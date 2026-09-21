@@ -74,8 +74,9 @@ Commit the hypothesis and frozen specification before execution, then commit the
 implementation checkpoint and verified results with a clear status. Preserve
 failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
-The approved Q7 mechanism test is complete. The next evidence gate is fresh-game
-validation with a durable GET-only public recorder and valid pre-window admission.
+The approved Q7 mechanism test is complete. Current authorized work is Q8 joint
+routing, queue access, profitability and market portability. The user owns forward
+validation; it does not block this research lane.
 Neither a continuous recorder nor live trading is operating. Q7's large data and
 ledger archive is indexed in its DATA_ARCHIVE.json and EXTERNAL_ARTIFACTS.json;
 see DELIVERY_NOTES.md there for restoration without duplicating source code.

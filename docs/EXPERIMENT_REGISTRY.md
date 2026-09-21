@@ -31,3 +31,7 @@ Q7 source was committed before outcomes at f0a2692; the specification at d15f57c
 115 unit tests pass. The selected router earns simulated $354.33/$353.89 at
 queue 3,300 (.25s/5s), and $90.45/$79.08 at queue 10,000. No fresh evaluation
 or live strategy promotion follows from this reused-cohort mechanism result.
+
+Q8 preregistered: `nfl_joint_route_lab_20260921/EXPERIMENT_SPEC.md`. Joint routing
+and rejected-pair recovery, with unchanged Q7 controls; market portability is a
+separate algebra/adapter build. Outcomes not yet observed.
