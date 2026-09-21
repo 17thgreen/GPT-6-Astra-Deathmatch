@@ -1,0 +1,21 @@
+{
+  "../nfl_factorial_lab_20260921/completion_policy.py": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec",
+  "../nfl_factorial_lab_20260921/verify_results.py": "a40b9f52a6ebdf003f0ea69af3d5416c1194df9f00ca55aaf18fc7c381155fa2",
+  "../nfl_factorial_lab_20260921/test_adaptive.py": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546",
+  "../nfl_factorial_lab_20260921/test_replay_v2.py": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c",
+  "../nfl_factorial_lab_20260921/test_factorial.py": "0a627b0588b9b6688b98f7c1742628c6895757c9f02b143b24b5a21a1d05cd0a",
+  "../nfl_factorial_lab_20260921/factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+  "../nfl_factorial_lab_20260921/test_queue_policies.py": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a",
+  "../nfl_factorial_lab_20260921/timing_policy.py": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f",
+  "../nfl_factorial_lab_20260921/analyze.py": "a05e4ba81f873e1b0b58a528d11b6494f573dfe2dfb3f85a6c25f2a05c2bd542",
+  "../nfl_factorial_lab_20260921/run_experiment.py": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc",
+  "../nfl_factorial_lab_20260921/shared_margin_probe.py": "79c8f3cb0cd485a2cac4f72121d8e0afd1a35870454909ddf330101d3de1871b",
+  "../nfl_factorial_lab_20260921/test_completion.py": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4",
+  "../nfl_factorial_lab_20260921/adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+  "../nfl_factorial_lab_20260921/queue_policies.py": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+  "../nfl_factorial_lab_20260921/build_report.py": "ce309edf7f1b718125751d2a8c0ce262e717e997a0bdaeab89cacab60f19ef10",
+  "../nfl_factorial_lab_20260921/replay_v2.py": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+  "../nfl_factorial_lab_20260921/test_analysis.py": "c0b502ce28ad59df898d6f1c45461cd88f10911c9af3cc5abb4347c64a3682f4",
+  "../nfl_factorial_lab_20260921/test_timing.py": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150",
+  "../nfl_factorial_lab_20260921/package.py": "11e1c0b7df63eaf614d950a7d1c644bdb257b315f651543d05fec22c2cba959a"
+}

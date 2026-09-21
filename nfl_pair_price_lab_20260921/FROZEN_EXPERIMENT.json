@@ -1,0 +1,20 @@
+{
+  "status": "FROZEN_BEFORE_Q7_OUTCOMES",
+  "created_at": "2026-09-21T18:20:58.688484+00:00",
+  "spec_commit": "d15f57c0e3d3327292cef21c5b4c3a1c4cba99b6",
+  "sha256": {
+    "verify_results.py": "1f903b888b10d0246d013a3086f6d08bd9e33ab98663c4f5c214196e3152c6c8",
+    "q7_analysis.py": "7e8139179c74ddefc08d3d089327dad12e68016564907321ec0a0dd872e88342",
+    "pair_policy.py": "5b0c2b4438dbf016686fca82293f1825febce38799315ac14708b5a41a394abc",
+    "run_experiment.py": "9829f078f68d5ac38ec0b816fb38caffb895682e8aebdc9070804325d1fc8bd0",
+    "test_q7_analysis.py": "7cbeee82c8b84db424c192822eaec06865c35dc887140f816a115b81d55e14e1",
+    "test_pair_policy.py": "e691362d3212711f7782b263db9f6bc27ff95eace1a42fdf8ec9ec58b0d4692f",
+    "EXPERIMENT_SPEC.md": "fe978c80a00dfad52a5ea27ff734c8a26224fe708e5b52a31fb8d4701b533df0",
+    "README.md": "ef03704e996658771f0bffe7bfd39b5dbb695eeb2cc9659810505c1278ac4ead",
+    "Q6_REFERENCES.json": "c85f036e5518f0aa4286171cc012c6bb9e82895e7e5e027ad3abf303fb4d1538",
+    "BASELINE_HASHES.json": "2ed71a85203c9dcabd0b7cafaac14bd5fa90884975fa178e81abb7205f695b8d",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "inputs/markets.json": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+    "inputs/week_membership.json": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+  }
+}
