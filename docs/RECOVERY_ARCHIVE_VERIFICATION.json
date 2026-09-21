@@ -1,0 +1,54 @@
+{
+  "archives": [
+    {
+      "path": "strategy_review_20260921/NFL_Maker_Audit_Kit.zip",
+      "sha256": "6235a6ef6f3fc0bb8105ab291c2193b95475385fee6ed58341c73aa0a0fad2dd",
+      "bytes": 65840,
+      "verified": true
+    },
+    {
+      "path": "maker_replay_round2/NFL_Maker_REST_Replay_Kit.zip",
+      "sha256": "32a43157dbceaf3edff996fb6556571f35463accbdcb3a903c3f1d41aed3a033",
+      "bytes": 15385088,
+      "verified": true
+    },
+    {
+      "path": "nfl_queue_lab_20260921/NFL_Queue_Experiment_Kit.zip",
+      "sha256": "161c4ae096b8333a45a67ca53f2d4233929b05078f5a9ad5d32aafd68517bec7",
+      "bytes": 31358537,
+      "verified": true
+    },
+    {
+      "path": "nfl_completion_lab_20260921/NFL_Completion_Experiment_Kit.zip",
+      "sha256": "e58339a5d6066a0e12a5e1fb53a45dc49b89bbf0b7717554155523d0ebff31ab",
+      "bytes": 39666290,
+      "verified": true
+    },
+    {
+      "path": "nfl_measurement_lab_20260921/NFL_Measurement_Kit.zip",
+      "sha256": "48e12ade2475121ab11be2f1ac85d913acfc180692408704f2e69ed8af0350b5",
+      "bytes": 3689777,
+      "verified": true
+    },
+    {
+      "path": "nfl_timing_lab_20260921/NFL_Timing_Cap_Kit.zip",
+      "sha256": "720216d3b211968c0645cc79f77763cf5f39b0dfdaa2b8985f038afc9bf23d2f",
+      "bytes": 44156430,
+      "verified": true
+    },
+    {
+      "path": "nfl_adaptive_lab_20260921/NFL_Adaptive_Kit.zip",
+      "sha256": "a2007d1652126b5d8efb8f6d37b2d578ddbeadf9aa35e8ab9666ebe7b09b41c6",
+      "bytes": 58771719,
+      "verified": true
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Kit.zip",
+      "sha256": "f330169d9b58826348b662863518ca82fdd64e34e8a30e1df4e54b45c5552c39",
+      "bytes": 62342699,
+      "verified": true
+    }
+  ],
+  "all_passed": true,
+  "original_import_commit": "7da067ada9faf255e672791975c8835959ead75b"
+}

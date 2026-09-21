@@ -1,0 +1,28 @@
+{
+  "selected": "router_on",
+  "retained_candidate": "router_on",
+  "checks": {
+    "q3300_d0.25_flat_positive": true,
+    "q3300_d0.25_beats_router": true,
+    "q3300_d0.25_retains_allocator": true,
+    "q3300_d0.25_inventory_limit": true,
+    "q3300_d5_flat_positive": true,
+    "q3300_d5_beats_router": true,
+    "q3300_d5_retains_allocator": true,
+    "q3300_d5_inventory_limit": true,
+    "q10000_d0.25_flat_positive": true,
+    "q10000_d0.25_beats_router": true,
+    "q10000_d0.25_retains_allocator": true,
+    "q10000_d0.25_inventory_limit": true,
+    "q10000_d5_flat_positive": true,
+    "q10000_d5_beats_router": true,
+    "q10000_d5_retains_allocator": true,
+    "q10000_d5_inventory_limit": true,
+    "week1_improvement": true,
+    "week2_improvement": true,
+    "positive_without_best_two": true
+  },
+  "failed": [],
+  "status": "DEVELOPMENT_SHADOW_CANDIDATE_ONLY",
+  "fresh_games": 0
+}

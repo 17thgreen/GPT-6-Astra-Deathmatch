@@ -1,7 +1,10 @@
 # Q7 proposal: isolate chosen-pair price consistency
 
-Status: PROPOSED, NOT IMPLEMENTED, NOT RUN. This proposal is committed before any
-Q7 outputs. Implementation details and exact code must be frozen before execution.
+Status: COMPLETED on `research/q7-paired-price`. This original proposal preceded
+Q7 outputs. The detailed specification was committed at d15f57c and source at
+f0a2692 before the run. See `nfl_pair_price_lab_20260921/Q7_RESULTS.md` and its
+selected-candidate freeze. The original controlled design is retained below.
+The next evidence gate is described in `docs/FORWARD_CAPTURE_READINESS.md`.
 
 ## Question
 

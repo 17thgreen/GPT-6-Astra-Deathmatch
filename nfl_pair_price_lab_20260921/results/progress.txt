@@ -1,0 +1,17 @@
+q3300_d0.25_router_off pnl 201.52149999992344 residual 0.0 seconds 41
+q3300_d0.25_allocator_off pnl 205.94219999993493 residual 0.0 seconds 47
+q3300_d0.25_router_on pnl 354.33099999998285 residual 0.0 seconds 53
+q3300_d0.25_allocator_on pnl 345.24439999997867 residual 0.0 seconds 43
+q3300_d5_router_off pnl 198.4082999999182 residual 0.0 seconds 40
+q3300_d5_router_on pnl 353.8933999999563 residual 0.0 seconds 52
+q3300_d5_allocator_off pnl 203.26209999991897 residual 0.0 seconds 46
+q3300_d5_allocator_on pnl 345.417399999943 residual 0.0 seconds 44
+q10000_d0.25_router_off pnl 10.354599999961465 residual 0.0 seconds 37
+q10000_d0.25_allocator_off pnl 14.292899999959445 residual 0.0 seconds 43
+q10000_d0.25_router_on pnl 90.44509999996444 residual 0.0 seconds 51
+q10000_d0.25_allocator_on pnl 75.9048999999668 residual 0.0 seconds 41
+q10000_d5_router_off pnl 0.3238999999530279 residual 0.0 seconds 39
+q10000_d5_allocator_off pnl 6.690399999954934 residual 0.0 seconds 43
+q10000_d5_router_on pnl 79.0757999999596 residual 0.0 seconds 51
+q10000_d5_allocator_on pnl 69.05739999996058 residual 0.0 seconds 40
+DONE 16 completed; 0 failed

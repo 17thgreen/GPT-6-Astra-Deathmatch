@@ -1,0 +1,332 @@
+{
+  "files": [
+    {
+      "path": "nfl_pair_price_lab_20260921/inputs/events.jsonl.gz",
+      "bytes": 22967126,
+      "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off_decisions.jsonl.gz",
+      "bytes": 910568,
+      "sha256": "5a635f5febb288815a63ac13b66a281b9c015e52242808eb3f7a8ab985a31483"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off_fills.jsonl.gz",
+      "bytes": 197092,
+      "sha256": "2ca16b3bf8ad1782d14b765e0fa33db2260f18504a4a15c40d33c3e6e2513209"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off_orders.jsonl.gz",
+      "bytes": 585897,
+      "sha256": "979a4e7a10ea12b4609aaa3ceac53090411224107b6023727dad6bb5b9d20368"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off_pairs.jsonl.gz",
+      "bytes": 1314261,
+      "sha256": "147d694cdba612088ba359dd87b58285e32a9b670e27a1d87be384949a64ed39"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on_decisions.jsonl.gz",
+      "bytes": 827020,
+      "sha256": "464007fef1f617a0e37b3f8d4473ae3e57ea60eaf8dd9f8396143ddb90822239"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on_fills.jsonl.gz",
+      "bytes": 174325,
+      "sha256": "8b50de03d99ad5efabd497ac090d9649ffb198cbdd46dc903e76018222c48892"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on_orders.jsonl.gz",
+      "bytes": 553670,
+      "sha256": "ea9d595a41caee5dd4e5cbe4a7fb7e4f32ef9d2381e198dd896c412154dcbe2a"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on_pairs.jsonl.gz",
+      "bytes": 1314566,
+      "sha256": "b0862c153a845901a95bc634db76377d964e26d9a492117c2867fdea48420b16"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off_decisions.jsonl.gz",
+      "bytes": 76,
+      "sha256": "31c5af35b3e7e608d04f6e124891a27af8e73f29a410965e25d9524197629520"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off_fills.jsonl.gz",
+      "bytes": 194281,
+      "sha256": "eae0cffb8ca0d06a3c9722d340f27214bca68e8219b8683a4839ec176cb2613d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off_orders.jsonl.gz",
+      "bytes": 574793,
+      "sha256": "335bae5f08fb3aa0650a7ab249ae2b0700276add7e60f7cd5a7b08a788107e08"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off_pairs.jsonl.gz",
+      "bytes": 72,
+      "sha256": "3a17cbba0aa1547908e4eb8d216fc48613560293539438f187f4a1e1d0c12349"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on_decisions.jsonl.gz",
+      "bytes": 75,
+      "sha256": "bc769622f8358472e3324006b34ada791b373563a363312043ece6c77392221d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on_fills.jsonl.gz",
+      "bytes": 173001,
+      "sha256": "3c85f0c9b5924a1345df4d650c07874fe488e8efc1436ef3e68ca961faa943be"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on_orders.jsonl.gz",
+      "bytes": 577884,
+      "sha256": "43105bc80db49c196420bd530f79332c53794c624b98df100df3fefc5d1150dc"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on_pairs.jsonl.gz",
+      "bytes": 23853656,
+      "sha256": "9c2106ea64af5c4d9e13737fdaebb70d58a0e281ae2dacf3fdb97109fe2f03cd"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off_decisions.jsonl.gz",
+      "bytes": 909659,
+      "sha256": "645489e71d2c0029d58a11794054bf0226716347c6c5edfce1633e8d6780ab44"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off_fills.jsonl.gz",
+      "bytes": 190459,
+      "sha256": "540f477a8c43b902e5d48ff40062e1aa00248312ed3da529da8eab1d9141fc96"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off_orders.jsonl.gz",
+      "bytes": 582237,
+      "sha256": "2fe1a1bd10f22805f18e615b013054c379fff3590690096edef84bcb4d4703e4"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off_pairs.jsonl.gz",
+      "bytes": 1310755,
+      "sha256": "786eef3eb3f10a29839abd056e31055af4ae9ae3add8735db2c80d03da0a4b59"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on_decisions.jsonl.gz",
+      "bytes": 826256,
+      "sha256": "2dab3bb45355e39688cea0d08e5da7491e4b83e6b65119157fde0b6d686d1390"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on_fills.jsonl.gz",
+      "bytes": 168103,
+      "sha256": "c8165a896b93a31e088a07aa63a2c8fe465cbaa48b4439ca1aaef91606088d14"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on_orders.jsonl.gz",
+      "bytes": 550407,
+      "sha256": "4c826e67a9329d9741e616d3fc998b1aaa5aae7752ae1bcb2ba46112b49a9164"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on_pairs.jsonl.gz",
+      "bytes": 1311640,
+      "sha256": "d2aa242eea4414ac94d191567f4528e80ed68729a93c664aaf813aabf466a398"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off_decisions.jsonl.gz",
+      "bytes": 73,
+      "sha256": "21dfd832803155e9a69ca08e6ed3f6cc2086a325b0df05334dd3aabcaf290875"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off_fills.jsonl.gz",
+      "bytes": 187392,
+      "sha256": "4b5eda26c2b2c34cde65be8b46830b4bb71cbf61d588816a7eec9b97277e895e"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off_orders.jsonl.gz",
+      "bytes": 570969,
+      "sha256": "7d77fae7edf3629d90c6fb6c42472827d8cd17a44c7d9a7f851d0a2251f14f6e"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off_pairs.jsonl.gz",
+      "bytes": 69,
+      "sha256": "e5a309376e1514b5695c31916cde236359e7b14fe349bdbf4b8e6e597ba5e9bd"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on_decisions.jsonl.gz",
+      "bytes": 72,
+      "sha256": "c93e29aa6196673f0c4d3ebab981196f0155d37b4386be9bed84ca1cced4f42d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on_fills.jsonl.gz",
+      "bytes": 167008,
+      "sha256": "a28d1fe2b1c9254696f3d2079c3746394585c034f05ea80fad995ec3ba5fbc66"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on_orders.jsonl.gz",
+      "bytes": 573905,
+      "sha256": "cad276765b3c54c0f9d22d731b58d27b503ea9ddf0ca27d8f68adf0cc02cb7ab"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on_pairs.jsonl.gz",
+      "bytes": 23834266,
+      "sha256": "f0c4faeb1a440862ce976b0342bdeba52dbbf1c62ad1b3564af61ea712c6a757"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off_decisions.jsonl.gz",
+      "bytes": 920036,
+      "sha256": "485815b10fa4c89ff54c7fbd038871be0a0c377503c2332f6cbdd5c7696353ef"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off_fills.jsonl.gz",
+      "bytes": 594548,
+      "sha256": "f06f9534f83ac63394ac797ff633bd89befb38d5d24c400e83307c68d434e1f4"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off_orders.jsonl.gz",
+      "bytes": 587589,
+      "sha256": "c8e62558648004f78856a974a0494bc08abba5dc6d906dea8cb03238957d1855"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off_pairs.jsonl.gz",
+      "bytes": 1335208,
+      "sha256": "846fed5d5754385070bf86c07dd5bc6d50772581ea6f60cef81e1eb3336eb6ef"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on_decisions.jsonl.gz",
+      "bytes": 838304,
+      "sha256": "dba3d5b26c31a1f4da90b17297be5b097d01b60298ae3414a21351a5b0a476fa"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on_fills.jsonl.gz",
+      "bytes": 534954,
+      "sha256": "ecb1446c31e7110dac94877c2c413b095d55c7d26117c4254862670f191aa56d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on_orders.jsonl.gz",
+      "bytes": 569776,
+      "sha256": "027c459fa332dd27c33ea19ab0baf51f7895f8c0f1a4f3b45ec231f48db0a542"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on_pairs.jsonl.gz",
+      "bytes": 1347750,
+      "sha256": "c7af7be8e6f10154ecfa430082502db6ab4914f501bac64ea3b819b5ebd16bb6"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off_decisions.jsonl.gz",
+      "bytes": 75,
+      "sha256": "ca0c0c21d4928b34eb920da18e21da3bbced0397f7ac09299d86cddc97470397"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off_fills.jsonl.gz",
+      "bytes": 598123,
+      "sha256": "8b838aa1d0be286c66a1a729bb1e0374ca79d51af0ee5f32574bf77260cc815d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off_orders.jsonl.gz",
+      "bytes": 576474,
+      "sha256": "e30ad28d05fd129e8ece4eb4fbe9e28e25ce5e2020ade67826da6a413d20ce1c"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off_pairs.jsonl.gz",
+      "bytes": 71,
+      "sha256": "1e73273301aaf8414850bb4bb7ea0cd5eb76c322600ba6b98491c9ac1a475b85"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on_decisions.jsonl.gz",
+      "bytes": 74,
+      "sha256": "bf0ce358d6e8ccdf2bcc60380a8601cab7ffc7560ba572a1e0a0dcbad0fa9134"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on_fills.jsonl.gz",
+      "bytes": 539848,
+      "sha256": "7ab41f8175a8460f898dda11f4bb34d75809af62f0b630c7b23147e76aa9b9f8"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on_orders.jsonl.gz",
+      "bytes": 578838,
+      "sha256": "657f8a76009334b07eb725ff91a2d83bf16c0734ad69063896a4dc3454d1e1c1"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on_pairs.jsonl.gz",
+      "bytes": 23999325,
+      "sha256": "922adcda43634adb6258a8cd8f5845458b353883a5bbf939a05440c5f280167f"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off_decisions.jsonl.gz",
+      "bytes": 919244,
+      "sha256": "b00cdf07ed467ddcfff6f461cfd64a89a1c99b2f70b78f56a3d2e4e9629eed82"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off_fills.jsonl.gz",
+      "bytes": 565200,
+      "sha256": "7409e3df3facd23d1665e7e3f95c2cacf4c73c29ffbd6ce8da9ce205c553a7c0"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off_orders.jsonl.gz",
+      "bytes": 582794,
+      "sha256": "330cc6217640844f86d8971a28d63b5554c281332d5d0d1989b4759bb727de80"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off_pairs.jsonl.gz",
+      "bytes": 1339376,
+      "sha256": "64f8ebd2c76c997f51fd8005bd4ac21e1f7453a08ebf02c3904e89caa3a256fb"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on_decisions.jsonl.gz",
+      "bytes": 837756,
+      "sha256": "7d168aa9ed495717e151a3c082e25a8ca8c63fd9da9b399e63037572293bf31e"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on_fills.jsonl.gz",
+      "bytes": 509324,
+      "sha256": "1461d966c0a2459257c747da8c2e0480accfb57bc53319d046ebeed99bf70630"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on_orders.jsonl.gz",
+      "bytes": 565600,
+      "sha256": "65fe7139a27e68e08bee493437225bf2531400b600d7976d216730a7bbf99272"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on_pairs.jsonl.gz",
+      "bytes": 1346244,
+      "sha256": "4f4447012a6b5a7df3ed86ee1302859e0e1661cf8ca733d4c9c48870c0fe3034"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off_decisions.jsonl.gz",
+      "bytes": 72,
+      "sha256": "dfac6baf3070023483d2758fd175d35110604b539190df201de1052ed2dca399"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off_fills.jsonl.gz",
+      "bytes": 569585,
+      "sha256": "aa7d7bf4b5f7e4557a0fd365cff6438a8d9bcb0c375ab5d12ea46939f9b1192b"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off_orders.jsonl.gz",
+      "bytes": 570999,
+      "sha256": "30f910b5aaa26960f6d16a7b6271f3eea658907705d9b5b690db8f9841eb6c51"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off_pairs.jsonl.gz",
+      "bytes": 68,
+      "sha256": "b44d0f06556a88abe192626a8d6da916bb0a4ae40da43f16f521d41eead18dac"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on_decisions.jsonl.gz",
+      "bytes": 71,
+      "sha256": "a7ff6b84fb4a17b4f6d5ceb513fbf5ccc7312393f3b815a1e3d10709e323ce5d"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on_fills.jsonl.gz",
+      "bytes": 512610,
+      "sha256": "466b14ad6e2e92f774e50b743592c27ccb216c70e48324aa4915786d2df607f5"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on_orders.jsonl.gz",
+      "bytes": 572515,
+      "sha256": "fa815d756784eff2dd68610c552c721abe419bb507608f921850b2cc9467ec82"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on_pairs.jsonl.gz",
+      "bytes": 24024512,
+      "sha256": "81258aa3c04a62f2bad9ef538b00db462641e6f51857843777a3c95ad9975086"
+    }
+  ],
+  "code_freeze_commit": "f0a2692a09f14210039796f2b2d5ae696de138cd",
+  "artifact_type": "NORMALIZED_INPUT_AND_COMPRESSED_LEDGER_BYTES_ONLY",
+  "file_count": 65
+}

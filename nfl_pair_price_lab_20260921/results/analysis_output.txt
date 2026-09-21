@@ -1,0 +1,84 @@
+{
+  "selection": {
+    "selected": "router_on",
+    "retained_candidate": "router_on",
+    "checks": {
+      "q3300_d0.25_flat_positive": true,
+      "q3300_d0.25_beats_router": true,
+      "q3300_d0.25_retains_allocator": true,
+      "q3300_d0.25_inventory_limit": true,
+      "q3300_d5_flat_positive": true,
+      "q3300_d5_beats_router": true,
+      "q3300_d5_retains_allocator": true,
+      "q3300_d5_inventory_limit": true,
+      "q10000_d0.25_flat_positive": true,
+      "q10000_d0.25_beats_router": true,
+      "q10000_d0.25_retains_allocator": true,
+      "q10000_d0.25_inventory_limit": true,
+      "q10000_d5_flat_positive": true,
+      "q10000_d5_beats_router": true,
+      "q10000_d5_retains_allocator": true,
+      "q10000_d5_inventory_limit": true,
+      "week1_improvement": true,
+      "week2_improvement": true,
+      "positive_without_best_two": true
+    },
+    "failed": [],
+    "status": "DEVELOPMENT_SHADOW_CANDIDATE_ONLY",
+    "fresh_games": 0
+  },
+  "effects": {
+    "q3300_d0.25": {
+      "pnl": {
+        "router_off": 201.52149999992344,
+        "router_on": 354.33099999998285,
+        "allocator_off": 205.94219999993493,
+        "allocator_on": 345.24439999997867
+      },
+      "guard_effect_router": 152.80950000005942,
+      "guard_effect_allocator": 139.30220000004374,
+      "interaction": -13.507300000015675,
+      "architecture_effect_guard_off": 4.420700000011493,
+      "architecture_effect_guard_on": -9.086600000004182
+    },
+    "q3300_d5": {
+      "pnl": {
+        "router_off": 198.4082999999182,
+        "router_on": 353.8933999999563,
+        "allocator_off": 203.26209999991897,
+        "allocator_on": 345.417399999943
+      },
+      "guard_effect_router": 155.48510000003807,
+      "guard_effect_allocator": 142.155300000024,
+      "interaction": -13.329800000014075,
+      "architecture_effect_guard_off": 4.853800000000774,
+      "architecture_effect_guard_on": -8.4760000000133
+    },
+    "q10000_d0.25": {
+      "pnl": {
+        "router_off": 10.354599999961465,
+        "router_on": 90.44509999996444,
+        "allocator_off": 14.292899999959445,
+        "allocator_on": 75.9048999999668
+      },
+      "guard_effect_router": 80.09050000000298,
+      "guard_effect_allocator": 61.612000000007356,
+      "interaction": -18.47849999999562,
+      "architecture_effect_guard_off": 3.93829999999798,
+      "architecture_effect_guard_on": -14.54019999999764
+    },
+    "q10000_d5": {
+      "pnl": {
+        "router_off": 0.3238999999530279,
+        "router_on": 79.0757999999596,
+        "allocator_off": 6.690399999954934,
+        "allocator_on": 69.05739999996058
+      },
+      "guard_effect_router": 78.75190000000657,
+      "guard_effect_allocator": 62.367000000005646,
+      "interaction": -16.384900000000926,
+      "architecture_effect_guard_off": 6.366500000001906,
+      "architecture_effect_guard_on": -10.01839999999902
+    }
+  }
+}

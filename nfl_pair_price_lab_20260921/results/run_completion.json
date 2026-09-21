@@ -1,0 +1,10 @@
+{
+  "process_exit_code": 0,
+  "completed_scenarios": 16,
+  "failed_scenarios": 0,
+  "unit_tests": 115,
+  "independently_verified_ledgers": 16,
+  "exact_q6_control_ledgers": 8,
+  "analysis_exit_code": 0,
+  "source_hashes_match_after_execution": true
+}

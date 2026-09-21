@@ -1,0 +1,8 @@
+{
+  "filename": "NFL_Q7_Paired_Price_Data_2026-09-21.zip",
+  "bytes": 151353162,
+  "sha256": "721fcc31d619c6aead3e2101407413aca2a9b3b4a3ea77c355c32b6828a972c7",
+  "file_count": 65,
+  "restore": "Extract at repository root; requires matching committed Q7 code and summaries.",
+  "code_freeze_commit": "f0a2692a09f14210039796f2b2d5ae696de138cd"
+}

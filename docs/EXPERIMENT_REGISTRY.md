@@ -14,9 +14,9 @@ not presented as a pre-outcome Git preregistration of that historical work.
 | Q4 | Early-week small orders failed; cap sensitivity matters | `nfl_timing_lab_20260921/NFL_Timing_Cap_Results.md` |
 | Q5 | Allocation bundle improved development P&L; ranking attribution unresolved | `nfl_adaptive_lab_20260921/NFL_Adaptive_Results.md` |
 | Q6 | Simplest allocator selected; optional F/P/R features unnecessary under declared retention rule | `nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Results.md` |
-| Q7 | Proposed: isolate the actual chosen-pair price check; NOT YET RUN | `docs/NEXT_EXPERIMENT.md` |
+| Q7 | Completed: guarded original router passes frozen simplification screen; 16 ledger audits and eight exact Q6 controls | `nfl_pair_price_lab_20260921/Q7_RESULTS.md` |
 
-Current Q6 candidate: `nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.
+Prior Q6 candidate: `nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.
 Same 31 development games, 16 Week 1 and 15 Week 2, pooled $5,000. Q6 baseline
 and selected candidate use the same hard 250-event cap and assumed total exit
 depth 250 per game. The old $1,027.47 result used the original engine, 16 games
@@ -25,3 +25,9 @@ and early queue near 291; it is a different scenario, not a contradicted figure.
 No always-on collector is running. The prior 32-game reservation is schedule-only;
 most venue IDs and full-window coverage remain unverified. Never backdate a
 missed admission/capture deadline or silently replace games after outcomes.
+
+Current research candidate: `nfl_pair_price_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.
+Q7 source was committed before outcomes at f0a2692; the specification at d15f57c.
+115 unit tests pass. The selected router earns simulated $354.33/$353.89 at
+queue 3,300 (.25s/5s), and $90.45/$79.08 at queue 10,000. No fresh evaluation
+or live strategy promotion follows from this reused-cohort mechanism result.

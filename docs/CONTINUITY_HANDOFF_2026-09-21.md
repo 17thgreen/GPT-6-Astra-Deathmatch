@@ -65,3 +65,25 @@ remain unverified. Do not repeat rejected hypotheses as new discoveries.
 
 Current working branch: research/q7-paired-price. Use Q7's frozen spec and future
 results record to advance this handoff without editing old experiment snapshots.
+
+## Work completed in the replacement chat
+
+All eight original kit checksums verified (RECOVERY_ARCHIVE_VERIFICATION.json).
+Q7 specification committed at d15f57c; implementation frozen at f0a2692 before
+outcomes. Completed 16 scenarios, 115 unit tests, independent ledger/fee audits
+and eight exact Q6 fill/order control matches. All declared selection criteria
+pass for router_on. Primary net is $354.33; queue-10,000/.25s net is $90.45;
+slow-delay values are $353.89 and $79.08. Same reused games and execution
+assumptions. The current candidate is Q7's frozen guarded router; Q6 stays as
+an immutable prior reference. See Q7_RESULTS.md and SHADOW_CANDIDATE_FREEZE.json.
+
+Removing the guard from the Q6 allocator reduces primary net to $205.94,
+close to the original router's $201.52. Adding it to the original router beats
+the Q6 allocator in every scenario. This supports the admission mechanism
+within this simulator; it does not prove a durable market edge. Offset-order
+handling and each architecture's original timing remain explicit in the spec.
+
+Next gate: durable forward collection and pre-window cohort admission. The
+collector currently rejects holdout configuration, so a future admission and
+capture version needs explicit review and freeze, plus an actual persistent
+host. No host deployment or background collection was performed by this chat.

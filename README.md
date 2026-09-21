@@ -6,19 +6,21 @@ are preserved here. No live order-enabled strategy has been validated or deploye
 
 ## Current result
 
-The Q6 simplification screen selected the core allocator with its three optional
-features disabled. On 31 repeatedly examined NFL games, one shared $5,000 account,
-250-contract event cap and assumed early queue of 3,300, completed simulated net
-was **$345.24**, versus **$201.52** for the original router. At queue 10,000 it was
-$75.90 versus $10.35. These are hypothetical historical executions, not live P&L.
+Q7 selects the original router plus a chosen-pair price guard as the simpler
+shadow research candidate. On the same 31 reused NFL games and shared $5,000,
+it earns completed simulated net **$354.33**, versus **$201.52** for the original
+router and **$345.24** for the prior Q6 allocator at queue 3,300/.25s. It beats
+both across all four frozen queue/delay scenarios. All sixteen ledgers reconcile;
+eight unchanged controls reproduce exact Q6 fill/order histories; 115 tests pass.
 
-The extra two-sided flow gate, cash earmark and portfolio ranking were unnecessary
-to retain the improvement on this sample. Common budgeting, quote sizing,
-offset-order handling and the chosen-pair margin check remain bundled.
+The result supports paired-price admission as the main mechanism in the prior
+allocator gain on these development data. It does not establish live execution
+or fresh profitability. Full results: [Q7 report](nfl_pair_price_lab_20260921/Q7_RESULTS.md).
+The original Q6 record and candidate remain unchanged.
 
-Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Results.md),
-[the experiment registry](docs/EXPERIMENT_REGISTRY.md), and
-[the next experiment](docs/NEXT_EXPERIMENT.md).
+Start with [the continuity handoff](docs/CONTINUITY_HANDOFF_2026-09-21.md),
+[the registry](docs/EXPERIMENT_REGISTRY.md), and
+[forward capture readiness](docs/FORWARD_CAPTURE_READINESS.md).
 
 ## Research history
 
@@ -33,6 +35,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_timing_lab_20260921` | Q4 size, early entry, stability and event-cap experiments |
 | `nfl_adaptive_lab_20260921` | Q5 adaptive policies and capital controls |
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
+| `nfl_pair_price_lab_20260921` | Q7 chosen-pair guard isolation and simpler candidate |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
@@ -43,8 +46,8 @@ standalone kit; the repository's artifact policy below applies to this checkout.
 Python 3.12, standard library:
 
 ```bash
-cd nfl_factorial_lab_20260921
-python -m unittest -v test_replay_v2 test_queue_policies test_completion test_timing test_adaptive test_factorial test_analysis
+cd nfl_pair_price_lab_20260921
+python -m unittest -v test_pair_policy test_q7_analysis test_replay_v2 test_queue_policies test_completion test_timing test_adaptive test_factorial test_analysis
 ```
 
 The imported Q6 run passed 94 unit tests, 36 independent financial-ledger checks,
@@ -71,6 +74,8 @@ Commit the hypothesis and frozen specification before execution, then commit the
 implementation checkpoint and verified results with a clear status. Preserve
 failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
-The next research step is an isolated test of the **actual chosen-pair price
-check**, with the original router's timing and sizing held fixed. Fresh-game
-validation and a durable public recorder remain separate unmet gates.
+The approved Q7 mechanism test is complete. The next evidence gate is fresh-game
+validation with a durable GET-only public recorder and valid pre-window admission.
+Neither a continuous recorder nor live trading is operating. Q7's large data and
+ledger archive is indexed in its DATA_ARCHIVE.json and EXTERNAL_ARTIFACTS.json;
+see DELIVERY_NOTES.md there for restoration without duplicating source code.

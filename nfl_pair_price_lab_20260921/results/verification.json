@@ -1,0 +1,470 @@
+{
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "scenario": "q3300_d0.25_router_off",
+      "fills": 14331,
+      "orders": 42986,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_allocator_off",
+      "fills": 14209,
+      "orders": 42159,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 59,
+        "empty_pair_sets": 13,
+        "total_requested": 7151137.755849953,
+        "total_unfunded": 4917.4675000007865,
+        "peak_shortfall": 367.0315375000032,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_router_on",
+      "fills": 13001,
+      "orders": 43660,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_allocator_on",
+      "fills": 12853,
+      "orders": 40859,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 21,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 600.7346250007813,
+        "peak_shortfall": 87.61275000003707,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_router_off",
+      "fills": 14045,
+      "orders": 42856,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_router_on",
+      "fills": 12716,
+      "orders": 43502,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_allocator_off",
+      "fills": 13917,
+      "orders": 42041,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 60,
+        "empty_pair_sets": 13,
+        "total_requested": 7151135.244037453,
+        "total_unfunded": 5048.452462502002,
+        "peak_shortfall": 368.19963750002125,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_allocator_on",
+      "fills": 12594,
+      "orders": 40773,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 22,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 660.674487501542,
+        "peak_shortfall": 90.3587500000699,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_router_off",
+      "fills": 4696,
+      "orders": 44296,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_allocator_off",
+      "fills": 4754,
+      "orders": 43066,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 13,
+        "total_requested": 7151134.950912457,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_router_on",
+      "fills": 4204,
+      "orders": 45114,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_allocator_on",
+      "fills": 4224,
+      "orders": 40648,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_router_off",
+      "fills": 4675,
+      "orders": 44290,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_allocator_off",
+      "fills": 4744,
+      "orders": 43058,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 13,
+        "total_requested": 7151134.950912457,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_router_on",
+      "fills": 4184,
+      "orders": 45110,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_allocator_on",
+      "fills": 4204,
+      "orders": 40644,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    }
+  ],
+  "q6_regressions": {
+    "q3300_d0.25_router_off": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d0.25_allocator_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d5_router_off": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d5_allocator_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_router_off": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_allocator_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d5_router_off": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d5_allocator_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    }
+  },
+  "guard_diagnostics": {
+    "q3300_d0.25_router_off": {
+      "checks": 0,
+      "nonpassing_checks": 0,
+      "reasons": {}
+    },
+    "q3300_d0.25_allocator_off": {
+      "checks": 79298,
+      "nonpassing_checks": 52933,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2333
+      }
+    },
+    "q3300_d0.25_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61532,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53631
+      }
+    },
+    "q3300_d0.25_allocator_on": {
+      "checks": 79298,
+      "nonpassing_checks": 52876,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2276
+      }
+    },
+    "q3300_d5_router_off": {
+      "checks": 0,
+      "nonpassing_checks": 0,
+      "reasons": {}
+    },
+    "q3300_d5_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61530,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53629
+      }
+    },
+    "q3300_d5_allocator_off": {
+      "checks": 79298,
+      "nonpassing_checks": 52932,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2332
+      }
+    },
+    "q3300_d5_allocator_on": {
+      "checks": 79298,
+      "nonpassing_checks": 52876,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2276
+      }
+    },
+    "q10000_d0.25_router_off": {
+      "checks": 0,
+      "nonpassing_checks": 0,
+      "reasons": {}
+    },
+    "q10000_d0.25_allocator_off": {
+      "checks": 79298,
+      "nonpassing_checks": 52929,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2329
+      }
+    },
+    "q10000_d0.25_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61089,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53188
+      }
+    },
+    "q10000_d0.25_allocator_on": {
+      "checks": 79298,
+      "nonpassing_checks": 52866,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2266
+      }
+    },
+    "q10000_d5_router_off": {
+      "checks": 0,
+      "nonpassing_checks": 0,
+      "reasons": {}
+    },
+    "q10000_d5_allocator_off": {
+      "checks": 79298,
+      "nonpassing_checks": 52929,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2329
+      }
+    },
+    "q10000_d5_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61089,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53188
+      }
+    },
+    "q10000_d5_allocator_on": {
+      "checks": 79298,
+      "nonpassing_checks": 52866,
+      "reasons": {
+        "missing_pair": 50600,
+        "nonpositive_margin": 2266
+      }
+    }
+  },
+  "caveat": "Accounting and exact reference reproduction do not verify historical queue positions or executable fills."
+}
