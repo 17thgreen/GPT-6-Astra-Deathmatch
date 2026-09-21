@@ -1,0 +1,69 @@
+{
+  "parts": [
+    {
+      "filename": "NFL_Q8_Ledgers_Part_1_2026-09-21.zip",
+      "size": 280188957,
+      "sha256": "eaadd12037abef219ac1f61c641d5f9ad505ae83e7ea921a408d1b26c518c904",
+      "files": [
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_joint_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_joint_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_joint_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_joint_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_pairs.jsonl.gz"
+      ]
+    },
+    {
+      "filename": "NFL_Q8_Ledgers_Part_2_2026-09-21.zip",
+      "size": 283991787,
+      "sha256": "1b8bd2365548b8bd79eba05b928f0c14f7ca0671940ba300403cde5d23942037",
+      "files": [
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_joint_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_joint_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_joint_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_joint_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_pairs.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_decisions.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_fills.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_orders.jsonl.gz",
+        "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_pairs.jsonl.gz"
+      ]
+    }
+  ],
+  "contains": "48 Q8 compressed fills/orders/decisions/pairs; both parts required",
+  "requires_inputs": "nfl_pair_price_lab_20260921/DATA_ARCHIVE.json",
+  "save_note": "Initial single-archive preparation failed before upload; replaced by two smaller parts."
+}

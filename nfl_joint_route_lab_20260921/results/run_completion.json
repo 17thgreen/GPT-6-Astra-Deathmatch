@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETED_AND_AUDITED",
+  "completed_at": "2026-09-21T19:53:52.358568+00:00",
+  "scenarios": 12,
+  "failures": 0,
+  "exact_q7_controls": 4,
+  "replay_unit_tests": 128,
+  "portability_tests": 8,
+  "selected": "Q7_GuardedRouter",
+  "frozen_input_manifest_matches": true
+}

@@ -1,0 +1,334 @@
+{
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "scenario": "q3300_d0.25_router_on",
+      "fills": 13001,
+      "orders": 43660,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_rescue",
+      "fills": 12848,
+      "orders": 42499,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_joint",
+      "fills": 12611,
+      "orders": 43329,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_router_on",
+      "fills": 12716,
+      "orders": 43502,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_rescue",
+      "fills": 12574,
+      "orders": 42336,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_joint",
+      "fills": 12484,
+      "orders": 43158,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_router_on",
+      "fills": 4204,
+      "orders": 45114,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_rescue",
+      "fills": 4146,
+      "orders": 44220,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_router_on",
+      "fills": 4184,
+      "orders": 45110,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_joint",
+      "fills": 4038,
+      "orders": 44459,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_rescue",
+      "fills": 4127,
+      "orders": 44216,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_joint",
+      "fills": 4050,
+      "orders": 44456,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    }
+  ],
+  "q7_regressions": {
+    "q3300_d0.25_router_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d5_router_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_router_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d5_router_on": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    }
+  },
+  "guard_diagnostics": {
+    "q3300_d0.25_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61532,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53631
+      }
+    },
+    "q3300_d0.25_rescue": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q3300_d0.25_joint": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q3300_d5_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61530,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53629
+      }
+    },
+    "q3300_d5_rescue": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q3300_d5_joint": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q10000_d0.25_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61089,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53188
+      }
+    },
+    "q10000_d0.25_rescue": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q10000_d5_router_on": {
+      "checks": 659427,
+      "nonpassing_checks": 61089,
+      "reasons": {
+        "missing_pair": 7901,
+        "nonpositive_margin": 53188
+      }
+    },
+    "q10000_d0.25_joint": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q10000_d5_rescue": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    },
+    "q10000_d5_joint": {
+      "checks": 659427,
+      "nonpassing_checks": 7901,
+      "reasons": {
+        "missing_pair": 7901
+      }
+    }
+  },
+  "caveat": "Accounting and exact reference reproduction do not verify historical queue positions or executable fills."
+}

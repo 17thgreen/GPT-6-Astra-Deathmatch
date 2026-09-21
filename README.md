@@ -6,6 +6,14 @@ are preserved here. No live order-enabled strategy has been validated or deploye
 
 ## Current result
 
+Q8 joint routing is complete: both new variants improve the lighter-queue
+headline but lose to Q7 under queue-10000 stress, so **Q7 remains selected**.
+[Q8 results](nfl_joint_route_lab_20260921/Q8_RESULTS.md) preserve all twelve
+comparisons. [Market expansion roadmap](market_portability/RESEARCH_ROADMAP.md)
+covers queue access, profitability and rule-aware portability; the new payoff
+checker passes eight focused tests. The user owns forward validation.
+
+
 Q7 selects the original router plus a chosen-pair price guard as the simpler
 shadow research candidate. On the same 31 reused NFL games and shared $5,000,
 it earns completed simulated net **$354.33**, versus **$201.52** for the original
@@ -36,6 +44,8 @@ Start with [the continuity handoff](docs/CONTINUITY_HANDOFF_2026-09-21.md),
 | `nfl_adaptive_lab_20260921` | Q5 adaptive policies and capital controls |
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
 | `nfl_pair_price_lab_20260921` | Q7 chosen-pair guard isolation and simpler candidate |
+| `nfl_joint_route_lab_20260921` | Q8 joint-route and rejected-pair recovery experiment |
+| `market_portability` | Payoff compatibility, explicit profiles and sourced expansion roadmap |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

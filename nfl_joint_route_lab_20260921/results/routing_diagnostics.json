@@ -1,0 +1,77 @@
+{
+  "caveat": "Descriptive decision counts only, not unique opportunities, guaranteed fills or saved profit.",
+  "scenarios": {
+    "q3300_d0.25_router_on": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 597895
+    },
+    "q3300_d0.25_rescue": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 47664,
+      "recovered_failed_original_pair": 47664,
+      "changed_original_keys": 47664
+    },
+    "q3300_d0.25_joint": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 651526,
+      "recovered_failed_original_pair": 47382,
+      "changed_original_keys": 66315
+    },
+    "q3300_d5_router_on": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 597897
+    },
+    "q3300_d5_rescue": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 47665,
+      "recovered_failed_original_pair": 47665,
+      "changed_original_keys": 47665
+    },
+    "q3300_d5_joint": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 651526,
+      "recovered_failed_original_pair": 47431,
+      "changed_original_keys": 66322
+    },
+    "q10000_d0.25_router_on": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 598338
+    },
+    "q10000_d0.25_rescue": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 47439,
+      "recovered_failed_original_pair": 47439,
+      "changed_original_keys": 47439
+    },
+    "q10000_d5_router_on": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 598338
+    },
+    "q10000_d0.25_joint": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 651526,
+      "recovered_failed_original_pair": 47219,
+      "changed_original_keys": 65944
+    },
+    "q10000_d5_rescue": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 47439,
+      "recovered_failed_original_pair": 47439,
+      "changed_original_keys": 47439
+    },
+    "q10000_d5_joint": {
+      "pair_decisions": 659427,
+      "passing_selected_pair": 651526,
+      "joint_selection_decisions": 651526,
+      "recovered_failed_original_pair": 47219,
+      "changed_original_keys": 65942
+    }
+  }
+}

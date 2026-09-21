@@ -1,0 +1,249 @@
+{
+  "files": [
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_decisions.jsonl.gz",
+      "size": 71,
+      "sha256": "90bd862424760c88e29edc9da0e4a0b3e8679e22c7491e46de9826a73a4a37e6"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_fills.jsonl.gz",
+      "size": 166729,
+      "sha256": "1ba6cb1c5f836bf1a1e25accbcff6fc3aa8fc33f80c68c8eba94020c9c187a31"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_orders.jsonl.gz",
+      "size": 573433,
+      "sha256": "56b5b44210f9ee105f4d7196275435175890a39b13691d76ecb962261a27183b"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_joint_pairs.jsonl.gz",
+      "size": 87795100,
+      "sha256": "3884c7942f96dcad0c2c89e0e0516c207ae532f9ca0d88aa8700167bb8c9c3c8"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_decisions.jsonl.gz",
+      "size": 72,
+      "sha256": "41c2ef92c64d42eb490bb8fb2ea8d85fe5df89a5d85e985d441852702773371c"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_fills.jsonl.gz",
+      "size": 171032,
+      "sha256": "2166fb9bbe317e01fb5f7a68015dbc1c603737ab281d2bfea3823829622a1e91"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_orders.jsonl.gz",
+      "size": 570502,
+      "sha256": "a5e7ec16353cd87dedbfffaec77c34ed1a9f8c4412c523576fedada45d23f464"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_rescue_pairs.jsonl.gz",
+      "size": 28258221,
+      "sha256": "d86751338cccbc27285f42116d87ec5ca545774d74f2b39ce910c4e3301be986"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_decisions.jsonl.gz",
+      "size": 75,
+      "sha256": "8af25d2ef582d884be58c8612569fed46cc1b5747f96d9fdd52c985bf3920352"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_fills.jsonl.gz",
+      "size": 173001,
+      "sha256": "f29a1a7ff09e6bab8bc5c1a034f51a96070ef5584fdb927a9c72cebf8213dec0"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_orders.jsonl.gz",
+      "size": 577884,
+      "sha256": "ab4c7b1fde91c6101c85d0bdea694de72b7f4f675883ee433b8bb6ac3f989d0d"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d0.25_router_on_pairs.jsonl.gz",
+      "size": 23853656,
+      "sha256": "89d62d1704c871369db9b02b964d6b1dc5359e270438f4b5ed2ee92c5d36ef81"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_joint_decisions.jsonl.gz",
+      "size": 68,
+      "sha256": "d6445ae35d873d97b473da5a42b4ff98f50192521d38b3e5d5f97a0a0c974e71"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_joint_fills.jsonl.gz",
+      "size": 162040,
+      "sha256": "bb679d0c3a808b2bfc245e57544a77db997b4b54207580558a77cbef899a0653"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_joint_orders.jsonl.gz",
+      "size": 569736,
+      "sha256": "af32173ea212b38b136de941dac2a019593ba59a47ea1fa118d10cc208825c9b"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_joint_pairs.jsonl.gz",
+      "size": 87777370,
+      "sha256": "f6aea16ced74768bb46b04f02c6f7aae50a4a8a9ba5c6a78f02fa06439ae2c51"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_decisions.jsonl.gz",
+      "size": 69,
+      "sha256": "64c654845fa49556527ee343da54662ea221ce2a74133492abf1ea59d351f1a1"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_fills.jsonl.gz",
+      "size": 164806,
+      "sha256": "c51eec3389506a004a8aabbabc1985f35f36f981d48d04ee79cbf87da205ca52"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_orders.jsonl.gz",
+      "size": 566613,
+      "sha256": "53f681f0d428d5941d2c02573235dca213ea66235d8bb56dbc4e28e81434fa8c"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_rescue_pairs.jsonl.gz",
+      "size": 28227229,
+      "sha256": "6fe69a2661c53b0e9879914e64adb3e0634f1bc021f0031c1d3ca7dad309bf1e"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_decisions.jsonl.gz",
+      "size": 72,
+      "sha256": "79a8d4f7bc93fac85bc69104f819e6a012834d3dfa3ea1aff8361923e311201d"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_fills.jsonl.gz",
+      "size": 167008,
+      "sha256": "1741a3c972d3595138133a6af445db232e31a5c69f73ac8338742562384e194b"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_orders.jsonl.gz",
+      "size": 573905,
+      "sha256": "9b44f4ca2d4ae98940c7e2bf0528a9506a10d7b0c1fc4cb5e0adaaabd9da79ac"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q10000_d5_router_on_pairs.jsonl.gz",
+      "size": 23834266,
+      "sha256": "82df4e7ee6a3466b256dcdeab98edb18de984838bdff6f528de4957c7939f317"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_decisions.jsonl.gz",
+      "size": 70,
+      "sha256": "237dcfeb9303c9a98a8436766b586a47e16e5a74366e1edf3ea00cd3933f1fac"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_fills.jsonl.gz",
+      "size": 523696,
+      "sha256": "9dc8d532acf5559244ba0821c7610ceba68d32b14d9cba3dfa01e5efa1785387"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_orders.jsonl.gz",
+      "size": 578593,
+      "sha256": "4461b1ba2a394f0b2a82580bc6d90dec0659e5052748d2d4a089d5a1707a3fbf"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_joint_pairs.jsonl.gz",
+      "size": 88241669,
+      "sha256": "65cb4a5c59f1580ee01d9aeb43f2c89213ed28627d24c94c6c4db171b594e910"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_decisions.jsonl.gz",
+      "size": 71,
+      "sha256": "575d2a2a71c1f05920402e43ea4c639eea7ed55bf0c948eea2a7bc3ae1f7522f"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_fills.jsonl.gz",
+      "size": 534050,
+      "sha256": "6254f6ad68fbcf6c38bd8b61ae1594d09ec11a4971fcd2f945f46c1572afe370"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_orders.jsonl.gz",
+      "size": 568675,
+      "sha256": "c6dac2332452e53a4589f0fb08dab8eaf9536e61ae09460ff5c7f3967303bd36"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_rescue_pairs.jsonl.gz",
+      "size": 28401458,
+      "sha256": "d15045f22db3147b72a0ea60ba7251f2f8799f0e1e47415ea3bd15a43e3faa12"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_decisions.jsonl.gz",
+      "size": 74,
+      "sha256": "9569fd9396878e031db63826729227c0feb32abda552c228595d832b8758ed59"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_fills.jsonl.gz",
+      "size": 539848,
+      "sha256": "e038a5d2e6a27d58ea215465e3b7d175d7bfa8f0f3976864e2943cfcc2f6433b"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_orders.jsonl.gz",
+      "size": 578838,
+      "sha256": "8a6b5fa8d6593660390d9138f635469d2567212b7a1d1bb2928ca033cb28daad"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d0.25_router_on_pairs.jsonl.gz",
+      "size": 23999325,
+      "sha256": "6598365e791f78de8520b30e99cc1a621ac8ba8ff77c2417a45e5011a262811e"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_joint_decisions.jsonl.gz",
+      "size": 67,
+      "sha256": "1dc536140401770b62cb1c0925cb451a06d6212383e92690d5f49e938217a8fb"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_joint_fills.jsonl.gz",
+      "size": 503507,
+      "sha256": "7a1c57d0b9a69db7f01aaf4b5bfe01017dc7103c6109b7348ac7591e2cdbb18a"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_joint_orders.jsonl.gz",
+      "size": 572497,
+      "sha256": "d73b9ba483cc211dacc9e984e2fb90520cbbbb09e32bb7b83626b4343d78856b"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_joint_pairs.jsonl.gz",
+      "size": 88190508,
+      "sha256": "04f6e730e28edf32fafa37e1e51d2b30ff5aac7db7f947f8220678bc7847844a"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_decisions.jsonl.gz",
+      "size": 68,
+      "sha256": "d6c9df1a3042df4cd665170515ddf932337b6616fd1b4ce883b734604ef64f93"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_fills.jsonl.gz",
+      "size": 507163,
+      "sha256": "d5b2fba09d8458f420938707cce315b73dbde208da322a2ed7fbacd2c9ed778e"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_orders.jsonl.gz",
+      "size": 562566,
+      "sha256": "71dfc0f3658053036ccc01594112821fb18dbe82fb85b19978212ee5c667b25f"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_rescue_pairs.jsonl.gz",
+      "size": 28380638,
+      "sha256": "4fc5e1bc3ff7b2e6559b64a7a5bf19264d76c78531154460e8c617f659538a68"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_decisions.jsonl.gz",
+      "size": 71,
+      "sha256": "faf6bf0feaea72e3e93da194560bd91b3036828fd4a79e2ef61d7a37c22a7dc1"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_fills.jsonl.gz",
+      "size": 512610,
+      "sha256": "a1623bbd2d974ed4244b406515a2fc1ac65d5d857219dbd2d395692114b09311"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_orders.jsonl.gz",
+      "size": 572515,
+      "sha256": "28795b8a1f50fedec370f5cd657b0aa4c313d96fc5aede30dfec1682c512248d"
+    },
+    {
+      "path": "nfl_joint_route_lab_20260921/results/q3300_d5_router_on_pairs.jsonl.gz",
+      "size": 24024512,
+      "sha256": "d046e7a75c19e55381cadf836de847c5153b6947c9f7d0eeba628db1b2c8ace4"
+    }
+  ],
+  "restoration": "Extract at repository root; Q7 inputs require the separate Q7 data archive. These checksums do not contain file bytes.",
+  "archives": [
+    "NFL_Q8_Ledgers_Part_1_2026-09-21.zip",
+    "NFL_Q8_Ledgers_Part_2_2026-09-21.zip"
+  ]
+}

@@ -1,0 +1,13 @@
+q3300_d0.25_router_on pnl 354.33099999998285 residual 0.0 seconds 55
+q3300_d0.25_rescue pnl 360.03069999998934 residual 0.0 seconds 62
+q3300_d0.25_joint pnl 371.45249999997304 residual 0.0 seconds 74
+q3300_d5_router_on pnl 353.8933999999563 residual 0.0 seconds 53
+q3300_d5_rescue pnl 360.40779999997085 residual 0.0 seconds 62
+q3300_d5_joint pnl 370.68109999992794 residual 0.0 seconds 75
+q10000_d0.25_router_on pnl 90.44509999996444 residual 0.0 seconds 52
+q10000_d0.25_rescue pnl 73.26909999997224 residual 0.0 seconds 58
+q10000_d5_router_on pnl 79.0757999999596 residual 0.0 seconds 52
+q10000_d0.25_joint pnl 70.84719999997105 residual 0.0 seconds 72
+q10000_d5_rescue pnl 66.34849999995367 residual 0.0 seconds 57
+q10000_d5_joint pnl 61.66199999996206 residual 0.0 seconds 67
+DONE 12 completed; 0 failed

@@ -87,3 +87,29 @@ Next gate: durable forward collection and pre-window cohort admission. The
 collector currently rejects holdout configuration, so a future admission and
 capture version needs explicit review and freeze, plus an actual persistent
 host. No host deployment or background collection was performed by this chat.
+
+
+## Latest active mandate and Q8 checkpoint
+
+User directs queue access, profitability and market expansion research; user
+owns forward validation. Keep GitHub current. Do not make capture readiness a
+blocker for this lane. No live orders or higher risk limits authorized.
+
+Branch: research/q8-joint-routing. Q8 spec commit 4e48fa6; implementation freeze
+410dc16; portability build dda1b29. Twelve frozen scenarios completed. Recovery
+and joint routing improve the queue-3300 headline but underperform Q7 at queue
+10000 and fail the two-week improvement screen. Retain Q7 GuardedRouter.
+Independent verification: all 12 ledgers, four exact Q7 fill/order controls;
+128 replay tests plus eight separate portability tests. No outcome-driven tuning.
+Read Q8_RESULTS.md, selection.json, verification.json and archive indexes.
+
+New market_portability module checks payout vectors, exposes an explicit profile
+schema and GET-only series inspector. It is not a full non-NFL replay adapter.
+Research priority: NCAAF and basketball pregame adapters; exact-threshold
+spreads/totals separately. Three-way soccer requires a different cross-outcome
+inventory model. All sampled current fees/ticks and exceptional rules are in
+SERIES_SNAPSHOT.json; sample discovery is not an exhaustive admission process.
+
+Next queue hypothesis should explicitly value unbalanced inventory and
+completion costs: Q8's static margin times bottleneck service was insufficient.
+Do not tune Q8 after its negative result. See market_portability/RESEARCH_ROADMAP.md.

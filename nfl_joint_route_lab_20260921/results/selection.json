@@ -1,0 +1,36 @@
+{
+  "selected": "router_on",
+  "screen": {
+    "rescue": {
+      "passed": false,
+      "checks": {
+        "q3300_d0.25_profit": true,
+        "q3300_d0.25_inventory": true,
+        "q3300_d5_profit": true,
+        "q3300_d5_inventory": true,
+        "q10000_d0.25_profit": false,
+        "q10000_d0.25_inventory": true,
+        "q10000_d5_profit": false,
+        "q10000_d5_inventory": true,
+        "both_weeks": false,
+        "excluding_best_two": true
+      }
+    },
+    "joint": {
+      "passed": false,
+      "checks": {
+        "q3300_d0.25_profit": true,
+        "q3300_d0.25_inventory": true,
+        "q3300_d5_profit": true,
+        "q3300_d5_inventory": true,
+        "q10000_d0.25_profit": false,
+        "q10000_d0.25_inventory": true,
+        "q10000_d5_profit": false,
+        "q10000_d5_inventory": true,
+        "both_weeks": false,
+        "excluding_best_two": true
+      }
+    }
+  },
+  "evidence": "REUSED_DEVELOPMENT_ONLY"
+}

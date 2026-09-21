@@ -32,6 +32,9 @@ Q7 source was committed before outcomes at f0a2692; the specification at d15f57c
 queue 3,300 (.25s/5s), and $90.45/$79.08 at queue 10,000. No fresh evaluation
 or live strategy promotion follows from this reused-cohort mechanism result.
 
-Q8 preregistered: `nfl_joint_route_lab_20260921/EXPERIMENT_SPEC.md`. Joint routing
+Q8 complete: `nfl_joint_route_lab_20260921/EXPERIMENT_SPEC.md`. Joint routing
 and rejected-pair recovery, with unchanged Q7 controls; market portability is a
-separate algebra/adapter build. Outcomes not yet observed.
+separate algebra/adapter build. Both variants fail the frozen screen; Q7 remains selected. Primary completed
+P&L: Q7 $354.33, recovery $360.03, joint $371.45; queue-10000/.25s:
+$90.45/$73.27/$70.85. All 12 ledgers and four exact Q7 controls pass.
+See `nfl_joint_route_lab_20260921/Q8_RESULTS.md`.
