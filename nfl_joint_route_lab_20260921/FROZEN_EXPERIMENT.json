@@ -1,0 +1,17 @@
+{
+  "stage": "Q8",
+  "status": "FROZEN_BEFORE_MATRIX",
+  "specification_commit": "4e48fa69a40554093747d97ae3fce7ab61c1ddbb",
+  "sha256": {
+    "q8_analysis.py": "8bdd7d4be3a14a1f5e1cb205ae3f6234f6b97d4dd72280f79886e180769549fc",
+    "verify_results.py": "dd91a20c168c74f7f987500ba6c928e3d580d90cfde71e0e940114c03be3c26f",
+    "run_experiment.py": "3e53580490cdb61ffc958439acdc751948c8a5612a64b9c4660ad9c74a229138",
+    "test_q8_analysis.py": "d283d0e7010e3167501289c1054bdf1ae4e7b35d2d7b25130ac8b4c36c5351f2",
+    "test_joint_policy.py": "a6f91b92fa604f2b5f42988b1f1b78aed3c07e60921068f6f4cf24dcf7e378f9",
+    "joint_policy.py": "b9a34620f66a8033796aca4639d799201bd7b45595c1114664d855ad97793f1a",
+    "EXPERIMENT_SPEC.md": "ceb811b2d16be65f812f4c1652aed808abb7edd783d79f53a4dcacda871895b9",
+    "Q7_REFERENCES.json": "3dccb5ad4c13eebeb2793c11e6428d5e4f529d39f0519c5ea442b17aba77f426",
+    "BASELINE_HASHES.json": "33d397d1b5e05993f5641f00a25f69ddbbbb37f159bc17268b4ae9b6cbe80d7e"
+  },
+  "input_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+}
