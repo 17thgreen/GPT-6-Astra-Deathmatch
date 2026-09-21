@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13DALNYG",
+  "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+  "kickoff": "2026-09-14 00:20:00+00:00",
+  "from_utc": "2026-09-07T00:20:00+00:00",
+  "through_utc": "2026-09-13T21:20:00+00:00",
+  "pages": 28,
+  "trades": 27617,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52",
+  "retrieved_at": "2026-09-21T05:39:00.604754+00:00",
+  "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz"
+}

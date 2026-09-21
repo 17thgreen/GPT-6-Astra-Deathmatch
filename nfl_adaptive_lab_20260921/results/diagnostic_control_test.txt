@@ -1,0 +1,1 @@
+PASS neutral control changes only adjusted ranking value on an identical fixture.

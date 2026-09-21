@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13BALIND",
+  "ticker": "KXNFLGAME-26SEP13BALIND-BAL",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 6,
+  "trades": 5626,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a",
+  "retrieved_at": "2026-09-21T05:29:27.716774+00:00",
+  "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz"
+}

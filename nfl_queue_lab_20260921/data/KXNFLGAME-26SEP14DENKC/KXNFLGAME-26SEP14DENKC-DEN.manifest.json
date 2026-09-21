@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP14DENKC",
+  "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+  "kickoff": "2026-09-15 00:15:00+00:00",
+  "from_utc": "2026-09-08T00:15:00+00:00",
+  "through_utc": "2026-09-14T21:15:00+00:00",
+  "pages": 52,
+  "trades": 51521,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92",
+  "retrieved_at": "2026-09-21T05:43:59.491445+00:00",
+  "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz"
+}

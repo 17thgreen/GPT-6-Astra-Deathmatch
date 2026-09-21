@@ -1,0 +1,64 @@
+{
+  "evidence": "PUBLIC_OBSERVABLES_AND_CONDITIONAL_SHADOW_SERVICE_NOT_EXECUTED_PNL",
+  "markets": 4,
+  "book_snapshots": 476,
+  "valid_books": 476,
+  "first_book": 1790000505.5076365,
+  "last_book": 1790001684.8776827,
+  "deduplicated_trades": 4326,
+  "errors": 8,
+  "median_http_seconds": 5.008608937263489,
+  "p95_http_seconds": 9.679702758789062,
+  "median_observation_gap": 5.6201066970825195,
+  "max_observation_gap": 136.72502160072327,
+  "quote_spells": 54,
+  "spell_end_reasons": {
+    "gap": 44,
+    "capture_end": 8,
+    "price_change": 2
+  },
+  "median_observed_spell_seconds": 106.0850179195404,
+  "left_censored_spells": 52,
+  "right_censored_spells": 52,
+  "shadow_joins": 54,
+  "tape_complete_joins": 38,
+  "full_horizon_observed": 0,
+  "censored_before_full": 38,
+  "any_service_joins": 0,
+  "full_service_joins": 0,
+  "join_end_reasons": {
+    "gap": 44,
+    "capture_end": 8,
+    "price_change": 2
+  },
+  "median_join_depth": 467892.93,
+  "min_join_depth": 5.49,
+  "max_join_depth": 10557824.81,
+  "joins_above_3300": 43,
+  "depth_intervals": 898,
+  "intervals_with_unexplained_decline": 88,
+  "shadow_markouts": {
+    "30": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    },
+    "60": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    },
+    "300": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    }
+  },
+  "limitations": [
+    "Snapshots do not reveal order identity, actual own-queue advancement or unobserved price changes.",
+    "Spell durations are censored observations, not estimates of individual-order lifetime.",
+    "Shadow fills assume initial depth, no cancellations, arrival delay, exact-price allocation and half participation.",
+    "Coverage means cursor exhaustion, not a guarantee against later trade publication.",
+    "No service/markout row is an actual own-order fill; overlapping game and outcome risks are correlated."
+  ]
+}

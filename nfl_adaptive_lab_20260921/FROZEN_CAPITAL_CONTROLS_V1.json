@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-09-21T16:39:31.449989+00:00",
+  "cases": 2,
+  "sha256": {
+    "MULTIBOT_EXPERIMENT_DESIGN.md": "be9acc07ec37842a38c24514436098ea7eaa9c7ea1f959c250e6f494893c59d5",
+    "run_capital_controls.py": "23a14746c08ba4dbd01ed8d5edf87f08ce87c99c9ea60b0a3721e7303fe77392",
+    "FROZEN_EXPERIMENT.json": "305e883f0dd9653837b52f9077baad75e6542679f562e1e15c6672dcb8b04b7b",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  }
+}

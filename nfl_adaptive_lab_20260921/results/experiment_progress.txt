@@ -1,0 +1,17 @@
+q3300_d0.25_baseline pnl 201.52149999992344 residual 0.0 seconds 51
+q3300_d0.25_inventory pnl 162.13059999994766 residual 0.0 seconds 52
+q3300_d0.25_patience pnl 159.86599999994633 residual 0.0 seconds 66
+q3300_d0.25_allocation pnl 342.76329999996415 residual 0.0 seconds 41
+q3300_d5_baseline pnl 198.4082999999182 residual 0.0 seconds 41
+q3300_d5_inventory pnl 157.96809999993638 residual 0.0 seconds 40
+q3300_d5_allocation pnl 340.9916999999441 residual 0.0 seconds 40
+q10000_d0.25_baseline pnl 10.354599999961465 residual 0.0 seconds 39
+q3300_d5_patience pnl 157.4871999998877 residual 0.0 seconds 54
+q10000_d0.25_inventory pnl 27.71299999999792 residual 0.0 seconds 42
+q10000_d0.25_allocation pnl 67.54749999995329 residual 0.0 seconds 39
+q10000_d0.25_patience pnl 2.099399999961861 residual 0.0 seconds 58
+q10000_d5_baseline pnl 0.3238999999530279 residual 0.0 seconds 38
+q10000_d5_inventory pnl 25.87319999999454 residual 0.0 seconds 40
+q10000_d5_allocation pnl 62.42609999995511 residual 0.0 seconds 37
+q10000_d5_patience pnl -4.094600000034916 residual 0.0 seconds 57
+DONE 16 cases

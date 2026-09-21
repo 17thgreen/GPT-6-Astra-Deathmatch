@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
+  "trades": 321,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.jsonl.gz",
+  "sha256": "f2b9ab11046576520a49d78c7fc176cc4cc56dbf5a84aee71d6317f77ccfba62",
+  "from_utc": "2026-09-09T21:20:00+00:00",
+  "through_utc": "2026-09-09T21:25:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:11.548387+00:00"
+}

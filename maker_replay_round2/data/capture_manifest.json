@@ -1,0 +1,584 @@
+{
+  "cohort_rule": "All sixteen games in NFL season 2026 week 1, from the previous audit schedule; not selected by results.",
+  "source": "https://api.elections.kalshi.com/trade-api/v2/",
+  "window": "T-7 days through T-3 hours; no historical order books",
+  "games": [
+    {
+      "event": "KXNFLGAME-26SEP09NESEA",
+      "metadata_sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "ticker": "KXNFLGAME-26SEP09NESEA-SEA",
+          "kickoff": "2026-09-10 00:20:00+00:00",
+          "from_utc": "2026-09-03T00:20:00+00:00",
+          "through_utc": "2026-09-09T21:20:00+00:00",
+          "pages": 32,
+          "trades": 31757,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "365da2e165cf4955e7e5093dcfa71ff5c11aa93d2af588a71a01f5a50fca6be4",
+          "retrieved_at": "2026-09-21T05:26:08.328950+00:00",
+          "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+          "kickoff": "2026-09-10 00:20:00+00:00",
+          "from_utc": "2026-09-03T00:20:00+00:00",
+          "through_utc": "2026-09-09T21:20:00+00:00",
+          "pages": 27,
+          "trades": 26181,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43",
+          "retrieved_at": "2026-09-21T05:28:18.978471+00:00",
+          "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP10SFLAR",
+      "metadata_sha256": "be00acfe24abba807aaeb7e6dd9757a38a9b48f9e9d2ab8ff618c3d5389116ee",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+          "kickoff": "2026-09-11 00:35:00+00:00",
+          "from_utc": "2026-09-04T00:35:00+00:00",
+          "through_utc": "2026-09-10T21:35:00+00:00",
+          "pages": 36,
+          "trades": 35633,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b",
+          "retrieved_at": "2026-09-21T05:26:25.615406+00:00",
+          "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "ticker": "KXNFLGAME-26SEP10SFLAR-SF",
+          "kickoff": "2026-09-11 00:35:00+00:00",
+          "from_utc": "2026-09-04T00:35:00+00:00",
+          "through_utc": "2026-09-10T21:35:00+00:00",
+          "pages": 28,
+          "trades": 27474,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "f2053a6f65e2486a72f422bf6d41fa055d5d5f1612cf13faac38773677995e3f",
+          "retrieved_at": "2026-09-21T05:28:41.545318+00:00",
+          "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BALIND",
+      "metadata_sha256": "4be01bca476d760928401845ed7d7d15e7f621d563c6abaab3519dbe4ab3a064",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "ticker": "KXNFLGAME-26SEP13BALIND-IND",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 3,
+          "trades": 2616,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "6e467250bbdc7bd59438ad189bb2ec6445f14b993261e161082aaaca4165cdce",
+          "retrieved_at": "2026-09-21T05:29:01.073615+00:00",
+          "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "ticker": "KXNFLGAME-26SEP13BALIND-BAL",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 6,
+          "trades": 5626,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a",
+          "retrieved_at": "2026-09-21T05:29:27.716774+00:00",
+          "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ATLPIT",
+      "metadata_sha256": "138aef1c984780b10b5b697ae8edea44a03362d6f506738f2799e082eb58b53e",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "ticker": "KXNFLGAME-26SEP13ATLPIT-PIT",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 11,
+          "trades": 10248,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8",
+          "retrieved_at": "2026-09-21T05:29:13.278061+00:00",
+          "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "ticker": "KXNFLGAME-26SEP13ATLPIT-ATL",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 5,
+          "trades": 4963,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "51a23a5488396750c53f5a601992eee6cf84d7bdfb776be9124ae7e5247de2a9",
+          "retrieved_at": "2026-09-21T05:29:37.394157+00:00",
+          "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CHICAR",
+      "metadata_sha256": "357c94639e71caf790f202c866f04021a914f3c8f559fabb5594db20a117ea0c",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "ticker": "KXNFLGAME-26SEP13CHICAR-CAR",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 4,
+          "trades": 3530,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916",
+          "retrieved_at": "2026-09-21T05:29:58.916041+00:00",
+          "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "ticker": "KXNFLGAME-26SEP13CHICAR-CHI",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 9,
+          "trades": 8292,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd",
+          "retrieved_at": "2026-09-21T05:30:39.848947+00:00",
+          "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BUFHOU",
+      "metadata_sha256": "6c90e49decdb1d88dae3492d7c8a1c5a43fcbdb8417e4333254408a3081a7983",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "ticker": "KXNFLGAME-26SEP13BUFHOU-HOU",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 10,
+          "trades": 9606,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "03693472b0f34e3ff66812c14e509ab92201559e814c4413f0f4bb81e2e506ff",
+          "retrieved_at": "2026-09-21T05:30:17.581433+00:00",
+          "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "ticker": "KXNFLGAME-26SEP13BUFHOU-BUF",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 14,
+          "trades": 13552,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f",
+          "retrieved_at": "2026-09-21T05:31:22.691649+00:00",
+          "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CLEJAC",
+      "metadata_sha256": "ca39845731d1e7f00a382cc4b89f52aa739ae3137ee2b3bd06e3a72abae828b2",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "ticker": "KXNFLGAME-26SEP13CLEJAC-JAC",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 6,
+          "trades": 5111,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c",
+          "retrieved_at": "2026-09-21T05:31:13.151159+00:00",
+          "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "ticker": "KXNFLGAME-26SEP13CLEJAC-CLE",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 4,
+          "trades": 3757,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "760434ad4167f1c3bcebcb0fb9518bbc393a1a98bc21e3b6e4443fc54b92c0b7",
+          "retrieved_at": "2026-09-21T05:31:31.887059+00:00",
+          "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NYJTEN",
+      "metadata_sha256": "9b3d40143fb937a91f3fd6ca75b3ae1faaa907c43cab5181553f3694b7987137",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "ticker": "KXNFLGAME-26SEP13NYJTEN-TEN",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 4,
+          "trades": 3014,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "0d1210ea3346f4e1da9d6c5893672382a629c2a5deeedaea027fe0088ca584a9",
+          "retrieved_at": "2026-09-21T05:31:54.390073+00:00",
+          "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "ticker": "KXNFLGAME-26SEP13NYJTEN-NYJ",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 4,
+          "trades": 3381,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "f6a24d0e6bb263055d6b14cb76ebd23e316a0ef9f0831af8a4294e6ca266022a",
+          "retrieved_at": "2026-09-21T05:32:12.871835+00:00",
+          "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NODET",
+      "metadata_sha256": "75c12818fb175f0dbcf507aa9a291e142e5db25f067f384397ad596ebd98ae96",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "ticker": "KXNFLGAME-26SEP13NODET-DET",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 10,
+          "trades": 9135,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "b3a71626ebd8baf117ae11e5f1be33a400284cd1a1d07b66df9687cd54a7d98a",
+          "retrieved_at": "2026-09-21T05:32:12.785573+00:00",
+          "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "ticker": "KXNFLGAME-26SEP13NODET-NO",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 5,
+          "trades": 4204,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882",
+          "retrieved_at": "2026-09-21T05:32:36.433905+00:00",
+          "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13TBCIN",
+      "metadata_sha256": "88bc858c659b628773889d06c7a43e520a3f5fbbe6305b9f99241996358e815c",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "ticker": "KXNFLGAME-26SEP13TBCIN-CIN",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 3,
+          "trades": 2758,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "2881d47242d1b02500e925f613713a97a0026ea692515848aa8c33680a84450e",
+          "retrieved_at": "2026-09-21T05:32:31.141494+00:00",
+          "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "ticker": "KXNFLGAME-26SEP13TBCIN-TB",
+          "kickoff": "2026-09-13 17:00:00+00:00",
+          "from_utc": "2026-09-06T17:00:00+00:00",
+          "through_utc": "2026-09-13T14:00:00+00:00",
+          "pages": 5,
+          "trades": 4776,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d",
+          "retrieved_at": "2026-09-21T05:32:55.074340+00:00",
+          "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ARILAC",
+      "metadata_sha256": "dc443307226ea47146d425edf680c56adf5b92f60f6a4edf2eff05e059b6b153",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "ticker": "KXNFLGAME-26SEP13ARILAC-LAC",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 7,
+          "trades": 6100,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49",
+          "retrieved_at": "2026-09-21T05:33:17.011517+00:00",
+          "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "ticker": "KXNFLGAME-26SEP13ARILAC-ARI",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 4,
+          "trades": 3571,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "5129a083bc314abb9abdadc1ddd4040a12f553f7ccabe63d232ec857149a9692",
+          "retrieved_at": "2026-09-21T05:33:37.085664+00:00",
+          "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13MIALV",
+      "metadata_sha256": "9e342c023e9b0c0859d64e74108091f8fc4eccfaa035540f510bee3cb29623b3",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "ticker": "KXNFLGAME-26SEP13MIALV-LV",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 6,
+          "trades": 5286,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "42379cc363aeafc95cd13b4d115a061a1e7e8db6351d18dd720ba9fdf55a0504",
+          "retrieved_at": "2026-09-21T05:34:15.586267+00:00",
+          "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "ticker": "KXNFLGAME-26SEP13MIALV-MIA",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 5,
+          "trades": 4341,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5",
+          "retrieved_at": "2026-09-21T05:34:49.422307+00:00",
+          "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13GBMIN",
+      "metadata_sha256": "c73ff9d5213a30b4a63a70945eaf641f8acab2d1418212a41e373417c1f9d6dd",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "ticker": "KXNFLGAME-26SEP13GBMIN-MIN",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 8,
+          "trades": 7625,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "4d724c23cc803ab9d70b6434732cac49fa294fafb6a7bfad7bb022007ffb919a",
+          "retrieved_at": "2026-09-21T05:33:41.924675+00:00",
+          "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "ticker": "KXNFLGAME-26SEP13GBMIN-GB",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 15,
+          "trades": 14461,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "ae668f9a1754eedb25346f68615771455dde4e35b9bc4683c64fbe471b7f5a48",
+          "retrieved_at": "2026-09-21T05:35:11.823275+00:00",
+          "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13WASPHI",
+      "metadata_sha256": "7a8deb9e2379f88f6822480d16d6e18b877c3bd58064378b57a82ac747ac7fe4",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "ticker": "KXNFLGAME-26SEP13WASPHI-PHI",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 8,
+          "trades": 7995,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "4946d0b98ef9de675e8d677c08398a38c04c8468acb3438a1db0613ab547504d",
+          "retrieved_at": "2026-09-21T05:35:37.672834+00:00",
+          "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
+          "kickoff": "2026-09-13 20:25:00+00:00",
+          "from_utc": "2026-09-06T20:25:00+00:00",
+          "through_utc": "2026-09-13T17:25:00+00:00",
+          "pages": 4,
+          "trades": 3171,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3",
+          "retrieved_at": "2026-09-21T05:35:58.182292+00:00",
+          "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP13DALNYG",
+      "metadata_sha256": "0968e0bf5501ac3a9ef3920823eb63d365d8444651b13c75b30dee4656a5e77b",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
+          "kickoff": "2026-09-14 00:20:00+00:00",
+          "from_utc": "2026-09-07T00:20:00+00:00",
+          "through_utc": "2026-09-13T21:20:00+00:00",
+          "pages": 13,
+          "trades": 12752,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd",
+          "retrieved_at": "2026-09-21T05:36:22.823018+00:00",
+          "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+          "kickoff": "2026-09-14 00:20:00+00:00",
+          "from_utc": "2026-09-07T00:20:00+00:00",
+          "through_utc": "2026-09-13T21:20:00+00:00",
+          "pages": 28,
+          "trades": 27617,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52",
+          "retrieved_at": "2026-09-21T05:39:00.604754+00:00",
+          "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz"
+        }
+      ]
+    },
+    {
+      "event": "KXNFLGAME-26SEP14DENKC",
+      "metadata_sha256": "47eb885ab1b799fdf822529e5232d6eea6b4c864a168c3043d1cad9ad304816e",
+      "collateral_return_type": "MECNET",
+      "mutually_exclusive": true,
+      "markets": [
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "ticker": "KXNFLGAME-26SEP14DENKC-KC",
+          "kickoff": "2026-09-15 00:15:00+00:00",
+          "from_utc": "2026-09-08T00:15:00+00:00",
+          "through_utc": "2026-09-14T21:15:00+00:00",
+          "pages": 28,
+          "trades": 27204,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "2d6c491920340b2b74dc2a6ea5830fb310e8fca676feb16945418d37ee1bbb20",
+          "retrieved_at": "2026-09-21T05:38:38.756518+00:00",
+          "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.jsonl.gz"
+        },
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+          "kickoff": "2026-09-15 00:15:00+00:00",
+          "from_utc": "2026-09-08T00:15:00+00:00",
+          "through_utc": "2026-09-14T21:15:00+00:00",
+          "pages": 52,
+          "trades": 51521,
+          "excluded_block_trades": 0,
+          "pagination_exhausted": true,
+          "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92",
+          "retrieved_at": "2026-09-21T05:43:59.491445+00:00",
+          "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz"
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

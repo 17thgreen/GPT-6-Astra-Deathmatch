@@ -1,0 +1,4637 @@
+[
+  {
+    "path": "stern_lab/CLAUDE_HANDOFF.md",
+    "bytes": 7166,
+    "sha256": "ebf21d4460f62efebb8f3ce4241e9dd2ee4720fad6147d83189c00190ea190e8"
+  },
+  {
+    "path": "stern_lab/EXPERIMENT_PROTOCOL.md",
+    "bytes": 2912,
+    "sha256": "3f9f4c5dc8ba45127738efafe0e93a8123732771d2c3dfdb5c4be4d9554e6734"
+  },
+  {
+    "path": "stern_lab/MODEL_STATUS.json",
+    "bytes": 459,
+    "sha256": "4205ea2b850866fa1e536cef4a65269a9bd7471e690b793ddc0f927ab97cf5ee"
+  },
+  {
+    "path": "stern_lab/README.md",
+    "bytes": 5333,
+    "sha256": "95307be64f1c9f6eb7dd329575763670a4d54cec2b13679948069f18aeebe349"
+  },
+  {
+    "path": "stern_lab/ROUND1_MEMO.md",
+    "bytes": 16884,
+    "sha256": "22f423abbca84874d53b158aba19897976e4234b3d067e0ca4255fbc606f6e34"
+  },
+  {
+    "path": "stern_lab/ROUND2_MODEL_SPEC.md",
+    "bytes": 3575,
+    "sha256": "3b7a2f11841d36df0aebd92d79a3ccbbe12ddf514bd302f54e5a3d6c7a7aa8db"
+  },
+  {
+    "path": "stern_lab/ROUND2_PROTOCOL.md",
+    "bytes": 3613,
+    "sha256": "0459219a87a3525562091138b399d2573d95d23f349629e42fca188f2767572a"
+  },
+  {
+    "path": "stern_lab/ROUND2_RESULTS.md",
+    "bytes": 8019,
+    "sha256": "9dd5f797d5174b3924048f477d8467f7275938bfc28dc560e70e0d9aa16535d2"
+  },
+  {
+    "path": "stern_lab/SHA256SUMS",
+    "bytes": 5140,
+    "sha256": "bb6807db795b33eda88a9a485852306827585302e864bf472e404b1484e0aa87"
+  },
+  {
+    "path": "stern_lab/Stern_Kalshi_Research_Memo.md",
+    "bytes": 24964,
+    "sha256": "9feb2d2bab7ddaee6feb62ec94956fd47fe197e38ee6cc948db6b29abaec9189"
+  },
+  {
+    "path": "stern_lab/audit_repository.py",
+    "bytes": 2465,
+    "sha256": "1c8641a61b157d5b184edf54c661dcd98bbd997f2227e4058b7ddd682286901d"
+  },
+  {
+    "path": "stern_lab/build_round2_report.py",
+    "bytes": 10475,
+    "sha256": "8070bc8842a0acd7c88b1a90ce4b20c299ca52fbd203cdd04a66c39b591f83e7"
+  },
+  {
+    "path": "stern_lab/download_data.py",
+    "bytes": 1172,
+    "sha256": "7bf8a59986604f9a9ce3baf243b6d2af780a93ee4a60b815e641984bb569ade0"
+  },
+  {
+    "path": "stern_lab/requirements.txt",
+    "bytes": 40,
+    "sha256": "5838ee875daf894a601df1e63aa6c4be8a848941a542a217d65eab474e74bf1b"
+  },
+  {
+    "path": "stern_lab/results/audit_rerun/reproduction.json",
+    "bytes": 904,
+    "sha256": "928799772998609391ab3eb06215cc8740b70a6bf8d565c32dee3de1080bf4c2"
+  },
+  {
+    "path": "stern_lab/results/data_manifest.json",
+    "bytes": 2132,
+    "sha256": "8bdeb638b3a14df3a1b53b5d0a089936be8b7b5d4981b603b8b143ef61f5f56d"
+  },
+  {
+    "path": "stern_lab/results/forecast_results.json",
+    "bytes": 5610,
+    "sha256": "ac45beaf9c5a0da93b37020aeb95ea5368749acecb60d253518a69cc0dc1762d"
+  },
+  {
+    "path": "stern_lab/results/model.json",
+    "bytes": 927,
+    "sha256": "e066e10f21e4c5c8235271ef41d7bd83849ba80264bdb9f87ec8c8dd033090e2"
+  },
+  {
+    "path": "stern_lab/results/repo_summary_reproduction.json",
+    "bytes": 500,
+    "sha256": "4b91b29a599c43e4dfca227220a9b578480bb9993a66354de0f405cbf3a08cac"
+  },
+  {
+    "path": "stern_lab/results/round2/development_clock_0.0001.json",
+    "bytes": 677,
+    "sha256": "cb92b2c5498ad8476e3b642303185467f8cfafd90ec2c126e3316e2568743e94"
+  },
+  {
+    "path": "stern_lab/results/round2/development_clock_0.001.json",
+    "bytes": 676,
+    "sha256": "dc7f4545ddb4178405d3cd08ac4a90b1f6769f0a2b4a4ad6df5cdd67322a9297"
+  },
+  {
+    "path": "stern_lab/results/round2/development_refit_v1.json",
+    "bytes": 937,
+    "sha256": "045f000995ebea685fde9f0086f360c4c88ee2a52a1ec3b47483f01347892ca9"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth2_100.json",
+    "bytes": 71553,
+    "sha256": "d36ab916f2ce6292f382297ee58febc2e156d29ba2236077475273aa97f530fa"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth2_200.json",
+    "bytes": 140386,
+    "sha256": "bfcd84f5cd2af566395d8ee129f88f80cd36b6eb0d432108f4f7b92013891617"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth2_50.json",
+    "bytes": 36237,
+    "sha256": "9ce7558c06a0ea04c0e30ab2cda07dd70461d01782d2f74f54950f3fb2f85ed2"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth3_100.json",
+    "bytes": 127999,
+    "sha256": "d86d6ac3e87aa1e7056ce606017f15c2f651bbf763c24443975ec8e8cd3fd519"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth3_200.json",
+    "bytes": 251990,
+    "sha256": "e0eb18f97c5d2a272372bc25f89f29af59cbdf670d60b19ad49b52af3e57d2e1"
+  },
+  {
+    "path": "stern_lab/results/round2/development_residual_depth3_50.json",
+    "bytes": 64565,
+    "sha256": "b60fea24d53c22190afd7064f73d171768f2cacbb4d0b4fefc6aff1ff019125c"
+  },
+  {
+    "path": "stern_lab/results/round2/expanded_v1.json",
+    "bytes": 939,
+    "sha256": "91580d99f10fcf903f831a5a48a2b6f59d791f8034b92be07e11d96d185a4e08"
+  },
+  {
+    "path": "stern_lab/results/round2/forecast_results.json",
+    "bytes": 38124,
+    "sha256": "cee67b9b0e8de613b705f0e36065e8d773727dff8fd8cd9f15ae60ac2474ad11"
+  },
+  {
+    "path": "stern_lab/results/round2/model.json",
+    "bytes": 1110,
+    "sha256": "2cc6de74769baa09901609a821a25138fae31e61cc14be6f30f451ce1dba4df2"
+  },
+  {
+    "path": "stern_lab/results/round2/selection.json",
+    "bytes": 19880,
+    "sha256": "42a002d3a2e26098dcf07922cfa8135e5ea5982e315b0c1014cb0bc78127a3ec"
+  },
+  {
+    "path": "stern_lab/results/round2_tests.txt",
+    "bytes": 2069,
+    "sha256": "69394da61d706514eef46b86ce15cb7c54d9c11f87b80b91041cca56eae2ecef"
+  },
+  {
+    "path": "stern_lab/results/settlement_audit.json",
+    "bytes": 862,
+    "sha256": "41b1e009dcf6868d865f053e7abeceeeb3598e480b0513b7e7fa46d8f6feaea6"
+  },
+  {
+    "path": "stern_lab/results/test_output.txt",
+    "bytes": 1018,
+    "sha256": "4a4fe35dc67f9d5a546d6ccf30263bde35317b207e6330a005be8a409ea7da87"
+  },
+  {
+    "path": "stern_lab/results/tie_correction.json",
+    "bytes": 677,
+    "sha256": "b5fd197865a322b0e3ba9d3a4c5f4968cceb6f43e5231e89ef4d6ad10c0ca187"
+  },
+  {
+    "path": "stern_lab/results/tied_market_source.json",
+    "bytes": 2737,
+    "sha256": "b6ecf11952c119c08a99abbb4adff915b825e0080ada4d38a218e026264c9fba"
+  },
+  {
+    "path": "stern_lab/run_experiment.py",
+    "bytes": 7875,
+    "sha256": "5bf4a05e86d72f354f53b03da3746b4d024178e2fea8f3e88b66913a0be013b3"
+  },
+  {
+    "path": "stern_lab/run_round2.py",
+    "bytes": 8975,
+    "sha256": "78ce9c42826a3bbd07152c620ac1ca83ccb76c58de64a70f93396f436980a559"
+  },
+  {
+    "path": "stern_lab/settlement.py",
+    "bytes": 2301,
+    "sha256": "f597d76804692ea87c86866b82da605276a847d764ad7ce4a255ddf6b9a3fb8c"
+  },
+  {
+    "path": "stern_lab/stern_round2.py",
+    "bytes": 5695,
+    "sha256": "0ba81e5979b21b7047bdfde0ad4bd056840bbc08c8a546ad6cf13c8fe9491f78"
+  },
+  {
+    "path": "stern_lab/stern_state.py",
+    "bytes": 6306,
+    "sha256": "0e54bcfc2ebf95ab77fe009add5b481def219516f55dd774752e8eed6a04e63f"
+  },
+  {
+    "path": "stern_lab/test_research.py",
+    "bytes": 3350,
+    "sha256": "d281d623c4f0e32c7fbd6488bb765fe5c0889b6197800fadb9a312135df13bcf"
+  },
+  {
+    "path": "stern_lab/test_round2.py",
+    "bytes": 2589,
+    "sha256": "d47a03dd3856c1eb759008815763ea0dfdf95c20387f6c0857c6f2e2252f76c8"
+  },
+  {
+    "path": "stern_lab/test_settlement.py",
+    "bytes": 2012,
+    "sha256": "f620bca00a8e34c589ab4aa7b972a999d468e8cc8a461afc497f310732738c9f"
+  },
+  {
+    "path": "strategy_review_20260921/NFL_Maker_Audit_and_Strategy_Ranking.md",
+    "bytes": 21552,
+    "sha256": "9854f565f960ee2cb57bcce2be40bd099e172be43e348712b2bace9836e25f20"
+  },
+  {
+    "path": "strategy_review_20260921/README.md",
+    "bytes": 3237,
+    "sha256": "7016f84b729b1b1663d1aaa221ca68f24abacf6702d36fece0da0b6291a673fa"
+  },
+  {
+    "path": "strategy_review_20260921/SOURCE_MANIFEST.json",
+    "bytes": 11362,
+    "sha256": "96b1c391253a42931229ec0a7cc022e77bcf049b93f7689b843dfceed84713b2"
+  },
+  {
+    "path": "strategy_review_20260921/audit_maker.py",
+    "bytes": 4595,
+    "sha256": "e323e0fe4a7ac7efb1dc52aaf3a2a884c606bad1fc7fb315aa9684823937c430"
+  },
+  {
+    "path": "strategy_review_20260921/fetch_sources.py",
+    "bytes": 1897,
+    "sha256": "141415401d255e59d9cc838466bd842234d8deaee4a4e2fe4ac198e25bab8730"
+  },
+  {
+    "path": "strategy_review_20260921/inputs/schedule_source.json",
+    "bytes": 386,
+    "sha256": "d843e845d9c4537ed497e73f4bb1a855bda7b925983c5b5b1b7ba307fd8f3bb6"
+  },
+  {
+    "path": "strategy_review_20260921/quote_guards.py",
+    "bytes": 6095,
+    "sha256": "86b50285ee336644bf5b45cc4d6003246f30638b8a42651620986f5f0ff8a234"
+  },
+  {
+    "path": "strategy_review_20260921/reproduce_defects.py",
+    "bytes": 4118,
+    "sha256": "5dfd7a5c701e1c1d3245b166b7d9b5d993442d7409ea1e8c4d92a6f26cee75ac"
+  },
+  {
+    "path": "strategy_review_20260921/requirements.txt",
+    "bytes": 27,
+    "sha256": "6979eeaed30ec7f45ff725f33240136e49c396fdf8a5ef12964fb2960c8a5d1e"
+  },
+  {
+    "path": "strategy_review_20260921/results/artifact_audit.json",
+    "bytes": 11217,
+    "sha256": "bde9e1850c722f367dd9c845fbd0ef6d396ae953771059c90654cd407c3be146"
+  },
+  {
+    "path": "strategy_review_20260921/results/defect_reproductions.json",
+    "bytes": 810,
+    "sha256": "0a5005603ec6cb68663dd7ef38100ced98a259ba6980084fff511edd057db58e"
+  },
+  {
+    "path": "strategy_review_20260921/results/runtime.json",
+    "bytes": 66,
+    "sha256": "b32c3de655522fcb59fa51e976e53891367c39e106f94cdf6e4170dd847cadc3"
+  },
+  {
+    "path": "strategy_review_20260921/results/tests.txt",
+    "bytes": 1054,
+    "sha256": "ca3785d3aff357d1987a4d29f1c44fa56639c6c149dbed251c84575e0153a6d1"
+  },
+  {
+    "path": "strategy_review_20260921/results_audit_stdout.txt",
+    "bytes": 5362,
+    "sha256": "6ade337ee95d87b963e8a44cc7132ebf97c3fd7f971ea4fe022f88697b64d43f"
+  },
+  {
+    "path": "strategy_review_20260921/test_review.py",
+    "bytes": 4354,
+    "sha256": "b04f528500dddb231e26474cd0a9eac11ce0da6b6ef6d54bb7917c73abae50d5"
+  },
+  {
+    "path": "maker_replay_round2/DELIVERY_MANIFEST.json",
+    "bytes": 54656,
+    "sha256": "820bf475396d166a8f2f7f9d72df80a0765d356a1d6d8764d54d54249f10414f"
+  },
+  {
+    "path": "maker_replay_round2/EXPERIMENT_SPEC.md",
+    "bytes": 3535,
+    "sha256": "95dc0b3ca9828b893d69dc1139cab48be0ce38a1666c4fca5b2321b4aa696327"
+  },
+  {
+    "path": "maker_replay_round2/NFL_Maker_REST_Replay_Results.md",
+    "bytes": 11861,
+    "sha256": "a9c1670c6336aa3a09d171e73e7b382adfe4540e86d9caacaa5de9162bff19e9"
+  },
+  {
+    "path": "maker_replay_round2/POST_RESULT_DIAGNOSTICS.md",
+    "bytes": 1561,
+    "sha256": "7bf47782d81b9af08c6f1b1735726301331eb5bc7cab501bebdcae2a7c5bbef2"
+  },
+  {
+    "path": "maker_replay_round2/README.md",
+    "bytes": 5760,
+    "sha256": "8c8226fbd1bfc2816aa38e28715ceed2cbfdd73821774b9653a1de8d014fe328"
+  },
+  {
+    "path": "maker_replay_round2/SOURCE_MANIFEST.json",
+    "bytes": 11362,
+    "sha256": "96b1c391253a42931229ec0a7cc022e77bcf049b93f7689b843dfceed84713b2"
+  },
+  {
+    "path": "maker_replay_round2/collect_candles.py",
+    "bytes": 2661,
+    "sha256": "c32f842f2896bf5433e1c03d2c90ebbefdc1c5855b2b1e3c9d81317b3782f08c"
+  },
+  {
+    "path": "maker_replay_round2/collect_postlude.py",
+    "bytes": 2829,
+    "sha256": "14e84a87cbbacaa291896ed5b3f2c57e7780ad16a2293828f5dcfc124e7ae971"
+  },
+  {
+    "path": "maker_replay_round2/collect_public.py",
+    "bytes": 4991,
+    "sha256": "8dc4674bd5588ee1515e904a8ff0786c148391a11a24b0e95ae447c02f486246"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.manifest.json",
+    "bytes": 55332,
+    "sha256": "d94fed31f5f50392c7fddee3ac48585de2db4babe3bab496d67d68f48140518a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.manifest.json",
+    "bytes": 517,
+    "sha256": "d4583d658d330561b7ede49af7809bedd2491723ff3fd9b00cd4b08211a3734a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "96b6dfd5177e4709c5303c5513bd1393264d941af15cf45e3babc23b62d75192"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.manifest.json",
+    "bytes": 49878,
+    "sha256": "fdcb6b64857ce716a92ca29cb5c2eb0f00db81285db6d1bc23904094a42f8765"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.manifest.json",
+    "bytes": 519,
+    "sha256": "bd67a157d8c601a3c6512ae2830425ae5e939ac7f2f19f639fe766ff3a32405c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "642f7d050c5b0020d40dfce48e58a549d7a280e7ce2daf284a9eb4e728125331"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/event.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.manifest.json",
+    "bytes": 49526,
+    "sha256": "3fcab52d5e1a31574c1f470e33565fbe35459ee0771d2052b0e1670775d5f09e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.manifest.json",
+    "bytes": 519,
+    "sha256": "1cae6d559eeec5b2d9c870952ea04e9457c5535cffa234211971a1f9d876d7b2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "b068650d6f3d42fad734cc47fad4c6a20cb1e13eb8d0bc1085312517a3ba49d7"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.manifest.json",
+    "bytes": 49412,
+    "sha256": "34807d459b9f7d2a3d1acbf0b6584c7d4261be592e5e0a0403990373a00420c8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.manifest.json",
+    "bytes": 517,
+    "sha256": "35028c7e5644498f6f64422908fd9271e0933efa9d1d7632be720bf241798ed0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "0dbe0bacb73722c50af8ffa199272c777f7977593c61a7f8c67e9303a87d3cd7"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/event.json",
+    "bytes": 6662,
+    "sha256": "be00acfe24abba807aaeb7e6dd9757a38a9b48f9e9d2ab8ff618c3d5389116ee"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.manifest.json",
+    "bytes": 84618,
+    "sha256": "1b89b3c2ae969a5efb043b3310024cc7eea6e95450c903e7aab57a39f2d5de1b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.manifest.json",
+    "bytes": 521,
+    "sha256": "abd62ee0c163842d7f89a33297407a5f6ca985e9637847447feb5e41c8e7ec9f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "47667f52f36868bb7f1262ad0c0f3ceb615d41b6a1734859164d21e463414b62"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.manifest.json",
+    "bytes": 71978,
+    "sha256": "fd83c4dedfc6b6c6d8020e22b7d9f842753335f0a849f445a9427bef899350cc"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.manifest.json",
+    "bytes": 521,
+    "sha256": "b0294a6541cb2a4080a0493a7e6c9c6d360da4e1778dc8c7415f30df75b2536f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9ab0e38e5b06383fa8d08da225c1e794aa594587fd6ed1d7906f8a461283fd60"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/event.json",
+    "bytes": 6587,
+    "sha256": "dc443307226ea47146d425edf680c56adf5b92f60f6a4edf2eff05e059b6b153"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.manifest.json",
+    "bytes": 81210,
+    "sha256": "fce98e724fe0da066ee07f8a564485cbf1fcfdb95cc67e641ce5779b55328a60"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.manifest.json",
+    "bytes": 521,
+    "sha256": "367e39d9e2a96602a8cbd9bf9d05dccb0077e9206b61a1e6458710095b4ff11f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "d0761b92ec74606e307b7b9416960085238f21c5e399193258ee7c5ac39e3211"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.manifest.json",
+    "bytes": 59882,
+    "sha256": "470235160034819f406833c66d904c671eec41542cabd1a877f7e44090e28d5f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.manifest.json",
+    "bytes": 523,
+    "sha256": "39285a42b17f6e5ae16e7685e6b09fad280a884ec960559c99c0ef90f7474927"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "adb147e20b543ff8cfdc45a8653a2ba03801273b2a3ff8baff1209202f4f176c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/event.json",
+    "bytes": 6513,
+    "sha256": "138aef1c984780b10b5b697ae8edea44a03362d6f506738f2799e082eb58b53e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.manifest.json",
+    "bytes": 82586,
+    "sha256": "e39b385c850b9076e446a4606ab474840a8a5990857d431df052a4334e56dbbe"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.manifest.json",
+    "bytes": 521,
+    "sha256": "0fc31e2bb4fbd1dc4d5227d756418d169570eed56319ab0dc5771dd34dc8b4f8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "646172582f74325052733ee6940b626f01031a00effcdc4ed984da2ac85b1802"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.manifest.json",
+    "bytes": 93610,
+    "sha256": "fa59b7b0585d0198ab95d44090e6eefda5c48517ff4668919b2d0fac67bd3bda"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.manifest.json",
+    "bytes": 521,
+    "sha256": "3a2229e62277f9f1f87d61ccff1669af8cf400c0330ed194b5e749cbeae712ac"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9e43433fff4f0717e8446dcef03a13ecc459601dcc7de02984860a8a05bd7c21"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/event.json",
+    "bytes": 6559,
+    "sha256": "4be01bca476d760928401845ed7d7d15e7f621d563c6abaab3519dbe4ab3a064"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.manifest.json",
+    "bytes": 61034,
+    "sha256": "63cd215127e295fa910b7bcf806dda823b40ced9a5ae940e4320af251ad1697d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.manifest.json",
+    "bytes": 523,
+    "sha256": "e248e7f0359438c38360a0ba15490d64fd1ef6530eab81641a09ddd0ca3d5725"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "99e2264bf063b04bc5099ce93d93d391470804df1d2175e1168ffed187975279"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.manifest.json",
+    "bytes": 70330,
+    "sha256": "403749c35846f811cba3ea6dd6d6c7424ec27199492a34d1f6c1901c08bbb9e0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.manifest.json",
+    "bytes": 522,
+    "sha256": "64ed7253103137bef220a32041646a6aac05d0ddaa612f7a24cbe39ec06e86e8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "71a1712728b4145edfa161d67f51e7fcf05a5490feba18466d1fc3d087c2388a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/event.json",
+    "bytes": 6484,
+    "sha256": "6c90e49decdb1d88dae3492d7c8a1c5a43fcbdb8417e4333254408a3081a7983"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.manifest.json",
+    "bytes": 88394,
+    "sha256": "0c92791f3575529bf909cd59cfc2fd18ca71f3109f8ff1bf1eeb784b8f16466a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.manifest.json",
+    "bytes": 521,
+    "sha256": "fd26409c839672e7fd98c48a4a0bcfe5e7b3e3f80eeac22abde81c0abe43a505"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "392c42c6f5ec12a0139af8d754862ab1bd8875ceae2f0993342f3faee9054716"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.manifest.json",
+    "bytes": 68570,
+    "sha256": "c8bf1cf91340a5f461d2a083b51c09100de25ab1a7b76c6c51e2af434cddbf57"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.manifest.json",
+    "bytes": 521,
+    "sha256": "d364893d04181002ce98dea13ecdc72061b511e3378743553300af5abd6d9808"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "2149aa38e8d857e0eb285c7f029405c0ca475decfecd41fef96a2bcf531f6dc6"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/event.json",
+    "bytes": 6493,
+    "sha256": "357c94639e71caf790f202c866f04021a914f3c8f559fabb5594db20a117ea0c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.manifest.json",
+    "bytes": 69898,
+    "sha256": "a5b6d26680355d6a5d0e67254b4fbb7c1f3a1aad186f6426ff0ba3ef12ad3ea6"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.manifest.json",
+    "bytes": 521,
+    "sha256": "bd146730ac28f07ed12cc6b2dea7405a4be63692204293429311e83c2b1db38e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "6a34fde2bccc3667ceb0872250c40f9d320f4b00e0488833a710630a21e97e56"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.manifest.json",
+    "bytes": 61786,
+    "sha256": "b3bca8711469ef5bec97bbfdc41378a87e49209a7c862dc962503643faaa4a6a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.manifest.json",
+    "bytes": 521,
+    "sha256": "0ed676155d38d97e19f99b7eba67f5da077ec195c8dfabb7ecf775a4acc44ae3"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "cb47bd0a2fe14d74307ebafce7708ad459e4ad3e1be6b810a2651c57e7f2f615"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/event.json",
+    "bytes": 6571,
+    "sha256": "ca39845731d1e7f00a382cc4b89f52aa739ae3137ee2b3bd06e3a72abae828b2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.manifest.json",
+    "bytes": 42106,
+    "sha256": "c19e60be05108eba08ac6baef6655c4b9d41297a2b1ebe75a1acc35f572128cd"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.manifest.json",
+    "bytes": 523,
+    "sha256": "54eca6203013121d3238fe4372e2170c4e15bf8ee326dad97c41d0cb73a5d3d6"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "eb64f0fd2f449505e30726091a0215590b68d6001ee900714310ca4b61c4c4e5"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.manifest.json",
+    "bytes": 51610,
+    "sha256": "f729593af2cac78cbd61aef675afae55bf3d57166a8ed0a0969d7058d017374d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.manifest.json",
+    "bytes": 523,
+    "sha256": "23f7e56b992b13d9cf29d9a7fc066b7c79f54d6e0bbfe618b35289eed1e8bece"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "87a2c087e3e464c718dc101f74925ab053f886b9caf4925c94e04655624bc263"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/event.json",
+    "bytes": 6550,
+    "sha256": "0968e0bf5501ac3a9ef3920823eb63d365d8444651b13c75b30dee4656a5e77b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.manifest.json",
+    "bytes": 60020,
+    "sha256": "3e82b41603c7146527337d68a3c07e5e98bcb9bf62d48ff0a29129d3debf4992"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.manifest.json",
+    "bytes": 517,
+    "sha256": "8d1abb0ba71474d4282597662267b810096f0911320493f9369bb472c0d16af2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "9bcb1d999022e8b1f9e526585502c569c226ba5ab52a94785cd81a1357052395"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.manifest.json",
+    "bytes": 78630,
+    "sha256": "19321552a2338c50fc627eaabe821cb3892dfc2397ff19da9a5d5644b4adf48c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.manifest.json",
+    "bytes": 517,
+    "sha256": "b351b320fcd0b445436c2e29474aa9d3d38fdf2cf395c4bad9d9c67981a4248f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "11c73a9e149d1916d7f08bc99fa600c40306fb8704b1c776839fad5fd2b033de"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/event.json",
+    "bytes": 6519,
+    "sha256": "c73ff9d5213a30b4a63a70945eaf641f8acab2d1418212a41e373417c1f9d6dd"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.manifest.json",
+    "bytes": 81860,
+    "sha256": "83e8d9ff9fe41b79ad971b8a66d43529cde83061fe7aec6f2dbcd6bf707a5690"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.manifest.json",
+    "bytes": 515,
+    "sha256": "5377446f75bf0e5254de475c3567aae656ec202f8dac122f641c55bc5c96ec3c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "b4c55b35b5381e3b9df5799b8eefb300d61c5946363aa3209388b698b28d1201"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.manifest.json",
+    "bytes": 94406,
+    "sha256": "6e945be4018fd5e89bad05423e9f24ef8e05b16d7c9518a059a230ddb91a46a0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.manifest.json",
+    "bytes": 517,
+    "sha256": "e5ddd7a549b70a04886b17f1b84bd20a1fce92e614525287c1cce6a8cadaf370"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "fb4e0c9e9ed664cfe841c2c674d4bd2ac17f2b8c78e0349d1b445959143a7cb5"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/event.json",
+    "bytes": 6475,
+    "sha256": "9e342c023e9b0c0859d64e74108091f8fc4eccfaa035540f510bee3cb29623b3"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.manifest.json",
+    "bytes": 63606,
+    "sha256": "8e045e170bb591be14b4ffa3bea0d3913af998bc96649904b7200d2a7f8c9055"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.manifest.json",
+    "bytes": 518,
+    "sha256": "e40e32ac5632f5c0224ac91b61baa2c31e0fadb5e20556992961f0f8f48de00f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "648747b6af8ade659a58f56d0d30b1e00f6c45fa0ab9cd2a48e8dae931517083"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.manifest.json",
+    "bytes": 83876,
+    "sha256": "b61a8ff97e51550d732661672984e599ec432d284db33aec9a2da6ffe5da9185"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.manifest.json",
+    "bytes": 515,
+    "sha256": "5e5611773b9384d941c4ef8d1cea84ea2ba370ebb69e7483d0d7b13ac184658c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "d6b72577bc1eec43bd3cec54104470d1970e25a0f80fa42baedff6d7db511b62"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/event.json",
+    "bytes": 6522,
+    "sha256": "75c12818fb175f0dbcf507aa9a291e142e5db25f067f384397ad596ebd98ae96"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.manifest.json",
+    "bytes": 93018,
+    "sha256": "a35ce056bd15b2eb1f206d9fe140a8b29abd48a271e4824b6c2b6b35117eb7e3"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.manifest.json",
+    "bytes": 521,
+    "sha256": "fe8d04981d26d08782c49f66884c35dc03fe99a83c07a357f9703a7f7bd006cb"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9d7399105056b6695b1ad1774ee663f2da2197c486f1b4d96dc4620091f2fb56"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.manifest.json",
+    "bytes": 90474,
+    "sha256": "88332b0cc7b7b5475127c2b81406bffa7847deda2cca2ae2148828230eb59002"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.manifest.json",
+    "bytes": 521,
+    "sha256": "f84af4516c58813f4ec9e0d5c7a483ac088258a9d9b4fd30fe8b913870b7657a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "fbff14ba79774aaf9f2640a6300ac17438028739bea776a66ebd49904550ae8d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/event.json",
+    "bytes": 6604,
+    "sha256": "9b3d40143fb937a91f3fd6ca75b3ae1faaa907c43cab5181553f3694b7987137"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.manifest.json",
+    "bytes": 92502,
+    "sha256": "cdae864b7698c591dd48cdb17f6441dbff6cce099a87f116863ee84c2ae0ba8c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.manifest.json",
+    "bytes": 517,
+    "sha256": "3f5b7d0f7ee59d75bed5617635e9d18e58406b206c384e659c0fd0c8c721f20c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "2d98c9baf2a5e229747867e4e93859653a1b1a089ac9aab9378fab3763d0316a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.manifest.json",
+    "bytes": 86404,
+    "sha256": "ed265ba117e529771bd99e407ce7ecac99e6799f3197d9215e0bb37e4bb138f2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.manifest.json",
+    "bytes": 515,
+    "sha256": "2c6ec074181031de4500a8987c35b1bdda3c035e27ee856bd948c691702cb762"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "0f5f60d78d17c854c6f8a680ef71b9acd2516137b5099afa0e27f4f9fc869db8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/event.json",
+    "bytes": 6530,
+    "sha256": "88bc858c659b628773889d06c7a43e520a3f5fbbe6305b9f99241996358e815c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.manifest.json",
+    "bytes": 72602,
+    "sha256": "16f61827678460d86032f924d33fc9e86965499b94fc4ccfcc71483221f05856"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.manifest.json",
+    "bytes": 521,
+    "sha256": "887bd51904e1231320a4eb5af2fd65ba366029d8851ea61c4946e872821254bc"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "a8aac4a2d7535e3e2d80cdcfe83f9b181eab7198262a5b32286546172c2ebdd1"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.manifest.json",
+    "bytes": 102378,
+    "sha256": "34c407e8609293653c400dc4b01adedec031f0a5cb64d979c051b37ba8a4a707"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.manifest.json",
+    "bytes": 521,
+    "sha256": "20ab63d8395a87e2f67692b1a32c09f43b9a164b811b376bad34eee4e751a5b0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "5a14c1d6102411c47dc72173ad65e5f663fb8fea1c20f7fd9f1bda3b93cee6ba"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/event.json",
+    "bytes": 6573,
+    "sha256": "7a8deb9e2379f88f6822480d16d6e18b877c3bd58064378b57a82ac747ac7fe4"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.manifest.json",
+    "bytes": 53286,
+    "sha256": "2aa31f5be2ef3dfd899ef618b3e02430af827d890fd2280c1fdcbc5037ba9cde"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.manifest.json",
+    "bytes": 519,
+    "sha256": "453a0556882929d98273ac586e293be85828e3113d7a47bbe40d04f510e2902a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "eee909aa22afd8f4621057c3c8ed486533371873480f09425a9125e51f3f486d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.manifest.json",
+    "bytes": 71428,
+    "sha256": "1eebb644c0dc8977e8ff6f415b2b67546be48b3b3ffc6f8ee9ce0d68251baef7"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.manifest.json",
+    "bytes": 517,
+    "sha256": "482bbc5307ca4958240e3025e0583268a00fae6571eca18be3b50dd33a8b47e1"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "6f20a4f3cd2a4f57b3bcecd77b647ae01fce9878db0286d90a0dc5ad3321f51a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/event.json",
+    "bytes": 6512,
+    "sha256": "47eb885ab1b799fdf822529e5232d6eea6b4c864a168c3043d1cad9ad304816e"
+  },
+  {
+    "path": "maker_replay_round2/data/capture_manifest.json",
+    "bytes": 24559,
+    "sha256": "62fda048cab68ff77d4a86c5a5da2a4669799dee1f76d7df5262a88c152399f6"
+  },
+  {
+    "path": "maker_replay_round2/data/cohort.json",
+    "bytes": 1963,
+    "sha256": "9db8f875455620a330db8ad5d73b1862b1d96808cf7bbcd4a170d1586017999d"
+  },
+  {
+    "path": "maker_replay_round2/data/exit_candle_probe.json",
+    "bytes": 11562,
+    "sha256": "4dc713e4091df06aa266c4672d75086d75ad386462ad8da7b9acbce7ca477a77"
+  },
+  {
+    "path": "maker_replay_round2/data/first_event_metadata.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "maker_replay_round2/data/postlude_manifest.json",
+    "bytes": 14904,
+    "sha256": "f9b26eeed4239e146683759e4edc0d9bb05c438b398d3d8317ad6805c41b1a82"
+  },
+  {
+    "path": "maker_replay_round2/data/sample_event_fee_changes.json",
+    "bytes": 45,
+    "sha256": "16662354ffac33e29efb13ca786120e05cfa729f6f96d29c54f85c2b4f3cda43"
+  },
+  {
+    "path": "maker_replay_round2/data/series_metadata.json",
+    "bytes": 1777,
+    "sha256": "367a52889577319d2ec0f80e97e1ca088ee4f74f96009b16169226c44ad23e91"
+  },
+  {
+    "path": "maker_replay_round2/fetch_sources.py",
+    "bytes": 1897,
+    "sha256": "141415401d255e59d9cc838466bd842234d8deaee4a4e2fe4ac198e25bab8730"
+  },
+  {
+    "path": "maker_replay_round2/legacy_loader.py",
+    "bytes": 1411,
+    "sha256": "1093110c905c7fe87ba8eab18ada2d016b521e1177ab2fa338a47abb99a2961e"
+  },
+  {
+    "path": "maker_replay_round2/quote_source_audit.py",
+    "bytes": 2763,
+    "sha256": "9cc9d1951f436394efee40bead7659109d33120947ee39bf82590cdb33a406b8"
+  },
+  {
+    "path": "maker_replay_round2/record_public_books.py",
+    "bytes": 1868,
+    "sha256": "0fb94aff885be14febd7b72be3b2c33328de3c5c52078811536c567eda2bb245"
+  },
+  {
+    "path": "maker_replay_round2/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "maker_replay_round2/requirements.txt",
+    "bytes": 27,
+    "sha256": "6979eeaed30ec7f45ff725f33240136e49c396fdf8a5ef12964fb2960c8a5d1e"
+  },
+  {
+    "path": "maker_replay_round2/results/candle_progress.txt",
+    "bytes": 1963,
+    "sha256": "50dbb74e638bcd4b3ea6b4a99520de1477389858de3a23465ade7b91493e5545"
+  },
+  {
+    "path": "maker_replay_round2/results/candle_suite_summary.json",
+    "bytes": 14030,
+    "sha256": "f30a014acf77c534696fb66c25b0e0de22210da8cda99a54504825945c135080"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_baseline_regression.json",
+    "bytes": 5990,
+    "sha256": "2608a78f020ec2385149e9ab7f4ae1e781234e5cd1ced766905f66f9f04a7697"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_early_queue3300.json",
+    "bytes": 5997,
+    "sha256": "ded70477ef7620ef4e5a7d0e53498ddf0d7f3d898203f8ef0599688a09499d62"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_exit_depth50.json",
+    "bytes": 6189,
+    "sha256": "eff73efc989147e6d9b806b9522bbdad22ac03d5cc8be2240182e47f50d1e9a2"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_profile_fixed.json",
+    "bytes": 5950,
+    "sha256": "366626eed5fe6b5d866d9609170cd0a1e9188f81161af63fecf9755256123c43"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_profile_reduce.json",
+    "bytes": 5981,
+    "sha256": "df70a08bf81f8079b2b1f4245eb862f518006683ffd631afa68d05b6eb7496f0"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_winddown5m.json",
+    "bytes": 5980,
+    "sha256": "8066995b21c633a0ea1616c6e6371f23475d40fb3c7b275d6e2bc9c3b99b62cf"
+  },
+  {
+    "path": "maker_replay_round2/results/capture_progress.txt",
+    "bytes": 1604,
+    "sha256": "e41c79b8c1a2a4b989e366abfd71c4fb34e0ee9ec2e792b3c0cf1c0b246c1c23"
+  },
+  {
+    "path": "maker_replay_round2/results/data_summary.json",
+    "bytes": 278,
+    "sha256": "4d063b8454b51da88ad6522531ccda97172d2835fda0e1f58581fd78247c4bc3"
+  },
+  {
+    "path": "maker_replay_round2/results/forward_book_progress.txt",
+    "bytes": 515,
+    "sha256": "b5247458659808615b11417d1a41cf309bb8577e74fe1c511598c72245555e60"
+  },
+  {
+    "path": "maker_replay_round2/results/forward_queue_snapshot.json",
+    "bytes": 2500,
+    "sha256": "8150847086cbaa47ad8e8634d4c74688a7c1c4f4b621c21f170b6558601e54fe"
+  },
+  {
+    "path": "maker_replay_round2/results/frozen_spec_sha256.txt",
+    "bytes": 65,
+    "sha256": "9299d0477873a2323f8c3c06cb6d445dd40e37422081d30c3d556a2782679400"
+  },
+  {
+    "path": "maker_replay_round2/results/initial_display_timezone_note.txt",
+    "bytes": 426,
+    "sha256": "dc8e63c658148530c03533a374bcf649bc63a61a5a69e2ece38888b985909a47"
+  },
+  {
+    "path": "maker_replay_round2/results/legacy_exact_window.json",
+    "bytes": 2088,
+    "sha256": "252f1aa5145f175696d0fedb7dba5cd0229a8181770eb484e441f72c6645e43d"
+  },
+  {
+    "path": "maker_replay_round2/results/post_diagnostics_progress.txt",
+    "bytes": 424,
+    "sha256": "ba5c93848f5ec3ce7aeeaf008c6f84e8e143f126ec0072357a7c44144316aa5f"
+  },
+  {
+    "path": "maker_replay_round2/results/post_diagnostics_summary.json",
+    "bytes": 27494,
+    "sha256": "9260b20d6b1697fff66232befbfe89e3c713c1f99def00dd3b96f81eeb57d078"
+  },
+  {
+    "path": "maker_replay_round2/results/postlude_progress.txt",
+    "bytes": 689,
+    "sha256": "e0f2fe43a5d018cd1800642c728a786af48159135e9694310282dbeb9b8af79b"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_exit_depth50.json",
+    "bytes": 6062,
+    "sha256": "e9408ce5a64d1841f4a0b38bd094ab3031ed5ba66362c768fa117561ebf5e522"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_fixed.json",
+    "bytes": 5985,
+    "sha256": "abe55d7ee382fad23d153f7d49a85211fc8d34ee08067dfea1cfcd74a73fbb36"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_nondirect_precision.json",
+    "bytes": 5956,
+    "sha256": "cd5082dbd8fad3ed6a8ecc7b19f5434158e4e0656737053881cf631a689ed5d6"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_reduce.json",
+    "bytes": 5966,
+    "sha256": "e48a504d8c1f5d7b0869f773777eb30bd13315863fe9fc7c66194e17202a89df"
+  },
+  {
+    "path": "maker_replay_round2/results/queue3300_fixed.json",
+    "bytes": 5901,
+    "sha256": "013e96d01c048ff30fea86f1a511263c5fbdf90684d53d5ebb35c62fd5142061"
+  },
+  {
+    "path": "maker_replay_round2/results/queue3300_reduce.json",
+    "bytes": 5893,
+    "sha256": "226e41e3af0039dd5d53241a2d2c7918cfa549e5f996cc789077b69381aa4044"
+  },
+  {
+    "path": "maker_replay_round2/results/quote_audit_progress.txt",
+    "bytes": 790,
+    "sha256": "111f598a8d31a37c3fa6137d4d6725e266404cc96540ed1286cd565b7c3e41fe"
+  },
+  {
+    "path": "maker_replay_round2/results/quote_source_audit.json",
+    "bytes": 15241,
+    "sha256": "fe19d295bb62a9f8990e0867429e8914af2c45a8b4cdbf65e8fa965a3be202f9"
+  },
+  {
+    "path": "maker_replay_round2/results/runtime.json",
+    "bytes": 66,
+    "sha256": "b32c3de655522fcb59fa51e976e53891367c39e106f94cdf6e4170dd847cadc3"
+  },
+  {
+    "path": "maker_replay_round2/results/suite_progress.txt",
+    "bytes": 1179,
+    "sha256": "49831a025b43862297889dcadb5044a8f8bc0ba009ad1e2256ada0115d23869f"
+  },
+  {
+    "path": "maker_replay_round2/results/suite_summary.json",
+    "bytes": 50151,
+    "sha256": "959a7c68e8802296fece05ead3c3a2c3dff2294e274fd9ccb26f449b44ab4a36"
+  },
+  {
+    "path": "maker_replay_round2/results/tests.txt",
+    "bytes": 2489,
+    "sha256": "055043ce87cb4614b6f22e9141ee3ab5996d4e5af89dfeb07147cbffb7d21a83"
+  },
+  {
+    "path": "maker_replay_round2/results/thin_queue_optimistic.json",
+    "bytes": 6010,
+    "sha256": "71cb96298d67c186671c855164ac273f3acea29782e673df628b01e0dd6da9ce"
+  },
+  {
+    "path": "maker_replay_round2/results/verification.json",
+    "bytes": 334,
+    "sha256": "e55ec83e35124ec3f6c35d4d61d0b8e6ee5fe2f99d07322ce7f4afc76efeca9d"
+  },
+  {
+    "path": "maker_replay_round2/run_candle_suite.py",
+    "bytes": 3220,
+    "sha256": "441b1448f296a1ad0179343e7e7f9c99a778df428596c94875bdd25374c09021"
+  },
+  {
+    "path": "maker_replay_round2/run_post_diagnostics.py",
+    "bytes": 1608,
+    "sha256": "90b2d944283ee2838313030149c19cb52af3d6396b9700ecf18b4e3b869b9341"
+  },
+  {
+    "path": "maker_replay_round2/run_suite.py",
+    "bytes": 7125,
+    "sha256": "b11830812bf820d998341f86d3fa17511ba4e5936099fd1c8507b220527b489c"
+  },
+  {
+    "path": "maker_replay_round2/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 57694,
+    "sha256": "0514aca0cca1bb80c0b4a77ce9af648cf2cdb0ab1fd8709469ad7cac98139e51"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/EXPERIMENT_SPEC.md",
+    "bytes": 4974,
+    "sha256": "267e1f599bbf7e60c23f107e0105116f69d7a25eb004cc5d087d49613798ceab"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/FROZEN_INPUTS.json",
+    "bytes": 296,
+    "sha256": "8af8cbb684ae0ad04e04664f059c36eca899384230b3abe6008872de25c18363"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/NFL_Queue_Experiment_Results.md",
+    "bytes": 12392,
+    "sha256": "de10103a32099aae5284ef3f7bc039b2ef5e8d4314b90efd4f4482208276614b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/POST_RESULT_DIAGNOSTICS.md",
+    "bytes": 1170,
+    "sha256": "5ebcdbab1de8d86f3694e615ebec7c6dfe33f89b454c22013c0091c162f56110"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/QUEUE_STRESS_SPEC.md",
+    "bytes": 756,
+    "sha256": "d8d63f157304a38eeec7b3f0ae5b65317b7b7f272a1ee7853024af15e29eb565"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/README.md",
+    "bytes": 3851,
+    "sha256": "7e48cb4a43143daa399e7950a922f65c8dfb59894c18bfce9ac8eecfe7bf3f09"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/analyze_forward.py",
+    "bytes": 9062,
+    "sha256": "9d15ebb12edc2a41c7804fec298e52fb9f232a1ca8ad30172f4a7b2f44f11f64"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/build_report.py",
+    "bytes": 14092,
+    "sha256": "0c8c5eb124303a7168120256074373104e15acf55c3e8a9475dd413ed9479917"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/capture_progress.txt",
+    "bytes": 50,
+    "sha256": "0fdd8b99685a9f101c8803deafe9be340a23068b1a1cc7d406f5a45cff0919f7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/capture_queue.py",
+    "bytes": 5954,
+    "sha256": "a3f10d4d455b8900c425d421d46053987bc70540323b77bc1afd53e85bd6908b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/capture_resume_progress.txt",
+    "bytes": 2066,
+    "sha256": "d226f60ba7c4deca6d81fe02aa8cc888f0205efe113774c0fdccf9ef429de4a1"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.manifest.json",
+    "bytes": 55332,
+    "sha256": "d94fed31f5f50392c7fddee3ac48585de2db4babe3bab496d67d68f48140518a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.manifest.json",
+    "bytes": 517,
+    "sha256": "d4583d658d330561b7ede49af7809bedd2491723ff3fd9b00cd4b08211a3734a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "96b6dfd5177e4709c5303c5513bd1393264d941af15cf45e3babc23b62d75192"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.manifest.json",
+    "bytes": 49878,
+    "sha256": "fdcb6b64857ce716a92ca29cb5c2eb0f00db81285db6d1bc23904094a42f8765"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.manifest.json",
+    "bytes": 519,
+    "sha256": "bd67a157d8c601a3c6512ae2830425ae5e939ac7f2f19f639fe766ff3a32405c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "642f7d050c5b0020d40dfce48e58a549d7a280e7ce2daf284a9eb4e728125331"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/event.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.manifest.json",
+    "bytes": 49526,
+    "sha256": "3fcab52d5e1a31574c1f470e33565fbe35459ee0771d2052b0e1670775d5f09e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.manifest.json",
+    "bytes": 519,
+    "sha256": "1cae6d559eeec5b2d9c870952ea04e9457c5535cffa234211971a1f9d876d7b2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "b068650d6f3d42fad734cc47fad4c6a20cb1e13eb8d0bc1085312517a3ba49d7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.manifest.json",
+    "bytes": 49412,
+    "sha256": "34807d459b9f7d2a3d1acbf0b6584c7d4261be592e5e0a0403990373a00420c8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.manifest.json",
+    "bytes": 517,
+    "sha256": "35028c7e5644498f6f64422908fd9271e0933efa9d1d7632be720bf241798ed0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "0dbe0bacb73722c50af8ffa199272c777f7977593c61a7f8c67e9303a87d3cd7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/event.json",
+    "bytes": 6662,
+    "sha256": "be00acfe24abba807aaeb7e6dd9757a38a9b48f9e9d2ab8ff618c3d5389116ee"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.manifest.json",
+    "bytes": 84618,
+    "sha256": "1b89b3c2ae969a5efb043b3310024cc7eea6e95450c903e7aab57a39f2d5de1b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.manifest.json",
+    "bytes": 521,
+    "sha256": "abd62ee0c163842d7f89a33297407a5f6ca985e9637847447feb5e41c8e7ec9f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "47667f52f36868bb7f1262ad0c0f3ceb615d41b6a1734859164d21e463414b62"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.manifest.json",
+    "bytes": 71978,
+    "sha256": "fd83c4dedfc6b6c6d8020e22b7d9f842753335f0a849f445a9427bef899350cc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.manifest.json",
+    "bytes": 521,
+    "sha256": "b0294a6541cb2a4080a0493a7e6c9c6d360da4e1778dc8c7415f30df75b2536f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9ab0e38e5b06383fa8d08da225c1e794aa594587fd6ed1d7906f8a461283fd60"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/event.json",
+    "bytes": 6587,
+    "sha256": "dc443307226ea47146d425edf680c56adf5b92f60f6a4edf2eff05e059b6b153"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.manifest.json",
+    "bytes": 81210,
+    "sha256": "fce98e724fe0da066ee07f8a564485cbf1fcfdb95cc67e641ce5779b55328a60"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.manifest.json",
+    "bytes": 521,
+    "sha256": "367e39d9e2a96602a8cbd9bf9d05dccb0077e9206b61a1e6458710095b4ff11f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "d0761b92ec74606e307b7b9416960085238f21c5e399193258ee7c5ac39e3211"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.manifest.json",
+    "bytes": 59882,
+    "sha256": "470235160034819f406833c66d904c671eec41542cabd1a877f7e44090e28d5f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.manifest.json",
+    "bytes": 523,
+    "sha256": "39285a42b17f6e5ae16e7685e6b09fad280a884ec960559c99c0ef90f7474927"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "adb147e20b543ff8cfdc45a8653a2ba03801273b2a3ff8baff1209202f4f176c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/event.json",
+    "bytes": 6513,
+    "sha256": "138aef1c984780b10b5b697ae8edea44a03362d6f506738f2799e082eb58b53e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.manifest.json",
+    "bytes": 82586,
+    "sha256": "e39b385c850b9076e446a4606ab474840a8a5990857d431df052a4334e56dbbe"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.manifest.json",
+    "bytes": 521,
+    "sha256": "0fc31e2bb4fbd1dc4d5227d756418d169570eed56319ab0dc5771dd34dc8b4f8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "646172582f74325052733ee6940b626f01031a00effcdc4ed984da2ac85b1802"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.manifest.json",
+    "bytes": 93610,
+    "sha256": "fa59b7b0585d0198ab95d44090e6eefda5c48517ff4668919b2d0fac67bd3bda"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.manifest.json",
+    "bytes": 521,
+    "sha256": "3a2229e62277f9f1f87d61ccff1669af8cf400c0330ed194b5e749cbeae712ac"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9e43433fff4f0717e8446dcef03a13ecc459601dcc7de02984860a8a05bd7c21"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/event.json",
+    "bytes": 6559,
+    "sha256": "4be01bca476d760928401845ed7d7d15e7f621d563c6abaab3519dbe4ab3a064"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.manifest.json",
+    "bytes": 61034,
+    "sha256": "63cd215127e295fa910b7bcf806dda823b40ced9a5ae940e4320af251ad1697d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.manifest.json",
+    "bytes": 523,
+    "sha256": "e248e7f0359438c38360a0ba15490d64fd1ef6530eab81641a09ddd0ca3d5725"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "99e2264bf063b04bc5099ce93d93d391470804df1d2175e1168ffed187975279"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.manifest.json",
+    "bytes": 70330,
+    "sha256": "403749c35846f811cba3ea6dd6d6c7424ec27199492a34d1f6c1901c08bbb9e0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.manifest.json",
+    "bytes": 522,
+    "sha256": "64ed7253103137bef220a32041646a6aac05d0ddaa612f7a24cbe39ec06e86e8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "71a1712728b4145edfa161d67f51e7fcf05a5490feba18466d1fc3d087c2388a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/event.json",
+    "bytes": 6484,
+    "sha256": "6c90e49decdb1d88dae3492d7c8a1c5a43fcbdb8417e4333254408a3081a7983"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.manifest.json",
+    "bytes": 88394,
+    "sha256": "0c92791f3575529bf909cd59cfc2fd18ca71f3109f8ff1bf1eeb784b8f16466a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.manifest.json",
+    "bytes": 521,
+    "sha256": "fd26409c839672e7fd98c48a4a0bcfe5e7b3e3f80eeac22abde81c0abe43a505"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "392c42c6f5ec12a0139af8d754862ab1bd8875ceae2f0993342f3faee9054716"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.manifest.json",
+    "bytes": 68570,
+    "sha256": "c8bf1cf91340a5f461d2a083b51c09100de25ab1a7b76c6c51e2af434cddbf57"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.manifest.json",
+    "bytes": 521,
+    "sha256": "d364893d04181002ce98dea13ecdc72061b511e3378743553300af5abd6d9808"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "2149aa38e8d857e0eb285c7f029405c0ca475decfecd41fef96a2bcf531f6dc6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/event.json",
+    "bytes": 6493,
+    "sha256": "357c94639e71caf790f202c866f04021a914f3c8f559fabb5594db20a117ea0c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.manifest.json",
+    "bytes": 69898,
+    "sha256": "a5b6d26680355d6a5d0e67254b4fbb7c1f3a1aad186f6426ff0ba3ef12ad3ea6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.manifest.json",
+    "bytes": 521,
+    "sha256": "bd146730ac28f07ed12cc6b2dea7405a4be63692204293429311e83c2b1db38e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "6a34fde2bccc3667ceb0872250c40f9d320f4b00e0488833a710630a21e97e56"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.manifest.json",
+    "bytes": 61786,
+    "sha256": "b3bca8711469ef5bec97bbfdc41378a87e49209a7c862dc962503643faaa4a6a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.manifest.json",
+    "bytes": 521,
+    "sha256": "0ed676155d38d97e19f99b7eba67f5da077ec195c8dfabb7ecf775a4acc44ae3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "cb47bd0a2fe14d74307ebafce7708ad459e4ad3e1be6b810a2651c57e7f2f615"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/event.json",
+    "bytes": 6571,
+    "sha256": "ca39845731d1e7f00a382cc4b89f52aa739ae3137ee2b3bd06e3a72abae828b2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.manifest.json",
+    "bytes": 42106,
+    "sha256": "c19e60be05108eba08ac6baef6655c4b9d41297a2b1ebe75a1acc35f572128cd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.manifest.json",
+    "bytes": 523,
+    "sha256": "54eca6203013121d3238fe4372e2170c4e15bf8ee326dad97c41d0cb73a5d3d6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "eb64f0fd2f449505e30726091a0215590b68d6001ee900714310ca4b61c4c4e5"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.manifest.json",
+    "bytes": 51610,
+    "sha256": "f729593af2cac78cbd61aef675afae55bf3d57166a8ed0a0969d7058d017374d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.manifest.json",
+    "bytes": 523,
+    "sha256": "23f7e56b992b13d9cf29d9a7fc066b7c79f54d6e0bbfe618b35289eed1e8bece"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "87a2c087e3e464c718dc101f74925ab053f886b9caf4925c94e04655624bc263"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/event.json",
+    "bytes": 6550,
+    "sha256": "0968e0bf5501ac3a9ef3920823eb63d365d8444651b13c75b30dee4656a5e77b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.manifest.json",
+    "bytes": 60020,
+    "sha256": "3e82b41603c7146527337d68a3c07e5e98bcb9bf62d48ff0a29129d3debf4992"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.manifest.json",
+    "bytes": 517,
+    "sha256": "8d1abb0ba71474d4282597662267b810096f0911320493f9369bb472c0d16af2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "9bcb1d999022e8b1f9e526585502c569c226ba5ab52a94785cd81a1357052395"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.manifest.json",
+    "bytes": 78630,
+    "sha256": "19321552a2338c50fc627eaabe821cb3892dfc2397ff19da9a5d5644b4adf48c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.manifest.json",
+    "bytes": 517,
+    "sha256": "b351b320fcd0b445436c2e29474aa9d3d38fdf2cf395c4bad9d9c67981a4248f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "11c73a9e149d1916d7f08bc99fa600c40306fb8704b1c776839fad5fd2b033de"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/event.json",
+    "bytes": 6519,
+    "sha256": "c73ff9d5213a30b4a63a70945eaf641f8acab2d1418212a41e373417c1f9d6dd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.manifest.json",
+    "bytes": 81860,
+    "sha256": "83e8d9ff9fe41b79ad971b8a66d43529cde83061fe7aec6f2dbcd6bf707a5690"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.manifest.json",
+    "bytes": 515,
+    "sha256": "5377446f75bf0e5254de475c3567aae656ec202f8dac122f641c55bc5c96ec3c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "b4c55b35b5381e3b9df5799b8eefb300d61c5946363aa3209388b698b28d1201"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.manifest.json",
+    "bytes": 94406,
+    "sha256": "6e945be4018fd5e89bad05423e9f24ef8e05b16d7c9518a059a230ddb91a46a0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.manifest.json",
+    "bytes": 517,
+    "sha256": "e5ddd7a549b70a04886b17f1b84bd20a1fce92e614525287c1cce6a8cadaf370"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "fb4e0c9e9ed664cfe841c2c674d4bd2ac17f2b8c78e0349d1b445959143a7cb5"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/event.json",
+    "bytes": 6475,
+    "sha256": "9e342c023e9b0c0859d64e74108091f8fc4eccfaa035540f510bee3cb29623b3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.manifest.json",
+    "bytes": 63606,
+    "sha256": "8e045e170bb591be14b4ffa3bea0d3913af998bc96649904b7200d2a7f8c9055"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.manifest.json",
+    "bytes": 518,
+    "sha256": "e40e32ac5632f5c0224ac91b61baa2c31e0fadb5e20556992961f0f8f48de00f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "648747b6af8ade659a58f56d0d30b1e00f6c45fa0ab9cd2a48e8dae931517083"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.manifest.json",
+    "bytes": 83876,
+    "sha256": "b61a8ff97e51550d732661672984e599ec432d284db33aec9a2da6ffe5da9185"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.manifest.json",
+    "bytes": 515,
+    "sha256": "5e5611773b9384d941c4ef8d1cea84ea2ba370ebb69e7483d0d7b13ac184658c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "d6b72577bc1eec43bd3cec54104470d1970e25a0f80fa42baedff6d7db511b62"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/event.json",
+    "bytes": 6522,
+    "sha256": "75c12818fb175f0dbcf507aa9a291e142e5db25f067f384397ad596ebd98ae96"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.manifest.json",
+    "bytes": 93018,
+    "sha256": "a35ce056bd15b2eb1f206d9fe140a8b29abd48a271e4824b6c2b6b35117eb7e3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.manifest.json",
+    "bytes": 521,
+    "sha256": "fe8d04981d26d08782c49f66884c35dc03fe99a83c07a357f9703a7f7bd006cb"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9d7399105056b6695b1ad1774ee663f2da2197c486f1b4d96dc4620091f2fb56"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.manifest.json",
+    "bytes": 90474,
+    "sha256": "88332b0cc7b7b5475127c2b81406bffa7847deda2cca2ae2148828230eb59002"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.manifest.json",
+    "bytes": 521,
+    "sha256": "f84af4516c58813f4ec9e0d5c7a483ac088258a9d9b4fd30fe8b913870b7657a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "fbff14ba79774aaf9f2640a6300ac17438028739bea776a66ebd49904550ae8d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/event.json",
+    "bytes": 6604,
+    "sha256": "9b3d40143fb937a91f3fd6ca75b3ae1faaa907c43cab5181553f3694b7987137"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.manifest.json",
+    "bytes": 92502,
+    "sha256": "cdae864b7698c591dd48cdb17f6441dbff6cce099a87f116863ee84c2ae0ba8c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.manifest.json",
+    "bytes": 517,
+    "sha256": "3f5b7d0f7ee59d75bed5617635e9d18e58406b206c384e659c0fd0c8c721f20c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "2d98c9baf2a5e229747867e4e93859653a1b1a089ac9aab9378fab3763d0316a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.manifest.json",
+    "bytes": 86404,
+    "sha256": "ed265ba117e529771bd99e407ce7ecac99e6799f3197d9215e0bb37e4bb138f2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.manifest.json",
+    "bytes": 515,
+    "sha256": "2c6ec074181031de4500a8987c35b1bdda3c035e27ee856bd948c691702cb762"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "0f5f60d78d17c854c6f8a680ef71b9acd2516137b5099afa0e27f4f9fc869db8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/event.json",
+    "bytes": 6530,
+    "sha256": "88bc858c659b628773889d06c7a43e520a3f5fbbe6305b9f99241996358e815c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.manifest.json",
+    "bytes": 72602,
+    "sha256": "16f61827678460d86032f924d33fc9e86965499b94fc4ccfcc71483221f05856"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.manifest.json",
+    "bytes": 521,
+    "sha256": "887bd51904e1231320a4eb5af2fd65ba366029d8851ea61c4946e872821254bc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "a8aac4a2d7535e3e2d80cdcfe83f9b181eab7198262a5b32286546172c2ebdd1"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.manifest.json",
+    "bytes": 102378,
+    "sha256": "34c407e8609293653c400dc4b01adedec031f0a5cb64d979c051b37ba8a4a707"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.manifest.json",
+    "bytes": 521,
+    "sha256": "20ab63d8395a87e2f67692b1a32c09f43b9a164b811b376bad34eee4e751a5b0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "5a14c1d6102411c47dc72173ad65e5f663fb8fea1c20f7fd9f1bda3b93cee6ba"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/event.json",
+    "bytes": 6573,
+    "sha256": "7a8deb9e2379f88f6822480d16d6e18b877c3bd58064378b57a82ac747ac7fe4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.manifest.json",
+    "bytes": 53286,
+    "sha256": "2aa31f5be2ef3dfd899ef618b3e02430af827d890fd2280c1fdcbc5037ba9cde"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.manifest.json",
+    "bytes": 519,
+    "sha256": "453a0556882929d98273ac586e293be85828e3113d7a47bbe40d04f510e2902a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "eee909aa22afd8f4621057c3c8ed486533371873480f09425a9125e51f3f486d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.manifest.json",
+    "bytes": 71428,
+    "sha256": "1eebb644c0dc8977e8ff6f415b2b67546be48b3b3ffc6f8ee9ce0d68251baef7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.manifest.json",
+    "bytes": 517,
+    "sha256": "482bbc5307ca4958240e3025e0583268a00fae6571eca18be3b50dd33a8b47e1"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "6f20a4f3cd2a4f57b3bcecd77b647ae01fce9878db0286d90a0dc5ad3321f51a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/event.json",
+    "bytes": 6512,
+    "sha256": "47eb885ab1b799fdf822529e5232d6eea6b4c864a168c3043d1cad9ad304816e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/capture_manifest.json",
+    "bytes": 24559,
+    "sha256": "62fda048cab68ff77d4a86c5a5da2a4669799dee1f76d7df5262a88c152399f6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/cohort.json",
+    "bytes": 1963,
+    "sha256": "9db8f875455620a330db8ad5d73b1862b1d96808cf7bbcd4a170d1586017999d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/exit_candle_probe.json",
+    "bytes": 11562,
+    "sha256": "4dc713e4091df06aa266c4672d75086d75ad386462ad8da7b9acbce7ca477a77"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/first_event_metadata.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/postlude_manifest.json",
+    "bytes": 14904,
+    "sha256": "f9b26eeed4239e146683759e4edc0d9bb05c438b398d3d8317ad6805c41b1a82"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/sample_event_fee_changes.json",
+    "bytes": 45,
+    "sha256": "16662354ffac33e29efb13ca786120e05cfa729f6f96d29c54f85c2b4f3cda43"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/series_metadata.json",
+    "bytes": 1777,
+    "sha256": "367a52889577319d2ec0f80e97e1ca088ee4f74f96009b16169226c44ad23e91"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/forward/capture_summary.json",
+    "bytes": 1958,
+    "sha256": "d935d5f454f7ddf00db980b65243334c559d16c8c098e4a329a8dd7c59ded3c0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/package_results.py",
+    "bytes": 1461,
+    "sha256": "46174874f6029d3cf12acd6709abb15e5439a77a11270a66f50dd217c424b516"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/queue_policies.py",
+    "bytes": 11366,
+    "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/analyze_forward_output.txt",
+    "bytes": 7662,
+    "sha256": "afb9961eb10c2a348da33decebf3299e30ae3833407b1feefca03fa03f161650"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/build_report_output.txt",
+    "bytes": 26,
+    "sha256": "4095a7333fc5d5fc8e1861c149b4c34fd90e95690ad17b20a971e28c6f080133"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/forward_analysis.json",
+    "bytes": 7661,
+    "sha256": "ed999612caf6fa6a23a874b0a40dcf1df1a13a71ed52ffba6de0a5b173eb2b17"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/forward_hypothetical_joins.json",
+    "bytes": 276126,
+    "sha256": "fcd56ff1e185e09f798237bb4053cd5e00a0e6f9c790c1341a4ffa1b498e71f2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/forward_progress.txt",
+    "bytes": 5529,
+    "sha256": "fd43d245314f2106eee26f429388b3e3d84ada55ef95cbedb7f2cfcf31366312"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/forward_shadow_routes.json",
+    "bytes": 1203854,
+    "sha256": "4b5b894539cc4e9958f8307fd1f040c302be8054327fea4b9bf0384276f604ca"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/mechanism_progress.txt",
+    "bytes": 71,
+    "sha256": "6319ff2c178db05d973291864b7d65c1ee4233c87b6a2dbd368c113b0ba36169"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/mechanism_spec_sha256.txt",
+    "bytes": 65,
+    "sha256": "32a01209e30bd3d5d9e57d4c721ff3c8a9e9c36d4bfe24ef5f409f46ea4a24a8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/mechanism_summary.json",
+    "bytes": 16131,
+    "sha256": "e73bf67ed9081fa3a2a55965bc5a2a825b9b42bd0854b8f2bfe00a4d08cc0761"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q100000_preserve.json",
+    "bytes": 7235,
+    "sha256": "1038a1aeacbe171b14699578d1d7a9e108b4a5f68646f9ed0254a6afd5ba0da6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q100000_route.json",
+    "bytes": 7252,
+    "sha256": "8cd5d661d0cb9034bd2943a06bd2033a48195b23edaa65dc98bd13e7c3e81ea9"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q10000_preserve.json",
+    "bytes": 7478,
+    "sha256": "b8b31281e3b7cb0f5936eb3ac75feb966233260f04bb0a135a7b708731368196"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q10000_route.json",
+    "bytes": 7507,
+    "sha256": "fa3c9fce9273ca2fc821bc6590a92b928e4d3a01a1589ee929b3bfaf739b9ecc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_churn60.json",
+    "bytes": 7546,
+    "sha256": "5c9b3c472d4439f6c0facb903c60a379c4a1b0384d5a4cd3ce878df3f3e84a98"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_combined.json",
+    "bytes": 7621,
+    "sha256": "0487a3feb00a08d3316f5b4945d087c99afdbae19e73b4de6562d2ac642f21e8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_combined_race250.json",
+    "bytes": 7604,
+    "sha256": "dffc3b4968052c1671fe6f1569fd86f1ea74fab1d2387c336293dc39e8e52266"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_improve_exit.json",
+    "bytes": 7548,
+    "sha256": "8727042a699f1b91b2b62f7ac76c403ba2fbbfa01281bbb291fb63a790d8dc0b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_improve_exit_race250.json",
+    "bytes": 7561,
+    "sha256": "46a8615138e5d8d845c7721cfc6369d094c1cbcf36bfa9cf891f26314d199c07"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_margin_only.json",
+    "bytes": 7563,
+    "sha256": "757194a9282f920cbeb498a88c1a49581f842fb7b84c0097b30447a1f44bdca3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_preserve.json",
+    "bytes": 7483,
+    "sha256": "db39c2b0f67c37ce55c1ecf9de8f2e5132f947d809f9dad94472d70211c34c33"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_route.json",
+    "bytes": 7546,
+    "sha256": "8901362ec32b74440cc8ee309c54d1ba201ce00e68dc4df8683de3ad84b401db"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_churn60.json",
+    "bytes": 7537,
+    "sha256": "9849bbfd35f4e8665f55d2037a1be394f0c1a28feb0fffc110e971164f7b40a7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_combined.json",
+    "bytes": 7594,
+    "sha256": "1c7ea68c2f6ca7ae36a111aac97ee404bfec2bc4ce6e3d902cf1417e1c2887a3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_combined_race250.json",
+    "bytes": 7554,
+    "sha256": "0b872bebc4835d210c9c7da43b3dd82fff91792254ea68ea7d4a3e6a68bc2dc0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_improve_exit.json",
+    "bytes": 7534,
+    "sha256": "b280cb42e73c2b562ffe25644415309a6bf23419c7b3b79e97bf64f51662873d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_improve_exit_race250.json",
+    "bytes": 7522,
+    "sha256": "1bea1ea7ee95c7e92f2c2c99c3bbb1dae1712572ea5616636d649ad6df19fe20"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_margin_only.json",
+    "bytes": 7461,
+    "sha256": "0be9546d91e56a296406b04bbd36f6a2391e777af85dc4adfab4283859e58b42"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_preserve.json",
+    "bytes": 7483,
+    "sha256": "f969efeb2f2d6e758a44c33b4d6eca85ed6e19da5992d8b6ec1a46760c0d9777"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_route.json",
+    "bytes": 7511,
+    "sha256": "8f11ab980ebb1e72b19f58116410b00b7ca4580b3b56d3e78a1bef126d3ae3dc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/queue_stress_progress.txt",
+    "bytes": 136,
+    "sha256": "c7070f09872069828d50db46649eabb80d762894e2898f689f5878afecd59370"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/queue_stress_spec_sha256.txt",
+    "bytes": 65,
+    "sha256": "8a1be2049602a1bb560f23406de7fd1686875cc3549764764305f6ad16a700d7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/queue_stress_summary.json",
+    "bytes": 31718,
+    "sha256": "d35c77c006268b280b5857f71bf7af67069988181063bbb74ae6fe869fbe07a3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/queue_suite_summary.json",
+    "bytes": 119757,
+    "sha256": "c2040313eeb30ff7d2ee420a148b0f0a99be67d021fda3d62ada01f8d29fbdbd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/suite_progress.txt",
+    "bytes": 980,
+    "sha256": "f9b44d544933062690a763a2dc7772f21b72c5cd1e8a65365950dc5d0f7c877c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/tests.txt",
+    "bytes": 4751,
+    "sha256": "1837c63032ef2e82583e2424fa43dca9f95b0db97663a02638e0ae2234294190"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/verification.json",
+    "bytes": 3108,
+    "sha256": "b67b37b8fad4ce9a7ebeb8dd9f6c567d39e79d0730fc1e8c422d730218c12dd6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/verify_results_output.txt",
+    "bytes": 72,
+    "sha256": "abaad5b43bd9a4c2f252b108d5364435b75278eabcf29f2dd7d7ed1952530efc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/run_candle_suite.py",
+    "bytes": 3220,
+    "sha256": "441b1448f296a1ad0179343e7e7f9c99a778df428596c94875bdd25374c09021"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/run_mechanism_check.py",
+    "bytes": 1252,
+    "sha256": "bece26282607142af0a98d88367a3051e316aea84cb07f5006ae8dc359433e6f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/run_queue_stress.py",
+    "bytes": 1256,
+    "sha256": "c3bf890ec7908846b273cb0f34a15e36a6850931f5bb7af10fbd9fa367f59162"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/run_queue_suite.py",
+    "bytes": 4901,
+    "sha256": "7ae8f885ef1d6265a713d6862a7068711870075cb19d81c28f7580a15a1d243f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/run_suite.py",
+    "bytes": 7125,
+    "sha256": "b11830812bf820d998341f86d3fa17511ba4e5936099fd1c8507b220527b489c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/test_forward.py",
+    "bytes": 1748,
+    "sha256": "cc43b1598e731af3a2c2abb6534382faa38ea712e832e6fdcf904457b2d789ef"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/test_queue_policies.py",
+    "bytes": 4435,
+    "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/verify_results.py",
+    "bytes": 3750,
+    "sha256": "d62eadbaf342ae1e9c0080a11fa4c35cdaed2d033ff93f4a30c64bc3b7f452ce"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/BASELINE_HASHES.json",
+    "bytes": 179,
+    "sha256": "f8b7ed70f5900ab87f463a0adf5679356f40a92fbcda92886eafc594c926b135"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/COHORT_SELECTION.json",
+    "bytes": 2894,
+    "sha256": "d84ad61ae84ef2523e9e3a282762e54dc9bb1665d8f5a60d4e071825f72e3bcc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 83652,
+    "sha256": "c774a23c58e599d6d64c91afa4a94a2fcf9325c82348f9065919753950955942"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/EXPERIMENT_SPEC.md",
+    "bytes": 5024,
+    "sha256": "57a44929ce8b34fd01bf88f8e91da3414ce1acbed8f8ba8c1baa11a27f68a0e2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/FROZEN_CODE.json",
+    "bytes": 365,
+    "sha256": "fbbef411cefae9c692b7a636b1d144ec36eb24c148e27b27814a5734b4e1414c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/FROZEN_SPEC.json",
+    "bytes": 358,
+    "sha256": "3a2ebd2dacbf6eddc690b1b11ff06f40955e524f3ff716b5c184d88b1c7e9c71"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/NFL_Completion_Experiment_Results.md",
+    "bytes": 9846,
+    "sha256": "713f99c4cabcdf5fa4921d518fbcd0e8099b2e8c35745eedf5c6755efd36e9e1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/Q1_REGRESSION_REFERENCE.json",
+    "bytes": 617,
+    "sha256": "f3be08eed7844ea70b4e920a97d8b1500587f0c22635a27107b95496ff988e91"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/README.md",
+    "bytes": 2751,
+    "sha256": "b0e7a1f57c07f1691be215efb3e519a8476089f537c00499c2a848c41acbf751"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/build_report.py",
+    "bytes": 13327,
+    "sha256": "ea21ab9b6f2d603b054174b55744efb6992ea1e7bbb19a32b349dd9c6cfe1aa4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/collect_week2.py",
+    "bytes": 5678,
+    "sha256": "598d6bd8596acd4866ea6e0b049da2db2a73c213983dd6181b0e2a526fe9c10a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/completion_policy.py",
+    "bytes": 6007,
+    "sha256": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.manifest.json",
+    "bytes": 55332,
+    "sha256": "d94fed31f5f50392c7fddee3ac48585de2db4babe3bab496d67d68f48140518a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.manifest.json",
+    "bytes": 517,
+    "sha256": "d4583d658d330561b7ede49af7809bedd2491723ff3fd9b00cd4b08211a3734a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "96b6dfd5177e4709c5303c5513bd1393264d941af15cf45e3babc23b62d75192"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.manifest.json",
+    "bytes": 49878,
+    "sha256": "fdcb6b64857ce716a92ca29cb5c2eb0f00db81285db6d1bc23904094a42f8765"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.manifest.json",
+    "bytes": 519,
+    "sha256": "bd67a157d8c601a3c6512ae2830425ae5e939ac7f2f19f639fe766ff3a32405c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "642f7d050c5b0020d40dfce48e58a549d7a280e7ce2daf284a9eb4e728125331"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/event.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.manifest.json",
+    "bytes": 49526,
+    "sha256": "3fcab52d5e1a31574c1f470e33565fbe35459ee0771d2052b0e1670775d5f09e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.manifest.json",
+    "bytes": 519,
+    "sha256": "1cae6d559eeec5b2d9c870952ea04e9457c5535cffa234211971a1f9d876d7b2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "b068650d6f3d42fad734cc47fad4c6a20cb1e13eb8d0bc1085312517a3ba49d7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.manifest.json",
+    "bytes": 49412,
+    "sha256": "34807d459b9f7d2a3d1acbf0b6584c7d4261be592e5e0a0403990373a00420c8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.manifest.json",
+    "bytes": 517,
+    "sha256": "35028c7e5644498f6f64422908fd9271e0933efa9d1d7632be720bf241798ed0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "0dbe0bacb73722c50af8ffa199272c777f7977593c61a7f8c67e9303a87d3cd7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/event.json",
+    "bytes": 6662,
+    "sha256": "be00acfe24abba807aaeb7e6dd9757a38a9b48f9e9d2ab8ff618c3d5389116ee"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.manifest.json",
+    "bytes": 84618,
+    "sha256": "1b89b3c2ae969a5efb043b3310024cc7eea6e95450c903e7aab57a39f2d5de1b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.manifest.json",
+    "bytes": 521,
+    "sha256": "abd62ee0c163842d7f89a33297407a5f6ca985e9637847447feb5e41c8e7ec9f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "47667f52f36868bb7f1262ad0c0f3ceb615d41b6a1734859164d21e463414b62"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.manifest.json",
+    "bytes": 71978,
+    "sha256": "fd83c4dedfc6b6c6d8020e22b7d9f842753335f0a849f445a9427bef899350cc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.manifest.json",
+    "bytes": 521,
+    "sha256": "b0294a6541cb2a4080a0493a7e6c9c6d360da4e1778dc8c7415f30df75b2536f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9ab0e38e5b06383fa8d08da225c1e794aa594587fd6ed1d7906f8a461283fd60"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/event.json",
+    "bytes": 6587,
+    "sha256": "dc443307226ea47146d425edf680c56adf5b92f60f6a4edf2eff05e059b6b153"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.manifest.json",
+    "bytes": 81210,
+    "sha256": "fce98e724fe0da066ee07f8a564485cbf1fcfdb95cc67e641ce5779b55328a60"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.manifest.json",
+    "bytes": 521,
+    "sha256": "367e39d9e2a96602a8cbd9bf9d05dccb0077e9206b61a1e6458710095b4ff11f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "d0761b92ec74606e307b7b9416960085238f21c5e399193258ee7c5ac39e3211"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.manifest.json",
+    "bytes": 59882,
+    "sha256": "470235160034819f406833c66d904c671eec41542cabd1a877f7e44090e28d5f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.manifest.json",
+    "bytes": 523,
+    "sha256": "39285a42b17f6e5ae16e7685e6b09fad280a884ec960559c99c0ef90f7474927"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "adb147e20b543ff8cfdc45a8653a2ba03801273b2a3ff8baff1209202f4f176c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/event.json",
+    "bytes": 6513,
+    "sha256": "138aef1c984780b10b5b697ae8edea44a03362d6f506738f2799e082eb58b53e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.manifest.json",
+    "bytes": 82586,
+    "sha256": "e39b385c850b9076e446a4606ab474840a8a5990857d431df052a4334e56dbbe"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.manifest.json",
+    "bytes": 521,
+    "sha256": "0fc31e2bb4fbd1dc4d5227d756418d169570eed56319ab0dc5771dd34dc8b4f8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "646172582f74325052733ee6940b626f01031a00effcdc4ed984da2ac85b1802"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.manifest.json",
+    "bytes": 93610,
+    "sha256": "fa59b7b0585d0198ab95d44090e6eefda5c48517ff4668919b2d0fac67bd3bda"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.manifest.json",
+    "bytes": 521,
+    "sha256": "3a2229e62277f9f1f87d61ccff1669af8cf400c0330ed194b5e749cbeae712ac"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9e43433fff4f0717e8446dcef03a13ecc459601dcc7de02984860a8a05bd7c21"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/event.json",
+    "bytes": 6559,
+    "sha256": "4be01bca476d760928401845ed7d7d15e7f621d563c6abaab3519dbe4ab3a064"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.manifest.json",
+    "bytes": 61034,
+    "sha256": "63cd215127e295fa910b7bcf806dda823b40ced9a5ae940e4320af251ad1697d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.manifest.json",
+    "bytes": 523,
+    "sha256": "e248e7f0359438c38360a0ba15490d64fd1ef6530eab81641a09ddd0ca3d5725"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "99e2264bf063b04bc5099ce93d93d391470804df1d2175e1168ffed187975279"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.manifest.json",
+    "bytes": 70330,
+    "sha256": "403749c35846f811cba3ea6dd6d6c7424ec27199492a34d1f6c1901c08bbb9e0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.manifest.json",
+    "bytes": 522,
+    "sha256": "64ed7253103137bef220a32041646a6aac05d0ddaa612f7a24cbe39ec06e86e8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "71a1712728b4145edfa161d67f51e7fcf05a5490feba18466d1fc3d087c2388a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/event.json",
+    "bytes": 6484,
+    "sha256": "6c90e49decdb1d88dae3492d7c8a1c5a43fcbdb8417e4333254408a3081a7983"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.manifest.json",
+    "bytes": 88394,
+    "sha256": "0c92791f3575529bf909cd59cfc2fd18ca71f3109f8ff1bf1eeb784b8f16466a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.manifest.json",
+    "bytes": 521,
+    "sha256": "fd26409c839672e7fd98c48a4a0bcfe5e7b3e3f80eeac22abde81c0abe43a505"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "392c42c6f5ec12a0139af8d754862ab1bd8875ceae2f0993342f3faee9054716"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.manifest.json",
+    "bytes": 68570,
+    "sha256": "c8bf1cf91340a5f461d2a083b51c09100de25ab1a7b76c6c51e2af434cddbf57"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.manifest.json",
+    "bytes": 521,
+    "sha256": "d364893d04181002ce98dea13ecdc72061b511e3378743553300af5abd6d9808"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "2149aa38e8d857e0eb285c7f029405c0ca475decfecd41fef96a2bcf531f6dc6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/event.json",
+    "bytes": 6493,
+    "sha256": "357c94639e71caf790f202c866f04021a914f3c8f559fabb5594db20a117ea0c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.manifest.json",
+    "bytes": 69898,
+    "sha256": "a5b6d26680355d6a5d0e67254b4fbb7c1f3a1aad186f6426ff0ba3ef12ad3ea6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.manifest.json",
+    "bytes": 521,
+    "sha256": "bd146730ac28f07ed12cc6b2dea7405a4be63692204293429311e83c2b1db38e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "6a34fde2bccc3667ceb0872250c40f9d320f4b00e0488833a710630a21e97e56"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.manifest.json",
+    "bytes": 61786,
+    "sha256": "b3bca8711469ef5bec97bbfdc41378a87e49209a7c862dc962503643faaa4a6a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.manifest.json",
+    "bytes": 521,
+    "sha256": "0ed676155d38d97e19f99b7eba67f5da077ec195c8dfabb7ecf775a4acc44ae3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "cb47bd0a2fe14d74307ebafce7708ad459e4ad3e1be6b810a2651c57e7f2f615"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/event.json",
+    "bytes": 6571,
+    "sha256": "ca39845731d1e7f00a382cc4b89f52aa739ae3137ee2b3bd06e3a72abae828b2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.manifest.json",
+    "bytes": 42106,
+    "sha256": "c19e60be05108eba08ac6baef6655c4b9d41297a2b1ebe75a1acc35f572128cd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.manifest.json",
+    "bytes": 523,
+    "sha256": "54eca6203013121d3238fe4372e2170c4e15bf8ee326dad97c41d0cb73a5d3d6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "eb64f0fd2f449505e30726091a0215590b68d6001ee900714310ca4b61c4c4e5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.manifest.json",
+    "bytes": 51610,
+    "sha256": "f729593af2cac78cbd61aef675afae55bf3d57166a8ed0a0969d7058d017374d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.manifest.json",
+    "bytes": 523,
+    "sha256": "23f7e56b992b13d9cf29d9a7fc066b7c79f54d6e0bbfe618b35289eed1e8bece"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.manifest.json",
+    "bytes": 419,
+    "sha256": "87a2c087e3e464c718dc101f74925ab053f886b9caf4925c94e04655624bc263"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/event.json",
+    "bytes": 6550,
+    "sha256": "0968e0bf5501ac3a9ef3920823eb63d365d8444651b13c75b30dee4656a5e77b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.manifest.json",
+    "bytes": 60020,
+    "sha256": "3e82b41603c7146527337d68a3c07e5e98bcb9bf62d48ff0a29129d3debf4992"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.manifest.json",
+    "bytes": 517,
+    "sha256": "8d1abb0ba71474d4282597662267b810096f0911320493f9369bb472c0d16af2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "9bcb1d999022e8b1f9e526585502c569c226ba5ab52a94785cd81a1357052395"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.manifest.json",
+    "bytes": 78630,
+    "sha256": "19321552a2338c50fc627eaabe821cb3892dfc2397ff19da9a5d5644b4adf48c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.manifest.json",
+    "bytes": 517,
+    "sha256": "b351b320fcd0b445436c2e29474aa9d3d38fdf2cf395c4bad9d9c67981a4248f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "11c73a9e149d1916d7f08bc99fa600c40306fb8704b1c776839fad5fd2b033de"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/event.json",
+    "bytes": 6519,
+    "sha256": "c73ff9d5213a30b4a63a70945eaf641f8acab2d1418212a41e373417c1f9d6dd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.manifest.json",
+    "bytes": 81860,
+    "sha256": "83e8d9ff9fe41b79ad971b8a66d43529cde83061fe7aec6f2dbcd6bf707a5690"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.manifest.json",
+    "bytes": 515,
+    "sha256": "5377446f75bf0e5254de475c3567aae656ec202f8dac122f641c55bc5c96ec3c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "b4c55b35b5381e3b9df5799b8eefb300d61c5946363aa3209388b698b28d1201"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.manifest.json",
+    "bytes": 94406,
+    "sha256": "6e945be4018fd5e89bad05423e9f24ef8e05b16d7c9518a059a230ddb91a46a0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.manifest.json",
+    "bytes": 517,
+    "sha256": "e5ddd7a549b70a04886b17f1b84bd20a1fce92e614525287c1cce6a8cadaf370"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "fb4e0c9e9ed664cfe841c2c674d4bd2ac17f2b8c78e0349d1b445959143a7cb5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/event.json",
+    "bytes": 6475,
+    "sha256": "9e342c023e9b0c0859d64e74108091f8fc4eccfaa035540f510bee3cb29623b3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.manifest.json",
+    "bytes": 63606,
+    "sha256": "8e045e170bb591be14b4ffa3bea0d3913af998bc96649904b7200d2a7f8c9055"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.manifest.json",
+    "bytes": 518,
+    "sha256": "e40e32ac5632f5c0224ac91b61baa2c31e0fadb5e20556992961f0f8f48de00f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "648747b6af8ade659a58f56d0d30b1e00f6c45fa0ab9cd2a48e8dae931517083"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.manifest.json",
+    "bytes": 83876,
+    "sha256": "b61a8ff97e51550d732661672984e599ec432d284db33aec9a2da6ffe5da9185"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.manifest.json",
+    "bytes": 515,
+    "sha256": "5e5611773b9384d941c4ef8d1cea84ea2ba370ebb69e7483d0d7b13ac184658c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "d6b72577bc1eec43bd3cec54104470d1970e25a0f80fa42baedff6d7db511b62"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/event.json",
+    "bytes": 6522,
+    "sha256": "75c12818fb175f0dbcf507aa9a291e142e5db25f067f384397ad596ebd98ae96"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.manifest.json",
+    "bytes": 93018,
+    "sha256": "a35ce056bd15b2eb1f206d9fe140a8b29abd48a271e4824b6c2b6b35117eb7e3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.manifest.json",
+    "bytes": 521,
+    "sha256": "fe8d04981d26d08782c49f66884c35dc03fe99a83c07a357f9703a7f7bd006cb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "9d7399105056b6695b1ad1774ee663f2da2197c486f1b4d96dc4620091f2fb56"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.manifest.json",
+    "bytes": 90474,
+    "sha256": "88332b0cc7b7b5475127c2b81406bffa7847deda2cca2ae2148828230eb59002"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.manifest.json",
+    "bytes": 521,
+    "sha256": "f84af4516c58813f4ec9e0d5c7a483ac088258a9d9b4fd30fe8b913870b7657a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "fbff14ba79774aaf9f2640a6300ac17438028739bea776a66ebd49904550ae8d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/event.json",
+    "bytes": 6604,
+    "sha256": "9b3d40143fb937a91f3fd6ca75b3ae1faaa907c43cab5181553f3694b7987137"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.manifest.json",
+    "bytes": 92502,
+    "sha256": "cdae864b7698c591dd48cdb17f6441dbff6cce099a87f116863ee84c2ae0ba8c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.manifest.json",
+    "bytes": 517,
+    "sha256": "3f5b7d0f7ee59d75bed5617635e9d18e58406b206c384e659c0fd0c8c721f20c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.manifest.json",
+    "bytes": 415,
+    "sha256": "2d98c9baf2a5e229747867e4e93859653a1b1a089ac9aab9378fab3763d0316a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.manifest.json",
+    "bytes": 86404,
+    "sha256": "ed265ba117e529771bd99e407ce7ecac99e6799f3197d9215e0bb37e4bb138f2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.manifest.json",
+    "bytes": 515,
+    "sha256": "2c6ec074181031de4500a8987c35b1bdda3c035e27ee856bd948c691702cb762"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.manifest.json",
+    "bytes": 413,
+    "sha256": "0f5f60d78d17c854c6f8a680ef71b9acd2516137b5099afa0e27f4f9fc869db8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/event.json",
+    "bytes": 6530,
+    "sha256": "88bc858c659b628773889d06c7a43e520a3f5fbbe6305b9f99241996358e815c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.manifest.json",
+    "bytes": 72602,
+    "sha256": "16f61827678460d86032f924d33fc9e86965499b94fc4ccfcc71483221f05856"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.manifest.json",
+    "bytes": 521,
+    "sha256": "887bd51904e1231320a4eb5af2fd65ba366029d8851ea61c4946e872821254bc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "a8aac4a2d7535e3e2d80cdcfe83f9b181eab7198262a5b32286546172c2ebdd1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.manifest.json",
+    "bytes": 102378,
+    "sha256": "34c407e8609293653c400dc4b01adedec031f0a5cb64d979c051b37ba8a4a707"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.manifest.json",
+    "bytes": 521,
+    "sha256": "20ab63d8395a87e2f67692b1a32c09f43b9a164b811b376bad34eee4e751a5b0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.manifest.json",
+    "bytes": 418,
+    "sha256": "5a14c1d6102411c47dc72173ad65e5f663fb8fea1c20f7fd9f1bda3b93cee6ba"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/event.json",
+    "bytes": 6573,
+    "sha256": "7a8deb9e2379f88f6822480d16d6e18b877c3bd58064378b57a82ac747ac7fe4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.manifest.json",
+    "bytes": 53286,
+    "sha256": "2aa31f5be2ef3dfd899ef618b3e02430af827d890fd2280c1fdcbc5037ba9cde"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.manifest.json",
+    "bytes": 519,
+    "sha256": "453a0556882929d98273ac586e293be85828e3113d7a47bbe40d04f510e2902a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.manifest.json",
+    "bytes": 416,
+    "sha256": "eee909aa22afd8f4621057c3c8ed486533371873480f09425a9125e51f3f486d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.manifest.json",
+    "bytes": 71428,
+    "sha256": "1eebb644c0dc8977e8ff6f415b2b67546be48b3b3ffc6f8ee9ce0d68251baef7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.manifest.json",
+    "bytes": 517,
+    "sha256": "482bbc5307ca4958240e3025e0583268a00fae6571eca18be3b50dd33a8b47e1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.manifest.json",
+    "bytes": 414,
+    "sha256": "6f20a4f3cd2a4f57b3bcecd77b647ae01fce9878db0286d90a0dc5ad3321f51a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/event.json",
+    "bytes": 6512,
+    "sha256": "47eb885ab1b799fdf822529e5232d6eea6b4c864a168c3043d1cad9ad304816e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/capture_manifest.json",
+    "bytes": 24559,
+    "sha256": "62fda048cab68ff77d4a86c5a5da2a4669799dee1f76d7df5262a88c152399f6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/cohort.json",
+    "bytes": 1963,
+    "sha256": "9db8f875455620a330db8ad5d73b1862b1d96808cf7bbcd4a170d1586017999d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/exit_candle_probe.json",
+    "bytes": 11562,
+    "sha256": "4dc713e4091df06aa266c4672d75086d75ad386462ad8da7b9acbce7ca477a77"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/first_event_metadata.json",
+    "bytes": 6586,
+    "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/postlude_manifest.json",
+    "bytes": 14904,
+    "sha256": "f9b26eeed4239e146683759e4edc0d9bb05c438b398d3d8317ad6805c41b1a82"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/sample_event_fee_changes.json",
+    "bytes": 45,
+    "sha256": "16662354ffac33e29efb13ca786120e05cfa729f6f96d29c54f85c2b4f3cda43"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/series_metadata.json",
+    "bytes": 1777,
+    "sha256": "367a52889577319d2ec0f80e97e1ca088ee4f74f96009b16169226c44ad23e91"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-BUF.manifest.json",
+    "bytes": 57205,
+    "sha256": "575b2a7708f14e046535ba1bc7d3d10c7b9ef68845b3dd3f348b1b17ff0da893"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-DET.manifest.json",
+    "bytes": 62299,
+    "sha256": "a16710fe100e439168fc4961795d385608d20393f2672580767267ed30bc65f1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/event.json",
+    "bytes": 6379,
+    "sha256": "6d955d88431cc6d22af5ada7f51bcca2ff7d913301b191e3b530ae898d58afe5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-ATL.manifest.json",
+    "bytes": 77829,
+    "sha256": "f226413162be3e50822dbbdd52309d783ab0b8da1601a1d3ea1c803f49f4a4e5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-CAR.manifest.json",
+    "bytes": 65589,
+    "sha256": "70115be0573ab5f7d08a5063ddb9fce712a354bde137f1f5bbb9eff6d58355fd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/event.json",
+    "bytes": 6413,
+    "sha256": "ca338b1a633d9270df618f3b1532749dedc3421782122f30923e22d11fae785f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-CIN.manifest.json",
+    "bytes": 62979,
+    "sha256": "659b269b4c726e6d513ad1e30651f323f99ccdf35738e6630d2857275a548aca"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-HOU.manifest.json",
+    "bytes": 70071,
+    "sha256": "1d361ac912cc8a24908e093f01b7b662e79d7b2d1b0893f173a7020ef38595f3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/event.json",
+    "bytes": 6413,
+    "sha256": "68b0cd65bb992ef6ff33a51492eb5a4a5b962bbd2af95fedce027f1ffdc0c00a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-CLE.manifest.json",
+    "bytes": 82862,
+    "sha256": "6c6b2f0c75e7634c4f73b9557c9ce78b3aef4f108a73453aef264c50f84a188d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-TB.manifest.json",
+    "bytes": 43926,
+    "sha256": "09f250e2686ec2a7b0851fec19a851050eb1e80e3b55898411b6762c94b0f63a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/event.json",
+    "bytes": 6416,
+    "sha256": "37a8d5487a31c1615d16c884da3bbde91da6c89d8b674e1eda6f9ad5b7de3353"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-GB.manifest.json",
+    "bytes": 54331,
+    "sha256": "cf180b1971c817eeb6df0cb817459b2742c26b75638f9bbe6cbc483ca9e63265"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-NYJ.manifest.json",
+    "bytes": 66087,
+    "sha256": "f67680b0db74043dedcbdfee576c92cd7d03e1180886ba7bf02ba3fe3326c28b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/event.json",
+    "bytes": 6400,
+    "sha256": "a2e2f7a0ae173ca625638c0914d3deb48343b9126160d3475c74e6d9a80b5162"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-IND.manifest.json",
+    "bytes": 94347,
+    "sha256": "ff491c7ca065f7e067d3abf166e01316818f567b9a1034a8f57fa7fa14a50f63"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-KC.manifest.json",
+    "bytes": 58780,
+    "sha256": "eed87d46b523cf7964c847dd2bc40ee7b672e79dd6325d119a59c291a8921044"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/event.json",
+    "bytes": 6431,
+    "sha256": "f05790708e64c7adcb3bb788191bf800a591aadaadaff600b3de9ae1382ac5ed"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-DEN.manifest.json",
+    "bytes": 90627,
+    "sha256": "f024ba90ec58364241e334d5abf46c5af1b7aaab851760aed77babe249ab1c9f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-JAC.manifest.json",
+    "bytes": 72252,
+    "sha256": "e5f2d4ac89217424185d97fc5e90c325b234397167db2a9f7ac30e2480c5069d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/event.json",
+    "bytes": 6422,
+    "sha256": "af76b8d442680038a44627131deac0b86b0ab7d4d1a7eaaea951bf72c924788a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LAC.manifest.json",
+    "bytes": 56511,
+    "sha256": "f8cca10ae3370ef2cab75a2ba1ff80aba7e92bf8f992d8e0c164ace7e9bdc33d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LV.manifest.json",
+    "bytes": 39412,
+    "sha256": "6a6bc457f5ae4625e6cd6fe5756161f02764947c366209cf1592ccf0aa8f15c4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/event.json",
+    "bytes": 6427,
+    "sha256": "608fbb284cec15f2d2d3004d5572fc3958115628b267164bfa9b4870f30e398d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-MIA.manifest.json",
+    "bytes": 73557,
+    "sha256": "58eb36077e93a5faeea32422e6ba113682d2b199c83fed3091274c76cff3a995"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-SF.manifest.json",
+    "bytes": 47835,
+    "sha256": "bce4e01bdaec675c3a94a2bac15c13c93b12728e1c2ddcc1abcfa3bb967d5036"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/event.json",
+    "bytes": 6405,
+    "sha256": "c35b4c6c4fb695682913592cd56716aac36bfa3ab2c52bbd2ed41066e2a7f8f4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-CHI.manifest.json",
+    "bytes": 53172,
+    "sha256": "589a3bf0f60c788b5674b5b8dee14a8fd09a1f6269ab51a4cb741086ae85625d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-MIN.manifest.json",
+    "bytes": 61504,
+    "sha256": "7be1d7b32d9d868c45c226c5951e5913bd6e2465dc145dcb1cbd70c0542491b5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/event.json",
+    "bytes": 6402,
+    "sha256": "506034de14a4b9692740bac5f5bdcbe1a1b99db8815592e03ebe76ed4d30576c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-BAL.manifest.json",
+    "bytes": 51453,
+    "sha256": "3e4d3a0297578d093efd8f46454c5e140b53e97df22038b92b89debc48d328e9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-NO.manifest.json",
+    "bytes": 69828,
+    "sha256": "f812c91604c047722d7696fa2e1b9d6579cff05107e91e19be93c3c1a69f9834"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/event.json",
+    "bytes": 6408,
+    "sha256": "fcf518e3ed03131bc67d4b66ea33191f4cfdbd093f04f2b2cd47241893041700"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-PHI.manifest.json",
+    "bytes": 28135,
+    "sha256": "5465c988335ebf306eddc230fc0fdd37849c7a17750ee0fb1c024d311c9e5792"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-TEN.manifest.json",
+    "bytes": 94479,
+    "sha256": "1e5703d157c1e5d8565df393d150ca0349077d5c7c0ff44e4904cd4e1829f76e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/event.json",
+    "bytes": 6423,
+    "sha256": "50d8bcdf3801b61d65d0c559a291e32812100494e3f118a4491c5be56329f200"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-NE.manifest.json",
+    "bytes": 49740,
+    "sha256": "eee8fc4b89e83c30eed3ab8ff6f834849cc50063f5feeccc342e54407aa8ce6e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-PIT.manifest.json",
+    "bytes": 49386,
+    "sha256": "0a6b6b610d7263a32d38fa85a103ba1b17ff96d995b02a92940adfc9c10264e7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/event.json",
+    "bytes": 6432,
+    "sha256": "cd6413081f74fceb0cf2732e10e9d4df4559847b5a1d429958f84fc8d1291a3b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-ARI.manifest.json",
+    "bytes": 74031,
+    "sha256": "3d520bd8cb9723e1b45cbae02693b54d632adaa9077e97c9d827a2825bf21a02"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-SEA.manifest.json",
+    "bytes": 63087,
+    "sha256": "52981db0d3170cfc474b9596cf7ed2619e34c637d454ccd3378bcd4b817a7dff"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/event.json",
+    "bytes": 6421,
+    "sha256": "c8f496c3a7b9cc3ee9c27c5122dddf3d8c1180b5301b0c0e69dc4e482637fa33"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-DAL.manifest.json",
+    "bytes": 69153,
+    "sha256": "b82e0cdf21d604f5dcdb4677526e060e217350a47ce57f1a85207a6367682bcd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-WAS.manifest.json",
+    "bytes": 80079,
+    "sha256": "c5471e3bbf8e2ff3965acbaf7b4a4d9c3ebc727b681e4dd56ee42934bee67f53"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/event.json",
+    "bytes": 6429,
+    "sha256": "0cf84320f592a9a217ecdce5fedba75c7c1f1ec6b8d08891221de883f71c7042"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/cohort.json",
+    "bytes": 2103,
+    "sha256": "d59aa008b90c57dcf362fa17c8bcc513253ff267009e5617cd956a4f34547638"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/load_data.py",
+    "bytes": 5284,
+    "sha256": "817c74deec49103ff8e1849c23677b207cb698e5cb05559b69978fe25eaa2ca3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/package_results.py",
+    "bytes": 1370,
+    "sha256": "a2cc8c05122240c3fa887ea7507e7a900b364720311b85b52d4936a697fc24ed"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/queue_policies.py",
+    "bytes": 11366,
+    "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/recover_fill_artifact.py",
+    "bytes": 1893,
+    "sha256": "5f59d5f6d15f162e9471c73c43a757c8e6fc2a0315c3cfce303e347956479235"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/artifact_recovery.json",
+    "bytes": 635,
+    "sha256": "07db7ac6cea66d79ed69b2d3af0e8dc19bbae2f0f3ad65a46a051c9451ad2f09"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/capture_progress.txt",
+    "bytes": 1963,
+    "sha256": "d976874d8761fd7f0ab4d2460b9dc2182cdbfc27f1c46a2d703a94f200ef4ed8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_pair_complete.json",
+    "bytes": 9149,
+    "sha256": "34d274e4788a605fd4091327168c2785fc6705a15dae20354eaa176a2305926e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_pair_gate.json",
+    "bytes": 9142,
+    "sha256": "8b634ba46ff9dccd6dc6cc00d2e268fad0dd7713f18681359cca8ea812c356be"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_q1_route.json",
+    "bytes": 10551,
+    "sha256": "b6af553d7cee9710840545a2e4bfaa02b0e89c89b124ac58eb0a6e45c84bd0ea"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_pair_complete.json",
+    "bytes": 9917,
+    "sha256": "479324a95c73986081ad1f1cffb760aa7c58356c547799f710e9a04fb08dbdb5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_pair_gate.json",
+    "bytes": 9858,
+    "sha256": "546c06636fadad109acf0a75b2b99f15e2dcaf3f412bf21e841401ee3b2d5566"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_q1_route.json",
+    "bytes": 10921,
+    "sha256": "4e7dd09f91df2e107f1224ddc87125374141b5d39a895605f10ff3d967e7d7fb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_pair_complete.json",
+    "bytes": 11000,
+    "sha256": "476bc5a1e71706657a598f42d15a02c7c67cf72075d6bf0d12c69225dc98fe54"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_pair_gate.json",
+    "bytes": 11004,
+    "sha256": "17d7b77ddb1f4ce7dce245a3128b50973351a3f10cb80be72755baef085b5e1a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_q1_route.json",
+    "bytes": 10907,
+    "sha256": "232cf12531db41bb58ea0298c22a0ee9531ed4e343f896a71c4c72d6e99a9fbf"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_pair_complete.json",
+    "bytes": 10166,
+    "sha256": "33947c1862e639cdf58c5a3c26d49e56c30f19339a75c6e5ed873e5172e17f1f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_pair_gate.json",
+    "bytes": 10145,
+    "sha256": "52e3741ca4ac7fe40be07dacbabf6c40086f9f94f2848d9a39cbe113c0133275"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_q1_route.json",
+    "bytes": 10910,
+    "sha256": "14220f157485f0d96a1b0321219e2c6d26307d76923af2ad15ac5392de0169f9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/experiment_summary.json",
+    "bytes": 275694,
+    "sha256": "fac30205fc120d0c25372873679165e77d2768a477237a650945e7f363c5a1f2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/promotion_decision.json",
+    "bytes": 151,
+    "sha256": "423ff737897b8cd9c325e6e96da1c75f1e0adc286ad07328759362143689cf4b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/report_output.txt",
+    "bytes": 50,
+    "sha256": "7f5ed9b15a4bca0bb974f664d52db1291183199da71de8707de6e22e994dea67"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/suite_progress.txt",
+    "bytes": 1840,
+    "sha256": "cdc506ee324f32a5ca3b1d1750e0c299f50a325e2b677b54fe687df5774f5fdb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/tests.txt",
+    "bytes": 5547,
+    "sha256": "9629409595d651770af663da8ca8dfb4277b6307332a45623dbbe12cc466d7d6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/verification.json",
+    "bytes": 5831,
+    "sha256": "5cefe8c160ea8094e8e283b7977d7fe7a497cd48937350ec04d735dac80e94e8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/verification_output.txt",
+    "bytes": 62,
+    "sha256": "55599c4b85082e62395f08a132ee4f2754a4f2bc04c8d6f091a2467e6b3c9289"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_pair_complete.json",
+    "bytes": 6418,
+    "sha256": "f2f5ed66f44d1abc7450c3ce10c31cb7185dbcb432c074bfceeab4192ec7541f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_pair_gate.json",
+    "bytes": 6352,
+    "sha256": "39c232e896bb89e36ba840b35c976a557748433ea9d5d923f9f792a2f558504a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_q1_route.json",
+    "bytes": 6780,
+    "sha256": "5092bdebf8040dbb3c624f81e9303f5c35234814818961afe4edaceb82cd9cc7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_pair_complete.json",
+    "bytes": 6892,
+    "sha256": "f993a4f6a7d57ffda684ce1f0a8eb2bae7b03421cd499283c21a5050089db3cd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_pair_gate.json",
+    "bytes": 6877,
+    "sha256": "963df9fb737ca9b1f8b856aab505ad376d09ab1931f5c3cd923413794ddd1a38"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_q1_route.json",
+    "bytes": 6811,
+    "sha256": "1a577094886529d4216412962d0b53eb976f405142596cdda8ce21ee6499b226"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_pair_complete.json",
+    "bytes": 6536,
+    "sha256": "a666666f8dfbc684a6975a4c9a617dd0e99731dfe75d553d7c28da16b080795a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_pair_gate.json",
+    "bytes": 6508,
+    "sha256": "c5250980989ec41accc3779566b7eda3d31313a4e4538eb34e3a7c5fcd067722"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_q1_route.json",
+    "bytes": 6791,
+    "sha256": "1d236c194aa1f1ecd21f5d1ed4ace691974d527527669cc00c0b1921f701a4f0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_pair_complete.json",
+    "bytes": 5908,
+    "sha256": "998ba9fa3611e6f700987c82af8991acfe102945d4fa76fa30200cf33b4f2411"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_pair_gate.json",
+    "bytes": 5867,
+    "sha256": "e238b020803f8d35399acf6b6a870ce6cfe9b2dd890cc2ac0787915a5fb24ca6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_q1_route.json",
+    "bytes": 6523,
+    "sha256": "352878ecac10f25f76b2de5cc924b8d8283eb1845092543c64ce51ecba27c1ba"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_pair_complete.json",
+    "bytes": 6757,
+    "sha256": "6b26e4064e6ea22b205a3a691a98a3cb582e24f2e3b96b36d5a6453ff29c2265"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_pair_gate.json",
+    "bytes": 6763,
+    "sha256": "7febf797db146a0dc1bf9cc03fc6ff559e9495775767c46b15d2a22e0d57b7dd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_q1_route.json",
+    "bytes": 6537,
+    "sha256": "7106693b836e42e961cdf42aaf32385fa304042b5589253f5f10ce4de794b65e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_pair_complete.json",
+    "bytes": 6227,
+    "sha256": "e3400a1921f90d64dc9a60a0d3288959827c03bf47d7501bf58b7cc4d9fe3c77"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_pair_gate.json",
+    "bytes": 6128,
+    "sha256": "b69b8a0bafbef91b65e3837510792e01d5343d356feeacafc3d0c2c5d689ce5a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_q1_route.json",
+    "bytes": 6506,
+    "sha256": "03e2474c4488f9f18f2c0576e25eb267e3ce7071ff257ca2babb73ea2d86ee59"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/run_experiment.py",
+    "bytes": 3343,
+    "sha256": "77b9f41cd330b02a1984d74db4632f3d7af1df4a42e50ced0a8af04234ab31e5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/test_completion.py",
+    "bytes": 3874,
+    "sha256": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/test_queue_policies.py",
+    "bytes": 4435,
+    "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/verify_results.py",
+    "bytes": 3431,
+    "sha256": "d4fa6ec4f4eb6622a0e1adb7f7d6f6a02c845c8633325487bbc6f9a1d326bac9"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 7640,
+    "sha256": "712073e2276a27d2f54f184f0d5730fa4cec3f04bcdaf01c478e7f5f02bb0e9a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/FROZEN_ANALYSIS.json",
+    "bytes": 435,
+    "sha256": "4c39f106d0d02e2d39bea787d036b478121acf7b13e2e17ac94a4ea4c9b617d1"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/FROZEN_PROTOCOL.json",
+    "bytes": 341,
+    "sha256": "eedff901a9637f31f0de3f2510a35baeaba32efbcb5ca90a1f9118c819c67c43"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/HOLDOUT_MANIFEST.json",
+    "bytes": 7446,
+    "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/NFL_Measurement_Results.md",
+    "bytes": 10574,
+    "sha256": "649b1e56661f2e3c05ec588dce975a64684393f0810ac75f5cbd67d74c4db9ba"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/PROTOCOL.md",
+    "bytes": 4739,
+    "sha256": "734fa69110b49c8c16adc383cba2d9ea70fb3fb80b222b680d9c1e2de5837959"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/README.md",
+    "bytes": 2917,
+    "sha256": "37042f7a4226cbea7c5360890efff298196bfb61ad5cc1bd65176ab1509ba949"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/build_report.py",
+    "bytes": 13044,
+    "sha256": "c6643c361da82b93b9a4f15fcd803e22f3c007aab8ebf1a11377041749d86e6d"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/capture.py",
+    "bytes": 7205,
+    "sha256": "454a756f8748aff992edb1efae272a07bf617c2f4ccdbe8f286ec49a3a6e8f96"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/contextualize.py",
+    "bytes": 1724,
+    "sha256": "b7601bc5021e3b920aa4d2bbd8b7950ce728fbc97268f9e5bb86300cc81f503e"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/evaluation_gate.py",
+    "bytes": 2967,
+    "sha256": "69ce7398e92ff343734b5c79d228ee9daeb9f5b95414df05f55a5a7849effebe"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/forward/capture_summary.json",
+    "bytes": 12280,
+    "sha256": "33b0bebd84befeba31030708b24a722c6dd1854e7cf5979d356e9d258aac6c8b"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/historical.py",
+    "bytes": 5491,
+    "sha256": "f50446b705ceb151e52c272b2e21e64e6f44dcd492125570e7a03d2ba436aea4"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/historical_provenance.json",
+    "bytes": 586,
+    "sha256": "b649b6324128ae380094b3c100d6dcba69882b147bcc58d0c74b199054183c5b"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/q1_forward_capture_summary.json",
+    "bytes": 1958,
+    "sha256": "d935d5f454f7ddf00db980b65243334c559d16c8c098e4a329a8dd7c59ded3c0"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/schedule_only.json",
+    "bytes": 43829,
+    "sha256": "fa00c99733c2f1527fc80ad07d1fb5aefc882fd6b55088d65061fb1a3ac0e35f"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/measure.py",
+    "bytes": 12662,
+    "sha256": "af0a17c16fa66cc71871a97a1d92a5dd596838b35d7852c8fe373fc1c2d3e84c"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/package.py",
+    "bytes": 1293,
+    "sha256": "c29ddb77e193577937df99f671a478759dae0b083bbe89f7e9ce832bff88b7f0"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/capture_progress.txt",
+    "bytes": 812,
+    "sha256": "0fd97001b2d04729c5d7c202936c70c888445eaf14e15d4d11a775558cb551e5"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/historical_markout_per_game.json",
+    "bytes": 35311,
+    "sha256": "afa705b4f2dfd994dd27b841aec8a26c66da8eba17cd005b28b705bfb94b1aad"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/historical_markout_summary.json",
+    "bytes": 3877,
+    "sha256": "0b87f496d17d399da2dacefcbd83a4ff26aab98cf69d8055d3c3cd960c8e0d29"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/historical_progress.txt",
+    "bytes": 3878,
+    "sha256": "a93c30352dba82e9525c50ef5f2c4127bd775c4f5d69fb061711f9c6d58ac5a4"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/holdout_progress.txt",
+    "bytes": 617,
+    "sha256": "0ef49db30ab7c7e706411a239acb1ff84e203a1103555beac3b218cf3f369d34"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/holdout_status.json",
+    "bytes": 616,
+    "sha256": "1b7aac12142f5b035e00e817f95bd8fe06df1a38d99d9c7437e3e1db5b9c507c"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/measurement_progress.txt",
+    "bytes": 4076,
+    "sha256": "5c78d1cdfe55ca672e28935b47b20fdeb67db72e76cb53b95bf9fe03a0e74b96"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q1_development_depth_changes.json",
+    "bytes": 246419,
+    "sha256": "9e2db489b67fc32de8707aedfbf70d29fed76ed001b9e66b0becd1febb756816"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q1_development_features.json",
+    "bytes": 21237,
+    "sha256": "cbb1fb4f29ac07a58a708b89d99ccf4352dd626e2521309ab40410ba22face3a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q1_development_labels.json",
+    "bytes": 21551,
+    "sha256": "18fa141942d08b6d849704324c578d6f6ac785a8bbf116415be28ea223644af4"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q1_development_spells.json",
+    "bytes": 17401,
+    "sha256": "f09ec049d9af9c3d3ecbcb2ec93b7b00696fd44c9e8b3a694e334dd226cd284a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q1_development_summary.json",
+    "bytes": 2040,
+    "sha256": "8ccbe6140e20e98691024d7584f92277c362c3137d315ee3db91ac2b7495b1fb"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q3_development_depth_changes.json",
+    "bytes": 231635,
+    "sha256": "718ee13e06003b8017957595eea4594b50d89e3fb5a446d4b01b9b4f4595887c"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q3_development_features.json",
+    "bytes": 6256,
+    "sha256": "793e03d41c472bbbb6b7ea3772935677d3244dab81eccc4fa8619f08d2fa72d1"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q3_development_labels.json",
+    "bytes": 6461,
+    "sha256": "454b3dd0404ce11ec0e265502da8fbf2b8a8ed4917bc8b0461474aabd38abf9a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q3_development_spells.json",
+    "bytes": 2644,
+    "sha256": "aacd1d31ff8ac19a8c0f0594507950c6da4cc6e3d3a5d80e4a60a05721e1545c"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/q3_development_summary.json",
+    "bytes": 1976,
+    "sha256": "8386d1707a47858ee7d839f491ed4a4f7a7ff6ee4b4d26cbc1e7a26b601a898d"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/queue_context.json",
+    "bytes": 1530,
+    "sha256": "b261a7b6a94a16dd87490e6b3d3686068a2be6aad11e0e76931a4981f2c78a9d"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/tests.txt",
+    "bytes": 2860,
+    "sha256": "f508dd4d59e0859ed3f6476b1d8bbe34bf900f57dd5f21cd59dcbfc4ecbe2d3a"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/verification.json",
+    "bytes": 429,
+    "sha256": "c176808a04f71ead514b88b974c9272e249c92bbb1f099d487d73b53cee56a49"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/verification_progress.txt",
+    "bytes": 430,
+    "sha256": "61b8246ee1fba258cb18c4f63d6dba1f5428efe06bbdf7cf36dbce11cb8a4461"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/test_measurement.py",
+    "bytes": 6285,
+    "sha256": "97062b3abc35227fcebae1c0bc9a898a66c5c9875b9a5c2e6b0edadda163eab6"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/verify.py",
+    "bytes": 4445,
+    "sha256": "cabc2f717be12cbaf0ac1d6a2f97b18af9b66b8072cc9922d4e02e57839f0ae8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/BASELINE_HASHES.json",
+    "bytes": 552,
+    "sha256": "044b660696df2315281b947491d9a78f5c777badb52a09d022b2e2c077d83660"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 36258,
+    "sha256": "4b5477d21e3ae5a0d8fa500c3a85490fd5f16bd044ad280deece269a0bd25c2e"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/Dockerfile",
+    "bytes": 249,
+    "sha256": "4e2cc5b9f11f033a69753289a7be367fb0ae32a8fff36a367a6a6f8195cbd5e4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/EXPERIMENT_SPEC.md",
+    "bytes": 5254,
+    "sha256": "b39b1f9c33eb7e9feb091aff1a455f6d7bfcd07998f40530b346f87e2243b000"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/FROZEN_EXPERIMENT.json",
+    "bytes": 647,
+    "sha256": "c48c72565306e59d19f4b6bd452e1eff3fee2ebc773b392c68bd581a6b865e44"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/NFL_Timing_Cap_Results.md",
+    "bytes": 10652,
+    "sha256": "f87b0d16e7781ac999cdba209c49807905ad69f99aa5548132a912a7a212f4ac"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/Q2_REGRESSION_REFERENCE.json",
+    "bytes": 23316,
+    "sha256": "276ca26fc8275c2de104cf3a00264220c409df0740bb5ef5297cb8d6b70dd41c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/README.md",
+    "bytes": 2268,
+    "sha256": "14c52e52b521daa5ef10b1cee02d129800b03d3cf04878f93861952ec741a29e"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/build_report.py",
+    "bytes": 13778,
+    "sha256": "c36dfebe4b819650454e8501650e85a0c66bc27b9418d63c809931ebfe675e71"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/OPERATIONS.md",
+    "bytes": 2623,
+    "sha256": "c2425863f8c805c725ebe1a5723712669a61f1f7dcf44b3c0f96454454c8f3a4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/RESERVED_HOLDOUT.json",
+    "bytes": 7446,
+    "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/development_panel.json",
+    "bytes": 247,
+    "sha256": "65227f7faa3df6f63f9b52163ee82a0328ae271078db3a19901c8028081b00b1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/inspect_capture.py",
+    "bytes": 1604,
+    "sha256": "5b25fd3fefa6a8ee62d830805ac11fe73f4b4ac9dd5c0dd583bba91e1e9caab5"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/record.py",
+    "bytes": 11722,
+    "sha256": "243d477f64e6a419ce6b2bf46c1e2f252021733393c273837fc8413608dfeb0c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/schedule_only.json",
+    "bytes": 43829,
+    "sha256": "fa00c99733c2f1527fc80ad07d1fb5aefc882fd6b55088d65061fb1a3ac0e35f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/completion_policy.py",
+    "bytes": 6007,
+    "sha256": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/compose.yaml",
+    "bytes": 235,
+    "sha256": "12c7e7023142f4043e7205e91fb6db017a6560504369447e6a7cc047f9e7d36a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/inputs/manifest.json",
+    "bytes": 50950,
+    "sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/inputs/markets.json",
+    "bytes": 9697,
+    "sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/inputs/week_membership.json",
+    "bytes": 1166,
+    "sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/package.py",
+    "bytes": 1315,
+    "sha256": "753590b1cc8fbffdfa84bc140f43c589ee7b8c9091457b5ed0c596b6e0f2ecd4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/prepare_data.py",
+    "bytes": 1658,
+    "sha256": "52052ff6a8d3ab9fe2480c5a2e13214662862bcc195119f337ce4ed97654cd70"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/queue_policies.py",
+    "bytes": 11366,
+    "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_recovery.json",
+    "bytes": 294,
+    "sha256": "d937213d46d26ce40836ad3dfc6f9ac5dafa276be2fd806c32fb8995f1469332"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_session1.txt",
+    "bytes": 535,
+    "sha256": "03712d2421fc5335c999f137393d7bce7cde694ad41c85acc0393134832891dd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_session2.txt",
+    "bytes": 155,
+    "sha256": "971aecbbc6113fa8e3faea033d0d56fd89a5ea3d0a2ab70109790b6fbcc0913f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_session3.txt",
+    "bytes": 205,
+    "sha256": "a5c7335a3ab914008b012f901f500bf88b8c8c845e07d85f49e63d4ce7c64b6a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_tests.txt",
+    "bytes": 1143,
+    "sha256": "b656386a6613eecab62f3cdb5ea00f06b654747d4d5311cc11ed43552017b4e2"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/collector_verification.json",
+    "bytes": 769,
+    "sha256": "6e4ea43e48fa11130c70106ad89f939bf4b2eba6c65c0d511b51427e7e204c3a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/experiment_progress.txt",
+    "bytes": 3413,
+    "sha256": "044b407ae21f2ca4131f3f731adab03d16d7e50cce3db00ddf3cd67f74b18ba7"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/experiment_summary.json",
+    "bytes": 660684,
+    "sha256": "7e9410bf5003f76d9634676f617881fa0139d1cfad5a71f9e23cd9cd890cd6ab"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/preparation.txt",
+    "bytes": 49,
+    "sha256": "8ba50b759cb400caa87b4a912cd016be0f22510eedbb54fc53dca5d111bfe7cb"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/promotion_decision.json",
+    "bytes": 528,
+    "sha256": "42f27621b637b35a6f293a3711e57f5d9011771c99228580e2454f6154572b75"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d3_d1_route_cap250.json",
+    "bytes": 11285,
+    "sha256": "ad522c73bacfc781707adc3325c91471e12c7025e99aaa4cc05cc82403abc845"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d7_d3_route_cap250.json",
+    "bytes": 10768,
+    "sha256": "485e0a51024e137a900fe29b23ed8c6759098532d707dae8c75d065c1999c024"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_full_route_cap250.json",
+    "bytes": 11335,
+    "sha256": "5b0709567754ff1af5ef9dc93a5887f0cd428155299bd0a83d4b65972fe39f69"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h12_h3_route_cap250.json",
+    "bytes": 11109,
+    "sha256": "52d948c94bc9f63949209e474cf6aef136b29797c2a984ed793df400020e2ea7"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h24_h12_route_cap250.json",
+    "bytes": 11421,
+    "sha256": "cf3e3acfa8b8c62013be3d5084c4338e946f76ffab603d10ee7acbb990570eb1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d3_d1_route_cap250.json",
+    "bytes": 11262,
+    "sha256": "0cd903714ddffd0a77330e3713bfb8d7cd67f61d5c32bc5d3f226b1886c36b45"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d7_d3_route_cap250.json",
+    "bytes": 10784,
+    "sha256": "0d699f695e21e9f2713b8d0938da348815aab34f417f9831f3147aebbbfd2b4b"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_full_route_cap250.json",
+    "bytes": 11285,
+    "sha256": "a7a48bf4562344652ff718b1527e83d58774f622a3fdc8a8dfc072672b756379"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h12_h3_route_cap250.json",
+    "bytes": 10964,
+    "sha256": "d4d6b60010b9c0aba1c94d4caa0ae90b2caba5f8917fbc65c614286a0b0024ad"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h24_h12_route_cap250.json",
+    "bytes": 11440,
+    "sha256": "d9b16307adddef2171b8dbbec366c9217ac9b857ed37dfaa40db36510b69112a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d3_d1_route_cap250.json",
+    "bytes": 11289,
+    "sha256": "bb2412edbbce97e32a6fa876825c2c1f8fd23db191ffb3df8d00e891d26d8aec"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_route_cap250.json",
+    "bytes": 10816,
+    "sha256": "7476422c5b1d6e35ed70110d275e57a36dc52dde71e82a34a34bce1a78ddee42"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_stable_cap250.json",
+    "bytes": 9454,
+    "sha256": "e2623f3af6df3b8ab18d4b7f8046eabf4969943939b1ba6f8986a9ffe870fae4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap100.json",
+    "bytes": 11323,
+    "sha256": "540a15dada5a8951ac5f0e4312e93bfd16121b4eaa58270ab0a924f9582df461"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap25.json",
+    "bytes": 11342,
+    "sha256": "25d9ee0b67df5f347974b014d291da3e8394a0f7290aa81a9d473a6d6ed1ed41"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap250.json",
+    "bytes": 11323,
+    "sha256": "a32ee9cd0a36ea9bc005e84f48d048e0484ed3c4687cab97fadca460ad10a6d9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap50.json",
+    "bytes": 11338,
+    "sha256": "df88395248e5c310540d84cb3781cf250009cbe4d49e74e541c765f59792a14f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap500.json",
+    "bytes": 11448,
+    "sha256": "f9df4910102f46f6b91e1b4378c0178f75b7b5a56faa1b7c4d009500d8cc0118"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_stable_cap250.json",
+    "bytes": 10523,
+    "sha256": "246893bd13c921dfe1ec65cce37bfba21aea7c08cd75efd01219f51870ed28d1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h12_h3_route_cap250.json",
+    "bytes": 11109,
+    "sha256": "e397fdbee88d7f4b2558f88f7210dc2b9c1599601801db8f7b7c387f27472088"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h24_h12_route_cap250.json",
+    "bytes": 11445,
+    "sha256": "16bc62c10152730dd8184abcba876c974c31e757df23aa3627cc4f5594488bb6"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d3_d1_route_cap250.json",
+    "bytes": 11338,
+    "sha256": "8122cd69c88f6334ca81522707706a72d3f7354739a1f43206d51de11d4aca49"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d7_d3_route_cap250.json",
+    "bytes": 10773,
+    "sha256": "0b95d0b59d254ed5efd08e0eabeb3efcf9a9de0b4c99589f0e3f4e245872c982"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_full_route_cap250.json",
+    "bytes": 11278,
+    "sha256": "a6cc46047ed6ece0e3dae7c390f32b07aac32dabd8fd3850dcaf5fee0d94c166"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h12_h3_route_cap250.json",
+    "bytes": 11071,
+    "sha256": "21ddcce2d4c04c7538799b9f5c73215dda533bf965b8f6df9a81843ab02821f3"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h24_h12_route_cap250.json",
+    "bytes": 11465,
+    "sha256": "5087d5a0d58c5c28bf306f9c53bc7606bebf8735a6d296441b2ae37706ca9f8c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d3_d1_route_cap250.json",
+    "bytes": 11479,
+    "sha256": "51bd0bb4798d7f1b9e38b69cccdf909664bf9dedc40bea141d04db0fc1581f03"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d7_d3_route_cap250.json",
+    "bytes": 11453,
+    "sha256": "a8b09d154c0324742a6d101c662fc1f9632873a50374223c185e4846b3a7829f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_full_route_cap250.json",
+    "bytes": 11288,
+    "sha256": "f1ba5ab963d5a48c6ab7e44471b8c0a0983a2da79fc2b64fb9442df81b0920c6"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h12_h3_route_cap250.json",
+    "bytes": 11183,
+    "sha256": "08a7e6281ea369ab02ee6a1628469144be45f4d5c5dac7f1644e9f9abfb550d9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h24_h12_route_cap250.json",
+    "bytes": 11460,
+    "sha256": "0e34ea83b90cec9478041116e7ac25871713b70f82b595ab9938546614bf55f5"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d3_d1_route_cap250.json",
+    "bytes": 11412,
+    "sha256": "1191086054a19dac75094d62cc913284e373de1f54271fdff90e244177b847bc"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d7_d3_route_cap250.json",
+    "bytes": 11369,
+    "sha256": "299654ff3563b186842486244b5b86b13600e7bd29c613eb2e6f1f0875f39b98"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_full_route_cap250.json",
+    "bytes": 11273,
+    "sha256": "ca6630cc1978cd1ab9c003b0a2060d51092c745bbc6c4ca76cae39f45f85a788"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h12_h3_route_cap250.json",
+    "bytes": 11105,
+    "sha256": "6fa1554079a75b253704ec8d5bd534f8244792e1e80edfd22419f9ef928cc0b5"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h24_h12_route_cap250.json",
+    "bytes": 11434,
+    "sha256": "1fa554c20b161d64ac0ccc5e91863e125129223a729e0b59dfe6e58d2481a1d1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d3_d1_route_cap250.json",
+    "bytes": 11477,
+    "sha256": "5bb8fca98ab3ea378adfc2a81abc1776cd3ab46e1d1569ce94b8282cc5b63b5c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_route_cap250.json",
+    "bytes": 11451,
+    "sha256": "24811a06cc4043d0f91f4b0e791423d1a74b8c72b79a176186f356e4c69d9d83"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_stable_cap250.json",
+    "bytes": 9453,
+    "sha256": "8ea1968f129afb99b24f30258fc9c6ce025e4cc5e7fedc9d8d9805b4658da97d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap100.json",
+    "bytes": 11245,
+    "sha256": "6d599d213c98e1c780c8da3b5fe56ab443e45a2765ea37b859db96eaa1c7de52"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap25.json",
+    "bytes": 11314,
+    "sha256": "b49a393996d9619d71d07112c58a68b4b607187df571408ebf32359c0dbb8dbd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap250.json",
+    "bytes": 11277,
+    "sha256": "9e1eb2352533682afa98dbd9998ba4318b393f3cd5b643ba216fa7d0886ed161"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap50.json",
+    "bytes": 11267,
+    "sha256": "f6f52d7affe176335d668bf01a738781348e995fee6078891e11d889ef6ed3ba"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap500.json",
+    "bytes": 11504,
+    "sha256": "6e811b254d92534ab8bb9e9e2d0fe5091f4aceac58de82b20589ee0a561ab63a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_stable_cap250.json",
+    "bytes": 11119,
+    "sha256": "2635644322339ccebd62e8e6ccfeba6f6cda21a8fded0a0ac81cfe63ab248ac8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h12_h3_route_cap250.json",
+    "bytes": 11168,
+    "sha256": "ee3926409bfe07076dfbecf6caf8c8b4fecb82253d0c2f13fe69ae71b0193810"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h24_h12_route_cap250.json",
+    "bytes": 11489,
+    "sha256": "c3a368ab57d917ec89bfed572c926658b0ab4f47dbc4b3d4b41cd30e71723930"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d3_d1_route_cap250.json",
+    "bytes": 11464,
+    "sha256": "713470ff27cf6bf0ba0196e0ed8cc9ed2be287157f1b998df5794e11aedf2101"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d7_d3_route_cap250.json",
+    "bytes": 11433,
+    "sha256": "5d0a6ac8127340f76309dc12351a6a45be111840c63ee4d8f0ef6b62b06457ab"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_full_route_cap250.json",
+    "bytes": 11285,
+    "sha256": "bcbd4808f9dc13583ab3b1e678df1c231b7e84b389aa6d4899dcd0f0509b8305"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h12_h3_route_cap250.json",
+    "bytes": 11142,
+    "sha256": "957763c173c1b4812f0fb28a574bd26b95134f86c6f7579ad5e46bddfa35deda"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h24_h12_route_cap250.json",
+    "bytes": 11435,
+    "sha256": "a91f4674060e61c632b68fd202903994b249724231c24c8c2807cfd4405573e2"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/tests.txt",
+    "bytes": 7273,
+    "sha256": "b9d9fb622bab7a617286947ace6dd4278fe7aacfbd18c84deb1cb3a0c57a55bb"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/verification.json",
+    "bytes": 9933,
+    "sha256": "fa633ca700a447937d2da2c6b81bae1d328425f6ba89d5184766341266e60ce0"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/verification_progress.txt",
+    "bytes": 73,
+    "sha256": "568d08eb6bb5bc01ce183eb427e8e68d5b038c01e1d95cc9808ff6d825a276cf"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/run_experiment.py",
+    "bytes": 4827,
+    "sha256": "31239d9642afef258d69b935a5c7bab75c8bd640d17b1a0768ecebde2440c03e"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/test_collector.py",
+    "bytes": 3357,
+    "sha256": "046a4c1ae493df266e5755c0d39026cbdb9857732232c5e73ba7823dd1709500"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/test_completion.py",
+    "bytes": 3874,
+    "sha256": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/test_queue_policies.py",
+    "bytes": 4435,
+    "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/test_timing.py",
+    "bytes": 5310,
+    "sha256": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/timing_policy.py",
+    "bytes": 5830,
+    "sha256": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/verify_results.py",
+    "bytes": 5053,
+    "sha256": "537afea1c6511862a8e5e2b48e77577a7f566a8d8fa56400befab905847b2b9a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/ALLOCATION_DIAGNOSTIC.md",
+    "bytes": 1221,
+    "sha256": "725f35f5943f5b66ecbcbb634b412691826f99deaf1e3d8d65918d8b49e3ecd0"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/BASELINE_HASHES.json",
+    "bytes": 730,
+    "sha256": "190cefa1e403e66c9043fa21e9e99b24ad32e6272bb6e1818b20127494e7307b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/CAPITAL_RECOVERY.md",
+    "bytes": 1085,
+    "sha256": "0b59a4d32e5f87e211794a3c510734161c34b0a7f87b41923bf989c8166d0cd4"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 22946,
+    "sha256": "d3f52221bdd01406e2624dc99db69efba54330b4aa51facbac9ba0badc838362"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/EXPERIMENT_SPEC.md",
+    "bytes": 7563,
+    "sha256": "4398b573b95e03824688537ed023de5a0a872a191247551d9365340cf80917b4"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/FORWARD_PROTOCOL.md",
+    "bytes": 3199,
+    "sha256": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/FROZEN_ALLOCATION_DIAGNOSTIC.json",
+    "bytes": 574,
+    "sha256": "1f36fff19896c02ea23ead0ea6384a5aa05b346b5335ff316a7ea7e806d078fe"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/FROZEN_CAPITAL_CONTROLS.json",
+    "bytes": 1045,
+    "sha256": "32ad437372cfe0fba687250d918434c3e9dc0750bb0169d3b6fcd87eee496bf4"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/FROZEN_CAPITAL_CONTROLS_V1.json",
+    "bytes": 577,
+    "sha256": "684a12a12d0c6d58250333bee3c1c19f56a9e87dd2f0af81a702f403c3820fb2"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/FROZEN_EXPERIMENT.json",
+    "bytes": 843,
+    "sha256": "305e883f0dd9653837b52f9077baad75e6542679f562e1e15c6672dcb8b04b7b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/MULTIBOT_EXPERIMENT_DESIGN.md",
+    "bytes": 3473,
+    "sha256": "be9acc07ec37842a38c24514436098ea7eaa9c7ea1f959c250e6f494893c59d5"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/NFL_Adaptive_Results.md",
+    "bytes": 10082,
+    "sha256": "935871433011eac2b94583c819d10811e97b1d8aeb5ffa8fa29d1f09a64fa0c6"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/Q2_REGRESSION_REFERENCE.json",
+    "bytes": 23316,
+    "sha256": "276ca26fc8275c2de104cf3a00264220c409df0740bb5ef5297cb8d6b70dd41c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/README.md",
+    "bytes": 2405,
+    "sha256": "dc7a69cc66d20695a18f3557c9d24855ffcae38e658ababdaa32a22249fc7aef"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/RESERVED_HOLDOUT.json",
+    "bytes": 7446,
+    "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/adaptive_policy.py",
+    "bytes": 11000,
+    "sha256": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/build_report.py",
+    "bytes": 13438,
+    "sha256": "bd04829760e832d6af3f2feab3aa8279320600f931aab835936dc46527cec38d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/completion_policy.py",
+    "bytes": 6007,
+    "sha256": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/inputs/manifest.json",
+    "bytes": 50950,
+    "sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/inputs/markets.json",
+    "bytes": 9697,
+    "sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/inputs/week_membership.json",
+    "bytes": 1166,
+    "sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/package.py",
+    "bytes": 1311,
+    "sha256": "2c7e00323b71ed2354ab3fe935319cbe938f132e6ef929055f32bfe92fb3dcfa"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/queue_policies.py",
+    "bytes": 11366,
+    "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/allocation_diagnostic_progress.txt",
+    "bytes": 161,
+    "sha256": "c41d4d30056ee3fa51358c1898aecf861de2384a491058bdac9ba9d53e7a6ce2"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/allocation_diagnostic_summary.json",
+    "bytes": 25604,
+    "sha256": "a880984b94d92e98d54da218f9c8f793545df4ee78c4190e3182e8b1dd4bc60a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/capital_buffer_test.txt",
+    "bytes": 79,
+    "sha256": "44a167ed27238ad3655e272e0d62ed918f7f751be6831e69e51aec193702c8cd"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/capital_controls_summary.json",
+    "bytes": 38469,
+    "sha256": "909acf7774931482c4448d419baee1acf1f5ec8374a3db051a5b8c20596586f2"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/capital_progress.txt",
+    "bytes": 228,
+    "sha256": "a7ba16fe6a9b48eb9e8089eb354467756710a86539d481e8e02f3d6d4d98e936"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/capital_v1_failure.txt",
+    "bytes": 1689,
+    "sha256": "777cab689bf8dd99774fa6ee586d0368ad6e6dda846accfe37ed31bde2d28ee3"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/diagnostic_control_test.txt",
+    "bytes": 82,
+    "sha256": "a06449606940c12f0c1c9a81177361608a4a8e545a00d13a0aca347d4472a882"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/experiment_progress.txt",
+    "bytes": 1090,
+    "sha256": "442711f54669710610c3836bea28c2336bb486beb909c26fc7ba3f5cca20304a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/experiment_summary.json",
+    "bytes": 204381,
+    "sha256": "d407251e41e17817859d0ce7ab5d5279373a8321d8f0019bbf63f8bbe0712719"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/promotion_decision.json",
+    "bytes": 995,
+    "sha256": "53480c6220c964275f13ec3e4a0d3d9c1d520e5636d1a40e2dc785539237dc67"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation.json",
+    "bytes": 11112,
+    "sha256": "89f39131edcda94b2481dbb94e10ef2c499322bfadc40293ed9579a25a7d80e1"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_neutral.json",
+    "bytes": 11137,
+    "sha256": "e0efe09c17f36fa6a49784a7a36b2181b4c8e4d4132fef758b612cf07e51a844"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_baseline.json",
+    "bytes": 11264,
+    "sha256": "7a362cf8e50f94444c625e62063c9cc7ffb47cb7accc8450d5b7db9609ec8b3b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_inventory.json",
+    "bytes": 11275,
+    "sha256": "127a15f0de2185c29118508c721949c737b07c0c6e392043a7f7fae80c7f0f09"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_patience.json",
+    "bytes": 11208,
+    "sha256": "11b66cbd0144b39a3fb50f52425e9a43b56a636337ce838b91fbbc5bf90b9dfc"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_allocation.json",
+    "bytes": 11134,
+    "sha256": "0867e7e05ea4779ddc579227f53b7269f905a361611c52da47fe018264e43302"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_baseline.json",
+    "bytes": 11250,
+    "sha256": "ea50c156eca12a12ee3570d65176d45cc54e9beb3ec1171891ebd73331283fba"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_inventory.json",
+    "bytes": 11282,
+    "sha256": "c56500522f557ecb5aefccbc20ff215a3424a64b98b356d8a3597ca17f9caddf"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_patience.json",
+    "bytes": 11312,
+    "sha256": "8dc75bf6a7d62a2ae555f92bf289f1047427d40115b7bee9757436b184eeb07d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation.json",
+    "bytes": 11211,
+    "sha256": "187c5162b39a5803cfb380d62381bd92dd6d79059b04a25971b1085b80f355bb"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_neutral.json",
+    "bytes": 11211,
+    "sha256": "6fbe6c279fd6f0362c64dfc296ce4a72f7f4b6fc2b10e21dc37a6a1af5e55997"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline.json",
+    "bytes": 11255,
+    "sha256": "496f3a0af3319a501fb75923c9d58508fbc456d57fd5037bbc1d3b6c5968851d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash1000.json",
+    "bytes": 11282,
+    "sha256": "120dfd6846831ba33b24309de323422e81583c0389f602eaf32f5808037604a8"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash4000.json",
+    "bytes": 11218,
+    "sha256": "9d393c1cf662a720420d824406fb480e220e0be86a33a0b0312261b2fa79fb10"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash5000.json",
+    "bytes": 11221,
+    "sha256": "d545f943a18776005170fcc7b101682fa6fa0f02ae82d9e7f658e6321f39cf6f"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_inventory.json",
+    "bytes": 11209,
+    "sha256": "016b5a4e6e67f0f6d78fb0c3912edb496ed23502ba7e9ab0a2da8c7ec8ae1908"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_patience.json",
+    "bytes": 11456,
+    "sha256": "c463c68761a125cc7aeed3b7749df1ff7825fc0235c216972baba0a660793a1d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_allocation.json",
+    "bytes": 11218,
+    "sha256": "0d830ce40ee3d98aafcb710dd2d42ed4a29cf6674d35689e9a20d894cef82080"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_baseline.json",
+    "bytes": 11271,
+    "sha256": "defbf2fc0a88ec2cd459312192592e955c6d2c2712dd6152fa3d0040622590da"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_inventory.json",
+    "bytes": 11231,
+    "sha256": "c2cbe4f47729dbb314de732eb5c8e82e4e1d8b9fb1d7c74a3b76f5c632f24a79"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_patience.json",
+    "bytes": 11426,
+    "sha256": "9c41f4ea928a38d98ed1474a932cf9f681ee20953926353f7c1757eb20cd8ca6"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/tests.txt",
+    "bytes": 9870,
+    "sha256": "473d442f90aaf5d3085c9578f820402a99bdac0cbe96aae15f6b645e0bcb5909"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/verification.json",
+    "bytes": 3689,
+    "sha256": "8cf17de9c883ce2e40214b16af76e816fcd21d5c5170739a35cd2a3d71b0ddbc"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/verification_progress.txt",
+    "bytes": 87,
+    "sha256": "565f0e6aa64f030985eceb72fd88b8e4236bc37184569aec77b6e8800d4c1314"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/run_allocation_diagnostic.py",
+    "bytes": 1184,
+    "sha256": "161d1c074a394e6832b8c2602555be8035971ae169933b97bb49dc302e1c1e5c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/run_capital_controls.py",
+    "bytes": 2650,
+    "sha256": "b29521d9d74e834b18792eaf55b7cf0c68473c51fa1263b3b91ab3938b7bbad6"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/run_capital_controls_v1_failed.py",
+    "bytes": 2080,
+    "sha256": "23a14746c08ba4dbd01ed8d5edf87f08ce87c99c9ea60b0a3721e7303fe77392"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/run_experiment.py",
+    "bytes": 3678,
+    "sha256": "5deaa32bf8322c1c8cdb442c92519e8f4f853c8073a59e9503d29588982af3e3"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/test_adaptive.py",
+    "bytes": 6919,
+    "sha256": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/test_completion.py",
+    "bytes": 3874,
+    "sha256": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/test_queue_policies.py",
+    "bytes": 4435,
+    "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/test_timing.py",
+    "bytes": 5310,
+    "sha256": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/timing_policy.py",
+    "bytes": 5830,
+    "sha256": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/verify_results.py",
+    "bytes": 7347,
+    "sha256": "ecc2ebc94de845df9347aa17f30013c9f4b3a90cae2e0deb840d158cb0e85e7a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/BASELINE_HASHES.json",
+    "bytes": 912,
+    "sha256": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/DELIVERY_MANIFEST.json",
+    "bytes": 31462,
+    "sha256": "5d4e6160ecb99b773cbe7dc13375797f9dac550521643d5994f2f280aca53a2d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/EXPERIMENT_SPEC.md",
+    "bytes": 6270,
+    "sha256": "540356a6ee130f0e7077c3eff8d62d4271b3d545e0a3f43acaaf72e4ebce1afd"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/FORWARD_HANDOFF.md",
+    "bytes": 2245,
+    "sha256": "b6f5b3fb011c79386fb6d5f12bef45fdd1dad795d1a45b18f6ac47f1298d9679"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/FORWARD_PROTOCOL.md",
+    "bytes": 3199,
+    "sha256": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/FROZEN_EXPERIMENT.json",
+    "bytes": 1117,
+    "sha256": "8fb0d26037514a493b7d3b0c31789052937d02c88ab4c2ec1b1885906f076a5b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Results.md",
+    "bytes": 10400,
+    "sha256": "87a99923fcb75e57380d833dc3de3be9d49247148fbd948f6b2f002a00c84075"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/Q5_REFERENCES.json",
+    "bytes": 129354,
+    "sha256": "8828ecd556857bcbde8e9909cd6ebd68766ec4f2c8350923cb7d391481e39c65"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/README.md",
+    "bytes": 2732,
+    "sha256": "503b456928a74139af2617aa0c11676e9d5ecce593e2bbb0a1efe0df751421b0"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json",
+    "bytes": 7446,
+    "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json",
+    "bytes": 3057,
+    "sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/adaptive_policy.py",
+    "bytes": 11000,
+    "sha256": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/analyze.py",
+    "bytes": 6116,
+    "sha256": "a05e4ba81f873e1b0b58a528d11b6494f573dfe2dfb3f85a6c25f2a05c2bd542"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/build_report.py",
+    "bytes": 14012,
+    "sha256": "ce309edf7f1b718125751d2a8c0ce262e717e997a0bdaeab89cacab60f19ef10"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/completion_policy.py",
+    "bytes": 6007,
+    "sha256": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/factorial_policy.py",
+    "bytes": 3624,
+    "sha256": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/inputs/manifest.json",
+    "bytes": 50950,
+    "sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/inputs/markets.json",
+    "bytes": 9697,
+    "sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/inputs/week_membership.json",
+    "bytes": 1166,
+    "sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/package.py",
+    "bytes": 1335,
+    "sha256": "11e1c0b7df63eaf614d950a7d1c644bdb257b315f651543d05fec22c2cba959a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/queue_policies.py",
+    "bytes": 11366,
+    "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/replay_v2.py",
+    "bytes": 18973,
+    "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/experiment_progress.txt",
+    "bytes": 1616,
+    "sha256": "31ef837aa9e65539571be1ae60e07eb7e0c6f8c7279e3dc1195aedd52a45bd02"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/experiment_summary.json",
+    "bytes": 461101,
+    "sha256": "c06593b0ce8c3f2eb505747f65f129b6cccabfd1f36d64dc89c2082ec4be3054"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/factor_effects.json",
+    "bytes": 8206,
+    "sha256": "39cb13f4b39f024bbc5ab153c57ab646fda04a4a7ad5373cdefe3d0d01e5d5b1"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_000.json",
+    "bytes": 11218,
+    "sha256": "29ae23f504b2e0c6af13cb749c887b1f77980e98cddf0d4c0bf20103eaa24eb8"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_001.json",
+    "bytes": 11217,
+    "sha256": "edbceca725715e88f130ba68fe4d5f37dd708f1c4400d965b62304bac04d325d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_010.json",
+    "bytes": 11199,
+    "sha256": "9fcd752ad923dec2658ae16898e45b3d027b5960961ee3b6e7aea0f5194c8451"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_011.json",
+    "bytes": 11222,
+    "sha256": "cb57d36558ef0c84c572efbedd9eb95dde79943c19e7ddb736f50fc2a6e1879c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_100.json",
+    "bytes": 11221,
+    "sha256": "ccc4717a8568ba14dad319596493428efd31e67cfb4edf03eb44350756a17387"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_101.json",
+    "bytes": 11219,
+    "sha256": "2c4f7e22b43868318326fa30cdfefc691f8bac84c3eb00e39ec407e21de4dc9f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_110.json",
+    "bytes": 11240,
+    "sha256": "a2a022f88206b3bc2f459671f0029a5a5283c7b4c2f910050d0b2d673414e41f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_111.json",
+    "bytes": 11219,
+    "sha256": "9dfd5f44f01b351ae809a39d7cd8f500dc3c39682a06fba6fb74ed220e023c6a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_baseline.json",
+    "bytes": 11274,
+    "sha256": "58fcbf4c0756831da7e173d082fa27f7f3bbba4b6ca4409a7f6a4fa79b50c043"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_000.json",
+    "bytes": 11249,
+    "sha256": "347f0820cf54ef223685ed4ba3dcde8c3807c12108d9343fddcd67490e4becaa"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_001.json",
+    "bytes": 11249,
+    "sha256": "620deea0010b5ee67365ce61e6d8e0bbd0c8882b3c7f0bd4460be99d28e0c6ee"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_010.json",
+    "bytes": 11247,
+    "sha256": "2756c200914205b65dace070cee586befaf2cad46b3ccbd3787acc7e97756c9d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_011.json",
+    "bytes": 11252,
+    "sha256": "5ec2b277509ae28e1d302b356ab022c366262df9a0102b5435927b46c27a76c8"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_100.json",
+    "bytes": 11242,
+    "sha256": "82a2dab6acb44ddcedc70f220f654c3fd10cbdfcfbc7f6a4ebf7a9a1e3c7933e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_101.json",
+    "bytes": 11239,
+    "sha256": "9081d9e23b620b8b340ac823568d66ee26291f0ae3445010fcd37c5536034e92"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_110.json",
+    "bytes": 11246,
+    "sha256": "fdafa2a667c2112e76df652adea67dc04e6ea6347dcbc4b1b9fb24c4ba5a40ac"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_111.json",
+    "bytes": 11244,
+    "sha256": "effd5a41edea85ef41447134c8a417632dc2f4764660bba52dd9c037b102cec6"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_baseline.json",
+    "bytes": 11258,
+    "sha256": "87bb76c51058cdb7490088927e6c3573c3e76471676e34239bf81a3acd53b215"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_000.json",
+    "bytes": 11357,
+    "sha256": "78b94ae5a846dfa81a1baec8fdc0b7992e479af1ddbc67908195f47500a7930a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_001.json",
+    "bytes": 11356,
+    "sha256": "90c076004afda4eda53161ee3c073a54befd1da7d2abc2714d23e97388acfa35"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_010.json",
+    "bytes": 11365,
+    "sha256": "abe15735e46c8f72887d3d875362d93902458f717cb85618d91d8539a22f7e2f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_011.json",
+    "bytes": 11362,
+    "sha256": "081ad322eb05a7f17bf6f582925fb2de69473897c43b25aecfdb657699088a5d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_100.json",
+    "bytes": 11308,
+    "sha256": "33988cd2a9bdff3cffbcf04930632e5645d3e468eebd5a2a4c43980e7a6fa11b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_101.json",
+    "bytes": 11307,
+    "sha256": "e322405227acd761a0e20fcc7beff19c5b2354a6d74efc264e3f6d38772baefb"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_110.json",
+    "bytes": 11313,
+    "sha256": "863a6dbdbc35f44ff207c21ec8d59717df5acf085b592f56dc353b09032a993d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_111.json",
+    "bytes": 11320,
+    "sha256": "9db983949e38a589942f24d6a3cf98393d532cf54842287c7b74185f1ccd2282"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_baseline.json",
+    "bytes": 11263,
+    "sha256": "c6019320790cf7d06a5e9e856c1b292510e2a5c9b7534bf08c2a6404325a64d5"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_000.json",
+    "bytes": 11376,
+    "sha256": "88204ef683f535dc0097bc7a9482f0c05792dd3ea262e8701169e2952c753573"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_001.json",
+    "bytes": 11376,
+    "sha256": "c06c3f373b02465537f9940a8f4c317f36644f5b1dc36f6ba4121417317ade0d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_010.json",
+    "bytes": 11381,
+    "sha256": "81ae8496a94f20da590eaedf333e7f73345e7647c3bf154070b98bf527e4ff16"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_011.json",
+    "bytes": 11378,
+    "sha256": "4da95b053e9384e4e96038f09878725c89fcd32c57a3a07c77a47aa3c2ff223f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_100.json",
+    "bytes": 11330,
+    "sha256": "4d4bc2373046f71dc68e829e47b70b69fdd8ad37a5d7c1a1cec1913c7676c34d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_101.json",
+    "bytes": 11329,
+    "sha256": "182f996f8eae396bcd2a3a8f24699c7fee5015f9d9b1d2025d093d8e6a85f2b5"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_110.json",
+    "bytes": 11323,
+    "sha256": "b88bd83f2d9c0394a829d4d09c711f44da788dc5ec73f01318ae2eb2c2e3fde1"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_111.json",
+    "bytes": 11328,
+    "sha256": "6b78e69922e59bb3e97363603d336fec4c21132149f43d5c78a035cfc4ea23c1"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_baseline.json",
+    "bytes": 11281,
+    "sha256": "7e897d9f0cb2640cb7cf00179aae666ca2ef472f77ecbb873481063a074dd406"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/run_completion.json",
+    "bytes": 508,
+    "sha256": "9ecddd8997988ac1366410dc40f93174cf18b0af5fbbce5646db5fbe6b54366e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/runtime.json",
+    "bytes": 124,
+    "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/selection.json",
+    "bytes": 3435,
+    "sha256": "0bf4a66f7032e45060d35c3a6d5b3f7d537e68c607b502b44de330906e64242b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/shared_margin_probe.json",
+    "bytes": 554,
+    "sha256": "e2225021d2402ff63f666acf24760e70d74a607b61a72d25999fbcdc43b84b7e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/tests.txt",
+    "bytes": 11992,
+    "sha256": "db69ed01089846036c96614a0620630a8ee0b12a4f0801e05e9f81d3c6e68449"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/verification.json",
+    "bytes": 19113,
+    "sha256": "d23f32caa268a834e7cd8d68aec5a90669ebee8a29096e09448dea5312920b05"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/run_experiment.py",
+    "bytes": 4503,
+    "sha256": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/shared_margin_probe.py",
+    "bytes": 1387,
+    "sha256": "79c8f3cb0cd485a2cac4f72121d8e0afd1a35870454909ddf330101d3de1871b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_adaptive.py",
+    "bytes": 6919,
+    "sha256": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_analysis.py",
+    "bytes": 1161,
+    "sha256": "c0b502ce28ad59df898d6f1c45461cd88f10911c9af3cc5abb4347c64a3682f4"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_completion.py",
+    "bytes": 3874,
+    "sha256": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_factorial.py",
+    "bytes": 4900,
+    "sha256": "0a627b0588b9b6688b98f7c1742628c6895757c9f02b143b24b5a21a1d05cd0a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_queue_policies.py",
+    "bytes": 4435,
+    "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_replay_v2.py",
+    "bytes": 8072,
+    "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/test_timing.py",
+    "bytes": 5310,
+    "sha256": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/timing_policy.py",
+    "bytes": 5830,
+    "sha256": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/verify_results.py",
+    "bytes": 8874,
+    "sha256": "a40b9f52a6ebdf003f0ea69af3d5416c1194df9f00ca55aaf18fc7c381155fa2"
+  }
+]

@@ -1,0 +1,73 @@
+{
+  "started_utc": "2026-09-21T14:21:20.601197+00:00",
+  "ended_utc": "2026-09-21T14:41:29.792021+00:00",
+  "polls": 120,
+  "interval": 5,
+  "tickers": [
+    "KXNFLGAME-26SEP21NYGLAR-LAR",
+    "KXNFLGAME-26SEP21NYGLAR-NYG",
+    "KXNFLGAME-26SEP24ATLGB-GB",
+    "KXNFLGAME-26SEP24ATLGB-ATL"
+  ],
+  "errors": [
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "operation": "book",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001381.1590002
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "operation": "book",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001381.1590817
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "operation": "book",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001381.1590958
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "operation": "book",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001381.1591535
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "operation": "trades",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001401.1790707
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "operation": "trades",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001401.1791468
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "operation": "trades",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001401.180986
+    },
+    {
+      "poll": 72,
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "operation": "trades",
+      "error": "URLError(TimeoutError('timed out'))",
+      "at": 1790001401.1810217
+    }
+  ],
+  "resumed": true,
+  "resumed_at_poll": 12,
+  "sha256": "dc2214d2b4130c0cfc26f90d899d03819dbf8d00ab7935857b0922225af1b8a5"
+}

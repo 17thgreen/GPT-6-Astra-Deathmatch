@@ -1,0 +1,92 @@
+[
+  {
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "game_id": "2026_02_DET_BUF",
+    "kickoff": "2026-09-18T00:15:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "game_id": "2026_02_CAR_ATL",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "game_id": "2026_02_NO_BAL",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "game_id": "2026_02_MIN_CHI",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "game_id": "2026_02_CIN_HOU",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "game_id": "2026_02_PIT_NE",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "game_id": "2026_02_GB_NYJ",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "game_id": "2026_02_CLE_TB",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "game_id": "2026_02_PHI_TEN",
+    "kickoff": "2026-09-20T17:00:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "game_id": "2026_02_JAX_DEN",
+    "kickoff": "2026-09-20T20:05:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "game_id": "2026_02_LV_LAC",
+    "kickoff": "2026-09-20T20:05:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "game_id": "2026_02_SEA_ARI",
+    "kickoff": "2026-09-20T20:25:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "game_id": "2026_02_WAS_DAL",
+    "kickoff": "2026-09-20T20:25:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "game_id": "2026_02_MIA_SF",
+    "kickoff": "2026-09-20T20:25:00+00:00",
+    "week": 2
+  },
+  {
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "game_id": "2026_02_IND_KC",
+    "kickoff": "2026-09-21T00:20:00+00:00",
+    "week": 2
+  }
+]

@@ -1,0 +1,10 @@
+{"poll": 0, "elapsed": 33.2, "errors": 0}
+{"poll": 12, "elapsed": 134.7, "errors": 0}
+{"poll": 24, "elapsed": 224.1, "errors": 0}
+{"poll": 36, "elapsed": 303.8, "errors": 0}
+{"poll": 48, "elapsed": 390.4, "errors": 0}
+{"poll": 60, "elapsed": 472.5, "errors": 0}
+{"poll": 72, "elapsed": 544.4, "errors": 0}
+{"poll": 84, "elapsed": 612.8, "errors": 0}
+{"poll": 96, "elapsed": 687.6, "errors": 0}
+{"started_utc": "2026-09-21T15:31:01.687806+00:00", "ended_utc": "2026-09-21T15:43:28.312770+00:00", "target_seconds": 720, "polls": 106, "tickers": ["KXNFLGAME-26SEP21NYGLAR-LAR", "KXNFLGAME-26SEP21NYGLAR-NYG", "KXNFLGAME-26SEP24ATLGB-ATL", "KXNFLGAME-26SEP24ATLGB-GB"], "errors": 0, "sha256": "c4cf6ce57989ed5ab4dcbe0b499c07d7437d852d55c10f737b6e82f7cca6cd36", "status": "BOUNDED_CAPTURE_COMPLETE_NO_ORDERS_PLACED"}

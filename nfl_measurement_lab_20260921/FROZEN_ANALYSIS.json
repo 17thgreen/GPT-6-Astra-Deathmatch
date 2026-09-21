@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-09-21T15:37:03.594521+00:00",
+  "sha256": {
+    "measure.py": "af0a17c16fa66cc71871a97a1d92a5dd596838b35d7852c8fe373fc1c2d3e84c",
+    "historical.py": "f50446b705ceb151e52c272b2e21e64e6f44dcd492125570e7a03d2ba436aea4",
+    "evaluation_gate.py": "69ce7398e92ff343734b5c79d228ee9daeb9f5b95414df05f55a5a7849effebe",
+    "test_measurement.py": "97062b3abc35227fcebae1c0bc9a898a66c5c9875b9a5c2e6b0edadda163eab6"
+  }
+}

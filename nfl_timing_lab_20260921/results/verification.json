@@ -1,0 +1,388 @@
+{
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "scenario": "q3300_s250_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 6208,
+      "orders": 9984,
+      "unresolved_contracts": 1.7359447213038948e-12
+    },
+    {
+      "scenario": "q3300_s250_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 7161,
+      "orders": 1708,
+      "unresolved_contracts": 2.9309887850104133e-12
+    },
+    {
+      "scenario": "q3300_s250_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 1423,
+      "orders": 33271,
+      "unresolved_contracts": 1.4579448759377556e-12
+    },
+    {
+      "scenario": "q3300_s250_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 449,
+      "orders": 389,
+      "unresolved_contracts": 4.991562718714704e-13
+    },
+    {
+      "scenario": "q3300_s250_full_route_cap250",
+      "passed": true,
+      "fills": 14331,
+      "orders": 42986,
+      "unresolved_contracts": 5.231370892033738e-12
+    },
+    {
+      "scenario": "q3300_s50_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 2784,
+      "orders": 12558,
+      "unresolved_contracts": 1.4621637234313312e-12
+    },
+    {
+      "scenario": "q3300_s50_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 894,
+      "orders": 42291,
+      "unresolved_contracts": 3.9668268669856843e-13
+    },
+    {
+      "scenario": "q3300_s50_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 3098,
+      "orders": 2055,
+      "unresolved_contracts": 1.3145040611561853e-13
+    },
+    {
+      "scenario": "q3300_s50_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 123,
+      "orders": 486,
+      "unresolved_contracts": 1.3766765505351941e-14
+    },
+    {
+      "scenario": "q3300_s50_full_route_cap250",
+      "passed": true,
+      "fills": 5947,
+      "orders": 52569,
+      "unresolved_contracts": 1.429190099599964e-12
+    },
+    {
+      "scenario": "q3300_s25_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 2226,
+      "orders": 13566,
+      "unresolved_contracts": 3.888001032237298e-13
+    },
+    {
+      "scenario": "q3300_s25_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 2316,
+      "orders": 2148,
+      "unresolved_contracts": 5.5067062021407764e-14
+    },
+    {
+      "scenario": "q3300_s25_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 754,
+      "orders": 42972,
+      "unresolved_contracts": 1.0680345496894006e-13
+    },
+    {
+      "scenario": "q3300_s25_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 91,
+      "orders": 486,
+      "unresolved_contracts": 1.9984014443252818e-15
+    },
+    {
+      "scenario": "q3300_s25_full_route_cap250",
+      "passed": true,
+      "fills": 4364,
+      "orders": 54352,
+      "unresolved_contracts": 1.9895196601282805e-13
+    },
+    {
+      "scenario": "q3300_s10_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 1846,
+      "orders": 14243,
+      "unresolved_contracts": 1.509903313490213e-13
+    },
+    {
+      "scenario": "q3300_s10_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 1912,
+      "orders": 2267,
+      "unresolved_contracts": 0.0
+    },
+    {
+      "scenario": "q3300_s10_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 624,
+      "orders": 43433,
+      "unresolved_contracts": 1.3766765505351941e-14
+    },
+    {
+      "scenario": "q3300_s10_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 65,
+      "orders": 486,
+      "unresolved_contracts": 3.3306690738754696e-16
+    },
+    {
+      "scenario": "q3300_s10_full_route_cap250",
+      "passed": true,
+      "fills": 3572,
+      "orders": 55875,
+      "unresolved_contracts": 0.0
+    },
+    {
+      "scenario": "q3300_s25_d7_d3_stable_cap250",
+      "passed": true,
+      "fills": 0,
+      "orders": 0,
+      "unresolved_contracts": 0
+    },
+    {
+      "scenario": "q3300_s25_full_stable_cap250",
+      "passed": true,
+      "fills": 1159,
+      "orders": 958,
+      "unresolved_contracts": 3.530509218307998e-14
+    },
+    {
+      "scenario": "q3300_s25_full_route_cap25",
+      "passed": true,
+      "fills": 3403,
+      "orders": 42052,
+      "unresolved_contracts": 1.2256862191861728e-13
+    },
+    {
+      "scenario": "q3300_s25_full_route_cap50",
+      "passed": true,
+      "fills": 3868,
+      "orders": 49300,
+      "unresolved_contracts": 1.6253665080512292e-13
+    },
+    {
+      "scenario": "q3300_s25_full_route_cap100",
+      "passed": true,
+      "fills": 4039,
+      "orders": 51978,
+      "unresolved_contracts": 2.6290081223123707e-13
+    },
+    {
+      "scenario": "q3300_s25_full_route_cap500",
+      "passed": true,
+      "fills": 4762,
+      "orders": 55702,
+      "unresolved_contracts": 4343.009999999999
+    },
+    {
+      "scenario": "q10000_s250_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 326,
+      "orders": 33707,
+      "unresolved_contracts": 2.6895152771544417e-13
+    },
+    {
+      "scenario": "q10000_s250_full_route_cap250",
+      "passed": true,
+      "fills": 4696,
+      "orders": 44296,
+      "unresolved_contracts": 2.2001289678996727e-12
+    },
+    {
+      "scenario": "q10000_s250_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 2092,
+      "orders": 9748,
+      "unresolved_contracts": 1.168898311476596e-12
+    },
+    {
+      "scenario": "q10000_s250_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 2671,
+      "orders": 1024,
+      "unresolved_contracts": 1.8102186416513177e-12
+    },
+    {
+      "scenario": "q10000_s250_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 324,
+      "orders": 350,
+      "unresolved_contracts": 4.005684672847565e-13
+    },
+    {
+      "scenario": "q10000_s50_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 1032,
+      "orders": 13045,
+      "unresolved_contracts": 4.614086890342151e-13
+    },
+    {
+      "scenario": "q10000_s50_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 196,
+      "orders": 40801,
+      "unresolved_contracts": 5.939693181744587e-14
+    },
+    {
+      "scenario": "q10000_s50_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 1171,
+      "orders": 1325,
+      "unresolved_contracts": 1.2168044349891716e-13
+    },
+    {
+      "scenario": "q10000_s50_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 114,
+      "orders": 476,
+      "unresolved_contracts": 1.709743457922741e-14
+    },
+    {
+      "scenario": "q10000_s50_full_route_cap250",
+      "passed": true,
+      "fills": 2094,
+      "orders": 54062,
+      "unresolved_contracts": 3.552713678800501e-14
+    },
+    {
+      "scenario": "q10000_s25_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 779,
+      "orders": 13326,
+      "unresolved_contracts": 1.0302869668521453e-13
+    },
+    {
+      "scenario": "q10000_s25_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 143,
+      "orders": 40888,
+      "unresolved_contracts": 6.661338147750939e-15
+    },
+    {
+      "scenario": "q10000_s25_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 910,
+      "orders": 1368,
+      "unresolved_contracts": 1.9539925233402755e-14
+    },
+    {
+      "scenario": "q10000_s25_full_route_cap250",
+      "passed": true,
+      "fills": 1603,
+      "orders": 54466,
+      "unresolved_contracts": 7.105427357601002e-15
+    },
+    {
+      "scenario": "q10000_s25_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 75,
+      "orders": 476,
+      "unresolved_contracts": 7.438494264988549e-15
+    },
+    {
+      "scenario": "q10000_s10_d3_d1_route_cap250",
+      "passed": true,
+      "fills": 644,
+      "orders": 13486,
+      "unresolved_contracts": 3.552713678800501e-14
+    },
+    {
+      "scenario": "q10000_s10_h24_h12_route_cap250",
+      "passed": true,
+      "fills": 752,
+      "orders": 1414,
+      "unresolved_contracts": 3.6637359812630166e-15
+    },
+    {
+      "scenario": "q10000_s10_d7_d3_route_cap250",
+      "passed": true,
+      "fills": 106,
+      "orders": 40889,
+      "unresolved_contracts": 1.1102230246251565e-15
+    },
+    {
+      "scenario": "q10000_s10_h12_h3_route_cap250",
+      "passed": true,
+      "fills": 61,
+      "orders": 476,
+      "unresolved_contracts": 1.1102230246251565e-15
+    },
+    {
+      "scenario": "q10000_s10_full_route_cap250",
+      "passed": true,
+      "fills": 1318,
+      "orders": 54698,
+      "unresolved_contracts": 0.0
+    },
+    {
+      "scenario": "q10000_s25_d7_d3_stable_cap250",
+      "passed": true,
+      "fills": 0,
+      "orders": 0,
+      "unresolved_contracts": 0
+    },
+    {
+      "scenario": "q10000_s25_full_stable_cap250",
+      "passed": true,
+      "fills": 223,
+      "orders": 201,
+      "unresolved_contracts": 4.440892098500626e-16
+    },
+    {
+      "scenario": "q10000_s25_full_route_cap25",
+      "passed": true,
+      "fills": 1134,
+      "orders": 43513,
+      "unresolved_contracts": 5.137557046452912e-14
+    },
+    {
+      "scenario": "q10000_s25_full_route_cap50",
+      "passed": true,
+      "fills": 1326,
+      "orders": 51870,
+      "unresolved_contracts": 1.212363542890671e-13
+    },
+    {
+      "scenario": "q10000_s25_full_route_cap100",
+      "passed": true,
+      "fills": 1400,
+      "orders": 53737,
+      "unresolved_contracts": 3.552713678800501e-14
+    },
+    {
+      "scenario": "q10000_s25_full_route_cap500",
+      "passed": true,
+      "fills": 1725,
+      "orders": 54681,
+      "unresolved_contracts": 1468.9099999999996
+    }
+  ],
+  "q2_regression_differences": {
+    "3300": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0,
+      "max_reserved_cash": 0.0,
+      "min_cash": 0.0
+    },
+    "10000": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0,
+      "max_reserved_cash": 0.0,
+      "min_cash": 0.0
+    }
+  },
+  "note": "Internal accounting and data integrity checks; hypothetical historical queues/exits remain unverified."
+}

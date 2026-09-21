@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13CHICAR",
+  "ticker": "KXNFLGAME-26SEP13CHICAR-CAR",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 4,
+  "trades": 3530,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916",
+  "retrieved_at": "2026-09-21T05:29:58.916041+00:00",
+  "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz"
+}

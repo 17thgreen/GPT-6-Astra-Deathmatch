@@ -1,0 +1,98 @@
+[
+  {
+    "event":"KXNFLGAME-26SEP09NESEA",
+    "kickoff":"2026-09-10 00:20:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP10SFLAR",
+    "kickoff":"2026-09-11 00:35:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13ATLPIT",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13BALIND",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13BUFHOU",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13CHICAR",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13CLEJAC",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13NODET",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13NYJTEN",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13TBCIN",
+    "kickoff":"2026-09-13 17:00:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13ARILAC",
+    "kickoff":"2026-09-13 20:25:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13GBMIN",
+    "kickoff":"2026-09-13 20:25:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13MIALV",
+    "kickoff":"2026-09-13 20:25:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13WASPHI",
+    "kickoff":"2026-09-13 20:25:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP13DALNYG",
+    "kickoff":"2026-09-14 00:20:00+00:00",
+    "season":2026,
+    "week":1
+  },
+  {
+    "event":"KXNFLGAME-26SEP14DENKC",
+    "kickoff":"2026-09-15 00:15:00+00:00",
+    "season":2026,
+    "week":1
+  }
+]

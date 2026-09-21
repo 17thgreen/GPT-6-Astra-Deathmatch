@@ -1,0 +1,14 @@
+{
+  "frozen_at": "2026-09-21T16:36:59.394579+00:00",
+  "cases": 16,
+  "sha256": {
+    "EXPERIMENT_SPEC.md": "4398b573b95e03824688537ed023de5a0a872a191247551d9365340cf80917b4",
+    "FORWARD_PROTOCOL.md": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326",
+    "RESERVED_HOLDOUT.json": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "BASELINE_HASHES.json": "190cefa1e403e66c9043fa21e9e99b24ad32e6272bb6e1818b20127494e7307b",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "run_experiment.py": "5deaa32bf8322c1c8cdb442c92519e8f4f853c8073a59e9503d29588982af3e3",
+    "test_adaptive.py": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  }
+}

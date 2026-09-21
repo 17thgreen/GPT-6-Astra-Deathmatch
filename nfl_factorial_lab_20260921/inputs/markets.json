@@ -1,0 +1,374 @@
+{
+  "KXNFLGAME-26SEP09NESEA-SEA": {
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "direction": -1,
+    "kickoff": 1788999600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP09NESEA-NE": {
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "direction": 1,
+    "kickoff": 1788999600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP10SFLAR-LAR": {
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "direction": 1,
+    "kickoff": 1789086900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP10SFLAR-SF": {
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "direction": -1,
+    "kickoff": 1789086900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13ATLPIT-PIT": {
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13ATLPIT-ATL": {
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13BALIND-IND": {
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13BALIND-BAL": {
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13BUFHOU-HOU": {
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13BUFHOU-BUF": {
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13CHICAR-CAR": {
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13CHICAR-CHI": {
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13CLEJAC-JAC": {
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13CLEJAC-CLE": {
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13NODET-DET": {
+    "event": "KXNFLGAME-26SEP13NODET",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13NODET-NO": {
+    "event": "KXNFLGAME-26SEP13NODET",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13NYJTEN-TEN": {
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13NYJTEN-NYJ": {
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13TBCIN-CIN": {
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "direction": 1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13TBCIN-TB": {
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "direction": -1,
+    "kickoff": 1789318800.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13ARILAC-LAC": {
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "direction": -1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13ARILAC-ARI": {
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "direction": 1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13GBMIN-MIN": {
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "direction": -1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13GBMIN-GB": {
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "direction": 1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13MIALV-LV": {
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "direction": 1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13MIALV-MIA": {
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "direction": -1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13WASPHI-PHI": {
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "direction": 1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13WASPHI-WAS": {
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "direction": -1,
+    "kickoff": 1789331100.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13DALNYG-NYG": {
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "direction": -1,
+    "kickoff": 1789345200.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP13DALNYG-DAL": {
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "direction": 1,
+    "kickoff": 1789345200.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP14DENKC-KC": {
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "direction": -1,
+    "kickoff": 1789431300.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP14DENKC-DEN": {
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "direction": 1,
+    "kickoff": 1789431300.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP17DETBUF-BUF": {
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "direction": 1,
+    "kickoff": 1789690500.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP17DETBUF-DET": {
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "direction": -1,
+    "kickoff": 1789690500.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CARATL-ATL": {
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CARATL-CAR": {
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20NOBAL-BAL": {
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20NOBAL-NO": {
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20MINCHI-CHI": {
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20MINCHI-MIN": {
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CINHOU-HOU": {
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CINHOU-CIN": {
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20PITNE-NE": {
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20PITNE-PIT": {
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20GBNYJ-NYJ": {
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20GBNYJ-GB": {
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CLETB-TB": {
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20CLETB-CLE": {
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20PHITEN-TEN": {
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "direction": -1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20PHITEN-PHI": {
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "direction": 1,
+    "kickoff": 1789923600.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20JACDEN-DEN": {
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "direction": 1,
+    "kickoff": 1789934700.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20JACDEN-JAC": {
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "direction": -1,
+    "kickoff": 1789934700.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20LVLAC-LAC": {
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "direction": 1,
+    "kickoff": 1789934700.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20LVLAC-LV": {
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "direction": -1,
+    "kickoff": 1789934700.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20SEAARI-ARI": {
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "direction": 1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20SEAARI-SEA": {
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "direction": -1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20WASDAL-DAL": {
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "direction": 1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20WASDAL-WAS": {
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "direction": -1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20MIASF-SF": {
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "direction": -1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20MIASF-MIA": {
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "direction": 1,
+    "kickoff": 1789935900.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20INDKC-KC": {
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "direction": -1,
+    "kickoff": 1789950000.0,
+    "verified_mecnet": true
+  },
+  "KXNFLGAME-26SEP20INDKC-IND": {
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "direction": 1,
+    "kickoff": 1789950000.0,
+    "verified_mecnet": true
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-09-21T16:06:15.327945+00:00",
+  "failed_run": 1,
+  "reason": "Both ten-second metadata requests timed out; raw errors retained.",
+  "change": "Collector HTTP timeout increased from 10 to 20 seconds; two-attempt bound retained. No trading code or experiment parameter changed."
+}

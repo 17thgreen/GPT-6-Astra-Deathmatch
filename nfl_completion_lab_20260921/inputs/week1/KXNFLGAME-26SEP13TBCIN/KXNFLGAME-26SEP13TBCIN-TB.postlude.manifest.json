@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13TBCIN-TB",
+  "trades": 36,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.jsonl.gz",
+  "sha256": "d14b7c8bed03e3b57240eb4d426e09d65127492610fafbea14f17d59822c3a24",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:11.538518+00:00"
+}

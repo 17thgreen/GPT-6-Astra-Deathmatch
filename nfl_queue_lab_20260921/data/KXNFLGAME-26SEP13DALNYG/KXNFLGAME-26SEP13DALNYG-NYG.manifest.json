@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13DALNYG",
+  "ticker": "KXNFLGAME-26SEP13DALNYG-NYG",
+  "kickoff": "2026-09-14 00:20:00+00:00",
+  "from_utc": "2026-09-07T00:20:00+00:00",
+  "through_utc": "2026-09-13T21:20:00+00:00",
+  "pages": 13,
+  "trades": 12752,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd",
+  "retrieved_at": "2026-09-21T05:36:22.823018+00:00",
+  "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz"
+}

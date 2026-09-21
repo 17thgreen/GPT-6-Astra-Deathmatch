@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13NODET-DET",
+  "trades": 59,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.jsonl.gz",
+  "sha256": "8a8246c89a60e198a6db3dc11c98dc73595f54f17df16866cf4f15d1ffc65fc6",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:54.809431+00:00"
+}

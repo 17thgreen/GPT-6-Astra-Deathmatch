@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13BALIND-BAL",
+  "trades": 46,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.jsonl.gz",
+  "sha256": "cde4590587dceccb00250821268d78de8a3c32aed82bc394b3568cf6f1f52ddc",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:33.212634+00:00"
+}

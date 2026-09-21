@@ -1,0 +1,1109 @@
+[
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 120,
+    "contracts": 43955.37,
+    "midpoint_change_cents": -0.0013864062570739378,
+    "midpoint_less_fill_cents": 0.4986135937429265,
+    "fee_adjusted_midpoint_markout_cents": 0.08675788646529467
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 120,
+    "contracts": 50622.12,
+    "midpoint_change_cents": 0.0019287023143242537,
+    "midpoint_less_fill_cents": 0.5071043053906082,
+    "fee_adjusted_midpoint_markout_cents": 0.10635992724129338
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 120,
+    "contracts": 16241.43,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5029828038540946,
+    "fee_adjusted_midpoint_markout_cents": 0.08460892913986066
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 120,
+    "contracts": 19250.16,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06322596799195479
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 120,
+    "contracts": 50904.82,
+    "midpoint_change_cents": -0.00026146836389951507,
+    "midpoint_less_fill_cents": 0.4997385316360936,
+    "fee_adjusted_midpoint_markout_cents": 0.06790083925254324
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "horizon_seconds": 120,
+    "contracts": 6773.12,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999969,
+    "fee_adjusted_midpoint_markout_cents": 0.20656654540300176
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "horizon_seconds": 120,
+    "contracts": 7126.6,
+    "midpoint_change_cents": -0.017086689304857683,
+    "midpoint_less_fill_cents": 0.4829133106951435,
+    "fee_adjusted_midpoint_markout_cents": 0.12043190301125498
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "horizon_seconds": 120,
+    "contracts": 2750.0,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999745,
+    "fee_adjusted_midpoint_markout_cents": 0.11916727272727015
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 120,
+    "contracts": 9192.08,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5135986631970061,
+    "fee_adjusted_midpoint_markout_cents": 0.07948581822611808
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "horizon_seconds": 120,
+    "contracts": 2750.0,
+    "midpoint_change_cents": -0.090909090909091,
+    "midpoint_less_fill_cents": 0.40909090909090945,
+    "fee_adjusted_midpoint_markout_cents": -0.008490909090908744
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "horizon_seconds": 120,
+    "contracts": 2772.16,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06310241833083269
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "horizon_seconds": 120,
+    "contracts": 2500.0,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.07998400000000043
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NODET",
+    "horizon_seconds": 120,
+    "contracts": 6468.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.1675529612544989
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "horizon_seconds": 120,
+    "contracts": 2494.61,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000003,
+    "fee_adjusted_midpoint_markout_cents": 0.08181439182878328
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "horizon_seconds": 120,
+    "contracts": 2389.91,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.499999999999992,
+    "fee_adjusted_midpoint_markout_cents": 0.23064257649868858
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "horizon_seconds": 120,
+    "contracts": 2012.72,
+    "midpoint_change_cents": -0.03874855916371878,
+    "midpoint_less_fill_cents": 0.46125144083628167,
+    "fee_adjusted_midpoint_markout_cents": 0.056619897452204394
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "horizon_seconds": 120,
+    "contracts": 7481.74,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5167073434789239,
+    "fee_adjusted_midpoint_markout_cents": 0.1680665192856212
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "horizon_seconds": 120,
+    "contracts": 6190.66,
+    "midpoint_change_cents": 0.005862864379565351,
+    "midpoint_less_fill_cents": 0.5151639728235765,
+    "fee_adjusted_midpoint_markout_cents": 0.19183495782356036
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 120,
+    "contracts": 44524.08,
+    "midpoint_change_cents": -0.008493044662573668,
+    "midpoint_less_fill_cents": 0.5128117189619613,
+    "fee_adjusted_midpoint_markout_cents": 0.1296356937639112
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "horizon_seconds": 120,
+    "contracts": 8033.5,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999767,
+    "fee_adjusted_midpoint_markout_cents": 0.12164560901225883
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "horizon_seconds": 120,
+    "contracts": 5716.04,
+    "midpoint_change_cents": -0.043736572872128295,
+    "midpoint_less_fill_cents": 0.48084600527637716,
+    "fee_adjusted_midpoint_markout_cents": 0.08627563837901467
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "horizon_seconds": 120,
+    "contracts": 12046.04,
+    "midpoint_change_cents": -0.031130562408891248,
+    "midpoint_less_fill_cents": 0.4688694375911079,
+    "fee_adjusted_midpoint_markout_cents": 0.3016667718187877
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 120,
+    "contracts": 6118.3,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08640962358825208
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 120,
+    "contracts": 9064.29,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000031,
+    "fee_adjusted_midpoint_markout_cents": 0.07523424338806779
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "horizon_seconds": 120,
+    "contracts": 4751.28,
+    "midpoint_change_cents": -0.05204281793537748,
+    "midpoint_less_fill_cents": 0.4542944217137307,
+    "fee_adjusted_midpoint_markout_cents": 0.028695425232782342
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "horizon_seconds": 120,
+    "contracts": 14516.6,
+    "midpoint_change_cents": -0.02548255101056743,
+    "midpoint_less_fill_cents": 0.4819124312855604,
+    "fee_adjusted_midpoint_markout_cents": 0.09115150930658461
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "horizon_seconds": 120,
+    "contracts": 5434.81,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.499999999999999,
+    "fee_adjusted_midpoint_markout_cents": 0.20471644822909996
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "horizon_seconds": 120,
+    "contracts": 1473.37,
+    "midpoint_change_cents": -0.011840203071869265,
+    "midpoint_less_fill_cents": 0.48815979692812816,
+    "fee_adjusted_midpoint_markout_cents": 0.0939411010133206
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 120,
+    "contracts": 2500.0,
+    "midpoint_change_cents": -0.30000000000000027,
+    "midpoint_less_fill_cents": 0.20000000000000018,
+    "fee_adjusted_midpoint_markout_cents": -0.22957999999999984
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "horizon_seconds": 120,
+    "contracts": 856.5,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.6253823701109145,
+    "fee_adjusted_midpoint_markout_cents": 0.3344892002335064
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "horizon_seconds": 120,
+    "contracts": 530.6800000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.15276626215421765
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 300,
+    "contracts": 41346.56,
+    "midpoint_change_cents": -0.006046452232059941,
+    "midpoint_less_fill_cents": 0.4939535477679405,
+    "fee_adjusted_midpoint_markout_cents": 0.08202109196025058
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 300,
+    "contracts": 49351.83,
+    "midpoint_change_cents": 0.004724546181975424,
+    "midpoint_less_fill_cents": 0.5084108329924143,
+    "fee_adjusted_midpoint_markout_cents": 0.10773855802307679
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 300,
+    "contracts": 14933.49,
+    "midpoint_change_cents": -0.003433892546216594,
+    "midpoint_less_fill_cents": 0.4998101582416439,
+    "fee_adjusted_midpoint_markout_cents": 0.08144847587536513
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 300,
+    "contracts": 50493.43,
+    "midpoint_change_cents": 0.00864765970543095,
+    "midpoint_less_fill_cents": 0.508647659705424,
+    "fee_adjusted_midpoint_markout_cents": 0.0768049427420488
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "horizon_seconds": 300,
+    "contracts": 5780.18,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999966,
+    "fee_adjusted_midpoint_markout_cents": 0.2068274690407531
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "horizon_seconds": 300,
+    "contracts": 6260.29,
+    "midpoint_change_cents": -0.022272131163252596,
+    "midpoint_less_fill_cents": 0.47772786883674817,
+    "fee_adjusted_midpoint_markout_cents": 0.1156280300113902
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 300,
+    "contracts": 8527.5,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5146584579302185,
+    "fee_adjusted_midpoint_markout_cents": 0.08051949574904001
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "horizon_seconds": 300,
+    "contracts": 2202.03,
+    "midpoint_change_cents": -0.22706320985636,
+    "midpoint_less_fill_cents": 0.2729367901436404,
+    "fee_adjusted_midpoint_markout_cents": -0.14404208843657873
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "horizon_seconds": 300,
+    "contracts": 1984.52,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.0629673674238611
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 300,
+    "contracts": 18007.63,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06325457597696132
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "horizon_seconds": 300,
+    "contracts": 2416.53,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000003,
+    "fee_adjusted_midpoint_markout_cents": 0.07998452326269528
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NODET",
+    "horizon_seconds": 300,
+    "contracts": 5823.57,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.16756817553493866
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "horizon_seconds": 300,
+    "contracts": 2203.1,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08201624982978573
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "horizon_seconds": 300,
+    "contracts": 1613.31,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999924,
+    "fee_adjusted_midpoint_markout_cents": 0.23064693084403348
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "horizon_seconds": 300,
+    "contracts": 1610.23,
+    "midpoint_change_cents": -0.05216025039901137,
+    "midpoint_less_fill_cents": 0.4478397496009891,
+    "fee_adjusted_midpoint_markout_cents": 0.04285412642914407
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "horizon_seconds": 300,
+    "contracts": 2047.78,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999706,
+    "fee_adjusted_midpoint_markout_cents": 0.11915342468428931
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "horizon_seconds": 300,
+    "contracts": 6969.22,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5179360100556452,
+    "fee_adjusted_midpoint_markout_cents": 0.16924419088506362
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "horizon_seconds": 300,
+    "contracts": 5835.86,
+    "midpoint_change_cents": 0.004462067287426365,
+    "midpoint_less_fill_cents": 0.5143286507901152,
+    "fee_adjusted_midpoint_markout_cents": 0.19085447560428148
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 300,
+    "contracts": 43890.75,
+    "midpoint_change_cents": -0.015075955639855724,
+    "midpoint_less_fill_cents": 0.5063971337924253,
+    "fee_adjusted_midpoint_markout_cents": 0.12321799012320116
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "horizon_seconds": 300,
+    "contracts": 4467.38,
+    "midpoint_change_cents": -0.08394181824693614,
+    "midpoint_less_fill_cents": 0.4449475979209264,
+    "fee_adjusted_midpoint_markout_cents": 0.05066951994233497
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "horizon_seconds": 300,
+    "contracts": 9836.35,
+    "midpoint_change_cents": -0.05083186344528209,
+    "midpoint_less_fill_cents": 0.44916813655471705,
+    "fee_adjusted_midpoint_markout_cents": 0.28232881099188123
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 300,
+    "contracts": 7672.64,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000031,
+    "fee_adjusted_midpoint_markout_cents": 0.07517490720273905
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "horizon_seconds": 300,
+    "contracts": 3832.74,
+    "midpoint_change_cents": -0.130454974770008,
+    "midpoint_less_fill_cents": 0.3774010238106446,
+    "fee_adjusted_midpoint_markout_cents": -0.04842227753512891
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "horizon_seconds": 300,
+    "contracts": 12674.59,
+    "midpoint_change_cents": -0.028900737617548442,
+    "midpoint_less_fill_cents": 0.4795689643609751,
+    "fee_adjusted_midpoint_markout_cents": 0.08872160756284597
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "horizon_seconds": 300,
+    "contracts": 1354.4,
+    "midpoint_change_cents": -0.025760484347312488,
+    "midpoint_less_fill_cents": 0.47423951565268485,
+    "fee_adjusted_midpoint_markout_cents": 0.07992468989958386
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 300,
+    "contracts": 2198.98,
+    "midpoint_change_cents": -0.22737814805045997,
+    "midpoint_less_fill_cents": 0.2726218519495416,
+    "fee_adjusted_midpoint_markout_cents": -0.15678632820671268
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "horizon_seconds": 300,
+    "contracts": 4165.36,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.499999999999999,
+    "fee_adjusted_midpoint_markout_cents": 0.20492346399830885
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "horizon_seconds": 300,
+    "contracts": 6831.9400000000005,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999745,
+    "fee_adjusted_midpoint_markout_cents": 0.1222771277265291
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "horizon_seconds": 300,
+    "contracts": 794.65,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.6304914113131547,
+    "fee_adjusted_midpoint_markout_cents": 0.3398099792361396
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "horizon_seconds": 300,
+    "contracts": 529.86,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.15275733212546755
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 300,
+    "contracts": 4821.39,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000003,
+    "fee_adjusted_midpoint_markout_cents": 0.08609861471484409
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 600,
+    "contracts": 41965.77,
+    "midpoint_change_cents": -0.0027091126887460928,
+    "midpoint_less_fill_cents": 0.49729088731125437,
+    "fee_adjusted_midpoint_markout_cents": 0.08536445298156137
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 600,
+    "contracts": 48159.33,
+    "midpoint_change_cents": 0.004480128772555602,
+    "midpoint_less_fill_cents": 0.5086414200529787,
+    "fee_adjusted_midpoint_markout_cents": 0.10793069587969811
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 600,
+    "contracts": 13697.01,
+    "midpoint_change_cents": -0.00020697947946303615,
+    "midpoint_less_fill_cents": 0.5033299238300918,
+    "fee_adjusted_midpoint_markout_cents": 0.08516566754350081
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 600,
+    "contracts": 50724.31,
+    "midpoint_change_cents": 0.019159846629751936,
+    "midpoint_less_fill_cents": 0.519159846629745,
+    "fee_adjusted_midpoint_markout_cents": 0.0873199655155416
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "horizon_seconds": 600,
+    "contracts": 6108.16,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999968,
+    "fee_adjusted_midpoint_markout_cents": 0.2067611195515475
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "horizon_seconds": 600,
+    "contracts": 6055.9,
+    "midpoint_change_cents": -0.05084297957363854,
+    "midpoint_less_fill_cents": 0.44915702042636246,
+    "fee_adjusted_midpoint_markout_cents": 0.08741557819647093
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "horizon_seconds": 600,
+    "contracts": 2498.66,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999973,
+    "fee_adjusted_midpoint_markout_cents": 0.119163871835301
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 600,
+    "contracts": 8557.82,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.514606523624,
+    "fee_adjusted_midpoint_markout_cents": 0.08047843960260193
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "horizon_seconds": 600,
+    "contracts": 2451.35,
+    "midpoint_change_cents": -0.2039692414383913,
+    "midpoint_less_fill_cents": 0.29603075856160915,
+    "fee_adjusted_midpoint_markout_cents": -0.12125767434270887
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "horizon_seconds": 600,
+    "contracts": 2503.56,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06309415392481148
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 600,
+    "contracts": 17988.41,
+    "midpoint_change_cents": -0.01389783755206826,
+    "midpoint_less_fill_cents": 0.48610216244793214,
+    "fee_adjusted_midpoint_markout_cents": 0.04936317328768956
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "horizon_seconds": 600,
+    "contracts": 2453.48,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.07998027291846727
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13NODET",
+    "horizon_seconds": 600,
+    "contracts": 5115.57,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.1679177491462344
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "horizon_seconds": 600,
+    "contracts": 2128.7,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08186216939916426
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "horizon_seconds": 600,
+    "contracts": 2037.39,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999922,
+    "fee_adjusted_midpoint_markout_cents": 0.23064067262526275
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "horizon_seconds": 600,
+    "contracts": 1472.93,
+    "midpoint_change_cents": -0.07441629948470063,
+    "midpoint_less_fill_cents": 0.4255837005152998,
+    "fee_adjusted_midpoint_markout_cents": 0.020459220736898945
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "horizon_seconds": 600,
+    "contracts": 6355.4,
+    "midpoint_change_cents": 0.01966831356012212,
+    "midpoint_less_fill_cents": 0.5393366271202447,
+    "fee_adjusted_midpoint_markout_cents": 0.19016899015010902
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "horizon_seconds": 600,
+    "contracts": 5760.07,
+    "midpoint_change_cents": 0.010618794563260526,
+    "midpoint_less_fill_cents": 0.5206152008569344,
+    "fee_adjusted_midpoint_markout_cents": 0.19708441043251249
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 600,
+    "contracts": 43377.07,
+    "midpoint_change_cents": -0.010533791240394903,
+    "midpoint_less_fill_cents": 0.5113343294049112,
+    "fee_adjusted_midpoint_markout_cents": 0.12818304694161897
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "horizon_seconds": 600,
+    "contracts": 4254.11,
+    "midpoint_change_cents": -0.05876669855739514,
+    "midpoint_less_fill_cents": 0.4733951402290927,
+    "fee_adjusted_midpoint_markout_cents": 0.07938793308118157
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "horizon_seconds": 600,
+    "contracts": 10360.2,
+    "midpoint_change_cents": -0.05847425725372102,
+    "midpoint_less_fill_cents": 0.44152574274627815,
+    "fee_adjusted_midpoint_markout_cents": 0.27449904441999096
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 600,
+    "contracts": 7449.47,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000033,
+    "fee_adjusted_midpoint_markout_cents": 0.07529998778436917
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "horizon_seconds": 600,
+    "contracts": 4180.85,
+    "midpoint_change_cents": -0.11959290574883108,
+    "midpoint_less_fill_cents": 0.38368633172680483,
+    "fee_adjusted_midpoint_markout_cents": -0.04187306408983534
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "horizon_seconds": 600,
+    "contracts": 12493.77,
+    "midpoint_change_cents": -0.008592282393545203,
+    "midpoint_less_fill_cents": 0.49706253596792394,
+    "fee_adjusted_midpoint_markout_cents": 0.10597962024272656
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "horizon_seconds": 600,
+    "contracts": 1306.67,
+    "midpoint_change_cents": -0.026701462496269167,
+    "midpoint_less_fill_cents": 0.47329853750372824,
+    "fee_adjusted_midpoint_markout_cents": 0.07896791079614332
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 600,
+    "contracts": 2414.01,
+    "midpoint_change_cents": -0.31068636832490365,
+    "midpoint_less_fill_cents": 0.18931363167509657,
+    "fee_adjusted_midpoint_markout_cents": -0.24028690850493578
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "horizon_seconds": 600,
+    "contracts": 6880.9800000000005,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.4999999999999976,
+    "fee_adjusted_midpoint_markout_cents": 0.12206836816848526
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "horizon_seconds": 600,
+    "contracts": 4236.41,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999895,
+    "fee_adjusted_midpoint_markout_cents": 0.2051914238706819
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "horizon_seconds": 600,
+    "contracts": 520.17,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.6414345310187027,
+    "fee_adjusted_midpoint_markout_cents": 0.3532787357979094
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "horizon_seconds": 600,
+    "contracts": 522.8100000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.1526271494424365
+  },
+  {
+    "policy": "q1_route",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 600,
+    "contracts": 5027.2,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08573957670273756
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 120,
+    "contracts": 6444.82,
+    "midpoint_change_cents": -0.03879084287846678,
+    "midpoint_less_fill_cents": 0.4612091571215337,
+    "fee_adjusted_midpoint_markout_cents": 0.04834114839514566
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 120,
+    "contracts": 17430.78,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000006,
+    "fee_adjusted_midpoint_markout_cents": 0.09929905603765338
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 120,
+    "contracts": 1829.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06355061534089711
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 120,
+    "contracts": 744.5600000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999206,
+    "fee_adjusted_midpoint_markout_cents": 0.06601214139893917
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 120,
+    "contracts": 533.12,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08178271308523453
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 120,
+    "contracts": 19511.08,
+    "midpoint_change_cents": -0.0011439653776213192,
+    "midpoint_less_fill_cents": 0.49885603462237144,
+    "fee_adjusted_midpoint_markout_cents": 0.06691889941509442
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 120,
+    "contracts": 42.98,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5986505351326161,
+    "fee_adjusted_midpoint_markout_cents": 0.2173103769194937
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 120,
+    "contracts": 1008.37,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000032,
+    "fee_adjusted_midpoint_markout_cents": 0.07236926921665982
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 120,
+    "contracts": 358.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08562750780205129
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 120,
+    "contracts": 1848.1200000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000032,
+    "fee_adjusted_midpoint_markout_cents": 0.07515745730797024
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 300,
+    "contracts": 6443.73,
+    "midpoint_change_cents": -0.03879740460882133,
+    "midpoint_less_fill_cents": 0.46120259539117914,
+    "fee_adjusted_midpoint_markout_cents": 0.04833458260976215
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 300,
+    "contracts": 17399.87,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000006,
+    "fee_adjusted_midpoint_markout_cents": 0.09929470737425095
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 300,
+    "contracts": 1829.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06355061534089711
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 300,
+    "contracts": 744.5600000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999206,
+    "fee_adjusted_midpoint_markout_cents": 0.06601214139893917
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 300,
+    "contracts": 308.44,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08306315652963346
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 300,
+    "contracts": 19261.08,
+    "midpoint_change_cents": 0.013826846677340913,
+    "midpoint_less_fill_cents": 0.5138268466773337,
+    "fee_adjusted_midpoint_markout_cents": 0.0818801437925526
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 300,
+    "contracts": 42.98,
+    "midpoint_change_cents": -0.02989762680316429,
+    "midpoint_less_fill_cents": 0.5687529083294518,
+    "fee_adjusted_midpoint_markout_cents": 0.18741275011632938
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 300,
+    "contracts": 1008.37,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000032,
+    "fee_adjusted_midpoint_markout_cents": 0.07236926921665982
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 300,
+    "contracts": 307.89,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.0859560232550591
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 300,
+    "contracts": 1848.1200000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000032,
+    "fee_adjusted_midpoint_markout_cents": 0.07515745730797024
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "horizon_seconds": 600,
+    "contracts": 6416.01,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08714839908291959
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "horizon_seconds": 600,
+    "contracts": 17399.87,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000006,
+    "fee_adjusted_midpoint_markout_cents": 0.09929470737425095
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "horizon_seconds": 600,
+    "contracts": 1829.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.06355061534089711
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "horizon_seconds": 600,
+    "contracts": 744.5600000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.49999999999999206,
+    "fee_adjusted_midpoint_markout_cents": 0.06601214139893917
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "horizon_seconds": 600,
+    "contracts": 531.62,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08178774312478883
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "horizon_seconds": 600,
+    "contracts": 19511.08,
+    "midpoint_change_cents": 0.05015662895134411,
+    "midpoint_less_fill_cents": 0.5501566289513369,
+    "fee_adjusted_midpoint_markout_cents": 0.11821949374405985
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "horizon_seconds": 600,
+    "contracts": 42.98,
+    "midpoint_change_cents": -0.06875290832945476,
+    "midpoint_less_fill_cents": 0.5298976268031613,
+    "fee_adjusted_midpoint_markout_cents": 0.1485574685900389
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "horizon_seconds": 600,
+    "contracts": 1008.37,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000032,
+    "fee_adjusted_midpoint_markout_cents": 0.07236926921665982
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "horizon_seconds": 600,
+    "contracts": 358.88,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000004,
+    "fee_adjusted_midpoint_markout_cents": 0.08562750780205129
+  },
+  {
+    "policy": "pair_complete",
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "horizon_seconds": 600,
+    "contracts": 1598.1200000000001,
+    "midpoint_change_cents": 0.0,
+    "midpoint_less_fill_cents": 0.5000000000000028,
+    "fee_adjusted_midpoint_markout_cents": 0.074925537506573
+  }
+]

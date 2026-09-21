@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13MIALV-LV",
+  "trades": 42,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.jsonl.gz",
+  "sha256": "5eb2d0d5e3db9d5771348db6c4a0fa76816ce784a43f1e0807bcb23513e4686b",
+  "from_utc": "2026-09-13T17:25:00+00:00",
+  "through_utc": "2026-09-13T17:30:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:28.530360+00:00"
+}

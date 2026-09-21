@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-09-21T15:59:23.432483+00:00",
+  "cases": 52,
+  "sha256": {
+    "EXPERIMENT_SPEC.md": "b39b1f9c33eb7e9feb091aff1a455f6d7bfcd07998f40530b346f87e2243b000",
+    "BASELINE_HASHES.json": "044b660696df2315281b947491d9a78f5c777badb52a09d022b2e2c077d83660",
+    "timing_policy.py": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f",
+    "run_experiment.py": "31239d9642afef258d69b935a5c7bab75c8bd640d17b1a0768ecebde2440c03e",
+    "test_timing.py": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d"
+  }
+}

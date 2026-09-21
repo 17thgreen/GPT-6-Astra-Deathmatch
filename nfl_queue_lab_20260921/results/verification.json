@@ -1,0 +1,146 @@
+{
+  "scenarios": [
+    {
+      "scenario": "q291_route",
+      "fills": 51418,
+      "pnl": 1060.6224999994465,
+      "passed": true
+    },
+    {
+      "scenario": "q291_preserve",
+      "fills": 49732,
+      "pnl": 684.640899999481,
+      "passed": true
+    },
+    {
+      "scenario": "q291_churn60",
+      "fills": 11292,
+      "pnl": 245.04609999995137,
+      "passed": true
+    },
+    {
+      "scenario": "q291_combined",
+      "fills": 51671,
+      "pnl": 1040.1686999994563,
+      "passed": true
+    },
+    {
+      "scenario": "q291_improve_exit",
+      "fills": 49500,
+      "pnl": 672.8354999995254,
+      "passed": true
+    },
+    {
+      "scenario": "q291_improve_exit_race250",
+      "fills": 49450,
+      "pnl": 673.1918999995114,
+      "passed": true
+    },
+    {
+      "scenario": "q291_combined_race250",
+      "fills": 51418,
+      "pnl": 1040.0498999994634,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_preserve",
+      "fills": 6431,
+      "pnl": 46.6429999999591,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_route",
+      "fills": 8689,
+      "pnl": 154.0656999999428,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_churn60",
+      "fills": 566,
+      "pnl": -41.410700000014,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_improve_exit",
+      "fills": 6360,
+      "pnl": 44.9345999999523,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_combined",
+      "fills": 8773,
+      "pnl": 152.67819999994936,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_improve_exit_race250",
+      "fills": 6349,
+      "pnl": 43.9510999999502,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_combined_race250",
+      "fills": 8745,
+      "pnl": 152.2853999999461,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_margin_only",
+      "fills": 3041,
+      "pnl": 96.73049999995874,
+      "passed": true
+    },
+    {
+      "scenario": "q291_margin_only",
+      "fills": 21098,
+      "pnl": 966.6217999998007,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_route",
+      "fills": 2995,
+      "pnl": 19.60389999996096,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_preserve",
+      "fills": 2033,
+      "pnl": -29.20210000001589,
+      "passed": true
+    },
+    {
+      "scenario": "q100000_route",
+      "fills": 254,
+      "pnl": -16.099600000003193,
+      "passed": true
+    },
+    {
+      "scenario": "q100000_preserve",
+      "fills": 175,
+      "pnl": -35.40450000000055,
+      "passed": true
+    }
+  ],
+  "baseline_regression_passed": true,
+  "forward_hash_passed": true,
+  "recorded_capture_errors": 8,
+  "trade_interval_coverage": {
+    "KXNFLGAME-26SEP21NYGLAR-LAR": [
+      1789996878,
+      1790001684
+    ],
+    "KXNFLGAME-26SEP21NYGLAR-NYG": [
+      1789996878,
+      1790001684
+    ],
+    "KXNFLGAME-26SEP24ATLGB-GB": [
+      1789996878,
+      1790001684
+    ],
+    "KXNFLGAME-26SEP24ATLGB-ATL": [
+      1789996878,
+      1790001684
+    ]
+  },
+  "note": "Verifies internal accounting and constraints; does not validate hypothetical fills or historical queue assumptions."
+}

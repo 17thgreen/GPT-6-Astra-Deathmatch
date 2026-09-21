@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+  "trades": 262,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.jsonl.gz",
+  "sha256": "ca94c5cb1221ab0a18e465d2163d944463da0b3b66c59d7fb0e86783551a2328",
+  "from_utc": "2026-09-10T21:35:00+00:00",
+  "through_utc": "2026-09-10T21:40:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:11.551135+00:00"
+}

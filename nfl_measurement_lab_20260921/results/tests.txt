@@ -1,0 +1,28 @@
+test_best_price_independent_of_array_order (test_measurement.MeasurementTests.test_best_price_independent_of_array_order) ... ok
+test_block_trade_excluded (test_measurement.MeasurementTests.test_block_trade_excluded) ... ok
+test_conflicting_duplicate_rejected (test_measurement.MeasurementTests.test_conflicting_duplicate_rejected) ... ok
+test_dedup_retains_first_receipt (test_measurement.MeasurementTests.test_dedup_retains_first_receipt) ... ok
+test_depth_decline_not_credited_as_own_service (test_measurement.MeasurementTests.test_depth_decline_not_credited_as_own_service) ... ok
+test_empty_holdout_cannot_pass (test_measurement.MeasurementTests.test_empty_holdout_cannot_pass) ... ok
+test_equal_receive_time_not_strictly_prior (test_measurement.MeasurementTests.test_equal_receive_time_not_strictly_prior) ... ok
+test_future_received_trade_cannot_enter_feature (test_measurement.MeasurementTests.test_future_received_trade_cannot_enter_feature) ... ok
+test_gap_censors_and_does_not_count_unseen_service (test_measurement.MeasurementTests.test_gap_censors_and_does_not_count_unseen_service) ... ok
+test_historical_future_publication_excluded (test_measurement.MeasurementTests.test_historical_future_publication_excluded) ... ok
+test_historical_markout_sign_and_fee (test_measurement.MeasurementTests.test_historical_markout_sign_and_fee) ... ok
+test_historical_prefill_quote_not_markout (test_measurement.MeasurementTests.test_historical_prefill_quote_not_markout) ... ok
+test_historical_stale_quote_excluded (test_measurement.MeasurementTests.test_historical_stale_quote_excluded) ... ok
+test_holdout_overlap_rejected (test_measurement.MeasurementTests.test_holdout_overlap_rejected) ... ok
+test_markout_no_side_sign (test_measurement.MeasurementTests.test_markout_no_side_sign) ... ok
+test_markout_requires_continuous_observation (test_measurement.MeasurementTests.test_markout_requires_continuous_observation) ... ok
+test_missing_page_not_complete_coverage (test_measurement.MeasurementTests.test_missing_page_not_complete_coverage) ... ok
+test_no_service_before_depth_clears (test_measurement.MeasurementTests.test_no_service_before_depth_clears) ... ok
+test_nonfinite_depth_rejected (test_measurement.MeasurementTests.test_nonfinite_depth_rejected) ... ok
+test_price_change_interval_not_silently_filled (test_measurement.MeasurementTests.test_price_change_interval_not_silently_filled) ... ok
+test_private_routes_are_unavailable (test_measurement.MeasurementTests.test_private_routes_are_unavailable) ... ok
+test_trade_only_service_subtracts_queue_once (test_measurement.MeasurementTests.test_trade_only_service_subtracts_queue_once) ... ok
+test_zero_size_level_is_not_best (test_measurement.MeasurementTests.test_zero_size_level_is_not_best) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.001s
+
+OK

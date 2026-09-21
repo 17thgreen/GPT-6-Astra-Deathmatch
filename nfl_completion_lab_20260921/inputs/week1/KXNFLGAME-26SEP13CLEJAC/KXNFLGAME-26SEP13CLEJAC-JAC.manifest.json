@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13CLEJAC",
+  "ticker": "KXNFLGAME-26SEP13CLEJAC-JAC",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 6,
+  "trades": 5111,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c",
+  "retrieved_at": "2026-09-21T05:31:13.151159+00:00",
+  "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz"
+}

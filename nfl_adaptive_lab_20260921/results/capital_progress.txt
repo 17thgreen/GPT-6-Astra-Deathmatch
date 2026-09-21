@@ -1,0 +1,4 @@
+q3300_d0.25_baseline_cash1000 pnl 89.1175000000053 residual 0.0
+q3300_d0.25_baseline_cash4000 pnl 201.2075999999788 residual 0.0
+q3300_d0.25_baseline_cash5000 pnl 201.52149999992344 residual 0.0
+DONE 3 buffered capital controls

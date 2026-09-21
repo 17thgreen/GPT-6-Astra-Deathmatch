@@ -1,0 +1,5 @@
+# Mechanism check, declared after Q1 results
+
+The frozen Q1 suite completed before this diagnostic was specified. Route policy P&L exceeded the preserving baseline in both assumed queue regimes, but its score combines fee-inclusive pair margin and estimated service. To distinguish queue-flow ranking from merely choosing cheaper equivalent legs, run exactly two additional cases: replace the service fraction with 1 in the route score (margin-only routing), with early queues 290.595 and 3,300. Preserve the 25% switching hurdle and every other control. No grid search or threshold optimization. These are post-result mechanism diagnostics, not independent validation or a new primary contest.
+
+Operational capture deviation: individual public GETs took about five seconds in this workspace. The initial sequential collector was interrupted once, retaining all complete raw records, and resumed with four concurrent independent GETs. The 120-round upper bound and two selected events remain unchanged. Capture timestamps, partial round and interruption are preserved. Actual duration/cadence must be reported rather than calling this an uninterrupted five-second feed.

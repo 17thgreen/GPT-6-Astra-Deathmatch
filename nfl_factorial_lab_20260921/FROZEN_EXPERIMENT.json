@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-09-21T17:04:04.326024+00:00",
+  "cases": 36,
+  "sha256": {
+    "EXPERIMENT_SPEC.md": "540356a6ee130f0e7077c3eff8d62d4271b3d545e0a3f43acaaf72e4ebce1afd",
+    "BASELINE_HASHES.json": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335",
+    "factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+    "run_experiment.py": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc",
+    "test_factorial.py": "0a627b0588b9b6688b98f7c1742628c6895757c9f02b143b24b5a21a1d05cd0a",
+    "analyze.py": "a05e4ba81f873e1b0b58a528d11b6494f573dfe2dfb3f85a6c25f2a05c2bd542",
+    "test_analysis.py": "c0b502ce28ad59df898d6f1c45461cd88f10911c9af3cc5abb4347c64a3682f4",
+    "Q5_REFERENCES.json": "8828ecd556857bcbde8e9909cd6ebd68766ec4f2c8350923cb7d391481e39c65",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "RESERVED_HOLDOUT.json": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "FORWARD_PROTOCOL.md": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326"
+  }
+}

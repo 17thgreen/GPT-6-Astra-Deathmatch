@@ -1,0 +1,11 @@
+{
+  "research_reference": "results/model.json",
+  "experimental_challenger": "results/round2/model.json",
+  "promote_challenger": false,
+  "reason": "Selected on 2022, but no reliable incremental gain over published V1 in 2023-2025; 2025 point estimate worsened.",
+  "market_admitted": false,
+  "order_execution_available": false,
+  "settlement_conversion": "settlement.py",
+  "tie_probability_estimator_available": false,
+  "evidence": "ROUND2_RESULTS.md"
+}

@@ -1,0 +1,136 @@
+{
+  "evidence": "BOUNDED_PUBLIC_REST_MEASUREMENTS_NOT_STRATEGY_EXECUTION",
+  "book_snapshots": 196,
+  "deduplicated_public_trades": 3894,
+  "errors": [],
+  "first_book_received": 1790000505.5076365,
+  "last_book_received": 1790001199.9776857,
+  "median_request_seconds": 5.1502004861831665,
+  "p95_request_seconds": 15.181466579437256,
+  "median_per_ticker_observation_gap_seconds": 5.819472789764404,
+  "max_per_ticker_observation_gap_seconds": 136.72502160072327,
+  "spreads_two_or_more_ticks": 0,
+  "spread_observations": 196,
+  "legs": [
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "outcome": "yes",
+      "observations": 49,
+      "queue_min": 631007.56,
+      "queue_median": 634682.43,
+      "queue_max": 638726.87,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 6819.5699756620415,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "outcome": "no",
+      "observations": 49,
+      "queue_min": 8409038.09,
+      "queue_median": 8439383.13,
+      "queue_max": 8450622.98,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 9297.522194065503,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "outcome": "yes",
+      "observations": 49,
+      "queue_min": 466476.85,
+      "queue_median": 479074.1,
+      "queue_max": 479620.1,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 8662.916942397806,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "outcome": "no",
+      "observations": 49,
+      "queue_min": 10530206.0,
+      "queue_median": 10537135.96,
+      "queue_max": 10557824.81,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 3092.2099592366612,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "outcome": "yes",
+      "observations": 49,
+      "queue_min": 757.87,
+      "queue_median": 1957.87,
+      "queue_max": 2010.72,
+      "queue_above_3300_fraction": 0.0,
+      "median_implied_queue_wait_minutes": 3792.58904109589,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "outcome": "no",
+      "observations": 49,
+      "queue_min": 295149.6,
+      "queue_median": 368818.54,
+      "queue_max": 368846.83,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 63096.23745437956,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "outcome": "yes",
+      "observations": 49,
+      "queue_min": 131399.1,
+      "queue_median": 131400.1,
+      "queue_max": 131731.46,
+      "queue_above_3300_fraction": 1.0,
+      "median_implied_queue_wait_minutes": 614977.0670826833,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "outcome": "no",
+      "observations": 49,
+      "queue_min": 5.49,
+      "queue_median": 15034.11,
+      "queue_max": 15260.32,
+      "queue_above_3300_fraction": 0.7346938775510204,
+      "median_implied_queue_wait_minutes": 505.11332668660685,
+      "zero_known_eligible_flow_observations": 1,
+      "wait_note": "Queue divided by previously received eligible trailing-hour flow; steady-flow heuristic, not expected execution time."
+    }
+  ],
+  "hypothetical_joins": 348,
+  "joins_with_any_service": 0,
+  "joins_with_full_250_service": 0,
+  "join_end_reasons": {
+    "observation_gap": 308,
+    "coverage_end": 40
+  },
+  "shadow_route_decisions": 372,
+  "shadow_selected_counts": {
+    "KXNFLGAME-26SEP21NYGLAR-LAR/no": 32,
+    "KXNFLGAME-26SEP21NYGLAR-LAR/yes": 1,
+    "KXNFLGAME-26SEP24ATLGB-ATL/no": 93,
+    "KXNFLGAME-26SEP24ATLGB-ATL/yes": 1,
+    "KXNFLGAME-26SEP21NYGLAR-NYG/no": 92,
+    "KXNFLGAME-26SEP24ATLGB-GB/no": 92,
+    "KXNFLGAME-26SEP21NYGLAR-NYG/yes": 61
+  },
+  "restrictions": [
+    "Overlapping snapshots are not independent opportunities.",
+    "Hypothetical join ignores cancellations ahead; transient price changes between snapshots and arrival-time queue are unknown.",
+    "Recorded quotes are current observations, never historical queue replacements.",
+    "Short-window service and steady-flow ratios do not validate fill probabilities or P&L.",
+    "Workspace/proxy end-to-end latency is not a measurement of exchange matching-engine latency."
+  ]
+}

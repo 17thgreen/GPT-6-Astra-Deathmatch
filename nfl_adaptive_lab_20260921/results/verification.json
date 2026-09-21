@@ -1,0 +1,171 @@
+{
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "scenario": "q3300_d0.25_baseline",
+      "fills": 14331,
+      "orders": 42986,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_inventory",
+      "fills": 9884,
+      "orders": 38943,
+      "decisions": 40892,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_patience",
+      "fills": 12037,
+      "orders": 97899,
+      "decisions": 59577,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_allocation",
+      "fills": 12450,
+      "orders": 34975,
+      "decisions": 2558,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d5_baseline",
+      "fills": 14045,
+      "orders": 42856,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d5_inventory",
+      "fills": 9947,
+      "orders": 38850,
+      "decisions": 40835,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d5_allocation",
+      "fills": 12175,
+      "orders": 34881,
+      "decisions": 2558,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d0.25_baseline",
+      "fills": 4696,
+      "orders": 44296,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d5_patience",
+      "fills": 11876,
+      "orders": 98211,
+      "decisions": 59941,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d0.25_inventory",
+      "fills": 2613,
+      "orders": 41008,
+      "decisions": 41729,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d0.25_allocation",
+      "fills": 4163,
+      "orders": 34434,
+      "decisions": 2558,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d0.25_patience",
+      "fills": 2517,
+      "orders": 133559,
+      "decisions": 96149,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d5_baseline",
+      "fills": 4675,
+      "orders": 44290,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d5_inventory",
+      "fills": 2531,
+      "orders": 40998,
+      "decisions": 41736,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d5_allocation",
+      "fills": 4169,
+      "orders": 34426,
+      "decisions": 2558,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d5_patience",
+      "fills": 2479,
+      "orders": 131964,
+      "decisions": 94599,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_baseline_cash1000",
+      "fills": 6399,
+      "orders": 16606,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_baseline_cash4000",
+      "fills": 14335,
+      "orders": 43068,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_baseline_cash5000",
+      "fills": 14331,
+      "orders": 42986,
+      "decisions": 0,
+      "passed": true
+    },
+    {
+      "scenario": "q3300_d0.25_allocation_neutral",
+      "fills": 12439,
+      "orders": 34407,
+      "decisions": 2558,
+      "passed": true
+    },
+    {
+      "scenario": "q10000_d0.25_allocation_neutral",
+      "fills": 4187,
+      "orders": 34371,
+      "decisions": 2558,
+      "passed": true
+    }
+  ],
+  "q2_regressions": {
+    "3300": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0,
+      "max_reserved_cash": 0.0,
+      "min_cash": 0.0
+    },
+    "10000": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0,
+      "max_reserved_cash": 0.0,
+      "min_cash": 0.0
+    }
+  },
+  "caveat": "Independent accounting checks do not verify historical queue positions or executable fills."
+}

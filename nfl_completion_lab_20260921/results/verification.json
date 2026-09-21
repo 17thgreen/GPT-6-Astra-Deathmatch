@@ -1,0 +1,244 @@
+{
+  "checked_scenarios": [
+    {
+      "scenario": "week1_q291_pair_gate",
+      "passed": true,
+      "fills": 13929,
+      "residual": 1.7248424910576432e-12
+    },
+    {
+      "scenario": "week1_q291_pair_complete",
+      "passed": true,
+      "fills": 11993,
+      "residual": 5.919709167301335e-13
+    },
+    {
+      "scenario": "week1_q291_q1_route",
+      "passed": true,
+      "fills": 51418,
+      "residual": 1.625011236683349e-11
+    },
+    {
+      "scenario": "week1_q3300_pair_gate",
+      "passed": true,
+      "fills": 1033,
+      "residual": 1.545430450278218e-13
+    },
+    {
+      "scenario": "week1_q3300_q1_route",
+      "passed": true,
+      "fills": 8689,
+      "residual": 2.396305376350938e-12
+    },
+    {
+      "scenario": "week1_q3300_pair_complete",
+      "passed": true,
+      "fills": 1041,
+      "residual": 4.2321701698710967e-13
+    },
+    {
+      "scenario": "week1_q10000_pair_gate",
+      "passed": true,
+      "fills": 265,
+      "residual": 8.526512829121202e-14
+    },
+    {
+      "scenario": "week1_q10000_q1_route",
+      "passed": true,
+      "fills": 2995,
+      "residual": 1.4230838729645257e-12
+    },
+    {
+      "scenario": "week1_q10000_pair_complete",
+      "passed": true,
+      "fills": 162,
+      "residual": 8.881784197001252e-14
+    },
+    {
+      "scenario": "week2_q291_pair_complete",
+      "passed": true,
+      "fills": 6185,
+      "residual": 7.990275108227252e-13
+    },
+    {
+      "scenario": "week2_q291_pair_gate",
+      "passed": true,
+      "fills": 7760,
+      "residual": 1.8332002582610585e-12
+    },
+    {
+      "scenario": "week2_q291_q1_route",
+      "passed": true,
+      "fills": 45732,
+      "residual": 1.2395418025334948e-11
+    },
+    {
+      "scenario": "week2_q3300_pair_gate",
+      "passed": true,
+      "fills": 71,
+      "residual": 3.552713678800501e-15
+    },
+    {
+      "scenario": "week2_q3300_q1_route",
+      "passed": true,
+      "fills": 5642,
+      "residual": 2.8350655156827997e-12
+    },
+    {
+      "scenario": "week2_q3300_pair_complete",
+      "passed": true,
+      "fills": 61,
+      "residual": 2.842170943040401e-14
+    },
+    {
+      "scenario": "week2_q10000_pair_gate",
+      "passed": true,
+      "fills": 6,
+      "residual": 0.0
+    },
+    {
+      "scenario": "week2_q10000_q1_route",
+      "passed": true,
+      "fills": 1701,
+      "residual": 7.770450949351471e-13
+    },
+    {
+      "scenario": "week2_q10000_pair_complete",
+      "passed": true,
+      "fills": 2,
+      "residual": 0.0
+    },
+    {
+      "scenario": "combined_q291_pair_gate",
+      "passed": true,
+      "fills": 21689,
+      "residual": 3.5580427493187017e-12
+    },
+    {
+      "scenario": "combined_q291_pair_complete",
+      "passed": true,
+      "fills": 18178,
+      "residual": 1.3909984275528586e-12
+    },
+    {
+      "scenario": "combined_q3300_pair_gate",
+      "passed": true,
+      "fills": 1104,
+      "residual": 1.580957587066223e-13
+    },
+    {
+      "scenario": "combined_q291_q1_route",
+      "passed": true,
+      "fills": 97150,
+      "residual": 2.864553039216844e-11
+    },
+    {
+      "scenario": "combined_q3300_q1_route",
+      "passed": true,
+      "fills": 14331,
+      "residual": 5.231370892033738e-12
+    },
+    {
+      "scenario": "combined_q3300_pair_complete",
+      "passed": true,
+      "fills": 1102,
+      "residual": 4.516387264175137e-13
+    },
+    {
+      "scenario": "combined_q10000_pair_gate",
+      "passed": true,
+      "fills": 271,
+      "residual": 8.526512829121202e-14
+    },
+    {
+      "scenario": "combined_q10000_pair_complete",
+      "passed": true,
+      "fills": 164,
+      "residual": 8.881784197001252e-14
+    },
+    {
+      "scenario": "combined_q10000_q1_route",
+      "passed": true,
+      "fills": 4696,
+      "residual": 2.2001289678996727e-12
+    },
+    {
+      "scenario": "combined_q100000_pair_gate",
+      "passed": true,
+      "fills": 0,
+      "residual": 0
+    },
+    {
+      "scenario": "combined_q100000_pair_complete",
+      "passed": true,
+      "fills": 0,
+      "residual": 0
+    },
+    {
+      "scenario": "combined_q100000_q1_route",
+      "passed": true,
+      "fills": 420,
+      "residual": 3.4994229736184934e-13
+    }
+  ],
+  "q1_regression_differences": {
+    "week1_q291_q1_route": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0
+    },
+    "week1_q3300_q1_route": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0
+    },
+    "week1_q10000_q1_route": {
+      "completed_strategy_pnl": 0.0,
+      "maker_contracts": 0.0,
+      "taker_contracts": 0.0,
+      "unhedged_contract_hours": 0.0
+    }
+  },
+  "cohort_counts": {
+    "week1": {
+      "cohort": "week1",
+      "games": 16,
+      "markets": 32,
+      "trades": 391118,
+      "precutoff_trades": 387258,
+      "postlude_trades": 3860,
+      "duplicate_trades": 0,
+      "quotes": 173074,
+      "missing_candle_minutes": 143918,
+      "null_candle_prices": 0,
+      "start": 1788394817.069481,
+      "end": 1789420860
+    },
+    "week2": {
+      "cohort": "week2",
+      "games": 15,
+      "markets": 30,
+      "trades": 290614,
+      "precutoff_trades": 288551,
+      "postlude_trades": 2063,
+      "duplicate_trades": 0,
+      "quotes": 191914,
+      "missing_candle_minutes": 105266,
+      "null_candle_prices": 0,
+      "start": 1789085760,
+      "end": 1789939560
+    },
+    "combined": {
+      "cohort": "combined",
+      "games": 31,
+      "markets": 62,
+      "trades": 681732,
+      "quotes": 364988,
+      "bankroll_note": "ONE shared $5,000 account; overlapping windows run chronologically."
+    }
+  },
+  "all_checks_passed": true,
+  "note": "Internal ledger/causality controls do not validate counterfactual execution."
+}

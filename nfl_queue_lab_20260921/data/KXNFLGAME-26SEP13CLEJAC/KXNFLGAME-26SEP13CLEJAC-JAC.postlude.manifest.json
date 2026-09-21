@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13CLEJAC-JAC",
+  "trades": 49,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.jsonl.gz",
+  "sha256": "701abcc0fc0155bea10d03143a20e457ea4b778b706e6d354416c53777c76cec",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:54.810934+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13WASPHI",
+  "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
+  "kickoff": "2026-09-13 20:25:00+00:00",
+  "from_utc": "2026-09-06T20:25:00+00:00",
+  "through_utc": "2026-09-13T17:25:00+00:00",
+  "pages": 4,
+  "trades": 3171,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3",
+  "retrieved_at": "2026-09-21T05:35:58.182292+00:00",
+  "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz"
+}

@@ -1,0 +1,197 @@
+measured_queue {
+  "all": {
+    "games": 48,
+    "games_with_fills": 46,
+    "pnl": 2653.648194627859,
+    "contracts": 2832580.624999997,
+    "contract_weighted_cents": 0.09368305958203262,
+    "mean_game_ratio_cents": -0.040404156644246125,
+    "mean_game_pnl": 55.284337388080395,
+    "median_game_pnl": 9.331920855946464,
+    "positive_games": 31,
+    "negative_games": 15
+  },
+  "clustered_all": {
+    "blocks": 3,
+    "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+    "block_totals": [
+      {
+        "block": "2026-1",
+        "pnl": 816.5435271415581,
+        "contracts": 1384754.6899999974,
+        "games": 16
+      },
+      {
+        "block": "2026-2",
+        "pnl": 1893.9011939375532,
+        "contracts": 1416433.2,
+        "games": 16
+      },
+      {
+        "block": "2026-3",
+        "pnl": -56.79652645125225,
+        "contracts": 31392.73499999999,
+        "games": 16
+      }
+    ]
+  },
+  "complete": {
+    "games": 31,
+    "games_with_fills": 31,
+    "pnl": 2454.617525781682,
+    "contracts": 2687506.5849999986,
+    "contract_weighted_cents": 0.09133438182000522,
+    "mean_game_ratio_cents": 0.06796158686911608,
+    "mean_game_pnl": 79.18121050908653,
+    "median_game_pnl": 57.19640658183198,
+    "positive_games": 24,
+    "negative_games": 7,
+    "clustered": {
+      "blocks": 2,
+      "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+      "block_totals": [
+        {
+          "block": "2026-1",
+          "pnl": 816.5435271415581,
+          "contracts": 1384754.6899999974,
+          "games": 16
+        },
+        {
+          "block": "2026-2",
+          "pnl": 1638.073998640124,
+          "contracts": 1302751.8950000005,
+          "games": 15
+        }
+      ]
+    }
+  },
+  "still_open": {
+    "games": 17,
+    "games_with_fills": 15,
+    "pnl": 199.03066884617692,
+    "contracts": 145074.0399999996,
+    "contract_weighted_cents": 0.1371924769215619,
+    "mean_game_ratio_cents": -0.2643600265718613,
+    "mean_game_pnl": 11.70768640271629,
+    "median_game_pnl": 0.0,
+    "positive_games": 7,
+    "negative_games": 8,
+    "clustered": {
+      "blocks": 2,
+      "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+      "block_totals": [
+        {
+          "block": "2026-2",
+          "pnl": 255.82719529742917,
+          "contracts": 113681.30499999963,
+          "games": 1
+        },
+        {
+          "block": "2026-3",
+          "pnl": -56.79652645125225,
+          "contracts": 31392.73499999999,
+          "games": 16
+        }
+      ]
+    }
+  }
+}
+conservative_queue_3300 {
+  "all": {
+    "games": 48,
+    "games_with_fills": 41,
+    "pnl": 494.1895130551102,
+    "contracts": 695658.3800000004,
+    "contract_weighted_cents": 0.07103910874402317,
+    "mean_game_ratio_cents": -0.2631488325758148,
+    "mean_game_pnl": 10.295614855314795,
+    "median_game_pnl": 0.0,
+    "positive_games": 21,
+    "negative_games": 20
+  },
+  "clustered_all": {
+    "blocks": 3,
+    "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+    "block_totals": [
+      {
+        "block": "2026-1",
+        "pnl": 174.13195906885903,
+        "contracts": 359904.6599999999,
+        "games": 16
+      },
+      {
+        "block": "2026-2",
+        "pnl": 378.90477829751035,
+        "contracts": 331573.18000000034,
+        "games": 16
+      },
+      {
+        "block": "2026-3",
+        "pnl": -58.8472243112592,
+        "contracts": 4180.540000000004,
+        "games": 16
+      }
+    ]
+  },
+  "complete": {
+    "games": 31,
+    "games_with_fills": 31,
+    "pnl": 504.4913730988792,
+    "contracts": 665326.4200000003,
+    "contract_weighted_cents": 0.07582614457109324,
+    "mean_game_ratio_cents": 0.04979659460249587,
+    "mean_game_pnl": 16.273915261254167,
+    "median_game_pnl": 13.093187499994201,
+    "positive_games": 20,
+    "negative_games": 11,
+    "clustered": {
+      "blocks": 2,
+      "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+      "block_totals": [
+        {
+          "block": "2026-1",
+          "pnl": 174.13195906885903,
+          "contracts": 359904.6599999999,
+          "games": 16
+        },
+        {
+          "block": "2026-2",
+          "pnl": 330.35941403002016,
+          "contracts": 305421.7600000004,
+          "games": 15
+        }
+      ]
+    }
+  },
+  "still_open": {
+    "games": 17,
+    "games_with_fills": 10,
+    "pnl": -10.301860043769011,
+    "contracts": 30331.959999999923,
+    "contract_weighted_cents": -0.0339637136662749,
+    "mean_game_ratio_cents": -1.2332796568285775,
+    "mean_game_pnl": -0.6059917672805301,
+    "median_game_pnl": -0.417812500000764,
+    "positive_games": 1,
+    "negative_games": 9,
+    "clustered": {
+      "blocks": 2,
+      "status": "INSUFFICIENT_BLOCKS_FOR_RELIABLE_INTERVAL",
+      "block_totals": [
+        {
+          "block": "2026-2",
+          "pnl": 48.545364267490186,
+          "contracts": 26151.41999999992,
+          "games": 1
+        },
+        {
+          "block": "2026-3",
+          "pnl": -58.8472243112592,
+          "contracts": 4180.540000000004,
+          "games": 16
+        }
+      ]
+    }
+  }
+}
+queue issue {'3_to_24h_applied_queue': 290.595, 'under_12h_profile_queue': 1327847.0050000001, 'ratio': 4569.407611968547, 'sample_time': '2026-09-20T18:48:55.379670+00:00', 'note': 'The window runner chooses one depth at 13.5h and applies it throughout 3–24h; both depths are snapshot assumptions.'}

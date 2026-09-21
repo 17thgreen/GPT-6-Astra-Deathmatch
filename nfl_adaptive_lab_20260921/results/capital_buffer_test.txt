@@ -1,0 +1,1 @@
+PASS new-order sizing leaves at least $.02 idle cash on a constrained fixture.

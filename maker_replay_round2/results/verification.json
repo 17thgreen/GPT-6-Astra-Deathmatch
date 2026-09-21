@@ -1,0 +1,9 @@
+{
+  "unit_tests_passed": 19,
+  "per_game_ledger_reconciles": true,
+  "candle_baseline_all_16_flat": true,
+  "maker_fills_at_or_after_cutoff": 0,
+  "exposure_limit_respected": true,
+  "baseline_regression_pnl_matches": true,
+  "source_rule": "Private repository-backed files excluded from deliverable; public REST captures included."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "SUSPECTED_FINAL_SCORE_BUG_NOT_REPRODUCED",
+  "results": [
+    {
+      "seasons": [
+        2023
+      ],
+      "games": 285,
+      "score_mismatches": 0,
+      "winner_mismatches": 0,
+      "tied_game_ids": []
+    },
+    {
+      "seasons": [
+        2024
+      ],
+      "games": 285,
+      "score_mismatches": 0,
+      "winner_mismatches": 0,
+      "tied_game_ids": []
+    },
+    {
+      "seasons": [
+        2025,
+        2026
+      ],
+      "games": 315,
+      "score_mismatches": 0,
+      "winner_mismatches": 0,
+      "tied_game_ids": [
+        "2025_04_GB_DAL"
+      ]
+    }
+  ],
+  "correction": "Initial audit used pandas default timestamp parsing with errors=coerce; this mishandled mixed ISO strings. The corrected replay executes the repo load_pbp function with format=ISO8601. Prior mismatch counts are withdrawn.",
+  "pandas": "2.2.3"
+}

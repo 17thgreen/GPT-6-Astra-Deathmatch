@@ -1,0 +1,2 @@
+{"poll": 0, "elapsed": 35.7, "active_markets": 4}
+{"run_id": 2, "status": "complete", "elapsed": 89.6, "database": "collector/development_capture.sqlite"}

@@ -1,0 +1,12 @@
+test_gate_blocks_data_and_execution_defects (test_research.TestResearchContract.test_gate_blocks_data_and_execution_defects) ... ok
+test_integrated_variance_is_monotone_in_time_remaining (test_research.TestResearchContract.test_integrated_variance_is_monotone_in_time_remaining) ... ok
+test_no_silent_extrapolation_to_endgame (test_research.TestResearchContract.test_no_silent_extrapolation_to_endgame) ... ok
+test_probability_transport_invariants (test_research.TestResearchContract.test_probability_transport_invariants) ... ok
+test_reduces_to_original_when_state_corrections_zero (test_research.TestResearchContract.test_reduces_to_original_when_state_corrections_zero) ... ok
+test_team_swap_symmetry (test_research.TestResearchContract.test_team_swap_symmetry) ... ok
+test_transport_refuses_nonfinite_or_terminal_inputs (test_research.TestResearchContract.test_transport_refuses_nonfinite_or_terminal_inputs) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.586s
+
+OK

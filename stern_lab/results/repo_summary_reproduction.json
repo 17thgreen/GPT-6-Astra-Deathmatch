@@ -1,0 +1,17 @@
+{
+  "games": 196,
+  "tickets": 1340105,
+  "pnl": 66188.69999999998,
+  "cost": 709252.3,
+  "dollar_roi": 0.09332179818098578,
+  "mean_game_roi": -0.08134588699571993,
+  "median_game_roi": -0.061772888388165706,
+  "wins": 89,
+  "top3_profit_share": 0.6072019846287964,
+  "game_bootstrap_ci95": [
+    -0.1584895557796358,
+    -0.0016779441896026565
+  ],
+  "source_commit": "b31fe30d0019263ff9af706a62430d31c9b961ef",
+  "input_sha256": "297029ac23371851eaddfc18704984faca84e41fc3f4a58430634e2afb73e2d2"
+}

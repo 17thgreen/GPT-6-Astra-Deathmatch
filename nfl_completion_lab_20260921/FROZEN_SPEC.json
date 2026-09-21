@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-21T14:58:35.413994+00:00",
+  "sha256": {
+    "EXPERIMENT_SPEC.md": "57a44929ce8b34fd01bf88f8e91da3414ce1acbed8f8ba8c1baa11a27f68a0e2",
+    "COHORT_SELECTION.json": "d84ad61ae84ef2523e9e3a282762e54dc9bb1665d8f5a60d4e071825f72e3bcc",
+    "BASELINE_HASHES.json": "f8b7ed70f5900ab87f463a0adf5679356f40a92fbcda92886eafc594c926b135"
+  }
+}

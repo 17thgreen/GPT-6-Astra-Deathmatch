@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/25b7b116f529/nfl_timing_lab_20260921/collector/record.py", line 183, in <module>
+    a=p.parse_args();run(a.panel,a.database,a.seconds,a.interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/25b7b116f529/nfl_timing_lab_20260921/collector/record.py", line 138, in run
+    if row.get('error'):raise RuntimeError('Metadata missing')
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Metadata missing

@@ -1,0 +1,34 @@
+{
+  "integrity": "ok",
+  "runs": [
+    {
+      "id": 1,
+      "started": 1790006624.4113595,
+      "ended": 1790006651.1191518,
+      "status": "failed"
+    },
+    {
+      "id": 2,
+      "started": 1790006775.3772461,
+      "ended": 1790006865.0047016,
+      "status": "complete"
+    },
+    {
+      "id": 3,
+      "started": 1790006885.240839,
+      "ended": 1790006972.1435008,
+      "status": "complete"
+    }
+  ],
+  "response_counts": {
+    "book": 60,
+    "metadata": 6,
+    "trades": 27
+  },
+  "distinct_trades": 4930,
+  "failed_responses": 1,
+  "restart_gaps": 2,
+  "watermarks_match_completed_pagination": true,
+  "last_received": 1790006972.1433127,
+  "note": "Finite development capture; no orders placed. No claim of complete seven-day or holdout coverage."
+}

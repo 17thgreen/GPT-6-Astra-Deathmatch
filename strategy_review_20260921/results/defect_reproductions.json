@@ -1,0 +1,33 @@
+{
+  "kind": "SYNTHETIC_COUNTEREXAMPLES_NOT_HISTORICAL_RETURNS",
+  "late_fill": {
+    "cutoff": "2026-09-20 14:00:00+00:00",
+    "maker_contracts_at_or_after_cutoff": 50.0,
+    "fills": [
+      {
+        "at": "2026-09-20 14:00:00+00:00",
+        "ticker": "KXNFLGAME-26SEP20TEST-A",
+        "outcome": "yes",
+        "price": 0.49,
+        "size": 50.0,
+        "fee": 0.2186625,
+        "kind": "maker",
+        "reason": "join best bid"
+      }
+    ]
+  },
+  "same_price_downsize": {
+    "old_size": 100,
+    "requested_size": 5,
+    "actual_resting_size": 100.0
+  },
+  "event_cap": {
+    "exposure_before": 200,
+    "configured_cap": 250,
+    "additional_risk_quote": 250.0,
+    "possible_exposure_after_fill": 450.0
+  },
+  "invalid_book_retains_quote": {
+    "maker_contracts_after_invalid_book": 50.0
+  }
+}

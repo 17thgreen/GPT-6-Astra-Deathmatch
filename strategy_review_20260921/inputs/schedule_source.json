@@ -1,0 +1,6 @@
+{
+  "source_url": "https://github.com/nflverse/nfldata/blob/master/data/games.csv",
+  "full_source_sha256": "e1b54b27a64bf69bbd26db111cff5d1c229ee2312b2bbedf7e37e209f58d7cfa",
+  "matched_games": 315,
+  "note": "Schedule snapshot obtained during prior Stern research in this workspace; matching keys included for audit reproducibility. Two UTC-date aliases explicitly recorded in CSV."
+}

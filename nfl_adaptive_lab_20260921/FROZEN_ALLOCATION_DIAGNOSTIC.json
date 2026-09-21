@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-09-21T16:40:50.793187+00:00",
+  "cases": 2,
+  "sha256": {
+    "ALLOCATION_DIAGNOSTIC.md": "725f35f5943f5b66ecbcbb634b412691826f99deaf1e3d8d65918d8b49e3ecd0",
+    "run_allocation_diagnostic.py": "161d1c074a394e6832b8c2602555be8035971ae169933b97bb49dc302e1c1e5c",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "run_experiment.py": "5deaa32bf8322c1c8cdb442c92519e8f4f853c8073a59e9503d29588982af3e3",
+    "FROZEN_EXPERIMENT.json": "305e883f0dd9653837b52f9077baad75e6542679f562e1e15c6672dcb8b04b7b"
+  }
+}

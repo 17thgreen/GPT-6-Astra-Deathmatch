@@ -1,0 +1,197 @@
+{
+  "evidence": "EXPLORATORY_PUBLIC_PRINT_REPLAY_NOT_EXECUTION_VALIDATION",
+  "config": {
+    "starting_cash": 5000,
+    "order_size": 250,
+    "exposure_cap": 250,
+    "queue_early": 290.595,
+    "queue_last12h": 1327847.005,
+    "fill_participation": 0.5,
+    "requote_seconds": 60,
+    "proxy_max_age_seconds": 300,
+    "cancel_delay_seconds": 0.25,
+    "order_delay_seconds": 0.25,
+    "maker_coefficient": 0.0175,
+    "taker_coefficient": 0.07,
+    "balance_precision": ".01",
+    "assumed_exit_depth": 250,
+    "inventory_reduce_only": false,
+    "event_netting": true,
+    "quote_source": "prints"
+  },
+  "trades": 391118,
+  "fills": 17906,
+  "maker_contracts": 410329.39,
+  "taker_contracts": 2066.93,
+  "completed_window_games": 16,
+  "all_flat": false,
+  "completed_strategy_pnl": null,
+  "terminal_payout_bounds": [
+    251.45999999976357,
+    501.45999999976357
+  ],
+  "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+  "unresolved_contracts": 250.0,
+  "min_cash": 3718.559999999865,
+  "max_reserved_cash": 3062.2122910274998,
+  "max_abs_event_exposure": 250.00000000000026,
+  "metrics": {
+    "new_orders": 15774.0,
+    "cancel_requests": 12998.0,
+    "cancels_acknowledged": 12995.0,
+    "fees": 1742.979299999986,
+    "paired_units": 206073.15999999733,
+    "fills_while_cancel_pending": 8.0,
+    "events_with_unresolved_exit": 1,
+    "unresolved_exit_attempts": 1.0
+  },
+  "per_game": [
+    {
+      "event": "KXNFLGAME-26SEP09NESEA",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 234.8199999999988,
+      "pnl_lower_payout_bound": 234.8199999999988,
+      "pnl_upper_payout_bound": 234.8199999999988,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP10SFLAR",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 88.84000000000029,
+      "pnl_lower_payout_bound": 88.84000000000029,
+      "pnl_upper_payout_bound": 88.84000000000029,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BALIND",
+      "window_complete": true,
+      "net_inventory": -250.0,
+      "cashflow": -97.73000000000005,
+      "pnl_lower_payout_bound": -97.73000000000005,
+      "pnl_upper_payout_bound": 152.26999999999995,
+      "flat": false
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ATLPIT",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 15.68999999999986,
+      "pnl_lower_payout_bound": 15.68999999999986,
+      "pnl_upper_payout_bound": 15.68999999999986,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CHICAR",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -17.269999999999982,
+      "pnl_lower_payout_bound": -17.269999999999982,
+      "pnl_upper_payout_bound": -17.269999999999982,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BUFHOU",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -29.47000000000019,
+      "pnl_lower_payout_bound": -29.47000000000019,
+      "pnl_upper_payout_bound": -29.47000000000019,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CLEJAC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -3.5000000000000213,
+      "pnl_lower_payout_bound": -3.5000000000000213,
+      "pnl_upper_payout_bound": -3.5000000000000213,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NYJTEN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -3.799999999999939,
+      "pnl_lower_payout_bound": -3.799999999999939,
+      "pnl_upper_payout_bound": -3.799999999999939,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NODET",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 8.69999999999991,
+      "pnl_lower_payout_bound": 8.69999999999991,
+      "pnl_upper_payout_bound": 8.69999999999991,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13TBCIN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.75,
+      "pnl_lower_payout_bound": -0.75,
+      "pnl_upper_payout_bound": -0.75,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ARILAC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -8.030000000000204,
+      "pnl_lower_payout_bound": -8.030000000000204,
+      "pnl_upper_payout_bound": -8.030000000000204,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13MIALV",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -6.029999999999987,
+      "pnl_lower_payout_bound": -6.029999999999987,
+      "pnl_upper_payout_bound": -6.029999999999987,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13GBMIN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 6.889999999999773,
+      "pnl_lower_payout_bound": 6.889999999999773,
+      "pnl_upper_payout_bound": 6.889999999999773,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13WASPHI",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -9.040000000000042,
+      "pnl_lower_payout_bound": -9.040000000000042,
+      "pnl_upper_payout_bound": -9.040000000000042,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13DALNYG",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 17.19999999999959,
+      "pnl_lower_payout_bound": 17.19999999999959,
+      "pnl_upper_payout_bound": 17.19999999999959,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP14DENKC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 54.939999999996544,
+      "pnl_lower_payout_bound": 54.939999999996544,
+      "pnl_upper_payout_bound": 54.939999999996544,
+      "flat": true
+    }
+  ],
+  "seconds": 10.26151378600116,
+  "scenario": "profile_nondirect_precision",
+  "maker_fills_at_or_after_cutoff": 0
+}

@@ -1,0 +1,20 @@
+{
+  "status": "PARTIAL_CORRECTION_ONE_VERIFIED_TIED_GAME_NOT_FULL_TAPE_REPLAY",
+  "game_id": "2025_04_GB_DAL",
+  "original_pnl": -3096.2700000000004,
+  "corrected_pnl": -229.77000000000044,
+  "difference": 2866.5,
+  "tickets": 15187,
+  "total_cost": 7823.27,
+  "official_yes_payout": 0.5,
+  "source_market": "KXNFLGAME-25SEP28GBDAL-DAL",
+  "corrected_total_pnl": 69055.19999999998,
+  "corrected_dollar_roi": 0.09736337830698608,
+  "corrected_mean_game_roi": -0.07947646410733693,
+  "corrected_median_game_roi": -0.0571285931347483,
+  "corrected_game_bootstrap_ci95": [
+    -0.1566783283099991,
+    0.000603385580340625
+  ],
+  "corrected_top3_profit_share": 0.5819968662750961
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+    "outcome": "yes",
+    "price": 0.73,
+    "start_at": 1790004684.1050687,
+    "last_at": 1790005402.8133235,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.708254814148,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+    "outcome": "no",
+    "price": 0.26,
+    "start_at": 1790004684.1050687,
+    "last_at": 1790005402.8133235,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.708254814148,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+    "outcome": "yes",
+    "price": 0.74,
+    "start_at": 1790004684.1074831,
+    "last_at": 1790005402.8693504,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.7618672847748,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+    "outcome": "no",
+    "price": 0.25,
+    "start_at": 1790004684.1074831,
+    "last_at": 1790005402.8693504,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.7618672847748,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+    "outcome": "yes",
+    "price": 0.26,
+    "start_at": 1790004684.1551154,
+    "last_at": 1790005402.7921019,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.6369864940643,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+    "outcome": "no",
+    "price": 0.73,
+    "start_at": 1790004684.1551154,
+    "last_at": 1790005402.7921019,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.6369864940643,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+    "outcome": "yes",
+    "price": 0.25,
+    "start_at": 1790004684.189561,
+    "last_at": 1790005402.8445265,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.6549656391144,
+    "change_interval_upper": null,
+    "right_censored": true
+  },
+  {
+    "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+    "outcome": "no",
+    "price": 0.73,
+    "start_at": 1790004684.189561,
+    "last_at": 1790005402.8445265,
+    "left_censored": true,
+    "end_reason": "capture_end",
+    "observed_duration": 718.6549656391144,
+    "change_interval_upper": null,
+    "right_censored": true
+  }
+]

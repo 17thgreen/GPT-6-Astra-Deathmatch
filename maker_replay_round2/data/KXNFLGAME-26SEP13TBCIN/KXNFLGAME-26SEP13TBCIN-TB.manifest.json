@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13TBCIN",
+  "ticker": "KXNFLGAME-26SEP13TBCIN-TB",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 5,
+  "trades": 4776,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d",
+  "retrieved_at": "2026-09-21T05:32:55.074340+00:00",
+  "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz"
+}

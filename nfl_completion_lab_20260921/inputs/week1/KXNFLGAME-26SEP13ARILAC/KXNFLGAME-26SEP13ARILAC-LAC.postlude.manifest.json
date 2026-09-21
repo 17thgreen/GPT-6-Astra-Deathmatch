@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13ARILAC-LAC",
+  "trades": 37,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.jsonl.gz",
+  "sha256": "9dee73a18dcc39425471a9f784cb26a2135e235c991514bea6e1a5080bf6c18e",
+  "from_utc": "2026-09-13T17:25:00+00:00",
+  "through_utc": "2026-09-13T17:30:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:16.654190+00:00"
+}

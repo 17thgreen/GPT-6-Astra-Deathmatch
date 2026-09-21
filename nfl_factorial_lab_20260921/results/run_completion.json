@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-09-21T17:15:23.242939+00:00",
+  "process_exit_code_observed": 0,
+  "completed_atomic_case_files": 36,
+  "failed_cases": 0,
+  "progress_capture_case_lines": 26,
+  "all_36_ledgers_verified": true,
+  "note": "The progress text capture stops before the final case lines. It is preserved without alteration. All 36 atomic case summaries and complete ledgers exist and verify; use the verification index as the completion record. Cause of the incomplete text capture is not established."
+}

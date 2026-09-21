@@ -1,0 +1,79 @@
+{
+  "levels": [
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "side": "yes_dollars",
+      "price": 0.73,
+      "queue_contracts": 249922.78,
+      "hours_to_kickoff": 18.395164962777777,
+      "received_utc": "2026-09-21T05:51:17.406134+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "side": "no_dollars",
+      "price": 0.26,
+      "queue_contracts": 7936255.35,
+      "hours_to_kickoff": 18.395164962777777,
+      "received_utc": "2026-09-21T05:51:17.406134+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "side": "yes_dollars",
+      "price": 0.27,
+      "queue_contracts": 4782.24,
+      "hours_to_kickoff": 18.393227055,
+      "received_utc": "2026-09-21T05:51:24.382602+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "side": "no_dollars",
+      "price": 0.72,
+      "queue_contracts": 5473277.35,
+      "hours_to_kickoff": 18.393227055,
+      "received_utc": "2026-09-21T05:51:24.382602+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "side": "yes_dollars",
+      "price": 0.73,
+      "queue_contracts": 23600.47,
+      "hours_to_kickoff": 90.39150483722223,
+      "received_utc": "2026-09-21T05:51:30.582586+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "side": "no_dollars",
+      "price": 0.25,
+      "queue_contracts": 61806.23,
+      "hours_to_kickoff": 90.39150483722223,
+      "received_utc": "2026-09-21T05:51:30.582586+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "side": "yes_dollars",
+      "price": 0.25,
+      "queue_contracts": 19546.76,
+      "hours_to_kickoff": 90.389850265,
+      "received_utc": "2026-09-21T05:51:36.539046+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "side": "no_dollars",
+      "price": 0.74,
+      "queue_contracts": 504.55,
+      "hours_to_kickoff": 90.389850265,
+      "received_utc": "2026-09-21T05:51:36.539046+00:00"
+    }
+  ],
+  "levels_above_3300": 7,
+  "levels_count": 8,
+  "note": "Two upcoming events chosen by schedule, one public REST snapshot each; not historical queue data or a representative population estimate."
+}

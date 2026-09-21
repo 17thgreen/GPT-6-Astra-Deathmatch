@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13CHICAR",
+  "ticker": "KXNFLGAME-26SEP13CHICAR-CHI",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 9,
+  "trades": 8292,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd",
+  "retrieved_at": "2026-09-21T05:30:39.848947+00:00",
+  "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz"
+}

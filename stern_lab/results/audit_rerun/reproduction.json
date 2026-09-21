@@ -1,0 +1,35 @@
+{
+  "original": {
+    "games": 196,
+    "tickets": 1340105,
+    "pnl": 66188.69999999998,
+    "dollar_roi": 0.09332179818098578,
+    "mean_game_roi": -0.08134588699571993,
+    "median_game_roi": -0.061772888388165706,
+    "wins": 89,
+    "top3_profit_share": 0.6072019846287964,
+    "game_bootstrap_ci95": [
+      -0.1584895557796358,
+      -0.0016779441896026565
+    ]
+  },
+  "corrected_one_tie": {
+    "games": 196,
+    "tickets": 1340105,
+    "pnl": 69055.19999999998,
+    "dollar_roi": 0.09736337830698608,
+    "mean_game_roi": -0.07947646410733693,
+    "median_game_roi": -0.0571285931347483,
+    "wins": 89,
+    "top3_profit_share": 0.5819968662750961,
+    "game_bootstrap_ci95": [
+      -0.1566783283099991,
+      0.000603385580340625
+    ]
+  },
+  "correction": {
+    "old_pnl": -3096.2700000000004,
+    "new_pnl": -229.77000000000044,
+    "status": "PARTIAL_CORRECTION_NOT_FULL_TAPE_REPLAY"
+  }
+}

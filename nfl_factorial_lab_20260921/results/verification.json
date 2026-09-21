@@ -1,0 +1,694 @@
+{
+  "all_checks_passed": true,
+  "cases": [
+    {
+      "scenario": "q3300_d0.25_baseline",
+      "fills": 14331,
+      "orders": 42986,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_000",
+      "fills": 12853,
+      "orders": 40859,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 21,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 600.7346250007813,
+        "peak_shortfall": 87.61275000003707,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_001",
+      "fills": 12853,
+      "orders": 40845,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 21,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 600.7346250007672,
+        "peak_shortfall": 87.61275000003616,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_010",
+      "fills": 12490,
+      "orders": 39790,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 984,
+        "empty_pair_sets": 14,
+        "total_requested": 6578266.74412496,
+        "total_unfunded": 572293.0846627501,
+        "peak_shortfall": 1594.7501915100552,
+        "protected_cash_sum": 2104545.5212915777
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_100",
+      "fills": 12819,
+      "orders": 35263,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 2,
+        "empty_pair_sets": 36,
+        "total_requested": 6025728.344537466,
+        "total_unfunded": 73.06758750010886,
+        "peak_shortfall": 52.03260000005457,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_011",
+      "fills": 12487,
+      "orders": 40461,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 948,
+        "empty_pair_sets": 14,
+        "total_requested": 6578011.43023746,
+        "total_unfunded": 605400.755633627,
+        "peak_shortfall": 1568.3754250000638,
+        "protected_cash_sum": 2124469.642601326
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_110",
+      "fills": 12439,
+      "orders": 34407,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 803,
+        "empty_pair_sets": 36,
+        "total_requested": 6025729.195037465,
+        "total_unfunded": 471335.6019901241,
+        "peak_shortfall": 1459.111036980048,
+        "protected_cash_sum": 2092310.0654210772
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_101",
+      "fills": 12819,
+      "orders": 35263,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 2,
+        "empty_pair_sets": 36,
+        "total_requested": 6025728.344537466,
+        "total_unfunded": 73.06758750010749,
+        "peak_shortfall": 52.03260000005366,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d0.25_111",
+      "fills": 12450,
+      "orders": 34975,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 736,
+        "empty_pair_sets": 36,
+        "total_requested": 6026471.958699965,
+        "total_unfunded": 474627.57791451714,
+        "peak_shortfall": 1506.0381767625508,
+        "protected_cash_sum": 2070189.4195826538
+      }
+    },
+    {
+      "scenario": "q3300_d5_baseline",
+      "fills": 14045,
+      "orders": 42856,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_000",
+      "fills": 12594,
+      "orders": 40773,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 22,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 660.674487501542,
+        "peak_shortfall": 90.3587500000699,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_001",
+      "fills": 12594,
+      "orders": 40754,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 22,
+        "empty_pair_sets": 14,
+        "total_requested": 6577517.54808746,
+        "total_unfunded": 660.6744875015261,
+        "peak_shortfall": 90.358750000069,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_010",
+      "fills": 12273,
+      "orders": 39698,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 996,
+        "empty_pair_sets": 14,
+        "total_requested": 6578264.23406246,
+        "total_unfunded": 586061.6246323369,
+        "peak_shortfall": 1678.109137500087,
+        "protected_cash_sum": 2118821.406886597
+      }
+    },
+    {
+      "scenario": "q3300_d5_011",
+      "fills": 12208,
+      "orders": 40296,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 964,
+        "empty_pair_sets": 14,
+        "total_requested": 6578011.43023746,
+        "total_unfunded": 638555.7652333011,
+        "peak_shortfall": 1570.0821250000854,
+        "protected_cash_sum": 2155072.6911866902
+      }
+    },
+    {
+      "scenario": "q3300_d5_100",
+      "fills": 12560,
+      "orders": 35236,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 2,
+        "empty_pair_sets": 36,
+        "total_requested": 6025728.344537466,
+        "total_unfunded": 49.226387500152214,
+        "peak_shortfall": 25.445400000076916,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_101",
+      "fills": 12560,
+      "orders": 35236,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 2,
+        "empty_pair_sets": 36,
+        "total_requested": 6025728.344537466,
+        "total_unfunded": 49.22638750015085,
+        "peak_shortfall": 25.445400000076006,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q3300_d5_110",
+      "fills": 12236,
+      "orders": 34268,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 812,
+        "empty_pair_sets": 36,
+        "total_requested": 6026228.071062465,
+        "total_unfunded": 463289.3444462505,
+        "peak_shortfall": 1436.4553450100725,
+        "protected_cash_sum": 2085320.1901973507
+      }
+    },
+    {
+      "scenario": "q3300_d5_111",
+      "fills": 12175,
+      "orders": 34881,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 759,
+        "empty_pair_sets": 36,
+        "total_requested": 6025960.409862465,
+        "total_unfunded": 517905.3223872606,
+        "peak_shortfall": 1564.110342937579,
+        "protected_cash_sum": 2110338.1726263743
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_baseline",
+      "fills": 4696,
+      "orders": 44296,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_000",
+      "fills": 4224,
+      "orders": 40648,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_001",
+      "fills": 4224,
+      "orders": 40648,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_010",
+      "fills": 4157,
+      "orders": 40163,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 665,
+        "empty_pair_sets": 14,
+        "total_requested": 6579990.459087457,
+        "total_unfunded": 290497.1295478563,
+        "peak_shortfall": 1134.7606000000437,
+        "protected_cash_sum": 1418358.7817105665
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_011",
+      "fills": 4134,
+      "orders": 40347,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 631,
+        "empty_pair_sets": 14,
+        "total_requested": 6579995.440712457,
+        "total_unfunded": 274058.98316793557,
+        "peak_shortfall": 1079.7411125000453,
+        "protected_cash_sum": 1354205.441303841
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_100",
+      "fills": 4238,
+      "orders": 34667,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_101",
+      "fills": 4238,
+      "orders": 34667,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_110",
+      "fills": 4187,
+      "orders": 34371,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 554,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 231917.42524211152,
+        "peak_shortfall": 1078.6565120900464,
+        "protected_cash_sum": 1405041.6982350398
+      }
+    },
+    {
+      "scenario": "q10000_d0.25_111",
+      "fills": 4163,
+      "orders": 34434,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 530,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 228302.34102193674,
+        "peak_shortfall": 1079.7410125000506,
+        "protected_cash_sum": 1348237.3870944579
+      }
+    },
+    {
+      "scenario": "q10000_d5_baseline",
+      "fills": 4675,
+      "orders": 44290,
+      "decisions": 0,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 0,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 0,
+        "total_requested": 0.0,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_000",
+      "fills": 4204,
+      "orders": 40644,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_001",
+      "fills": 4204,
+      "orders": 40644,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 14,
+        "total_requested": 6579997.9507749565,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_010",
+      "fills": 4139,
+      "orders": 40107,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 667,
+        "empty_pair_sets": 14,
+        "total_requested": 6579990.459087457,
+        "total_unfunded": 296993.6124923085,
+        "peak_shortfall": 1173.8992137650434,
+        "protected_cash_sum": 1422092.601906663
+      }
+    },
+    {
+      "scenario": "q10000_d5_100",
+      "fills": 4218,
+      "orders": 34663,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_011",
+      "fills": 4140,
+      "orders": 40326,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 635,
+        "empty_pair_sets": 14,
+        "total_requested": 6579995.440712457,
+        "total_unfunded": 276988.53585584246,
+        "peak_shortfall": 1084.8933125000494,
+        "protected_cash_sum": 1354476.687832099
+      }
+    },
+    {
+      "scenario": "q10000_d5_101",
+      "fills": 4218,
+      "orders": 34663,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 0,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 0.0,
+        "peak_shortfall": 0.0,
+        "protected_cash_sum": 0.0
+      }
+    },
+    {
+      "scenario": "q10000_d5_110",
+      "fills": 4169,
+      "orders": 34352,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 554,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 237977.581934912,
+        "peak_shortfall": 1173.8468596575476,
+        "protected_cash_sum": 1408839.8067655873
+      }
+    },
+    {
+      "scenario": "q10000_d5_111",
+      "fills": 4169,
+      "orders": 34426,
+      "decisions": 2558,
+      "passed": true,
+      "funding_diagnostics": {
+        "rebalances": 2558,
+        "shortfall_rebalances": 536,
+        "empty_pair_sets": 36,
+        "total_requested": 6028211.8610374695,
+        "total_unfunded": 230747.3326540944,
+        "peak_shortfall": 1084.893212500051,
+        "protected_cash_sum": 1348496.1823210076
+      }
+    }
+  ],
+  "q5_regressions": {
+    "q3300_d0.25_baseline": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d0.25_111": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d5_baseline": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d5_111": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_baseline": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_111": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d5_baseline": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d5_111": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q3300_d0.25_110": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    },
+    "q10000_d0.25_110": {
+      "differences": {
+        "completed_strategy_pnl": 0.0,
+        "maker_contracts": 0.0,
+        "taker_contracts": 0.0,
+        "unhedged_contract_hours": 0.0,
+        "max_reserved_cash": 0.0,
+        "min_cash": 0.0
+      },
+      "exact_ledger_hashes_match": true
+    }
+  },
+  "caveat": "Accounting and exact reference reproduction do not verify historical queue positions or executable fills."
+}

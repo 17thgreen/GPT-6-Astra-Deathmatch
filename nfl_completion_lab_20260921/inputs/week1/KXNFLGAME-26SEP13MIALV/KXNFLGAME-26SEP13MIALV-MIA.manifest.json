@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13MIALV",
+  "ticker": "KXNFLGAME-26SEP13MIALV-MIA",
+  "kickoff": "2026-09-13 20:25:00+00:00",
+  "from_utc": "2026-09-06T20:25:00+00:00",
+  "through_utc": "2026-09-13T17:25:00+00:00",
+  "pages": 5,
+  "trades": 4341,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5",
+  "retrieved_at": "2026-09-21T05:34:49.422307+00:00",
+  "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz"
+}

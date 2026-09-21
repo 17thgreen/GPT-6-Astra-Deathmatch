@@ -1,0 +1,8 @@
+{
+  "frozen_at": "2026-09-21T15:31:01.639791+00:00",
+  "sha256": {
+    "PROTOCOL.md": "734fa69110b49c8c16adc383cba2d9ea70fb3fb80b222b680d9c1e2de5837959",
+    "HOLDOUT_MANIFEST.json": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "capture.py": "454a756f8748aff992edb1efae272a07bf617c2f4ccdbe8f286ec49a3a6e8f96"
+  }
+}

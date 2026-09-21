@@ -1,0 +1,307 @@
+{
+  "frozen_at": "2026-09-21T15:29:51.413345+00:00",
+  "selection": "First 32 scheduled regular-season games with the entire T-7d window after this freeze; order kickoff then game_id; schedule-only fields.",
+  "source": "Existing research_sources/games.csv schedule snapshot; kickoff may be rescheduled; unknown venue tickers stay null.",
+  "development_events": [
+    "KXNFLGAME-26SEP09NESEA",
+    "KXNFLGAME-26SEP10SFLAR",
+    "KXNFLGAME-26SEP13ATLPIT",
+    "KXNFLGAME-26SEP13BALIND",
+    "KXNFLGAME-26SEP13BUFHOU",
+    "KXNFLGAME-26SEP13CHICAR",
+    "KXNFLGAME-26SEP13CLEJAC",
+    "KXNFLGAME-26SEP13NODET",
+    "KXNFLGAME-26SEP13NYJTEN",
+    "KXNFLGAME-26SEP13TBCIN",
+    "KXNFLGAME-26SEP13ARILAC",
+    "KXNFLGAME-26SEP13GBMIN",
+    "KXNFLGAME-26SEP13MIALV",
+    "KXNFLGAME-26SEP13WASPHI",
+    "KXNFLGAME-26SEP13DALNYG",
+    "KXNFLGAME-26SEP14DENKC",
+    "KXNFLGAME-26SEP17DETBUF",
+    "KXNFLGAME-26SEP20CARATL",
+    "KXNFLGAME-26SEP20NOBAL",
+    "KXNFLGAME-26SEP20MINCHI",
+    "KXNFLGAME-26SEP20CINHOU",
+    "KXNFLGAME-26SEP20PITNE",
+    "KXNFLGAME-26SEP20GBNYJ",
+    "KXNFLGAME-26SEP20CLETB",
+    "KXNFLGAME-26SEP20PHITEN",
+    "KXNFLGAME-26SEP20JACDEN",
+    "KXNFLGAME-26SEP20LVLAC",
+    "KXNFLGAME-26SEP20SEAARI",
+    "KXNFLGAME-26SEP20WASDAL",
+    "KXNFLGAME-26SEP20MIASF",
+    "KXNFLGAME-26SEP20INDKC"
+  ],
+  "measurement_development_events": [
+    "KXNFLGAME-26SEP21NYGLAR",
+    "KXNFLGAME-26SEP24ATLGB"
+  ],
+  "holdout_games": [
+    {
+      "game_id": "2026_03_PHI_CHI",
+      "kickoff": "2026-09-29T00:15:00+00:00",
+      "week": 3,
+      "away": "PHI",
+      "home": "CHI",
+      "event": "KXNFLGAME-26SEP28PHICHI"
+    },
+    {
+      "game_id": "2026_04_PIT_CLE",
+      "kickoff": "2026-10-02T00:15:00+00:00",
+      "week": 4,
+      "away": "PIT",
+      "home": "CLE",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_IND_WAS",
+      "kickoff": "2026-10-04T13:30:00+00:00",
+      "week": 4,
+      "away": "IND",
+      "home": "WAS",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_ARI_NYG",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "ARI",
+      "home": "NYG",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_DAL_HOU",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "DAL",
+      "home": "HOU",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_GB_TB",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "GB",
+      "home": "TB",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_JAX_CIN",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "JAX",
+      "home": "CIN",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_LA_PHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "LA",
+      "home": "PHI",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_NE_BUF",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "NE",
+      "home": "BUF",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_NYJ_CHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "NYJ",
+      "home": "CHI",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_TEN_BAL",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "week": 4,
+      "away": "TEN",
+      "home": "BAL",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_MIA_MIN",
+      "kickoff": "2026-10-04T20:05:00+00:00",
+      "week": 4,
+      "away": "MIA",
+      "home": "MIN",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_DEN_SF",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "week": 4,
+      "away": "DEN",
+      "home": "SF",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_KC_LV",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "week": 4,
+      "away": "KC",
+      "home": "LV",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_LAC_SEA",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "week": 4,
+      "away": "LAC",
+      "home": "SEA",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_DET_CAR",
+      "kickoff": "2026-10-05T00:20:00+00:00",
+      "week": 4,
+      "away": "DET",
+      "home": "CAR",
+      "event": null
+    },
+    {
+      "game_id": "2026_04_ATL_NO",
+      "kickoff": "2026-10-06T00:15:00+00:00",
+      "week": 4,
+      "away": "ATL",
+      "home": "NO",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_TB_DAL",
+      "kickoff": "2026-10-09T00:15:00+00:00",
+      "week": 5,
+      "away": "TB",
+      "home": "DAL",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_PHI_JAX",
+      "kickoff": "2026-10-11T13:30:00+00:00",
+      "week": 5,
+      "away": "PHI",
+      "home": "JAX",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_CIN_MIA",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "CIN",
+      "home": "MIA",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_CLE_NYJ",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "CLE",
+      "home": "NYJ",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_HOU_TEN",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "HOU",
+      "home": "TEN",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_IND_PIT",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "IND",
+      "home": "PIT",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_LV_NE",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "LV",
+      "home": "NE",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_MIN_NO",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "MIN",
+      "home": "NO",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_NYG_WAS",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "week": 5,
+      "away": "NYG",
+      "home": "WAS",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_DEN_LAC",
+      "kickoff": "2026-10-11T20:05:00+00:00",
+      "week": 5,
+      "away": "DEN",
+      "home": "LAC",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_CHI_GB",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "week": 5,
+      "away": "CHI",
+      "home": "GB",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_DET_ARI",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "week": 5,
+      "away": "DET",
+      "home": "ARI",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_SF_SEA",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "week": 5,
+      "away": "SF",
+      "home": "SEA",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_BAL_ATL",
+      "kickoff": "2026-10-12T00:20:00+00:00",
+      "week": 5,
+      "away": "BAL",
+      "home": "ATL",
+      "event": null
+    },
+    {
+      "game_id": "2026_05_BUF_LA",
+      "kickoff": "2026-10-13T00:15:00+00:00",
+      "week": 5,
+      "away": "BUF",
+      "home": "LA",
+      "event": null
+    }
+  ],
+  "status": "PENDING_FUTURE_WINDOWS_NO_HOLDOUT_RESULTS",
+  "rules": [
+    "No replacing games after outcomes are known.",
+    "Record schedule changes and identity verification before collecting; never invent venue tickers.",
+    "Do not collect incomplete windows and call them completed whole-game validation.",
+    "Freeze a candidate model and evaluation code before reading holdout outcomes; measurements alone are not a candidate."
+  ]
+}

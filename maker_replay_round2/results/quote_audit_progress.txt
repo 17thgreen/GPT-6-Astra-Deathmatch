@@ -1,0 +1,21 @@
+{
+  "counts": {
+    "valid_candle_quotes": 172914.0,
+    "missing_print_side": 711.0,
+    "comparable": 172203.0,
+    "absolute_bid_error_cents_sum": 4572.999999999997,
+    "absolute_ask_error_cents_sum": 1043.9999999999993,
+    "at_least_one_print_side_older_than_5m": 128780.0,
+    "different_price_pair": 5050.0,
+    "print_proxy_wider_than_candle_spread": 2848.0,
+    "crossed_or_locked_print_proxy": 1104.0
+  },
+  "rates": {
+    "absolute_bid_error_cents_sum": 0.02655586720324267,
+    "absolute_ask_error_cents_sum": 0.006062612149614114,
+    "at_least_one_print_side_older_than_5m": 0.7478383071142779,
+    "different_price_pair": 0.029325853788842237,
+    "print_proxy_wider_than_candle_spread": 0.016538620116954988,
+    "crossed_or_locked_print_proxy": 0.006411038135224125
+  }
+}

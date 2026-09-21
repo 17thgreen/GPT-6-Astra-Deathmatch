@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13WASPHI-WAS",
+  "trades": 34,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.jsonl.gz",
+  "sha256": "335c020dba095ce5d919952827312c581da4d9a6f0d07c0084bba0df149a00bf",
+  "from_utc": "2026-09-13T17:25:00+00:00",
+  "through_utc": "2026-09-13T17:30:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:39.392004+00:00"
+}

@@ -1,0 +1,1217 @@
+{
+  "status": "HISTORICAL_FORECAST_RESEARCH_ONLY",
+  "selection": "clock_0.0001",
+  "tests": {
+    "2023": {
+      "games": 285,
+      "states": 15803,
+      "models": {
+        "original_stern": {
+          "logloss": 0.48520624815510077,
+          "brier": 0.15948602886849642,
+          "late_logloss": 0.3472799146120398,
+          "late_brier": 0.10689255880822847,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1814,
+              "weight": 0.11495627026097938,
+              "predicted": 0.031185393826791512,
+              "observed": 0.050511049514838084
+            },
+            {
+              "bin": 1,
+              "states": 960,
+              "weight": 0.06081765418330515,
+              "predicted": 0.1497400514756811,
+              "observed": 0.2853196546682585
+            },
+            {
+              "bin": 2,
+              "states": 1022,
+              "weight": 0.06468669680581038,
+              "predicted": 0.24936001625545912,
+              "observed": 0.23049565080101697
+            },
+            {
+              "bin": 3,
+              "states": 1333,
+              "weight": 0.0842786191955167,
+              "predicted": 0.3472456234282665,
+              "observed": 0.3552998247268634
+            },
+            {
+              "bin": 4,
+              "states": 1665,
+              "weight": 0.10538361453873918,
+              "predicted": 0.44426971585973063,
+              "observed": 0.44853434410042275
+            },
+            {
+              "bin": 5,
+              "states": 1624,
+              "weight": 0.10279104859437269,
+              "predicted": 0.5607378034154665,
+              "observed": 0.593705869348676
+            },
+            {
+              "bin": 6,
+              "states": 1303,
+              "weight": 0.08241898606164533,
+              "predicted": 0.6536852981334718,
+              "observed": 0.6243940966113545
+            },
+            {
+              "bin": 7,
+              "states": 1651,
+              "weight": 0.10441158718167028,
+              "predicted": 0.7523303525777636,
+              "observed": 0.7986291468613711
+            },
+            {
+              "bin": 8,
+              "states": 1400,
+              "weight": 0.08857062912464575,
+              "predicted": 0.8517582577405227,
+              "observed": 0.849126590059202
+            },
+            {
+              "bin": 9,
+              "states": 3031,
+              "weight": 0.19168489405331507,
+              "predicted": 0.9707723692480683,
+              "observed": 0.9314636190204504
+            }
+          ]
+        },
+        "published_v1": {
+          "logloss": 0.47103398727329054,
+          "brier": 0.15650236610413448,
+          "late_logloss": 0.32342774856828843,
+          "late_brier": 0.1034480492767005,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1322,
+              "weight": 0.08375879891115347,
+              "predicted": 0.04061584191294055,
+              "observed": 0.029990421963340032
+            },
+            {
+              "bin": 1,
+              "states": 987,
+              "weight": 0.06256740335687704,
+              "predicted": 0.15176668947831734,
+              "observed": 0.16600006069250148
+            },
+            {
+              "bin": 2,
+              "states": 1202,
+              "weight": 0.07609927929872526,
+              "predicted": 0.25166003381206714,
+              "observed": 0.23675168354213966
+            },
+            {
+              "bin": 3,
+              "states": 1522,
+              "weight": 0.0962880686564897,
+              "predicted": 0.35194373696330356,
+              "observed": 0.3396643858576696
+            },
+            {
+              "bin": 4,
+              "states": 1512,
+              "weight": 0.09563977727412629,
+              "predicted": 0.44989792197756795,
+              "observed": 0.43911685332867467
+            },
+            {
+              "bin": 5,
+              "states": 1562,
+              "weight": 0.09885825009093707,
+              "predicted": 0.5493091366268363,
+              "observed": 0.544252681734125
+            },
+            {
+              "bin": 6,
+              "states": 1784,
+              "weight": 0.11288754182105981,
+              "predicted": 0.6500286755759725,
+              "observed": 0.6838044411018358
+            },
+            {
+              "bin": 7,
+              "states": 1726,
+              "weight": 0.10916337894177228,
+              "predicted": 0.7500192352729882,
+              "observed": 0.7940148071767829
+            },
+            {
+              "bin": 8,
+              "states": 1652,
+              "weight": 0.10449301083650112,
+              "predicted": 0.8496889653316857,
+              "observed": 0.8466921920193043
+            },
+            {
+              "bin": 9,
+              "states": 2534,
+              "weight": 0.16024449081235784,
+              "predicted": 0.9647329907257278,
+              "observed": 0.9557096244603704
+            }
+          ]
+        },
+        "expanded_v1": {
+          "logloss": 0.4709498242777691,
+          "brier": 0.15639661903167967,
+          "late_logloss": 0.32382780436683495,
+          "late_brier": 0.10345555192880278,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1402,
+              "weight": 0.0888295499514336,
+              "predicted": 0.039228323741810255,
+              "observed": 0.031125528765447844
+            },
+            {
+              "bin": 1,
+              "states": 1014,
+              "weight": 0.06427386248715887,
+              "predicted": 0.1516786379669728,
+              "observed": 0.17733200203860985
+            },
+            {
+              "bin": 2,
+              "states": 1183,
+              "weight": 0.07489183485028358,
+              "predicted": 0.25169434830662757,
+              "observed": 0.24560369749756022
+            },
+            {
+              "bin": 3,
+              "states": 1485,
+              "weight": 0.0939422719478121,
+              "predicted": 0.3512497862968063,
+              "observed": 0.3468242034021195
+            },
+            {
+              "bin": 4,
+              "states": 1462,
+              "weight": 0.09248643938394631,
+              "predicted": 0.44956382176219806,
+              "observed": 0.43706566927180457
+            },
+            {
+              "bin": 5,
+              "states": 1495,
+              "weight": 0.09460557294352306,
+              "predicted": 0.5490760467816265,
+              "observed": 0.5445620962862562
+            },
+            {
+              "bin": 6,
+              "states": 1721,
+              "weight": 0.1089103940073469,
+              "predicted": 0.6498974086327336,
+              "observed": 0.6797366922063948
+            },
+            {
+              "bin": 7,
+              "states": 1693,
+              "weight": 0.10707072705687663,
+              "predicted": 0.7498175331971366,
+              "observed": 0.7858606696991978
+            },
+            {
+              "bin": 8,
+              "states": 1679,
+              "weight": 0.10621411982907827,
+              "predicted": 0.8501180215186676,
+              "observed": 0.8384400742061963
+            },
+            {
+              "bin": 9,
+              "states": 2669,
+              "weight": 0.16877522754254054,
+              "predicted": 0.9657577852916377,
+              "observed": 0.9515966473726822
+            }
+          ]
+        },
+        "challenger": {
+          "logloss": 0.4709645056868307,
+          "brier": 0.1564744383195579,
+          "late_logloss": 0.325188514864587,
+          "late_brier": 0.1044696140368787,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1385,
+              "weight": 0.08774957729251356,
+              "predicted": 0.039233080792575724,
+              "observed": 0.0307686000389476
+            },
+            {
+              "bin": 1,
+              "states": 1044,
+              "weight": 0.06617182909426675,
+              "predicted": 0.15184007478978756,
+              "observed": 0.18085367610614825
+            },
+            {
+              "bin": 2,
+              "states": 1188,
+              "weight": 0.07519938202763686,
+              "predicted": 0.2514030772025721,
+              "observed": 0.23700948101710242
+            },
+            {
+              "bin": 3,
+              "states": 1478,
+              "weight": 0.09351958444756228,
+              "predicted": 0.3522226928066496,
+              "observed": 0.3463939998482652
+            },
+            {
+              "bin": 4,
+              "states": 1438,
+              "weight": 0.09096335335947522,
+              "predicted": 0.45070116973339075,
+              "observed": 0.4485167473576318
+            },
+            {
+              "bin": 5,
+              "states": 1529,
+              "weight": 0.09675868299136997,
+              "predicted": 0.5491318513234967,
+              "observed": 0.5344336479469695
+            },
+            {
+              "bin": 6,
+              "states": 1719,
+              "weight": 0.10878492083478233,
+              "predicted": 0.6500516337009313,
+              "observed": 0.6893057334085367
+            },
+            {
+              "bin": 7,
+              "states": 1623,
+              "weight": 0.10263707514400033,
+              "predicted": 0.7508696793083645,
+              "observed": 0.7808725894062885
+            },
+            {
+              "bin": 8,
+              "states": 1680,
+              "weight": 0.10628918788198566,
+              "predicted": 0.8496323266689306,
+              "observed": 0.8409121464903969
+            },
+            {
+              "bin": 9,
+              "states": 2719,
+              "weight": 0.17192640692640693,
+              "predicted": 0.9659684401039313,
+              "observed": 0.9481105508325767
+            }
+          ]
+        }
+      },
+      "paired_contrasts": {
+        "challenger_minus_original_stern": {
+          "mean": -0.014241742468270252,
+          "ci95": [
+            -0.02786825212584445,
+            -0.0015743049282970663
+          ],
+          "week_cluster_ci95": [
+            -0.02841330164635368,
+            -0.0010485254286068924
+          ]
+        },
+        "challenger_minus_published_v1": {
+          "mean": -6.94815864604734e-05,
+          "ci95": [
+            -0.0029931153532423253,
+            0.0031072565703815515
+          ],
+          "week_cluster_ci95": [
+            -0.002384862533509793,
+            0.002330633446000445
+          ]
+        },
+        "challenger_minus_expanded_v1": {
+          "mean": 1.4681409061261972e-05,
+          "ci95": [
+            -0.0016957460604208308,
+            0.0016810690883736587
+          ],
+          "week_cluster_ci95": [
+            -0.0014507769855510015,
+            0.0015479035121395875
+          ]
+        }
+      }
+    },
+    "2024": {
+      "games": 285,
+      "states": 15798,
+      "models": {
+        "original_stern": {
+          "logloss": 0.45032071367253595,
+          "brier": 0.15035422438232712,
+          "late_logloss": 0.2846220942557866,
+          "late_brier": 0.09097521155737656,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1891,
+              "weight": 0.11980063795853267,
+              "predicted": 0.030356366802692415,
+              "observed": 0.04411331196926617
+            },
+            {
+              "bin": 1,
+              "states": 1011,
+              "weight": 0.06399977215766689,
+              "predicted": 0.15145669572768608,
+              "observed": 0.13764929956033392
+            },
+            {
+              "bin": 2,
+              "states": 994,
+              "weight": 0.063008658008658,
+              "predicted": 0.24722605517283727,
+              "observed": 0.2312824314306894
+            },
+            {
+              "bin": 3,
+              "states": 1296,
+              "weight": 0.08194743237679525,
+              "predicted": 0.34744068778850495,
+              "observed": 0.37310116294128565
+            },
+            {
+              "bin": 4,
+              "states": 1536,
+              "weight": 0.09718053107249783,
+              "predicted": 0.443089033590333,
+              "observed": 0.40694029210743937
+            },
+            {
+              "bin": 5,
+              "states": 1623,
+              "weight": 0.10276062964428614,
+              "predicted": 0.5570654920396478,
+              "observed": 0.5780530408218318
+            },
+            {
+              "bin": 6,
+              "states": 1800,
+              "weight": 0.11388457187626162,
+              "predicted": 0.6546881682459275,
+              "observed": 0.6295009853165113
+            },
+            {
+              "bin": 7,
+              "states": 1569,
+              "weight": 0.09928871221114988,
+              "predicted": 0.7512667060814313,
+              "observed": 0.782630225301744
+            },
+            {
+              "bin": 8,
+              "states": 1403,
+              "weight": 0.08875282304645185,
+              "predicted": 0.8520340993554111,
+              "observed": 0.8495646644051673
+            },
+            {
+              "bin": 9,
+              "states": 2675,
+              "weight": 0.16937623164769977,
+              "predicted": 0.971999327687421,
+              "observed": 0.9705068231549256
+            }
+          ]
+        },
+        "published_v1": {
+          "logloss": 0.4405784511010017,
+          "brier": 0.14522800658564358,
+          "late_logloss": 0.2788922663555067,
+          "late_brier": 0.08851191000377795,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1451,
+              "weight": 0.09194007746639324,
+              "predicted": 0.03722324796812167,
+              "observed": 0.021498048448051546
+            },
+            {
+              "bin": 1,
+              "states": 1020,
+              "weight": 0.06461152882205512,
+              "predicted": 0.15175385989718967,
+              "observed": 0.11501163692785107
+            },
+            {
+              "bin": 2,
+              "states": 1197,
+              "weight": 0.07583162451583503,
+              "predicted": 0.2502630872499904,
+              "observed": 0.15197175692931725
+            },
+            {
+              "bin": 3,
+              "states": 1360,
+              "weight": 0.08606406366794178,
+              "predicted": 0.3516249626651025,
+              "observed": 0.2735783748987792
+            },
+            {
+              "bin": 4,
+              "states": 1543,
+              "weight": 0.09758958800510047,
+              "predicted": 0.4508473305421273,
+              "observed": 0.4257457111166088
+            },
+            {
+              "bin": 5,
+              "states": 1696,
+              "weight": 0.10727226759082714,
+              "predicted": 0.5513680636214618,
+              "observed": 0.5864537735277815
+            },
+            {
+              "bin": 6,
+              "states": 1896,
+              "weight": 0.1199686616861132,
+              "predicted": 0.65095640439989,
+              "observed": 0.6780411569417437
+            },
+            {
+              "bin": 7,
+              "states": 1853,
+              "weight": 0.11729950873995194,
+              "predicted": 0.7496317355646341,
+              "observed": 0.7791299215509742
+            },
+            {
+              "bin": 8,
+              "states": 1607,
+              "weight": 0.10164833934917036,
+              "predicted": 0.8494538077929382,
+              "observed": 0.8817509232325862
+            },
+            {
+              "bin": 9,
+              "states": 2175,
+              "weight": 0.1377743401566116,
+              "predicted": 0.9675916577018148,
+              "observed": 0.9876217889241492
+            }
+          ]
+        },
+        "expanded_v1": {
+          "logloss": 0.43892723371556597,
+          "brier": 0.1447974322866607,
+          "late_logloss": 0.27734693124547904,
+          "late_brier": 0.0881785889753931,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1548,
+              "weight": 0.0980838459785828,
+              "predicted": 0.03663221995622384,
+              "observed": 0.026655671444168277
+            },
+            {
+              "bin": 1,
+              "states": 1024,
+              "weight": 0.06486899065846434,
+              "predicted": 0.1522378080812695,
+              "observed": 0.12133398897123389
+            },
+            {
+              "bin": 2,
+              "states": 1180,
+              "weight": 0.07474823422191842,
+              "predicted": 0.24965767937061087,
+              "observed": 0.15580516353217302
+            },
+            {
+              "bin": 3,
+              "states": 1338,
+              "weight": 0.08467194701266723,
+              "predicted": 0.3515463399494669,
+              "observed": 0.2803905179879651
+            },
+            {
+              "bin": 4,
+              "states": 1472,
+              "weight": 0.09309539798459465,
+              "predicted": 0.4508995956842596,
+              "observed": 0.4306229874639088
+            },
+            {
+              "bin": 5,
+              "states": 1633,
+              "weight": 0.10328844439647764,
+              "predicted": 0.5509522747106371,
+              "observed": 0.583319530433073
+            },
+            {
+              "bin": 6,
+              "states": 1828,
+              "weight": 0.11567936987604577,
+              "predicted": 0.6509706470542508,
+              "observed": 0.6715786931206116
+            },
+            {
+              "bin": 7,
+              "states": 1804,
+              "weight": 0.11416439823642038,
+              "predicted": 0.7489478751267367,
+              "observed": 0.7748806495604997
+            },
+            {
+              "bin": 8,
+              "states": 1670,
+              "weight": 0.1056527882705168,
+              "predicted": 0.8491003486737121,
+              "observed": 0.8669858568241083
+            },
+            {
+              "bin": 9,
+              "states": 2301,
+              "weight": 0.14574658336431187,
+              "predicted": 0.9678834750850482,
+              "observed": 0.9839373251940521
+            }
+          ]
+        },
+        "challenger": {
+          "logloss": 0.4388076581425497,
+          "brier": 0.14486117363480072,
+          "late_logloss": 0.2790839392625789,
+          "late_brier": 0.08840539402562302,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1559,
+              "weight": 0.09879243563454089,
+              "predicted": 0.03731527965209822,
+              "observed": 0.030984778597785978
+            },
+            {
+              "bin": 1,
+              "states": 1028,
+              "weight": 0.06511847801321485,
+              "predicted": 0.1505938821991462,
+              "observed": 0.10431937859729534
+            },
+            {
+              "bin": 2,
+              "states": 1173,
+              "weight": 0.07430849851902482,
+              "predicted": 0.24852418246607702,
+              "observed": 0.16955908505549766
+            },
+            {
+              "bin": 3,
+              "states": 1325,
+              "weight": 0.08384260092016324,
+              "predicted": 0.35150466252636126,
+              "observed": 0.28838165915818026
+            },
+            {
+              "bin": 4,
+              "states": 1472,
+              "weight": 0.0930772505426245,
+              "predicted": 0.4508384118888866,
+              "observed": 0.4237925327935963
+            },
+            {
+              "bin": 5,
+              "states": 1625,
+              "weight": 0.10279960267494892,
+              "predicted": 0.551005368204966,
+              "observed": 0.583765023951417
+            },
+            {
+              "bin": 6,
+              "states": 1864,
+              "weight": 0.11796007163043173,
+              "predicted": 0.6509504084904887,
+              "observed": 0.6731094181124129
+            },
+            {
+              "bin": 7,
+              "states": 1776,
+              "weight": 0.1123837304585227,
+              "predicted": 0.7501140104538032,
+              "observed": 0.7617547338422482
+            },
+            {
+              "bin": 8,
+              "states": 1618,
+              "weight": 0.10236742174415304,
+              "predicted": 0.8493977479303795,
+              "observed": 0.8725880349783371
+            },
+            {
+              "bin": 9,
+              "states": 2358,
+              "weight": 0.1493499098623752,
+              "predicted": 0.96749142894084,
+              "observed": 0.9839053360227806
+            }
+          ]
+        }
+      },
+      "paired_contrasts": {
+        "challenger_minus_original_stern": {
+          "mean": -0.011513055529986601,
+          "ci95": [
+            -0.021062081549971228,
+            -0.0020918331332093307
+          ],
+          "week_cluster_ci95": [
+            -0.021047221331516746,
+            -0.0018093197040417333
+          ]
+        },
+        "challenger_minus_published_v1": {
+          "mean": -0.0017707929584524214,
+          "ci95": [
+            -0.004092869409376056,
+            0.0006928903644219568
+          ],
+          "week_cluster_ci95": [
+            -0.0037896185825401956,
+            0.0003518999553406124
+          ]
+        },
+        "challenger_minus_expanded_v1": {
+          "mean": -0.00011957557301667897,
+          "ci95": [
+            -0.0014164880647922875,
+            0.0011817710672052677
+          ],
+          "week_cluster_ci95": [
+            -0.0014522044950607891,
+            0.0012303252333853902
+          ]
+        }
+      }
+    },
+    "2025": {
+      "games": 284,
+      "states": 15741,
+      "models": {
+        "original_stern": {
+          "logloss": 0.5153328467945254,
+          "brier": 0.16815445244220018,
+          "late_logloss": 0.42243683470373766,
+          "late_brier": 0.12129104283469809,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1933,
+              "weight": 0.12293419608560449,
+              "predicted": 0.029376153374953425,
+              "observed": 0.11234690746096551
+            },
+            {
+              "bin": 1,
+              "states": 1128,
+              "weight": 0.07173381196268519,
+              "predicted": 0.15012962140879835,
+              "observed": 0.23776435526798098
+            },
+            {
+              "bin": 2,
+              "states": 1191,
+              "weight": 0.07571455447196736,
+              "predicted": 0.2450970958147353,
+              "observed": 0.2957922467354781
+            },
+            {
+              "bin": 3,
+              "states": 1170,
+              "weight": 0.07424775928297053,
+              "predicted": 0.35008223544090056,
+              "observed": 0.30165060203861677
+            },
+            {
+              "bin": 4,
+              "states": 1619,
+              "weight": 0.10279678469541328,
+              "predicted": 0.4424055741845648,
+              "observed": 0.3945177196713825
+            },
+            {
+              "bin": 5,
+              "states": 1634,
+              "weight": 0.10379810762501641,
+              "predicted": 0.5561354612068129,
+              "observed": 0.515542172259865
+            },
+            {
+              "bin": 6,
+              "states": 1623,
+              "weight": 0.10297121645342547,
+              "predicted": 0.654046003050521,
+              "observed": 0.6109512848151342
+            },
+            {
+              "bin": 7,
+              "states": 1226,
+              "weight": 0.0778602435987536,
+              "predicted": 0.7506260432672928,
+              "observed": 0.730331782000017
+            },
+            {
+              "bin": 8,
+              "states": 1448,
+              "weight": 0.09207455658993834,
+              "predicted": 0.847278039250345,
+              "observed": 0.8493533408164987
+            },
+            {
+              "bin": 9,
+              "states": 2769,
+              "weight": 0.17586876923422506,
+              "predicted": 0.97123280678473,
+              "observed": 0.9524493399666631
+            }
+          ]
+        },
+        "published_v1": {
+          "logloss": 0.48987899637986265,
+          "brier": 0.16387516489313725,
+          "late_logloss": 0.36392419248899976,
+          "late_brier": 0.11558948248772846,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1502,
+              "weight": 0.09555057618437898,
+              "predicted": 0.03875837342603447,
+              "observed": 0.07855946398659967
+            },
+            {
+              "bin": 1,
+              "states": 1066,
+              "weight": 0.06776911468812877,
+              "predicted": 0.153530676064992,
+              "observed": 0.20632939152144938
+            },
+            {
+              "bin": 2,
+              "states": 1431,
+              "weight": 0.09093656837355872,
+              "predicted": 0.2527386169303318,
+              "observed": 0.2640302954779544
+            },
+            {
+              "bin": 3,
+              "states": 1529,
+              "weight": 0.09712724111816029,
+              "predicted": 0.34993007014744276,
+              "observed": 0.3224272307575717
+            },
+            {
+              "bin": 4,
+              "states": 1525,
+              "weight": 0.09681211270814678,
+              "predicted": 0.449674509903733,
+              "observed": 0.3964112808913439
+            },
+            {
+              "bin": 5,
+              "states": 1550,
+              "weight": 0.09840628700432257,
+              "predicted": 0.5503894260013628,
+              "observed": 0.4867791188035814
+            },
+            {
+              "bin": 6,
+              "states": 1697,
+              "weight": 0.10776116026301347,
+              "predicted": 0.6505548041008702,
+              "observed": 0.64268301398806
+            },
+            {
+              "bin": 7,
+              "states": 1571,
+              "weight": 0.09976598025152507,
+              "predicted": 0.7490224864401552,
+              "observed": 0.7359033628480838
+            },
+            {
+              "bin": 8,
+              "states": 1428,
+              "weight": 0.09076352051704162,
+              "predicted": 0.8498091518257014,
+              "observed": 0.8754544920185745
+            },
+            {
+              "bin": 9,
+              "states": 2442,
+              "weight": 0.15510743889172351,
+              "predicted": 0.9644739301954752,
+              "observed": 0.9669579445705622
+            }
+          ]
+        },
+        "expanded_v1": {
+          "logloss": 0.49085635502854114,
+          "brier": 0.1640380482230158,
+          "late_logloss": 0.3668835249144779,
+          "late_brier": 0.1159115994010517,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1580,
+              "weight": 0.10051102066947135,
+              "predicted": 0.03718213001562608,
+              "observed": 0.07914102753670994
+            },
+            {
+              "bin": 1,
+              "states": 1087,
+              "weight": 0.0690986830071337,
+              "predicted": 0.1525131886828653,
+              "observed": 0.2170345124251348
+            },
+            {
+              "bin": 2,
+              "states": 1424,
+              "weight": 0.0904975707514625,
+              "predicted": 0.2510349778010907,
+              "observed": 0.27026308242551955
+            },
+            {
+              "bin": 3,
+              "states": 1488,
+              "weight": 0.09451497662209297,
+              "predicted": 0.3492070488436481,
+              "observed": 0.3225693093111701
+            },
+            {
+              "bin": 4,
+              "states": 1471,
+              "weight": 0.0933813005625459,
+              "predicted": 0.4492226529980856,
+              "observed": 0.39736167127229066
+            },
+            {
+              "bin": 5,
+              "states": 1494,
+              "weight": 0.09485196666442032,
+              "predicted": 0.5504437565675645,
+              "observed": 0.4889531652946317
+            },
+            {
+              "bin": 6,
+              "states": 1629,
+              "weight": 0.10345231276013334,
+              "predicted": 0.6505923616333166,
+              "observed": 0.6327181311170363
+            },
+            {
+              "bin": 7,
+              "states": 1545,
+              "weight": 0.09809115859430904,
+              "predicted": 0.7483958652634447,
+              "observed": 0.7249607471766492
+            },
+            {
+              "bin": 8,
+              "states": 1462,
+              "weight": 0.0929401368337617,
+              "predicted": 0.8496086784085911,
+              "observed": 0.8653203150862362
+            },
+            {
+              "bin": 9,
+              "states": 2561,
+              "weight": 0.1626608735346689,
+              "predicted": 0.965743190909866,
+              "observed": 0.9642050698417963
+            }
+          ]
+        },
+        "challenger": {
+          "logloss": 0.49035414184331316,
+          "brier": 0.16398249741206275,
+          "late_logloss": 0.3623147189251598,
+          "late_brier": 0.11555554478484306,
+          "calibration": [
+            {
+              "bin": 0,
+              "states": 1569,
+              "weight": 0.0998342326687397,
+              "predicted": 0.037527457733669355,
+              "observed": 0.08035315538149713
+            },
+            {
+              "bin": 1,
+              "states": 1107,
+              "weight": 0.0703459392719956,
+              "predicted": 0.15133749522915824,
+              "observed": 0.20873352510035265
+            },
+            {
+              "bin": 2,
+              "states": 1421,
+              "weight": 0.09029864995395015,
+              "predicted": 0.25075049651151676,
+              "observed": 0.2756441067530481
+            },
+            {
+              "bin": 3,
+              "states": 1464,
+              "weight": 0.09299334684342095,
+              "predicted": 0.34980422917333265,
+              "observed": 0.3135499839428335
+            },
+            {
+              "bin": 4,
+              "states": 1509,
+              "weight": 0.09580379004489455,
+              "predicted": 0.4501251037681063,
+              "observed": 0.41119186213870085
+            },
+            {
+              "bin": 5,
+              "states": 1466,
+              "weight": 0.09306522949499227,
+              "predicted": 0.550347226649496,
+              "observed": 0.4785274936569843
+            },
+            {
+              "bin": 6,
+              "states": 1641,
+              "weight": 0.10421247581180862,
+              "predicted": 0.6504930332093135,
+              "observed": 0.6323146136960169
+            },
+            {
+              "bin": 7,
+              "states": 1537,
+              "weight": 0.09758589415279553,
+              "predicted": 0.7493495214635634,
+              "observed": 0.7307062999597785
+            },
+            {
+              "bin": 8,
+              "states": 1451,
+              "weight": 0.09223484848484846,
+              "predicted": 0.8517138967334381,
+              "observed": 0.8635715731762237
+            },
+            {
+              "bin": 9,
+              "states": 2576,
+              "weight": 0.16362559327255394,
+              "predicted": 0.966298293173195,
+              "observed": 0.9636405757877183
+            }
+          ]
+        }
+      },
+      "paired_contrasts": {
+        "challenger_minus_original_stern": {
+          "mean": -0.024978704951211433,
+          "ci95": [
+            -0.040360631969699114,
+            -0.010683421726534541
+          ],
+          "week_cluster_ci95": [
+            -0.04055351422850362,
+            -0.009381618786261757
+          ]
+        },
+        "challenger_minus_published_v1": {
+          "mean": 0.00047514546345083674,
+          "ci95": [
+            -0.0024607830483612974,
+            0.0037097483793888035
+          ],
+          "week_cluster_ci95": [
+            -0.0028066906294196945,
+            0.004786479477366874
+          ]
+        },
+        "challenger_minus_expanded_v1": {
+          "mean": -0.0005022131852272263,
+          "ci95": [
+            -0.0022290408081421555,
+            0.0012372022289925126
+          ],
+          "week_cluster_ci95": [
+            -0.002406685479526642,
+            0.0017543420487081472
+          ]
+        }
+      }
+    }
+  },
+  "training_games": 1897,
+  "training_states": 105202,
+  "protocol_sha256": "0459219a87a3525562091138b399d2573d95d23f349629e42fca188f2767572a",
+  "model_sha256": "2cc6de74769baa09901609a821a25138fae31e61cc14be6f30f451ce1dba4df2",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "scipy": "1.17.0",
+    "sklearn": "1.8.0"
+  },
+  "engineering": {
+    "json_roundtrip_max_error": 0.0,
+    "team_swap_max_error": 0.0,
+    "single_state_median_ms": 4.523976999735169,
+    "single_state_p95_ms": 6.879923000451527,
+    "timing_repeats": 25,
+    "timing_scope": "Python DataFrame to probability; no network"
+  },
+  "runtime_seconds": 324.41199197600054,
+  "source_audit": [
+    {
+      "season": 2016,
+      "source_rows": 47651,
+      "source_games": 267,
+      "excluded_tied_games": 2,
+      "admitted_games": 265,
+      "admitted_states": 14685,
+      "sha256": "95eba04e2145e3c1c8ca502f2a3a76cfb0a5990680c3fb480f02a74a45f54a3b",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2016.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 14685,
+      "round2_games": 265
+    },
+    {
+      "season": 2017,
+      "source_rows": 47245,
+      "source_games": 267,
+      "excluded_tied_games": 0,
+      "admitted_games": 267,
+      "admitted_states": 14810,
+      "sha256": "84eacd963c1fdd45965f6222c62e9329a7f3412f029d92c1ac5e34a1bb4d3710",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2017.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 14810,
+      "round2_games": 267
+    },
+    {
+      "season": 2018,
+      "source_rows": 47109,
+      "source_games": 267,
+      "excluded_tied_games": 2,
+      "admitted_games": 265,
+      "admitted_states": 14708,
+      "sha256": "2e6f2dce7c7ebd46e985cabe0c17eb72b39a77f98cb4478409294f50b5820150",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2018.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 14708,
+      "round2_games": 265
+    },
+    {
+      "season": 2019,
+      "source_rows": 47260,
+      "source_games": 267,
+      "excluded_tied_games": 1,
+      "admitted_games": 266,
+      "admitted_states": 14761,
+      "sha256": "60c3067017db2d28a78f66a79b657268be8578d9a5288e6a827efdcd7fe42540",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2019.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 14761,
+      "round2_games": 266
+    },
+    {
+      "season": 2020,
+      "source_rows": 47705,
+      "source_games": 269,
+      "excluded_tied_games": 1,
+      "admitted_games": 268,
+      "admitted_states": 14870,
+      "sha256": "8889f5d8782b5c5dce3c3644acdc0322b228a7e9cb13fa36cbac250e260e9f60",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2020.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 14870,
+      "round2_games": 268
+    },
+    {
+      "season": 2021,
+      "source_rows": 49922,
+      "source_games": 285,
+      "excluded_tied_games": 1,
+      "admitted_games": 284,
+      "admitted_states": 15741,
+      "sha256": "333ad34378e5339d5172717cc83378e908daf02c8699416ab3e17c2ec10f78d8",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2021.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 15741,
+      "round2_games": 284
+    },
+    {
+      "season": 2022,
+      "source_rows": 49434,
+      "source_games": 284,
+      "excluded_tied_games": 2,
+      "admitted_games": 282,
+      "admitted_states": 15627,
+      "sha256": "931121d8897779d7944e2a293e92ed8799c8e5cceef84096ac42339003fedc09",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2022.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 15627,
+      "round2_games": 282
+    },
+    {
+      "season": 2023,
+      "source_rows": 49665,
+      "source_games": 285,
+      "excluded_tied_games": 0,
+      "admitted_games": 285,
+      "admitted_states": 15803,
+      "sha256": "bd3484731408def6b0ec93225bba2bd7b2c65769ca707a2b9444d891abdc6776",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2023.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 15803,
+      "round2_games": 285
+    },
+    {
+      "season": 2024,
+      "source_rows": 49492,
+      "source_games": 285,
+      "excluded_tied_games": 0,
+      "admitted_games": 285,
+      "admitted_states": 15798,
+      "sha256": "3fd2896bc0b911b615142d2f1fabae54a4bbba5ab7b73b28187b118ef8af6a3b",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2024.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 15798,
+      "round2_games": 285
+    },
+    {
+      "season": 2025,
+      "source_rows": 48771,
+      "source_games": 285,
+      "excluded_tied_games": 1,
+      "admitted_games": 284,
+      "admitted_states": 15741,
+      "sha256": "c6ecedd6d678cc37ed316b23ef84ee1ec6abb69c514bb11868a7ebd5a367df29",
+      "source": "https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_2025.parquet",
+      "round2_missing_extra_states": 0,
+      "round2_states": 15741,
+      "round2_games": 284
+    }
+  ]
+}

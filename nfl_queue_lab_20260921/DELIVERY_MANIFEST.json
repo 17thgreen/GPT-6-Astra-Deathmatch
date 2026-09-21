@@ -1,0 +1,1504 @@
+{
+  "files": [
+    {
+      "path": "EXPERIMENT_SPEC.md",
+      "bytes": 4974,
+      "sha256": "267e1f599bbf7e60c23f107e0105116f69d7a25eb004cc5d087d49613798ceab"
+    },
+    {
+      "path": "FROZEN_INPUTS.json",
+      "bytes": 296,
+      "sha256": "8af8cbb684ae0ad04e04664f059c36eca899384230b3abe6008872de25c18363"
+    },
+    {
+      "path": "NFL_Queue_Experiment_Results.md",
+      "bytes": 12392,
+      "sha256": "de10103a32099aae5284ef3f7bc039b2ef5e8d4314b90efd4f4482208276614b"
+    },
+    {
+      "path": "POST_RESULT_DIAGNOSTICS.md",
+      "bytes": 1170,
+      "sha256": "5ebcdbab1de8d86f3694e615ebec7c6dfe33f89b454c22013c0091c162f56110"
+    },
+    {
+      "path": "QUEUE_STRESS_SPEC.md",
+      "bytes": 756,
+      "sha256": "d8d63f157304a38eeec7b3f0ae5b65317b7b7f272a1ee7853024af15e29eb565"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3851,
+      "sha256": "7e48cb4a43143daa399e7950a922f65c8dfb59894c18bfce9ac8eecfe7bf3f09"
+    },
+    {
+      "path": "analyze_forward.py",
+      "bytes": 9062,
+      "sha256": "9d15ebb12edc2a41c7804fec298e52fb9f232a1ca8ad30172f4a7b2f44f11f64"
+    },
+    {
+      "path": "build_report.py",
+      "bytes": 14092,
+      "sha256": "0c8c5eb124303a7168120256074373104e15acf55c3e8a9475dd413ed9479917"
+    },
+    {
+      "path": "capture_progress.txt",
+      "bytes": 50,
+      "sha256": "0fdd8b99685a9f101c8803deafe9be340a23068b1a1cc7d406f5a45cff0919f7"
+    },
+    {
+      "path": "capture_queue.py",
+      "bytes": 5954,
+      "sha256": "a3f10d4d455b8900c425d421d46053987bc70540323b77bc1afd53e85bd6908b"
+    },
+    {
+      "path": "capture_resume_progress.txt",
+      "bytes": 2066,
+      "sha256": "d226f60ba7c4deca6d81fe02aa8cc888f0205efe113774c0fdccf9ef429de4a1"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.jsonl.gz",
+      "bytes": 86924,
+      "sha256": "f64604084f8357379c36db87b70e6736b80f8f23e363113d045ee690f39a95eb"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.manifest.json",
+      "bytes": 55332,
+      "sha256": "d94fed31f5f50392c7fddee3ac48585de2db4babe3bab496d67d68f48140518a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz",
+      "bytes": 770627,
+      "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.manifest.json",
+      "bytes": 517,
+      "sha256": "d4583d658d330561b7ede49af7809bedd2491723ff3fd9b00cd4b08211a3734a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.jsonl.gz",
+      "bytes": 7730,
+      "sha256": "e3315d7387d7236392b671f287c7a0cf97a196f9b1a713a2d88bbd105e005279"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.manifest.json",
+      "bytes": 414,
+      "sha256": "96b6dfd5177e4709c5303c5513bd1393264d941af15cf45e3babc23b62d75192"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.jsonl.gz",
+      "bytes": 94055,
+      "sha256": "032f7816617861116550a65114064c15f892db1a442d70b7b2c1e05be89a2857"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.manifest.json",
+      "bytes": 49878,
+      "sha256": "fdcb6b64857ce716a92ca29cb5c2eb0f00db81285db6d1bc23904094a42f8765"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.jsonl.gz",
+      "bytes": 930701,
+      "sha256": "365da2e165cf4955e7e5093dcfa71ff5c11aa93d2af588a71a01f5a50fca6be4"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.manifest.json",
+      "bytes": 519,
+      "sha256": "bd67a157d8c601a3c6512ae2830425ae5e939ac7f2f19f639fe766ff3a32405c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.jsonl.gz",
+      "bytes": 9101,
+      "sha256": "f2b9ab11046576520a49d78c7fc176cc4cc56dbf5a84aee71d6317f77ccfba62"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.manifest.json",
+      "bytes": 416,
+      "sha256": "642f7d050c5b0020d40dfce48e58a549d7a280e7ce2daf284a9eb4e728125331"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP09NESEA/event.json",
+      "bytes": 6586,
+      "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.jsonl.gz",
+      "bytes": 86086,
+      "sha256": "ce9eb13525e35623b20c7396eb8c59f1d11a590a8172650bf91e29582acbf34d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.manifest.json",
+      "bytes": 49526,
+      "sha256": "3fcab52d5e1a31574c1f470e33565fbe35459ee0771d2052b0e1670775d5f09e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz",
+      "bytes": 1025896,
+      "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.manifest.json",
+      "bytes": 519,
+      "sha256": "1cae6d559eeec5b2d9c870952ea04e9457c5535cffa234211971a1f9d876d7b2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.jsonl.gz",
+      "bytes": 7563,
+      "sha256": "ca94c5cb1221ab0a18e465d2163d944463da0b3b66c59d7fb0e86783551a2328"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.manifest.json",
+      "bytes": 416,
+      "sha256": "b068650d6f3d42fad734cc47fad4c6a20cb1e13eb8d0bc1085312517a3ba49d7"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.jsonl.gz",
+      "bytes": 85885,
+      "sha256": "bb1cb2e50b0e596ea31d1838ae48f1e77f9956a62a140262ff326d856180e68a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.manifest.json",
+      "bytes": 49412,
+      "sha256": "34807d459b9f7d2a3d1acbf0b6584c7d4261be592e5e0a0403990373a00420c8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.jsonl.gz",
+      "bytes": 805136,
+      "sha256": "f2053a6f65e2486a72f422bf6d41fa055d5d5f1612cf13faac38773677995e3f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.manifest.json",
+      "bytes": 517,
+      "sha256": "35028c7e5644498f6f64422908fd9271e0933efa9d1d7632be720bf241798ed0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.jsonl.gz",
+      "bytes": 7265,
+      "sha256": "c1effa67b16ce4590620d1af1d37b2e2e886cc2cd3511fe8d05ae29da16fda27"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.manifest.json",
+      "bytes": 414,
+      "sha256": "0dbe0bacb73722c50af8ffa199272c777f7977593c61a7f8c67e9303a87d3cd7"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP10SFLAR/event.json",
+      "bytes": 6662,
+      "sha256": "be00acfe24abba807aaeb7e6dd9757a38a9b48f9e9d2ab8ff618c3d5389116ee"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.jsonl.gz",
+      "bytes": 43393,
+      "sha256": "38be5ca8f6787874ad542892b532922758d99af586081b7137879f1e6bd14906"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.manifest.json",
+      "bytes": 84618,
+      "sha256": "1b89b3c2ae969a5efb043b3310024cc7eea6e95450c903e7aab57a39f2d5de1b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.jsonl.gz",
+      "bytes": 111013,
+      "sha256": "5129a083bc314abb9abdadc1ddd4040a12f553f7ccabe63d232ec857149a9692"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.manifest.json",
+      "bytes": 521,
+      "sha256": "abd62ee0c163842d7f89a33297407a5f6ca985e9637847447feb5e41c8e7ec9f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.jsonl.gz",
+      "bytes": 1041,
+      "sha256": "37e0db922723df23f51e10a5397e908f1157b7ac7187dff7fa602237f8cbf529"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "47667f52f36868bb7f1262ad0c0f3ceb615d41b6a1734859164d21e463414b62"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.jsonl.gz",
+      "bytes": 54717,
+      "sha256": "f43bf2512ff5a170c74dbcb7131a7308228b26595578be42ebc1c34d1dd68027"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.manifest.json",
+      "bytes": 71978,
+      "sha256": "fd83c4dedfc6b6c6d8020e22b7d9f842753335f0a849f445a9427bef899350cc"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz",
+      "bytes": 186401,
+      "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.manifest.json",
+      "bytes": 521,
+      "sha256": "b0294a6541cb2a4080a0493a7e6c9c6d360da4e1778dc8c7415f30df75b2536f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.jsonl.gz",
+      "bytes": 1422,
+      "sha256": "9dee73a18dcc39425471a9f784cb26a2135e235c991514bea6e1a5080bf6c18e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "9ab0e38e5b06383fa8d08da225c1e794aa594587fd6ed1d7906f8a461283fd60"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ARILAC/event.json",
+      "bytes": 6587,
+      "sha256": "dc443307226ea47146d425edf680c56adf5b92f60f6a4edf2eff05e059b6b153"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.jsonl.gz",
+      "bytes": 52819,
+      "sha256": "92027b0fd6d156c93302ab3ec17768b10e7c47d86072a8ff7cd325b6c5fa4093"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.manifest.json",
+      "bytes": 81210,
+      "sha256": "fce98e724fe0da066ee07f8a564485cbf1fcfdb95cc67e641ce5779b55328a60"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.jsonl.gz",
+      "bytes": 155018,
+      "sha256": "51a23a5488396750c53f5a601992eee6cf84d7bdfb776be9124ae7e5247de2a9"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.manifest.json",
+      "bytes": 521,
+      "sha256": "367e39d9e2a96602a8cbd9bf9d05dccb0077e9206b61a1e6458710095b4ff11f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.jsonl.gz",
+      "bytes": 1756,
+      "sha256": "fc083b15803d698ccfbfd5a4e9788391d3f5a048b5f8e3b36ae0b99976f9d2c2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "d0761b92ec74606e307b7b9416960085238f21c5e399193258ee7c5ac39e3211"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.jsonl.gz",
+      "bytes": 73995,
+      "sha256": "00747c47ae1932192d5c506ea0b340e60be87f4fbdce81829a3f9fb455dc6216"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.manifest.json",
+      "bytes": 59882,
+      "sha256": "470235160034819f406833c66d904c671eec41542cabd1a877f7e44090e28d5f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz",
+      "bytes": 313206,
+      "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.manifest.json",
+      "bytes": 523,
+      "sha256": "39285a42b17f6e5ae16e7685e6b09fad280a884ec960559c99c0ef90f7474927"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.jsonl.gz",
+      "bytes": 2639,
+      "sha256": "02a2be695f23d6f72a4e444377158e963ccda95d71fbc6aeb626e0fce9ed8bc0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "adb147e20b543ff8cfdc45a8653a2ba03801273b2a3ff8baff1209202f4f176c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13ATLPIT/event.json",
+      "bytes": 6513,
+      "sha256": "138aef1c984780b10b5b697ae8edea44a03362d6f506738f2799e082eb58b53e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.jsonl.gz",
+      "bytes": 53720,
+      "sha256": "46ab93a8d76a7e5fc26a51c3e66aa4cb9a806104ad09fa6798f4349fa2b44975"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.manifest.json",
+      "bytes": 82586,
+      "sha256": "e39b385c850b9076e446a4606ab474840a8a5990857d431df052a4334e56dbbe"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz",
+      "bytes": 174905,
+      "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.manifest.json",
+      "bytes": 521,
+      "sha256": "0fc31e2bb4fbd1dc4d5227d756418d169570eed56319ab0dc5771dd34dc8b4f8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.jsonl.gz",
+      "bytes": 1665,
+      "sha256": "cde4590587dceccb00250821268d78de8a3c32aed82bc394b3568cf6f1f52ddc"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "646172582f74325052733ee6940b626f01031a00effcdc4ed984da2ac85b1802"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.jsonl.gz",
+      "bytes": 37942,
+      "sha256": "5b4576003884cdb4266565b4d8f4f170aad0e18d32ba451d934e1cd78656f3df"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.manifest.json",
+      "bytes": 93610,
+      "sha256": "fa59b7b0585d0198ab95d44090e6eefda5c48517ff4668919b2d0fac67bd3bda"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.jsonl.gz",
+      "bytes": 82857,
+      "sha256": "6e467250bbdc7bd59438ad189bb2ec6445f14b993261e161082aaaca4165cdce"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.manifest.json",
+      "bytes": 521,
+      "sha256": "3a2229e62277f9f1f87d61ccff1669af8cf400c0330ed194b5e749cbeae712ac"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.jsonl.gz",
+      "bytes": 1150,
+      "sha256": "e1eb3408018fc67ec55167b195d2bf289887298a6ad6771bf2ed9c778f523fe0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "9e43433fff4f0717e8446dcef03a13ecc459601dcc7de02984860a8a05bd7c21"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BALIND/event.json",
+      "bytes": 6559,
+      "sha256": "4be01bca476d760928401845ed7d7d15e7f621d563c6abaab3519dbe4ab3a064"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.jsonl.gz",
+      "bytes": 79446,
+      "sha256": "91f7a93c777e8520eae9b6b3ff3c6cf12aab22a3a4a0d8dcc55b1d0999b5c3e5"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.manifest.json",
+      "bytes": 61034,
+      "sha256": "63cd215127e295fa910b7bcf806dda823b40ced9a5ae940e4320af251ad1697d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz",
+      "bytes": 412926,
+      "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.manifest.json",
+      "bytes": 523,
+      "sha256": "e248e7f0359438c38360a0ba15490d64fd1ef6530eab81641a09ddd0ca3d5725"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.jsonl.gz",
+      "bytes": 7617,
+      "sha256": "5a33f37dafe70685d18160b745c92550b9d5554e920483e744e1ff9d8a17ba35"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.manifest.json",
+      "bytes": 419,
+      "sha256": "99e2264bf063b04bc5099ce93d93d391470804df1d2175e1168ffed187975279"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.jsonl.gz",
+      "bytes": 64390,
+      "sha256": "4a82e7b7e541835d1f64c537120edb7afdbafc733b645c1d38edf5f8ff40f27b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.manifest.json",
+      "bytes": 70330,
+      "sha256": "403749c35846f811cba3ea6dd6d6c7424ec27199492a34d1f6c1901c08bbb9e0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.jsonl.gz",
+      "bytes": 293244,
+      "sha256": "03693472b0f34e3ff66812c14e509ab92201559e814c4413f0f4bb81e2e506ff"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.manifest.json",
+      "bytes": 522,
+      "sha256": "64ed7253103137bef220a32041646a6aac05d0ddaa612f7a24cbe39ec06e86e8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.jsonl.gz",
+      "bytes": 4935,
+      "sha256": "13daac006b9bf1ffbaf7466c7d596d5628f1a6656fbff5928bc0e5a06d4d3433"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.manifest.json",
+      "bytes": 419,
+      "sha256": "71a1712728b4145edfa161d67f51e7fcf05a5490feba18466d1fc3d087c2388a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13BUFHOU/event.json",
+      "bytes": 6484,
+      "sha256": "6c90e49decdb1d88dae3492d7c8a1c5a43fcbdb8417e4333254408a3081a7983"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.jsonl.gz",
+      "bytes": 43000,
+      "sha256": "0a1f19543e68ba293cf2ce62f95b67c0eda67ac81bcf26f77d21392933d0d48c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.manifest.json",
+      "bytes": 88394,
+      "sha256": "0c92791f3575529bf909cd59cfc2fd18ca71f3109f8ff1bf1eeb784b8f16466a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz",
+      "bytes": 110706,
+      "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.manifest.json",
+      "bytes": 521,
+      "sha256": "fd26409c839672e7fd98c48a4a0bcfe5e7b3e3f80eeac22abde81c0abe43a505"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.jsonl.gz",
+      "bytes": 1252,
+      "sha256": "01ea1a6f21844960ed13e5e901e402fa428afbf5e7348f2a856a2f375608c180"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "392c42c6f5ec12a0139af8d754862ab1bd8875ceae2f0993342f3faee9054716"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.jsonl.gz",
+      "bytes": 64596,
+      "sha256": "12cbdb9257b1226e5b80061a112b05cfbe6e4d05312a4353a8481d3354a0ffe1"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.manifest.json",
+      "bytes": 68570,
+      "sha256": "c8bf1cf91340a5f461d2a083b51c09100de25ab1a7b76c6c51e2af434cddbf57"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz",
+      "bytes": 255344,
+      "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.manifest.json",
+      "bytes": 521,
+      "sha256": "d364893d04181002ce98dea13ecdc72061b511e3378743553300af5abd6d9808"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.jsonl.gz",
+      "bytes": 3053,
+      "sha256": "2adf914d3b6ccf875d81f8c3bf481e5619865dbed1a5c2371219b6c6681ead79"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "2149aa38e8d857e0eb285c7f029405c0ca475decfecd41fef96a2bcf531f6dc6"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CHICAR/event.json",
+      "bytes": 6493,
+      "sha256": "357c94639e71caf790f202c866f04021a914f3c8f559fabb5594db20a117ea0c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.jsonl.gz",
+      "bytes": 51598,
+      "sha256": "74545cfd9abb29c00a9aaeee76e35b439cd1105eac3eed4d6b01df68710c49b8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.manifest.json",
+      "bytes": 69898,
+      "sha256": "a5b6d26680355d6a5d0e67254b4fbb7c1f3a1aad186f6426ff0ba3ef12ad3ea6"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.jsonl.gz",
+      "bytes": 117200,
+      "sha256": "760434ad4167f1c3bcebcb0fb9518bbc393a1a98bc21e3b6e4443fc54b92c0b7"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.manifest.json",
+      "bytes": 521,
+      "sha256": "bd146730ac28f07ed12cc6b2dea7405a4be63692204293429311e83c2b1db38e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.jsonl.gz",
+      "bytes": 1245,
+      "sha256": "0bbaf1f1c9ab73ed67ff0db9676a372dac345b9b3fc20046bb6c359f349de384"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "6a34fde2bccc3667ceb0872250c40f9d320f4b00e0488833a710630a21e97e56"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.jsonl.gz",
+      "bytes": 58182,
+      "sha256": "1c5111875f73badfbbbd4c175c1a711ca212eeb86c2b799edc88980118b9c95e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.manifest.json",
+      "bytes": 61786,
+      "sha256": "b3bca8711469ef5bec97bbfdc41378a87e49209a7c862dc962503643faaa4a6a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz",
+      "bytes": 156423,
+      "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.manifest.json",
+      "bytes": 521,
+      "sha256": "0ed676155d38d97e19f99b7eba67f5da077ec195c8dfabb7ecf775a4acc44ae3"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.jsonl.gz",
+      "bytes": 1694,
+      "sha256": "701abcc0fc0155bea10d03143a20e457ea4b778b706e6d354416c53777c76cec"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "cb47bd0a2fe14d74307ebafce7708ad459e4ad3e1be6b810a2651c57e7f2f615"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13CLEJAC/event.json",
+      "bytes": 6571,
+      "sha256": "ca39845731d1e7f00a382cc4b89f52aa739ae3137ee2b3bd06e3a72abae828b2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.jsonl.gz",
+      "bytes": 94870,
+      "sha256": "5deb09d883b1326b9c5d8ed05630662269ebb33bb49133feb431068d7c94d760"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.manifest.json",
+      "bytes": 42106,
+      "sha256": "c19e60be05108eba08ac6baef6655c4b9d41297a2b1ebe75a1acc35f572128cd"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz",
+      "bytes": 802084,
+      "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.manifest.json",
+      "bytes": 523,
+      "sha256": "54eca6203013121d3238fe4372e2170c4e15bf8ee326dad97c41d0cb73a5d3d6"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.jsonl.gz",
+      "bytes": 11255,
+      "sha256": "e21980cc2815e62a3ce6096f1c07d966a2bf71124cd372c7ed92b8deb819883d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.manifest.json",
+      "bytes": 419,
+      "sha256": "eb64f0fd2f449505e30726091a0215590b68d6001ee900714310ca4b61c4c4e5"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.jsonl.gz",
+      "bytes": 71297,
+      "sha256": "1f38a4c68c04d929e5090880c59f5cc652b2b9ef40c9cce252a3a5293c734235"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.manifest.json",
+      "bytes": 51610,
+      "sha256": "f729593af2cac78cbd61aef675afae55bf3d57166a8ed0a0969d7058d017374d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz",
+      "bytes": 376944,
+      "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.manifest.json",
+      "bytes": 523,
+      "sha256": "23f7e56b992b13d9cf29d9a7fc066b7c79f54d6e0bbfe618b35289eed1e8bece"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.jsonl.gz",
+      "bytes": 4977,
+      "sha256": "3884c5caf66252132584665a7ffdf65129b1edc9253c51d0f82840a714d87457"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.manifest.json",
+      "bytes": 419,
+      "sha256": "87a2c087e3e464c718dc101f74925ab053f886b9caf4925c94e04655624bc263"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13DALNYG/event.json",
+      "bytes": 6550,
+      "sha256": "0968e0bf5501ac3a9ef3920823eb63d365d8444651b13c75b30dee4656a5e77b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.jsonl.gz",
+      "bytes": 75527,
+      "sha256": "0986570c108123860413f092f24e10ac8111803d0aa442c47037bb8142a1a741"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.manifest.json",
+      "bytes": 60020,
+      "sha256": "3e82b41603c7146527337d68a3c07e5e98bcb9bf62d48ff0a29129d3debf4992"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.jsonl.gz",
+      "bytes": 429163,
+      "sha256": "ae668f9a1754eedb25346f68615771455dde4e35b9bc4683c64fbe471b7f5a48"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.manifest.json",
+      "bytes": 517,
+      "sha256": "8d1abb0ba71474d4282597662267b810096f0911320493f9369bb472c0d16af2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.jsonl.gz",
+      "bytes": 4077,
+      "sha256": "ef5d69d58ed93e718f839a285cfa3c9c165d899957974752bbce29211b7fb509"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.manifest.json",
+      "bytes": 414,
+      "sha256": "9bcb1d999022e8b1f9e526585502c569c226ba5ab52a94785cd81a1357052395"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.jsonl.gz",
+      "bytes": 54382,
+      "sha256": "e122c61e62bc0c8789b31d96e3cfb5657990321e46c21827c1f22521d0786a64"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.manifest.json",
+      "bytes": 78630,
+      "sha256": "19321552a2338c50fc627eaabe821cb3892dfc2397ff19da9a5d5644b4adf48c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.jsonl.gz",
+      "bytes": 231419,
+      "sha256": "4d724c23cc803ab9d70b6434732cac49fa294fafb6a7bfad7bb022007ffb919a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.manifest.json",
+      "bytes": 517,
+      "sha256": "b351b320fcd0b445436c2e29474aa9d3d38fdf2cf395c4bad9d9c67981a4248f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.jsonl.gz",
+      "bytes": 2207,
+      "sha256": "49e0ed94b8bb7db975cfd08f4494fe2279874dcf02eec284d3fd374b75fde03b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.manifest.json",
+      "bytes": 415,
+      "sha256": "11c73a9e149d1916d7f08bc99fa600c40306fb8704b1c776839fad5fd2b033de"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13GBMIN/event.json",
+      "bytes": 6519,
+      "sha256": "c73ff9d5213a30b4a63a70945eaf641f8acab2d1418212a41e373417c1f9d6dd"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.jsonl.gz",
+      "bytes": 49247,
+      "sha256": "7d7aded13bd41551fd5f7d18198813b54ea3f725b7832f7606bf6b01d9b001eb"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.manifest.json",
+      "bytes": 81860,
+      "sha256": "83e8d9ff9fe41b79ad971b8a66d43529cde83061fe7aec6f2dbcd6bf707a5690"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.jsonl.gz",
+      "bytes": 162312,
+      "sha256": "42379cc363aeafc95cd13b4d115a061a1e7e8db6351d18dd720ba9fdf55a0504"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.manifest.json",
+      "bytes": 515,
+      "sha256": "5377446f75bf0e5254de475c3567aae656ec202f8dac122f641c55bc5c96ec3c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.jsonl.gz",
+      "bytes": 1545,
+      "sha256": "5eb2d0d5e3db9d5771348db6c4a0fa76816ce784a43f1e0807bcb23513e4686b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.manifest.json",
+      "bytes": 413,
+      "sha256": "b4c55b35b5381e3b9df5799b8eefb300d61c5946363aa3209388b698b28d1201"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.jsonl.gz",
+      "bytes": 42285,
+      "sha256": "b991db220e4f648ef6cd13ce2598e4d3c6b8d221744bdad9823385d36fed37f2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.manifest.json",
+      "bytes": 94406,
+      "sha256": "6e945be4018fd5e89bad05423e9f24ef8e05b16d7c9518a059a230ddb91a46a0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz",
+      "bytes": 134187,
+      "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.manifest.json",
+      "bytes": 517,
+      "sha256": "e5ddd7a549b70a04886b17f1b84bd20a1fce92e614525287c1cce6a8cadaf370"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.jsonl.gz",
+      "bytes": 1127,
+      "sha256": "8485b889793b04071fbd91244008d2c46396a07a74fe26603e19cdd93d3ef795"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.manifest.json",
+      "bytes": 415,
+      "sha256": "fb4e0c9e9ed664cfe841c2c674d4bd2ac17f2b8c78e0349d1b445959143a7cb5"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13MIALV/event.json",
+      "bytes": 6475,
+      "sha256": "9e342c023e9b0c0859d64e74108091f8fc4eccfaa035540f510bee3cb29623b3"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.jsonl.gz",
+      "bytes": 68834,
+      "sha256": "3573905a6a25c27025b4f3c914e1b622848fffb7846447d3c0b983e39a85a8a3"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.manifest.json",
+      "bytes": 63606,
+      "sha256": "8e045e170bb591be14b4ffa3bea0d3913af998bc96649904b7200d2a7f8c9055"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.jsonl.gz",
+      "bytes": 277516,
+      "sha256": "b3a71626ebd8baf117ae11e5f1be33a400284cd1a1d07b66df9687cd54a7d98a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.manifest.json",
+      "bytes": 518,
+      "sha256": "e40e32ac5632f5c0224ac91b61baa2c31e0fadb5e20556992961f0f8f48de00f"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.jsonl.gz",
+      "bytes": 2012,
+      "sha256": "8a8246c89a60e198a6db3dc11c98dc73595f54f17df16866cf4f15d1ffc65fc6"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.manifest.json",
+      "bytes": 415,
+      "sha256": "648747b6af8ade659a58f56d0d30b1e00f6c45fa0ab9cd2a48e8dae931517083"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.jsonl.gz",
+      "bytes": 49582,
+      "sha256": "a4844dd9ea7a1ae1d988bed8a9786c5a4c869ede97fbd9fccc6df81d404bdea8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.manifest.json",
+      "bytes": 83876,
+      "sha256": "b61a8ff97e51550d732661672984e599ec432d284db33aec9a2da6ffe5da9185"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz",
+      "bytes": 132010,
+      "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.manifest.json",
+      "bytes": 515,
+      "sha256": "5e5611773b9384d941c4ef8d1cea84ea2ba370ebb69e7483d0d7b13ac184658c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.jsonl.gz",
+      "bytes": 1108,
+      "sha256": "ba72d34c4540b3624e326d0c2bb7309344c3735239e709fc4fbdbd2a08cd696b"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.manifest.json",
+      "bytes": 413,
+      "sha256": "d6b72577bc1eec43bd3cec54104470d1970e25a0f80fa42baedff6d7db511b62"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NODET/event.json",
+      "bytes": 6522,
+      "sha256": "75c12818fb175f0dbcf507aa9a291e142e5db25f067f384397ad596ebd98ae96"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.jsonl.gz",
+      "bytes": 41445,
+      "sha256": "0a52c5684eaad6edef52e1b5d0adc000a763b7d646877d6d2aa7dd3765b32006"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.manifest.json",
+      "bytes": 93018,
+      "sha256": "a35ce056bd15b2eb1f206d9fe140a8b29abd48a271e4824b6c2b6b35117eb7e3"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.jsonl.gz",
+      "bytes": 106191,
+      "sha256": "f6a24d0e6bb263055d6b14cb76ebd23e316a0ef9f0831af8a4294e6ca266022a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.manifest.json",
+      "bytes": 521,
+      "sha256": "fe8d04981d26d08782c49f66884c35dc03fe99a83c07a357f9703a7f7bd006cb"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.jsonl.gz",
+      "bytes": 1110,
+      "sha256": "352c9b5f34b5a7fc4a35c52401cc586f3bf597d2634470f8d44a544e8ba3baa2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "9d7399105056b6695b1ad1774ee663f2da2197c486f1b4d96dc4620091f2fb56"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.jsonl.gz",
+      "bytes": 41018,
+      "sha256": "b6d120e94ad3f1d54b0021cd29b017101640acca2783259f03c8d48cb7e597b4"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.manifest.json",
+      "bytes": 90474,
+      "sha256": "88332b0cc7b7b5475127c2b81406bffa7847deda2cca2ae2148828230eb59002"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.jsonl.gz",
+      "bytes": 95297,
+      "sha256": "0d1210ea3346f4e1da9d6c5893672382a629c2a5deeedaea027fe0088ca584a9"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.manifest.json",
+      "bytes": 521,
+      "sha256": "f84af4516c58813f4ec9e0d5c7a483ac088258a9d9b4fd30fe8b913870b7657a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.jsonl.gz",
+      "bytes": 743,
+      "sha256": "268ca8ac55732fad03855747c52a6e7adb1681767735c767170c0335c3045c19"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "fbff14ba79774aaf9f2640a6300ac17438028739bea776a66ebd49904550ae8d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13NYJTEN/event.json",
+      "bytes": 6604,
+      "sha256": "9b3d40143fb937a91f3fd6ca75b3ae1faaa907c43cab5181553f3694b7987137"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.jsonl.gz",
+      "bytes": 38928,
+      "sha256": "e38a3052fb89fb47f139ff2ae1a0092b570738cb4e2c1e87c1f9d651bb4a7b64"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.manifest.json",
+      "bytes": 92502,
+      "sha256": "cdae864b7698c591dd48cdb17f6441dbff6cce099a87f116863ee84c2ae0ba8c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.jsonl.gz",
+      "bytes": 86743,
+      "sha256": "2881d47242d1b02500e925f613713a97a0026ea692515848aa8c33680a84450e"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.manifest.json",
+      "bytes": 517,
+      "sha256": "3f5b7d0f7ee59d75bed5617635e9d18e58406b206c384e659c0fd0c8c721f20c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.jsonl.gz",
+      "bytes": 962,
+      "sha256": "6fb891bb4911f6f6d837ad8a17577675eb01b3492548b246629f5a7b7134eccc"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.manifest.json",
+      "bytes": 415,
+      "sha256": "2d98c9baf2a5e229747867e4e93859653a1b1a089ac9aab9378fab3763d0316a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.jsonl.gz",
+      "bytes": 49581,
+      "sha256": "40fe378b8a4f34180994949d402ce42156cc59fa27c2324ec3cfa5951935a8c4"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.manifest.json",
+      "bytes": 86404,
+      "sha256": "ed265ba117e529771bd99e407ce7ecac99e6799f3197d9215e0bb37e4bb138f2"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz",
+      "bytes": 148836,
+      "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.manifest.json",
+      "bytes": 515,
+      "sha256": "2c6ec074181031de4500a8987c35b1bdda3c035e27ee856bd948c691702cb762"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.jsonl.gz",
+      "bytes": 1381,
+      "sha256": "d14b7c8bed03e3b57240eb4d426e09d65127492610fafbea14f17d59822c3a24"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.manifest.json",
+      "bytes": 413,
+      "sha256": "0f5f60d78d17c854c6f8a680ef71b9acd2516137b5099afa0e27f4f9fc869db8"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13TBCIN/event.json",
+      "bytes": 6530,
+      "sha256": "88bc858c659b628773889d06c7a43e520a3f5fbbe6305b9f99241996358e815c"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.jsonl.gz",
+      "bytes": 58253,
+      "sha256": "3e24651d4a35676bbe0edad39b243e9ae7d6813933787ece97a814e84028ba97"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.manifest.json",
+      "bytes": 72602,
+      "sha256": "16f61827678460d86032f924d33fc9e86965499b94fc4ccfcc71483221f05856"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.jsonl.gz",
+      "bytes": 241407,
+      "sha256": "4946d0b98ef9de675e8d677c08398a38c04c8468acb3438a1db0613ab547504d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.manifest.json",
+      "bytes": 521,
+      "sha256": "887bd51904e1231320a4eb5af2fd65ba366029d8851ea61c4946e872821254bc"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.jsonl.gz",
+      "bytes": 2011,
+      "sha256": "d1dc299d03ea579707316fa8a0d1a952ff6c9c6687df8aec9e2cbc8fd8c1ddef"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "a8aac4a2d7535e3e2d80cdcfe83f9b181eab7198262a5b32286546172c2ebdd1"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.jsonl.gz",
+      "bytes": 34114,
+      "sha256": "c137fbd00fa09f727f0a2666488cb83b14b3fd8837ea3097b59f43d8686bcd36"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.manifest.json",
+      "bytes": 102378,
+      "sha256": "34c407e8609293653c400dc4b01adedec031f0a5cb64d979c051b37ba8a4a707"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz",
+      "bytes": 98120,
+      "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.manifest.json",
+      "bytes": 521,
+      "sha256": "20ab63d8395a87e2f67692b1a32c09f43b9a164b811b376bad34eee4e751a5b0"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.jsonl.gz",
+      "bytes": 1347,
+      "sha256": "335c020dba095ce5d919952827312c581da4d9a6f0d07c0084bba0df149a00bf"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.manifest.json",
+      "bytes": 418,
+      "sha256": "5a14c1d6102411c47dc72173ad65e5f663fb8fea1c20f7fd9f1bda3b93cee6ba"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP13WASPHI/event.json",
+      "bytes": 6573,
+      "sha256": "7a8deb9e2379f88f6822480d16d6e18b877c3bd58064378b57a82ac747ac7fe4"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.jsonl.gz",
+      "bytes": 87910,
+      "sha256": "76a3f83cf75f084fe00843e861ab4dd8076f707e645127f251ec0fde23aecad4"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.manifest.json",
+      "bytes": 53286,
+      "sha256": "2aa31f5be2ef3dfd899ef618b3e02430af827d890fd2280c1fdcbc5037ba9cde"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz",
+      "bytes": 1462393,
+      "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.manifest.json",
+      "bytes": 519,
+      "sha256": "453a0556882929d98273ac586e293be85828e3113d7a47bbe40d04f510e2902a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.jsonl.gz",
+      "bytes": 12061,
+      "sha256": "358df33a1b6baf1e2998bd311b5245ff5e49bbf9aa066acd2b4e53268f84d0bd"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.manifest.json",
+      "bytes": 416,
+      "sha256": "eee909aa22afd8f4621057c3c8ed486533371873480f09425a9125e51f3f486d"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.jsonl.gz",
+      "bytes": 62326,
+      "sha256": "f95ea5d8c1b8c94fceb53746edabd1315091c52ae9e98922df67b2b1ed163523"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.manifest.json",
+      "bytes": 71428,
+      "sha256": "1eebb644c0dc8977e8ff6f415b2b67546be48b3b3ffc6f8ee9ce0d68251baef7"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.jsonl.gz",
+      "bytes": 791568,
+      "sha256": "2d6c491920340b2b74dc2a6ea5830fb310e8fca676feb16945418d37ee1bbb20"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.manifest.json",
+      "bytes": 517,
+      "sha256": "482bbc5307ca4958240e3025e0583268a00fae6571eca18be3b50dd33a8b47e1"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.jsonl.gz",
+      "bytes": 8603,
+      "sha256": "7bc5cadaffc3f12dfbedbafcb05a0d4a7dba5a5a024bfac44de458dfdc704810"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.manifest.json",
+      "bytes": 414,
+      "sha256": "6f20a4f3cd2a4f57b3bcecd77b647ae01fce9878db0286d90a0dc5ad3321f51a"
+    },
+    {
+      "path": "data/KXNFLGAME-26SEP14DENKC/event.json",
+      "bytes": 6512,
+      "sha256": "47eb885ab1b799fdf822529e5232d6eea6b4c864a168c3043d1cad9ad304816e"
+    },
+    {
+      "path": "data/candle_manifest.json",
+      "bytes": 2893751,
+      "sha256": "3903cb91f06d1789e00974af7a020cdb432ae70a8a1cd6ed0b8fb48140a01e73"
+    },
+    {
+      "path": "data/capture_manifest.json",
+      "bytes": 24559,
+      "sha256": "62fda048cab68ff77d4a86c5a5da2a4669799dee1f76d7df5262a88c152399f6"
+    },
+    {
+      "path": "data/cohort.json",
+      "bytes": 1963,
+      "sha256": "9db8f875455620a330db8ad5d73b1862b1d96808cf7bbcd4a170d1586017999d"
+    },
+    {
+      "path": "data/exit_candle_probe.json",
+      "bytes": 11562,
+      "sha256": "4dc713e4091df06aa266c4672d75086d75ad386462ad8da7b9acbce7ca477a77"
+    },
+    {
+      "path": "data/first_event_metadata.json",
+      "bytes": 6586,
+      "sha256": "2c326f06ea6972a52101188487e4a364cdf552ca88950795076b97bd09a49536"
+    },
+    {
+      "path": "data/forward_books.jsonl",
+      "bytes": 1863,
+      "sha256": "7123dab9c6008ef2876cf7714d486efd64a2b2bdee20c8106109b656701d53bf"
+    },
+    {
+      "path": "data/postlude_manifest.json",
+      "bytes": 14904,
+      "sha256": "f9b26eeed4239e146683759e4edc0d9bb05c438b398d3d8317ad6805c41b1a82"
+    },
+    {
+      "path": "data/sample_event_fee_changes.json",
+      "bytes": 45,
+      "sha256": "16662354ffac33e29efb13ca786120e05cfa729f6f96d29c54f85c2b4f3cda43"
+    },
+    {
+      "path": "data/series_metadata.json",
+      "bytes": 1777,
+      "sha256": "367a52889577319d2ec0f80e97e1ca088ee4f74f96009b16169226c44ad23e91"
+    },
+    {
+      "path": "forward/capture_summary.json",
+      "bytes": 1958,
+      "sha256": "d935d5f454f7ddf00db980b65243334c559d16c8c098e4a329a8dd7c59ded3c0"
+    },
+    {
+      "path": "forward/observations.jsonl",
+      "bytes": 1709467,
+      "sha256": "dc2214d2b4130c0cfc26f90d899d03819dbf8d00ab7935857b0922225af1b8a5"
+    },
+    {
+      "path": "package_results.py",
+      "bytes": 1461,
+      "sha256": "46174874f6029d3cf12acd6709abb15e5439a77a11270a66f50dd217c424b516"
+    },
+    {
+      "path": "queue_policies.py",
+      "bytes": 11366,
+      "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2"
+    },
+    {
+      "path": "replay_v2.py",
+      "bytes": 18973,
+      "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+    },
+    {
+      "path": "results/analyze_forward_output.txt",
+      "bytes": 7662,
+      "sha256": "afb9961eb10c2a348da33decebf3299e30ae3833407b1feefca03fa03f161650"
+    },
+    {
+      "path": "results/build_report_output.txt",
+      "bytes": 26,
+      "sha256": "4095a7333fc5d5fc8e1861c149b4c34fd90e95690ad17b20a971e28c6f080133"
+    },
+    {
+      "path": "results/forward_analysis.json",
+      "bytes": 7661,
+      "sha256": "ed999612caf6fa6a23a874b0a40dcf1df1a13a71ed52ffba6de0a5b173eb2b17"
+    },
+    {
+      "path": "results/forward_hypothetical_joins.json",
+      "bytes": 276126,
+      "sha256": "fcd56ff1e185e09f798237bb4053cd5e00a0e6f9c790c1341a4ffa1b498e71f2"
+    },
+    {
+      "path": "results/forward_progress.txt",
+      "bytes": 5529,
+      "sha256": "fd43d245314f2106eee26f429388b3e3d84ada55ef95cbedb7f2cfcf31366312"
+    },
+    {
+      "path": "results/forward_shadow_routes.json",
+      "bytes": 1203854,
+      "sha256": "4b5b894539cc4e9958f8307fd1f040c302be8054327fea4b9bf0384276f604ca"
+    },
+    {
+      "path": "results/mechanism_progress.txt",
+      "bytes": 71,
+      "sha256": "6319ff2c178db05d973291864b7d65c1ee4233c87b6a2dbd368c113b0ba36169"
+    },
+    {
+      "path": "results/mechanism_spec_sha256.txt",
+      "bytes": 65,
+      "sha256": "32a01209e30bd3d5d9e57d4c721ff3c8a9e9c36d4bfe24ef5f409f46ea4a24a8"
+    },
+    {
+      "path": "results/mechanism_summary.json",
+      "bytes": 16131,
+      "sha256": "e73bf67ed9081fa3a2a55965bc5a2a825b9b42bd0854b8f2bfe00a4d08cc0761"
+    },
+    {
+      "path": "results/q100000_preserve.json",
+      "bytes": 7235,
+      "sha256": "1038a1aeacbe171b14699578d1d7a9e108b4a5f68646f9ed0254a6afd5ba0da6"
+    },
+    {
+      "path": "results/q100000_preserve_fills.jsonl.gz",
+      "bytes": 7682,
+      "sha256": "3689ca9dfa0a3ae72d43e25765ad2a7513a02c333f0bfd6954cea429a73ad90a"
+    },
+    {
+      "path": "results/q100000_route.json",
+      "bytes": 7252,
+      "sha256": "8cd5d661d0cb9034bd2943a06bd2033a48195b23edaa65dc98bd13e7c3e81ea9"
+    },
+    {
+      "path": "results/q100000_route_fills.jsonl.gz",
+      "bytes": 11026,
+      "sha256": "d76c9b28484a60d1fde4c36e5c140cced67b2d1c381b6f7438cd52ff709838fb"
+    },
+    {
+      "path": "results/q10000_preserve.json",
+      "bytes": 7478,
+      "sha256": "b8b31281e3b7cb0f5936eb3ac75feb966233260f04bb0a135a7b708731368196"
+    },
+    {
+      "path": "results/q10000_preserve_fills.jsonl.gz",
+      "bytes": 85217,
+      "sha256": "df8b021104681057717c866dd0b0118f3db8d3fa66c3d2c4ef2279574c6273f8"
+    },
+    {
+      "path": "results/q10000_route.json",
+      "bytes": 7507,
+      "sha256": "fa3c9fce9273ca2fc821bc6590a92b928e4d3a01a1589ee929b3bfaf739b9ecc"
+    },
+    {
+      "path": "results/q10000_route_fills.jsonl.gz",
+      "bytes": 122140,
+      "sha256": "41e282ddb9448f710ea71f20e9727645c03735440484395eeab61ded45abd782"
+    },
+    {
+      "path": "results/q291_churn60.json",
+      "bytes": 7546,
+      "sha256": "5c9b3c472d4439f6c0facb903c60a379c4a1b0384d5a4cd3ce878df3f3e84a98"
+    },
+    {
+      "path": "results/q291_churn60_fills.jsonl.gz",
+      "bytes": 474902,
+      "sha256": "3db7911ad7d345571723980d9d9ab6109a3e9e0c1fd266231583d6ff46e64c8d"
+    },
+    {
+      "path": "results/q291_combined.json",
+      "bytes": 7621,
+      "sha256": "0487a3feb00a08d3316f5b4945d087c99afdbae19e73b4de6562d2ac642f21e8"
+    },
+    {
+      "path": "results/q291_combined_fills.jsonl.gz",
+      "bytes": 2194298,
+      "sha256": "88fd7b0aa6cd6535366c3843ccd2dc3aa683f18a3f9a6ffddf52e7940069cf36"
+    },
+    {
+      "path": "results/q291_combined_race250.json",
+      "bytes": 7604,
+      "sha256": "dffc3b4968052c1671fe6f1569fd86f1ea74fab1d2387c336293dc39e8e52266"
+    },
+    {
+      "path": "results/q291_combined_race250_fills.jsonl.gz",
+      "bytes": 2182978,
+      "sha256": "e1fcf982ad0d1d7ffb6c0f346252e3b5ebdc748ed661321cbdcbc086414778bc"
+    },
+    {
+      "path": "results/q291_improve_exit.json",
+      "bytes": 7548,
+      "sha256": "8727042a699f1b91b2b62f7ac76c403ba2fbbfa01281bbb291fb63a790d8dc0b"
+    },
+    {
+      "path": "results/q291_improve_exit_fills.jsonl.gz",
+      "bytes": 2151950,
+      "sha256": "d1dddad200fbab7ad0da1fe3f9c847409e9f106c25a5e5f8a54feb988dee66f8"
+    },
+    {
+      "path": "results/q291_improve_exit_race250.json",
+      "bytes": 7561,
+      "sha256": "46a8615138e5d8d845c7721cfc6369d094c1cbcf36bfa9cf891f26314d199c07"
+    },
+    {
+      "path": "results/q291_improve_exit_race250_fills.jsonl.gz",
+      "bytes": 2148914,
+      "sha256": "e0671678f0f3fd2a3057a2ecbccc5ab08a2741d7489b70c027e46b48060cad06"
+    },
+    {
+      "path": "results/q291_margin_only.json",
+      "bytes": 7563,
+      "sha256": "757194a9282f920cbeb498a88c1a49581f842fb7b84c0097b30447a1f44bdca3"
+    },
+    {
+      "path": "results/q291_margin_only_fills.jsonl.gz",
+      "bytes": 870102,
+      "sha256": "921526e8b696b5b8123f8368988e98ef49cd686bb1fccf6883bcc0371212e5f6"
+    },
+    {
+      "path": "results/q291_preserve.json",
+      "bytes": 7483,
+      "sha256": "db39c2b0f67c37ce55c1ecf9de8f2e5132f947d809f9dad94472d70211c34c33"
+    },
+    {
+      "path": "results/q291_preserve_fills.jsonl.gz",
+      "bytes": 2161037,
+      "sha256": "f6df4e1fde4f979e7c423d76ce886883b53c9b02b6357a275ee61b1aca12a936"
+    },
+    {
+      "path": "results/q291_route.json",
+      "bytes": 7546,
+      "sha256": "8901362ec32b74440cc8ee309c54d1ba201ce00e68dc4df8683de3ad84b401db"
+    },
+    {
+      "path": "results/q291_route_fills.jsonl.gz",
+      "bytes": 2182312,
+      "sha256": "3a88e0ddefe981f255caa38a9db646cad8a1db3848f3617ae96ee187bfe81881"
+    },
+    {
+      "path": "results/q3300_churn60.json",
+      "bytes": 7537,
+      "sha256": "9849bbfd35f4e8665f55d2037a1be394f0c1a28feb0fffc110e971164f7b40a7"
+    },
+    {
+      "path": "results/q3300_churn60_fills.jsonl.gz",
+      "bytes": 23608,
+      "sha256": "495c5b3a50f88bb2a35bcb9047b8100ba433846ec20730ad7291781272310f4a"
+    },
+    {
+      "path": "results/q3300_combined.json",
+      "bytes": 7594,
+      "sha256": "1c7ea68c2f6ca7ae36a111aac97ee404bfec2bc4ce6e3d902cf1417e1c2887a3"
+    },
+    {
+      "path": "results/q3300_combined_fills.jsonl.gz",
+      "bytes": 359964,
+      "sha256": "b1b45da71553ce4ddb57aaf8cad0a3fac28d2bd84c9ab1c2eef9240093b520af"
+    },
+    {
+      "path": "results/q3300_combined_race250.json",
+      "bytes": 7554,
+      "sha256": "0b872bebc4835d210c9c7da43b3dd82fff91792254ea68ea7d4a3e6a68bc2dc0"
+    },
+    {
+      "path": "results/q3300_combined_race250_fills.jsonl.gz",
+      "bytes": 358724,
+      "sha256": "7a09ac3079c39a2aecf29289f76a83312041c1631495059b798209ab6f1901a7"
+    },
+    {
+      "path": "results/q3300_improve_exit.json",
+      "bytes": 7534,
+      "sha256": "b280cb42e73c2b562ffe25644415309a6bf23419c7b3b79e97bf64f51662873d"
+    },
+    {
+      "path": "results/q3300_improve_exit_fills.jsonl.gz",
+      "bytes": 267155,
+      "sha256": "65a6942927247922cfedf301167b1b3d3abcd06ca33044a38684f2044c45a882"
+    },
+    {
+      "path": "results/q3300_improve_exit_race250.json",
+      "bytes": 7522,
+      "sha256": "1bea1ea7ee95c7e92f2c2c99c3bbb1dae1712572ea5616636d649ad6df19fe20"
+    },
+    {
+      "path": "results/q3300_improve_exit_race250_fills.jsonl.gz",
+      "bytes": 266583,
+      "sha256": "027724b70992b61bbd5e9e01e9dc155ab3db1dc2e1ecef88d4129c2f5aff03a9"
+    },
+    {
+      "path": "results/q3300_margin_only.json",
+      "bytes": 7461,
+      "sha256": "0be9546d91e56a296406b04bbd36f6a2391e777af85dc4adfab4283859e58b42"
+    },
+    {
+      "path": "results/q3300_margin_only_fills.jsonl.gz",
+      "bytes": 122790,
+      "sha256": "b53089704537c51def0de213af904c435a35f6f1a180a22e32e5d1103193d4f4"
+    },
+    {
+      "path": "results/q3300_preserve.json",
+      "bytes": 7483,
+      "sha256": "f969efeb2f2d6e758a44c33b4d6eca85ed6e19da5992d8b6ec1a46760c0d9777"
+    },
+    {
+      "path": "results/q3300_preserve_fills.jsonl.gz",
+      "bytes": 269859,
+      "sha256": "e5e51e0a1ed43617688d513b9db68d9805c10829d7cc22f7e250c7c2b5219820"
+    },
+    {
+      "path": "results/q3300_route.json",
+      "bytes": 7511,
+      "sha256": "8f11ab980ebb1e72b19f58116410b00b7ca4580b3b56d3e78a1bef126d3ae3dc"
+    },
+    {
+      "path": "results/q3300_route_fills.jsonl.gz",
+      "bytes": 356039,
+      "sha256": "ac71076b198f070e435394e4ca97f9796e3fad17da581a12ee82b3f258018742"
+    },
+    {
+      "path": "results/queue_stress_progress.txt",
+      "bytes": 136,
+      "sha256": "c7070f09872069828d50db46649eabb80d762894e2898f689f5878afecd59370"
+    },
+    {
+      "path": "results/queue_stress_spec_sha256.txt",
+      "bytes": 65,
+      "sha256": "8a1be2049602a1bb560f23406de7fd1686875cc3549764764305f6ad16a700d7"
+    },
+    {
+      "path": "results/queue_stress_summary.json",
+      "bytes": 31718,
+      "sha256": "d35c77c006268b280b5857f71bf7af67069988181063bbb74ae6fe869fbe07a3"
+    },
+    {
+      "path": "results/queue_suite_summary.json",
+      "bytes": 119757,
+      "sha256": "c2040313eeb30ff7d2ee420a148b0f0a99be67d021fda3d62ada01f8d29fbdbd"
+    },
+    {
+      "path": "results/runtime.json",
+      "bytes": 124,
+      "sha256": "08dd0c735737f1363034909ab83ca25d83c358a8fd1a365a84a5497b2fca342a"
+    },
+    {
+      "path": "results/suite_progress.txt",
+      "bytes": 980,
+      "sha256": "f9b44d544933062690a763a2dc7772f21b72c5cd1e8a65365950dc5d0f7c877c"
+    },
+    {
+      "path": "results/tests.txt",
+      "bytes": 4751,
+      "sha256": "1837c63032ef2e82583e2424fa43dca9f95b0db97663a02638e0ae2234294190"
+    },
+    {
+      "path": "results/verification.json",
+      "bytes": 3108,
+      "sha256": "b67b37b8fad4ce9a7ebeb8dd9f6c567d39e79d0730fc1e8c422d730218c12dd6"
+    },
+    {
+      "path": "results/verify_results_output.txt",
+      "bytes": 72,
+      "sha256": "abaad5b43bd9a4c2f252b108d5364435b75278eabcf29f2dd7d7ed1952530efc"
+    },
+    {
+      "path": "run_candle_suite.py",
+      "bytes": 3220,
+      "sha256": "441b1448f296a1ad0179343e7e7f9c99a778df428596c94875bdd25374c09021"
+    },
+    {
+      "path": "run_mechanism_check.py",
+      "bytes": 1252,
+      "sha256": "bece26282607142af0a98d88367a3051e316aea84cb07f5006ae8dc359433e6f"
+    },
+    {
+      "path": "run_queue_stress.py",
+      "bytes": 1256,
+      "sha256": "c3bf890ec7908846b273cb0f34a15e36a6850931f5bb7af10fbd9fa367f59162"
+    },
+    {
+      "path": "run_queue_suite.py",
+      "bytes": 4901,
+      "sha256": "7ae8f885ef1d6265a713d6862a7068711870075cb19d81c28f7580a15a1d243f"
+    },
+    {
+      "path": "run_suite.py",
+      "bytes": 7125,
+      "sha256": "b11830812bf820d998341f86d3fa17511ba4e5936099fd1c8507b220527b489c"
+    },
+    {
+      "path": "test_forward.py",
+      "bytes": 1748,
+      "sha256": "cc43b1598e731af3a2c2abb6534382faa38ea712e832e6fdcf904457b2d789ef"
+    },
+    {
+      "path": "test_queue_policies.py",
+      "bytes": 4435,
+      "sha256": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a"
+    },
+    {
+      "path": "test_replay_v2.py",
+      "bytes": 8072,
+      "sha256": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c"
+    },
+    {
+      "path": "verify_results.py",
+      "bytes": 3750,
+      "sha256": "d62eadbaf342ae1e9c0080a11fa4c35cdaed2d033ff93f4a30c64bc3b7f452ce"
+    }
+  ]
+}

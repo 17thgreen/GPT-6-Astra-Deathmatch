@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13NODET",
+  "ticker": "KXNFLGAME-26SEP13NODET-NO",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 5,
+  "trades": 4204,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882",
+  "retrieved_at": "2026-09-21T05:32:36.433905+00:00",
+  "path": "data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz"
+}

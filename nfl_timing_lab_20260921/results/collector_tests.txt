@@ -1,0 +1,14 @@
+test_changed_panel_cannot_resume_database (test_collector.CollectorTests.test_changed_panel_cannot_resume_database) ... ok
+test_conflict_rolls_back_response_and_checkpoint (test_collector.CollectorTests.test_conflict_rolls_back_response_and_checkpoint) ... ok
+test_duplicate_trade_not_duplicated (test_collector.CollectorTests.test_duplicate_trade_not_duplicated) ... ok
+test_missing_first_page_rejected (test_collector.CollectorTests.test_missing_first_page_rejected) ... ok
+test_only_one_writer (test_collector.CollectorTests.test_only_one_writer) ... ok
+test_private_and_unregistered_panel_rejected (test_collector.CollectorTests.test_private_and_unregistered_panel_rejected) ... ok
+test_restart_preserves_watermark_and_records_gap (test_collector.CollectorTests.test_restart_preserves_watermark_and_records_gap) ... ok
+test_unfinished_pages_never_advance (test_collector.CollectorTests.test_unfinished_pages_never_advance) ... ok
+test_watermark_cannot_move_backward (test_collector.CollectorTests.test_watermark_cannot_move_backward) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.017s
+
+OK

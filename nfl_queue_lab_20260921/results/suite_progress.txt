@@ -1,0 +1,15 @@
+q291_route pnl 1060.6224999994465 inside 0.0 seconds 27.8
+q291_preserve pnl 684.640899999481 inside 0.0 seconds 31.2
+q291_churn60 pnl 245.04609999995137 inside 0.0 seconds 42.2
+q291_combined pnl 1040.1686999994563 inside 2697.299999999998 seconds 28.7
+q291_improve_exit pnl 672.8354999995254 inside 416.38 seconds 44.2
+q291_improve_exit_race250 pnl 673.1918999995114 inside 0.0 seconds 43.2
+q291_combined_race250 pnl 1040.0498999994634 inside 1285.49 seconds 33.5
+q3300_preserve pnl 46.6429999999591 inside 0.0 seconds 23.0
+q3300_route pnl 154.0656999999428 inside 0.0 seconds 21.0
+q3300_churn60 pnl -41.410700000014 inside 0.0 seconds 32.5
+q3300_improve_exit pnl 44.9345999999523 inside 97.07000000000001 seconds 29.3
+q3300_combined pnl 152.67819999994936 inside 962.1400000000001 seconds 19.3
+q3300_improve_exit_race250 pnl 43.9510999999502 inside 0.0 seconds 32.5
+q3300_combined_race250 pnl 152.2853999999461 inside 750.0 seconds 25.1
+BASELINE REGRESSION PASS 684.640899999481

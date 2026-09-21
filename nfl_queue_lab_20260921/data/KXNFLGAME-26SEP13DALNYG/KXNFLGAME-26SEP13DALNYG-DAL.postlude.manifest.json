@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13DALNYG-DAL",
+  "trades": 406,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.jsonl.gz",
+  "sha256": "e21980cc2815e62a3ce6096f1c07d966a2bf71124cd372c7ed92b8deb819883d",
+  "from_utc": "2026-09-13T21:20:00+00:00",
+  "through_utc": "2026-09-13T21:25:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:49.377150+00:00"
+}

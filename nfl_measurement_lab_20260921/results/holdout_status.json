@@ -1,0 +1,16 @@
+{
+  "status": "INSUFFICIENT",
+  "reasons": [
+    "Candidate not demonstrably frozen before first reserved window",
+    "Execution assumptions not matched",
+    "Incomplete or altered 32-game cohort",
+    "Missing immutable baseline_sha256",
+    "Missing immutable candidate_sha256",
+    "Missing immutable data_manifest_sha256",
+    "Missing immutable execution_settings_sha256",
+    "One shared $5,000 account not established"
+  ],
+  "completed_games": 0,
+  "required_games": 32,
+  "note": "Structural evidence gate only; values and hashes require independent provenance verification. No profit pass is inferred."
+}

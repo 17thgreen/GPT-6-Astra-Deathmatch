@@ -1,0 +1,12 @@
+services:
+  nfl-recorder:
+    build: .
+    restart: unless-stopped
+    volumes:
+      - ./capture-data:/data
+    stop_grace_period: 120s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

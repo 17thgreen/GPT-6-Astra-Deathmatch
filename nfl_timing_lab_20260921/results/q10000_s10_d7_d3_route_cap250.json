@@ -1,0 +1,370 @@
+{
+  "evidence": "52_CASE_DEVELOPMENT_MATRIX_HYPOTHETICAL_EXECUTION_NOT_HOLDOUT",
+  "config": {
+    "starting_cash": 5000,
+    "order_size": 10,
+    "exposure_cap": 250,
+    "queue_early": 10000,
+    "queue_last12h": 1327847.005,
+    "fill_participation": 0.5,
+    "requote_seconds": 60,
+    "proxy_max_age_seconds": 300,
+    "cancel_delay_seconds": 0.25,
+    "order_delay_seconds": 0.25,
+    "maker_coefficient": 0.0175,
+    "taker_coefficient": 0.07,
+    "balance_precision": ".0001",
+    "assumed_exit_depth": 250,
+    "inventory_reduce_only": false,
+    "event_netting": true,
+    "quote_source": "candles",
+    "liquidation_lead_seconds": 300
+  },
+  "trades": 681732,
+  "fills": 106,
+  "maker_contracts": 730.0,
+  "taker_contracts": 130.0,
+  "completed_window_games": 31,
+  "all_flat": true,
+  "completed_strategy_pnl": -0.5749999999970896,
+  "terminal_payout_bounds": [
+    -0.5749999999970896,
+    -0.5749999999970896
+  ],
+  "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+  "unresolved_contracts": 0.0,
+  "min_cash": 4875.105799999999,
+  "max_reserved_cash": 224.38772749999998,
+  "max_abs_event_exposure": 80.0,
+  "metrics": {
+    "new_orders": 40889.0,
+    "same_price_keep_decisions": 720391.0,
+    "cancel_requests": 40816.0,
+    "route_switch_decisions": 30840.0,
+    "cancels_acknowledged": 40816.0,
+    "fees": 4.475,
+    "paired_units": 430.0,
+    "inventory_completion_refreshes": 91934.0,
+    "completion_filled_contracts": 239.99999999999997,
+    "completion_overshoot_contracts": 0.0,
+    "events_with_unresolved_exit": 0,
+    "improved_filled_contracts": 0.0,
+    "improved_paired_contracts": 0.0
+  },
+  "per_game": [
+    {
+      "event": "KXNFLGAME-26SEP09NESEA",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.11750000000000105,
+      "pnl_lower_payout_bound": 0.11750000000000105,
+      "pnl_upper_payout_bound": 0.11750000000000105,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP10SFLAR",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.019700000000000273,
+      "pnl_lower_payout_bound": 0.019700000000000273,
+      "pnl_upper_payout_bound": 0.019700000000000273,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ATLPIT",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BALIND",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13BUFHOU",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.012500000000000178,
+      "pnl_lower_payout_bound": 0.012500000000000178,
+      "pnl_upper_payout_bound": 0.012500000000000178,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CHICAR",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13CLEJAC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NODET",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13NYJTEN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13TBCIN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13ARILAC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13GBMIN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13MIALV",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13WASPHI",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP13DALNYG",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.17569999999999997,
+      "pnl_lower_payout_bound": -0.17569999999999997,
+      "pnl_upper_payout_bound": -0.17569999999999997,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP14DENKC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.1728000000000005,
+      "pnl_lower_payout_bound": -0.1728000000000005,
+      "pnl_upper_payout_bound": -0.1728000000000005,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP17DETBUF",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.41260000000000296,
+      "pnl_lower_payout_bound": -0.41260000000000296,
+      "pnl_upper_payout_bound": -0.41260000000000296,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20CARATL",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.12799999999999923,
+      "pnl_lower_payout_bound": 0.12799999999999923,
+      "pnl_upper_payout_bound": 0.12799999999999923,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20NOBAL",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.04079999999999906,
+      "pnl_lower_payout_bound": 0.04079999999999906,
+      "pnl_upper_payout_bound": 0.04079999999999906,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20MINCHI",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.17800000000000127,
+      "pnl_lower_payout_bound": -0.17800000000000127,
+      "pnl_upper_payout_bound": -0.17800000000000127,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20CINHOU",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20PITNE",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.15649999999999853,
+      "pnl_lower_payout_bound": 0.15649999999999853,
+      "pnl_upper_payout_bound": 0.15649999999999853,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20GBNYJ",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.08459999999999823,
+      "pnl_lower_payout_bound": 0.08459999999999823,
+      "pnl_upper_payout_bound": 0.08459999999999823,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20CLETB",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20PHITEN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.18510000000000204,
+      "pnl_lower_payout_bound": 0.18510000000000204,
+      "pnl_upper_payout_bound": 0.18510000000000204,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20JACDEN",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.11470000000000091,
+      "pnl_lower_payout_bound": 0.11470000000000091,
+      "pnl_upper_payout_bound": 0.11470000000000091,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20LVLAC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.3707000000000029,
+      "pnl_lower_payout_bound": -0.3707000000000029,
+      "pnl_upper_payout_bound": -0.3707000000000029,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20SEAARI",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20WASDAL",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20MIASF",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.04890000000000194,
+      "pnl_lower_payout_bound": -0.04890000000000194,
+      "pnl_upper_payout_bound": -0.04890000000000194,
+      "flat": true
+    },
+    {
+      "event": "KXNFLGAME-26SEP20INDKC",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": -0.07569999999999899,
+      "pnl_lower_payout_bound": -0.07569999999999899,
+      "pnl_upper_payout_bound": -0.07569999999999899,
+      "flat": true
+    }
+  ],
+  "queue_policy": {
+    "name": "route",
+    "flow_window": 3600,
+    "service_horizon": 600,
+    "switch_ratio": 1.25,
+    "pair_buffer": 0.001,
+    "inside_race_queue": 0,
+    "use_flow": true
+  },
+  "pair_holding_time_seconds": {
+    "paired_units": 430.0,
+    "weighted_mean": 237071.15617266376,
+    "weighted_median": 289234.39666080475,
+    "weighted_p90": 365904.442291975
+  },
+  "unhedged_contract_hours": 28316.83254284595,
+  "improved_unpaired_contracts": 0.0,
+  "completion_policy": "q1_route",
+  "entry_band": "d7_d3",
+  "variant": "route",
+  "passive_pairing_fraction": 0.6976744186046512,
+  "submitted_maker_orders": 40889,
+  "fully_filled_submitted_orders": 73,
+  "never_filled_submitted_orders": 40816,
+  "maker_exposure_added_outside_entry_window": 0,
+  "scenario": "q10000_s10_d7_d3_route_cap250",
+  "elapsed_seconds": 26.499364346998846,
+  "maker_fills_at_or_after_cutoff": 0,
+  "week_contributions": {
+    "week1": -0.19879999999999898,
+    "week2": -0.3762000000000101
+  },
+  "pnl_excluding_top_two_games": -0.9166000000000096,
+  "positive_games": 9,
+  "net_cents_per_traded_contract": -0.06686046511594065
+}

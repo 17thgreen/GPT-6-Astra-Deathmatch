@@ -1,0 +1,61 @@
+{
+  "evidence": "PUBLIC_OBSERVABLES_AND_CONDITIONAL_SHADOW_SERVICE_NOT_EXECUTED_PNL",
+  "markets": 4,
+  "book_snapshots": 424,
+  "valid_books": 424,
+  "first_book": 1790004684.1050687,
+  "last_book": 1790005402.8693504,
+  "deduplicated_trades": 5006,
+  "errors": 0,
+  "median_http_seconds": 6.425488710403442,
+  "p95_http_seconds": 9.912682056427002,
+  "median_observation_gap": 6.52163290977478,
+  "max_observation_gap": 18.113866567611694,
+  "quote_spells": 8,
+  "spell_end_reasons": {
+    "capture_end": 8
+  },
+  "median_observed_spell_seconds": 718.6816102266312,
+  "left_censored_spells": 8,
+  "right_censored_spells": 8,
+  "shadow_joins": 16,
+  "tape_complete_joins": 8,
+  "full_horizon_observed": 8,
+  "censored_before_full": 0,
+  "any_service_joins": 0,
+  "full_service_joins": 0,
+  "join_end_reasons": {
+    "horizon": 8,
+    "capture_end": 8
+  },
+  "median_join_depth": 518635.67,
+  "min_join_depth": 83.46,
+  "max_join_depth": 10308283.65,
+  "joins_above_3300": 14,
+  "depth_intervals": 840,
+  "intervals_with_unexplained_decline": 69,
+  "shadow_markouts": {
+    "30": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    },
+    "60": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    },
+    "300": {
+      "n": 0,
+      "mean_midpoint_change_cents": null,
+      "mean_midpoint_less_fill_cents": null
+    }
+  },
+  "limitations": [
+    "Snapshots do not reveal order identity, actual own-queue advancement or unobserved price changes.",
+    "Spell durations are censored observations, not estimates of individual-order lifetime.",
+    "Shadow fills assume initial depth, no cancellations, arrival delay, exact-price allocation and half participation.",
+    "Coverage means cursor exhaustion, not a guarantee against later trade publication.",
+    "No service/markout row is an actual own-order fill; overlapping game and outcome risks are correlated."
+  ]
+}

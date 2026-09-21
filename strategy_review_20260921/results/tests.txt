@@ -1,0 +1,13 @@
+test_cash_reserved_across_orders (test_review.ReviewTests.test_cash_reserved_across_orders) ... ok
+test_exact_seven_day_three_hour_window (test_review.ReviewTests.test_exact_seven_day_three_hour_window) ... ok
+test_invalid_inputs_and_existing_breach (test_review.ReviewTests.test_invalid_inputs_and_existing_breach) ... ok
+test_invalid_stale_and_expired_quotes_require_cancel (test_review.ReviewTests.test_invalid_stale_and_expired_quotes_require_cancel) ... ok
+test_joint_leg_reservations_cover_every_subset_of_fills (test_review.ReviewTests.test_joint_leg_reservations_cover_every_subset_of_fills) ... ok
+test_original_defects_are_reproduced (test_review.ReviewTests.test_original_defects_are_reproduced) ... ok
+test_pending_cancel_still_reserves_risk_and_cash (test_review.ReviewTests.test_pending_cancel_still_reserves_risk_and_cash) ... ok
+test_size_reduction_and_pair_economics (test_review.ReviewTests.test_size_reduction_and_pair_economics) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.086s
+
+OK

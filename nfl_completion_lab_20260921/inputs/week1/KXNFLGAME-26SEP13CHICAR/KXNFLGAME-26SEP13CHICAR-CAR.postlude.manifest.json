@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13CHICAR-CAR",
+  "trades": 32,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.jsonl.gz",
+  "sha256": "01ea1a6f21844960ed13e5e901e402fa428afbf5e7348f2a856a2f375608c180",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:39.748434+00:00"
+}

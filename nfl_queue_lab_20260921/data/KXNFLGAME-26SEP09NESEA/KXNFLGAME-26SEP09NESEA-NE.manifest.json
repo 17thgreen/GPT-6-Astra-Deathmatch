@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP09NESEA",
+  "ticker": "KXNFLGAME-26SEP09NESEA-NE",
+  "kickoff": "2026-09-10 00:20:00+00:00",
+  "from_utc": "2026-09-03T00:20:00+00:00",
+  "through_utc": "2026-09-09T21:20:00+00:00",
+  "pages": 27,
+  "trades": 26181,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43",
+  "retrieved_at": "2026-09-21T05:28:18.978471+00:00",
+  "path": "data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz"
+}

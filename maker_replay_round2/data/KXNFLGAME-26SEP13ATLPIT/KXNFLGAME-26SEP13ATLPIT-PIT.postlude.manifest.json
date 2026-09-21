@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13ATLPIT-PIT",
+  "trades": 81,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.jsonl.gz",
+  "sha256": "02a2be695f23d6f72a4e444377158e963ccda95d71fbc6aeb626e0fce9ed8bc0",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:26.230715+00:00"
+}

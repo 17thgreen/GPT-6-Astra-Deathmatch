@@ -1,0 +1,11 @@
+INPUT {"raw_rows": 391118, "deduplicated_rows": 391118, "games": 16, "markets": 32, "start": "2026-09-03T00:20:17.069481+00:00", "end": "2026-09-14T21:19:59.616586+00:00", "tie_order": "trade_id lexical ordering for identical timestamps; receipt ordering unavailable"}
+profile_reduce pnl None bounds [105.99969999999394, 124.92969999999394] unresolved 18.93
+profile_fixed pnl None bounds [269.4848999998576, 519.4848999998576] unresolved 250.0
+queue3300_fixed pnl None bounds [46.71899999991638, 296.7189999999164] unresolved 250.0
+queue3300_reduce pnl None bounds [-28.93960000003517, 221.06039999996483] unresolved 250.0
+profile_nondirect_precision pnl None bounds [251.45999999976357, 501.45999999976357] unresolved 250.0
+thin_queue_optimistic pnl None bounds [807.9565999996057, 936.0265999996058] unresolved 128.07000000000008
+profile_exit_depth50 pnl None bounds [-328.5200000001314, 1432.8899999998687] unresolved 1761.41
+legacy_exact_window 1027.4705153661134
+candles_profile_reduce pnl 217.8416999999672 bounds [217.8416999999672, 217.8416999999672] unresolved 0.0
+candles_profile_fixed pnl 681.7310999994816 bounds [681.7310999994816, 681.7310999994816] unresolved 0.0

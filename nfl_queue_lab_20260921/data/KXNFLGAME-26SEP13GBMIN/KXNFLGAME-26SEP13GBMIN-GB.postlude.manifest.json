@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13GBMIN-GB",
+  "trades": 131,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.jsonl.gz",
+  "sha256": "ef5d69d58ed93e718f839a285cfa3c9c165d899957974752bbce29211b7fb509",
+  "from_utc": "2026-09-13T17:25:00+00:00",
+  "through_utc": "2026-09-13T17:30:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:22.223858+00:00"
+}

@@ -1,0 +1,54 @@
+{
+  "q1_development": [
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "regime": "final_12h",
+      "joins": 28,
+      "median_depth": 4522119.1,
+      "minimum_depth": 466582.11,
+      "maximum_depth": 10557824.81,
+      "reference_assumption": 1327847.005,
+      "above_reference": 14,
+      "hours_to_kickoff_min": 9.636628881891568,
+      "hours_to_kickoff_max": 9.88735898984803
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "regime": "early_over_12h",
+      "joins": 26,
+      "median_depth": 73330.21,
+      "minimum_depth": 5.49,
+      "maximum_depth": 374608.85,
+      "reference_assumption": 3300,
+      "above_reference": 15,
+      "hours_to_kickoff_min": 81.63661693897512,
+      "hours_to_kickoff_max": 81.88464031126765
+    }
+  ],
+  "q3_development": [
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "regime": "final_12h",
+      "joins": 8,
+      "median_depth": 4680789.155,
+      "minimum_depth": 650742.95,
+      "maximum_depth": 10308283.65,
+      "reference_assumption": 1327847.005,
+      "above_reference": 4,
+      "hours_to_kickoff_min": 8.559630522529284,
+      "hours_to_kickoff_max": 8.726637480921216
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "regime": "early_over_12h",
+      "joins": 8,
+      "median_depth": 240087.06,
+      "minimum_depth": 83.46,
+      "maximum_depth": 386528.39,
+      "reference_assumption": 3300,
+      "above_reference": 6,
+      "hours_to_kickoff_min": 80.5596180844307,
+      "hours_to_kickoff_max": 80.72663681023651
+    }
+  ]
+}

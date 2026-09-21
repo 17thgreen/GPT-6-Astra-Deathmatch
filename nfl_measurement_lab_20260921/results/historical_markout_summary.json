@@ -1,0 +1,93 @@
+{
+  "evidence": "31_PREVIOUSLY_EXAMINED_GAMES_DEVELOPMENT_ONLY_MINUTE_RESOLUTION",
+  "summaries": {
+    "q1_route": {
+      "120": {
+        "fill_rows": 14314,
+        "observed_markouts": 14314,
+        "games": 31,
+        "maker_contracts": 357441.87,
+        "covered_contracts": 357441.87,
+        "contract_coverage_fraction": 1.0,
+        "adverse_movement_contract_fraction": 0.009760971763044995,
+        "equal_game_mean_midpoint_change_cents": -0.019784722556972868,
+        "midpoint_change_cents": -0.00777150141923778,
+        "midpoint_less_fill_cents": 0.49768942849364417,
+        "fee_adjusted_midpoint_markout_cents": 0.10603629060020153
+      },
+      "300": {
+        "fill_rows": 14314,
+        "observed_markouts": 13273,
+        "games": 31,
+        "maker_contracts": 357441.87,
+        "covered_contracts": 330478.09,
+        "contract_coverage_fraction": 0.9245645732549465,
+        "adverse_movement_contract_fraction": 0.011975105520611063,
+        "equal_game_mean_midpoint_change_cents": -0.02759631113353131,
+        "midpoint_change_cents": -0.009884876180445125,
+        "midpoint_less_fill_cents": 0.49571499581106715,
+        "fee_adjusted_midpoint_markout_cents": 0.102366014642603
+      },
+      "600": {
+        "fill_rows": 14314,
+        "observed_markouts": 13192,
+        "games": 31,
+        "maker_contracts": 357441.87,
+        "covered_contracts": 329057.54,
+        "contract_coverage_fraction": 0.9205903606088452,
+        "adverse_movement_contract_fraction": 0.015882906071685823,
+        "equal_game_mean_midpoint_change_cents": -0.02856332686149606,
+        "midpoint_change_cents": -0.007947576584934075,
+        "midpoint_less_fill_cents": 0.4975218467870375,
+        "fee_adjusted_midpoint_markout_cents": 0.10440582823295727
+      }
+    },
+    "pair_complete": {
+      "120": {
+        "fill_rows": 1101,
+        "observed_markouts": 1101,
+        "games": 10,
+        "maker_contracts": 49752.59,
+        "covered_contracts": 49752.59,
+        "contract_coverage_fraction": 1.0,
+        "adverse_movement_contract_fraction": 0.00547348389299934,
+        "equal_game_mean_midpoint_change_cents": -0.003993480825608809,
+        "midpoint_change_cents": -0.00547348389299934,
+        "midpoint_less_fill_cents": 0.4946117378009844,
+        "fee_adjusted_midpoint_markout_cents": 0.07655993386474705
+      },
+      "300": {
+        "fill_rows": 1101,
+        "observed_markouts": 1092,
+        "games": 10,
+        "maker_contracts": 49752.59,
+        "covered_contracts": 49194.92,
+        "contract_coverage_fraction": 0.9887911363006429,
+        "adverse_movement_contract_fraction": 0.0055877720707747875,
+        "equal_game_mean_midpoint_change_cents": -0.00548681847346447,
+        "midpoint_change_cents": 0.00030562098688233057,
+        "midpoint_less_fill_cents": 0.5003918087477299,
+        "fee_adjusted_midpoint_markout_cents": 0.08240129265379177
+      },
+      "600": {
+        "fill_rows": 1101,
+        "observed_markouts": 1095,
+        "games": 10,
+        "maker_contracts": 49752.59,
+        "covered_contracts": 49441.37,
+        "contract_coverage_fraction": 0.9937446472635898,
+        "adverse_movement_contract_fraction": 0.007203683878500939,
+        "equal_game_mean_midpoint_change_cents": -0.0018596279378110647,
+        "midpoint_change_cents": 0.019733575343886933,
+        "midpoint_less_fill_cents": 0.5198193334852951,
+        "fee_adjusted_midpoint_markout_cents": 0.10178116019033989
+      }
+    }
+  },
+  "notes": [
+    "Conditional on previous hypothetical maker fills; policies have different fill selections.",
+    "Midpoint valuation is not an executable liquidation price or completed net profit.",
+    "Missing or pre-fill-only future candles are excluded and coverage is reported.",
+    "Many correlated fills per game; no print-level significance claim or filter tuning."
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "selected": "000",
+  "screening": {
+    "000": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 0,
+      "worst_retention_ratio": 1.0072385229107514
+    },
+    "001": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 1,
+      "worst_retention_ratio": 1.0072385229107514
+    },
+    "010": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 1,
+      "worst_retention_ratio": 0.9555378303337437
+    },
+    "011": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 2,
+      "worst_retention_ratio": 0.9999983981059464
+    },
+    "100": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 1,
+      "worst_retention_ratio": 1.0093382226160097
+    },
+    "101": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 2,
+      "worst_retention_ratio": 1.0093382226160097
+    },
+    "110": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 2,
+      "worst_retention_ratio": 0.9579435721386542
+    },
+    "111": {
+      "conditions": {
+        "flat_all": true,
+        "positive_all": true,
+        "beats_original_all": true,
+        "improves_both_primary_weeks": true,
+        "positive_primary_excluding_top_two": true,
+        "inventory_within_limit": true,
+        "retains_95pct_full_everywhere": true
+      },
+      "eligible": true,
+      "enabled": 3,
+      "worst_retention_ratio": 1.0
+    }
+  },
+  "status": "SHADOW_RESEARCH_CANDIDATE_ONLY"
+}

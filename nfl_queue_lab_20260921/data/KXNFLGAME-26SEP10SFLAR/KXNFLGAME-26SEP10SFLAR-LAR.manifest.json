@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP10SFLAR",
+  "ticker": "KXNFLGAME-26SEP10SFLAR-LAR",
+  "kickoff": "2026-09-11 00:35:00+00:00",
+  "from_utc": "2026-09-04T00:35:00+00:00",
+  "through_utc": "2026-09-10T21:35:00+00:00",
+  "pages": 36,
+  "trades": 35633,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b",
+  "retrieved_at": "2026-09-21T05:26:25.615406+00:00",
+  "path": "data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz"
+}

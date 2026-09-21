@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP13BUFHOU-BUF",
+  "trades": 269,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.jsonl.gz",
+  "sha256": "5a33f37dafe70685d18160b745c92550b9d5554e920483e744e1ff9d8a17ba35",
+  "from_utc": "2026-09-13T14:00:00+00:00",
+  "through_utc": "2026-09-13T14:05:00+00:00",
+  "retrieved_at": "2026-09-21T05:33:47.841667+00:00"
+}

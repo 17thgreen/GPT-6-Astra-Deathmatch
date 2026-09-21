@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13BUFHOU",
+  "ticker": "KXNFLGAME-26SEP13BUFHOU-BUF",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 14,
+  "trades": 13552,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f",
+  "retrieved_at": "2026-09-21T05:31:22.691649+00:00",
+  "path": "data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz"
+}

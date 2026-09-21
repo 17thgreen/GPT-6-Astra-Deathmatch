@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13ARILAC",
+  "ticker": "KXNFLGAME-26SEP13ARILAC-LAC",
+  "kickoff": "2026-09-13 20:25:00+00:00",
+  "from_utc": "2026-09-06T20:25:00+00:00",
+  "through_utc": "2026-09-13T17:25:00+00:00",
+  "pages": 7,
+  "trades": 6100,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49",
+  "retrieved_at": "2026-09-21T05:33:17.011517+00:00",
+  "path": "data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz"
+}

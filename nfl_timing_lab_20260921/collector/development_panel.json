@@ -1,0 +1,13 @@
+{
+  "purpose": "development",
+  "events": [
+    {
+      "event": "KXNFLGAME-26SEP21NYGLAR",
+      "kickoff": "2026-09-22T00:15:00+00:00"
+    },
+    {
+      "event": "KXNFLGAME-26SEP24ATLGB",
+      "kickoff": "2026-09-25T00:15:00+00:00"
+    }
+  ]
+}

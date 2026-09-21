@@ -1,0 +1,5 @@
+Selected upcoming events by schedule: ['KXNFLGAME-26SEP21NYGLAR', 'KXNFLGAME-26SEP24ATLGB']
+KXNFLGAME-26SEP21NYGLAR-LAR {'yes_dollars': ['0.7300', '249922.78'], 'no_dollars': ['0.2600', '7936255.35']}
+KXNFLGAME-26SEP21NYGLAR-NYG {'yes_dollars': ['0.2700', '4782.24'], 'no_dollars': ['0.7200', '5473277.35']}
+KXNFLGAME-26SEP24ATLGB-GB {'yes_dollars': ['0.7300', '23600.47'], 'no_dollars': ['0.2500', '61806.23']}
+KXNFLGAME-26SEP24ATLGB-ATL {'yes_dollars': ['0.2500', '19546.76'], 'no_dollars': ['0.7400', '504.55']}

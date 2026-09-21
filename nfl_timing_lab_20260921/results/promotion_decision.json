@@ -1,0 +1,25 @@
+{
+  "passing_candidates": [],
+  "details": [
+    {
+      "candidate": "route",
+      "checks": {
+        "pooled_profit": false,
+        "both_week_differences": false,
+        "inventory_no_greater": true,
+        "positive_queue_stress": false
+      },
+      "passes": false
+    },
+    {
+      "candidate": "stable",
+      "checks": {
+        "pooled_profit": false,
+        "both_week_differences": false,
+        "inventory_no_greater": true,
+        "positive_queue_stress": false
+      },
+      "passes": false
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+test_all_full_fill_orders_respect_risk_for_every_permutation (test_replay_v2.Tests.test_all_full_fill_orders_respect_risk_for_every_permutation) ... ok
+test_cancel_pending_fills_are_accounted_and_reserved (test_replay_v2.Tests.test_cancel_pending_fills_are_accounted_and_reserved) ... ok
+test_candle_mode_does_not_invent_quotes_from_trades (test_replay_v2.Tests.test_candle_mode_does_not_invent_quotes_from_trades) ... ok
+test_cross_ticker_pair_releases_one_dollar_per_pair (test_replay_v2.Tests.test_cross_ticker_pair_releases_one_dollar_per_pair) ... ok
+test_crossed_proxy_cancels_old_orders (test_replay_v2.Tests.test_crossed_proxy_cancels_old_orders) ... ok
+test_cutoff_before_matching_and_silent_clock (test_replay_v2.Tests.test_cutoff_before_matching_and_silent_clock) ... ok
+test_early_liquidation_and_retries_never_reuse_depth (test_replay_v2.Tests.test_early_liquidation_and_retries_never_reuse_depth) ... ok
+test_exit_uses_single_game_depth_budget (test_replay_v2.Tests.test_exit_uses_single_game_depth_budget) ... ok
+test_fee_accumulator_split_and_unsplit (test_replay_v2.Tests.test_fee_accumulator_split_and_unsplit) ... ok
+test_fee_rounding_is_not_affected_by_binary_float_complements (test_replay_v2.Tests.test_fee_rounding_is_not_affected_by_binary_float_complements) ... ok
+test_future_print_does_not_change_prior_fills (test_replay_v2.Tests.test_future_print_does_not_change_prior_fills) ... ok
+test_global_cash_reservations (test_replay_v2.Tests.test_global_cash_reservations) ... ok
+test_joint_exposure_cap_and_pending_cancels (test_replay_v2.Tests.test_joint_exposure_cap_and_pending_cancels) ... ok
+test_payoff_identity_rejects_unverified_events (test_replay_v2.Tests.test_payoff_identity_rejects_unverified_events) ... ok
+test_queue_is_consumed_once_and_replenishment_goes_to_back (test_replay_v2.Tests.test_queue_is_consumed_once_and_replenishment_goes_to_back) ... ok
+test_same_price_downsize_waits_for_ack (test_replay_v2.Tests.test_same_price_downsize_waits_for_ack) ... ok
+test_stale_one_side_cancels_despite_other_side_activity (test_replay_v2.Tests.test_stale_one_side_cancels_despite_other_side_activity) ... ok
+test_unfinished_capture_is_not_completed_pnl (test_replay_v2.Tests.test_unfinished_capture_is_not_completed_pnl) ... ok
+test_unresolved_inventory_has_no_fictitious_exit (test_replay_v2.Tests.test_unresolved_inventory_has_no_fictitious_exit) ... ok
+test_challenger_does_not_cancel_good_incumbent_for_tiny_gain (test_queue_policies.QueueTests.test_challenger_does_not_cancel_good_incumbent_for_tiny_gain) ... ok
+test_churn_requests_cancel_without_freeing_reservations (test_queue_policies.QueueTests.test_churn_requests_cancel_without_freeing_reservations) ... ok
+test_fifo_matching_cost_and_duration (test_queue_policies.QueueTests.test_fifo_matching_cost_and_duration) ... ok
+test_improvement_requires_inventory_and_pair_margin (test_queue_policies.QueueTests.test_improvement_requires_inventory_and_pair_margin) ... ok
+test_inside_race_queue_applies_only_to_new_improvement (test_queue_policies.QueueTests.test_inside_race_queue_applies_only_to_new_improvement) ... ok
+test_keep_price_retains_identity_and_consumed_queue (test_queue_policies.QueueTests.test_keep_price_retains_identity_and_consumed_queue) ... ok
+test_one_tick_spread_never_crossed (test_queue_policies.QueueTests.test_one_tick_spread_never_crossed) ... ok
+test_other_offset_orders_reduce_improvement_quantity (test_queue_policies.QueueTests.test_other_offset_orders_reduce_improvement_quantity) ... ok
+test_route_favors_service_with_equal_price_and_margin (test_queue_policies.QueueTests.test_route_favors_service_with_equal_price_and_margin) ... ok
+test_strictly_prior_eligible_flow_only (test_queue_policies.QueueTests.test_strictly_prior_eligible_flow_only) ... ok
+test_switch_keeps_pending_risk_reserved (test_queue_policies.QueueTests.test_switch_keeps_pending_risk_reserved) ... ok
+test_worst_remaining_lot_controls_improvement_gate (test_queue_policies.QueueTests.test_worst_remaining_lot_controls_improvement_gate) ... ok
+test_both_legs_and_fees_required (test_completion.CompletionTests.test_both_legs_and_fees_required) ... ok
+test_capacity_respects_fractional_grid_and_deadline (test_completion.CompletionTests.test_capacity_respects_fractional_grid_and_deadline) ... ok
+test_completion_cancels_same_direction_after_first_fill (test_completion.CompletionTests.test_completion_cancels_same_direction_after_first_fill) ... ok
+test_failed_entry_gate_does_not_abandon_inventory (test_completion.CompletionTests.test_failed_entry_gate_does_not_abandon_inventory) ... ok
+test_fast_first_leg_cannot_admit_unserviceable_pair (test_completion.CompletionTests.test_fast_first_leg_cannot_admit_unserviceable_pair) ... ok
+test_incumbent_remaining_quantity_cannot_get_free_priority (test_completion.CompletionTests.test_incumbent_remaining_quantity_cannot_get_free_priority) ... ok
+test_pending_offset_reservation_prevents_double_hedge (test_completion.CompletionTests.test_pending_offset_reservation_prevents_double_hedge) ... ok
+test_pending_resize_race_is_counted_not_silently_clipped (test_completion.CompletionTests.test_pending_resize_race_is_counted_not_silently_clipped) ... ok
+test_queue_must_clear_before_service_starts (test_completion.CompletionTests.test_queue_must_clear_before_service_starts) ... ok
+test_ten_minute_horizon_shrinks_near_stop (test_completion.CompletionTests.test_ten_minute_horizon_shrinks_near_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.009s
+
+OK

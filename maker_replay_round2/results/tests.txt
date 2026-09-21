@@ -1,0 +1,24 @@
+test_all_full_fill_orders_respect_risk_for_every_permutation (test_replay_v2.Tests.test_all_full_fill_orders_respect_risk_for_every_permutation) ... ok
+test_cancel_pending_fills_are_accounted_and_reserved (test_replay_v2.Tests.test_cancel_pending_fills_are_accounted_and_reserved) ... ok
+test_candle_mode_does_not_invent_quotes_from_trades (test_replay_v2.Tests.test_candle_mode_does_not_invent_quotes_from_trades) ... ok
+test_cross_ticker_pair_releases_one_dollar_per_pair (test_replay_v2.Tests.test_cross_ticker_pair_releases_one_dollar_per_pair) ... ok
+test_crossed_proxy_cancels_old_orders (test_replay_v2.Tests.test_crossed_proxy_cancels_old_orders) ... ok
+test_cutoff_before_matching_and_silent_clock (test_replay_v2.Tests.test_cutoff_before_matching_and_silent_clock) ... ok
+test_early_liquidation_and_retries_never_reuse_depth (test_replay_v2.Tests.test_early_liquidation_and_retries_never_reuse_depth) ... ok
+test_exit_uses_single_game_depth_budget (test_replay_v2.Tests.test_exit_uses_single_game_depth_budget) ... ok
+test_fee_accumulator_split_and_unsplit (test_replay_v2.Tests.test_fee_accumulator_split_and_unsplit) ... ok
+test_fee_rounding_is_not_affected_by_binary_float_complements (test_replay_v2.Tests.test_fee_rounding_is_not_affected_by_binary_float_complements) ... ok
+test_future_print_does_not_change_prior_fills (test_replay_v2.Tests.test_future_print_does_not_change_prior_fills) ... ok
+test_global_cash_reservations (test_replay_v2.Tests.test_global_cash_reservations) ... ok
+test_joint_exposure_cap_and_pending_cancels (test_replay_v2.Tests.test_joint_exposure_cap_and_pending_cancels) ... ok
+test_payoff_identity_rejects_unverified_events (test_replay_v2.Tests.test_payoff_identity_rejects_unverified_events) ... ok
+test_queue_is_consumed_once_and_replenishment_goes_to_back (test_replay_v2.Tests.test_queue_is_consumed_once_and_replenishment_goes_to_back) ... ok
+test_same_price_downsize_waits_for_ack (test_replay_v2.Tests.test_same_price_downsize_waits_for_ack) ... ok
+test_stale_one_side_cancels_despite_other_side_activity (test_replay_v2.Tests.test_stale_one_side_cancels_despite_other_side_activity) ... ok
+test_unfinished_capture_is_not_completed_pnl (test_replay_v2.Tests.test_unfinished_capture_is_not_completed_pnl) ... ok
+test_unresolved_inventory_has_no_fictitious_exit (test_replay_v2.Tests.test_unresolved_inventory_has_no_fictitious_exit) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.017s
+
+OK

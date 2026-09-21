@@ -1,0 +1,14 @@
+{
+  "event": "KXNFLGAME-26SEP13ATLPIT",
+  "ticker": "KXNFLGAME-26SEP13ATLPIT-PIT",
+  "kickoff": "2026-09-13 17:00:00+00:00",
+  "from_utc": "2026-09-06T17:00:00+00:00",
+  "through_utc": "2026-09-13T14:00:00+00:00",
+  "pages": 11,
+  "trades": 10248,
+  "excluded_block_trades": 0,
+  "pagination_exhausted": true,
+  "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8",
+  "retrieved_at": "2026-09-21T05:29:13.278061+00:00",
+  "path": "data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz"
+}

@@ -1,0 +1,793 @@
+{
+  "status": "POST_RESULT_DIAGNOSTICS_NOT_HOLDOUT",
+  "scenarios": {
+    "candles_early_queue3300": {
+      "evidence": "EXPLORATORY_MINUTE_BID_ASK_REPLAY_DEPTH_AND_RECEIPT_LATENCY_UNOBSERVED",
+      "config": {
+        "starting_cash": 5000,
+        "order_size": 250,
+        "exposure_cap": 250,
+        "queue_early": 3300,
+        "queue_last12h": 1327847.005,
+        "fill_participation": 0.5,
+        "requote_seconds": 60,
+        "proxy_max_age_seconds": 300,
+        "cancel_delay_seconds": 0.25,
+        "order_delay_seconds": 0.25,
+        "maker_coefficient": 0.0175,
+        "taker_coefficient": 0.07,
+        "balance_precision": ".0001",
+        "assumed_exit_depth": 250,
+        "inventory_reduce_only": false,
+        "event_netting": true,
+        "quote_source": "candles",
+        "liquidation_lead_seconds": 0
+      },
+      "trades": 391118,
+      "fills": 6436,
+      "maker_contracts": 155466.51,
+      "taker_contracts": 1956.8899999999999,
+      "completed_window_games": 16,
+      "all_flat": true,
+      "completed_strategy_pnl": 44.55279999996037,
+      "terminal_payout_bounds": [
+        44.55279999996037,
+        44.55279999996037
+      ],
+      "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+      "unresolved_contracts": 0.0,
+      "min_cash": 3747.0684999999908,
+      "max_reserved_cash": 4258.4668126550005,
+      "max_abs_event_exposure": 250.00000000000014,
+      "metrics": {
+        "new_orders": 22180.0,
+        "cancel_requests": 20857.0,
+        "cancels_acknowledged": 20857.0,
+        "fees": 667.4247999999992,
+        "paired_units": 78711.69999999982,
+        "events_with_unresolved_exit": 0
+      },
+      "per_game": [
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 63.418199999999935,
+          "pnl_lower_payout_bound": 63.418199999999935,
+          "pnl_upper_payout_bound": 63.418199999999935,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 24.223499999999675,
+          "pnl_lower_payout_bound": 24.223499999999675,
+          "pnl_upper_payout_bound": 24.223499999999675,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -4.311500000000052,
+          "pnl_lower_payout_bound": -4.311500000000052,
+          "pnl_upper_payout_bound": -4.311500000000052,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -2.0030999999999075,
+          "pnl_lower_payout_bound": -2.0030999999999075,
+          "pnl_upper_payout_bound": -2.0030999999999075,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -8.045399999999987,
+          "pnl_lower_payout_bound": -8.045399999999987,
+          "pnl_upper_payout_bound": -8.045399999999987,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -26.575400000000293,
+          "pnl_lower_payout_bound": -26.575400000000293,
+          "pnl_upper_payout_bound": -26.575400000000293,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 2.799299999999958,
+          "pnl_lower_payout_bound": 2.799299999999958,
+          "pnl_upper_payout_bound": 2.799299999999958,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -3.647099999999938,
+          "pnl_lower_payout_bound": -3.647099999999938,
+          "pnl_upper_payout_bound": -3.647099999999938,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 2.713199999999958,
+          "pnl_lower_payout_bound": 2.713199999999958,
+          "pnl_upper_payout_bound": 2.713199999999958,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -5.003600000000006,
+          "pnl_lower_payout_bound": -5.003600000000006,
+          "pnl_upper_payout_bound": -5.003600000000006,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -8.668000000000163,
+          "pnl_lower_payout_bound": -8.668000000000163,
+          "pnl_upper_payout_bound": -8.668000000000163,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -1.7451000000000043,
+          "pnl_lower_payout_bound": -1.7451000000000043,
+          "pnl_upper_payout_bound": -1.7451000000000043,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 4.067099999999893,
+          "pnl_lower_payout_bound": 4.067099999999893,
+          "pnl_upper_payout_bound": 4.067099999999893,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -18.908700000000096,
+          "pnl_lower_payout_bound": -18.908700000000096,
+          "pnl_upper_payout_bound": -18.908700000000096,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 12.043399999999856,
+          "pnl_lower_payout_bound": 12.043399999999856,
+          "pnl_upper_payout_bound": 12.043399999999856,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 14.195999999998996,
+          "pnl_lower_payout_bound": 14.195999999998996,
+          "pnl_upper_payout_bound": 14.195999999998996,
+          "flat": true
+        }
+      ],
+      "scenario": "candles_early_queue3300",
+      "seconds": 39.264298503001555,
+      "maker_fills_at_or_after_cutoff": 0
+    },
+    "candles_baseline_regression": {
+      "evidence": "EXPLORATORY_MINUTE_BID_ASK_REPLAY_DEPTH_AND_RECEIPT_LATENCY_UNOBSERVED",
+      "config": {
+        "starting_cash": 5000,
+        "order_size": 250,
+        "exposure_cap": 250,
+        "queue_early": 290.595,
+        "queue_last12h": 1327847.005,
+        "fill_participation": 0.5,
+        "requote_seconds": 60,
+        "proxy_max_age_seconds": 300,
+        "cancel_delay_seconds": 0.25,
+        "order_delay_seconds": 0.25,
+        "maker_coefficient": 0.0175,
+        "taker_coefficient": 0.07,
+        "balance_precision": ".0001",
+        "assumed_exit_depth": 250,
+        "inventory_reduce_only": false,
+        "event_netting": true,
+        "quote_source": "candles",
+        "liquidation_lead_seconds": 0
+      },
+      "trades": 391118,
+      "fills": 49734,
+      "maker_contracts": 946168.65,
+      "taker_contracts": 1252.4299999999994,
+      "completed_window_games": 16,
+      "all_flat": true,
+      "completed_strategy_pnl": 681.7310999994816,
+      "terminal_payout_bounds": [
+        681.7310999994816,
+        681.7310999994816
+      ],
+      "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+      "unresolved_contracts": 0.0,
+      "min_cash": 3714.9245999999944,
+      "max_reserved_cash": 4356.7726523375,
+      "max_abs_event_exposure": 250.00000000000043,
+      "metrics": {
+        "new_orders": 33100.0,
+        "fees": 3851.1990000001238,
+        "paired_units": 473710.5399999993,
+        "cancel_requests": 24557.0,
+        "cancels_acknowledged": 24557.0,
+        "fills_while_cancel_pending": 1.0,
+        "events_with_unresolved_exit": 0
+      },
+      "per_game": [
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 389.972800000001,
+          "pnl_lower_payout_bound": 389.972800000001,
+          "pnl_upper_payout_bound": 389.972800000001,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 169.9377,
+          "pnl_lower_payout_bound": 169.9377,
+          "pnl_upper_payout_bound": 169.9377,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 12.343299999999793,
+          "pnl_lower_payout_bound": 12.343299999999793,
+          "pnl_upper_payout_bound": 12.343299999999793,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 65.99010000000017,
+          "pnl_lower_payout_bound": 65.99010000000017,
+          "pnl_upper_payout_bound": 65.99010000000017,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -81.3010000000002,
+          "pnl_lower_payout_bound": -81.3010000000002,
+          "pnl_upper_payout_bound": -81.3010000000002,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -80.73070000000047,
+          "pnl_lower_payout_bound": -80.73070000000047,
+          "pnl_upper_payout_bound": -80.73070000000047,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 22.898599999999462,
+          "pnl_lower_payout_bound": 22.898599999999462,
+          "pnl_upper_payout_bound": 22.898599999999462,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -8.132200000000253,
+          "pnl_lower_payout_bound": -8.132200000000253,
+          "pnl_upper_payout_bound": -8.132200000000253,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 76.33679999999941,
+          "pnl_lower_payout_bound": 76.33679999999941,
+          "pnl_upper_payout_bound": 76.33679999999941,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -2.4343000000001354,
+          "pnl_lower_payout_bound": -2.4343000000001354,
+          "pnl_upper_payout_bound": -2.4343000000001354,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -44.61080000000064,
+          "pnl_lower_payout_bound": -44.61080000000064,
+          "pnl_upper_payout_bound": -44.61080000000064,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -19.41810000000035,
+          "pnl_lower_payout_bound": -19.41810000000035,
+          "pnl_upper_payout_bound": -19.41810000000035,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 34.056399999998234,
+          "pnl_lower_payout_bound": 34.056399999998234,
+          "pnl_upper_payout_bound": 34.056399999998234,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -63.3887000000004,
+          "pnl_lower_payout_bound": -63.3887000000004,
+          "pnl_upper_payout_bound": -63.3887000000004,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 130.75139999999962,
+          "pnl_lower_payout_bound": 130.75139999999962,
+          "pnl_upper_payout_bound": 130.75139999999962,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 79.45979999999517,
+          "pnl_lower_payout_bound": 79.45979999999517,
+          "pnl_upper_payout_bound": 79.45979999999517,
+          "flat": true
+        }
+      ],
+      "scenario": "candles_baseline_regression",
+      "seconds": 50.78463229599947,
+      "maker_fills_at_or_after_cutoff": 0
+    },
+    "candles_exit_depth50": {
+      "evidence": "EXPLORATORY_MINUTE_BID_ASK_REPLAY_DEPTH_AND_RECEIPT_LATENCY_UNOBSERVED",
+      "config": {
+        "starting_cash": 5000,
+        "order_size": 250,
+        "exposure_cap": 250,
+        "queue_early": 290.595,
+        "queue_last12h": 1327847.005,
+        "fill_participation": 0.5,
+        "requote_seconds": 60,
+        "proxy_max_age_seconds": 300,
+        "cancel_delay_seconds": 0.25,
+        "order_delay_seconds": 0.25,
+        "maker_coefficient": 0.0175,
+        "taker_coefficient": 0.07,
+        "balance_precision": ".0001",
+        "assumed_exit_depth": 50,
+        "inventory_reduce_only": false,
+        "event_netting": true,
+        "quote_source": "candles",
+        "liquidation_lead_seconds": 0
+      },
+      "trades": 391118,
+      "fills": 49734,
+      "maker_contracts": 946168.65,
+      "taker_contracts": 562.5399999999996,
+      "completed_window_games": 16,
+      "all_flat": false,
+      "completed_strategy_pnl": null,
+      "terminal_payout_bounds": [
+        364.27689999948143,
+        1054.1668999994815
+      ],
+      "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+      "unresolved_contracts": 689.8900000000001,
+      "min_cash": 3714.9245999999944,
+      "max_reserved_cash": 4356.7726523375,
+      "max_abs_event_exposure": 250.00000000000043,
+      "metrics": {
+        "new_orders": 33100.0,
+        "fees": 3840.8218000001257,
+        "paired_units": 473020.6499999993,
+        "cancel_requests": 24557.0,
+        "cancels_acknowledged": 24557.0,
+        "fills_while_cancel_pending": 1.0,
+        "events_with_unresolved_exit": 9,
+        "unresolved_exit_attempts": 9.0
+      },
+      "per_game": [
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 389.972800000001,
+          "pnl_lower_payout_bound": 389.972800000001,
+          "pnl_upper_payout_bound": 389.972800000001,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "window_complete": true,
+          "net_inventory": 121.41000000000003,
+          "cashflow": 94.19349999999997,
+          "pnl_lower_payout_bound": 94.19349999999997,
+          "pnl_upper_payout_bound": 215.6035,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "window_complete": true,
+          "net_inventory": 43.94000000000007,
+          "cashflow": -13.282500000000244,
+          "pnl_lower_payout_bound": -13.282500000000244,
+          "pnl_upper_payout_bound": 30.657499999999825,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 65.99010000000017,
+          "pnl_lower_payout_bound": 65.99010000000017,
+          "pnl_upper_payout_bound": 65.99010000000017,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -81.3010000000002,
+          "pnl_lower_payout_bound": -81.3010000000002,
+          "pnl_upper_payout_bound": -81.3010000000002,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -80.73070000000047,
+          "pnl_lower_payout_bound": -80.73070000000047,
+          "pnl_upper_payout_bound": -80.73070000000047,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "window_complete": true,
+          "net_inventory": -53.349999999999824,
+          "cashflow": -18.6283000000004,
+          "pnl_lower_payout_bound": -18.6283000000004,
+          "pnl_upper_payout_bound": 34.72169999999942,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "window_complete": true,
+          "net_inventory": -21.329999999999856,
+          "cashflow": -18.63740000000018,
+          "pnl_lower_payout_bound": -18.63740000000018,
+          "pnl_upper_payout_bound": 2.6925999999996755,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 76.33679999999941,
+          "pnl_lower_payout_bound": 76.33679999999941,
+          "pnl_upper_payout_bound": 76.33679999999941,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "window_complete": true,
+          "net_inventory": -40.420000000000044,
+          "cashflow": -16.333600000000146,
+          "pnl_lower_payout_bound": -16.333600000000146,
+          "pnl_upper_payout_bound": 24.086399999999898,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "window_complete": true,
+          "net_inventory": 70.85000000000008,
+          "cashflow": -57.309000000000644,
+          "pnl_lower_payout_bound": -57.309000000000644,
+          "pnl_upper_payout_bound": 13.540999999999435,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "window_complete": true,
+          "net_inventory": 130.05999999999995,
+          "cashflow": -95.26900000000032,
+          "pnl_lower_payout_bound": -95.26900000000032,
+          "pnl_upper_payout_bound": 34.79099999999963,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "window_complete": true,
+          "net_inventory": -8.529999999999944,
+          "cashflow": 29.512699999998265,
+          "pnl_lower_payout_bound": 29.512699999998265,
+          "pnl_upper_payout_bound": 38.042699999998206,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "window_complete": true,
+          "net_inventory": -200.00000000000026,
+          "cashflow": -120.44870000000039,
+          "pnl_lower_payout_bound": -120.44870000000039,
+          "pnl_upper_payout_bound": 79.55129999999987,
+          "flat": false
+        },
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 130.75139999999962,
+          "pnl_lower_payout_bound": 130.75139999999962,
+          "pnl_upper_payout_bound": 130.75139999999962,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 79.45979999999517,
+          "pnl_lower_payout_bound": 79.45979999999517,
+          "pnl_upper_payout_bound": 79.45979999999517,
+          "flat": true
+        }
+      ],
+      "scenario": "candles_exit_depth50",
+      "seconds": 47.07637132000127,
+      "maker_fills_at_or_after_cutoff": 0
+    },
+    "candles_winddown5m": {
+      "evidence": "EXPLORATORY_MINUTE_BID_ASK_REPLAY_DEPTH_AND_RECEIPT_LATENCY_UNOBSERVED",
+      "config": {
+        "starting_cash": 5000,
+        "order_size": 250,
+        "exposure_cap": 250,
+        "queue_early": 290.595,
+        "queue_last12h": 1327847.005,
+        "fill_participation": 0.5,
+        "requote_seconds": 60,
+        "proxy_max_age_seconds": 300,
+        "cancel_delay_seconds": 0.25,
+        "order_delay_seconds": 0.25,
+        "maker_coefficient": 0.0175,
+        "taker_coefficient": 0.07,
+        "balance_precision": ".0001",
+        "assumed_exit_depth": 250,
+        "inventory_reduce_only": false,
+        "event_netting": true,
+        "quote_source": "candles",
+        "liquidation_lead_seconds": 300
+      },
+      "trades": 391118,
+      "fills": 49732,
+      "maker_contracts": 945917.18,
+      "taker_contracts": 1103.3399999999995,
+      "completed_window_games": 16,
+      "all_flat": true,
+      "completed_strategy_pnl": 684.640899999481,
+      "terminal_payout_bounds": [
+        684.640899999481,
+        684.640899999481
+      ],
+      "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+      "unresolved_contracts": 0.0,
+      "min_cash": 3714.9245999999944,
+      "max_reserved_cash": 4356.7726523375,
+      "max_abs_event_exposure": 250.00000000000043,
+      "metrics": {
+        "new_orders": 33099.0,
+        "fees": 3847.777300000124,
+        "paired_units": 473510.2599999993,
+        "cancel_requests": 24558.0,
+        "cancels_acknowledged": 24558.0,
+        "fills_while_cancel_pending": 1.0,
+        "events_with_unresolved_exit": 0
+      },
+      "per_game": [
+        {
+          "event": "KXNFLGAME-26SEP09NESEA",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 389.972800000001,
+          "pnl_lower_payout_bound": 389.972800000001,
+          "pnl_upper_payout_bound": 389.972800000001,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP10SFLAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 172.8475,
+          "pnl_lower_payout_bound": 172.8475,
+          "pnl_upper_payout_bound": 172.8475,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BALIND",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 12.343299999999793,
+          "pnl_lower_payout_bound": 12.343299999999793,
+          "pnl_upper_payout_bound": 12.343299999999793,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ATLPIT",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 65.99010000000017,
+          "pnl_lower_payout_bound": 65.99010000000017,
+          "pnl_upper_payout_bound": 65.99010000000017,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CHICAR",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -81.3010000000002,
+          "pnl_lower_payout_bound": -81.3010000000002,
+          "pnl_upper_payout_bound": -81.3010000000002,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13BUFHOU",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -80.73070000000047,
+          "pnl_lower_payout_bound": -80.73070000000047,
+          "pnl_upper_payout_bound": -80.73070000000047,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13CLEJAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 22.898599999999462,
+          "pnl_lower_payout_bound": 22.898599999999462,
+          "pnl_upper_payout_bound": 22.898599999999462,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NYJTEN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -8.132200000000253,
+          "pnl_lower_payout_bound": -8.132200000000253,
+          "pnl_upper_payout_bound": -8.132200000000253,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13NODET",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 76.33679999999941,
+          "pnl_lower_payout_bound": 76.33679999999941,
+          "pnl_upper_payout_bound": 76.33679999999941,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13TBCIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -2.4343000000001354,
+          "pnl_lower_payout_bound": -2.4343000000001354,
+          "pnl_upper_payout_bound": -2.4343000000001354,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13ARILAC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -44.61080000000064,
+          "pnl_lower_payout_bound": -44.61080000000064,
+          "pnl_upper_payout_bound": -44.61080000000064,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13MIALV",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -19.41810000000035,
+          "pnl_lower_payout_bound": -19.41810000000035,
+          "pnl_upper_payout_bound": -19.41810000000035,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13GBMIN",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 34.056399999998234,
+          "pnl_lower_payout_bound": 34.056399999998234,
+          "pnl_upper_payout_bound": 34.056399999998234,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13WASPHI",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": -63.3887000000004,
+          "pnl_lower_payout_bound": -63.3887000000004,
+          "pnl_upper_payout_bound": -63.3887000000004,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP13DALNYG",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 130.75139999999962,
+          "pnl_lower_payout_bound": 130.75139999999962,
+          "pnl_upper_payout_bound": 130.75139999999962,
+          "flat": true
+        },
+        {
+          "event": "KXNFLGAME-26SEP14DENKC",
+          "window_complete": true,
+          "net_inventory": 0.0,
+          "cashflow": 79.45979999999517,
+          "pnl_lower_payout_bound": 79.45979999999517,
+          "pnl_upper_payout_bound": 79.45979999999517,
+          "flat": true
+        }
+      ],
+      "scenario": "candles_winddown5m",
+      "seconds": 40.302353410999785,
+      "maker_fills_at_or_after_cutoff": 0
+    }
+  }
+}

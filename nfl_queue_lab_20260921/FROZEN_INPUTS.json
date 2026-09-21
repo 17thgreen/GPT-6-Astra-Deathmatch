@@ -1,0 +1,8 @@
+{
+  "frozen_utc": "2026-09-21T14:21:21.845720+00:00",
+  "sha256": {
+    "EXPERIMENT_SPEC.md": "267e1f599bbf7e60c23f107e0105116f69d7a25eb004cc5d087d49613798ceab",
+    "replay_v2.py": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3"
+  },
+  "prior_winddown_pnl": 684.640899999481
+}

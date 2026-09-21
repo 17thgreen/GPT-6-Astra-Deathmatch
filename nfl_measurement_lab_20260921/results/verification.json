@@ -1,0 +1,19 @@
+{
+  "all_checks_passed": true,
+  "panels": {
+    "q1_development": {
+      "joins": 54,
+      "full_service": 0,
+      "passed": true
+    },
+    "q3_development": {
+      "joins": 16,
+      "full_service": 0,
+      "passed": true
+    }
+  },
+  "historical_markout_rows": 44067,
+  "frozen_hashes_verified": true,
+  "holdout_completed_games": 0,
+  "note": "Internal measurement and artifact checks, not proof of executable fills."
+}

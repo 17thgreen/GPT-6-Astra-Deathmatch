@@ -1,0 +1,569 @@
+{
+  "started_utc": "2026-09-21T15:31:01.687806+00:00",
+  "ended_utc": "2026-09-21T15:43:28.312770+00:00",
+  "target_seconds": 720,
+  "polls": 106,
+  "tickers": [
+    "KXNFLGAME-26SEP21NYGLAR-LAR",
+    "KXNFLGAME-26SEP21NYGLAR-NYG",
+    "KXNFLGAME-26SEP24ATLGB-ATL",
+    "KXNFLGAME-26SEP24ATLGB-GB"
+  ],
+  "errors": 0,
+  "complete_intervals": [
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790000941,
+      "end": 1790004676,
+      "poll": 0
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790000941,
+      "end": 1790004676,
+      "poll": 0
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790000941,
+      "end": 1790004676,
+      "poll": 0
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790000941,
+      "end": 1790004676,
+      "poll": 0
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004556,
+      "end": 1790004709,
+      "poll": 3
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004556,
+      "end": 1790004709,
+      "poll": 3
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004556,
+      "end": 1790004709,
+      "poll": 3
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004556,
+      "end": 1790004709,
+      "poll": 3
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004589,
+      "end": 1790004748,
+      "poll": 7
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004589,
+      "end": 1790004748,
+      "poll": 7
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004589,
+      "end": 1790004748,
+      "poll": 7
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004589,
+      "end": 1790004748,
+      "poll": 7
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004628,
+      "end": 1790004779,
+      "poll": 11
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004628,
+      "end": 1790004779,
+      "poll": 11
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004628,
+      "end": 1790004779,
+      "poll": 11
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004628,
+      "end": 1790004779,
+      "poll": 11
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004659,
+      "end": 1790004815,
+      "poll": 15
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004659,
+      "end": 1790004815,
+      "poll": 15
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004659,
+      "end": 1790004815,
+      "poll": 15
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004659,
+      "end": 1790004815,
+      "poll": 15
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004695,
+      "end": 1790004847,
+      "poll": 19
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004695,
+      "end": 1790004847,
+      "poll": 19
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004695,
+      "end": 1790004847,
+      "poll": 19
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004695,
+      "end": 1790004847,
+      "poll": 19
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004727,
+      "end": 1790004878,
+      "poll": 24
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004727,
+      "end": 1790004878,
+      "poll": 24
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004727,
+      "end": 1790004878,
+      "poll": 24
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004727,
+      "end": 1790004878,
+      "poll": 24
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004758,
+      "end": 1790004910,
+      "poll": 29
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004758,
+      "end": 1790004910,
+      "poll": 29
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004758,
+      "end": 1790004910,
+      "poll": 29
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004758,
+      "end": 1790004910,
+      "poll": 29
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004790,
+      "end": 1790004942,
+      "poll": 34
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004790,
+      "end": 1790004942,
+      "poll": 34
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004790,
+      "end": 1790004942,
+      "poll": 34
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004790,
+      "end": 1790004942,
+      "poll": 34
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004822,
+      "end": 1790004973,
+      "poll": 38
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004822,
+      "end": 1790004973,
+      "poll": 38
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004822,
+      "end": 1790004973,
+      "poll": 38
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004822,
+      "end": 1790004973,
+      "poll": 38
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004853,
+      "end": 1790005009,
+      "poll": 43
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004853,
+      "end": 1790005009,
+      "poll": 43
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004853,
+      "end": 1790005009,
+      "poll": 43
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004853,
+      "end": 1790005009,
+      "poll": 43
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004889,
+      "end": 1790005042,
+      "poll": 48
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004889,
+      "end": 1790005042,
+      "poll": 48
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004889,
+      "end": 1790005042,
+      "poll": 48
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004889,
+      "end": 1790005042,
+      "poll": 48
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004922,
+      "end": 1790005076,
+      "poll": 53
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004922,
+      "end": 1790005076,
+      "poll": 53
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004922,
+      "end": 1790005076,
+      "poll": 53
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004922,
+      "end": 1790005076,
+      "poll": 53
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004956,
+      "end": 1790005108,
+      "poll": 57
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004956,
+      "end": 1790005108,
+      "poll": 57
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004956,
+      "end": 1790005108,
+      "poll": 57
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004956,
+      "end": 1790005108,
+      "poll": 57
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790004988,
+      "end": 1790005139,
+      "poll": 62
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790004988,
+      "end": 1790005139,
+      "poll": 62
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790004988,
+      "end": 1790005139,
+      "poll": 62
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790004988,
+      "end": 1790005139,
+      "poll": 62
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005019,
+      "end": 1790005174,
+      "poll": 68
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005019,
+      "end": 1790005174,
+      "poll": 68
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005019,
+      "end": 1790005174,
+      "poll": 68
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005019,
+      "end": 1790005174,
+      "poll": 68
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005054,
+      "end": 1790005204,
+      "poll": 73
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005054,
+      "end": 1790005204,
+      "poll": 73
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005054,
+      "end": 1790005204,
+      "poll": 73
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005054,
+      "end": 1790005204,
+      "poll": 73
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005084,
+      "end": 1790005238,
+      "poll": 79
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005084,
+      "end": 1790005238,
+      "poll": 79
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005084,
+      "end": 1790005238,
+      "poll": 79
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005084,
+      "end": 1790005238,
+      "poll": 79
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005118,
+      "end": 1790005272,
+      "poll": 85
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005118,
+      "end": 1790005272,
+      "poll": 85
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005118,
+      "end": 1790005272,
+      "poll": 85
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005118,
+      "end": 1790005272,
+      "poll": 85
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005152,
+      "end": 1790005303,
+      "poll": 90
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005152,
+      "end": 1790005303,
+      "poll": 90
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005152,
+      "end": 1790005303,
+      "poll": 90
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005152,
+      "end": 1790005303,
+      "poll": 90
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005183,
+      "end": 1790005334,
+      "poll": 95
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005183,
+      "end": 1790005334,
+      "poll": 95
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005183,
+      "end": 1790005334,
+      "poll": 95
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005183,
+      "end": 1790005334,
+      "poll": 95
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005214,
+      "end": 1790005365,
+      "poll": 100
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005214,
+      "end": 1790005365,
+      "poll": 100
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005214,
+      "end": 1790005365,
+      "poll": 100
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005214,
+      "end": 1790005365,
+      "poll": 100
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-LAR",
+      "start": 1790005245,
+      "end": 1790005402,
+      "poll": 106
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "start": 1790005245,
+      "end": 1790005402,
+      "poll": 106
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "start": 1790005245,
+      "end": 1790005402,
+      "poll": 106
+    },
+    {
+      "ticker": "KXNFLGAME-26SEP21NYGLAR-NYG",
+      "start": 1790005245,
+      "end": 1790005402,
+      "poll": 106
+    }
+  ],
+  "sha256": "c4cf6ce57989ed5ab4dcbe0b499c07d7437d852d55c10f737b6e82f7cca6cd36",
+  "status": "BOUNDED_CAPTURE_COMPLETE_NO_ORDERS_PLACED"
+}

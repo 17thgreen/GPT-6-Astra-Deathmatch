@@ -1,0 +1,20 @@
+{
+  "week1_q291_q1_route": {
+    "completed_strategy_pnl": 1060.6224999994465,
+    "maker_contracts": 1033961.66,
+    "taker_contracts": 1328.1799999999998,
+    "unhedged_contract_hours": 410039.5335973777
+  },
+  "week1_q3300_q1_route": {
+    "completed_strategy_pnl": 154.0656999999428,
+    "maker_contracts": 228203.98,
+    "taker_contracts": 1085.0800000000002,
+    "unhedged_contract_hours": 277566.03839531174
+  },
+  "week1_q10000_q1_route": {
+    "completed_strategy_pnl": 19.60389999996096,
+    "maker_contracts": 87682.88,
+    "taker_contracts": 1042.98,
+    "unhedged_contract_hours": 152628.4144791466
+  }
+}

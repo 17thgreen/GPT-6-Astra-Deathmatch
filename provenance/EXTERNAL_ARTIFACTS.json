@@ -1,0 +1,3592 @@
+[
+  {
+    "path": "stern_lab/results/final_score_replay_2023.csv",
+    "bytes": 8339,
+    "sha256": "9cc9c0afbc926c3ef8b861c978c373714db2e179647b3e28bee186664df69031"
+  },
+  {
+    "path": "stern_lab/results/final_score_replay_2024.csv",
+    "bytes": 8359,
+    "sha256": "441115559d7161022ea858ceae72ac2e29dc52695a926ea321047e64a1537987"
+  },
+  {
+    "path": "stern_lab/results/final_score_replay_2025_2026.csv",
+    "bytes": 9247,
+    "sha256": "9d2acddecda44fac856dbd18c40a300f8a564a5ff9f305167e90dc3b127f57b3"
+  },
+  {
+    "path": "stern_lab/results/predictions_2023.csv",
+    "bytes": 3725057,
+    "sha256": "cd4d846caf47a7d576053b48461e3735c9f17533c311a034f3d51fe34f132a2c"
+  },
+  {
+    "path": "stern_lab/results/predictions_2024.csv",
+    "bytes": 3726839,
+    "sha256": "026496b72eb7620b37076813d09f5ed2e78a44c472f7a83d8358360ba2042584"
+  },
+  {
+    "path": "stern_lab/results/repo_per_game_tie_corrected.csv",
+    "bytes": 13753,
+    "sha256": "f30882176b99c2bb7e5bd3511a1bba4064bc7269015f8f4d78b7c0d49bf3b551"
+  },
+  {
+    "path": "stern_lab/results/round2/predictions_2023.csv",
+    "bytes": 4660762,
+    "sha256": "1c742f5d82217f26f29218e3a6548197dcde14987ece70a59aae1fed1a58b9d1"
+  },
+  {
+    "path": "stern_lab/results/round2/predictions_2024.csv",
+    "bytes": 4663579,
+    "sha256": "68822dfc13b1159c1ff5a69593e61d06ff9acafcbb0d5f825d3be8be90b2eb63"
+  },
+  {
+    "path": "stern_lab/results/round2/predictions_2025.csv",
+    "bytes": 4646624,
+    "sha256": "4f58c6b326a9be001efcfa9e46256ea4586248c414273fe7d706ab31601dc8e2"
+  },
+  {
+    "path": "stern_lab/results/round2_run.log",
+    "bytes": 5717,
+    "sha256": "9f024dde4765eb604af140c9ccbc6430e222b06fb6537f61e9e6db071e78ce26"
+  },
+  {
+    "path": "strategy_review_20260921/inputs/nfl_schedule_keys.csv",
+    "bytes": 39733,
+    "sha256": "bc03385f6c8b4cdb4c7a9dcf1d9b1249c8ebbff5777575f26cd6a086363590fc"
+  },
+  {
+    "path": "strategy_review_20260921/results/conservative_queue_3300_audited_games.csv",
+    "bytes": 43600,
+    "sha256": "8b2f1c711f2e55fd4af5317a06decf90bdee12261cd8371e04f770eb4a4b7d1d"
+  },
+  {
+    "path": "strategy_review_20260921/results/measured_queue_audited_games.csv",
+    "bytes": 47196,
+    "sha256": "49f46ec32d9d632101abcac614c32b44fa18232f13f76da1c38a1726d98bea8b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.jsonl.gz",
+    "bytes": 86924,
+    "sha256": "f64604084f8357379c36db87b70e6736b80f8f23e363113d045ee690f39a95eb"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz",
+    "bytes": 770627,
+    "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.jsonl.gz",
+    "bytes": 7730,
+    "sha256": "e3315d7387d7236392b671f287c7a0cf97a196f9b1a713a2d88bbd105e005279"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.jsonl.gz",
+    "bytes": 94055,
+    "sha256": "032f7816617861116550a65114064c15f892db1a442d70b7b2c1e05be89a2857"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.jsonl.gz",
+    "bytes": 930701,
+    "sha256": "365da2e165cf4955e7e5093dcfa71ff5c11aa93d2af588a71a01f5a50fca6be4"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.jsonl.gz",
+    "bytes": 9101,
+    "sha256": "f2b9ab11046576520a49d78c7fc176cc4cc56dbf5a84aee71d6317f77ccfba62"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.jsonl.gz",
+    "bytes": 86086,
+    "sha256": "ce9eb13525e35623b20c7396eb8c59f1d11a590a8172650bf91e29582acbf34d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz",
+    "bytes": 1025896,
+    "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.jsonl.gz",
+    "bytes": 7563,
+    "sha256": "ca94c5cb1221ab0a18e465d2163d944463da0b3b66c59d7fb0e86783551a2328"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.jsonl.gz",
+    "bytes": 85885,
+    "sha256": "bb1cb2e50b0e596ea31d1838ae48f1e77f9956a62a140262ff326d856180e68a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.jsonl.gz",
+    "bytes": 805136,
+    "sha256": "f2053a6f65e2486a72f422bf6d41fa055d5d5f1612cf13faac38773677995e3f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.jsonl.gz",
+    "bytes": 7265,
+    "sha256": "c1effa67b16ce4590620d1af1d37b2e2e886cc2cd3511fe8d05ae29da16fda27"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.jsonl.gz",
+    "bytes": 43393,
+    "sha256": "38be5ca8f6787874ad542892b532922758d99af586081b7137879f1e6bd14906"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.jsonl.gz",
+    "bytes": 111013,
+    "sha256": "5129a083bc314abb9abdadc1ddd4040a12f553f7ccabe63d232ec857149a9692"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.jsonl.gz",
+    "bytes": 1041,
+    "sha256": "37e0db922723df23f51e10a5397e908f1157b7ac7187dff7fa602237f8cbf529"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.jsonl.gz",
+    "bytes": 54717,
+    "sha256": "f43bf2512ff5a170c74dbcb7131a7308228b26595578be42ebc1c34d1dd68027"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz",
+    "bytes": 186401,
+    "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.jsonl.gz",
+    "bytes": 1422,
+    "sha256": "9dee73a18dcc39425471a9f784cb26a2135e235c991514bea6e1a5080bf6c18e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.jsonl.gz",
+    "bytes": 52819,
+    "sha256": "92027b0fd6d156c93302ab3ec17768b10e7c47d86072a8ff7cd325b6c5fa4093"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.jsonl.gz",
+    "bytes": 155018,
+    "sha256": "51a23a5488396750c53f5a601992eee6cf84d7bdfb776be9124ae7e5247de2a9"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.jsonl.gz",
+    "bytes": 1756,
+    "sha256": "fc083b15803d698ccfbfd5a4e9788391d3f5a048b5f8e3b36ae0b99976f9d2c2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.jsonl.gz",
+    "bytes": 73995,
+    "sha256": "00747c47ae1932192d5c506ea0b340e60be87f4fbdce81829a3f9fb455dc6216"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz",
+    "bytes": 313206,
+    "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.jsonl.gz",
+    "bytes": 2639,
+    "sha256": "02a2be695f23d6f72a4e444377158e963ccda95d71fbc6aeb626e0fce9ed8bc0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.jsonl.gz",
+    "bytes": 53720,
+    "sha256": "46ab93a8d76a7e5fc26a51c3e66aa4cb9a806104ad09fa6798f4349fa2b44975"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz",
+    "bytes": 174905,
+    "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.jsonl.gz",
+    "bytes": 1665,
+    "sha256": "cde4590587dceccb00250821268d78de8a3c32aed82bc394b3568cf6f1f52ddc"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.jsonl.gz",
+    "bytes": 37942,
+    "sha256": "5b4576003884cdb4266565b4d8f4f170aad0e18d32ba451d934e1cd78656f3df"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.jsonl.gz",
+    "bytes": 82857,
+    "sha256": "6e467250bbdc7bd59438ad189bb2ec6445f14b993261e161082aaaca4165cdce"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.jsonl.gz",
+    "bytes": 1150,
+    "sha256": "e1eb3408018fc67ec55167b195d2bf289887298a6ad6771bf2ed9c778f523fe0"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.jsonl.gz",
+    "bytes": 79446,
+    "sha256": "91f7a93c777e8520eae9b6b3ff3c6cf12aab22a3a4a0d8dcc55b1d0999b5c3e5"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz",
+    "bytes": 412926,
+    "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.jsonl.gz",
+    "bytes": 7617,
+    "sha256": "5a33f37dafe70685d18160b745c92550b9d5554e920483e744e1ff9d8a17ba35"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.jsonl.gz",
+    "bytes": 64390,
+    "sha256": "4a82e7b7e541835d1f64c537120edb7afdbafc733b645c1d38edf5f8ff40f27b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.jsonl.gz",
+    "bytes": 293244,
+    "sha256": "03693472b0f34e3ff66812c14e509ab92201559e814c4413f0f4bb81e2e506ff"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.jsonl.gz",
+    "bytes": 4935,
+    "sha256": "13daac006b9bf1ffbaf7466c7d596d5628f1a6656fbff5928bc0e5a06d4d3433"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.jsonl.gz",
+    "bytes": 43000,
+    "sha256": "0a1f19543e68ba293cf2ce62f95b67c0eda67ac81bcf26f77d21392933d0d48c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz",
+    "bytes": 110706,
+    "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.jsonl.gz",
+    "bytes": 1252,
+    "sha256": "01ea1a6f21844960ed13e5e901e402fa428afbf5e7348f2a856a2f375608c180"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.jsonl.gz",
+    "bytes": 64596,
+    "sha256": "12cbdb9257b1226e5b80061a112b05cfbe6e4d05312a4353a8481d3354a0ffe1"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz",
+    "bytes": 255344,
+    "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.jsonl.gz",
+    "bytes": 3053,
+    "sha256": "2adf914d3b6ccf875d81f8c3bf481e5619865dbed1a5c2371219b6c6681ead79"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.jsonl.gz",
+    "bytes": 51598,
+    "sha256": "74545cfd9abb29c00a9aaeee76e35b439cd1105eac3eed4d6b01df68710c49b8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.jsonl.gz",
+    "bytes": 117200,
+    "sha256": "760434ad4167f1c3bcebcb0fb9518bbc393a1a98bc21e3b6e4443fc54b92c0b7"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.jsonl.gz",
+    "bytes": 1245,
+    "sha256": "0bbaf1f1c9ab73ed67ff0db9676a372dac345b9b3fc20046bb6c359f349de384"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.jsonl.gz",
+    "bytes": 58182,
+    "sha256": "1c5111875f73badfbbbd4c175c1a711ca212eeb86c2b799edc88980118b9c95e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz",
+    "bytes": 156423,
+    "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.jsonl.gz",
+    "bytes": 1694,
+    "sha256": "701abcc0fc0155bea10d03143a20e457ea4b778b706e6d354416c53777c76cec"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.jsonl.gz",
+    "bytes": 94870,
+    "sha256": "5deb09d883b1326b9c5d8ed05630662269ebb33bb49133feb431068d7c94d760"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz",
+    "bytes": 802084,
+    "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.jsonl.gz",
+    "bytes": 11255,
+    "sha256": "e21980cc2815e62a3ce6096f1c07d966a2bf71124cd372c7ed92b8deb819883d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.jsonl.gz",
+    "bytes": 71297,
+    "sha256": "1f38a4c68c04d929e5090880c59f5cc652b2b9ef40c9cce252a3a5293c734235"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz",
+    "bytes": 376944,
+    "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.jsonl.gz",
+    "bytes": 4977,
+    "sha256": "3884c5caf66252132584665a7ffdf65129b1edc9253c51d0f82840a714d87457"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.jsonl.gz",
+    "bytes": 75527,
+    "sha256": "0986570c108123860413f092f24e10ac8111803d0aa442c47037bb8142a1a741"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.jsonl.gz",
+    "bytes": 429163,
+    "sha256": "ae668f9a1754eedb25346f68615771455dde4e35b9bc4683c64fbe471b7f5a48"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.jsonl.gz",
+    "bytes": 4077,
+    "sha256": "ef5d69d58ed93e718f839a285cfa3c9c165d899957974752bbce29211b7fb509"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.jsonl.gz",
+    "bytes": 54382,
+    "sha256": "e122c61e62bc0c8789b31d96e3cfb5657990321e46c21827c1f22521d0786a64"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.jsonl.gz",
+    "bytes": 231419,
+    "sha256": "4d724c23cc803ab9d70b6434732cac49fa294fafb6a7bfad7bb022007ffb919a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.jsonl.gz",
+    "bytes": 2207,
+    "sha256": "49e0ed94b8bb7db975cfd08f4494fe2279874dcf02eec284d3fd374b75fde03b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.jsonl.gz",
+    "bytes": 49247,
+    "sha256": "7d7aded13bd41551fd5f7d18198813b54ea3f725b7832f7606bf6b01d9b001eb"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.jsonl.gz",
+    "bytes": 162312,
+    "sha256": "42379cc363aeafc95cd13b4d115a061a1e7e8db6351d18dd720ba9fdf55a0504"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.jsonl.gz",
+    "bytes": 1545,
+    "sha256": "5eb2d0d5e3db9d5771348db6c4a0fa76816ce784a43f1e0807bcb23513e4686b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.jsonl.gz",
+    "bytes": 42285,
+    "sha256": "b991db220e4f648ef6cd13ce2598e4d3c6b8d221744bdad9823385d36fed37f2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz",
+    "bytes": 134187,
+    "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.jsonl.gz",
+    "bytes": 1127,
+    "sha256": "8485b889793b04071fbd91244008d2c46396a07a74fe26603e19cdd93d3ef795"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.jsonl.gz",
+    "bytes": 68834,
+    "sha256": "3573905a6a25c27025b4f3c914e1b622848fffb7846447d3c0b983e39a85a8a3"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.jsonl.gz",
+    "bytes": 277516,
+    "sha256": "b3a71626ebd8baf117ae11e5f1be33a400284cd1a1d07b66df9687cd54a7d98a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.jsonl.gz",
+    "bytes": 2012,
+    "sha256": "8a8246c89a60e198a6db3dc11c98dc73595f54f17df16866cf4f15d1ffc65fc6"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.jsonl.gz",
+    "bytes": 49582,
+    "sha256": "a4844dd9ea7a1ae1d988bed8a9786c5a4c869ede97fbd9fccc6df81d404bdea8"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz",
+    "bytes": 132010,
+    "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.jsonl.gz",
+    "bytes": 1108,
+    "sha256": "ba72d34c4540b3624e326d0c2bb7309344c3735239e709fc4fbdbd2a08cd696b"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.jsonl.gz",
+    "bytes": 41445,
+    "sha256": "0a52c5684eaad6edef52e1b5d0adc000a763b7d646877d6d2aa7dd3765b32006"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.jsonl.gz",
+    "bytes": 106191,
+    "sha256": "f6a24d0e6bb263055d6b14cb76ebd23e316a0ef9f0831af8a4294e6ca266022a"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.jsonl.gz",
+    "bytes": 1110,
+    "sha256": "352c9b5f34b5a7fc4a35c52401cc586f3bf597d2634470f8d44a544e8ba3baa2"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.jsonl.gz",
+    "bytes": 41018,
+    "sha256": "b6d120e94ad3f1d54b0021cd29b017101640acca2783259f03c8d48cb7e597b4"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.jsonl.gz",
+    "bytes": 95297,
+    "sha256": "0d1210ea3346f4e1da9d6c5893672382a629c2a5deeedaea027fe0088ca584a9"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.jsonl.gz",
+    "bytes": 743,
+    "sha256": "268ca8ac55732fad03855747c52a6e7adb1681767735c767170c0335c3045c19"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.jsonl.gz",
+    "bytes": 38928,
+    "sha256": "e38a3052fb89fb47f139ff2ae1a0092b570738cb4e2c1e87c1f9d651bb4a7b64"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.jsonl.gz",
+    "bytes": 86743,
+    "sha256": "2881d47242d1b02500e925f613713a97a0026ea692515848aa8c33680a84450e"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.jsonl.gz",
+    "bytes": 962,
+    "sha256": "6fb891bb4911f6f6d837ad8a17577675eb01b3492548b246629f5a7b7134eccc"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.jsonl.gz",
+    "bytes": 49581,
+    "sha256": "40fe378b8a4f34180994949d402ce42156cc59fa27c2324ec3cfa5951935a8c4"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz",
+    "bytes": 148836,
+    "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.jsonl.gz",
+    "bytes": 1381,
+    "sha256": "d14b7c8bed03e3b57240eb4d426e09d65127492610fafbea14f17d59822c3a24"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.jsonl.gz",
+    "bytes": 58253,
+    "sha256": "3e24651d4a35676bbe0edad39b243e9ae7d6813933787ece97a814e84028ba97"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.jsonl.gz",
+    "bytes": 241407,
+    "sha256": "4946d0b98ef9de675e8d677c08398a38c04c8468acb3438a1db0613ab547504d"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.jsonl.gz",
+    "bytes": 2011,
+    "sha256": "d1dc299d03ea579707316fa8a0d1a952ff6c9c6687df8aec9e2cbc8fd8c1ddef"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.jsonl.gz",
+    "bytes": 34114,
+    "sha256": "c137fbd00fa09f727f0a2666488cb83b14b3fd8837ea3097b59f43d8686bcd36"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz",
+    "bytes": 98120,
+    "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.jsonl.gz",
+    "bytes": 1347,
+    "sha256": "335c020dba095ce5d919952827312c581da4d9a6f0d07c0084bba0df149a00bf"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.jsonl.gz",
+    "bytes": 87910,
+    "sha256": "76a3f83cf75f084fe00843e861ab4dd8076f707e645127f251ec0fde23aecad4"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz",
+    "bytes": 1462393,
+    "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.jsonl.gz",
+    "bytes": 12061,
+    "sha256": "358df33a1b6baf1e2998bd311b5245ff5e49bbf9aa066acd2b4e53268f84d0bd"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.jsonl.gz",
+    "bytes": 62326,
+    "sha256": "f95ea5d8c1b8c94fceb53746edabd1315091c52ae9e98922df67b2b1ed163523"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.jsonl.gz",
+    "bytes": 791568,
+    "sha256": "2d6c491920340b2b74dc2a6ea5830fb310e8fca676feb16945418d37ee1bbb20"
+  },
+  {
+    "path": "maker_replay_round2/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.jsonl.gz",
+    "bytes": 8603,
+    "sha256": "7bc5cadaffc3f12dfbedbafcb05a0d4a7dba5a5a024bfac44de458dfdc704810"
+  },
+  {
+    "path": "maker_replay_round2/data/candle_manifest.json",
+    "bytes": 2893751,
+    "sha256": "3903cb91f06d1789e00974af7a020cdb432ae70a8a1cd6ed0b8fb48140a01e73"
+  },
+  {
+    "path": "maker_replay_round2/data/forward_books.jsonl",
+    "bytes": 1863,
+    "sha256": "7123dab9c6008ef2876cf7714d486efd64a2b2bdee20c8106109b656701d53bf"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_baseline_regression_fills.jsonl.gz",
+    "bytes": 1399714,
+    "sha256": "8667fa128d2bc500379d952900450c0f20593edf8e6db9ef5b0e4870fb1c0620"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_early_queue3300_fills.jsonl.gz",
+    "bytes": 178470,
+    "sha256": "252d3abc4ed9162fd744abbccf755efe0b5b64e7ed4f04adcb51a5e62ac7d0fb"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_exit_depth50_fills.jsonl.gz",
+    "bytes": 1399336,
+    "sha256": "5bf0b6b20b0f961eea65356cefc931a39ddea9edbc71e4171bec64a232137024"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_profile_fixed_fills.jsonl.gz",
+    "bytes": 1399708,
+    "sha256": "ff995e572a49e790c3073e9c5d0b76bc0689547dbf74e5e54cda6913bc06bff8"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_profile_reduce_fills.jsonl.gz",
+    "bytes": 381841,
+    "sha256": "8882a2ec104cfc22562bd739d4f653d70de6d0b539829fb8dd422b885cf7b717"
+  },
+  {
+    "path": "maker_replay_round2/results/candles_winddown5m_fills.jsonl.gz",
+    "bytes": 1399190,
+    "sha256": "ff3ba4833810315e5ca9a2ca5d310d7e5d97d7c5660ad98fe53b300c3ccaf8fe"
+  },
+  {
+    "path": "maker_replay_round2/results/legacy_exact_window_fills.csv.gz",
+    "bytes": 1491176,
+    "sha256": "4dd175e3f14dbb8a398661b48fc5e049475cda5e6f92c1908b2442fcb276b013"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_exit_depth50_fills.jsonl.gz",
+    "bytes": 482964,
+    "sha256": "a1c5d8b045016bdc6db9534be43aea78acb9beae2e779c53b245eee5a10f63b4"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_fixed_fills.jsonl.gz",
+    "bytes": 482327,
+    "sha256": "10d4770b0d844438ddd3290ac2b0d5641ec4d11d47bf5d114d3bece0599775e8"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_nondirect_precision_fills.jsonl.gz",
+    "bytes": 456052,
+    "sha256": "46c45c120851a0692f5381432133fe8cd1c642b640e62b060e9d0b4e9d2badbb"
+  },
+  {
+    "path": "maker_replay_round2/results/profile_reduce_fills.jsonl.gz",
+    "bytes": 141669,
+    "sha256": "f1fc068f414cc704d7a3e84b71d566060140b3b357fd0caed0ce14b7507f3821"
+  },
+  {
+    "path": "maker_replay_round2/results/queue3300_fixed_fills.jsonl.gz",
+    "bytes": 203361,
+    "sha256": "dd9597db8f83144853dbc99e850b006b22620bdf8070fa769da47b33cc7e5e39"
+  },
+  {
+    "path": "maker_replay_round2/results/queue3300_reduce_fills.jsonl.gz",
+    "bytes": 71472,
+    "sha256": "dedad4e3694fd707712e1911a7061cb22b49b857c285c8ff621120aed992057c"
+  },
+  {
+    "path": "maker_replay_round2/results/thin_queue_optimistic_fills.jsonl.gz",
+    "bytes": 1174006,
+    "sha256": "7e8c0c32362d2e84ba5bcccb0b222984c812e516957b1cf8f0613ab12c044785"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.jsonl.gz",
+    "bytes": 86924,
+    "sha256": "f64604084f8357379c36db87b70e6736b80f8f23e363113d045ee690f39a95eb"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz",
+    "bytes": 770627,
+    "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.jsonl.gz",
+    "bytes": 7730,
+    "sha256": "e3315d7387d7236392b671f287c7a0cf97a196f9b1a713a2d88bbd105e005279"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.jsonl.gz",
+    "bytes": 94055,
+    "sha256": "032f7816617861116550a65114064c15f892db1a442d70b7b2c1e05be89a2857"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.jsonl.gz",
+    "bytes": 930701,
+    "sha256": "365da2e165cf4955e7e5093dcfa71ff5c11aa93d2af588a71a01f5a50fca6be4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.jsonl.gz",
+    "bytes": 9101,
+    "sha256": "f2b9ab11046576520a49d78c7fc176cc4cc56dbf5a84aee71d6317f77ccfba62"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.jsonl.gz",
+    "bytes": 86086,
+    "sha256": "ce9eb13525e35623b20c7396eb8c59f1d11a590a8172650bf91e29582acbf34d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz",
+    "bytes": 1025896,
+    "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.jsonl.gz",
+    "bytes": 7563,
+    "sha256": "ca94c5cb1221ab0a18e465d2163d944463da0b3b66c59d7fb0e86783551a2328"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.jsonl.gz",
+    "bytes": 85885,
+    "sha256": "bb1cb2e50b0e596ea31d1838ae48f1e77f9956a62a140262ff326d856180e68a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.jsonl.gz",
+    "bytes": 805136,
+    "sha256": "f2053a6f65e2486a72f422bf6d41fa055d5d5f1612cf13faac38773677995e3f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.jsonl.gz",
+    "bytes": 7265,
+    "sha256": "c1effa67b16ce4590620d1af1d37b2e2e886cc2cd3511fe8d05ae29da16fda27"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.jsonl.gz",
+    "bytes": 43393,
+    "sha256": "38be5ca8f6787874ad542892b532922758d99af586081b7137879f1e6bd14906"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.jsonl.gz",
+    "bytes": 111013,
+    "sha256": "5129a083bc314abb9abdadc1ddd4040a12f553f7ccabe63d232ec857149a9692"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.jsonl.gz",
+    "bytes": 1041,
+    "sha256": "37e0db922723df23f51e10a5397e908f1157b7ac7187dff7fa602237f8cbf529"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.jsonl.gz",
+    "bytes": 54717,
+    "sha256": "f43bf2512ff5a170c74dbcb7131a7308228b26595578be42ebc1c34d1dd68027"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz",
+    "bytes": 186401,
+    "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.jsonl.gz",
+    "bytes": 1422,
+    "sha256": "9dee73a18dcc39425471a9f784cb26a2135e235c991514bea6e1a5080bf6c18e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.jsonl.gz",
+    "bytes": 52819,
+    "sha256": "92027b0fd6d156c93302ab3ec17768b10e7c47d86072a8ff7cd325b6c5fa4093"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.jsonl.gz",
+    "bytes": 155018,
+    "sha256": "51a23a5488396750c53f5a601992eee6cf84d7bdfb776be9124ae7e5247de2a9"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.jsonl.gz",
+    "bytes": 1756,
+    "sha256": "fc083b15803d698ccfbfd5a4e9788391d3f5a048b5f8e3b36ae0b99976f9d2c2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.jsonl.gz",
+    "bytes": 73995,
+    "sha256": "00747c47ae1932192d5c506ea0b340e60be87f4fbdce81829a3f9fb455dc6216"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz",
+    "bytes": 313206,
+    "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.jsonl.gz",
+    "bytes": 2639,
+    "sha256": "02a2be695f23d6f72a4e444377158e963ccda95d71fbc6aeb626e0fce9ed8bc0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.jsonl.gz",
+    "bytes": 53720,
+    "sha256": "46ab93a8d76a7e5fc26a51c3e66aa4cb9a806104ad09fa6798f4349fa2b44975"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz",
+    "bytes": 174905,
+    "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.jsonl.gz",
+    "bytes": 1665,
+    "sha256": "cde4590587dceccb00250821268d78de8a3c32aed82bc394b3568cf6f1f52ddc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.jsonl.gz",
+    "bytes": 37942,
+    "sha256": "5b4576003884cdb4266565b4d8f4f170aad0e18d32ba451d934e1cd78656f3df"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.jsonl.gz",
+    "bytes": 82857,
+    "sha256": "6e467250bbdc7bd59438ad189bb2ec6445f14b993261e161082aaaca4165cdce"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.jsonl.gz",
+    "bytes": 1150,
+    "sha256": "e1eb3408018fc67ec55167b195d2bf289887298a6ad6771bf2ed9c778f523fe0"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.jsonl.gz",
+    "bytes": 79446,
+    "sha256": "91f7a93c777e8520eae9b6b3ff3c6cf12aab22a3a4a0d8dcc55b1d0999b5c3e5"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz",
+    "bytes": 412926,
+    "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.jsonl.gz",
+    "bytes": 7617,
+    "sha256": "5a33f37dafe70685d18160b745c92550b9d5554e920483e744e1ff9d8a17ba35"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.jsonl.gz",
+    "bytes": 64390,
+    "sha256": "4a82e7b7e541835d1f64c537120edb7afdbafc733b645c1d38edf5f8ff40f27b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.jsonl.gz",
+    "bytes": 293244,
+    "sha256": "03693472b0f34e3ff66812c14e509ab92201559e814c4413f0f4bb81e2e506ff"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.jsonl.gz",
+    "bytes": 4935,
+    "sha256": "13daac006b9bf1ffbaf7466c7d596d5628f1a6656fbff5928bc0e5a06d4d3433"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.jsonl.gz",
+    "bytes": 43000,
+    "sha256": "0a1f19543e68ba293cf2ce62f95b67c0eda67ac81bcf26f77d21392933d0d48c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz",
+    "bytes": 110706,
+    "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.jsonl.gz",
+    "bytes": 1252,
+    "sha256": "01ea1a6f21844960ed13e5e901e402fa428afbf5e7348f2a856a2f375608c180"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.jsonl.gz",
+    "bytes": 64596,
+    "sha256": "12cbdb9257b1226e5b80061a112b05cfbe6e4d05312a4353a8481d3354a0ffe1"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz",
+    "bytes": 255344,
+    "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.jsonl.gz",
+    "bytes": 3053,
+    "sha256": "2adf914d3b6ccf875d81f8c3bf481e5619865dbed1a5c2371219b6c6681ead79"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.jsonl.gz",
+    "bytes": 51598,
+    "sha256": "74545cfd9abb29c00a9aaeee76e35b439cd1105eac3eed4d6b01df68710c49b8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.jsonl.gz",
+    "bytes": 117200,
+    "sha256": "760434ad4167f1c3bcebcb0fb9518bbc393a1a98bc21e3b6e4443fc54b92c0b7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.jsonl.gz",
+    "bytes": 1245,
+    "sha256": "0bbaf1f1c9ab73ed67ff0db9676a372dac345b9b3fc20046bb6c359f349de384"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.jsonl.gz",
+    "bytes": 58182,
+    "sha256": "1c5111875f73badfbbbd4c175c1a711ca212eeb86c2b799edc88980118b9c95e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz",
+    "bytes": 156423,
+    "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.jsonl.gz",
+    "bytes": 1694,
+    "sha256": "701abcc0fc0155bea10d03143a20e457ea4b778b706e6d354416c53777c76cec"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.jsonl.gz",
+    "bytes": 94870,
+    "sha256": "5deb09d883b1326b9c5d8ed05630662269ebb33bb49133feb431068d7c94d760"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz",
+    "bytes": 802084,
+    "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.jsonl.gz",
+    "bytes": 11255,
+    "sha256": "e21980cc2815e62a3ce6096f1c07d966a2bf71124cd372c7ed92b8deb819883d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.jsonl.gz",
+    "bytes": 71297,
+    "sha256": "1f38a4c68c04d929e5090880c59f5cc652b2b9ef40c9cce252a3a5293c734235"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz",
+    "bytes": 376944,
+    "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.jsonl.gz",
+    "bytes": 4977,
+    "sha256": "3884c5caf66252132584665a7ffdf65129b1edc9253c51d0f82840a714d87457"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.jsonl.gz",
+    "bytes": 75527,
+    "sha256": "0986570c108123860413f092f24e10ac8111803d0aa442c47037bb8142a1a741"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.jsonl.gz",
+    "bytes": 429163,
+    "sha256": "ae668f9a1754eedb25346f68615771455dde4e35b9bc4683c64fbe471b7f5a48"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.jsonl.gz",
+    "bytes": 4077,
+    "sha256": "ef5d69d58ed93e718f839a285cfa3c9c165d899957974752bbce29211b7fb509"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.jsonl.gz",
+    "bytes": 54382,
+    "sha256": "e122c61e62bc0c8789b31d96e3cfb5657990321e46c21827c1f22521d0786a64"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.jsonl.gz",
+    "bytes": 231419,
+    "sha256": "4d724c23cc803ab9d70b6434732cac49fa294fafb6a7bfad7bb022007ffb919a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.jsonl.gz",
+    "bytes": 2207,
+    "sha256": "49e0ed94b8bb7db975cfd08f4494fe2279874dcf02eec284d3fd374b75fde03b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.jsonl.gz",
+    "bytes": 49247,
+    "sha256": "7d7aded13bd41551fd5f7d18198813b54ea3f725b7832f7606bf6b01d9b001eb"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.jsonl.gz",
+    "bytes": 162312,
+    "sha256": "42379cc363aeafc95cd13b4d115a061a1e7e8db6351d18dd720ba9fdf55a0504"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.jsonl.gz",
+    "bytes": 1545,
+    "sha256": "5eb2d0d5e3db9d5771348db6c4a0fa76816ce784a43f1e0807bcb23513e4686b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.jsonl.gz",
+    "bytes": 42285,
+    "sha256": "b991db220e4f648ef6cd13ce2598e4d3c6b8d221744bdad9823385d36fed37f2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz",
+    "bytes": 134187,
+    "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.jsonl.gz",
+    "bytes": 1127,
+    "sha256": "8485b889793b04071fbd91244008d2c46396a07a74fe26603e19cdd93d3ef795"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.jsonl.gz",
+    "bytes": 68834,
+    "sha256": "3573905a6a25c27025b4f3c914e1b622848fffb7846447d3c0b983e39a85a8a3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.jsonl.gz",
+    "bytes": 277516,
+    "sha256": "b3a71626ebd8baf117ae11e5f1be33a400284cd1a1d07b66df9687cd54a7d98a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.jsonl.gz",
+    "bytes": 2012,
+    "sha256": "8a8246c89a60e198a6db3dc11c98dc73595f54f17df16866cf4f15d1ffc65fc6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.jsonl.gz",
+    "bytes": 49582,
+    "sha256": "a4844dd9ea7a1ae1d988bed8a9786c5a4c869ede97fbd9fccc6df81d404bdea8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz",
+    "bytes": 132010,
+    "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.jsonl.gz",
+    "bytes": 1108,
+    "sha256": "ba72d34c4540b3624e326d0c2bb7309344c3735239e709fc4fbdbd2a08cd696b"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.jsonl.gz",
+    "bytes": 41445,
+    "sha256": "0a52c5684eaad6edef52e1b5d0adc000a763b7d646877d6d2aa7dd3765b32006"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.jsonl.gz",
+    "bytes": 106191,
+    "sha256": "f6a24d0e6bb263055d6b14cb76ebd23e316a0ef9f0831af8a4294e6ca266022a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.jsonl.gz",
+    "bytes": 1110,
+    "sha256": "352c9b5f34b5a7fc4a35c52401cc586f3bf597d2634470f8d44a544e8ba3baa2"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.jsonl.gz",
+    "bytes": 41018,
+    "sha256": "b6d120e94ad3f1d54b0021cd29b017101640acca2783259f03c8d48cb7e597b4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.jsonl.gz",
+    "bytes": 95297,
+    "sha256": "0d1210ea3346f4e1da9d6c5893672382a629c2a5deeedaea027fe0088ca584a9"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.jsonl.gz",
+    "bytes": 743,
+    "sha256": "268ca8ac55732fad03855747c52a6e7adb1681767735c767170c0335c3045c19"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.jsonl.gz",
+    "bytes": 38928,
+    "sha256": "e38a3052fb89fb47f139ff2ae1a0092b570738cb4e2c1e87c1f9d651bb4a7b64"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.jsonl.gz",
+    "bytes": 86743,
+    "sha256": "2881d47242d1b02500e925f613713a97a0026ea692515848aa8c33680a84450e"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.jsonl.gz",
+    "bytes": 962,
+    "sha256": "6fb891bb4911f6f6d837ad8a17577675eb01b3492548b246629f5a7b7134eccc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.jsonl.gz",
+    "bytes": 49581,
+    "sha256": "40fe378b8a4f34180994949d402ce42156cc59fa27c2324ec3cfa5951935a8c4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz",
+    "bytes": 148836,
+    "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.jsonl.gz",
+    "bytes": 1381,
+    "sha256": "d14b7c8bed03e3b57240eb4d426e09d65127492610fafbea14f17d59822c3a24"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.jsonl.gz",
+    "bytes": 58253,
+    "sha256": "3e24651d4a35676bbe0edad39b243e9ae7d6813933787ece97a814e84028ba97"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.jsonl.gz",
+    "bytes": 241407,
+    "sha256": "4946d0b98ef9de675e8d677c08398a38c04c8468acb3438a1db0613ab547504d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.jsonl.gz",
+    "bytes": 2011,
+    "sha256": "d1dc299d03ea579707316fa8a0d1a952ff6c9c6687df8aec9e2cbc8fd8c1ddef"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.jsonl.gz",
+    "bytes": 34114,
+    "sha256": "c137fbd00fa09f727f0a2666488cb83b14b3fd8837ea3097b59f43d8686bcd36"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz",
+    "bytes": 98120,
+    "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.jsonl.gz",
+    "bytes": 1347,
+    "sha256": "335c020dba095ce5d919952827312c581da4d9a6f0d07c0084bba0df149a00bf"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.jsonl.gz",
+    "bytes": 87910,
+    "sha256": "76a3f83cf75f084fe00843e861ab4dd8076f707e645127f251ec0fde23aecad4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz",
+    "bytes": 1462393,
+    "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.jsonl.gz",
+    "bytes": 12061,
+    "sha256": "358df33a1b6baf1e2998bd311b5245ff5e49bbf9aa066acd2b4e53268f84d0bd"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.jsonl.gz",
+    "bytes": 62326,
+    "sha256": "f95ea5d8c1b8c94fceb53746edabd1315091c52ae9e98922df67b2b1ed163523"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.jsonl.gz",
+    "bytes": 791568,
+    "sha256": "2d6c491920340b2b74dc2a6ea5830fb310e8fca676feb16945418d37ee1bbb20"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.jsonl.gz",
+    "bytes": 8603,
+    "sha256": "7bc5cadaffc3f12dfbedbafcb05a0d4a7dba5a5a024bfac44de458dfdc704810"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/candle_manifest.json",
+    "bytes": 2893751,
+    "sha256": "3903cb91f06d1789e00974af7a020cdb432ae70a8a1cd6ed0b8fb48140a01e73"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/data/forward_books.jsonl",
+    "bytes": 1863,
+    "sha256": "7123dab9c6008ef2876cf7714d486efd64a2b2bdee20c8106109b656701d53bf"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/forward/observations.jsonl",
+    "bytes": 1709467,
+    "sha256": "dc2214d2b4130c0cfc26f90d899d03819dbf8d00ab7935857b0922225af1b8a5"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q100000_preserve_fills.jsonl.gz",
+    "bytes": 7682,
+    "sha256": "3689ca9dfa0a3ae72d43e25765ad2a7513a02c333f0bfd6954cea429a73ad90a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q100000_route_fills.jsonl.gz",
+    "bytes": 11026,
+    "sha256": "d76c9b28484a60d1fde4c36e5c140cced67b2d1c381b6f7438cd52ff709838fb"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q10000_preserve_fills.jsonl.gz",
+    "bytes": 85217,
+    "sha256": "df8b021104681057717c866dd0b0118f3db8d3fa66c3d2c4ef2279574c6273f8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q10000_route_fills.jsonl.gz",
+    "bytes": 122140,
+    "sha256": "41e282ddb9448f710ea71f20e9727645c03735440484395eeab61ded45abd782"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_churn60_fills.jsonl.gz",
+    "bytes": 474902,
+    "sha256": "3db7911ad7d345571723980d9d9ab6109a3e9e0c1fd266231583d6ff46e64c8d"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_combined_fills.jsonl.gz",
+    "bytes": 2194298,
+    "sha256": "88fd7b0aa6cd6535366c3843ccd2dc3aa683f18a3f9a6ffddf52e7940069cf36"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_combined_race250_fills.jsonl.gz",
+    "bytes": 2182978,
+    "sha256": "e1fcf982ad0d1d7ffb6c0f346252e3b5ebdc748ed661321cbdcbc086414778bc"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_improve_exit_fills.jsonl.gz",
+    "bytes": 2151950,
+    "sha256": "d1dddad200fbab7ad0da1fe3f9c847409e9f106c25a5e5f8a54feb988dee66f8"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_improve_exit_race250_fills.jsonl.gz",
+    "bytes": 2148914,
+    "sha256": "e0671678f0f3fd2a3057a2ecbccc5ab08a2741d7489b70c027e46b48060cad06"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_margin_only_fills.jsonl.gz",
+    "bytes": 870102,
+    "sha256": "921526e8b696b5b8123f8368988e98ef49cd686bb1fccf6883bcc0371212e5f6"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_preserve_fills.jsonl.gz",
+    "bytes": 2161037,
+    "sha256": "f6df4e1fde4f979e7c423d76ce886883b53c9b02b6357a275ee61b1aca12a936"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q291_route_fills.jsonl.gz",
+    "bytes": 2182312,
+    "sha256": "3a88e0ddefe981f255caa38a9db646cad8a1db3848f3617ae96ee187bfe81881"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_churn60_fills.jsonl.gz",
+    "bytes": 23608,
+    "sha256": "495c5b3a50f88bb2a35bcb9047b8100ba433846ec20730ad7291781272310f4a"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_combined_fills.jsonl.gz",
+    "bytes": 359964,
+    "sha256": "b1b45da71553ce4ddb57aaf8cad0a3fac28d2bd84c9ab1c2eef9240093b520af"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_combined_race250_fills.jsonl.gz",
+    "bytes": 358724,
+    "sha256": "7a09ac3079c39a2aecf29289f76a83312041c1631495059b798209ab6f1901a7"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_improve_exit_fills.jsonl.gz",
+    "bytes": 267155,
+    "sha256": "65a6942927247922cfedf301167b1b3d3abcd06ca33044a38684f2044c45a882"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_improve_exit_race250_fills.jsonl.gz",
+    "bytes": 266583,
+    "sha256": "027724b70992b61bbd5e9e01e9dc155ab3db1dc2e1ecef88d4129c2f5aff03a9"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_margin_only_fills.jsonl.gz",
+    "bytes": 122790,
+    "sha256": "b53089704537c51def0de213af904c435a35f6f1a180a22e32e5d1103193d4f4"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_preserve_fills.jsonl.gz",
+    "bytes": 269859,
+    "sha256": "e5e51e0a1ed43617688d513b9db68d9805c10829d7cc22f7e250c7c2b5219820"
+  },
+  {
+    "path": "nfl_queue_lab_20260921/results/q3300_route_fills.jsonl.gz",
+    "bytes": 356039,
+    "sha256": "ac71076b198f070e435394e4ca97f9796e3fad17da581a12ee82b3f258018742"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.candles.jsonl.gz",
+    "bytes": 86924,
+    "sha256": "f64604084f8357379c36db87b70e6736b80f8f23e363113d045ee690f39a95eb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.jsonl.gz",
+    "bytes": 770627,
+    "sha256": "00bf8d2dd36fd8e01ca95fc09d5efe8cdb1210517f27a3280e838aacc2367b43"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-NE.postlude.jsonl.gz",
+    "bytes": 7730,
+    "sha256": "e3315d7387d7236392b671f287c7a0cf97a196f9b1a713a2d88bbd105e005279"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.candles.jsonl.gz",
+    "bytes": 94055,
+    "sha256": "032f7816617861116550a65114064c15f892db1a442d70b7b2c1e05be89a2857"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.jsonl.gz",
+    "bytes": 930701,
+    "sha256": "365da2e165cf4955e7e5093dcfa71ff5c11aa93d2af588a71a01f5a50fca6be4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP09NESEA/KXNFLGAME-26SEP09NESEA-SEA.postlude.jsonl.gz",
+    "bytes": 9101,
+    "sha256": "f2b9ab11046576520a49d78c7fc176cc4cc56dbf5a84aee71d6317f77ccfba62"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.candles.jsonl.gz",
+    "bytes": 86086,
+    "sha256": "ce9eb13525e35623b20c7396eb8c59f1d11a590a8172650bf91e29582acbf34d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.jsonl.gz",
+    "bytes": 1025896,
+    "sha256": "ab728e580d2516529a370eab3756058f02528db65db7b912acaeff95f6662c9b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-LAR.postlude.jsonl.gz",
+    "bytes": 7563,
+    "sha256": "ca94c5cb1221ab0a18e465d2163d944463da0b3b66c59d7fb0e86783551a2328"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.candles.jsonl.gz",
+    "bytes": 85885,
+    "sha256": "bb1cb2e50b0e596ea31d1838ae48f1e77f9956a62a140262ff326d856180e68a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.jsonl.gz",
+    "bytes": 805136,
+    "sha256": "f2053a6f65e2486a72f422bf6d41fa055d5d5f1612cf13faac38773677995e3f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP10SFLAR/KXNFLGAME-26SEP10SFLAR-SF.postlude.jsonl.gz",
+    "bytes": 7265,
+    "sha256": "c1effa67b16ce4590620d1af1d37b2e2e886cc2cd3511fe8d05ae29da16fda27"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.candles.jsonl.gz",
+    "bytes": 43393,
+    "sha256": "38be5ca8f6787874ad542892b532922758d99af586081b7137879f1e6bd14906"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.jsonl.gz",
+    "bytes": 111013,
+    "sha256": "5129a083bc314abb9abdadc1ddd4040a12f553f7ccabe63d232ec857149a9692"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-ARI.postlude.jsonl.gz",
+    "bytes": 1041,
+    "sha256": "37e0db922723df23f51e10a5397e908f1157b7ac7187dff7fa602237f8cbf529"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.candles.jsonl.gz",
+    "bytes": 54717,
+    "sha256": "f43bf2512ff5a170c74dbcb7131a7308228b26595578be42ebc1c34d1dd68027"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.jsonl.gz",
+    "bytes": 186401,
+    "sha256": "68ebe7d495f75ae6000e43028c1f8281ca659b165e34882ca737d27898fdca49"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ARILAC/KXNFLGAME-26SEP13ARILAC-LAC.postlude.jsonl.gz",
+    "bytes": 1422,
+    "sha256": "9dee73a18dcc39425471a9f784cb26a2135e235c991514bea6e1a5080bf6c18e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.candles.jsonl.gz",
+    "bytes": 52819,
+    "sha256": "92027b0fd6d156c93302ab3ec17768b10e7c47d86072a8ff7cd325b6c5fa4093"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.jsonl.gz",
+    "bytes": 155018,
+    "sha256": "51a23a5488396750c53f5a601992eee6cf84d7bdfb776be9124ae7e5247de2a9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-ATL.postlude.jsonl.gz",
+    "bytes": 1756,
+    "sha256": "fc083b15803d698ccfbfd5a4e9788391d3f5a048b5f8e3b36ae0b99976f9d2c2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.candles.jsonl.gz",
+    "bytes": 73995,
+    "sha256": "00747c47ae1932192d5c506ea0b340e60be87f4fbdce81829a3f9fb455dc6216"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.jsonl.gz",
+    "bytes": 313206,
+    "sha256": "f70a89226ec0a22c9d624117f5be487e576d288a4c49d84c5b0383728f7b0bc8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13ATLPIT/KXNFLGAME-26SEP13ATLPIT-PIT.postlude.jsonl.gz",
+    "bytes": 2639,
+    "sha256": "02a2be695f23d6f72a4e444377158e963ccda95d71fbc6aeb626e0fce9ed8bc0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.candles.jsonl.gz",
+    "bytes": 53720,
+    "sha256": "46ab93a8d76a7e5fc26a51c3e66aa4cb9a806104ad09fa6798f4349fa2b44975"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.jsonl.gz",
+    "bytes": 174905,
+    "sha256": "82beeb1a5e8c56453d291bc58777ef018b80eebaaeed59ac087a84ec7a58512a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-BAL.postlude.jsonl.gz",
+    "bytes": 1665,
+    "sha256": "cde4590587dceccb00250821268d78de8a3c32aed82bc394b3568cf6f1f52ddc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.candles.jsonl.gz",
+    "bytes": 37942,
+    "sha256": "5b4576003884cdb4266565b4d8f4f170aad0e18d32ba451d934e1cd78656f3df"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.jsonl.gz",
+    "bytes": 82857,
+    "sha256": "6e467250bbdc7bd59438ad189bb2ec6445f14b993261e161082aaaca4165cdce"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BALIND/KXNFLGAME-26SEP13BALIND-IND.postlude.jsonl.gz",
+    "bytes": 1150,
+    "sha256": "e1eb3408018fc67ec55167b195d2bf289887298a6ad6771bf2ed9c778f523fe0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.candles.jsonl.gz",
+    "bytes": 79446,
+    "sha256": "91f7a93c777e8520eae9b6b3ff3c6cf12aab22a3a4a0d8dcc55b1d0999b5c3e5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.jsonl.gz",
+    "bytes": 412926,
+    "sha256": "1613fb20d81605d83e03ddb709208929ca7dd3db7fc3da6f6d1ba3620e8ec81f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-BUF.postlude.jsonl.gz",
+    "bytes": 7617,
+    "sha256": "5a33f37dafe70685d18160b745c92550b9d5554e920483e744e1ff9d8a17ba35"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.candles.jsonl.gz",
+    "bytes": 64390,
+    "sha256": "4a82e7b7e541835d1f64c537120edb7afdbafc733b645c1d38edf5f8ff40f27b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.jsonl.gz",
+    "bytes": 293244,
+    "sha256": "03693472b0f34e3ff66812c14e509ab92201559e814c4413f0f4bb81e2e506ff"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13BUFHOU/KXNFLGAME-26SEP13BUFHOU-HOU.postlude.jsonl.gz",
+    "bytes": 4935,
+    "sha256": "13daac006b9bf1ffbaf7466c7d596d5628f1a6656fbff5928bc0e5a06d4d3433"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.candles.jsonl.gz",
+    "bytes": 43000,
+    "sha256": "0a1f19543e68ba293cf2ce62f95b67c0eda67ac81bcf26f77d21392933d0d48c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.jsonl.gz",
+    "bytes": 110706,
+    "sha256": "4f9ee21bb757be493d11a4713081a1c04289b8064e07832071a941852da91916"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CAR.postlude.jsonl.gz",
+    "bytes": 1252,
+    "sha256": "01ea1a6f21844960ed13e5e901e402fa428afbf5e7348f2a856a2f375608c180"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.candles.jsonl.gz",
+    "bytes": 64596,
+    "sha256": "12cbdb9257b1226e5b80061a112b05cfbe6e4d05312a4353a8481d3354a0ffe1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.jsonl.gz",
+    "bytes": 255344,
+    "sha256": "c9f21bc0d71765dd4cb46611cbc7382eaca8c6ec4732eeb4a5473c71b287a2bd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CHICAR/KXNFLGAME-26SEP13CHICAR-CHI.postlude.jsonl.gz",
+    "bytes": 3053,
+    "sha256": "2adf914d3b6ccf875d81f8c3bf481e5619865dbed1a5c2371219b6c6681ead79"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.candles.jsonl.gz",
+    "bytes": 51598,
+    "sha256": "74545cfd9abb29c00a9aaeee76e35b439cd1105eac3eed4d6b01df68710c49b8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.jsonl.gz",
+    "bytes": 117200,
+    "sha256": "760434ad4167f1c3bcebcb0fb9518bbc393a1a98bc21e3b6e4443fc54b92c0b7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-CLE.postlude.jsonl.gz",
+    "bytes": 1245,
+    "sha256": "0bbaf1f1c9ab73ed67ff0db9676a372dac345b9b3fc20046bb6c359f349de384"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.candles.jsonl.gz",
+    "bytes": 58182,
+    "sha256": "1c5111875f73badfbbbd4c175c1a711ca212eeb86c2b799edc88980118b9c95e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.jsonl.gz",
+    "bytes": 156423,
+    "sha256": "c5d055bd0352b5c76411723eb85c784d6c2f8005beb57ba151a36ee759c89d1c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13CLEJAC/KXNFLGAME-26SEP13CLEJAC-JAC.postlude.jsonl.gz",
+    "bytes": 1694,
+    "sha256": "701abcc0fc0155bea10d03143a20e457ea4b778b706e6d354416c53777c76cec"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.candles.jsonl.gz",
+    "bytes": 94870,
+    "sha256": "5deb09d883b1326b9c5d8ed05630662269ebb33bb49133feb431068d7c94d760"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.jsonl.gz",
+    "bytes": 802084,
+    "sha256": "c5e11fc472553611dcc2b221947154a61770677582cda4d9a679b24ae76e0a52"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-DAL.postlude.jsonl.gz",
+    "bytes": 11255,
+    "sha256": "e21980cc2815e62a3ce6096f1c07d966a2bf71124cd372c7ed92b8deb819883d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.candles.jsonl.gz",
+    "bytes": 71297,
+    "sha256": "1f38a4c68c04d929e5090880c59f5cc652b2b9ef40c9cce252a3a5293c734235"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.jsonl.gz",
+    "bytes": 376944,
+    "sha256": "d3e4f7664a065a2cfb52a9981341de467113aae0d04e132d71ebb5e39ca552fd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13DALNYG/KXNFLGAME-26SEP13DALNYG-NYG.postlude.jsonl.gz",
+    "bytes": 4977,
+    "sha256": "3884c5caf66252132584665a7ffdf65129b1edc9253c51d0f82840a714d87457"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.candles.jsonl.gz",
+    "bytes": 75527,
+    "sha256": "0986570c108123860413f092f24e10ac8111803d0aa442c47037bb8142a1a741"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.jsonl.gz",
+    "bytes": 429163,
+    "sha256": "ae668f9a1754eedb25346f68615771455dde4e35b9bc4683c64fbe471b7f5a48"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-GB.postlude.jsonl.gz",
+    "bytes": 4077,
+    "sha256": "ef5d69d58ed93e718f839a285cfa3c9c165d899957974752bbce29211b7fb509"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.candles.jsonl.gz",
+    "bytes": 54382,
+    "sha256": "e122c61e62bc0c8789b31d96e3cfb5657990321e46c21827c1f22521d0786a64"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.jsonl.gz",
+    "bytes": 231419,
+    "sha256": "4d724c23cc803ab9d70b6434732cac49fa294fafb6a7bfad7bb022007ffb919a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13GBMIN/KXNFLGAME-26SEP13GBMIN-MIN.postlude.jsonl.gz",
+    "bytes": 2207,
+    "sha256": "49e0ed94b8bb7db975cfd08f4494fe2279874dcf02eec284d3fd374b75fde03b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.candles.jsonl.gz",
+    "bytes": 49247,
+    "sha256": "7d7aded13bd41551fd5f7d18198813b54ea3f725b7832f7606bf6b01d9b001eb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.jsonl.gz",
+    "bytes": 162312,
+    "sha256": "42379cc363aeafc95cd13b4d115a061a1e7e8db6351d18dd720ba9fdf55a0504"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-LV.postlude.jsonl.gz",
+    "bytes": 1545,
+    "sha256": "5eb2d0d5e3db9d5771348db6c4a0fa76816ce784a43f1e0807bcb23513e4686b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.candles.jsonl.gz",
+    "bytes": 42285,
+    "sha256": "b991db220e4f648ef6cd13ce2598e4d3c6b8d221744bdad9823385d36fed37f2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.jsonl.gz",
+    "bytes": 134187,
+    "sha256": "ff07879d62f2d8571013c0a7829d5ca44fb70aab406bdf25ba6f0d13bf5239f5"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13MIALV/KXNFLGAME-26SEP13MIALV-MIA.postlude.jsonl.gz",
+    "bytes": 1127,
+    "sha256": "8485b889793b04071fbd91244008d2c46396a07a74fe26603e19cdd93d3ef795"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.candles.jsonl.gz",
+    "bytes": 68834,
+    "sha256": "3573905a6a25c27025b4f3c914e1b622848fffb7846447d3c0b983e39a85a8a3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.jsonl.gz",
+    "bytes": 277516,
+    "sha256": "b3a71626ebd8baf117ae11e5f1be33a400284cd1a1d07b66df9687cd54a7d98a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-DET.postlude.jsonl.gz",
+    "bytes": 2012,
+    "sha256": "8a8246c89a60e198a6db3dc11c98dc73595f54f17df16866cf4f15d1ffc65fc6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.candles.jsonl.gz",
+    "bytes": 49582,
+    "sha256": "a4844dd9ea7a1ae1d988bed8a9786c5a4c869ede97fbd9fccc6df81d404bdea8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.jsonl.gz",
+    "bytes": 132010,
+    "sha256": "48808817df1cff3dd1244fa97c04956ee7b5f0048db8041212a3d80e32867882"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NODET/KXNFLGAME-26SEP13NODET-NO.postlude.jsonl.gz",
+    "bytes": 1108,
+    "sha256": "ba72d34c4540b3624e326d0c2bb7309344c3735239e709fc4fbdbd2a08cd696b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.candles.jsonl.gz",
+    "bytes": 41445,
+    "sha256": "0a52c5684eaad6edef52e1b5d0adc000a763b7d646877d6d2aa7dd3765b32006"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.jsonl.gz",
+    "bytes": 106191,
+    "sha256": "f6a24d0e6bb263055d6b14cb76ebd23e316a0ef9f0831af8a4294e6ca266022a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-NYJ.postlude.jsonl.gz",
+    "bytes": 1110,
+    "sha256": "352c9b5f34b5a7fc4a35c52401cc586f3bf597d2634470f8d44a544e8ba3baa2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.candles.jsonl.gz",
+    "bytes": 41018,
+    "sha256": "b6d120e94ad3f1d54b0021cd29b017101640acca2783259f03c8d48cb7e597b4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.jsonl.gz",
+    "bytes": 95297,
+    "sha256": "0d1210ea3346f4e1da9d6c5893672382a629c2a5deeedaea027fe0088ca584a9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13NYJTEN/KXNFLGAME-26SEP13NYJTEN-TEN.postlude.jsonl.gz",
+    "bytes": 743,
+    "sha256": "268ca8ac55732fad03855747c52a6e7adb1681767735c767170c0335c3045c19"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.candles.jsonl.gz",
+    "bytes": 38928,
+    "sha256": "e38a3052fb89fb47f139ff2ae1a0092b570738cb4e2c1e87c1f9d651bb4a7b64"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.jsonl.gz",
+    "bytes": 86743,
+    "sha256": "2881d47242d1b02500e925f613713a97a0026ea692515848aa8c33680a84450e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-CIN.postlude.jsonl.gz",
+    "bytes": 962,
+    "sha256": "6fb891bb4911f6f6d837ad8a17577675eb01b3492548b246629f5a7b7134eccc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.candles.jsonl.gz",
+    "bytes": 49581,
+    "sha256": "40fe378b8a4f34180994949d402ce42156cc59fa27c2324ec3cfa5951935a8c4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.jsonl.gz",
+    "bytes": 148836,
+    "sha256": "6cccf227b046998cee437792002f78a0fc62a262ce1c957fe4a7bbf489795f2d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13TBCIN/KXNFLGAME-26SEP13TBCIN-TB.postlude.jsonl.gz",
+    "bytes": 1381,
+    "sha256": "d14b7c8bed03e3b57240eb4d426e09d65127492610fafbea14f17d59822c3a24"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.candles.jsonl.gz",
+    "bytes": 58253,
+    "sha256": "3e24651d4a35676bbe0edad39b243e9ae7d6813933787ece97a814e84028ba97"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.jsonl.gz",
+    "bytes": 241407,
+    "sha256": "4946d0b98ef9de675e8d677c08398a38c04c8468acb3438a1db0613ab547504d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-PHI.postlude.jsonl.gz",
+    "bytes": 2011,
+    "sha256": "d1dc299d03ea579707316fa8a0d1a952ff6c9c6687df8aec9e2cbc8fd8c1ddef"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.candles.jsonl.gz",
+    "bytes": 34114,
+    "sha256": "c137fbd00fa09f727f0a2666488cb83b14b3fd8837ea3097b59f43d8686bcd36"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.jsonl.gz",
+    "bytes": 98120,
+    "sha256": "e7466382c8295ce691233177e8a6bb94bc321dbaa0ad4cbd8f68b65d955743f3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP13WASPHI/KXNFLGAME-26SEP13WASPHI-WAS.postlude.jsonl.gz",
+    "bytes": 1347,
+    "sha256": "335c020dba095ce5d919952827312c581da4d9a6f0d07c0084bba0df149a00bf"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.candles.jsonl.gz",
+    "bytes": 87910,
+    "sha256": "76a3f83cf75f084fe00843e861ab4dd8076f707e645127f251ec0fde23aecad4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.jsonl.gz",
+    "bytes": 1462393,
+    "sha256": "9088a2ddbb76663c4bf441c4d854e33f72ea151e1bcb15ece0b51de614771d92"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.jsonl.gz",
+    "bytes": 12061,
+    "sha256": "358df33a1b6baf1e2998bd311b5245ff5e49bbf9aa066acd2b4e53268f84d0bd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.candles.jsonl.gz",
+    "bytes": 62326,
+    "sha256": "f95ea5d8c1b8c94fceb53746edabd1315091c52ae9e98922df67b2b1ed163523"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.jsonl.gz",
+    "bytes": 791568,
+    "sha256": "2d6c491920340b2b74dc2a6ea5830fb310e8fca676feb16945418d37ee1bbb20"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-KC.postlude.jsonl.gz",
+    "bytes": 8603,
+    "sha256": "7bc5cadaffc3f12dfbedbafcb05a0d4a7dba5a5a024bfac44de458dfdc704810"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/candle_manifest.json",
+    "bytes": 2893751,
+    "sha256": "3903cb91f06d1789e00974af7a020cdb432ae70a8a1cd6ed0b8fb48140a01e73"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week1/forward_books.jsonl",
+    "bytes": 1863,
+    "sha256": "7123dab9c6008ef2876cf7714d486efd64a2b2bdee20c8106109b656701d53bf"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-BUF.candles.jsonl.gz",
+    "bytes": 93302,
+    "sha256": "50857c6566f8e0ebcbebdbf017928707306ffec52a275972e9db2f91847bc3cb"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-BUF.trades.jsonl.gz",
+    "bytes": 1049276,
+    "sha256": "bec0b3c08bb1a803d16c19681f0774f8db636bda43612bc4f19ea269ddb2c7a9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-DET.candles.jsonl.gz",
+    "bytes": 86847,
+    "sha256": "0eb9ad7f9ee419d2bc1b5178e4dc762c051f5b46d446acbf28e0920aae71b04a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP17DETBUF/KXNFLGAME-26SEP17DETBUF-DET.trades.jsonl.gz",
+    "bytes": 732963,
+    "sha256": "7a124f1c2d60ba373bb2d9423e1dc9eef0ce5aa1d17ad9b9ddd0a5250e40563c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-ATL.candles.jsonl.gz",
+    "bytes": 52129,
+    "sha256": "c84e72d825db3a189cca33372f4b0395c43b0838bf288e4241e71281fb1b45b2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-ATL.trades.jsonl.gz",
+    "bytes": 120187,
+    "sha256": "ef367f7a263a9168ecb6ccfac9529eb5d8868ffe06c0a78465fca0b5acb75f36"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-CAR.candles.jsonl.gz",
+    "bytes": 68908,
+    "sha256": "bb083ce60ffcd98e16a1ded9e0e221be98197a92e0d99702eb812f4908a3cf75"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CARATL/KXNFLGAME-26SEP20CARATL-CAR.trades.jsonl.gz",
+    "bytes": 203522,
+    "sha256": "5e4e2255a7fba6e7038ae41e5a08d0296a56b3adecd5d6d490ced03131605916"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-CIN.candles.jsonl.gz",
+    "bytes": 71959,
+    "sha256": "15d73c53d224e97afa934b1dc6b147f8f89df84b9b28bc3aab177b249b6905a0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-CIN.trades.jsonl.gz",
+    "bytes": 226336,
+    "sha256": "d638994eebacb9a3085b87fc60c3a1560ac3ccc50bf2b6b50bfe60e3bc6c7ec3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-HOU.candles.jsonl.gz",
+    "bytes": 60417,
+    "sha256": "bb57725f756499a911c10a296225f08ccf4d98b3ea52556df495edede5955261"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CINHOU/KXNFLGAME-26SEP20CINHOU-HOU.trades.jsonl.gz",
+    "bytes": 158660,
+    "sha256": "de94b2dfaa4f724eea07f7941bc0bff4d24582cca31e34c5d3cdea570cd312e6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-CLE.candles.jsonl.gz",
+    "bytes": 45438,
+    "sha256": "272dc6a271a681e5d528b826d417ecf5468f7d4738516bd44ab09db5c17d451e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-CLE.trades.jsonl.gz",
+    "bytes": 70744,
+    "sha256": "9a999de9c056d1a551681bf014172fee5efee5a00312d6582425173fbb26319b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-TB.candles.jsonl.gz",
+    "bytes": 74544,
+    "sha256": "bf91e8a5d32b98d6ef8ec02d12eca71b657e44ce5ba1a9f0821dfda5535b128b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20CLETB/KXNFLGAME-26SEP20CLETB-TB.trades.jsonl.gz",
+    "bytes": 201991,
+    "sha256": "0c301023eac7dd532946c814878fa818a4560f63d010397f4bbbbf4bf1fe5161"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-GB.candles.jsonl.gz",
+    "bytes": 77818,
+    "sha256": "2c56b83cd62bdf7abe6a7b149fa8418b8484b5c5dca24f1baf49a81087243959"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-GB.trades.jsonl.gz",
+    "bytes": 281288,
+    "sha256": "95be79d37199a103a54271aa65100475896d462172d4c70d206a7d2d04f45f9a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-NYJ.candles.jsonl.gz",
+    "bytes": 62268,
+    "sha256": "d82a6867234b501f99b80e9e0393446b2f49df7b580cf0693dd8c1f60f1c07f7"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20GBNYJ/KXNFLGAME-26SEP20GBNYJ-NYJ.trades.jsonl.gz",
+    "bytes": 153420,
+    "sha256": "56f52d5cb346e370d6ea8a94002963aa96c2dedd0d0dfaa9717bb4e8952c4668"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-IND.candles.jsonl.gz",
+    "bytes": 38806,
+    "sha256": "f36f911b484dbd9d36ea601edbf4d086655542b1d36021c52ec70e3699b5ddde"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-IND.trades.jsonl.gz",
+    "bytes": 92694,
+    "sha256": "863ba7bf39603ead8d2125ffc01596a6646cecc158e5f3bc1826267f23381055"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-KC.candles.jsonl.gz",
+    "bytes": 74889,
+    "sha256": "8a5232219afb19a0e42459ffde36ca87cecee2725da51cbf2d75e19ef1def7d0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20INDKC/KXNFLGAME-26SEP20INDKC-KC.trades.jsonl.gz",
+    "bytes": 378284,
+    "sha256": "39b1be7398adb29b8659678ecb6694f31539691ed41b0c698fcb6f16f5320399"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-DEN.candles.jsonl.gz",
+    "bytes": 51197,
+    "sha256": "847ca865080fd91451633c186cdfd3f70d51092026b43de8247cb5d793f14776"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-DEN.trades.jsonl.gz",
+    "bytes": 155532,
+    "sha256": "6fcfa10e49fde785307c1abfcf134a7b88a22eedeb9e70b2ef69c8f2438c1a73"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-JAC.candles.jsonl.gz",
+    "bytes": 73228,
+    "sha256": "def2541b29981883d31cf84fb2ee0e258001055b2fbe2d8d8a9dd950faf80a85"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20JACDEN/KXNFLGAME-26SEP20JACDEN-JAC.trades.jsonl.gz",
+    "bytes": 330961,
+    "sha256": "fb1f21e03635a0a1aab05a9d1c79bc5d6fc3eed334b02694b7de310bd7f4992e"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LAC.candles.jsonl.gz",
+    "bytes": 70485,
+    "sha256": "0cf94f6b94d9e47938b329d1f2666334789c523a2df4f9bade5e8cdff55df971"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LAC.trades.jsonl.gz",
+    "bytes": 214870,
+    "sha256": "01f126cd426e7c8f4bff0a4abcda32cd2c7d00153b81f3510532ee528443c0da"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LV.candles.jsonl.gz",
+    "bytes": 95885,
+    "sha256": "a30d76de4255c31c1ab4c4e1b8b4e54bed83d6c30b602b75c90ca809469a03a6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20LVLAC/KXNFLGAME-26SEP20LVLAC-LV.trades.jsonl.gz",
+    "bytes": 539667,
+    "sha256": "5ead1a574dc27da4fa4b0c8075cfee663ff231bb6b30d7b6abde0bacd4eaa01d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-MIA.candles.jsonl.gz",
+    "bytes": 62473,
+    "sha256": "1f6f77e6ff670d6c3aa86fdfb14fd36fc3318b6a9e4054d7ace790e001297010"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-MIA.trades.jsonl.gz",
+    "bytes": 180749,
+    "sha256": "66a00f96705fcd76f06c969d7e3116a4b3363e968b395701b983f1f7d0f3d6ac"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-SF.candles.jsonl.gz",
+    "bytes": 84459,
+    "sha256": "c8b1d222afccd92981eb1463c3631f3582e5627f79fdd1d5c9962e630d14523f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MIASF/KXNFLGAME-26SEP20MIASF-SF.trades.jsonl.gz",
+    "bytes": 355952,
+    "sha256": "33f498ac0815701d29072cce94cf7ed3ec9479ab555e4c1ca45daaae3c86b387"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-CHI.candles.jsonl.gz",
+    "bytes": 84673,
+    "sha256": "b2a01a187dfff5c092420a8ba2b08c0ad49427f385cd2f38924e66b92a9dbf9b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-CHI.trades.jsonl.gz",
+    "bytes": 343006,
+    "sha256": "69e14ad7d1881bde3fb869eba6e3c8ed6209d43c518b16bf2c6bdd501a7c0bf9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-MIN.candles.jsonl.gz",
+    "bytes": 80213,
+    "sha256": "8a39600467d0b8d871becf0554681d283031e4c9ac7384ba6d4a8f7a5a717671"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20MINCHI/KXNFLGAME-26SEP20MINCHI-MIN.trades.jsonl.gz",
+    "bytes": 281220,
+    "sha256": "932e285c8dacfed7c2f0c4fe4921ae9c2c0702c811e523e3ecbbcd7baa5daafc"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-BAL.candles.jsonl.gz",
+    "bytes": 78402,
+    "sha256": "1d81a019bfb3c6873d12d5bd40e9a83bf72d3cd10016f222f36c2de5d8e470fe"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-BAL.trades.jsonl.gz",
+    "bytes": 258589,
+    "sha256": "4c6c45ef86bf4c88cffe1fcec21ebc862763033656b028e1bfda18593b3a5dad"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-NO.candles.jsonl.gz",
+    "bytes": 60218,
+    "sha256": "7fcf0ac27149bbc40479511ca833d56b988593c75b8ec4be213f8222a8755359"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20NOBAL/KXNFLGAME-26SEP20NOBAL-NO.trades.jsonl.gz",
+    "bytes": 133521,
+    "sha256": "aeee270f29fedf622db38a4f02361c9d65689fa14d5259a0dc950eb27bda3830"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-PHI.candles.jsonl.gz",
+    "bytes": 121814,
+    "sha256": "1c8b93dd8f6d01ab1bf30e59cd876349c8cf3a40ab002fa7dca823faccdddd89"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-PHI.trades.jsonl.gz",
+    "bytes": 939309,
+    "sha256": "4b24755f414c955f1321e5a5e154ae4fbb8f3199f5180eff2e9d3466e28055ff"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-TEN.candles.jsonl.gz",
+    "bytes": 48710,
+    "sha256": "74e819545ef1a1e94bc63546ba8a560610a49f8362d563136846ef5e47b09fef"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PHITEN/KXNFLGAME-26SEP20PHITEN-TEN.trades.jsonl.gz",
+    "bytes": 117857,
+    "sha256": "db86b3962681d69a1a03a124657abe453e5ac15130354f2103c18c0412f25287"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-NE.candles.jsonl.gz",
+    "bytes": 72915,
+    "sha256": "b5715c3981385c277b26d9d9a6c524d576bec347ba5cad37b7355de93cff71b1"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-NE.trades.jsonl.gz",
+    "bytes": 189397,
+    "sha256": "e2f08a7193026650713db025ce325af82342ed8c08e9edce52bc0269cebffd53"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-PIT.candles.jsonl.gz",
+    "bytes": 87793,
+    "sha256": "a7acf77c024ddc8c8a6f6793b2b8b07d17c8f2b9aab34812a7298354cbe1e5c9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20PITNE/KXNFLGAME-26SEP20PITNE-PIT.trades.jsonl.gz",
+    "bytes": 331751,
+    "sha256": "6241462900302475c65a442daec463923f24645dc1989954c1f1ee8446728b31"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-ARI.candles.jsonl.gz",
+    "bytes": 52912,
+    "sha256": "676d08801b85dcfa86cc379871d6029872f85268f6cfce66cf50c40d3493ec32"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-ARI.trades.jsonl.gz",
+    "bytes": 113209,
+    "sha256": "bb9f208802c166d629a8b6dd3e9a45a154ff3a6f4e57e0a713802ceb1507d47f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-SEA.candles.jsonl.gz",
+    "bytes": 67465,
+    "sha256": "82405afc037f7b00e4a95233e336f2d52e7eb2a31fde142c5403e2fddff6bf03"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20SEAARI/KXNFLGAME-26SEP20SEAARI-SEA.trades.jsonl.gz",
+    "bytes": 205765,
+    "sha256": "5294fcc734a4ada35ba457901be4f0dcd47bbc6ea03231db014f9c8d9b38dd00"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-DAL.candles.jsonl.gz",
+    "bytes": 66248,
+    "sha256": "a4ec2536070e09e56e8e67e0280c29bb0071f6b1fd2af3ad0354474132430e14"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-DAL.trades.jsonl.gz",
+    "bytes": 249731,
+    "sha256": "aabcf78576b4fa60d34e90ca99290cf86280ec1b39f90fb197c0fe143dcc78b4"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-WAS.candles.jsonl.gz",
+    "bytes": 61727,
+    "sha256": "ebd0aad0427f4a102297afd0741d5ac211bba1eba42af0f8ffff9942abb5246f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/KXNFLGAME-26SEP20WASDAL/KXNFLGAME-26SEP20WASDAL-WAS.trades.jsonl.gz",
+    "bytes": 212926,
+    "sha256": "bc9f63c01f0db92d049fa78d0c0f1f220daf43ddaaca70598354104256fd9294"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/inputs/week2/capture_manifest.json",
+    "bytes": 2344829,
+    "sha256": "8fc612aa09ddfa3ec63f355b56367f2dbf68008f50194e7cf9f2913f0e11f54f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_pair_complete_fills.jsonl.gz",
+    "bytes": 68,
+    "sha256": "f6b2f4ae412bee523c0fdb2d3e80efc07af221cb64ac4d52feec2adb621b09f8"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_pair_gate_fills.jsonl.gz",
+    "bytes": 64,
+    "sha256": "25c9c0a6ffe2515b80081618d2f963c3a31b01f496cbce2df08a3ecef7137ae6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q100000_q1_route_fills.jsonl.gz",
+    "bytes": 18004,
+    "sha256": "621c7e735e6dd14095d1325d696a13d316a282e935652bd43a4e5132b8c60490"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_pair_complete_fills.jsonl.gz",
+    "bytes": 7470,
+    "sha256": "342b028b3184955294e0dd284303631fffa99827ecdbf432abfceb54fddae84d"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_pair_gate_fills.jsonl.gz",
+    "bytes": 11255,
+    "sha256": "9156442f70e149d13e14415de0314fe39d7fb94820520cd57ff255eb70c6ac84"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q10000_q1_route_fills.jsonl.gz",
+    "bytes": 193558,
+    "sha256": "af07e3d2560abea977feabeb5fbb95fb1f7612c6317667a5bf34f87a4b23de84"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_pair_complete_fills.jsonl.gz",
+    "bytes": 774050,
+    "sha256": "dca50e221ec77b0bbff00774a208626d08f7c753ec67aff8c7e3bcbc3f270ca2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_pair_gate_fills.jsonl.gz",
+    "bytes": 890802,
+    "sha256": "a2a9eac620106358ef26c357bf329121a5b0fac7f92e556d2822dbd85dd8c921"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q291_q1_route_fills.jsonl.gz",
+    "bytes": 4220878,
+    "sha256": "c18448c82f358d54c6e4c0156fc702921eef6e8eae05d2f25416ca54654b92b6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_pair_complete_fills.jsonl.gz",
+    "bytes": 46271,
+    "sha256": "51c614e5c437ecbb7d5901dfe0af2e6a2963b8b363f315593b00f8ce8164197b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_pair_gate_fills.jsonl.gz",
+    "bytes": 44570,
+    "sha256": "a85d22e127b6f4b9c1bb0964d567f3069863495d2643b7eb15691b206b941767"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/combined_q3300_q1_route_fills.jsonl.gz",
+    "bytes": 596181,
+    "sha256": "f36d27de2312585aa7d42f5f4ece81139ffd2b2ba13b8c8a3cb259cef991d62c"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_pair_complete_fills.jsonl.gz",
+    "bytes": 7293,
+    "sha256": "2f1707f53b166c2a33d3295f0f52ea2134446ea6cf38121c62473c503eff7ac3"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_pair_gate_fills.jsonl.gz",
+    "bytes": 10918,
+    "sha256": "9c74aef46085a941a1de5a463a825fec3e009b78c5fc2cfd4ec6d1dcd8912187"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q10000_q1_route_fills.jsonl.gz",
+    "bytes": 122732,
+    "sha256": "f3b83dc366f08b7146263b634ae88d91f4af1b3c4c1e4d0fa42c42e008e239dd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_pair_complete_fills.jsonl.gz",
+    "bytes": 504984,
+    "sha256": "1e10d569a40f60cb1c7946379bb8c9194e25be7fd1d3d66133be52fd1aeae80b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_pair_gate_fills.jsonl.gz",
+    "bytes": 565857,
+    "sha256": "c2d5c0d920223b401243e707555d180719b06ef606a474e543902c15ef05c4a6"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q291_q1_route_fills.jsonl.gz",
+    "bytes": 2194970,
+    "sha256": "cbf438fda4b6a53c346e48838ec836a1d9ab01837bf7238a14e0fb109c30f0f2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_pair_complete_fills.jsonl.gz",
+    "bytes": 43320,
+    "sha256": "8289bd5112ed8cfcd80f76fdfbab51e7eca946cb5c864fa69df34b4a1d95c002"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_pair_gate_fills.jsonl.gz",
+    "bytes": 41234,
+    "sha256": "2e2b77f58a724ef732623f5cabe3f66e53c217083fedf986adb8147e9edc3c3b"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week1_q3300_q1_route_fills.jsonl.gz",
+    "bytes": 357783,
+    "sha256": "bd4846a7ac1df49a078aaa237697ed2864c1fd3d940e403024a48086d9a406ef"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_pair_complete_fills.jsonl.gz",
+    "bytes": 460,
+    "sha256": "769ccc12f9516af7939b02e4054d34e3ac4d1ff31f65dc7ce0c1621ec89d511a"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_pair_gate_fills.jsonl.gz",
+    "bytes": 635,
+    "sha256": "ad7b36191d4bb53ce84ae2c12cadd8e2c86a65bda20d26aff5d1a5f4aabdf528"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q10000_q1_route_fills.jsonl.gz",
+    "bytes": 71068,
+    "sha256": "15dfeb4a312f2bec36583ad555ab67ffd2cfa366164d546740e19012c0ed82f2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_pair_complete_fills.jsonl.gz",
+    "bytes": 269255,
+    "sha256": "146f99dbae03cfe4b2572d45bad41a5d703df0a892f986e127172167270747cd"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_pair_gate_fills.jsonl.gz",
+    "bytes": 324133,
+    "sha256": "5c8d9a8283b56ad446ac4d98b5458b77e6fe42179cf6d469d4e5b8a362dc082f"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q291_q1_route_fills.jsonl.gz",
+    "bytes": 2023369,
+    "sha256": "2dbfac0b6759f6cd4c70f3fb20e17bbe42d756cff7755d8d4a1993a4d302d6c0"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_pair_complete_fills.jsonl.gz",
+    "bytes": 3270,
+    "sha256": "9dcb5c6e92ebb0fe2d9959145daf5cf95d9b5c65f7bc41e37ce2b9a9133e65a2"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_pair_gate_fills.jsonl.gz",
+    "bytes": 3654,
+    "sha256": "3fe70e426aff3bfb97ec3439a34751d9145a20cf096f99b04eae5d42ca540ca9"
+  },
+  {
+    "path": "nfl_completion_lab_20260921/results/week2_q3300_q1_route_fills.jsonl.gz",
+    "bytes": 238619,
+    "sha256": "6c417daf84bcf3d4f809aec533400e1afefc5921e9cd1384fcee822d2496c5cb"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/forward/observations.jsonl",
+    "bytes": 2977605,
+    "sha256": "c4cf6ce57989ed5ab4dcbe0b499c07d7437d852d55c10f737b6e82f7cca6cd36"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/historical_quotes.jsonl.gz",
+    "bytes": 1444192,
+    "sha256": "af19caa03761c9d4809fdfa1227cb1d8bfa51cff3ad271cee2e66ba30ffc6a8b"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/pair_complete_fills.jsonl.gz",
+    "bytes": 46271,
+    "sha256": "51c614e5c437ecbb7d5901dfe0af2e6a2963b8b363f315593b00f8ce8164197b"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/q1_forward_observations.jsonl",
+    "bytes": 1709467,
+    "sha256": "dc2214d2b4130c0cfc26f90d899d03819dbf8d00ab7935857b0922225af1b8a5"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/inputs/q1_route_fills.jsonl.gz",
+    "bytes": 596181,
+    "sha256": "f36d27de2312585aa7d42f5f4ece81139ffd2b2ba13b8c8a3cb259cef991d62c"
+  },
+  {
+    "path": "nfl_measurement_lab_20260921/results/historical_markout_rows.jsonl.gz",
+    "bytes": 1203918,
+    "sha256": "e3028e5fce6e8426bed848e0bfa3aa79d97dba39fbeda458aaeda6bdb8362bf7"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/collector/development_capture.sqlite",
+    "bytes": 5152768,
+    "sha256": "3ca23c932d53c45763632b0a5ece9d5a9b09047aa1740f71d2b4b6c0c6b41029"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/inputs/events.jsonl.gz",
+    "bytes": 22967126,
+    "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 26356,
+    "sha256": "69199599747ef29ed36fecbcb6dc1685a30ba5d40dc02ec0de5a44ffec26eecd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 178928,
+    "sha256": "35aa06fc0b17b24f55f439ef7ee1eb02b8bdb99c45adebe4690568548337ff30"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 5348,
+    "sha256": "1bf60329f05807dd0d77400ebd6eef8424f18e21673b7e9296a975386ee89bfb"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 508322,
+    "sha256": "ad7204c0099cf94bf2b795c1b8ff0cbb85223f2364bb08ff87499ff0f6d7fd13"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_full_route_cap250_fills.jsonl.gz",
+    "bytes": 52656,
+    "sha256": "5fdd5004eb09f7f1c5aa28e958bd6b942031d498c7977d7a56b7d26bc89c605b"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_full_route_cap250_orders.jsonl.gz",
+    "bytes": 692021,
+    "sha256": "aad2032472f8ee50f342562c38670ae41f4409f0ce7a7f7f3eb75f9e370a4b57"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 3411,
+    "sha256": "68eeebbd8bb28b9b39fa09f3630d0fc9fc740995b5bbdefcd5fd6dbb4aa3fd79"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7547,
+    "sha256": "9b3923c7ce50a5c70ffc2fdb107fab23560c2c4d2b882467513c7764554cc8f6"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 29345,
+    "sha256": "21adc93f2c7f9a92e093d806c7b96c003971f9e999ef122dbb882ae597b14d94"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s10_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 21277,
+    "sha256": "d33b1df18eabb5f96ea69cbc7f10433545e8f7e396720d680083a005a354b401"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 85258,
+    "sha256": "424bfe2a51800b94fa33d0085436aaac470ee459a4449183f917f0d87676a9d8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 131298,
+    "sha256": "da9f51998d37b288749dbf18135511cb15f50370b11db482d4c503e532231ef7"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 14355,
+    "sha256": "0cc0eb3b8cdde35907ab29432877bb45958ba95891a02ef64ae609cd3a82c838"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 425784,
+    "sha256": "e8ba182e48d236c5584c7f175d5c1f11cc6f796d1fdd4d5fb180e5a590ad9da5"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_full_route_cap250_fills.jsonl.gz",
+    "bytes": 194287,
+    "sha256": "aa545cf393a49225a368beca920da013393f747e2320e41799a7b7dd698341c9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_full_route_cap250_orders.jsonl.gz",
+    "bytes": 573506,
+    "sha256": "dc90a1b7e285d6076fca41a7786134853a13117a238c6fc2869b778350564f02"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 14404,
+    "sha256": "ba28bde877f81ba61b4d4bb11f8906d408e16e8cad7a966fa7de70930307fd02"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 5994,
+    "sha256": "8bcaab463d8a9d90cca3734211ce8a8bda0e9e1478b34a84020942944dc84147"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 111096,
+    "sha256": "0a48d3d847f8acf206b302a1630a6ec09284143be3bf87c2b54dcf7053c0e98b"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s250_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 17728,
+    "sha256": "ab9eef73b94de94fbdde0f5c63742bbe6870e1fed5a182b9b1be7845d757e9fa"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 33037,
+    "sha256": "e23608e9ae779832bb0425d8dc8847410cf223907dbbc7431d526551b6d7e370"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 176696,
+    "sha256": "1e8db52aa8b81c300141f5dc9c80c69774b61f16884ea7f8a33448edd493039c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 7081,
+    "sha256": "89dd07f8a9fa185d3b05b11857a6c9637053d1aef4e9c250433e9f2e632b7f29"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 508650,
+    "sha256": "681c6df25452063bad9e79d62c5519c25870bdb7410b359331ca12b4f2a272bd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_stable_cap250_fills.jsonl.gz",
+    "bytes": 79,
+    "sha256": "9ba58efa14487c28085536a83a3ec38c7e1c4aef011524134c922836b077da38"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_d7_d3_stable_cap250_orders.jsonl.gz",
+    "bytes": 80,
+    "sha256": "dbf28e2c13199b45d8cf902c85b26854f543c12d540cb602aa3fbeef217bc2cd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap100_fills.jsonl.gz",
+    "bytes": 58611,
+    "sha256": "95bfec0160883c725cd4b6a95f6e9e5182dce80d81618801d07dd7b3524b493c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap100_orders.jsonl.gz",
+    "bytes": 679387,
+    "sha256": "ae9fbc2fa27e3e5cdd2c89a585fca2bffd3a91444f3399ec29cc36cadd51dd2f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap250_fills.jsonl.gz",
+    "bytes": 67079,
+    "sha256": "84408f3d81462ffc533cb25153c11d6e16d1d306339f22381499ea787c39c5c0"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap250_orders.jsonl.gz",
+    "bytes": 689693,
+    "sha256": "f76579cd52cc1048af336e8fb90f1bbfab0bfa715a16808b44b229cb003efb2c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap25_fills.jsonl.gz",
+    "bytes": 47353,
+    "sha256": "292929ed2d79f0e9a1592addaec7812a107737cd68e7e7556cdc5a7879ace545"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap25_orders.jsonl.gz",
+    "bytes": 560444,
+    "sha256": "3e3ae4c6905e3fc93b6decad3d561c46b7015eaea9b7936b79bd6ee823b667b9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap500_fills.jsonl.gz",
+    "bytes": 72245,
+    "sha256": "6b1ed3e9fdaeafeb2b0fa1a3b8ef0c2b1a4b6726d5b243c3fff47d8e4a288432"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap500_orders.jsonl.gz",
+    "bytes": 692724,
+    "sha256": "b35d8752d298364e38463b72b2430e81313b3a163bfdd3ec49ba1ac12fee9e8e"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap50_fills.jsonl.gz",
+    "bytes": 55611,
+    "sha256": "6e33d31da14ac217140c4e77087c691d6ac8497dcda2afa04dab6d958614e9e8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_route_cap50_orders.jsonl.gz",
+    "bytes": 655816,
+    "sha256": "d94e55c8408b00dd3fc3a1b55e92707104eab3648b7ad0762c83c23460bc8d02"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_stable_cap250_fills.jsonl.gz",
+    "bytes": 9314,
+    "sha256": "ecd61b1b2cd4012e2acf553a5adc8c2997f60523eee65e98c38288f40dfe165d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_full_stable_cap250_orders.jsonl.gz",
+    "bytes": 3770,
+    "sha256": "088ad19e20a80da71cb2713fbcdbf8e3cd478ef67932041669e545aa5633087c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 4097,
+    "sha256": "2947d5ac659f8c87afbe0f35d1444c8bd8a44d864468540c2509031eab22cf09"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7570,
+    "sha256": "a7d7d7c0bb4b605b8105d536cd75f34de63c8ba3fce0dc672074cce74ebc97d1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 37401,
+    "sha256": "88c739e0da4843de905be0014a89dbb37f92ddb9aaa6969365c6c3016db0f386"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s25_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 20900,
+    "sha256": "ff8c9b3840c54f9cf891923655251d2548266e25c066bb6f523cf686d4b1f8a5"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 43901,
+    "sha256": "555c0b0e619c3fbe444692344a733c3202ae885ba4c3e1f940d71440d2419db9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 172122,
+    "sha256": "c0e1a06f8e2f33cb3a9c301b6a1eeb5034cf81f44216280a0b35b1d0ea5899f8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 9521,
+    "sha256": "d51e95c322f5f7c4a18395dd292aaf6014b563b06f81abf59e8d1aadb7bbbdd6"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 506722,
+    "sha256": "d9571941c0c3798a015be478c59554f713bedd83fdf74a474a13619d1c45b04c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_full_route_cap250_fills.jsonl.gz",
+    "bytes": 88790,
+    "sha256": "c0a28e4a2746173bea598d0db46dd5bf3af0e87cd1b4b6fd5dcacfa635db13cd"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_full_route_cap250_orders.jsonl.gz",
+    "bytes": 682536,
+    "sha256": "77b5e6e744138f55b5f0ef8adc026fc703812ec0b28e52c5c6b577c0890eb100"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 5866,
+    "sha256": "050632c8f15ac34ea1e1f842e07f7b2f0b862f604abfbb70776e627324921505"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7552,
+    "sha256": "aba95ad77e226deba9ed4dee34886cd80ecd5f5402a788366f19b363ff8a35a8"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 48801,
+    "sha256": "40c302f1dcf2b3245fe2b3c445485291be12694136cfa522b68f4cbee22b7faf"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q10000_s50_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 20379,
+    "sha256": "bba786fb5dcd9f50c077157f980c88c90359bf7743e77fd1dcb3bea4bb99836c"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 74050,
+    "sha256": "1c90aec33667baa6ae5cbf0e6897bdaa420179a9434a61ec6b7f9cc9df38c2ca"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 191287,
+    "sha256": "fc1571ebbe9160ce91b1db5dde083600814def6881257127afeb6a04ff159e8f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 27267,
+    "sha256": "bf4f9d5a0da95244ad562d8d49c6f3e6f33f7ecadda5e98c1377f726acae4398"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 553753,
+    "sha256": "32e4f06e350e640952af037ab3415bcd895d58c21c9c445155e84758b669ce50"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_full_route_cap250_fills.jsonl.gz",
+    "bytes": 143224,
+    "sha256": "495bc49820a703fc8a73dda1fee39690834d94a7d0bbbb13659a6bc7f4bbda17"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_full_route_cap250_orders.jsonl.gz",
+    "bytes": 715433,
+    "sha256": "057224a34ab122a70e704fd93ad36dc91ab799e636a4887a66e0e9a030bf9282"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 3638,
+    "sha256": "dc466df35a061a8e53231797ce8fae21abf19f0698e14ddfc4406f1c08716f08"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7701,
+    "sha256": "a7a2bf75b6b39db8c6d45a4fb8a1520c5976c373d59c64a692cf36567191cf4f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 73620,
+    "sha256": "bceedc859bcc24a4e177adbedb20ca721aad1275e64565d922cefdd57762d456"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s10_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 31845,
+    "sha256": "6a20d87732b0ac8eb9866cd072cc62cc4a2c798c2b0cf404373d49289cfa1cb0"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 254077,
+    "sha256": "8dba71f255651785af98dde0e6092e7e7b52d6fddeffc33d40727218005f62de"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 139842,
+    "sha256": "9ac4049707b236fc3726f0910cee48302f8945f769d2c4fd10228c945b873123"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 60293,
+    "sha256": "b1b4d82375ff30ff2f204c2fcff6db7a4a7892ca94ad16d537907e015737b3a1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 426660,
+    "sha256": "91674488b407dfc566a5c35d9054276ca2465d9a7d42789b21c62de16d404f0e"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_full_route_cap250_fills.jsonl.gz",
+    "bytes": 598129,
+    "sha256": "b842804870ab7f9c053372e1187e544ab0aa0462160366f422963ccb4deaa039"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_full_route_cap250_orders.jsonl.gz",
+    "bytes": 573126,
+    "sha256": "ac8e7faebcab76e36b900051ae94bb633d8eb27dea75ee3c5661d037085089a9"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 19896,
+    "sha256": "ef5437810283d80c94957bd25b187871065f98abfcb300fb0e0bcf6427036509"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 6837,
+    "sha256": "8cc45a503319ad6abc6deeeef2eeb7704743f6e0b76a3f68fb558717a2355e06"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 299406,
+    "sha256": "dc8540d7fa2fcb29badd72f3069b1c4983608d83d04b72f9084db25c30863303"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s250_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 31205,
+    "sha256": "1fa1e4db696532f691cbfeba6d7900582480fd473cebcd7be73f18327a11c80f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 93158,
+    "sha256": "3f18fe9e90437c0fa9516d6212482416e930933c9fbc88bd89e56de1d3862578"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 181737,
+    "sha256": "de196690609ec7582a076fb564d0e860673deb9e23475f4be254a04715cdc4ae"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 34091,
+    "sha256": "55545b17157845c686bb2e4afc7ae71f82f38833a2561b024b6220426de26cfa"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 546591,
+    "sha256": "b9de5ffb00dfb9cf76ecaa24f3605e869105b1c005a8f4fdd89c1d0a2e4607c6"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_stable_cap250_fills.jsonl.gz",
+    "bytes": 78,
+    "sha256": "359e742b7ed91ef1c54f8775a0447862de3aff8977aa415ebadf8a3ed40c235a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_d7_d3_stable_cap250_orders.jsonl.gz",
+    "bytes": 79,
+    "sha256": "20546d3838272313c853056b3b00888e778402ee62f34230eb4c786c1628e13d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap100_fills.jsonl.gz",
+    "bytes": 167465,
+    "sha256": "b1f8aa120605566e19c1adffee833b7cd5360448de63d9d6bee3eba5cd502325"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap100_orders.jsonl.gz",
+    "bytes": 666245,
+    "sha256": "7d561a293e267286a7df9d281fb92239a5d3c043aa78c1045792e5bcea5823ed"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap250_fills.jsonl.gz",
+    "bytes": 184018,
+    "sha256": "71bdd50d8b6fabf1d2ac3abed849d28d97833d3a15bd8e5dcc7da74d57dd47b1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap250_orders.jsonl.gz",
+    "bytes": 695031,
+    "sha256": "94078811dca63ce0c24d5541029d4674b78bd2576b19d1221fca56bbd41ebd99"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap25_fills.jsonl.gz",
+    "bytes": 140223,
+    "sha256": "35e2c33a5ba679ba14229aad29c9917cc7b01d0c20c7222b91f38817c7ebda54"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap25_orders.jsonl.gz",
+    "bytes": 551301,
+    "sha256": "b322ed361b1f73d686bd08789c44d7d72e0a1497b1c3274633eb49225e1dd0d0"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap500_fills.jsonl.gz",
+    "bytes": 201890,
+    "sha256": "5c4d524fa07b67e8ae52cbb3500061f3322d7eb1c189b6a93fc4e784a74608c3"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap500_orders.jsonl.gz",
+    "bytes": 713299,
+    "sha256": "81e61dc46ad1806bf3877fcc53b289d96108c916b273a32907e60658ef582749"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap50_fills.jsonl.gz",
+    "bytes": 159877,
+    "sha256": "d89c2f36d63f3603ecdc5869374d9f4f355e441bf19c8739e38fad76f46867ea"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_route_cap50_orders.jsonl.gz",
+    "bytes": 634096,
+    "sha256": "ff5b83b4f3280ff48a3104008106af31619a03527f91d6a45ec7827f2b748b71"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_stable_cap250_fills.jsonl.gz",
+    "bytes": 45771,
+    "sha256": "ec139d8a670500585e8d6cabf92db86df41fd1a81e77bd84a0fcd07db6a174b1"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_full_stable_cap250_orders.jsonl.gz",
+    "bytes": 16880,
+    "sha256": "1cf769d3e8b7779d1c7ac7c654575a6b0820663b49927f345dd642e7756de604"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 4856,
+    "sha256": "58ce9204c3ce4ef96c36f954eb7d88eb3f9c33f05209edffba142ed5a2f04214"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7754,
+    "sha256": "b4f6311f0babfcba425ca0d5cace6c926cc759041021f445c388219255759c51"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 94281,
+    "sha256": "fab53f21ba1745d893a401695a4fac63dad0e1c4f9d3bff78f032551161d8c9d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s25_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 31132,
+    "sha256": "8269ff639b5bca96de43ea0f79bbd218fa9240df44a39963c7eea8bc55a5f55d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d3_d1_route_cap250_fills.jsonl.gz",
+    "bytes": 117710,
+    "sha256": "842c539a4807b544f659bcdf847a98f9f914ec98566cfae2f7eaf9e11eccd18d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d3_d1_route_cap250_orders.jsonl.gz",
+    "bytes": 167601,
+    "sha256": "8b89f6b0efaaef740a35287434fc752112dc23a3057598a57084a696ef88ccc2"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d7_d3_route_cap250_fills.jsonl.gz",
+    "bytes": 40053,
+    "sha256": "e4fa19a809e2721071ea584c8649cc62d1389c1bb132e164c2827b0be261b26a"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_d7_d3_route_cap250_orders.jsonl.gz",
+    "bytes": 536753,
+    "sha256": "d2685b16d4eafba6b3447faececb467dc46ab70d0a9b4ed2747a8f70a5d004ef"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_full_route_cap250_fills.jsonl.gz",
+    "bytes": 253338,
+    "sha256": "df5af50c481d63e932a9212a173ab400f2365019c8e50f64bcca39af42807111"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_full_route_cap250_orders.jsonl.gz",
+    "bytes": 675349,
+    "sha256": "ff9dae90289636ba3f2e6a41ae4ad2dd185a454ea34090a57e9a1b799321fa2f"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h12_h3_route_cap250_fills.jsonl.gz",
+    "bytes": 6323,
+    "sha256": "5a2fc95a62cc276aca97138ea1f428118fbc0c772fe63ef89eb2725369cd7d2d"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h12_h3_route_cap250_orders.jsonl.gz",
+    "bytes": 7755,
+    "sha256": "ed5c4e72b32a0efbd34f58e226745ff61357052ad03df190eb7d98486629d5df"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h24_h12_route_cap250_fills.jsonl.gz",
+    "bytes": 130032,
+    "sha256": "c0aa9a2185e39140cd268457576a7abd6d466a1b429828b6adc4ce890f7554af"
+  },
+  {
+    "path": "nfl_timing_lab_20260921/results/q3300_s50_h24_h12_route_cap250_orders.jsonl.gz",
+    "bytes": 30821,
+    "sha256": "4cdd077baefdd4fa0ece770ee69a4fc37df00f40d035a4fb3ff2bce9b2f884c8"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/inputs/events.jsonl.gz",
+    "bytes": 22967126,
+    "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_decisions.jsonl.gz",
+    "bytes": 1061007,
+    "sha256": "14513a0e9a3930da92935e8c4ff7ddb9433e0cafa8ba90144e0161489f186224"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_fills.jsonl.gz",
+    "bytes": 171578,
+    "sha256": "0bf2bf2d70ee3caf7bcdc3c08c2b22dc5d43071dc979d7bf6209eb869a2f8f1d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_neutral_decisions.jsonl.gz",
+    "bytes": 799384,
+    "sha256": "c42182baafc14b38c9c0e2b4efe3d7d55b9f9e91af4e437e1cb6568cacd6d8dd"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_neutral_fills.jsonl.gz",
+    "bytes": 172431,
+    "sha256": "5aed5a187f12dbeb9cb2078c81acf0a8f1a2b99b88ef584f6fe83ee35d74b8c7"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_neutral_orders.jsonl.gz",
+    "bytes": 477550,
+    "sha256": "c555bd9388822479f72fa8d364a66764c29aceb11b492b828512b07ab9cbf9d3"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_allocation_orders.jsonl.gz",
+    "bytes": 478758,
+    "sha256": "ff58799dd9407ac4f16e8c29838c160aee9c145c04d31be78ed7b44a4418ab15"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_baseline_decisions.jsonl.gz",
+    "bytes": 74,
+    "sha256": "a8f72061faddeb4f2d8103cd120dc284c48399b548d37d92ef583a3a31e54502"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_baseline_fills.jsonl.gz",
+    "bytes": 194279,
+    "sha256": "4e80a3719f402d0b9ee82746b176f9dcb67f1a0211bafce4dbb24d15a2c86451"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_baseline_orders.jsonl.gz",
+    "bytes": 574791,
+    "sha256": "1be86a2438d40b9f4380350e6aa8f4191251bed97705f28602cc7b765b697232"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_inventory_decisions.jsonl.gz",
+    "bytes": 198102,
+    "sha256": "c9fa0834467c20b9cff6eab51b5615cdb5e28b494cdb680aa4d60453dfc57540"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_inventory_fills.jsonl.gz",
+    "bytes": 110136,
+    "sha256": "ddd971dff5c7a3e15f03e0dcde90f7fc89fb733fa9e133907d0e60ebadaf7330"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_inventory_orders.jsonl.gz",
+    "bytes": 541430,
+    "sha256": "f9523452306dd3f2a17d6a68c9dace037b506becac1b5fa44027d8da9ef50996"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_patience_decisions.jsonl.gz",
+    "bytes": 3264797,
+    "sha256": "0f800303f047972d1a4ededa2a035259bf263f9e4327fe979d862df3e36ff4f0"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_patience_fills.jsonl.gz",
+    "bytes": 103561,
+    "sha256": "0c5078506e675356259e9bd636f0ebce5a163cee1cd59e8e7205c676d785c5f8"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d0.25_patience_orders.jsonl.gz",
+    "bytes": 1438518,
+    "sha256": "f5759fda58760fe4ad28f60e921904af7c24f41d8ae24c679696e41e306fb31a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_allocation_decisions.jsonl.gz",
+    "bytes": 1060682,
+    "sha256": "91073c4f1da80d644b1cf17e00ec78b14f4fdf532a99ec64584dee184d43da6b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_allocation_fills.jsonl.gz",
+    "bytes": 166635,
+    "sha256": "79f439201d795f9d515a5a089fe6eae075d00e48cc30b962686673725df8d2a7"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_allocation_orders.jsonl.gz",
+    "bytes": 476156,
+    "sha256": "2d27dfba7a57184143dd3375deb15c239501a87ec6958b697430e2d14a490245"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_baseline_decisions.jsonl.gz",
+    "bytes": 71,
+    "sha256": "48182efffbf6e2641b577a52e70bbcd924cc642de115d99788d3f73f07520e13"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_baseline_fills.jsonl.gz",
+    "bytes": 187390,
+    "sha256": "1ae333ef0f77268bf7112985322d7d0e9ba7fa92cd72d66c137a9def1a4f09dd"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_baseline_orders.jsonl.gz",
+    "bytes": 570967,
+    "sha256": "7f86999f88c692fb7d98e5b9c5cd9ffb288484b0c45ed99dba9cb211e76e6f07"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_inventory_decisions.jsonl.gz",
+    "bytes": 198062,
+    "sha256": "78746f7c5d02b1f9a2e04830760c4792cfcbaaaa84d806e4adfec238713ea074"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_inventory_fills.jsonl.gz",
+    "bytes": 106239,
+    "sha256": "8874eab5c9a70b8509e29579e754f22dc2663ade0e706cc1217e929abdf0d6ce"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_inventory_orders.jsonl.gz",
+    "bytes": 535614,
+    "sha256": "581cd0c068392e64c1deb2b1f55ad813ef72f7f703d015b55b9c53263b1461b1"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_patience_decisions.jsonl.gz",
+    "bytes": 3186324,
+    "sha256": "315a165f8bcde4dae849ff8d6026333deccfbb21773d6866034894da66563da0"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_patience_fills.jsonl.gz",
+    "bytes": 99177,
+    "sha256": "5ab38e1a4d92dd58ad2ac636335019197f75f512bb6145a91a65c7cf5053e6ec"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q10000_d5_patience_orders.jsonl.gz",
+    "bytes": 1411113,
+    "sha256": "bb430dbd0e89a71e1accfee85a79b943b1983428324210ce0414f1166c4d65d1"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_decisions.jsonl.gz",
+    "bytes": 1075035,
+    "sha256": "45ab9ced156360bc9e84b276311162f58b734c97f0d44f6b0b72579844584119"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_fills.jsonl.gz",
+    "bytes": 517351,
+    "sha256": "fed95745db39bb3da0602b6eb485a4b924e551ee9e92499536d709187e47291e"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_neutral_decisions.jsonl.gz",
+    "bytes": 811944,
+    "sha256": "500771044f5c3ad147c536205e927ba8024ee3d84008f8b8ee0b9e3096b821a8"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_neutral_fills.jsonl.gz",
+    "bytes": 516952,
+    "sha256": "0703fcaa8a4426ac1940adfee892066e425a305b97789993ab463c798fd5c462"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_neutral_orders.jsonl.gz",
+    "bytes": 490295,
+    "sha256": "d4c25a68010cf8b222fa27680655dc8fe70751612e6fd66b424de45e225565cb"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_allocation_orders.jsonl.gz",
+    "bytes": 499670,
+    "sha256": "2c637c6b75614c13b6f3f7c4f2cf69abeb18e72a0239aa832ed640248d542e9a"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash1000_decisions.jsonl.gz",
+    "bytes": 82,
+    "sha256": "54623521f29eb67d84a50bdcc331f8f029be4550034a616fc6c423ecf3bad530"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash1000_fills.jsonl.gz",
+    "bytes": 267149,
+    "sha256": "7920cd8a7b79a48b28bd8a5f5a90dd706e50506b25c7d93da77ea1f41de2140b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash1000_orders.jsonl.gz",
+    "bytes": 278152,
+    "sha256": "0306af19568fa7112a85e6680fe4b1867abb4b2329fce03bfc06282eb5f16ca6"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash4000_decisions.jsonl.gz",
+    "bytes": 82,
+    "sha256": "a0f11eeaf62683ec444c07613a5222bac641e7222073d17d8a602434e8d08f26"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash4000_fills.jsonl.gz",
+    "bytes": 602521,
+    "sha256": "9d68ccfeaf67a9ba4742fbcb7fdf5482f50da1c89a72d1643434671824166b98"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash4000_orders.jsonl.gz",
+    "bytes": 580014,
+    "sha256": "e90a702d843bf4a9ec713333529df2fcca85041f1b65a9c1019bd6273e9cb8ef"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash5000_decisions.jsonl.gz",
+    "bytes": 82,
+    "sha256": "395b5a9eaa63e69fa06f2710f3c0e79e610d28c3f0551dec6060485077991a09"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash5000_fills.jsonl.gz",
+    "bytes": 598130,
+    "sha256": "c6956a070ab999abf4905fa99423a5fbc9d469c7efad91ec8c9eeb300873761c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_cash5000_orders.jsonl.gz",
+    "bytes": 576481,
+    "sha256": "c6f0b8b5f27cf0f83f50f0f53e7e277292b9f1e00c71bd2128642e31de85267c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_decisions.jsonl.gz",
+    "bytes": 73,
+    "sha256": "5407a62c766cb2099b914516c623f1a61d5bc5d0bcc1f5728e8281818caa5b8e"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_fills.jsonl.gz",
+    "bytes": 598121,
+    "sha256": "33301226f9db7976d12de510aa39bde2c97634a1362affe74d3d7029f3ec54e0"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_baseline_orders.jsonl.gz",
+    "bytes": 576472,
+    "sha256": "b722c4fc2c129f1e35d282599d8f4a694d1a95c30d9914640f65c03f0b62ce79"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_inventory_decisions.jsonl.gz",
+    "bytes": 227166,
+    "sha256": "ceda4729740e60b48e74b7f85f74103f247ca331d8632d9cf7b1a95d3c357128"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_inventory_fills.jsonl.gz",
+    "bytes": 416056,
+    "sha256": "adda937fdf8688ace7d18d5334d219e5597b983dff4c97659384604868f9e618"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_inventory_orders.jsonl.gz",
+    "bytes": 554167,
+    "sha256": "ca283120e8ba882a064b5e61c87c65ee9ebcf6e8f9d75e51cc06d0844bb70dba"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_patience_decisions.jsonl.gz",
+    "bytes": 2023389,
+    "sha256": "d1165959fed8119173a17318c1d5ddf1d5fd4625f0e34619e37fbcc557aa79b0"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_patience_fills.jsonl.gz",
+    "bytes": 497435,
+    "sha256": "16422cee000cd3bdeb7479c60a971a6420d8a93583869b07ef257096e9599a6f"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d0.25_patience_orders.jsonl.gz",
+    "bytes": 1156099,
+    "sha256": "b3ef5d67ca8accba0dee211de60673357d7ac15bbfd707155b5e05c4189a5d43"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_allocation_decisions.jsonl.gz",
+    "bytes": 1074103,
+    "sha256": "9b69ccb8c8b252dc2af38dcf54d7adc265c74d62440b3f8f6ddfc11214e2458c"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_allocation_fills.jsonl.gz",
+    "bytes": 491245,
+    "sha256": "bb7603a17f54985b95c585880c39b979ff3af830041524c8df9c1fcd845ef1da"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_allocation_orders.jsonl.gz",
+    "bytes": 495744,
+    "sha256": "2ddc96707d2411bee6b9a98694a77f503390c2f4d989247651bd2d143b31ce94"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_baseline_decisions.jsonl.gz",
+    "bytes": 70,
+    "sha256": "6d15e9df3cd2ef84a22f73b62d04bc1e09e7d54806a9a90e4e28b5e465eacfc1"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_baseline_fills.jsonl.gz",
+    "bytes": 569583,
+    "sha256": "bc77d3c1566aebe9fe7a6879baa5a3355467122098bec3fd6001c532c24b8b1d"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_baseline_orders.jsonl.gz",
+    "bytes": 570997,
+    "sha256": "9523e290d25a5669a8879b114944d0f6afa1106a81f05512c24fab8ea35458a3"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_inventory_decisions.jsonl.gz",
+    "bytes": 226553,
+    "sha256": "8c50bf8aaee8cc86ec39bf4ca0d58a70778849ba0012887a0f82246107ba6550"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_inventory_fills.jsonl.gz",
+    "bytes": 415889,
+    "sha256": "425d26b53ad87ac004583decae4d50048f0ab81aed0176afda01cad44da90a3b"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_inventory_orders.jsonl.gz",
+    "bytes": 546553,
+    "sha256": "a9cefb381e756185b4543ab30a308ac810689f14989c50e278f61cf0f6ccd490"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_patience_decisions.jsonl.gz",
+    "bytes": 2023044,
+    "sha256": "f2bb9cb0742cafc76fff5835841d3a664a808c29e598194d59cd6a4e58685e88"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_patience_fills.jsonl.gz",
+    "bytes": 475530,
+    "sha256": "7c97c5a1c33671211b0984742eedb0d65eb343614065cc681e8f976cd48fc38e"
+  },
+  {
+    "path": "nfl_adaptive_lab_20260921/results/q3300_d5_patience_orders.jsonl.gz",
+    "bytes": 1148536,
+    "sha256": "2a4a3a0859d7ac894f98f433be3f0870fa989fdb3f3168e92d8a52358d953121"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/inputs/events.jsonl.gz",
+    "bytes": 22967126,
+    "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_000_decisions.jsonl.gz",
+    "bytes": 827011,
+    "sha256": "c2b6cf172d65357eaa2e86edba2fbd866fceab3e4f680defe3ffb88002febb2f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_000_fills.jsonl.gz",
+    "bytes": 174316,
+    "sha256": "678d6cb602fb832f8a77ac7a0cfefd9a4d8390002b0962ddc956ba1f19f4b59d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_000_orders.jsonl.gz",
+    "bytes": 553661,
+    "sha256": "e16632b630058854bfc6ac410cb960d5439fb8a151e180d0793c37e8f92068d9"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_001_decisions.jsonl.gz",
+    "bytes": 1101381,
+    "sha256": "80a5e51a6c4f6f1b1faaa1e8ea5b29e91980dc6aa6bca83356087e77b30aeb74"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_001_fills.jsonl.gz",
+    "bytes": 174316,
+    "sha256": "209e4519f69c9e3913f02fdc5021cb47e9605eeb0ddffa4333e3afa8c48b8666"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_001_orders.jsonl.gz",
+    "bytes": 553661,
+    "sha256": "de57674955204d3c7df08c965da0b173c63d988e1e12504cafb67ce0f93cde41"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_010_decisions.jsonl.gz",
+    "bytes": 830024,
+    "sha256": "236a4818ac4aa71300dca5c6f5f3de26dc60f620e1e2ea9524725702a897aa8b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_010_fills.jsonl.gz",
+    "bytes": 171295,
+    "sha256": "21cb975711338bc49a6c3f8f6bd6bef16d1ec8a562e5b2255d0b242edcb3cf62"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_010_orders.jsonl.gz",
+    "bytes": 549300,
+    "sha256": "ed2cd37b6763da5c2e79ba67a2fa311abc7fe6712f64b64bbeaf9316b6897c2f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_011_decisions.jsonl.gz",
+    "bytes": 1104859,
+    "sha256": "0a0df67451fe42dbf46241833af88ae12eb40eafb3495c1610f1b44c1f7b2f91"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_011_fills.jsonl.gz",
+    "bytes": 170654,
+    "sha256": "fe02a44dfdde01353657c5e32242208a6dfcbe37320aae28855ccfa3650b2d5b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_011_orders.jsonl.gz",
+    "bytes": 552768,
+    "sha256": "fb0896e957523a62e7aa8b597a616a6f5fb170e778a2beeb372d206982f0bfd9"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_100_decisions.jsonl.gz",
+    "bytes": 809027,
+    "sha256": "89f0dbc771566cb18f0e9259c60fbbada70c0fa9cbb25dd21f9b1c0f5ea6a35f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_100_fills.jsonl.gz",
+    "bytes": 174821,
+    "sha256": "1ca756b3e72dd459d3adcab22ae5eba9eeb75ca64da8dc5282bbde8a6e9f0830"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_100_orders.jsonl.gz",
+    "bytes": 479699,
+    "sha256": "33f1bc6d93c5a0264e5d31896d2ca91102688ce7d7cc0583cfc6d4b3750e1404"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_101_decisions.jsonl.gz",
+    "bytes": 1072775,
+    "sha256": "938416a3d53c940494a100e5decc9350529c7672c9ea3a39ef0e0fd39ab6f2e8"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_101_fills.jsonl.gz",
+    "bytes": 174821,
+    "sha256": "2a18baa68769240453abf6b6a7f4f367e336910c6e943f6026a810c1d9ecef18"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_101_orders.jsonl.gz",
+    "bytes": 479699,
+    "sha256": "e74672639562b8db2fc8d6cffcb51c9175309c9733866b6a16dbb551d46e9bc4"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_110_decisions.jsonl.gz",
+    "bytes": 812470,
+    "sha256": "0d9abd94713eb8947b1457bbf4fb6266dc2c8f1ef2c22011d5ef5b40248270ae"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_110_fills.jsonl.gz",
+    "bytes": 172416,
+    "sha256": "e00ccc1d2b34e2df05f064b28cc541d43ee6a1c7a6a63922bdc8e559ac62c93c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_110_orders.jsonl.gz",
+    "bytes": 477535,
+    "sha256": "d67d1cdc10e1f0b4e57fbd341774c23c7cf616679f7ce6bfd4cab7eea7b13a8e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_111_decisions.jsonl.gz",
+    "bytes": 1076165,
+    "sha256": "99a67f72a3c0ccc8c925fedb6dc9c694288204a0b386c4b61245568394d3d418"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_111_fills.jsonl.gz",
+    "bytes": 171571,
+    "sha256": "aa5c404b594f36b9ec32b233848fca44017f2b75c243e02172bdad1e171741aa"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_111_orders.jsonl.gz",
+    "bytes": 478751,
+    "sha256": "e773d60482a48b3d9e4a6115b953ce449699032329afc81e62e212492709bc3c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_baseline_decisions.jsonl.gz",
+    "bytes": 74,
+    "sha256": "8966548bbeee08a1395533af45cc200aa6d38c1fc8f40e316fafbdbeba71da78"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_baseline_fills.jsonl.gz",
+    "bytes": 194279,
+    "sha256": "4e30751f1f094da446d418c9d7aa744267dc10788c35533a75ff6dc7c799f458"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d0.25_baseline_orders.jsonl.gz",
+    "bytes": 574791,
+    "sha256": "ae1be427c4649753dc3356009c3ce50eecdbddd1e2968645943e463409f78a19"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_000_decisions.jsonl.gz",
+    "bytes": 826247,
+    "sha256": "860ff15775f6a2e92adfe557765baf49e44178ee5469a8d36f6a04b50eee818d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_000_fills.jsonl.gz",
+    "bytes": 168094,
+    "sha256": "7ee64a33beba06062f7dad673c486b6b67382798ccb2ac2cb00d37524042f6f3"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_000_orders.jsonl.gz",
+    "bytes": 550398,
+    "sha256": "e4241e728fd550d2d37a61d9061ef20a61add7b4f988fe1b2258482b368c8c7f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_001_decisions.jsonl.gz",
+    "bytes": 1100442,
+    "sha256": "e7147927ae688d0c1667e15f0ecaff9be5f0a60d762d69d3f86b529e6083cd25"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_001_fills.jsonl.gz",
+    "bytes": 168094,
+    "sha256": "e92b3797e127bff635ecdb0e4c41672110781b46405c7c34818d1bae590d6b8e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_001_orders.jsonl.gz",
+    "bytes": 550398,
+    "sha256": "60f55441abd9807c4e14a123b122f60911d55093eaedbe153812e1f9a1fc4ff3"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_010_decisions.jsonl.gz",
+    "bytes": 828932,
+    "sha256": "3213fa5ec676357ee9ed327cff0a05881242a6f8caa110ef5f0da61e1f32a1dd"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_010_fills.jsonl.gz",
+    "bytes": 165407,
+    "sha256": "f08ae20d9ebb87817183b020fc6368138dc4e823f5a5f825868e030192a21543"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_010_orders.jsonl.gz",
+    "bytes": 545364,
+    "sha256": "56b9e9a25fdf50bb79e3eb1da5c4ace2cee58236306d2e6a5e58507b377b99cc"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_011_decisions.jsonl.gz",
+    "bytes": 1104067,
+    "sha256": "634102f0eb8c797df00907814add78971b048b64de7e7faab994553e0dd133cf"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_011_fills.jsonl.gz",
+    "bytes": 165582,
+    "sha256": "48f1295e6c85dd12c908ace26ad4ea6219fbc135906918710841b1c1ffd51931"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_011_orders.jsonl.gz",
+    "bytes": 549611,
+    "sha256": "9c7f868c8bae76609cb706c55b369d403860dc11c46a91bb84cab615468bfed2"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_100_decisions.jsonl.gz",
+    "bytes": 808220,
+    "sha256": "53d4d214ae90220a6b4f2500e4240a5029dde813e8c044b6c283ee024f78a868"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_100_fills.jsonl.gz",
+    "bytes": 168570,
+    "sha256": "7de435dfbfdbf3b7fe57ff0474f7da2544579a60d837fd4bcdc3a9f5addc9b6b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_100_orders.jsonl.gz",
+    "bytes": 476938,
+    "sha256": "c4d3d4d76a10e23f540d4f7387b9f8e1db29c1e4a1ac904071323fc9e63ed719"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_101_decisions.jsonl.gz",
+    "bytes": 1071847,
+    "sha256": "7d81f758252b05910b5b149bdb76d4335e1fb753e5fc049ddcababafc8bdeb77"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_101_fills.jsonl.gz",
+    "bytes": 168570,
+    "sha256": "b9bf838ea3fe3f37d53b72f961a193fd45c055202e7400d85999844fbd9f1cff"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_101_orders.jsonl.gz",
+    "bytes": 476938,
+    "sha256": "d72f6c38952892e63c0f3d8e40a9af9b9d85c17cb0bfecd2ac01a7164dfd6a18"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_110_decisions.jsonl.gz",
+    "bytes": 811553,
+    "sha256": "64e580bca429cde4a0eedba13d5f390678634bcf5bc2889b04728d8ad77d97ed"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_110_fills.jsonl.gz",
+    "bytes": 166441,
+    "sha256": "a679c596393b49a279950c4a4ef763be2c654a5d4b6c8f54bd4f8a85e60cfaca"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_110_orders.jsonl.gz",
+    "bytes": 474766,
+    "sha256": "19791d9eed421d73d10b0bc1453b93d1a7375b6a0c604b966f6f3618c462c8dc"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_111_decisions.jsonl.gz",
+    "bytes": 1075548,
+    "sha256": "ed2a743cb0fe9e05c83713cf3a20ce696af974a7b8d572979bb35a53834b365f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_111_fills.jsonl.gz",
+    "bytes": 166628,
+    "sha256": "22afd2d5d809680560c480e8b8ad04ef693ff56f2c8a86edaa88b9182a40311f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_111_orders.jsonl.gz",
+    "bytes": 476149,
+    "sha256": "a0af4381a81c21c6c9158f027805c914703d8340cc23b9de68c9043966367ac0"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_baseline_decisions.jsonl.gz",
+    "bytes": 71,
+    "sha256": "a7ced654d3c23a8db78b2a898979b0dfbafcda93a2fdcb8d7297cd182fb5a084"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_baseline_fills.jsonl.gz",
+    "bytes": 187390,
+    "sha256": "6fb621b96a0db145c727fbbc06fc5841e5673a21956d8731eee6dc12986a387a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q10000_d5_baseline_orders.jsonl.gz",
+    "bytes": 570967,
+    "sha256": "c6052bf5c593d079ea3894ef81f05c470b70300b396e5c31fabfb67646fec441"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_decisions.jsonl.gz",
+    "bytes": 838295,
+    "sha256": "e6db52374f834bba210d5c17836828ac3bf0dd54ca9feb5836ea71a611c61b71"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+    "bytes": 534945,
+    "sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_orders.jsonl.gz",
+    "bytes": 569767,
+    "sha256": "c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_001_decisions.jsonl.gz",
+    "bytes": 1111022,
+    "sha256": "671bde135c0aa0ad513d51e47a91cdfc7796455f93ceed8dbf38065bfff57785"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_001_fills.jsonl.gz",
+    "bytes": 534928,
+    "sha256": "16c424ed68c7d252e63ac57c421c729bd36efd9c02158d799327c06cabd62b25"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_001_orders.jsonl.gz",
+    "bytes": 569465,
+    "sha256": "7b0ba0f21279e1cc8c681c89420a6ca6a58f468841a5c3882bffe1d4d2ab69da"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_010_decisions.jsonl.gz",
+    "bytes": 844654,
+    "sha256": "64e5a86ec05814ba5a1c42856be3d3d52f6916fa49c73d1940744cb2fa97c35c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_010_fills.jsonl.gz",
+    "bytes": 519081,
+    "sha256": "31ccd7ca3a196b3cf22b5fcf3bd71e9db007b83e457f74666245539f1de124c2"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_010_orders.jsonl.gz",
+    "bytes": 558241,
+    "sha256": "faa162eb57f39b4fc375d5592f1df024cb721306287d57aab71e6ac9e078302d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_011_decisions.jsonl.gz",
+    "bytes": 1120401,
+    "sha256": "cd61e068590decfccd7e7a2b6e4729d5b3177e9d61e98a26979a0f64a31837f8"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_011_fills.jsonl.gz",
+    "bytes": 519041,
+    "sha256": "e8e347375e5ab83ea93b8301de6052d94e524cb4d3f05f2b299de556a24f7001"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_011_orders.jsonl.gz",
+    "bytes": 569485,
+    "sha256": "1fe8b8592a1def503420217f2d5c905cfdfe2e8295787aa65df6df62a8fe73e6"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_100_decisions.jsonl.gz",
+    "bytes": 821547,
+    "sha256": "4e3fa0cabb264408bed4cdd181b9c4e9fd930e777f951dedd774da0acfb2941c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_100_fills.jsonl.gz",
+    "bytes": 533816,
+    "sha256": "ec886e5e7f1e664351917b55548c75ad29899a733558795fd41c63710c66a895"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_100_orders.jsonl.gz",
+    "bytes": 500021,
+    "sha256": "503fb809c87e990c7aba14454a861e86e154377cbe81d3771849f75357aedc55"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_101_decisions.jsonl.gz",
+    "bytes": 1084003,
+    "sha256": "0fed01a6bb61583f16827274369925df8e5f33cddfb3413652c1a54a6dda9d62"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_101_fills.jsonl.gz",
+    "bytes": 533816,
+    "sha256": "75db1e06b755bd64bd188935a85cd7d2af674b476fcb2b88828f9b250ec2338c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_101_orders.jsonl.gz",
+    "bytes": 500035,
+    "sha256": "625531ab58d2bf1b9ec5e0b18607f46f54411efbcfdb335548def3e295a2382a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_110_decisions.jsonl.gz",
+    "bytes": 828350,
+    "sha256": "d6e2c5e5d3381a1abb6b9a0053fd4716c8d461d4a286d55cf9c4cd6c2e43192b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_110_fills.jsonl.gz",
+    "bytes": 516937,
+    "sha256": "e7bd3dbd7091d86301868ea766623447c101ddee02e3af46269334b39ee3dff3"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_110_orders.jsonl.gz",
+    "bytes": 490280,
+    "sha256": "57e735dec2d3556f83242cf680b65a1679d285df730124a28755dc8e71ff7478"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_111_decisions.jsonl.gz",
+    "bytes": 1093477,
+    "sha256": "93a94dcfcbb606f1151d8854c00be9193c2b79d50635a8525114b6a129508b3b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_111_fills.jsonl.gz",
+    "bytes": 517344,
+    "sha256": "24b1f36188852ebfaeff80284e3773f38f58a841e1f02b01ece0b9c4a9ed8a9e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_111_orders.jsonl.gz",
+    "bytes": 499663,
+    "sha256": "445099dc87116e49db9839f1b18a9e607314c8f999deea5b9a96afaf863923db"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_baseline_decisions.jsonl.gz",
+    "bytes": 73,
+    "sha256": "cf85beaaf5ea51adaef955a69e4021407e0843fd53a66d925c5b98f8cf476a55"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_baseline_fills.jsonl.gz",
+    "bytes": 598121,
+    "sha256": "3e3b066b5a581c8779d08b4689ba5fdc3f769971b7381b0b7adae072c7e61477"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d0.25_baseline_orders.jsonl.gz",
+    "bytes": 576472,
+    "sha256": "9113037334be82ec44babe819377a794b82cda31a5f1938b34e9720cc79978dd"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_000_decisions.jsonl.gz",
+    "bytes": 837747,
+    "sha256": "a5b5af7436154d91ae1f2cc3d21f16d216d6656961f27a3c121ada559b62676b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_000_fills.jsonl.gz",
+    "bytes": 509315,
+    "sha256": "123a80518beabb39edead474400911a9a0117f295cd14219f5ef634f1fb3466a"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_000_orders.jsonl.gz",
+    "bytes": 565591,
+    "sha256": "137a6d46a77f7f895eb9c3a85b86afc272a2aa969d61bb80cc79c1f9666cc184"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_001_decisions.jsonl.gz",
+    "bytes": 1110320,
+    "sha256": "a6743458b5c1c38eef70f8101f03b2dd19119814dca261fa65fdd9781ac36662"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_001_fills.jsonl.gz",
+    "bytes": 509313,
+    "sha256": "1cdedbcd6aca4e5ddab81990e07324b422e60e9369f402ceb65e554af885ff85"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_001_orders.jsonl.gz",
+    "bytes": 565279,
+    "sha256": "b19d83e26ef13f83b3aacde301e25e477a23356dde8378153011662db8391d32"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_010_decisions.jsonl.gz",
+    "bytes": 843562,
+    "sha256": "8094f5c1279edc5a986bf8aee36bc3dc1b6b06a4552baafaad0eb4154ff696aa"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_010_fills.jsonl.gz",
+    "bytes": 495601,
+    "sha256": "7748960d7124ee9473674159336937d3b24b9f85fbc56ae938b07677cf904055"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_010_orders.jsonl.gz",
+    "bytes": 554104,
+    "sha256": "b3c2514f15110a87378e410c829e25d08b3aab2f8bf483b77684d6cf7262b15d"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_011_decisions.jsonl.gz",
+    "bytes": 1118935,
+    "sha256": "bd1a67f7b1f2a01eccaa9ab123d1e1e897bdab550e8b46d2871cb9fa17d15c8c"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_011_fills.jsonl.gz",
+    "bytes": 492981,
+    "sha256": "7528d019e5c604e166be7dff72350a3ddb0e002d07be8234442e9e8cba8a6260"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_011_orders.jsonl.gz",
+    "bytes": 564586,
+    "sha256": "dca1559c46dce476bfef1c8e149d45596bd1e8781cd77c7e3e71b0e19e0cfbaa"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_100_decisions.jsonl.gz",
+    "bytes": 820928,
+    "sha256": "586066a524e04d7b707ccbb33325cb147e6d84ce1a26f69b3f4f1b043a493797"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_100_fills.jsonl.gz",
+    "bytes": 507755,
+    "sha256": "92c60d1cf879d4d4e5fea0d61801294927b0adf8538291be6281e19305b3ac70"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_100_orders.jsonl.gz",
+    "bytes": 496746,
+    "sha256": "535cfccd8fddc00db66525f0b77c290abfdea297d159188d6c7f9a2e405ee79f"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_101_decisions.jsonl.gz",
+    "bytes": 1083226,
+    "sha256": "619dc08886600823e6b49cc64cff7aa307af74077d9db7107e939a957ce9c3c1"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_101_fills.jsonl.gz",
+    "bytes": 507755,
+    "sha256": "0f712dd07a68320ba92f9e74b49aa6ba2b5e69c75a31be24c6acb67bf26ad7ee"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_101_orders.jsonl.gz",
+    "bytes": 496755,
+    "sha256": "8cb00cb8d26483d0c3795641428a961c050a8902c96e904d0d5e379646c04316"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_110_decisions.jsonl.gz",
+    "bytes": 827275,
+    "sha256": "f1eeb91905f9ba1fdac1b027d6e8bb3119c2e21f7ed43793eeb097aecf965d82"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_110_fills.jsonl.gz",
+    "bytes": 494184,
+    "sha256": "52f1b6b9494eab0c5c38c36a1617ff798971fd833a44136f1e6c064519b67312"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_110_orders.jsonl.gz",
+    "bytes": 486230,
+    "sha256": "42b186da396be0af8050b6b6c5c747008eabed02248ada653c83b3dce8c47e96"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_111_decisions.jsonl.gz",
+    "bytes": 1092353,
+    "sha256": "e4d5d00d6ca6e9f3b096c074e78b3271e1729b64bf327bb262f5455d7b524a5e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_111_fills.jsonl.gz",
+    "bytes": 491238,
+    "sha256": "11ec8685596e7ab54b18b5d21497a58ba180129273bcb74278cce51b7e093967"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_111_orders.jsonl.gz",
+    "bytes": 495737,
+    "sha256": "c0f5f178971168ee3248cbcd43aca7aaaad43faf697df40d19e9f30e390c94d0"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_baseline_decisions.jsonl.gz",
+    "bytes": 70,
+    "sha256": "550e93c1c634106ff11800b836a064abcba971e3a0a199084ecb289b9397541b"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_baseline_fills.jsonl.gz",
+    "bytes": 569583,
+    "sha256": "922c128d48fccb08de6d6e8db34a4a092fa774ed708a911480dd28e24abfd01e"
+  },
+  {
+    "path": "nfl_factorial_lab_20260921/results/q3300_d5_baseline_orders.jsonl.gz",
+    "bytes": 570997,
+    "sha256": "d5d3ed770cf528b1028b619bacc297d1efaee1ea2ac8aff46f796af161289ef8"
+  }
+]

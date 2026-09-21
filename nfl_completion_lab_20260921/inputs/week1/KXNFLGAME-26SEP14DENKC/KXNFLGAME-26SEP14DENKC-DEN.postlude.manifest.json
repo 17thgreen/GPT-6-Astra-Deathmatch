@@ -1,0 +1,11 @@
+{
+  "ticker": "KXNFLGAME-26SEP14DENKC-DEN",
+  "trades": 437,
+  "pages": 1,
+  "pagination_exhausted": true,
+  "path": "data/KXNFLGAME-26SEP14DENKC/KXNFLGAME-26SEP14DENKC-DEN.postlude.jsonl.gz",
+  "sha256": "358df33a1b6baf1e2998bd311b5245ff5e49bbf9aa066acd2b4e53268f84d0bd",
+  "from_utc": "2026-09-14T21:15:00+00:00",
+  "through_utc": "2026-09-14T21:20:00+00:00",
+  "retrieved_at": "2026-09-21T05:34:53.866599+00:00"
+}

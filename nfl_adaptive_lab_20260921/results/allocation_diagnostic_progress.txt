@@ -1,0 +1,3 @@
+q3300_d0.25_allocation_neutral pnl 328.34789999999884 residual 0.0
+q10000_d0.25_allocation_neutral pnl 78.51749999996355 residual 0.0
+DONE 2 diagnostic controls

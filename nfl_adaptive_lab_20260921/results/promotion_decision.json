@@ -1,0 +1,35 @@
+{
+  "inventory": {
+    "status": "RESEARCH_NOT_PROMOTED",
+    "conditions": {
+      "beats_baseline_all_four": false,
+      "positive_net_all_four": true,
+      "flat_all_four": true,
+      "improves_both_primary_weeks": false,
+      "primary_positive_excluding_best_two": true,
+      "inventory_hours_within_limit": true
+    }
+  },
+  "patience": {
+    "status": "RESEARCH_NOT_PROMOTED",
+    "conditions": {
+      "beats_baseline_all_four": false,
+      "positive_net_all_four": false,
+      "flat_all_four": true,
+      "improves_both_primary_weeks": false,
+      "primary_positive_excluding_best_two": true,
+      "inventory_hours_within_limit": true
+    }
+  },
+  "allocation": {
+    "status": "DEVELOPMENT_CHALLENGER",
+    "conditions": {
+      "beats_baseline_all_four": true,
+      "positive_net_all_four": true,
+      "flat_all_four": true,
+      "improves_both_primary_weeks": true,
+      "primary_positive_excluding_best_two": true,
+      "inventory_hours_within_limit": true
+    }
+  }
+}

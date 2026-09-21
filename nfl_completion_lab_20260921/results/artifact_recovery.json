@@ -1,0 +1,13 @@
+{
+  "scenario": "combined_q291_q1_route",
+  "detected_error": "EOFError: Compressed file ended before the end-of-stream marker was reached",
+  "original_ledger_bytes": 4157148,
+  "original_ledger_sha256": "3c858647da6a5b196204cb0157b91df7c55a813d4e18a8b59bb6d271ea1c2d02",
+  "original_valid_lines_before_error": 95716,
+  "expected_fills": 97150,
+  "timestamp": "2026-09-21T15:16:58.629208+00:00",
+  "summary_fields_changed_excluding_runtime": [],
+  "regenerated_ledger_bytes": 4220878,
+  "regenerated_ledger_sha256": "c18448c82f358d54c6e4c0156fc702921eef6e8eae05d2f25416ca54654b92b6",
+  "finished": "2026-09-21T15:18:04.124209+00:00"
+}

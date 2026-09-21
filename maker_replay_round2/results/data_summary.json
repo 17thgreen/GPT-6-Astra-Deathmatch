@@ -1,0 +1,9 @@
+{
+  "raw_rows": 391118,
+  "deduplicated_rows": 391118,
+  "games": 16,
+  "markets": 32,
+  "start": "2026-09-03T00:20:17.069481+00:00",
+  "end": "2026-09-14T21:19:59.616586+00:00",
+  "tie_order": "trade_id lexical ordering for identical timestamps; receipt ordering unavailable"
+}

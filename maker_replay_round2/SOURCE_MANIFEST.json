@@ -1,0 +1,313 @@
+{
+  "repository": "17thgreen/Claude-SportsBetting-Competition-to-the-Death",
+  "commit": "f4ad8e8bfba2db2a5e8e1ecf80f935424f60f175",
+  "review_date": "2026-09-21",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "efe8227eeaa2609625fc0e0cb46ea6c1ad87d3cc1f2e82ff3f92ac0f68b01009",
+      "bytes": 25212,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "STRATEGY_BOARD.md",
+      "sha256": "6a362e7e39077f56ce3b34c4ab456a29c04becf7371dfa6fc94caf0bbff2d46e",
+      "bytes": 6619,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/development_nfl_ml_line_move_linear_only_20260920T055226_cc1e6e/summary.json",
+      "sha256": "63a093bf778e185e6f2b96eb445eff72bcecb164bd5d31e98af6d9fd368fb4c8",
+      "bytes": 6678,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/adverse_selection_tail.json",
+      "sha256": "7e55b56b664931568d06e495a4e12824edfb723d38df0fc176a8909068620ee9",
+      "bytes": 7946,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/kalshi_queue_depth_by_regime.json",
+      "sha256": "1a9c630832de7b79d637379d4541b06725910b8cd8e7a87b88f74f51d77e2e0e",
+      "bytes": 535,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/kalshi_queue_depth_by_series.json",
+      "sha256": "dc5b48c0bca6a19d3b97d4701ee4e0e284c7915ec4ed9364cbac009fb4c30239",
+      "bytes": 2696,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/ncaaf_sharp_reference_profit_concentration.json",
+      "sha256": "b769a3e335951da136ffb7de2ce7996dd8a9c38f0fa76836548175cbba3729c7",
+      "bytes": 8382,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/paper_mm_fleet.json",
+      "sha256": "7b525cd212b13873c3b81bb283e4c706231ed0ed8add5394b49dd2279ebccaa6",
+      "bytes": 18508,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/paper_mm_quote_window.json",
+      "sha256": "be46944a6da55983e2c0d2196ce5b5dabdbe2291e98761d52df1d9a7d654e4a1",
+      "bytes": 4726,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/paper_mm_regimes.json",
+      "sha256": "9415024b64d6dc6a5ac5283047fc9bd3602a64885320079c4a60e7ec0365bf4e",
+      "bytes": 19542,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/paper_mm_size_vs_depth.json",
+      "sha256": "529cf70737e2eb2e0ae6dd767e028bfc181ff53b925a1864008eb6bcd8b38b5f",
+      "bytes": 2437,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/paper_mm_validation.json",
+      "sha256": "b220f15666e5a753a9dbc578ababa317fb93ca6f5d94e6d79fac96763783d991",
+      "bytes": 207831,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "artifacts/experiments/diagnostics/windowed_fleet.json",
+      "sha256": "3d3531966806c8ef3ffa6c62dc43e565516a2a847c103fa85534de6e1f91f801",
+      "bytes": 7651,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/holdout_ncaaf_model_line_shopping_blend_20260920T034813_e7f2fe/summary.json",
+      "sha256": "d51a147ca41c5a073347e55437572c5e0fc8111953ca33e4968b009566bca51c",
+      "bytes": 5999,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/mm_validation_20260920T203131_245d15/summary.json",
+      "sha256": "baf2b283979ff5a948ca5f1fbdc129206f387b243a83a60844995cc3ab41c53e",
+      "bytes": 28930,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/validation_nfl_ml_line_move_linear_only_20260920T055327_19dbde/summary.json",
+      "sha256": "19660d0028fadc22debcd94f108ae729ead6e12f4db569ea0ea0e4f613b8b99b",
+      "bytes": 4822,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/windowed_fleet_20260920T200319_d61c30/summary.json",
+      "sha256": "e9d799b7fe24725aaa2169e62f9b8b6a9a5dd354184049c5519ff5dbd9e3d7ae",
+      "bytes": 5735,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "artifacts/experiments/windowed_fleet_20260920T200540_107ec1/summary.json",
+      "sha256": "f7f065224b9b3715497a3a32bbf07d07f86f3e8ef0d99e657f95d69881270ceb",
+      "bytes": 37589,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/00_executive_decision.md",
+      "sha256": "9debec9264d334fecff759817dc6d03c47bccac7fc0f3bdcf4bdf8f160797623",
+      "bytes": 10267,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/16_phase2_results.md",
+      "sha256": "9e0097ad6111324ea17ba7757cc78ce46c05b98006ca4cce2467e69f121d33d1",
+      "bytes": 13325,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/19_framework_two_disposition.md",
+      "sha256": "c7fa967d7d78601f891d1aa0586955887492bed7441e195beeb1b3f871682e2e",
+      "bytes": 28907,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/20_ml_and_microstructure.md",
+      "sha256": "431f1be3c8b7a9b0c529972527c7e7682de836b4424a4d6bf8c27c663e23bec6",
+      "bytes": 10897,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/21_paper_market_maker.md",
+      "sha256": "23035c6d4b326d997cd315bd0f23928e2ca04d30b5ed0a9132a8bf5fc8c1acce",
+      "bytes": 23761,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/22_flatline_deployment.md",
+      "sha256": "d1a005dd97c34d93b35a1a7e2aa68c777f4cefc83713d2f7d7510211200804a3",
+      "bytes": 40297,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/23_long_term_plan.md",
+      "sha256": "b38474f6ae6ef45d07cf280390cce846b6082a5f90659ed24f01b82a64a64059",
+      "bytes": 4712,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/26_grok_deathmatch_review.md",
+      "sha256": "a74abebcd259cf8eae9fa617e6a94cb11997c9f3c0523e6b5ff712fa57b4e9de",
+      "bytes": 6422,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "docs/27_kalshi_strategy_survey.md",
+      "sha256": "78989e3ccd0963c25a822ce7fd5a01a35e0b2f957ed39eaedb063f2ccc917a23",
+      "bytes": 6199,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "3432bb80015d2112cd18cc6b7b5be16d96b072173d6b5ac37cbc2382e6f5e3c9",
+      "bytes": 1603,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/capture_pregame_tapes.py",
+      "sha256": "a2e63aff6bb3efafc7af22b4f0710419ff7845b8e3ca7bb384862009eead5bdc",
+      "bytes": 5528,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_adverse_selection_tail.py",
+      "sha256": "fab9f581a5b381925cace5c9ea43c9f6312e9b07bab6be82bd2fe84d648eff34",
+      "bytes": 9875,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_mm_validation.py",
+      "sha256": "cfe3c8b065df167dc80d27ac45129b67863fe73a6393eb99e83c8d3091f08594",
+      "bytes": 10463,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_paper_mm_fleet.py",
+      "sha256": "1e7d5c3151d09d0c826d3d3267acf4fbb3abb24aea3c2e16e58e749db89d851c",
+      "bytes": 12511,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_paper_mm_regimes.py",
+      "sha256": "bb68f5cb77e6e7524f390dba5d1d6f8077144fd964612ebb205279f1cd59d606",
+      "bytes": 13709,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_paper_mm_replay.py",
+      "sha256": "edb3eabb011de4914ec622bcf7fdf2bad22a530e91d90ea2a93d176a65cdccd1",
+      "bytes": 5421,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_season_extrapolation.py",
+      "sha256": "d3796ae80737d358c6e41e48345a3d51621ba4a6ed61ca23116995cbce398a2b",
+      "bytes": 3997,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/run_windowed_fleet.py",
+      "sha256": "3495b110bff2dfc1b0073ede4ad821ac57c4d53e10fb6c58e9b76e794d5f59f1",
+      "bytes": 13604,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "scripts/sample_kalshi_queue_depth.py",
+      "sha256": "a31c6b7f38e98636026ed7bf516381a9e71c0bd082c947d1e5ec8571d774e156",
+      "bytes": 3912,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/__init__.py",
+      "sha256": "f7608e1b4c038ad98762fdd8ac44c161c5263a8a98094368cd3f322473c43fcc",
+      "bytes": 383,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/config.py",
+      "sha256": "c2071718b74db4a8e7d92fcb17fecca768fec7cf505a4568966b175e72decfc6",
+      "bytes": 6258,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/eval/cfb_market.py",
+      "sha256": "929558403e3855ed878e8a37c25d83530038ccaab1d32071ad25ca1b0f4609b5",
+      "bytes": 20200,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/eval/ml_line_move.py",
+      "sha256": "dca95d0b91a27fcfb0efe21dd736dfa51344281a6a29ed2185845fba7c5c6658",
+      "bytes": 14864,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/paper/account.py",
+      "sha256": "5d1c79768d4e48c986c55796c5ad3e87e6441f3907babafc4c3e6ec4f77d5c9a",
+      "bytes": 7033,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/paper/execution.py",
+      "sha256": "54e4fa35271963e38620414fcf8d9b5de2ee75e72e7d4ec8519d106b0d2c93ad",
+      "bytes": 7201,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/paper/fees.py",
+      "sha256": "839b9875ed15d31f754d6176f3c649d3272c56e4571ebdeda4c8380a31114d0c",
+      "bytes": 3066,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/paper/live.py",
+      "sha256": "99d273b75cf086d9cfad70a562c666296a256e478c032531314a628532862f45",
+      "bytes": 16086,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/paper/policy.py",
+      "sha256": "3918920921edce2d3ae932065df7f98841b2cdf026c67dbfb53d3133302cf448",
+      "bytes": 12746,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/paper/regimes.py",
+      "sha256": "763c008a306303bd8022367dbc792d0b55a7e0011445f94edc271e67b391742e",
+      "bytes": 8325,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/paper/replay.py",
+      "sha256": "494ddd3d02cf85965ff8d966656f59d79b2221aa113d77874b165f2939522964",
+      "bytes": 13856,
+      "required_for_reproduction": true
+    },
+    {
+      "path": "src/flatstake/providers/kalshi_book.py",
+      "sha256": "d46b4d7d31a48c50404a256d5419562b4ac30b2fafc709d704113dd8127bf590",
+      "bytes": 6880,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "src/flatstake/providers/kalshi_public.py",
+      "sha256": "5b400c1eb62383fb3fd559402bc53cc56ea28486932e2ab8bfae57d254c375f7",
+      "bytes": 20730,
+      "required_for_reproduction": false
+    },
+    {
+      "path": "tests/test_paper_mm.py",
+      "sha256": "91a9a91838b76ae54ad077f785c0cb0d9a65b7fa18abade33fa907068a5c648d",
+      "bytes": 14987,
+      "required_for_reproduction": false
+    }
+  ]
+}

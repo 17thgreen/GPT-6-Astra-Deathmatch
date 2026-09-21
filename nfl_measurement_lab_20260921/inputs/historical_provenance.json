@@ -1,0 +1,16 @@
+{
+  "source": "../nfl_completion_lab_20260921",
+  "cohort": {
+    "cohort": "combined",
+    "games": 31,
+    "markets": 62,
+    "trades": 681732,
+    "quotes": 364988,
+    "bankroll_note": "ONE shared $5,000 account; overlapping windows run chronologically."
+  },
+  "files": {
+    "q1_route_fills.jsonl.gz": "f36d27de2312585aa7d42f5f4ece81139ffd2b2ba13b8c8a3cb259cef991d62c",
+    "pair_complete_fills.jsonl.gz": "51c614e5c437ecbb7d5901dfe0af2e6a2963b8b363f315593b00f8ce8164197b",
+    "historical_quotes.jsonl.gz": "af19caa03761c9d4809fdfa1227cb1d8bfa51cff3ad271cee2e66ba30ffc6a8b"
+  }
+}
