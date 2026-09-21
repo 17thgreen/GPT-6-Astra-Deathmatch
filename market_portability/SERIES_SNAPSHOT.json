@@ -1,0 +1,1038 @@
+{
+  "base_url": "https://api.elections.kalshi.com/trade-api/v2",
+  "discovery_only": true,
+  "series": [
+    {
+      "series_ticker": "KXNFLGAME",
+      "retrieved_at": "2026-09-21T19:46:58.637884+00:00",
+      "series": {
+        "ticker": "KXNFLGAME",
+        "title": "Professional Football Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/FOOTBALLGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/FOOTBALLGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "the Governing League",
+            "url": "https://www.nfl.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-16T00:29:24.467894Z"
+      },
+      "sample_market": {
+        "ticker": "KXNFLGAME-26SEP28PHICHI-PHI",
+        "event_ticker": "KXNFLGAME-26SEP28PHICHI",
+        "status": "active",
+        "rules_primary": "If Philadelphia wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the team who wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-15T16:16:00Z",
+        "close_time": "2026-10-01T00:15:00Z",
+        "expected_expiration_time": "2026-09-29T06:15:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNFLGAME-26SEP28PHICHI",
+        "title": "Philadelphia vs Chicago",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNFLGAME-26SEP28PHICHI-CHI",
+            "title": "Chicago wins",
+            "yes_sub_title": "Chicago",
+            "rules_primary": "If Chicago wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the team who wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLGAME-26SEP28PHICHI-PHI",
+            "title": "Philadelphia wins",
+            "yes_sub_title": "Philadelphia",
+            "rules_primary": "If Philadelphia wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the team who wins the Philadelphia vs Chicago Pro Football game originally scheduled for Sep 28, 2026. If the game ends in a tie, the market will resolve to $0.50 for each team. If the game is postponed but begins within 48 hours from its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is not started within 48 hours, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNBAGAME",
+      "retrieved_at": "2026-09-21T19:46:58.638763+00:00",
+      "series": {
+        "ticker": "KXNBAGAME",
+        "title": "NBA Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/BASKETBALLGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/BASKETBALLGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "the Governing League",
+            "url": "https://www.nba.com"
+          },
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com"
+          }
+        ],
+        "last_updated_ts": "2026-09-21T17:25:02.826336Z"
+      },
+      "sample_market": {
+        "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+        "event_ticker": "KXNBAGAME-26OCT20OKCSAS",
+        "status": "active",
+        "rules_primary": "If San Antonio wins the Oklahoma City vs San Antonio Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
+        "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-08-20T15:28:00Z",
+        "close_time": "2026-10-23T01:30:00Z",
+        "expected_expiration_time": "2026-10-21T04:30:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNBAGAME-26OCT20OKCSAS",
+        "title": "Oklahoma City vs San Antonio",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNBAGAME-26OCT20OKCSAS-OKC",
+            "title": "Oklahoma City wins",
+            "yes_sub_title": "Oklahoma City",
+            "rules_primary": "If Oklahoma City wins the Oklahoma City vs San Antonio Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNBAGAME-26OCT20OKCSAS-SAS",
+            "title": "San Antonio wins",
+            "yes_sub_title": "San Antonio",
+            "rules_primary": "If San Antonio wins the Oklahoma City vs San Antonio Pro Basketball game originally scheduled for Oct 20, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXWNBAGAME",
+      "retrieved_at": "2026-09-21T19:46:58.641894+00:00",
+      "series": {
+        "ticker": "KXWNBAGAME",
+        "title": "Women's Pro Basketball Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/BASKETBALLGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/BASKETBALLGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com"
+          },
+          {
+            "name": "the Governing League",
+            "url": "https://www.wnba.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-21T17:25:02.95687Z"
+      },
+      "sample_market": {
+        "ticker": "KXWNBAGAME-26SEP23DALSEA-SEA",
+        "event_ticker": "KXWNBAGAME-26SEP23DALSEA",
+        "status": "active",
+        "rules_primary": "If Seattle wins the Dallas vs Seattle women's Pro Basketball game originally scheduled for Sep 23, 2026, then the market resolves to Yes.",
+        "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T02:10:00Z",
+        "close_time": "2026-09-26T02:00:00Z",
+        "expected_expiration_time": "2026-09-24T05:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXWNBAGAME-26SEP23DALSEA",
+        "title": "Dallas vs Seattle",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXWNBAGAME-26SEP23DALSEA-SEA",
+            "title": "Seattle wins",
+            "yes_sub_title": "Seattle",
+            "rules_primary": "If Seattle wins the Dallas vs Seattle women's Pro Basketball game originally scheduled for Sep 23, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXWNBAGAME-26SEP23DALSEA-DAL",
+            "title": "Dallas wins",
+            "yes_sub_title": "Dallas",
+            "rules_primary": "If Dallas wins the Dallas vs Seattle women's Pro Basketball game originally scheduled for Sep 23, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within 2 days). If the cancelled game is not played or is rescheduled further than 2 days out, all markets will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNHLGAME",
+      "retrieved_at": "2026-09-21T19:46:58.643679+00:00",
+      "series": {
+        "ticker": "KXNHLGAME",
+        "title": "NHL Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/HOCKEYWINNINGINPERIOD.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/HOCKEYWINNINGINPERIOD.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "NHL",
+            "url": "https://www.nhl.com"
+          },
+          {
+            "name": "ESPN",
+            "url": "https://espn.com"
+          }
+        ],
+        "last_updated_ts": "2026-09-20T19:52:39.291317Z"
+      },
+      "sample_market": {
+        "ticker": "KXNHLGAME-26SEP24UTAVGK-VGK",
+        "event_ticker": "KXNHLGAME-26SEP24UTAVGK",
+        "status": "active",
+        "rules_primary": "If Vegas wins the Utah vs Vegas NHL game originally scheduled for Sep 24, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T04:05:00Z",
+        "close_time": "2026-09-27T02:00:00Z",
+        "expected_expiration_time": "2026-09-25T05:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNHLGAME-26SEP24UTAVGK",
+        "title": "Utah vs Vegas",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNHLGAME-26SEP24UTAVGK-VGK",
+            "title": "Vegas wins",
+            "yes_sub_title": "Vegas",
+            "rules_primary": "If Vegas wins the Utah vs Vegas NHL game originally scheduled for Sep 24, 2026, then the market resolves to Yes.",
+            "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price."
+          },
+          {
+            "ticker": "KXNHLGAME-26SEP24UTAVGK-UTA",
+            "title": "Utah wins",
+            "yes_sub_title": "Utah",
+            "rules_primary": "If Utah wins the Utah vs Vegas NHL game originally scheduled for Sep 24, 2026, then the market resolves to Yes.",
+            "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXMLBGAME",
+      "retrieved_at": "2026-09-21T19:47:11.616037+00:00",
+      "series": {
+        "ticker": "KXMLBGAME",
+        "title": "Professional Baseball Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 0.5,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/BASEBALLGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/BASEBALLGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com"
+          },
+          {
+            "name": "Fox Sports",
+            "url": "https://www.foxsports.com"
+          },
+          {
+            "name": "the Governing League",
+            "url": "https://www.mlb.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-16T00:29:24.467894Z"
+      },
+      "sample_market": {
+        "ticker": "KXMLBGAME-26SEP241510AZCOL-COL",
+        "event_ticker": "KXMLBGAME-26SEP241510AZCOL",
+        "status": "active",
+        "rules_primary": "If Colorado wins the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T19:25:00Z",
+        "close_time": "2026-09-27T19:10:00Z",
+        "expected_expiration_time": "2026-09-24T22:10:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXMLBGAME-26SEP241510AZCOL",
+        "title": "Arizona vs Colorado",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXMLBGAME-26SEP241510AZCOL-AZ",
+            "title": "Arizona wins",
+            "yes_sub_title": "Arizona",
+            "rules_primary": "If Arizona wins the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXMLBGAME-26SEP241510AZCOL-COL",
+            "title": "Colorado wins",
+            "yes_sub_title": "Colorado",
+            "rules_primary": "If Colorado wins the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Arizona vs Colorado professional baseball game originally scheduled for Sep 24, 2026 at 3:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNCAAFGAME",
+      "retrieved_at": "2026-09-21T19:47:11.630844+00:00",
+      "series": {
+        "ticker": "KXNCAAFGAME",
+        "title": "College Football Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/FOOTBALLGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/FOOTBALLGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "Kalshi using information originating from the NCAA",
+            "url": "https://www.ncaa.com/sports/football/fbs"
+          },
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com"
+          }
+        ],
+        "last_updated_ts": "2026-09-16T00:29:24.467894Z"
+      },
+      "sample_market": {
+        "ticker": "KXNCAAFGAME-26OCT04SJSUHAW-SJSU",
+        "event_ticker": "KXNCAAFGAME-26OCT04SJSUHAW",
+        "status": "active",
+        "rules_primary": "If San Jose St. wins the San Jose St. vs Hawai'i college football game originally scheduled for Oct 4, 2026, then the market resolves to Yes.",
+        "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-20T04:07:00Z",
+        "close_time": "2026-10-06T04:00:00Z",
+        "expected_expiration_time": "2026-10-04T07:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNCAAFGAME-26OCT04SJSUHAW",
+        "title": "San Jose St. vs Hawai'i",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNCAAFGAME-26OCT04SJSUHAW-HAW",
+            "title": "Hawai'i wins",
+            "yes_sub_title": "Hawai'i",
+            "rules_primary": "If Hawai'i wins the San Jose St. vs Hawai'i college football game originally scheduled for Oct 4, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNCAAFGAME-26OCT04SJSUHAW-SJSU",
+            "title": "San Jose St. wins",
+            "yes_sub_title": "San Jose St.",
+            "rules_primary": "If San Jose St. wins the San Jose St. vs Hawai'i college football game originally scheduled for Oct 4, 2026, then the market resolves to Yes.",
+            "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNCAAMBGAME",
+      "retrieved_at": "2026-09-21T19:47:11.719446+00:00",
+      "series": {
+        "ticker": "KXNCAAMBGAME",
+        "title": "Men's College Basketball Men's Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/ACHIEVEMENTS.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/ACHIEVEMENTS.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "Kalshi using information originating from the NCAA",
+            "url": "https://www.ncaa.com/sports/basketball-men/d1"
+          },
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-21T19:03:23.998414Z"
+      }
+    },
+    {
+      "series_ticker": "KXATPMATCH",
+      "retrieved_at": "2026-09-21T19:47:11.720147+00:00",
+      "series": {
+        "ticker": "KXATPMATCH",
+        "title": "ATP Tennis Match",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/ACHIEVEMENTS.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/ACHIEVEMENTS.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "ATP",
+            "url": "https://www.atptour.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-21T19:03:23.807989Z"
+      },
+      "sample_market": {
+        "ticker": "KXATPMATCH-26SEP22SVRSEK-SVR",
+        "event_ticker": "KXATPMATCH-26SEP22SVRSEK",
+        "status": "active",
+        "rules_primary": "If Dalibor Svrcina wins the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T10:45:00Z",
+        "close_time": "2026-10-06T04:00:00Z",
+        "expected_expiration_time": "2026-09-22T07:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXATPMATCH-26SEP22SVRSEK",
+        "title": "Svrcina vs Sekulic",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXATPMATCH-26SEP22SVRSEK-SVR",
+            "title": "Dalibor Svrcina wins",
+            "yes_sub_title": "Dalibor Svrcina",
+            "rules_primary": "If Dalibor Svrcina wins the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXATPMATCH-26SEP22SVRSEK-SEK",
+            "title": "Philip Sekulic wins",
+            "yes_sub_title": "Philip Sekulic",
+            "rules_primary": "If Philip Sekulic wins the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Svrcina vs Sekulic professional tennis match in the 2026 ATP Hangzhou Qualification Round 1 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXWTAMATCH",
+      "retrieved_at": "2026-09-21T19:47:19.396566+00:00",
+      "series": {
+        "ticker": "KXWTAMATCH",
+        "title": "WTA Tennis Match",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/ACHIEVEMENTS.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/ACHIEVEMENTS.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "WTA",
+            "url": "https://www.wtatennis.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-21T19:03:24.510886Z"
+      },
+      "sample_market": {
+        "ticker": "KXWTAMATCH-26SEP21PARYAM-YAM",
+        "event_ticker": "KXWTAMATCH-26SEP21PARYAM",
+        "status": "active",
+        "rules_primary": "If Mei Yamaguchi wins the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T03:05:00Z",
+        "close_time": "2026-10-06T03:00:00Z",
+        "expected_expiration_time": "2026-09-22T06:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXWTAMATCH-26SEP21PARYAM",
+        "title": "Parks vs Yamaguchi",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXWTAMATCH-26SEP21PARYAM-PAR",
+            "title": "Alycia Parks wins",
+            "yes_sub_title": "Alycia Parks",
+            "rules_primary": "If Alycia Parks wins the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXWTAMATCH-26SEP21PARYAM-YAM",
+            "title": "Mei Yamaguchi wins",
+            "yes_sub_title": "Mei Yamaguchi",
+            "rules_primary": "If Mei Yamaguchi wins the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played, then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Parks vs Yamaguchi professional tennis match in the 2026 WTA Singapore Round Of 32 after a ball has been played. If the match does not occur (signaled by a ball being played) due to a player injury, walkover, forfeiture, or any other cancellation (all before the match starts), the market will resolve to a fair price in accordance with the rules. If this match is postponed or delayed, the market will remain open and close after the rescheduled match has finished (within two weeks).\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXUCLGAME",
+      "retrieved_at": "2026-09-21T19:47:24.048931+00:00",
+      "series": {
+        "ticker": "KXUCLGAME",
+        "title": "UEFA Champions League Game",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/SOCCERGAMEWIN.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/SOCCERGAMEWIN.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "ESPN",
+            "url": "https://www.espn.com/"
+          },
+          {
+            "name": "Fox Sports",
+            "url": "https://www.foxsports.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-16T00:29:24.467894Z"
+      },
+      "sample_market": {
+        "ticker": "KXUCLGAME-26SEP10SLARCL-TIE",
+        "event_ticker": "KXUCLGAME-26SEP10SLARCL",
+        "status": "finalized",
+        "rules_primary": "If Tie is the result of the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties). If the game ends in a tie, the market called \"Tie\" resolves to Yes. If the game is cancelled or rescheduled to over 48 hours away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-03T00:39:00Z",
+        "close_time": "2026-09-10T21:10:51Z",
+        "expected_expiration_time": "2026-09-10T22:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXUCLGAME-26SEP10SLARCL",
+        "title": "Slavia Prague vs Lens",
+        "mutually_exclusive": true,
+        "collateral_return_type": "MECNET",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXUCLGAME-26SEP10SLARCL-SLA",
+            "title": "Slavia Prague wins",
+            "yes_sub_title": "Slavia Prague",
+            "rules_primary": "If Slavia Prague wins the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties). If the game ends in a tie, the market called \"Tie\" resolves to Yes. If the game is cancelled or rescheduled to over 48 hours away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXUCLGAME-26SEP10SLARCL-RCL",
+            "title": "Lens wins",
+            "yes_sub_title": "Lens",
+            "rules_primary": "If Lens wins the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties). If the game ends in a tie, the market called \"Tie\" resolves to Yes. If the game is cancelled or rescheduled to over 48 hours away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXUCLGAME-26SEP10SLARCL-TIE",
+            "title": "Tie is the result",
+            "yes_sub_title": "Tie",
+            "rules_primary": "If Tie is the result of the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties), then the market resolves to Yes.",
+            "rules_secondary": "The following market refers to the Slavia Prague vs Lens professional Champions League soccer game originally scheduled for Sep 10, 2026 after 90 minutes plus stoppage time (does not include extra time or penalties). If the game ends in a tie, the market called \"Tie\" resolves to Yes. If the game is cancelled or rescheduled to over 48 hours away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNFLSPREAD",
+      "retrieved_at": "2026-09-21T19:47:24.080876+00:00",
+      "series": {
+        "ticker": "KXNFLSPREAD",
+        "title": "Pro Football Spread",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/FOOTBALLSPREAD.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/FOOTBALLSPREAD.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "the Governing League",
+            "url": "https://www.nfl.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-20T21:32:59.85694Z"
+      },
+      "sample_market": {
+        "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND8",
+        "event_ticker": "KXNFLSPREAD-26SEP27HOUIND",
+        "status": "active",
+        "rules_primary": "If IND Colts wins by more than 7.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+        "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T07:05:00Z",
+        "close_time": "2026-09-29T17:00:00Z",
+        "expected_expiration_time": "2026-09-27T20:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNFLSPREAD-26SEP27HOUIND",
+        "title": "HOU Texans vs IND Colts: Spread",
+        "mutually_exclusive": false,
+        "collateral_return_type": "",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU21",
+            "title": "HOU Texans wins by over 20.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 20.5 points",
+            "rules_primary": "If HOU Texans wins by more than 20.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU18",
+            "title": "HOU Texans wins by over 17.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 17.5 points",
+            "rules_primary": "If HOU Texans wins by more than 17.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU17",
+            "title": "HOU Texans wins by over 16.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 16.5 points",
+            "rules_primary": "If HOU Texans wins by more than 16.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU15",
+            "title": "HOU Texans wins by over 14.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 14.5 points",
+            "rules_primary": "If HOU Texans wins by more than 14.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU14",
+            "title": "HOU Texans wins by over 13.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 13.5 points",
+            "rules_primary": "If HOU Texans wins by more than 13.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU11",
+            "title": "HOU Texans wins by over 10.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 10.5 points",
+            "rules_primary": "If HOU Texans wins by more than 10.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU10",
+            "title": "HOU Texans wins by over 9.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 9.5 points",
+            "rules_primary": "If HOU Texans wins by more than 9.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU8",
+            "title": "HOU Texans wins by over 7.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 7.5 points",
+            "rules_primary": "If HOU Texans wins by more than 7.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU7",
+            "title": "HOU Texans wins by over 6.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 6.5 points",
+            "rules_primary": "If HOU Texans wins by more than 6.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU6",
+            "title": "HOU Texans wins by over 5.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 5.5 points",
+            "rules_primary": "If HOU Texans wins by more than 5.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU5",
+            "title": "HOU Texans wins by over 4.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 4.5 points",
+            "rules_primary": "If HOU Texans wins by more than 4.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU4",
+            "title": "HOU Texans wins by over 3.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 3.5 points",
+            "rules_primary": "If HOU Texans wins by more than 3.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU3",
+            "title": "HOU Texans wins by over 2.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 2.5 points",
+            "rules_primary": "If HOU Texans wins by more than 2.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-HOU2",
+            "title": "HOU Texans wins by over 1.5 points?",
+            "yes_sub_title": "HOU Texans wins by over 1.5 points",
+            "rules_primary": "If HOU Texans wins by more than 1.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND2",
+            "title": "IND Colts wins by over 1.5 points?",
+            "yes_sub_title": "IND Colts wins by over 1.5 points",
+            "rules_primary": "If IND Colts wins by more than 1.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND3",
+            "title": "IND Colts wins by over 2.5 points?",
+            "yes_sub_title": "IND Colts wins by over 2.5 points",
+            "rules_primary": "If IND Colts wins by more than 2.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND4",
+            "title": "IND Colts wins by over 3.5 points?",
+            "yes_sub_title": "IND Colts wins by over 3.5 points",
+            "rules_primary": "If IND Colts wins by more than 3.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND5",
+            "title": "IND Colts wins by over 4.5 points?",
+            "yes_sub_title": "IND Colts wins by over 4.5 points",
+            "rules_primary": "If IND Colts wins by more than 4.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND6",
+            "title": "IND Colts wins by over 5.5 points?",
+            "yes_sub_title": "IND Colts wins by over 5.5 points",
+            "rules_primary": "If IND Colts wins by more than 5.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND7",
+            "title": "IND Colts wins by over 6.5 points?",
+            "yes_sub_title": "IND Colts wins by over 6.5 points",
+            "rules_primary": "If IND Colts wins by more than 6.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND8",
+            "title": "IND Colts wins by over 7.5 points?",
+            "yes_sub_title": "IND Colts wins by over 7.5 points",
+            "rules_primary": "If IND Colts wins by more than 7.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND10",
+            "title": "IND Colts wins by over 9.5 points?",
+            "yes_sub_title": "IND Colts wins by over 9.5 points",
+            "rules_primary": "If IND Colts wins by more than 9.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND11",
+            "title": "IND Colts wins by over 10.5 points?",
+            "yes_sub_title": "IND Colts wins by over 10.5 points",
+            "rules_primary": "If IND Colts wins by more than 10.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND14",
+            "title": "IND Colts wins by over 13.5 points?",
+            "yes_sub_title": "IND Colts wins by over 13.5 points",
+            "rules_primary": "If IND Colts wins by more than 13.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND15",
+            "title": "IND Colts wins by over 14.5 points?",
+            "yes_sub_title": "IND Colts wins by over 14.5 points",
+            "rules_primary": "If IND Colts wins by more than 14.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    },
+    {
+      "series_ticker": "KXNFLTOTAL",
+      "retrieved_at": "2026-09-21T19:47:24.126614+00:00",
+      "series": {
+        "ticker": "KXNFLTOTAL",
+        "title": "Pro Football Total Points",
+        "fee_type": "quadratic_with_maker_fees",
+        "fee_multiplier": 1,
+        "contract_terms_url": "https://assets.kalshi.com/contract_terms/FOOTBALLTOTALS.pdf",
+        "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/FOOTBALLTOTALS.pdf",
+        "frequency": "custom",
+        "settlement_sources": [
+          {
+            "name": "the Governing League",
+            "url": "https://www.nfl.com/"
+          }
+        ],
+        "last_updated_ts": "2026-09-16T00:29:24.467894Z"
+      },
+      "sample_market": {
+        "ticker": "KXNFLTOTAL-26SEP27HOUIND-67",
+        "event_ticker": "KXNFLTOTAL-26SEP27HOUIND",
+        "status": "active",
+        "rules_primary": "If HOU Texans and IND Colts collectively score more than 66.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+        "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "notional_value_dollars": "1.0000",
+        "open_time": "2026-09-21T07:05:00Z",
+        "close_time": "2026-09-29T17:00:00Z",
+        "expected_expiration_time": "2026-09-27T20:00:00Z"
+      },
+      "sample_event": {
+        "event_ticker": "KXNFLTOTAL-26SEP27HOUIND",
+        "title": "HOU Texans vs IND Colts: Total Points",
+        "mutually_exclusive": false,
+        "collateral_return_type": "",
+        "fee_type_override": null,
+        "fee_multiplier_override": null,
+        "markets": [
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-25",
+            "title": "Full Game: over 24.5 points scored?",
+            "yes_sub_title": "Over 24.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 24.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-28",
+            "title": "Full Game: over 27.5 points scored?",
+            "yes_sub_title": "Over 27.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 27.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-31",
+            "title": "Full Game: over 30.5 points scored?",
+            "yes_sub_title": "Over 30.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 30.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-34",
+            "title": "Full Game: over 33.5 points scored?",
+            "yes_sub_title": "Over 33.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 33.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-37",
+            "title": "Full Game: over 36.5 points scored?",
+            "yes_sub_title": "Over 36.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 36.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-40",
+            "title": "Full Game: over 39.5 points scored?",
+            "yes_sub_title": "Over 39.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 39.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-43",
+            "title": "Full Game: over 42.5 points scored?",
+            "yes_sub_title": "Over 42.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 42.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-44",
+            "title": "Full Game: over 43.5 points scored?",
+            "yes_sub_title": "Over 43.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 43.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-45",
+            "title": "Full Game: over 44.5 points scored?",
+            "yes_sub_title": "Over 44.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 44.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-46",
+            "title": "Full Game: over 45.5 points scored?",
+            "yes_sub_title": "Over 45.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 45.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-47",
+            "title": "Full Game: over 46.5 points scored?",
+            "yes_sub_title": "Over 46.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 46.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-48",
+            "title": "Full Game: over 47.5 points scored?",
+            "yes_sub_title": "Over 47.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 47.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-49",
+            "title": "Full Game: over 48.5 points scored?",
+            "yes_sub_title": "Over 48.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 48.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-52",
+            "title": "Full Game: over 51.5 points scored?",
+            "yes_sub_title": "Over 51.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 51.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-55",
+            "title": "Full Game: over 54.5 points scored?",
+            "yes_sub_title": "Over 54.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 54.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-58",
+            "title": "Full Game: over 57.5 points scored?",
+            "yes_sub_title": "Over 57.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 57.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-61",
+            "title": "Full Game: over 60.5 points scored?",
+            "yes_sub_title": "Over 60.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 60.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-64",
+            "title": "Full Game: over 63.5 points scored?",
+            "yes_sub_title": "Over 63.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 63.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          },
+          {
+            "ticker": "KXNFLTOTAL-26SEP27HOUIND-67",
+            "title": "Full Game: over 66.5 points scored?",
+            "yes_sub_title": "Over 66.5 points scored",
+            "rules_primary": "If HOU Texans and IND Colts collectively score more than 66.5 points in the HOU Texans vs IND Colts Pro Football game originally scheduled for Sep 27, 2026, then the market resolves to Yes.",
+            "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners."
+          }
+        ]
+      }
+    }
+  ]
+}
