@@ -33,6 +33,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_timing_lab_20260921` | Q4 size, early entry, stability and event-cap experiments |
 | `nfl_adaptive_lab_20260921` | Q5 adaptive policies and capital controls |
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
+| `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check; frozen, not run |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
@@ -71,6 +72,8 @@ Commit the hypothesis and frozen specification before execution, then commit the
 implementation checkpoint and verified results with a clear status. Preserve
 failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
-The next research step is an isolated test of the **actual chosen-pair price
-check**, with the original router's timing and sizing held fixed. Fresh-game
-validation and a durable public recorder remain separate unmet gates.
+Q7 isolates the **actual chosen-pair price check** in
+`nfl_paircheck_lab_20260922`. The 2×2 is implemented and frozen. The 16
+historical scenarios have not been run, because the normalized event tape is
+not in this clone. Fresh-game validation and a durable public recorder remain
+separate unmet gates.

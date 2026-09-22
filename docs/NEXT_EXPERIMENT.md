@@ -1,7 +1,10 @@
 # Q7 proposal: isolate chosen-pair price consistency
 
-Status: PROPOSED, NOT IMPLEMENTED, NOT RUN. This proposal is committed before any
-Q7 outputs. Implementation details and exact code must be frozen before execution.
+Status: IMPLEMENTED, FROZEN, NOT RUN. The hypothesis was committed before the
+source freeze. No Q7 scenario has been executed and this file does not report
+Q7 P&L. The frozen lab is `nfl_paircheck_lab_20260922/`. Historical replay waits
+on the owner kit; see that directory's README. Live execution remains outside
+this experiment.
 
 ## Question
 

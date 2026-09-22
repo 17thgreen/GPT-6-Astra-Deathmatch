@@ -1,7 +1,7 @@
 {
   "experiment": "Q7_CHOSEN_PAIR_COST_CHECK",
   "directory": "nfl_paircheck_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE_AND_OUTCOMES",
+  "status": "IMPLEMENTED_FROZEN_NOT_RUN",
   "frozen_at": "2026-09-22T20:53:49Z",
   "note": "Hypothesis commit only. implementation_sha256 is null until the source-freeze commit. results and pnl stay null until a real replay. This timestamp is the hypothesis freeze, not an execution time.",
   "does_not_modify": [
@@ -188,7 +188,15 @@
     "test_adaptive.py": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546"
   },
   "spec_sha256": "cdfba7817a4a13c51b3aec3dc2256e7de1cd61386d9e1b359d85b2b65a78344f",
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "paircheck_policy.py": "ae0a19e03acebd359e711fb13b5b47ca807d72632f3a2cd1c1c282ad5916d7a9",
+    "run_experiment.py": "55d6fafe860d68e8b84e59b37c8cd641b4ec835712632867eaebcd809ff626b6",
+    "analyze.py": "2fcc5262197ccf1e1dd3eb241649c57581e7353046945427b6e01e8f14fa16d6",
+    "verify_results.py": "2b925a39941428ae6b33753445c531967b73025ed4b127d28c5080cfeb237c40",
+    "test_paircheck.py": "9169b1879e2afd89bb26500695295300bd57902aa83e6d78aafac893252ef5a6",
+    "test_runner.py": "e5820ccb3f8c9835edcee2467bf0c28abf8bef1fb47065fe2db5fbd64f9b540f"
+  },
   "results": null,
-  "pnl": null
+  "pnl": null,
+  "source_frozen_note": "Source, tests, and runner were frozen after the hypothesis commit and before any Q7 scenario execution. results and pnl remain null."
 }
