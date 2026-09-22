@@ -25,6 +25,9 @@ import rails
 
 EXPERIMENT_ID = 'r2p1_hygiene_000_20260922'
 STRATEGY_POINTER = 'Q6-000'
+CANONICAL_FREEZE = 'R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md'
+CANONICAL_FREEZE_SHA256_PREFIX = 'ddcd4427'
+FEE_SENSITIVITY_STATUS = 'SUPERSEDED_BY_R2-P1'
 FEEBOOK_COMMIT = '22371178cb2663250b4762f328069571c48cb551'
 RAILS_COMMIT = '6a28e0d6254327ea4e6451c781bec56215ac6cac'
 INHERITED_MODEL_ID = 'q6.order_fees.fixed_point_balance.v1'
@@ -84,6 +87,21 @@ def development_cohort_event_ids():
     if len(event_ids) != 31:
         raise HygieneError('N_events')
     return event_ids
+
+
+def pin_lock():
+    """Conductor pin. The canonical freeze file is cited, not substituted."""
+    return {
+        'canonical_freeze': CANONICAL_FREEZE,
+        'canonical_freeze_sha256_prefix': CANONICAL_FREEZE_SHA256_PREFIX,
+        'canonical_freeze_bytes': 'not_in_checkout',
+        'fee_sensitivity_000_r1p1': FEE_SENSITIVITY_STATUS,
+        'second_lab': False,
+        'fee_treatment_arms_emitted': False,
+        'queue_fragility_twin': False,
+        'live_orders': False,
+        'scorecard': empty_pre_settlement(),
+    }
 
 
 def instrument_binding():

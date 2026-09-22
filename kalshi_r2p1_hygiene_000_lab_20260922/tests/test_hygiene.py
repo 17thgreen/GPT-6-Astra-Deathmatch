@@ -97,6 +97,41 @@ class PinTests(unittest.TestCase):
         self.assertEqual(frozen['strategy_pointer'], 'Q6-000')
         self.assertEqual(frozen['admission'], 'Conductor ADMIT R2-P1')
 
+    def test_pin_lock_is_one_lab_and_fee_sensitivity_is_superseded(self):
+        frozen = json.loads(hygiene.FROZEN_EXPERIMENT.read_text())
+        lock = hygiene.pin_lock()
+        self.assertEqual(lock['canonical_freeze'], hygiene.CANONICAL_FREEZE)
+        self.assertEqual(
+            lock['canonical_freeze'],
+            'R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md',
+        )
+        self.assertEqual(lock['canonical_freeze_sha256_prefix'], 'ddcd4427')
+        self.assertTrue(lock['canonical_freeze_sha256_prefix'].startswith('ddcd4427'))
+        self.assertEqual(lock['canonical_freeze_bytes'], 'not_in_checkout')
+        self.assertEqual(frozen['packet'], lock['canonical_freeze'])
+        self.assertEqual(frozen['canonical_freeze_sha256_prefix'], 'ddcd4427')
+        self.assertEqual(frozen['canonical_freeze_bytes'], 'not_in_checkout')
+        self.assertFalse((ROOT / hygiene.CANONICAL_FREEZE).exists())
+        self.assertEqual(lock['fee_sensitivity_000_r1p1'], 'SUPERSEDED_BY_R2-P1')
+        self.assertEqual(frozen['fee_sensitivity_000_r1p1'], 'SUPERSEDED_BY_R2-P1')
+        self.assertIs(lock['second_lab'], False)
+        self.assertIs(frozen['second_lab'], False)
+        self.assertIs(lock['fee_treatment_arms_emitted'], False)
+        self.assertIs(frozen['fee_treatment_arms_emitted'], False)
+        self.assertIs(lock['queue_fragility_twin'], False)
+        self.assertIs(lock['live_orders'], False)
+        for key in ('results', 'pnl', *hygiene.OUTPUT_KEYS):
+            self.assertIsNone(lock['scorecard'][key])
+            self.assertIsNone(frozen[key])
+        for arm in ('FS0', 'FS1', 'FS2'):
+            self.assertNotIn(arm, frozen)
+        self.assertFalse((PARENT / 'kalshi_fee_sensitivity_000_lab_20260922').exists())
+        self.assertEqual(list(PARENT.glob('*fee_sensitivity*')), [])
+        self.assertEqual(list(PARENT.glob('*queue_fragility*')), [])
+        self.assertEqual(list(PARENT.glob('*queue-fragility*')), [])
+        labs = sorted(path.name for path in PARENT.glob('kalshi_r2p1_hygiene_000_lab_*'))
+        self.assertEqual(labs, ['kalshi_r2p1_hygiene_000_lab_20260922'])
+
     def test_shadow_manifest_and_cohort_pins(self):
         frozen = json.loads(hygiene.FROZEN_EXPERIMENT.read_text())
         self.assertEqual(hygiene.sha256_file(hygiene.SHADOW_FREEZE), frozen['shadow_freeze_sha256'])

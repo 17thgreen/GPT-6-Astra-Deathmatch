@@ -5,14 +5,35 @@ frozen and before any unit-test outcome is recorded. No figure in this document
 is a trading result. Q6 outcomes that already exist are not re-labeled as
 evidence from this lab.
 
-Conductor ADMIT R2-P1 is the measurement kernel. No separate Deep Research
-packet was in this checkout. The pins below are that admission plus the frozen
-feebook and rails labs already on main.
+## Pin lock
+
+The only canonical freeze is
+`R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md`, sha256 prefix
+`ddcd4427`. Those bytes were not in this checkout. This lab does not vendor a
+substitute under that name and does not invent the rest of the digest.
+`EXPERIMENT_SPEC.md` is the lab hypothesis. It is not that freeze.
+
+`fee_sensitivity_000_r1p1` is `SUPERSEDED_BY_R2-P1`. There is no second lab
+directory for it. Queue-fragility stays queued and is not started here.
+
+The R2-P1 scorecard is only:
+
+- `fee_delta_vs_inherited_model`
+- `freshness_gap_sec`
+- `queue_bin_mismatch_rate`
+
+`results` and `pnl` stay null. FS0, FS1, and FS2 would be scorecard columns
+only if each mapped 1:1 onto those three outputs inside this one lab. Three
+fee treatments do not. They are not emitted. The fee statistic remains the
+single examiner-minus-inherited delta.
+
+Conductor ADMIT R2-P1 is the measurement kernel used to build the helpers.
+The pins below are that admission plus the frozen feebook and rails labs
+already on main.
 
 This lab relabels Q6-`000` measurement hygiene. It does not retune the `000`
 signal, does not reopen capital arms A1/A2/A3, and does not start the
-queue-fragility twin. Fee-treatment arms FS0/FS1/FS2 are not this experiment.
-The fee question that remains is the examiner-versus-inherited delta below.
+queue-fragility twin.
 
 ## Placement
 

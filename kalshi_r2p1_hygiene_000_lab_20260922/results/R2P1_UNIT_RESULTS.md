@@ -16,7 +16,7 @@ From `kalshi_r2p1_hygiene_000_lab_20260922`, Python 3.12.3, standard library:
 python3 -m unittest -v tests.test_hygiene
 ```
 
-Ran 19 tests in 0.008s. Result: OK. Failures: 0. Errors: 0.
+Ran 20 tests in 0.007s. Result: OK. Failures: 0. Errors: 0.
 
 The checks that passed are the predeclared ones: examiner `order_fee` round-up
 differs from the inherited fixed-point balance fee on the same feebook rate;
@@ -52,8 +52,11 @@ Those reruns check unchanged modules. They are not R2-P1 results.
 - Queue labels `q3300` and `q10000` are instrument settings from
   `rails.scenario_queue`. They are not a queue-fragility knob. Capital arms
   were not reopened. The `000` signal was not retuned.
-- No separate Deep Research packet was in this checkout. The measurement
-  kernel is the Conductor ADMIT R2-P1 text, pinned in `EXPERIMENT_SPEC.md`.
+- The canonical freeze is `R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md`,
+  sha256 prefix `ddcd4427`. Those bytes were not in this checkout. This lab
+  does not substitute a file under that name. `fee_sensitivity_000_r1p1` is
+  superseded by R2-P1. No second lab directory exists. FS0, FS1, and FS2 are
+  not scorecard columns. Queue-fragility was not started.
 - No live order client was added. No Q1–Q7 directory, and neither the feebook
   lab, the rails lab, nor the capital-structure lab, was modified.
 

@@ -1,9 +1,12 @@
 # R2-P1 hygiene stress on Q6-000
 
-Status: hypothesis committed in this directory. Source, if frozen, follows in
-the same directory. Unit outcomes, if recorded, live under `results/` and are
-not profit. `EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json`
-keeps `results`, `pnl`, and the three pre-settlement outputs null.
+Status: one lab, `kalshi_r2p1_hygiene_000_lab_20260922`. The canonical freeze
+is `R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md` (sha256 prefix
+`ddcd4427`). Those bytes were not in this checkout, so this directory does not
+substitute a file under that name. `fee_sensitivity_000_r1p1` is superseded by
+R2-P1 and has no second lab. `EXPERIMENT_SPEC.md` is the hypothesis.
+`FROZEN_EXPERIMENT.json` keeps `results`, `pnl`, and the three pre-settlement
+outputs null.
 
 The lab imports `kalshi_feebook_lab_20260922` for examiner fees and
 `kalshi_rails_lab_20260922` for queue labels, maker-credit admission, and the
