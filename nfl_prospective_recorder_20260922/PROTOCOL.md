@@ -115,6 +115,29 @@ Each real admission appends one record. Required fields:
 copy under `capture-data/` and refuses a stamp that is already too late for
 any included game. There is no flag to choose an earlier timestamp.
 
+## Identity snapshot
+
+The rules above were committed before this listing was saved. At
+`2026-09-22T20:57:58Z` the public open and unopened `KXNFLGAME` events
+collection was retrieved with nested markets off
+(`listing_snapshot_20260922.json`). Classification used that same clock.
+Prices, results, and settlements were not stored. This clock is not an
+admission stamp; `prospective_panel.json` still has `admitted_at: null`, and
+the recorder refuses that file.
+
+- 16 reserved games, PIT@CLE through ATL@NO, still had their entire T−7d in
+  the future. PIT@CLE is `KXNFLGAME-26OCT01PITCLE`, kickoff
+  `2026-10-02T00:15:00Z`, T−7d `2026-09-25T00:15:00Z` (2026-09-24 20:15
+  America/New_York). A full window for that game exists only if `admit.py`
+  and the first recorder process both run before that T−7d instant.
+- PHI@CHI is the only `ineligible_incomplete` row.
+- 15 week-5 games had no listing row. Their events are null. They are not
+  polled and no ticker was invented for them.
+
+A later listing that fills week 5, or a missed PIT@CLE start, requires a new
+panel version and a new database. It does not edit this file's admission time,
+because this file was never admitted.
+
 ## What this repository state is not
 
 - Not a running collector. Docker files are instructions for a durable host.

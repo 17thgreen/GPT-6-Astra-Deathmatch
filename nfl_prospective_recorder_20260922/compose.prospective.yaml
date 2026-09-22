@@ -1,0 +1,5 @@
+# Use only after admit.py has written capture-data/prospective/admitted_panel.json.
+# docker compose -f compose.yaml -f compose.prospective.yaml up -d --build
+services:
+  nfl-recorder:
+    command: ["python", "-u", "record.py", "--panel", "/data/prospective/admitted_panel.json", "--database", "/data/prospective/capture.sqlite", "--seconds", "86400"]

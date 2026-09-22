@@ -73,4 +73,7 @@ failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
 The next research step is an isolated test of the **actual chosen-pair price
 check**, with the original router's timing and sizing held fixed. Fresh-game
-validation and a durable public recorder remain separate unmet gates.
+validation and a durable public recorder remain separate unmet gates. A
+reviewed prospective recorder, not deployed by this commit, is in
+`nfl_prospective_recorder_20260922/`. PHI@CHI's full T−7d window is already
+missed and is not backfilled.

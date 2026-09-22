@@ -1,0 +1,135 @@
+{
+  "admitted_at": null,
+  "panel_version": "2026-09-22.1",
+  "cohort_id": "schedule-only-20260922-after-phi-chi-miss",
+  "cohort_kind": "schedule_only_new",
+  "purpose": "prospective",
+  "panel_sha256": null,
+  "events": [
+    {
+      "game_id": "2026_04_PIT_CLE",
+      "event": "KXNFLGAME-26OCT01PITCLE",
+      "kickoff": "2026-10-02T00:15:00+00:00",
+      "t_minus_7d_start": "2026-09-25T00:15:00+00:00"
+    },
+    {
+      "game_id": "2026_04_IND_WAS",
+      "event": "KXNFLGAME-26OCT04INDWAS",
+      "kickoff": "2026-10-04T13:30:00+00:00",
+      "t_minus_7d_start": "2026-09-27T13:30:00+00:00"
+    },
+    {
+      "game_id": "2026_04_ARI_NYG",
+      "event": "KXNFLGAME-26OCT04ARINYG",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_DAL_HOU",
+      "event": "KXNFLGAME-26OCT04DALHOU",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_GB_TB",
+      "event": "KXNFLGAME-26OCT04GBTB",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_JAX_CIN",
+      "event": "KXNFLGAME-26OCT04JACCIN",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_LA_PHI",
+      "event": "KXNFLGAME-26OCT04LARPHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_NE_BUF",
+      "event": "KXNFLGAME-26OCT04NEBUF",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_NYJ_CHI",
+      "event": "KXNFLGAME-26OCT04NYJCHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_TEN_BAL",
+      "event": "KXNFLGAME-26OCT04TENBAL",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00"
+    },
+    {
+      "game_id": "2026_04_MIA_MIN",
+      "event": "KXNFLGAME-26OCT04MIAMIN",
+      "kickoff": "2026-10-04T20:05:00+00:00",
+      "t_minus_7d_start": "2026-09-27T20:05:00+00:00"
+    },
+    {
+      "game_id": "2026_04_DEN_SF",
+      "event": "KXNFLGAME-26OCT04DENSF",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00"
+    },
+    {
+      "game_id": "2026_04_KC_LV",
+      "event": "KXNFLGAME-26OCT04KCLV",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00"
+    },
+    {
+      "game_id": "2026_04_LAC_SEA",
+      "event": "KXNFLGAME-26OCT04LACSEA",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00"
+    },
+    {
+      "game_id": "2026_04_DET_CAR",
+      "event": "KXNFLGAME-26OCT04DETCAR",
+      "kickoff": "2026-10-05T00:20:00+00:00",
+      "t_minus_7d_start": "2026-09-28T00:20:00+00:00"
+    },
+    {
+      "game_id": "2026_04_ATL_NO",
+      "event": "KXNFLGAME-26OCT05ATLNO",
+      "kickoff": "2026-10-06T00:15:00+00:00",
+      "t_minus_7d_start": "2026-09-29T00:15:00+00:00"
+    }
+  ],
+  "not_backfilled": [
+    {
+      "game_id": "2026_03_PHI_CHI",
+      "event": "KXNFLGAME-26SEP28PHICHI",
+      "kickoff": "2026-09-29T00:15:00+00:00",
+      "t_minus_7d_start": "2026-09-22T00:15:00+00:00",
+      "reason": "T-7d already started at classification; full window was not recorded. Do not backfill."
+    }
+  ],
+  "unresolved_not_admitted": [
+    "2026_05_TB_DAL",
+    "2026_05_PHI_JAX",
+    "2026_05_CIN_MIA",
+    "2026_05_CLE_NYJ",
+    "2026_05_HOU_TEN",
+    "2026_05_IND_PIT",
+    "2026_05_LV_NE",
+    "2026_05_MIN_NO",
+    "2026_05_NYG_WAS",
+    "2026_05_DEN_LAC",
+    "2026_05_CHI_GB",
+    "2026_05_DET_ARI",
+    "2026_05_SF_SEA",
+    "2026_05_BAL_ATL",
+    "2026_05_BUF_LA"
+  ],
+  "collector_running": false,
+  "production_claim": false,
+  "instructions": "Do not fill admitted_at by hand. Run admit.py at the host; it stamps the actual UTC time, refuses any included game whose T-7d start has already passed, and appends this record. Never copy an earlier timestamp to cover a missed window."
+}

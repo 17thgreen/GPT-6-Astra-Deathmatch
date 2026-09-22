@@ -1,0 +1,13 @@
+services:
+  nfl-recorder:
+    build: .
+    restart: unless-stopped
+    command: ["python", "-u", "record.py", "--panel", "development_panel.json", "--database", "/data/development/capture.sqlite", "--seconds", "86400"]
+    volumes:
+      - ./capture-data:/data
+    stop_grace_period: 120s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
