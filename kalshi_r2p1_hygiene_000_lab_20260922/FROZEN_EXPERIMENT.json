@@ -65,12 +65,12 @@
     "Q6_000_signal_retune"
   ],
   "specification_sha256": {
-    "EXPERIMENT_SPEC.md": "8f91010269262bc8320b5c2d0d48ef23c08700a00b06e7ce511a91c0853aecd8",
+    "EXPERIMENT_SPEC.md": "d338e049cb065ffe1e12279f6ad119aa9060e710f5aabf37a6eb279d5cf5a261",
     "r2p1_hygiene_freeze.json": "1dfb2946f5be32f511ac8c6d1318dddd38531e90d1586871bc77fe234b3407bd",
     "results/EMPTY_RESULTS.json": "baffd97793ba7d84a31af4753ca2a23919154dde71814cb35077ad0d72a6c57e"
   },
   "implementation_sha256": {
-    "README.md": "6d43fd6a2e31d8d92ffbbb2a5a7391cedde016e28cacdfc61c946fc78c0a5d18",
+    "README.md": "aa1e81fac236d19891b6536d4d18cc2bf0faf673dd08ba9c9ef87cde3a87479e",
     "hygiene.py": "65310a88ec7602a3fa2e50f2444e64c431dd29ef648992cb7861a5b74ca3b69f",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "tests/test_hygiene.py": "339e68b1df0ed45716219d6aaf799469aa1195053a72a38e85142fad7d8cf4aa"
@@ -83,6 +83,32 @@
     "prior_hygiene_py_sha256": "f4fc25846885cf8d2e77432c6819375b7eab9a8bff85de767a4eca3fe00c2590",
     "prior_test_hygiene_py_sha256": "f19677e1115f46152d970de5cbc230ffa94eb7817d940981c85179a968369ea5",
     "note": "Conductor follow-up. The pin-lock allows that sibling directory and no other queue-fragility name. A second fee-sensitivity lab and a second R2-P1 lab stay forbidden. results and pnl stay null."
+  },
+  "fixture_join_acceptance": {
+    "accepted_at": "2026-09-22T23:38:00Z",
+    "pick": "A",
+    "status": "HARNESS_WIRED_SCORECARD_NULL",
+    "lab_directory": "kalshi_r2p1_hygiene_000_lab_20260922",
+    "second_lab": false,
+    "packet": "packets/R2-P1_FIXTURE_JOIN_000_FREEZE_2026-09-22.md",
+    "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
+    "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "hygiene_py_commit": "c33af159d00c07f2d66b2f93174cfcdb4cde8d37",
+    "forbid_000_retune": true,
+    "forbid_capital_A2_A3": true,
+    "forbid_shadow_fee_literals": true,
+    "deferred_pick_B": "queue_fragility_fixture_join",
+    "primary_fixture": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+    "fee_delta_vs_inherited_model": null,
+    "freshness_gap_sec": null,
+    "queue_bin_mismatch_rate": null,
+    "results": null,
+    "pnl": null,
+    "prior_experiment_spec_sha256": "8f91010269262bc8320b5c2d0d48ef23c08700a00b06e7ce511a91c0853aecd8",
+    "prior_readme_sha256": "6d43fd6a2e31d8d92ffbbb2a5a7391cedde016e28cacdfc61c946fc78c0a5d18",
+    "hygiene_py_sha256": "65310a88ec7602a3fa2e50f2444e64c431dd29ef648992cb7861a5b74ca3b69f",
+    "note": "Conductor ACCEPT + GO. The join harness lives in this lab. Helper output on synthetic rows is not copied into these fields. hygiene.py bytes are unchanged."
   },
   "source_frozen_at": "2026-09-22T23:04:55Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",

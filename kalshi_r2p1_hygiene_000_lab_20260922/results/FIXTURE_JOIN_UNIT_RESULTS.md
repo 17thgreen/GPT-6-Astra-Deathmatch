@@ -11,16 +11,20 @@ No completed-net figure is reported.
 Pick **A**. Freeze sha256
 `e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c`.
 
+The harness is `fixture_join.py` inside `kalshi_r2p1_hygiene_000_lab_20260922`.
+There is no second R2-P1 lab. `hygiene.py` is unchanged from
+`c33af159d00c07f2d66b2f93174cfcdb4cde8d37`.
+
 ## Command
 
-From `kalshi_r2p1_fixture_join_000_lab_20260922`, Python 3.12.3, standard
-library:
+From `kalshi_r2p1_hygiene_000_lab_20260922`, Python 3.12.3, standard library:
 
 ```bash
-python3 -m unittest -v tests.test_fixture_join
+python3 -m unittest -v tests.test_hygiene tests.test_fixture_join
 ```
 
-Ran 14 tests in 0.016s. Result: OK. Failures: 0. Errors: 0.
+Ran 34 tests in 0.023s. Result: OK. Failures: 0. Errors: 0. Twenty of those
+tests are the existing hygiene pins. Fourteen are the join wiring.
 
 The checks that passed are the predeclared ones: the harness imports the
 feebook, rails, and hygiene modules at the pinned commits; the freeze packet
@@ -35,9 +39,11 @@ the same rows; a non-`000` stem and a maker fill with no order are refused;
 `write_scorecard` raises. An in-memory `pre_settlement_outputs` preview on the
 maker rows was computed inside the test and was not written to disk.
 
-The frozen hygiene suite was rerun from its own directory: 20 tests, OK.
-The frozen queue-fragility suite was rerun from its own directory: 12 tests,
-OK. Those reruns check unchanged modules. They are not fixture-join results.
+The hygiene tests in the same command are the existing helper pins.
+`hygiene.py` was not edited. The queue-fragility suite was rerun from its own
+directory: 12 tests, OK. Its core module is unchanged. The sibling-pin list
+in that lab's freeze names the hygiene files this join adds. That rerun is
+not a fixture-join result and not pick B.
 
 ## Limitations
 
@@ -61,9 +67,10 @@ OK. Those reruns check unchanged modules. They are not fixture-join results.
 - `fee_delta_vs_inherited_model`, `freshness_gap_sec`, and
   `queue_bin_mismatch_rate` stay null in the freeze. So do `results` and
   `pnl`. Pick B, the queue-fragility fixture join, was not started.
-- No live order client was added. The feebook lab, the rails lab, the hygiene
-  lab, the queue-fragility lab, the capital-structure lab, and the Q1–Q7
-  trees were not modified. Q6-`000` was not retuned. Capital A2 and A3 stay
-  closed.
+- No live order client was added. `hygiene.py` was not edited. The feebook
+  lab, the rails lab, the capital-structure lab, and the Q1–Q7 trees were not
+  modified. Queue-fragility code was not modified. Its freeze file gained the
+  sibling-pin paths for this join. Q6-`000` was not retuned. Capital A2 and
+  A3 stay closed. Pick B was not started.
 
 No profit is reported.

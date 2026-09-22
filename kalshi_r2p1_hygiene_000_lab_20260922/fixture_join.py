@@ -1,9 +1,11 @@
-"""Read-only join of Q6-000 fill and order fixtures into R2-P1 hygiene helpers.
+"""Read-only join of Q6-000 fill and order fixtures into this lab's hygiene helpers.
 
-Examiner fees come from kalshi_feebook_lab_20260922. Queue bins, maker-credit
-admission, and content freshness come from kalshi_rails_lab_20260922 through
-kalshi_r2p1_hygiene_000_lab_20260922. This module does not place live orders,
-does not retune Q6-000, and does not write scorecard metrics.
+This module lives in kalshi_r2p1_hygiene_000_lab_20260922. There is no second
+R2-P1 directory. Examiner fees come from kalshi_feebook_lab_20260922. Queue
+bins, maker-credit admission, and content freshness come from
+kalshi_rails_lab_20260922 through hygiene.py in this directory. This module
+does not place live orders, does not retune Q6-000, and does not write
+scorecard metrics into FROZEN_EXPERIMENT.json.
 """
 import gzip
 import hashlib
@@ -15,10 +17,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 PARENT = ROOT.parent
-HYGIENE_DIR = PARENT / 'kalshi_r2p1_hygiene_000_lab_20260922'
+LAB_DIRECTORY = 'kalshi_r2p1_hygiene_000_lab_20260922'
 FEEBOOK_DIR = PARENT / 'kalshi_feebook_lab_20260922'
 RAILS_DIR = PARENT / 'kalshi_rails_lab_20260922'
-for _path in (HYGIENE_DIR, FEEBOOK_DIR, RAILS_DIR):
+for _path in (ROOT, FEEBOOK_DIR, RAILS_DIR):
     if str(_path) not in sys.path:
         sys.path.insert(0, str(_path))
 
@@ -29,6 +31,7 @@ import rails
 EXPERIMENT_ID = 'R2-P1_fixture_join_000_20260922'
 STRATEGY_POINTER = 'Q6-000'
 PICK = 'A'
+SECOND_LAB = False
 DEFERRED_PICK_B = 'queue_fragility_fixture_join'
 FEEBOOK_COMMIT = '22371178cb2663250b4762f328069571c48cb551'
 RAILS_COMMIT = '6a28e0d6254327ea4e6451c781bec56215ac6cac'
@@ -105,7 +108,9 @@ def instrument_binding():
     hygiene_binding = hygiene.instrument_binding()
     return {
         'experiment_id': EXPERIMENT_ID,
+        'lab_directory': LAB_DIRECTORY,
         'pick': PICK,
+        'second_lab': SECOND_LAB,
         'strategy_pointer': STRATEGY_POINTER,
         'feebook_commit': FEEBOOK_COMMIT,
         'rails_commit': RAILS_COMMIT,

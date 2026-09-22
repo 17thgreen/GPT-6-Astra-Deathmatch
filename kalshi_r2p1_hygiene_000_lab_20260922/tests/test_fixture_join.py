@@ -17,7 +17,6 @@ PARENT = ROOT.parent
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(PARENT / 'kalshi_feebook_lab_20260922'))
 sys.path.insert(0, str(PARENT / 'kalshi_rails_lab_20260922'))
-sys.path.insert(0, str(PARENT / 'kalshi_r2p1_hygiene_000_lab_20260922'))
 
 import feebook
 import fixture_join
@@ -37,6 +36,9 @@ class PinTests(unittest.TestCase):
         self.assertEqual(Path(rails.__file__).resolve().parent.name, 'kalshi_rails_lab_20260922')
         self.assertEqual(Path(hygiene.__file__).resolve().parent.name, 'kalshi_r2p1_hygiene_000_lab_20260922')
         self.assertEqual(binding['experiment_id'], 'R2-P1_fixture_join_000_20260922')
+        self.assertEqual(binding['lab_directory'], 'kalshi_r2p1_hygiene_000_lab_20260922')
+        self.assertEqual(ROOT.name, 'kalshi_r2p1_hygiene_000_lab_20260922')
+        self.assertIs(binding['second_lab'], False)
         self.assertEqual(binding['pick'], 'A')
         self.assertEqual(binding['strategy_pointer'], 'Q6-000')
         self.assertEqual(binding['feebook_commit'], '22371178cb2663250b4762f328069571c48cb551')
@@ -56,8 +58,8 @@ class PinTests(unittest.TestCase):
         for commit, path in (
             (fixture_join.FEEBOOK_COMMIT, 'kalshi_feebook_lab_20260922'),
             (fixture_join.RAILS_COMMIT, 'kalshi_rails_lab_20260922'),
-            (fixture_join.HYGIENE_COMMIT, 'kalshi_r2p1_hygiene_000_lab_20260922'),
-            (fixture_join.HYGIENE_COMMIT, 'kalshi_queue_fragility_000_lab_20260922'),
+            (fixture_join.HYGIENE_COMMIT, 'kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py'),
+            (fixture_join.HYGIENE_COMMIT, 'kalshi_queue_fragility_000_lab_20260922/queue_fragility.py'),
             (fixture_join.HYGIENE_COMMIT, 'kalshi_capital_structure_lab_20260922'),
             (fixture_join.HYGIENE_COMMIT, 'nfl_factorial_lab_20260921'),
             (fixture_join.HYGIENE_COMMIT, 'nfl_paircheck_lab_20260922'),
@@ -77,15 +79,25 @@ class PinTests(unittest.TestCase):
         frozen = json.loads(fixture_join.FROZEN_EXPERIMENT.read_text())
         packet = json.loads(fixture_join.PACKET_FROZEN.read_text())
         kernel = json.loads((PARENT / 'packets' / 'R2-P1_FIXTURE_JOIN_000' / 'freeze.json').read_text())
-        self.assertEqual(frozen['pick'], 'A')
+        acceptance = frozen['fixture_join_acceptance']
+        self.assertIs(frozen['second_lab'], False)
+        self.assertEqual(acceptance['pick'], 'A')
+        self.assertIs(acceptance['second_lab'], False)
+        self.assertEqual(acceptance['lab_directory'], fixture_join.LAB_DIRECTORY)
         self.assertEqual(packet['pick'], 'A')
         self.assertEqual(kernel['pick'], 'A')
-        self.assertEqual(frozen['packet_sha256'], fixture_join.PACKET_SHA256)
+        self.assertEqual(acceptance['packet_sha256'], fixture_join.PACKET_SHA256)
+        self.assertEqual(packet['packet_sha256'], fixture_join.PACKET_SHA256)
         self.assertEqual(kernel['packet_sha256'], fixture_join.PACKET_SHA256)
-        self.assertEqual(frozen['deferred_pick_B'], 'queue_fragility_fixture_join')
-        self.assertIs(frozen['forbid_000_retune'], True)
-        self.assertIs(frozen['forbid_capital_A2_A3'], True)
+        self.assertEqual(acceptance['deferred_pick_B'], 'queue_fragility_fixture_join')
+        self.assertIs(acceptance['forbid_000_retune'], True)
+        self.assertIs(acceptance['forbid_capital_A2_A3'], True)
         self.assertIs(frozen['live_orders'], False)
+        self.assertEqual(list(PARENT.glob('kalshi_r2p1_fixture_join_000_lab_*')), [])
+        self.assertEqual(
+            sorted(path.name for path in PARENT.glob('kalshi_r2p1_hygiene_000_lab_*')),
+            ['kalshi_r2p1_hygiene_000_lab_20260922'],
+        )
 
     def test_freeze_outputs_stay_null(self):
         frozen = json.loads(fixture_join.FROZEN_EXPERIMENT.read_text())
@@ -93,12 +105,15 @@ class PinTests(unittest.TestCase):
         packet_results = json.loads(fixture_join.PACKET_RESULTS.read_text())
         packet_frozen = json.loads(fixture_join.PACKET_FROZEN.read_text())
         hygiene_frozen = json.loads(hygiene.FROZEN_EXPERIMENT.read_text())
-        for payload in (frozen, empty, packet_results, packet_frozen, hygiene_frozen):
+        acceptance = frozen['fixture_join_acceptance']
+        for payload in (frozen, empty, packet_results, packet_frozen, hygiene_frozen, acceptance):
             for key in fixture_join.OUTPUT_KEYS:
                 self.assertIsNone(payload[key])
-        self.assertEqual(empty['status'], 'NOT_RUN')
-        self.assertEqual(empty['pick'], 'A')
-        self.assertEqual(packet_results, empty)
+        self.assertEqual(empty['status'], 'NOT_JOINED')
+        self.assertEqual(packet_results['status'], 'NOT_RUN')
+        self.assertEqual(packet_results['pick'], 'A')
+        self.assertEqual(fixture_join.FROZEN_EXPERIMENT, hygiene.FROZEN_EXPERIMENT)
+        self.assertEqual(fixture_join.EMPTY_RESULTS, hygiene.EMPTY_RESULTS)
 
     def test_production_pin_matches_the_delivery_manifest(self):
         manifest = json.loads((PARENT / 'nfl_factorial_lab_20260921' / 'DELIVERY_MANIFEST.json').read_text())
