@@ -1,0 +1,28 @@
+{
+  "ticker": "KXWNBAGAME-26SEP17LADAL-DAL",
+  "event": "KXWNBAGAME-26SEP17LADAL",
+  "series": "KXWNBAGAME",
+  "kickoff": 1789689600.0,
+  "start": 1789431000.0,
+  "end": 1789679100.0,
+  "pagination_exhausted": true,
+  "trade_pages": 1,
+  "trades": 402,
+  "candles": 1304,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXWNBAGAME-26SEP17LADAL-DAL&min_ts=1789431000&max_ts=1789679100&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T18:09:40.243513+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP17LADAL-DAL/candlesticks?start_ts=1789431000&end_ts=1789679100&period_interval=1",
+      "received_at": "2026-09-22T18:09:45.048130+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "ac1682e395104f0ff2220532dbba2691c1c40ec9f36dcc239a2b0e199e5643f0",
+    "candles.jsonl.gz": "64086dd7222d6486c7ddaa41656965edfbbc9be0ac9eed3c321bb04296d81e83"
+  }
+}

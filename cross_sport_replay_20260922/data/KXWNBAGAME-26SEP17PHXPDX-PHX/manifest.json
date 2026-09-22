@@ -1,0 +1,28 @@
+{
+  "ticker": "KXWNBAGAME-26SEP17PHXPDX-PHX",
+  "event": "KXWNBAGAME-26SEP17PHXPDX",
+  "series": "KXWNBAGAME",
+  "kickoff": 1789696800.0,
+  "start": 1789438200.0,
+  "end": 1789686300.0,
+  "pagination_exhausted": true,
+  "trade_pages": 1,
+  "trades": 376,
+  "candles": 1044,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXWNBAGAME-26SEP17PHXPDX-PHX&min_ts=1789438200&max_ts=1789686300&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T18:09:54.416658+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP17PHXPDX-PHX/candlesticks?start_ts=1789438200&end_ts=1789686300&period_interval=1",
+      "received_at": "2026-09-22T18:09:59.424864+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "c99363cffb40d98caaabada45d8801d6151cb946b766a4e400138703babdcafc",
+    "candles.jsonl.gz": "07818803ac843710a30a6b4a30a0b4f138582fdc53a86cc126c1d223d04d8587"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "ticker": "KXWNBAGAME-26SEP17CONNATL-ATL",
+  "event": "KXWNBAGAME-26SEP17CONNATL",
+  "series": "KXWNBAGAME",
+  "kickoff": 1789687800.0,
+  "start": 1789429200.0,
+  "end": 1789677300.0,
+  "pagination_exhausted": true,
+  "trade_pages": 1,
+  "trades": 502,
+  "candles": 1551,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXWNBAGAME-26SEP17CONNATL-ATL&min_ts=1789429200&max_ts=1789677300&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T18:09:30.663808+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXWNBAGAME/markets/KXWNBAGAME-26SEP17CONNATL-ATL/candlesticks?start_ts=1789429200&end_ts=1789677300&period_interval=1",
+      "received_at": "2026-09-22T18:09:35.950008+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "ee0b53974e62fea7e494466dd8914fc3d13eb0c001523ca0bd95aba8fba312ca",
+    "candles.jsonl.gz": "a3dd244851556b9086eb3c423fce9c7f59fd18819717206cdfa3c94b058e2a2c"
+  }
+}
