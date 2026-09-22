@@ -5,13 +5,17 @@
   "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
   "ran_at": "2026-09-22T23:48:00Z",
   "python": "3.12.3",
-  "command": "python3 -m unittest -v tests.test_fixture_join",
-  "cwd": "kalshi_r2p1_fixture_join_000_lab_20260922",
-  "tests_run": 14,
+  "command": "python3 -m unittest -v tests.test_hygiene tests.test_fixture_join",
+  "cwd": "kalshi_r2p1_hygiene_000_lab_20260922",
+  "lab_directory": "kalshi_r2p1_hygiene_000_lab_20260922",
+  "second_lab": false,
+  "tests_run": 34,
+  "hygiene_tests_run": 20,
+  "fixture_join_tests_run": 14,
   "failures": 0,
   "errors": 0,
   "result": "OK",
-  "elapsed_seconds": 0.016,
+  "elapsed_seconds": 0.022,
   "source_used": "synthetic_schema_standin",
   "production_gzip_present": false,
   "production_pin": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
@@ -39,5 +43,5 @@
   "results": null,
   "pnl": null,
   "tape_walk": null,
-  "note": "Code verification of join wiring on the synthetic schema stand-in. Not a simulated execution and not live validation. Freeze scorecard fields remain null."
+  "note": "Code verification of join wiring inside the hygiene lab on the synthetic schema stand-in. Not a simulated execution and not live validation. Freeze scorecard fields remain null. Pick B was not started."
 }

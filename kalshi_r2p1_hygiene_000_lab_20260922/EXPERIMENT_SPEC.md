@@ -202,3 +202,26 @@ relabel development games, and may not fill the three pre-settlement outputs.
 `results`, `pnl`, `fee_delta_vs_inherited_model`, `freshness_gap_sec`, and
 `queue_bin_mismatch_rate` in `FROZEN_EXPERIMENT.json` stay null until an
 Examiner fixture join. A full Q6-`000` tape walk is out of this unit page.
+
+## Fixture-join acceptance
+
+Conductor ACCEPT + GO, pick A. The freeze is
+`packets/R2-P1_FIXTURE_JOIN_000_FREEZE_2026-09-22.md`, sha256
+`e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c`.
+
+The join harness is `fixture_join.py` in this directory. It is the same lab.
+There is no second R2-P1 directory. It calls the helpers in `hygiene.py`.
+The feebook pin is `22371178cb2663250b4762f328069571c48cb551`. The rails pin
+is `6a28e0d6254327ea4e6451c781bec56215ac6cac`. `hygiene.py` remains the
+helper text pinned at `c33af159d00c07f2d66b2f93174cfcdb4cde8d37`.
+
+The harness reads Q6-`000` fill and order ledgers. The production gzip pair
+is gitignored. `fixtures/PIN.md` records that path. The synthetic jsonl pair
+is the schema stand-in when the gzip is absent. Rates come from
+`feebook.load_series_table` through `feebook.order_fee`. This lab still does
+not read shadow `common_config` fee literals.
+
+Helper values on synthetic rows stay in memory. `write_scorecard` raises.
+The five scorecard fields in `FROZEN_EXPERIMENT.json` stay null. Pick B, the
+queue-fragility fixture join, stays deferred. No Q6-`000` retune. No capital
+A2 or A3. No live orders. No completed-profit claim.

@@ -1,9 +1,0 @@
-{
-  "results": null,
-  "pnl": null,
-  "fee_delta_vs_inherited_model": null,
-  "freshness_gap_sec": null,
-  "queue_bin_mismatch_rate": null,
-  "status": "NOT_RUN",
-  "pick": "A"
-}
