@@ -1,0 +1,90 @@
+{
+  "experiment": "CAPITAL-STRUCTURE-PROBE",
+  "directory": "kalshi_capital_structure_lab_20260922",
+  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "frozen_at": "2026-09-22T22:51:27Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "packet": "CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md",
+  "packet_sha256": "729c493e7a059615e6c734a19967b98a61c0c0cc2bc6949d203dd5096414060c",
+  "depends_on": [
+    {
+      "directory": "kalshi_feebook_lab_20260922",
+      "commit": "22371178cb2663250b4762f328069571c48cb551",
+      "role": "examiner fee channel"
+    },
+    {
+      "directory": "kalshi_rails_lab_20260922",
+      "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "role": "queue labels and maker-credit rail"
+    }
+  ],
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "Do A1, A2, and A3 keep one shared C_total of 5000 USD, with A2 unused-only FIFO borrows logged, A3 refusing cross-event borrow, the 9 USD A3 residual unable to fund orders, and wallet-sum promotion refused?",
+  "C_total_usd": 5000,
+  "N_events": 31,
+  "slice_usd": 161,
+  "residual_usd": 9,
+  "residual_policy": "non_trading_residual_bucket",
+  "soft_policy": "borrow_unused_event_id_FIFO",
+  "arms": [
+    "A1_shared_pool",
+    "A2_shared_soft_reserve",
+    "A3_hard_equal_slices"
+  ],
+  "promotion_scoreboard": "shared_account_only",
+  "forbidden": "sum_of_N_independent_wallets_vs_one_5k",
+  "strategy_pointer": "Q6-000",
+  "paircheck_varied": false,
+  "signal_retune": false,
+  "live_orders": false,
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "q7_packet_pins": {
+    "verification_sha256": "eb1586bf13b1631951a4f177293350cb89fc7948a50fbb7044f4f05313ebc06f",
+    "verification_status": "VERIFIED",
+    "paircheck_effects_sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+    "paircheck_effects_status": "COMPLETE",
+    "selection": "NO_NEW_SELECTION",
+    "fallback_shadow": "000",
+    "note": "Cited by the freeze packet. These blobs are not the files in this checkout."
+  },
+  "q7_checkout_observation": {
+    "base": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "verification_path": "nfl_paircheck_lab_20260922/results/verification.json",
+    "verification_sha256": "9cde03dc3d52eb3ab9d18024155c341451de9e1e8836356cdcf3cf1d0ac006e4",
+    "verification_status": "NOT_RUN_INPUTS_MISSING",
+    "paircheck_effects_path": "nfl_paircheck_lab_20260922/results/paircheck_effects.json",
+    "paircheck_effects_present": false,
+    "analysis_status_path": "nfl_paircheck_lab_20260922/results/analysis_status.json",
+    "analysis_status": "NOT_RUN_INPUTS_MISSING",
+    "analysis_status_sha256": "8acec3c77b86abce43b6eb01a941de317f1603a5a30c7ee4bc4582800c119ebb",
+    "note": "Observed on the base checkout. This lab does not rewrite Q7 artifacts and does not treat the in-tree file as the packet VERIFIED hash. Strategy pointer remains the on-tree Q6-000 shadow freeze."
+  },
+  "primary_stress": "q3300_d0.25",
+  "harsh_twin_stress": "q10000_d0.25",
+  "harsh_twin_is_capital_knob": false,
+  "fee_source": "kalshi_feebook_lab_20260922 feebook.load_series_table / order_fee",
+  "queue_source": "kalshi_rails_lab_20260922 rails.scenario_queue",
+  "go": "Conductor 2026-09-22 post Q7 verify+analyze",
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "1d10aefd72e0343f8c7ec40a2c109d412291bfe92c7b25a4a6ba2ce2192a71b9",
+    "CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md": "729c493e7a059615e6c734a19967b98a61c0c0cc2bc6949d203dd5096414060c",
+    "capital_structure_freeze.json": "9dba87b52d3340763438e3ae6bef5fd2b89c50b5e1f4a83d80230051c7d97240"
+  },
+  "implementation_sha256": null,
+  "results": null,
+  "pnl": null
+}
