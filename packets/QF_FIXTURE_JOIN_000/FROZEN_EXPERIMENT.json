@@ -1,0 +1,15 @@
+{
+  "experiment_id": "QF_fixture_join_000_20260922",
+  "status": "FROZEN_NOT_RUN",
+  "pick": "B",
+  "results": null,
+  "pnl": null,
+  "fill_rate_delta_vs_q3300": null,
+  "adverse_queue_exposure": null,
+  "participation_stress_gap": null,
+  "packet_sha256": "d95adb9b7e8aba852134c96b8f0f7d35a76bbf68254b8808f82f99ec82bb6ca4",
+  "strategy_pointer": "Q6-000",
+  "knob": "qf_fixture_join_wiring_only_metrics_null",
+  "fee_fixed": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+  "prior_A_merge": "80050e9b"
+}
