@@ -38,3 +38,8 @@ separate algebra/adapter build. Both variants fail the frozen screen; Q7 remains
 P&L: Q7 $354.33, recovery $360.03, joint $371.45; queue-10000/.25s:
 $90.45/$73.27/$70.85. All 12 ledgers and four exact Q7 controls pass.
 See `nfl_joint_route_lab_20260921/Q8_RESULTS.md`.
+
+M1 complete: `market_access_lab_20260922/MARKET_UPDATE.md`. Descriptive six-sport
+book census and execution-neutral adapters; 16 tests, 50 arithmetic checks,
+6 retained timeouts. No fills simulated; no non-NFL P&L. Spec cfe48ab, source
+freeze 079d7c7. NCAAF/WNBA historical adapter integration remains next.

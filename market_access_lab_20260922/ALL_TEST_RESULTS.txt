@@ -1,0 +1,21 @@
+test_exception_pauses (test_adapter.AdapterTests.test_exception_pauses) ... ok
+test_fee_override_zero_preserved (test_adapter.AdapterTests.test_fee_override_zero_preserved) ... ok
+test_fractional_payout_is_not_binary (test_adapter.AdapterTests.test_fractional_payout_is_not_binary) ... ok
+test_future_stale_wrong_identity (test_adapter.AdapterTests.test_future_stale_wrong_identity) ... ok
+test_invalid_settlement (test_adapter.AdapterTests.test_invalid_settlement) ... ok
+test_late_listing_and_exclusive_stop (test_adapter.AdapterTests.test_late_listing_and_exclusive_stop) ... ok
+test_missing_start_not_replaced_by_close (test_adapter.AdapterTests.test_missing_start_not_replaced_by_close) ... ok
+test_moved_start_recomputes_cutoff (test_adapter.AdapterTests.test_moved_start_recomputes_cutoff) ... ok
+test_one_sided_and_crossed (test_adapter.AdapterTests.test_one_sided_and_crossed) ... ok
+test_same_contract_pairs_constant_even_fractional (test_adapter.AdapterTests.test_same_contract_pairs_constant_even_fractional) ... ok
+test_two_sided_margin_and_depth (test_adapter.AdapterTests.test_two_sided_margin_and_depth) ... ok
+test_ambiguity (test_schedule_bridge.ScheduleBridgeTests.test_ambiguity) ... ok
+test_exact_match (test_schedule_bridge.ScheduleBridgeTests.test_exact_match) ... ok
+test_no_close_time_substitute (test_schedule_bridge.ScheduleBridgeTests.test_no_close_time_substitute) ... ok
+test_requires_timezone (test_schedule_bridge.ScheduleBridgeTests.test_requires_timezone) ... ok
+test_wrong_event_and_type (test_schedule_bridge.ScheduleBridgeTests.test_wrong_event_and_type) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+OK

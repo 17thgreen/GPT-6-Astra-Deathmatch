@@ -6,6 +6,11 @@ are preserved here. No live order-enabled strategy has been validated or deploye
 
 ## Current result
 
+September 22: [other-market update](market_access_lab_20260922/MARKET_UPDATE.md)
+adds tested adapter components and a 28-event, 56-ticker public-book census.
+50 usable snapshots; six retained timeouts. No non-NFL profitability claim.
+
+
 Q8 joint routing is complete: both new variants improve the lighter-queue
 headline but lose to Q7 under queue-10000 stress, so **Q7 remains selected**.
 [Q8 results](nfl_joint_route_lab_20260921/Q8_RESULTS.md) preserve all twelve

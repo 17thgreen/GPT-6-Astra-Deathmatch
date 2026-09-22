@@ -1,0 +1,6 @@
+{
+  "frozen_source_matches": true,
+  "usable_snapshot_arithmetic_checks": 50,
+  "request_errors": 6,
+  "no_simulated_fills_or_pnl": true
+}
