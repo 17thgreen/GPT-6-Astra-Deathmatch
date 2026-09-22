@@ -1,0 +1,43 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "R2-P1-FIXTURE-JOIN-000",
+  "pick": "A",
+  "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
+  "ran_at": "2026-09-22T23:48:00Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_fixture_join",
+  "cwd": "kalshi_r2p1_fixture_join_000_lab_20260922",
+  "tests_run": 14,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.016,
+  "source_used": "synthetic_schema_standin",
+  "production_gzip_present": false,
+  "production_pin": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+  "hygiene_regression": {
+    "command": "python3 -m unittest tests.test_hygiene",
+    "cwd": "kalshi_r2p1_hygiene_000_lab_20260922",
+    "tests_run": 20,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "note": "Unchanged hygiene module. Not a fixture-join profit result."
+  },
+  "queue_fragility_regression": {
+    "command": "python3 -m unittest tests.test_queue_fragility",
+    "cwd": "kalshi_queue_fragility_000_lab_20260922",
+    "tests_run": 12,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "note": "Unchanged queue-fragility module. Not a fixture-join profit result."
+  },
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "results": null,
+  "pnl": null,
+  "tape_walk": null,
+  "note": "Code verification of join wiring on the synthetic schema stand-in. Not a simulated execution and not live validation. Freeze scorecard fields remain null."
+}
