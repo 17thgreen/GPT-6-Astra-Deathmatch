@@ -4,7 +4,7 @@
   "directory": "kalshi_queue_fragility_000_lab_20260922",
   "status": "FROZEN_NOT_RUN",
   "frozen_at": "2026-09-22T23:11:03.331014+00:00",
-  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results, pnl, and the three pre-settlement outputs stay null. This timestamp is the conductor freeze, not a test run.",
+  "note": "Hypothesis committed before source. Source and tests are frozen in implementation_sha256. results, pnl, and the three pre-settlement outputs stay null. frozen_at is the conductor freeze, not a test run.",
   "packet": "QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md",
   "conductor_packet": "packets/QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md",
   "packet_sha256": "e01d684abefd2d919ac6546f85619a246ce73098c04f7b24c84451ff49b00308",
@@ -78,7 +78,14 @@
     "queue_fragility_000_r1p5_freeze.json": "32825cd6bd9ee8d448b26ddb29403d2894b3f0a7310664fadd331b9e297a3d83",
     "results/EMPTY_RESULTS.json": "6a41d4037b3ddba326303d1d015316b2f1c13da913950a217b5b2f5da0404407"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "3107453deda9fab94cc2f75b5615010b80264cf2497746bbe5552e41b60d516e",
+    "queue_fragility.py": "312e7f19643584a395e72654758c50a8c9ae155580991f4144b3721e5ecaba4e",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_queue_fragility.py": "74bd29692e8a47592332d4f89bda632ddecad1577868e1fdac0ed955a205056c"
+  },
+  "source_frozen_at": "2026-09-22T23:18:54Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
   "fill_rate_delta_vs_q3300": null,
   "adverse_queue_exposure": null,
   "participation_stress_gap": null,
