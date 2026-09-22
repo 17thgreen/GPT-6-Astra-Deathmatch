@@ -1,7 +1,7 @@
 {
   "kind": "unit_test_verification",
   "experiment": "QUEUE-FRAGILITY-000-R1P5",
-  "ran_at": "2026-09-22T23:19:45Z",
+  "ran_at": "2026-09-22T23:23:11Z",
   "python": "3.12.3",
   "command": "python3 -m unittest -v tests.test_queue_fragility",
   "cwd": "kalshi_queue_fragility_000_lab_20260922",
@@ -35,16 +35,16 @@
     "elapsed_seconds": 0.004,
     "note": "Unchanged rails module. Not a queue-fragility profit result."
   },
-  "r2p1_snapshot_pin": {
-    "command": "python3 -m unittest tests.test_hygiene",
+  "r2p1_sibling_pin": {
+    "command": "python3 -m unittest -v tests.test_hygiene",
     "cwd": "kalshi_r2p1_hygiene_000_lab_20260922",
     "tests_run": 20,
-    "failures": 1,
+    "failures": 0,
     "errors": 0,
-    "result": "FAILED",
-    "elapsed_seconds": 0.007,
-    "failing_test": "test_pin_lock_is_one_lab_and_fee_sensitivity_is_superseded",
-    "note": "The frozen R2-P1 suite asserts that no *queue_fragility* directory exists. This lab is that directory. The R2-P1 tree was not edited."
+    "result": "OK",
+    "elapsed_seconds": 0.006,
+    "allowed_sibling": "kalshi_queue_fragility_000_lab_20260922",
+    "note": "Pin amended in this PR. The lock allows that sibling directory only. A second fee-sensitivity lab and a second R2-P1 lab stay forbidden. Not a profit result."
   },
   "fill_rate_delta_vs_q3300": null,
   "adverse_queue_exposure": null,

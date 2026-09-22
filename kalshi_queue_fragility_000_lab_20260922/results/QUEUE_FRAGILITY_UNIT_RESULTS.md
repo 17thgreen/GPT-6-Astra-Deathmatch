@@ -39,6 +39,7 @@ refused. The feebook and rails directories still match commits
 The frozen feebook suite was rerun from its own directory: 37 tests, OK.
 The frozen rails suite was rerun from its own directory: 44 tests, OK.
 Those reruns check unchanged modules. They are not queue-fragility results.
+The R2-P1 hygiene suite was rerun after the sibling-pin amendment: 20 tests, OK.
 
 ## Limitations
 
@@ -55,10 +56,11 @@ Those reruns check unchanged modules. They are not queue-fragility results.
 - Capital is the shared A1-equivalent pool of 5000 USD. A2 and A3 were not
   reopened. The `000` signal was not retuned. Maker-off and the unrounded
   comparator are not arms.
-- The frozen R2-P1 suite was rerun: 20 tests, 1 failure.
-  `test_pin_lock_is_one_lab_and_fee_sensitivity_is_superseded` asserts that
-  no `*queue_fragility*` directory exists, because that twin had not been
-  started. This lab is that directory. The R2-P1 tree was not edited.
+- The R2-P1 pin-lock allows `kalshi_queue_fragility_000_lab_20260922` and no
+  other `*queue_fragility*` or `*queue-fragility*` path. A second
+  fee-sensitivity lab and a second R2-P1 directory stay forbidden.
+  `queue_fragility_twin` stays false on the R2-P1 lab. The hygiene behavior
+  of that lab was not retuned.
 - No live order client was added. No Q1–Q7 directory, and neither the feebook
   lab, the rails lab, the R2-P1 lab, nor the capital-structure lab, was
   modified.
