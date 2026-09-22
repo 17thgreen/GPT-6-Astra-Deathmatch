@@ -1,0 +1,41 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "R2-P1-HYGIENE-000",
+  "ran_at": "2026-09-22T23:05:57Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_hygiene",
+  "cwd": "kalshi_r2p1_hygiene_000_lab_20260922",
+  "tests_run": 19,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.008,
+  "feebook_regression": {
+    "command": "python3 -m unittest tests.test_feebook",
+    "cwd": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "tests_run": 37,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.004,
+    "note": "Unchanged feebook module. Not an R2-P1 profit result."
+  },
+  "rails_regression": {
+    "command": "python3 -m unittest tests.test_rails",
+    "cwd": "kalshi_rails_lab_20260922",
+    "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "tests_run": 44,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.004,
+    "note": "Unchanged rails module. Not an R2-P1 profit result."
+  },
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "pnl": null,
+  "tape_walk": null,
+  "note": "Code verification of hygiene labels. Not a simulated execution and not live validation. Freeze results, pnl, and the three pre-settlement outputs remain null."
+}
