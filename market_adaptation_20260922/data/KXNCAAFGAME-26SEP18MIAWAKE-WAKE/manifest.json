@@ -1,0 +1,32 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP18MIAWAKE-WAKE",
+  "event": "KXNCAAFGAME-26SEP18MIAWAKE",
+  "series": "KXNCAAFGAME",
+  "start": 1789763700.0,
+  "end": 1789772700.0,
+  "pagination_exhausted": true,
+  "trade_pages": 2,
+  "trades": 1046,
+  "candles": 151,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP18MIAWAKE-WAKE&min_ts=1789763700&max_ts=1789772700&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T18:43:16.173485+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP18MIAWAKE-WAKE&min_ts=1789763700&max_ts=1789772700&limit=1000&is_block_trade=false&cursor=EhIKEAcibGO7Aayi-eBsO8fkIX0aDAi-xrbVBhDY9vCWAQ",
+      "received_at": "2026-09-22T18:43:20.268089+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP18MIAWAKE-WAKE/candlesticks?start_ts=1789763700&end_ts=1789772700&period_interval=1",
+      "received_at": "2026-09-22T18:43:24.480443+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "3830f91e5fd87afaf58f2c0a277ba4c0982abcb713bcd2628cb0667781fd3e3b",
+    "candles.jsonl.gz": "a3f5c86b3702c4da679bb5de2f1555e31c27ba2b07d6e313e7f882ac3154342c"
+  }
+}

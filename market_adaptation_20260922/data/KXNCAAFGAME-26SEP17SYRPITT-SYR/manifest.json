@@ -1,0 +1,27 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP17SYRPITT-SYR",
+  "event": "KXNCAAFGAME-26SEP17SYRPITT",
+  "series": "KXNCAAFGAME",
+  "start": 1789677300.0,
+  "end": 1789686300.0,
+  "pagination_exhausted": true,
+  "trade_pages": 1,
+  "trades": 529,
+  "candles": 147,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP17SYRPITT-SYR&min_ts=1789677300&max_ts=1789686300&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T18:43:07.513120+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP17SYRPITT-SYR/candlesticks?start_ts=1789677300&end_ts=1789686300&period_interval=1",
+      "received_at": "2026-09-22T18:43:11.862321+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "211b46a46d3347179be7ebc5e721c15af0341345a8ddc505546e6def45bb6813",
+    "candles.jsonl.gz": "e3204054a2d9c566a3863e5296f164242e044b981da7b05e4c77d806ac013357"
+  }
+}
