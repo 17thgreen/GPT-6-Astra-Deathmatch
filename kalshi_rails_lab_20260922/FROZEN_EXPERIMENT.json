@@ -1,7 +1,7 @@
 {
   "experiment": "R1-P5-RAILS",
   "directory": "kalshi_rails_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-22T22:14:29Z",
   "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
   "depends_on": {
@@ -38,7 +38,14 @@
     "SOURCE_PINS.json": "78d97a2085fbd826c1312da86131f23a3dc3a4345cccb301d924a97675496c9a",
     "grok_config_MICRO_V1.json": "d392f2c307c8c26b92733ae9a68d0e24682128740d66a34a467aca65e89a90b7"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "0172de8346b6d364ddb9c2d7eeba25313903ca7d768a4416e08a371b24d36d53",
+    "rails.py": "834386506dd72210d77ee063d4a96248d76ce09a4be6ce771b9609337d3388e1",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_rails.py": "1b7170cd3c9e3f5380ae5065bb380e2a8914fbded3efa4055e8a1065c37ca0f7"
+  },
   "results": null,
-  "pnl": null
+  "pnl": null,
+  "source_frozen_at": "2026-09-22T22:19:17Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results and pnl remain null."
 }
