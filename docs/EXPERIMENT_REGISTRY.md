@@ -17,6 +17,7 @@ not presented as a pre-outcome Git preregistration of that historical work.
 | Q7 | Implemented and frozen; 16 scenarios NOT RUN (historical tape absent) | `nfl_paircheck_lab_20260922/EXPERIMENT_SPEC.md` |
 | Prospective recorder | GET-only schedule-only admission path. Rules frozen before the 2026-09-22 listing snapshot. 16 week-4 games have venue ids; PHI@CHI is not backfilled; week 5 is unresolved. Not deployed. Not a P&L experiment. Separate from Q7. | `nfl_prospective_recorder_20260922/PROTOCOL.md` |
 | R1-P1 | Reciprocal book and fee algebra pinned to unit tests. Code verification only; no simulated or live P&L. Does not replace the Q6 candidate. | `kalshi_feebook_lab_20260922/results/FEEBOOK_UNIT_RESULTS.md` |
+| R1-P5 | Queue, fee-credit, freshness, and MICRO scorecard rails pinned to unit tests. Code verification only; no simulated or live P&L. Does not replace the Q6 candidate. | `kalshi_rails_lab_20260922/results/RAILS_UNIT_RESULTS.md` |
 
 Current Q6 candidate: `nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.
 Same 31 development games, 16 Week 1 and 15 Week 2, pooled $5,000. Q6 baseline

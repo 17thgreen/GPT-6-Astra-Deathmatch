@@ -1,0 +1,25 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "R1-P5-RAILS",
+  "ran_at": "2026-09-22T22:20:05Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_rails",
+  "cwd": "kalshi_rails_lab_20260922",
+  "tests_run": 44,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.004,
+  "feebook_regression": {
+    "command": "python3 -m unittest tests.test_feebook",
+    "cwd": "kalshi_feebook_lab_20260922",
+    "tests_run": 37,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.007,
+    "note": "Unchanged feebook module. Not an R1-P5 profit result."
+  },
+  "pnl": null,
+  "note": "Code verification of queue, fee-credit, freshness, and MICRO helpers. Not a simulated execution and not live validation. Freeze results and pnl remain null."
+}
