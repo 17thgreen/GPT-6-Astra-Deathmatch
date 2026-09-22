@@ -15,7 +15,7 @@
   "failures": 0,
   "errors": 0,
   "result": "OK",
-  "elapsed_seconds": 0.022,
+  "elapsed_seconds": 0.023,
   "source_used": "synthetic_schema_standin",
   "production_gzip_present": false,
   "production_pin": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",

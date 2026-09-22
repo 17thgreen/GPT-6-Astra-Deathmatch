@@ -23,7 +23,7 @@ From `kalshi_r2p1_hygiene_000_lab_20260922`, Python 3.12.3, standard library:
 python3 -m unittest -v tests.test_hygiene tests.test_fixture_join
 ```
 
-Ran 34 tests in 0.022s. Result: OK. Failures: 0. Errors: 0. Twenty of those
+Ran 34 tests in 0.023s. Result: OK. Failures: 0. Errors: 0. Twenty of those
 tests are the existing hygiene pins. Fourteen are the join wiring.
 
 The checks that passed are the predeclared ones: the harness imports the
