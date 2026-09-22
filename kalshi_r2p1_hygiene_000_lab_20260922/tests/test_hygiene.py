@@ -138,6 +138,9 @@ class PinTests(unittest.TestCase):
         self.assertEqual(underscore, [sibling])
         self.assertEqual(hyphen, [])
         self.assertTrue((PARENT / sibling).is_dir())
+        self.assertNotIn('fee_sensitivity', sibling)
+        self.assertNotIn(sibling, [path.name for path in PARENT.glob('*fee_sensitivity*')])
+        self.assertNotIn(sibling, [path.name for path in PARENT.glob('kalshi_r2p1_hygiene_000_lab_*')])
         labs = sorted(path.name for path in PARENT.glob('kalshi_r2p1_hygiene_000_lab_*'))
         self.assertEqual(labs, ['kalshi_r2p1_hygiene_000_lab_20260922'])
 
