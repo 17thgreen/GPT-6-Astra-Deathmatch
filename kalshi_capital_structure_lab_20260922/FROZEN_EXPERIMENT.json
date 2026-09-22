@@ -1,7 +1,7 @@
 {
   "experiment": "CAPITAL-STRUCTURE-PROBE",
   "directory": "kalshi_capital_structure_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-22T22:51:27Z",
   "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
   "packet": "CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md",
@@ -84,7 +84,14 @@
     "CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md": "729c493e7a059615e6c734a19967b98a61c0c0cc2bc6949d203dd5096414060c",
     "capital_structure_freeze.json": "9dba87b52d3340763438e3ae6bef5fd2b89c50b5e1f4a83d80230051c7d97240"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "4028a39c8a7d356ad7a0fc9bd044fde204cb7151720401490b01bf0cdd31b7a2",
+    "capital_structure.py": "f52666c657f64c00f5fed95498edf672d95394dcf2e4a79f6fd9964a115fc3e0",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_capital_structure.py": "add39e2aeb217c3ac327685816557fcab57267daaa98e5ec8a97320f1810bc24"
+  },
   "results": null,
-  "pnl": null
+  "pnl": null,
+  "source_frozen_at": "2026-09-22T22:55:00Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results and pnl remain null."
 }
