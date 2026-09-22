@@ -15,6 +15,7 @@ not presented as a pre-outcome Git preregistration of that historical work.
 | Q5 | Allocation bundle improved development P&L; ranking attribution unresolved | `nfl_adaptive_lab_20260921/NFL_Adaptive_Results.md` |
 | Q6 | Simplest allocator selected; optional F/P/R features unnecessary under declared retention rule | `nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Results.md` |
 | Q7 | Proposed: isolate the actual chosen-pair price check; NOT YET RUN | `docs/NEXT_EXPERIMENT.md` |
+| Prospective recorder | GET-only schedule-only admission path. Rules frozen before the 2026-09-22 listing snapshot. 16 week-4 games have venue ids; PHI@CHI is not backfilled; week 5 is unresolved. Not deployed. Not a P&L experiment. Separate from Q7. | `nfl_prospective_recorder_20260922/PROTOCOL.md` |
 
 Current Q6 candidate: `nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.
 Same 31 development games, 16 Week 1 and 15 Week 2, pooled $5,000. Q6 baseline
@@ -22,6 +23,10 @@ and selected candidate use the same hard 250-event cap and assumed total exit
 depth 250 per game. The old $1,027.47 result used the original engine, 16 games
 and early queue near 291; it is a different scenario, not a contradicted figure.
 
-No always-on collector is running. The prior 32-game reservation is schedule-only;
-most venue IDs and full-window coverage remain unverified. Never backdate a
-missed admission/capture deadline or silently replace games after outcomes.
+No always-on collector is running. Preparing a Docker file or a prospective
+panel is not deployment. The prior 32-game reservation cannot support a
+complete-cohort comparison: PHI@CHI's full T−7d window opened
+2026-09-22T00:15:00Z with no durable recorder. Admission rules for a new
+schedule-only version are in `nfl_prospective_recorder_20260922/PROTOCOL.md`.
+Never backdate a missed admission/capture deadline or silently replace games
+after outcomes.

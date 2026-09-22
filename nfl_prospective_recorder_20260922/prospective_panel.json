@@ -1,0 +1,314 @@
+{
+  "purpose": "prospective",
+  "panel_version": "2026-09-22.1",
+  "cohort_id": "schedule-only-20260922-after-phi-chi-miss",
+  "cohort_kind": "schedule_only_new",
+  "frozen_before_windows": true,
+  "complete_prior_32_game_cohort": false,
+  "admitted_at": null,
+  "classified_as_of": "2026-09-22T20:57:58+00:00",
+  "identity_listing_retrieved_at": "2026-09-22T20:57:58+00:00",
+  "source_registry": "nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json",
+  "source_listing": "GET /trade-api/v2/events?series_ticker=KXNFLGAME&status=open|unopened&with_nested_markets=false",
+  "rules": [
+    "Freeze this panel and stamp admitted_at before every included T-7d start. Do not backfill a start that has already passed.",
+    "This is a new schedule-only version. It does not revive the prior 32-game complete-cohort gate.",
+    "Venue tickers come only from a public KXNFLGAME listing match. Unmatched games keep a null event and are not polled.",
+    "Do not store scores, results, settlement values, or prices in this panel.",
+    "The recorder issues public GETs only. No credentials and no order routes."
+  ],
+  "events": [
+    {
+      "game_id": "2026_04_PIT_CLE",
+      "kickoff": "2026-10-02T00:15:00+00:00",
+      "away": "PIT",
+      "home": "CLE",
+      "t_minus_7d_start": "2026-09-25T00:15:00+00:00",
+      "event": "KXNFLGAME-26OCT01PITCLE",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_IND_WAS",
+      "kickoff": "2026-10-04T13:30:00+00:00",
+      "away": "IND",
+      "home": "WAS",
+      "t_minus_7d_start": "2026-09-27T13:30:00+00:00",
+      "event": "KXNFLGAME-26OCT04INDWAS",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_ARI_NYG",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "ARI",
+      "home": "NYG",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04ARINYG",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_DAL_HOU",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "DAL",
+      "home": "HOU",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04DALHOU",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_GB_TB",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "GB",
+      "home": "TB",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04GBTB",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_JAX_CIN",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "JAX",
+      "home": "CIN",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04JACCIN",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_LA_PHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "LA",
+      "home": "PHI",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04LARPHI",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_NE_BUF",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "NE",
+      "home": "BUF",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04NEBUF",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_NYJ_CHI",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "NYJ",
+      "home": "CHI",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04NYJCHI",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_TEN_BAL",
+      "kickoff": "2026-10-04T17:00:00+00:00",
+      "away": "TEN",
+      "home": "BAL",
+      "t_minus_7d_start": "2026-09-27T17:00:00+00:00",
+      "event": "KXNFLGAME-26OCT04TENBAL",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_MIA_MIN",
+      "kickoff": "2026-10-04T20:05:00+00:00",
+      "away": "MIA",
+      "home": "MIN",
+      "t_minus_7d_start": "2026-09-27T20:05:00+00:00",
+      "event": "KXNFLGAME-26OCT04MIAMIN",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_DEN_SF",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "away": "DEN",
+      "home": "SF",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00",
+      "event": "KXNFLGAME-26OCT04DENSF",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_KC_LV",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "away": "KC",
+      "home": "LV",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00",
+      "event": "KXNFLGAME-26OCT04KCLV",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_LAC_SEA",
+      "kickoff": "2026-10-04T20:25:00+00:00",
+      "away": "LAC",
+      "home": "SEA",
+      "t_minus_7d_start": "2026-09-27T20:25:00+00:00",
+      "event": "KXNFLGAME-26OCT04LACSEA",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_DET_CAR",
+      "kickoff": "2026-10-05T00:20:00+00:00",
+      "away": "DET",
+      "home": "CAR",
+      "t_minus_7d_start": "2026-09-28T00:20:00+00:00",
+      "event": "KXNFLGAME-26OCT04DETCAR",
+      "identity": "public_events_listing_title_only"
+    },
+    {
+      "game_id": "2026_04_ATL_NO",
+      "kickoff": "2026-10-06T00:15:00+00:00",
+      "away": "ATL",
+      "home": "NO",
+      "t_minus_7d_start": "2026-09-29T00:15:00+00:00",
+      "event": "KXNFLGAME-26OCT05ATLNO",
+      "identity": "public_events_listing_title_only"
+    }
+  ],
+  "ineligible_incomplete": [
+    {
+      "game_id": "2026_03_PHI_CHI",
+      "kickoff": "2026-09-29T00:15:00+00:00",
+      "away": "PHI",
+      "home": "CHI",
+      "t_minus_7d_start": "2026-09-22T00:15:00+00:00",
+      "event": "KXNFLGAME-26SEP28PHICHI",
+      "reason": "T-7d already started at classification; full window was not recorded. Do not backfill."
+    }
+  ],
+  "unresolved_identities": [
+    {
+      "game_id": "2026_05_TB_DAL",
+      "kickoff": "2026-10-09T00:15:00+00:00",
+      "away": "TB",
+      "home": "DAL",
+      "t_minus_7d_start": "2026-10-02T00:15:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_PHI_JAX",
+      "kickoff": "2026-10-11T13:30:00+00:00",
+      "away": "PHI",
+      "home": "JAX",
+      "t_minus_7d_start": "2026-10-04T13:30:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_CIN_MIA",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "CIN",
+      "home": "MIA",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_CLE_NYJ",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "CLE",
+      "home": "NYJ",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_HOU_TEN",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "HOU",
+      "home": "TEN",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_IND_PIT",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "IND",
+      "home": "PIT",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_LV_NE",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "LV",
+      "home": "NE",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_MIN_NO",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "MIN",
+      "home": "NO",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_NYG_WAS",
+      "kickoff": "2026-10-11T17:00:00+00:00",
+      "away": "NYG",
+      "home": "WAS",
+      "t_minus_7d_start": "2026-10-04T17:00:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_DEN_LAC",
+      "kickoff": "2026-10-11T20:05:00+00:00",
+      "away": "DEN",
+      "home": "LAC",
+      "t_minus_7d_start": "2026-10-04T20:05:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_CHI_GB",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "away": "CHI",
+      "home": "GB",
+      "t_minus_7d_start": "2026-10-04T20:25:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_DET_ARI",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "away": "DET",
+      "home": "ARI",
+      "t_minus_7d_start": "2026-10-04T20:25:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_SF_SEA",
+      "kickoff": "2026-10-11T20:25:00+00:00",
+      "away": "SF",
+      "home": "SEA",
+      "t_minus_7d_start": "2026-10-04T20:25:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_BAL_ATL",
+      "kickoff": "2026-10-12T00:20:00+00:00",
+      "away": "BAL",
+      "home": "ATL",
+      "t_minus_7d_start": "2026-10-05T00:20:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    },
+    {
+      "game_id": "2026_05_BUF_LA",
+      "kickoff": "2026-10-13T00:15:00+00:00",
+      "away": "BUF",
+      "home": "LA",
+      "t_minus_7d_start": "2026-10-06T00:15:00+00:00",
+      "event": null,
+      "reason": "No open or unopened KXNFLGAME listing row matched the Eastern kickoff date and ticker team codes."
+    }
+  ]
+}
