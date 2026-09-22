@@ -179,3 +179,85 @@ relabel development games, and may not fill the three pre-settlement outputs.
 `results`, `pnl`, `fill_rate_delta_vs_q3300`, `adverse_queue_exposure`, and
 `participation_stress_gap` in `FROZEN_EXPERIMENT.json` stay null until an
 Examiner fixture join. A full Q6-`000` tape walk is out of this unit page.
+
+## Fixture join (pick B)
+
+September 22, 2026. This section is the hypothesis for the queue-fragility
+fixture join. It is committed before that harness runs and before any
+unit-test outcome of the join is recorded. No figure in this section is a
+trading result. Q6 outcomes that already exist are not re-labeled as evidence
+from this join.
+
+Pick **B**. The canonical freeze is
+`packets/QF_FIXTURE_JOIN_000_FREEZE_2026-09-22.md`, sha256
+`d95adb9b7e8aba852134c96b8f0f7d35a76bbf68254b8808f82f99ec82bb6ca4`.
+Empty scorecard bytes are `packets/QF_FIXTURE_JOIN_000/results.json` and this
+lab's `results/EMPTY_RESULTS.json`. Pick A already lives in
+`kalshi_r2p1_hygiene_000_lab_20260922` (`fixture_join.py` and `fixtures/`)
+after `79800a82`. There is no `kalshi_r2p1_fixture_join_000_lab_*` directory.
+This join does not add a second `*queue_fragility*` directory. The harness
+file is `fixture_join.py` in this lab. `queue_fragility.py` stays the arm
+instrument.
+
+## Question for the join
+
+Holding strategy Q6-`000` and the R1-P1 examiner channel fixed, can a
+read-only harness:
+
+1. Load a fill ledger and the matching order ledger whose filename label is
+   `000`.
+2. Join maker fills to orders on `order_id`.
+3. Call `measure_arm` for `QF0_q3300_measured`, `QF1_q10000_stress`, and
+   `QF2_front_optimistic` on each maker row as its own slice.
+
+Each slice uses the order's ticker, outcome, price, and submitted quantity
+as one quote, and the fill's price and size as one print. The order's
+`initial_queue` is parsed so the schema can be checked. It is not passed as
+`queue_ahead_contracts`. That ahead value, the participation, and the queue
+model come from `arm_queue_params`. Taker rows use order id `-1` and are not
+sent through the maker instrument. Rows are not chained into one book. This
+is not a 31-game walk and not live trading.
+
+The fee table is `feebook_binding()` on every arm. No maker-off arm. No
+unrounded comparator arm. No live orders. No capital A2 or A3. No Q6-`000`
+retune.
+
+## Join scorecard
+
+These fields stay null in this lab's `FROZEN_EXPERIMENT.json`, in
+`results/EMPTY_RESULTS.json`, and in `packets/QF_FIXTURE_JOIN_000/results.json`:
+
+- `fill_rate_delta_vs_q3300`
+- `adverse_queue_exposure`
+- `participation_stress_gap`
+- `results`
+- `pnl`
+
+Unit tests may compare in-memory `measure_arm` results on the synthetic
+stand-in with a direct call. Those values stay in memory. The harness has no
+writer that stores them in the freeze packet. `published` on a join report is
+the null scorecard, status `NOT_RUN`, pick `B`.
+
+## Join fixture pin
+
+| Role | Path | SHA-256 |
+|---|---|---|
+| Primary fills | `nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz` | `9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f` |
+| Primary orders | `nfl_factorial_lab_20260921/results/q3300_d0.25_000_orders.jsonl.gz` | `c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c` |
+| Harsh twin fills | `nfl_factorial_lab_20260921/results/q10000_d0.25_000_fills.jsonl.gz` | `678d6cb602fb832f8a77ac7a0cfefd9a4d8390002b0962ddc956ba1f19f4b59d` |
+| Harsh twin orders | `nfl_factorial_lab_20260921/results/q10000_d0.25_000_orders.jsonl.gz` | `e16632b630058854bfc6ac410cb960d5439fb8a151e180d0793c37e8f92068d9` |
+
+The harsh twin is a queue-label pin. It is not a second fee knob and the
+default join does not open it. The ledger label must be `000`.
+
+`*.jsonl.gz` is gitignored. When the primary pair is absent, the harness
+reads the synthetic stand-in under `fixtures/`. That stand-in uses the
+factorial fill and order keys. It is not a replay and not a restoration of
+the indexed gzip bytes. `fixtures/PIN.md` records the production path. The
+same production hashes are pinned by the hygiene-lab join module.
+
+## What the join result file may say
+
+After this hypothesis, a result file may record whether the join unit tests
+passed and may repeat these limitations. It may not report profit and may not
+fill the five scorecard fields.
