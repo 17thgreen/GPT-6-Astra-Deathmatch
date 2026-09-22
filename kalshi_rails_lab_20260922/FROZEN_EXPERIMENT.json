@@ -1,0 +1,44 @@
+{
+  "experiment": "R1-P5-RAILS",
+  "directory": "kalshi_rails_lab_20260922",
+  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "frozen_at": "2026-09-22T22:14:29Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "depends_on": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551"
+  },
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "Do the queue instrument, the venue-rounded maker-credit floor, and the content-fresh predicate match the predeclared pins, and does the MICRO_V1 helper keep its verdict order and HISTORICAL_OUT_OF_SAMPLE stage?",
+  "fee_credit_rule_id": "astra.r1p5.rails.maker_credit_floor_cent.v1",
+  "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+  "comparator_formula_id": "grok.fees_ts.unrounded_per_unit.v1",
+  "queue_defaults": {
+    "queue_ahead_contracts": "3300",
+    "fill_participation": "0.5",
+    "stress_queue_ahead": "10000",
+    "models": ["measured", "front"]
+  },
+  "evidence_stage": "HISTORICAL_OUT_OF_SAMPLE",
+  "sibling_bytes": "execution.py, fees.py, fees.ts, micro.ts, and config.ts were read at the pinned commits. Their bytes are not vendored.",
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "0fb7d5fa25e79d950d487e10eb75a3459f7ca9c20bd62af33e50747d454fc66e",
+    "SOURCE_PINS.json": "78d97a2085fbd826c1312da86131f23a3dc3a4345cccb301d924a97675496c9a",
+    "grok_config_MICRO_V1.json": "d392f2c307c8c26b92733ae9a68d0e24682128740d66a34a467aca65e89a90b7"
+  },
+  "implementation_sha256": null,
+  "results": null,
+  "pnl": null
+}

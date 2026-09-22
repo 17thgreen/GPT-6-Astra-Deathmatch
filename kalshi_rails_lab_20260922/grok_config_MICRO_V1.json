@@ -1,0 +1,14 @@
+{
+  "id": "micro-tape-v1",
+  "version": "1.0.0",
+  "hash": "micro-tape-v1.0.0:taker0.07:maker0.0175:ls0.15:fav0.85:nflInplay3.25h:thin500:skipBlock",
+  "longshotMax": 0.15,
+  "favoriteMin": 0.85,
+  "favoriteMax": 0.95,
+  "weatherCheapMax": 0.1,
+  "nflInplayHours": 3.25,
+  "skipBlockTrades": true,
+  "thinN": 500,
+  "surviveRoi": 0,
+  "maxTradesPerMarket": 1000
+}
