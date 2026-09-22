@@ -1,0 +1,30 @@
+{
+  "provenance": "Transcription of the General Trading Fees Table in the Kalshi fee-schedule PDF retrieved 2026-09-22. Stated effective date July 7, 2026. This JSON is the numeric table only. It is not the PDF and it does not contain PDF bytes.",
+  "source_url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+  "role": "taker",
+  "M": "1",
+  "rate": "0.07",
+  "rows": [
+    {"price": "0.01", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.07"},
+    {"price": "0.05", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.34"},
+    {"price": "0.10", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.63"},
+    {"price": "0.15", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.90"},
+    {"price": "0.20", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.12"},
+    {"price": "0.25", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.32"},
+    {"price": "0.30", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.47"},
+    {"price": "0.35", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.60"},
+    {"price": "0.40", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.68"},
+    {"price": "0.45", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.74"},
+    {"price": "0.50", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.75"},
+    {"price": "0.55", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.74"},
+    {"price": "0.60", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.68"},
+    {"price": "0.65", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.60"},
+    {"price": "0.70", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.47"},
+    {"price": "0.75", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.32"},
+    {"price": "0.80", "fee_one_contract": "0.02", "fee_hundred_contracts": "1.12"},
+    {"price": "0.85", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.90"},
+    {"price": "0.90", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.63"},
+    {"price": "0.95", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.34"},
+    {"price": "0.99", "fee_one_contract": "0.01", "fee_hundred_contracts": "0.07"}
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "experiment": "R1-P1-FEEBOOK",
+  "directory": "kalshi_feebook_lab_20260922",
+  "status": "HYPOTHESIS_FROZEN",
+  "frozen_at": "2026-09-22T21:38:47Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "does_not_modify": [
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "Do bids-only reciprocal identities and the order-level cent-ceiling fee reproduce the pinned vectors and the transcribed general taker table, and does the scorecard withhold completed_profit without the examiner fee channel?",
+  "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+  "comparator_formula_id": "grok.fees_ts.unrounded_per_unit.v1",
+  "rates": {
+    "taker": "0.07",
+    "maker": "0.0175",
+    "per_contract_cap": "0.035"
+  },
+  "book": {
+    "ask_yes": "1 - best_no_bid",
+    "ask_no": "1 - best_yes_bid",
+    "spread_yes": "1 - best_no_bid - best_yes_bid",
+    "taker_yes_fills": "no",
+    "taker_no_fills": "yes"
+  },
+  "sibling_bytes": "not retrieved; public raw URLs returned 404; source not vendored",
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "84f4a629b3e9167dcb2286d157b0bafdb50e304f4aa84f7ca06f87ed98b766ce",
+    "SOURCE_PINS.json": "0db29e296af1b81af64720af26606bd8b193d2ea8fd95ec37d7a83594d1a733a",
+    "bids_only_fixture.json": "544f3b1fb105800b484514bdb77434bfdae1f26a91f2dd2e344311a231798b81",
+    "fee_fixture_vectors.json": "6a36f53bbbade79d566599debbfd38453decc824ab12ab5e7e1c8b724088b6a3",
+    "kalshi_general_fee_table.json": "a259eaf5b74ace93960e0990b7d89fd417a1e992ab9656393ed32890476d434e",
+    "series_fee_table.stub.json": "600d56beda64c2edd9af2c9d220398ff1a7158dba140603a42f7cb7f95212384"
+  },
+  "implementation_sha256": null,
+  "results": null,
+  "pnl": null
+}

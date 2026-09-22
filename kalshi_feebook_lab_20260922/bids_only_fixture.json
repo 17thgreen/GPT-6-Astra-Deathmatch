@@ -1,0 +1,40 @@
+{
+  "provenance": "Public documentation example from Kalshi orderbook responses, retrieved 2026-09-22. Not a live market capture, not a fill, and not a profit sample.",
+  "source_url": "https://docs.kalshi.com/getting_started/orderbook_responses",
+  "documented_result": {
+    "best_yes_bid": "0.4200",
+    "best_no_bid": "0.5600",
+    "ask_yes": "0.4400",
+    "ask_no": "0.5800",
+    "spread_yes": "0.0200",
+    "spread_no": "0.0200"
+  },
+  "orderbook_fp": {
+    "yes_dollars": [
+      ["0.0100", "200.00"],
+      ["0.1500", "100.00"],
+      ["0.2000", "50.00"],
+      ["0.2500", "20.00"],
+      ["0.3000", "11.00"],
+      ["0.3100", "10.00"],
+      ["0.3200", "10.00"],
+      ["0.3300", "11.00"],
+      ["0.3400", "9.00"],
+      ["0.3500", "11.00"],
+      ["0.4100", "10.00"],
+      ["0.4200", "13.00"]
+    ],
+    "no_dollars": [
+      ["0.0100", "100.00"],
+      ["0.1600", "3.00"],
+      ["0.2500", "50.00"],
+      ["0.2800", "19.00"],
+      ["0.3600", "5.00"],
+      ["0.3700", "50.00"],
+      ["0.3800", "300.00"],
+      ["0.4400", "29.00"],
+      ["0.4500", "20.00"],
+      ["0.5600", "17.00"]
+    ]
+  }
+}
