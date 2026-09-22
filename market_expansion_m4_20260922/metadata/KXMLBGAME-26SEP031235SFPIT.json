@@ -1,0 +1,1046 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP031235SFPIT",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "SF vs PIT (Sep 3)",
+      "title": "San Francisco vs Pittsburgh"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-03T19:24:30Z",
+        "created_time": "2026-08-31T16:45:43.161172Z",
+        "custom_strike": {
+          "baseball_team": "cef5e9c6-0724-4524-bdd1-000f92a91c40"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-03T19:35:00Z",
+        "expiration_time": "2026-09-06T16:35:00Z",
+        "expiration_value": "Pittsburgh",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-06T16:35:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "San Francisco",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-03T19:35:00Z",
+        "open_interest_fp": "1149260.77",
+        "open_time": "2026-08-31T16:55:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If San Francisco wins the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-03T19:27:35.076705Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP031235SFPIT-SF",
+        "title": "San Francisco wins",
+        "updated_time": "2026-09-03T19:27:35.099846Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1905206.75",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "San Francisco"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-03T19:24:30Z",
+        "created_time": "2026-08-31T16:45:43.161172Z",
+        "custom_strike": {
+          "baseball_team": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-03T19:35:00Z",
+        "expiration_time": "2026-09-06T16:35:00Z",
+        "expiration_value": "Pittsburgh",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-06T16:35:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Pittsburgh",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-03T19:35:00Z",
+        "open_interest_fp": "641246.51",
+        "open_time": "2026-08-31T16:55:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Pittsburgh wins the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-03T19:27:35.076705Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP031235SFPIT-PIT",
+        "title": "Pittsburgh wins",
+        "updated_time": "2026-09-03T19:27:35.099846Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1226371.78",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Pittsburgh"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP031235SFPIT",
+    "received_at": "2026-09-22T19:18:36.343484+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-03T19:24:30Z",
+      "created_time": "2026-08-31T16:45:43.161172Z",
+      "custom_strike": {
+        "baseball_team": "cef5e9c6-0724-4524-bdd1-000f92a91c40"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-03T19:35:00Z",
+      "expiration_time": "2026-09-06T16:35:00Z",
+      "expiration_value": "Pittsburgh",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-06T16:35:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "San Francisco",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-03T19:35:00Z",
+      "open_interest_fp": "1149260.77",
+      "open_time": "2026-08-31T16:55:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If San Francisco wins the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-03T19:27:35.076705Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP031235SFPIT-SF",
+      "title": "San Francisco wins",
+      "updated_time": "2026-09-03T19:27:35.099846Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1905206.75",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "San Francisco"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-03T19:24:30Z",
+      "created_time": "2026-08-31T16:45:43.161172Z",
+      "custom_strike": {
+        "baseball_team": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-03T19:35:00Z",
+      "expiration_time": "2026-09-06T16:35:00Z",
+      "expiration_value": "Pittsburgh",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-06T16:35:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Pittsburgh",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-03T19:35:00Z",
+      "open_interest_fp": "641246.51",
+      "open_time": "2026-08-31T16:55:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Pittsburgh wins the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the San Francisco vs Pittsburgh professional baseball game originally scheduled for Sep 3, 2026 at 12:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-03T19:27:35.076705Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP031235SFPIT-PIT",
+      "title": "Pittsburgh wins",
+      "updated_time": "2026-09-03T19:27:35.099846Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1226371.78",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Pittsburgh"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-02T22:40:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "points": 5,
+              "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 13,
+              "opponent_structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "points": 12,
+              "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "winner": false
+            },
+            {
+              "date": "2026-08-31T22:05:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "points": 7,
+              "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "winner": true
+            },
+            {
+              "date": "2026-08-30T02:05:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+              "points": 7,
+              "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "winner": true
+            },
+            {
+              "date": "2026-08-29T20:05:00+00:00",
+              "opponent_points": 7,
+              "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+              "points": 1,
+              "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "winner": false
+            }
+          ],
+          "away_team_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29": [
+              {
+                "comment": "The Pittsburgh Pirates transferred INF Konnor Griffin from the 10-day injured list to the 60-day injured list with a left-hand ring finger sagittal band injury.",
+                "date_updated": "2026-07-11",
+                "description": "Finger",
+                "name": "Konnor Griffin",
+                "start_date": "2026-07-06",
+                "status": "D60",
+                "structured_id": "c97a9d44-b173-4cb9-98bc-79f72019e940"
+              },
+              {
+                "comment": "The Pittsburgh Pirates placed OF Ryan O'Hearn on the 10-day injured list with a left quad strain.",
+                "date_updated": "2026-08-01",
+                "description": "Quad",
+                "name": "Ryan O'Hearn",
+                "start_date": "2026-08-01",
+                "status": "D10",
+                "structured_id": "3c7f1548-fa20-417b-a2b9-6361ac297c04"
+              },
+              {
+                "comment": "The Pittsburgh Pirates transferred C Endy Rodr\u00edguez from the 10-day injured list to the 60-day injured list due to left hip inflammation.",
+                "date_updated": "2026-09-01",
+                "description": "Hip",
+                "name": "Endy Rodr\u00edguez",
+                "start_date": "2026-08-10",
+                "status": "D60",
+                "structured_id": "200e94c3-9ce5-4e7e-b88b-e2fe8199261a"
+              },
+              {
+                "comment": "The Pittsburgh Pirates placed RHP Mitch Keller on the 60-day injured list with a right arm teres major muscle injury.",
+                "date_updated": "2026-08-03",
+                "description": "Arm",
+                "name": "Mitch Keller",
+                "start_date": "2026-08-03",
+                "status": "D60",
+                "structured_id": "8a0a26c4-f37a-490f-902a-a3accfb3de90"
+              }
+            ],
+            "cef5e9c6-0724-4524-bdd1-000f92a91c40": [
+              {
+                "comment": "The San Francisco Giants placed LHP Sam Hentges on the 15-day injured list with left forearm strain.",
+                "date_updated": "2026-08-30",
+                "description": "Forearm",
+                "name": "Sam Hentges",
+                "start_date": "2026-08-27",
+                "status": "D15",
+                "structured_id": "7f624660-29ce-486b-b591-3f9284b4a902"
+              },
+              {
+                "comment": "The San Francisco Giants transferred INF Matt Chapman to the 60-day injured list due to abdominal strain.",
+                "date_updated": "2026-08-13",
+                "description": "Leg",
+                "name": "Matt Chapman",
+                "start_date": "2026-06-30",
+                "status": "D60",
+                "structured_id": "68a46689-2f11-4300-bf7c-f6826f5474ca"
+              },
+              {
+                "comment": "The San Francisco Giants transferred RHP Jos\u00e9 Butt\u00f3 to the the 60-day injured list with right arm fatigue.",
+                "date_updated": "2026-04-21",
+                "description": "Arm",
+                "name": "Jos\u00e9 Butt\u00f3",
+                "start_date": "2026-04-02",
+                "status": "D60",
+                "structured_id": "34c238ae-98f7-410e-a07b-9fcc2c8f0e22"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP Rowan Wick on the 60-day injured list as he recovers from Tommy John surgery.",
+                "date_updated": "2026-02-15",
+                "description": "Elbow",
+                "name": "Rowan Wick",
+                "start_date": "2026-02-15",
+                "status": "D60",
+                "structured_id": "3ce0f301-d33f-4ac5-8c75-82a2564ef949"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP Randy Rodr\u00edguez on the 60-day injured list due to a right elbow sprain.",
+                "date_updated": "2026-02-10",
+                "description": "Elbow",
+                "name": "Randy Rodr\u00edguez",
+                "start_date": "2026-02-10",
+                "status": "D60",
+                "structured_id": "b9ba4fd5-26e0-4be0-871c-4dd5511fbf88"
+              },
+              {
+                "comment": "The San Francisco Giants transferred LHP Carson Whisenhunt from the 15-day injured list to the 60-day injured list with elbow sprain.",
+                "date_updated": "2026-08-26",
+                "description": "Elbow",
+                "name": "Carson Whisenhunt",
+                "start_date": "2026-08-26",
+                "status": "D60",
+                "structured_id": "86284042-ad24-4275-a54f-12a1416ca5ca"
+              },
+              {
+                "comment": "The San Francisco Giants transferred C Daniel Susac to the 60-day injured list.",
+                "date_updated": "2026-08-19",
+                "description": "Knee",
+                "name": "Daniel Susac",
+                "start_date": "2026-08-10",
+                "status": "D60",
+                "structured_id": "ec880a95-23c6-4c73-8f29-e1da4859afd2"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP Hayden Birdsong on the 60-day injured list as he is scheduled to undergo Tommy John surgery.",
+                "date_updated": "2026-03-21",
+                "description": "Forearm",
+                "name": "Hayden Birdsong",
+                "start_date": "2026-03-21",
+                "status": "D60",
+                "structured_id": "e812caa2-fd6b-43c0-9c26-e2d48880b1dd"
+              },
+              {
+                "comment": "The San Francisco Giants transferred RHP Trevor McDonald from the 15-day injured list to the 60-day injured list with a right elbow strain.",
+                "date_updated": "2026-08-13",
+                "description": "Elbow",
+                "name": "Trevor McDonald",
+                "start_date": "2026-07-21",
+                "status": "D60",
+                "structured_id": "40e115d1-0206-40c6-a052-66bac5ba1846"
+              },
+              {
+                "comment": "The San Francisco Giants placed OF Victor Bericoto on the 10-day injured list.",
+                "date_updated": "2026-08-24",
+                "description": "Knee",
+                "name": "Victor Bericoto",
+                "start_date": "2026-08-23",
+                "status": "D10",
+                "structured_id": "f34273c2-90d5-41e4-a797-9e752052ab7a"
+              },
+              {
+                "comment": "The San Francisco Giants transferred RHP Adrian Houser to the 60-day injured list due to a right forearm strain.",
+                "date_updated": "2026-09-01",
+                "description": "Forearm",
+                "name": "Adrian Houser",
+                "start_date": "2026-08-25",
+                "status": "D60",
+                "structured_id": "7d3dab02-045b-4e06-bb0b-1c2d550fd5a4"
+              },
+              {
+                "comment": "The San Francisco Giants placed INF Willy Adames on the 10-day injured list.",
+                "date_updated": "2026-08-24",
+                "description": "Back",
+                "name": "Willy Adames",
+                "start_date": "2026-08-23",
+                "status": "D10",
+                "structured_id": "b160dd99-cd2c-4348-ac4e-499d19a12d42"
+              },
+              {
+                "comment": "The San Francisco Giants placed C Jesus Rodriguez on the 10-day injured list with a right elbow neuritis.",
+                "date_updated": "2026-08-01",
+                "description": "Elbow",
+                "name": "Jesus Rodriguez",
+                "start_date": "2026-08-01",
+                "status": "D10",
+                "structured_id": "7bd32bfc-2387-4a88-90b8-97d4d9594e43"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP Joel Peguero on the 60-day injured list with a left hamstring strain.",
+                "date_updated": "2026-06-01",
+                "description": "Hamstring",
+                "name": "Joel Peguero",
+                "start_date": "2026-06-01",
+                "status": "D60",
+                "structured_id": "1ae53b70-0c2c-49ef-b40e-16ff92916c26"
+              },
+              {
+                "comment": "The San Francisco Giants transferred OF Casey Schmitt from the 10-day injured list to the 60-day injured list due to left knee meniscus tear.",
+                "date_updated": "2026-07-28",
+                "description": "Leg",
+                "name": "Casey Schmitt",
+                "start_date": "2026-07-28",
+                "status": "D60",
+                "structured_id": "9fc46a4a-7aa7-4726-a703-e42cb6d0f9c3"
+              },
+              {
+                "comment": "The San Francisco Giants transferred LHP Matt Gage from the 15-day injured list to the 60-day injured list due to left elbow strain.",
+                "date_updated": "2026-08-02",
+                "description": "Elbow",
+                "name": "Matt Gage",
+                "start_date": "2026-07-04",
+                "status": "D60",
+                "structured_id": "a54ecef2-d6ed-4fc4-948a-bb31df8dfe19"
+              },
+              {
+                "comment": "The San Francisco Giants transferred OF Harrison Bader to the 60-day injured list.",
+                "date_updated": "2026-08-19",
+                "description": "Plantar Fasciitis",
+                "name": "Harrison Bader",
+                "start_date": "2026-05-30",
+                "status": "D60",
+                "structured_id": "94598e6c-aad8-44cc-9320-0dd54de8826a"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP Keaton Winn on the 15-day injured list with right elbow neuritis.",
+                "date_updated": "2026-08-20",
+                "description": "Elbow",
+                "name": "Keaton Winn",
+                "start_date": "2026-08-19",
+                "status": "D15",
+                "structured_id": "cc9b5702-5f73-4f95-a166-84a2413e37e1"
+              },
+              {
+                "comment": "The San Francisco Giants placed RHP JT Brubaker on the 15-day injured list due to bruised ribs.",
+                "date_updated": "2026-08-24",
+                "description": "Ribs",
+                "name": "JT Brubaker",
+                "start_date": "2026-08-24",
+                "status": "D15",
+                "structured_id": "0ae5eb31-fe67-480d-8908-c6a42f312da0"
+              },
+              {
+                "comment": "The San Francisco Giants placed INF Marcelo Mayer on the 10-day injured list with a stress reaction on his left forearm.",
+                "date_updated": "2026-08-04",
+                "description": "Forearm",
+                "name": "Marcelo Mayer",
+                "start_date": "2026-06-26",
+                "status": "D10",
+                "structured_id": "bed1a296-f73d-4119-86f1-73160375452d"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-02T22:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "points": 4,
+              "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "winner": false
+            },
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 12,
+              "opponent_structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+              "points": 13,
+              "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "winner": true
+            },
+            {
+              "date": "2026-08-30T18:15:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+              "points": 5,
+              "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "winner": true
+            },
+            {
+              "date": "2026-08-29T18:15:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+              "points": 6,
+              "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "winner": true
+            },
+            {
+              "date": "2026-08-29T00:15:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+              "points": 1,
+              "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+              "winner": false
+            }
+          ],
+          "home_team_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+          "status": "closed"
+        },
+        "end_date": "2026-09-03T20:30:10Z",
+        "id": "07342858-06f0-4cf4-ac90-d6487d206d36",
+        "last_updated_ts": "2026-09-04T21:03:39.815237Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP031235SFPIT",
+          "KXMLBEXTRAS-26SEP031235SFPIT",
+          "KXMLBSPREAD-26SEP031235SFPIT",
+          "KXMLBTOTAL-26SEP031235SFPIT"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP031235SFPIT",
+          "KXMLBEXTRAS-26SEP031235SFPIT",
+          "KXMLBRFI-26SEP031235SFPIT",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-1",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-2",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-3",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-4",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-5",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-6",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-7",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-8",
+          "KXMLBINNINGWIN-26SEP031235SFPIT-9",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-1",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-2",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-3",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-4",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-5",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-6",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-7",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-8",
+          "KXMLBINNINGTOTAL-26SEP031235SFPIT-9",
+          "KXMLBSPREAD-26SEP031235SFPIT",
+          "KXMLBTOTAL-26SEP031235SFPIT",
+          "KXMLBF5-26SEP031235SFPIT",
+          "KXMLBF5SPREAD-26SEP031235SFPIT",
+          "KXMLBF5TOTAL-26SEP031235SFPIT",
+          "KXMLBF3-26SEP031235SFPIT",
+          "KXMLBF7-26SEP031235SFPIT",
+          "KXMLBTEAMTOTAL-26SEP031235SFPIT",
+          "KXMLBKS-26SEP031235SFPIT",
+          "KXMLBOUTS-26SEP031235SFPIT",
+          "KXMLBHR-26SEP031235SFPIT",
+          "KXMLBHIT-26SEP031235SFPIT",
+          "KXMLBTB-26SEP031235SFPIT",
+          "KXMLBHRR-26SEP031235SFPIT",
+          "KXMLBRBI-26SEP031235SFPIT",
+          "KXMLBHA-26SEP031235SFPIT",
+          "KXMLBERA-26SEP031235SFPIT",
+          "KXMLBSB-26SEP031235SFPIT",
+          "KXMLBWA-26SEP031235SFPIT"
+        ],
+        "source_id": "5750e479-d408-4b22-806b-94fba622a3e3",
+        "source_ids": {
+          "source_2_id": "2026090338F181AF",
+          "source_3_id": "5750e479-d408-4b22-806b-94fba622a3e3",
+          "source_4_id": "63299383",
+          "source_5_id": "sr:sport_event:63299383"
+        },
+        "start_date": "2026-09-03T16:35:00Z",
+        "title": "San Francisco vs Pittsburgh",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP031235SFPIT&limit=100",
+    "received_at": "2026-09-22T19:18:40.657085+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788453300.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-02T22:40:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "points": 5,
+          "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 13,
+          "opponent_structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "points": 12,
+          "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "winner": false
+        },
+        {
+          "date": "2026-08-31T22:05:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "points": 7,
+          "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "winner": true
+        },
+        {
+          "date": "2026-08-30T02:05:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+          "points": 7,
+          "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "winner": true
+        },
+        {
+          "date": "2026-08-29T20:05:00+00:00",
+          "opponent_points": 7,
+          "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+          "points": 1,
+          "structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "winner": false
+        }
+      ],
+      "away_team_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29": [
+          {
+            "comment": "The Pittsburgh Pirates transferred INF Konnor Griffin from the 10-day injured list to the 60-day injured list with a left-hand ring finger sagittal band injury.",
+            "date_updated": "2026-07-11",
+            "description": "Finger",
+            "name": "Konnor Griffin",
+            "start_date": "2026-07-06",
+            "status": "D60",
+            "structured_id": "c97a9d44-b173-4cb9-98bc-79f72019e940"
+          },
+          {
+            "comment": "The Pittsburgh Pirates placed OF Ryan O'Hearn on the 10-day injured list with a left quad strain.",
+            "date_updated": "2026-08-01",
+            "description": "Quad",
+            "name": "Ryan O'Hearn",
+            "start_date": "2026-08-01",
+            "status": "D10",
+            "structured_id": "3c7f1548-fa20-417b-a2b9-6361ac297c04"
+          },
+          {
+            "comment": "The Pittsburgh Pirates transferred C Endy Rodr\u00edguez from the 10-day injured list to the 60-day injured list due to left hip inflammation.",
+            "date_updated": "2026-09-01",
+            "description": "Hip",
+            "name": "Endy Rodr\u00edguez",
+            "start_date": "2026-08-10",
+            "status": "D60",
+            "structured_id": "200e94c3-9ce5-4e7e-b88b-e2fe8199261a"
+          },
+          {
+            "comment": "The Pittsburgh Pirates placed RHP Mitch Keller on the 60-day injured list with a right arm teres major muscle injury.",
+            "date_updated": "2026-08-03",
+            "description": "Arm",
+            "name": "Mitch Keller",
+            "start_date": "2026-08-03",
+            "status": "D60",
+            "structured_id": "8a0a26c4-f37a-490f-902a-a3accfb3de90"
+          }
+        ],
+        "cef5e9c6-0724-4524-bdd1-000f92a91c40": [
+          {
+            "comment": "The San Francisco Giants placed LHP Sam Hentges on the 15-day injured list with left forearm strain.",
+            "date_updated": "2026-08-30",
+            "description": "Forearm",
+            "name": "Sam Hentges",
+            "start_date": "2026-08-27",
+            "status": "D15",
+            "structured_id": "7f624660-29ce-486b-b591-3f9284b4a902"
+          },
+          {
+            "comment": "The San Francisco Giants transferred INF Matt Chapman to the 60-day injured list due to abdominal strain.",
+            "date_updated": "2026-08-13",
+            "description": "Leg",
+            "name": "Matt Chapman",
+            "start_date": "2026-06-30",
+            "status": "D60",
+            "structured_id": "68a46689-2f11-4300-bf7c-f6826f5474ca"
+          },
+          {
+            "comment": "The San Francisco Giants transferred RHP Jos\u00e9 Butt\u00f3 to the the 60-day injured list with right arm fatigue.",
+            "date_updated": "2026-04-21",
+            "description": "Arm",
+            "name": "Jos\u00e9 Butt\u00f3",
+            "start_date": "2026-04-02",
+            "status": "D60",
+            "structured_id": "34c238ae-98f7-410e-a07b-9fcc2c8f0e22"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP Rowan Wick on the 60-day injured list as he recovers from Tommy John surgery.",
+            "date_updated": "2026-02-15",
+            "description": "Elbow",
+            "name": "Rowan Wick",
+            "start_date": "2026-02-15",
+            "status": "D60",
+            "structured_id": "3ce0f301-d33f-4ac5-8c75-82a2564ef949"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP Randy Rodr\u00edguez on the 60-day injured list due to a right elbow sprain.",
+            "date_updated": "2026-02-10",
+            "description": "Elbow",
+            "name": "Randy Rodr\u00edguez",
+            "start_date": "2026-02-10",
+            "status": "D60",
+            "structured_id": "b9ba4fd5-26e0-4be0-871c-4dd5511fbf88"
+          },
+          {
+            "comment": "The San Francisco Giants transferred LHP Carson Whisenhunt from the 15-day injured list to the 60-day injured list with elbow sprain.",
+            "date_updated": "2026-08-26",
+            "description": "Elbow",
+            "name": "Carson Whisenhunt",
+            "start_date": "2026-08-26",
+            "status": "D60",
+            "structured_id": "86284042-ad24-4275-a54f-12a1416ca5ca"
+          },
+          {
+            "comment": "The San Francisco Giants transferred C Daniel Susac to the 60-day injured list.",
+            "date_updated": "2026-08-19",
+            "description": "Knee",
+            "name": "Daniel Susac",
+            "start_date": "2026-08-10",
+            "status": "D60",
+            "structured_id": "ec880a95-23c6-4c73-8f29-e1da4859afd2"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP Hayden Birdsong on the 60-day injured list as he is scheduled to undergo Tommy John surgery.",
+            "date_updated": "2026-03-21",
+            "description": "Forearm",
+            "name": "Hayden Birdsong",
+            "start_date": "2026-03-21",
+            "status": "D60",
+            "structured_id": "e812caa2-fd6b-43c0-9c26-e2d48880b1dd"
+          },
+          {
+            "comment": "The San Francisco Giants transferred RHP Trevor McDonald from the 15-day injured list to the 60-day injured list with a right elbow strain.",
+            "date_updated": "2026-08-13",
+            "description": "Elbow",
+            "name": "Trevor McDonald",
+            "start_date": "2026-07-21",
+            "status": "D60",
+            "structured_id": "40e115d1-0206-40c6-a052-66bac5ba1846"
+          },
+          {
+            "comment": "The San Francisco Giants placed OF Victor Bericoto on the 10-day injured list.",
+            "date_updated": "2026-08-24",
+            "description": "Knee",
+            "name": "Victor Bericoto",
+            "start_date": "2026-08-23",
+            "status": "D10",
+            "structured_id": "f34273c2-90d5-41e4-a797-9e752052ab7a"
+          },
+          {
+            "comment": "The San Francisco Giants transferred RHP Adrian Houser to the 60-day injured list due to a right forearm strain.",
+            "date_updated": "2026-09-01",
+            "description": "Forearm",
+            "name": "Adrian Houser",
+            "start_date": "2026-08-25",
+            "status": "D60",
+            "structured_id": "7d3dab02-045b-4e06-bb0b-1c2d550fd5a4"
+          },
+          {
+            "comment": "The San Francisco Giants placed INF Willy Adames on the 10-day injured list.",
+            "date_updated": "2026-08-24",
+            "description": "Back",
+            "name": "Willy Adames",
+            "start_date": "2026-08-23",
+            "status": "D10",
+            "structured_id": "b160dd99-cd2c-4348-ac4e-499d19a12d42"
+          },
+          {
+            "comment": "The San Francisco Giants placed C Jesus Rodriguez on the 10-day injured list with a right elbow neuritis.",
+            "date_updated": "2026-08-01",
+            "description": "Elbow",
+            "name": "Jesus Rodriguez",
+            "start_date": "2026-08-01",
+            "status": "D10",
+            "structured_id": "7bd32bfc-2387-4a88-90b8-97d4d9594e43"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP Joel Peguero on the 60-day injured list with a left hamstring strain.",
+            "date_updated": "2026-06-01",
+            "description": "Hamstring",
+            "name": "Joel Peguero",
+            "start_date": "2026-06-01",
+            "status": "D60",
+            "structured_id": "1ae53b70-0c2c-49ef-b40e-16ff92916c26"
+          },
+          {
+            "comment": "The San Francisco Giants transferred OF Casey Schmitt from the 10-day injured list to the 60-day injured list due to left knee meniscus tear.",
+            "date_updated": "2026-07-28",
+            "description": "Leg",
+            "name": "Casey Schmitt",
+            "start_date": "2026-07-28",
+            "status": "D60",
+            "structured_id": "9fc46a4a-7aa7-4726-a703-e42cb6d0f9c3"
+          },
+          {
+            "comment": "The San Francisco Giants transferred LHP Matt Gage from the 15-day injured list to the 60-day injured list due to left elbow strain.",
+            "date_updated": "2026-08-02",
+            "description": "Elbow",
+            "name": "Matt Gage",
+            "start_date": "2026-07-04",
+            "status": "D60",
+            "structured_id": "a54ecef2-d6ed-4fc4-948a-bb31df8dfe19"
+          },
+          {
+            "comment": "The San Francisco Giants transferred OF Harrison Bader to the 60-day injured list.",
+            "date_updated": "2026-08-19",
+            "description": "Plantar Fasciitis",
+            "name": "Harrison Bader",
+            "start_date": "2026-05-30",
+            "status": "D60",
+            "structured_id": "94598e6c-aad8-44cc-9320-0dd54de8826a"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP Keaton Winn on the 15-day injured list with right elbow neuritis.",
+            "date_updated": "2026-08-20",
+            "description": "Elbow",
+            "name": "Keaton Winn",
+            "start_date": "2026-08-19",
+            "status": "D15",
+            "structured_id": "cc9b5702-5f73-4f95-a166-84a2413e37e1"
+          },
+          {
+            "comment": "The San Francisco Giants placed RHP JT Brubaker on the 15-day injured list due to bruised ribs.",
+            "date_updated": "2026-08-24",
+            "description": "Ribs",
+            "name": "JT Brubaker",
+            "start_date": "2026-08-24",
+            "status": "D15",
+            "structured_id": "0ae5eb31-fe67-480d-8908-c6a42f312da0"
+          },
+          {
+            "comment": "The San Francisco Giants placed INF Marcelo Mayer on the 10-day injured list with a stress reaction on his left forearm.",
+            "date_updated": "2026-08-04",
+            "description": "Forearm",
+            "name": "Marcelo Mayer",
+            "start_date": "2026-06-26",
+            "status": "D10",
+            "structured_id": "bed1a296-f73d-4119-86f1-73160375452d"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-02T22:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "points": 4,
+          "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "winner": false
+        },
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 12,
+          "opponent_structured_id": "cef5e9c6-0724-4524-bdd1-000f92a91c40",
+          "points": 13,
+          "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "winner": true
+        },
+        {
+          "date": "2026-08-30T18:15:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+          "points": 5,
+          "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "winner": true
+        },
+        {
+          "date": "2026-08-29T18:15:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+          "points": 6,
+          "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "winner": true
+        },
+        {
+          "date": "2026-08-29T00:15:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "8068b1da-6725-4883-a163-885111c4f717",
+          "points": 1,
+          "structured_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+          "winner": false
+        }
+      ],
+      "home_team_id": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP031235SFPIT",
+      "status": "closed"
+    },
+    "end_date": "2026-09-03T20:30:10Z",
+    "id": "07342858-06f0-4cf4-ac90-d6487d206d36",
+    "last_updated_ts": "2026-09-04T21:03:39.815237Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP031235SFPIT",
+      "KXMLBEXTRAS-26SEP031235SFPIT",
+      "KXMLBSPREAD-26SEP031235SFPIT",
+      "KXMLBTOTAL-26SEP031235SFPIT"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP031235SFPIT",
+      "KXMLBEXTRAS-26SEP031235SFPIT",
+      "KXMLBRFI-26SEP031235SFPIT",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-1",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-2",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-3",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-4",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-5",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-6",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-7",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-8",
+      "KXMLBINNINGWIN-26SEP031235SFPIT-9",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-1",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-2",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-3",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-4",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-5",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-6",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-7",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-8",
+      "KXMLBINNINGTOTAL-26SEP031235SFPIT-9",
+      "KXMLBSPREAD-26SEP031235SFPIT",
+      "KXMLBTOTAL-26SEP031235SFPIT",
+      "KXMLBF5-26SEP031235SFPIT",
+      "KXMLBF5SPREAD-26SEP031235SFPIT",
+      "KXMLBF5TOTAL-26SEP031235SFPIT",
+      "KXMLBF3-26SEP031235SFPIT",
+      "KXMLBF7-26SEP031235SFPIT",
+      "KXMLBTEAMTOTAL-26SEP031235SFPIT",
+      "KXMLBKS-26SEP031235SFPIT",
+      "KXMLBOUTS-26SEP031235SFPIT",
+      "KXMLBHR-26SEP031235SFPIT",
+      "KXMLBHIT-26SEP031235SFPIT",
+      "KXMLBTB-26SEP031235SFPIT",
+      "KXMLBHRR-26SEP031235SFPIT",
+      "KXMLBRBI-26SEP031235SFPIT",
+      "KXMLBHA-26SEP031235SFPIT",
+      "KXMLBERA-26SEP031235SFPIT",
+      "KXMLBSB-26SEP031235SFPIT",
+      "KXMLBWA-26SEP031235SFPIT"
+    ],
+    "source_id": "5750e479-d408-4b22-806b-94fba622a3e3",
+    "source_ids": {
+      "source_2_id": "2026090338F181AF",
+      "source_3_id": "5750e479-d408-4b22-806b-94fba622a3e3",
+      "source_4_id": "63299383",
+      "source_5_id": "sr:sport_event:63299383"
+    },
+    "start_date": "2026-09-03T16:35:00Z",
+    "title": "San Francisco vs Pittsburgh",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP031235SFPIT-PIT",
+    "KXMLBGAME-26SEP031235SFPIT-SF"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "error": "{\"url\": \"https://api.elections.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP011840NYMTB-NYM/candlesticks?start_ts=1788044160&end_ts=1788300900&period_interval=1\", \"errors\": [\"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\"]}",
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-NYM&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:24:54.285356+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-NYM&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false&cursor=EhIKEAchKuX2OZ_3T9ZUj8MuiQEaDAi33dvUBhDYg8u3Aw",
+      "received_at": "2026-09-22T19:24:58.888086+00:00",
+      "prior_errors": []
+    }
+  ],
+  "partial_sha256": "f3c2f4e4574fc28533784d51675684e510a1a1944da8bce16eac420c1277f096"
+}

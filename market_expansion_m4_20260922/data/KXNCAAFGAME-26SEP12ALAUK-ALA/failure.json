@@ -1,0 +1,26 @@
+{
+  "error": "{\"url\": \"https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAcipUpKuaAgHnOc4Rte65saDAiw2IfVBhDgwcedAg\", \"errors\": [\"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\"]}",
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:24:43.565184+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAciz8OAKZxzeLEkIVXxRlYaDAiugZbVBhC4r-TQAw",
+      "received_at": "2026-09-22T19:24:49.459094+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAcixJtZGZW2IupMHenlC68aDAiwtZXVBhCg-um5Aw",
+      "received_at": "2026-09-22T19:24:54.170316+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAci3p5sKYUgoZKBU8chk1IaDAilvJLVBhCg9_GTAQ",
+      "received_at": "2026-09-22T19:24:59.046707+00:00",
+      "prior_errors": []
+    }
+  ],
+  "partial_sha256": "071cc681a01753dc9e1e12ccce71001c34700f239428372fa3fab72053bda449"
+}

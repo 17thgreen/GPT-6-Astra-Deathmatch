@@ -1,0 +1,48 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP12ALAUK-UK",
+  "event": "KXNCAAFGAME-26SEP12ALAUK",
+  "series": "KXNCAAFGAME",
+  "kickoff": 1789241400.0,
+  "start": 1788636600.0,
+  "end": 1789239900.0,
+  "pagination_exhausted": true,
+  "archived_candles": false,
+  "trades": 2909,
+  "candles": 5390,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-UK&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:24:11.615028+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-UK&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAciy9alcZtL9OEQ3dB2CWIaDAjW7JXVBhDQp-TWAQ",
+      "received_at": "2026-09-22T19:24:17.688597+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-UK&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAci2-QuwZM7xKd_7ikKckoaDAjXiJLVBhC4tIbWAg",
+      "received_at": "2026-09-22T19:24:22.632151+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP12ALAUK-UK/candlesticks?start_ts=1788636600&end_ts=1788895800&period_interval=1",
+      "received_at": "2026-09-22T19:24:28.536430+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP12ALAUK-UK/candlesticks?start_ts=1788895800&end_ts=1789155000&period_interval=1",
+      "received_at": "2026-09-22T19:24:33.363888+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP12ALAUK-UK/candlesticks?start_ts=1789155000&end_ts=1789239900&period_interval=1",
+      "received_at": "2026-09-22T19:24:38.402583+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "5e746096b15ead168a03f55aef4308dc2a042d0b7b34640272f6d6c806838666",
+    "candles.jsonl.gz": "79b40d52f019d63b1b868e3ad7c9220ad6067dad898d12188ab4ec09e3d288c1"
+  }
+}

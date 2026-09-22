@@ -1,0 +1,390 @@
+{
+  "series": "KXNCAAFGAME",
+  "event": "KXNCAAFGAME-26SEP05ACTTU",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "NCAA Football",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNCAAFGAME",
+      "settlement_sources": [
+        {
+          "name": "Kalshi using information originating from the NCAA",
+          "url": "https://www.ncaa.com/sports/football/fbs"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "AC vs TTU (Sep 5)",
+      "title": "Abilene Christian vs Texas Tech"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-06T02:20:09Z",
+        "created_time": "2026-08-18T15:38:17.560243Z",
+        "custom_strike": {
+          "football_team": "8c2bb3a9-6c76-47f6-8ccb-eef514f2d166"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-06T02:00:00Z",
+        "expiration_time": "2026-09-07T23:00:00Z",
+        "expiration_value": "Texas Tech",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-07T23:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Texas Tech",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-06T02:00:00Z",
+        "open_interest_fp": "40261.89",
+        "open_time": "2026-08-18T15:42:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Texas Tech wins the Abilene Christian vs Texas Tech college football game originally scheduled for Sep 5, 2026, then the market resolves to Yes.",
+        "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 90,
+        "settlement_ts": "2026-09-06T02:22:45.490608Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNCAAFGAME-26SEP05ACTTU-TTU",
+        "title": "Texas Tech wins",
+        "updated_time": "2026-09-06T02:22:45.528574Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "43048.36",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Texas Tech"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-06T02:20:09Z",
+        "created_time": "2026-08-18T15:38:17.560243Z",
+        "custom_strike": {
+          "football_team": "df25ea1b-c4b9-4f38-8e93-1b314d89a3f7"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-06T02:00:00Z",
+        "expiration_time": "2026-09-07T23:00:00Z",
+        "expiration_value": "Texas Tech",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T23:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Abilene Christian",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-06T02:00:00Z",
+        "open_interest_fp": "571507.92",
+        "open_time": "2026-08-18T15:42:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Abilene Christian wins the Abilene Christian vs Texas Tech college football game originally scheduled for Sep 5, 2026, then the market resolves to Yes.",
+        "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 90,
+        "settlement_ts": "2026-09-06T02:22:45.490608Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNCAAFGAME-26SEP05ACTTU-AC",
+        "title": "Abilene Christian wins",
+        "updated_time": "2026-09-06T02:22:45.528574Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "571645.92",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Abilene Christian"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNCAAFGAME-26SEP05ACTTU",
+    "received_at": "2026-09-22T19:18:16.165182+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-06T02:20:09Z",
+      "created_time": "2026-08-18T15:38:17.560243Z",
+      "custom_strike": {
+        "football_team": "8c2bb3a9-6c76-47f6-8ccb-eef514f2d166"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-06T02:00:00Z",
+      "expiration_time": "2026-09-07T23:00:00Z",
+      "expiration_value": "Texas Tech",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-07T23:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Texas Tech",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-06T02:00:00Z",
+      "open_interest_fp": "40261.89",
+      "open_time": "2026-08-18T15:42:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Texas Tech wins the Abilene Christian vs Texas Tech college football game originally scheduled for Sep 5, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 90,
+      "settlement_ts": "2026-09-06T02:22:45.490608Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNCAAFGAME-26SEP05ACTTU-TTU",
+      "title": "Texas Tech wins",
+      "updated_time": "2026-09-06T02:22:45.528574Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "43048.36",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Texas Tech"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-06T02:20:09Z",
+      "created_time": "2026-08-18T15:38:17.560243Z",
+      "custom_strike": {
+        "football_team": "df25ea1b-c4b9-4f38-8e93-1b314d89a3f7"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-06T02:00:00Z",
+      "expiration_time": "2026-09-07T23:00:00Z",
+      "expiration_value": "Texas Tech",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-07T23:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Abilene Christian",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-06T02:00:00Z",
+      "open_interest_fp": "571507.92",
+      "open_time": "2026-08-18T15:42:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Abilene Christian wins the Abilene Christian vs Texas Tech college football game originally scheduled for Sep 5, 2026, then the market resolves to Yes.",
+      "rules_secondary": "If the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, the market will resolve to a fair price.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the NCAA. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 90,
+      "settlement_ts": "2026-09-06T02:22:45.490608Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNCAAFGAME-26SEP05ACTTU-AC",
+      "title": "Abilene Christian wins",
+      "updated_time": "2026-09-06T02:22:45.528574Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "571645.92",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Abilene Christian"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_team_id": "df25ea1b-c4b9-4f38-8e93-1b314d89a3f7",
+          "conference": false,
+          "division": "FBS",
+          "home_team_id": "8c2bb3a9-6c76-47f6-8ccb-eef514f2d166",
+          "league": "NCAAFB",
+          "main_game_event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+          "season": {
+            "type": "REG",
+            "week": 1,
+            "year": 2026
+          },
+          "status": "scheduled",
+          "tier": "C"
+        },
+        "end_date": "2026-09-06T02:24:59Z",
+        "id": "1265c7d3-0c76-4a6c-ad80-25e3665cc9af",
+        "last_updated_ts": "2026-09-07T03:05:46.670259Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNCAAFGAME-26SEP05ACTTU",
+          "KXNCAAFSPREAD-26SEP05ACTTU",
+          "KXNCAAFTOTAL-26SEP05ACTTU",
+          "KXNCAAFTEAMTOTAL-26SEP05ACTTU",
+          "KXNCAAF1H-26SEP05ACTTU",
+          "KXNCAAFOT-26SEP05ACTTU",
+          "KXNCAAF1HSPREAD-26SEP05ACTTU",
+          "KXNCAAF1HTOTAL-26SEP05ACTTU",
+          "KXNCAAFFIRSTTDTEAM-26SEP05ACTTU"
+        ],
+        "related_event_tickers": [
+          "KXNCAAFGAME-26SEP05ACTTU",
+          "KXNCAAFSPREAD-26SEP05ACTTU",
+          "KXNCAAFTOTAL-26SEP05ACTTU",
+          "KXNCAAFTEAMTOTAL-26SEP05ACTTU",
+          "KXNCAAF1H-26SEP05ACTTU",
+          "KXNCAAFOT-26SEP05ACTTU",
+          "KXNCAAF1HSPREAD-26SEP05ACTTU",
+          "KXNCAAF1HTOTAL-26SEP05ACTTU",
+          "KXNCAAFFIRSTTDTEAM-26SEP05ACTTU"
+        ],
+        "source_id": "4d321cd9-32a5-4ace-b703-a878c587bb0c",
+        "source_ids": {
+          "source_1_id": "2968732",
+          "source_2_id": "202609050C04C1C9",
+          "source_3_id": "4d321cd9-32a5-4ace-b703-a878c587bb0c",
+          "source_6_id": "18258777"
+        },
+        "start_date": "2026-09-05T23:00:00Z",
+        "title": "Abilene Christian at Texas Tech",
+        "type": "football_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNCAAFGAME-26SEP05ACTTU&limit=100",
+    "received_at": "2026-09-22T19:18:21.151636+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788649200.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_team_id": "df25ea1b-c4b9-4f38-8e93-1b314d89a3f7",
+      "conference": false,
+      "division": "FBS",
+      "home_team_id": "8c2bb3a9-6c76-47f6-8ccb-eef514f2d166",
+      "league": "NCAAFB",
+      "main_game_event_ticker": "KXNCAAFGAME-26SEP05ACTTU",
+      "season": {
+        "type": "REG",
+        "week": 1,
+        "year": 2026
+      },
+      "status": "scheduled",
+      "tier": "C"
+    },
+    "end_date": "2026-09-06T02:24:59Z",
+    "id": "1265c7d3-0c76-4a6c-ad80-25e3665cc9af",
+    "last_updated_ts": "2026-09-07T03:05:46.670259Z",
+    "notification_message": "The game is about to begin!",
+    "primary_event_tickers": [
+      "KXNCAAFGAME-26SEP05ACTTU",
+      "KXNCAAFSPREAD-26SEP05ACTTU",
+      "KXNCAAFTOTAL-26SEP05ACTTU",
+      "KXNCAAFTEAMTOTAL-26SEP05ACTTU",
+      "KXNCAAF1H-26SEP05ACTTU",
+      "KXNCAAFOT-26SEP05ACTTU",
+      "KXNCAAF1HSPREAD-26SEP05ACTTU",
+      "KXNCAAF1HTOTAL-26SEP05ACTTU",
+      "KXNCAAFFIRSTTDTEAM-26SEP05ACTTU"
+    ],
+    "related_event_tickers": [
+      "KXNCAAFGAME-26SEP05ACTTU",
+      "KXNCAAFSPREAD-26SEP05ACTTU",
+      "KXNCAAFTOTAL-26SEP05ACTTU",
+      "KXNCAAFTEAMTOTAL-26SEP05ACTTU",
+      "KXNCAAF1H-26SEP05ACTTU",
+      "KXNCAAFOT-26SEP05ACTTU",
+      "KXNCAAF1HSPREAD-26SEP05ACTTU",
+      "KXNCAAF1HTOTAL-26SEP05ACTTU",
+      "KXNCAAFFIRSTTDTEAM-26SEP05ACTTU"
+    ],
+    "source_id": "4d321cd9-32a5-4ace-b703-a878c587bb0c",
+    "source_ids": {
+      "source_1_id": "2968732",
+      "source_2_id": "202609050C04C1C9",
+      "source_3_id": "4d321cd9-32a5-4ace-b703-a878c587bb0c",
+      "source_6_id": "18258777"
+    },
+    "start_date": "2026-09-05T23:00:00Z",
+    "title": "Abilene Christian at Texas Tech",
+    "type": "football_game"
+  },
+  "tickers": [
+    "KXNCAAFGAME-26SEP05ACTTU-AC",
+    "KXNCAAFGAME-26SEP05ACTTU-TTU"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

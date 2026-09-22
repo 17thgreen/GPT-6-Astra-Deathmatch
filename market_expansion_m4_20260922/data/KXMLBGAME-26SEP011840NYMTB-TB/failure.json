@@ -1,0 +1,16 @@
+{
+  "error": "{\"url\": \"https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-TB&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false&cursor=EhIKEAchIn2voapcxYpm_D2sJiQaDAjjutzUBhCAou_qAg\", \"errors\": [\"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\"]}",
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-TB&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:24:54.050852+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-TB&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false&cursor=EhIKEAchJv3qCZzhUvW-q6YblJ8aCwj4gt3UBhCQo5he",
+      "received_at": "2026-09-22T19:24:58.896582+00:00",
+      "prior_errors": []
+    }
+  ],
+  "partial_sha256": "c887bfc196d815f57d7dffe6ab0d96950255ddbe082f630dc0bbaef389f81080"
+}

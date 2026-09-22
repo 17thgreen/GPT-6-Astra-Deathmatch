@@ -1,0 +1,33 @@
+KXNCAAFGAME-26SEP04FPUMRST-FPU 707 trades 2912 candles
+KXNCAAFGAME-26SEP03AKRWAKE-WAKE 605 trades 3146 candles
+KXNCAAFGAME-26SEP04FPUMRST-MRST 655 trades 2060 candles
+KXNCAAFGAME-26SEP03AKRWAKE-AKR 1309 trades 4811 candles
+KXNCAAFGAME-26SEP05ACTTU-TTU 186 trades 310 candles
+KXNCAAFGAME-26SEP05ACTTU-AC 600 trades 1708 candles
+KXNCAAFGAME-26SEP06LOUMISS-LOU 6436 trades 3526 candles
+KXNCAAFGAME-26SEP10FAMUMIA-MIA 153 trades 654 candles
+KXNCAAFGAME-26SEP06LOUMISS-MISS 12026 trades 4319 candles
+KXNCAAFGAME-26SEP11MIZZKU-KU 3769 trades 5514 candles
+KXNCAAFGAME-26SEP10FAMUMIA-FAMU 5889 trades 3557 candles
+KXNCAAFGAME-26SEP12ALAUK-UK 2909 trades 5390 candles
+KXNCAAFGAME-26SEP11MIZZKU-MIZZ 5883 trades 5266 candles
+KXNCAAFGAME-26SEP07SMUFSU-FSU 24456 trades 4710 candles
+FAILED KXMLBGAME-26SEP011840NYMTB-NYM {"url": "https://api.elections.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP011840NYMTB-NYM/candlesticks?start_ts=1788044160&end_ts=1788300900&period_interval=1", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP011840NYMTB-TB {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP011840NYMTB-TB&min_ts=1788044160&max_ts=1788300900&limit=1000&is_block_trade=false&cursor=EhIKEAchIn2voapcxYpm_D2sJiQaDAjjutzUBhCAou_qAg", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXNCAAFGAME-26SEP12ALAUK-ALA {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP12ALAUK-ALA&min_ts=1788636600&max_ts=1789239900&limit=1000&is_block_trade=false&cursor=EhIKEAcipUpKuaAgHnOc4Rte65saDAiw2IfVBhDgwcedAg", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXNCAAFGAME-26SEP07SMUFSU-SMU {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-SMU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchqkgdCZKWYsbLlDpfzLIaCwjv3fbUBhDY4o8E", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP021240SDCIN-SD {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP021240SDCIN-SD&min_ts=1788108900&max_ts=1788365700&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP021240SDCIN-CIN {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP021240SDCIN-CIN&min_ts=1788108900&max_ts=1788365700&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP031235SFPIT-SF {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP031235SFPIT-SF&min_ts=1788195300&max_ts=1788451800&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP031235SFPIT-PIT {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP031235SFPIT-PIT&min_ts=1788195300&max_ts=1788451800&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP041410DETCLEG1-DET {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP041410DETCLEG1-DET&min_ts=1788287100&max_ts=1788543900&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP041410DETCLEG1-CLE {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP041410DETCLEG1-CLE&min_ts=1788287100&max_ts=1788543900&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP051610CHCMIA-CHC {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP051610CHCMIA-CHC&min_ts=1788380700&max_ts=1788637500&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+FAILED KXMLBGAME-26SEP051610CHCMIA-MIA {"url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP051610CHCMIA-MIA&min_ts=1788380700&max_ts=1788637500&limit=1000&is_block_trade=false", "errors": ["<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>", "<urlopen error Tunnel connection failed: 403 Forbidden>"]}
+KXMLBGAME-26SEP061210MILCIN-CIN 628 trades 1083 candles
+KXMLBGAME-26SEP071305ATLPHI-PHI 2387 trades 1356 candles
+KXMLBGAME-26SEP061210MILCIN-MIL 2626 trades 1117 candles
+KXMLBGAME-26SEP071305ATLPHI-ATL 2513 trades 1216 candles
+KXMLBGAME-26SEP081835CLEBAL-CLE 1385 trades 1210 candles
+KXMLBGAME-26SEP081835CLEBAL-BAL 1328 trades 1604 candles
+CAPTURE_STATUS {'KXNCAAFGAME': {'complete': False, 'expected_markets': 16, 'captured_markets': 14}, 'KXMLBGAME': {'complete': False, 'expected_markets': 16, 'captured_markets': 6}}

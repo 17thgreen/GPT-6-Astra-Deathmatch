@@ -1,0 +1,98 @@
+{
+  "complete": true,
+  "endpoints": [
+    {
+      "endpoint": "markets",
+      "pages": 1,
+      "sha256": "cc3441a90adb20870a4c34748ea01636806ac51aa406beabdf32b71c55380525",
+      "file": "metadata/nba_markets.jsonl.gz",
+      "exhausted": true
+    },
+    {
+      "endpoint": "historical/markets",
+      "pages": 3,
+      "sha256": "b90f6486697b910a95f77d946fdf9c5558ab55740cbb15cb3d229259a5335e22",
+      "file": "metadata/nba_historical_markets.jsonl.gz",
+      "exhausted": true
+    }
+  ],
+  "failures": [],
+  "reserved": [
+    "KXNBAGAME-26MAY01CLETOR",
+    "KXNBAGAME-26MAY04MINSAS",
+    "KXNBAGAME-26MAY05CLEDET",
+    "KXNBAGAME-26MAY06MINSAS",
+    "KXNBAGAME-26MAY07CLEDET",
+    "KXNBAGAME-26MAY08NYKPHI",
+    "KXNBAGAME-26MAY09DETCLE",
+    "KXNBAGAME-26MAY10NYKPHI"
+  ],
+  "candidate_selection": [
+    "KXNBAGAME-26MAY01CLETOR",
+    "KXNBAGAME-26MAY04MINSAS",
+    "KXNBAGAME-26MAY05CLEDET",
+    "KXNBAGAME-26MAY06MINSAS",
+    "KXNBAGAME-26MAY07CLEDET",
+    "KXNBAGAME-26MAY08NYKPHI",
+    "KXNBAGAME-26MAY09DETCLE",
+    "KXNBAGAME-26MAY10NYKPHI"
+  ],
+  "events_by_day": {
+    "01": [
+      "KXNBAGAME-26MAY01CLETOR",
+      "KXNBAGAME-26MAY01DETORL",
+      "KXNBAGAME-26MAY01LALHOU"
+    ],
+    "04": [
+      "KXNBAGAME-26MAY04MINSAS",
+      "KXNBAGAME-26MAY04PHINYK"
+    ],
+    "05": [
+      "KXNBAGAME-26MAY05CLEDET",
+      "KXNBAGAME-26MAY05LALOKC"
+    ],
+    "06": [
+      "KXNBAGAME-26MAY06MINSAS",
+      "KXNBAGAME-26MAY06PHINYK"
+    ],
+    "07": [
+      "KXNBAGAME-26MAY07CLEDET",
+      "KXNBAGAME-26MAY07LALOKC"
+    ],
+    "08": [
+      "KXNBAGAME-26MAY08NYKPHI",
+      "KXNBAGAME-26MAY08SASMIN"
+    ],
+    "09": [
+      "KXNBAGAME-26MAY09DETCLE",
+      "KXNBAGAME-26MAY09OKCLAL"
+    ],
+    "10": [
+      "KXNBAGAME-26MAY10NYKPHI",
+      "KXNBAGAME-26MAY10SASMIN"
+    ],
+    "11": [
+      "KXNBAGAME-26MAY11DETCLE",
+      "KXNBAGAME-26MAY11OKCLAL"
+    ],
+    "12": [
+      "KXNBAGAME-26MAY12MINSAS"
+    ],
+    "13": [
+      "KXNBAGAME-26MAY13CLEDET"
+    ],
+    "15": [
+      "KXNBAGAME-26MAY15DETCLE",
+      "KXNBAGAME-26MAY15SASMIN"
+    ],
+    "18": [
+      "KXNBAGAME-26MAY18SASOKC"
+    ],
+    "19": [
+      "KXNBAGAME-26MAY19CLENYK"
+    ],
+    "20": [
+      "KXNBAGAME-26MAY20SASOKC"
+    ]
+  }
+}

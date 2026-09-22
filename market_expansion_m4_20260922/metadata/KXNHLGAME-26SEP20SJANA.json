@@ -1,0 +1,550 @@
+{
+  "series": "KXNHLGAME",
+  "event": "KXNHLGAME-26SEP20SJANA",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNHLGAME-26SEP20SJANA",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "NHL Preseason",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNHLGAME",
+      "settlement_sources": [
+        {
+          "name": "NHL",
+          "url": "https://www.nhl.com"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://espn.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "SJ vs ANA (Sep 20)",
+      "title": "San Jose vs Anaheim"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T23:35:22Z",
+        "created_time": "2026-09-17T00:02:18.815778Z",
+        "custom_strike": {
+          "hockey_team": "954d2f87-b6bf-4eba-b424-478817a59b92"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP20SJANA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-21T02:00:00Z",
+        "expiration_time": "2026-09-22T20:00:00Z",
+        "expiration_value": "Anaheim",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-22T20:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Anaheim",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T23:00:00Z",
+        "open_interest_fp": "23844.13",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Anaheim wins the San Jose vs Anaheim NHL game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T23:37:14.512631Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+        "title": "Anaheim wins",
+        "updated_time": "2026-09-20T23:37:14.52965Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "33323.33",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Anaheim"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T23:35:22Z",
+        "created_time": "2026-09-17T00:02:18.815778Z",
+        "custom_strike": {
+          "hockey_team": "eb4bc183-5966-40eb-8bdb-3dd922ad1752"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP20SJANA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-21T02:00:00Z",
+        "expiration_time": "2026-09-22T20:00:00Z",
+        "expiration_value": "Anaheim",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-22T20:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "San Jose",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T23:00:00Z",
+        "open_interest_fp": "25496.37",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If San Jose wins the San Jose vs Anaheim NHL game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T23:37:14.512631Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
+        "title": "San Jose wins",
+        "updated_time": "2026-09-20T23:37:14.52965Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "35425.44",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "San Jose"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNHLGAME-26SEP20SJANA",
+    "received_at": "2026-09-22T19:18:55.711662+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T23:35:22Z",
+      "created_time": "2026-09-17T00:02:18.815778Z",
+      "custom_strike": {
+        "hockey_team": "954d2f87-b6bf-4eba-b424-478817a59b92"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP20SJANA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-21T02:00:00Z",
+      "expiration_time": "2026-09-22T20:00:00Z",
+      "expiration_value": "Anaheim",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-22T20:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Anaheim",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T23:00:00Z",
+      "open_interest_fp": "23844.13",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Anaheim wins the San Jose vs Anaheim NHL game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T23:37:14.512631Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP20SJANA-ANA",
+      "title": "Anaheim wins",
+      "updated_time": "2026-09-20T23:37:14.52965Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "33323.33",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Anaheim"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T23:35:22Z",
+      "created_time": "2026-09-17T00:02:18.815778Z",
+      "custom_strike": {
+        "hockey_team": "eb4bc183-5966-40eb-8bdb-3dd922ad1752"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP20SJANA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-21T02:00:00Z",
+      "expiration_time": "2026-09-22T20:00:00Z",
+      "expiration_value": "Anaheim",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-22T20:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "San Jose",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T23:00:00Z",
+      "open_interest_fp": "25496.37",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If San Jose wins the San Jose vs Anaheim NHL game originally scheduled for Sep 20, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T23:37:14.512631Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP20SJANA-SJ",
+      "title": "San Jose wins",
+      "updated_time": "2026-09-20T23:37:14.52965Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "35425.44",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "San Jose"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-04-17T00:00:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "6f769f6d-161e-43d3-a586-db5451c5050e",
+              "points": 6,
+              "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "winner": true
+            },
+            {
+              "date": "2026-04-16T00:30:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "a0e115e4-5a0c-405f-a005-e83ecdc0baa6",
+              "points": 2,
+              "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "winner": false
+            },
+            {
+              "date": "2026-04-14T00:00:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+              "points": 3,
+              "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "winner": true
+            },
+            {
+              "date": "2026-04-12T02:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "points": 3,
+              "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "winner": false
+            },
+            {
+              "date": "2026-04-10T02:00:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "points": 1,
+              "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "winner": false
+            }
+          ],
+          "away_team_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "game_injuries": {
+            "954d2f87-b6bf-4eba-b424-478817a59b92": [
+              {
+                "comment": "The Ducks announced on Thursday (Jun 18) that Terry underwent hip surgery and is expected to need 5-6 months to recover, per Chris Johnston of The Athletic.",
+                "date_updated": "2026-06-18",
+                "description": "Hip",
+                "name": "Troy Terry",
+                "start_date": "2026-05-21",
+                "status": "Out",
+                "structured_id": "dcc474b7-284c-44d0-a8ca-88bba52b429f"
+              }
+            ],
+            "eb4bc183-5966-40eb-8bdb-3dd922ad1752": []
+          },
+          "home_last_games": [
+            {
+              "date": "2026-04-17T00:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+              "points": 5,
+              "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "winner": true
+            },
+            {
+              "date": "2026-04-15T00:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "1cee0410-99f1-43a2-a67c-4e6a3b968a9c",
+              "points": 2,
+              "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "winner": false
+            },
+            {
+              "date": "2026-04-13T00:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "points": 3,
+              "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "winner": false
+            },
+            {
+              "date": "2026-04-10T02:00:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "points": 6,
+              "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "winner": true
+            },
+            {
+              "date": "2026-04-08T02:00:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+              "points": 0,
+              "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "winner": false
+            }
+          ],
+          "home_team_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "league": "NHL",
+          "main_game_event_ticker": "KXNHLGAME-26SEP20SJANA",
+          "source_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+          "status": "scheduled"
+        },
+        "end_date": "2026-09-20T23:35:27Z",
+        "id": "194e41e4-0b2d-47a5-901a-af95849dd071",
+        "last_updated_ts": "2026-09-21T23:48:33.109104Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNHLGAME-26SEP20SJANA",
+          "KXNHLSPREAD-26SEP20SJANA",
+          "KXNHLTOTAL-26SEP20SJANA"
+        ],
+        "related_event_tickers": [
+          "KXNHLGAME-26SEP20SJANA",
+          "KXNHLSPREAD-26SEP20SJANA",
+          "KXNHLTOTAL-26SEP20SJANA"
+        ],
+        "source_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+        "source_ids": {
+          "source_1_id": "3001895",
+          "source_2_id": "20260920D613A23A",
+          "source_3_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+          "source_4_id": "73101432",
+          "source_5_id": "sr:match:73101432"
+        },
+        "start_date": "2026-09-20T20:00:00Z",
+        "title": "San Jose at Anaheim",
+        "type": "hockey_match"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNHLGAME-26SEP20SJANA&limit=100",
+    "received_at": "2026-09-22T19:18:59.912089+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1789934400.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-04-17T00:00:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "6f769f6d-161e-43d3-a586-db5451c5050e",
+          "points": 6,
+          "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "winner": true
+        },
+        {
+          "date": "2026-04-16T00:30:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "a0e115e4-5a0c-405f-a005-e83ecdc0baa6",
+          "points": 2,
+          "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "winner": false
+        },
+        {
+          "date": "2026-04-14T00:00:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+          "points": 3,
+          "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "winner": true
+        },
+        {
+          "date": "2026-04-12T02:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "points": 3,
+          "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "winner": false
+        },
+        {
+          "date": "2026-04-10T02:00:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "points": 1,
+          "structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "winner": false
+        }
+      ],
+      "away_team_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+      "game_injuries": {
+        "954d2f87-b6bf-4eba-b424-478817a59b92": [
+          {
+            "comment": "The Ducks announced on Thursday (Jun 18) that Terry underwent hip surgery and is expected to need 5-6 months to recover, per Chris Johnston of The Athletic.",
+            "date_updated": "2026-06-18",
+            "description": "Hip",
+            "name": "Troy Terry",
+            "start_date": "2026-05-21",
+            "status": "Out",
+            "structured_id": "dcc474b7-284c-44d0-a8ca-88bba52b429f"
+          }
+        ],
+        "eb4bc183-5966-40eb-8bdb-3dd922ad1752": []
+      },
+      "home_last_games": [
+        {
+          "date": "2026-04-17T00:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+          "points": 5,
+          "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "winner": true
+        },
+        {
+          "date": "2026-04-15T00:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "1cee0410-99f1-43a2-a67c-4e6a3b968a9c",
+          "points": 2,
+          "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "winner": false
+        },
+        {
+          "date": "2026-04-13T00:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "points": 3,
+          "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "winner": false
+        },
+        {
+          "date": "2026-04-10T02:00:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "points": 6,
+          "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "winner": true
+        },
+        {
+          "date": "2026-04-08T02:00:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "fcfd0b58-cc0a-448e-8f4b-6ddeab8f339f",
+          "points": 0,
+          "structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "winner": false
+        }
+      ],
+      "home_team_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+      "league": "NHL",
+      "main_game_event_ticker": "KXNHLGAME-26SEP20SJANA",
+      "source_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+      "status": "scheduled"
+    },
+    "end_date": "2026-09-20T23:35:27Z",
+    "id": "194e41e4-0b2d-47a5-901a-af95849dd071",
+    "last_updated_ts": "2026-09-21T23:48:33.109104Z",
+    "notification_message": "The game is about to begin!",
+    "primary_event_tickers": [
+      "KXNHLGAME-26SEP20SJANA",
+      "KXNHLSPREAD-26SEP20SJANA",
+      "KXNHLTOTAL-26SEP20SJANA"
+    ],
+    "related_event_tickers": [
+      "KXNHLGAME-26SEP20SJANA",
+      "KXNHLSPREAD-26SEP20SJANA",
+      "KXNHLTOTAL-26SEP20SJANA"
+    ],
+    "source_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+    "source_ids": {
+      "source_1_id": "3001895",
+      "source_2_id": "20260920D613A23A",
+      "source_3_id": "3f08b936-bc13-44a3-8501-ec1177b8b2a3",
+      "source_4_id": "73101432",
+      "source_5_id": "sr:match:73101432"
+    },
+    "start_date": "2026-09-20T20:00:00Z",
+    "title": "San Jose at Anaheim",
+    "type": "hockey_match"
+  },
+  "tickers": [
+    "KXNHLGAME-26SEP20SJANA-ANA",
+    "KXNHLGAME-26SEP20SJANA-SJ"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

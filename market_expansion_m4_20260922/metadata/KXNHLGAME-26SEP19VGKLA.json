@@ -1,0 +1,546 @@
+{
+  "series": "KXNHLGAME",
+  "event": "KXNHLGAME-26SEP19VGKLA",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "NHL Preseason",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNHLGAME",
+      "settlement_sources": [
+        {
+          "name": "NHL",
+          "url": "https://www.nhl.com"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://espn.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "VGK vs LA (Sep 19)",
+      "title": "Vegas vs Los Angeles"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T04:31:47Z",
+        "created_time": "2026-09-17T00:02:16.048857Z",
+        "custom_strike": {
+          "hockey_team": "dbea1e18-0f3c-47a6-9617-e16981181ca2"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-20T04:00:00Z",
+        "expiration_time": "2026-09-22T01:00:00Z",
+        "expiration_value": "Vegas",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-22T01:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Los Angeles",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T04:00:00Z",
+        "open_interest_fp": "17700.48",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Los Angeles wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T04:32:34.514911Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+        "title": "Los Angeles wins",
+        "updated_time": "2026-09-20T04:32:34.609969Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "21645.72",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Los Angeles"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T04:31:47Z",
+        "created_time": "2026-09-17T00:02:16.048857Z",
+        "custom_strike": {
+          "hockey_team": "d599b5cc-5e06-4679-9303-4d5dad7c4cce"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-20T04:00:00Z",
+        "expiration_time": "2026-09-22T01:00:00Z",
+        "expiration_value": "Vegas",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-22T01:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Vegas",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T04:00:00Z",
+        "open_interest_fp": "19776.69",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Vegas wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T04:32:34.514911Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+        "title": "Vegas wins",
+        "updated_time": "2026-09-20T04:32:34.609969Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "30711.00",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Vegas"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNHLGAME-26SEP19VGKLA",
+    "received_at": "2026-09-22T19:19:06.991026+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T04:31:47Z",
+      "created_time": "2026-09-17T00:02:16.048857Z",
+      "custom_strike": {
+        "hockey_team": "dbea1e18-0f3c-47a6-9617-e16981181ca2"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-20T04:00:00Z",
+      "expiration_time": "2026-09-22T01:00:00Z",
+      "expiration_value": "Vegas",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-22T01:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Los Angeles",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T04:00:00Z",
+      "open_interest_fp": "17700.48",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Los Angeles wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T04:32:34.514911Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP19VGKLA-LA",
+      "title": "Los Angeles wins",
+      "updated_time": "2026-09-20T04:32:34.609969Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "21645.72",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Los Angeles"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T04:31:47Z",
+      "created_time": "2026-09-17T00:02:16.048857Z",
+      "custom_strike": {
+        "hockey_team": "d599b5cc-5e06-4679-9303-4d5dad7c4cce"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP19VGKLA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-20T04:00:00Z",
+      "expiration_time": "2026-09-22T01:00:00Z",
+      "expiration_value": "Vegas",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-22T01:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Vegas",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T04:00:00Z",
+      "open_interest_fp": "19776.69",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Vegas wins the Vegas vs Los Angeles NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T04:32:34.514911Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP19VGKLA-VGK",
+      "title": "Vegas wins",
+      "updated_time": "2026-09-20T04:32:34.609969Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "30711.00",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Vegas"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-04-16T02:00:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "points": 4,
+              "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "winner": true
+            },
+            {
+              "date": "2026-04-14T02:00:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "6f769f6d-161e-43d3-a586-db5451c5050e",
+              "points": 6,
+              "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "winner": true
+            },
+            {
+              "date": "2026-04-12T00:00:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "70ecc991-a426-4567-b6ec-53f529f29078",
+              "points": 3,
+              "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "winner": true
+            },
+            {
+              "date": "2026-04-10T02:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "points": 3,
+              "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "winner": false
+            },
+            {
+              "date": "2026-04-08T02:00:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "points": 2,
+              "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "winner": true
+            }
+          ],
+          "away_team_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "game_injuries": {
+            "d599b5cc-5e06-4679-9303-4d5dad7c4cce": [],
+            "dbea1e18-0f3c-47a6-9617-e16981181ca2": [
+              {
+                "comment": "The Los Angeles Kings said on Thursday (Sept. 10) that Fiala has undergone an additional procedure and won't be ready for the start of training camp.",
+                "date_updated": "2026-09-10",
+                "description": "Leg",
+                "name": "Kevin Fiala",
+                "start_date": "2026-02-13",
+                "status": "Out",
+                "structured_id": "7de885af-a4de-48d2-9cff-9377706fbf0e"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-04-17T01:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "ea3554a4-eaa6-4e72-a32f-8388e618133f",
+              "points": 1,
+              "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "winner": false
+            },
+            {
+              "date": "2026-04-15T02:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "points": 3,
+              "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "winner": false
+            },
+            {
+              "date": "2026-04-14T01:30:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "points": 5,
+              "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "winner": true
+            },
+            {
+              "date": "2026-04-11T20:00:00+00:00",
+              "opponent_points": 0,
+              "opponent_structured_id": "e8b67c82-f465-450d-aef9-c8414f2ae83a",
+              "points": 1,
+              "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "winner": true
+            },
+            {
+              "date": "2026-04-10T02:30:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "points": 4,
+              "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "winner": true
+            }
+          ],
+          "home_team_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "league": "NHL",
+          "main_game_event_ticker": "KXNHLGAME-26SEP19VGKLA",
+          "source_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+          "status": "scheduled"
+        },
+        "end_date": "2026-09-20T04:32:10Z",
+        "id": "9b150d7a-198b-4296-980a-bc4513595f76",
+        "last_updated_ts": "2026-09-21T05:30:55.489769Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNHLGAME-26SEP19VGKLA",
+          "KXNHLSPREAD-26SEP19VGKLA",
+          "KXNHLTOTAL-26SEP19VGKLA"
+        ],
+        "related_event_tickers": [
+          "KXNHLGAME-26SEP19VGKLA",
+          "KXNHLSPREAD-26SEP19VGKLA",
+          "KXNHLTOTAL-26SEP19VGKLA"
+        ],
+        "source_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+        "source_ids": {
+          "source_3_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+          "source_4_id": "73101426",
+          "source_5_id": "sr:match:73101426"
+        },
+        "start_date": "2026-09-20T01:00:00Z",
+        "title": "Vegas at Los Angeles",
+        "type": "hockey_match"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNHLGAME-26SEP19VGKLA&limit=100",
+    "received_at": "2026-09-22T19:19:11.332545+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1789866000.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-04-16T02:00:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "points": 4,
+          "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "winner": true
+        },
+        {
+          "date": "2026-04-14T02:00:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "6f769f6d-161e-43d3-a586-db5451c5050e",
+          "points": 6,
+          "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "winner": true
+        },
+        {
+          "date": "2026-04-12T00:00:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "70ecc991-a426-4567-b6ec-53f529f29078",
+          "points": 3,
+          "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "winner": true
+        },
+        {
+          "date": "2026-04-10T02:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "points": 3,
+          "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "winner": false
+        },
+        {
+          "date": "2026-04-08T02:00:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "points": 2,
+          "structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "winner": true
+        }
+      ],
+      "away_team_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+      "game_injuries": {
+        "d599b5cc-5e06-4679-9303-4d5dad7c4cce": [],
+        "dbea1e18-0f3c-47a6-9617-e16981181ca2": [
+          {
+            "comment": "The Los Angeles Kings said on Thursday (Sept. 10) that Fiala has undergone an additional procedure and won't be ready for the start of training camp.",
+            "date_updated": "2026-09-10",
+            "description": "Leg",
+            "name": "Kevin Fiala",
+            "start_date": "2026-02-13",
+            "status": "Out",
+            "structured_id": "7de885af-a4de-48d2-9cff-9377706fbf0e"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-04-17T01:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "ea3554a4-eaa6-4e72-a32f-8388e618133f",
+          "points": 1,
+          "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "winner": false
+        },
+        {
+          "date": "2026-04-15T02:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "points": 3,
+          "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "winner": false
+        },
+        {
+          "date": "2026-04-14T01:30:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "points": 5,
+          "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "winner": true
+        },
+        {
+          "date": "2026-04-11T20:00:00+00:00",
+          "opponent_points": 0,
+          "opponent_structured_id": "e8b67c82-f465-450d-aef9-c8414f2ae83a",
+          "points": 1,
+          "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "winner": true
+        },
+        {
+          "date": "2026-04-10T02:30:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "points": 4,
+          "structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "winner": true
+        }
+      ],
+      "home_team_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+      "league": "NHL",
+      "main_game_event_ticker": "KXNHLGAME-26SEP19VGKLA",
+      "source_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+      "status": "scheduled"
+    },
+    "end_date": "2026-09-20T04:32:10Z",
+    "id": "9b150d7a-198b-4296-980a-bc4513595f76",
+    "last_updated_ts": "2026-09-21T05:30:55.489769Z",
+    "notification_message": "The game is about to begin!",
+    "primary_event_tickers": [
+      "KXNHLGAME-26SEP19VGKLA",
+      "KXNHLSPREAD-26SEP19VGKLA",
+      "KXNHLTOTAL-26SEP19VGKLA"
+    ],
+    "related_event_tickers": [
+      "KXNHLGAME-26SEP19VGKLA",
+      "KXNHLSPREAD-26SEP19VGKLA",
+      "KXNHLTOTAL-26SEP19VGKLA"
+    ],
+    "source_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+    "source_ids": {
+      "source_3_id": "b099f18d-cd3f-4ea4-9aa2-616150d98c02",
+      "source_4_id": "73101426",
+      "source_5_id": "sr:match:73101426"
+    },
+    "start_date": "2026-09-20T01:00:00Z",
+    "title": "Vegas at Los Angeles",
+    "type": "hockey_match"
+  },
+  "tickers": [
+    "KXNHLGAME-26SEP19VGKLA-LA",
+    "KXNHLGAME-26SEP19VGKLA-VGK"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

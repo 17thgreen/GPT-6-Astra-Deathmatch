@@ -1,0 +1,1010 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP051610CHCMIA",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "CHC vs MIA (Sep 5)",
+      "title": "Chicago C vs Miami"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-05T23:39:42Z",
+        "created_time": "2026-09-02T20:15:38.918338Z",
+        "custom_strike": {
+          "baseball_team": "2101af91-b334-4db1-b859-0cc50c1e2d4a"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-05T23:10:00Z",
+        "expiration_time": "2026-09-08T20:10:00Z",
+        "expiration_value": "Chicago C",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-08T20:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Chicago C",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-05T23:10:00Z",
+        "open_interest_fp": "951544.20",
+        "open_time": "2026-09-02T20:25:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Chicago C wins the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-05T23:42:45.539337Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP051610CHCMIA-CHC",
+        "title": "Chicago C wins",
+        "updated_time": "2026-09-05T23:42:45.644656Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1857847.45",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Chicago C"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-05T23:39:42Z",
+        "created_time": "2026-09-02T20:15:38.918338Z",
+        "custom_strike": {
+          "baseball_team": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-05T23:10:00Z",
+        "expiration_time": "2026-09-08T20:10:00Z",
+        "expiration_value": "Chicago C",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-08T20:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Miami",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-05T23:10:00Z",
+        "open_interest_fp": "1037273.18",
+        "open_time": "2026-09-02T20:25:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Miami wins the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-05T23:42:45.539337Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP051610CHCMIA-MIA",
+        "title": "Miami wins",
+        "updated_time": "2026-09-05T23:42:45.644656Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1892740.80",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Miami"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP051610CHCMIA",
+    "received_at": "2026-09-22T19:18:45.628719+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-05T23:39:42Z",
+      "created_time": "2026-09-02T20:15:38.918338Z",
+      "custom_strike": {
+        "baseball_team": "2101af91-b334-4db1-b859-0cc50c1e2d4a"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-05T23:10:00Z",
+      "expiration_time": "2026-09-08T20:10:00Z",
+      "expiration_value": "Chicago C",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-08T20:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Chicago C",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-05T23:10:00Z",
+      "open_interest_fp": "951544.20",
+      "open_time": "2026-09-02T20:25:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Chicago C wins the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-05T23:42:45.539337Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP051610CHCMIA-CHC",
+      "title": "Chicago C wins",
+      "updated_time": "2026-09-05T23:42:45.644656Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1857847.45",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Chicago C"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-05T23:39:42Z",
+      "created_time": "2026-09-02T20:15:38.918338Z",
+      "custom_strike": {
+        "baseball_team": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-05T23:10:00Z",
+      "expiration_time": "2026-09-08T20:10:00Z",
+      "expiration_value": "Chicago C",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-08T20:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Miami",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-05T23:10:00Z",
+      "open_interest_fp": "1037273.18",
+      "open_time": "2026-09-02T20:25:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Miami wins the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Chicago C vs Miami professional baseball game originally scheduled for Sep 5, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-05T23:42:45.539337Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP051610CHCMIA-MIA",
+      "title": "Miami wins",
+      "updated_time": "2026-09-05T23:42:45.644656Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1892740.80",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Miami"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-04T23:10:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "points": 6,
+              "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "winner": true
+            },
+            {
+              "date": "2026-09-03T23:15:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 2,
+              "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "winner": true
+            },
+            {
+              "date": "2026-09-02T23:40:00+00:00",
+              "opponent_points": 9,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 5,
+              "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "winner": false
+            },
+            {
+              "date": "2026-09-01T23:40:00+00:00",
+              "opponent_points": 9,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 4,
+              "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "winner": false
+            },
+            {
+              "date": "2026-08-31T23:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 17,
+              "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "winner": true
+            }
+          ],
+          "away_team_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "2101af91-b334-4db1-b859-0cc50c1e2d4a": [
+              {
+                "comment": "The Chicago Cubs transferred RHP Cade Horton to the 60-day injured list due right forearm discomfort.",
+                "date_updated": "2026-04-18",
+                "description": "Forearm",
+                "name": "Cade Horton",
+                "start_date": "2026-04-04",
+                "status": "D60",
+                "structured_id": "62f5314a-ea54-401d-9450-f697f4490413"
+              },
+              {
+                "comment": "The Chicago Cubs transferred RHP Hunter Harvey to the 60-day injured list with right triceps inflammation.",
+                "date_updated": "2026-04-12",
+                "description": "Tricep",
+                "name": "Hunter Harvey",
+                "start_date": "2026-04-09",
+                "status": "D60",
+                "structured_id": "276b775b-d362-40da-aabf-9ebc4083397e"
+              },
+              {
+                "comment": "The Chicago Cubs transferred LHP Riley Martin from the 15-day injured list to the 60-day injured list due to left elbow flexor strain.",
+                "date_updated": "2026-05-17",
+                "description": "Elbow",
+                "name": "Riley Martin",
+                "start_date": "2026-04-26",
+                "status": "D60",
+                "structured_id": "0afc410c-0a2b-413e-a5a3-b86f8d277b2f"
+              },
+              {
+                "comment": "The Chicago Cubs placed RHP Edward Cabrera on the 15-day injured list due to a right middle finger blister",
+                "date_updated": "2026-08-17",
+                "description": "Blister",
+                "name": "Edward Cabrera",
+                "start_date": "2026-08-17",
+                "status": "D15",
+                "structured_id": "41f0c962-c34b-47ec-8c3c-d91b5e745267"
+              },
+              {
+                "comment": "Webb was experiencing soreness on Thursday (Sep. 3) but will avoid a stint on the injured list, per Vinnie Duber of the Chicago Sun-Times.",
+                "date_updated": "2026-09-03",
+                "description": "Forearm",
+                "name": "Jacob Webb",
+                "start_date": "2026-09-02",
+                "status": "Day-to-Day",
+                "structured_id": "4ee4cee0-f7a1-4e69-9de2-3be4a9e428b4"
+              },
+              {
+                "comment": "The Chicago Cubs placed INF Dansby Swanson on the 10-day injured list.",
+                "date_updated": "2026-08-17",
+                "description": "Side",
+                "name": "Dansby Swanson",
+                "start_date": "2026-08-16",
+                "status": "D10",
+                "structured_id": "7f1abc6d-02d4-471d-8d8d-bec82f1ac918"
+              },
+              {
+                "comment": "The Chicago Cubs placed INF Tyler Austin on the 60-day injured list due to a right knee injury.",
+                "date_updated": "2026-03-24",
+                "description": "Knee",
+                "name": "Tyler Austin",
+                "start_date": "2026-03-25",
+                "status": "D60",
+                "structured_id": "b956d32e-4ee6-4f19-8604-ae8ade9f6d5e"
+              },
+              {
+                "comment": "The Chicago Cubs placed LHP Justin Steele on the 60-day injured list with a left elbow injury.",
+                "date_updated": "2026-03-25",
+                "description": "Elbow",
+                "name": "Justin Steele",
+                "start_date": "2026-03-25",
+                "status": "D60",
+                "structured_id": "dc229c68-26cd-46e7-b88f-fc8222886205"
+              },
+              {
+                "comment": "The Chicago Cubs transferred RHP Phil Maton from the 15-day injured list to the 60-day injured list due to right knee tendinitis.",
+                "date_updated": "2026-08-19",
+                "description": "Knee",
+                "name": "Phil Maton",
+                "start_date": "2026-07-20",
+                "status": "D60",
+                "structured_id": "dcf39ccd-7ca7-4414-aae5-3bd48f4e1871"
+              },
+              {
+                "comment": "The Chicago Cubs placed RHP Gavin Hollowell on the 15-day injured list due to right shoulder inflammation.",
+                "date_updated": "2026-07-31",
+                "description": "Shoulder",
+                "name": "Gavin Hollowell",
+                "start_date": "2026-07-31",
+                "status": "D15",
+                "structured_id": "cc6436ae-758f-4ed3-a761-f6dfc04aa555"
+              },
+              {
+                "comment": "The Chicago Cubs transaferred RHP Porter Hodge to the 60-day injured list with a right elbow strain.",
+                "date_updated": "2026-04-24",
+                "description": "Elbow",
+                "name": "Porter Hodge",
+                "start_date": "2026-03-22",
+                "status": "D60",
+                "structured_id": "c0bf3b27-cf93-45c3-b9bc-521655c2bd0d"
+              },
+              {
+                "comment": "The Chicago Cubs transferred RHP Ben Brown from the 15-day injured list to the 60-day injured list with a neck strain.",
+                "date_updated": "2026-08-03",
+                "description": "Neck",
+                "name": "Ben Brown",
+                "start_date": "2026-06-21",
+                "status": "D60",
+                "structured_id": "c56a0050-bffc-4688-9ea7-d6c6d8a2de88"
+              },
+              {
+                "comment": "The Chicago Cubs placed RHP Shelby Miller on the 60-day injured list due to a right elbow UCL injury.",
+                "date_updated": "2026-03-01",
+                "description": "Elbow",
+                "name": "Shelby Miller",
+                "start_date": "2026-03-01",
+                "status": "D60",
+                "structured_id": "c982bf05-7c1a-4726-9b2e-3b5947657ca2"
+              }
+            ],
+            "80d1713b-a45b-42f8-ba94-a634aaa9a0e2": [
+              {
+                "comment": "The Miami Marlins placed RHP Pete Fairbanks on the 15-day injured list right median nerve irritation.",
+                "date_updated": "2026-08-25",
+                "description": "Nerve",
+                "name": "Pete Fairbanks",
+                "start_date": "2026-08-24",
+                "status": "D15",
+                "structured_id": "998d0aba-8833-4b9b-bdca-96521b910505"
+              },
+              {
+                "comment": "The Miami Marlins placed INF Xavier Edwards on the 10-day injured list due to a left thumb sprain.",
+                "date_updated": "2026-08-31",
+                "description": "Thumb",
+                "name": "Xavier Edwards",
+                "start_date": "2026-08-30",
+                "status": "D10",
+                "structured_id": "85bbe43b-0343-425e-9179-cb6e3b58bd8a"
+              },
+              {
+                "comment": "The Miami Marlins placed RHP William Kempner on the 60-day injured list with a right elbow sprain.",
+                "date_updated": "2026-08-21",
+                "description": "Elbow",
+                "name": "William Kempner",
+                "start_date": "2026-07-12",
+                "status": "D60",
+                "structured_id": "06c8c2af-13df-46c7-b4c4-a9f6440976ca"
+              },
+              {
+                "comment": "The Miami Marlins placed RHP Anthony Bender on the 15-day injured list with a right shin stress reaction.",
+                "date_updated": "2026-06-30",
+                "description": "Shin",
+                "name": "Anthony Bender",
+                "start_date": "2026-06-30",
+                "status": "D15",
+                "structured_id": "7cc738aa-4fe7-4ec0-8c2e-031ff53d2ef9"
+              },
+              {
+                "comment": "The Miami Marlins placed RHP Adam Mazur on the 60-day injured list with right elbow surgery.",
+                "date_updated": "2026-03-25",
+                "description": "Elbow",
+                "name": "Adam Mazur",
+                "start_date": "2026-03-25",
+                "status": "D60",
+                "structured_id": "2ab0f817-2ade-419e-a1bb-dad449c1ab10"
+              },
+              {
+                "comment": "The Miami Marlins placed RHP Ronny Henriquez on the 60-day injured list with right elbow UCL surgery.",
+                "date_updated": "2026-02-12",
+                "description": "Elbow",
+                "name": "Ronny Henriquez",
+                "start_date": "2026-02-12",
+                "status": "D60",
+                "structured_id": "ea1f0f45-41ba-4cac-bd44-d703af06e82a"
+              },
+              {
+                "comment": "The Miami Marlins placed RHP Max Meyer on the 15-day injured list due to neck a injury.",
+                "date_updated": "2026-07-19",
+                "description": "Neck",
+                "name": "Max Meyer",
+                "start_date": "2026-07-20",
+                "status": "D15",
+                "structured_id": "5e4fbf77-8f46-4425-841d-4eeb427866b3"
+              },
+              {
+                "comment": "The Miami Marlins transferred LHP Andrew Nardi from the 15-day injured list to the 60-day injured list due to a stress reaction in his left ribcage.",
+                "date_updated": "2026-06-01",
+                "description": "Ribs",
+                "name": "Andrew Nardi",
+                "start_date": "2026-05-28",
+                "status": "D60",
+                "structured_id": "b151c095-1d4f-4691-9361-11ace6c878f6"
+              },
+              {
+                "comment": "The Miami Marlins transferred LHP Robby Snelling from the 15-day injured list to the 60-day injured list with a left UCL sprain.",
+                "date_updated": "2026-05-21",
+                "description": "Elbow",
+                "name": "Robby Snelling",
+                "start_date": "2026-05-13",
+                "status": "D60",
+                "structured_id": "2e53f2fc-15af-4724-95cf-c7d7ae5802aa"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-04T23:10:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 1,
+              "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "winner": false
+            },
+            {
+              "date": "2026-09-03T23:40:00+00:00",
+              "opponent_points": 7,
+              "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+              "points": 3,
+              "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T23:40:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+              "points": 9,
+              "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T23:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+              "points": 6,
+              "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "winner": true
+            },
+            {
+              "date": "2026-08-31T22:45:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+              "points": 3,
+              "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+              "winner": false
+            }
+          ],
+          "home_team_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+          "status": "complete"
+        },
+        "end_date": "2026-09-06T00:30:32Z",
+        "id": "f94407e4-3969-4f4d-91c4-a06140fb9a49",
+        "last_updated_ts": "2026-09-07T01:05:46.687611Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP051610CHCMIA",
+          "KXMLBEXTRAS-26SEP051610CHCMIA",
+          "KXMLBSPREAD-26SEP051610CHCMIA",
+          "KXMLBTOTAL-26SEP051610CHCMIA"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP051610CHCMIA",
+          "KXMLBEXTRAS-26SEP051610CHCMIA",
+          "KXMLBRFI-26SEP051610CHCMIA",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-1",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-2",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-3",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-4",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-5",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-6",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-7",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-8",
+          "KXMLBINNINGWIN-26SEP051610CHCMIA-9",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-1",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-2",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-3",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-4",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-5",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-6",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-7",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-8",
+          "KXMLBINNINGTOTAL-26SEP051610CHCMIA-9",
+          "KXMLBSPREAD-26SEP051610CHCMIA",
+          "KXMLBTOTAL-26SEP051610CHCMIA",
+          "KXMLBF5-26SEP051610CHCMIA",
+          "KXMLBF5SPREAD-26SEP051610CHCMIA",
+          "KXMLBF5TOTAL-26SEP051610CHCMIA",
+          "KXMLBF3-26SEP051610CHCMIA",
+          "KXMLBF7-26SEP051610CHCMIA",
+          "KXMLBTEAMTOTAL-26SEP051610CHCMIA",
+          "KXMLBOUTS-26SEP051610CHCMIA",
+          "KXMLBWA-26SEP051610CHCMIA",
+          "KXMLBHA-26SEP051610CHCMIA",
+          "KXMLBKS-26SEP051610CHCMIA",
+          "KXMLBERA-26SEP051610CHCMIA",
+          "KXMLBHR-26SEP051610CHCMIA",
+          "KXMLBHIT-26SEP051610CHCMIA",
+          "KXMLBTB-26SEP051610CHCMIA",
+          "KXMLBHRR-26SEP051610CHCMIA",
+          "KXMLBRBI-26SEP051610CHCMIA",
+          "KXMLBSB-26SEP051610CHCMIA"
+        ],
+        "source_id": "6f84c9f7-bbd3-400c-8fb0-34776910650b",
+        "source_ids": {
+          "source_2_id": "202609050508A544",
+          "source_3_id": "6f84c9f7-bbd3-400c-8fb0-34776910650b",
+          "source_4_id": "63299335",
+          "source_5_id": "sr:sport_event:63299335"
+        },
+        "start_date": "2026-09-05T20:10:00Z",
+        "title": "Chicago C vs Miami",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP051610CHCMIA&limit=100",
+    "received_at": "2026-09-22T19:18:50.470346+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788639000.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-04T23:10:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "points": 6,
+          "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "winner": true
+        },
+        {
+          "date": "2026-09-03T23:15:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 2,
+          "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "winner": true
+        },
+        {
+          "date": "2026-09-02T23:40:00+00:00",
+          "opponent_points": 9,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 5,
+          "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "winner": false
+        },
+        {
+          "date": "2026-09-01T23:40:00+00:00",
+          "opponent_points": 9,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 4,
+          "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "winner": false
+        },
+        {
+          "date": "2026-08-31T23:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 17,
+          "structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "winner": true
+        }
+      ],
+      "away_team_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "2101af91-b334-4db1-b859-0cc50c1e2d4a": [
+          {
+            "comment": "The Chicago Cubs transferred RHP Cade Horton to the 60-day injured list due right forearm discomfort.",
+            "date_updated": "2026-04-18",
+            "description": "Forearm",
+            "name": "Cade Horton",
+            "start_date": "2026-04-04",
+            "status": "D60",
+            "structured_id": "62f5314a-ea54-401d-9450-f697f4490413"
+          },
+          {
+            "comment": "The Chicago Cubs transferred RHP Hunter Harvey to the 60-day injured list with right triceps inflammation.",
+            "date_updated": "2026-04-12",
+            "description": "Tricep",
+            "name": "Hunter Harvey",
+            "start_date": "2026-04-09",
+            "status": "D60",
+            "structured_id": "276b775b-d362-40da-aabf-9ebc4083397e"
+          },
+          {
+            "comment": "The Chicago Cubs transferred LHP Riley Martin from the 15-day injured list to the 60-day injured list due to left elbow flexor strain.",
+            "date_updated": "2026-05-17",
+            "description": "Elbow",
+            "name": "Riley Martin",
+            "start_date": "2026-04-26",
+            "status": "D60",
+            "structured_id": "0afc410c-0a2b-413e-a5a3-b86f8d277b2f"
+          },
+          {
+            "comment": "The Chicago Cubs placed RHP Edward Cabrera on the 15-day injured list due to a right middle finger blister",
+            "date_updated": "2026-08-17",
+            "description": "Blister",
+            "name": "Edward Cabrera",
+            "start_date": "2026-08-17",
+            "status": "D15",
+            "structured_id": "41f0c962-c34b-47ec-8c3c-d91b5e745267"
+          },
+          {
+            "comment": "Webb was experiencing soreness on Thursday (Sep. 3) but will avoid a stint on the injured list, per Vinnie Duber of the Chicago Sun-Times.",
+            "date_updated": "2026-09-03",
+            "description": "Forearm",
+            "name": "Jacob Webb",
+            "start_date": "2026-09-02",
+            "status": "Day-to-Day",
+            "structured_id": "4ee4cee0-f7a1-4e69-9de2-3be4a9e428b4"
+          },
+          {
+            "comment": "The Chicago Cubs placed INF Dansby Swanson on the 10-day injured list.",
+            "date_updated": "2026-08-17",
+            "description": "Side",
+            "name": "Dansby Swanson",
+            "start_date": "2026-08-16",
+            "status": "D10",
+            "structured_id": "7f1abc6d-02d4-471d-8d8d-bec82f1ac918"
+          },
+          {
+            "comment": "The Chicago Cubs placed INF Tyler Austin on the 60-day injured list due to a right knee injury.",
+            "date_updated": "2026-03-24",
+            "description": "Knee",
+            "name": "Tyler Austin",
+            "start_date": "2026-03-25",
+            "status": "D60",
+            "structured_id": "b956d32e-4ee6-4f19-8604-ae8ade9f6d5e"
+          },
+          {
+            "comment": "The Chicago Cubs placed LHP Justin Steele on the 60-day injured list with a left elbow injury.",
+            "date_updated": "2026-03-25",
+            "description": "Elbow",
+            "name": "Justin Steele",
+            "start_date": "2026-03-25",
+            "status": "D60",
+            "structured_id": "dc229c68-26cd-46e7-b88f-fc8222886205"
+          },
+          {
+            "comment": "The Chicago Cubs transferred RHP Phil Maton from the 15-day injured list to the 60-day injured list due to right knee tendinitis.",
+            "date_updated": "2026-08-19",
+            "description": "Knee",
+            "name": "Phil Maton",
+            "start_date": "2026-07-20",
+            "status": "D60",
+            "structured_id": "dcf39ccd-7ca7-4414-aae5-3bd48f4e1871"
+          },
+          {
+            "comment": "The Chicago Cubs placed RHP Gavin Hollowell on the 15-day injured list due to right shoulder inflammation.",
+            "date_updated": "2026-07-31",
+            "description": "Shoulder",
+            "name": "Gavin Hollowell",
+            "start_date": "2026-07-31",
+            "status": "D15",
+            "structured_id": "cc6436ae-758f-4ed3-a761-f6dfc04aa555"
+          },
+          {
+            "comment": "The Chicago Cubs transaferred RHP Porter Hodge to the 60-day injured list with a right elbow strain.",
+            "date_updated": "2026-04-24",
+            "description": "Elbow",
+            "name": "Porter Hodge",
+            "start_date": "2026-03-22",
+            "status": "D60",
+            "structured_id": "c0bf3b27-cf93-45c3-b9bc-521655c2bd0d"
+          },
+          {
+            "comment": "The Chicago Cubs transferred RHP Ben Brown from the 15-day injured list to the 60-day injured list with a neck strain.",
+            "date_updated": "2026-08-03",
+            "description": "Neck",
+            "name": "Ben Brown",
+            "start_date": "2026-06-21",
+            "status": "D60",
+            "structured_id": "c56a0050-bffc-4688-9ea7-d6c6d8a2de88"
+          },
+          {
+            "comment": "The Chicago Cubs placed RHP Shelby Miller on the 60-day injured list due to a right elbow UCL injury.",
+            "date_updated": "2026-03-01",
+            "description": "Elbow",
+            "name": "Shelby Miller",
+            "start_date": "2026-03-01",
+            "status": "D60",
+            "structured_id": "c982bf05-7c1a-4726-9b2e-3b5947657ca2"
+          }
+        ],
+        "80d1713b-a45b-42f8-ba94-a634aaa9a0e2": [
+          {
+            "comment": "The Miami Marlins placed RHP Pete Fairbanks on the 15-day injured list right median nerve irritation.",
+            "date_updated": "2026-08-25",
+            "description": "Nerve",
+            "name": "Pete Fairbanks",
+            "start_date": "2026-08-24",
+            "status": "D15",
+            "structured_id": "998d0aba-8833-4b9b-bdca-96521b910505"
+          },
+          {
+            "comment": "The Miami Marlins placed INF Xavier Edwards on the 10-day injured list due to a left thumb sprain.",
+            "date_updated": "2026-08-31",
+            "description": "Thumb",
+            "name": "Xavier Edwards",
+            "start_date": "2026-08-30",
+            "status": "D10",
+            "structured_id": "85bbe43b-0343-425e-9179-cb6e3b58bd8a"
+          },
+          {
+            "comment": "The Miami Marlins placed RHP William Kempner on the 60-day injured list with a right elbow sprain.",
+            "date_updated": "2026-08-21",
+            "description": "Elbow",
+            "name": "William Kempner",
+            "start_date": "2026-07-12",
+            "status": "D60",
+            "structured_id": "06c8c2af-13df-46c7-b4c4-a9f6440976ca"
+          },
+          {
+            "comment": "The Miami Marlins placed RHP Anthony Bender on the 15-day injured list with a right shin stress reaction.",
+            "date_updated": "2026-06-30",
+            "description": "Shin",
+            "name": "Anthony Bender",
+            "start_date": "2026-06-30",
+            "status": "D15",
+            "structured_id": "7cc738aa-4fe7-4ec0-8c2e-031ff53d2ef9"
+          },
+          {
+            "comment": "The Miami Marlins placed RHP Adam Mazur on the 60-day injured list with right elbow surgery.",
+            "date_updated": "2026-03-25",
+            "description": "Elbow",
+            "name": "Adam Mazur",
+            "start_date": "2026-03-25",
+            "status": "D60",
+            "structured_id": "2ab0f817-2ade-419e-a1bb-dad449c1ab10"
+          },
+          {
+            "comment": "The Miami Marlins placed RHP Ronny Henriquez on the 60-day injured list with right elbow UCL surgery.",
+            "date_updated": "2026-02-12",
+            "description": "Elbow",
+            "name": "Ronny Henriquez",
+            "start_date": "2026-02-12",
+            "status": "D60",
+            "structured_id": "ea1f0f45-41ba-4cac-bd44-d703af06e82a"
+          },
+          {
+            "comment": "The Miami Marlins placed RHP Max Meyer on the 15-day injured list due to neck a injury.",
+            "date_updated": "2026-07-19",
+            "description": "Neck",
+            "name": "Max Meyer",
+            "start_date": "2026-07-20",
+            "status": "D15",
+            "structured_id": "5e4fbf77-8f46-4425-841d-4eeb427866b3"
+          },
+          {
+            "comment": "The Miami Marlins transferred LHP Andrew Nardi from the 15-day injured list to the 60-day injured list due to a stress reaction in his left ribcage.",
+            "date_updated": "2026-06-01",
+            "description": "Ribs",
+            "name": "Andrew Nardi",
+            "start_date": "2026-05-28",
+            "status": "D60",
+            "structured_id": "b151c095-1d4f-4691-9361-11ace6c878f6"
+          },
+          {
+            "comment": "The Miami Marlins transferred LHP Robby Snelling from the 15-day injured list to the 60-day injured list with a left UCL sprain.",
+            "date_updated": "2026-05-21",
+            "description": "Elbow",
+            "name": "Robby Snelling",
+            "start_date": "2026-05-13",
+            "status": "D60",
+            "structured_id": "2e53f2fc-15af-4724-95cf-c7d7ae5802aa"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-04T23:10:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 1,
+          "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "winner": false
+        },
+        {
+          "date": "2026-09-03T23:40:00+00:00",
+          "opponent_points": 7,
+          "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+          "points": 3,
+          "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T23:40:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+          "points": 9,
+          "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T23:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+          "points": 6,
+          "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "winner": true
+        },
+        {
+          "date": "2026-08-31T22:45:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+          "points": 3,
+          "structured_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+          "winner": false
+        }
+      ],
+      "home_team_id": "80d1713b-a45b-42f8-ba94-a634aaa9a0e2",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP051610CHCMIA",
+      "status": "complete"
+    },
+    "end_date": "2026-09-06T00:30:32Z",
+    "id": "f94407e4-3969-4f4d-91c4-a06140fb9a49",
+    "last_updated_ts": "2026-09-07T01:05:46.687611Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP051610CHCMIA",
+      "KXMLBEXTRAS-26SEP051610CHCMIA",
+      "KXMLBSPREAD-26SEP051610CHCMIA",
+      "KXMLBTOTAL-26SEP051610CHCMIA"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP051610CHCMIA",
+      "KXMLBEXTRAS-26SEP051610CHCMIA",
+      "KXMLBRFI-26SEP051610CHCMIA",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-1",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-2",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-3",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-4",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-5",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-6",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-7",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-8",
+      "KXMLBINNINGWIN-26SEP051610CHCMIA-9",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-1",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-2",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-3",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-4",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-5",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-6",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-7",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-8",
+      "KXMLBINNINGTOTAL-26SEP051610CHCMIA-9",
+      "KXMLBSPREAD-26SEP051610CHCMIA",
+      "KXMLBTOTAL-26SEP051610CHCMIA",
+      "KXMLBF5-26SEP051610CHCMIA",
+      "KXMLBF5SPREAD-26SEP051610CHCMIA",
+      "KXMLBF5TOTAL-26SEP051610CHCMIA",
+      "KXMLBF3-26SEP051610CHCMIA",
+      "KXMLBF7-26SEP051610CHCMIA",
+      "KXMLBTEAMTOTAL-26SEP051610CHCMIA",
+      "KXMLBOUTS-26SEP051610CHCMIA",
+      "KXMLBWA-26SEP051610CHCMIA",
+      "KXMLBHA-26SEP051610CHCMIA",
+      "KXMLBKS-26SEP051610CHCMIA",
+      "KXMLBERA-26SEP051610CHCMIA",
+      "KXMLBHR-26SEP051610CHCMIA",
+      "KXMLBHIT-26SEP051610CHCMIA",
+      "KXMLBTB-26SEP051610CHCMIA",
+      "KXMLBHRR-26SEP051610CHCMIA",
+      "KXMLBRBI-26SEP051610CHCMIA",
+      "KXMLBSB-26SEP051610CHCMIA"
+    ],
+    "source_id": "6f84c9f7-bbd3-400c-8fb0-34776910650b",
+    "source_ids": {
+      "source_2_id": "202609050508A544",
+      "source_3_id": "6f84c9f7-bbd3-400c-8fb0-34776910650b",
+      "source_4_id": "63299335",
+      "source_5_id": "sr:sport_event:63299335"
+    },
+    "start_date": "2026-09-05T20:10:00Z",
+    "title": "Chicago C vs Miami",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP051610CHCMIA-CHC",
+    "KXMLBGAME-26SEP051610CHCMIA-MIA"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

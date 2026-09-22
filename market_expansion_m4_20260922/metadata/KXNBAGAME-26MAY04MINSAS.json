@@ -1,0 +1,519 @@
+{
+  "series": "KXNBAGAME",
+  "event": "KXNBAGAME-26MAY04MINSAS",
+  "structurally_admitted": false,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNBAGAME-26MAY04MINSAS",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Basketball (M)",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNBAGAME",
+      "settlement_sources": [
+        {
+          "name": "the Governing League",
+          "url": "https://www.nba.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "MIN at SAS (May 4)",
+      "title": "Game 1: Minnesota at San Antonio"
+    },
+    "markets": []
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNBAGAME-26MAY04MINSAS",
+    "received_at": "2026-09-22T19:19:16.584433+00:00",
+    "prior_errors": []
+  },
+  "historical_markets": {
+    "response": {
+      "cursor": "",
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-05-05T04:15:21Z",
+          "created_time": "2026-05-01T16:55:32.914221Z",
+          "custom_strike": {
+            "basketball_team": "ad36c3e8-4194-4e63-920f-7c50f46191a6"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26MAY04MINSAS",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-05-04T20:00:00Z",
+          "expiration_time": "2026-05-18T17:00:00Z",
+          "expiration_value": "Minnesota",
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-05-18T17:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.9900",
+          "no_sub_title": "San Antonio",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-05-05T04:10:00Z",
+          "open_interest_fp": "0.00",
+          "open_time": "2026-05-01T17:00:00Z",
+          "previous_price_dollars": "0.0100",
+          "previous_yes_ask_dollars": "0.0100",
+          "previous_yes_bid_dollars": "0.0000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "no",
+          "rules_primary": "If San Antonio wins the Game 1: Minnesota at San Antonio professional basketball game originally scheduled for May 4, 2026, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "settlement_timer_seconds": 30,
+          "settlement_ts": "2026-05-05T04:15:52.098816Z",
+          "settlement_value_dollars": "0.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26MAY04MINSAS-SAS",
+          "title": "Game 1: Minnesota at San Antonio Winner?",
+          "updated_time": "2026-05-10T20:12:58.073804Z",
+          "volume_24h_fp": "0.00",
+          "volume_fp": "15373138.96",
+          "yes_ask_dollars": "0.0100",
+          "yes_ask_size_fp": "-1692096.54",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "San Antonio"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-05-05T04:15:21Z",
+          "created_time": "2026-05-01T16:55:32.914221Z",
+          "custom_strike": {
+            "basketball_team": "29e3c04e-fadb-4006-be20-cbb8c159ce0e"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26MAY04MINSAS",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-05-04T20:00:00Z",
+          "expiration_time": "2026-05-18T17:00:00Z",
+          "expiration_value": "Minnesota",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-05-18T17:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Minnesota",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-05-05T04:10:00Z",
+          "open_interest_fp": "0.00",
+          "open_time": "2026-05-01T17:00:00Z",
+          "previous_price_dollars": "0.9900",
+          "previous_yes_ask_dollars": "1.0000",
+          "previous_yes_bid_dollars": "0.9900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Minnesota wins the Game 1: Minnesota at San Antonio professional basketball game originally scheduled for May 4, 2026, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "settlement_timer_seconds": 30,
+          "settlement_ts": "2026-05-05T04:15:52.098816Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26MAY04MINSAS-MIN",
+          "title": "Game 1: Minnesota at San Antonio Winner?",
+          "updated_time": "2026-05-10T20:12:58.193349Z",
+          "volume_24h_fp": "0.00",
+          "volume_fp": "26016819.90",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "-1563246.98",
+          "yes_sub_title": "Minnesota"
+        }
+      ]
+    },
+    "source": {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets?event_ticker=KXNBAGAME-26MAY04MINSAS&limit=1000",
+      "received_at": "2026-09-22T19:19:21.786949+00:00",
+      "prior_errors": []
+    }
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-05-05T04:15:21Z",
+      "created_time": "2026-05-01T16:55:32.914221Z",
+      "custom_strike": {
+        "basketball_team": "ad36c3e8-4194-4e63-920f-7c50f46191a6"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26MAY04MINSAS",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-05-04T20:00:00Z",
+      "expiration_time": "2026-05-18T17:00:00Z",
+      "expiration_value": "Minnesota",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-05-18T17:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.9900",
+      "no_sub_title": "San Antonio",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-05-05T04:10:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-05-01T17:00:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "0.0100",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If San Antonio wins the Game 1: Minnesota at San Antonio professional basketball game originally scheduled for May 4, 2026, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 30,
+      "settlement_ts": "2026-05-05T04:15:52.098816Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26MAY04MINSAS-SAS",
+      "title": "Game 1: Minnesota at San Antonio Winner?",
+      "updated_time": "2026-05-10T20:12:58.073804Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "15373138.96",
+      "yes_ask_dollars": "0.0100",
+      "yes_ask_size_fp": "-1692096.54",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "San Antonio"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-05-05T04:15:21Z",
+      "created_time": "2026-05-01T16:55:32.914221Z",
+      "custom_strike": {
+        "basketball_team": "29e3c04e-fadb-4006-be20-cbb8c159ce0e"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26MAY04MINSAS",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-05-04T20:00:00Z",
+      "expiration_time": "2026-05-18T17:00:00Z",
+      "expiration_value": "Minnesota",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-05-18T17:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.0100",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Minnesota",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-05-05T04:10:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-05-01T17:00:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.9900",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Minnesota wins the Game 1: Minnesota at San Antonio professional basketball game originally scheduled for May 4, 2026, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 30,
+      "settlement_ts": "2026-05-05T04:15:52.098816Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26MAY04MINSAS-MIN",
+      "title": "Game 1: Minnesota at San Antonio Winner?",
+      "updated_time": "2026-05-10T20:12:58.193349Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "26016819.90",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.9900",
+      "yes_bid_size_fp": "-1563246.98",
+      "yes_sub_title": "Minnesota"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-05-01T01:30:00+00:00",
+              "opponent_points": 98,
+              "opponent_structured_id": "ba2cb6be-9827-46a8-8e6f-d8661307ba77",
+              "points": 110,
+              "structured_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+              "winner": true
+            },
+            {
+              "date": "2026-04-28T02:30:00+00:00",
+              "opponent_points": 125,
+              "opponent_structured_id": "ba2cb6be-9827-46a8-8e6f-d8661307ba77",
+              "points": 113,
+              "structured_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+              "winner": false
+            },
+            {
+              "date": "2026-04-26T00:30:00+00:00",
+              "opponent_points": 96,
+              "opponent_structured_id": "ba2cb6be-9827-46a8-8e6f-d8661307ba77",
+              "points": 112,
+              "structured_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+              "winner": true
+            },
+            {
+              "date": "2026-04-24T01:30:00+00:00",
+              "opponent_points": 96,
+              "opponent_structured_id": "ba2cb6be-9827-46a8-8e6f-d8661307ba77",
+              "points": 113,
+              "structured_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+              "winner": true
+            },
+            {
+              "date": "2026-04-21T02:30:00+00:00",
+              "opponent_points": 114,
+              "opponent_structured_id": "ba2cb6be-9827-46a8-8e6f-d8661307ba77",
+              "points": 119,
+              "structured_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+              "winner": true
+            }
+          ],
+          "away_team_id": "29e3c04e-fadb-4006-be20-cbb8c159ce0e",
+          "conference": "western",
+          "game_injuries": {
+            "29e3c04e-fadb-4006-be20-cbb8c159ce0e": [
+              {
+                "comment": "The Timberwolves listed Dosunmu as OUT for Monday's (May. 3) game against San Antonio.",
+                "date_updated": "2026-05-04",
+                "description": "Calf",
+                "start_date": "2026-04-30",
+                "status": "Out",
+                "structured_id": "930f19e3-6885-4738-9dae-484cb321f64f"
+              },
+              {
+                "comment": "DiVincenzo has been diagnosed with a torn right Achilles tendon, and he will miss the remainder of the postseason, per Shams Charania of ESPN reports.",
+                "date_updated": "2026-04-25",
+                "description": "Leg",
+                "start_date": "2026-04-25",
+                "status": "Out For Season",
+                "structured_id": "19e432c3-e255-428c-94d0-cedebed3dfc5"
+              }
+            ],
+            "ad36c3e8-4194-4e63-920f-7c50f46191a6": [
+              {
+                "comment": "The Spurs announced on Wednesday (Feb. 4) that Jones Garcia underwent ankle surgery and will miss the remainder of the 2025-26 season, per Tom Orsborn of the San Antonio Express-News.",
+                "date_updated": "2026-02-04",
+                "description": "Ankle",
+                "start_date": "2026-02-04",
+                "status": "Out For Season",
+                "structured_id": "286d58e9-242b-4e81-b562-1b68ce86e283"
+              },
+              {
+                "comment": "The Spurs listed Bryant as OUT for Monday's (May. 4) game against Minnesota..",
+                "date_updated": "2026-05-04",
+                "description": "Foot",
+                "start_date": "2026-05-03",
+                "status": "Out",
+                "structured_id": "98eb67fd-32c0-49c7-b81d-607cc6a35771"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-04-29T01:30:00+00:00",
+              "opponent_points": 95,
+              "opponent_structured_id": "2229b01e-68eb-46ad-adf4-71a9533c84fc",
+              "points": 114,
+              "structured_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+              "winner": true
+            },
+            {
+              "date": "2026-04-26T19:30:00+00:00",
+              "opponent_points": 93,
+              "opponent_structured_id": "2229b01e-68eb-46ad-adf4-71a9533c84fc",
+              "points": 114,
+              "structured_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+              "winner": true
+            },
+            {
+              "date": "2026-04-25T02:30:00+00:00",
+              "opponent_points": 108,
+              "opponent_structured_id": "2229b01e-68eb-46ad-adf4-71a9533c84fc",
+              "points": 120,
+              "structured_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+              "winner": true
+            },
+            {
+              "date": "2026-04-22T00:00:00+00:00",
+              "opponent_points": 106,
+              "opponent_structured_id": "2229b01e-68eb-46ad-adf4-71a9533c84fc",
+              "points": 103,
+              "structured_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+              "winner": false
+            },
+            {
+              "date": "2026-04-20T01:00:00+00:00",
+              "opponent_points": 98,
+              "opponent_structured_id": "2229b01e-68eb-46ad-adf4-71a9533c84fc",
+              "points": 111,
+              "structured_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+              "winner": true
+            }
+          ],
+          "home_team_id": "ad36c3e8-4194-4e63-920f-7c50f46191a6",
+          "is_playoffs": true,
+          "league": "NBA",
+          "main_game_event_ticker": "KXNBAGAME-26MAY04MINSAS",
+          "parent_series": "KXNBASERIES-26MINSASR2",
+          "player_id_mapping": {
+            "0a485720-7ec1-4e1b-a9e9-dcf912dde8db": "286d58e9-242b-4e81-b562-1b68ce86e283",
+            "0a5e8d12-47e5-4afc-973a-e1f8184776c1": "37610450-b248-4427-b2d0-ff7fe6973eab",
+            "190797ba-a6f4-4286-9d5e-d157ff834829": "8193b1fe-f78e-4709-9845-3e1b53dc66b7",
+            "24a0f5aa-209a-4d54-91db-bddecc37f87e": "7b22d659-5c24-411c-937b-23352fdefff6",
+            "24c85a15-686e-4161-934b-40948188fa36": "2bf5e35d-4c07-42ff-bcc0-e2e7b05eab71",
+            "2b95727a-4273-4f8f-a45b-3d9ac9969dba": "ddef089e-567a-4057-a913-5c93bbd0ec91",
+            "2e49c27a-06c5-4c4a-87fd-69840b783947": "2f1946d8-9bb5-472b-803a-206835b7b87e",
+            "37fbc3a5-0d10-4e22-803b-baa2ea0cdb12": "e9c185a4-48f9-497a-9da5-03d763ab11a3",
+            "460b7264-b98f-483e-b841-59a18c2e4d67": "4d76b816-4ca3-4a92-bbd3-489819b6821b",
+            "5b297372-b2af-445e-a4bc-777982dbc1e3": "85df4482-17a9-49b8-b40f-b6cddb54e579",
+            "65fec68f-dfbb-4127-bb7a-932d5144c0f6": "c040b6ef-2b8f-4338-ad6c-6a5973bb1484",
+            "6f4f5e4b-37d7-4d28-a226-4f52d09aab02": "e0294aa0-1f2e-4c78-82b1-0db9a9f1e841",
+            "7ad01370-ae8e-40ae-b70d-61f6d8dba8d9": "b7022c10-2203-4b3e-877d-f539c32e0532",
+            "80328aab-9ce6-49c8-b3f2-f5bf73cdf319": "74621b0e-0eda-4474-838c-3e669d032ebf",
+            "823b2161-0c34-494c-9d7c-b438152f4f4d": "15a36614-d0eb-4be8-af9f-4e79a32d4231",
+            "85cd25fd-f437-48dd-b736-af5422c0feb7": "98eb67fd-32c0-49c7-b81d-607cc6a35771",
+            "8e288d6e-50b8-404b-812b-823ae5bab61f": "72670315-7b9d-4dc1-ac5a-f3675f4ab19d",
+            "8e3cbaa3-e30a-4cf8-aa7a-1b57f15f0f98": "b4fad83a-0403-4f63-8a8c-a5ea70d0ba4b",
+            "952cd8e7-2fa5-4eac-bcd9-b2e135eab16f": "0f3fa1bc-e62a-4ea6-b30e-8f77f6f625f8",
+            "9570a938-324f-40e8-92dd-8a4fcf4a953b": "125f7622-b921-4377-a6c7-6e83a77789dc",
+            "98e2cdeb-69dc-499c-a853-84c32c714924": "b269496a-6cdf-466d-aa1a-c648b20591ae",
+            "9c1deadf-622c-4326-bd14-3e273b5e1e5a": "14647265-8f75-4624-abab-5b6f9d1ef5cb",
+            "9cfad453-b323-43dc-a066-6cd0a21745ad": "19e432c3-e255-428c-94d0-cedebed3dfc5",
+            "a34ec970-f4a1-47a3-98a1-51ff5e92a443": "9c875ec2-a062-4b15-9621-d5786b40a985",
+            "aa5536d2-4d75-43fb-8df3-47fbf99d3b7c": "4432f713-dfc6-47db-881d-bace88c4d9c1",
+            "b16123e8-c885-4276-9994-8d5e390c0f0d": "fbbc0dd3-d175-4281-b220-f2e4a08be13e",
+            "bde7f42e-7296-453d-bcba-cac6fad2d03f": "926570a7-5b58-40ae-90b0-dd2021314424",
+            "ce8d0944-b277-499e-9701-02a5f1828615": "eaa9ccb5-2e4c-48f2-bfae-964f5c56aa6e",
+            "cfc1e41b-74ab-45ee-8132-aaf9ca7f8163": "c995b1bb-82ab-4be9-aad1-6351b75e108a",
+            "d0c7135a-1aea-40cb-ba20-df656de71749": "36ea9bc5-23b0-4274-9c6c-cd8a07b1b654",
+            "d7276f4c-b9ee-43bf-860d-07b01a0fe7b6": "a4ea1e30-5edb-44f3-8836-e59c49af3b82",
+            "ddee4a31-2791-4339-bfc3-a058ce2d1397": "3737a938-d72f-41bc-8098-e50c9334a4b5",
+            "f8a7e4c7-d60e-4751-9203-30a772dd9272": "930f19e3-6885-4738-9dae-484cb321f64f",
+            "fa0e2b60-8ee9-4db6-b9bc-d0e23d6b29d2": "5310feca-3879-45e1-987b-ff68729c3a6d",
+            "fe215630-2dc5-4573-95cc-c1b14abbbbcd": "98cb9106-25d8-4846-be07-d6f5e2403ad3",
+            "fed6929f-8d92-456c-8a89-9e0c17cf4f7b": "03768fde-7261-4f9a-8ee5-e0a2ff33c3c1"
+          },
+          "series_game_number": "Game 1",
+          "series_to_stat_mapping": {
+            "KXNBA3PT": "three_points_made",
+            "KXNBAAST": "assists",
+            "KXNBABLK": "blocks",
+            "KXNBAPTS": "points",
+            "KXNBAREB": "rebounds",
+            "KXNBASTL": "steals"
+          },
+          "series_to_stat_name_mapping": {
+            "KXNBA3PT": "threes",
+            "KXNBAAST": "assists",
+            "KXNBABLK": "blocks",
+            "KXNBAPTS": "points",
+            "KXNBAREB": "rebounds",
+            "KXNBASTL": "steals"
+          },
+          "source_id": "92b3b712-c809-4284-abd8-893c3065642a",
+          "status": "inprogress"
+        },
+        "end_date": "2026-05-05T16:57:02Z",
+        "id": "946388c0-9211-4e57-8edb-f82e44540aa9",
+        "last_updated_ts": "2026-05-06T17:14:54.647891Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNBAGAME-26MAY04MINSAS",
+          "KXNBASPREAD-26MAY04MINSAS",
+          "KXNBATOTAL-26MAY04MINSAS",
+          "KXNBATEAMTOTAL-26MAY04MINSAS",
+          "KXNBAOVERTIME-26MAY04MINSAS",
+          "KXNBA1HWINNER-26MAY04MINSAS",
+          "KXNBA1HSPREAD-26MAY04MINSAS",
+          "KXNBA1HTOTAL-26MAY04MINSAS",
+          "KXNBA2HWINNER-26MAY04MINSAS",
+          "KXNBA2HSPREAD-26MAY04MINSAS",
+          "KXNBA2HTOTAL-26MAY04MINSAS"
+        ],
+        "related_event_tickers": [
+          "KXNBAGAME-26MAY04MINSAS",
+          "KXNBASPREAD-26MAY04MINSAS",
+          "KXNBATOTAL-26MAY04MINSAS",
+          "KXNBATEAMTOTAL-26MAY04MINSAS",
+          "KXNBAOVERTIME-26MAY04MINSAS",
+          "KXNBAPTS-26MAY04MINSAS",
+          "KXNBAREB-26MAY04MINSAS",
+          "KXNBAAST-26MAY04MINSAS",
+          "KXNBASTL-26MAY04MINSAS",
+          "KXNBABLK-26MAY04MINSAS",
+          "KXNBA3PT-26MAY04MINSAS",
+          "KXNBA2D-26MAY04MINSAS",
+          "KXNBA3D-26MAY04MINSAS",
+          "KXNBA1HWINNER-26MAY04MINSAS",
+          "KXNBA1HSPREAD-26MAY04MINSAS",
+          "KXNBA1HTOTAL-26MAY04MINSAS",
+          "KXNBA2HWINNER-26MAY04MINSAS",
+          "KXNBAMENTION-26MAY04MINSAS",
+          "KXNBAPTSLEADER-26MAY04MINSAS",
+          "KXNBA2HSPREAD-26MAY04MINSAS",
+          "KXNBA2HTOTAL-26MAY04MINSAS"
+        ],
+        "source_id": "92b3b712-c809-4284-abd8-893c3065642a",
+        "source_ids": {
+          "source_2_id": "202605040DC8L3F8",
+          "source_3_id": "92b3b712-c809-4284-abd8-893c3065642a",
+          "source_4_id": "70504952",
+          "source_5_id": "sr:match:70504952"
+        },
+        "start_date": "2026-05-05T01:30:00Z",
+        "title": "Minnesota at San Antonio",
+        "type": "basketball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNBAGAME-26MAY04MINSAS&limit=100",
+    "received_at": "2026-09-22T19:19:27.282672+00:00",
+    "prior_errors": []
+  },
+  "failure": "Missing contract rules"
+}

@@ -1,0 +1,30 @@
+{
+  "ticker": "KXMLBGAME-26SEP061210MILCIN-CIN",
+  "event": "KXMLBGAME-26SEP061210MILCIN",
+  "series": "KXMLBGAME",
+  "kickoff": 1788711000.0,
+  "start": 1788452700.0,
+  "end": 1788709500.0,
+  "pagination_exhausted": true,
+  "archived_candles": false,
+  "trades": 628,
+  "candles": 1083,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP061210MILCIN-CIN&min_ts=1788452700&max_ts=1788709500&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:25:15.286670+00:00",
+      "prior_errors": [
+        "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      ]
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP061210MILCIN-CIN/candlesticks?start_ts=1788452700&end_ts=1788709500&period_interval=1",
+      "received_at": "2026-09-22T19:25:21.209098+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "e1bfd402ff4611d83c3f8c65ebc6d9023f2ac064ac987f29e60c3f23c2686f8e",
+    "candles.jsonl.gz": "28ed5a942399ab4804c62e3b05c218178ef9c517c28365037c645d78a8ab28e9"
+  }
+}

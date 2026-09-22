@@ -1,0 +1,158 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP07SMUFSU-FSU",
+  "event": "KXNCAAFGAME-26SEP07SMUFSU",
+  "series": "KXNCAAFGAME",
+  "kickoff": 1788830100.0,
+  "start": 1788225300.0,
+  "end": 1788828600.0,
+  "pagination_exhausted": true,
+  "archived_candles": false,
+  "trades": 24456,
+  "candles": 4710,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:22:26.320794+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchh5rL4be1kL2jBVNap5oaDAiHrf3UBhDwzpWkAw",
+      "received_at": "2026-09-22T19:22:31.797673+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchh1q_4agtiW1J_oSR0coaCwjnpP3UBhCopqc8",
+      "received_at": "2026-09-22T19:22:37.682850+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhxexkYBLPCKR_O7BT2MaDAiDnf3UBhCos73GAw",
+      "received_at": "2026-09-22T19:22:41.268494+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhz00uZFQTqym1o-oNYgaDAjDmP3UBhCQpq2nAg",
+      "received_at": "2026-09-22T19:22:47.036594+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhtwXyaRx7083G0eOe0QaDAiFlf3UBhDwk5_GAg",
+      "received_at": "2026-09-22T19:22:52.078589+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhtDBubyIsE4HuGpVP2saDAjykv3UBhCQ9uXAAw",
+      "received_at": "2026-09-22T19:22:56.997453+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhsDz2YHIm4C5Mw_wIGcaDAjtkP3UBhDA9vz_Ag",
+      "received_at": "2026-09-22T19:23:03.930811+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhqW6Safif8_8OXgj13MaDAiXjf3UBhCg-tibAQ",
+      "received_at": "2026-09-22T19:23:08.930212+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchho6ZCaYM5fS42HRd7iwaCwj1h_3UBhDA_6RO",
+      "received_at": "2026-09-22T19:23:13.484086+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhlmpOao7qlxHdEy87FgaDAitgf3UBhDg8v_0Ag",
+      "received_at": "2026-09-22T19:23:19.736796+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchhea3oZbxNJ9zPRX978oaCwi49_zUBhCIor8x",
+      "received_at": "2026-09-22T19:23:24.720048+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchikYS8axxaUEWpBqLd1IaCwiY6_zUBhDI8qQ4",
+      "received_at": "2026-09-22T19:23:30.063730+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchjKAVmYmQD5PanLDkc_waDAiJ3fzUBhDI5riGAQ",
+      "received_at": "2026-09-22T19:23:34.998629+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchj-y6cZg3a0LLvqnaAIkaDAj0y_zUBhDoi-ObAw",
+      "received_at": "2026-09-22T19:23:40.275856+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchj1k0eZ0sOaGMPY1N-hAaDAjrtfzUBhCA36SeAQ",
+      "received_at": "2026-09-22T19:23:45.234246+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchjArFGYHAs-n4j34z5j4aDAiXm_zUBhDItszSAw",
+      "received_at": "2026-09-22T19:23:50.542414+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchgUgvqZEzhGKRbT8f3lUaDAi3-fvUBhDo56SQAQ",
+      "received_at": "2026-09-22T19:23:55.293714+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchjnvB-YQGdGdS6xvU3csaDAirz_vUBhD4ybi5Aw",
+      "received_at": "2026-09-22T19:24:00.452188+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchjSFWybkzBvGBnjpHc0YaDAiGnvvUBhDA58zqAQ",
+      "received_at": "2026-09-22T19:24:06.088790+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchlCUFSYFqRV_Cy3CahzUaDAjZvfrUBhDo3J3WAg",
+      "received_at": "2026-09-22T19:24:11.541776+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchluSg0bDzYtIfC5SCIeAaDAiy4fjUBhCg58jXAg",
+      "received_at": "2026-09-22T19:24:17.341590+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchlFom6ZuyHRbxW_Fq6tgaDAjcoffUBhC4nImuAg",
+      "received_at": "2026-09-22T19:24:22.670184+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAchvHrtKb3I_V39iuzsaeoaDAj60fPUBhD4lYyLAg",
+      "received_at": "2026-09-22T19:24:28.605816+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP07SMUFSU-FSU&min_ts=1788225300&max_ts=1788828600&limit=1000&is_block_trade=false&cursor=EhIKEAch8dBpQYR3f_P5dV78sxoaDAiJrOjUBhDgo5-BAw",
+      "received_at": "2026-09-22T19:24:33.388262+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP07SMUFSU-FSU/candlesticks?start_ts=1788225300&end_ts=1788484500&period_interval=1",
+      "received_at": "2026-09-22T19:24:38.490987+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP07SMUFSU-FSU/candlesticks?start_ts=1788484500&end_ts=1788743700&period_interval=1",
+      "received_at": "2026-09-22T19:24:43.679601+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP07SMUFSU-FSU/candlesticks?start_ts=1788743700&end_ts=1788828600&period_interval=1",
+      "received_at": "2026-09-22T19:24:49.492252+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "232b6581497a919746e91e474ca9865e7c72d3cdf070d820a79d38c2d255972e",
+    "candles.jsonl.gz": "f103e838fa3059f46629d5c29b523a6a80a15f756d08dc9e9b9823e076ecdbd1"
+  }
+}

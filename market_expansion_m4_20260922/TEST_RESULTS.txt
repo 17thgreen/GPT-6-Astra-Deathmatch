@@ -1,0 +1,21 @@
+test_small_cap_ledger_reconciles_and_tampering_is_rejected (test_m4.FinancialAuditTests.test_small_cap_ledger_reconciles_and_tampering_is_rejected) ... ok
+test_complete_first_keeps_only_bounded_offsets (test_m4.InventoryPolicyTests.test_complete_first_keeps_only_bounded_offsets) ... ok
+test_existing_offset_never_grows_or_loses_priority_for_free (test_m4.InventoryPolicyTests.test_existing_offset_never_grows_or_loses_priority_for_free) ... ok
+test_fill_immediately_requests_exposure_cancel (test_m4.InventoryPolicyTests.test_fill_immediately_requests_exposure_cancel) ... ok
+test_flat_inventory_retains_ordinary_pair_admission (test_m4.InventoryPolicyTests.test_flat_inventory_retains_ordinary_pair_admission) ... ok
+test_order_and_cap_are_coupled_and_exit_allowance_unchanged (test_m4.InventoryPolicyTests.test_order_and_cap_are_coupled_and_exit_allowance_unchanged) ... ok
+test_original_mode_exact_fill_and_order_control (test_m4.InventoryPolicyTests.test_original_mode_exact_fill_and_order_control) ... ok
+test_pending_other_offset_is_reserved_until_cancellation (test_m4.InventoryPolicyTests.test_pending_other_offset_is_reserved_until_cancellation) ... ok
+test_ambiguous_cents_and_conflicting_quote_fields_rejected (test_m4.StorageMetadataTests.test_ambiguous_cents_and_conflicting_quote_fields_rejected) ... ok
+test_explicit_zero_override_and_no_maker_fee (test_m4.StorageMetadataTests.test_explicit_zero_override_and_no_maker_fee) ... ok
+test_fee_override_has_precedence_over_series_discount (test_m4.StorageMetadataTests.test_fee_override_has_precedence_over_series_discount) ... ok
+test_historical_quote_uses_documented_dollar_string (test_m4.StorageMetadataTests.test_historical_quote_uses_documented_dollar_string) ... ok
+test_invalid_fee_rules_rejected (test_m4.StorageMetadataTests.test_invalid_fee_rules_rejected) ... ok
+test_missing_rules_block_admission (test_m4.StorageMetadataTests.test_missing_rules_block_admission) ... ok
+test_nba_selection_is_date_balanced_and_ignores_other_dates (test_m4.StorageMetadataTests.test_nba_selection_is_date_balanced_and_ignores_other_dates) ... ok
+test_tier_split_never_drops_boundary_second (test_m4.StorageMetadataTests.test_tier_split_never_drops_boundary_second) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.006s
+
+OK

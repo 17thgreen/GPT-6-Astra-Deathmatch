@@ -1,0 +1,33 @@
+{
+  "ticker": "KXMLBGAME-26SEP081835CLEBAL-BAL",
+  "event": "KXMLBGAME-26SEP081835CLEBAL",
+  "series": "KXMLBGAME",
+  "kickoff": 1788906900.0,
+  "start": 1788648900.0,
+  "end": 1788905400.0,
+  "pagination_exhausted": true,
+  "archived_candles": false,
+  "trades": 1328,
+  "candles": 1604,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP081835CLEBAL-BAL&min_ts=1788648900&max_ts=1788905400&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:25:37.753527+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP081835CLEBAL-BAL&min_ts=1788648900&max_ts=1788905400&limit=1000&is_block_trade=false&cursor=EhIKEAcihKAfGYnqVJEDIRBU6zgaDAi-uYDVBhCwsprqAQ",
+      "received_at": "2026-09-22T19:25:43.481043+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXMLBGAME/markets/KXMLBGAME-26SEP081835CLEBAL-BAL/candlesticks?start_ts=1788648900&end_ts=1788905400&period_interval=1",
+      "received_at": "2026-09-22T19:25:48.514252+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "95df7053fed02d1c76178dde9c79c0ed005215060ea6bf53e1bc6f03fcf51392",
+    "candles.jsonl.gz": "411e666d98d98b78c783ed72f0a8a27d718cf40ed204b55bde0ef988215600d3"
+  }
+}

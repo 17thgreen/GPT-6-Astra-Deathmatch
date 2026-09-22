@@ -1,0 +1,38 @@
+{
+  "ticker": "KXNCAAFGAME-26SEP10FAMUMIA-MIA",
+  "event": "KXNCAAFGAME-26SEP10FAMUMIA",
+  "series": "KXNCAAFGAME",
+  "kickoff": 1789084800.0,
+  "start": 1788480000.0,
+  "end": 1789083300.0,
+  "pagination_exhausted": true,
+  "archived_candles": false,
+  "trades": 153,
+  "candles": 654,
+  "sources": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXNCAAFGAME-26SEP10FAMUMIA-MIA&min_ts=1788480000&max_ts=1789083300&limit=1000&is_block_trade=false",
+      "received_at": "2026-09-22T19:23:03.719912+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP10FAMUMIA-MIA/candlesticks?start_ts=1788480000&end_ts=1788739200&period_interval=1",
+      "received_at": "2026-09-22T19:23:08.436610+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP10FAMUMIA-MIA/candlesticks?start_ts=1788739200&end_ts=1788998400&period_interval=1",
+      "received_at": "2026-09-22T19:23:13.189439+00:00",
+      "prior_errors": []
+    },
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNCAAFGAME/markets/KXNCAAFGAME-26SEP10FAMUMIA-MIA/candlesticks?start_ts=1788998400&end_ts=1789083300&period_interval=1",
+      "received_at": "2026-09-22T19:23:18.991015+00:00",
+      "prior_errors": []
+    }
+  ],
+  "sha256": {
+    "trades.jsonl.gz": "116474ee7ff1adbb45a9ab5ecdfdfdd5df2358da6c4ccc72149bc4116203c49e",
+    "candles.jsonl.gz": "2e5615547fc769070cb2fde6bb195b8de381a243e793b63e3316e18988b21399"
+  }
+}

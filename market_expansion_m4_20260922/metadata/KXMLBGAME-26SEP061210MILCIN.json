@@ -1,0 +1,812 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP061210MILCIN",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "MIL vs CIN (Sep 6)",
+      "title": "Milwaukee vs Cincinnati"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-06T19:29:54Z",
+        "created_time": "2026-09-03T16:15:45.809429Z",
+        "custom_strike": {
+          "baseball_team": "087f0ae7-c231-4dcd-b7e5-f026c1769e40"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-06T19:10:00Z",
+        "expiration_time": "2026-09-09T16:10:00Z",
+        "expiration_value": "Cincinnati",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-09T16:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Milwaukee",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-06T19:10:00Z",
+        "open_interest_fp": "2198783.65",
+        "open_time": "2026-09-03T16:25:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Milwaukee wins the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-06T19:32:55.552226Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP061210MILCIN-MIL",
+        "title": "Milwaukee wins",
+        "updated_time": "2026-09-06T19:32:55.634741Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "4707440.66",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Milwaukee"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-06T19:29:54Z",
+        "created_time": "2026-09-03T16:15:45.809429Z",
+        "custom_strike": {
+          "baseball_team": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-06T19:10:00Z",
+        "expiration_time": "2026-09-09T16:10:00Z",
+        "expiration_value": "Cincinnati",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-09T16:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Cincinnati",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-06T19:10:00Z",
+        "open_interest_fp": "888210.47",
+        "open_time": "2026-09-03T16:25:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Cincinnati wins the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-06T19:32:55.552226Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP061210MILCIN-CIN",
+        "title": "Cincinnati wins",
+        "updated_time": "2026-09-06T19:32:55.634741Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1792138.98",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Cincinnati"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP061210MILCIN",
+    "received_at": "2026-09-22T19:18:45.715213+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-06T19:29:54Z",
+      "created_time": "2026-09-03T16:15:45.809429Z",
+      "custom_strike": {
+        "baseball_team": "087f0ae7-c231-4dcd-b7e5-f026c1769e40"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-06T19:10:00Z",
+      "expiration_time": "2026-09-09T16:10:00Z",
+      "expiration_value": "Cincinnati",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-09T16:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Milwaukee",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-06T19:10:00Z",
+      "open_interest_fp": "2198783.65",
+      "open_time": "2026-09-03T16:25:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Milwaukee wins the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-06T19:32:55.552226Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP061210MILCIN-MIL",
+      "title": "Milwaukee wins",
+      "updated_time": "2026-09-06T19:32:55.634741Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "4707440.66",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Milwaukee"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-06T19:29:54Z",
+      "created_time": "2026-09-03T16:15:45.809429Z",
+      "custom_strike": {
+        "baseball_team": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-06T19:10:00Z",
+      "expiration_time": "2026-09-09T16:10:00Z",
+      "expiration_value": "Cincinnati",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-09T16:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Cincinnati",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-06T19:10:00Z",
+      "open_interest_fp": "888210.47",
+      "open_time": "2026-09-03T16:25:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Cincinnati wins the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-06T19:32:55.552226Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP061210MILCIN-CIN",
+      "title": "Cincinnati wins",
+      "updated_time": "2026-09-06T19:32:55.634741Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1792138.98",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Cincinnati"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-05T22:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "points": 3,
+              "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "winner": false
+            },
+            {
+              "date": "2026-09-04T22:10:00+00:00",
+              "opponent_points": 7,
+              "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "points": 10,
+              "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "winner": true
+            },
+            {
+              "date": "2026-09-03T23:15:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 1,
+              "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T23:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 9,
+              "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T23:40:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 9,
+              "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "winner": true
+            }
+          ],
+          "away_team_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "087f0ae7-c231-4dcd-b7e5-f026c1769e40": [
+              {
+                "comment": "The Milwaukee Brewers transferred RHP Brandon Woodruff from the 15-day injured list to the 60-day injured list with right shoulder inflammation.",
+                "date_updated": "2026-07-12",
+                "description": "Shoulder",
+                "name": "Brandon Woodruff",
+                "start_date": "2026-07-04",
+                "status": "D60",
+                "structured_id": "6a85be9f-797a-4392-a988-a75ee6fc7700"
+              },
+              {
+                "comment": "The Milwaukee Brewers transferred LHP Brian Fitzpatrick to the 60-day injured list due to left elbow injury.",
+                "date_updated": "2026-06-09",
+                "description": "Elbow",
+                "name": "Brian Fitzpatrick",
+                "start_date": "2026-06-05",
+                "status": "D60",
+                "structured_id": "10994620-0739-49c7-a0dc-5de652e5adf9"
+              },
+              {
+                "comment": "The Milwaukee Brewers said on Thursday (Jun. 18) that Priester will undergo thoracic outlet compression surgery and is expected to be sidelined 8-to-10 months, per Curt Hogg of the Milwaukee Journal Sentinel.",
+                "date_updated": "2026-06-18",
+                "description": "Wrist",
+                "name": "Quinn Priester",
+                "start_date": "2026-03-22",
+                "status": "D60",
+                "structured_id": "5a2bc28a-63ec-4ffc-9f7f-6a30e30b05f2"
+              },
+              {
+                "comment": "The Milwaukee Brewers transferred LHP Angel Zerpa to the 60-day injured list with left forearm tightness.",
+                "date_updated": "2026-05-31",
+                "description": "Forearm",
+                "name": "Angel Zerpa",
+                "start_date": "2026-04-26",
+                "status": "D60",
+                "structured_id": "295dd437-7da4-421b-a2a8-c2b0c589a7b5"
+              },
+              {
+                "comment": "The Milwaukee Brewers transferred LHP Rob Zastryzny from the 15-day injured list to the 60-day injured list with a left trapezius strain.",
+                "date_updated": "2026-07-15",
+                "description": "Shoulder",
+                "name": "Rob Zastryzny",
+                "start_date": "2026-05-31",
+                "status": "D60",
+                "structured_id": "b0351f3d-8e46-4c14-991e-46d6ef4fb7d6"
+              },
+              {
+                "comment": "The Milwaukee Brewers placed RHP Bryse Wilson on the 15-day injured list with low back strain.",
+                "date_updated": "2026-08-31",
+                "description": "Back",
+                "name": "Bryse Wilson",
+                "start_date": "2026-08-31",
+                "status": "D15",
+                "structured_id": "3a144c2b-a605-47fc-8e0d-6983797df257"
+              }
+            ],
+            "ed1fa89d-04cc-4a5d-9e87-9a89c0142724": [
+              {
+                "comment": "The Cincinnati Reds placed INF Spencer Steer on the 10-day injured list with right wrist sprain.",
+                "date_updated": "2026-07-27",
+                "description": "Wrist",
+                "name": "Spencer Steer",
+                "start_date": "2026-07-26",
+                "status": "D10",
+                "structured_id": "757b1795-461a-4cca-93e6-ff83f4dcfe11"
+              },
+              {
+                "comment": "The Cincinnati Reds transferred INF Michael Toglia from the 10-day injured list to the 60-day injured list with a right shoulder dislocation.",
+                "date_updated": "2026-09-04",
+                "description": "Shoulder",
+                "name": "Michael Toglia",
+                "start_date": "2026-08-22",
+                "status": "D60",
+                "structured_id": "ce742f0d-b8dd-4bd6-b7bf-b55799141db9"
+              },
+              {
+                "comment": "The Cincinnati Reds said on Thursday (Aug. 13) that RHP Hunter Greene will miss the entire 2027 season after undergoing Tommy John surgery.",
+                "date_updated": "2026-08-13",
+                "description": "Elbow",
+                "name": "Hunter Greene",
+                "start_date": "2026-08-02",
+                "status": "D60",
+                "structured_id": "26a4a9f1-eb66-44da-81b6-24f97d066f86"
+              },
+              {
+                "comment": "The Cincinnati Reds transferred OF Blake Dunn from the 10-day injured list to the 60-day injured list with a right elbow sprain.",
+                "date_updated": "2026-08-06",
+                "description": "Elbow",
+                "name": "Blake Dunn",
+                "start_date": "2026-06-27",
+                "status": "D60",
+                "structured_id": "ec8a934b-30d5-43c3-a6c4-88b0e60d2db9"
+              },
+              {
+                "comment": "The Cincinnati Reds placed INF Ke'Bryan Hayes on the 10-day injured list due to a left groin strain.",
+                "date_updated": "2026-08-28",
+                "description": "Groin",
+                "name": "Ke'Bryan Hayes",
+                "start_date": "2026-08-28",
+                "status": "D10",
+                "structured_id": "4d3ba9a0-52b8-4726-ad35-13118f1503b9"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-05T22:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 5,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            },
+            {
+              "date": "2026-09-04T22:10:00+00:00",
+              "opponent_points": 10,
+              "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+              "points": 7,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T16:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "points": 7,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "points": 4,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            },
+            {
+              "date": "2026-08-31T22:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "points": 0,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": false
+            }
+          ],
+          "home_team_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+          "status": "closed"
+        },
+        "end_date": "2026-09-06T19:40:12Z",
+        "id": "5515a8f9-d676-4c42-92d6-91bc1d1931e6",
+        "last_updated_ts": "2026-09-07T20:05:46.746454Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP061210MILCIN",
+          "KXMLBEXTRAS-26SEP061210MILCIN",
+          "KXMLBSPREAD-26SEP061210MILCIN",
+          "KXMLBTOTAL-26SEP061210MILCIN"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP061210MILCIN",
+          "KXMLBEXTRAS-26SEP061210MILCIN",
+          "KXMLBRFI-26SEP061210MILCIN",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-1",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-2",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-3",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-4",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-5",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-6",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-7",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-8",
+          "KXMLBINNINGWIN-26SEP061210MILCIN-9",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-1",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-2",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-3",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-4",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-5",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-6",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-7",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-8",
+          "KXMLBINNINGTOTAL-26SEP061210MILCIN-9",
+          "KXMLBSPREAD-26SEP061210MILCIN",
+          "KXMLBTOTAL-26SEP061210MILCIN",
+          "KXMLBF5-26SEP061210MILCIN",
+          "KXMLBF5SPREAD-26SEP061210MILCIN",
+          "KXMLBF5TOTAL-26SEP061210MILCIN",
+          "KXMLBF3-26SEP061210MILCIN",
+          "KXMLBF7-26SEP061210MILCIN",
+          "KXMLBTEAMTOTAL-26SEP061210MILCIN",
+          "KXMLBHR-26SEP061210MILCIN",
+          "KXMLBHIT-26SEP061210MILCIN",
+          "KXMLBTB-26SEP061210MILCIN",
+          "KXMLBHRR-26SEP061210MILCIN",
+          "KXMLBRBI-26SEP061210MILCIN",
+          "KXMLBKS-26SEP061210MILCIN",
+          "KXMLBOUTS-26SEP061210MILCIN",
+          "KXMLBWA-26SEP061210MILCIN",
+          "KXMLBSB-26SEP061210MILCIN",
+          "KXMLBHA-26SEP061210MILCIN",
+          "KXMLBERA-26SEP061210MILCIN"
+        ],
+        "source_id": "93d7eff2-1492-4336-9f88-8235f926f38d",
+        "source_ids": {
+          "source_2_id": "2026090634202D9E",
+          "source_3_id": "93d7eff2-1492-4336-9f88-8235f926f38d",
+          "source_4_id": "63300915",
+          "source_5_id": "sr:sport_event:63300915"
+        },
+        "start_date": "2026-09-06T16:10:00Z",
+        "title": "Milwaukee vs Cincinnati",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP061210MILCIN&limit=100",
+    "received_at": "2026-09-22T19:18:50.487093+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788711000.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-05T22:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "points": 3,
+          "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "winner": false
+        },
+        {
+          "date": "2026-09-04T22:10:00+00:00",
+          "opponent_points": 7,
+          "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "points": 10,
+          "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "winner": true
+        },
+        {
+          "date": "2026-09-03T23:15:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 1,
+          "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T23:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 9,
+          "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T23:40:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 9,
+          "structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "winner": true
+        }
+      ],
+      "away_team_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "087f0ae7-c231-4dcd-b7e5-f026c1769e40": [
+          {
+            "comment": "The Milwaukee Brewers transferred RHP Brandon Woodruff from the 15-day injured list to the 60-day injured list with right shoulder inflammation.",
+            "date_updated": "2026-07-12",
+            "description": "Shoulder",
+            "name": "Brandon Woodruff",
+            "start_date": "2026-07-04",
+            "status": "D60",
+            "structured_id": "6a85be9f-797a-4392-a988-a75ee6fc7700"
+          },
+          {
+            "comment": "The Milwaukee Brewers transferred LHP Brian Fitzpatrick to the 60-day injured list due to left elbow injury.",
+            "date_updated": "2026-06-09",
+            "description": "Elbow",
+            "name": "Brian Fitzpatrick",
+            "start_date": "2026-06-05",
+            "status": "D60",
+            "structured_id": "10994620-0739-49c7-a0dc-5de652e5adf9"
+          },
+          {
+            "comment": "The Milwaukee Brewers said on Thursday (Jun. 18) that Priester will undergo thoracic outlet compression surgery and is expected to be sidelined 8-to-10 months, per Curt Hogg of the Milwaukee Journal Sentinel.",
+            "date_updated": "2026-06-18",
+            "description": "Wrist",
+            "name": "Quinn Priester",
+            "start_date": "2026-03-22",
+            "status": "D60",
+            "structured_id": "5a2bc28a-63ec-4ffc-9f7f-6a30e30b05f2"
+          },
+          {
+            "comment": "The Milwaukee Brewers transferred LHP Angel Zerpa to the 60-day injured list with left forearm tightness.",
+            "date_updated": "2026-05-31",
+            "description": "Forearm",
+            "name": "Angel Zerpa",
+            "start_date": "2026-04-26",
+            "status": "D60",
+            "structured_id": "295dd437-7da4-421b-a2a8-c2b0c589a7b5"
+          },
+          {
+            "comment": "The Milwaukee Brewers transferred LHP Rob Zastryzny from the 15-day injured list to the 60-day injured list with a left trapezius strain.",
+            "date_updated": "2026-07-15",
+            "description": "Shoulder",
+            "name": "Rob Zastryzny",
+            "start_date": "2026-05-31",
+            "status": "D60",
+            "structured_id": "b0351f3d-8e46-4c14-991e-46d6ef4fb7d6"
+          },
+          {
+            "comment": "The Milwaukee Brewers placed RHP Bryse Wilson on the 15-day injured list with low back strain.",
+            "date_updated": "2026-08-31",
+            "description": "Back",
+            "name": "Bryse Wilson",
+            "start_date": "2026-08-31",
+            "status": "D15",
+            "structured_id": "3a144c2b-a605-47fc-8e0d-6983797df257"
+          }
+        ],
+        "ed1fa89d-04cc-4a5d-9e87-9a89c0142724": [
+          {
+            "comment": "The Cincinnati Reds placed INF Spencer Steer on the 10-day injured list with right wrist sprain.",
+            "date_updated": "2026-07-27",
+            "description": "Wrist",
+            "name": "Spencer Steer",
+            "start_date": "2026-07-26",
+            "status": "D10",
+            "structured_id": "757b1795-461a-4cca-93e6-ff83f4dcfe11"
+          },
+          {
+            "comment": "The Cincinnati Reds transferred INF Michael Toglia from the 10-day injured list to the 60-day injured list with a right shoulder dislocation.",
+            "date_updated": "2026-09-04",
+            "description": "Shoulder",
+            "name": "Michael Toglia",
+            "start_date": "2026-08-22",
+            "status": "D60",
+            "structured_id": "ce742f0d-b8dd-4bd6-b7bf-b55799141db9"
+          },
+          {
+            "comment": "The Cincinnati Reds said on Thursday (Aug. 13) that RHP Hunter Greene will miss the entire 2027 season after undergoing Tommy John surgery.",
+            "date_updated": "2026-08-13",
+            "description": "Elbow",
+            "name": "Hunter Greene",
+            "start_date": "2026-08-02",
+            "status": "D60",
+            "structured_id": "26a4a9f1-eb66-44da-81b6-24f97d066f86"
+          },
+          {
+            "comment": "The Cincinnati Reds transferred OF Blake Dunn from the 10-day injured list to the 60-day injured list with a right elbow sprain.",
+            "date_updated": "2026-08-06",
+            "description": "Elbow",
+            "name": "Blake Dunn",
+            "start_date": "2026-06-27",
+            "status": "D60",
+            "structured_id": "ec8a934b-30d5-43c3-a6c4-88b0e60d2db9"
+          },
+          {
+            "comment": "The Cincinnati Reds placed INF Ke'Bryan Hayes on the 10-day injured list due to a left groin strain.",
+            "date_updated": "2026-08-28",
+            "description": "Groin",
+            "name": "Ke'Bryan Hayes",
+            "start_date": "2026-08-28",
+            "status": "D10",
+            "structured_id": "4d3ba9a0-52b8-4726-ad35-13118f1503b9"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-05T22:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 5,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        },
+        {
+          "date": "2026-09-04T22:10:00+00:00",
+          "opponent_points": 10,
+          "opponent_structured_id": "087f0ae7-c231-4dcd-b7e5-f026c1769e40",
+          "points": 7,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T16:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "points": 7,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "points": 4,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        },
+        {
+          "date": "2026-08-31T22:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "points": 0,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": false
+        }
+      ],
+      "home_team_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP061210MILCIN",
+      "status": "closed"
+    },
+    "end_date": "2026-09-06T19:40:12Z",
+    "id": "5515a8f9-d676-4c42-92d6-91bc1d1931e6",
+    "last_updated_ts": "2026-09-07T20:05:46.746454Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP061210MILCIN",
+      "KXMLBEXTRAS-26SEP061210MILCIN",
+      "KXMLBSPREAD-26SEP061210MILCIN",
+      "KXMLBTOTAL-26SEP061210MILCIN"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP061210MILCIN",
+      "KXMLBEXTRAS-26SEP061210MILCIN",
+      "KXMLBRFI-26SEP061210MILCIN",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-1",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-2",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-3",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-4",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-5",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-6",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-7",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-8",
+      "KXMLBINNINGWIN-26SEP061210MILCIN-9",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-1",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-2",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-3",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-4",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-5",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-6",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-7",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-8",
+      "KXMLBINNINGTOTAL-26SEP061210MILCIN-9",
+      "KXMLBSPREAD-26SEP061210MILCIN",
+      "KXMLBTOTAL-26SEP061210MILCIN",
+      "KXMLBF5-26SEP061210MILCIN",
+      "KXMLBF5SPREAD-26SEP061210MILCIN",
+      "KXMLBF5TOTAL-26SEP061210MILCIN",
+      "KXMLBF3-26SEP061210MILCIN",
+      "KXMLBF7-26SEP061210MILCIN",
+      "KXMLBTEAMTOTAL-26SEP061210MILCIN",
+      "KXMLBHR-26SEP061210MILCIN",
+      "KXMLBHIT-26SEP061210MILCIN",
+      "KXMLBTB-26SEP061210MILCIN",
+      "KXMLBHRR-26SEP061210MILCIN",
+      "KXMLBRBI-26SEP061210MILCIN",
+      "KXMLBKS-26SEP061210MILCIN",
+      "KXMLBOUTS-26SEP061210MILCIN",
+      "KXMLBWA-26SEP061210MILCIN",
+      "KXMLBSB-26SEP061210MILCIN",
+      "KXMLBHA-26SEP061210MILCIN",
+      "KXMLBERA-26SEP061210MILCIN"
+    ],
+    "source_id": "93d7eff2-1492-4336-9f88-8235f926f38d",
+    "source_ids": {
+      "source_2_id": "2026090634202D9E",
+      "source_3_id": "93d7eff2-1492-4336-9f88-8235f926f38d",
+      "source_4_id": "63300915",
+      "source_5_id": "sr:sport_event:63300915"
+    },
+    "start_date": "2026-09-06T16:10:00Z",
+    "title": "Milwaukee vs Cincinnati",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP061210MILCIN-CIN",
+    "KXMLBGAME-26SEP061210MILCIN-MIL"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

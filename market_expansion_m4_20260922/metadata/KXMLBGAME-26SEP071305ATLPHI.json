@@ -1,0 +1,830 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP071305ATLPHI",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "ATL vs PHI (Sep 7)",
+      "title": "Atlanta vs Philadelphia"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-07T19:04:37Z",
+        "created_time": "2026-09-04T17:15:49.28827Z",
+        "custom_strike": {
+          "baseball_team": "aa47177d-346b-4467-b8d2-dc49e284a2e6"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-07T20:05:00Z",
+        "expiration_time": "2026-09-10T17:05:00Z",
+        "expiration_value": "Philadelphia",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-10T17:05:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Atlanta",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T20:05:00Z",
+        "open_interest_fp": "1394692.52",
+        "open_time": "2026-09-04T17:25:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Atlanta wins the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-07T19:07:45.551675Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP071305ATLPHI-ATL",
+        "title": "Atlanta wins",
+        "updated_time": "2026-09-07T19:07:45.614781Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1823339.27",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Atlanta"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-07T19:04:37Z",
+        "created_time": "2026-09-04T17:15:49.28827Z",
+        "custom_strike": {
+          "baseball_team": "bf277158-b28d-4a0e-aa3b-54fd3acd3009"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-07T20:05:00Z",
+        "expiration_time": "2026-09-10T17:05:00Z",
+        "expiration_value": "Philadelphia",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-10T17:05:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Philadelphia",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-07T20:05:00Z",
+        "open_interest_fp": "921071.92",
+        "open_time": "2026-09-04T17:25:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Philadelphia wins the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-07T19:07:45.551675Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP071305ATLPHI-PHI",
+        "title": "Philadelphia wins",
+        "updated_time": "2026-09-07T19:07:45.614781Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1310044.36",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Philadelphia"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP071305ATLPHI",
+    "received_at": "2026-09-22T19:18:45.740390+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-07T19:04:37Z",
+      "created_time": "2026-09-04T17:15:49.28827Z",
+      "custom_strike": {
+        "baseball_team": "aa47177d-346b-4467-b8d2-dc49e284a2e6"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-07T20:05:00Z",
+      "expiration_time": "2026-09-10T17:05:00Z",
+      "expiration_value": "Philadelphia",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-10T17:05:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Atlanta",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-07T20:05:00Z",
+      "open_interest_fp": "1394692.52",
+      "open_time": "2026-09-04T17:25:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Atlanta wins the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-07T19:07:45.551675Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP071305ATLPHI-ATL",
+      "title": "Atlanta wins",
+      "updated_time": "2026-09-07T19:07:45.614781Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1823339.27",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Atlanta"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-07T19:04:37Z",
+      "created_time": "2026-09-04T17:15:49.28827Z",
+      "custom_strike": {
+        "baseball_team": "bf277158-b28d-4a0e-aa3b-54fd3acd3009"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-07T20:05:00Z",
+      "expiration_time": "2026-09-10T17:05:00Z",
+      "expiration_value": "Philadelphia",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-10T17:05:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Philadelphia",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-07T20:05:00Z",
+      "open_interest_fp": "921071.92",
+      "open_time": "2026-09-04T17:25:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Philadelphia wins the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-07T19:07:45.551675Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP071305ATLPHI-PHI",
+      "title": "Philadelphia wins",
+      "updated_time": "2026-09-07T19:07:45.614781Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1310044.36",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Philadelphia"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-06T17:10:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "points": 5,
+              "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "winner": true
+            },
+            {
+              "date": "2026-09-05T22:05:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "points": 2,
+              "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "winner": false
+            },
+            {
+              "date": "2026-09-04T22:40:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "points": 5,
+              "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "winner": true
+            },
+            {
+              "date": "2026-09-02T17:05:00+00:00",
+              "opponent_points": 0,
+              "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+              "points": 9,
+              "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T22:45:00+00:00",
+              "opponent_points": 9,
+              "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+              "points": 5,
+              "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "winner": false
+            }
+          ],
+          "away_team_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "aa47177d-346b-4467-b8d2-dc49e284a2e6": [
+              {
+                "comment": "The Atlanta Braves transferred RHP Robert Suarez from the 15-day injured list to the 60-day injured list with right elbow inflammation.",
+                "date_updated": "2026-09-01",
+                "description": "Elbow",
+                "name": "Robert Suarez",
+                "start_date": "2026-06-23",
+                "status": "D60",
+                "structured_id": "93e5bb3e-ff47-420d-814f-f121858ae7e3"
+              },
+              {
+                "comment": "The Atlanta Braves placed LHP Joey Wentz on the 60-day injured list with a right ACL tear.",
+                "date_updated": "2026-03-24",
+                "description": "Knee",
+                "name": "Joey Wentz",
+                "start_date": "2026-03-24",
+                "status": "D60",
+                "structured_id": "0e955735-daea-45d7-bad6-3f0cd64ab452"
+              },
+              {
+                "comment": "The Atlanta Braves placed RHP Joe Jim\u00e9nez on the 60-day injured list with a left articular cartilage injury.",
+                "date_updated": "2026-02-10",
+                "description": "Knee",
+                "name": "Joe Jim\u00e9nez",
+                "start_date": "2026-02-10",
+                "status": "D60",
+                "structured_id": "fc247c9a-380b-4047-b84b-04ffdf86570b"
+              },
+              {
+                "comment": "The Atlanta Braves placed RHP Spencer Schwellenbach on the 60-day injured list with right elbow inflammation.",
+                "date_updated": "2026-02-10",
+                "description": "Elbow",
+                "name": "Spencer Schwellenbach",
+                "start_date": "2026-02-10",
+                "status": "D60",
+                "structured_id": "e3a1c424-8ea0-455d-ae1f-930cb5f1435a"
+              },
+              {
+                "comment": "The Atlanta Braves placed RHP Reynaldo L\u00f3pez on the 15-day injured list with left knee inflammation.",
+                "date_updated": "2026-08-02",
+                "description": "Knee",
+                "name": "Reynaldo L\u00f3pez",
+                "start_date": "2026-07-30",
+                "status": "D15",
+                "structured_id": "78d7efa0-7d4f-46f0-ae81-8426546fffa5"
+              },
+              {
+                "comment": "The Atlanta Braves transferred RHP Spencer Stride from the 15-day injured list to the 60-day injured list.",
+                "date_updated": "2026-06-17",
+                "description": "Elbow",
+                "name": "Spencer Strider",
+                "start_date": "2026-06-12",
+                "status": "D60",
+                "structured_id": "455adc26-3219-4d45-a98b-91fcf25c2d26"
+              }
+            ],
+            "bf277158-b28d-4a0e-aa3b-54fd3acd3009": [
+              {
+                "comment": "The Philadelphia Phillies transferred RHP Brad Keller to the 60-day injured list with a right elbow UCL tear.",
+                "date_updated": "2026-07-24",
+                "description": "Elbow",
+                "name": "Brad Keller",
+                "start_date": "2026-07-13",
+                "status": "D60",
+                "structured_id": "8b3dfda7-8977-4c65-b245-c84f885e9296"
+              },
+              {
+                "comment": "The Philadelphia Phillies placed OF Johan Rojas on the 60-day injured list with a right elbow UCL repair.",
+                "date_updated": "2026-06-25",
+                "description": "Elbow",
+                "name": "Johan Rojas",
+                "start_date": "2026-06-25",
+                "status": "D60",
+                "structured_id": "13cc59c7-ac5d-4117-a200-ba395b5d3c64"
+              },
+              {
+                "comment": "The Philadelphia Phillies placed OF Adolis Garc\u00eda on the 60-day injured list with a right latissimus dorsi tear.",
+                "date_updated": "2026-06-10",
+                "description": "Lat",
+                "name": "Adolis Garc\u00eda",
+                "start_date": "2026-06-10",
+                "status": "D60",
+                "structured_id": "fff3a200-3a52-43ee-8b43-615359ab5b1b"
+              },
+              {
+                "comment": "The Philadelphia Phillies placed RHP Caleb Kilian on the 15-day injured list with a left oblique strain.",
+                "date_updated": "2026-08-10",
+                "description": "Oblique",
+                "name": "Caleb Kilian",
+                "start_date": "2026-08-10",
+                "status": "D15",
+                "structured_id": "aba1e873-5805-40c0-ad8f-8193cdfdb334"
+              },
+              {
+                "comment": "The Philadelphia Phillies transferred LHP Tanner Banks to the 60-day injured list with a left forearm strain.",
+                "date_updated": "2026-07-25",
+                "description": "Forearm",
+                "name": "Tanner Banks",
+                "start_date": "2026-07-09",
+                "status": "D60",
+                "structured_id": "64146d14-4086-48a2-950f-45203528b90b"
+              },
+              {
+                "comment": "The Philadelphia Phillies placed OF Felix Reyes on the 60-day injured list with a right wrist fracture.",
+                "date_updated": "2026-08-20",
+                "description": "Wrist",
+                "name": "Felix Reyes",
+                "start_date": "2026-08-20",
+                "status": "D60",
+                "structured_id": "b5c115bf-f4db-4f69-b435-bb2fd647b91e"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-06T17:10:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "points": 4,
+              "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "winner": false
+            },
+            {
+              "date": "2026-09-05T22:05:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "points": 4,
+              "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "winner": true
+            },
+            {
+              "date": "2026-09-04T22:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+              "points": 2,
+              "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T19:40:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+              "points": 0,
+              "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T01:40:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+              "points": 7,
+              "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+              "winner": true
+            }
+          ],
+          "home_team_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+          "status": "complete"
+        },
+        "end_date": "2026-09-07T19:45:10Z",
+        "id": "e4365308-8270-4aff-8809-21334c5239d8",
+        "last_updated_ts": "2026-09-08T20:05:47.973381Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP071305ATLPHI",
+          "KXMLBEXTRAS-26SEP071305ATLPHI",
+          "KXMLBSPREAD-26SEP071305ATLPHI",
+          "KXMLBTOTAL-26SEP071305ATLPHI"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP071305ATLPHI",
+          "KXMLBEXTRAS-26SEP071305ATLPHI",
+          "KXMLBRFI-26SEP071305ATLPHI",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-1",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-2",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-3",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-4",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-5",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-6",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-7",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-8",
+          "KXMLBINNINGWIN-26SEP071305ATLPHI-9",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-1",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-2",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-3",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-4",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-5",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-6",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-7",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-8",
+          "KXMLBINNINGTOTAL-26SEP071305ATLPHI-9",
+          "KXMLBSPREAD-26SEP071305ATLPHI",
+          "KXMLBTOTAL-26SEP071305ATLPHI",
+          "KXMLBF5-26SEP071305ATLPHI",
+          "KXMLBF5SPREAD-26SEP071305ATLPHI",
+          "KXMLBF5TOTAL-26SEP071305ATLPHI",
+          "KXMLBF3-26SEP071305ATLPHI",
+          "KXMLBF7-26SEP071305ATLPHI",
+          "KXMLBTEAMTOTAL-26SEP071305ATLPHI",
+          "KXMLBHR-26SEP071305ATLPHI",
+          "KXMLBHIT-26SEP071305ATLPHI",
+          "KXMLBTB-26SEP071305ATLPHI",
+          "KXMLBHRR-26SEP071305ATLPHI",
+          "KXMLBRBI-26SEP071305ATLPHI",
+          "KXMLBKS-26SEP071305ATLPHI",
+          "KXMLBOUTS-26SEP071305ATLPHI",
+          "KXMLBWA-26SEP071305ATLPHI",
+          "KXMLBHA-26SEP071305ATLPHI",
+          "KXMLBERA-26SEP071305ATLPHI",
+          "KXMLBSB-26SEP071305ATLPHI"
+        ],
+        "source_id": "4872c887-04f7-433a-ad7e-616e4c25fc16",
+        "source_ids": {
+          "source_2_id": "202609070F94842B",
+          "source_3_id": "4872c887-04f7-433a-ad7e-616e4c25fc16",
+          "source_4_id": "63303047",
+          "source_5_id": "sr:sport_event:63303047"
+        },
+        "start_date": "2026-09-07T17:05:00Z",
+        "title": "Atlanta vs Philadelphia",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP071305ATLPHI&limit=100",
+    "received_at": "2026-09-22T19:18:50.469263+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788800700.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-06T17:10:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "points": 5,
+          "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "winner": true
+        },
+        {
+          "date": "2026-09-05T22:05:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "points": 2,
+          "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "winner": false
+        },
+        {
+          "date": "2026-09-04T22:40:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "points": 5,
+          "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "winner": true
+        },
+        {
+          "date": "2026-09-02T17:05:00+00:00",
+          "opponent_points": 0,
+          "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+          "points": 9,
+          "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T22:45:00+00:00",
+          "opponent_points": 9,
+          "opponent_structured_id": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02",
+          "points": 5,
+          "structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "winner": false
+        }
+      ],
+      "away_team_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "aa47177d-346b-4467-b8d2-dc49e284a2e6": [
+          {
+            "comment": "The Atlanta Braves transferred RHP Robert Suarez from the 15-day injured list to the 60-day injured list with right elbow inflammation.",
+            "date_updated": "2026-09-01",
+            "description": "Elbow",
+            "name": "Robert Suarez",
+            "start_date": "2026-06-23",
+            "status": "D60",
+            "structured_id": "93e5bb3e-ff47-420d-814f-f121858ae7e3"
+          },
+          {
+            "comment": "The Atlanta Braves placed LHP Joey Wentz on the 60-day injured list with a right ACL tear.",
+            "date_updated": "2026-03-24",
+            "description": "Knee",
+            "name": "Joey Wentz",
+            "start_date": "2026-03-24",
+            "status": "D60",
+            "structured_id": "0e955735-daea-45d7-bad6-3f0cd64ab452"
+          },
+          {
+            "comment": "The Atlanta Braves placed RHP Joe Jim\u00e9nez on the 60-day injured list with a left articular cartilage injury.",
+            "date_updated": "2026-02-10",
+            "description": "Knee",
+            "name": "Joe Jim\u00e9nez",
+            "start_date": "2026-02-10",
+            "status": "D60",
+            "structured_id": "fc247c9a-380b-4047-b84b-04ffdf86570b"
+          },
+          {
+            "comment": "The Atlanta Braves placed RHP Spencer Schwellenbach on the 60-day injured list with right elbow inflammation.",
+            "date_updated": "2026-02-10",
+            "description": "Elbow",
+            "name": "Spencer Schwellenbach",
+            "start_date": "2026-02-10",
+            "status": "D60",
+            "structured_id": "e3a1c424-8ea0-455d-ae1f-930cb5f1435a"
+          },
+          {
+            "comment": "The Atlanta Braves placed RHP Reynaldo L\u00f3pez on the 15-day injured list with left knee inflammation.",
+            "date_updated": "2026-08-02",
+            "description": "Knee",
+            "name": "Reynaldo L\u00f3pez",
+            "start_date": "2026-07-30",
+            "status": "D15",
+            "structured_id": "78d7efa0-7d4f-46f0-ae81-8426546fffa5"
+          },
+          {
+            "comment": "The Atlanta Braves transferred RHP Spencer Stride from the 15-day injured list to the 60-day injured list.",
+            "date_updated": "2026-06-17",
+            "description": "Elbow",
+            "name": "Spencer Strider",
+            "start_date": "2026-06-12",
+            "status": "D60",
+            "structured_id": "455adc26-3219-4d45-a98b-91fcf25c2d26"
+          }
+        ],
+        "bf277158-b28d-4a0e-aa3b-54fd3acd3009": [
+          {
+            "comment": "The Philadelphia Phillies transferred RHP Brad Keller to the 60-day injured list with a right elbow UCL tear.",
+            "date_updated": "2026-07-24",
+            "description": "Elbow",
+            "name": "Brad Keller",
+            "start_date": "2026-07-13",
+            "status": "D60",
+            "structured_id": "8b3dfda7-8977-4c65-b245-c84f885e9296"
+          },
+          {
+            "comment": "The Philadelphia Phillies placed OF Johan Rojas on the 60-day injured list with a right elbow UCL repair.",
+            "date_updated": "2026-06-25",
+            "description": "Elbow",
+            "name": "Johan Rojas",
+            "start_date": "2026-06-25",
+            "status": "D60",
+            "structured_id": "13cc59c7-ac5d-4117-a200-ba395b5d3c64"
+          },
+          {
+            "comment": "The Philadelphia Phillies placed OF Adolis Garc\u00eda on the 60-day injured list with a right latissimus dorsi tear.",
+            "date_updated": "2026-06-10",
+            "description": "Lat",
+            "name": "Adolis Garc\u00eda",
+            "start_date": "2026-06-10",
+            "status": "D60",
+            "structured_id": "fff3a200-3a52-43ee-8b43-615359ab5b1b"
+          },
+          {
+            "comment": "The Philadelphia Phillies placed RHP Caleb Kilian on the 15-day injured list with a left oblique strain.",
+            "date_updated": "2026-08-10",
+            "description": "Oblique",
+            "name": "Caleb Kilian",
+            "start_date": "2026-08-10",
+            "status": "D15",
+            "structured_id": "aba1e873-5805-40c0-ad8f-8193cdfdb334"
+          },
+          {
+            "comment": "The Philadelphia Phillies transferred LHP Tanner Banks to the 60-day injured list with a left forearm strain.",
+            "date_updated": "2026-07-25",
+            "description": "Forearm",
+            "name": "Tanner Banks",
+            "start_date": "2026-07-09",
+            "status": "D60",
+            "structured_id": "64146d14-4086-48a2-950f-45203528b90b"
+          },
+          {
+            "comment": "The Philadelphia Phillies placed OF Felix Reyes on the 60-day injured list with a right wrist fracture.",
+            "date_updated": "2026-08-20",
+            "description": "Wrist",
+            "name": "Felix Reyes",
+            "start_date": "2026-08-20",
+            "status": "D60",
+            "structured_id": "b5c115bf-f4db-4f69-b435-bb2fd647b91e"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-06T17:10:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "points": 4,
+          "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "winner": false
+        },
+        {
+          "date": "2026-09-05T22:05:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "points": 4,
+          "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "winner": true
+        },
+        {
+          "date": "2026-09-04T22:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "aa47177d-346b-4467-b8d2-dc49e284a2e6",
+          "points": 2,
+          "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T19:40:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+          "points": 0,
+          "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T01:40:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "38fca57a-f2cb-43b2-9e84-cc250972ac17",
+          "points": 7,
+          "structured_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+          "winner": true
+        }
+      ],
+      "home_team_id": "bf277158-b28d-4a0e-aa3b-54fd3acd3009",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP071305ATLPHI",
+      "status": "complete"
+    },
+    "end_date": "2026-09-07T19:45:10Z",
+    "id": "e4365308-8270-4aff-8809-21334c5239d8",
+    "last_updated_ts": "2026-09-08T20:05:47.973381Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP071305ATLPHI",
+      "KXMLBEXTRAS-26SEP071305ATLPHI",
+      "KXMLBSPREAD-26SEP071305ATLPHI",
+      "KXMLBTOTAL-26SEP071305ATLPHI"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP071305ATLPHI",
+      "KXMLBEXTRAS-26SEP071305ATLPHI",
+      "KXMLBRFI-26SEP071305ATLPHI",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-1",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-2",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-3",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-4",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-5",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-6",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-7",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-8",
+      "KXMLBINNINGWIN-26SEP071305ATLPHI-9",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-1",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-2",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-3",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-4",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-5",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-6",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-7",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-8",
+      "KXMLBINNINGTOTAL-26SEP071305ATLPHI-9",
+      "KXMLBSPREAD-26SEP071305ATLPHI",
+      "KXMLBTOTAL-26SEP071305ATLPHI",
+      "KXMLBF5-26SEP071305ATLPHI",
+      "KXMLBF5SPREAD-26SEP071305ATLPHI",
+      "KXMLBF5TOTAL-26SEP071305ATLPHI",
+      "KXMLBF3-26SEP071305ATLPHI",
+      "KXMLBF7-26SEP071305ATLPHI",
+      "KXMLBTEAMTOTAL-26SEP071305ATLPHI",
+      "KXMLBHR-26SEP071305ATLPHI",
+      "KXMLBHIT-26SEP071305ATLPHI",
+      "KXMLBTB-26SEP071305ATLPHI",
+      "KXMLBHRR-26SEP071305ATLPHI",
+      "KXMLBRBI-26SEP071305ATLPHI",
+      "KXMLBKS-26SEP071305ATLPHI",
+      "KXMLBOUTS-26SEP071305ATLPHI",
+      "KXMLBWA-26SEP071305ATLPHI",
+      "KXMLBHA-26SEP071305ATLPHI",
+      "KXMLBERA-26SEP071305ATLPHI",
+      "KXMLBSB-26SEP071305ATLPHI"
+    ],
+    "source_id": "4872c887-04f7-433a-ad7e-616e4c25fc16",
+    "source_ids": {
+      "source_2_id": "202609070F94842B",
+      "source_3_id": "4872c887-04f7-433a-ad7e-616e4c25fc16",
+      "source_4_id": "63303047",
+      "source_5_id": "sr:sport_event:63303047"
+    },
+    "start_date": "2026-09-07T17:05:00Z",
+    "title": "Atlanta vs Philadelphia",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP071305ATLPHI-ATL",
+    "KXMLBGAME-26SEP071305ATLPHI-PHI"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

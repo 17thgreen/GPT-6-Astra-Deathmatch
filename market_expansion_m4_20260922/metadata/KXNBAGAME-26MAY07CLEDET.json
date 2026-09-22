@@ -1,0 +1,502 @@
+{
+  "series": "KXNBAGAME",
+  "event": "KXNBAGAME-26MAY07CLEDET",
+  "structurally_admitted": false,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNBAGAME-26MAY07CLEDET",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Basketball (M)",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNBAGAME",
+      "settlement_sources": [
+        {
+          "name": "the Governing League",
+          "url": "https://www.nba.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "CLE at DET (May 7)",
+      "title": "Game 2: Cleveland at Detroit"
+    },
+    "markets": []
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNBAGAME-26MAY07CLEDET",
+    "received_at": "2026-09-22T19:19:21.637522+00:00",
+    "prior_errors": []
+  },
+  "historical_markets": {
+    "response": {
+      "cursor": "",
+      "markets": [
+        {
+          "can_close_early": true,
+          "close_time": "2026-05-08T01:43:20Z",
+          "created_time": "2026-05-04T15:01:01.416228Z",
+          "custom_strike": {
+            "basketball_team": "65569528-1888-40aa-9d62-2b0e8142a9b4"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26MAY07CLEDET",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-05-08T02:00:00Z",
+          "expiration_time": "2026-05-21T23:00:00Z",
+          "expiration_value": "Detroit",
+          "last_price_dollars": "0.9900",
+          "latest_expiration_time": "2026-05-21T23:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "0.0100",
+          "no_bid_dollars": "0.0000",
+          "no_sub_title": "Detroit",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-05-08T02:00:00Z",
+          "open_interest_fp": "0.00",
+          "open_time": "2026-05-04T15:05:00Z",
+          "previous_price_dollars": "0.9900",
+          "previous_yes_ask_dollars": "1.0000",
+          "previous_yes_bid_dollars": "0.9900",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "yes",
+          "rules_primary": "If Detroit wins the Game 2: Cleveland at Detroit professional basketball game originally scheduled for May 7, 2026, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "settlement_timer_seconds": 30,
+          "settlement_ts": "2026-05-08T01:43:55.26298Z",
+          "settlement_value_dollars": "1.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26MAY07CLEDET-DET",
+          "title": "Game 2: Cleveland at Detroit Winner?",
+          "updated_time": "2026-05-08T01:43:55.833506Z",
+          "volume_24h_fp": "0.00",
+          "volume_fp": "11098212.51",
+          "yes_ask_dollars": "1.0000",
+          "yes_ask_size_fp": "0.00",
+          "yes_bid_dollars": "0.9900",
+          "yes_bid_size_fp": "-4768079.84",
+          "yes_sub_title": "Detroit"
+        },
+        {
+          "can_close_early": true,
+          "close_time": "2026-05-08T01:43:20Z",
+          "created_time": "2026-05-04T15:01:01.416228Z",
+          "custom_strike": {
+            "basketball_team": "90381a35-42a6-4975-851f-175418e4271a"
+          },
+          "early_close_condition": "This market will close and expire after a winner is declared.",
+          "event_ticker": "KXNBAGAME-26MAY07CLEDET",
+          "exchange_index": 0,
+          "expected_expiration_time": "2026-05-08T02:00:00Z",
+          "expiration_time": "2026-05-21T23:00:00Z",
+          "expiration_value": "Detroit",
+          "last_price_dollars": "0.0100",
+          "latest_expiration_time": "2026-05-21T23:00:00Z",
+          "liquidity_dollars": "0.0000",
+          "market_type": "binary",
+          "no_ask_dollars": "1.0000",
+          "no_bid_dollars": "0.9900",
+          "no_sub_title": "Cleveland",
+          "notional_value_dollars": "1.0000",
+          "occurrence_datetime": "2026-05-08T02:00:00Z",
+          "open_interest_fp": "0.00",
+          "open_time": "2026-05-04T15:05:00Z",
+          "previous_price_dollars": "0.0100",
+          "previous_yes_ask_dollars": "0.0100",
+          "previous_yes_bid_dollars": "0.0000",
+          "price_level_structure": "linear_cent",
+          "price_ranges": [
+            {
+              "end": "1.0000",
+              "start": "0.0000",
+              "step": "0.0100"
+            }
+          ],
+          "result": "no",
+          "rules_primary": "If Cleveland wins the Game 2: Cleveland at Detroit professional basketball game originally scheduled for May 7, 2026, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "settlement_timer_seconds": 30,
+          "settlement_ts": "2026-05-08T01:43:55.26298Z",
+          "settlement_value_dollars": "0.0000",
+          "status": "finalized",
+          "strike_type": "structured",
+          "ticker": "KXNBAGAME-26MAY07CLEDET-CLE",
+          "title": "Game 2: Cleveland at Detroit Winner?",
+          "updated_time": "2026-05-08T01:43:55.833506Z",
+          "volume_24h_fp": "0.00",
+          "volume_fp": "13294163.10",
+          "yes_ask_dollars": "0.0100",
+          "yes_ask_size_fp": "-4496566.71",
+          "yes_bid_dollars": "0.0000",
+          "yes_bid_size_fp": "0.00",
+          "yes_sub_title": "Cleveland"
+        }
+      ]
+    },
+    "source": {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets?event_ticker=KXNBAGAME-26MAY07CLEDET&limit=1000",
+      "received_at": "2026-09-22T19:19:27.245709+00:00",
+      "prior_errors": []
+    }
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-05-08T01:43:20Z",
+      "created_time": "2026-05-04T15:01:01.416228Z",
+      "custom_strike": {
+        "basketball_team": "65569528-1888-40aa-9d62-2b0e8142a9b4"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26MAY07CLEDET",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-05-08T02:00:00Z",
+      "expiration_time": "2026-05-21T23:00:00Z",
+      "expiration_value": "Detroit",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-05-21T23:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.0100",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Detroit",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-05-08T02:00:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-05-04T15:05:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.9900",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Detroit wins the Game 2: Cleveland at Detroit professional basketball game originally scheduled for May 7, 2026, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 30,
+      "settlement_ts": "2026-05-08T01:43:55.26298Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26MAY07CLEDET-DET",
+      "title": "Game 2: Cleveland at Detroit Winner?",
+      "updated_time": "2026-05-08T01:43:55.833506Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "11098212.51",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.9900",
+      "yes_bid_size_fp": "-4768079.84",
+      "yes_sub_title": "Detroit"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-05-08T01:43:20Z",
+      "created_time": "2026-05-04T15:01:01.416228Z",
+      "custom_strike": {
+        "basketball_team": "90381a35-42a6-4975-851f-175418e4271a"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNBAGAME-26MAY07CLEDET",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-05-08T02:00:00Z",
+      "expiration_time": "2026-05-21T23:00:00Z",
+      "expiration_value": "Detroit",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-05-21T23:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.9900",
+      "no_sub_title": "Cleveland",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-05-08T02:00:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-05-04T15:05:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "0.0100",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Cleveland wins the Game 2: Cleveland at Detroit professional basketball game originally scheduled for May 7, 2026, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "settlement_timer_seconds": 30,
+      "settlement_ts": "2026-05-08T01:43:55.26298Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNBAGAME-26MAY07CLEDET-CLE",
+      "title": "Game 2: Cleveland at Detroit Winner?",
+      "updated_time": "2026-05-08T01:43:55.833506Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "13294163.10",
+      "yes_ask_dollars": "0.0100",
+      "yes_ask_size_fp": "-4496566.71",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Cleveland"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-05-05T23:00:00+00:00",
+              "opponent_points": 111,
+              "opponent_structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "points": 101,
+              "structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "winner": false
+            },
+            {
+              "date": "2026-05-03T23:30:00+00:00",
+              "opponent_points": 102,
+              "opponent_structured_id": "96c447dd-2cdd-4c58-a151-ef0df87de981",
+              "points": 114,
+              "structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "winner": true
+            },
+            {
+              "date": "2026-05-01T23:30:00+00:00",
+              "opponent_points": 112,
+              "opponent_structured_id": "96c447dd-2cdd-4c58-a151-ef0df87de981",
+              "points": 110,
+              "structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "winner": false
+            },
+            {
+              "date": "2026-04-29T23:30:00+00:00",
+              "opponent_points": 120,
+              "opponent_structured_id": "96c447dd-2cdd-4c58-a151-ef0df87de981",
+              "points": 125,
+              "structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "winner": true
+            },
+            {
+              "date": "2026-04-26T17:00:00+00:00",
+              "opponent_points": 93,
+              "opponent_structured_id": "96c447dd-2cdd-4c58-a151-ef0df87de981",
+              "points": 89,
+              "structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "winner": false
+            }
+          ],
+          "away_team_id": "90381a35-42a6-4975-851f-175418e4271a",
+          "conference": "eastern",
+          "game_injuries": {
+            "65569528-1888-40aa-9d62-2b0e8142a9b4": [
+              {
+                "comment": "The Pistons listed Huerter as Doubtful for Thursday's (May 7) game 2 against the Cavaliers.",
+                "date_updated": "2026-05-06",
+                "description": "Adductor",
+                "start_date": "2026-04-28",
+                "status": "Day To Day",
+                "structured_id": "33c2e858-9265-47f1-b048-fbab4a62f9c8"
+              }
+            ],
+            "90381a35-42a6-4975-851f-175418e4271a": [
+              {
+                "comment": "The Cavaliers listed Merrill as Questionable for Thursday's (May. 7) game 2 against the Pistons.",
+                "date_updated": "2026-05-05",
+                "description": "Hamstring",
+                "start_date": "2026-05-05",
+                "status": "Day To Day",
+                "structured_id": "5e64b57d-17f7-46e7-af61-b749c276591f"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-05-05T23:00:00+00:00",
+              "opponent_points": 101,
+              "opponent_structured_id": "90381a35-42a6-4975-851f-175418e4271a",
+              "points": 111,
+              "structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "winner": true
+            },
+            {
+              "date": "2026-05-03T19:30:00+00:00",
+              "opponent_points": 94,
+              "opponent_structured_id": "00c3e69d-d9b9-4ac3-bf79-19707fe43637",
+              "points": 116,
+              "structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "winner": true
+            },
+            {
+              "date": "2026-05-01T23:00:00+00:00",
+              "opponent_points": 79,
+              "opponent_structured_id": "00c3e69d-d9b9-4ac3-bf79-19707fe43637",
+              "points": 93,
+              "structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "winner": true
+            },
+            {
+              "date": "2026-04-29T23:00:00+00:00",
+              "opponent_points": 109,
+              "opponent_structured_id": "00c3e69d-d9b9-4ac3-bf79-19707fe43637",
+              "points": 116,
+              "structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "winner": true
+            },
+            {
+              "date": "2026-04-28T00:00:00+00:00",
+              "opponent_points": 94,
+              "opponent_structured_id": "00c3e69d-d9b9-4ac3-bf79-19707fe43637",
+              "points": 88,
+              "structured_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+              "winner": false
+            }
+          ],
+          "home_team_id": "65569528-1888-40aa-9d62-2b0e8142a9b4",
+          "is_playoffs": true,
+          "league": "NBA",
+          "main_game_event_ticker": "KXNBAGAME-26MAY07CLEDET",
+          "parent_series": "KXNBASERIES-26CLEDETR2",
+          "player_id_mapping": {
+            "00fb2704-aa25-4ef7-8972-cde454810810": "d3705d84-27ff-4482-ab98-bba306710adc",
+            "030424b9-7367-45e1-b9d4-c8dee3a89e53": "6eaf3b9a-9461-4d09-b7c8-f99a4a7c22e2",
+            "18c14a3d-2ce0-451c-bceb-b0ce13c16ead": "54277f13-99a5-4ee0-934a-2051f41ef6bc",
+            "18d35316-9f40-408c-abcc-ab49e06ef8e8": "74de2700-bb3b-4770-98b7-4c20677814cf",
+            "1a120d1a-0202-4039-a00e-4daa8b7ffcfc": "8dc06468-b5e3-4d7f-b644-f3ced82f0246",
+            "22be3275-1ef8-47f7-a30d-af38f7bc96b2": "dfbabd3c-b574-4d27-81a8-36653c7d06e9",
+            "252f4b13-6abb-45dc-ae85-f822b817cb51": "a49a4c93-ac16-4556-9cf5-fce719ca9208",
+            "4707d9b8-fca3-4550-ae25-bd4b449e4dbf": "ac20a549-f6e2-4feb-94df-b86af72950cc",
+            "536e0e15-02b5-4994-9613-0f5ec88f82e0": "7e264353-4d67-4c27-8757-e97bbd629b3e",
+            "57d55cd4-6ab8-4255-a248-bef800c0cbab": "0a8c3059-aa64-4871-8291-fff857a201af",
+            "5bb6159f-27ae-406e-ac5b-e8911f0cbb7c": "1935e9f5-be0f-4138-9ca3-1499c08738b9",
+            "5efce548-15a0-4a8c-9f63-5f5db4851696": "1bd97b36-a12a-4e51-a4dc-bce1f4afdc25",
+            "68a8c4ea-1d77-4a42-bea4-dbe9a162332a": "24c7e18f-1086-4b18-b37c-631d2c39e0e9",
+            "6b8ed06d-a33f-46ce-b416-647100736df8": "5e64b57d-17f7-46e7-af61-b749c276591f",
+            "7458ef96-cab7-433e-a761-4e93537f4b52": "67469ff2-4ef3-45c9-8d29-f89a0a5f05c5",
+            "79fc04d6-0dcf-4817-ab79-2528026d72be": "5ac2f6ed-c991-40a4-afa0-aff7c779b0d7",
+            "82f09975-6a8d-42e4-b42c-a52b9349ed50": "cbf135fe-afac-422d-8f3e-9f3291a954a1",
+            "858d255e-9a7b-4c7a-aac4-fc7cf3a5f238": "33c2e858-9265-47f1-b048-fbab4a62f9c8",
+            "90b52759-3f0e-4d93-b5ca-fcb53afce857": "7709e8e3-d714-4bf9-8655-793857fe3e50",
+            "9d4d6c87-78db-4556-b94a-bb8d566dd004": "60e91db8-8128-4e53-9b13-eabdf6913ab5",
+            "a2b3bc56-566e-443d-affe-7837a59a1ed7": "7864645c-a818-47f6-8e3a-2f74c8e083e4",
+            "a2c6a907-282f-4172-9d60-42d03987da0e": "f6c3270e-ba4c-485c-829d-cdbf29e5f34b",
+            "a3fff5c7-19b6-4dac-bd75-11b944bea505": "67a44479-d07a-4782-b8a8-c997f71f1327",
+            "a52b2c84-9c3d-4d6e-8a3b-10e75d11c2bc": "d5324b8e-901b-404d-bfef-a5f5d62bed85",
+            "ac9f5700-2da0-4c7d-a031-ed1acf0d6581": "2d0fbc02-5133-41b7-9eac-83abfca3a748",
+            "ad389979-d1d5-4f26-ad64-3e516b3373a3": "e92aa777-3acd-4bce-a1cb-c734771fb903",
+            "b6dde96e-3748-4cbe-86d2-798d5dffb3c0": "6daf79e8-b1ff-4208-83b1-ef4334d6f2c6",
+            "bbeecf0c-62c6-4211-991d-2afaf2403623": "22c635e6-e6ac-4e0f-bff6-a8b77e157103",
+            "c34996e5-8be6-4053-a2f2-0acb0155e18c": "ade1d2f5-5be7-40f0-819d-7216389b2777",
+            "c7c7c72b-7cee-409a-b2b5-256d173ac305": "968216f4-82ae-4763-9a71-6875cf126a23",
+            "d64b602e-45f2-4ba9-878b-0a4f7210ec77": "e6212176-2793-4f9a-8e1b-7d294eca2787",
+            "e23521cd-8e92-4701-b9e7-dc4acd21dfec": "b5fee735-ad6a-4350-85be-62ebd0ff9800",
+            "f6aff1dc-15b9-4c89-a2fb-746f4cf78890": "e59d506e-4dfc-496b-87e1-f74fda25816d",
+            "fa95eb6b-9008-4d67-8476-3b69e90b8688": "c151ea5c-a22e-4083-a35e-eac7502ee20e",
+            "ff6f99de-5cd8-4bf1-a5d2-6bebcf4350ee": "819b5bea-f98f-4e24-a5e8-6f3f33270ae7"
+          },
+          "series_game_number": "Game 2",
+          "series_to_stat_mapping": {
+            "KXNBA3PT": "three_points_made",
+            "KXNBAAST": "assists",
+            "KXNBABLK": "blocks",
+            "KXNBAPTS": "points",
+            "KXNBAREB": "rebounds",
+            "KXNBASTL": "steals"
+          },
+          "series_to_stat_name_mapping": {
+            "KXNBA3PT": "threes",
+            "KXNBAAST": "assists",
+            "KXNBABLK": "blocks",
+            "KXNBAPTS": "points",
+            "KXNBAREB": "rebounds",
+            "KXNBASTL": "steals"
+          },
+          "source_id": "575f9ecc-96a7-435d-8d1d-8fde45e2bade",
+          "status": "inprogress"
+        },
+        "end_date": "2026-05-08T14:49:55Z",
+        "id": "0dcf4f85-1b1c-48d2-bb38-3d14e3450a49",
+        "last_updated_ts": "2026-05-09T15:26:13.295133Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNBAGAME-26MAY07CLEDET",
+          "KXNBASPREAD-26MAY07CLEDET",
+          "KXNBATOTAL-26MAY07CLEDET",
+          "KXNBATEAMTOTAL-26MAY07CLEDET",
+          "KXNBAOVERTIME-26MAY07CLEDET",
+          "KXNBA1HWINNER-26MAY07CLEDET",
+          "KXNBA2HWINNER-26MAY07CLEDET",
+          "KXNBA1HSPREAD-26MAY07CLEDET",
+          "KXNBA1HTOTAL-26MAY07CLEDET",
+          "KXNBA2HTOTAL-26MAY07CLEDET",
+          "KXNBA2HSPREAD-26MAY07CLEDET"
+        ],
+        "related_event_tickers": [
+          "KXNBAGAME-26MAY07CLEDET",
+          "KXNBASPREAD-26MAY07CLEDET",
+          "KXNBATOTAL-26MAY07CLEDET",
+          "KXNBATEAMTOTAL-26MAY07CLEDET",
+          "KXNBAOVERTIME-26MAY07CLEDET",
+          "KXNBAMENTION-26MAY07CLEDET",
+          "KXNBAPTS-26MAY07CLEDET",
+          "KXNBAREB-26MAY07CLEDET",
+          "KXNBAAST-26MAY07CLEDET",
+          "KXNBASTL-26MAY07CLEDET",
+          "KXNBABLK-26MAY07CLEDET",
+          "KXNBA3PT-26MAY07CLEDET",
+          "KXNBA2D-26MAY07CLEDET",
+          "KXNBA3D-26MAY07CLEDET",
+          "KXNBAPTSLEADER-26MAY07CLEDET",
+          "KXNBA1HWINNER-26MAY07CLEDET",
+          "KXNBA2HWINNER-26MAY07CLEDET",
+          "KXNBA1HSPREAD-26MAY07CLEDET",
+          "KXNBA1HTOTAL-26MAY07CLEDET",
+          "KXNBA2HTOTAL-26MAY07CLEDET",
+          "KXNBA2HSPREAD-26MAY07CLEDET"
+        ],
+        "source_id": "575f9ecc-96a7-435d-8d1d-8fde45e2bade",
+        "source_ids": {
+          "source_2_id": "20260507CDBCE493",
+          "source_3_id": "575f9ecc-96a7-435d-8d1d-8fde45e2bade",
+          "source_4_id": "70504994",
+          "source_5_id": "sr:match:70504994"
+        },
+        "start_date": "2026-05-07T23:00:00Z",
+        "title": "Cleveland at Detroit",
+        "type": "basketball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNBAGAME-26MAY07CLEDET&limit=100",
+    "received_at": "2026-09-22T19:19:32.163314+00:00",
+    "prior_errors": []
+  },
+  "failure": "Missing contract rules"
+}

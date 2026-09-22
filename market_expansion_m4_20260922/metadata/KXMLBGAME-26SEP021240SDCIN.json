@@ -1,0 +1,902 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP021240SDCIN",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "SD vs CIN (Sep 2)",
+      "title": "San Diego vs Cincinnati"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-02T19:39:49Z",
+        "created_time": "2026-08-30T16:45:44.203925Z",
+        "custom_strike": {
+          "baseball_team": "807fa239-87eb-4e89-a969-649ab2027bc4"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-02T19:40:00Z",
+        "expiration_time": "2026-09-05T16:40:00Z",
+        "expiration_value": "Cincinnati",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-05T16:40:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "San Diego",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-02T19:40:00Z",
+        "open_interest_fp": "2862757.37",
+        "open_time": "2026-08-30T16:55:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If San Diego wins the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-02T19:42:51.308904Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP021240SDCIN-SD",
+        "title": "San Diego wins",
+        "updated_time": "2026-09-02T19:42:51.368084Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "3959728.43",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "San Diego"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-02T19:39:49Z",
+        "created_time": "2026-08-30T16:45:44.203925Z",
+        "custom_strike": {
+          "baseball_team": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-02T19:40:00Z",
+        "expiration_time": "2026-09-05T16:40:00Z",
+        "expiration_value": "Cincinnati",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-05T16:40:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Cincinnati",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-02T19:40:00Z",
+        "open_interest_fp": "827811.56",
+        "open_time": "2026-08-30T16:55:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Cincinnati wins the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-02T19:42:51.308904Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP021240SDCIN-CIN",
+        "title": "Cincinnati wins",
+        "updated_time": "2026-09-02T19:42:51.368084Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1638434.70",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Cincinnati"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP021240SDCIN",
+    "received_at": "2026-09-22T19:18:36.320835+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-02T19:39:49Z",
+      "created_time": "2026-08-30T16:45:44.203925Z",
+      "custom_strike": {
+        "baseball_team": "807fa239-87eb-4e89-a969-649ab2027bc4"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-02T19:40:00Z",
+      "expiration_time": "2026-09-05T16:40:00Z",
+      "expiration_value": "Cincinnati",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-05T16:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "San Diego",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-02T19:40:00Z",
+      "open_interest_fp": "2862757.37",
+      "open_time": "2026-08-30T16:55:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If San Diego wins the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-02T19:42:51.308904Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP021240SDCIN-SD",
+      "title": "San Diego wins",
+      "updated_time": "2026-09-02T19:42:51.368084Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "3959728.43",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "San Diego"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-02T19:39:49Z",
+      "created_time": "2026-08-30T16:45:44.203925Z",
+      "custom_strike": {
+        "baseball_team": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-02T19:40:00Z",
+      "expiration_time": "2026-09-05T16:40:00Z",
+      "expiration_value": "Cincinnati",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-05T16:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Cincinnati",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-02T19:40:00Z",
+      "open_interest_fp": "827811.56",
+      "open_time": "2026-08-30T16:55:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Cincinnati wins the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the San Diego vs Cincinnati professional baseball game originally scheduled for Sep 2, 2026 at 12:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-02T19:42:51.308904Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP021240SDCIN-CIN",
+      "title": "Cincinnati wins",
+      "updated_time": "2026-09-02T19:42:51.368084Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1638434.70",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Cincinnati"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "points": 3,
+              "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "winner": false
+            },
+            {
+              "date": "2026-08-31T22:40:00+00:00",
+              "opponent_points": 0,
+              "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "points": 5,
+              "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "winner": true
+            },
+            {
+              "date": "2026-08-30T17:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+              "points": 4,
+              "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "winner": false
+            },
+            {
+              "date": "2026-08-29T20:10:00+00:00",
+              "opponent_points": 7,
+              "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+              "points": 6,
+              "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "winner": false
+            },
+            {
+              "date": "2026-08-28T23:10:00+00:00",
+              "opponent_points": 9,
+              "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+              "points": 4,
+              "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "winner": false
+            }
+          ],
+          "away_team_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "807fa239-87eb-4e89-a969-649ab2027bc4": [
+              {
+                "comment": "The San Diego Padres placed RHP Jeremiah Estrada on the 15-day injured list with right shoulder impingement.",
+                "date_updated": "2026-08-26",
+                "description": "Shoulder",
+                "name": "Jeremiah Estrada",
+                "start_date": "2026-08-25",
+                "status": "D15",
+                "structured_id": "55aa033b-5d39-4524-93a1-17b28831a1c6"
+              },
+              {
+                "comment": "The San Diego Padres transferred RHP Lucas Giolito to the 60-day injured list with right elbow inflammation.",
+                "date_updated": "2026-06-23",
+                "description": "Elbow",
+                "name": "Lucas Giolito",
+                "start_date": "2026-06-23",
+                "status": "D60",
+                "structured_id": "e9d7d9ea-1a24-47d5-b739-f4951df44b98"
+              },
+              {
+                "comment": "The San Diego Padres transferred OF Luis Rengifo from the 10-day injured list to the 60-day injured list with a right knee sprain.",
+                "date_updated": "2026-09-01",
+                "description": "Knee",
+                "name": "Luis Rengifo",
+                "start_date": "2026-08-29",
+                "status": "D60",
+                "structured_id": "efe72309-e440-4c4f-ab81-a1c281340392"
+              },
+              {
+                "comment": "The San Diego Padres placed DH Miguel Andujar on the 10-day injured list due to fractured right wrist.",
+                "date_updated": "2026-07-20",
+                "description": "Wrist",
+                "name": "Miguel Andujar",
+                "start_date": "2026-07-20",
+                "status": "D10",
+                "structured_id": "614add2e-abd2-4c8c-b941-328b3df1af36"
+              },
+              {
+                "comment": "The San Diego Padres transferred RHP Joe Musgrove to the 60-day injured list due to his elbow surgery.",
+                "date_updated": "2026-03-25",
+                "description": "Elbow",
+                "name": "Joe Musgrove",
+                "start_date": "2026-03-25",
+                "status": "D60",
+                "structured_id": "327e7c26-803b-4d08-80f6-5ad9d015a8b7"
+              },
+              {
+                "comment": "The San Diego Padres placed RHP Jason Adam on the 60-day injured list with a right shoulder strain.",
+                "date_updated": "2026-07-02",
+                "description": "Shoulder",
+                "name": "Jason Adam",
+                "start_date": "2026-06-30",
+                "status": "D60",
+                "structured_id": "a33e4c57-2981-4035-ada6-cfcb7e925d0a"
+              },
+              {
+                "comment": "The San Diego Padres transferred RHP Bryan Hoeing from the 15-day injured list to the 60-day injured list due to a right elbow surgery.",
+                "date_updated": "2026-04-22",
+                "description": "Elbow",
+                "name": "Bryan Hoeing",
+                "start_date": "2026-03-25",
+                "status": "D60",
+                "structured_id": "7f59400b-c588-4768-835a-ec7c9aa54217"
+              },
+              {
+                "comment": "The San Diego Padres placed OF Ram\u00f3n Laureano on the 60-day injured list.",
+                "date_updated": "2026-06-05",
+                "description": "Hip",
+                "name": "Ram\u00f3n Laureano",
+                "start_date": "2026-05-31",
+                "status": "D60",
+                "structured_id": "0b0d52b8-44ad-476f-9be0-1fda279406da"
+              },
+              {
+                "comment": "The San Diego Padres transferred RHP Nick Pivetta from the 15-day injured list to the 60-day injured list with a right elbow inflammation.",
+                "date_updated": "2026-06-02",
+                "description": "Elbow",
+                "name": "Nick Pivetta",
+                "start_date": "2026-04-13",
+                "status": "D60",
+                "structured_id": "385eae4e-e8b4-415d-bcc6-271488320018"
+              },
+              {
+                "comment": "The San Diego Padres placed INF Gavin Sheets on the 10-day injured list with left foot sprain.",
+                "date_updated": "2026-08-30",
+                "description": "Foot",
+                "name": "Gavin Sheets",
+                "start_date": "2026-08-30",
+                "status": "D10",
+                "structured_id": "17001645-ad91-4730-9f75-c6cbb7711375"
+              }
+            ],
+            "ed1fa89d-04cc-4a5d-9e87-9a89c0142724": [
+              {
+                "comment": "The Cincinnati Reds placed INF Spencer Steer on the 10-day injured list with right wrist sprain.",
+                "date_updated": "2026-07-27",
+                "description": "Wrist",
+                "name": "Spencer Steer",
+                "start_date": "2026-07-26",
+                "status": "D10",
+                "structured_id": "757b1795-461a-4cca-93e6-ff83f4dcfe11"
+              },
+              {
+                "comment": "The Cincinnati Reds placed INF Michael Toglia on the 10-day injured list with right shoulder dislocation.",
+                "date_updated": "2026-08-23",
+                "description": "Shoulder",
+                "name": "Michael Toglia",
+                "start_date": "2026-08-22",
+                "status": "D10",
+                "structured_id": "ce742f0d-b8dd-4bd6-b7bf-b55799141db9"
+              },
+              {
+                "comment": "The Cincinnati Reds said on Thursday (Aug. 13) that RHP Hunter Greene will miss the entire 2027 season after undergoing Tommy John surgery.",
+                "date_updated": "2026-08-13",
+                "description": "Elbow",
+                "name": "Hunter Greene",
+                "start_date": "2026-08-02",
+                "status": "D60",
+                "structured_id": "26a4a9f1-eb66-44da-81b6-24f97d066f86"
+              },
+              {
+                "comment": "The Cincinnati Reds placed RHP Graham Ashcraft on the 60-day injured list due to a sprained right forearm.",
+                "date_updated": "2026-05-29",
+                "description": "Forearm",
+                "name": "Graham Ashcraft",
+                "start_date": "2026-05-29",
+                "status": "D60",
+                "structured_id": "82b35d3d-21d5-4e06-989b-c7b14f0aec62"
+              },
+              {
+                "comment": "The Cincinnati Reds transferred OF Blake Dunn from the 10-day injured list to the 60-day injured list with a right elbow sprain.",
+                "date_updated": "2026-08-06",
+                "description": "Elbow",
+                "name": "Blake Dunn",
+                "start_date": "2026-06-27",
+                "status": "D60",
+                "structured_id": "ec8a934b-30d5-43c3-a6c4-88b0e60d2db9"
+              },
+              {
+                "comment": "The Cincinnati Reds placed INF Ke'Bryan Hayes on the 10-day injured list due to a left groin strain.",
+                "date_updated": "2026-08-28",
+                "description": "Groin",
+                "name": "Ke'Bryan Hayes",
+                "start_date": "2026-08-28",
+                "status": "D10",
+                "structured_id": "4d3ba9a0-52b8-4726-ad35-13118f1503b9"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "points": 4,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            },
+            {
+              "date": "2026-08-31T22:40:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+              "points": 0,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": false
+            },
+            {
+              "date": "2026-08-30T23:20:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 7,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            },
+            {
+              "date": "2026-08-29T18:20:00+00:00",
+              "opponent_points": 17,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 5,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": false
+            },
+            {
+              "date": "2026-08-28T18:20:00+00:00",
+              "opponent_points": 8,
+              "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+              "points": 10,
+              "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+              "winner": true
+            }
+          ],
+          "home_team_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+          "status": "complete"
+        },
+        "end_date": "2026-09-02T20:05:07Z",
+        "id": "7fc59363-b874-4e5a-ae12-a84218ef541a",
+        "last_updated_ts": "2026-09-03T21:03:39.786228Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP021240SDCIN",
+          "KXMLBEXTRAS-26SEP021240SDCIN",
+          "KXMLBSPREAD-26SEP021240SDCIN",
+          "KXMLBTOTAL-26SEP021240SDCIN"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP021240SDCIN",
+          "KXMLBEXTRAS-26SEP021240SDCIN",
+          "KXMLBRFI-26SEP021240SDCIN",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-1",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-2",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-3",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-4",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-5",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-6",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-7",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-8",
+          "KXMLBINNINGWIN-26SEP021240SDCIN-9",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-1",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-2",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-3",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-4",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-5",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-6",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-7",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-8",
+          "KXMLBINNINGTOTAL-26SEP021240SDCIN-9",
+          "KXMLBSPREAD-26SEP021240SDCIN",
+          "KXMLBTOTAL-26SEP021240SDCIN",
+          "KXMLBF5-26SEP021240SDCIN",
+          "KXMLBF5SPREAD-26SEP021240SDCIN",
+          "KXMLBF5TOTAL-26SEP021240SDCIN",
+          "KXMLBF3-26SEP021240SDCIN",
+          "KXMLBF7-26SEP021240SDCIN",
+          "KXMLBTEAMTOTAL-26SEP021240SDCIN",
+          "KXMLBHR-26SEP021240SDCIN",
+          "KXMLBHIT-26SEP021240SDCIN",
+          "KXMLBTB-26SEP021240SDCIN",
+          "KXMLBHRR-26SEP021240SDCIN",
+          "KXMLBRBI-26SEP021240SDCIN",
+          "KXMLBKS-26SEP021240SDCIN",
+          "KXMLBOUTS-26SEP021240SDCIN",
+          "KXMLBSB-26SEP021240SDCIN",
+          "KXMLBWA-26SEP021240SDCIN",
+          "KXMLBHA-26SEP021240SDCIN",
+          "KXMLBERA-26SEP021240SDCIN"
+        ],
+        "source_id": "52bc327b-a320-4ffc-bf6e-4cb001ad5668",
+        "source_ids": {
+          "source_2_id": "20260902390DC042",
+          "source_3_id": "52bc327b-a320-4ffc-bf6e-4cb001ad5668",
+          "source_4_id": "63301763",
+          "source_5_id": "sr:sport_event:63301763"
+        },
+        "start_date": "2026-09-02T16:40:00Z",
+        "title": "San Diego vs Cincinnati",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP021240SDCIN&limit=100",
+    "received_at": "2026-09-22T19:18:40.565705+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788367200.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "points": 3,
+          "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "winner": false
+        },
+        {
+          "date": "2026-08-31T22:40:00+00:00",
+          "opponent_points": 0,
+          "opponent_structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "points": 5,
+          "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "winner": true
+        },
+        {
+          "date": "2026-08-30T17:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+          "points": 4,
+          "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "winner": false
+        },
+        {
+          "date": "2026-08-29T20:10:00+00:00",
+          "opponent_points": 7,
+          "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+          "points": 6,
+          "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "winner": false
+        },
+        {
+          "date": "2026-08-28T23:10:00+00:00",
+          "opponent_points": 9,
+          "opponent_structured_id": "942f3f85-869a-4f7a-8e5a-336365c5294b",
+          "points": 4,
+          "structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "winner": false
+        }
+      ],
+      "away_team_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "807fa239-87eb-4e89-a969-649ab2027bc4": [
+          {
+            "comment": "The San Diego Padres placed RHP Jeremiah Estrada on the 15-day injured list with right shoulder impingement.",
+            "date_updated": "2026-08-26",
+            "description": "Shoulder",
+            "name": "Jeremiah Estrada",
+            "start_date": "2026-08-25",
+            "status": "D15",
+            "structured_id": "55aa033b-5d39-4524-93a1-17b28831a1c6"
+          },
+          {
+            "comment": "The San Diego Padres transferred RHP Lucas Giolito to the 60-day injured list with right elbow inflammation.",
+            "date_updated": "2026-06-23",
+            "description": "Elbow",
+            "name": "Lucas Giolito",
+            "start_date": "2026-06-23",
+            "status": "D60",
+            "structured_id": "e9d7d9ea-1a24-47d5-b739-f4951df44b98"
+          },
+          {
+            "comment": "The San Diego Padres transferred OF Luis Rengifo from the 10-day injured list to the 60-day injured list with a right knee sprain.",
+            "date_updated": "2026-09-01",
+            "description": "Knee",
+            "name": "Luis Rengifo",
+            "start_date": "2026-08-29",
+            "status": "D60",
+            "structured_id": "efe72309-e440-4c4f-ab81-a1c281340392"
+          },
+          {
+            "comment": "The San Diego Padres placed DH Miguel Andujar on the 10-day injured list due to fractured right wrist.",
+            "date_updated": "2026-07-20",
+            "description": "Wrist",
+            "name": "Miguel Andujar",
+            "start_date": "2026-07-20",
+            "status": "D10",
+            "structured_id": "614add2e-abd2-4c8c-b941-328b3df1af36"
+          },
+          {
+            "comment": "The San Diego Padres transferred RHP Joe Musgrove to the 60-day injured list due to his elbow surgery.",
+            "date_updated": "2026-03-25",
+            "description": "Elbow",
+            "name": "Joe Musgrove",
+            "start_date": "2026-03-25",
+            "status": "D60",
+            "structured_id": "327e7c26-803b-4d08-80f6-5ad9d015a8b7"
+          },
+          {
+            "comment": "The San Diego Padres placed RHP Jason Adam on the 60-day injured list with a right shoulder strain.",
+            "date_updated": "2026-07-02",
+            "description": "Shoulder",
+            "name": "Jason Adam",
+            "start_date": "2026-06-30",
+            "status": "D60",
+            "structured_id": "a33e4c57-2981-4035-ada6-cfcb7e925d0a"
+          },
+          {
+            "comment": "The San Diego Padres transferred RHP Bryan Hoeing from the 15-day injured list to the 60-day injured list due to a right elbow surgery.",
+            "date_updated": "2026-04-22",
+            "description": "Elbow",
+            "name": "Bryan Hoeing",
+            "start_date": "2026-03-25",
+            "status": "D60",
+            "structured_id": "7f59400b-c588-4768-835a-ec7c9aa54217"
+          },
+          {
+            "comment": "The San Diego Padres placed OF Ram\u00f3n Laureano on the 60-day injured list.",
+            "date_updated": "2026-06-05",
+            "description": "Hip",
+            "name": "Ram\u00f3n Laureano",
+            "start_date": "2026-05-31",
+            "status": "D60",
+            "structured_id": "0b0d52b8-44ad-476f-9be0-1fda279406da"
+          },
+          {
+            "comment": "The San Diego Padres transferred RHP Nick Pivetta from the 15-day injured list to the 60-day injured list with a right elbow inflammation.",
+            "date_updated": "2026-06-02",
+            "description": "Elbow",
+            "name": "Nick Pivetta",
+            "start_date": "2026-04-13",
+            "status": "D60",
+            "structured_id": "385eae4e-e8b4-415d-bcc6-271488320018"
+          },
+          {
+            "comment": "The San Diego Padres placed INF Gavin Sheets on the 10-day injured list with left foot sprain.",
+            "date_updated": "2026-08-30",
+            "description": "Foot",
+            "name": "Gavin Sheets",
+            "start_date": "2026-08-30",
+            "status": "D10",
+            "structured_id": "17001645-ad91-4730-9f75-c6cbb7711375"
+          }
+        ],
+        "ed1fa89d-04cc-4a5d-9e87-9a89c0142724": [
+          {
+            "comment": "The Cincinnati Reds placed INF Spencer Steer on the 10-day injured list with right wrist sprain.",
+            "date_updated": "2026-07-27",
+            "description": "Wrist",
+            "name": "Spencer Steer",
+            "start_date": "2026-07-26",
+            "status": "D10",
+            "structured_id": "757b1795-461a-4cca-93e6-ff83f4dcfe11"
+          },
+          {
+            "comment": "The Cincinnati Reds placed INF Michael Toglia on the 10-day injured list with right shoulder dislocation.",
+            "date_updated": "2026-08-23",
+            "description": "Shoulder",
+            "name": "Michael Toglia",
+            "start_date": "2026-08-22",
+            "status": "D10",
+            "structured_id": "ce742f0d-b8dd-4bd6-b7bf-b55799141db9"
+          },
+          {
+            "comment": "The Cincinnati Reds said on Thursday (Aug. 13) that RHP Hunter Greene will miss the entire 2027 season after undergoing Tommy John surgery.",
+            "date_updated": "2026-08-13",
+            "description": "Elbow",
+            "name": "Hunter Greene",
+            "start_date": "2026-08-02",
+            "status": "D60",
+            "structured_id": "26a4a9f1-eb66-44da-81b6-24f97d066f86"
+          },
+          {
+            "comment": "The Cincinnati Reds placed RHP Graham Ashcraft on the 60-day injured list due to a sprained right forearm.",
+            "date_updated": "2026-05-29",
+            "description": "Forearm",
+            "name": "Graham Ashcraft",
+            "start_date": "2026-05-29",
+            "status": "D60",
+            "structured_id": "82b35d3d-21d5-4e06-989b-c7b14f0aec62"
+          },
+          {
+            "comment": "The Cincinnati Reds transferred OF Blake Dunn from the 10-day injured list to the 60-day injured list with a right elbow sprain.",
+            "date_updated": "2026-08-06",
+            "description": "Elbow",
+            "name": "Blake Dunn",
+            "start_date": "2026-06-27",
+            "status": "D60",
+            "structured_id": "ec8a934b-30d5-43c3-a6c4-88b0e60d2db9"
+          },
+          {
+            "comment": "The Cincinnati Reds placed INF Ke'Bryan Hayes on the 10-day injured list due to a left groin strain.",
+            "date_updated": "2026-08-28",
+            "description": "Groin",
+            "name": "Ke'Bryan Hayes",
+            "start_date": "2026-08-28",
+            "status": "D10",
+            "structured_id": "4d3ba9a0-52b8-4726-ad35-13118f1503b9"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "points": 4,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        },
+        {
+          "date": "2026-08-31T22:40:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "807fa239-87eb-4e89-a969-649ab2027bc4",
+          "points": 0,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": false
+        },
+        {
+          "date": "2026-08-30T23:20:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 7,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        },
+        {
+          "date": "2026-08-29T18:20:00+00:00",
+          "opponent_points": 17,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 5,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": false
+        },
+        {
+          "date": "2026-08-28T18:20:00+00:00",
+          "opponent_points": 8,
+          "opponent_structured_id": "2101af91-b334-4db1-b859-0cc50c1e2d4a",
+          "points": 10,
+          "structured_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+          "winner": true
+        }
+      ],
+      "home_team_id": "ed1fa89d-04cc-4a5d-9e87-9a89c0142724",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP021240SDCIN",
+      "status": "complete"
+    },
+    "end_date": "2026-09-02T20:05:07Z",
+    "id": "7fc59363-b874-4e5a-ae12-a84218ef541a",
+    "last_updated_ts": "2026-09-03T21:03:39.786228Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP021240SDCIN",
+      "KXMLBEXTRAS-26SEP021240SDCIN",
+      "KXMLBSPREAD-26SEP021240SDCIN",
+      "KXMLBTOTAL-26SEP021240SDCIN"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP021240SDCIN",
+      "KXMLBEXTRAS-26SEP021240SDCIN",
+      "KXMLBRFI-26SEP021240SDCIN",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-1",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-2",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-3",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-4",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-5",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-6",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-7",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-8",
+      "KXMLBINNINGWIN-26SEP021240SDCIN-9",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-1",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-2",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-3",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-4",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-5",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-6",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-7",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-8",
+      "KXMLBINNINGTOTAL-26SEP021240SDCIN-9",
+      "KXMLBSPREAD-26SEP021240SDCIN",
+      "KXMLBTOTAL-26SEP021240SDCIN",
+      "KXMLBF5-26SEP021240SDCIN",
+      "KXMLBF5SPREAD-26SEP021240SDCIN",
+      "KXMLBF5TOTAL-26SEP021240SDCIN",
+      "KXMLBF3-26SEP021240SDCIN",
+      "KXMLBF7-26SEP021240SDCIN",
+      "KXMLBTEAMTOTAL-26SEP021240SDCIN",
+      "KXMLBHR-26SEP021240SDCIN",
+      "KXMLBHIT-26SEP021240SDCIN",
+      "KXMLBTB-26SEP021240SDCIN",
+      "KXMLBHRR-26SEP021240SDCIN",
+      "KXMLBRBI-26SEP021240SDCIN",
+      "KXMLBKS-26SEP021240SDCIN",
+      "KXMLBOUTS-26SEP021240SDCIN",
+      "KXMLBSB-26SEP021240SDCIN",
+      "KXMLBWA-26SEP021240SDCIN",
+      "KXMLBHA-26SEP021240SDCIN",
+      "KXMLBERA-26SEP021240SDCIN"
+    ],
+    "source_id": "52bc327b-a320-4ffc-bf6e-4cb001ad5668",
+    "source_ids": {
+      "source_2_id": "20260902390DC042",
+      "source_3_id": "52bc327b-a320-4ffc-bf6e-4cb001ad5668",
+      "source_4_id": "63301763",
+      "source_5_id": "sr:sport_event:63301763"
+    },
+    "start_date": "2026-09-02T16:40:00Z",
+    "title": "San Diego vs Cincinnati",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP021240SDCIN-CIN",
+    "KXMLBGAME-26SEP021240SDCIN-SD"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

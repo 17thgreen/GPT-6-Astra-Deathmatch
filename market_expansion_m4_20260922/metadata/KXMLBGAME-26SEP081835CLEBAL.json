@@ -1,0 +1,866 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP081835CLEBAL",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "CLE vs BAL (Sep 8)",
+      "title": "Cleveland vs Baltimore"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-09T01:44:32Z",
+        "created_time": "2026-09-05T22:45:39.044995Z",
+        "custom_strike": {
+          "baseball_team": "60097777-bab8-4215-8d29-b92466b5bb65"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-09T01:35:00Z",
+        "expiration_time": "2026-09-11T22:35:00Z",
+        "expiration_value": "Cleveland",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-11T22:35:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Cleveland",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-09T01:35:00Z",
+        "open_interest_fp": "501931.66",
+        "open_time": "2026-09-05T22:55:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Cleveland wins the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-09T01:47:35.516167Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP081835CLEBAL-CLE",
+        "title": "Cleveland wins",
+        "updated_time": "2026-09-09T01:47:35.537693Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "856039.23",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Cleveland"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-09T01:44:32Z",
+        "created_time": "2026-09-05T22:45:39.044995Z",
+        "custom_strike": {
+          "baseball_team": "e0a64786-0b17-4f7c-a8b5-425d52debb2d"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-09T01:35:00Z",
+        "expiration_time": "2026-09-11T22:35:00Z",
+        "expiration_value": "Cleveland",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-11T22:35:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Baltimore",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-09T01:35:00Z",
+        "open_interest_fp": "829027.09",
+        "open_time": "2026-09-05T22:55:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Baltimore wins the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-09T01:47:35.516167Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP081835CLEBAL-BAL",
+        "title": "Baltimore wins",
+        "updated_time": "2026-09-09T01:47:35.537693Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "1770348.77",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Baltimore"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP081835CLEBAL",
+    "received_at": "2026-09-22T19:18:45.653147+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-09T01:44:32Z",
+      "created_time": "2026-09-05T22:45:39.044995Z",
+      "custom_strike": {
+        "baseball_team": "60097777-bab8-4215-8d29-b92466b5bb65"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-09T01:35:00Z",
+      "expiration_time": "2026-09-11T22:35:00Z",
+      "expiration_value": "Cleveland",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-11T22:35:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Cleveland",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-09T01:35:00Z",
+      "open_interest_fp": "501931.66",
+      "open_time": "2026-09-05T22:55:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Cleveland wins the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-09T01:47:35.516167Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP081835CLEBAL-CLE",
+      "title": "Cleveland wins",
+      "updated_time": "2026-09-09T01:47:35.537693Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "856039.23",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Cleveland"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-09T01:44:32Z",
+      "created_time": "2026-09-05T22:45:39.044995Z",
+      "custom_strike": {
+        "baseball_team": "e0a64786-0b17-4f7c-a8b5-425d52debb2d"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-09T01:35:00Z",
+      "expiration_time": "2026-09-11T22:35:00Z",
+      "expiration_value": "Cleveland",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-11T22:35:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Baltimore",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-09T01:35:00Z",
+      "open_interest_fp": "829027.09",
+      "open_time": "2026-09-05T22:55:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Baltimore wins the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-09T01:47:35.516167Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP081835CLEBAL-BAL",
+      "title": "Baltimore wins",
+      "updated_time": "2026-09-09T01:47:35.537693Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "1770348.77",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Baltimore"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-07T17:35:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "points": 4,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": false
+            },
+            {
+              "date": "2026-09-06T17:40:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "points": 3,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": true
+            },
+            {
+              "date": "2026-09-05T22:10:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "points": 0,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": false
+            },
+            {
+              "date": "2026-09-04T23:15:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "points": 4,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": true
+            },
+            {
+              "date": "2026-09-04T18:10:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "points": 7,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": true
+            }
+          ],
+          "away_team_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "60097777-bab8-4215-8d29-b92466b5bb65": [
+              {
+                "comment": "The Cleveland Guardians placed INF Rhys Hoskins on the 10-day injured list due to lower back inflammation.",
+                "date_updated": "2026-08-19",
+                "description": "Back",
+                "name": "Rhys Hoskins",
+                "start_date": "2026-08-19",
+                "status": "D10",
+                "structured_id": "ecea2125-3031-4a5c-8c2e-f42adb1962e3"
+              },
+              {
+                "comment": "The Cleveland Guardians transferred RHP Shawn Armstrong to the 60-day injured list due to left calf strain.",
+                "date_updated": "2026-08-03",
+                "description": "Leg",
+                "name": "Shawn Armstrong",
+                "start_date": "2026-07-24",
+                "status": "D60",
+                "structured_id": "00c84600-e6ad-4a1c-92a1-b6aa39d14195"
+              },
+              {
+                "comment": "DeLauter is not in the lineup for Wednesday's (Aug. 26) game against the Angels due to a left hamstring injury.",
+                "date_updated": "2026-08-26",
+                "description": "Hamstring",
+                "name": "Chase DeLauter",
+                "start_date": "2026-08-24",
+                "status": "Day-to-Day",
+                "structured_id": "686c9148-d428-47ff-bf9d-bb9b4bab64cd"
+              },
+              {
+                "comment": "The Cleveland Guardians placed Colin Holderman (RP) on the 15-day injured list with right wrist inflammation.",
+                "date_updated": "2026-09-04",
+                "description": "Wrist",
+                "name": "Colin Holderman",
+                "start_date": "2026-09-04",
+                "status": "D15",
+                "structured_id": "0c13e080-7bcd-44c5-911c-eb0bf7bf6394"
+              }
+            ],
+            "e0a64786-0b17-4f7c-a8b5-425d52debb2d": [
+              {
+                "comment": "The Baltimore Orioles placed Luis Robert (CF) on the 10-day injured list due to left hamstring discomfort.",
+                "date_updated": "2026-09-06",
+                "description": "Hamstring",
+                "name": "Luis Robert Jr.",
+                "start_date": "2026-09-06",
+                "status": "D10",
+                "structured_id": "db3c2a5d-9db8-41ed-a050-2838b80b3130"
+              },
+              {
+                "comment": "The Baltimore Orioles placed OF Christian Franklin on the 10-day injured list due to left hand inflammation.",
+                "date_updated": "2026-09-01",
+                "description": "Hand",
+                "name": "Christian Franklin",
+                "start_date": "2026-08-31",
+                "status": "D10",
+                "structured_id": "8d3b50eb-13c8-4932-ad64-27b540f0c5da"
+              },
+              {
+                "comment": "The Baltimore Orioles placed OF Tyler O'Neill on the 10-day injured list due to a right shoulder inflammation.",
+                "date_updated": "2026-08-26",
+                "description": "Shoulder",
+                "name": "Tyler O'Neill",
+                "start_date": "2026-08-23",
+                "status": "D10",
+                "structured_id": "c964809c-d1a3-459c-9821-4b16b6ae5584"
+              },
+              {
+                "comment": "The Baltimore Orioles transferred LHP Keegan Akin from the 15-day injured list to the 60-day injured list due to left elbow discomfort.",
+                "date_updated": "2026-07-13",
+                "description": "Elbow",
+                "name": "Keegan Akin",
+                "start_date": "2026-06-28",
+                "status": "D60",
+                "structured_id": "03e5cf0f-f1b4-4f65-b7c4-00aba859e3ec"
+              },
+              {
+                "comment": "The Baltimore Orioles transferred RHP Ryan Helsley to the 60-day injured list.",
+                "date_updated": "2026-07-03",
+                "description": "Elbow",
+                "name": "Ryan Helsley",
+                "start_date": "2026-06-30",
+                "status": "D60",
+                "structured_id": "82d13521-457a-4aac-9a53-da36ad60bd87"
+              },
+              {
+                "comment": "The Baltimore Orioles said on Friday (Jul. 31) that INF Ryan Mountcastle pulled an oblique earlier this week and will now miss a couple more months.",
+                "date_updated": "2026-07-31",
+                "description": "Foot",
+                "name": "Ryan Mountcastle",
+                "start_date": "2026-04-11",
+                "status": "D60",
+                "structured_id": "2644800e-090a-44b8-8172-188915c90789"
+              },
+              {
+                "comment": "Westburg will miss the remainder of the 2026 season according to Andy Kostka of The Baltimore Banner.",
+                "date_updated": "2026-04-01",
+                "description": "UCL",
+                "name": "Jordan Westburg",
+                "start_date": "2026-02-20",
+                "status": "D60",
+                "structured_id": "92985e99-f192-45a9-a1d1-0430292a36e2"
+              },
+              {
+                "comment": "The Baltimore Orioles transferred RHP Zach Eflin from the 15-day injured list to the 60-day injured list with right elbow discomfort.",
+                "date_updated": "2026-04-07",
+                "description": "Elbow",
+                "name": "Zach Eflin",
+                "start_date": "2026-04-01",
+                "status": "D60",
+                "structured_id": "6dabeab7-84ab-4722-aa83-62bd5a9c98da"
+              },
+              {
+                "comment": "The Baltimore Orioles placed RHP Colin Selby on the 60-day injured list due to right shoulder inflammation.",
+                "date_updated": "2026-02-14",
+                "description": "Shoulder",
+                "name": "Colin Selby",
+                "start_date": "2026-02-14",
+                "status": "D60",
+                "structured_id": "fd42b8e6-a0db-49b6-85af-643abb42aa08"
+              },
+              {
+                "comment": "The Baltimore Orioles placed RHP F\u00e9lix Bautista on the 60-day injured list.",
+                "date_updated": "2026-02-20",
+                "description": "Shoulder",
+                "name": "F\u00e9lix Bautista",
+                "start_date": "2026-02-20",
+                "status": "D60",
+                "structured_id": "62764b82-a3be-4a20-b92b-892d74bddf8f"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-07T17:35:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "points": 6,
+              "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "winner": true
+            },
+            {
+              "date": "2026-09-06T17:35:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+              "points": 1,
+              "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "winner": false
+            },
+            {
+              "date": "2026-09-05T23:05:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+              "points": 0,
+              "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "winner": false
+            },
+            {
+              "date": "2026-09-04T23:05:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+              "points": 0,
+              "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "winner": false
+            },
+            {
+              "date": "2026-09-03T23:15:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+              "points": 5,
+              "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+              "winner": false
+            }
+          ],
+          "home_team_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+          "status": "complete"
+        },
+        "end_date": "2026-09-09T02:00:57Z",
+        "id": "8428e22e-6758-400b-8955-d3bbff4959f4",
+        "last_updated_ts": "2026-09-10T02:21:27.468953Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP081835CLEBAL",
+          "KXMLBEXTRAS-26SEP081835CLEBAL",
+          "KXMLBSPREAD-26SEP081835CLEBAL",
+          "KXMLBTOTAL-26SEP081835CLEBAL"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP081835CLEBAL",
+          "KXMLBEXTRAS-26SEP081835CLEBAL",
+          "KXMLBRFI-26SEP081835CLEBAL",
+          "KXMLBSPREAD-26SEP081835CLEBAL",
+          "KXMLBTOTAL-26SEP081835CLEBAL",
+          "KXMLBF5-26SEP081835CLEBAL",
+          "KXMLBF5SPREAD-26SEP081835CLEBAL",
+          "KXMLBF5TOTAL-26SEP081835CLEBAL",
+          "KXMLBF3-26SEP081835CLEBAL",
+          "KXMLBF7-26SEP081835CLEBAL",
+          "KXMLBTEAMTOTAL-26SEP081835CLEBAL",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-1",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-2",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-3",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-4",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-5",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-6",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-7",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-8",
+          "KXMLBINNINGWIN-26SEP081835CLEBAL-9",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-1",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-2",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-3",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-4",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-5",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-6",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-7",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-8",
+          "KXMLBINNINGTOTAL-26SEP081835CLEBAL-9",
+          "KXMLBKS-26SEP081835CLEBAL",
+          "KXMLBOUTS-26SEP081835CLEBAL",
+          "KXMLBHR-26SEP081835CLEBAL",
+          "KXMLBHIT-26SEP081835CLEBAL",
+          "KXMLBTB-26SEP081835CLEBAL",
+          "KXMLBHRR-26SEP081835CLEBAL",
+          "KXMLBRBI-26SEP081835CLEBAL",
+          "KXMLBSB-26SEP081835CLEBAL",
+          "KXMLBHA-26SEP081835CLEBAL",
+          "KXMLBERA-26SEP081835CLEBAL",
+          "KXMLBWA-26SEP081835CLEBAL"
+        ],
+        "source_id": "c33ade0c-88d8-4a60-b3a0-34e75416cb70",
+        "source_ids": {
+          "source_2_id": "20260908914EBAF9",
+          "source_3_id": "c33ade0c-88d8-4a60-b3a0-34e75416cb70",
+          "source_4_id": "63303787",
+          "source_5_id": "sr:sport_event:63303787"
+        },
+        "start_date": "2026-09-08T22:35:00Z",
+        "title": "Cleveland vs Baltimore",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP081835CLEBAL&limit=100",
+    "received_at": "2026-09-22T19:18:50.621340+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788906900.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-07T17:35:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "points": 4,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": false
+        },
+        {
+          "date": "2026-09-06T17:40:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "points": 3,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": true
+        },
+        {
+          "date": "2026-09-05T22:10:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "points": 0,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": false
+        },
+        {
+          "date": "2026-09-04T23:15:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "points": 4,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": true
+        },
+        {
+          "date": "2026-09-04T18:10:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "points": 7,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": true
+        }
+      ],
+      "away_team_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "60097777-bab8-4215-8d29-b92466b5bb65": [
+          {
+            "comment": "The Cleveland Guardians placed INF Rhys Hoskins on the 10-day injured list due to lower back inflammation.",
+            "date_updated": "2026-08-19",
+            "description": "Back",
+            "name": "Rhys Hoskins",
+            "start_date": "2026-08-19",
+            "status": "D10",
+            "structured_id": "ecea2125-3031-4a5c-8c2e-f42adb1962e3"
+          },
+          {
+            "comment": "The Cleveland Guardians transferred RHP Shawn Armstrong to the 60-day injured list due to left calf strain.",
+            "date_updated": "2026-08-03",
+            "description": "Leg",
+            "name": "Shawn Armstrong",
+            "start_date": "2026-07-24",
+            "status": "D60",
+            "structured_id": "00c84600-e6ad-4a1c-92a1-b6aa39d14195"
+          },
+          {
+            "comment": "DeLauter is not in the lineup for Wednesday's (Aug. 26) game against the Angels due to a left hamstring injury.",
+            "date_updated": "2026-08-26",
+            "description": "Hamstring",
+            "name": "Chase DeLauter",
+            "start_date": "2026-08-24",
+            "status": "Day-to-Day",
+            "structured_id": "686c9148-d428-47ff-bf9d-bb9b4bab64cd"
+          },
+          {
+            "comment": "The Cleveland Guardians placed Colin Holderman (RP) on the 15-day injured list with right wrist inflammation.",
+            "date_updated": "2026-09-04",
+            "description": "Wrist",
+            "name": "Colin Holderman",
+            "start_date": "2026-09-04",
+            "status": "D15",
+            "structured_id": "0c13e080-7bcd-44c5-911c-eb0bf7bf6394"
+          }
+        ],
+        "e0a64786-0b17-4f7c-a8b5-425d52debb2d": [
+          {
+            "comment": "The Baltimore Orioles placed Luis Robert (CF) on the 10-day injured list due to left hamstring discomfort.",
+            "date_updated": "2026-09-06",
+            "description": "Hamstring",
+            "name": "Luis Robert Jr.",
+            "start_date": "2026-09-06",
+            "status": "D10",
+            "structured_id": "db3c2a5d-9db8-41ed-a050-2838b80b3130"
+          },
+          {
+            "comment": "The Baltimore Orioles placed OF Christian Franklin on the 10-day injured list due to left hand inflammation.",
+            "date_updated": "2026-09-01",
+            "description": "Hand",
+            "name": "Christian Franklin",
+            "start_date": "2026-08-31",
+            "status": "D10",
+            "structured_id": "8d3b50eb-13c8-4932-ad64-27b540f0c5da"
+          },
+          {
+            "comment": "The Baltimore Orioles placed OF Tyler O'Neill on the 10-day injured list due to a right shoulder inflammation.",
+            "date_updated": "2026-08-26",
+            "description": "Shoulder",
+            "name": "Tyler O'Neill",
+            "start_date": "2026-08-23",
+            "status": "D10",
+            "structured_id": "c964809c-d1a3-459c-9821-4b16b6ae5584"
+          },
+          {
+            "comment": "The Baltimore Orioles transferred LHP Keegan Akin from the 15-day injured list to the 60-day injured list due to left elbow discomfort.",
+            "date_updated": "2026-07-13",
+            "description": "Elbow",
+            "name": "Keegan Akin",
+            "start_date": "2026-06-28",
+            "status": "D60",
+            "structured_id": "03e5cf0f-f1b4-4f65-b7c4-00aba859e3ec"
+          },
+          {
+            "comment": "The Baltimore Orioles transferred RHP Ryan Helsley to the 60-day injured list.",
+            "date_updated": "2026-07-03",
+            "description": "Elbow",
+            "name": "Ryan Helsley",
+            "start_date": "2026-06-30",
+            "status": "D60",
+            "structured_id": "82d13521-457a-4aac-9a53-da36ad60bd87"
+          },
+          {
+            "comment": "The Baltimore Orioles said on Friday (Jul. 31) that INF Ryan Mountcastle pulled an oblique earlier this week and will now miss a couple more months.",
+            "date_updated": "2026-07-31",
+            "description": "Foot",
+            "name": "Ryan Mountcastle",
+            "start_date": "2026-04-11",
+            "status": "D60",
+            "structured_id": "2644800e-090a-44b8-8172-188915c90789"
+          },
+          {
+            "comment": "Westburg will miss the remainder of the 2026 season according to Andy Kostka of The Baltimore Banner.",
+            "date_updated": "2026-04-01",
+            "description": "UCL",
+            "name": "Jordan Westburg",
+            "start_date": "2026-02-20",
+            "status": "D60",
+            "structured_id": "92985e99-f192-45a9-a1d1-0430292a36e2"
+          },
+          {
+            "comment": "The Baltimore Orioles transferred RHP Zach Eflin from the 15-day injured list to the 60-day injured list with right elbow discomfort.",
+            "date_updated": "2026-04-07",
+            "description": "Elbow",
+            "name": "Zach Eflin",
+            "start_date": "2026-04-01",
+            "status": "D60",
+            "structured_id": "6dabeab7-84ab-4722-aa83-62bd5a9c98da"
+          },
+          {
+            "comment": "The Baltimore Orioles placed RHP Colin Selby on the 60-day injured list due to right shoulder inflammation.",
+            "date_updated": "2026-02-14",
+            "description": "Shoulder",
+            "name": "Colin Selby",
+            "start_date": "2026-02-14",
+            "status": "D60",
+            "structured_id": "fd42b8e6-a0db-49b6-85af-643abb42aa08"
+          },
+          {
+            "comment": "The Baltimore Orioles placed RHP F\u00e9lix Bautista on the 60-day injured list.",
+            "date_updated": "2026-02-20",
+            "description": "Shoulder",
+            "name": "F\u00e9lix Bautista",
+            "start_date": "2026-02-20",
+            "status": "D60",
+            "structured_id": "62764b82-a3be-4a20-b92b-892d74bddf8f"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-07T17:35:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "points": 6,
+          "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "winner": true
+        },
+        {
+          "date": "2026-09-06T17:35:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+          "points": 1,
+          "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "winner": false
+        },
+        {
+          "date": "2026-09-05T23:05:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+          "points": 0,
+          "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "winner": false
+        },
+        {
+          "date": "2026-09-04T23:05:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+          "points": 0,
+          "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "winner": false
+        },
+        {
+          "date": "2026-09-03T23:15:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "6e285aea-d5a3-419f-89e7-7061016abf87",
+          "points": 5,
+          "structured_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+          "winner": false
+        }
+      ],
+      "home_team_id": "e0a64786-0b17-4f7c-a8b5-425d52debb2d",
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP081835CLEBAL",
+      "status": "complete"
+    },
+    "end_date": "2026-09-09T02:00:57Z",
+    "id": "8428e22e-6758-400b-8955-d3bbff4959f4",
+    "last_updated_ts": "2026-09-10T02:21:27.468953Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP081835CLEBAL",
+      "KXMLBEXTRAS-26SEP081835CLEBAL",
+      "KXMLBSPREAD-26SEP081835CLEBAL",
+      "KXMLBTOTAL-26SEP081835CLEBAL"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP081835CLEBAL",
+      "KXMLBEXTRAS-26SEP081835CLEBAL",
+      "KXMLBRFI-26SEP081835CLEBAL",
+      "KXMLBSPREAD-26SEP081835CLEBAL",
+      "KXMLBTOTAL-26SEP081835CLEBAL",
+      "KXMLBF5-26SEP081835CLEBAL",
+      "KXMLBF5SPREAD-26SEP081835CLEBAL",
+      "KXMLBF5TOTAL-26SEP081835CLEBAL",
+      "KXMLBF3-26SEP081835CLEBAL",
+      "KXMLBF7-26SEP081835CLEBAL",
+      "KXMLBTEAMTOTAL-26SEP081835CLEBAL",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-1",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-2",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-3",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-4",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-5",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-6",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-7",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-8",
+      "KXMLBINNINGWIN-26SEP081835CLEBAL-9",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-1",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-2",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-3",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-4",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-5",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-6",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-7",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-8",
+      "KXMLBINNINGTOTAL-26SEP081835CLEBAL-9",
+      "KXMLBKS-26SEP081835CLEBAL",
+      "KXMLBOUTS-26SEP081835CLEBAL",
+      "KXMLBHR-26SEP081835CLEBAL",
+      "KXMLBHIT-26SEP081835CLEBAL",
+      "KXMLBTB-26SEP081835CLEBAL",
+      "KXMLBHRR-26SEP081835CLEBAL",
+      "KXMLBRBI-26SEP081835CLEBAL",
+      "KXMLBSB-26SEP081835CLEBAL",
+      "KXMLBHA-26SEP081835CLEBAL",
+      "KXMLBERA-26SEP081835CLEBAL",
+      "KXMLBWA-26SEP081835CLEBAL"
+    ],
+    "source_id": "c33ade0c-88d8-4a60-b3a0-34e75416cb70",
+    "source_ids": {
+      "source_2_id": "20260908914EBAF9",
+      "source_3_id": "c33ade0c-88d8-4a60-b3a0-34e75416cb70",
+      "source_4_id": "63303787",
+      "source_5_id": "sr:sport_event:63303787"
+    },
+    "start_date": "2026-09-08T22:35:00Z",
+    "title": "Cleveland vs Baltimore",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP081835CLEBAL-BAL",
+    "KXMLBGAME-26SEP081835CLEBAL-CLE"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

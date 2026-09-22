@@ -1,0 +1,10 @@
+{
+  "KXNCAAFGAME": {
+    "error": "Incomplete reserved sport; no subset replay",
+    "blocked": true
+  },
+  "KXMLBGAME": {
+    "error": "Incomplete reserved sport; no subset replay",
+    "blocked": true
+  }
+}

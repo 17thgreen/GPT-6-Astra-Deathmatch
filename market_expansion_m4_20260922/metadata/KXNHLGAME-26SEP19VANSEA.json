@@ -1,0 +1,566 @@
+{
+  "series": "KXNHLGAME",
+  "event": "KXNHLGAME-26SEP19VANSEA",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXNHLGAME-26SEP19VANSEA",
+      "exchange_index": 0,
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "NHL Preseason",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXNHLGAME",
+      "settlement_sources": [
+        {
+          "name": "NHL",
+          "url": "https://www.nhl.com"
+        },
+        {
+          "name": "ESPN",
+          "url": "https://espn.com"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "VAN vs SEA (Sep 19)",
+      "title": "Vancouver vs Seattle"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T06:39:43Z",
+        "created_time": "2026-09-17T00:02:14.826148Z",
+        "custom_strike": {
+          "hockey_team": "2ed1104c-eb5a-4175-9f05-0561caaa59d2"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP19VANSEA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-20T04:00:00Z",
+        "expiration_time": "2026-09-22T01:00:00Z",
+        "expiration_value": "Seattle",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-22T01:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Seattle",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T04:00:00Z",
+        "open_interest_fp": "14967.23",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Seattle wins the Vancouver vs Seattle NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T06:40:34.557426Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+        "title": "Seattle wins",
+        "updated_time": "2026-09-20T06:40:35.035474Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "19001.01",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Seattle"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-20T06:39:43Z",
+        "created_time": "2026-09-17T00:02:14.826148Z",
+        "custom_strike": {
+          "hockey_team": "2d6db4a4-99f2-4547-85f3-9913404577f9"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXNHLGAME-26SEP19VANSEA",
+        "exchange_index": 0,
+        "expected_expiration_time": "2026-09-20T04:00:00Z",
+        "expiration_time": "2026-09-22T01:00:00Z",
+        "expiration_value": "Seattle",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-22T01:00:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Vancouver",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-20T04:00:00Z",
+        "open_interest_fp": "9983.43",
+        "open_time": "2026-09-17T00:07:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Vancouver wins the Vancouver vs Seattle NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+        "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+        "settlement_timer_seconds": 45,
+        "settlement_ts": "2026-09-20T06:40:34.557426Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXNHLGAME-26SEP19VANSEA-VAN",
+        "title": "Vancouver wins",
+        "updated_time": "2026-09-20T06:40:35.035474Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "10481.21",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Vancouver"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXNHLGAME-26SEP19VANSEA",
+    "received_at": "2026-09-22T19:19:06.835014+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T06:39:43Z",
+      "created_time": "2026-09-17T00:02:14.826148Z",
+      "custom_strike": {
+        "hockey_team": "2ed1104c-eb5a-4175-9f05-0561caaa59d2"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP19VANSEA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-20T04:00:00Z",
+      "expiration_time": "2026-09-22T01:00:00Z",
+      "expiration_value": "Seattle",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-22T01:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Seattle",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T04:00:00Z",
+      "open_interest_fp": "14967.23",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Seattle wins the Vancouver vs Seattle NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T06:40:34.557426Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP19VANSEA-SEA",
+      "title": "Seattle wins",
+      "updated_time": "2026-09-20T06:40:35.035474Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "19001.01",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Seattle"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-20T06:39:43Z",
+      "created_time": "2026-09-17T00:02:14.826148Z",
+      "custom_strike": {
+        "hockey_team": "2d6db4a4-99f2-4547-85f3-9913404577f9"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXNHLGAME-26SEP19VANSEA",
+      "exchange_index": 0,
+      "expected_expiration_time": "2026-09-20T04:00:00Z",
+      "expiration_time": "2026-09-22T01:00:00Z",
+      "expiration_value": "Seattle",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-22T01:00:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Vancouver",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-20T04:00:00Z",
+      "open_interest_fp": "9983.43",
+      "open_time": "2026-09-17T00:07:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Vancouver wins the Vancouver vs Seattle NHL game originally scheduled for Sep 19, 2026, then the market resolves to Yes.",
+      "rules_secondary": "In the event of a tie, all markets will resolve at 50c.\n\nIf the game is postponed but begins within 48 hours of its originally scheduled start time, the market will remain open and resolve based on the official final result. If the game is cancelled or not started within 48 hours of its originally scheduled start, all markets will resolve to a fair price.",
+      "settlement_timer_seconds": 45,
+      "settlement_ts": "2026-09-20T06:40:34.557426Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXNHLGAME-26SEP19VANSEA-VAN",
+      "title": "Vancouver wins",
+      "updated_time": "2026-09-20T06:40:35.035474Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "10481.21",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Vancouver"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-04-17T01:00:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "e8b67c82-f465-450d-aef9-c8414f2ae83a",
+              "points": 1,
+              "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "winner": false
+            },
+            {
+              "date": "2026-04-15T02:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "points": 4,
+              "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "winner": true
+            },
+            {
+              "date": "2026-04-13T00:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+              "points": 4,
+              "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "winner": true
+            },
+            {
+              "date": "2026-04-12T02:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+              "points": 4,
+              "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "winner": true
+            },
+            {
+              "date": "2026-04-10T02:30:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "points": 1,
+              "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+              "winner": false
+            }
+          ],
+          "away_team_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "game_injuries": {
+            "2d6db4a4-99f2-4547-85f3-9913404577f9": [
+              {
+                "comment": "The Canucks said on Tuesday (Sept. 8) that Demko still doesn't have a timeline for his return, per Rick Dhaliwal of CHEK",
+                "date_updated": "2026-09-08",
+                "description": "Hip",
+                "name": "Thatcher Demko",
+                "start_date": "2026-01-10",
+                "status": "Out",
+                "structured_id": "724aef3f-f77c-4830-9a0e-d9b518356ff2"
+              }
+            ],
+            "2ed1104c-eb5a-4175-9f05-0561caaa59d2": [
+              {
+                "comment": "The Kraken said on Friday (Apr. 17) that McCann underwent a procedure for his lower-body injury, per Mike Benton of the Kraken Audio Network.",
+                "date_updated": "2026-04-17",
+                "description": "Lower-Body",
+                "name": "Jared McCann",
+                "start_date": "2026-04-13",
+                "status": "Out For Season",
+                "structured_id": "08ac3a96-35b1-4dfa-bd92-81731fd5e71f"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-04-17T02:00:00+00:00",
+              "opponent_points": 2,
+              "opponent_structured_id": "70ecc991-a426-4567-b6ec-53f529f29078",
+              "points": 0,
+              "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "winner": false
+            },
+            {
+              "date": "2026-04-16T02:00:00+00:00",
+              "opponent_points": 4,
+              "opponent_structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "points": 1,
+              "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "winner": false
+            },
+            {
+              "date": "2026-04-14T01:30:00+00:00",
+              "opponent_points": 5,
+              "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+              "points": 3,
+              "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "winner": false
+            },
+            {
+              "date": "2026-04-11T23:00:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "ea3554a4-eaa6-4e72-a32f-8388e618133f",
+              "points": 4,
+              "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "winner": true
+            },
+            {
+              "date": "2026-04-10T02:00:00+00:00",
+              "opponent_points": 3,
+              "opponent_structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+              "points": 4,
+              "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+              "winner": true
+            }
+          ],
+          "home_team_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "league": "NHL",
+          "main_game_event_ticker": "KXNHLGAME-26SEP19VANSEA",
+          "source_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+          "status": "scheduled"
+        },
+        "end_date": "2026-09-20T06:40:10Z",
+        "id": "a8f6c844-658d-44c9-8922-35158008bdda",
+        "last_updated_ts": "2026-09-21T07:30:55.485639Z",
+        "notification_message": "The game is about to begin!",
+        "primary_event_tickers": [
+          "KXNHLGAME-26SEP19VANSEA",
+          "KXNHLSPREAD-26SEP19VANSEA",
+          "KXNHLTOTAL-26SEP19VANSEA"
+        ],
+        "related_event_tickers": [
+          "KXNHLGAME-26SEP19VANSEA",
+          "KXNHLSPREAD-26SEP19VANSEA",
+          "KXNHLTOTAL-26SEP19VANSEA"
+        ],
+        "source_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+        "source_ids": {
+          "source_3_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+          "source_4_id": "73101428",
+          "source_5_id": "sr:match:73101428"
+        },
+        "start_date": "2026-09-20T01:00:00Z",
+        "title": "Vancouver at Seattle",
+        "type": "hockey_match"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXNHLGAME-26SEP19VANSEA&limit=100",
+    "received_at": "2026-09-22T19:19:11.371464+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1789866000.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-04-17T01:00:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "e8b67c82-f465-450d-aef9-c8414f2ae83a",
+          "points": 1,
+          "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "winner": false
+        },
+        {
+          "date": "2026-04-15T02:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "points": 4,
+          "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "winner": true
+        },
+        {
+          "date": "2026-04-13T00:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "954d2f87-b6bf-4eba-b424-478817a59b92",
+          "points": 4,
+          "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "winner": true
+        },
+        {
+          "date": "2026-04-12T02:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "eb4bc183-5966-40eb-8bdb-3dd922ad1752",
+          "points": 4,
+          "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "winner": true
+        },
+        {
+          "date": "2026-04-10T02:30:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "points": 1,
+          "structured_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+          "winner": false
+        }
+      ],
+      "away_team_id": "2d6db4a4-99f2-4547-85f3-9913404577f9",
+      "game_injuries": {
+        "2d6db4a4-99f2-4547-85f3-9913404577f9": [
+          {
+            "comment": "The Canucks said on Tuesday (Sept. 8) that Demko still doesn't have a timeline for his return, per Rick Dhaliwal of CHEK",
+            "date_updated": "2026-09-08",
+            "description": "Hip",
+            "name": "Thatcher Demko",
+            "start_date": "2026-01-10",
+            "status": "Out",
+            "structured_id": "724aef3f-f77c-4830-9a0e-d9b518356ff2"
+          }
+        ],
+        "2ed1104c-eb5a-4175-9f05-0561caaa59d2": [
+          {
+            "comment": "The Kraken said on Friday (Apr. 17) that McCann underwent a procedure for his lower-body injury, per Mike Benton of the Kraken Audio Network.",
+            "date_updated": "2026-04-17",
+            "description": "Lower-Body",
+            "name": "Jared McCann",
+            "start_date": "2026-04-13",
+            "status": "Out For Season",
+            "structured_id": "08ac3a96-35b1-4dfa-bd92-81731fd5e71f"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-04-17T02:00:00+00:00",
+          "opponent_points": 2,
+          "opponent_structured_id": "70ecc991-a426-4567-b6ec-53f529f29078",
+          "points": 0,
+          "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "winner": false
+        },
+        {
+          "date": "2026-04-16T02:00:00+00:00",
+          "opponent_points": 4,
+          "opponent_structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "points": 1,
+          "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "winner": false
+        },
+        {
+          "date": "2026-04-14T01:30:00+00:00",
+          "opponent_points": 5,
+          "opponent_structured_id": "dbea1e18-0f3c-47a6-9617-e16981181ca2",
+          "points": 3,
+          "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "winner": false
+        },
+        {
+          "date": "2026-04-11T23:00:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "ea3554a4-eaa6-4e72-a32f-8388e618133f",
+          "points": 4,
+          "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "winner": true
+        },
+        {
+          "date": "2026-04-10T02:00:00+00:00",
+          "opponent_points": 3,
+          "opponent_structured_id": "d599b5cc-5e06-4679-9303-4d5dad7c4cce",
+          "points": 4,
+          "structured_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+          "winner": true
+        }
+      ],
+      "home_team_id": "2ed1104c-eb5a-4175-9f05-0561caaa59d2",
+      "league": "NHL",
+      "main_game_event_ticker": "KXNHLGAME-26SEP19VANSEA",
+      "source_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+      "status": "scheduled"
+    },
+    "end_date": "2026-09-20T06:40:10Z",
+    "id": "a8f6c844-658d-44c9-8922-35158008bdda",
+    "last_updated_ts": "2026-09-21T07:30:55.485639Z",
+    "notification_message": "The game is about to begin!",
+    "primary_event_tickers": [
+      "KXNHLGAME-26SEP19VANSEA",
+      "KXNHLSPREAD-26SEP19VANSEA",
+      "KXNHLTOTAL-26SEP19VANSEA"
+    ],
+    "related_event_tickers": [
+      "KXNHLGAME-26SEP19VANSEA",
+      "KXNHLSPREAD-26SEP19VANSEA",
+      "KXNHLTOTAL-26SEP19VANSEA"
+    ],
+    "source_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+    "source_ids": {
+      "source_3_id": "450fdd48-b4c7-4ae8-a985-7a38cbb8544a",
+      "source_4_id": "73101428",
+      "source_5_id": "sr:match:73101428"
+    },
+    "start_date": "2026-09-20T01:00:00Z",
+    "title": "Vancouver at Seattle",
+    "type": "hockey_match"
+  },
+  "tickers": [
+    "KXNHLGAME-26SEP19VANSEA-SEA",
+    "KXNHLGAME-26SEP19VANSEA-VAN"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}

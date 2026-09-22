@@ -1,0 +1,5 @@
+{
+  "error": "{\"url\": \"https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBGAME-26SEP021240SDCIN-CIN&min_ts=1788108900&max_ts=1788365700&limit=1000&is_block_trade=false\", \"errors\": [\"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\", \"<urlopen error Tunnel connection failed: 403 Forbidden>\"]}",
+  "sources": [],
+  "partial_sha256": "99502bf57aff28bf9deae4a22f861002276da57decb89143fc5c6d8f43b48a7b"
+}

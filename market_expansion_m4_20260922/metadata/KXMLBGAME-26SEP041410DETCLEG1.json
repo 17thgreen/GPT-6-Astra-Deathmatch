@@ -1,0 +1,906 @@
+{
+  "series": "KXMLBGAME",
+  "event": "KXMLBGAME-26SEP041410DETCLEG1",
+  "structurally_admitted": true,
+  "replay_admitted": false,
+  "manual_review_required": true,
+  "metadata": {
+    "event": {
+      "category": "Sports",
+      "collateral_return_type": "MECNET",
+      "event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+      "exchange_index": 3,
+      "fee_multiplier_override": 1,
+      "fee_type_override": "quadratic_with_maker_fees",
+      "last_updated_ts": "0001-01-01T00:00:00Z",
+      "mutually_exclusive": true,
+      "product_metadata": {
+        "competition": "Pro Baseball",
+        "competition_scope": "Game"
+      },
+      "series_ticker": "KXMLBGAME",
+      "settlement_sources": [
+        {
+          "name": "ESPN",
+          "url": "https://www.espn.com"
+        },
+        {
+          "name": "Fox Sports",
+          "url": "https://www.foxsports.com"
+        },
+        {
+          "name": "the Governing League",
+          "url": "https://www.mlb.com/"
+        }
+      ],
+      "strike_period": "",
+      "sub_title": "DET vs CLE (Sep 4, Game 1)",
+      "title": "Detroit vs Cleveland: Game 1"
+    },
+    "markets": [
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-04T22:04:38Z",
+        "created_time": "2026-09-01T18:15:44.459439Z",
+        "custom_strike": {
+          "baseball_team": "8905d233-d4fc-485d-9df7-3092bb192b3e"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-04T21:10:00Z",
+        "expiration_time": "2026-09-07T18:10:00Z",
+        "expiration_value": "Cleveland",
+        "last_price_dollars": "0.0100",
+        "latest_expiration_time": "2026-09-07T18:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Detroit",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-04T21:10:00Z",
+        "open_interest_fp": "2551689.71",
+        "open_time": "2026-09-01T18:25:00Z",
+        "previous_price_dollars": "0.0100",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "no",
+        "rules_primary": "If Detroit wins the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-04T22:07:45.557668Z",
+        "settlement_value_dollars": "0.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP041410DETCLEG1-DET",
+        "title": "Detroit wins",
+        "updated_time": "2026-09-04T22:07:45.646854Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "3644633.77",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Detroit"
+      },
+      {
+        "can_close_early": true,
+        "close_time": "2026-09-04T22:04:38Z",
+        "created_time": "2026-09-01T18:15:44.459439Z",
+        "custom_strike": {
+          "baseball_team": "60097777-bab8-4215-8d29-b92466b5bb65"
+        },
+        "early_close_condition": "This market will close and expire after a winner is declared.",
+        "event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+        "exchange_index": 3,
+        "expected_expiration_time": "2026-09-04T21:10:00Z",
+        "expiration_time": "2026-09-07T18:10:00Z",
+        "expiration_value": "Cleveland",
+        "last_price_dollars": "0.9900",
+        "latest_expiration_time": "2026-09-07T18:10:00Z",
+        "liquidity_dollars": "0.0000",
+        "market_type": "binary",
+        "no_ask_dollars": "1.0000",
+        "no_bid_dollars": "0.0000",
+        "no_sub_title": "Cleveland",
+        "notional_value_dollars": "1.0000",
+        "occurrence_datetime": "2026-09-04T21:10:00Z",
+        "open_interest_fp": "1391489.09",
+        "open_time": "2026-09-01T18:25:00Z",
+        "previous_price_dollars": "0.9900",
+        "previous_yes_ask_dollars": "1.0000",
+        "previous_yes_bid_dollars": "0.0000",
+        "price_level_structure": "linear_cent",
+        "price_ranges": [
+          {
+            "end": "1.0000",
+            "start": "0.0000",
+            "step": "0.0100"
+          }
+        ],
+        "result": "yes",
+        "rules_primary": "If Cleveland wins the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT, then the market resolves to Yes.",
+        "rules_secondary": "The following market refers to the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "settlement_timer_seconds": 120,
+        "settlement_ts": "2026-09-04T22:07:45.557668Z",
+        "settlement_value_dollars": "1.0000",
+        "status": "finalized",
+        "strike_type": "structured",
+        "ticker": "KXMLBGAME-26SEP041410DETCLEG1-CLE",
+        "title": "Cleveland wins",
+        "updated_time": "2026-09-04T22:07:45.646854Z",
+        "volume_24h_fp": "0.00",
+        "volume_fp": "3083217.73",
+        "yes_ask_dollars": "1.0000",
+        "yes_ask_size_fp": "0.00",
+        "yes_bid_dollars": "0.0000",
+        "yes_bid_size_fp": "0.00",
+        "yes_sub_title": "Cleveland"
+      }
+    ]
+  },
+  "metadata_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP041410DETCLEG1",
+    "received_at": "2026-09-22T19:18:36.211797+00:00",
+    "prior_errors": []
+  },
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-04T22:04:38Z",
+      "created_time": "2026-09-01T18:15:44.459439Z",
+      "custom_strike": {
+        "baseball_team": "8905d233-d4fc-485d-9df7-3092bb192b3e"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-04T21:10:00Z",
+      "expiration_time": "2026-09-07T18:10:00Z",
+      "expiration_value": "Cleveland",
+      "last_price_dollars": "0.0100",
+      "latest_expiration_time": "2026-09-07T18:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Detroit",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-04T21:10:00Z",
+      "open_interest_fp": "2551689.71",
+      "open_time": "2026-09-01T18:25:00Z",
+      "previous_price_dollars": "0.0100",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "no",
+      "rules_primary": "If Detroit wins the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-04T22:07:45.557668Z",
+      "settlement_value_dollars": "0.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP041410DETCLEG1-DET",
+      "title": "Detroit wins",
+      "updated_time": "2026-09-04T22:07:45.646854Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "3644633.77",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Detroit"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-04T22:04:38Z",
+      "created_time": "2026-09-01T18:15:44.459439Z",
+      "custom_strike": {
+        "baseball_team": "60097777-bab8-4215-8d29-b92466b5bb65"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-04T21:10:00Z",
+      "expiration_time": "2026-09-07T18:10:00Z",
+      "expiration_value": "Cleveland",
+      "last_price_dollars": "0.9900",
+      "latest_expiration_time": "2026-09-07T18:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "1.0000",
+      "no_bid_dollars": "0.0000",
+      "no_sub_title": "Cleveland",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-04T21:10:00Z",
+      "open_interest_fp": "1391489.09",
+      "open_time": "2026-09-01T18:25:00Z",
+      "previous_price_dollars": "0.9900",
+      "previous_yes_ask_dollars": "1.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "yes",
+      "rules_primary": "If Cleveland wins the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "The following market refers to the Detroit vs Cleveland professional baseball game 1 of the double header originally scheduled for Sep 4, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 120,
+      "settlement_ts": "2026-09-04T22:07:45.557668Z",
+      "settlement_value_dollars": "1.0000",
+      "status": "finalized",
+      "strike_type": "structured",
+      "ticker": "KXMLBGAME-26SEP041410DETCLEG1-CLE",
+      "title": "Cleveland wins",
+      "updated_time": "2026-09-04T22:07:45.646854Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "3083217.73",
+      "yes_ask_dollars": "1.0000",
+      "yes_ask_size_fp": "0.00",
+      "yes_bid_dollars": "0.0000",
+      "yes_bid_size_fp": "0.00",
+      "yes_sub_title": "Cleveland"
+    }
+  ],
+  "milestones": {
+    "cursor": "",
+    "milestones": [
+      {
+        "category": "Sports",
+        "details": {
+          "away_last_games": [
+            {
+              "date": "2026-09-02T23:40:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+              "points": 11,
+              "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "winner": true
+            },
+            {
+              "date": "2026-09-01T23:40:00+00:00",
+              "opponent_points": 15,
+              "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+              "points": 2,
+              "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "winner": false
+            },
+            {
+              "date": "2026-08-31T23:40:00+00:00",
+              "opponent_points": 11,
+              "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+              "points": 1,
+              "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "winner": false
+            },
+            {
+              "date": "2026-08-30T17:40:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "5ee3dc32-f192-4b80-ac4a-fd285f36dc1a",
+              "points": 1,
+              "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "winner": false
+            },
+            {
+              "date": "2026-08-29T17:10:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "5ee3dc32-f192-4b80-ac4a-fd285f36dc1a",
+              "points": 2,
+              "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+              "winner": true
+            }
+          ],
+          "away_team_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "double_header_game_number": 1,
+          "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+          "game_injuries": {
+            "60097777-bab8-4215-8d29-b92466b5bb65": [
+              {
+                "comment": "The Cleveland Guardians placed INF Rhys Hoskins on the 10-day injured list due to lower back inflammation.",
+                "date_updated": "2026-08-19",
+                "description": "Back",
+                "name": "Rhys Hoskins",
+                "start_date": "2026-08-19",
+                "status": "D10",
+                "structured_id": "ecea2125-3031-4a5c-8c2e-f42adb1962e3"
+              },
+              {
+                "comment": "The Cleveland Guardians transferred RHP Shawn Armstrong to the 60-day injured list due to left calf strain.",
+                "date_updated": "2026-08-03",
+                "description": "Leg",
+                "name": "Shawn Armstrong",
+                "start_date": "2026-07-24",
+                "status": "D60",
+                "structured_id": "00c84600-e6ad-4a1c-92a1-b6aa39d14195"
+              },
+              {
+                "comment": "DeLauter is not in the lineup for Wednesday's (Aug. 26) game against the Angels due to a left hamstring injury.",
+                "date_updated": "2026-08-26",
+                "description": "Hamstring",
+                "name": "Chase DeLauter",
+                "start_date": "2026-08-24",
+                "status": "Day-to-Day",
+                "structured_id": "686c9148-d428-47ff-bf9d-bb9b4bab64cd"
+              },
+              {
+                "comment": "The Cleveland Guardians placed Colin Holderman (RP) on the 15-day injured list with right wrist inflammation.",
+                "date_updated": "2026-09-04",
+                "description": "Wrist",
+                "name": "Colin Holderman",
+                "start_date": "2026-09-04",
+                "status": "D15",
+                "structured_id": "0c13e080-7bcd-44c5-911c-eb0bf7bf6394"
+              }
+            ],
+            "8905d233-d4fc-485d-9df7-3092bb192b3e": [
+              {
+                "comment": "The Detroit Tigers transferred RHP Justin Verlander to the 60-day injured list with left hip inflammation.",
+                "date_updated": "2026-05-10",
+                "description": "Hip",
+                "name": "Justin Verlander",
+                "start_date": "2026-04-01",
+                "status": "D60",
+                "structured_id": "3f6e0416-9593-46ee-a9df-a7146209b3cf"
+              },
+              {
+                "comment": "The Detroit Tigers transferred LHP Brant Hurter to the 60-day injured list with lumbar spine inflammation.",
+                "date_updated": "2026-05-29",
+                "description": "Back",
+                "name": "Brant Hurter",
+                "start_date": "2026-05-23",
+                "status": "D60",
+                "structured_id": "62359e0b-af3c-41a9-ba64-ea99993248c5"
+              },
+              {
+                "comment": "The Detroit Tigers transferred RHP Burch Smith from the 15-day injured list to the 60-day injured list with right shoulder inflammation.",
+                "date_updated": "2026-06-23",
+                "description": "Shoulder",
+                "name": "Burch Smith",
+                "start_date": "2026-05-22",
+                "status": "D60",
+                "structured_id": "371215b2-de0f-4d78-b5ab-15576a9c1d36"
+              },
+              {
+                "comment": "The Detroit Tigers transferred RHP Will Vest to the 60-day injured list.",
+                "date_updated": "2026-07-10",
+                "description": "Elbow",
+                "name": "Will Vest",
+                "start_date": "2026-06-28",
+                "status": "D60",
+                "structured_id": "c509f103-0e57-4f1c-b86a-94812d894207"
+              },
+              {
+                "comment": "The Detroit Tigers placed OF Kerry Carpenter on the 10-day injured list due to a heel injury.",
+                "date_updated": "2026-07-27",
+                "description": "Heel",
+                "name": "Kerry Carpenter",
+                "start_date": "2026-07-26",
+                "status": "D10",
+                "structured_id": "d442448f-bf21-4199-9335-ef0227774108"
+              },
+              {
+                "comment": "The Detroit Tigers transferred LHP Bailey Horn from the 15-day injured list to the 60-day injured list as he continues his recovery from a left elbow arthroscopy.",
+                "date_updated": "2026-04-22",
+                "description": "Elbow",
+                "name": "Bailey Horn",
+                "start_date": "2026-03-22",
+                "status": "D60",
+                "structured_id": "d77d69ef-7e19-489a-a9a2-601d6314ad02"
+              },
+              {
+                "comment": "The Detroit Tigers trasferred OF Parker Meadows to the 60-day injured list with a left radius fracture.",
+                "date_updated": "2026-04-13",
+                "description": "Head/Arm",
+                "name": "Parker Meadows",
+                "start_date": "2026-04-09",
+                "status": "D60",
+                "structured_id": "836612c7-5c56-4025-b4e4-e5bb415c7e7b"
+              },
+              {
+                "comment": "The Detroit Tigers placed RHP Reese Olson on the 60-day injured list after he underwent a right shoulder labral repair.",
+                "date_updated": "2026-02-10",
+                "description": "Shoulder",
+                "name": "Reese Olson",
+                "start_date": "2026-02-10",
+                "status": "D60",
+                "structured_id": "8e434834-945c-474f-bb9f-6b9da9cadb69"
+              },
+              {
+                "comment": "The Detroit Tigers placed OF Matt Vierling to the 10-day injure list due to left adductor strain.",
+                "date_updated": "2026-07-31",
+                "description": "Adductor",
+                "name": "Matt Vierling",
+                "start_date": "2026-07-30",
+                "status": "D10",
+                "structured_id": "7ddb9224-3903-4ee0-9a21-df5c6a6ea1c1"
+              },
+              {
+                "comment": "The Detroit Tigers placed RHP Jack Flaherty on the 15-day injured list due to right flexor inflammation.",
+                "date_updated": "2026-07-21",
+                "description": "Flexor",
+                "name": "Jack Flaherty",
+                "start_date": "2026-07-21",
+                "status": "D15",
+                "structured_id": "d8cf99be-54c6-4fcd-bc4f-10e46d3a6b9f"
+              },
+              {
+                "comment": "The Tigers announced that Sweeney underwent season-ending shoulder surgery.",
+                "date_updated": "2026-04-11",
+                "description": "Shoulder",
+                "name": "Trey Sweeney",
+                "start_date": "2026-03-22",
+                "status": "D60",
+                "structured_id": "5f606271-528d-4b39-8459-b4e1c68467f5"
+              },
+              {
+                "comment": "The Detroit Tigers placed OF Wenceel P\u00e9rez on the 60-day injured list with a left orbital fracture.",
+                "date_updated": "2026-06-19",
+                "description": "Face",
+                "name": "Wenceel P\u00e9rez",
+                "start_date": "2026-06-17",
+                "status": "D60",
+                "structured_id": "39ba0d3b-638e-40e2-940f-9a9fc79653dc"
+              }
+            ]
+          },
+          "home_last_games": [
+            {
+              "date": "2026-09-03T17:10:00+00:00",
+              "opponent_points": 6,
+              "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+              "points": 3,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": false
+            },
+            {
+              "date": "2026-09-02T22:40:00+00:00",
+              "opponent_points": 11,
+              "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+              "points": 0,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": false
+            },
+            {
+              "date": "2026-09-01T22:40:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+              "points": 6,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": true
+            },
+            {
+              "date": "2026-08-30T17:40:00+00:00",
+              "opponent_points": 1,
+              "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+              "points": 11,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": true
+            },
+            {
+              "date": "2026-08-29T20:10:00+00:00",
+              "opponent_points": 8,
+              "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+              "points": 3,
+              "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+              "winner": false
+            }
+          ],
+          "home_team_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "is_double_header": true,
+          "league": "MLB",
+          "main_game_event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+          "status": "closed"
+        },
+        "end_date": "2026-09-04T22:15:03Z",
+        "id": "3d67d2ae-e9e9-41c7-9c39-049be24e5045",
+        "last_updated_ts": "2026-09-05T23:03:39.830727Z",
+        "notification_message": "The game is about to begin.",
+        "primary_event_tickers": [
+          "KXMLBGAME-26SEP041410DETCLEG1",
+          "KXMLBEXTRAS-26SEP041410DETCLEG1",
+          "KXMLBSPREAD-26SEP041410DETCLEG1",
+          "KXMLBTOTAL-26SEP041410DETCLEG1"
+        ],
+        "related_event_tickers": [
+          "KXMLBGAME-26SEP041410DETCLEG1",
+          "KXMLBEXTRAS-26SEP041410DETCLEG1",
+          "KXMLBRFI-26SEP041410DETCLEG1",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-1",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-2",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-3",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-4",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-5",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-6",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-7",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-8",
+          "KXMLBINNINGWIN-26SEP041410DETCLEG1-9",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-1",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-2",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-3",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-4",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-5",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-6",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-7",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-8",
+          "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-9",
+          "KXMLBSPREAD-26SEP041410DETCLEG1",
+          "KXMLBTOTAL-26SEP041410DETCLEG1",
+          "KXMLBF5-26SEP041410DETCLEG1",
+          "KXMLBF5SPREAD-26SEP041410DETCLEG1",
+          "KXMLBF5TOTAL-26SEP041410DETCLEG1",
+          "KXMLBF3-26SEP041410DETCLEG1",
+          "KXMLBF7-26SEP041410DETCLEG1",
+          "KXMLBTEAMTOTAL-26SEP041410DETCLEG1",
+          "KXMLBKS-26SEP041410DETCLEG1",
+          "KXMLBOUTS-26SEP041410DETCLEG1",
+          "KXMLBHR-26SEP041410DETCLEG1",
+          "KXMLBHIT-26SEP041410DETCLEG1",
+          "KXMLBTB-26SEP041410DETCLEG1",
+          "KXMLBHRR-26SEP041410DETCLEG1",
+          "KXMLBSB-26SEP041410DETCLEG1",
+          "KXMLBRBI-26SEP041410DETCLEG1",
+          "KXMLBWA-26SEP041410DETCLEG1",
+          "KXMLBHA-26SEP041410DETCLEG1",
+          "KXMLBERA-26SEP041410DETCLEG1"
+        ],
+        "source_id": "c6e0384c-bdb9-499f-8f1b-413d5afb308d",
+        "source_ids": {
+          "source_2_id": "20260904F51F7BF2",
+          "source_3_id": "c6e0384c-bdb9-499f-8f1b-413d5afb308d",
+          "source_4_id": "72099056",
+          "source_5_id": "sr:sport_event:72099056"
+        },
+        "start_date": "2026-09-04T18:10:00Z",
+        "title": "Detroit vs Cleveland (Game 1)",
+        "type": "baseball_game"
+      }
+    ]
+  },
+  "schedule_source": {
+    "url": "https://api.elections.kalshi.com/trade-api/v2/milestones?related_event_ticker=KXMLBGAME-26SEP041410DETCLEG1&limit=100",
+    "received_at": "2026-09-22T19:18:40.512476+00:00",
+    "prior_errors": []
+  },
+  "kickoff": 1788545400.0,
+  "matched_milestone": {
+    "category": "Sports",
+    "details": {
+      "away_last_games": [
+        {
+          "date": "2026-09-02T23:40:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+          "points": 11,
+          "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "winner": true
+        },
+        {
+          "date": "2026-09-01T23:40:00+00:00",
+          "opponent_points": 15,
+          "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+          "points": 2,
+          "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "winner": false
+        },
+        {
+          "date": "2026-08-31T23:40:00+00:00",
+          "opponent_points": 11,
+          "opponent_structured_id": "a2e0a7af-4208-4889-b60c-7c9254c67d5b",
+          "points": 1,
+          "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "winner": false
+        },
+        {
+          "date": "2026-08-30T17:40:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "5ee3dc32-f192-4b80-ac4a-fd285f36dc1a",
+          "points": 1,
+          "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "winner": false
+        },
+        {
+          "date": "2026-08-29T17:10:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "5ee3dc32-f192-4b80-ac4a-fd285f36dc1a",
+          "points": 2,
+          "structured_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+          "winner": true
+        }
+      ],
+      "away_team_id": "8905d233-d4fc-485d-9df7-3092bb192b3e",
+      "double_header_game_number": 1,
+      "f5_tie_id": "b8c3e2a1-7f4d-4e9b-a6d0-3c5f8e1b2a49",
+      "game_injuries": {
+        "60097777-bab8-4215-8d29-b92466b5bb65": [
+          {
+            "comment": "The Cleveland Guardians placed INF Rhys Hoskins on the 10-day injured list due to lower back inflammation.",
+            "date_updated": "2026-08-19",
+            "description": "Back",
+            "name": "Rhys Hoskins",
+            "start_date": "2026-08-19",
+            "status": "D10",
+            "structured_id": "ecea2125-3031-4a5c-8c2e-f42adb1962e3"
+          },
+          {
+            "comment": "The Cleveland Guardians transferred RHP Shawn Armstrong to the 60-day injured list due to left calf strain.",
+            "date_updated": "2026-08-03",
+            "description": "Leg",
+            "name": "Shawn Armstrong",
+            "start_date": "2026-07-24",
+            "status": "D60",
+            "structured_id": "00c84600-e6ad-4a1c-92a1-b6aa39d14195"
+          },
+          {
+            "comment": "DeLauter is not in the lineup for Wednesday's (Aug. 26) game against the Angels due to a left hamstring injury.",
+            "date_updated": "2026-08-26",
+            "description": "Hamstring",
+            "name": "Chase DeLauter",
+            "start_date": "2026-08-24",
+            "status": "Day-to-Day",
+            "structured_id": "686c9148-d428-47ff-bf9d-bb9b4bab64cd"
+          },
+          {
+            "comment": "The Cleveland Guardians placed Colin Holderman (RP) on the 15-day injured list with right wrist inflammation.",
+            "date_updated": "2026-09-04",
+            "description": "Wrist",
+            "name": "Colin Holderman",
+            "start_date": "2026-09-04",
+            "status": "D15",
+            "structured_id": "0c13e080-7bcd-44c5-911c-eb0bf7bf6394"
+          }
+        ],
+        "8905d233-d4fc-485d-9df7-3092bb192b3e": [
+          {
+            "comment": "The Detroit Tigers transferred RHP Justin Verlander to the 60-day injured list with left hip inflammation.",
+            "date_updated": "2026-05-10",
+            "description": "Hip",
+            "name": "Justin Verlander",
+            "start_date": "2026-04-01",
+            "status": "D60",
+            "structured_id": "3f6e0416-9593-46ee-a9df-a7146209b3cf"
+          },
+          {
+            "comment": "The Detroit Tigers transferred LHP Brant Hurter to the 60-day injured list with lumbar spine inflammation.",
+            "date_updated": "2026-05-29",
+            "description": "Back",
+            "name": "Brant Hurter",
+            "start_date": "2026-05-23",
+            "status": "D60",
+            "structured_id": "62359e0b-af3c-41a9-ba64-ea99993248c5"
+          },
+          {
+            "comment": "The Detroit Tigers transferred RHP Burch Smith from the 15-day injured list to the 60-day injured list with right shoulder inflammation.",
+            "date_updated": "2026-06-23",
+            "description": "Shoulder",
+            "name": "Burch Smith",
+            "start_date": "2026-05-22",
+            "status": "D60",
+            "structured_id": "371215b2-de0f-4d78-b5ab-15576a9c1d36"
+          },
+          {
+            "comment": "The Detroit Tigers transferred RHP Will Vest to the 60-day injured list.",
+            "date_updated": "2026-07-10",
+            "description": "Elbow",
+            "name": "Will Vest",
+            "start_date": "2026-06-28",
+            "status": "D60",
+            "structured_id": "c509f103-0e57-4f1c-b86a-94812d894207"
+          },
+          {
+            "comment": "The Detroit Tigers placed OF Kerry Carpenter on the 10-day injured list due to a heel injury.",
+            "date_updated": "2026-07-27",
+            "description": "Heel",
+            "name": "Kerry Carpenter",
+            "start_date": "2026-07-26",
+            "status": "D10",
+            "structured_id": "d442448f-bf21-4199-9335-ef0227774108"
+          },
+          {
+            "comment": "The Detroit Tigers transferred LHP Bailey Horn from the 15-day injured list to the 60-day injured list as he continues his recovery from a left elbow arthroscopy.",
+            "date_updated": "2026-04-22",
+            "description": "Elbow",
+            "name": "Bailey Horn",
+            "start_date": "2026-03-22",
+            "status": "D60",
+            "structured_id": "d77d69ef-7e19-489a-a9a2-601d6314ad02"
+          },
+          {
+            "comment": "The Detroit Tigers trasferred OF Parker Meadows to the 60-day injured list with a left radius fracture.",
+            "date_updated": "2026-04-13",
+            "description": "Head/Arm",
+            "name": "Parker Meadows",
+            "start_date": "2026-04-09",
+            "status": "D60",
+            "structured_id": "836612c7-5c56-4025-b4e4-e5bb415c7e7b"
+          },
+          {
+            "comment": "The Detroit Tigers placed RHP Reese Olson on the 60-day injured list after he underwent a right shoulder labral repair.",
+            "date_updated": "2026-02-10",
+            "description": "Shoulder",
+            "name": "Reese Olson",
+            "start_date": "2026-02-10",
+            "status": "D60",
+            "structured_id": "8e434834-945c-474f-bb9f-6b9da9cadb69"
+          },
+          {
+            "comment": "The Detroit Tigers placed OF Matt Vierling to the 10-day injure list due to left adductor strain.",
+            "date_updated": "2026-07-31",
+            "description": "Adductor",
+            "name": "Matt Vierling",
+            "start_date": "2026-07-30",
+            "status": "D10",
+            "structured_id": "7ddb9224-3903-4ee0-9a21-df5c6a6ea1c1"
+          },
+          {
+            "comment": "The Detroit Tigers placed RHP Jack Flaherty on the 15-day injured list due to right flexor inflammation.",
+            "date_updated": "2026-07-21",
+            "description": "Flexor",
+            "name": "Jack Flaherty",
+            "start_date": "2026-07-21",
+            "status": "D15",
+            "structured_id": "d8cf99be-54c6-4fcd-bc4f-10e46d3a6b9f"
+          },
+          {
+            "comment": "The Tigers announced that Sweeney underwent season-ending shoulder surgery.",
+            "date_updated": "2026-04-11",
+            "description": "Shoulder",
+            "name": "Trey Sweeney",
+            "start_date": "2026-03-22",
+            "status": "D60",
+            "structured_id": "5f606271-528d-4b39-8459-b4e1c68467f5"
+          },
+          {
+            "comment": "The Detroit Tigers placed OF Wenceel P\u00e9rez on the 60-day injured list with a left orbital fracture.",
+            "date_updated": "2026-06-19",
+            "description": "Face",
+            "name": "Wenceel P\u00e9rez",
+            "start_date": "2026-06-17",
+            "status": "D60",
+            "structured_id": "39ba0d3b-638e-40e2-940f-9a9fc79653dc"
+          }
+        ]
+      },
+      "home_last_games": [
+        {
+          "date": "2026-09-03T17:10:00+00:00",
+          "opponent_points": 6,
+          "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+          "points": 3,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": false
+        },
+        {
+          "date": "2026-09-02T22:40:00+00:00",
+          "opponent_points": 11,
+          "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+          "points": 0,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": false
+        },
+        {
+          "date": "2026-09-01T22:40:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "d237086c-19b8-4f27-9efb-ae6f5b915332",
+          "points": 6,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": true
+        },
+        {
+          "date": "2026-08-30T17:40:00+00:00",
+          "opponent_points": 1,
+          "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+          "points": 11,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": true
+        },
+        {
+          "date": "2026-08-29T20:10:00+00:00",
+          "opponent_points": 8,
+          "opponent_structured_id": "1fd1359b-d478-46ab-9ea7-612d671951d6",
+          "points": 3,
+          "structured_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+          "winner": false
+        }
+      ],
+      "home_team_id": "60097777-bab8-4215-8d29-b92466b5bb65",
+      "is_double_header": true,
+      "league": "MLB",
+      "main_game_event_ticker": "KXMLBGAME-26SEP041410DETCLEG1",
+      "status": "closed"
+    },
+    "end_date": "2026-09-04T22:15:03Z",
+    "id": "3d67d2ae-e9e9-41c7-9c39-049be24e5045",
+    "last_updated_ts": "2026-09-05T23:03:39.830727Z",
+    "notification_message": "The game is about to begin.",
+    "primary_event_tickers": [
+      "KXMLBGAME-26SEP041410DETCLEG1",
+      "KXMLBEXTRAS-26SEP041410DETCLEG1",
+      "KXMLBSPREAD-26SEP041410DETCLEG1",
+      "KXMLBTOTAL-26SEP041410DETCLEG1"
+    ],
+    "related_event_tickers": [
+      "KXMLBGAME-26SEP041410DETCLEG1",
+      "KXMLBEXTRAS-26SEP041410DETCLEG1",
+      "KXMLBRFI-26SEP041410DETCLEG1",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-1",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-2",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-3",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-4",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-5",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-6",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-7",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-8",
+      "KXMLBINNINGWIN-26SEP041410DETCLEG1-9",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-1",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-2",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-3",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-4",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-5",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-6",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-7",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-8",
+      "KXMLBINNINGTOTAL-26SEP041410DETCLEG1-9",
+      "KXMLBSPREAD-26SEP041410DETCLEG1",
+      "KXMLBTOTAL-26SEP041410DETCLEG1",
+      "KXMLBF5-26SEP041410DETCLEG1",
+      "KXMLBF5SPREAD-26SEP041410DETCLEG1",
+      "KXMLBF5TOTAL-26SEP041410DETCLEG1",
+      "KXMLBF3-26SEP041410DETCLEG1",
+      "KXMLBF7-26SEP041410DETCLEG1",
+      "KXMLBTEAMTOTAL-26SEP041410DETCLEG1",
+      "KXMLBKS-26SEP041410DETCLEG1",
+      "KXMLBOUTS-26SEP041410DETCLEG1",
+      "KXMLBHR-26SEP041410DETCLEG1",
+      "KXMLBHIT-26SEP041410DETCLEG1",
+      "KXMLBTB-26SEP041410DETCLEG1",
+      "KXMLBHRR-26SEP041410DETCLEG1",
+      "KXMLBSB-26SEP041410DETCLEG1",
+      "KXMLBRBI-26SEP041410DETCLEG1",
+      "KXMLBWA-26SEP041410DETCLEG1",
+      "KXMLBHA-26SEP041410DETCLEG1",
+      "KXMLBERA-26SEP041410DETCLEG1"
+    ],
+    "source_id": "c6e0384c-bdb9-499f-8f1b-413d5afb308d",
+    "source_ids": {
+      "source_2_id": "20260904F51F7BF2",
+      "source_3_id": "c6e0384c-bdb9-499f-8f1b-413d5afb308d",
+      "source_4_id": "72099056",
+      "source_5_id": "sr:sport_event:72099056"
+    },
+    "start_date": "2026-09-04T18:10:00Z",
+    "title": "Detroit vs Cleveland (Game 1)",
+    "type": "baseball_game"
+  },
+  "tickers": [
+    "KXMLBGAME-26SEP041410DETCLEG1-CLE",
+    "KXMLBGAME-26SEP041410DETCLEG1-DET"
+  ],
+  "coefficients": {
+    "maker": 0.0175,
+    "taker": 0.07,
+    "type": "quadratic_with_maker_fees",
+    "multiplier": "1",
+    "evidence": "CURRENT_RULE_COUNTERFACTUAL_NOT_HISTORICAL_FEE_VERIFICATION"
+  }
+}
