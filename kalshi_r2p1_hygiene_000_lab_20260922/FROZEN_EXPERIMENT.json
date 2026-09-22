@@ -1,0 +1,86 @@
+{
+  "experiment": "R2-P1-HYGIENE-000",
+  "experiment_id": "r2p1_hygiene_000_20260922",
+  "directory": "kalshi_r2p1_hygiene_000_lab_20260922",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-22T23:02:32Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results, pnl, and the three pre-settlement outputs stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "admission": "Conductor ADMIT R2-P1",
+  "kernel": "Conductor pin lock. Canonical freeze bytes were not in this checkout.",
+  "packet": "R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+  "canonical_freeze": "R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md",
+  "canonical_freeze_sha256_prefix": "ddcd4427",
+  "canonical_freeze_bytes": "not_in_checkout",
+  "fee_sensitivity_000_r1p1": "SUPERSEDED_BY_R2-P1",
+  "second_lab": false,
+  "fee_treatment_arms_emitted": false,
+  "depends_on": [
+    {
+      "directory": "kalshi_feebook_lab_20260922",
+      "commit": "22371178cb2663250b4762f328069571c48cb551",
+      "role": "examiner fee channel and order_fee round_up algebra"
+    },
+    {
+      "directory": "kalshi_rails_lab_20260922",
+      "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "role": "fixed queue labels, maker-credit floor, content-fresh predicate"
+    }
+  ],
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "kalshi_capital_structure_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "Do the Q6-000 hygiene helpers re-score fill fees with the R1-P1 round-up algebra against the inherited fixed-point model, and label maker-credit refusal, content freshness versus keepalive, and queue-bin mismatch against the fixed q3300 and q10000 rails, while the three pre-settlement outputs stay null?",
+  "knob": "none_hygiene_relabel_only",
+  "strategy_pointer": "Q6-000",
+  "signal_retune": false,
+  "capital_structure_reopened": false,
+  "queue_fragility_twin": false,
+  "live_orders": false,
+  "forbid_shadow_fee_literals": true,
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "fee_source": "kalshi_feebook_lab_20260922 feebook.load_series_table / order_fee",
+  "queue_source_fixed": "kalshi_rails_lab_20260922 rails.scenario_queue",
+  "primary_assumed_scenario": "q3300",
+  "other_assumed_scenario": "q10000",
+  "queue_is_knob": false,
+  "inherited_model_id": "q6.order_fees.fixed_point_balance.v1",
+  "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+  "not_this_experiment": [
+    "FS0_FS1_FS2_fee_treatment_arms",
+    "capital_A1_A2_A3",
+    "queue_fragility_000_under_R1P5",
+    "Q6_000_signal_retune"
+  ],
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "8f91010269262bc8320b5c2d0d48ef23c08700a00b06e7ce511a91c0853aecd8",
+    "r2p1_hygiene_freeze.json": "1dfb2946f5be32f511ac8c6d1318dddd38531e90d1586871bc77fe234b3407bd",
+    "results/EMPTY_RESULTS.json": "baffd97793ba7d84a31af4753ca2a23919154dde71814cb35077ad0d72a6c57e"
+  },
+  "implementation_sha256": {
+    "README.md": "6d43fd6a2e31d8d92ffbbb2a5a7391cedde016e28cacdfc61c946fc78c0a5d18",
+    "hygiene.py": "f4fc25846885cf8d2e77432c6819375b7eab9a8bff85de767a4eca3fe00c2590",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_hygiene.py": "f19677e1115f46152d970de5cbc230ffa94eb7817d940981c85179a968369ea5"
+  },
+  "pin_lock_note": "Canonical freeze is R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md, sha256 prefix ddcd4427. Bytes were not in this checkout and were not substituted. fee_sensitivity_000_r1p1 is SUPERSEDED_BY_R2-P1. No second lab. FS0/FS1/FS2 are not scorecard columns.",
+  "source_frozen_at": "2026-09-22T23:04:55Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "results": null,
+  "pnl": null
+}
