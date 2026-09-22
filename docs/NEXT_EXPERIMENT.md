@@ -50,3 +50,5 @@ mechanism requiring further isolation. Neither result substitutes for fresh data
 In parallel planning, establish a durable GET-only public collector and admit a
 future cohort before its full T−7d windows. Deployment is not accomplished by
 committing a Docker file. Live execution is outside this research proposal.
+That collector work is specified separately in
+`nfl_prospective_recorder_20260922/PROTOCOL.md` and is not part of the Q7 2×2.

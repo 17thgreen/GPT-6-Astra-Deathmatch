@@ -10,3 +10,4 @@ __pycache__/
 *.csv.gz
 *.partial
 *.lock
+nfl_prospective_recorder_20260922/capture-data/

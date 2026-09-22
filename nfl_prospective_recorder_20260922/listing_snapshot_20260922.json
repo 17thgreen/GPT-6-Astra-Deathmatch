@@ -1,0 +1,304 @@
+{
+  "retrieved_at": "2026-09-22T20:57:58+00:00",
+  "source": "GET /trade-api/v2/events?series_ticker=KXNFLGAME&status=open|unopened&with_nested_markets=false",
+  "retained_fields": [
+    "event_ticker",
+    "title",
+    "sub_title",
+    "series_ticker",
+    "mutually_exclusive",
+    "collateral_return_type",
+    "category"
+  ],
+  "note": "Identity fields only. Prices, results, and settlements were not retained. This file is not an admission.",
+  "events": [
+    {
+      "event_ticker": "KXNFLGAME-26SEP24ATLGB",
+      "title": "Atlanta vs Green Bay",
+      "sub_title": "ATL vs GB (Sep 24)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27CARCLE",
+      "title": "Carolina vs Cleveland",
+      "sub_title": "CAR vs CLE (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27CINPIT",
+      "title": "Cincinnati vs Pittsburgh",
+      "sub_title": "CIN vs PIT (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27HOUIND",
+      "title": "Houston vs Indianapolis",
+      "sub_title": "HOU vs IND (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27KCMIA",
+      "title": "Kansas City vs Miami",
+      "sub_title": "KC vs MIA (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27LACBUF",
+      "title": "Los Angeles C vs Buffalo",
+      "sub_title": "LAC vs BUF (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27NEJAC",
+      "title": "New England vs Jacksonville",
+      "sub_title": "NE vs JAC (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27NYJDET",
+      "title": "New York J vs Detroit",
+      "sub_title": "NYJ vs DET (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27SEAWAS",
+      "title": "Seattle vs Washington",
+      "sub_title": "SEA vs WAS (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27TENNYG",
+      "title": "Tennessee vs New York G",
+      "sub_title": "TEN vs NYG (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27ARISF",
+      "title": "Arizona vs San Francisco",
+      "sub_title": "ARI vs SF (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27MINTB",
+      "title": "Minnesota vs Tampa Bay",
+      "sub_title": "MIN vs TB (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27BALDAL",
+      "title": "Baltimore vs Dallas",
+      "sub_title": "BAL vs DAL (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27LVNO",
+      "title": "Las Vegas vs New Orleans",
+      "sub_title": "LV vs NO (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP27LARDEN",
+      "title": "Los Angeles R vs Denver",
+      "sub_title": "LAR vs DEN (Sep 27)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26SEP28PHICHI",
+      "title": "Philadelphia vs Chicago",
+      "sub_title": "PHI vs CHI (Sep 28)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT01PITCLE",
+      "title": "PIT Steelers vs CLE Browns",
+      "sub_title": "PIT vs CLE (Oct 1)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04INDWAS",
+      "title": "IND Colts vs WAS Commanders",
+      "sub_title": "IND vs WAS (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04ARINYG",
+      "title": "ARI Cardinals vs NY Giants",
+      "sub_title": "ARI vs NYG (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04DALHOU",
+      "title": "DAL Cowboys vs HOU Texans",
+      "sub_title": "DAL vs HOU (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04GBTB",
+      "title": "GB Packers vs TB Buccaneers",
+      "sub_title": "GB vs TB (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04JACCIN",
+      "title": "JAC Jaguars vs CIN Bengals",
+      "sub_title": "JAC vs CIN (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04LARPHI",
+      "title": "LA Rams vs PHI Eagles",
+      "sub_title": "LAR vs PHI (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04NEBUF",
+      "title": "NE Patriots vs BUF Bills",
+      "sub_title": "NE vs BUF (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04NYJCHI",
+      "title": "NY Jets vs CHI Bears",
+      "sub_title": "NYJ vs CHI (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04TENBAL",
+      "title": "TEN Titans vs BAL Ravens",
+      "sub_title": "TEN vs BAL (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04MIAMIN",
+      "title": "MIA Dolphins vs MIN Vikings",
+      "sub_title": "MIA vs MIN (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04DENSF",
+      "title": "DEN Broncos vs SF 49ers",
+      "sub_title": "DEN vs SF (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04KCLV",
+      "title": "KC Chiefs vs LV Raiders",
+      "sub_title": "KC vs LV (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04LACSEA",
+      "title": "LA Chargers vs SEA Seahawks",
+      "sub_title": "LAC vs SEA (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT04DETCAR",
+      "title": "DET Lions vs CAR Panthers",
+      "sub_title": "DET vs CAR (Oct 4)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    },
+    {
+      "event_ticker": "KXNFLGAME-26OCT05ATLNO",
+      "title": "ATL Falcons vs NO Saints",
+      "sub_title": "ATL vs NO (Oct 5)",
+      "series_ticker": "KXNFLGAME",
+      "mutually_exclusive": true,
+      "collateral_return_type": "MECNET",
+      "category": "Sports"
+    }
+  ]
+}
