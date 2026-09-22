@@ -1,0 +1,13 @@
+{
+  "note": "Hand vectors for ceil_cent fee; verify against Kalshi PDF examples when available",
+  "eps": 1e-9,
+  "vectors": [
+    {"P": 0.50, "C": 1, "role": "taker", "rate": 0.07, "raw": 0.0175, "ceil_cent": 0.02},
+    {"P": 0.50, "C": 1, "role": "maker", "rate": 0.0175, "raw": 0.004375, "ceil_cent": 0.01},
+    {"P": 0.10, "C": 1, "role": "taker", "rate": 0.07, "raw": 0.0063, "ceil_cent": 0.01},
+    {"P": 0.50, "C": 100, "role": "taker", "rate": 0.07, "raw": 1.75, "ceil_cent": 1.75},
+    {"P": 0.50, "C": 1000, "role": "maker", "rate": 0.0175, "raw": 4.375, "ceil_cent": 4.38}
+  ],
+  "taker_side_polarity": {"taker_yes_fills": "no", "taker_no_fills": "yes"},
+  "queue_defaults": {"ahead": 3300, "participation": 0.5, "stress_ahead": 10000}
+}

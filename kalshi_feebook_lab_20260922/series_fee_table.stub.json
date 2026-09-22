@@ -1,0 +1,21 @@
+{
+  "schema": "astra.r1p1.series_fee_table.stub.v1",
+  "formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+  "note": "Research default only. M is 1 and maker fees are enabled. Overrides are empty on purpose. This file is not a copy of the Kalshi non-standard series table. The July 7, 2026 fee-schedule PDF prose says the maker multiplier defaults to 0. The KXNFLGAME row on that PDF lists maker and taker multipliers of 1, which this default matches. A series that differs must be passed as an override by the caller. An empty override map is not a lookup of KXNFLGAME.",
+  "pdf": {
+    "url": "https://kalshi.com/docs/kalshi-fee-schedule.pdf",
+    "stated_effective": "2026-07-07",
+    "retrieved": "2026-09-22"
+  },
+  "rates": {
+    "taker": "0.07",
+    "maker": "0.0175"
+  },
+  "default": {
+    "M": "1",
+    "maker_fees_enabled": true,
+    "per_contract_cap_enabled": false,
+    "per_contract_cap": "0.035"
+  },
+  "overrides": {}
+}
