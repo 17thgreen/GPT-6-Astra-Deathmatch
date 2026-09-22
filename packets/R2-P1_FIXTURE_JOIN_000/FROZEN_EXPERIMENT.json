@@ -1,0 +1,14 @@
+{
+  "experiment_id": "R2-P1_fixture_join_000_20260922",
+  "status": "FROZEN_NOT_RUN",
+  "pick": "A",
+  "results": null,
+  "pnl": null,
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
+  "strategy_pointer": "Q6-000",
+  "knob": "fixture_join_wiring_only_metrics_null",
+  "deferred_pick_B": "queue_fragility_fixture_join"
+}
