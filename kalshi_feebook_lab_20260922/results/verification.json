@@ -1,0 +1,15 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "R1-P1-FEEBOOK",
+  "ran_at": "2026-09-22T21:42:09Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_feebook",
+  "cwd": "kalshi_feebook_lab_20260922",
+  "tests_run": 37,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.004,
+  "pnl": null,
+  "note": "Code verification of fee and book algebra. Not a simulated execution and not live validation. Freeze results and pnl remain null."
+}
