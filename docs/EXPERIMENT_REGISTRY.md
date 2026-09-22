@@ -14,7 +14,7 @@ not presented as a pre-outcome Git preregistration of that historical work.
 | Q4 | Early-week small orders failed; cap sensitivity matters | `nfl_timing_lab_20260921/NFL_Timing_Cap_Results.md` |
 | Q5 | Allocation bundle improved development P&L; ranking attribution unresolved | `nfl_adaptive_lab_20260921/NFL_Adaptive_Results.md` |
 | Q6 | Simplest allocator selected; optional F/P/R features unnecessary under declared retention rule | `nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Results.md` |
-| Q7 | Proposed: isolate the actual chosen-pair price check; NOT YET RUN | `docs/NEXT_EXPERIMENT.md` |
+| Q7 | Implemented and frozen; 16 scenarios NOT RUN (historical tape absent) | `nfl_paircheck_lab_20260922/EXPERIMENT_SPEC.md` |
 | Prospective recorder | GET-only schedule-only admission path. Rules frozen before the 2026-09-22 listing snapshot. 16 week-4 games have venue ids; PHI@CHI is not backfilled; week 5 is unresolved. Not deployed. Not a P&L experiment. Separate from Q7. | `nfl_prospective_recorder_20260922/PROTOCOL.md` |
 
 Current Q6 candidate: `nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json`.

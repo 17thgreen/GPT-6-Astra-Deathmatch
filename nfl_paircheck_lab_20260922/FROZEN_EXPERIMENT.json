@@ -1,0 +1,202 @@
+{
+  "experiment": "Q7_CHOSEN_PAIR_COST_CHECK",
+  "directory": "nfl_paircheck_lab_20260922",
+  "status": "IMPLEMENTED_FROZEN_NOT_RUN",
+  "frozen_at": "2026-09-22T20:53:49Z",
+  "note": "Hypothesis commit only. implementation_sha256 is null until the source-freeze commit. results and pnl stay null until a real replay. This timestamp is the hypothesis freeze, not an execution time.",
+  "does_not_modify": [
+    "nfl_factorial_lab_20260921",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921"
+  ],
+  "question": "Does checking the combined acquisition cost of the two routes actually chosen explain the Q6 improvement, or do the allocator scheduling and sizing rules matter?",
+  "arms": {
+    "A": {
+      "architecture": "original_router",
+      "pair_check": false,
+      "role": "untouched_reference"
+    },
+    "B": {
+      "architecture": "original_router",
+      "pair_check": true,
+      "role": "admission_only"
+    },
+    "C": {
+      "architecture": "q6_allocator_000",
+      "pair_check": false,
+      "role": "remove_combined_cost_filter_only"
+    },
+    "D": {
+      "architecture": "q6_allocator_000",
+      "pair_check": true,
+      "role": "untouched_q6_reference"
+    }
+  },
+  "q6_factor_label": "000",
+  "factors_000": {
+    "flow": false,
+    "protection": false,
+    "ranking": false
+  },
+  "combined_cost_filter": {
+    "expression": "1 - sum(chosen_leg_costs) - 0.0002 - 2 * balance_precision / order_size",
+    "reject_when": "margin <= 0",
+    "cost_definition": "price + maker_coefficient * price * (1 - price)",
+    "quantity_in_cushion": "configured order_size, not realized quote size and not joint capacity",
+    "routes": "the two keys returned by choose(), not each route paired with its cheapest counterleg"
+  },
+  "admission_constraints": {
+    "offset_only_unblocked": true,
+    "partial_fill_keeps_reducing_leg": true,
+    "assume_simultaneous_fills": false,
+    "inspect_future_quotes": false,
+    "cancel_instantly": false,
+    "hypothetical_margin_counted_as_pnl": false,
+    "rejection_reason": "combined_acquisition_cost"
+  },
+  "fixed": {
+    "starting_cash": 5000,
+    "development_games": 31,
+    "week1_games": 16,
+    "week2_games": 15,
+    "order_size": 250,
+    "exposure_cap": 250,
+    "assumed_exit_depth": 250,
+    "quote_source": "candles",
+    "liquidation_lead_seconds": 300,
+    "early_queues": [
+      3300,
+      10000
+    ],
+    "submit_cancel_delays": [
+      0.25,
+      5
+    ]
+  },
+  "scenarios": [
+    "q3300_d0.25_A",
+    "q3300_d0.25_B",
+    "q3300_d0.25_C",
+    "q3300_d0.25_D",
+    "q3300_d5_A",
+    "q3300_d5_B",
+    "q3300_d5_C",
+    "q3300_d5_D",
+    "q10000_d0.25_A",
+    "q10000_d0.25_B",
+    "q10000_d0.25_C",
+    "q10000_d0.25_D",
+    "q10000_d5_A",
+    "q10000_d5_B",
+    "q10000_d5_C",
+    "q10000_d5_D"
+  ],
+  "scenario_count": 16,
+  "metrics": [
+    "completed_strategy_pnl",
+    "terminal_payout_bounds",
+    "unresolved_contracts",
+    "all_flat",
+    "week_contributions",
+    "unhedged_contract_hours",
+    "taker_contracts",
+    "maker_contracts",
+    "min_cash",
+    "max_reserved_cash",
+    "max_abs_event_exposure",
+    "pnl_excluding_top_two_games",
+    "pair_rejection_count"
+  ],
+  "effects": [
+    "original_guard = B - A",
+    "allocator_guard = D - C",
+    "interaction = (D - C) - (B - A)",
+    "architecture_check_off = C - A",
+    "architecture_check_on = D - B"
+  ],
+  "selection_rule": {
+    "apply_only_if": "all 16 scenarios flat with non-null completed_strategy_pnl",
+    "otherwise": "NO_NEW_SELECTION",
+    "candidate_arm": "B",
+    "not_a_candidate": [
+      "C"
+    ],
+    "require_B_beats_A_all_stresses": true,
+    "require_D_positive_and_B_at_least_95pct_of_D": true,
+    "primary_weeks": "q3300_d0.25 both week contributions B > A",
+    "inventory_hours": "B unhedged_contract_hours <= 1.25 * A in every stress",
+    "live_promotion": false,
+    "fallback_shadow_candidate": "q6 label 000"
+  },
+  "positive_controls": {
+    "arm_A": "Q6 baseline summaries and Q5_REFERENCES baseline rows, including uncompressed fill/order hashes when ledger bytes exist",
+    "arm_D": "Q6 label 000 summaries and fill/order/decision ledger hashes, excluding the side rejection ledger",
+    "mismatch_is": "failed reproduction, not a Q7 finding"
+  },
+  "inputs": {
+    "path": "nfl_factorial_lab_20260921/inputs",
+    "manifest": "nfl_factorial_lab_20260921/inputs/manifest.json",
+    "required_sha256_names": [
+      "events.jsonl.gz",
+      "markets.json",
+      "week_membership.json"
+    ],
+    "missing_input_behavior": "write not-run status, execute zero scenarios, invent no P&L"
+  },
+  "q6_dependency_sha256": {
+    "SHADOW_CANDIDATE_FREEZE.json": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+    "factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "queue_policies.py": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+    "completion_policy.py": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec",
+    "timing_policy.py": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f",
+    "replay_v2.py": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "Q5_REFERENCES.json": "8828ecd556857bcbde8e9909cd6ebd68766ec4f2c8350923cb7d391481e39c65",
+    "EXPERIMENT_SPEC.md": "540356a6ee130f0e7077c3eff8d62d4271b3d545e0a3f43acaaf72e4ebce1afd",
+    "FROZEN_EXPERIMENT.json": "8fb0d26037514a493b7d3b0c31789052937d02c88ab4c2ec1b1885906f076a5b",
+    "BASELINE_HASHES.json": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335"
+  },
+  "q6_shadow_candidate_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "q6_selected_label": "000",
+  "q6_source_sha256": {
+    "EXPERIMENT_SPEC.md": "540356a6ee130f0e7077c3eff8d62d4271b3d545e0a3f43acaaf72e4ebce1afd",
+    "BASELINE_HASHES.json": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335",
+    "factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+    "run_experiment.py": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc",
+    "test_factorial.py": "0a627b0588b9b6688b98f7c1742628c6895757c9f02b143b24b5a21a1d05cd0a",
+    "analyze.py": "a05e4ba81f873e1b0b58a528d11b6494f573dfe2dfb3f85a6c25f2a05c2bd542",
+    "test_analysis.py": "c0b502ce28ad59df898d6f1c45461cd88f10911c9af3cc5abb4347c64a3682f4",
+    "Q5_REFERENCES.json": "8828ecd556857bcbde8e9909cd6ebd68766ec4f2c8350923cb7d391481e39c65",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "RESERVED_HOLDOUT.json": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "FORWARD_PROTOCOL.md": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326"
+  },
+  "q6_baseline_sha256": {
+    "replay_v2.py": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+    "queue_policies.py": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+    "completion_policy.py": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec",
+    "timing_policy.py": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "test_replay_v2.py": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c",
+    "test_queue_policies.py": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a",
+    "test_completion.py": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4",
+    "test_timing.py": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150",
+    "test_adaptive.py": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546"
+  },
+  "spec_sha256": "cdfba7817a4a13c51b3aec3dc2256e7de1cd61386d9e1b359d85b2b65a78344f",
+  "implementation_sha256": {
+    "paircheck_policy.py": "ae0a19e03acebd359e711fb13b5b47ca807d72632f3a2cd1c1c282ad5916d7a9",
+    "run_experiment.py": "55d6fafe860d68e8b84e59b37c8cd641b4ec835712632867eaebcd809ff626b6",
+    "analyze.py": "2fcc5262197ccf1e1dd3eb241649c57581e7353046945427b6e01e8f14fa16d6",
+    "verify_results.py": "2b925a39941428ae6b33753445c531967b73025ed4b127d28c5080cfeb237c40",
+    "test_paircheck.py": "9169b1879e2afd89bb26500695295300bd57902aa83e6d78aafac893252ef5a6",
+    "test_runner.py": "e5820ccb3f8c9835edcee2467bf0c28abf8bef1fb47065fe2db5fbd64f9b540f"
+  },
+  "results": null,
+  "pnl": null,
+  "source_frozen_note": "Source, tests, and runner were frozen after the hypothesis commit and before any Q7 scenario execution. results and pnl remain null."
+}
