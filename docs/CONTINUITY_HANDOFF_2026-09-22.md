@@ -75,3 +75,32 @@ M2 shows a completion problem, with no observed shared-cash fill displacement.
 The 36 outcome ledgers were saved as one verified 17.3 MB archive; exact checksum
 indexes are committed. No long-running upload remains. Nothing runs in the
 background after this checkpoint.
+
+## M3 individual-market adaptation completed
+
+The user asked for pound-for-pound comparisons, separate market settings and
+feasible compounding while preserving the NFL work. Read
+market_adaptation_20260922/COMPARISON.md and M3_RESULTS.md. M3's specification
+was committed at 58ae378 and source/input freeze at f20bd36 before outcomes.
+All 32 clock/queue/delay scenarios reconcile; eight unchanged controls reproduce
+M2 fills and orders exactly. Twelve new plus 162 inherited tests pass. All 140
+frozen source/input hashes match; Q7 remains the NFL development candidate.
+
+On four reused CFB games, extending the cutoff from T-3h to T-30m raises net
+from $16.01 to $79.02 at constant assumed queue 3300, and $6.37 to $30.51 at
+constant 10000. These queues are unverified environmental assumptions, not bot
+settings. Under the inherited NFL final-12h queue profile the later cutoff adds
+no CFB profit. All tested WNBA cases remain negative. No market is promoted.
+
+Six-series availability was specified at f80f984 before metadata queries. The
+bounded September window returned NFL 30, CFB 372, WNBA 14, MLB 268, NHL 7 and
+NBA zero event candidates. No request failed. These are metadata reservations,
+not admitted cohorts or full schedule counts. Next: independently evaluate CFB's
+later window; admit MLB for its own control/timing study; investigate WNBA size,
+inventory and completion; admit sparse NHL and separately specify an NBA season
+window. Only after viability, compare equal total cash over a matched calendar
+and test capacity/reinvestment. The user handles forward validation.
+
+All M3 financial ledgers and the sixteen M2 control ledger files needed by its
+auditor are retained in Git. The full M2 pair-decision archive remains separate.
+No live orders, transfers or long-running services were created.

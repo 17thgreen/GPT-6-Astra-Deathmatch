@@ -6,6 +6,16 @@ are preserved here. No live order-enabled strategy has been validated or deploye
 
 ## Current result
 
+Latest: [M3 individual-market adaptation](market_adaptation_20260922/M3_RESULTS.md)
+is complete: 32 audited scenarios, eight exact M2 controls and 174 tests.
+CFB's later T-30m cutoff earns **$79.02/$30.51** at constant assumed queue
+3300/10000, versus **$16.01/$6.37** at T-3h under those SAME assumptions.
+No CFB gain appears under the inherited NFL final-12h queue profile. WNBA remains
+negative. This is conditional research evidence; **NFL Q7 stays unchanged**.
+[Normalized comparison and compounding work](market_adaptation_20260922/COMPARISON.md)
+and six-market historical availability are now documented. All M3 inputs and
+financial ledgers fit in Git.
+
 September 22 continuation: [M2 CFB/WNBA transport pilot](cross_sport_replay_20260922/M2_RESULTS.md)
 is complete. On eight frozen games, unchanged Q7/NFL assumptions produce
 CFB **+$2.47 / -$2.80**, WNBA **-$45.18 / -$35.29**, and combined

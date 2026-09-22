@@ -1,0 +1,218 @@
+{
+  "evidence": "REUSED_DEVELOPMENT_CLOCK_SENSITIVITY_NOT_PROMOTION",
+  "config": {
+    "starting_cash": 5000,
+    "order_size": 250,
+    "exposure_cap": 250,
+    "queue_early": 10000,
+    "queue_last12h": 1327847.005,
+    "fill_participation": 0.5,
+    "requote_seconds": 60,
+    "proxy_max_age_seconds": 300,
+    "cancel_delay_seconds": 0.25,
+    "order_delay_seconds": 0.25,
+    "maker_coefficient": 0.0175,
+    "taker_coefficient": 0.07,
+    "balance_precision": ".0001",
+    "assumed_exit_depth": 250,
+    "inventory_reduce_only": false,
+    "event_netting": true,
+    "quote_source": "candles",
+    "liquidation_lead_seconds": 300
+  },
+  "trades": 35054,
+  "fills": 200,
+  "maker_contracts": 7799.25,
+  "taker_contracts": 253.56999999999994,
+  "completed_window_games": 4,
+  "all_flat": true,
+  "completed_strategy_pnl": 6.372699999998076,
+  "terminal_payout_bounds": [
+    6.372699999998076,
+    6.372699999998076
+  ],
+  "bound_note": "Bounds value unresolved binary payouts in [0,1], before any future exit fees; not mark-to-market or confidence intervals.",
+  "unresolved_contracts": 0.0,
+  "min_cash": 4601.631199999999,
+  "max_reserved_cash": 1099.4650063925,
+  "max_abs_event_exposure": 250.00000000000006,
+  "metrics": {
+    "new_orders": 5695.0,
+    "same_price_keep_decisions": 79548.0,
+    "cancel_requests": 5654.0,
+    "cancels_acknowledged": 5654.0,
+    "route_switch_decisions": 4913.0,
+    "fees": 26.355700000000017,
+    "paired_units": 4026.4100000000017,
+    "events_with_unresolved_exit": 0,
+    "improved_filled_contracts": 0.0,
+    "improved_paired_contracts": 0.0
+  },
+  "per_game": [
+    {
+      "event": "KXNCAAFGAME-26SEP17SYRPITT",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 1.9801000000000597,
+      "pnl_lower_payout_bound": 1.9801000000000597,
+      "pnl_upper_payout_bound": 1.9801000000000597,
+      "flat": true
+    },
+    {
+      "event": "KXNCAAFGAME-26SEP18HOUTTU",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 1.250599999999821,
+      "pnl_lower_payout_bound": 1.250599999999821,
+      "pnl_upper_payout_bound": 1.250599999999821,
+      "flat": true
+    },
+    {
+      "event": "KXNCAAFGAME-26SEP18MIAWAKE",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 3.141999999999989,
+      "pnl_lower_payout_bound": 3.141999999999989,
+      "pnl_upper_payout_bound": 3.141999999999989,
+      "flat": true
+    },
+    {
+      "event": "KXNCAAFGAME-26SEP18PRSTORE",
+      "window_complete": true,
+      "net_inventory": 0.0,
+      "cashflow": 0.0,
+      "pnl_lower_payout_bound": 0.0,
+      "pnl_upper_payout_bound": 0.0,
+      "flat": true
+    }
+  ],
+  "queue_policy": {
+    "name": "route",
+    "flow_window": 3600,
+    "service_horizon": 600,
+    "switch_ratio": 1.25,
+    "pair_buffer": 0.001,
+    "inside_race_queue": 0,
+    "use_flow": true
+  },
+  "pair_holding_time_seconds": {
+    "paired_units": 4026.41,
+    "weighted_mean": 28461.655275926827,
+    "weighted_median": 1743.691370010376,
+    "weighted_p90": 136078.15743517876
+  },
+  "unhedged_contract_hours": 31832.859283206813,
+  "improved_unpaired_contracts": 0.0,
+  "completion_policy": "q1_route",
+  "entry_band": "full",
+  "variant": "route",
+  "passive_pairing_fraction": 0.9370233036377316,
+  "submitted_maker_orders": 5695,
+  "fully_filled_submitted_orders": 41,
+  "never_filled_submitted_orders": 5653,
+  "maker_exposure_added_outside_entry_window": 0,
+  "experiment": "baseline",
+  "decision_records": 0,
+  "scenario": "NCAAF_t180_constant_q10000_d0.25",
+  "sport": "NCAAF",
+  "cutoff_minutes": 180,
+  "queue_profile": "constant",
+  "actual_schedules": {
+    "KXNCAAFGAME-26SEP17SYRPITT-PITT": {
+      "event": "KXNCAAFGAME-26SEP17SYRPITT",
+      "direction": 1,
+      "kickoff": 1789687800.0,
+      "listed_at": 1788484080.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP17SYRPITT-SYR": {
+      "event": "KXNCAAFGAME-26SEP17SYRPITT",
+      "direction": -1,
+      "kickoff": 1789687800.0,
+      "listed_at": 1788484080.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18HOUTTU-HOU": {
+      "event": "KXNCAAFGAME-26SEP18HOUTTU",
+      "direction": 1,
+      "kickoff": 1789776000.0,
+      "listed_at": 1779304140.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18HOUTTU-TTU": {
+      "event": "KXNCAAFGAME-26SEP18HOUTTU",
+      "direction": -1,
+      "kickoff": 1789776000.0,
+      "listed_at": 1779304140.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18MIAWAKE-MIA": {
+      "event": "KXNCAAFGAME-26SEP18MIAWAKE",
+      "direction": 1,
+      "kickoff": 1789774200.0,
+      "listed_at": 1788570420.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18MIAWAKE-WAKE": {
+      "event": "KXNCAAFGAME-26SEP18MIAWAKE",
+      "direction": -1,
+      "kickoff": 1789774200.0,
+      "listed_at": 1788570420.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18PRSTORE-ORE": {
+      "event": "KXNCAAFGAME-26SEP18PRSTORE",
+      "direction": 1,
+      "kickoff": 1789785000.0,
+      "listed_at": 1788581280.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    },
+    "KXNCAAFGAME-26SEP18PRSTORE-PRST": {
+      "event": "KXNCAAFGAME-26SEP18PRSTORE",
+      "direction": -1,
+      "kickoff": 1789785000.0,
+      "listed_at": 1788581280.0,
+      "series": "KXNCAAFGAME",
+      "verified_mecnet": true
+    }
+  },
+  "engine_clock_anchors": {
+    "KXNCAAFGAME-26SEP17SYRPITT-PITT": 1789687800.0,
+    "KXNCAAFGAME-26SEP17SYRPITT-SYR": 1789687800.0,
+    "KXNCAAFGAME-26SEP18HOUTTU-HOU": 1789776000.0,
+    "KXNCAAFGAME-26SEP18HOUTTU-TTU": 1789776000.0,
+    "KXNCAAFGAME-26SEP18MIAWAKE-MIA": 1789774200.0,
+    "KXNCAAFGAME-26SEP18MIAWAKE-WAKE": 1789774200.0,
+    "KXNCAAFGAME-26SEP18PRSTORE-ORE": 1789785000.0,
+    "KXNCAAFGAME-26SEP18PRSTORE-PRST": 1789785000.0
+  },
+  "pair_checks": 58787,
+  "pair_rejections": 10043,
+  "sport_cashflows": {
+    "KXNCAAFGAME": 6.3726999999998695
+  },
+  "efficiency": {
+    "net_per_1000_initial_cash": 1.2745399999996154,
+    "net_per_1000_filled_contracts": 0.7913625289026796,
+    "net_per_game": 1.593174999999519,
+    "return_on_initial_cash_pct": 0.12745399999996154,
+    "calendar_days": 8.0,
+    "observed_net_per_1000_initial_cash_per_day": 0.15931749999995193
+  },
+  "inventory_cost_hours": {
+    "total": 9745.651355557848,
+    "per_event": {
+      "KXNCAAFGAME-26SEP17SYRPITT": 2372.159697151455,
+      "KXNCAAFGAME-26SEP18MIAWAKE": 952.380233870221,
+      "KXNCAAFGAME-26SEP18HOUTTU": 6421.111424536171
+    },
+    "definition": "FIFO inventory acquisition cost including entry fees; excludes resting-order reservations"
+  }
+}

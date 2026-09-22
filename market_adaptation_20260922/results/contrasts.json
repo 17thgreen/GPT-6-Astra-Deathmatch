@@ -1,0 +1,265 @@
+{
+  "post_outcome_descriptive": true,
+  "production_promotion": false,
+  "interpretation": "Cutoff effects are compared within an identical assumed environment. No queue calibration or market validation follows.",
+  "cutoff_contrasts": [
+    {
+      "sport": "NCAAF",
+      "queue_profile": "nfl",
+      "queue": 3300,
+      "delay": 0.25,
+      "old_net": 2.467599999999038,
+      "later_net": 2.467599999999038,
+      "cutoff_effect": 0.0,
+      "later_net_without_best_two": -2.7809999999999953,
+      "old_passive_completion": 1.0,
+      "new_passive_completion": 1.0
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "nfl",
+      "queue": 3300,
+      "delay": 5,
+      "old_net": 2.467599999999038,
+      "later_net": 2.467599999999038,
+      "cutoff_effect": 0.0,
+      "later_net_without_best_two": -2.780999999999974,
+      "old_passive_completion": 1.0,
+      "new_passive_completion": 1.0
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "nfl",
+      "queue": 10000,
+      "delay": 0.25,
+      "old_net": -2.7967000000016924,
+      "later_net": -2.7967000000016924,
+      "cutoff_effect": 0.0,
+      "later_net_without_best_two": -3.751799999999972,
+      "old_passive_completion": 0.7464300000000003,
+      "new_passive_completion": 0.7464300000000003
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "nfl",
+      "queue": 10000,
+      "delay": 5,
+      "old_net": -2.7967000000016924,
+      "later_net": -2.7967000000016924,
+      "cutoff_effect": 0.0,
+      "later_net_without_best_two": -3.751799999999972,
+      "old_passive_completion": 0.7464300000000003,
+      "new_passive_completion": 0.7464300000000003
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "constant",
+      "queue": 3300,
+      "delay": 0.25,
+      "old_net": 16.006499999995867,
+      "later_net": 79.01999999998407,
+      "cutoff_effect": 63.0134999999882,
+      "later_net_without_best_two": 11.683299999999917,
+      "old_passive_completion": 0.9486041926643801,
+      "new_passive_completion": 0.9935783196196738
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "constant",
+      "queue": 3300,
+      "delay": 5,
+      "old_net": 16.006499999987682,
+      "later_net": 75.84629999997378,
+      "cutoff_effect": 59.8397999999861,
+      "later_net_without_best_two": 11.683299999999917,
+      "old_passive_completion": 0.9486041926643801,
+      "new_passive_completion": 0.9903318754751175
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "constant",
+      "queue": 10000,
+      "delay": 0.25,
+      "old_net": 6.372699999998076,
+      "later_net": 30.50540000000092,
+      "cutoff_effect": 24.132700000002842,
+      "later_net_without_best_two": 5.192900000000016,
+      "old_passive_completion": 0.9370233036377316,
+      "new_passive_completion": 0.944618507123357
+    },
+    {
+      "sport": "NCAAF",
+      "queue_profile": "constant",
+      "queue": 10000,
+      "delay": 5,
+      "old_net": 6.3727999999964595,
+      "later_net": 29.895499999992353,
+      "cutoff_effect": 23.522699999995893,
+      "later_net_without_best_two": 5.192900000000016,
+      "old_passive_completion": 0.9370233036377316,
+      "new_passive_completion": 0.9435816779818142
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "nfl",
+      "queue": 3300,
+      "delay": 0.25,
+      "old_net": -45.18499999999949,
+      "later_net": -47.41729999999916,
+      "cutoff_effect": -2.232299999999668,
+      "later_net_without_best_two": -41.1083,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.0
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "nfl",
+      "queue": 3300,
+      "delay": 5,
+      "old_net": -45.18499999999949,
+      "later_net": -47.41729999999916,
+      "cutoff_effect": -2.232299999999668,
+      "later_net_without_best_two": -41.1083,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.0
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "nfl",
+      "queue": 10000,
+      "delay": 0.25,
+      "old_net": -35.29210000000057,
+      "later_net": -32.82540000000063,
+      "cutoff_effect": 2.466699999999946,
+      "later_net_without_best_two": -32.82539999999997,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.0
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "nfl",
+      "queue": 10000,
+      "delay": 5,
+      "old_net": -35.29210000000057,
+      "later_net": -32.82540000000063,
+      "cutoff_effect": 2.466699999999946,
+      "later_net_without_best_two": -32.82539999999997,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.0
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "constant",
+      "queue": 3300,
+      "delay": 0.25,
+      "old_net": -45.18499999999949,
+      "later_net": -39.17070000000149,
+      "cutoff_effect": 6.014299999998002,
+      "later_net_without_best_two": -37.93340000000002,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.5655127692783303
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "constant",
+      "queue": 3300,
+      "delay": 5,
+      "old_net": -45.18499999999949,
+      "later_net": -39.17070000000149,
+      "cutoff_effect": 6.014299999998002,
+      "later_net_without_best_two": -37.93340000000002,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.5655127692783303
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "constant",
+      "queue": 10000,
+      "delay": 0.25,
+      "old_net": -35.29210000000057,
+      "later_net": -34.3139000000001,
+      "cutoff_effect": 0.97820000000047,
+      "later_net_without_best_two": -32.87929999999999,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.5493539597433419
+    },
+    {
+      "sport": "WNBA",
+      "queue_profile": "constant",
+      "queue": 10000,
+      "delay": 5,
+      "old_net": -35.29210000000057,
+      "later_net": -34.3139000000001,
+      "cutoff_effect": 0.97820000000047,
+      "later_net_without_best_two": -32.87929999999999,
+      "old_passive_completion": 0.0,
+      "new_passive_completion": 0.5493539597433419
+    }
+  ],
+  "latency_contrasts": [
+    {
+      "scenario": "NCAAF_t180_nfl_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q10000_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q3300_d5",
+      "slow_minus_fast": -8.185452315956354e-12
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q10000_d5",
+      "slow_minus_fast": 9.999999838328222e-05
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q10000_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q3300_d5",
+      "slow_minus_fast": -3.1737000000102853
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q10000_d5",
+      "slow_minus_fast": -0.6099000000085653
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q10000_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q10000_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q10000_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q3300_d5",
+      "slow_minus_fast": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q10000_d5",
+      "slow_minus_fast": 0.0
+    }
+  ]
+}

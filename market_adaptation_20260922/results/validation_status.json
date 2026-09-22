@@ -1,0 +1,9 @@
+{
+  "new_tests": 12,
+  "inherited_tests": 162,
+  "ledger_audits": 32,
+  "exact_control_ledgers": 8,
+  "frozen_file_count": 140,
+  "all_frozen_hashes_match": true,
+  "no_policy_promotion": true
+}

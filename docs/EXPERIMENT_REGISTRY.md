@@ -52,3 +52,13 @@ NCAAF +$2.47/-$2.80, WNBA -$45.18/-$35.29, combined -$42.72/-$38.09.
 No sport promotion and no tuning. All raw inputs are in Git; compressed outcome
 ledgers are indexed in DATA_ARCHIVE.json. Equal-total-capital fixed-versus-shared
 bot allocation remains a separate unrun experiment direction.
+
+M3 complete: `market_adaptation_20260922/M3_RESULTS.md`. Spec 58ae378, source/input
+freeze f20bd36. 32 individual-sport cutoff x queue-environment x depth x delay
+cases; all flat and independently audited, eight exact M2 controls, 174 tests.
+CFB late/constant-depth net $79.02/$30.51 at queues 3300/10000, but no late-cutoff
+gain under the inherited NFL late-depth profile. WNBA negative throughout.
+No promotion; NFL Q7 unchanged. Separate six-series metadata availability audit
+specified at f80f984; reservations are not replay admission or profitability.
+Next stages: independent market adaptation, matched-calendar comparison, then
+capital capacity and feasible reinvestment. All tried variants remain visible.

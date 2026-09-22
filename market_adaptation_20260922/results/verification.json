@@ -1,0 +1,320 @@
+{
+  "all_passed": true,
+  "ledger_audits": [
+    {
+      "scenario": "NCAAF_t180_nfl_q3300_d0.25",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 7.37188088351104e-14
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q3300_d5",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 5.950795411990839e-14
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q10000_d0.25",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q10000_d5",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q3300_d0.25",
+      "passed": true,
+      "fills": 462,
+      "orders": 5210,
+      "completed_net": 16.006499999995867,
+      "residual": 4.085620730620576e-14
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q3300_d5",
+      "passed": true,
+      "fills": 464,
+      "orders": 5210,
+      "completed_net": 16.006499999987682,
+      "residual": 6.927791673660977e-14
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q10000_d0.25",
+      "passed": true,
+      "fills": 200,
+      "orders": 5695,
+      "completed_net": 6.372699999998076,
+      "residual": 1.2789769243681803e-13
+    },
+    {
+      "scenario": "NCAAF_t180_constant_q10000_d5",
+      "passed": true,
+      "fills": 201,
+      "orders": 5695,
+      "completed_net": 6.3727999999964595,
+      "residual": 4.263256414560601e-14
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q3300_d0.25",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 7.37188088351104e-14
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q3300_d5",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 5.950795411990839e-14
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q10000_d0.25",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "NCAAF_t30_nfl_q10000_d5",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q3300_d0.25",
+      "passed": true,
+      "fills": 967,
+      "orders": 5330,
+      "completed_net": 79.01999999998407,
+      "residual": 2.17131868041065e-13
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q3300_d5",
+      "passed": true,
+      "fills": 1001,
+      "orders": 5329,
+      "completed_net": 75.84629999997378,
+      "residual": 1.8474111129762605e-13
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q10000_d0.25",
+      "passed": true,
+      "fills": 468,
+      "orders": 5753,
+      "completed_net": 30.50540000000092,
+      "residual": 1.9895196601282805e-13
+    },
+    {
+      "scenario": "NCAAF_t30_constant_q10000_d5",
+      "passed": true,
+      "fills": 403,
+      "orders": 5750,
+      "completed_net": 29.895499999992353,
+      "residual": 1.4210854715202004e-13
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q3300_d0.25",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q3300_d5",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q10000_d0.25",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q10000_d5",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q3300_d0.25",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q3300_d5",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q10000_d0.25",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t180_constant_q10000_d5",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q3300_d0.25",
+      "passed": true,
+      "fills": 6,
+      "orders": 2919,
+      "completed_net": -47.41729999999916,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q3300_d5",
+      "passed": true,
+      "fills": 6,
+      "orders": 2919,
+      "completed_net": -47.41729999999916,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q10000_d0.25",
+      "passed": true,
+      "fills": 8,
+      "orders": 3268,
+      "completed_net": -32.82540000000063,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_nfl_q10000_d5",
+      "passed": true,
+      "fills": 8,
+      "orders": 3268,
+      "completed_net": -32.82540000000063,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q3300_d0.25",
+      "passed": true,
+      "fills": 23,
+      "orders": 2928,
+      "completed_net": -39.17070000000149,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q3300_d5",
+      "passed": true,
+      "fills": 23,
+      "orders": 2928,
+      "completed_net": -39.17070000000149,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q10000_d0.25",
+      "passed": true,
+      "fills": 24,
+      "orders": 3274,
+      "completed_net": -34.3139000000001,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_t30_constant_q10000_d5",
+      "passed": true,
+      "fills": 24,
+      "orders": 3274,
+      "completed_net": -34.3139000000001,
+      "residual": 0.0
+    }
+  ],
+  "exact_M2_controls": [
+    {
+      "scenario": "NCAAF_t180_nfl_q3300_d0.25",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q3300_d5",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q10000_d0.25",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "NCAAF_t180_nfl_q10000_d5",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q3300_d0.25",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q3300_d5",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q10000_d0.25",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    },
+    {
+      "scenario": "WNBA_t180_nfl_q10000_d5",
+      "exact_matches": {
+        "fills": true,
+        "orders": true
+      }
+    }
+  ],
+  "frozen_hashes_match": true
+}
