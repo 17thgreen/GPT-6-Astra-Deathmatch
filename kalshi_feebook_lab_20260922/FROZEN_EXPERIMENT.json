@@ -1,7 +1,7 @@
 {
   "experiment": "R1-P1-FEEBOOK",
   "directory": "kalshi_feebook_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-22T21:38:47Z",
   "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
   "does_not_modify": [
@@ -40,7 +40,14 @@
     "kalshi_general_fee_table.json": "a259eaf5b74ace93960e0990b7d89fd417a1e992ab9656393ed32890476d434e",
     "series_fee_table.stub.json": "600d56beda64c2edd9af2c9d220398ff1a7158dba140603a42f7cb7f95212384"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "7661e8fdc8b031c275782e0a6ffd68ad63a66f52430c2a406607649f578e2863",
+    "feebook.py": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_feebook.py": "1ed3b25bdbb03cbe3c4a54aa01bacba74131fd2baf7a1c154ac58ab8d9e86ff8"
+  },
   "results": null,
-  "pnl": null
+  "pnl": null,
+  "source_frozen_at": "2026-09-22T21:41:14Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results and pnl remain null."
 }
