@@ -1,0 +1,36 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "CAPITAL-STRUCTURE-PROBE",
+  "ran_at": "2026-09-22T22:55:45Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_capital_structure",
+  "cwd": "kalshi_capital_structure_lab_20260922",
+  "tests_run": 23,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.011,
+  "feebook_regression": {
+    "command": "python3 -m unittest tests.test_feebook",
+    "cwd": "kalshi_feebook_lab_20260922",
+    "tests_run": 37,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.005,
+    "note": "Unchanged feebook module. Not a capital-structure profit result."
+  },
+  "rails_regression": {
+    "command": "python3 -m unittest tests.test_rails",
+    "cwd": "kalshi_rails_lab_20260922",
+    "tests_run": 44,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.008,
+    "note": "Unchanged rails module. Not a capital-structure profit result."
+  },
+  "pnl": null,
+  "tape_walk": null,
+  "note": "Code verification of capital partition invariants. Not a simulated execution and not live validation. Freeze results and pnl remain null."
+}

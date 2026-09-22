@@ -1,0 +1,26 @@
+{
+  "status": "FROZEN",
+  "packet": "packets/CAPITAL_STRUCTURE_PROBE_FREEZE_KERNEL_2026-09-22.md",
+  "packet_sha256": "729c493e7a059615e6c734a19967b98a61c0c0cc2bc6949d203dd5096414060c",
+  "C_total_usd": 5000,
+  "N_events": 31,
+  "slice_usd": 161,
+  "residual_usd": 9,
+  "residual_policy": "non_trading_residual_bucket",
+  "soft_policy": "borrow_unused_event_id_FIFO",
+  "arms": [
+    "A1_shared_pool",
+    "A2_shared_soft_reserve",
+    "A3_hard_equal_slices"
+  ],
+  "promotion_scoreboard": "shared_account_only",
+  "forbidden": "sum_of_N_independent_wallets_vs_one_5k",
+  "strategy_pointer": "Q6-000",
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "q7_verification_sha256": "eb1586bf13b1631951a4f177293350cb89fc7948a50fbb7044f4f05313ebc06f",
+  "q7_paircheck_effects_sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+  "q7_selection": "NO_NEW_SELECTION",
+  "primary_stress": "q3300_d0.25",
+  "go": "Conductor 2026-09-22 post Q7 verify+analyze"
+}
