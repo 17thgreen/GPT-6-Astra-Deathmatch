@@ -1,0 +1,30 @@
+{
+  "candidate_events": [
+    "KXWNBAGAME-26SEP17CONNATL",
+    "KXWNBAGAME-26SEP17LADAL",
+    "KXWNBAGAME-26SEP17LVSEA",
+    "KXWNBAGAME-26SEP17PHXPDX",
+    "KXWNBAGAME-26SEP17WSHCHI",
+    "KXWNBAGAME-26SEP18INDTOR",
+    "KXWNBAGAME-26SEP18NYMIN",
+    "KXWNBAGAME-26SEP18PDXGS",
+    "KXWNBAGAME-26SEP19CHIATL",
+    "KXWNBAGAME-26SEP19PHXDAL",
+    "KXWNBAGAME-26SEP19SEAGS",
+    "KXWNBAGAME-26SEP20MINCONN",
+    "KXWNBAGAME-26SEP20NYTOR",
+    "KXWNBAGAME-26SEP20PDXLA",
+    "KXWNBAGAME-26SEP20SEALV",
+    "KXWNBAGAME-26SEP20WSHIND"
+  ],
+  "requests": [
+    {
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXWNBAGAME&min_close_ts=1789344000&max_close_ts=1790035200&limit=1000",
+      "received_at": "2026-09-22T17:50:19.407520+00:00",
+      "prior_errors": []
+    }
+  ],
+  "raw_capture": "KXWNBAGAME_discovery.jsonl.gz",
+  "raw_sha256": "863dae84b6f060b655df1bbc2414e06fc7f0e14b267b37c93252d36d9a84f128",
+  "pagination_exhausted": true
+}
