@@ -1,0 +1,8 @@
+{
+  "filename": "M2_CFB_WNBA_Ledgers_2026-09-22.zip",
+  "bytes": 17272632,
+  "sha256": "78dbd8b16ca9eee6fab4f02a14b2c1d5ce697e775a96ff3cb113552ccc26cb96",
+  "file_count": 36,
+  "source_freeze_commit": "3f12171a2b0e0ad6d5b6cdde0fa76f0dcfa91176",
+  "restore": "Extract at repository root; raw inputs and source are in Git. Run cross_sport_replay_20260922/verify_replay.py from its directory."
+}

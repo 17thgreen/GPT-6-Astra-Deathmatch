@@ -1,0 +1,101 @@
+{
+  "all_passed": true,
+  "cases": [
+    {
+      "scenario": "NCAAF_q3300_d0.25",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 7.37188088351104e-14
+    },
+    {
+      "scenario": "NCAAF_q3300_d5",
+      "passed": true,
+      "fills": 110,
+      "orders": 5139,
+      "completed_net": 2.467599999999038,
+      "residual": 5.950795411990839e-14
+    },
+    {
+      "scenario": "NCAAF_q10000_d0.25",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "NCAAF_q10000_d5",
+      "passed": true,
+      "fills": 27,
+      "orders": 5659,
+      "completed_net": -2.7967000000016924,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "WNBA_q3300_d0.25",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_q3300_d5",
+      "passed": true,
+      "fills": 6,
+      "orders": 2889,
+      "completed_net": -45.18499999999949,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_q10000_d0.25",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "WNBA_q10000_d5",
+      "passed": true,
+      "fills": 8,
+      "orders": 3238,
+      "completed_net": -35.29210000000057,
+      "residual": 0.0
+    },
+    {
+      "scenario": "combined_q3300_d0.25",
+      "passed": true,
+      "fills": 116,
+      "orders": 8028,
+      "completed_net": -42.71739999999954,
+      "residual": 7.37188088351104e-14
+    },
+    {
+      "scenario": "combined_q3300_d5",
+      "passed": true,
+      "fills": 116,
+      "orders": 8028,
+      "completed_net": -42.71739999999954,
+      "residual": 5.950795411990839e-14
+    },
+    {
+      "scenario": "combined_q10000_d0.25",
+      "passed": true,
+      "fills": 35,
+      "orders": 8897,
+      "completed_net": -38.088800000002266,
+      "residual": 1.3933298959045715e-14
+    },
+    {
+      "scenario": "combined_q10000_d5",
+      "passed": true,
+      "fills": 35,
+      "orders": 8897,
+      "completed_net": -38.088800000002266,
+      "residual": 1.3933298959045715e-14
+    }
+  ]
+}

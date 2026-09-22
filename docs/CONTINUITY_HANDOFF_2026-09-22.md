@@ -63,3 +63,15 @@ archive checksums and limits remain recorded in its DATA_ARCHIVE.json. This
 continuation has not independently established that those external bytes were
 successfully delivered; it does not repeat an upload or claim they are restored.
 M2's small raw inputs fit in Git and need no archive workflow.
+
+## Completed after recovery
+
+Source/input freeze published at 3f12171 before the twelve-run replay. M2 now
+completes with all ledgers flat and independently audited. CFB net is
++$2.47/-$2.80 at queues 3300/10000; WNBA -$45.18/-$35.29; combined
+-$42.72/-$38.09. Both delay settings have the same P&L. Read M2_RESULTS.md.
+No expansion earns promotion. The fleet architecture is documented separately;
+M2 shows a completion problem, with no observed shared-cash fill displacement.
+The 36 outcome ledgers were saved as one verified 17.3 MB archive; exact checksum
+indexes are committed. No long-running upload remains. Nothing runs in the
+background after this checkpoint.

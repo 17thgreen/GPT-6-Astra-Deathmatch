@@ -6,6 +6,14 @@ are preserved here. No live order-enabled strategy has been validated or deploye
 
 ## Current result
 
+September 22 continuation: [M2 CFB/WNBA transport pilot](cross_sport_replay_20260922/M2_RESULTS.md)
+is complete. On eight frozen games, unchanged Q7/NFL assumptions produce
+CFB **+$2.47 / -$2.80**, WNBA **-$45.18 / -$35.29**, and combined
+**-$42.72 / -$38.09** at early queues 3300 / 10000. All twelve ledgers reconcile;
+no expansion is promoted. [Current handoff](docs/CONTINUITY_HANDOFF_2026-09-22.md)
+and [fleet capital design](docs/FLEET_CAPITAL_DESIGN.md) preserve the mandate.
+Current branch: `research/m2-continuation`; raw M2 inputs are included in Git.
+
 September 22: [other-market update](market_access_lab_20260922/MARKET_UPDATE.md)
 adds tested adapter components and a 28-event, 56-ticker public-book census.
 50 usable snapshots; six retained timeouts. No non-NFL profitability claim.
@@ -89,8 +97,8 @@ Commit the hypothesis and frozen specification before execution, then commit the
 implementation checkpoint and verified results with a clear status. Preserve
 failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
-The approved Q7 mechanism test is complete. Current authorized work is Q8 joint
-routing, queue access, profitability and market portability. The user owns forward
+The approved Q7, Q8 and M2 studies are complete. Current authorized work remains
+queue access, profitability and market portability. The user owns forward
 validation; it does not block this research lane.
 Neither a continuous recorder nor live trading is operating. Q7's large data and
 ledger archive is indexed in its DATA_ARCHIVE.json and EXTERNAL_ARTIFACTS.json;

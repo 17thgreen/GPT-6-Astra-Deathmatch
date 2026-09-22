@@ -43,3 +43,12 @@ M1 complete: `market_access_lab_20260922/MARKET_UPDATE.md`. Descriptive six-spor
 book census and execution-neutral adapters; 16 tests, 50 arithmetic checks,
 6 retained timeouts. No fills simulated; no non-NFL P&L. Spec cfe48ab, source
 freeze 079d7c7. NCAAF/WNBA historical adapter integration remains next.
+
+M2 complete: `cross_sport_replay_20260922/M2_RESULTS.md`. Four NCAAF plus four
+WNBA events, all 16 captures complete, twelve hypothetical transport scenarios.
+Source/input freeze 3f12171 preceded outcomes. Ten new tests plus 152 inherited
+tests pass; twelve independent ledger audits pass. At queues 3300/10000:
+NCAAF +$2.47/-$2.80, WNBA -$45.18/-$35.29, combined -$42.72/-$38.09.
+No sport promotion and no tuning. All raw inputs are in Git; compressed outcome
+ledgers are indexed in DATA_ARCHIVE.json. Equal-total-capital fixed-versus-shared
+bot allocation remains a separate unrun experiment direction.

@@ -1,0 +1,11 @@
+{
+  "new_tests": 10,
+  "inherited_replay_tests": 128,
+  "inherited_market_adapter_tests": 16,
+  "inherited_payoff_tests": 8,
+  "ledger_audits": 12,
+  "all_source_input_hashes_match": true,
+  "source_freeze_commit": "3f12171a2b0e0ad6d5b6cdde0fa76f0dcfa91176",
+  "matrix_failures": 0,
+  "archive_saved": true
+}

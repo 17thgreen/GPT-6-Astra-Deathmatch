@@ -1,0 +1,146 @@
+{
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d0.25_fills.jsonl.gz": {
+    "bytes": 1975,
+    "sha256": "f5a326edb43718a6f29c2cd8c10dbb002fc6cbe9df92dd765bf1f3d53bf894f2"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d0.25_orders.jsonl.gz": {
+    "bytes": 115724,
+    "sha256": "a3c27438fad1c09a328a93bda0f4593d6cff8fc673c562a27e191f2eb2aa9c90"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d0.25_pairs.jsonl.gz": {
+    "bytes": 1257862,
+    "sha256": "7438658390608f733dd7896dce4eb3d1a5c08b946342b43145b10416eb5311d5"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d5_fills.jsonl.gz": {
+    "bytes": 1948,
+    "sha256": "224ef535b02ef80c2c08471ed2584b31f82baeff281a0f3522b760adfae40f0a"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d5_orders.jsonl.gz": {
+    "bytes": 115384,
+    "sha256": "df94258d70aa33f16f5e2f3f4f2076fbbcb13ebc99c28f6c5db18938ca222882"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q10000_d5_pairs.jsonl.gz": {
+    "bytes": 1257859,
+    "sha256": "e1dc4943509bfea9d8649ab13d250c8c6deb954761259f476f841cea9763dcbf"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d0.25_fills.jsonl.gz": {
+    "bytes": 6331,
+    "sha256": "a005e66fad7c352d7d1ac968eff4bbccb42e5afe99e43c34c93d3d367126a5da"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d0.25_orders.jsonl.gz": {
+    "bytes": 104772,
+    "sha256": "d9e07b69a1cc596b14ad5088a58f765a482bad35e2f1a2056709e9323a0b6318"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d0.25_pairs.jsonl.gz": {
+    "bytes": 1261940,
+    "sha256": "cb7a1276f08287f4e439c7c1a2437dfd2002d741a923557e165de9a23e9ef326"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d5_fills.jsonl.gz": {
+    "bytes": 6225,
+    "sha256": "41994c2199565c425d433ba5c939e131f92fb0d3a857440db4445f4c8fe4c28e"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d5_orders.jsonl.gz": {
+    "bytes": 104109,
+    "sha256": "b6f4fa747df668e650f869b65e798f154b1ac4a02b0fd8a2f54771a43b7dc448"
+  },
+  "cross_sport_replay_20260922/results/NCAAF_q3300_d5_pairs.jsonl.gz": {
+    "bytes": 1262343,
+    "sha256": "e84d060876a38ad1788b567dbe4ed96fb31f910caff8e54533d74de6fc43e4a9"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d0.25_fills.jsonl.gz": {
+    "bytes": 705,
+    "sha256": "c09e09d493afe49bc0a4e6cd81c4f2409250fc7a273346e58b4eb0c6f28c26e4"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d0.25_orders.jsonl.gz": {
+    "bytes": 64567,
+    "sha256": "7197464308562fc006d94781aa703a8c697f29d75938228421c27b0098999f4a"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d0.25_pairs.jsonl.gz": {
+    "bytes": 541472,
+    "sha256": "86d239b11c54efb91a492bc5d9ccae5118d578530cef13f163847a8dac025ca7"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d5_fills.jsonl.gz": {
+    "bytes": 698,
+    "sha256": "b852518ce36b4a486be3686cc0fe6ca8aed5cf03b57bd06da300211efb895956"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d5_orders.jsonl.gz": {
+    "bytes": 64724,
+    "sha256": "40a4dbb23f2a01e67cc4bd3cc0d94e2c3875940fee84bba9677d05d6bc1c26fc"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q10000_d5_pairs.jsonl.gz": {
+    "bytes": 541469,
+    "sha256": "f4fe4edb54b4db088bd8226cc831f02716c9faadb70352d398caa6982d61f0da"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d0.25_fills.jsonl.gz": {
+    "bytes": 715,
+    "sha256": "b1f8043396f1af94d45d360657dda911b550e5a390f9f49a492a390720deb4c7"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d0.25_orders.jsonl.gz": {
+    "bytes": 57650,
+    "sha256": "16c98ac1ba68f8ebcd4e76127abc3ccdbbd81c2a6a4dc6952bcbbe77a91d0b64"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d0.25_pairs.jsonl.gz": {
+    "bytes": 539813,
+    "sha256": "b7808050f4347dd76dd3be373bad2c74ed5a5b165318819562d0cccf521e4d6f"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d5_fills.jsonl.gz": {
+    "bytes": 708,
+    "sha256": "e73ed0c1379ed66e023aa51cf983b7e682496e226022e382b45ffb2bef8fbdbf"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d5_orders.jsonl.gz": {
+    "bytes": 57737,
+    "sha256": "60e4058a066cbf8dbd939d41e290f5271700e03ce0a3bd6e61370e6e0dc16f92"
+  },
+  "cross_sport_replay_20260922/results/WNBA_q3300_d5_pairs.jsonl.gz": {
+    "bytes": 539810,
+    "sha256": "734fe4c0a4fc2683b123151d554d73bec7585748699038a6bfb5c82fa3ebd7e9"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d0.25_fills.jsonl.gz": {
+    "bytes": 2358,
+    "sha256": "70840143e6d0c2863a1685f17d681751dd055633fddf70c2cd993ec196a45e53"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d0.25_orders.jsonl.gz": {
+    "bytes": 185185,
+    "sha256": "acd99da8936738ea37034794a547ec7af9255e1a5c256a3293e45215cab137fd"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d0.25_pairs.jsonl.gz": {
+    "bytes": 2159778,
+    "sha256": "df4ec17904e2310b1d1f69b5f45e95a166b91dd727929689d459f8335db1510a"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d5_fills.jsonl.gz": {
+    "bytes": 2307,
+    "sha256": "e1eb00fc288f02bca650001e83fbec7dd9052651dfa3e99d16d40ed0a72b85b9"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d5_orders.jsonl.gz": {
+    "bytes": 184541,
+    "sha256": "5a9db4cd46934c969c252e4f8ed194c4d1a3aedc236cfee0e7af0bfb637bad50"
+  },
+  "cross_sport_replay_20260922/results/combined_q10000_d5_pairs.jsonl.gz": {
+    "bytes": 2159775,
+    "sha256": "c2de67e1efb6d1d4507c29fa3d9074ab0c8d6cb13f74340ac499aab5f4c15f84"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d0.25_fills.jsonl.gz": {
+    "bytes": 6848,
+    "sha256": "24de0acd7d3cb02d67a6c6f54006dcebc94c5aa89ef3b6914dbdb077024d23d2"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d0.25_orders.jsonl.gz": {
+    "bytes": 166352,
+    "sha256": "fd0b8e455e41447d9282f43e4755064f955b30c847d57414ec31a6550b69ab9b"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d0.25_pairs.jsonl.gz": {
+    "bytes": 2158959,
+    "sha256": "f9ce7b4f62b1ab4fda4f507cf86c78fbb016e74fdb63621a2a92e08b3f454aef"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d5_fills.jsonl.gz": {
+    "bytes": 6700,
+    "sha256": "69a59592da29ffe6e0454d889800bef8db5d44aaac1e6c761eee3d114bf2cd32"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d5_orders.jsonl.gz": {
+    "bytes": 165767,
+    "sha256": "16fa6f739d2c9a0a023b584d19fe3d651f1877374b48b5bec3e0ade977652f93"
+  },
+  "cross_sport_replay_20260922/results/combined_q3300_d5_pairs.jsonl.gz": {
+    "bytes": 2159365,
+    "sha256": "d567670c6c14f9ac92e0a1b2c7a3a60ae83c3f828457362471a2dd85efc277aa"
+  }
+}

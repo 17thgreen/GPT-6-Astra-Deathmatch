@@ -1,0 +1,38 @@
+{
+  "post_result_diagnostic": true,
+  "cases": [
+    {
+      "scenario": "combined_q3300_d0.25",
+      "standalone_economic_fill_histories_match": {
+        "NCAAF": true,
+        "WNBA": true
+      },
+      "cash_minus_reservation_lower_bound": 2569.8430850399996
+    },
+    {
+      "scenario": "combined_q3300_d5",
+      "standalone_economic_fill_histories_match": {
+        "NCAAF": true,
+        "WNBA": true
+      },
+      "cash_minus_reservation_lower_bound": 2569.8430850399996
+    },
+    {
+      "scenario": "combined_q10000_d0.25",
+      "standalone_economic_fill_histories_match": {
+        "NCAAF": true,
+        "WNBA": true
+      },
+      "cash_minus_reservation_lower_bound": 2519.5302811074994
+    },
+    {
+      "scenario": "combined_q10000_d5",
+      "standalone_economic_fill_histories_match": {
+        "NCAAF": true,
+        "WNBA": true
+      },
+      "cash_minus_reservation_lower_bound": 2519.5302811074994
+    }
+  ],
+  "interpretation": "No shared-capital fill displacement in this pilot. This does not test a fixed 2500/2500 split or establish an allocator advantage."
+}
