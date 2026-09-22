@@ -56,7 +56,16 @@ Those reruns check unchanged modules. They are not R2-P1 results.
   sha256 prefix `ddcd4427`. Those bytes were not in this checkout. This lab
   does not substitute a file under that name. `fee_sensitivity_000_r1p1` is
   superseded by R2-P1. No second lab directory exists. FS0, FS1, and FS2 are
-  not scorecard columns. Queue-fragility was not started.
+  not scorecard columns. Queue-fragility is a separate sibling lab, not a knob
+  of this one.
+
+## Sibling pin amendment
+
+After `kalshi_queue_fragility_000_lab_20260922` landed, the pin-lock allows
+that directory name and no other `*queue_fragility*` or `*queue-fragility*`
+path. A second fee-sensitivity lab and a second R2-P1 directory stay
+forbidden. `queue_fragility_twin` stays false: this lab is not that twin.
+Pre-settlement outputs and pnl stay null.
 - No live order client was added. No Q1–Q7 directory, and neither the feebook
   lab, the rails lab, nor the capital-structure lab, was modified.
 

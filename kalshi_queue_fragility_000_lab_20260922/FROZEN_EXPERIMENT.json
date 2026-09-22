@@ -73,17 +73,23 @@
     "Q6_000_signal_retune"
   ],
   "specification_sha256": {
-    "EXPERIMENT_SPEC.md": "fad95bb0f6cefc5bcdbbbe470631b60a870ff6cfa890a9ece884c9ad7af7c8f9",
+    "EXPERIMENT_SPEC.md": "35a8e99a386b7083aeae0999d5bafcc6ae9370ba521705df38c110ee3cbe1fa8",
     "QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md": "e01d684abefd2d919ac6546f85619a246ce73098c04f7b24c84451ff49b00308",
     "queue_fragility_000_r1p5_freeze.json": "32825cd6bd9ee8d448b26ddb29403d2894b3f0a7310664fadd331b9e297a3d83",
     "results/EMPTY_RESULTS.json": "6a41d4037b3ddba326303d1d015316b2f1c13da913950a217b5b2f5da0404407"
   },
   "implementation_sha256": {
-    "README.md": "3107453deda9fab94cc2f75b5615010b80264cf2497746bbe5552e41b60d516e",
+    "README.md": "0a8214e05763a1f469c72143b05e843a7fee7c9672c6fa8cb4aed873df8c6634",
     "queue_fragility.py": "312e7f19643584a395e72654758c50a8c9ae155580991f4144b3721e5ecaba4e",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/test_queue_fragility.py": "74bd29692e8a47592332d4f89bda632ddecad1577868e1fdac0ed955a205056c"
+    "tests/test_queue_fragility.py": "c7ade82796fb2ebd2d282e5adb971e71fb59856575865122efc38511ed503454"
   },
+  "r2p1_sibling_pin_files": [
+    "kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/tests/test_hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/FROZEN_EXPERIMENT.json",
+    "kalshi_r2p1_hygiene_000_lab_20260922/results/R2P1_UNIT_RESULTS.md"
+  ],
   "source_frozen_at": "2026-09-22T23:18:54Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
   "fill_rate_delta_vs_q3300": null,

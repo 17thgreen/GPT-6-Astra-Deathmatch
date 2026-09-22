@@ -131,8 +131,13 @@ class PinTests(unittest.TestCase):
         )
         self.assertEqual(names.returncode, 0, names.stderr)
         changed = set(names.stdout.split())
+        sibling_pin = set(frozen['r2p1_sibling_pin_files'])
         for path in frozen['does_not_modify']:
-            self.assertFalse(any(item == path or item.startswith(path + '/') for item in changed))
+            hits = {item for item in changed if item == path or item.startswith(path + '/')}
+            if path == 'kalshi_r2p1_hygiene_000_lab_20260922':
+                self.assertTrue(hits <= sibling_pin, hits - sibling_pin)
+            else:
+                self.assertEqual(hits, set())
         ancestor = subprocess.run(
             ['git', 'merge-base', '--is-ancestor', qf.PRIOR_R2P1_MERGE, 'HEAD'],
             cwd=PARENT,

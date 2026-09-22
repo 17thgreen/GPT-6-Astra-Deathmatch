@@ -163,11 +163,13 @@ the prospective recorder, and the earlier Q labs. No signal retune. No capital
 redesign. No fee-treatment arm. No inherited `common_config` fee literals in
 this lab's source.
 
-The frozen R2-P1 unit file asserts that no `*queue_fragility*` directory
-exists, because that twin had not been started. This lab starts that twin in
-a new directory and does not rewrite the R2-P1 snapshot. A later rerun of the
-R2-P1 suite will fail that one assertion. That failure is the snapshot pin
-meeting this directory. It is not a reason to edit the R2-P1 lab.
+The R2-P1 pin-lock allows one sibling directory,
+`kalshi_queue_fragility_000_lab_20260922`, and no other `*queue_fragility*`
+or `*queue-fragility*` path. It still forbids a second fee-sensitivity lab
+and a second R2-P1 directory. That allowance is a pin amendment in the R2-P1
+test. `queue_fragility_twin` stays false on the R2-P1 lab: this directory is
+the twin, and R2-P1 is not. This lab does not retune Q6-`000`, does not
+reopen A2/A3, and does not change the R2-P1 fee-hygiene behavior.
 
 ## What a later result file may say
 

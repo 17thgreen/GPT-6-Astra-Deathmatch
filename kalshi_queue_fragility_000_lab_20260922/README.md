@@ -21,7 +21,8 @@ From this directory, Python 3.12 standard library:
 python3 -m unittest -v tests.test_queue_fragility
 ```
 
-No live orders. This lab does not modify the feebook lab, the rails lab, the
-R2-P1 hygiene lab, the capital-structure lab, or the Q1–Q7 trees. A Q6-`000`
-tape join is later Examiner work. Until that join the pre-settlement outputs
-stay null.
+No live orders. The R2-P1 pin-lock allows this directory as its queue-fragility
+sibling and still forbids a second fee-sensitivity lab and a second R2-P1
+directory. This lab does not modify the feebook lab, the rails lab, the
+capital-structure lab, or the Q1–Q7 trees. A Q6-`000` tape join is later
+Examiner work. Until that join the pre-settlement outputs stay null.

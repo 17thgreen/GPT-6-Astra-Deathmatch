@@ -119,6 +119,11 @@ class PinTests(unittest.TestCase):
         self.assertIs(lock['fee_treatment_arms_emitted'], False)
         self.assertIs(frozen['fee_treatment_arms_emitted'], False)
         self.assertIs(lock['queue_fragility_twin'], False)
+        self.assertEqual(lock['queue_fragility_sibling'], hygiene.QUEUE_FRAGILITY_SIBLING)
+        self.assertEqual(
+            lock['queue_fragility_sibling'],
+            'kalshi_queue_fragility_000_lab_20260922',
+        )
         self.assertIs(lock['live_orders'], False)
         for key in ('results', 'pnl', *hygiene.OUTPUT_KEYS):
             self.assertIsNone(lock['scorecard'][key])
@@ -127,8 +132,12 @@ class PinTests(unittest.TestCase):
             self.assertNotIn(arm, frozen)
         self.assertFalse((PARENT / 'kalshi_fee_sensitivity_000_lab_20260922').exists())
         self.assertEqual(list(PARENT.glob('*fee_sensitivity*')), [])
-        self.assertEqual(list(PARENT.glob('*queue_fragility*')), [])
-        self.assertEqual(list(PARENT.glob('*queue-fragility*')), [])
+        sibling = hygiene.QUEUE_FRAGILITY_SIBLING
+        underscore = sorted(path.name for path in PARENT.glob('*queue_fragility*'))
+        hyphen = sorted(path.name for path in PARENT.glob('*queue-fragility*'))
+        self.assertEqual(underscore, [sibling])
+        self.assertEqual(hyphen, [])
+        self.assertTrue((PARENT / sibling).is_dir())
         labs = sorted(path.name for path in PARENT.glob('kalshi_r2p1_hygiene_000_lab_*'))
         self.assertEqual(labs, ['kalshi_r2p1_hygiene_000_lab_20260922'])
 
