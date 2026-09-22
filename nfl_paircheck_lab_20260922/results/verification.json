@@ -1,0 +1,7 @@
+{
+  "status": "NOT_RUN_INPUTS_MISSING",
+  "all_checks_passed": null,
+  "scenarios_executed": 0,
+  "pnl": null,
+  "note": "Verification did not run. all_checks_passed null means not applicable, not success."
+}

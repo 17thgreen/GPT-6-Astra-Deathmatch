@@ -1,0 +1,37 @@
+{
+  "status": "NOT_RUN_INPUTS_MISSING",
+  "scenarios_executed": 0,
+  "scenario_grid": [
+    "q3300_d0.25_A",
+    "q3300_d0.25_B",
+    "q3300_d0.25_C",
+    "q3300_d0.25_D",
+    "q3300_d5_A",
+    "q3300_d5_B",
+    "q3300_d5_C",
+    "q3300_d5_D",
+    "q10000_d0.25_A",
+    "q10000_d0.25_B",
+    "q10000_d0.25_C",
+    "q10000_d0.25_D",
+    "q10000_d5_A",
+    "q10000_d5_B",
+    "q10000_d5_C",
+    "q10000_d5_D"
+  ],
+  "pnl": null,
+  "results": null,
+  "missing_inputs": [
+    "events.jsonl.gz"
+  ],
+  "inputs_path": "nfl_factorial_lab_20260921/inputs",
+  "evidence": "NOT_RUN_HISTORICAL_INPUTS_MISSING",
+  "how_to_run": [
+    "Obtain NFL_Allocation_Factorial_Kit.zip from the project owner.",
+    "From the repository root: python3 scripts/restore_kit.py /path/to/NFL_Allocation_Factorial_Kit.zip",
+    "Confirm nfl_factorial_lab_20260921/inputs/events.jsonl.gz matches inputs/manifest.json.",
+    "cd nfl_paircheck_lab_20260922 && python3 run_experiment.py && python3 verify_results.py && python3 analyze.py",
+    "Do not commit restored gzip bytes or the kit zip."
+  ],
+  "note": "No scenario was executed. This file is not a profit result."
+}
