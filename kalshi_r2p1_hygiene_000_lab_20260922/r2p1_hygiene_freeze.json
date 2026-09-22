@@ -1,0 +1,35 @@
+{
+  "status": "HYPOTHESIS_FROZEN",
+  "experiment_id": "r2p1_hygiene_000_20260922",
+  "admission": "Conductor ADMIT R2-P1",
+  "kernel": "Conductor admission text. No separate Deep Research packet was in this checkout.",
+  "knob": "none_hygiene_relabel_only",
+  "strategy_pointer": "Q6-000",
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "fee_source": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+  "queue_source_fixed": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "capital": "shared_pool_status_quo_not_reopened",
+  "signal_retune": false,
+  "capital_structure_reopened": false,
+  "queue_fragility_twin": false,
+  "live_orders": false,
+  "forbid_shadow_fee_literals": true,
+  "pre_settlement_outputs": [
+    "fee_delta_vs_inherited_model",
+    "freshness_gap_sec",
+    "queue_bin_mismatch_rate"
+  ],
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "results": null,
+  "pnl": null,
+  "not_this_experiment": [
+    "FS0_FS1_FS2_fee_treatment_arms",
+    "capital_A1_A2_A3",
+    "queue_fragility_000_under_R1P5",
+    "Q6_000_signal_retune"
+  ],
+  "frozen_at": "2026-09-22T23:02:32Z"
+}
