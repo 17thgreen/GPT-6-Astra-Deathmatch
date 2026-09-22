@@ -2,7 +2,7 @@
   "experiment": "R2-P1-HYGIENE-000",
   "experiment_id": "r2p1_hygiene_000_20260922",
   "directory": "kalshi_r2p1_hygiene_000_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-22T23:02:32Z",
   "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results, pnl, and the three pre-settlement outputs stay null. This timestamp is the hypothesis freeze, not a test run.",
   "admission": "Conductor ADMIT R2-P1",
@@ -63,7 +63,14 @@
     "r2p1_hygiene_freeze.json": "1126536ccaba7bf400aba1743d2cddf5fffb12e3bad4c4267c76ba0375360eca",
     "results/EMPTY_RESULTS.json": "baffd97793ba7d84a31af4753ca2a23919154dde71814cb35077ad0d72a6c57e"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "6374286e64170aaaba023b861f1fa05e973306f5f8146a7a744e30df88b88f1f",
+    "hygiene.py": "0cee7d3b0cd9cf47c5b9986085689acb387d83752ea4a0faba050f1d336d9dbf",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_hygiene.py": "acddfd00be66c005e53467cc02be9dad2dae1dd01f3501700d506d44e5816fc2"
+  },
+  "source_frozen_at": "2026-09-22T23:04:55Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
   "fee_delta_vs_inherited_model": null,
   "freshness_gap_sec": null,
   "queue_bin_mismatch_rate": null,
