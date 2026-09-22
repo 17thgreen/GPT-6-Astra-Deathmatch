@@ -71,11 +71,19 @@
   },
   "implementation_sha256": {
     "README.md": "6d43fd6a2e31d8d92ffbbb2a5a7391cedde016e28cacdfc61c946fc78c0a5d18",
-    "hygiene.py": "f4fc25846885cf8d2e77432c6819375b7eab9a8bff85de767a4eca3fe00c2590",
+    "hygiene.py": "65310a88ec7602a3fa2e50f2444e64c431dd29ef648992cb7861a5b74ca3b69f",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/test_hygiene.py": "f19677e1115f46152d970de5cbc230ffa94eb7817d940981c85179a968369ea5"
+    "tests/test_hygiene.py": "339e68b1df0ed45716219d6aaf799469aa1195053a72a38e85142fad7d8cf4aa"
   },
   "pin_lock_note": "Canonical freeze is R2-P1_FEEBOOK_RAILS_HYGIENE_000_FREEZE_2026-09-22.md, sha256 prefix ddcd4427. Bytes were not in this checkout and were not substituted. fee_sensitivity_000_r1p1 is SUPERSEDED_BY_R2-P1. No second lab. FS0/FS1/FS2 are not scorecard columns.",
+  "sibling_pin_amendment": {
+    "amended_at": "2026-09-22T23:22:40Z",
+    "queue_fragility_sibling": "kalshi_queue_fragility_000_lab_20260922",
+    "queue_fragility_twin": false,
+    "prior_hygiene_py_sha256": "f4fc25846885cf8d2e77432c6819375b7eab9a8bff85de767a4eca3fe00c2590",
+    "prior_test_hygiene_py_sha256": "f19677e1115f46152d970de5cbc230ffa94eb7817d940981c85179a968369ea5",
+    "note": "Conductor follow-up. The pin-lock allows that sibling directory and no other queue-fragility name. A second fee-sensitivity lab and a second R2-P1 lab stay forbidden. results and pnl stay null."
+  },
   "source_frozen_at": "2026-09-22T23:04:55Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
   "fee_delta_vs_inherited_model": null,

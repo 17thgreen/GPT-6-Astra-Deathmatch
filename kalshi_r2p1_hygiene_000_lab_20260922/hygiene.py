@@ -42,6 +42,7 @@ OUTPUT_KEYS = (
 )
 NOT_JOINED = 'NOT_JOINED'
 SYNTHETIC_FIXTURE_ONLY = 'SYNTHETIC_FIXTURE_ONLY'
+QUEUE_FRAGILITY_SIBLING = 'kalshi_queue_fragility_000_lab_20260922'
 MICRO_CENT = Decimal('0.000001')
 BALANCE_PRECISION = Decimal('0.0001')
 PRICE_GRID = Decimal('0.0001')
@@ -99,6 +100,7 @@ def pin_lock():
         'second_lab': False,
         'fee_treatment_arms_emitted': False,
         'queue_fragility_twin': False,
+        'queue_fragility_sibling': QUEUE_FRAGILITY_SIBLING,
         'live_orders': False,
         'scorecard': empty_pre_settlement(),
     }

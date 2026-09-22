@@ -1,0 +1,100 @@
+{
+  "experiment": "QUEUE-FRAGILITY-000-R1P5",
+  "experiment_id": "queue_fragility_000_r1p5_20260922",
+  "directory": "kalshi_queue_fragility_000_lab_20260922",
+  "status": "FROZEN_NOT_RUN",
+  "frozen_at": "2026-09-22T23:11:03.331014+00:00",
+  "note": "Hypothesis committed before source. Source and tests are frozen in implementation_sha256. results, pnl, and the three pre-settlement outputs stay null. frozen_at is the conductor freeze, not a test run.",
+  "packet": "QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md",
+  "conductor_packet": "packets/QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md",
+  "packet_sha256": "e01d684abefd2d919ac6546f85619a246ce73098c04f7b24c84451ff49b00308",
+  "kernel": "queue_fragility_000_r1p5_freeze.json",
+  "kernel_sha256": "32825cd6bd9ee8d448b26ddb29403d2894b3f0a7310664fadd331b9e297a3d83",
+  "empty_results": "results/EMPTY_RESULTS.json",
+  "knob": "queue_fill_stress_only",
+  "arms": [
+    "QF0_q3300_measured",
+    "QF1_q10000_stress",
+    "QF2_front_optimistic"
+  ],
+  "outputs": [
+    "fill_rate_delta_vs_q3300",
+    "adverse_queue_exposure",
+    "participation_stress_gap"
+  ],
+  "depends_on": [
+    {
+      "directory": "kalshi_feebook_lab_20260922",
+      "commit": "22371178cb2663250b4762f328069571c48cb551",
+      "role": "fixed examiner fee channel"
+    },
+    {
+      "directory": "kalshi_rails_lab_20260922",
+      "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "role": "queue/fill knob"
+    }
+  ],
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "kalshi_r2p1_hygiene_000_lab_20260922",
+    "kalshi_capital_structure_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "Holding Q6-000, the shared 5000 USD pool, and the R1-P1 examiner fee channel fixed, do QF0, QF1, and QF2 differ only in rails queue parameters while the three pre-settlement outputs stay null?",
+  "strategy_pointer": "Q6-000",
+  "signal_retune": false,
+  "capital_mode": "A1_shared_pool",
+  "capital_C_total_usd": "5000",
+  "forbid_capital_A2_A3": true,
+  "forbid_000_retune": true,
+  "live_orders": false,
+  "forbid_shadow_fee_literals": true,
+  "fee_is_knob": false,
+  "fee_fixed": "kalshi_feebook_lab_20260922@22371178cb2663250b4762f328069571c48cb551",
+  "rails_knob": "kalshi_rails_lab_20260922@6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "prior_r2p1_merge": "25ec05381207252abb8abec8f6f99e30765f9704",
+  "not_this_experiment": [
+    "fee_treatment_arms",
+    "maker_off",
+    "grok_unrounded_comparator",
+    "capital_A2_A3",
+    "Q6_000_signal_retune"
+  ],
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "35a8e99a386b7083aeae0999d5bafcc6ae9370ba521705df38c110ee3cbe1fa8",
+    "QUEUE_FRAGILITY_000_R1P5_FREEZE_2026-09-22.md": "e01d684abefd2d919ac6546f85619a246ce73098c04f7b24c84451ff49b00308",
+    "queue_fragility_000_r1p5_freeze.json": "32825cd6bd9ee8d448b26ddb29403d2894b3f0a7310664fadd331b9e297a3d83",
+    "results/EMPTY_RESULTS.json": "6a41d4037b3ddba326303d1d015316b2f1c13da913950a217b5b2f5da0404407"
+  },
+  "implementation_sha256": {
+    "README.md": "0a8214e05763a1f469c72143b05e843a7fee7c9672c6fa8cb4aed873df8c6634",
+    "queue_fragility.py": "312e7f19643584a395e72654758c50a8c9ae155580991f4144b3721e5ecaba4e",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_queue_fragility.py": "c7ade82796fb2ebd2d282e5adb971e71fb59856575865122efc38511ed503454"
+  },
+  "r2p1_sibling_pin_files": [
+    "kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/tests/test_hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/FROZEN_EXPERIMENT.json",
+    "kalshi_r2p1_hygiene_000_lab_20260922/results/R2P1_UNIT_RESULTS.md"
+  ],
+  "source_frozen_at": "2026-09-22T23:18:54Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
+  "fill_rate_delta_vs_q3300": null,
+  "adverse_queue_exposure": null,
+  "participation_stress_gap": null,
+  "results": null,
+  "pnl": null
+}
