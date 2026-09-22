@@ -85,11 +85,25 @@
     "tests/test_queue_fragility.py": "c7ade82796fb2ebd2d282e5adb971e71fb59856575865122efc38511ed503454"
   },
   "r2p1_sibling_pin_files": [
-    "kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
-    "kalshi_r2p1_hygiene_000_lab_20260922/tests/test_hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/EXPERIMENT_SPEC.md",
     "kalshi_r2p1_hygiene_000_lab_20260922/FROZEN_EXPERIMENT.json",
-    "kalshi_r2p1_hygiene_000_lab_20260922/results/R2P1_UNIT_RESULTS.md"
+    "kalshi_r2p1_hygiene_000_lab_20260922/README.md",
+    "kalshi_r2p1_hygiene_000_lab_20260922/fixture_join.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/fixtures/PIN.md",
+    "kalshi_r2p1_hygiene_000_lab_20260922/fixtures/synthetic_q3300_d0.25_000_fills.jsonl",
+    "kalshi_r2p1_hygiene_000_lab_20260922/fixtures/synthetic_q3300_d0.25_000_orders.jsonl",
+    "kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/results/FIXTURE_JOIN_UNIT_RESULTS.md",
+    "kalshi_r2p1_hygiene_000_lab_20260922/results/FIXTURE_JOIN_VERIFICATION.json",
+    "kalshi_r2p1_hygiene_000_lab_20260922/results/R2P1_UNIT_RESULTS.md",
+    "kalshi_r2p1_hygiene_000_lab_20260922/tests/test_fixture_join.py",
+    "kalshi_r2p1_hygiene_000_lab_20260922/tests/test_hygiene.py"
   ],
+  "fixture_join_sibling_pin": {
+    "pick": "A",
+    "packet_sha256": "e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c",
+    "note": "Allowed hygiene-lab diff from the R2-P1 merge after the pick A join harness moved into that one lab. Queue-fragility core is unchanged. Pick B fixture join was not started. Scorecard fields stay null."
+  },
   "source_frozen_at": "2026-09-22T23:18:54Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, and the three pre-settlement outputs remain null.",
   "fill_rate_delta_vs_q3300": null,

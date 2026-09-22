@@ -14,12 +14,18 @@ content-fresh predicate. It does not read Q6 `common_config` fee coefficients.
 Strategy pointer is Q6 label `000`. Capital arms and the queue-fragility twin
 are not knobs.
 
+Pick A fixture join, freeze sha256
+`e9bac91ca908b2ba704d966f0cf48cb181070ac11de1d117b93512bd2719ae1c`, is
+`fixture_join.py` in this same directory. It calls these helpers. It does
+not write the five scorecard fields. The production Q6-`000` gzip ledgers
+are gitignored; see `fixtures/PIN.md`. Pick B stays deferred.
+
 From this directory, Python 3.12 standard library:
 
 ```bash
-python3 -m unittest -v tests.test_hygiene
+python3 -m unittest -v tests.test_hygiene tests.test_fixture_join
 ```
 
 No live orders. This lab does not modify the feebook lab, the rails lab, the
-capital-structure lab, or the Q1–Q7 trees. A Q6-`000` tape join is later
-Examiner work. Until that join the pre-settlement outputs stay null.
+capital-structure lab, or the Q1–Q7 trees. There is no second R2-P1 lab.
+Pre-settlement outputs in `FROZEN_EXPERIMENT.json` stay null.
