@@ -1,0 +1,22 @@
+{
+  "registry_id": "astra.r3p3.fl_maker_taker.price_bands_10c.v0",
+  "width_dollars": "0.10",
+  "unit": "dollars",
+  "low_inclusive": true,
+  "high_exclusive": true,
+  "last_band_includes_one": true,
+  "rebinned_after_outcomes": false,
+  "note": "Absolute 10-cent edges pinned before outcomes. Not sample quantiles.",
+  "bands": [
+    {"id": "b00", "lo": "0.00", "hi": "0.10"},
+    {"id": "b01", "lo": "0.10", "hi": "0.20"},
+    {"id": "b02", "lo": "0.20", "hi": "0.30"},
+    {"id": "b03", "lo": "0.30", "hi": "0.40"},
+    {"id": "b04", "lo": "0.40", "hi": "0.50"},
+    {"id": "b05", "lo": "0.50", "hi": "0.60"},
+    {"id": "b06", "lo": "0.60", "hi": "0.70"},
+    {"id": "b07", "lo": "0.70", "hi": "0.80"},
+    {"id": "b08", "lo": "0.80", "hi": "0.90"},
+    {"id": "b09", "lo": "0.90", "hi": "1.00"}
+  ]
+}

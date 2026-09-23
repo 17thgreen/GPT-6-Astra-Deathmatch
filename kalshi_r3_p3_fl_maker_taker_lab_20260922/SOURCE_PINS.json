@@ -1,0 +1,64 @@
+{
+  "packet_id": "R3-P3-FL-MAKER-TAKER",
+  "as_of": "2026-09-23T00:36:15Z",
+  "not_a_strategy": true,
+  "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "collector": "READY",
+  "clock": "REFUSED",
+  "settled_n": 0,
+  "examiner": "NOT_NOW",
+  "feebook_dependency": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "imported": true,
+    "copied": false,
+    "symbols": ["order_fee", "examiner_fee_channel", "TAKER_FILLS_RESTING"],
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_py_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+    "fee_model": "imported order_fee round_up=True"
+  },
+  "price_bands": {
+    "registry_id": "astra.r3p3.fl_maker_taker.price_bands_10c.v0",
+    "file": "price_bands_10c.v0.json",
+    "sha256": "a818118964ff70e0c0e6ca2e33cf6854d12ed134e1d6f6a46a37e5b7e0599dcb",
+    "width_dollars": "0.10",
+    "ids": ["b00", "b01", "b02", "b03", "b04", "b05", "b06", "b07", "b08", "b09"],
+    "low_inclusive": true,
+    "high_exclusive": true,
+    "last_band_includes_one": true,
+    "rebinned_after_outcomes": false
+  },
+  "taker_fields": ["taker_outcome_side", "taker_book_side", "taker_side"],
+  "lee_ready": false,
+  "lee_ready_successful_path": false,
+  "literature": {
+    "authors": ["Constantin Burgi", "Wanying Deng", "Karl Whelan"],
+    "title": "Makers and Takers: The Economics of the Kalshi Prediction Market",
+    "date": "2026-01",
+    "vendored": false,
+    "published_returns_are_evidence": false,
+    "paper_maker_return_at_or_above_50c": "not evidence and not a target"
+  },
+  "fixture": {
+    "file": "fixtures/schema_only_public_trades.json",
+    "label": "SCHEMA_ONLY",
+    "admitted_settled_panel": false
+  },
+  "live_orders": false,
+  "q6_000_retune": false,
+  "forbid": [
+    "naked Q6/Q7 fee literals",
+    "copy of kalshi_feebook_lab_20260922",
+    "Lee-Ready success",
+    "invented resolutions",
+    "invented fills",
+    "invented PnL",
+    "paper 2.6 percent as evidence",
+    "000 retune",
+    "rebin after outcomes"
+  ],
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "band_roi": null
+}

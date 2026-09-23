@@ -1,0 +1,12 @@
+{
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "band_roi": null,
+  "settled_n": 0,
+  "clock": "REFUSED",
+  "collector": "READY",
+  "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "status": "EMPTY",
+  "note": "No Mincer-Zarnowitz statistic and no band ROI are recorded here. Schema-only unit checks do not fill this file. Settled N is 0."
+}
