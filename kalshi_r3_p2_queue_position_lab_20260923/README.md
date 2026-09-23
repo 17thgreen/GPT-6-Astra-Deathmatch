@@ -18,5 +18,6 @@ The first poll is the sample_id 0 cross-check: ticker
 with schema `{meta, samples[]}`. Authentic sha256
 `74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4`.
 `samples_n` is 38. `leftover_resting` is `no`. The fixture copy is the same
-bytes. Calibration is not run. Queue labels cite R1-P5.
+bytes. Code verification on 2026-09-23T19:16:17Z: 6 tests, 0 failures.
+Calibration is not run. Queue labels cite R1-P5.
 Q6-`000` is not retuned. No live orders.
