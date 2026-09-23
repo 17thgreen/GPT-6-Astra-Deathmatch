@@ -1,0 +1,13 @@
+{
+  "experiment": "R3-P4-L2-CAT-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "sf1_median_half_spread_bps_by_mid_decile": null,
+  "sf2_l1_top10_depth_share": null,
+  "sf2_kl_vs_uniform_1_10": null,
+  "sports_vs_nonsports_sf_gap": null,
+  "n_books": null,
+  "n_snapshots": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema and pins only. Not an Examiner score."
+}

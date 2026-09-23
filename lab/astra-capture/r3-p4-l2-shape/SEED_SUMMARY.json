@@ -1,0 +1,35 @@
+{
+  "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+  "freeze_packet_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "stubbed_at_utc": "2026-09-23T00:06:20Z",
+  "cohort": {
+    "markets_seed_n": 6,
+    "sports_n": 4,
+    "non_sports_n": 2,
+    "orderbook_ok_n": 6,
+    "events_n": 4,
+    "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+    "notes": [
+      "Non-sports active seed = KXBTC range markets (listing for weather/Fed/GDP returned 429 \u2014 series metadata only).",
+      "BTC15M Sep11 probes returned finalized + empty books \u2014 kept out of primary markets; see scout_probes.",
+      "Markets list endpoints often 429; used known tickers from prior stubs + one successful KXBTC series list (limit=2)."
+    ]
+  },
+  "blocker_notes": {
+    "http_429": [
+      "GET /markets?limit=5&status=open \u2192 429",
+      "GET /events?series_ticker=KXHIGHNY|KXBTC|INXY \u2192 429",
+      "GET /markets?series_ticker=KXHIGHNY|KXFEDDECISION|KXGDP \u2192 429 (retry also 429)",
+      "Intermittent 429 on some /markets/{ticker}/orderbook (retried; T95749.99 eventually 200)"
+    ],
+    "weather_econ_seed": "No open-market tickers resolved for KXHIGHNY/KXFEDDECISION/KXGDP/INXY this pass \u2014 series GETs 200 only. Honest smaller non-sports seed = KXBTC."
+  },
+  "primary_tickers": [
+    "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+    "KXNCAAFGAME-26SEP26BUCKPITT-BUCK",
+    "KXNCAAFGAME-26SEP26TEXTENN-TENN",
+    "KXNCAAFGAME-26SEP26PREMRST-MRST",
+    "KXBTC-26SEP2317-T76250",
+    "KXBTC-26SEP2317-T95749.99"
+  ]
+}
