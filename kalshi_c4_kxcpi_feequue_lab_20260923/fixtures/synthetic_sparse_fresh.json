@@ -1,0 +1,54 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "In-memory book observations plus refuse labels. Not a panel fill, not scout depth, and not fill density. Scorecard gap stays null.",
+  "rows": [
+    {
+      "row_id": "fresh-q3300",
+      "queue_ahead": "3300",
+      "previous": null,
+      "current": {"yes_bid": "0.40"},
+      "transaction_time": "1",
+      "previous_transaction_time": null,
+      "keepalive": false
+    },
+    {
+      "row_id": "stale-unchanged",
+      "queue_ahead": "3300",
+      "previous": {"yes_bid": "0.40"},
+      "current": {"yes_bid": "0.40"},
+      "transaction_time": "1",
+      "previous_transaction_time": "1",
+      "keepalive": false
+    },
+    {
+      "row_id": "keepalive-ignored",
+      "queue_ahead": "10000",
+      "previous": {"yes_bid": "0.40"},
+      "current": {"yes_bid": "0.55"},
+      "transaction_time": "2",
+      "previous_transaction_time": "1",
+      "keepalive": true
+    },
+    {
+      "row_id": "sparse-24h-refuse",
+      "queue_ahead": "3300",
+      "previous": null,
+      "current": {"yes_bid": "0.40"},
+      "transaction_time": "1",
+      "previous_transaction_time": null,
+      "keepalive": false,
+      "volume_24h_fp": "0.00"
+    },
+    {
+      "row_id": "missing-occurrence-refuse",
+      "queue_ahead": "3300",
+      "previous": null,
+      "current": {"yes_bid": "0.40"},
+      "transaction_time": "1",
+      "previous_transaction_time": null,
+      "keepalive": false,
+      "volume_24h_fp": "2.00",
+      "occurrence_datetime": null
+    }
+  ]
+}

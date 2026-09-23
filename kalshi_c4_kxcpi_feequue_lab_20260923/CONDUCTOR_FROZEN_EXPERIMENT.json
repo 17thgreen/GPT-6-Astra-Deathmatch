@@ -1,0 +1,15 @@
+{
+  "packet_id": "C4-KXCPI-FEEQUEUE-HARNESS",
+  "feature_family": "CPI-FQ",
+  "status": "FROZEN",
+  "arms": [
+    "C4A0",
+    "C4A1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "949b255859196f02d73303a1019e51276c583f8d1e3ffb4f0a64d330467c6f93",
+  "scout_hunt_sha256": "6033907bb739bc00c41c796a3c1ed24553e0b7a44116ec3ea4bbaf39066bdcc8",
+  "panel_stub_sha256": "b20b0cbee50c127d2e9bb2548b574b7d643cc708f54019d53bd91775f9762c13",
+  "stamped_at_et": "2026-09-23T13:53:00-04:00"
+}

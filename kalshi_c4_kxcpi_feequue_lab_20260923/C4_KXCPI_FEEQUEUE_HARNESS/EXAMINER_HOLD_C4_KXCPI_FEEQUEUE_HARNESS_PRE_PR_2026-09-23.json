@@ -1,0 +1,33 @@
+{
+  "id": "EXAMINER_HOLD_C4_KXCPI_FEEQUEUE_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "C4-KXCPI-FEEQUEUE-HARNESS",
+  "feature_family": "CPI-FQ",
+  "status": "NOT_SCORED",
+  "stub_ready": false,
+  "hold": "pre-ACCEPT \u2014 file READY NOT_SCORED when PR lands",
+  "freeze_sha256": "949b255859196f02d73303a1019e51276c583f8d1e3ffb4f0a64d330467c6f93",
+  "arms": [
+    "C4A0",
+    "C4A1"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "maker_vs_taker_roi_delta",
+    "sparse_vs_fresh_gap",
+    "missing_sot_n",
+    "settled_join_n",
+    "n_books"
+  ],
+  "refuse": [
+    "no invent fill density",
+    "no invent SoT",
+    "no invent depth/fills/PnL",
+    "no Lee-Ready",
+    "no 000 retune",
+    "no Cap-SR/QF/L2/EMPTY-OB/SOT-ID/NHL-FQ reopen",
+    "does not ungate S1/S2/R2-P4"
+  ],
+  "stamped_at_et": "2026-09-23T13:53:00-04:00"
+}
