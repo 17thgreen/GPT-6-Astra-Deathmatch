@@ -1,0 +1,183 @@
+{
+  "settled_nonempty_result_N": 17,
+  "settled_list_attempted_KXNHLGAME": "429_honest",
+  "method": "GET-only single-market (list status=settled|finalized|open 429 honest)",
+  "parent_seed_tickers": [
+    "KXNHLGAME-26SEP26TBFLA-TB",
+    "KXNHLGAME-26SEP26TBFLA-FLA",
+    "KXNHLGAME-26SEP26COLUTA-UTA"
+  ],
+  "parent_seeds_finalized_nonempty_N": 0,
+  "parent_seed_results": {
+    "KXNHLGAME-26SEP26TBFLA-TB": null,
+    "KXNHLGAME-26SEP26TBFLA-FLA": null,
+    "KXNHLGAME-26SEP26COLUTA-UTA": null
+  },
+  "parent_seed_statuses": {
+    "KXNHLGAME-26SEP26TBFLA-TB": "active",
+    "KXNHLGAME-26SEP26TBFLA-FLA": "active",
+    "KXNHLGAME-26SEP26COLUTA-UTA": "active"
+  },
+  "overnight_finalized_nonempty_N": 17,
+  "occurrence_datetime_match_all_settled_seeds": true,
+  "markets": [
+    {
+      "ticker": "KXNHLGAME-26SEP22CBJBUF-BUF",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:57:27Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22CBJBUF_BUF.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22CBJBUF-CBJ",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:57:27Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22CBJBUF_CBJ.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22DETPIT-DET",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:57:27Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22DETPIT_DET.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:57:27Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22DETPIT_PIT.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22EDMWPG-EDM",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:55:21Z",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22EDMWPG_EDM.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22EDMWPG-WPG",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:55:21Z",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22EDMWPG_WPG.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:15:22Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22FLACAR_CAR.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:15:22Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22FLACAR_FLA.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22NYINYR-NYI",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:35:22Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22NYINYR_NYI.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22NYINYR-NYR",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:35:22Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22NYINYR_NYR.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22PHIBOS-BOS",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:43:24Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22PHIBOS_BOS.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22PHIBOS-PHI",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T01:43:24Z",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22PHIBOS_PHI.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22TBNSH-TB",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T02:51:33Z",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22TBNSH_TB.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22UTALA-LA",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T04:55:20Z",
+      "occurrence_datetime": "2026-09-23T05:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22UTALA_LA.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22VANCGY-CGY",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T03:57:22Z",
+      "occurrence_datetime": "2026-09-23T04:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22VANCGY_CGY.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22VANCGY-VAN",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T03:57:22Z",
+      "occurrence_datetime": "2026-09-23T04:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22VANCGY_VAN.json"
+    },
+    {
+      "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T04:51:22Z",
+      "occurrence_datetime": "2026-09-23T05:00:00Z",
+      "source": "market_KXNHLGAME_26SEP22VGKSJ_VGK.json"
+    }
+  ],
+  "honest_gaps": [
+    "GET /markets?series_ticker=KXNHLGAME&status=settled|finalized|open list 429",
+    "GET /events?series_ticker=KXNHLGAME&status=settled list 429",
+    "FQ parent SEP26 panel seeds active/empty (not yet settled)"
+  ]
+}

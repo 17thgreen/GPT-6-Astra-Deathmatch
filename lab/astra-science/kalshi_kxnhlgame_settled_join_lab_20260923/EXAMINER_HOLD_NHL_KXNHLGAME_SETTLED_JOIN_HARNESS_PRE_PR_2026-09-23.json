@@ -1,0 +1,55 @@
+{
+  "id": "EXAMINER_HOLD_NHL_KXNHLGAME_SETTLED_JOIN_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "NHL-KXNHLGAME-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "NHL-RJ",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": true,
+  "hold": "HOLD pre-PR \u2014 freeze+scout authentic; do not score until PR branch sha verify + merge + Clock admit path",
+  "lab_dir": "kalshi_kxnhlgame_settled_join_lab_20260923/",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "knob": "join_gate",
+  "settled_nonempty_result_N_scout": 17,
+  "admitted_at": null,
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": "Clock admit + settled join N>0 + Examiner-ready",
+  "refuse": [
+    "invent settled result/depth/fills/PnL",
+    "Lee-Ready",
+    "Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/C3-RJ/C5-RJ/R3P3-RJ reopen",
+    "ungate S1/S2/R2-P4",
+    "Arm B touch",
+    "admit.py by Variants",
+    "KXFED/another FQ freeze",
+    "empty-books invent",
+    "live orders"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "orthogonal_pin": "MAXIMIZE_PIN_2026-09-23_1556ET.md",
+  "stamped_at_et": "2026-09-23T15:56:00-04:00",
+  "freeze_sha256": "d1f71cea6df8f6c5a9fac6f9d1aa418ce61aa650794f22b400a01c4f3fd45810",
+  "scout_reget_sha256": "99a7f90564ee2150f5edef4efafb7ccb954b87036e0b43f29ff7dc6ed104706f",
+  "scout_summary_sha256": "794e148df5927c64d08b4578b47a7453589f02872af65880922bcb9273194a1a",
+  "panel_stub_sha256": "60d183e7bdcf25adbc94eeeb3bb361b5232c19c0fe3e6a115f45ab3fcb100c79",
+  "settled_reget_capture_sha256": "8d597578bc65ea14ab1cbf5aa3c6d121d61431078a755b8419c815aa1d354df0",
+  "box_digest_match": true,
+  "scout_markets_settled_nonempty": 17,
+  "prior_r3p3_rj_pr42_main": "2fce8642d1b1961cbe0ef60fae1411cd8906f31a"
+}

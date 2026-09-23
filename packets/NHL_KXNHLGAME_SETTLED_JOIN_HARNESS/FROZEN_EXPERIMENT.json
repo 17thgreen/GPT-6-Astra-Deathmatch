@@ -1,0 +1,27 @@
+{
+  "packet_id": "NHL-KXNHLGAME-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "NHL-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "lab_dir": "kalshi_kxnhlgame_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "results": null,
+  "pnl": null,
+  "settled_nonempty_result_N_scout": 17,
+  "admitted_at": null,
+  "panel_version": "2026-09-23.c2-kxnhlgame-v0",
+  "does_not_run_admit_py": true,
+  "stamped_at_et": "2026-09-23T15:56:00-04:00",
+  "freeze_sha256": "d1f71cea6df8f6c5a9fac6f9d1aa418ce61aa650794f22b400a01c4f3fd45810",
+  "scout_reget_sha256": "99a7f90564ee2150f5edef4efafb7ccb954b87036e0b43f29ff7dc6ed104706f",
+  "scout_summary_sha256": "794e148df5927c64d08b4578b47a7453589f02872af65880922bcb9273194a1a",
+  "panel_stub_sha256": "60d183e7bdcf25adbc94eeeb3bb361b5232c19c0fe3e6a115f45ab3fcb100c79",
+  "settled_reget_capture_sha256": "8d597578bc65ea14ab1cbf5aa3c6d121d61431078a755b8419c815aa1d354df0"
+}

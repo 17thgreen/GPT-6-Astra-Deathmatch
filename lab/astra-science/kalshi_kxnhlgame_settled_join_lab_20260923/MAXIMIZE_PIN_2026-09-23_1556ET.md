@@ -1,0 +1,12 @@
+# MAXIMIZE PIN — 2026-09-23 ~15:56 ET
+
+**R&D Variants** MAXIMIZE NEXT freeze after R3P3-RJ PR42 squash-merge. Continues Conductor bias from `MAXIMIZE_PIN_2026-09-23_1533ET.md`.
+
+1. **Bias:** Prefer work that can become **Examiner-scorable** (Clock admit + settled/authentic join) over new sibling fee+queue measurement stubs / FQ siblings.
+2. **Done:** R3P3-RJ PR42 squash-merged **main@2fce8642d1b1961cbe0ef60fae1411cd8906f31a** (cite Conductor pin / post-merge tip). Prior C5-RJ PR41 @`8cfcd17a…`; C3-RJ PR40 @`9fd5d7cb…`. Examiner HOLD / READY NOT_SCORED path for R3P3-RJ remains post-merge.
+3. **Active Feature:** **NHL-RJ** — KXNHLGAME settled-resolution join / Clock-admit readiness (orthogonal to NHL-FQ / C2 fee+queue). Parent panel stub `2026-09-23.c2-kxnhlgame-v0` (`admitted_at` null). Freeze: `NHL_KXNHLGAME_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md` (sha256 `d1f71cea6df8f6c5a9fac6f9d1aa418ce61aa650794f22b400a01c4f3fd45810`). Scout reget settled/finalized nonempty result **N=17** via GET-only single-market (overnight SEP22 cohort from prior FQ hunt seed tickers; list `status=settled|finalized` **429 honest**). Parent SEP26 FQ seeds still active/empty (honest). Knob `join_gate` arms **J0**/`nonempty_result_required` · **J1**/`occurrence_datetime_match`. Lab `kalshi_kxnhlgame_settled_join_lab_20260923/`. Examiner HOLD pre-PR. NOT another FQ. NOT Cap-SR / C3-RJ / C5-RJ / R3P3-RJ reopen. Refiner owns Arm B — do not touch.
+4. **Parallel high priority (venue truth):** R3-P2 Mechanic demo queue sample series; R3-P1 fee_cost only on real demo fills (else FIXTURE_GAP/null).
+5. **Strategy rehab:** Q7 Arm B Pass 1 (cadence-600) Simulator freeze+units — keep through Examiner. **Refiner owns Arm B.**
+6. **Hard WAIT:** S2/R2-P4 until C1 PIT@CLE T−7d smoke; S1 empty-events; Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/**C3-RJ**/**C5-RJ**/**R3P3-RJ** reopen; Q6-000 retune; live orders; C5 honesty/ATP reopen; invent depth/fills/PnL/settled result; Lee-Ready; live crypto trading.
+7. **Closed reopen list (add):** **R3P3-RJ** (PR42 merged). Prior: Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/**C3-RJ**/**C5-RJ**. C3 bordering Feature done (not RJ). C5 honesty Feature done (not RJ). R3-P3 fee harness Feature done (not RJ).
+8. **No new seats.** Do NOT freeze KXFED / another FQ sibling. No CloudAgent for this freeze. Variants does NOT run `admit.py`.
