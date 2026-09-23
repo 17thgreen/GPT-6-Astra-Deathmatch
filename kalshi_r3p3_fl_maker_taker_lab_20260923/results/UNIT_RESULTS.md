@@ -92,3 +92,27 @@ remain null.
   kernels and does not edit the C3 or C5 labs.
 - No Q6-`000` retune. No queue-fragility reopen. `queue_fragility` is not
   imported.
+
+## PR15 absorption rerun
+
+Draft PR15 (https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/15)
+stays a separate draft scaffold. This lab does not create
+`kalshi_r3_p3_fl_maker_taker_lab_20260922/`. The kernels are not
+dual-maintained.
+
+From the same directory, after that absorption was committed:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator tests.test_pr15_absorption
+```
+
+Ran 14 tests in 0.049s at 2026-09-23T14:34:35Z. Result: OK. Failures: 0.
+Errors: 0. Python 3.12.3.
+
+The added checks are native `taker_*` agreement, `lee_ready` raising on
+every sample, `RebinRefused` when an outcome is passed to `assign_band`,
+an in-memory schema sheet that joins three rows and refuses two, and null
+`MZ` and `band_roi`. Imported `order_fee` quotes on that sheet are not
+copied into `FROZEN_EXPERIMENT.json` or `results/EMPTY_RESULTS.json`.
+`results` and `pnl` stayed null. `mz_alpha` and `post_fee_roi_by_band`
+stayed null.
