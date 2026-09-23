@@ -1,8 +1,8 @@
 # S5 KXMVECROSSCATEGORY fill-vs-legs harness
 
 Status: hypothesis committed, then source frozen. The unit page is
-`results/UNIT_RESULTS.md` after the code check. That page is not profit and
-not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
+`results/UNIT_RESULTS.md` (8 tests, OK, 2026-09-23T15:05:04Z). That page is
+not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `fill_vs_legs_mid_gap`,
 `combo_fee_delta_vs_feebook`, `legs_join_rate`, and `freshness_gap_sec` null.
