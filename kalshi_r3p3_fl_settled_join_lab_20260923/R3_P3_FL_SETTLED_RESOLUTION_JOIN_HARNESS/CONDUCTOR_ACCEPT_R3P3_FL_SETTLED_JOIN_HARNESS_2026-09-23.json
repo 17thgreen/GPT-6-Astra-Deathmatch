@@ -1,0 +1,38 @@
+{
+  "packet_id": "R3P3-FL-MAKER-TAKER-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "R3P3-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T15:43:00-04:00",
+  "seat": "Conductor",
+  "orthogonal_pin": "packets/MAXIMIZE_PIN_2026-09-23_1533ET.md",
+  "lab": "kalshi_r3p3_fl_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "digest_verify": {
+    "freeze": "7fcfc36ab4761e2dec56018b498372fb63c402f2582fe848e8775e28f9b720b9",
+    "scout_reget": "f675d7c40ccad37173b2cb54837349cd3053b7b76606c43efba5759a1bde551f",
+    "seed_summary": "b43d4ab065b712f5bf1b87eb164bccb00e8e9993f97db9d86a8d1619ce9ec13d",
+    "panel_stub": "6f640dd3a6091ba6b896ded38fdded4676583aa3c885223da21ddf03780250c0",
+    "settled_reget": "c5f680e4ff66af67691672c4b8c43eb57906f25b4d79fdeb65f61e031c13efda",
+    "settled_nonempty_result_N": 20,
+    "match": true
+  },
+  "notes": "Scorable-first maximize after C5-RJ PR41. Measurement-only join. GET-only. Variants does NOT run admit.py. admitted_at stays null. results/pnl/settled_join_n null. Scout N=20 is a pin, not copied into settled_join_n. CHI settled 429 + NY open 429 honest. Not R3-P3 fee reopen; not FQ sibling; not C3-RJ/C5-RJ reopen; not Arm B.",
+  "hard_refuse": [
+    "invent_settled_result",
+    "invent_fills",
+    "Lee-Ready",
+    "FQ_reopen",
+    "Cap-SR_reopen",
+    "C3_RJ_reopen",
+    "C5_RJ_reopen",
+    "ungate_S1_S2_R2P4",
+    "Arm_B_touch",
+    "admit_py_by_Variants",
+    "live_orders"
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "packet": "R3P3-FL-MAKER-TAKER-SETTLED-JOIN",
+  "feature_family": "R3P3-RJ",
+  "series": [
+    "KXHIGHNY",
+    "KXHIGHCHI"
+  ],
+  "settled_nonempty_result_N": 20,
+  "settled_list_limit": 20,
+  "settled_list_cursor_present": true,
+  "settled_KXHIGHNY_nonempty_N": 20,
+  "settled_KXHIGHCHI_list": "429_honest",
+  "parent_seeds_finalized_nonempty_N": 3,
+  "parent_seed_tickers": [
+    "KXHIGHNY-26SEP22-B67.5",
+    "KXHIGHNY-26SEP22-T70",
+    "KXHIGHCHI-26SEP22-B64.5"
+  ],
+  "parent_seed_results": {
+    "KXHIGHNY-26SEP22-B67.5": "yes",
+    "KXHIGHNY-26SEP22-T70": "no",
+    "KXHIGHCHI-26SEP22-B64.5": "yes"
+  },
+  "occurrence_datetime_sot_match_all_seeds": true,
+  "open_list_n": 4,
+  "open_tickers": [
+    "KXHIGHCHI-26SEP24-T73",
+    "KXHIGHCHI-26SEP24-T66",
+    "KXHIGHCHI-26SEP24-B72.5",
+    "KXHIGHCHI-26SEP24-B70.5"
+  ],
+  "markets": [
+    {
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-T63",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B69.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B65.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B63.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-T73",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-T66",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-B72.5",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-B70.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-B68.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP21-B66.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T05:00:00Z",
+      "occurrence_datetime": "2026-09-22T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-T78",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-T71",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-B77.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-B75.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-B73.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP20-B71.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T05:00:00Z",
+      "occurrence_datetime": "2026-09-21T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP19-T76",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T05:00:00Z",
+      "occurrence_datetime": "2026-09-20T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP19-T69",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T05:00:00Z",
+      "occurrence_datetime": "2026-09-20T14:00:00Z",
+      "source": "markets_settled_KXHIGHNY_lim20.json"
+    },
+    {
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T06:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "source": "market_KXHIGHCHI_26SEP22_B64_5.json",
+      "note": "parent panel seed CHI; KXHIGHCHI settled list 429 \u2014 counted via direct GET"
+    }
+  ],
+  "raw_capture": "lab/astra-capture/r3-p3-fl-maker-taker/settled_reget_2026-09-23.json",
+  "parent_panel_stub": "lab/governance/astra/packets/R3_P3_FL_MAKER_TAKER_PANEL_STUB_2026-09-22.json",
+  "fetched_at_et": "2026-09-23T15:41:00-04:00",
+  "mode": "GET_only_public",
+  "honest_gaps": [
+    "markets?series_ticker=KXHIGHCHI&status=settled 429",
+    "markets?series_ticker=KXHIGHNY&status=open 429"
+  ],
+  "results": null,
+  "pnl": null,
+  "candidate_won": "R3P3-RJ"
+}
