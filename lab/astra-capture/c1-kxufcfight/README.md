@@ -5,7 +5,7 @@
 **freeze:** `packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md`
 **freeze_sha256:** `a191c9b3f71030445d1d32684feb6dc1bf09abb7e09403d5dbdf1927eafc63c9`
 **panel_stub_sha256:** `2cc661d86202d3daf9ffa45320e39d249852a97490f458f72ab7ea8ec5c81a00`
-**status:** no recorder running — `PANEL_SCHEMA_STUB_SEED` (`admitted_at` null)
+**status:** Clock admit consumed by the honesty harness. `panel_admitted.json` is the subject (`admitted_at` `2026-09-23T00:49:43Z`, sha256 prefix `24426d80`). The stub stays the pre-admit seed. No recorder is running.
 **isolation:** separate from ADMIT-1 (`nfl_prospective_recorder_20260922/`), and from S1/S4/S5/R2-P3 poll budget
 
 ## Series
@@ -14,7 +14,8 @@
 
 ## Artifacts in this checkout
 
-- Panel stub: `lab/astra-capture/c1-kxufcfight/panel_stub.json`
+- Admitted panel: `lab/astra-capture/c1-kxufcfight/panel_admitted.json`
+- Pre-admit stub: `lab/astra-capture/c1-kxufcfight/panel_stub.json`
 - Kernel: `packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md`
 - Scout packet: `packets/scout_c1_kxufcfight/FROZEN_EXPERIMENT.json`
 - Harness: `kalshi_c1_kxufcfight_honesty_lab_20260922/`

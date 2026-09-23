@@ -13,10 +13,13 @@ The canonical kernel is
 The scout packet is `packets/scout_c1_kxufcfight/FROZEN_EXPERIMENT.json`.
 `EXPERIMENT_SPEC.md` is the lab hypothesis. It is not a second freeze.
 
-Panel schema seed: `lab/astra-capture/c1-kxufcfight/panel_stub.json`,
-`panel_version` `2026-09-22.c1-kxufcfight-v0`, sha256
+Pre-admit seed: `lab/astra-capture/c1-kxufcfight/panel_stub.json`, sha256
 `2cc661d86202d3daf9ffa45320e39d249852a97490f458f72ab7ea8ec5c81a00`.
-`admitted_at` is null. The recorder is not started.
+That file keeps `admitted_at` null. It is not the harness subject.
+
+Clock admit, consumed by this harness: `lab/astra-capture/c1-kxufcfight/panel_admitted.json`,
+`panel_version` `2026-09-22.c1-kxufcfight-v0`, `admitted_at`
+`2026-09-23T00:49:43Z`, sha256 prefix `24426d80`. The recorder is not started.
 
 Fee path, fixed: `kalshi_feebook_lab_20260922` at
 `22371178cb2663250b4762f328069571c48cb551`.
@@ -42,8 +45,9 @@ untouched. The new directory is
 On the pinned `KXUFCFIGHT` panel seed, under the shared 5000 USD measurement
 label, does one harness do all of the following on a code check:
 
-1. Load `panel_version` `2026-09-22.c1-kxufcfight-v0` and refuse a different
-   version. Keep `admitted_at` null. Leave the dropped ORTDAS tickers out.
+1. Load the admitted panel at `panel_version` `2026-09-22.c1-kxufcfight-v0`
+   with `admitted_at` `2026-09-23T00:49:43Z`. Refuse the pre-admit stub and
+   refuse a different version. Leave the dropped ORTDAS tickers out.
 2. Build the reciprocal book with `feebook.reciprocal_book`: `bid_YES`,
    `bid_NO`, `ask_YES = 1 - bid_NO`, `ask_NO = 1 - bid_YES`, `spread_YES`.
    A missing bid leaves the implied ask unset. The extreme-favorite fixture
@@ -105,6 +109,8 @@ admitted. Those two quotes are rails checks, not panel open interest.
 |---|---|
 | Series | `KXUFCFIGHT` |
 | Panel version | `2026-09-22.c1-kxufcfight-v0` |
+| Admitted at | `2026-09-23T00:49:43Z` on `panel_admitted.json` |
+| Admitted sha256 prefix | `24426d80` |
 | Strategy pointer | null |
 | Capital | Shared 5000 USD measurement label. Capital-structure modes A1, A2, and A3 are refused |
 | Examiner formula | `feebook.EXAMINER_FORMULA_ID` |

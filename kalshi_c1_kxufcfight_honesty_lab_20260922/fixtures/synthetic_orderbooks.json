@@ -1,0 +1,51 @@
+{
+  "schema": "c1.kxufcfight.synthetic_orderbooks.v0",
+  "source": "synthetic_schema_standin",
+  "note": "Unit stand-in for reciprocal-book checks. Not a live GET. volume_fp and open_interest_fp are omitted on purpose.",
+  "books": [
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "sample_time": "2026-09-23T04:00:00Z",
+      "transaction_time": "2026-09-23T03:59:00Z",
+      "hypothetical_contracts": "10",
+      "queue_scenario": "q3300",
+      "orderbook_fp": {
+        "yes_dollars": [["0.9800", "12.00"]],
+        "no_dollars": [["0.0100", "40.00"]]
+      }
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "sample_time": "2026-09-23T04:00:00Z",
+      "transaction_time": "2026-09-23T03:59:10Z",
+      "hypothetical_contracts": "1",
+      "queue_scenario": "q10000",
+      "orderbook_fp": {
+        "yes_dollars": [["0.0100", "40.00"]],
+        "no_dollars": [["0.9800", "12.00"]]
+      }
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+      "sample_time": "2026-09-23T00:00:00Z",
+      "transaction_time": "2026-09-22T23:59:00Z",
+      "hypothetical_contracts": "5",
+      "queue_ahead": "500",
+      "orderbook_fp": {
+        "yes_dollars": [["0.4000", "8"]],
+        "no_dollars": [["0.4500", "8"]]
+      }
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "sample_time": "2026-09-23T00:00:00Z",
+      "transaction_time": "2026-09-22T23:59:30Z",
+      "hypothetical_contracts": "1",
+      "queue_ahead": "500",
+      "orderbook_fp": {
+        "yes_dollars": [["0.9900", "3"]],
+        "no_dollars": []
+      }
+    }
+  ]
+}
