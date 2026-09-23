@@ -1,0 +1,13 @@
+{
+  "experiment": "R3-P2-QUEUE-POSITION",
+  "status": "SAMPLE_INGESTED_CALIBRATION_NOT_RUN",
+  "results": null,
+  "abs_err_contracts": null,
+  "signed_bias": null,
+  "brier": null,
+  "pnl": null,
+  "mz": null,
+  "roi": null,
+  "calibration_run": false,
+  "note": "Null until a declared calibration run. The series digest is pinned in FROZEN_EXPERIMENT.json. Sample ingest is not an estimate-error score and not profit."
+}

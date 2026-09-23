@@ -1,0 +1,20 @@
+{
+  "schema": "astra.r3p2.mechanic_first_demo_queue_poll.sanitized.v1",
+  "source_desk_narrative": "MECHANIC_FIRST_DEMO_QUEUE_POLL_2026-09-23.md",
+  "checkout_contained_desk_bytes": false,
+  "sanitized": true,
+  "secrets": null,
+  "live_keys": null,
+  "host": "demo-api.kalshi.co",
+  "verdict": "POLL_OK",
+  "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
+  "queue_position_fp": "4207.00",
+  "order_canceled_clean": true,
+  "is_fill": false,
+  "fill": null,
+  "l2_top": {
+    "price": "0.01",
+    "size_narrative": "~4208",
+    "size_exact": null
+  }
+}
