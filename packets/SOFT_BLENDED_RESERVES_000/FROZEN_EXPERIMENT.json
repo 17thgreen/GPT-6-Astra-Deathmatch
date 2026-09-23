@@ -1,0 +1,59 @@
+{
+  "experiment": "SOFT-BLENDED-RESERVES-000",
+  "directory": "kalshi_soft_blended_reserves_000_lab_20260923",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-23T13:35:21Z",
+  "packet": "SOFT_BLENDED_RESERVES_000_FREEZE_2026-09-23.md",
+  "packet_sha256": "1f263dec7d7810515c3e32c13f3c5eca4344c4951db762a88ea01a8dfde7b1b3",
+  "feature_family": "Cap-SR",
+  "not_feature_families": [
+    "F1",
+    "F2",
+    "F3"
+  ],
+  "nearest_dead_cards": [
+    "C1_empty_book",
+    "Q7_Arm_B_kill"
+  ],
+  "C_total_usd": 5000,
+  "N_events": 31,
+  "slice_usd": 161,
+  "residual_usd": 9,
+  "residual_policy": "non_trading_residual_bucket",
+  "capital_substrate": "A2_shared_soft_reserve",
+  "knob": "soft_policy_only",
+  "arms": [
+    {
+      "id": "SR0",
+      "soft_policy": "borrow_unused_event_id_FIFO"
+    },
+    {
+      "id": "SR1",
+      "soft_policy": "borrow_unused_proportional"
+    },
+    {
+      "id": "SR2",
+      "soft_policy": "soft_blend_pool_fraction_0_5",
+      "blend_fraction": 0.5
+    }
+  ],
+  "promotion_scoreboard": "shared_account_only",
+  "forbidden": "sum_of_N_independent_wallets_vs_one_5k",
+  "strategy_pointer": "Q6-000",
+  "signal_retune": false,
+  "live_orders": false,
+  "queue_fragility_reopen": false,
+  "fee_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "parent_capital_lab_pin": "ce4671b8",
+  "shadow_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "tape_manifest_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+  "scorecard_fields": [
+    "borrow_count_delta_vs_fifo",
+    "blend_utilization_gap",
+    "soft_breach_or_blend_rate"
+  ],
+  "results": null,
+  "pnl": null,
+  "go": "Conductor 2026-09-23 MAXIMIZE GO soft blended reserves (C1 books path exhausted)"
+}

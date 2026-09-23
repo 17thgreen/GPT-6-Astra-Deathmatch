@@ -1,0 +1,10 @@
+{
+  "experiment": "SOFT-BLENDED-RESERVES-000",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "borrow_count_delta_vs_fifo": null,
+  "blend_utilization_gap": null,
+  "soft_breach_or_blend_rate": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner opens. Units may assert invariants only."
+}
