@@ -40,6 +40,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_r3p3_fl_maker_taker_lab_20260923` | R3-P3 maker/taker and 10¢ favorite–longshot bands. Supersedes draft PR15. Measurement only. Lee-Ready refused. Scorecard null. 14 unit tests green |
 | `kalshi_cap_sr_effects_000_lab_20260923` | Cap-SR-FX effects path on Q6-000. Fixture stress only. Imports Cap-SR soft policies. Scorecard null. Not a second Cap-SR lab |
 | `kalshi_s5_mve_filllegs_lab_20260923` | S5 KXMVECROSSCATEGORY fill-vs-legs harness. Feature family MVE-FL. Leg-mid knob only. Scorecard null. RFQ out of scope. 8 unit tests green |
+| `kalshi_s4_ncaaf_feequue_lab_20260923` | S4 KXNCAAFGAME fee+queue honesty harness. Feature family NCAAF-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Conductor freeze bytes were not in this checkout |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

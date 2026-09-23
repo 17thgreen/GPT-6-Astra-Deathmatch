@@ -1,0 +1,49 @@
+{
+  "experiment": "S4-KXNCAAFGAME-FEEQUEUE-HARNESS",
+  "directory": "kalshi_s4_ncaaf_feequue_lab_20260923",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-23T15:50:00Z",
+  "packet": "S4_KXNCAAFGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
+  "packet_sha256": "3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728",
+  "conductor_packet_sha256_claim": "3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728",
+  "conductor_bytes_in_checkout": true,
+  "parent_freeze": "S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "parent_freeze_sha256": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
+  "conductor_parent_freeze_sha256_claim": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
+  "panel_version": "2026-09-22.s4-kxncaafgame-v0",
+  "panel_stub_sha256": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
+  "conductor_panel_stub_sha256_claim": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
+  "conductor_events_n_claim": 113,
+  "admitted_at": null,
+  "feature_family": "NCAAF-FQ",
+  "series": "KXNCAAFGAME",
+  "knob": "honesty_partition",
+  "arms": [
+    {
+      "id": "S4A0",
+      "partition": "maker_vs_taker_native"
+    },
+    {
+      "id": "S4A1",
+      "partition": "content_fresh_vs_stale_bin"
+    }
+  ],
+  "fee_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "lee_ready": "REFUSED",
+  "logan_keys_required": false,
+  "live_orders": false,
+  "signal_retune_000": false,
+  "queue_fragility_reopen": false,
+  "cap_sr_reopen": false,
+  "admit_py_run": false,
+  "r1_p2_challenger_bakeoff": false,
+  "scorecard_fields": [
+    "maker_vs_taker_roi_delta",
+    "fresh_vs_stale_gap",
+    "settled_join_n"
+  ],
+  "results": null,
+  "pnl": null,
+  "go": "Conductor 2026-09-23 after S5 PR25 @6626c689; NCAAF-FQ orthogonal to Cap-SR / Cap-SR-FX / MVE-FL / F1-F3. Harness freeze, parent kernel, and panel stub sha256 values on this branch match the conductor claims."
+}
