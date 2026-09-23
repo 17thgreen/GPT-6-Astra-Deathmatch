@@ -1,7 +1,9 @@
 # R3-P4 L2-SF half-spread versus depth-KL harness
 
 Status: hypothesis committed, then source frozen. The unit page is
-`results/UNIT_RESULTS.md` and is written after the code check. `EXPERIMENT_SPEC.md`
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 7 tests in 0.069s at 2026-09-23T17:31:39Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass. `EXPERIMENT_SPEC.md`
 is the hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps
 `sf1_median_half_spread_bps_by_mid_decile`, `sf2_l1_top10_depth_share`,
