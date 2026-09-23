@@ -1,0 +1,11 @@
+{
+  "experiment": "S5-KXMVECROSSCATEGORY-FILLLEGS-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "fill_vs_legs_mid_gap": null,
+  "combo_fee_delta_vs_feebook": null,
+  "legs_join_rate": null,
+  "freshness_gap_sec": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema/pins only. RFQ out of scope. Not R1-P4 strategy."
+}

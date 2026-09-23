@@ -1,0 +1,794 @@
+{
+  "schema_id": "astra.registry.s5_kxmvecrosscategory_panel.v0",
+  "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+  "series_ticker": "KXMVECROSSCATEGORY",
+  "series_glob": "KXMVECROSSCATEGORY*",
+  "related_series_fee_pin": [
+    "KXMVECROSSCATEGORY",
+    "KXMVECROSSCATEGORY-SHARD1",
+    "KXMVESPORTSMULTIGAMEEXTENDED"
+  ],
+  "prefer_over": [
+    "KXMVENFLSINGLEGAME",
+    "KXMVENFLMULTIGAME",
+    "KXMVENFLEXTENDED"
+  ],
+  "purpose": "measurement_gate",
+  "cohort_kind": "bounded_seed_sample_vs_open_inventory_gt_200",
+  "packet_id": "S5-KXMVECROSSCATEGORY-MEAS",
+  "freeze_cite": "lab/governance/astra/packets/S5_KXMVECROSSCATEGORY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "a28932ba13b4913b69c48b73dde8ba066cebd212670d0b1cbb5ea8e93734b8ba",
+  "scout_cite": "lab/governance/astra/packets/scout_s5_kxmvecrosscategory/",
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "kalshi_public_get",
+  "stub_status": "PANEL_SCHEMA_STUB_SEED_NOT_ADMITTED",
+  "admit_gate": {
+    "status": "WAIT_CLOCK_JOIN",
+    "admit_py_run": false,
+    "note": "Honor admit.py conceptually: real UTC stamp; refuse past T-7d; never backfill. Do NOT run admit.py in this stub pass. Explicitly NOT R1-P4 strategy. Seed only until Clock join; admitted_at stays null.",
+    "not_r1_p4_strategy": true
+  },
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_type_series_override": "quadratic_with_combo_maker_fees",
+    "fee_multiplier": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "not_r1_p4_strategy": true,
+    "fee_confirmed_live_get": {
+      "KXMVECROSSCATEGORY": {
+        "fee_type": "quadratic_with_combo_maker_fees",
+        "fee_multiplier": 1
+      },
+      "KXMVECROSSCATEGORY-SHARD1": {
+        "fee_type": "quadratic_with_combo_maker_fees",
+        "fee_multiplier": 1
+      },
+      "KXMVESPORTSMULTIGAMEEXTENDED": {
+        "fee_type": "quadratic_with_combo_maker_fees",
+        "fee_multiplier": 1
+      }
+    }
+  },
+  "resolve_notes": {
+    "host": "https://api.elections.kalshi.com/trade-api/v2/",
+    "series_list_http": "often 429 on box egress for /markets?series_ticker=...&status=open",
+    "webfetch_markets_list": "200 with cursor (open inventory >> page size; Scout/freeze: >>200)",
+    "seed_method": "bounded seed via GET /markets/{ticker} + GET /markets?event_ticker= after cooldown; MVE via GET /events/multivariate",
+    "markets_seed_n": 5,
+    "markets_open_inventory": ">>200 (cursor present on successful list pages; MVE events >= 800 with has_more=True)",
+    "mve_events_seed_n": 21,
+    "mve_open_lower_bound": 800,
+    "mve_has_more_after_sample": true,
+    "legs_join_rate": "5/5",
+    "collection_join_rate": "5/5",
+    "trades_probe": [
+      {
+        "ticker": "KXMVECROSSCATEGORY-S20264CF5F0166A4-D93D828F247",
+        "http": 200,
+        "trades_n": 0
+      },
+      {
+        "ticker": "KXMVECROSSCATEGORY-S2026FFD15C7F85E-073CF08455C",
+        "http": 200,
+        "trades_n": 0
+      },
+      {
+        "ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F-2DEC47CF182",
+        "http": 200,
+        "trades_n": 0
+      }
+    ],
+    "trades_note": "empty tape OK \u2014 do not invent fills",
+    "sample_vs_full": "seed sample N=5 markets / M=21 events vs open inventory >>200 markets and MVE >=800+"
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "api.elections.kalshi.com"
+    ],
+    "routes_allowlist": [
+      "GET /trade-api/v2/series/{series_ticker}",
+      "GET /trade-api/v2/markets?series_ticker=KXMVECROSSCATEGORY&status=open",
+      "GET /trade-api/v2/markets?event_ticker={event_ticker}",
+      "GET /trade-api/v2/markets/{market_ticker}",
+      "GET /trade-api/v2/events/multivariate?series_ticker=KXMVECROSSCATEGORY*",
+      "GET /trade-api/v2/markets/trades?ticker={market_ticker}",
+      "GET /trade-api/v2/historical/trades?ticker={market_ticker}",
+      "GET /trade-api/v2/markets/{market_ticker}/orderbook"
+    ],
+    "out_of_scope_routes": [
+      "GET /communications/rfqs (401 \u2014 deferred; do not ask Logan for key)",
+      "GET markets filter is_block_trade=true (429 this Scout/Collector pass \u2014 no RFQ-fill density claim)",
+      "any signed trading / portfolio / order host"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_pit_cle_poll_steal": true,
+      "recorder_pid_namespace": "s5-kxmvecrosscategory",
+      "db_path": "lab/astra-capture/s5-kxmvecrosscategory/capture.sqlite",
+      "note": "No recorder started in this stub. Future start uses separate pid+db; never shares ADMIT-1 poll loop under prospective/."
+    },
+    "schedule": {
+      "priority": "after_or_around_C1_ADMIT1_priorities",
+      "start_rule": "Do not start live poll until Clock join + Conductor greenlight AND admit.py would accept AND ADMIT-1 / S1 / R2-P3 / S4 budgets are not contended. GET-only. Throttle politely (listings 429-prone).",
+      "sample_interval_sec_planned": null,
+      "throttle_sec_hint": ">=60\u2013120s between series/list pages; prefer single-ticker / event_ticker GETs when listing 429s"
+    }
+  },
+  "rules": [
+    "GET-only public elections host. No credentials. No order/portfolio routes.",
+    "Prefer KXMVECROSSCATEGORY* (cross-category combo fee series) over empty KXMVENFL*.",
+    "Fee via R1-P1 feebook series override only @ pin 22371178cb2663250b4762f328069571c48cb551 \u2014 fee_type=quadratic_with_combo_maker_fees / multiplier 1. Forbid inherited Q7/Q6 fee literals.",
+    "Rails labels via R1-P5 @ pin 6a28e0d6254327ea4e6451c781bec56215ac6cac \u2014 instrument only.",
+    "Join mve_selected_legs / mve_collection_ticker from live API field names.",
+    "Capture covers markets + multivariate events + trades/historical when non-empty; empty tape OK \u2014 do not invent fills or OI.",
+    "Honor admit.py: empty/seed until Clock join; admitted_at null; no ADMIT without Clock. Explicitly NOT R1-P4 strategy.",
+    "RFQ /communications and is_block_trade density out of scope this freeze.",
+    "Does not steal ADMIT-1 prospective/ / PIT@CLE / S1 / R2-P3 / S4 poll budget.",
+    "Not a strategy. No live orders. results/pnl/volume stay null until Examiner run."
+  ],
+  "cohort_summary": {
+    "markets_seed_n": 5,
+    "events_seed_n": 21,
+    "mve_open_lower_bound": 800,
+    "mve_has_more": true,
+    "legs_join_rate": "5/5",
+    "collection_join_rate": "5/5",
+    "sample_tickers": [
+      "KXMVECROSSCATEGORY-S20264CF5F0166A4-D93D828F247",
+      "KXMVECROSSCATEGORY-S2026FFD15C7F85E-073CF08455C",
+      "KXMVECROSSCATEGORY-S2026FAFE350FA8F-2DEC47CF182",
+      "KXMVECROSSCATEGORY-S2026FAFE350FA8F-D22687ACA9C",
+      "KXMVECROSSCATEGORY-S2026FAFE350FA8F-20154DED5EC"
+    ],
+    "fee_type_confirmed": "quadratic_with_combo_maker_fees"
+  },
+  "events": [
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S20264CF5F0166A4",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": null,
+      "market_tickers": [
+        "KXMVECROSSCATEGORY-S20264CF5F0166A4-D93D828F247"
+      ],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FFD15C7F85E",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Inner Circle Esports vs. 3DMAX",
+      "market_tickers": [
+        "KXMVECROSSCATEGORY-S2026FFD15C7F85E-073CF08455C"
+      ],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France Winner",
+      "market_tickers": [
+        "KXMVECROSSCATEGORY-S2026FAFE350FA8F-2DEC47CF182",
+        "KXMVECROSSCATEGORY-S2026FAFE350FA8F-D22687ACA9C",
+        "KXMVECROSSCATEGORY-S2026FAFE350FA8F-20154DED5EC"
+      ],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FFB9C9464EB",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France Winner",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FEAC93F2BEC",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Lee Cutler vs Louis Greene",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FCFAAD0AA7C",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Lee Cutler vs Louis Greene",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FB8C5C67DE5",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France End of Round 1 Leader",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FB6F941E5CC",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Lee Cutler vs Louis Greene",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FB60658D9D6",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France Winner",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAEF90E8775",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "BTC 15 min \u00b7 $85",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F8A58CFE650",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Castelnuovo vs Kotov",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F88D8962DB7",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France End of Round 1 Leader",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F86E0B00B9E",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Lanus vs Estudiantes La Plata",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F7A3BA6681C",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Ratti vs Coria",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F7396D7171B",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "FedEx Open de France End of Round 1 Leader",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-S2026F70665FB10E",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "title": "Baez vs Brooksby",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-SHARD1-S2026FF7C4259D33",
+      "series_ticker": "KXMVECROSSCATEGORY-SHARD1",
+      "title": "Arsenal vs Coventry",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-SHARD1-S2026FE64A14BA11",
+      "series_ticker": "KXMVECROSSCATEGORY-SHARD1",
+      "title": "West Ham vs Charlton",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-SHARD1-S2026FB5FB58764E",
+      "series_ticker": "KXMVECROSSCATEGORY-SHARD1",
+      "title": "Guadalajara vs Tijuana de Caliente",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-SHARD1-S2026FAFDE6BAB55",
+      "series_ticker": "KXMVECROSSCATEGORY-SHARD1",
+      "title": "Doosan Bears vs NC Dinos",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    },
+    {
+      "event_ticker": "KXMVECROSSCATEGORY-SHARD1-S2026F9D204D4217",
+      "series_ticker": "KXMVECROSSCATEGORY-SHARD1",
+      "title": "Arsenal vs Coventry",
+      "market_tickers": [],
+      "kalshi_occurrence_datetime": null,
+      "window_clock_source": "unknown",
+      "sot_pin": null,
+      "t_minus_7d_utc": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+      "occurrence_source": "kalshi_public_get"
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXMVECROSSCATEGORY-S20264CF5F0166A4-D93D828F247",
+      "event_ticker": "KXMVECROSSCATEGORY-S20264CF5F0166A4",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXMLBGAME-26SEP221840MILPHI",
+          "market_ticker": "KXMLBGAME-26SEP221840MILPHI-PHI",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBHIT-26SEP221840MILPHI",
+          "market_ticker": "KXMLBHIT-26SEP221840MILPHI-PHIBHARPER3-1",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXMLBKS-26SEP221840MILPHI",
+          "market_ticker": "KXMLBKS-26SEP221840MILPHI-PHIZWHEELER45-8",
+          "side": "yes"
+        }
+      ],
+      "legs_n": 3,
+      "status_observed": "active",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "resolve_source": "kalshi_public_get",
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0"
+    },
+    {
+      "market_ticker": "KXMVECROSSCATEGORY-S2026FFD15C7F85E-073CF08455C",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FFD15C7F85E",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXCS2GAME-26SEP221200ICE3DMAX",
+          "market_ticker": "KXCS2GAME-26SEP221200ICE3DMAX-3DMAX",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXDPWORLDTOUR-FEODF26",
+          "market_ticker": "KXDPWORLDTOUR-FEODF26-TFLE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXDPWORLDTOURR1LEAD-FEODF26",
+          "market_ticker": "KXDPWORLDTOURR1LEAD-FEODF26-RGER",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXF1RACE-AZEGP26",
+          "market_ticker": "KXF1RACE-AZEGP26-NOR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXLOLGAME-26SEP251600FLYSR",
+          "market_ticker": "KXLOLGAME-26SEP251600FLYSR-FLY",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNASCARRACE-HOLC26",
+          "market_ticker": "KXNASCARRACE-HOLC26-KYLA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNASCARRACE-RACTSS26",
+          "market_ticker": "KXNASCARRACE-RACTSS26-KAHO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP24ATLGB",
+          "market_ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27ARISF",
+          "market_ticker": "KXNFLGAME-26SEP27ARISF-SF",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27BALDAL",
+          "market_ticker": "KXNFLGAME-26SEP27BALDAL-DAL",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27CARCLE",
+          "market_ticker": "KXNFLGAME-26SEP27CARCLE-CAR",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27CINPIT",
+          "market_ticker": "KXNFLGAME-26SEP27CINPIT-CIN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27HOUIND",
+          "market_ticker": "KXNFLGAME-26SEP27HOUIND-IND",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27KCMIA",
+          "market_ticker": "KXNFLGAME-26SEP27KCMIA-KC",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27LACBUF",
+          "market_ticker": "KXNFLGAME-26SEP27LACBUF-BUF",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27LARDEN",
+          "market_ticker": "KXNFLGAME-26SEP27LARDEN-DEN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27LVNO",
+          "market_ticker": "KXNFLGAME-26SEP27LVNO-NO",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27MINTB",
+          "market_ticker": "KXNFLGAME-26SEP27MINTB-MIN",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27NEJAC",
+          "market_ticker": "KXNFLGAME-26SEP27NEJAC-JAC",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27NYJDET",
+          "market_ticker": "KXNFLGAME-26SEP27NYJDET-DET",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27SEAWAS",
+          "market_ticker": "KXNFLGAME-26SEP27SEAWAS-SEA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP27TENNYG",
+          "market_ticker": "KXNFLGAME-26SEP27TENNYG-NYG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXNFLGAME-26SEP28PHICHI",
+          "market_ticker": "KXNFLGAME-26SEP28PHICHI-PHI",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXODIMATCH-26SEP240400AUSSA",
+          "market_ticker": "KXODIMATCH-26SEP240400AUSSA-SA",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+          "market_ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+          "market_ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXUFCFIGHT-26SEP22QUIPIW",
+          "market_ticker": "KXUFCFIGHT-26SEP22QUIPIW-PIW",
+          "side": "yes"
+        }
+      ],
+      "legs_n": 27,
+      "status_observed": "active",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "resolve_source": "kalshi_public_get",
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0"
+    },
+    {
+      "market_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F-2DEC47CF182",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXDPWORLDTOUR-FEODF26",
+          "market_ticker": "KXDPWORLDTOUR-FEODF26-VHOV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXDPWORLDTOURR1LEAD-FEODF26",
+          "market_ticker": "KXDPWORLDTOURR1LEAD-FEODF26-DLAW",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1-QUE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2-POD",
+          "side": "yes"
+        }
+      ],
+      "legs_n": 4,
+      "status_observed": "finalized",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "resolve_source": "kalshi_public_get",
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0"
+    },
+    {
+      "market_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F-D22687ACA9C",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXDPWORLDTOUR-FEODF26",
+          "market_ticker": "KXDPWORLDTOUR-FEODF26-VHOV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXDPWORLDTOURR1LEAD-FEODF26",
+          "market_ticker": "KXDPWORLDTOURR1LEAD-FEODF26-DLAW",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1-QUE",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2-QUE",
+          "side": "yes"
+        }
+      ],
+      "legs_n": 4,
+      "status_observed": "finalized",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "resolve_source": "kalshi_public_get",
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0"
+    },
+    {
+      "market_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F-20154DED5EC",
+      "event_ticker": "KXMVECROSSCATEGORY-S2026FAFE350FA8F",
+      "series_ticker": "KXMVECROSSCATEGORY",
+      "mve_collection_ticker": "KXMVECROSSCATEGORY-R",
+      "mve_selected_legs": [
+        {
+          "event_ticker": "KXDPWORLDTOUR-FEODF26",
+          "market_ticker": "KXDPWORLDTOUR-FEODF26-VHOV",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXDPWORLDTOURR1LEAD-FEODF26",
+          "market_ticker": "KXDPWORLDTOURR1LEAD-FEODF26-DLAW",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-1-POD",
+          "side": "yes"
+        },
+        {
+          "event_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2",
+          "market_ticker": "KXWTASETWINNER-26SEP20QUEPOD-2-POD",
+          "side": "yes"
+        }
+      ],
+      "legs_n": 4,
+      "status_observed": "finalized",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "admitted_at": null,
+      "resolve_source": "kalshi_public_get",
+      "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0"
+    }
+  ],
+  "ineligible": [],
+  "results": null,
+  "pnl": null,
+  "volume": null,
+  "stubbed_at_utc": "2026-09-22T23:56:34Z"
+}
