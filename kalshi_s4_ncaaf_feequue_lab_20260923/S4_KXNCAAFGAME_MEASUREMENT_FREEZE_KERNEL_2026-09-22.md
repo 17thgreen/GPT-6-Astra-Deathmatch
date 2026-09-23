@@ -1,109 +1,125 @@
-# S4 — KXNCAAFGAME fee+queue honesty measurement kernel — FREEZE 2026-09-22 (ET)
+# S4 — KXNCAAFGAME football OOS measurement kernel — FREEZE 2026-09-22 (ET)
 
 **Packet ID:** S4-KXNCAAFGAME-MEAS  
-**Scout series:** `KXNCAAFGAME` (college football game moneyline)  
+**Scout series:** `KXNCAAFGAME` (college football game moneyline binaries)  
+**Optional later siblings (not this freeze):** `KXNCAAFSPREAD` / `KXNCAAFTOTAL` if Scout confirms listing  
 **Owner (freeze):** Deep Research  
-**Implementer (later):** Collector (panel) → Simulator (fee+queue honesty harness) → Examiner (Kalshi)  
-**Reviewer:** Conductor triage; Adversary on Lee-Ready, invented fills, and live orders  
+**Implementer (later):** Collector (panel) → Simulator (fee/queue-honest markout) → Examiner (Kalshi)  
+**Reviewer:** Conductor triage; Adversary on fee-blind / weekend overlap vs `000`  
 **Status:** **FROZEN** — results/pnl **null** (not run)  
-**Cite:** Conductor maximize kick 2026-09-22 (S5 preferred that cycle; S4 remains TRY for a later football-OOS freeze); R1-P1 feebook; R1-P5 rails  
-**Conductor sha256 claim:** `9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795`  
-**Checkout status:** `lab/governance/astra/packets/` is absent and the conductor-box bytes were not attached to the implement run. This file is the lab recreation of that kernel. It is not asserted to equal the conductor sha256 claim. The recreation sha256 is recorded in `FROZEN_EXPERIMENT.json`.  
-**Repo (lab dir):** `17thgreen/GPT-6-Astra-Deathmatch` → `kalshi_s4_ncaaf_feequue_lab_20260923/` (do not mutate Q / Cap-SR / Cap-SR-FX / C3 / C5 / R3-P3 / S5 / feebook / rails labs)  
-**Hard rules:** Measurement-only college-football fee+queue honesty. GET-only. No Logan keys. No live orders. No invented fills or PnL. No Q6-`000` retune. No queue-fragility reopen. No Cap-SR reopen. No `admit.py`. No R1-P2 challenger bakeoff. Lee-Ready is refused. Must bind R1-P1 + R1-P5.
+**Cite:** Conductor maximize kick 2026-09-22 (S4 after S5 accept); Scout `SCOUT_MAXIMIZE_DELTA_2026-09-22.md` §S4 replace; triage `SCOUT_TRIAGE_MAXIMIZE_DELTA_2026-09-22.md` ADMIT TRY; R1-P1 feebook; R1-P5 rails  
+**Repo (future lab dir):** `17thgreen/GPT-6-Astra-Deathmatch` → e.g. `kalshi_ncaaf_game_meas_lab_20260922/` (do not mutate Q6/Q7/capital / S1 MLB / R2-P3 / S5 labs)  
+**Hard rules:** No live orders. No invented PnL. No Q6-`000` signal retune. No capital-structure arms. **Must** bind R1-P1 feebook + R1-P5 rails — **forbid** inherited Q7/Q6 `0.0175`/`0.07` fee literals. Orthogonal **football OOS** vs NFL `000` — not more `KXNFLGAME` capacity.
 
 ---
 
 ## Intent (one measurement kernel)
 
-Do public `KXNCAAFGAME` books stress the same fee and queue honesty instruments as `000`, under a college-football clock, when maker versus taker is read only from native `taker_*` fields and freshness is read only from rails content-fresh and queue-attribution bins?
+Measure whether NFL T−7d→T−3h **timing / microstructure lab objects** (fee-honest reciprocal book + rails freshness/queue labels) transfer to **college football** `KXNCAAFGAME` YES/NO books — a **football out-of-sample** series vs the NFL allocator `000`, without porting `000` or inventing maker EV.
 
-**Not a strategy.** Not a retune of the Q6 candidate. Not an Examiner score. Feature family **NCAAF-FQ**. Orthogonal to Cap-SR, Cap-SR-FX, MVE-FL, and F1–F3.
+Contrast to S1 (`KXMLBGAME`): S1 is daily non-football binary generalize; S4 is **weekend football OOS** with fee channel matching NFL game books (`maker_fees` / 1 per Scout).
+
+**Not a strategy.** Pre-settlement measurement only until Examiner opens a scorecard after freeze+units. Not an R1-P2 challenger open unless Conductor separately kicks bakeoff.
 
 ---
 
-## Dead-card / live-pin overlap (named)
+## Bound inventory (Scout-confirmed — mandatory)
+
+**Scout packet:** `lab/governance/astra/SCOUT_MAXIMIZE_DELTA_2026-09-22.md`
+
+| Field | Scout observation (raw API; not invented) |
+|---|---|
+| Series | `KXNCAAFGAME` |
+| Listing | **CLEARED** (was 429 on earlier brief) |
+| First page | **20 markets / 10 events** |
+| OI sum (page) | ≈ **2.55e5** (dominated by **MCNS/LSU**) |
+| Fee metadata | `maker_fees` / **1** (matches NFL game-book fee channel shape) |
+| Prior status | Brief DEFER → Maximize REPLACE placeholder → **TRY** |
+
+**Kickoff SoT:** Kalshi public `occurrence_datetime` / market close fields.  
+**Capture:** GET-only public elections host allowlist. Do not steal PIT@CLE / S1 / R2-P3 / S5 / R2-P1 poll budget.
+
+**Panel note:** Collector owns first bounded weekend/next-Saturday slate map; this freeze does **not** invent event tickers beyond Scout’s MCNS/LSU dominance note. Suggested panel_version: `2026-09-22.s4-kxncaafgame-v0`.
+
+---
+
+## Dead-card / live-pin overlap (named) — **MEDIUM**
 
 | Pin / card | Overlap | Handling |
 |---|---|---|
-| Q6-`000` KEEP | **None** — college slate, not the NFL week allocator | Do not retune `000` |
-| Q7 Arm B KILL | **Nearest dead card** | Do not reopen |
-| C1 empty-book `NOT_SCORED` | **Closed sibling** | Do not ungate; do not fill empty books |
-| Cap-SR / Cap-SR-FX | **Orthogonal** | Soft-policy and fixture stress stay closed |
-| MVE-FL (S5) | **Orthogonal** | Combo fill-vs-legs is a different knob |
-| F1–F3 / Gauntlet | **Out** | Not this kernel |
-| R1-P2 challenger bakeoff | **Denied** | Do not open |
-| Queue-fragility QF0/QF1/QF2 | **No reopen** | Import rails bins only |
-| Lee-Ready | **Refused** | Native `taker_*` fields only |
+| Q6-`000` KEEP | **Medium — weekend football calendar overlap with NFL Sun; different series** | Football **OOS** measurement vs `000`; **no** quote/size/route retune of `000`; not more NFL ML capacity |
+| Q7 pair-check / Arm B KILL | **None** — no pair-check knob | Cemetery CEM-ASTRA-20260922-001 stands |
+| Capital-structure A1/A2/A3 | **None** | Separate freeze |
+| Crypto F1–F3 / Gauntlet | **N/A** | Idle science |
+| More `KXNFLGAME` MM | **Explicitly out** | Incumbent territory |
+| S1 `KXMLBGAME` | **Complementary** — non-football daily vs football weekend OOS | Separate panels; may share feebook/rails libs |
+| R2-P3 PASSYDS | **Schedule kinship only** (football weekend) | Distinct prop-ladder contracts |
+| S5 MVE cross-category | **None** — distinct structure | Already frozen separately |
+| R1-P2 challenger QUEUE | **Related class, not this open** | Measurement freeze only; bakeoff needs separate Conductor kick |
+| Weather/politics placeholder | **Superseded** | This packet **is** the S4 series pin (`KXNCAAFGAME`) |
 
 ---
 
-## Mandatory instrument pins
+## Mandatory instrument pins (not inherited Q7 fees)
 
 | Dep | Pin | Rule |
 |---|---|---|
-| Fee | R1-P1 `kalshi_feebook_lab_20260922/` @ `22371178cb2663250b4762f328069571c48cb551` | Import only. No shadow `0.0175` / `0.07` literals |
-| Rails | R1-P5 `kalshi_rails_lab_20260922/` @ `6a28e0d6254327ea4e6451c781bec56215ac6cac` | `content_fresh_flag`, `queue_attribution_bin`, maker-credit floor refuse |
-| Capture | GET-only public elections host | No signed trading host. No Logan keys |
-| Panel | `lab/astra-capture/s4-kxncaafgame/panel_stub.json` | `panel_version` `2026-09-22.s4-kxncaafgame-v0`. `admitted_at` null. Prefer `panel_admitted.json` when it appears |
+| Fee | R1-P1 `kalshi_feebook_lab_20260922/` @ `22371178cb2663250b4762f328069571c48cb551` (or Archivist tip) | Reciprocal book + `order_fee` / `round_up` / series maker flag; Scout fee shape `maker_fees`/1 via feebook API only |
+| Rails | R1-P5 `kalshi_rails_lab_20260922/` @ `6a28e0d6254327ea4e6451c781bec56215ac6cac` | `content_fresh_flag`, `maker_credit_floor_zero_refuse`, `queue_attribution_bin` — instrument only |
+| Kickoff / close SoT | Kalshi `occurrence_datetime` / market close | CFB weekend cluster — do not mix NFL holdout +3h clocks |
+| Capture | GET-only public events/markets/orderbook/trades | Collector discipline; throttle |
 
-**Conductor panel-stub sha256 claim:** `38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a` (~113 events). Those bytes were not in this checkout. The committed stub is a schema seed with an empty event list. It does not invent the 113-event cohort.
-
-**Refuse gate:** Lee-Ready on any input. Completed-profit label without the feebook channel. Invented fills, invented settlement, or a non-null scorecard before Examiner.
+**Refuse gate:** completed-profit without feebook fee channel → refuse. Freshness from content/transaction time, not WS ping.
 
 ---
 
 ## Measurement objects (pre-settlement)
 
-For each later-admitted `KXNCAAFGAME` event:
+For each admitted `KXNCAAFGAME` YES-NO market at sample time `t` with `content_fresh_flag=true`:
 
-1. **Native taker partition:** `taker_outcome_side` / `taker_book_side` / `taker_side` only. Lee-Ready stays `REFUSED`.  
-2. **Rails freshness bin:** `content_fresh_flag` and `queue_attribution_bin` only.  
-3. **Fee channel:** R1-P1 `order_fee` as a pin check. The delta is not a scorecard field in this kernel.
+1. **Reciprocal book:** `bid_YES`, `bid_NO`, asks via R1-P1 Pin A, `spread_YES`.  
+2. **Fee channel** on fill or hypothetical size C at P via R1-P1 `order_fee` — never shadow Q7/Q6 literals.  
+3. **Rails labels:** `maker_credit_floor_zero_refuse`, `queue_attribution_bin` (3300 / 10000 as **labels**).  
+4. **Timing shape:** minutes-to-`occurrence_datetime`; raw `volume_fp` / `volume_24h_fp` / `open_interest_fp` only.  
+5. **Adverse mid markout (optional first units):** mid Δ over 1m / 5m / 15m conditional on touch — **no** outcome P&L required.  
+6. **OOS contrast vs `000`:** fee+queue honesty metrics only on CFB tape; **no** `000` parameter change.
 
-**Explicitly null until Examiner:** `maker_vs_taker_roi_delta`, `fresh_vs_stale_gap`, `settled_join_n`, `results`, `pnl`.
-
----
-
-## Panel / cohort (freeze rule — admit is Collector)
-
-- Series filter: `KXNCAAFGAME`.  
-- Suggested panel_version: `2026-09-22.s4-kxncaafgame-v0`.  
-- `admit.py` is not run. Do not backfill.  
-- Conductor described about 113 events. This recreation does not synthesize them.
+**Explicitly null until Examiner run:** `results`, `pnl`, strategy EV, annualization, live promotion, “beats `000`” claims.
 
 ---
 
-## Arms (one knob — harness)
+## Arms (optional contrast — still one kernel)
 
-One knob: honesty partition ∈ {`maker_vs_taker_native`, `content_fresh_vs_stale_bin`} with feebook and rails commits fixed.
+If Simulator needs a factorial later, **one knob only:** markout horizon ∈ {`1m`, `5m`, `15m`} with feebook+rails fixed.  
+**Not arms:** capital slices; Q6 signal; pair-check; spread/total expand; weather/politics revert.
 
-**Not arms:** Lee-Ready, Q6 signal, Cap-SR, queue-fragility, R1-P2 challenger, live maker sizes.
+First PR may be **schema + unit fixtures only** (empty results unchanged).
 
 ---
 
 ## Do-not-modify
 
-1. No live orders. No Logan keys. No `admit.py`.  
-2. No invented fills, settlement, or PnL.  
-3. No Q6-`000` retune. No Q7 Arm B reopen. No QF reopen. No Cap-SR reopen.  
-4. No R1-P2 challenger bakeoff.  
-5. Do not mutate feebook, rails, Q, Cap-SR, Cap-SR-FX, C3, C5, R3-P3, or S5 labs.  
-6. `results` / `pnl` null until Examiner opens after Clock admit.
+1. No live orders / no live launcher.  
+2. No invented PnL / no invented event tickers or OI beyond Scout raw figures.  
+3. No Q6-`000` retune; no Q7 reopen; no capital A2/A3.  
+4. No scoring with inherited Q7/Q6 fee literals.  
+5. No silent panel backfill; no steal of PIT@CLE / S1 / R2-P3 / S5 / R2-P1 budget.  
+6. Do not mutate feebook/rails/Q/S1/R2-P3/S5 labs — new NCAAF meas lab dir when implementing.  
+7. Do not expand this packet to `KXNFLGAME` MM capacity, `KXNCAAFSPREAD`/`TOTAL` until Scout listing confirm, or R1-P2 bakeoff without Conductor kick.
 
 ---
 
-## Empty results
+## Empty results (on disk)
 
-Scorecard fields stay null in `FROZEN_EXPERIMENT.json` and `results/EMPTY_RESULTS.json`.
+- `packets/scout_s4_kxncaafgame/FROZEN_EXPERIMENT.json` — `results`/`pnl` null  
+- `packets/scout_s4_kxncaafgame/results.json` + `results/EMPTY_RESULTS.json` — `NOT_RUN`
 
 ---
 
 ## Done =
 
-Kernel text on disk for the implement seat. Conductor-box bytes were not in the checkout, so this recreation is labeled as such. Implementation / admit / Examiner score = later seats.
+Freeze packet on disk + Conductor ping with path. Implementation / admit / Examiner score = later seats.
 
 ## Frozen-at
-
-`2026-09-22T23:59:00+00:00` UTC is the conductor-cycle cite. The checkout recreation was written 2026-09-23 because the governance tree and the conductor file were absent.
-Deep Research freeze. S4 stays orthogonal to the S5 pick.
+`2026-09-22T23:44:37+00:00` UTC. Desk 2026-09-22 ET.
+Deep Research freeze under Conductor maximize kick (S4 after S5 accept).

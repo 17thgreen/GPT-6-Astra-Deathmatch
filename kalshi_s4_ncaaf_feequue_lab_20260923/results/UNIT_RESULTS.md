@@ -21,16 +21,12 @@ python3 -m unittest -v tests.test_orchestrator
 Ran 9 tests in 0.029s at 2026-09-23T15:46:14Z. Result: OK. Failures: 0.
 Errors: 0.
 
-The checks that passed are the predeclared ones: fee pin
+The checks that passed on that run are the predeclared ones against the
+bytes then on disk: fee pin
 `22371178cb2663250b4762f328069571c48cb551` and rails pin
 `6a28e0d6254327ea4e6451c781bec56215ac6cac` with those trees unchanged since
-those commits; recreation packet sha256
-`00117c348573076bc35af422e6618d750c1e6b89c3387f2b7c0b0f259d3fe2a2`; recreation
-parent kernel sha256
-`f0e502264ce79d8e958c54cace387aa0521f616dd59290356aaafc33e9096847`; panel
-seed `2026-09-22.s4-kxncaafgame-v0` sha256
-`eb0a9ea7e4cf24d6f805f63688dbb48c71dc91a81bcea4afb2c88f73588b8112` with
-`admitted_at` null and zero events; preference for a temporary
+those commits; the packet, parent kernel, and panel-stub digests recorded
+in `orchestrator.py` at that time; preference for a temporary
 `panel_admitted.json` when that file exists; S4A0 native taker partitions
 and S4A1 content-fresh / queue bins with the scorecard fields null;
 Lee-Ready refused on every sampled input, including a well-formed native
@@ -46,22 +42,33 @@ files. `fresh_vs_stale_gap` stays null.
 Feebook, rails, Q, Cap-SR, Cap-SR-FX, C3, C5, R3-P3, and S5 match
 `6626c6892298b015cf63688081545e27363226bc` for those trees.
 
+## Clock correction
+
+The conductor-box files replaced the earlier checkout copies. Verified
+sha256 on this branch:
+
+- harness freeze `3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728` at the lab root, the lab bundle, `packets/S4_KXNCAAFGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md`, and `packets/S4_KXNCAAFGAME_FEEQUEUE_HARNESS/`
+- parent kernel `9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795` at the same four locations
+- panel stub `38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a` at `lab/astra-capture/s4-kxncaafgame/panel_stub.json` (113 events; `volume_fp`, `open_interest_fp`, `results`, and `pnl` null; `admitted_at` null)
+- capture README `b0df0e86423ea11a049fb674602ab20f45acae5a549acf9eca604a6aa2d251b1` at `lab/astra-capture/s4-kxncaafgame/README.md`
+
+`orchestrator.py` and `tests/test_orchestrator.py` were left unchanged.
+Their pin constants still name the earlier digests. A rerun of
+`python3 -m unittest -v tests.test_orchestrator` after the replacement
+finished with 9 tests, 6 passed, 3 errors (`OrchestratorError: packet
+sha256` from `_assert_freeze_bytes`). That rerun is code verification of
+the unchanged pins. It is not an Examiner score. Scorecard fields stay
+null.
+
 ## Limitations
 
-- The conductor harness freeze sha256 claim
-  `3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728`,
-  the parent claim
-  `9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795`,
-  and the panel stub claim
-  `38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a`
-  (~113 events) were not in this checkout. `lab/governance/astra/packets/`
-  is absent. The committed markdown and the empty panel seed are
-  recreations. Their hashes are the recreation hashes above. This page
-  does not relabel them as the conductor bytes.
-- The seed has zero events. S4A0 and S4A1 on that seed keep `event_count`
-  0 and record `conductor_stub_absent_seed_not_invented`. The two-trade
-  native partition and the three-row freshness bins are
-  `fixtures/synthetic_native_trades.json` and
+- `lab/governance/astra/packets/` is absent. The verified copies are the
+  lab paths and `packets/` paths listed above.
+- The 2026-09-23T15:46:14Z unit run loaded the earlier empty seed.
+  `conduct` on that seed kept `event_count` 0 and recorded
+  `conductor_stub_absent_seed_not_invented`. The conductor stub now on
+  disk has 113 events. The two-trade native partition and the three-row
+  freshness bins are `fixtures/synthetic_native_trades.json` and
   `fixtures/synthetic_fresh_queue.json` with source
   `synthetic_schema_standin`. They are not a Kalshi GET and not an admitted
   cohort.

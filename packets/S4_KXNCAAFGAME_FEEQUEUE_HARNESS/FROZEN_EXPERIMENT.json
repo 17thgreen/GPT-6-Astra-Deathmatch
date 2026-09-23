@@ -4,14 +4,14 @@
   "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-23T15:50:00Z",
   "packet": "S4_KXNCAAFGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
-  "packet_sha256": "00117c348573076bc35af422e6618d750c1e6b89c3387f2b7c0b0f259d3fe2a2",
+  "packet_sha256": "3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728",
   "conductor_packet_sha256_claim": "3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728",
-  "conductor_bytes_in_checkout": false,
+  "conductor_bytes_in_checkout": true,
   "parent_freeze": "S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
-  "parent_freeze_sha256": "f0e502264ce79d8e958c54cace387aa0521f616dd59290356aaafc33e9096847",
+  "parent_freeze_sha256": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
   "conductor_parent_freeze_sha256_claim": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
   "panel_version": "2026-09-22.s4-kxncaafgame-v0",
-  "panel_stub_sha256": "eb0a9ea7e4cf24d6f805f63688dbb48c71dc91a81bcea4afb2c88f73588b8112",
+  "panel_stub_sha256": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
   "conductor_panel_stub_sha256_claim": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
   "conductor_events_n_claim": 113,
   "admitted_at": null,
@@ -45,5 +45,5 @@
   ],
   "results": null,
   "pnl": null,
-  "go": "Conductor 2026-09-23 after S5 PR25 @6626c689; NCAAF-FQ orthogonal to Cap-SR / Cap-SR-FX / MVE-FL / F1-F3. Conductor freeze bytes were not in the checkout."
+  "go": "Conductor 2026-09-23 after S5 PR25 @6626c689; NCAAF-FQ orthogonal to Cap-SR / Cap-SR-FX / MVE-FL / F1-F3. Harness freeze, parent kernel, and panel stub sha256 values on this branch match the conductor claims."
 }

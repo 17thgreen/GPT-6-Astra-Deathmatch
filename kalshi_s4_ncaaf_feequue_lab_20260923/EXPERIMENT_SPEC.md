@@ -8,19 +8,17 @@ Feature family NCAAF-FQ.
 
 ## Placement
 
-The checkout recreation of the harness freeze is
+The harness freeze on this branch is
 `S4_KXNCAAFGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md`, sha256
-`00117c348573076bc35af422e6618d750c1e6b89c3387f2b7c0b0f259d3fe2a2`.
-The conductor sha256 claim for that freeze is
 `3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728`.
-Those conductor bytes were not in this checkout. This recreation is not
-asserted to equal that claim.
+That digest matches the conductor claim. The same bytes sit at the lab
+root, the lab bundle, `packets/`, and
+`packets/S4_KXNCAAFGAME_FEEQUEUE_HARNESS/`.
 
-The checkout recreation of the parent kernel is
+The parent kernel on this branch is
 `S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md`, sha256
-`f0e502264ce79d8e958c54cace387aa0521f616dd59290356aaafc33e9096847`.
-The conductor parent claim is
 `9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795`.
+That digest matches the conductor parent claim on the same four paths.
 
 `EXPERIMENT_SPEC.md` is the lab hypothesis. It is not a second freeze.
 
@@ -31,12 +29,12 @@ beside the engine and under `packets/S4_KXNCAAFGAME_FEEQUEUE_HARNESS/`.
 `results/EMPTY_RESULTS.json` keeps `maker_vs_taker_roi_delta`,
 `fresh_vs_stale_gap`, and `settled_join_n` null.
 
-Panel seed: `lab/astra-capture/s4-kxncaafgame/panel_stub.json`,
+Panel stub: `lab/astra-capture/s4-kxncaafgame/panel_stub.json`,
 `panel_version` `2026-09-22.s4-kxncaafgame-v0`, sha256
-`eb0a9ea7e4cf24d6f805f63688dbb48c71dc91a81bcea4afb2c88f73588b8112`.
-`admitted_at` is null. The conductor stub claim is
-`38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a`
-(~113 events). This seed has zero events so that cohort is not invented.
+`38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a`.
+`admitted_at` is null. The file is the conductor stub: 113 events, with
+`volume_fp`, `open_interest_fp`, `results`, and `pnl` null. Capture README
+sha256 `b0df0e86423ea11a049fb674602ab20f45acae5a549acf9eca604a6aa2d251b1`.
 `panel_admitted.json` is preferred when it appears.
 
 ## One knob
