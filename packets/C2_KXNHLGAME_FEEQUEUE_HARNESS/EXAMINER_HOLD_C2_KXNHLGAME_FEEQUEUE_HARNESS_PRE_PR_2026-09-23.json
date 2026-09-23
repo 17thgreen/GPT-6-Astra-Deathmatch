@@ -1,0 +1,73 @@
+{
+  "id": "EXAMINER_HOLD_C2_KXNHLGAME_FEEQUEUE_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "C2-KXNHLGAME-FEEQUEUE-HARNESS",
+  "feature_family": "NHL-FQ",
+  "status": "NOT_SCORED",
+  "stub_ready": false,
+  "hold": "Conductor ACCEPT+IMPLEMENT GO \u2014 pre-PR HOLD stands; READY NOT_SCORED only after PR branch sha verify + merge",
+  "freeze_sha256": "a36ec35143a32c7cd24e9fdf2a33f645d356b93e34c131bb1b8a94e3f92e38f5",
+  "freeze_path": "lab/governance/astra/packets/C2_KXNHLGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
+  "scout_hunt_sha256": "1ab794ad688ba31e0178e78294dcdbe50cf2799a71f40245e5a04a80e9dd5762",
+  "scout_path": "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXNHLGAME.json",
+  "scout_markets": 66,
+  "scout_events": 33,
+  "panel_stub_sha256": "60d183e7bdcf25adbc94eeeb3bb361b5232c19c0fe3e6a115f45ab3fcb100c79",
+  "panel_path": "lab/governance/astra/packets/C2_KXNHLGAME_PANEL_STUB_2026-09-23.json",
+  "panel_version": "2026-09-23.c2-kxnhlgame-v0",
+  "panel_events": 6,
+  "panel_markets": 12,
+  "panel_subset_of_scout": true,
+  "admitted_at": null,
+  "arms": [
+    "C2A0",
+    "C2A1"
+  ],
+  "arm_labels": {
+    "C2A0": "maker_vs_taker_native",
+    "C2A1": "content_fresh_vs_stale_bin"
+  },
+  "knob": "analysis_slice",
+  "box_pin_verify": {
+    "freeze": true,
+    "scout_hunt": true,
+    "panel_stub": true,
+    "verified_at_et": "2026-09-23T13:35:30-04:00"
+  },
+  "lab_dir": "kalshi_c2_kxnhlgame_feequue_lab_20260923/",
+  "metrics_null": [
+    "results",
+    "pnl",
+    "maker_vs_taker_roi_delta",
+    "fresh_vs_stale_gap",
+    "settled_join_n",
+    "n_books"
+  ],
+  "refuse": [
+    "no invent depth/fills/PnL",
+    "Lee-Ready REFUSED",
+    "no 000 retune",
+    "no Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF reopen",
+    "no claim S1 green",
+    "does not ungate S1/S2/R2-P4",
+    "do NOT stamp READY until PR branch authentic sha verify of freeze a36ec351\u2026 (+ scout/panel) + merge"
+  ],
+  "score_gate": [
+    "PR branch sha verify freeze=a36ec351\u2026 scout=1ab794ad\u2026 panel=60d183e7\u2026",
+    "merge",
+    "Clock admit",
+    "Examiner-ready"
+  ],
+  "also_owned_not_scored": [
+    "R3-P4-L2-SF-HARNESS",
+    "C1-EMPTY-OB-HARNESS",
+    "R2-P5-SOT-ID-HARNESS",
+    "R3-P4-L2-CAT-HARNESS",
+    "R2-P3-KXNFLPASSYDS-PROP-LADDER-HARNESS"
+  ],
+  "stub": "lab/governance/astra/packets/EXAMINER_SCORECARD_STUB_C2_KXNHLGAME_FEEQUEUE_HARNESS_2026-09-23.md",
+  "stamped_at_et": "2026-09-23T13:36:00-04:00",
+  "pin_confirmed_at_et": "2026-09-23T13:35:30-04:00",
+  "source": "EXAMINER_HOLD_CONFIRM_C2_NHL_FQ_PRE_PR \u2014 ACCEPT+IMPLEMENT GO freeze a36ec351\u2026",
+  "updated_at_et": "2026-09-23T13:35:30-04:00"
+}

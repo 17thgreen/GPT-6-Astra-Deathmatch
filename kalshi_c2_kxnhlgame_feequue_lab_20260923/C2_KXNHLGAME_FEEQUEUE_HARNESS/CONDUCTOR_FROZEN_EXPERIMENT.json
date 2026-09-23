@@ -1,0 +1,15 @@
+{
+  "packet_id": "C2-KXNHLGAME-FEEQUEUE-HARNESS",
+  "feature_family": "NHL-FQ",
+  "status": "FROZEN",
+  "arms": [
+    "C2A0",
+    "C2A1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "a36ec35143a32c7cd24e9fdf2a33f645d356b93e34c131bb1b8a94e3f92e38f5",
+  "scout_hunt_sha256": "1ab794ad688ba31e0178e78294dcdbe50cf2799a71f40245e5a04a80e9dd5762",
+  "panel_stub_sha256": "60d183e7bdcf25adbc94eeeb3bb361b5232c19c0fe3e6a115f45ab3fcb100c79",
+  "stamped_at_et": "2026-09-23T13:36:00-04:00"
+}
