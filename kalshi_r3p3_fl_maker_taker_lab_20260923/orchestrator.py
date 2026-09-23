@@ -473,6 +473,7 @@ def band_rows(trades, bands):
             'trade_n': len(trade_ids),
             'trade_ids': trade_ids,
             'lee_ready': 'REFUSED',
+            'aggressor_inference': None,
             'fee_schema': fee_schema_object(),
             'post_fee_roi': None,
         }
