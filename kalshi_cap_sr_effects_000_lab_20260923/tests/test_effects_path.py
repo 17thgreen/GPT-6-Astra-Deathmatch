@@ -209,7 +209,8 @@ class PinTests(unittest.TestCase):
         self.assertEqual(report['row_count'], 2)
         self.assertEqual(report['labels'][0]['role'], 'maker')
         self.assertEqual(report['labels'][1]['role'], 'taker')
-        self.assertIn('outcome_mid_at_fill', report['ignored_fill_keys'])
+        self.assertEqual(report['ignored_fill_keys'], ())
+        self.assertIn('outcome_mid_at_fill', effects.OPTIONAL_FILL_KEYS)
         for policy in soft.ARMS:
             instrument = report['policy_instrument'][policy]
             self.assertFalse(instrument['borrow_log_nonempty'])
