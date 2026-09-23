@@ -22,7 +22,7 @@ standard library:
 python3 -m unittest -v tests.test_orchestrator
 ```
 
-Ran 11 tests in 0.017s. Result: OK. Failures: 0. Errors: 0.
+Ran 12 tests in 0.016s. Result: OK. Failures: 0. Errors: 0.
 
 The checks that passed are the predeclared ones: the orchestrator imports
 `kalshi_r2p1_hygiene_000_lab_20260922/fixture_join.py` and
@@ -30,9 +30,9 @@ The checks that passed are the predeclared ones: the orchestrator imports
 `hygiene.py`, `queue_fragility.py`, and both join modules match their pin
 commits; the freeze packet hash matches `4799642e…`; the six scorecard fields
 stay null in the lab freeze, the empty results, and the packet freeze; the
-fee trio and the queue trio are both present, both typed, and both refused
-by the same `write_scorecard` exception; both joins read one fills path and
-one orders path; maker rows from the queue join carry QF0, QF1, and QF2 arm
+fee trio and the queue trio are required keys, typed, and refused by the
+same `write_scorecard` exception when missing or non-null; both joins read
+one fills path and one orders path; maker rows from the queue join carry QF0, QF1, and QF2 arm
 slices in memory and those slices are not written to the scorecard; a
 non-`000` stem is refused; live orders are refused; capital modes A2 and A3
 are refused; the harsh twin stays unloaded.

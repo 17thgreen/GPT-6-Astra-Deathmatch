@@ -2,15 +2,15 @@
   "kind": "unit_test_verification",
   "experiment": "EXAMINER-FEE-QUEUE-HONESTY-000",
   "packet_sha256": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
-  "ran_at": "2026-09-23T00:07:04Z",
+  "ran_at": "2026-09-23T00:09:12Z",
   "python": "3.12.3",
   "command": "python3 -m unittest -v tests.test_orchestrator",
   "cwd": "kalshi_examiner_fee_queue_honesty_000_lab_20260922",
-  "tests_run": 11,
+  "tests_run": 12,
   "failures": 0,
   "errors": 0,
   "result": "OK",
-  "elapsed_seconds": 0.017,
+  "elapsed_seconds": 0.016,
   "source_used": "synthetic_schema_standin",
   "production_gzip_present": false,
   "production_pin": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
@@ -88,5 +88,5 @@
   "results": null,
   "pnl": null,
   "tape_walk": null,
-  "note": "Code verification of one Examiner channel. Queue fields and fee fields share the refuse path. Not a simulated execution and not live validation. Freeze scorecard fields remain null. No target edge ratio."
+  "note": "Code verification of one Examiner channel. Omitting a queue field is refused on the same path as omitting a fee field. Not a simulated execution and not live validation. Freeze scorecard fields remain null. No target edge ratio."
 }
