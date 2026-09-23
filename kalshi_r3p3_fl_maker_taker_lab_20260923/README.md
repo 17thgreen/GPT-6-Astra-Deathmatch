@@ -1,10 +1,12 @@
 # R3-P3 FL maker/taker + favorite–longshot bands harness
 
-Status: hypothesis committed. The unit page is not recorded yet.
-`EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
-`results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps `mz_alpha`,
-`mz_psi`, `post_fee_roi_by_band`, `maker_vs_taker_roi_delta`, and
-`settled_join_n` null.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md` (8 tests, OK, 2026-09-23T14:27:43Z). That page is
+not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
+`FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
+`results/EMPTY_RESULTS.json` keeps `mz_alpha`, `mz_psi`,
+`post_fee_roi_by_band`, `maker_vs_taker_roi_delta`, and `settled_join_n`
+null.
 
 This lab is measurement-only. The only knob is the analysis slice: R3P3A0
 `maker_vs_taker` and R3P3A1 `fl_bands_10c`. Native taker fields are
@@ -28,4 +30,10 @@ Bands registry: `lab/astra-capture/r3-p3-fl-maker-taker/bands_registry_10c.json`
 Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
 
-No Logan keys. No live orders. A later unit run is not an Examiner score.
+From this directory, Python 3.12 standard library:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator
+```
+
+No Logan keys. No live orders. A passing unit run is not an Examiner score.

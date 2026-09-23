@@ -37,7 +37,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_prospective_recorder_20260922` | GET-only prospective recorder; reviewed, not deployed |
 | `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
 | `kalshi_soft_blended_reserves_000_lab_20260923` | Cap-SR soft-policy measurement on the A2 substrate. Scorecard null. Not a promotion claim |
-| `kalshi_r3p3_fl_maker_taker_lab_20260923` | R3-P3 maker/taker and 10¢ favorite–longshot bands. Measurement only. Lee-Ready refused. Scorecard null |
+| `kalshi_r3p3_fl_maker_taker_lab_20260923` | R3-P3 maker/taker and 10¢ favorite–longshot bands. Measurement only. Lee-Ready refused. Scorecard null. 8 unit tests green |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
