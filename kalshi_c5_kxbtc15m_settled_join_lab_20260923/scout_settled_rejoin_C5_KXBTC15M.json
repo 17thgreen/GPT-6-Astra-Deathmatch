@@ -1,0 +1,218 @@
+{
+  "packet": "C5-KXBTC15M-SETTLED-JOIN",
+  "feature_family": "C5-RJ",
+  "series": [
+    "KXBTC15M"
+  ],
+  "settled_nonempty_result_N": 20,
+  "settled_list_limit": 20,
+  "settled_list_cursor_present": true,
+  "parent_seed_finalized_nonempty": true,
+  "open_list_n": 1,
+  "open_tickers": [
+    "KXBTC15M-26SEP231530-30"
+  ],
+  "markets": [
+    {
+      "ticker": "KXBTC15M-26SEP231515-15",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T19:15:00Z",
+      "occurrence_datetime": "2026-09-23T19:20:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231500-00",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T19:00:00Z",
+      "occurrence_datetime": "2026-09-23T19:05:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231445-45",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T18:45:00Z",
+      "occurrence_datetime": "2026-09-23T18:50:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231430-30",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T18:30:00Z",
+      "occurrence_datetime": "2026-09-23T18:35:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231415-15",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T18:15:00Z",
+      "occurrence_datetime": "2026-09-23T18:20:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231400-00",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T18:00:00Z",
+      "occurrence_datetime": "2026-09-23T18:05:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231345-45",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T17:45:00Z",
+      "occurrence_datetime": "2026-09-23T17:50:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231330-30",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T17:30:00Z",
+      "occurrence_datetime": "2026-09-23T17:35:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231315-15",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T17:15:00Z",
+      "occurrence_datetime": "2026-09-23T17:20:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231300-00",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T17:00:00Z",
+      "occurrence_datetime": "2026-09-23T17:05:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231245-45",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T16:45:00Z",
+      "occurrence_datetime": "2026-09-23T16:50:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231230-30",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T16:30:00Z",
+      "occurrence_datetime": "2026-09-23T16:35:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231215-15",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T16:15:00Z",
+      "occurrence_datetime": "2026-09-23T16:20:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231200-00",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T16:00:00Z",
+      "occurrence_datetime": "2026-09-23T16:05:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231145-45",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T15:45:00Z",
+      "occurrence_datetime": "2026-09-23T15:50:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231130-30",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T15:30:00Z",
+      "occurrence_datetime": "2026-09-23T15:35:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231115-15",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T15:15:00Z",
+      "occurrence_datetime": "2026-09-23T15:20:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231100-00",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T15:00:00Z",
+      "occurrence_datetime": "2026-09-23T15:05:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231045-45",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T14:45:00Z",
+      "occurrence_datetime": "2026-09-23T14:50:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP231030-30",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T14:30:00Z",
+      "occurrence_datetime": "2026-09-23T14:35:00Z",
+      "source": "markets_settled_KXBTC15M_lim20.json"
+    },
+    {
+      "ticker": "KXBTC15M-26SEP222045-45",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:45:00Z",
+      "occurrence_datetime": "2026-09-23T00:50:00Z",
+      "source": "market_KXBTC15M_26SEP222045_45.json",
+      "note": "parent panel seed; series rotates 15m \u2014 not on lim20 page"
+    }
+  ],
+  "raw_capture": "lab/astra-capture/c5-kxbtc15m/settled_reget_2026-09-23.json",
+  "parent_panel_stub": "lab/governance/astra/packets/C5_KXBTC15M_PANEL_STUB_2026-09-22.json",
+  "fetched_at_et": "2026-09-23T15:18:00-04:00",
+  "mode": "GET_only_public",
+  "honest_gaps": [
+    "markets?status=finalized 429",
+    "markets?status=closed 429"
+  ],
+  "results": null,
+  "pnl": null,
+  "candidate_won": "C5-RJ"
+}
