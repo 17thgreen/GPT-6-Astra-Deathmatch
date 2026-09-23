@@ -1,0 +1,34 @@
+{
+  "id": "EXAMINER_HOLD_ETH_KXETH15M_FEEQUEUE_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "ETH-KXETH15M-FEEQUEUE-HARNESS",
+  "feature_family": "ETH-FQ",
+  "status": "NOT_SCORED",
+  "stub_ready": false,
+  "hold": "pre-ACCEPT — file READY NOT_SCORED when PR lands",
+  "freeze_sha256": "9cae3bad089e6e18bee22694a36a1a2c18db33935a315766cd6bd8f8476aa83a",
+  "arms": [
+    "ETHA0",
+    "ETHA1"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "maker_vs_taker_roi_delta",
+    "fresh_vs_stale_gap",
+    "settled_join_n",
+    "n_books"
+  ],
+  "refuse": [
+    "no invent depth/fills/fill-density/SoT/PnL",
+    "no Lee-Ready",
+    "no C5 reopen",
+    "no ATP-FQ reopen",
+    "no bacchus or kxeth15m strategy port",
+    "no 000 retune",
+    "no Cap-SR/QF/L2/EMPTY-OB/SOT-ID/NHL-FQ/CPI-FQ reopen",
+    "R3-P1 and R3-P2 stay out of this harness",
+    "does not ungate S1/S2/R2-P4"
+  ],
+  "stamped_at_et": "2026-09-23T14:29:19-04:00"
+}

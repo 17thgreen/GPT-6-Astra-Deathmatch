@@ -1,0 +1,11 @@
+{
+  "experiment": "ETH-KXETH15M-FEEQUEUE-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "maker_vs_taker_roi_delta": null,
+  "fresh_vs_stale_gap": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema and pins only. Not an Examiner score. The pre-ACCEPT empty payload is not this file."
+}

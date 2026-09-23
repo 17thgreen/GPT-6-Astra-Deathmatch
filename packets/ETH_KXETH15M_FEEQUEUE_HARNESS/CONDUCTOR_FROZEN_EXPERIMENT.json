@@ -1,0 +1,15 @@
+{
+  "packet_id": "ETH-KXETH15M-FEEQUEUE-HARNESS",
+  "feature_family": "ETH-FQ",
+  "status": "FROZEN",
+  "arms": [
+    "ETHA0",
+    "ETHA1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "9cae3bad089e6e18bee22694a36a1a2c18db33935a315766cd6bd8f8476aa83a",
+  "scout_hunt_sha256": "18f70001c8d68418d435e2016b756f90753e374a92d323f8e999f76215d9cf9c",
+  "panel_stub_sha256": "b3379783c84eaa910f6a57f5318b8536f21220cfeaf0f73e9ff73ee0f20dd90d",
+  "stamped_at_et": "2026-09-23T14:29:19-04:00"
+}

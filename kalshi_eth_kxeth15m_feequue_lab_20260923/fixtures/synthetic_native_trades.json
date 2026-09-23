@@ -1,0 +1,24 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "Schema rows only. Not a panel fill, not a scout market, and not a Kalshi GET.",
+  "trades": [
+    {
+      "trade_id": "eth-syn-yes",
+      "ticker": "KXETH15M-SYN-A",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "taker_side": "yes",
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null
+    },
+    {
+      "trade_id": "eth-syn-no",
+      "ticker": "KXETH15M-SYN-B",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null
+    }
+  ]
+}
