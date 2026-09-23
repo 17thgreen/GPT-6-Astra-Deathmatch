@@ -37,7 +37,19 @@ PANEL_ADMITTED = PARENT / 'lab' / 'astra-capture' / 'c1-kxufcfight' / 'panel_adm
 ADMITTED_AT = '2026-09-23T00:49:43Z'
 PANEL_SHA256_PREFIX = '24426d80'
 CAPTURE_SLOT = 'lab/astra-capture/c1-kxufcfight/'
+PRODUCTION_ORDERBOOK_REL = 'lab/astra-capture/c1-kxufcfight/orderbooks'
 PRODUCTION_ORDERBOOK_DIR = PARENT / 'lab' / 'astra-capture' / 'c1-kxufcfight' / 'orderbooks'
+ADMITTED_ORDERBOOK_TICKERS = (
+    'KXUFCFIGHT-26SEP22CONGUA-GUA',
+    'KXUFCFIGHT-26SEP22CONGUA-CON',
+    'KXUFCFIGHT-26SEP22DEGMOR-MOR',
+    'KXUFCFIGHT-26SEP22DEGMOR-DEG',
+)
+EXAMINER_GATE_NOTE = (
+    'C1 stays NOT_SCORED until pinned production orderbooks under '
+    'lab/astra-capture/c1-kxufcfight/orderbooks/ and an Examiner-ready '
+    'scorecard. Synthetic fixtures are refused for scorecard fill.'
+)
 SYNTHETIC_BOOKS = ROOT / 'fixtures' / 'synthetic_orderbooks.json'
 FROZEN_EXPERIMENT = ROOT / 'FROZEN_EXPERIMENT.json'
 EMPTY_RESULTS = ROOT / 'results' / 'EMPTY_RESULTS.json'
@@ -414,6 +426,7 @@ def instrument_binding():
         'queue_bins': tuple(rails.QUEUE_SCENARIO_LABELS),
         'outside_bin': OUTSIDE_BIN,
         'production_capture_path': CAPTURE_SLOT,
+        'production_orderbook_dir': PRODUCTION_ORDERBOOK_REL + '/',
         'kernel_sha256': KERNEL_SHA256,
         'panel_stub_sha256': PANEL_STUB_SHA256,
         'panel_admitted_sha256': sha256_file(PANEL_ADMITTED),
@@ -449,24 +462,131 @@ def write_scorecard(payload):
     raise ScorecardPromotionRefused()
 
 
-def resolve_orderbooks():
-    """Synthetic stand-in until a production orderbook pin exists.
+def _orderbook_pin_key(name):
+    return PRODUCTION_ORDERBOOK_REL + '/' + name
 
-    Files under the capture slot's orderbooks directory are refused. This
-    freeze does not carry their sha256, so they are not a silent backfill.
-    """
-    files = []
-    if PRODUCTION_ORDERBOOK_DIR.is_dir():
-        files = sorted(path for path in PRODUCTION_ORDERBOOK_DIR.glob('*.json') if path.is_file())
-    if files:
+
+def expected_orderbook_pin_keys():
+    return tuple(_orderbook_pin_key(ticker + '.json') for ticker in ADMITTED_ORDERBOOK_TICKERS)
+
+
+def production_orderbook_pins(frozen=None):
+    """Sha256 map from the freeze. Missing means no production pin yet."""
+    if frozen is None:
+        frozen = json.loads(FROZEN_EXPERIMENT.read_text())
+    pins = frozen.get('production_orderbook_pins', {})
+    if not isinstance(pins, dict):
         raise OrchestratorError('production orderbook pin')
+    for key, value in pins.items():
+        if not isinstance(key, str) or not isinstance(value, str) or len(value) != 64:
+            raise OrchestratorError('production orderbook pin')
+    return dict(pins)
+
+
+def _production_orderbook_files(directory):
+    directory = Path(directory)
+    if not directory.exists():
+        return []
+    if not directory.is_dir():
+        raise OrchestratorError('production orderbook pin')
+    resolved = directory.resolve()
+    files = []
+    for path in sorted(resolved.iterdir(), key=lambda item: item.name):
+        if path.is_symlink() or not path.is_file():
+            raise OrchestratorError('production orderbook pin')
+        if path.suffix != '.json' or path.resolve().parent != resolved:
+            raise OrchestratorError('production orderbook pin')
+        files.append(path)
+    return files
+
+
+def production_orderbook_status(directory=None, pins=None):
+    """Pin check for the capture slot.
+
+    No JSON and no pins is ``FIXTURE_GAP``. JSON is accepted only when the
+    four admitted names are present and each sha256 matches the pin map.
+    Any other file is refused. Status ``PINNED`` is still ``NOT_SCORED``.
+    """
+    directory = PRODUCTION_ORDERBOOK_DIR if directory is None else Path(directory)
+    pins = production_orderbook_pins() if pins is None else dict(pins)
+    files = _production_orderbook_files(directory)
+    if not files and not pins:
+        return {
+            'status': 'FIXTURE_GAP',
+            'score_status': 'NOT_SCORED',
+            'examiner_ready': False,
+            'pins': {},
+            'production_orderbooks_present': False,
+            'reason': 'FIXTURE_GAP',
+        }
+    expected = expected_orderbook_pin_keys()
+    if len(files) != len(expected) or set(pins) != set(expected):
+        raise OrchestratorError('production orderbook pin')
+    matched = {}
+    for path in files:
+        key = _orderbook_pin_key(path.name)
+        digest = sha256_file(path)
+        if key not in pins or pins[key] != digest:
+            raise OrchestratorError('production orderbook pin')
+        matched[key] = digest
+    if set(matched) != set(expected):
+        raise OrchestratorError('production orderbook pin')
+    return {
+        'status': 'PINNED',
+        'score_status': 'NOT_SCORED',
+        'examiner_ready': False,
+        'pins': matched,
+        'production_orderbooks_present': True,
+        'reason': 'PINNED_AWAITING_EXAMINER',
+    }
+
+
+def examiner_gate(status=None):
+    """Score stays closed. Pinned books still wait on Examiner-ready."""
+    if status is None:
+        status = production_orderbook_status()
+    pinned = status.get('status') == 'PINNED'
+    return {
+        'score_status': 'NOT_SCORED',
+        'examiner_ready': False,
+        'production_orderbook_status': 'PINNED' if pinned else 'FIXTURE_GAP',
+        'reason': 'PINNED_AWAITING_EXAMINER' if pinned else 'FIXTURE_GAP',
+        'note': EXAMINER_GATE_NOTE,
+        'results': None,
+        'pnl': None,
+    }
+
+
+def assert_score_gate(choice):
+    """Synthetic fixtures cannot fill the scorecard. This lab never writes it."""
+    if not isinstance(choice, dict):
+        raise ScorecardPromotionRefused()
+    if choice.get('source') == 'synthetic_schema_standin':
+        raise ScorecardPromotionRefused()
+    if choice.get('production_orderbook_status') != 'PINNED':
+        raise ScorecardPromotionRefused()
+    if choice.get('examiner_ready') is not True:
+        raise ScorecardPromotionRefused()
+    raise ScorecardPromotionRefused()
+
+
+def resolve_orderbooks():
+    """Synthetic label stand-in. Unpinned production JSON is refused.
+
+    A matching pin does not replace the synthetic books and does not fill
+    the scorecard. Missing production bytes are ``FIXTURE_GAP``.
+    """
+    status = production_orderbook_status()
     if not SYNTHETIC_BOOKS.is_file():
         raise OrchestratorError('synthetic books')
     return {
         'source': 'synthetic_schema_standin',
         'books_path': SYNTHETIC_BOOKS,
-        'production_orderbooks_present': False,
+        'production_orderbooks_present': status['production_orderbooks_present'],
         'production_capture_path': CAPTURE_SLOT,
+        'production_orderbook_status': status['status'],
+        'score_status': 'NOT_SCORED',
+        'examiner_ready': False,
     }
 
 
@@ -562,7 +682,10 @@ def conduct(panel=None):
         'packet_id': PACKET_ID,
         'source': choice['source'],
         'books_path': str(choice['books_path']),
-        'production_orderbooks_present': False,
+        'production_orderbooks_present': choice['production_orderbooks_present'],
+        'production_orderbook_status': choice['production_orderbook_status'],
+        'score_status': 'NOT_SCORED',
+        'examiner_ready': False,
         'production_capture_path': choice['production_capture_path'],
         'panel_version': panel['panel_version'],
         'strategy_pointer': None,

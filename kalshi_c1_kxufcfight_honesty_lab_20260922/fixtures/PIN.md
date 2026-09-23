@@ -14,14 +14,19 @@ does not contain production orderbook bytes.
 
 ## Production capture path
 
-Public GET orderbooks belong at `lab/astra-capture/c1-kxufcfight/orderbooks/`
-when a later collector writes them. The allowlist is the stub: series,
-market, a small open list, orderbook, and small trades, on the public
-elections host. This harness does not GET and does not start a recorder.
+Public GET orderbooks belong at `lab/astra-capture/c1-kxufcfight/orderbooks/`.
+`collect_orderbooks.py` issues one GET per admitted ticker against
+`https://api.elections.kalshi.com/trade-api/v2/markets/{ticker}/orderbook`.
+Private routes, other methods, and other hosts are refused. The collector
+does not start a recorder and does not edit this freeze by itself.
 
-This freeze has no production orderbook sha256. If that directory contains a
-JSON file, `resolve_orderbooks` refuses it. Absence selects the synthetic
-stand-in:
+`production_orderbook_pins` in `FROZEN_EXPERIMENT.json` is the sha256 map.
+`production_orderbook_status` refuses JSON in that directory unless the four
+admitted filenames are present and each digest matches the map. A missing
+capture is `FIXTURE_GAP`. A matching pin stays `NOT_SCORED` until an
+Examiner-ready scorecard exists. This lab does not open that scorecard.
+
+Absence of pinned bytes leaves the synthetic stand-in for in-memory labels:
 
 `kalshi_c1_kxufcfight_honesty_lab_20260922/fixtures/synthetic_orderbooks.json`
 

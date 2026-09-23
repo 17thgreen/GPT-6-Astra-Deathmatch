@@ -365,9 +365,16 @@ class PinTests(unittest.TestCase):
                 orchestrator.KERNEL,
             )
         }
+        status = orchestrator.production_orderbook_status()
         report = orchestrator.conduct(schema_panel())
         self.assertEqual(report['source'], 'synthetic_schema_standin')
-        self.assertFalse(report['production_orderbooks_present'])
+        self.assertEqual(
+            report['production_orderbooks_present'],
+            status['status'] == 'PINNED',
+        )
+        self.assertEqual(report['production_orderbook_status'], status['status'])
+        self.assertEqual(report['score_status'], 'NOT_SCORED')
+        self.assertIs(report['examiner_ready'], False)
         self.assertEqual(report['production_capture_path'], 'lab/astra-capture/c1-kxufcfight/')
         self.assertFalse(report['promoted'])
         self.assertIsNone(report['strategy_pointer'])
@@ -439,18 +446,11 @@ class PinTests(unittest.TestCase):
         for name, digest in recorded.items():
             self.assertEqual(orchestrator.sha256_file(ROOT / name), digest)
         spec = frozen['specification_sha256']
-        self.assertEqual(
-            orchestrator.sha256_file(ROOT / 'EXPERIMENT_SPEC.md'),
-            spec['EXPERIMENT_SPEC.md'],
-        )
-        self.assertEqual(
-            orchestrator.sha256_file(orchestrator.EMPTY_RESULTS),
-            spec['results/EMPTY_RESULTS.json'],
-        )
-        self.assertEqual(
-            orchestrator.sha256_file(orchestrator.KERNEL),
-            spec['packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md'],
-        )
+        for name, digest in spec.items():
+            candidates = (ROOT / name, PARENT / name)
+            path = next(candidate for candidate in candidates if candidate.is_file())
+            self.assertEqual(orchestrator.sha256_file(path), digest, name)
+        self.assertIn('ORDERBOOK_CAPTURE_SPEC.md', spec)
         admitted_key = 'lab/astra-capture/c1-kxufcfight/panel_admitted.json'
         if orchestrator.PANEL_ADMITTED.is_file():
             self.assertEqual(

@@ -23,17 +23,22 @@ A1, A2, and A3 are refused. There is no strategy pointer.
 From this directory, Python 3.12 standard library:
 
 ```bash
-python3 -m unittest -v tests.test_orchestrator
+python3 -m unittest -v tests.test_orchestrator tests.test_collect_orderbooks
 ```
 
 `write_scorecard` refuses a missing measurement field and a non-null value.
 In-memory fixture labels stay out of the freeze files. `volume_fp` and
 `open_interest_fp` stay null.
 
-Production orderbooks, when captured, belong at
-`lab/astra-capture/c1-kxufcfight/orderbooks/`. This freeze has no sha256 for
-those files. A JSON file there is refused. Units use
-`fixtures/synthetic_orderbooks.json`. See `fixtures/PIN.md`.
+Production orderbooks belong at
+`lab/astra-capture/c1-kxufcfight/orderbooks/`. The GET-only collector is
+`collect_orderbooks.py`. The hypothesis is `ORDERBOOK_CAPTURE_SPEC.md`.
+Unpinned JSON in that directory is refused. A sha256 pin is recorded in
+`FROZEN_EXPERIMENT.json` when a real four-market capture is present. Until
+then the score gate is `FIXTURE_GAP`. Either way Examiner status stays
+`NOT_SCORED` until those pinned books and an Examiner-ready scorecard both
+exist. Synthetic fixtures are refused for scorecard fill. Units for the
+label algebra use `fixtures/synthetic_orderbooks.json`. See `fixtures/PIN.md`.
 
 No live orders. This lab does not modify the feebook lab, the rails lab, the
 `000` honesty lab, the hygiene lab, the queue-fragility lab, or the

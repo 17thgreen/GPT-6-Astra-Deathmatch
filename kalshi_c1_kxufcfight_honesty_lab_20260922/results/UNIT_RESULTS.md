@@ -60,3 +60,33 @@ Those rows were not copied into the freeze files.
 - `results` and `pnl` stay null. No strategy EV is recorded.
 
 No profit is reported.
+
+## Orderbook pin scaffold
+
+September 23, 2026. This section records a code check of the GET-only collector
+and the production pin gate. It is not a public GET and not an Examiner score.
+`ORDERBOOK_CAPTURE_SPEC.md` was committed before this source. The capture
+directory has no JSON file. `production_orderbook_status` is `FIXTURE_GAP`.
+`examiner_score_status` is `NOT_SCORED`. `results` and `pnl` stay null.
+
+From `kalshi_c1_kxufcfight_honesty_lab_20260922`, Python 3.12.3, standard
+library, at `2026-09-23T13:27:11Z`:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator tests.test_collect_orderbooks
+```
+
+Ran 17 tests in 0.030s. Result: OK. Failures: 0. Errors: 0.
+
+The new checks cover the public GET allowlist (method, host, query, dropped
+ORTDAS ticker, credential header, and a destination outside
+`lab/astra-capture/c1-kxufcfight/orderbooks/`), a failed ticker that writes
+nothing, an economics payload that is not stored, an existing JSON file that
+blocks a second write, a four-file pin whose sha256 matches and whose score
+stays `NOT_SCORED`, a tampered file that is refused, and synthetic scorecard
+fill that is refused. The earlier 12 checks still pass. Feebook and rails
+cores were not edited.
+
+C1 stays `NOT_SCORED` until pinned production orderbooks and an Examiner-ready
+scorecard both exist. This scaffold does not open that scorecard. The public
+GET outcome is not in this section.
