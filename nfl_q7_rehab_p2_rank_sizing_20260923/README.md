@@ -43,7 +43,8 @@ python3 -m unittest -v test_rank_sizing
 
 Those tests cover budget fractioning, the imported feebook refusal, null freeze
 fields, parent hash pins, and the closed Pass-1 cadence gate. They do not
-replay the 31 games.
+replay the 31 games. The recorded run is in `results/UNIT_RESULTS.md`. That
+file is code verification. It is not a score.
 
 ## Score run
 
