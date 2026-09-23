@@ -1,0 +1,16 @@
+{
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "roi": null,
+  "winner": null,
+  "settled_n": 0,
+  "clock": "REFUSED",
+  "collector": "READY",
+  "panel_version": "2026-09-22.c1-kxufcfight-meas-v0",
+  "measurement_budget_usd": "5000",
+  "measurement_budget_role": "measurement_contrast_label",
+  "strategy_claim": false,
+  "status": "EMPTY",
+  "note": "No Mincer-Zarnowitz statistic, no ROI, no winner, and no profit are recorded here. The 5000 figure is the shared measurement-contrast label, not a filled account. Schema-only unit checks do not fill this file. Settled N is 0."
+}
