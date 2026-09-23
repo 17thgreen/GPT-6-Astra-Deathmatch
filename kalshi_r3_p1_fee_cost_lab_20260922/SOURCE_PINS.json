@@ -1,0 +1,33 @@
+{
+  "packet_id": "R3-P1-FEE-COST-VS-MODEL",
+  "as_of": "2026-09-23T00:10:00Z",
+  "not_a_strategy": true,
+  "feebook_dependency": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "imported": true,
+    "copied": false,
+    "symbols": ["order_fee", "examiner_fee_channel", "classify_scorecard"],
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_model": "round_up(M*rate*C*P*(1-P))"
+  },
+  "venue_fee": {
+    "shape": "synthetic Kalshi Fill",
+    "fields": ["fee_cost", "is_taker"],
+    "live_orders": false,
+    "authenticated_portfolio_calls": false
+  },
+  "prefer": "exchange-reported fee_cost over closed-form R1-P1 when both exist",
+  "score": "fee_model_minus_venue_delta",
+  "refuse": "model-only completed-net when fee_cost was available",
+  "model_only_when_fee_cost_null": "projection only",
+  "forbid": [
+    "naked Q7 fee literals",
+    "invented PnL",
+    "000 retune",
+    "copy of kalshi_feebook_lab_20260922"
+  ],
+  "results": null,
+  "pnl": null,
+  "fee_model_minus_venue_delta": null
+}
