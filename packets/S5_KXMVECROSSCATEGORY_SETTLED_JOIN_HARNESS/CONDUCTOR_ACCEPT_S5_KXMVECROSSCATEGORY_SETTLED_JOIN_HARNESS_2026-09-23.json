@@ -1,0 +1,50 @@
+{
+  "packet_id": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "S5-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T17:36:00-04:00",
+  "seat": "Conductor",
+  "orthogonal_pin": "packets/MAXIMIZE_PIN_2026-09-23_1733ET.md",
+  "lab": "kalshi_s5_kxmvecrosscategory_settled_join_lab_20260923/",
+  "prior_done": "R2P3-RJ PR46 main@b2c1639a77f62114572fd41182f8a3c5ef70cad1",
+  "knob": "join_gate",
+  "arms": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match (expected_expiration_time when occurrence_datetime null honest)"
+  },
+  "digest_verify": {
+    "freeze": "cd264a4d41ef055d1cbca80a5dbe6756746211537fb24799dca9dde8980cb799",
+    "scout_reget": "33db60a50f2e7746315f4603b9f78a9260145cb49d0250e141471de46f4df9e3",
+    "seed_summary": "3bc4aa5f44d7d31295dfd25f7bac3a3e39463c237315e8228c3fcf434d08419a",
+    "panel_stub": "4918b820d454c5f997ea100917859f7e9467d92933bed1bc8a55c81ab8ce5b8e",
+    "settled_reget": "91111f20586a1b684e430baa0e8b62a3fffc7d510de99e43bab7d213dfeb26da",
+    "settled_nonempty_result_N": 20,
+    "match": true
+  },
+  "notes": "Scorable-first maximize after R2P3-RJ PR46. Measurement-only S5 settled-resolution join. Orthogonal to S5 FILLLEGS/MVE-FL. GET-only. Variants does NOT run admit.py. admitted_at stays null. results/pnl/settled_join_n null. Scout N=20 pin not copied. Earlier list 429 honest. Parent seeds 5/5 finalized/nonempty. Sole implement: Variants \u2014 no Conductor pulse cloud.",
+  "hard_refuse": [
+    "invent_settled_result",
+    "invent_fills",
+    "invent_depth",
+    "Lee-Ready",
+    "FQ_reopen",
+    "S5_FILLLEGS_reopen",
+    "MVE_FL_reopen",
+    "Cap-SR_reopen",
+    "C3_RJ_reopen",
+    "C5_RJ_reopen",
+    "R3P3_RJ_reopen",
+    "NHL_RJ_reopen",
+    "S4_RJ_reopen",
+    "R2P3_RJ_reopen",
+    "ungate_S1_S2_R2P4",
+    "Arm_B_touch",
+    "admit_py_by_Variants",
+    "live_orders",
+    "copy_scout_N_into_settled_join_n",
+    "Conductor_pulse_cloud_kick"
+  ],
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false
+}

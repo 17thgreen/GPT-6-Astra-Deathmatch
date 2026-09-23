@@ -1,0 +1,269 @@
+{
+  "schema_id": "astra.registry.r2_p3_prop_slate_panel.v0",
+  "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+  "series_tickers": [
+    "KXNFLPASSYDS",
+    "KXNFLRECYDS",
+    "KXNFLRSHYDS"
+  ],
+  "purpose": "measurement_gate",
+  "cohort_kind": "sun_2026-09-27_dual_game_prop_slate_LACBUF_BALDAL",
+  "packet_id": "R2-P3-KXNFLPASSYDS-MEAS",
+  "scout_cite": "/workspace/lab/governance/astra/packets/scout_r2p3_kxnflpassyds/FROZEN_EXPERIMENT.json",
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "scout_packet",
+  "stub_status": "PANEL_SCHEMA_STUB_SEED_NOT_ADMITTED",
+  "admit_gate": {
+    "status": "WAIT_CLOCK_JOIN",
+    "admit_py_run": false,
+    "refuse_risk": "REFUSE_PAST_TMINUS7D",
+    "note": "Both games' T−7d starts are already past as of stub time (~2026-09-22T23:42Z). Live admit.py would refuse under current rules (real UTC stamp; refuse past T−7d; never backfill). Stub lands for Clock join + Conductor review only.",
+    "t_minus_7d_by_game": {
+      "LACBUF": {
+        "occurrence_utc": "2026-09-27T20:00:00Z",
+        "t_minus_7d_utc": "2026-09-20T20:00:00Z",
+        "past_at_stub": true
+      },
+      "BALDAL": {
+        "occurrence_utc": "2026-09-27T23:25:00Z",
+        "t_minus_7d_utc": "2026-09-20T23:25:00Z",
+        "past_at_stub": true
+      }
+    }
+  },
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "forbid_inherited_q7_fee_literals": true,
+    "r2_p5_schema_id": "astra.registry.r2_p5_admit_fields.v1"
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "api.elections.kalshi.com"
+    ],
+    "routes_allowlist": [
+      "GET /trade-api/v2/markets?series_ticker=KXNFLPASSYDS|KXNFLRECYDS|KXNFLRSHYDS&status=open",
+      "GET /trade-api/v2/events?series_ticker=...&status=open",
+      "GET /trade-api/v2/events/{event_ticker}",
+      "GET /trade-api/v2/markets/{market_ticker}/orderbook",
+      "GET /trade-api/v2/markets/trades?ticker={market_ticker}"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_pit_cle_poll_steal": true,
+      "recorder_pid_namespace": "r2-p3-prop-slate",
+      "db_path": "lab/astra-capture/r2-p3-prop-slate/capture.sqlite",
+      "note": "No recorder started in this stub. Future start uses separate pid+db; never shares ADMIT-1 poll loop."
+    },
+    "schedule": {
+      "priority": "after_or_around_C1_ADMIT1_priorities",
+      "start_rule": "Do not start live poll until Clock join + Conductor greenlight AND admit.py would accept (T−7d not past) AND ADMIT-1 PIT@CLE budget is not contended. GET-only.",
+      "sample_interval_sec_planned": null,
+      "throttle_sec_hint": "≥45–90s between series (scout mode)"
+    }
+  },
+  "rules": [
+    "GET-only public elections host. No credentials. No order/portfolio routes.",
+    "Series limited to KXNFLPASSYDS / KXNFLRECYDS / KXNFLRSHYDS for LACBUF + BALDAL only.",
+    "Kickoff SoT = Kalshi occurrence_datetime from scout packet (preferred) or public GET verify. Do not invent.",
+    "Honor admit.py conceptually: real UTC stamp; refuse past T−7d; never backfill. Do NOT run admit.py in this stub pass.",
+    "REFUSE_PAST_TMINUS7D: both games' T−7d (2026-09-20T20:00:00Z / 2026-09-20T23:25:00Z) already past at stub time — live admit would refuse; wait Clock join / Conductor for disposition.",
+    "events[] seeded for Clock join only; admitted_at stays null until real admit.py stamp.",
+    "Do NOT copy scout OI/vol into panel as admitted facts — volume_fp / volume_24h_fp / open_interest_fp stay null.",
+    "ATL@GB excluded (Conductor: too late).",
+    "Fee via R1-P1 feebook API only @ pin 22371178cb2663250b4762f328069571c48cb551. Forbid inherited Q7/Q6 fee literals.",
+    "Rails labels via R1-P5 @ pin 6a28e0d6254327ea4e6451c781bec56215ac6cac — instrument only.",
+    "Does not steal ADMIT-1 / PIT@CLE poll budget.",
+    "Not a strategy. No live orders."
+  ],
+  "excluded": [
+    {
+      "reason": "ATL@GB too late for T− measurement panel (Conductor NOT ATL@GB)",
+      "events": [
+        "KXNFLPASSYDS-26SEP24ATLGB",
+        "KXNFLRECYDS-26SEP24ATLGB",
+        "KXNFLRSHYDS-26SEP24ATLGB"
+      ],
+      "kickoff_utc": "2026-09-25T03:15:00Z"
+    }
+  ],
+  "events": [
+    {
+      "event_ticker": "KXNFLPASSYDS-26SEP27LACBUF",
+      "series_ticker": "KXNFLPASSYDS",
+      "game_id": "LACBUF",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T20:00:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T20:00:00Z",
+      "sot_pin": "2026-09-27T20:00:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 16:00 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNFLRECYDS-26SEP27LACBUF",
+      "series_ticker": "KXNFLRECYDS",
+      "game_id": "LACBUF",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T20:00:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T20:00:00Z",
+      "sot_pin": "2026-09-27T20:00:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 16:00 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNFLRSHYDS-26SEP27LACBUF",
+      "series_ticker": "KXNFLRSHYDS",
+      "game_id": "LACBUF",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T20:00:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T20:00:00Z",
+      "sot_pin": "2026-09-27T20:00:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 16:00 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNFLPASSYDS-26SEP27BALDAL",
+      "series_ticker": "KXNFLPASSYDS",
+      "game_id": "BALDAL",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T23:25:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T23:25:00Z",
+      "sot_pin": "2026-09-27T23:25:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 19:25 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNFLRECYDS-26SEP27BALDAL",
+      "series_ticker": "KXNFLRECYDS",
+      "game_id": "BALDAL",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T23:25:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T23:25:00Z",
+      "sot_pin": "2026-09-27T23:25:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 19:25 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNFLRSHYDS-26SEP27BALDAL",
+      "series_ticker": "KXNFLRSHYDS",
+      "game_id": "BALDAL",
+      "market_tickers": [],
+      "holdout_kickoff_utc": null,
+      "kalshi_occurrence_datetime": "2026-09-27T23:25:00Z",
+      "delta_kickoff_sec": null,
+      "window_clock_source": "kalshi_occurrence",
+      "t_minus_7d_utc": "2026-09-20T23:25:00Z",
+      "sot_pin": "2026-09-27T23:25:00Z",
+      "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+      "occurrence_source": "scout_packet",
+      "kickoff_et_label": "2026-09-27 19:25 ET",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null
+    }
+  ],
+  "ineligible": [],
+  "results": null,
+  "pnl": null,
+  "volume": null,
+  "stubbed_at_utc": "2026-09-22T23:42:45Z",
+  "freeze_cite": "/workspace/lab/governance/astra/packets/R2-P3_KXNFLPASSYDS_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "a30108f658359590e170c73ea00d1a1f0852d5751cb15c9f2a9c6389f4dd3eaa",
+  "freeze_delta": "Live public GET ticker and occurrence resolution was attempted, but Kalshi returned HTTP 429 for all three series markets/events listing requests. No API spelling delta was observable; the six frozen scout event tickers and occurrence_datetime values are retained, with occurrence_source=scout_packet.",
+  "live_resolution": {
+    "status": "UNCONFIRMED_RATE_LIMITED",
+    "host": "https://api.elections.kalshi.com/trade-api/v2/",
+    "method": "GET-only public",
+    "series_order_and_minimum_wait_sec": [
+      "KXNFLPASSYDS",
+      45,
+      "KXNFLRECYDS",
+      45,
+      "KXNFLRSHYDS"
+    ],
+    "requests": [
+      {
+        "series_ticker": "KXNFLPASSYDS",
+        "route": "GET /markets?series_ticker=KXNFLPASSYDS&status=open",
+        "http_code": 429
+      },
+      {
+        "series_ticker": "KXNFLRECYDS",
+        "route": "GET /markets?series_ticker=KXNFLRECYDS&status=open",
+        "http_code": 429
+      },
+      {
+        "series_ticker": "KXNFLRSHYDS",
+        "route": "GET /markets?series_ticker=KXNFLRSHYDS&status=open",
+        "http_code": 429
+      },
+      {
+        "series_ticker": "KXNFLPASSYDS",
+        "route": "GET /events?series_ticker=KXNFLPASSYDS&status=open",
+        "http_code": 429
+      },
+      {
+        "series_ticker": "KXNFLRECYDS",
+        "route": "GET /events?series_ticker=KXNFLRECYDS&status=open",
+        "http_code": 429
+      },
+      {
+        "series_ticker": "KXNFLRSHYDS",
+        "route": "GET /events?series_ticker=KXNFLRSHYDS&status=open",
+        "http_code": 429
+      }
+    ],
+    "live_confirmed": false,
+    "retained_scout_event_tickers": [
+      "KXNFLPASSYDS-26SEP27LACBUF",
+      "KXNFLRECYDS-26SEP27LACBUF",
+      "KXNFLRSHYDS-26SEP27LACBUF",
+      "KXNFLPASSYDS-26SEP27BALDAL",
+      "KXNFLRECYDS-26SEP27BALDAL",
+      "KXNFLRSHYDS-26SEP27BALDAL"
+    ],
+    "occurrence_source": "scout_packet",
+    "raw_volume_obtained": false,
+    "panel_volume_rule": "volume, volume_fp, volume_24h_fp, and open_interest_fp remain null."
+  }
+}
