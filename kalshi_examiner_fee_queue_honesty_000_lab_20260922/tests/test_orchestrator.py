@@ -236,7 +236,12 @@ class PinTests(unittest.TestCase):
         self.assertEqual([value_type for _name, value_type in fee], ['Decimal', 'Decimal', 'Decimal'])
         self.assertEqual(
             [value_type for _name, value_type in queue],
-            ['mapping', 'mapping', 'Decimal'],
+            ['mapping[arm, Decimal]', 'mapping[arm, Decimal]', 'Decimal'],
+        )
+        self.assertIn(orchestrator.DECIMAL_TYPE, [value_type for _name, value_type in queue])
+        self.assertEqual(
+            [value_type for _name, value_type in queue].count(orchestrator.ARM_DECIMAL_MAP_TYPE),
+            2,
         )
         binding = orchestrator.instrument_binding()
         self.assertEqual(binding['fee_fields'], fee)
@@ -277,6 +282,28 @@ class PinTests(unittest.TestCase):
             text = path.read_text()
             self.assertNotIn('110%', text)
             self.assertNotIn('110 %', text)
+
+    def test_omitted_queue_field_is_refused_like_an_omitted_fee_field(self):
+        published = orchestrator.published_scorecard()
+        fee_name = orchestrator.channel_fields(orchestrator.FEE_CHANNEL)[0][0]
+        dropped_fee = dict(published)
+        del dropped_fee[fee_name]
+        with self.assertRaises(orchestrator.ScorecardPromotionRefused) as fee_caught:
+            orchestrator.assert_null_scorecard(dropped_fee)
+        with self.assertRaises(orchestrator.ScorecardPromotionRefused):
+            orchestrator.write_scorecard(dropped_fee)
+        for name, _value_type in orchestrator.channel_fields(orchestrator.QUEUE_CHANNEL):
+            dropped = dict(published)
+            del dropped[name]
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused) as caught:
+                orchestrator.assert_null_scorecard(dropped)
+            self.assertIs(type(caught.exception), type(fee_caught.exception))
+            self.assertEqual(str(caught.exception), str(fee_caught.exception))
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused):
+                orchestrator.write_scorecard(dropped)
+        self.assertIsNone(published['fill_rate_delta_vs_q3300'])
+        self.assertIsNone(published['adverse_queue_exposure'])
+        self.assertIsNone(published['participation_stress_gap'])
 
     def test_scorecard_promotion_is_refused(self):
         report = orchestrator.conduct()

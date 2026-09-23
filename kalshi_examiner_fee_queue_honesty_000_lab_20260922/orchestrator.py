@@ -43,16 +43,18 @@ CAPITAL_MODE = 'A1_shared_pool'
 FEE_CHANNEL = 'fee'
 QUEUE_CHANNEL = 'queue'
 # Value types describe a later Examiner fill. This harness stores None.
-# fill_rate_delta_vs_q3300 and adverse_queue_exposure are per-arm mappings
-# in the queue-fragility join. participation_stress_gap is one Decimal.
-# The fee trio are Decimals. None of those aggregates are computed here.
+# The two queue maps are arm to Decimal, the same shape the QF join would
+# publish. participation_stress_gap is one Decimal, as are the fee fields.
+# None of those aggregates are computed here.
+DECIMAL_TYPE = 'Decimal'
+ARM_DECIMAL_MAP_TYPE = 'mapping[arm, Decimal]'
 SCORECARD_SCHEMA = (
-    ('fee_delta_vs_inherited_model', FEE_CHANNEL, 'Decimal'),
-    ('freshness_gap_sec', FEE_CHANNEL, 'Decimal'),
-    ('queue_bin_mismatch_rate', FEE_CHANNEL, 'Decimal'),
-    ('fill_rate_delta_vs_q3300', QUEUE_CHANNEL, 'mapping'),
-    ('adverse_queue_exposure', QUEUE_CHANNEL, 'mapping'),
-    ('participation_stress_gap', QUEUE_CHANNEL, 'Decimal'),
+    ('fee_delta_vs_inherited_model', FEE_CHANNEL, DECIMAL_TYPE),
+    ('freshness_gap_sec', FEE_CHANNEL, DECIMAL_TYPE),
+    ('queue_bin_mismatch_rate', FEE_CHANNEL, DECIMAL_TYPE),
+    ('fill_rate_delta_vs_q3300', QUEUE_CHANNEL, ARM_DECIMAL_MAP_TYPE),
+    ('adverse_queue_exposure', QUEUE_CHANNEL, ARM_DECIMAL_MAP_TYPE),
+    ('participation_stress_gap', QUEUE_CHANNEL, DECIMAL_TYPE),
 )
 OUTPUT_KEYS = tuple(name for name, _channel, _value_type in SCORECARD_SCHEMA) + (
     'results',
@@ -182,17 +184,21 @@ def published_scorecard():
 
 
 def assert_null_scorecard(payload):
-    """Raise when a caller tries to store a filled metric."""
+    """Require every fee field and every queue field, and require null.
+
+    A missing queue field is the same refusal as a missing fee field or a
+    filled value. This harness does not treat queue keys as optional.
+    """
     if not isinstance(payload, dict):
         raise ScorecardPromotionRefused()
     for key in OUTPUT_KEYS:
-        if payload.get(key) is not None:
+        if key not in payload or payload[key] is not None:
             raise ScorecardPromotionRefused()
     return payload
 
 
 def write_scorecard(payload):
-    """Refuse a non-null scorecard. A null payload is not written either."""
+    """Refuse a missing or non-null scorecard field. Nothing is written."""
     assert_null_scorecard(payload)
     raise ScorecardPromotionRefused()
 
@@ -353,7 +359,7 @@ def frozen_output_snapshot():
     snapshot = {}
     for name, payload in payloads.items():
         for key in OUTPUT_KEYS:
-            if payload.get(key) is not None:
+            if key not in payload or payload[key] is not None:
                 raise ScorecardPromotionRefused()
             snapshot['%s.%s' % (name, key)] = None
     packet_results = json.loads(PACKET_RESULTS.read_text())

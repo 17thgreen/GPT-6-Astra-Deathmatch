@@ -95,12 +95,14 @@ One packet. The fields are:
 
 `write_scorecard` does not write these fields. A non-null value is refused.
 
-## Later question, not a result
+## Queue question, not a result
 
-This packet is the frame for one later Examiner question: whether an honest
-queue treatment changes the modeled edge relative to the current model. The
-queue fields sit on the same scorecard as the fee fields, with the same
-refuse path. This file does not state a target ratio and does not record P&L.
+The queue side of this one scorecard is the frame for asking whether an
+honest queue treatment lifts the modeled edge relative to the current model.
+`fill_rate_delta_vs_q3300`, `adverse_queue_exposure`, and
+`participation_stress_gap` are required keys, typed, and refused when
+missing or non-null, on the same path as the fee trio. This file does not
+state a target ratio and does not record P&L.
 
 ## Do-not
 
