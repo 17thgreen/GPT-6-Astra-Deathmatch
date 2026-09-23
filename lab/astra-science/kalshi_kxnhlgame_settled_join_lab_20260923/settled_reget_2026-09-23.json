@@ -1,0 +1,202 @@
+{
+  "series": "KXNHLGAME",
+  "feature_family": "NHL-RJ",
+  "fetched_at_et": "2026-09-23T15:56:00-04:00",
+  "host": "https://api.elections.kalshi.com/trade-api/v2",
+  "settled_nonempty_result_N": 17,
+  "settled_list_http": "429_honest",
+  "markets_nonempty": [
+    {
+      "file": "market_KXNHLGAME_26SEP22CBJBUF_BUF.json",
+      "ticker": "KXNHLGAME-26SEP22CBJBUF-BUF",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:57:27Z",
+      "event_ticker": "KXNHLGAME-26SEP22CBJBUF"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22CBJBUF_CBJ.json",
+      "ticker": "KXNHLGAME-26SEP22CBJBUF-CBJ",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:57:27Z",
+      "event_ticker": "KXNHLGAME-26SEP22CBJBUF"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22DETPIT_DET.json",
+      "ticker": "KXNHLGAME-26SEP22DETPIT-DET",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:57:27Z",
+      "event_ticker": "KXNHLGAME-26SEP22DETPIT"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22DETPIT_PIT.json",
+      "ticker": "KXNHLGAME-26SEP22DETPIT-PIT",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:57:27Z",
+      "event_ticker": "KXNHLGAME-26SEP22DETPIT"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22EDMWPG_EDM.json",
+      "ticker": "KXNHLGAME-26SEP22EDMWPG-EDM",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "close_time": "2026-09-23T02:55:21Z",
+      "event_ticker": "KXNHLGAME-26SEP22EDMWPG"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22EDMWPG_WPG.json",
+      "ticker": "KXNHLGAME-26SEP22EDMWPG-WPG",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "close_time": "2026-09-23T02:55:21Z",
+      "event_ticker": "KXNHLGAME-26SEP22EDMWPG"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22FLACAR_CAR.json",
+      "ticker": "KXNHLGAME-26SEP22FLACAR-CAR",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T02:15:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22FLACAR"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22FLACAR_FLA.json",
+      "ticker": "KXNHLGAME-26SEP22FLACAR-FLA",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T02:15:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22FLACAR"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22NYINYR_NYI.json",
+      "ticker": "KXNHLGAME-26SEP22NYINYR-NYI",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T02:35:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22NYINYR"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22NYINYR_NYR.json",
+      "ticker": "KXNHLGAME-26SEP22NYINYR-NYR",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T02:35:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22NYINYR"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22PHIBOS_BOS.json",
+      "ticker": "KXNHLGAME-26SEP22PHIBOS-BOS",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:43:24Z",
+      "event_ticker": "KXNHLGAME-26SEP22PHIBOS"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22PHIBOS_PHI.json",
+      "ticker": "KXNHLGAME-26SEP22PHIBOS-PHI",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T02:00:00Z",
+      "close_time": "2026-09-23T01:43:24Z",
+      "event_ticker": "KXNHLGAME-26SEP22PHIBOS"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22TBNSH_TB.json",
+      "ticker": "KXNHLGAME-26SEP22TBNSH-TB",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T03:00:00Z",
+      "close_time": "2026-09-23T02:51:33Z",
+      "event_ticker": "KXNHLGAME-26SEP22TBNSH"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22UTALA_LA.json",
+      "ticker": "KXNHLGAME-26SEP22UTALA-LA",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T05:00:00Z",
+      "close_time": "2026-09-23T04:55:20Z",
+      "event_ticker": "KXNHLGAME-26SEP22UTALA"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22VANCGY_CGY.json",
+      "ticker": "KXNHLGAME-26SEP22VANCGY-CGY",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T04:00:00Z",
+      "close_time": "2026-09-23T03:57:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22VANCGY"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22VANCGY_VAN.json",
+      "ticker": "KXNHLGAME-26SEP22VANCGY-VAN",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T04:00:00Z",
+      "close_time": "2026-09-23T03:57:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22VANCGY"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP22VGKSJ_VGK.json",
+      "ticker": "KXNHLGAME-26SEP22VGKSJ-VGK",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T05:00:00Z",
+      "close_time": "2026-09-23T04:51:22Z",
+      "event_ticker": "KXNHLGAME-26SEP22VGKSJ"
+    }
+  ],
+  "parent_seeds_active_empty": [
+    {
+      "file": "market_KXNHLGAME_26SEP26COLUTA_UTA.json",
+      "ticker": "KXNHLGAME-26SEP26COLUTA-UTA",
+      "status": "active",
+      "result": "",
+      "occurrence_datetime": "2026-09-27T00:00:00Z",
+      "close_time": "2026-09-28T21:00:00Z",
+      "event_ticker": "KXNHLGAME-26SEP26COLUTA"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP26TBFLA_FLA.json",
+      "ticker": "KXNHLGAME-26SEP26TBFLA-FLA",
+      "status": "active",
+      "result": "",
+      "occurrence_datetime": "2026-09-27T01:00:00Z",
+      "close_time": "2026-09-28T22:00:00Z",
+      "event_ticker": "KXNHLGAME-26SEP26TBFLA"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP26TBFLA_TB.json",
+      "ticker": "KXNHLGAME-26SEP26TBFLA-TB",
+      "status": "active",
+      "result": "",
+      "occurrence_datetime": "2026-09-27T01:00:00Z",
+      "close_time": "2026-09-28T22:00:00Z",
+      "event_ticker": "KXNHLGAME-26SEP26TBFLA"
+    },
+    {
+      "file": "market_KXNHLGAME_26SEP26WSHPHI_WSH.json",
+      "ticker": "KXNHLGAME-26SEP26WSHPHI-WSH",
+      "status": "active",
+      "result": "",
+      "occurrence_datetime": "2026-09-27T00:00:00Z",
+      "close_time": "2026-09-28T21:00:00Z",
+      "event_ticker": "KXNHLGAME-26SEP26WSHPHI"
+    }
+  ],
+  "note": "Authentic GET-only. No invent. List endpoints 429 recorded honest."
+}
