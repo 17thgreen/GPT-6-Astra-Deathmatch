@@ -1,0 +1,27 @@
+{
+  "packet_id": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "S5-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "lab_dir": "kalshi_s5_kxmvecrosscategory_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "results": null,
+  "pnl": null,
+  "settled_nonempty_result_N_scout": 20,
+  "admitted_at": null,
+  "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+  "does_not_run_admit_py": true,
+  "stamped_at_et": "2026-09-23T17:33:00-04:00",
+  "freeze_sha256": "cd264a4d41ef055d1cbca80a5dbe6756746211537fb24799dca9dde8980cb799",
+  "scout_reget_sha256": "33db60a50f2e7746315f4603b9f78a9260145cb49d0250e141471de46f4df9e3",
+  "scout_summary_sha256": "3bc4aa5f44d7d31295dfd25f7bac3a3e39463c237315e8228c3fcf434d08419a",
+  "panel_stub_sha256": "4918b820d454c5f997ea100917859f7e9467d92933bed1bc8a55c81ab8ce5b8e",
+  "settled_reget_capture_sha256": "91111f20586a1b684e430baa0e8b62a3fffc7d510de99e43bab7d213dfeb26da"
+}

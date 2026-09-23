@@ -1,0 +1,76 @@
+{
+  "id": "EXAMINER_HOLD_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "S5-RJ",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "hold": "HOLD pre-PR \u2014 digests pending Conductor ACCEPT; stub_ready=false until draft PR merges; do not score; Variants sole implement (no Conductor pulse cloud)",
+  "lab_dir": "kalshi_s5_kxmvecrosscategory_settled_join_lab_20260923/",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "knob": "join_gate",
+  "settled_nonempty_result_N_scout": 20,
+  "admitted_at": null,
+  "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": "Clock admit + settled join N>0 + Examiner-ready",
+  "ready_gate": "PR branch sha verify + merge \u2192 READY NOT_SCORED (still not scored)",
+  "refuse": [
+    "invent settled result/depth/fills/PnL",
+    "Lee-Ready",
+    "Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/S4-FQ/R2-P3-prop-ladder/S5-FILLLEGS/MVE-FL/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ reopen",
+    "ungate S1/S2/R2-P4",
+    "Arm B touch",
+    "admit.py by Variants",
+    "KXFED/another FQ freeze",
+    "empty-books invent",
+    "live orders",
+    "copy scout N=20 into settled_join_n as score",
+    "score before PR merge",
+    "Conductor pulse cloud kick",
+    "invent occurrence_datetime when API null"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "orthogonal_pin": "MAXIMIZE_PIN_2026-09-23_1733ET.md",
+  "orthogonal_to": [
+    "S5-FILLLEGS",
+    "MVE-FL"
+  ],
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false,
+  "stamped_at_et": "2026-09-23T17:33:00-04:00",
+  "freeze_sha256": "cd264a4d41ef055d1cbca80a5dbe6756746211537fb24799dca9dde8980cb799",
+  "scout_reget_sha256": "33db60a50f2e7746315f4603b9f78a9260145cb49d0250e141471de46f4df9e3",
+  "scout_summary_sha256": "3bc4aa5f44d7d31295dfd25f7bac3a3e39463c237315e8228c3fcf434d08419a",
+  "panel_stub_sha256": "4918b820d454c5f997ea100917859f7e9467d92933bed1bc8a55c81ab8ce5b8e",
+  "settled_reget_capture_sha256": "91111f20586a1b684e430baa0e8b62a3fffc7d510de99e43bab7d213dfeb26da",
+  "maximize_pin_sha256": "1e071f2cebdc18e198901e33af49387a751ecc1fe85bd14a0cb09a1f3ff6416f",
+  "box_digest_match": true,
+  "scout_markets_settled_nonempty": 20,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "settled_list_http": "200",
+  "settled_list_earlier_http": "429_honest",
+  "finalized_list_http": "429_honest",
+  "events_closed_settled_http": "429_honest",
+  "occurrence_datetime_present_on_settled_N": 0,
+  "expected_expiration_time_present_on_settled_N": 20,
+  "prior_r2p3_rj_pr46_main": "b2c1639a77f62114572fd41182f8a3c5ef70cad1",
+  "prior_r2p3_rj_accept_sha256": "e5218cf2511607211ec1d825a9dad36abaee3d9cfda24488524c3d6bcbe3a565"
+}
