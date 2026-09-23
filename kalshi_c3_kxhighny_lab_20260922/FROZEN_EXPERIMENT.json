@@ -71,7 +71,14 @@
     "fixtures/schema_only_ladder.json": "cacc1bd2b5375714fee4d379b7ec551bb817a7ed54a7f3900e4f6210a65a0f17",
     "results/EMPTY_RESULTS.json": "6f39868b35ec44734e3ee6f577470eee4b7a659479415353744d87bfd239f08a"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "c02c518690b41ba818dd91b37ed196ebbc52887ba87dec949091cbb04fa5e286",
+    "ladder.py": "5c0f7e007e2bdd5bc0e7966766ed97b3b060454839b9afd23cea5fea830b16d0",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_ladder.py": "490c1369dd9a35f857328323f4de7cd1997462c1b9a17576d12bcd336cbe00f7"
+  },
+  "source_frozen_at": "2026-09-23T00:50:02Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, MZ, and ROI remain null.",
   "results": null,
   "pnl": null,
   "MZ": null,
