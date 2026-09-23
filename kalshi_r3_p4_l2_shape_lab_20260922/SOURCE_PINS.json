@@ -1,0 +1,52 @@
+{
+  "as_of": "2026-09-23T00:06:01Z",
+  "experiment": "R3-P4-L2-SHAPE-SF1-SF2",
+  "feebook_dependency": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "api": "feebook.reciprocal_book",
+    "level_parser": "feebook._levels",
+    "feebook_py_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "used_for_fees": false
+  },
+  "rails_dependency": {
+    "directory": "kalshi_rails_lab_20260922",
+    "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "api": ["rails.judge_freshness", "rails.canonical_book_content", "rails.BookObservation"],
+    "rails_py_sha256": "834386506dd72210d77ee063d4a96248d76ce09a4be6ce771b9609337d3388e1",
+    "require": "content_fresh"
+  },
+  "dubach": {
+    "author": "Philipp D. Dubach",
+    "title": "The Anatomy of a Decentralized Prediction Market: Microstructure Evidence from the Polymarket Order Book",
+    "arxiv": "2604.24366",
+    "date": "2026-08-24",
+    "vendored": false,
+    "sf1": "median quoted half-spread in bps of mid, by absolute mid-price decile",
+    "sf2": "L1 and top-10 depth shares, KL versus uniform 1/10",
+    "polymarket_panel_numbers_recomputed": false
+  },
+  "algebra": {
+    "half_spread_bps": "(spread_yes / 2) / mid_yes * 10000",
+    "decile_bins": "Dubach Table 1 absolute edges [k/10, (k+1)/10), bin 9 includes 1",
+    "depth_k": "yes bid size at rank k plus no bid size at rank k",
+    "kl": "sum share_k * ln(share_k / (1/10)), nats, 0*ln(0)=0",
+    "uniform": "1/10"
+  },
+  "capture": "synthetic_get_orderbook_fp",
+  "live_poll": false,
+  "lee_ready": false,
+  "live_orders": false,
+  "signal_retune_000": false,
+  "leave_alone": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "kalshi_capital_structure_lab_20260922",
+    "kalshi_r2p1_hygiene_000_lab_20260922",
+    "kalshi_queue_fragility_000_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "Q6/Q7 retune"
+  ]
+}
