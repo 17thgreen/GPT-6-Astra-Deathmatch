@@ -29,6 +29,13 @@ key or a non-null value on either side. The queue side asks whether an
 honest queue treatment lifts the modeled edge relative to the current model.
 The lab does not state a target edge ratio and does not record P&L.
 
+When `nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz` and
+the matching orders file are both on disk and match the pinned sha256, both
+joins read that pair. A different hash is refused. If either file is missing,
+both joins read the queue-fragility synthetic stand-in. A unit may place the
+same relative names under a temporary root. Synthetic labels stay out of the
+freeze files.
+
 No live orders. This lab does not modify the feebook lab, the rails lab,
 `hygiene.py`, `queue_fragility.py`, or either fixture-join module. There is
 no second Examiner packet. The six scorecard fields stay null.

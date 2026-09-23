@@ -5,9 +5,13 @@ gitignored, so a checkout can lack the bytes. The freeze kernel records that
 the fills gzip was present on the freeze desk. This pin is the path and the
 sha256. It does not contain the file bytes.
 
-When both production files exist and match these hashes, the orchestrator
-sends that pair to the hygiene join and the queue-fragility join. When they
-are absent, both joins read one synthetic schema stand-in:
+When both production files exist under a repository-shaped root and match
+these hashes, the orchestrator sends that pair to the hygiene join and the
+queue-fragility join. The default root is this checkout. A unit may use a
+temporary root with the same relative names. Selection still requires the
+sha256 pin. Those temporary bytes are not this indexed gzip unless the
+hashes match. A present pair with a different hash is refused. When the pair
+is absent, both joins read one synthetic schema stand-in:
 
 `kalshi_queue_fragility_000_lab_20260922/fixtures/synthetic_q3300_d0.25_000_fills.jsonl`
 

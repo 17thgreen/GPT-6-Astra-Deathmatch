@@ -55,7 +55,8 @@
     "nfl_factorial_lab_20260921",
     "nfl_paircheck_lab_20260922"
   ],
-  "question": "Does one orchestrator import the hygiene join and the queue-fragility join on one Q6-000 fills stream while the six scorecard fields, results, and pnl stay null?",
+  "production_preference": "Pinned q3300_d0.25_000 fills and orders gzip when both files are on disk and match the sha256 pin. A different hash is refused. Otherwise the synthetic stand-in. Scorecard stays null.",
+  "question": "Does one orchestrator prefer the pinned q3300 gzip pair when it is on disk, and otherwise one synthetic stand-in, while the six scorecard fields, results, and pnl stay null?",
   "specification_sha256": {
     "EXPERIMENT_SPEC.md": "a012ee5ec379411b972b6f99634f77c318bf592934790f62c86fa981ad1be273",
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000_FREEZE_2026-09-22.md": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
@@ -63,14 +64,14 @@
     "results/EMPTY_RESULTS.json": "4c6068d8b9d901286d15979d6a21e59f9eea5fc0f27723c498b7e8185b100523"
   },
   "implementation_sha256": {
-    "README.md": "476661f889a5e94bf09a98030417aab94928b5116dcde7b1b67fd9ea3ae2ff14",
-    "orchestrator.py": "fc18b3f73e4ca8eb39f373c867361df2e50394c8ecb461675978be9882938ea2",
-    "fixtures/PIN.md": "54e07fbe1a6054f973f9de00e1b5fa37dea03fceaca69e02fcbb016bde859995",
+    "README.md": "f2052b0128c6748d2d506598611fb3d471491839f2f1e1f87a7b4019da0943c7",
+    "orchestrator.py": "814dd1e6e6aa984054b5e21c2335bed486652ac60057b9401b951daed95fc596",
+    "fixtures/PIN.md": "44c580bba7f3ddc9539d8634e3ff72aa28cdb8956544eab19078e6295b8af7d1",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/test_orchestrator.py": "2bcf3bdb4be58d8daa91baf5a8b1cc8384beffda0e92bd0290ff10e5a9819274"
+    "tests/test_orchestrator.py": "93c4fa084d703720fda1bdc9df9f8fbc3c8d389e4a0b1a700a3a1f7278d2c4bd"
   },
-  "source_frozen_at": "2026-09-23T00:04:28Z",
-  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. The six scorecard fields, results, and pnl remain null.",
+  "source_frozen_at": "2026-09-23T00:16:40Z",
+  "source_frozen_note": "Source and tests were frozen after the production-preference hypothesis and before unit results. The six scorecard fields, results, and pnl remain null. A temporary layout is not the indexed gzip.",
   "fee_delta_vs_inherited_model": null,
   "freshness_gap_sec": null,
   "queue_bin_mismatch_rate": null,
