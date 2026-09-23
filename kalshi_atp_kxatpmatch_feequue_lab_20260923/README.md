@@ -1,10 +1,13 @@
 # ATP KXATPMATCH fee+queue honesty harness
 
-Status: hypothesis committed. The specification is `EXPERIMENT_SPEC.md`.
-`FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
-`results/EMPTY_RESULTS.json` keeps `maker_vs_taker_roi_delta`,
-`fresh_vs_stale_gap`, `settled_join_n`, and `n_books` null. A unit page
-is not recorded yet. This file is not profit and not an Examiner pass.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 12 tests in 0.061s at 2026-09-23T18:24:02Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
+`results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps
+`maker_vs_taker_roi_delta`, `fresh_vs_stale_gap`, `settled_join_n`, and
+`n_books` null.
 
 This lab is measurement-only. Feature family ATP-FQ. The series is
 `KXATPMATCH`. The only knob is `analysis_slice`: ATPA0

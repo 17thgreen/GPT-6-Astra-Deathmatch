@@ -46,6 +46,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_c1_empty_ob_lab_20260923` | C1 EMPTY-OB empty-orderbook refuse harness. Feature family EMPTY-OB. One gate: refuse scorecard or wait for fresh depth. Scorecard null. 7 unit tests green |
 | `kalshi_c2_kxnhlgame_feequue_lab_20260923` | C2 KXNHLGAME fee+queue honesty harness. Feature family NHL-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. 12 unit tests green |
 | `kalshi_c4_kxcpi_feequue_lab_20260923` | C4 KXCPI fee+queue honesty harness. Feature family CPI-FQ. Native taker partition and sparse-24h / missing-occurrence refuse bins. Lee-Ready refused. Scorecard null. 12 unit tests green |
+| `kalshi_atp_kxatpmatch_feequue_lab_20260923` | ATP KXATPMATCH fee+queue honesty harness. Feature family ATP-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. 12 unit tests green |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
