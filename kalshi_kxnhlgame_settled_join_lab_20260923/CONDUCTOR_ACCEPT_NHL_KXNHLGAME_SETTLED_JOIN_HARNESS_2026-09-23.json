@@ -1,0 +1,40 @@
+{
+  "packet_id": "NHL-KXNHLGAME-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "NHL-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T16:14:00-04:00",
+  "seat": "Conductor",
+  "orthogonal_pin": "packets/MAXIMIZE_PIN_2026-09-23_1556ET.md",
+  "lab": "kalshi_kxnhlgame_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "digest_verify": {
+    "freeze": "d1f71cea6df8f6c5a9fac6f9d1aa418ce61aa650794f22b400a01c4f3fd45810",
+    "scout_reget": "99a7f90564ee2150f5edef4efafb7ccb954b87036e0b43f29ff7dc6ed104706f",
+    "seed_summary": "794e148df5927c64d08b4578b47a7453589f02872af65880922bcb9273194a1a",
+    "panel_stub": "60d183e7bdcf25adbc94eeeb3bb361b5232c19c0fe3e6a115f45ab3fcb100c79",
+    "settled_reget": "8d597578bc65ea14ab1cbf5aa3c6d121d61431078a755b8419c815aa1d354df0",
+    "settled_nonempty_result_N": 17,
+    "match": true
+  },
+  "notes": "Scorable-first maximize after R3P3-RJ PR42 @2fce8642\u2026. Measurement-only join. GET-only. Variants does NOT run admit.py. admitted_at stays null. results/pnl/settled_join_n null. Scout N=17 is a pin, not copied into settled_join_n. Series settled/finalized/open list 429 honest. Parent SEP26 FQ seeds active/empty honest. Orthogonal to NHL-FQ. Not Cap-SR/C3-RJ/C5-RJ/R3P3-RJ reopen; not Arm B; not live orders.",
+  "hard_refuse": [
+    "invent_settled_result",
+    "invent_fills",
+    "Lee-Ready",
+    "FQ_reopen",
+    "Cap-SR_reopen",
+    "C3_RJ_reopen",
+    "C5_RJ_reopen",
+    "R3P3_RJ_reopen",
+    "NHL_FQ_reopen",
+    "ungate_S1_S2_R2P4",
+    "Arm_B_touch",
+    "admit_py_by_Variants",
+    "live_orders"
+  ]
+}
