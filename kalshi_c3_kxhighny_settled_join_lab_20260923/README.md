@@ -1,6 +1,9 @@
 # C3 KXHIGHNY settled-resolution join harness
 
-Status: hypothesis committed. The unit page is not recorded yet.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 10 tests in 0.086s. Recorded at 2026-09-23T19:12:16Z. Result: OK.
+Failures: 0. Errors: 0. That page is not profit and not an Examiner pass.
 `EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
 `results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps `results`,
 `pnl`, `settled_join_n`, `occurrence_match_n`, and `admit_ready_flag`
@@ -9,9 +12,9 @@ null.
 This lab is measurement-only. Feature family C3-RJ. The only knob is
 `join_gate`: J0 `nonempty_result_required` and J1
 `occurrence_datetime_match`. The scout pin says settled nonempty
-`result` N=4. CHI `KXHIGHCHI-26SEP22-B66.5` stays the honest 429 gap.
-`admitted_at` on the parent panel stub stays null. This lab does not
-run `admit.py`.
+`result` N=4. That pin is not `settled_join_n`. CHI
+`KXHIGHCHI-26SEP22-B66.5` stays the honest 429 gap. `admitted_at` on the
+parent panel stub stays null. This lab does not run `admit.py`.
 
 `lab/governance/astra/` is not in this checkout. Attached bytes are in
 this directory. `SOURCE_PINS.json` lists the digests. It does not
@@ -26,3 +29,11 @@ contain the file bytes.
 
 Feebook and rails commits are fixed path pins and are not imported.
 No fee arm. No live orders. No Logan keys.
+
+From this directory, Python 3.12 standard library:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator
+```
+
+No Logan keys. No live orders. A passing unit run is not an Examiner score.
