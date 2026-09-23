@@ -41,7 +41,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_cap_sr_effects_000_lab_20260923` | Cap-SR-FX effects path on Q6-000. Fixture stress only. Imports Cap-SR soft policies. Scorecard null. Not a second Cap-SR lab |
 | `kalshi_s5_mve_filllegs_lab_20260923` | S5 KXMVECROSSCATEGORY fill-vs-legs harness. Feature family MVE-FL. Leg-mid knob only. Scorecard null. RFQ out of scope. 8 unit tests green |
 | `kalshi_s4_ncaaf_feequue_lab_20260923` | S4 KXNCAAFGAME fee+queue honesty harness. Feature family NCAAF-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Conductor freeze bytes were not in this checkout |
-| `kalshi_r3p4_l2_cat_lab_20260923` | R3-P4 L2-CAT sports-versus-nonsports harness. Feature family L2-CAT. Category-slice knob only. Scorecard null. Hypothesis committed; unit page not yet recorded |
+| `kalshi_r3p4_l2_cat_lab_20260923` | R3-P4 L2-CAT sports-versus-nonsports harness. Feature family L2-CAT. Category-slice knob only. Scorecard null. 7 unit tests green |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

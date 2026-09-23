@@ -104,7 +104,8 @@ SCORECARD_FIELDS = (
     'n_snapshots',
 )
 OUTPUT_KEYS = SCORECARD_FIELDS + ('results', 'pnl')
-INVENTORY_KEYS = ('volume_fp', 'volume_24h_fp', 'open_interest_fp')
+EVENT_INVENTORY_KEYS = ('volume_fp', 'open_interest_fp')
+MARKET_INVENTORY_KEYS = ('volume_fp', 'volume_24h_fp', 'open_interest_fp')
 ADVERSARY_LABELS = {
     'invented_depth': 'invented depth is refused',
     'lee_ready': 'Lee-Ready is refused on every input',
@@ -549,7 +550,7 @@ def _validate_market(market, admitted):
         raise RecreationRefused()
     if market.get('invent_depth') is True:
         raise InventedDepthRefused()
-    for key in INVENTORY_KEYS:
+    for key in MARKET_INVENTORY_KEYS:
         _require_null(market, key)
     for key in ('half_spread_bps', 'l2_shape', 'results', 'pnl'):
         if key in market:
@@ -680,8 +681,10 @@ def _validate_panel(payload, admitted):
         if _atl_banned(event.get('event_ticker')) or _atl_banned(event.get('game_id')):
             raise AtlGbRefused()
         _stamp_ok(event.get('admitted_at'), admitted, stamp)
-        for key in INVENTORY_KEYS:
+        for key in EVENT_INVENTORY_KEYS:
             _require_null(event, key)
+        if 'volume_24h_fp' in event:
+            _require_null(event, 'volume_24h_fp')
     for market in markets:
         _validate_market(market, admitted)
         _stamp_ok(market.get('admitted_at'), admitted, stamp)

@@ -1,7 +1,9 @@
 # R3-P4 L2-CAT sports-versus-nonsports harness
 
-Status: hypothesis committed. The unit page is not yet recorded. This
-README is not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 7 tests in 0.043s at 2026-09-23T16:35:47Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is
 the hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps
 `sf1_median_half_spread_bps_by_mid_decile`, `sf2_l1_top10_depth_share`,
@@ -31,8 +33,7 @@ Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
 Those trees are not edited.
 
-From this directory, Python 3 standard library, once the source freeze is
-present:
+From this directory, Python 3 standard library:
 
 ```bash
 python3 -m unittest -v tests.test_orchestrator
