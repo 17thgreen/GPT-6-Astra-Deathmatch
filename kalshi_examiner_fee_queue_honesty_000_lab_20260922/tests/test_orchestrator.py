@@ -3,12 +3,15 @@
 Both joins run on one fills stream. In-memory labels are not a historical
 walk and they are not profit. Freeze outputs stay null.
 """
+import gzip
 import json
 import subprocess
 import sys
+import tempfile
 import unittest
 from decimal import Decimal
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 PARENT = ROOT.parent
@@ -341,6 +344,129 @@ class PinTests(unittest.TestCase):
                 orchestrator.qf_join.ledger_identity(name)
             with self.assertRaises(orchestrator.hygiene_join.FixtureJoinError):
                 orchestrator.ledger_identity(name)
+
+    def _freeze_bytes(self):
+        return {
+            path: path.read_bytes()
+            for path in (
+                orchestrator.FROZEN_EXPERIMENT,
+                orchestrator.EMPTY_RESULTS,
+                orchestrator.PACKET_FROZEN,
+                orchestrator.PACKET_RESULTS,
+                orchestrator.PACKET,
+                orchestrator.PACKET_KERNEL,
+            )
+        }
+
+    def _write_gzip(self, path, payload):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with gzip.open(path, 'wb') as handle:
+            handle.write(payload)
+
+    def test_production_layout_is_selected_when_the_pin_matches(self):
+        """Select the q3300 gzip pair when the name layout and sha256 match.
+
+        The temporary bytes are the queue-fragility schema stand-in. They are
+        not the indexed factorial ledger. The pin is aligned to those bytes
+        for this test so the production branch can run. In-memory labels stay
+        out of the freeze files.
+        """
+        before = self._freeze_bytes()
+        indexed_fills = '9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f'
+        indexed_orders = 'c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c'
+        self.assertEqual(orchestrator.PRIMARY_FILLS_SHA256, indexed_fills)
+        self.assertEqual(orchestrator.PRIMARY_ORDERS_SHA256, indexed_orders)
+        qf = orchestrator.qf_join
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            fills = root / orchestrator.PRIMARY_FILLS_REL
+            orders = root / orchestrator.PRIMARY_ORDERS_REL
+            self._write_gzip(fills, qf.SYNTHETIC_FILLS.read_bytes())
+            self._write_gzip(orders, qf.SYNTHETIC_ORDERS.read_bytes())
+            harsh = fills.parent / 'q10000_d0.25_000_fills.jsonl.gz'
+            harsh.write_bytes(fills.read_bytes())
+            misplaced = root / fills.name
+            misplaced.write_bytes(fills.read_bytes())
+            fills_sha = orchestrator.sha256_file(fills)
+            orders_sha = orchestrator.sha256_file(orders)
+            self.assertNotEqual(fills_sha, indexed_fills)
+            with self.assertRaises(orchestrator.OrchestratorError) as refused:
+                orchestrator.resolve_primary(root)
+            self.assertEqual(str(refused.exception), 'fills sha256')
+            partial_root = root / 'partial'
+            partial_fills = partial_root / orchestrator.PRIMARY_FILLS_REL
+            self._write_gzip(partial_fills, qf.SYNTHETIC_FILLS.read_bytes())
+            partial = orchestrator.resolve_primary(partial_root)
+            self.assertEqual(partial['source'], 'synthetic_schema_standin')
+            self.assertFalse(partial['production_present'])
+            self.assertNotEqual(Path(partial['fills_path']), partial_fills)
+            self.assertEqual(Path(partial['fills_path']), qf.SYNTHETIC_FILLS)
+            with patch.object(orchestrator, 'PRIMARY_FILLS_SHA256', fills_sha), \
+                 patch.object(orchestrator, 'PRIMARY_ORDERS_SHA256', orders_sha):
+                choice = orchestrator.resolve_primary(root)
+                self.assertEqual(choice['source'], 'production_pin')
+                self.assertIs(choice['production_present'], True)
+                self.assertEqual(Path(choice['fills_path']), fills)
+                self.assertEqual(Path(choice['orders_path']), orders)
+                self.assertEqual(choice['fills_sha256'], fills_sha)
+                self.assertEqual(choice['orders_sha256'], orders_sha)
+                self.assertEqual(orchestrator.sha256_file(choice['fills_path']), fills_sha)
+                self.assertEqual(orchestrator.sha256_file(choice['orders_path']), orders_sha)
+                self.assertTrue(str(choice['fills_path']).endswith(
+                    'nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz'
+                ))
+                self.assertNotIn('q10000', str(choice['fills_path']))
+                self.assertNotEqual(Path(choice['fills_path']), qf.SYNTHETIC_FILLS)
+                report = orchestrator.conduct(choice)
+            self.assertEqual(report['source'], 'production_pin')
+            self.assertIs(report['production_present'], True)
+            self.assertEqual(Path(report['fills_path']), fills)
+            self.assertEqual(Path(report['orders_path']), orders)
+            self.assertEqual(Path(report['hygiene_join']['fills_path']), fills)
+            self.assertEqual(Path(report['qf_join']['fills_path']), fills)
+            self.assertEqual(Path(report['hygiene_join']['orders_path']), orders)
+            self.assertEqual(Path(report['qf_join']['orders_path']), orders)
+            self.assertGreater(report['row_count'], 0)
+            self.assertFalse(report['promoted'])
+            self.assertFalse(report['stress']['loaded'])
+            self.assertNotIn('q10000', report['fills_path'])
+            fee_delta = report['hygiene_join']['labels'][0]['fee_delta']
+            self.assertIsInstance(fee_delta, Decimal)
+            makers = [row for row in report['qf_join']['labels'] if row['role'] == 'maker']
+            self.assertGreater(len(makers), 0)
+            arm = orchestrator.queue_fragility_core.ARMS[0]
+            self.assertIsInstance(makers[0]['arms'][arm]['fill_rate'], Decimal)
+            orchestrator.assert_null_scorecard(report)
+            orchestrator.assert_null_scorecard(report['published'])
+            for key in orchestrator.OUTPUT_KEYS:
+                self.assertIsNone(report[key])
+                self.assertIsNone(report['published'][key])
+            for name, _value_type in orchestrator.channel_fields(orchestrator.FEE_CHANNEL):
+                self.assertIn(name, report['hygiene_join'])
+                self.assertIsNone(report['hygiene_join'][name])
+            for name, _value_type in orchestrator.channel_fields(orchestrator.QUEUE_CHANNEL):
+                self.assertIn(name, report['qf_join'])
+                self.assertIsNone(report['qf_join'][name])
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused):
+                orchestrator.write_scorecard(report['published'])
+            filled = dict(report['published'])
+            filled['fee_delta_vs_inherited_model'] = fee_delta
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused):
+                orchestrator.write_scorecard(filled)
+            filled_queue = dict(report['published'])
+            filled_queue['fill_rate_delta_vs_q3300'] = {
+                arm: makers[0]['arms'][arm]['fill_rate'],
+            }
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused):
+                orchestrator.write_scorecard(filled_queue)
+        self.assertEqual(orchestrator.PRIMARY_FILLS_SHA256, indexed_fills)
+        self.assertEqual(orchestrator.PRIMARY_ORDERS_SHA256, indexed_orders)
+        for path, payload in before.items():
+            self.assertEqual(path.read_bytes(), payload)
+        for key in orchestrator.OUTPUT_KEYS:
+            self.assertIsNone(json.loads(orchestrator.FROZEN_EXPERIMENT.read_text())[key])
+            self.assertIsNone(json.loads(orchestrator.EMPTY_RESULTS.read_text())[key])
+            self.assertIsNone(json.loads(orchestrator.PACKET_FROZEN.read_text())[key])
 
     def test_implementation_hashes_match_source(self):
         frozen = json.loads(orchestrator.FROZEN_EXPERIMENT.read_text())

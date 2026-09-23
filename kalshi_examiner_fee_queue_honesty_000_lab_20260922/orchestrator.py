@@ -203,6 +203,73 @@ def write_scorecard(payload):
     raise ScorecardPromotionRefused()
 
 
+def _relative_tail(path, relative):
+    tail = Path(relative).parts
+    return Path(path).parts[-len(tail):] == tail
+
+
+def _is_checkout_root(root):
+    if root is None:
+        return True
+    return Path(root).resolve() == PARENT.resolve()
+
+
+def production_paths(root=None):
+    """Pinned q3300 gzip pair under a repository-shaped root."""
+    base = PARENT if root is None else Path(root)
+    return base / PRIMARY_FILLS_REL, base / PRIMARY_ORDERS_REL
+
+
+def assert_production_pin(fills_path, orders_path):
+    """Require the production names and the pinned sha256 values."""
+    fills_path = Path(fills_path)
+    orders_path = Path(orders_path)
+    if not _relative_tail(fills_path, PRIMARY_FILLS_REL):
+        raise OrchestratorError('fills path')
+    if not _relative_tail(orders_path, PRIMARY_ORDERS_REL):
+        raise OrchestratorError('orders path')
+    if not fills_path.is_file() or not orders_path.is_file():
+        raise OrchestratorError('production pin')
+    if sha256_file(fills_path) != PRIMARY_FILLS_SHA256:
+        raise OrchestratorError('fills sha256')
+    if sha256_file(orders_path) != PRIMARY_ORDERS_SHA256:
+        raise OrchestratorError('orders sha256')
+
+
+def _agree_with_child_joins(choice, fills, orders):
+    """The checkout root must match what both frozen joins would select."""
+    hygiene_choice = hygiene_join.resolve_primary()
+    qf_choice = qf_join.resolve_primary()
+    if bool(hygiene_choice['production_present']) != bool(choice['production_present']):
+        raise OrchestratorError('production presence')
+    if bool(qf_choice['production_present']) != bool(choice['production_present']):
+        raise OrchestratorError('production presence')
+    if choice['production_present']:
+        if hygiene_choice['source'] != 'production_pin' or qf_choice['source'] != 'production_pin':
+            raise OrchestratorError('production source')
+        if Path(hygiene_choice['fills_path']) != Path(fills):
+            raise OrchestratorError('fills path')
+        if Path(qf_choice['fills_path']) != Path(fills):
+            raise OrchestratorError('fills path')
+        if Path(hygiene_choice['orders_path']) != Path(orders):
+            raise OrchestratorError('orders path')
+        if Path(qf_choice['orders_path']) != Path(orders):
+            raise OrchestratorError('orders path')
+        if hygiene_join.PRIMARY_FILLS_SHA256 != PRIMARY_FILLS_SHA256:
+            raise OrchestratorError('fills sha256')
+        if qf_join.PRIMARY_FILLS_SHA256 != PRIMARY_FILLS_SHA256:
+            raise OrchestratorError('fills sha256')
+        if hygiene_join.PRIMARY_ORDERS_SHA256 != PRIMARY_ORDERS_SHA256:
+            raise OrchestratorError('orders sha256')
+        if qf_join.PRIMARY_ORDERS_SHA256 != PRIMARY_ORDERS_SHA256:
+            raise OrchestratorError('orders sha256')
+        return
+    if hygiene_choice['source'] != 'synthetic_schema_standin':
+        raise OrchestratorError('production source')
+    if qf_choice['source'] != 'synthetic_schema_standin':
+        raise OrchestratorError('production source')
+
+
 def stress_pin():
     """Harsh twin paths. The default channel does not open them."""
     left = hygiene_join.stress_pin()
@@ -223,40 +290,37 @@ def stress_pin():
     }
 
 
-def resolve_primary():
+def resolve_primary(root=None):
     """One fills stream for both joins.
 
-    Production gzip when both pinned files exist and both joins accept the
-    sha256. Otherwise one synthetic pair that both joins can read. The
-    published scorecard stays null either way.
+    Production gzip when both pinned files exist under ``root`` and both
+    sha256 values match the pin. The default root is the repository. A
+    missing file selects the queue-fragility synthetic pair. A present pair
+    with a different hash is refused and is not replaced by that stand-in.
+    The published scorecard stays null either way. In-memory labels are not
+    written to the freeze files.
     """
-    hygiene_choice = hygiene_join.resolve_primary()
-    qf_choice = qf_join.resolve_primary()
-    if bool(hygiene_choice['production_present']) != bool(qf_choice['production_present']):
-        raise OrchestratorError('production presence')
-    if hygiene_choice['production_present']:
-        if hygiene_choice['source'] != 'production_pin' or qf_choice['source'] != 'production_pin':
-            raise OrchestratorError('production source')
-        if Path(hygiene_choice['fills_path']) != Path(qf_choice['fills_path']):
-            raise OrchestratorError('fills path')
-        if Path(hygiene_choice['orders_path']) != Path(qf_choice['orders_path']):
-            raise OrchestratorError('orders path')
-        if hygiene_join.PRIMARY_FILLS_SHA256 != PRIMARY_FILLS_SHA256:
-            raise OrchestratorError('fills sha256')
-        if qf_join.PRIMARY_ORDERS_SHA256 != PRIMARY_ORDERS_SHA256:
-            raise OrchestratorError('orders sha256')
-        return {
+    fills, orders = production_paths(root)
+    if fills.is_file() and orders.is_file():
+        assert_production_pin(fills, orders)
+        choice = {
             'source': 'production_pin',
-            'fills_path': Path(hygiene_choice['fills_path']),
-            'orders_path': Path(hygiene_choice['orders_path']),
+            'fills_path': fills,
+            'orders_path': orders,
             'production_present': True,
+            'fills_sha256': PRIMARY_FILLS_SHA256,
+            'orders_sha256': PRIMARY_ORDERS_SHA256,
         }
-    return {
-        'source': 'synthetic_schema_standin',
-        'fills_path': qf_join.SYNTHETIC_FILLS,
-        'orders_path': qf_join.SYNTHETIC_ORDERS,
-        'production_present': False,
-    }
+    else:
+        choice = {
+            'source': 'synthetic_schema_standin',
+            'fills_path': qf_join.SYNTHETIC_FILLS,
+            'orders_path': qf_join.SYNTHETIC_ORDERS,
+            'production_present': False,
+        }
+    if _is_checkout_root(root):
+        _agree_with_child_joins(choice, fills, orders)
+    return choice
 
 
 def ledger_identity(path):
@@ -285,6 +349,10 @@ def conduct(choice=None):
         raise OrchestratorError('source')
     if choice.get('production_present') and source != 'production_pin':
         raise OrchestratorError('production source')
+    if source == 'production_pin':
+        if not choice.get('production_present'):
+            raise OrchestratorError('production source')
+        assert_production_pin(fills_path, orders_path)
     hygiene_report = hygiene_join.join_ledgers(fills_path, orders_path, source=source)
     qf_report = qf_join.join_ledgers(fills_path, orders_path, source=source)
     if hygiene_report['row_count'] != qf_report['row_count']:
