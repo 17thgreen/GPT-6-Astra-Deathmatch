@@ -1,0 +1,30 @@
+{
+  "packet": "C1-KXUFCFIGHT",
+  "synced_at_et": "2026-09-23T10:25:00-04:00",
+  "source_pr": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/19",
+  "source_main_ref": "637644966bae3737b52ab35826d3a63bf4b9b936",
+  "note": "Empty venue books from public GET (PR19). Real pin not FIXTURE_GAP. Does NOT open Examiner-ready. pnl null.",
+  "empty_object_sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+  "files": [
+    {
+      "file": "KXUFCFIGHT-26SEP22CONGUA-CON.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "file": "KXUFCFIGHT-26SEP22CONGUA-GUA.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "file": "KXUFCFIGHT-26SEP22DEGMOR-DEG.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "file": "KXUFCFIGHT-26SEP22DEGMOR-MOR.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    }
+  ]
+}
