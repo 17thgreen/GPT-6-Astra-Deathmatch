@@ -83,7 +83,12 @@ class BakeoffScaffoldTests(unittest.TestCase):
     def test_clock_refuses_mz_and_roi(self):
         stub = bakeoff.collector_stub()
         self.assertEqual(stub['status'], 'READY')
-        self.assertEqual(stub['clock'], 'REFUSED')
+        self.assertEqual(stub['clock'], 'NOT_ADMITTED')
+        self.assertEqual(stub['clock_rejoin'], 'KICKED')
+        self.assertEqual(stub['awaiting'], 'CLOCK_ADMIT_PASS')
+        self.assertEqual(stub['reported_settled_n'], 4)
+        self.assertEqual(stub['admitted_settled_n'], 0)
+        self.assertEqual(stub['events_finalized'], 2)
         self.assertEqual(stub['settled_n'], 0)
         self.assertFalse(stub['admitted'])
         for key in bakeoff.OUTPUT_KEYS:
@@ -91,9 +96,20 @@ class BakeoffScaffoldTests(unittest.TestCase):
         with self.assertRaises(bakeoff.ClockRefused):
             bakeoff.clock_admit()
         with self.assertRaises(bakeoff.ClockRefused):
+            bakeoff.clock_admit('ADMIT_PASS')
+        with self.assertRaises(bakeoff.ClockRefused):
             bakeoff.mz([Decimal('0.5')])
         with self.assertRaises(bakeoff.ClockRefused):
             bakeoff.roi(Decimal('0.01'))
+        rejoin = bakeoff.clock_rejoin()
+        self.assertEqual(rejoin['clock_rejoin'], 'KICKED')
+        self.assertEqual(rejoin['reported_settled_n'], 4)
+        self.assertEqual(rejoin['resolutions_applied'], 0)
+        self.assertFalse(rejoin['admitted'])
+        for key in bakeoff.OUTPUT_KEYS:
+            self.assertIsNone(rejoin[key])
+        with self.assertRaises(bakeoff.ClockRefused):
+            bakeoff.apply_resolutions([{'resolution': 'yes'}])
         with self.assertRaises(bakeoff.ScorecardRefused):
             bakeoff.write_scorecard(results=None, pnl=None, MZ=None, roi=None)
         with self.assertRaises(bakeoff.ScorecardRefused):
@@ -277,7 +293,11 @@ class BakeoffScaffoldTests(unittest.TestCase):
         self.assertEqual(walked['measurement_budget_role'], 'measurement_contrast_label')
         self.assertFalse(walked['strategy_claim'])
         self.assertIsNone(walked['winner'])
-        self.assertEqual(walked['clock'], 'REFUSED')
+        self.assertEqual(walked['clock'], 'NOT_ADMITTED')
+        self.assertEqual(walked['clock_rejoin'], 'KICKED')
+        self.assertEqual(walked['awaiting'], 'CLOCK_ADMIT_PASS')
+        self.assertEqual(walked['reported_settled_n'], 4)
+        self.assertEqual(walked['admitted_settled_n'], 0)
         self.assertEqual(walked['settled_n'], 0)
         for key in bakeoff.OUTPUT_KEYS:
             self.assertIsNone(walked[key])
@@ -365,6 +385,45 @@ class BakeoffScaffoldTests(unittest.TestCase):
         self.assertIsNone(empty['winner'])
         self.assertEqual(empty['status'], 'EMPTY')
         self.assertEqual(empty['measurement_budget_role'], 'measurement_contrast_label')
+        self.assertEqual(empty['clock'], 'NOT_ADMITTED')
+        self.assertEqual(empty['reported_settled_n'], 4)
+        self.assertEqual(empty['admitted_settled_n'], 0)
+
+    def test_resolution_hook_stays_not_admitted(self):
+        frozen_before = bakeoff.FROZEN_EXPERIMENT.read_bytes()
+        empty_before = bakeoff.EMPTY_RESULTS.read_bytes()
+        wired = bakeoff.wire_resolution_hook()
+        self.assertEqual(bakeoff.FROZEN_EXPERIMENT.read_bytes(), frozen_before)
+        self.assertEqual(bakeoff.EMPTY_RESULTS.read_bytes(), empty_before)
+        self.assertEqual(wired['label'], 'NOT_ADMITTED')
+        self.assertEqual(wired['awaiting'], 'CLOCK_ADMIT_PASS')
+        self.assertEqual(wired['clock_rejoin'], 'KICKED')
+        self.assertEqual(wired['clock_admit'], 'NOT_ADMITTED')
+        self.assertEqual(wired['reported_settled_n'], 4)
+        self.assertEqual(wired['admitted_settled_n'], 0)
+        self.assertEqual(wired['events_finalized'], 2)
+        self.assertEqual(wired['resolutions_applied'], 0)
+        self.assertEqual(len(wired['slot_ids']), 4)
+        self.assertFalse(wired['admitted'])
+        self.assertIsNone(wired['winner'])
+        for key in bakeoff.OUTPUT_KEYS:
+            self.assertIsNone(wired[key])
+        payload = json.loads(bakeoff.RESOLUTION_FIXTURE.read_text())
+        payload['slots'][0]['resolution'] = 'yes'
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'resolved.json'
+            path.write_text(json.dumps(payload))
+            with self.assertRaises(bakeoff.ClockRefused):
+                bakeoff.wire_resolution_hook(path)
+        payload = json.loads(bakeoff.RESOLUTION_FIXTURE.read_text())
+        payload['slots'][1]['pnl'] = '1.00'
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / 'pnl.json'
+            path.write_text(json.dumps(payload))
+            with self.assertRaises(bakeoff.ScorecardRefused):
+                bakeoff.load_resolution_hook(path)
+        self.assertEqual(bakeoff.FROZEN_EXPERIMENT.read_bytes(), frozen_before)
+        self.assertEqual(bakeoff.EMPTY_RESULTS.read_bytes(), empty_before)
 
     def test_loader_rejects_a_different_budget_and_an_observed_queue(self):
         payload = json.loads(bakeoff.SCHEMA_FIXTURE.read_text())

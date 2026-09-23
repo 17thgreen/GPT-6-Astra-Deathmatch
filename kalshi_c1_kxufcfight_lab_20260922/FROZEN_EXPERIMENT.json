@@ -88,11 +88,13 @@
     "results/EMPTY_RESULTS.json": "125cb27dbca042b04869a70295419c7dfb8e41c2a2dc425e1a7951daafc6f883"
   },
   "implementation_sha256": {
-    "README.md": "cd94a4d9bf53c1741990be1aab6b0a40574dbb8755cbfc3f48ed307c0ec9bd4b",
-    "bakeoff.py": "b9b2c26ab243634aa927a7ac0c583b96d97ecb56d96cfea29b62d6ce846756a9",
+    "README.md": "4446219e474652db18f58b564fb26beb6d3f73e2d9f6a0ccf6cb938e2af01ecc",
+    "bakeoff.py": "24ebdd5988fe98cd7c7c0436cfb6b5e0d161d3ab567f9077a49d5c17c9056077",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/test_bakeoff.py": "3b3c99af6d161655ff429780450a423f651282677d40036b3a148af75a4b5b1d"
+    "tests/test_bakeoff.py": "e9fe3f4fc8dbd5ff1628af144d6d1036e450ad0d760c161cf68cbe0cbf582e20"
   },
+  "rejoin_hook_at": "2026-09-23T00:57:01Z",
+  "rejoin_hook_note": "Resolution slots are placeholders labeled NOT_ADMITTED. Reported settled N is 4. results, pnl, MZ, and roi remain null.",
   "source_frozen_at": "2026-09-23T00:50:49Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, MZ, and roi remain null.",
   "results": null,

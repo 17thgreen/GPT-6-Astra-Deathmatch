@@ -5,8 +5,9 @@ queue-bin labels, and maker-credit admission come from
 kalshi_rails_lab_20260922. The shared 5000 USD figure is a measurement
 contrast label on KXUFCFIGHT and on the 000 instrument pointer.
 
-Settled N is 0. The clock refused admit, so results, pnl, MZ, and roi stay
-null. This module does not place live orders and does not award fills.
+The conductor reports settled N of 4 and a kicked clock rejoin. Admit status
+is NOT_ADMITTED, so results, pnl, MZ, and roi stay null. This module does not
+place live orders and does not award fills.
 """
 import hashlib
 import json
@@ -36,8 +37,14 @@ RAILS_COMMIT = '6a28e0d6254327ea4e6451c781bec56215ac6cac'
 FEEBOOK_DIRECTORY = 'kalshi_feebook_lab_20260922'
 RAILS_DIRECTORY = 'kalshi_rails_lab_20260922'
 COLLECTOR_STATUS = 'READY'
-CLOCK_ADMIT = 'REFUSED'
-SETTLED_N = 0
+CLOCK_ADMIT = 'NOT_ADMITTED'
+CLOCK_REJOIN = 'KICKED'
+AWAITING_CLOCK = 'CLOCK_ADMIT_PASS'
+REPORTED_SETTLED_N = 4
+ADMITTED_SETTLED_N = 0
+EVENTS_FINALIZED = 2
+SETTLED_N = ADMITTED_SETTLED_N
+RESOLUTION_LABEL = 'NOT_ADMITTED'
 EXAMINER_STATUS = 'NOT_NOW'
 LEE_READY = False
 LIVE_ORDERS = False
@@ -64,6 +71,7 @@ OUTSIDE_BIN = 'outside_pinned_bins'
 SCHEMA_LABEL = 'SCHEMA_ONLY'
 SCHEMA_VECTOR = 'schema_vector'
 SCHEMA_FIXTURE = ROOT / 'fixtures' / 'schema_only_kxufcfight.json'
+RESOLUTION_FIXTURE = ROOT / 'fixtures' / 'resolution_hook_not_admitted.json'
 FROZEN_EXPERIMENT = ROOT / 'FROZEN_EXPERIMENT.json'
 EMPTY_RESULTS = ROOT / 'results' / 'EMPTY_RESULTS.json'
 SOURCE_PINS = ROOT / 'SOURCE_PINS.json'
@@ -86,14 +94,17 @@ class InventedFillRefused(BakeoffError):
 
 
 class ScorecardRefused(BakeoffError):
-    """results, pnl, MZ, and roi stay null while settled N is 0."""
+    """results, pnl, MZ, and roi stay null until Clock ADMIT_PASS."""
 
 
 class ClockRefused(BakeoffError):
-    """The conductor clock refused admission."""
+    """Rejoin is kicked. Admit has not passed, so the scorecard stays null."""
 
     def __init__(self):
-        super().__init__('Clock REFUSED admit; settled N=0')
+        super().__init__(
+            'Clock NOT_ADMITTED; rejoin KICKED; reported settled N=4; '
+            'awaiting CLOCK_ADMIT_PASS; results, pnl, MZ, and roi stay null'
+        )
 
 
 class SchemaOnlyRefused(BakeoffError):
@@ -174,6 +185,12 @@ def instrument_binding():
         'q6_000_retune': Q6_000_RETUNE,
         'strategy_port': STRATEGY_PORT,
         'pinned_queue_labels': pinned_queue_labels(),
+        'clock_rejoin': CLOCK_REJOIN,
+        'awaiting': AWAITING_CLOCK,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
+        'scorecard_filled_from_reported_settles': False,
     }
 
 
@@ -217,7 +234,12 @@ def collector_stub():
         'admitted': False,
         'admitted_settled_panel': False,
         'clock': CLOCK_ADMIT,
+        'clock_rejoin': CLOCK_REJOIN,
+        'awaiting': AWAITING_CLOCK,
         'settled_n': SETTLED_N,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
         'examiner': EXAMINER_STATUS,
         'winner': None,
     }
@@ -226,7 +248,29 @@ def collector_stub():
 
 
 def clock_admit(*_args, **_kwargs):
-    """The conductor clock refused admission. Settled N is 0."""
+    """Admit stays closed. A passed token is not a Clock ADMIT_PASS."""
+    raise ClockRefused()
+
+
+def clock_rejoin():
+    """The conductor kicked a rejoin. The kick does not open the scorecard."""
+    record = {
+        'clock_rejoin': CLOCK_REJOIN,
+        'clock_admit': CLOCK_ADMIT,
+        'awaiting': AWAITING_CLOCK,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
+        'admitted': False,
+        'resolutions_applied': 0,
+        'winner': None,
+    }
+    record.update(_null_metrics())
+    return record
+
+
+def apply_resolutions(*_args, **_kwargs):
+    """Resolution values stay unwired until Clock ADMIT_PASS."""
     raise ClockRefused()
 
 
@@ -241,9 +285,10 @@ def roi(*args, **kwargs):
 
 
 def write_scorecard(*_args, **_kwargs):
-    """Refuse every scorecard fill. Settled N is 0 and the Examiner is not running."""
+    """Refuse every scorecard fill. Admit has not passed."""
     raise ScorecardRefused(
-        'Clock REFUSED admit; settled N=0; results, pnl, MZ, and roi stay null'
+        'Clock NOT_ADMITTED; awaiting CLOCK_ADMIT_PASS; '
+        'results, pnl, MZ, and roi stay null'
     )
 
 
@@ -612,6 +657,16 @@ def load_schema_fixture(path=None):
         raise ValueError('collector')
     if payload.get('clock') != CLOCK_ADMIT:
         raise ValueError('clock')
+    if payload.get('clock_rejoin') != CLOCK_REJOIN:
+        raise ValueError('clock_rejoin')
+    if payload.get('awaiting') != AWAITING_CLOCK:
+        raise ClockRefused()
+    if payload.get('reported_settled_n') != REPORTED_SETTLED_N:
+        raise ValueError('reported_settled_n')
+    if payload.get('admitted_settled_n') != ADMITTED_SETTLED_N:
+        raise ClockRefused()
+    if payload.get('events_finalized') != EVENTS_FINALIZED:
+        raise ValueError('events_finalized')
     if payload.get('settled_n') != SETTLED_N:
         raise ClockRefused()
     if payload.get('series') != SERIES_KXUFCFIGHT:
@@ -723,7 +778,12 @@ def walk_schema(path=None, table=None):
         'panel_version': payload['panel_version'],
         'collector': COLLECTOR_STATUS,
         'clock': CLOCK_ADMIT,
+        'clock_rejoin': CLOCK_REJOIN,
+        'awaiting': AWAITING_CLOCK,
         'settled_n': SETTLED_N,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
         'examiner': EXAMINER_STATUS,
         'measurement_budget_usd': MEASUREMENT_BUDGET_USD,
         'measurement_budget_role': BUDGET_ROLE,
@@ -738,11 +798,103 @@ def walk_schema(path=None, table=None):
     return walked
 
 
+def load_resolution_hook(path=None):
+    """Read the not-admitted placeholder. A stored resolution is refused."""
+    if path is None:
+        path = RESOLUTION_FIXTURE
+    payload = json.loads(Path(path).read_text())
+    if payload.get('packet_id') != PACKET_ID:
+        raise ValueError('packet_id')
+    if payload.get('label') != RESOLUTION_LABEL:
+        raise ClockRefused()
+    if payload.get('awaiting') != AWAITING_CLOCK:
+        raise ClockRefused()
+    if payload.get('clock_rejoin') != CLOCK_REJOIN:
+        raise ValueError('clock_rejoin')
+    if payload.get('clock_admit') != CLOCK_ADMIT:
+        raise ClockRefused()
+    if payload.get('collector') != COLLECTOR_STATUS:
+        raise ValueError('collector')
+    if payload.get('panel_version') != PANEL_VERSION:
+        raise ValueError('panel_version')
+    if payload.get('reported_settled_n') != REPORTED_SETTLED_N:
+        raise ValueError('reported_settled_n')
+    if payload.get('admitted_settled_n') != ADMITTED_SETTLED_N:
+        raise ClockRefused()
+    if payload.get('events_finalized') != EVENTS_FINALIZED:
+        raise ValueError('events_finalized')
+    if payload.get('admitted_settled_panel') is not False:
+        raise ClockRefused()
+    if payload.get('series') != SERIES_KXUFCFIGHT:
+        raise ValueError('series')
+    for key in OUTPUT_KEYS:
+        if payload.get(key) is not None:
+            raise ScorecardRefused(key)
+    if payload.get('winner') is not None:
+        raise ScorecardRefused('winner')
+    slots = payload.get('slots')
+    if not isinstance(slots, list) or len(slots) != REPORTED_SETTLED_N:
+        raise ValueError('slots')
+    seen = set()
+    per_event = {}
+    for slot in slots:
+        if not isinstance(slot, dict):
+            raise TypeError('slot')
+        slot_id = slot.get('slot_id')
+        if not isinstance(slot_id, str) or slot_id == '' or slot_id in seen:
+            raise ValueError('slot_id')
+        seen.add(slot_id)
+        event_index = slot.get('event_index')
+        contract_index = slot.get('contract_index')
+        if event_index not in (1, 2) or contract_index not in (1, 2):
+            raise ValueError('slot index')
+        per_event.setdefault(event_index, set()).add(contract_index)
+        if slot.get('series') != SERIES_KXUFCFIGHT:
+            raise ValueError('series')
+        if slot.get('resolution') is not None or slot.get('result') is not None:
+            raise ClockRefused()
+        for key in ('pnl', 'roi', 'MZ', 'mz', 'winner'):
+            if key in slot and slot[key] is not None:
+                raise ScorecardRefused(key)
+    if set(per_event) != {1, 2}:
+        raise ValueError('events')
+    for indexes in per_event.values():
+        if indexes != {1, 2}:
+            raise ValueError('contracts')
+    return payload
+
+
+def wire_resolution_hook(path=None):
+    """Name the empty slots. Apply none of them to the scorecard."""
+    payload = load_resolution_hook(path)
+    wired = {
+        'label': RESOLUTION_LABEL,
+        'awaiting': AWAITING_CLOCK,
+        'clock_rejoin': CLOCK_REJOIN,
+        'clock_admit': CLOCK_ADMIT,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
+        'slot_ids': [slot['slot_id'] for slot in payload['slots']],
+        'resolutions_applied': 0,
+        'admitted': False,
+        'admitted_settled_panel': False,
+        'winner': None,
+    }
+    wired.update(_null_metrics())
+    return wired
+
+
 def empty_outputs():
     """The empty-file contract. Schema walks do not fill it."""
     payload = {
         'settled_n': SETTLED_N,
+        'reported_settled_n': REPORTED_SETTLED_N,
+        'admitted_settled_n': ADMITTED_SETTLED_N,
+        'events_finalized': EVENTS_FINALIZED,
         'clock': CLOCK_ADMIT,
+        'clock_rejoin': CLOCK_REJOIN,
+        'awaiting': AWAITING_CLOCK,
         'collector': COLLECTOR_STATUS,
         'panel_version': PANEL_VERSION,
         'measurement_budget_usd': format(MEASUREMENT_BUDGET_USD, 'f'),
