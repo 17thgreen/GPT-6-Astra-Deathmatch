@@ -2,13 +2,13 @@
   "experiment": "Q7_ARM_B_REHAB_P2_PORTFOLIO_RANK_SIZING",
   "packet_id": "Q7-B-REHAB-P2-PORTFOLIO-RANK-SIZING",
   "directory": "nfl_q7_rehab_p2_rank_sizing_20260923",
-  "status": "HYPOTHESIS_FROZEN_NOT_RUN",
+  "status": "IMPLEMENTED_FROZEN_NOT_RUN",
   "frozen_at": "2026-09-23T21:39:43Z",
   "parent_corpse": "CEM-ASTRA-20260922-001",
   "parent_verdict": "Q7 Arm B KILL",
   "pass_n": 2,
   "pass_budget": 3,
-  "note": "Hypothesis committed before rehab source and before any rehab scenario. results and pnl are null. Pass-1 admission_cadence is a dead knob and is not reopened. The Examiner P1 KILL ack, the Conductor Pass-2 kick, and the 3-pass rehab policy are cited by the Simulator hand and are absent from this checkout. Those bytes were not invented. Parent Arm B and Arm D ledger blobs are not on main. Their sha256 values are the conductor source-pin manifest. waive_parent_ledger_hash_check is false. Absence is not a pass.",
+  "note": "Source and unit tests were frozen after the hypothesis commit and before any rehab scenario. results and pnl are null. Pass-1 admission_cadence is a dead knob and is not reopened. The Examiner P1 KILL ack, the Conductor Pass-2 kick, and the 3-pass rehab policy are cited by the Simulator hand and are absent from this checkout. Those bytes were not invented. Parent Arm B and Arm D ledger blobs are not on main. Their sha256 values are the conductor source-pin manifest. waive_parent_ledger_hash_check is false. Absence is not a pass.",
   "conductor_packets": {
     "freeze": "packets/refiner/REFINER_PASS2_FREEZE_Q7_B_PORTFOLIO_RANK_SIZING_2026-09-23.md",
     "diagnosis": "packets/refiner/REFINER_PASS2_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
@@ -218,8 +218,14 @@
   "feebook_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
   "fee_channel": "imported kalshi_feebook_lab_20260922.feebook.classify_scorecard; missing channel refuses completed profit",
   "spec_sha256": "a114caf497382689ca5227b6b0307403861313049ad2d641c7690978af2b8885",
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "rank_sizing_policy.py": "2447fc4f777855270f2037be94aeae2367f1990c595678cc9bcc9a9872deb360",
+    "selection.py": "247a064d41895c29b837fbf454235d9f8b7b56261e532edbc8baead2e65519d6",
+    "positive_controls.py": "3160a250bf94f5d912c43bb6412836403703f00f0d70d0f2bbde2e98f44564e6",
+    "run_experiment.py": "9c1dec93f1fda60aac6c22accbdd93bc93468b9245edc74519a4a44d84f0bcc2",
+    "test_rank_sizing.py": "eb833918da1685d5e72581c5aadfc9f78fc0247417d53d55ff091a283fea4a9a"
+  },
   "results": null,
   "pnl": null,
-  "source_frozen_at": null
+  "source_frozen_at": "2026-09-23T21:43:44Z"
 }

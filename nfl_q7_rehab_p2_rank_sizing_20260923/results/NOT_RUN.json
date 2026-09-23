@@ -1,0 +1,23 @@
+{
+  "status": "NOT_RUN_FREEZE_SCORE_REFUSED",
+  "scenarios_executed": 0,
+  "scenario_grid": [
+    "q3300_d0.25_B0",
+    "q3300_d0.25_B2",
+    "q3300_d0.25_D",
+    "q3300_d5_B0",
+    "q3300_d5_B2",
+    "q3300_d5_D",
+    "q10000_d0.25_B0",
+    "q10000_d0.25_B2",
+    "q10000_d0.25_D",
+    "q10000_d5_B0",
+    "q10000_d5_B2",
+    "q10000_d5_D"
+  ],
+  "pnl": null,
+  "results": null,
+  "score_run_in_this_freeze": false,
+  "evidence": "NOT_RUN_FREEZE_BEFORE_EXAMINER",
+  "note": "No scenario was executed. This file is not a profit result."
+}
