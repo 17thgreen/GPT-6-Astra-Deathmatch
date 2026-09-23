@@ -2,18 +2,28 @@
   "kind": "unit_test_verification",
   "experiment": "EXAMINER-FEE-QUEUE-HONESTY-000",
   "packet_sha256": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
-  "ran_at": "2026-09-23T00:09:12Z",
+  "ran_at": "2026-09-23T00:17:27Z",
   "python": "3.12.3",
   "command": "python3 -m unittest -v tests.test_orchestrator",
   "cwd": "kalshi_examiner_fee_queue_honesty_000_lab_20260922",
-  "tests_run": 12,
+  "tests_run": 13,
   "failures": 0,
   "errors": 0,
   "result": "OK",
-  "elapsed_seconds": 0.016,
+  "elapsed_seconds": 0.02,
   "source_used": "synthetic_schema_standin",
   "production_gzip_present": false,
   "production_pin": "nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+  "production_fills_sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f",
+  "production_orders_sha256": "c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c",
+  "production_path_unit": {
+    "layout": "temporary root plus nfl_factorial_lab_20260921/results/q3300_d0.25_000_{fills,orders}.jsonl.gz",
+    "bytes": "queue-fragility synthetic schema stand-in, gzipped",
+    "indexed_pin_refused": "fills sha256",
+    "matching_pin_source": "production_pin",
+    "scorecard_copied": false,
+    "note": "The temporary pair is not the indexed gzip. Aligning the pin to its sha256 exercised the production branch. Freeze files were unchanged."
+  },
   "production_fills_present_at_freeze": true,
   "single_examiner_packet": true,
   "queue_fields_equal_to_fee_fields": true,
@@ -24,7 +34,7 @@
     "failures": 0,
     "errors": 0,
     "result": "OK",
-    "elapsed_seconds": 0.009,
+    "elapsed_seconds": 0.007,
     "note": "Unchanged hygiene module. Not an orchestrator profit result."
   },
   "pick_a_join_regression": {
@@ -34,7 +44,7 @@
     "failures": 0,
     "errors": 0,
     "result": "OK",
-    "elapsed_seconds": 0.017,
+    "elapsed_seconds": 0.016,
     "note": "Unchanged pick A join. Not an orchestrator profit result."
   },
   "queue_fragility_regression": {
@@ -44,7 +54,7 @@
     "failures": 0,
     "errors": 0,
     "result": "OK",
-    "elapsed_seconds": 0.011,
+    "elapsed_seconds": 0.01,
     "note": "Unchanged queue_fragility.py. Not an orchestrator profit result."
   },
   "pick_b_join_regression": {
@@ -88,5 +98,5 @@
   "results": null,
   "pnl": null,
   "tape_walk": null,
-  "note": "Code verification of one Examiner channel. Omitting a queue field is refused on the same path as omitting a fee field. Not a simulated execution and not live validation. Freeze scorecard fields remain null. No target edge ratio."
+  "note": "Code verification of one Examiner channel. The production path is selected only when the q3300 gzip pair is present and matches the pin. Omitting a queue field is refused on the same path as omitting a fee field. Not a simulated execution and not live validation. Freeze scorecard fields remain null. No target edge ratio."
 }
