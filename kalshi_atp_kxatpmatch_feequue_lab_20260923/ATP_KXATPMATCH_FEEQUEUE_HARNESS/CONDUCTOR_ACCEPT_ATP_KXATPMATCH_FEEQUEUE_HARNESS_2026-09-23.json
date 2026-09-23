@@ -1,0 +1,61 @@
+{
+  "id": "CONDUCTOR_ACCEPT_ATP_KXATPMATCH_FEEQUEUE_HARNESS",
+  "status": "ACCEPT_IMPLEMENT_GO",
+  "feature_family": "ATP-FQ",
+  "packet_id": "ATP-KXATPMATCH-FEEQUEUE-HARNESS",
+  "freeze_path": "lab/governance/astra/packets/ATP_KXATPMATCH_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
+  "freeze_sha256": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+  "scout_hunt_sha256": "14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7",
+  "scout_markets": 48,
+  "scout_events": 24,
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "panel_events": 6,
+  "panel_markets": 12,
+  "panel_scout_subset": true,
+  "admitted_at": null,
+  "knob": "analysis_slice",
+  "arms": [
+    "ATPA0",
+    "ATPA1"
+  ],
+  "arm_values": {
+    "ATPA0": "maker_vs_taker_native",
+    "ATPA1": "content_fresh_vs_stale_bin"
+  },
+  "lab_dir": "kalshi_atp_kxatpmatch_feequue_lab_20260923/",
+  "results": null,
+  "pnl": null,
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "nearest_dead_card": "invent_depth_fills_fill_density_OR_invent_occurrence_datetime_SoT",
+  "commit_verbatim": [
+    "freeze",
+    "scout_hunt",
+    "panel_stub"
+  ],
+  "refuse": [
+    "invent_depth",
+    "invent_fills",
+    "invent_fill_density",
+    "invent_occurrence_datetime",
+    "invent_pnl",
+    "Lee-Ready",
+    "000_retune",
+    "Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ_reopen",
+    "ungate_S1_S2_R2-P4",
+    "ATL@GB",
+    "live_orders"
+  ],
+  "integrity": {
+    "panel_markets_byte_equal_scout_objects": true,
+    "panel_events_subset_of_scout": true,
+    "capture_alias_identical": true,
+    "freeze_copies_identical": true
+  },
+  "post_cpifq_main": "6e55a99790f4cc09a437d2e16ccf4e8e826a154b",
+  "stamped_at_et": "2026-09-23T14:13:00-04:00"
+}

@@ -1,0 +1,15 @@
+{
+  "packet_id": "ATP-KXATPMATCH-FEEQUEUE-HARNESS",
+  "feature_family": "ATP-FQ",
+  "status": "FROZEN",
+  "arms": [
+    "ATPA0",
+    "ATPA1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+  "scout_hunt_sha256": "14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "stamped_at_et": "2026-09-23T14:12:00-04:00"
+}
