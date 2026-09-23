@@ -1,11 +1,12 @@
 # C3 KXHIGHNY bordering-strike harness
 
-Status: hypothesis committed. Source and the unit page follow in later
-commits. `EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json`
-keeps `results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps
-`adjacent_spread_gap`, `bordering_depth_imbalance`,
-`fee_delta_vs_inherited_model`, `freshness_gap_sec`, and
-`multi_city_inventory_join` null.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md` (8 tests, OK, 2026-09-23T14:13:58Z). That page is
+not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
+`FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
+`results/EMPTY_RESULTS.json` keeps `adjacent_spread_gap`,
+`bordering_depth_imbalance`, `fee_delta_vs_inherited_model`,
+`freshness_gap_sec`, and `multi_city_inventory_join` null.
 
 This lab is measurement-only. The series is `KXHIGHNY`, with `KXHIGHCHI`
 as a same-calendar presence proof. The only knob is strike band: C3B0
@@ -28,5 +29,10 @@ Panel stub: `lab/astra-capture/c3-kxhighny/panel_stub.json`,
 Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
 
-No Logan keys. No live orders. A later unit run, once recorded, is not an
-Examiner score.
+From this directory, Python 3.12 standard library:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator
+```
+
+No Logan keys. No live orders. A passing unit run is not an Examiner score.
