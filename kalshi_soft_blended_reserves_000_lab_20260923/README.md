@@ -1,8 +1,9 @@
 # Cap-SR soft-blended reserves
 
-Status: hypothesis committed in this directory. Unit outcomes, if recorded,
-live under `results/` and are not profit. `EXPERIMENT_SPEC.md` is the
-hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md` (32 tests, OK, 2026-09-23T13:48:04Z). That page is
+not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
+`FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `borrow_count_delta_vs_fifo`,
 `blend_utilization_gap`, and `soft_breach_or_blend_rate` null.
 
