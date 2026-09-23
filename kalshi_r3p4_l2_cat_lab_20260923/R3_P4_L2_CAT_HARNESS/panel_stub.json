@@ -1,0 +1,1486 @@
+{
+  "schema_id": "astra.registry.r3_p4_l2_shape_panel.v0",
+  "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+  "packet_id": "R3-P4-L2-SHAPE-SF1-SF2",
+  "purpose": "measurement_gate",
+  "cohort_kind": "stratified_sports_vs_nonsports_l2_seed",
+  "freeze_cite": "lab/governance/astra/packets/R3-P4_L2_SHAPE_LONGSHOT_DEPTH_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "scout_cite": "lab/governance/astra/packets/r3_p4_l2_shape/",
+  "admitted_at": null,
+  "stub_status": "PANEL_SCHEMA_STUB_SEED",
+  "admit_gate": "WAIT_CLOCK_JOIN_CONDUCTOR — do not run admit.py; stub only",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "reciprocal_book_algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+    "content_fresh_instrument": "rails.judge_freshness / canonical_book_content — content_fresh_flag required",
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_lee_ready": true,
+    "no_live_orders": true
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/{ticker}",
+      "GET /markets/{ticker}",
+      "GET /markets/{ticker}/orderbook",
+      "GET /markets?series_ticker=...&limit=small (429 often)"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host",
+      "ADMIT-1 prospective recorder routes"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_pit_cle_poll_steal": true,
+      "no_c1_budget_steal": true,
+      "hold_r3_p3_crawl": true,
+      "recorder_pid_namespace": "astra-capture/r3-p4-l2-shape (idle — no recorder)",
+      "db_path": "lab/astra-capture/r3-p4-l2-shape/capture.sqlite (not created)"
+    },
+    "schedule": {
+      "stub_seed": "one-shot throttled public GETs",
+      "throttle_sec": "2–5 between calls; longer after 429"
+    }
+  },
+  "rules": [
+    "GET-only public elections host. No credentials. No order/portfolio routes.",
+    "Stratified sports vs non-sports L2 panel. Raw depth only when orderbook GET succeeds.",
+    "volume/OI/results/pnl null — do not invent; do not promote API zeros to admitted facts.",
+    "SF1 half-spread bps by mid decile and SF2 L1/top-10 depth share + KL vs uniform: schema objects null until Simulator/Examiner.",
+    "R1-P1 reciprocal book pin @22371178cb2663250b4762f328069571c48cb551.",
+    "R1-P5 content_fresh_flag required via rails @6a28e0d6254327ea4e6451c781bec56215ac6cac.",
+    "Do NOT steal ADMIT-1 / PIT@CLE / C1 / S1 / S4 / S5 / R2-P3 poll budget.",
+    "HOLD R3-P3 crawl — do not start P3.",
+    "No admit.py. No recorder. No live orders. No Lee-Ready. No 000 retune."
+  ],
+  "cohort_summary": {
+    "markets_seed_n": 6,
+    "sports_n": 4,
+    "non_sports_n": 2,
+    "orderbook_ok_n": 6,
+    "events_n": 4,
+    "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+    "notes": [
+      "Non-sports active seed = KXBTC range markets (listing for weather/Fed/GDP returned 429 — series metadata only).",
+      "BTC15M Sep11 probes returned finalized + empty books — kept out of primary markets; see scout_probes.",
+      "Markets list endpoints often 429; used known tickers from prior stubs + one successful KXBTC series list (limit=2)."
+    ]
+  },
+  "blocker_notes": {
+    "http_429": [
+      "GET /markets?limit=5&status=open → 429",
+      "GET /events?series_ticker=KXHIGHNY|KXBTC|INXY → 429",
+      "GET /markets?series_ticker=KXHIGHNY|KXFEDDECISION|KXGDP → 429 (retry also 429)",
+      "Intermittent 429 on some /markets/{ticker}/orderbook (retried; T95749.99 eventually 200)"
+    ],
+    "weather_econ_seed": "No open-market tickers resolved for KXHIGHNY/KXFEDDECISION/KXGDP/INXY this pass — series GETs 200 only. Honest smaller non-sports seed = KXBTC."
+  },
+  "series_metadata_seed": {
+    "INXY": {
+      "category": "Financials",
+      "title": "S&P 500 yearly range",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1
+    },
+    "KXGDP": {
+      "category": "Economics",
+      "title": "US GDP growth",
+      "fee_type": "quadratic_with_maker_fees",
+      "fee_multiplier": 1
+    },
+    "KXBTC": {
+      "category": "Crypto",
+      "title": "Bitcoin range",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1
+    },
+    "KXFEDDECISION": {
+      "category": "Economics",
+      "title": "Fed meeting",
+      "fee_type": "quadratic_with_maker_fees",
+      "fee_multiplier": 1
+    },
+    "KXHIGHNY": {
+      "category": "Climate and Weather",
+      "title": "Highest temperature in NYC",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1
+    }
+  },
+  "scout_probes_finalized_empty_ob": [
+    {
+      "market_ticker": "KXBTC15M-26SEP111930-30",
+      "status_observed": "finalized",
+      "note": "GET market+orderbook 200 but finalized/empty — not primary shape cohort"
+    },
+    {
+      "market_ticker": "KXBTC15M-26SEP111945-45",
+      "status_observed": "finalized",
+      "note": "GET market+orderbook 200 but finalized/empty — not primary shape cohort"
+    }
+  ],
+  "events": [
+    {
+      "event_ticker": "KXNCAAFGAME-26SEP26BUCKPITT",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "market_tickers": [
+        "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+        "KXNCAAFGAME-26SEP26BUCKPITT-BUCK"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNCAAFGAME-26SEP26TEXTENN",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "market_tickers": [
+        "KXNCAAFGAME-26SEP26TEXTENN-TENN"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXNCAAFGAME-26SEP26PREMRST",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "market_tickers": [
+        "KXNCAAFGAME-26SEP26PREMRST-MRST"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "open_interest_fp": null
+    },
+    {
+      "event_ticker": "KXBTC-26SEP2317",
+      "series_ticker": "KXBTC",
+      "category_slice": "non_sports",
+      "market_tickers": [
+        "KXBTC-26SEP2317-T76250",
+        "KXBTC-26SEP2317-T95749.99"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "open_interest_fp": null
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+      "event_ticker": "KXNCAAFGAME-26SEP26BUCKPITT",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "series_category_observed": null,
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26BUCKPITT-PITT/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "4117456.00"
+            ],
+            [
+              "0.0200",
+              "2408.00"
+            ],
+            [
+              "0.0300",
+              "336010.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "366577.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "475970.00"
+            ],
+            [
+              "0.1500",
+              "210823.00"
+            ],
+            [
+              "0.1600",
+              "48782.00"
+            ],
+            [
+              "0.2000",
+              "25.00"
+            ],
+            [
+              "0.2100",
+              "111606.00"
+            ],
+            [
+              "0.2200",
+              "37084.86"
+            ],
+            [
+              "0.2600",
+              "66959.00"
+            ],
+            [
+              "0.2700",
+              "36653.00"
+            ],
+            [
+              "0.3100",
+              "60053.00"
+            ],
+            [
+              "0.3500",
+              "108129.00"
+            ],
+            [
+              "0.3600",
+              "37496.00"
+            ],
+            [
+              "0.4000",
+              "35098.00"
+            ],
+            [
+              "0.4400",
+              "35872.00"
+            ],
+            [
+              "0.4800",
+              "32476.00"
+            ],
+            [
+              "0.5200",
+              "20250.00"
+            ],
+            [
+              "0.5600",
+              "19245.00"
+            ],
+            [
+              "0.6100",
+              "70481.00"
+            ],
+            [
+              "0.6300",
+              "15297.00"
+            ],
+            [
+              "0.6800",
+              "12751.00"
+            ],
+            [
+              "0.7000",
+              "1.00"
+            ],
+            [
+              "0.7300",
+              "54715.00"
+            ],
+            [
+              "0.7500",
+              "9806.00"
+            ],
+            [
+              "0.7800",
+              "2027.00"
+            ],
+            [
+              "0.7900",
+              "8916.00"
+            ],
+            [
+              "0.8300",
+              "44014.00"
+            ],
+            [
+              "0.8600",
+              "4765.00"
+            ],
+            [
+              "0.8900",
+              "250.00"
+            ],
+            [
+              "0.9100",
+              "40517.00"
+            ],
+            [
+              "0.9200",
+              "2003.00"
+            ],
+            [
+              "0.9300",
+              "1500.00"
+            ],
+            [
+              "0.9600",
+              "57.00"
+            ],
+            [
+              "0.9700",
+              "67440.99"
+            ],
+            [
+              "0.9800",
+              "2556.82"
+            ],
+            [
+              "0.9900",
+              "1412194.54"
+            ]
+          ]
+        },
+        "yes_level_count": 40,
+        "no_level_count": 0
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": "0.9900",
+        "bid_no": null,
+        "ask_yes": null,
+        "ask_no": "0.0100",
+        "spread_yes": null,
+        "spread_no": null,
+        "touch_yes_size": "1412194.54",
+        "touch_no_size": null
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "93998c6a5de74b59359f1cfc324caad84a70c94842f205cb29b3a4d5185bfd23"
+    },
+    {
+      "market_ticker": "KXNCAAFGAME-26SEP26BUCKPITT-BUCK",
+      "event_ticker": "KXNCAAFGAME-26SEP26BUCKPITT",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "series_category_observed": null,
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26BUCKPITT-BUCK/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "4134567.68"
+            ],
+            [
+              "0.0200",
+              "8923.00"
+            ],
+            [
+              "0.0300",
+              "341053.00"
+            ],
+            [
+              "0.0400",
+              "1079.00"
+            ],
+            [
+              "0.0500",
+              "367512.19"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.1100",
+              "475970.00"
+            ],
+            [
+              "0.1500",
+              "210823.00"
+            ],
+            [
+              "0.1600",
+              "86003.00"
+            ],
+            [
+              "0.1900",
+              "93.51"
+            ],
+            [
+              "0.2000",
+              "1020.19"
+            ],
+            [
+              "0.2100",
+              "111699.51"
+            ],
+            [
+              "0.2200",
+              "37054.00"
+            ],
+            [
+              "0.2500",
+              "467.59"
+            ],
+            [
+              "0.2600",
+              "66959.00"
+            ],
+            [
+              "0.2700",
+              "36618.00"
+            ],
+            [
+              "0.3100",
+              "60053.00"
+            ],
+            [
+              "0.3500",
+              "109157.70"
+            ],
+            [
+              "0.3600",
+              "37496.00"
+            ],
+            [
+              "0.4000",
+              "35191.51"
+            ],
+            [
+              "0.4100",
+              "280.55"
+            ],
+            [
+              "0.4200",
+              "93.51"
+            ],
+            [
+              "0.4400",
+              "35872.00"
+            ],
+            [
+              "0.4600",
+              "841.63"
+            ],
+            [
+              "0.4700",
+              "1088.00"
+            ],
+            [
+              "0.4800",
+              "32476.00"
+            ],
+            [
+              "0.5000",
+              "748.14"
+            ],
+            [
+              "0.5200",
+              "20250.00"
+            ],
+            [
+              "0.5400",
+              "280.55"
+            ],
+            [
+              "0.5500",
+              "28.00"
+            ],
+            [
+              "0.5600",
+              "19245.00"
+            ],
+            [
+              "0.5700",
+              "2524.99"
+            ],
+            [
+              "0.6100",
+              "70590.51"
+            ],
+            [
+              "0.6200",
+              "13193.51"
+            ],
+            [
+              "0.6300",
+              "15390.51"
+            ],
+            [
+              "0.6800",
+              "12938.03"
+            ],
+            [
+              "0.6900",
+              "28.00"
+            ],
+            [
+              "0.7300",
+              "54715.00"
+            ],
+            [
+              "0.7400",
+              "54.00"
+            ],
+            [
+              "0.7500",
+              "9806.00"
+            ],
+            [
+              "0.7600",
+              "93.51"
+            ],
+            [
+              "0.7800",
+              "467.59"
+            ],
+            [
+              "0.7900",
+              "11037.51"
+            ],
+            [
+              "0.8300",
+              "44014.00"
+            ],
+            [
+              "0.8600",
+              "4765.00"
+            ],
+            [
+              "0.8700",
+              "29.00"
+            ],
+            [
+              "0.8800",
+              "93.51"
+            ],
+            [
+              "0.8900",
+              "654.61"
+            ],
+            [
+              "0.9000",
+              "44.71"
+            ],
+            [
+              "0.9100",
+              "40517.00"
+            ],
+            [
+              "0.9200",
+              "2938.18"
+            ],
+            [
+              "0.9300",
+              "4600.00"
+            ],
+            [
+              "0.9400",
+              "544.71"
+            ],
+            [
+              "0.9500",
+              "100.00"
+            ],
+            [
+              "0.9600",
+              "3951.29"
+            ],
+            [
+              "0.9700",
+              "74129.78"
+            ],
+            [
+              "0.9800",
+              "45480.24"
+            ],
+            [
+              "0.9900",
+              "3782657.79"
+            ]
+          ],
+          "yes_dollars": []
+        },
+        "yes_level_count": 0,
+        "no_level_count": 58
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": null,
+        "bid_no": "0.9900",
+        "ask_yes": "0.0100",
+        "ask_no": null,
+        "spread_yes": null,
+        "spread_no": null,
+        "touch_yes_size": null,
+        "touch_no_size": "3782657.79"
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "3633f8e5a9937048b85abb3bf95b4b59cd690dca9e9bd14924875d5015e02bd3"
+    },
+    {
+      "market_ticker": "KXNCAAFGAME-26SEP26TEXTENN-TENN",
+      "event_ticker": "KXNCAAFGAME-26SEP26TEXTENN",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "series_category_observed": null,
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26TEXTENN-TENN/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "3382865.56"
+            ],
+            [
+              "0.0200",
+              "9480.81"
+            ],
+            [
+              "0.0300",
+              "352348.61"
+            ],
+            [
+              "0.0400",
+              "568.32"
+            ],
+            [
+              "0.0500",
+              "172057.07"
+            ],
+            [
+              "0.0700",
+              "170400.76"
+            ],
+            [
+              "0.0800",
+              "40.98"
+            ],
+            [
+              "0.0900",
+              "31974.99"
+            ],
+            [
+              "0.1000",
+              "7788.34"
+            ],
+            [
+              "0.1100",
+              "355098.89"
+            ],
+            [
+              "0.1200",
+              "5.62"
+            ],
+            [
+              "0.1300",
+              "149.17"
+            ],
+            [
+              "0.1400",
+              "93.76"
+            ],
+            [
+              "0.1500",
+              "130715.99"
+            ],
+            [
+              "0.1600",
+              "63763.81"
+            ],
+            [
+              "0.1700",
+              "53.54"
+            ],
+            [
+              "0.1800",
+              "42337.29"
+            ],
+            [
+              "0.1900",
+              "89.64"
+            ],
+            [
+              "0.2000",
+              "175.90"
+            ],
+            [
+              "0.2100",
+              "34516.06"
+            ],
+            [
+              "0.2200",
+              "33030.49"
+            ],
+            [
+              "0.2300",
+              "1477.57"
+            ],
+            [
+              "0.2400",
+              "27340.17"
+            ],
+            [
+              "0.2500",
+              "3885.41"
+            ],
+            [
+              "0.2600",
+              "33615.36"
+            ],
+            [
+              "0.2700",
+              "61.90"
+            ],
+            [
+              "0.2800",
+              "84.31"
+            ],
+            [
+              "0.2900",
+              "21621.00"
+            ],
+            [
+              "0.3000",
+              "2072.00"
+            ],
+            [
+              "0.3100",
+              "42564.27"
+            ],
+            [
+              "0.3200",
+              "12923.66"
+            ],
+            [
+              "0.3300",
+              "14.05"
+            ],
+            [
+              "0.3400",
+              "17690.00"
+            ],
+            [
+              "0.3500",
+              "23.28"
+            ],
+            [
+              "0.3600",
+              "35.60"
+            ],
+            [
+              "0.3700",
+              "38177.00"
+            ],
+            [
+              "0.3800",
+              "98.39"
+            ],
+            [
+              "0.3900",
+              "7734.00"
+            ],
+            [
+              "0.4000",
+              "0.26"
+            ],
+            [
+              "0.4100",
+              "7730.00"
+            ],
+            [
+              "0.4300",
+              "31534.58"
+            ],
+            [
+              "0.4400",
+              "11.00"
+            ],
+            [
+              "0.4500",
+              "3920.84"
+            ],
+            [
+              "0.4600",
+              "67.03"
+            ],
+            [
+              "0.4700",
+              "10.81"
+            ],
+            [
+              "0.4800",
+              "23472.00"
+            ],
+            [
+              "0.4900",
+              "342.00"
+            ],
+            [
+              "0.5000",
+              "118.00"
+            ],
+            [
+              "0.5100",
+              "117.00"
+            ],
+            [
+              "0.5200",
+              "5.00"
+            ],
+            [
+              "0.5300",
+              "6.00"
+            ],
+            [
+              "0.5400",
+              "4.00"
+            ],
+            [
+              "0.5500",
+              "163.06"
+            ],
+            [
+              "0.5600",
+              "4.00"
+            ],
+            [
+              "0.5700",
+              "3.00"
+            ],
+            [
+              "0.5800",
+              "3001.50"
+            ],
+            [
+              "0.5900",
+              "2.00"
+            ],
+            [
+              "0.6000",
+              "2302.00"
+            ],
+            [
+              "0.6100",
+              "1218.00"
+            ],
+            [
+              "0.6200",
+              "1242.04"
+            ],
+            [
+              "0.6300",
+              "14312.00"
+            ],
+            [
+              "0.6400",
+              "27292.00"
+            ],
+            [
+              "0.6500",
+              "183872.33"
+            ],
+            [
+              "0.6600",
+              "194602.36"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "2457350.00"
+            ],
+            [
+              "0.0200",
+              "12608.00"
+            ],
+            [
+              "0.0300",
+              "198095.00"
+            ],
+            [
+              "0.0400",
+              "66247.00"
+            ],
+            [
+              "0.0500",
+              "98679.00"
+            ],
+            [
+              "0.0600",
+              "18506.00"
+            ],
+            [
+              "0.0700",
+              "75597.00"
+            ],
+            [
+              "0.0800",
+              "45635.00"
+            ],
+            [
+              "0.0900",
+              "35793.00"
+            ],
+            [
+              "0.1000",
+              "14030.00"
+            ],
+            [
+              "0.1100",
+              "143975.00"
+            ],
+            [
+              "0.1200",
+              "49459.00"
+            ],
+            [
+              "0.1300",
+              "57626.00"
+            ],
+            [
+              "0.1400",
+              "44178.00"
+            ],
+            [
+              "0.1500",
+              "23656.00"
+            ],
+            [
+              "0.1600",
+              "15072.00"
+            ],
+            [
+              "0.1700",
+              "12259.00"
+            ],
+            [
+              "0.1800",
+              "28387.00"
+            ],
+            [
+              "0.1900",
+              "8183.00"
+            ],
+            [
+              "0.2000",
+              "21732.00"
+            ],
+            [
+              "0.2100",
+              "3099.00"
+            ],
+            [
+              "0.2200",
+              "1324.00"
+            ],
+            [
+              "0.2300",
+              "973.00"
+            ],
+            [
+              "0.2400",
+              "118.00"
+            ],
+            [
+              "0.2500",
+              "361.00"
+            ],
+            [
+              "0.2600",
+              "4705.00"
+            ],
+            [
+              "0.2700",
+              "4.00"
+            ],
+            [
+              "0.2800",
+              "203.41"
+            ],
+            [
+              "0.2900",
+              "234.00"
+            ],
+            [
+              "0.3000",
+              "2493.00"
+            ],
+            [
+              "0.3100",
+              "1717.10"
+            ],
+            [
+              "0.3200",
+              "41868.99"
+            ],
+            [
+              "0.3300",
+              "39438.47"
+            ]
+          ]
+        },
+        "yes_level_count": 33,
+        "no_level_count": 64
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": "0.3300",
+        "bid_no": "0.6600",
+        "ask_yes": "0.3400",
+        "ask_no": "0.6700",
+        "spread_yes": "0.0100",
+        "spread_no": "0.0100",
+        "touch_yes_size": "39438.47",
+        "touch_no_size": "194602.36"
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "433df13ec13e0aceb2f84c53f0236d87784949ddcaf74fd4dd6020837f83090a"
+    },
+    {
+      "market_ticker": "KXNCAAFGAME-26SEP26PREMRST-MRST",
+      "event_ticker": "KXNCAAFGAME-26SEP26PREMRST",
+      "series_ticker": "KXNCAAFGAME",
+      "category_slice": "sports",
+      "series_category_observed": null,
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXNCAAFGAME-26SEP26PREMRST-MRST/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "108451.00"
+            ],
+            [
+              "0.0200",
+              "2408.00"
+            ],
+            [
+              "0.0300",
+              "553.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0500",
+              "1114.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.0800",
+              "512.00"
+            ],
+            [
+              "0.0900",
+              "98.00"
+            ],
+            [
+              "0.2000",
+              "100.00"
+            ],
+            [
+              "0.2400",
+              "91.00"
+            ],
+            [
+              "0.2800",
+              "10.00"
+            ],
+            [
+              "0.2900",
+              "15.00"
+            ]
+          ],
+          "yes_dollars": [
+            [
+              "0.0100",
+              "108365.00"
+            ],
+            [
+              "0.0200",
+              "2408.00"
+            ],
+            [
+              "0.0300",
+              "520.00"
+            ],
+            [
+              "0.0400",
+              "500.00"
+            ],
+            [
+              "0.0700",
+              "300.00"
+            ],
+            [
+              "0.2200",
+              "39.00"
+            ],
+            [
+              "0.2300",
+              "15.00"
+            ],
+            [
+              "0.2900",
+              "135.00"
+            ],
+            [
+              "0.3000",
+              "13.32"
+            ],
+            [
+              "0.3800",
+              "50.00"
+            ],
+            [
+              "0.3900",
+              "132.00"
+            ],
+            [
+              "0.4400",
+              "13.00"
+            ],
+            [
+              "0.6300",
+              "25.00"
+            ],
+            [
+              "0.6400",
+              "2.00"
+            ],
+            [
+              "0.6600",
+              "5.00"
+            ],
+            [
+              "0.6800",
+              "10.00"
+            ]
+          ]
+        },
+        "yes_level_count": 16,
+        "no_level_count": 12
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": "0.6800",
+        "bid_no": "0.2900",
+        "ask_yes": "0.7100",
+        "ask_no": "0.3200",
+        "spread_yes": "0.0300",
+        "spread_no": "0.0300",
+        "touch_yes_size": "10.00",
+        "touch_no_size": "15.00"
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "afd3eb092ceb96434cfb44770872d6ba4e1d8d3b0fb5569772dd87cdcb276400"
+    },
+    {
+      "market_ticker": "KXBTC-26SEP2317-T76250",
+      "event_ticker": "KXBTC-26SEP2317",
+      "series_ticker": "KXBTC",
+      "category_slice": "non_sports",
+      "series_category_observed": "Crypto",
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXBTC-26SEP2317-T76250/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "33333.00"
+            ],
+            [
+              "0.0400",
+              "12.00"
+            ],
+            [
+              "0.0500",
+              "400.00"
+            ],
+            [
+              "0.1000",
+              "3333.00"
+            ],
+            [
+              "0.3000",
+              "1359.00"
+            ],
+            [
+              "0.5000",
+              "666.00"
+            ],
+            [
+              "0.7000",
+              "476.00"
+            ],
+            [
+              "0.8000",
+              "416.00"
+            ],
+            [
+              "0.9000",
+              "370.00"
+            ],
+            [
+              "0.9500",
+              "350.00"
+            ],
+            [
+              "0.9800",
+              "5342.00"
+            ],
+            [
+              "0.9900",
+              "2113.00"
+            ]
+          ],
+          "yes_dollars": []
+        },
+        "yes_level_count": 0,
+        "no_level_count": 12
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": null,
+        "bid_no": "0.9900",
+        "ask_yes": "0.0100",
+        "ask_no": null,
+        "spread_yes": null,
+        "spread_no": null,
+        "touch_yes_size": null,
+        "touch_no_size": "2113.00"
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "f3f730bbd98440446d2a0405a4748cc46606a9a79e88bf69118dbaf7236b829e"
+    },
+    {
+      "market_ticker": "KXBTC-26SEP2317-T95749.99",
+      "event_ticker": "KXBTC-26SEP2317",
+      "series_ticker": "KXBTC",
+      "category_slice": "non_sports",
+      "series_category_observed": "Crypto",
+      "status_observed": "active",
+      "resolve_source": "kalshi_public_get",
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": true,
+      "content_fresh_reason": "initial",
+      "raw_orderbook": {
+        "captured_via": "GET https://api.elections.kalshi.com/trade-api/v2/markets/KXBTC-26SEP2317-T95749.99/orderbook",
+        "orderbook_fp": {
+          "no_dollars": [
+            [
+              "0.0100",
+              "33333.00"
+            ],
+            [
+              "0.0400",
+              "12.00"
+            ],
+            [
+              "0.0500",
+              "400.00"
+            ],
+            [
+              "0.1000",
+              "3333.00"
+            ],
+            [
+              "0.3000",
+              "1327.00"
+            ],
+            [
+              "0.5000",
+              "666.00"
+            ],
+            [
+              "0.7000",
+              "476.00"
+            ],
+            [
+              "0.8000",
+              "416.00"
+            ],
+            [
+              "0.9000",
+              "370.00"
+            ],
+            [
+              "0.9500",
+              "350.00"
+            ],
+            [
+              "0.9800",
+              "5342.00"
+            ],
+            [
+              "0.9900",
+              "15.00"
+            ]
+          ],
+          "yes_dollars": []
+        },
+        "yes_level_count": 0,
+        "no_level_count": 12
+      },
+      "reciprocal_tob": {
+        "pin": "R1-P1 kalshi_feebook_lab_20260922 @22371178cb2663250b4762f328069571c48cb551",
+        "algebra": "ask_YES=1-best_NO_bid; ask_NO=1-best_YES_bid; spread_YES=1-best_NO_bid-best_YES_bid",
+        "bid_yes": null,
+        "bid_no": "0.9900",
+        "ask_yes": "0.0100",
+        "ask_no": null,
+        "spread_yes": null,
+        "spread_no": null,
+        "touch_yes_size": null,
+        "touch_no_size": "15.00"
+      },
+      "half_spread_bps": null,
+      "l2_shape": null,
+      "book_content_sha256": "023c0eff7b8dcc9476808986f728370f5701696b45e4c18f6940af1bc8f03ac9"
+    }
+  ],
+  "measurement_objects": {
+    "SF1_half_spread_bps_by_mid_decile": {
+      "status": null,
+      "description": "median quoted half-spread (bps of mid) by mid-price decile; null until Simulator/Examiner",
+      "by_slice": {
+        "sports": null,
+        "non_sports": null,
+        "all": null
+      },
+      "values": null
+    },
+    "SF2_l1_top10_depth_share_kl_vs_uniform": {
+      "status": null,
+      "description": "per-level share of top-10 depth + KL vs uniform 1/10 null; null until Simulator/Examiner",
+      "by_slice": {
+        "sports": null,
+        "non_sports": null,
+        "all": null
+      },
+      "l1_share": null,
+      "top10_shares": null,
+      "kl_vs_uniform": null
+    },
+    "category_slice": {
+      "sports_vs_non_sports": true,
+      "no_000_knobs": true
+    }
+  },
+  "results": null,
+  "pnl": null,
+  "volume": null,
+  "stubbed_at_utc": "2026-09-23T00:06:20Z",
+  "http_seed_log": [
+    {
+      "ticker": "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+      "orderbook": 200,
+      "slice": "sports"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26BUCKPITT-BUCK",
+      "orderbook": 200,
+      "slice": "sports"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26TEXTENN-TENN",
+      "orderbook": 200,
+      "slice": "sports"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP26PREMRST-MRST",
+      "orderbook": 200,
+      "slice": "sports"
+    },
+    {
+      "ticker": "KXBTC-26SEP2317-T76250",
+      "orderbook": 200,
+      "slice": "non_sports"
+    },
+    {
+      "ticker": "KXBTC-26SEP2317-T95749.99",
+      "orderbook": 200,
+      "slice": "non_sports"
+    }
+  ]
+}

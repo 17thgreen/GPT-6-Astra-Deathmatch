@@ -1,0 +1,58 @@
+{
+  "experiment": "R3-P4-L2-CAT-HARNESS",
+  "directory": "kalshi_r3p4_l2_cat_lab_20260923",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-23T16:24:00Z",
+  "packet": "R3_P4_L2_CAT_HARNESS_FREEZE_2026-09-23_2259.md",
+  "packet_sha256": "3fc370d93f0ea42864f7bf482d7f6515254999c76e2fc4477df1273bfcdc051f",
+  "conductor_packet_sha256_claim": "3fc370d93f0ea42864f7bf482d7f6515254999c76e2fc4477df1273bfcdc051f",
+  "conductor_bytes_in_checkout": true,
+  "parent_freeze": "R3-P4_L2_SHAPE_LONGSHOT_DEPTH_FREEZE_KERNEL_2026-09-22.md",
+  "parent_freeze_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "conductor_parent_freeze_sha256_claim": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+  "panel_stub_sha256": "7477e023ab70c59a6739650155ddb9d77077766e3afd80443e540d60b5a86cbb",
+  "conductor_panel_stub_sha256_claim": "7477e023ab70c59a6739650155ddb9d77077766e3afd80443e540d60b5a86cbb",
+  "conductor_markets_n_claim": 6,
+  "conductor_events_n_claim": 4,
+  "conductor_sports_n_claim": 4,
+  "conductor_nonsports_n_claim": 2,
+  "conductor_stamp_sha256": "6108488d33a4be6ece3235fa5b5a39cf563e97a543e3d8ec9828c4f5bea8ba9e",
+  "seed_summary_sha256": "e0d5281133d89d5f0215a8f02ae438b688bf53e4a48f2eb4c3727db4a29bb6f2",
+  "admitted_at": null,
+  "feature_family": "L2-CAT",
+  "knob": "category_slice",
+  "arms": [
+    {
+      "id": "R3P4C0",
+      "category_slice": "sports_only"
+    },
+    {
+      "id": "R3P4C1",
+      "category_slice": "nonsports_only"
+    }
+  ],
+  "fee_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "lee_ready": "REFUSED",
+  "atl_gb": "REFUSED",
+  "invented_depth": "REFUSED",
+  "logan_keys_required": false,
+  "live_orders": false,
+  "signal_retune_000": false,
+  "queue_fragility_reopen": false,
+  "cap_sr_reopen": false,
+  "cap_sr_fx_reopen": false,
+  "admit_py_run": false,
+  "scorecard_fields": [
+    "sf1_median_half_spread_bps_by_mid_decile",
+    "sf2_l1_top10_depth_share",
+    "sf2_kl_vs_uniform_1_10",
+    "sports_vs_nonsports_sf_gap",
+    "n_books",
+    "n_snapshots"
+  ],
+  "results": null,
+  "pnl": null,
+  "go": "Conductor RE-ACCEPT + IMPLEMENT GO on harness freeze sha256 3fc370d93f0ea42864f7bf482d7f6515254999c76e2fc4477df1273bfcdc051f after R2-P3 PR27 @3b0d1429. Feature family L2-CAT. One knob: category_slice. Parent kernel and panel stub sha256 values match the attached conductor bytes. 4 events / 6 markets; sports 4 / nonsports 2. admitted_at null. Scorecard null."
+}
