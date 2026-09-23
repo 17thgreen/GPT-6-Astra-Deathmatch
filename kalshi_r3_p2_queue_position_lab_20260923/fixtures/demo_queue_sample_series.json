@@ -1,0 +1,2904 @@
+{
+  "meta": {
+    "ts_start_et": "2026-09-23T14:54:22.258104-04:00",
+    "ts_end_et": "2026-09-23T14:55:31.468688-04:00",
+    "auth_balance_http": 200,
+    "balance_breakdown": [
+      {
+        "balance": "100.0000",
+        "exchange_index": 0
+      },
+      {
+        "balance": "0.0000",
+        "exchange_index": 1
+      },
+      {
+        "balance": "0.0000",
+        "exchange_index": 2
+      },
+      {
+        "balance": "0.0000",
+        "exchange_index": 3
+      }
+    ],
+    "funded_shards": {
+      "0": 100.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0
+    },
+    "n_attempted_pass2": 12,
+    "n_success_pass2": 12,
+    "n_attempted_total": 37,
+    "n_success_new_total": 16,
+    "n_success_including_prior": 17,
+    "tickers_used": [
+      "KXNFLGAME-26OCT04NEBUF-BUF",
+      "KXNFLGAME-26SEP24ATLGB-ATL",
+      "KXNFLGAME-26SEP24ATLGB-GB",
+      "KXNFLGAME-26SEP27HOUIND-IND",
+      "KXNFLGAME-26SEP27KCMIA-KC",
+      "KXNFLGAME-26SEP27KCMIA-MIA",
+      "KXNFLSPREAD-26SEP27HOUIND-IND8",
+      "KXNFLSPREAD-26SEP28PHICHI-CHI14",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI8"
+    ],
+    "leftover_resting": "no",
+    "blockers": [],
+    "includes_prior_first_poll": true,
+    "evidence": [
+      "[V] demo key-id + Ed25519 PEM loaded",
+      "[H] balance 200 funded={0: 100.0, 1: 0.0, 2: 0.0, 3: 0.0}",
+      "[V] pre-pass2 resting=[]",
+      "[V] discovered 60 markets",
+      "[V] pass2 n_attempted=12 n_success=12",
+      "[V] series n_success_new_total=16 leftover=no",
+      "[I] queue poll retries on null settle race"
+    ],
+    "markets_discovered": [
+      "KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "KXNFLGAME-26SEP24ATLGB-GB",
+      "KXNFLGAME-26SEP27KCMIA-KC",
+      "KXNFLGAME-26SEP27KCMIA-MIA",
+      "KXNFLGAME-26SEP24ATLGB-ATL",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI8",
+      "KXNFLGAME-26SEP27HOUIND-IND",
+      "KXNFLGAME-26OCT04NEBUF-BUF",
+      "KXNFLGAME-26OCT04KCLV-LV",
+      "KXNFLGAME-26OCT04DENSF-DEN",
+      "KXNFLGAME-26SEP27CINPIT-CIN",
+      "KXNFLGAME-26OCT04GBTB-TB",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI21",
+      "KXNFLGAME-26OCT01PITCLE-PIT",
+      "KXNFLGAME-26SEP27TENNYG-NYG",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI4",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI14",
+      "KXNFLGAME-26OCT04DALHOU-DAL",
+      "KXNFLGAME-26OCT04TENBAL-BAL",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI18",
+      "KXNFLGAME-26OCT05ATLNO-ATL",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI3",
+      "KXNFLGAME-26SEP27CINPIT-PIT",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI17",
+      "KXNFLSPREAD-26SEP28PHICHI-PHI7",
+      "KXNFLGAME-26OCT04GBTB-GB",
+      "KXNFLGAME-26OCT04LARPHI-PHI",
+      "KXNFLGAME-26SEP27NYJDET-NYJ",
+      "KXNFLGAME-26OCT01PITCLE-CLE",
+      "KXNFLGAME-26OCT04INDWAS-WAS",
+      "KXNFLGAME-26OCT04INDWAS-IND",
+      "KXNFLGAME-26OCT04ARINYG-NYG",
+      "KXNFLGAME-26OCT04ARINYG-ARI",
+      "KXNFLGAME-26OCT04DALHOU-HOU",
+      "KXNFLGAME-26OCT04JACCIN-JAC",
+      "KXNFLGAME-26OCT04NEBUF-NE"
+    ],
+    "limit_prices_used": [
+      "0.0100",
+      "0.0200"
+    ],
+    "failure_mode_counts": {},
+    "final_resting_http": 200,
+    "final_resting_ids": [],
+    "leftover_canceled": [],
+    "pass1_note": "pass1 retained; pass2 adds retry-poll successes",
+    "schema_notes": [
+      "samples array; sample_id 0 = prior_first_poll; first_demo_queue_poll.json not overwritten",
+      "queue_position_fp matched by exact order_id via batch market_tickers only",
+      "queue_poll_tries records settle retries (null body common at t+0)",
+      "queue_position_fp=0.00 can be authentic at thin limit price levels",
+      "abs_err_contracts/signed_bias/brier always null \u2014 samples only",
+      "calibration metrics not computed"
+    ]
+  },
+  "samples": [
+    {
+      "sample_id": 0,
+      "ts_et": "2026-09-23T14:46:47.782332-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf97-8990-763a-8f85-4e7c85fd7d74",
+      "create_http": 201,
+      "queue_position_fp": "4207.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT01PITCLE-PIT",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.5600",
+      "best_ask": "0.5700",
+      "l2_top_at_limit": null,
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "prior_first_poll",
+      "success": true,
+      "final_status": null,
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4208.00"
+          ],
+          [
+            "0.5400",
+            "27468.96"
+          ],
+          [
+            "0.5500",
+            "27272.70"
+          ],
+          [
+            "0.5600",
+            "27672.73"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.4100",
+            "21640.84"
+          ],
+          [
+            "0.4200",
+            "17815.70"
+          ],
+          [
+            "0.4300",
+            "12371.10"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 1,
+      "ts_et": "2026-09-23T14:50:44.897937-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI15",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-1f88-7932-a0e2-940a9890e32e",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI15",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.0500",
+      "best_ask": "0.0600",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "333641.20"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "333641.20"
+          ],
+          [
+            "0.0200",
+            "249999.90"
+          ],
+          [
+            "0.0300",
+            "583332.75"
+          ],
+          [
+            "0.0400",
+            "354166.10"
+          ],
+          [
+            "0.0500",
+            "253333.08"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.9100",
+            "133333.20"
+          ],
+          [
+            "0.9200",
+            "220832.98"
+          ],
+          [
+            "0.9300",
+            "249999.75"
+          ],
+          [
+            "0.9400",
+            "91666.41"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 2,
+      "ts_et": "2026-09-23T14:50:48.042752-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI14",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-2b40-733a-ab35-648e486c463e",
+      "create_http": 201,
+      "queue_position_fp": "5613.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI14",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.0700",
+      "best_ask": "0.0800",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "5614.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5614.00"
+          ],
+          [
+            "0.0200",
+            "116666.62"
+          ],
+          [
+            "0.0300",
+            "177777.60"
+          ],
+          [
+            "0.0400",
+            "133333.12"
+          ],
+          [
+            "0.0500",
+            "386666.28"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.9000",
+            "118332.86"
+          ],
+          [
+            "0.9100",
+            "155555.40"
+          ],
+          [
+            "0.9200",
+            "183027.96"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 3,
+      "ts_et": "2026-09-23T14:50:50.728124-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-36f8-7e72-bedd-7b0826c3e5ae",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.5000",
+      "best_ask": "0.5100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "22650.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.4800",
+            "89929.98"
+          ],
+          [
+            "0.4900",
+            "88093.67"
+          ],
+          [
+            "0.5000",
+            "86332.47"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.4700",
+            "88677.72"
+          ],
+          [
+            "0.4800",
+            "90383.82"
+          ],
+          [
+            "0.4900",
+            "91873.59"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 4,
+      "ts_et": "2026-09-23T14:50:54.006285-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI7",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-42b0-7499-b0c0-1c8a27a27ef8",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI7",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.1600",
+      "best_ask": "0.1700",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "qp_ok_but_cancel_unconfirmed",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "22116.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.1200",
+            "76388.40"
+          ],
+          [
+            "0.1300",
+            "347435.55"
+          ],
+          [
+            "0.1400",
+            "322617.37"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.7500",
+            "13333.20"
+          ],
+          [
+            "0.7600",
+            "13888.80"
+          ],
+          [
+            "0.7700",
+            "14492.60"
+          ],
+          [
+            "0.8000",
+            "178332.62"
+          ],
+          [
+            "0.8100",
+            "233332.54"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 5,
+      "ts_et": "2026-09-23T14:50:57.106560-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-4e68-7d67-ab92-0db456f71a9f",
+      "create_http": 201,
+      "queue_position_fp": "16100.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.4700",
+      "best_ask": "0.4800",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "16101.00"
+      },
+      "failure_mode": "qp_ok_but_cancel_unconfirmed",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "16101.00"
+          ],
+          [
+            "0.4500",
+            "71481.41"
+          ],
+          [
+            "0.4600",
+            "69925.83"
+          ],
+          [
+            "0.4700",
+            "68437.80"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5000",
+            "63999.36"
+          ],
+          [
+            "0.5100",
+            "65645.09"
+          ],
+          [
+            "0.5200",
+            "67013.46"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 6,
+      "ts_et": "2026-09-23T14:51:00.421909-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-5a20-71e1-9956-77bfb0c1ee24",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.2100",
+      "best_ask": "0.2200",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "15548.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "15548.00"
+          ],
+          [
+            "0.1600",
+            "30208.14"
+          ],
+          [
+            "0.1700",
+            "177450.59"
+          ],
+          [
+            "0.1800",
+            "168517.44"
+          ],
+          [
+            "0.1900",
+            "201753.70"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.7500",
+            "13999.86"
+          ],
+          [
+            "0.7600",
+            "47221.92"
+          ],
+          [
+            "0.7700",
+            "118114.69"
+          ],
+          [
+            "0.7800",
+            "112877.93"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 7,
+      "ts_et": "2026-09-23T14:51:03.686077-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI8",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-65d8-713a-a1f8-39e5cbe272ab",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI8",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.1100",
+      "best_ask": "0.1400",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "14960.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.0900",
+            "348147.80"
+          ],
+          [
+            "0.1000",
+            "314998.74"
+          ],
+          [
+            "0.1100",
+            "286363.35"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.8300",
+            "151960.45"
+          ],
+          [
+            "0.8400",
+            "181248.84"
+          ],
+          [
+            "0.8500",
+            "195313.79"
+          ],
+          [
+            "0.8600",
+            "24999.87"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 8,
+      "ts_et": "2026-09-23T14:51:06.934320-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-7578-7fce-b36e-179a3f68e14f",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP24ATLGB-GB",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.7000",
+      "best_ask": "0.7100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "14114.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.6000",
+            "30.00"
+          ],
+          [
+            "0.6300",
+            "2.00"
+          ],
+          [
+            "0.6800",
+            "14776.35"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.0100",
+            "13.62"
+          ],
+          [
+            "0.0800",
+            "6360.55"
+          ],
+          [
+            "0.2600",
+            "49323.18"
+          ],
+          [
+            "0.2700",
+            "60958.77"
+          ],
+          [
+            "0.2800",
+            "59898.08"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 9,
+      "ts_et": "2026-09-23T14:51:09.574805-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27KCMIA-KC",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-7d48-7b5c-85de-a818eb16cba4",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27KCMIA-KC",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.8500",
+      "best_ask": "0.8600",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "8620.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "8620.00"
+          ],
+          [
+            "0.7300",
+            "2.00"
+          ],
+          [
+            "0.8300",
+            "40360.80"
+          ],
+          [
+            "0.8400",
+            "39880.41"
+          ],
+          [
+            "0.8500",
+            "39802.21"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.1200",
+            "69316.74"
+          ],
+          [
+            "0.1300",
+            "69923.05"
+          ],
+          [
+            "0.1400",
+            "70927.14"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 10,
+      "ts_et": "2026-09-23T14:51:12.798640-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27KCMIA-MIA",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-8ce8-72ed-812d-556ad6871959",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27KCMIA-MIA",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.1400",
+      "best_ask": "0.1500",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "7799.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7799.00"
+          ],
+          [
+            "0.1200",
+            "295871.44"
+          ],
+          [
+            "0.1300",
+            "273076.65"
+          ],
+          [
+            "0.1400",
+            "254760.58"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.8300",
+            "233332.82"
+          ],
+          [
+            "0.8400",
+            "247915.08"
+          ],
+          [
+            "0.8500",
+            "264442.64"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 11,
+      "ts_et": "2026-09-23T14:51:16.041312-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-98a0-784b-a76c-b1464ebcd547",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP24ATLGB-ATL",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.2800",
+      "best_ask": "0.2900",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7481.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.2600",
+            "101281.16"
+          ],
+          [
+            "0.2700",
+            "98764.80"
+          ],
+          [
+            "0.2800",
+            "96497.18"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.1000",
+            "19354.83"
+          ],
+          [
+            "0.6800",
+            "46424.83"
+          ],
+          [
+            "0.6900",
+            "81719.76"
+          ],
+          [
+            "0.7000",
+            "83888.05"
+          ],
+          [
+            "0.7100",
+            "11042.46"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 12,
+      "ts_et": "2026-09-23T14:51:18.565347-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI10",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-a070-7d79-8dc7-1ed45c7590a8",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI10",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.1100",
+      "best_ask": "0.1200",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7323.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.0700",
+            "49999.95"
+          ],
+          [
+            "0.0800",
+            "145833.10"
+          ],
+          [
+            "0.0900",
+            "296296.00"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.8300",
+            "20588.19"
+          ],
+          [
+            "0.8400",
+            "21874.86"
+          ],
+          [
+            "0.8500",
+            "23333.31"
+          ],
+          [
+            "0.8600",
+            "97618.54"
+          ],
+          [
+            "0.8700",
+            "123076.80"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 13,
+      "ts_et": "2026-09-23T14:51:21.728217-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-CHI3",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-ac28-75ca-b69f-f3d7cfcf4c81",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-CHI3",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.2800",
+      "best_ask": "0.2900",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "7019.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7019.00"
+          ],
+          [
+            "0.2500",
+            "64666.02"
+          ],
+          [
+            "0.2600",
+            "95511.98"
+          ],
+          [
+            "0.2700",
+            "91974.72"
+          ],
+          [
+            "0.2800",
+            "30951.96"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.6600",
+            "490.19"
+          ],
+          [
+            "0.6700",
+            "505.05"
+          ],
+          [
+            "0.6800",
+            "27083.16"
+          ],
+          [
+            "0.6900",
+            "60214.56"
+          ],
+          [
+            "0.7000",
+            "76110.35"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 14,
+      "ts_et": "2026-09-23T14:51:25.082729-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP27HOUIND-IND8",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-bbc8-7e9c-9373-91962583224f",
+      "create_http": 201,
+      "queue_position_fp": "6549.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP27HOUIND-IND8",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.1700",
+      "best_ask": "0.1900",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "6550.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "6550.00"
+          ],
+          [
+            "0.1500",
+            "73333.26"
+          ],
+          [
+            "0.1600",
+            "68749.56"
+          ],
+          [
+            "0.1700",
+            "64705.74"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.7900",
+            "52380.90"
+          ],
+          [
+            "0.8000",
+            "54999.78"
+          ],
+          [
+            "0.8100",
+            "57894.54"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 15,
+      "ts_et": "2026-09-23T14:51:27.716213-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-c398-7861-838c-cad61ba501e4",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.2800",
+      "best_ask": "0.2900",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5903.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.2600",
+            "75640.36"
+          ],
+          [
+            "0.2700",
+            "72839.04"
+          ],
+          [
+            "0.2800",
+            "70237.14"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.6700",
+            "3030.30"
+          ],
+          [
+            "0.6800",
+            "29687.31"
+          ],
+          [
+            "0.6900",
+            "59139.30"
+          ],
+          [
+            "0.7000",
+            "57777.20"
+          ],
+          [
+            "0.7100",
+            "30381.64"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 16,
+      "ts_et": "2026-09-23T14:51:30.899704-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-d338-707a-aa5f-9e9b38cd63d1",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.6300",
+      "best_ask": "0.6400",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5862.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.6100",
+            "27868.44"
+          ],
+          [
+            "0.6200",
+            "35482.92"
+          ],
+          [
+            "0.6300",
+            "34920.60"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.3200",
+            "4656.71"
+          ],
+          [
+            "0.3300",
+            "35322.50"
+          ],
+          [
+            "0.3400",
+            "42423.36"
+          ],
+          [
+            "0.3500",
+            "38226.96"
+          ],
+          [
+            "0.3600",
+            "3878.33"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 17,
+      "ts_et": "2026-09-23T14:51:34.158683-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI8",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-def0-7906-a5f0-e91629cdb592",
+      "create_http": 201,
+      "queue_position_fp": "5620.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI8",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.3700",
+      "best_ask": "0.3800",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "5621.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5621.00"
+          ],
+          [
+            "0.3400",
+            "54411.09"
+          ],
+          [
+            "0.3500",
+            "60476.13"
+          ],
+          [
+            "0.3600",
+            "70369.92"
+          ],
+          [
+            "0.3700",
+            "18468.45"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5700",
+            "7751.80"
+          ],
+          [
+            "0.5800",
+            "19444.18"
+          ],
+          [
+            "0.5900",
+            "28861.50"
+          ],
+          [
+            "0.6000",
+            "49582.54"
+          ],
+          [
+            "0.6100",
+            "38034.15"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 18,
+      "ts_et": "2026-09-23T14:51:36.680817-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27HOUIND-IND",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9b-e6c0-71f0-9143-046bb353259b",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27HOUIND-IND",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.4200",
+      "best_ask": "0.4400",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "5099.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5099.00"
+          ],
+          [
+            "0.4000",
+            "22082.98"
+          ],
+          [
+            "0.4100",
+            "21544.50"
+          ],
+          [
+            "0.4200",
+            "21031.46"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5400",
+            "18840.12"
+          ],
+          [
+            "0.5500",
+            "19259.24"
+          ],
+          [
+            "0.5600",
+            "19696.56"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 19,
+      "ts_et": "2026-09-23T14:51:39.968599-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT04NEBUF-BUF",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9b-f660-761f-9132-55482d8f8faa",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT04NEBUF-BUF",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.6800",
+      "best_ask": "0.7100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5060.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.6000",
+            "2.00"
+          ],
+          [
+            "0.6600",
+            "12878.52"
+          ],
+          [
+            "0.6700",
+            "12686.25"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.2700",
+            "11643.81"
+          ],
+          [
+            "0.2800",
+            "11805.48"
+          ],
+          [
+            "0.2900",
+            "11944.74"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 20,
+      "ts_et": "2026-09-23T14:51:43.132032-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT04KCLV-LV",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9c-0218-7b9d-9cb4-7aa0e8d93a03",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT04KCLV-LV",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.3000",
+      "best_ask": "0.3100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "qp_ok_but_cancel_unconfirmed",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5033.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.2800",
+            "44642.25"
+          ],
+          [
+            "0.2900",
+            "43103.25"
+          ],
+          [
+            "0.3000",
+            "41661.25"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.6700",
+            "26262.60"
+          ],
+          [
+            "0.6800",
+            "26781.98"
+          ],
+          [
+            "0.6900",
+            "27956.76"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 21,
+      "ts_et": "2026-09-23T14:51:46.399316-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT04DENSF-DEN",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9c-0dd0-71e1-8d08-3a4916230c73",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT04DENSF-DEN",
+      "queue_poll_tries": null,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.3300",
+      "best_ask": "0.3600",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "4981.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4981.00"
+          ],
+          [
+            "0.3100",
+            "26881.50"
+          ],
+          [
+            "0.3200",
+            "26041.50"
+          ],
+          [
+            "0.3300",
+            "25252.50"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.6200",
+            "21929.50"
+          ],
+          [
+            "0.6300",
+            "22522.50"
+          ],
+          [
+            "0.6400",
+            "23148.00"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 22,
+      "ts_et": "2026-09-23T14:51:49.045415-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27CINPIT-CIN",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9c-1988-7a44-abdb-87df930d20d9",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27CINPIT-CIN",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.6300",
+      "best_ask": "0.6400",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "4443.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4443.00"
+          ],
+          [
+            "0.5000",
+            "2.00"
+          ],
+          [
+            "0.6100",
+            "12294.90"
+          ],
+          [
+            "0.6200",
+            "12096.45"
+          ],
+          [
+            "0.6300",
+            "11904.75"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.3400",
+            "11110.88"
+          ],
+          [
+            "0.3500",
+            "11282.04"
+          ],
+          [
+            "0.3600",
+            "11458.04"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 23,
+      "ts_et": "2026-09-23T14:51:52.227531-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT04GBTB-TB",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9c-2540-7cc9-9fb3-b50fed2e19b2",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT04GBTB-TB",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.4700",
+      "best_ask": "0.5000",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4409.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.4500",
+            "26076.80"
+          ],
+          [
+            "0.4600",
+            "22463.22"
+          ],
+          [
+            "0.4700",
+            "16920.57"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.4800",
+            "24999.78"
+          ],
+          [
+            "0.4900",
+            "25489.62"
+          ],
+          [
+            "0.5000",
+            "26656.40"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 24,
+      "ts_et": "2026-09-23T14:51:55.380294-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI21",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9c-30f8-7152-b251-8daa128e6eb5",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI21",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.1100",
+      "best_ask": "0.1200",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4339.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.0700",
+            "223809.30"
+          ],
+          [
+            "0.0800",
+            "193749.69"
+          ],
+          [
+            "0.0900",
+            "174073.90"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.8100",
+            "1754.38"
+          ],
+          [
+            "0.8200",
+            "1851.84"
+          ],
+          [
+            "0.8300",
+            "1960.78"
+          ],
+          [
+            "0.8500",
+            "68888.82"
+          ],
+          [
+            "0.8600",
+            "85713.84"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 25,
+      "ts_et": "2026-09-23T14:51:58.698630-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT01PITCLE-PIT",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9c-3cb0-7bca-b4f2-bf9997eb2c34",
+      "create_http": 201,
+      "queue_position_fp": null,
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT01PITCLE-PIT",
+      "queue_poll_tries": null,
+      "cancel_http": 410,
+      "cancel_confirmed": false,
+      "fill_count": "0.00",
+      "best_bid": "0.5600",
+      "best_ask": "0.5700",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "4208.00"
+      },
+      "failure_mode": "queue_null_http_200",
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": null,
+      "success": false,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "4208.00"
+          ],
+          [
+            "0.5400",
+            "27468.96"
+          ],
+          [
+            "0.5500",
+            "27272.70"
+          ],
+          [
+            "0.5600",
+            "27672.73"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.4100",
+            "21640.84"
+          ],
+          [
+            "0.4200",
+            "17815.70"
+          ],
+          [
+            "0.4300",
+            "12371.10"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 26,
+      "ts_et": "2026-09-23T14:54:45.224255-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9e-c908-785f-a1e0-afc35bdea472",
+      "create_http": 201,
+      "queue_position_fp": "22650.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI5",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.5000",
+      "best_ask": "0.5100",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "22651.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "22651.00"
+          ],
+          [
+            "0.4800",
+            "89929.98"
+          ],
+          [
+            "0.4900",
+            "88093.67"
+          ],
+          [
+            "0.5000",
+            "86332.47"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.4700",
+            "88677.72"
+          ],
+          [
+            "0.4800",
+            "90383.82"
+          ],
+          [
+            "0.4900",
+            "91873.59"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 27,
+      "ts_et": "2026-09-23T14:54:49.151942-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9e-d8a8-7815-ba34-edae3b202d4c",
+      "create_http": 201,
+      "queue_position_fp": "16100.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI6",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.4700",
+      "best_ask": "0.4800",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "16101.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "16101.00"
+          ],
+          [
+            "0.4500",
+            "71481.41"
+          ],
+          [
+            "0.4600",
+            "69925.83"
+          ],
+          [
+            "0.4700",
+            "68437.80"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5000",
+            "63999.36"
+          ],
+          [
+            "0.5100",
+            "65645.09"
+          ],
+          [
+            "0.5200",
+            "67013.46"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 28,
+      "ts_et": "2026-09-23T14:54:52.800428-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9e-e848-7b37-9df0-f9522079f11a",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI15",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.2100",
+      "best_ask": "0.2200",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "15547.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.1600",
+            "30208.14"
+          ],
+          [
+            "0.1700",
+            "177450.59"
+          ],
+          [
+            "0.1800",
+            "168517.44"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.7500",
+            "13999.86"
+          ],
+          [
+            "0.7600",
+            "47221.92"
+          ],
+          [
+            "0.7700",
+            "118114.69"
+          ],
+          [
+            "0.7800",
+            "112877.93"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 29,
+      "ts_et": "2026-09-23T14:54:56.667733-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-GB",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9e-f400-7d13-bdfe-618a16315d5e",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP24ATLGB-GB",
+      "queue_poll_tries": 3,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.7000",
+      "best_ask": "0.7100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "14614.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.6000",
+            "30.00"
+          ],
+          [
+            "0.6300",
+            "2.00"
+          ],
+          [
+            "0.6800",
+            "16246.89"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.0100",
+            "13.62"
+          ],
+          [
+            "0.0800",
+            "6360.55"
+          ],
+          [
+            "0.2600",
+            "49323.18"
+          ],
+          [
+            "0.2700",
+            "62328.63"
+          ],
+          [
+            "0.2800",
+            "61286.96"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 30,
+      "ts_et": "2026-09-23T14:55:01.144178-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27KCMIA-KC",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9f-0788-7fe4-b6dc-0a32d5de5c99",
+      "create_http": 201,
+      "queue_position_fp": "8619.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27KCMIA-KC",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.8500",
+      "best_ask": "0.8600",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "8620.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "8620.00"
+          ],
+          [
+            "0.7300",
+            "2.00"
+          ],
+          [
+            "0.8300",
+            "40360.80"
+          ],
+          [
+            "0.8400",
+            "39880.41"
+          ],
+          [
+            "0.8500",
+            "39802.21"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.1200",
+            "69316.74"
+          ],
+          [
+            "0.1300",
+            "69923.05"
+          ],
+          [
+            "0.1400",
+            "70927.14"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 31,
+      "ts_et": "2026-09-23T14:55:04.870821-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27KCMIA-MIA",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9f-1728-79df-8ee3-f94341f9aa8d",
+      "create_http": 201,
+      "queue_position_fp": "7798.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27KCMIA-MIA",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.1400",
+      "best_ask": "0.1500",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "7799.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7799.00"
+          ],
+          [
+            "0.1200",
+            "295871.44"
+          ],
+          [
+            "0.1300",
+            "273076.65"
+          ],
+          [
+            "0.1400",
+            "254760.58"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.8300",
+            "233332.82"
+          ],
+          [
+            "0.8400",
+            "247915.08"
+          ],
+          [
+            "0.8500",
+            "264442.64"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 32,
+      "ts_et": "2026-09-23T14:55:08.815668-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9f-26c8-7f28-94f0-94d4cea30526",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP24ATLGB-ATL",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.2800",
+      "best_ask": "0.2900",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "7481.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.2600",
+            "101281.16"
+          ],
+          [
+            "0.2700",
+            "98764.80"
+          ],
+          [
+            "0.2800",
+            "96497.18"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.1000",
+            "19354.83"
+          ],
+          [
+            "0.6800",
+            "46424.83"
+          ],
+          [
+            "0.6900",
+            "81719.76"
+          ],
+          [
+            "0.7000",
+            "83888.05"
+          ],
+          [
+            "0.7100",
+            "11040.20"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 33,
+      "ts_et": "2026-09-23T14:55:12.557878-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9f-3280-7f6b-bb82-dec56ff76df7",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI11",
+      "queue_poll_tries": 1,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.2800",
+      "best_ask": "0.2900",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5903.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.2600",
+            "75640.36"
+          ],
+          [
+            "0.2700",
+            "72839.04"
+          ],
+          [
+            "0.2800",
+            "70237.14"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.6700",
+            "3030.30"
+          ],
+          [
+            "0.6800",
+            "29687.31"
+          ],
+          [
+            "0.6900",
+            "59139.30"
+          ],
+          [
+            "0.7000",
+            "57777.20"
+          ],
+          [
+            "0.7100",
+            "30381.64"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 34,
+      "ts_et": "2026-09-23T14:55:15.683896-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9f-3e38-702f-8fb5-7b1d1cdfdc98",
+      "create_http": 201,
+      "queue_position_fp": "5862.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI2",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.6300",
+      "best_ask": "0.6400",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "5863.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5863.00"
+          ],
+          [
+            "0.6100",
+            "27868.44"
+          ],
+          [
+            "0.6200",
+            "35482.92"
+          ],
+          [
+            "0.6300",
+            "34920.60"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.3200",
+            "4656.71"
+          ],
+          [
+            "0.3300",
+            "35322.50"
+          ],
+          [
+            "0.3400",
+            "42423.36"
+          ],
+          [
+            "0.3500",
+            "38226.96"
+          ],
+          [
+            "0.3600",
+            "3878.33"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 35,
+      "ts_et": "2026-09-23T14:55:19.572151-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLSPREAD-26SEP28PHICHI-PHI8",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0100",
+      "count": "1.00",
+      "order_id": "01a0cf9f-4dd8-74ee-ba98-a86a16ff755d",
+      "create_http": 201,
+      "queue_position_fp": "5620.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLSPREAD-26SEP28PHICHI-PHI8",
+      "queue_poll_tries": 2,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.3700",
+      "best_ask": "0.3800",
+      "l2_top_at_limit": {
+        "price": "0.0100",
+        "size": "5621.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5621.00"
+          ],
+          [
+            "0.3400",
+            "54411.09"
+          ],
+          [
+            "0.3500",
+            "60476.13"
+          ],
+          [
+            "0.3600",
+            "70369.92"
+          ],
+          [
+            "0.3700",
+            "18468.45"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5700",
+            "7751.80"
+          ],
+          [
+            "0.5800",
+            "19444.18"
+          ],
+          [
+            "0.5900",
+            "28861.50"
+          ],
+          [
+            "0.6000",
+            "49582.54"
+          ],
+          [
+            "0.6100",
+            "38034.15"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 36,
+      "ts_et": "2026-09-23T14:55:23.388761-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26SEP27HOUIND-IND",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9f-5d78-734c-85d0-5e724829e4be",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26SEP27HOUIND-IND",
+      "queue_poll_tries": 1,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.4200",
+      "best_ask": "0.4400",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "canceled",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5098.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.4000",
+            "22082.98"
+          ],
+          [
+            "0.4100",
+            "21544.50"
+          ],
+          [
+            "0.4200",
+            "21031.46"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.5400",
+            "18840.12"
+          ],
+          [
+            "0.5500",
+            "19259.24"
+          ],
+          [
+            "0.5600",
+            "19696.56"
+          ]
+        ]
+      }
+    },
+    {
+      "sample_id": 37,
+      "ts_et": "2026-09-23T14:55:26.524235-04:00",
+      "host": "https://demo-api.kalshi.co",
+      "ticker": "KXNFLGAME-26OCT04NEBUF-BUF",
+      "market_exchange_index": 0,
+      "side": "bid",
+      "limit_price": "0.0200",
+      "count": "1.00",
+      "order_id": "01a0cf9f-6930-7252-ab61-149817a0cdaf",
+      "create_http": 201,
+      "queue_position_fp": "0.00",
+      "queue_http": 200,
+      "queue_endpoint_used": "GET /trade-api/v2/portfolio/orders/queue_positions?market_tickers=KXNFLGAME-26OCT04NEBUF-BUF",
+      "queue_poll_tries": 3,
+      "cancel_http": 200,
+      "cancel_confirmed": true,
+      "fill_count": "0.00",
+      "best_bid": "0.6800",
+      "best_ask": "0.7100",
+      "l2_top_at_limit": {
+        "price": "0.0200",
+        "size": "1.00"
+      },
+      "failure_mode": null,
+      "abs_err_contracts": null,
+      "signed_bias": null,
+      "brier": null,
+      "note": "pass2_retry_poll",
+      "success": true,
+      "final_status": "resting",
+      "l2_snapshot": {
+        "http": 200,
+        "yes_dollars_top5": [
+          [
+            "0.0100",
+            "5060.00"
+          ],
+          [
+            "0.0200",
+            "1.00"
+          ],
+          [
+            "0.6000",
+            "2.00"
+          ],
+          [
+            "0.6600",
+            "12878.52"
+          ],
+          [
+            "0.6700",
+            "12686.25"
+          ]
+        ],
+        "no_dollars_top5": [
+          [
+            "0.2700",
+            "11643.81"
+          ],
+          [
+            "0.2800",
+            "11805.48"
+          ],
+          [
+            "0.2900",
+            "11944.74"
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,16 +1,21 @@
 """R3-P2 queue_position sample ingest.
 
 The series source is the operator desk JSON at DESK_SERIES_PATH:
-`{meta, samples[]}`. It is not NDJSON. queue_position_fp on each sample
-must match the batch `queue_positions` entry with the same order_id.
+`{meta, samples[]}`. It is not NDJSON. When that document contains a
+`queue_positions` batch, each sample `queue_position_fp` must match the
+batch entry with the same order_id. The authentic desk file has no
+batch array. The loader does not create one. Each sample's
+`queue_endpoint_used` is the recorded batch market_tickers query.
+Null `queue_position_fp` values stay null.
 
 sample_id 0 is cross-checked against the first-poll fixture
-(queue_position_fp 4207.00, ticker KXNFLGAME-26OCT01PITCLE-PIT, cancel,
-fill absent).
+(queue_position_fp 4207.00, ticker KXNFLGAME-26OCT01PITCLE-PIT, cancel
+confirmed, fill absent). Other rows may have an unconfirmed cancel.
+A positive fill is refused.
 
 abs_err_contracts, signed_bias, and brier stay null on every sample and
 in the freeze. results, pnl, mz, and roi stay null. Status is
-SAMPLE_INGESTED_CALIBRATION_NOT_RUN.
+SAMPLE_INGESTED_CALIBRATION_NOT_RUN. Ingest is not a calibration score.
 
 This module does not invent missing sample bodies, does not place live
 orders, and does not retune Q6-000.
@@ -42,6 +47,12 @@ EXPERIMENT_ID = 'R3-P2-QUEUE-POSITION'
 FEATURE_FAMILY = 'R3-P2'
 STATUS = 'SAMPLE_INGESTED_CALIBRATION_NOT_RUN'
 HOST = 'demo-api.kalshi.co'
+SERIES_SHA256 = '74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4'
+SAMPLES_N = 38
+N_SUCCESS_INCLUDING_PRIOR = 17
+N_SUCCESS_NEW_TOTAL = 16
+LEFTOVER_RESTING = 'no'
+NULL_QUEUE_POSITION_N = 18
 TICKER = 'KXNFLGAME-26OCT01PITCLE-PIT'
 QUEUE_POSITION_FP = '4207.00'
 VERDICT = 'POLL_OK'
@@ -237,17 +248,44 @@ def _leftover_ok(value):
 
 
 def _host_ok(value):
+    """demo-api.kalshi.co only. The series records that host as an https URL."""
     if value is None:
         return True
-    return value == HOST
+    if not isinstance(value, str):
+        return False
+    text = value.strip()
+    if text == HOST:
+        return True
+    if '://' in text:
+        rest = text.split('://', 1)[1]
+        hostname = rest.split('/', 1)[0].split(':', 1)[0]
+        return hostname == HOST
+    return False
 
 
-def _cancel_not_fill(sample):
+def _quantity_is_zero(value):
+    if value is None or value is False or value == '':
+        return True
+    if value is True:
+        return False
+    try:
+        return Decimal(str(value)) == 0
+    except Exception:
+        return False
+
+
+def _fill_absent(sample):
+    """A zero fill_count is fill-absent. A positive fill is refused."""
     if sample.get('is_fill') is True:
-        raise IngestError('fill')
-    if sample.get('fill') not in (None, False, 0, ''):
-        if sample.get('fill') is not None:
-            raise IngestError('fill')
+        return False
+    if 'fill' in sample and not _quantity_is_zero(sample.get('fill')):
+        return False
+    if 'fill_count' in sample and not _quantity_is_zero(sample.get('fill_count')):
+        return False
+    return True
+
+
+def _cancel_confirmed(sample):
     flags = (
         sample.get('order_canceled_clean'),
         sample.get('cancel_confirmed'),
@@ -258,11 +296,12 @@ def _cancel_not_fill(sample):
     status_cancel = isinstance(status, str) and status.lower() in (
         'canceled', 'cancelled', 'cancel', 'canceled_clean', 'cancel_confirmed',
     )
-    if True in flags or status_cancel:
-        return True
-    if sample.get('is_fill') is False and sample.get('order_canceled_clean') is True:
-        return True
-    raise IngestError('cancel')
+    return True in flags or status_cancel
+
+
+def _assert_not_fill(sample):
+    if not _fill_absent(sample):
+        raise IngestError('fill')
 
 
 def _queue_position_index(payload):
@@ -274,7 +313,7 @@ def _queue_position_index(payload):
     elif isinstance(payload.get('meta'), dict) and 'queue_positions' in payload['meta']:
         batch = payload['meta']['queue_positions']
     if batch is None:
-        raise IngestError('queue_positions')
+        return None
     index = {}
     if isinstance(batch, dict):
         rows = batch.items()
@@ -296,8 +335,31 @@ def _assert_sample_nulls(sample):
             raise CalibrationNotRun(key)
 
 
+def _assert_recorded_queue_position(sample, index):
+    """Match a batch when one was stored. Do not invent a batch or a position."""
+    order_id = str(sample['order_id'])
+    recorded = sample.get('queue_position_fp')
+    if index is None:
+        if recorded is not None:
+            _norm_fp(recorded)
+        endpoint = sample.get('queue_endpoint_used')
+        if endpoint is not None:
+            if not isinstance(endpoint, str):
+                raise IngestError('queue_endpoint_used')
+            if 'queue_positions' not in endpoint or 'market_tickers=' not in endpoint:
+                raise IngestError('queue_endpoint_used')
+            ticker = sample.get('ticker')
+            if isinstance(ticker, str) and ticker not in endpoint:
+                raise IngestError('queue_endpoint_used')
+        return
+    if order_id not in index:
+        raise IngestError('order_id unmatched')
+    if _norm_fp(recorded) != _norm_fp(index[order_id]):
+        raise IngestError('queue_position_fp mismatch')
+
+
 def assert_series_document(payload, first_poll=None):
-    """Pin {meta, samples[]}. Match queue_position_fp by order_id. Keep errors null."""
+    """Pin {meta, samples[]}. Keep estimate fields null. Do not invent rows."""
     if not isinstance(payload, dict):
         raise IngestError('series schema')
     if 'samples' not in payload or 'meta' not in payload:
@@ -327,14 +389,10 @@ def assert_series_document(payload, first_poll=None):
         seen.add(sample_id)
         if 'order_id' not in sample or sample['order_id'] in (None, ''):
             raise IngestError('order_id')
-        order_id = str(sample['order_id'])
-        if order_id not in index:
-            raise IngestError('order_id unmatched')
-        if _norm_fp(sample.get('queue_position_fp')) != _norm_fp(index[order_id]):
-            raise IngestError('queue_position_fp mismatch')
+        _assert_recorded_queue_position(sample, index)
         if not _host_ok(sample.get('host')):
             raise IngestError('host')
-        _cancel_not_fill(sample)
+        _assert_not_fill(sample)
         _assert_sample_nulls(sample)
         assert_no_secrets(sample)
         if sample_id == 0:
@@ -345,6 +403,8 @@ def assert_series_document(payload, first_poll=None):
         raise IngestError('sample_id 0 ticker')
     if _norm_fp(prior.get('queue_position_fp')) != _norm_fp(QUEUE_POSITION_FP):
         raise IngestError('sample_id 0 queue_position_fp')
+    if not _cancel_confirmed(prior) or not _fill_absent(prior):
+        raise IngestError('sample_id 0 cancel')
     if first_poll is not None:
         if _norm_fp(first_poll.get('queue_position_fp')) != _norm_fp(prior.get('queue_position_fp')):
             raise IngestError('sample_id 0 cross-check')
@@ -352,11 +412,23 @@ def assert_series_document(payload, first_poll=None):
             raise IngestError('sample_id 0 cross-check')
         if first_poll.get('is_fill') is not False:
             raise IngestError('sample_id 0 cross-check')
+        if first_poll.get('order_canceled_clean') is not True:
+            raise IngestError('sample_id 0 cross-check')
+    if any('success' in sample for sample in samples):
+        successes = sum(1 for sample in samples if sample.get('success') is True)
+        stamped = meta.get('n_success_including_prior')
+        if stamped is not None and successes != stamped:
+            raise IngestError('n_success_including_prior')
+    null_queue_position_n = sum(
+        1 for sample in samples if sample.get('queue_position_fp') is None
+    )
     return {
         'samples_n': len(samples),
         'n_success_including_prior': meta.get('n_success_including_prior'),
         'n_success_new_total': meta.get('n_success_new_total'),
         'leftover_resting': meta.get('leftover_resting'),
+        'queue_positions_batch_present': index is not None,
+        'null_queue_position_n': null_queue_position_n,
         'sample_id_0_queue_position_fp': _fp_text(prior.get('queue_position_fp')),
         'sample_id_0_order_id': str(prior['order_id']),
     }
@@ -433,22 +505,37 @@ def load_series(path=None, first_poll=None):
     return summary
 
 
-def embed_desk_series(dest=None):
-    """Copy a sanitized desk series into fixtures. Refuse a missing source."""
-    if not DESK_SERIES_PATH.is_file():
-        raise SeriesSourceAbsent(str(DESK_SERIES_PATH))
-    payload = _strip_secrets(load_json(DESK_SERIES_PATH))
+def embed_desk_series(dest=None, source=None):
+    """Copy desk bytes into fixtures. Refuse a missing source.
+
+    Secret keys are dropped when present, and that rewrite changes the
+    digest. The authentic desk file has none, so the fixture keeps the
+    desk bytes and the desk sha256.
+    """
+    origin = DESK_SERIES_PATH if source is None else Path(source)
+    if not origin.is_file():
+        raise SeriesSourceAbsent(str(origin))
+    raw_in = origin.read_bytes()
+    payload = load_json_text(raw_in.decode('utf-8'))
+    stripped = _strip_secrets(payload)
     poll = load_first_poll()
-    assert_series_document(payload, first_poll=poll)
-    raw = (json.dumps(payload, indent=2, sort_keys=True) + '\n').encode('utf-8')
+    assert_series_document(stripped, first_poll=poll)
+    if stripped != payload:
+        raw = (json.dumps(stripped, indent=2, sort_keys=True) + '\n').encode('utf-8')
+        bytes_rewritten = True
+    else:
+        raw = raw_in
+        bytes_rewritten = False
     target = SERIES_PATH if dest is None else Path(dest)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes(raw)
     return {
         'sha256': sha256_bytes(raw),
+        'desk_sha256': sha256_bytes(raw_in),
         'bytes': len(raw),
         'samples_n': len(payload['samples']),
         'path': str(target),
+        'bytes_rewritten': bytes_rewritten,
     }
 
 
@@ -484,12 +571,40 @@ def ingest():
     assert_null_scorecard(empty)
     if frozen.get('live_orders') is not False or frozen.get('signal_retune_000') is not False:
         raise IngestError('freeze flags')
+    if DESK_SERIES_PATH.is_file() and SERIES_PATH.is_file():
+        if sha256_file(DESK_SERIES_PATH) != sha256_file(SERIES_PATH):
+            raise IngestError('fixture sha256 diverged from desk series')
     series = None
     series_error = None
     try:
         series = load_series(first_poll=poll)
     except SeriesSourceAbsent as exc:
         series_error = str(exc)
+    if series is not None:
+        if series['sha256'] != SERIES_SHA256:
+            raise IngestError('series_sha256')
+        if series['samples_n'] != SAMPLES_N:
+            raise IngestError('samples_n')
+        if series['n_success_including_prior'] != N_SUCCESS_INCLUDING_PRIOR:
+            raise IngestError('n_success_including_prior')
+        if series['n_success_new_total'] != N_SUCCESS_NEW_TOTAL:
+            raise IngestError('n_success_new_total')
+        if series['leftover_resting'] != LEFTOVER_RESTING:
+            raise IngestError('leftover_resting')
+        if series['null_queue_position_n'] != NULL_QUEUE_POSITION_N:
+            raise IngestError('null queue_position_fp')
+        if series['queue_positions_batch_present'] is not False:
+            raise IngestError('queue_positions batch was not in the desk file')
+        if frozen.get('series_sha256') != SERIES_SHA256:
+            raise IngestError('frozen series_sha256')
+        if frozen.get('samples_n') != SAMPLES_N:
+            raise IngestError('frozen samples_n')
+        if frozen.get('series_embedded') is not True:
+            raise IngestError('frozen series_embedded')
+        if frozen.get('desk_bytes_in_checkout') is not True:
+            raise IngestError('frozen desk bytes')
+        if frozen.get('calibration_run') is not False:
+            raise IngestError('calibration_run')
     report = {
         'experiment_id': EXPERIMENT_ID,
         'feature_family': FEATURE_FAMILY,
@@ -509,6 +624,9 @@ def ingest():
         'n_success_new_total': None if series is None else series['n_success_new_total'],
         'series_sha256': None if series is None else series['sha256'],
         'leftover_resting': None if series is None else series['leftover_resting'],
+        'null_queue_position_n': None if series is None else series['null_queue_position_n'],
+        'queue_positions_batch_present': None if series is None else series['queue_positions_batch_present'],
+        'calibration_run': False,
         'queue_label': label,
         'scorecard': scorecard,
         'live_orders': False,

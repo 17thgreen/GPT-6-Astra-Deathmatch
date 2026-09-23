@@ -15,12 +15,19 @@ null?
 | Source | Role |
 |---|---|
 | `fixtures/first_demo_queue_poll.json` | sample_id 0 cross-check. Verdict `POLL_OK`, ticker `KXNFLGAME-26OCT01PITCLE-PIT`, `queue_position_fp` `"4207.00"`, clean cancel, fill absent, L2 top `0.01`, size narrative `~4208` |
-| `lab/governance/astra/packets/r3_p2_queue_position/results/demo_queue_sample_series.json` | Series body. Schema `{meta, samples[]}`. Narrative `MECHANIC_DEMO_QUEUE_SAMPLE_SERIES_2026-09-23.md` |
+| `lab/governance/astra/packets/r3_p2_queue_position/results/demo_queue_sample_series.json` | Series body. Schema `{meta, samples[]}`. sha256 `74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4`. Narrative `MECHANIC_DEMO_QUEUE_SAMPLE_SERIES_2026-09-23.md` |
+| `fixtures/demo_queue_sample_series.json` | Same bytes as the desk file. No secret keys were present, so the copy was not reformatted |
 
-The desk series file is not in this checkout. `samples[]` is not invented.
-`meta.n_success_including_prior` and `meta.n_success_new_total` are recorded
-from the file when it is present. `leftover_resting` must be false or `no`.
-Host `demo-api.kalshi.co` only.
+The desk file is on this checkout. `samples_n` is 38. `samples[]` was not
+invented. The file has no `queue_positions` array, and the loader does not
+add one. Eighteen `queue_position_fp` values are null and stay null. When a
+document does contain `queue_positions`, each sample matches that batch by
+`order_id`. `meta.n_success_including_prior` is 17 and
+`meta.n_success_new_total` is 16, the file stamps.
+`leftover_resting` is `no`. `final_resting_ids` is empty. Twenty-eight
+samples have `final_status` `resting`; those rows are not relabeled and are
+not scored. Host `demo-api.kalshi.co` only. Series rows record
+`https://demo-api.kalshi.co`.
 
 ## Rails cite
 

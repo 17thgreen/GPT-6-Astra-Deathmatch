@@ -8,5 +8,6 @@
   "pnl": null,
   "mz": null,
   "roi": null,
-  "note": "Null until a declared calibration run. Sample ingest is not an estimate-error score and not profit."
+  "calibration_run": false,
+  "note": "Null until a declared calibration run. The series digest is pinned in FROZEN_EXPERIMENT.json. Sample ingest is not an estimate-error score and not profit."
 }
