@@ -1,0 +1,11 @@
+{
+  "experiment": "C5-KXBTC15M-HONESTY-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "fee_delta_vs_inherited_model": null,
+  "turnover_stress_flag": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema/pins only. Not live crypto trading."
+}

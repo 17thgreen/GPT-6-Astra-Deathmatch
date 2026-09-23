@@ -1,0 +1,16 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "Not a live GET. Not a panel fill. Instrument fields stay null.",
+  "windows": [
+    {
+      "event_ticker": "KXBTC15M-SYN-A",
+      "market_ticker": "KXBTC15M-SYN-A-00",
+      "series_ticker": "KXBTC15M"
+    },
+    {
+      "event_ticker": "KXBTC15M-SYN-B",
+      "market_ticker": "KXBTC15M-SYN-B-15",
+      "series_ticker": "KXBTC15M"
+    }
+  ]
+}
