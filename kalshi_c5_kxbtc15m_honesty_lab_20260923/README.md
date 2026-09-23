@@ -1,7 +1,7 @@
 # C5 KXBTC15M fee and queue honesty stress
 
-Status: hypothesis committed. Source is not in this commit. No unit outcome
-is recorded here. `EXPERIMENT_SPEC.md` is the hypothesis.
+Status: hypothesis committed, then source frozen. No unit outcome is recorded
+in this file. `EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `freshness_gap_sec`,
 `queue_bin_mismatch_rate`, `fee_delta_vs_inherited_model`, and
@@ -25,4 +25,15 @@ Panel stub: `lab/astra-capture/c5-kxbtc15m/panel_stub.json`,
 
 Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
-No Logan keys. No live orders.
+Helpers are imported from the Examiner hygiene join and checked against the
+C1 queue-bin helper. Those trees are not edited.
+
+From this directory, Python 3.12 standard library:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator
+```
+
+No Logan keys. No live orders. A passing unit run, once recorded, is not an
+Examiner score.
+
