@@ -1,7 +1,7 @@
 {
   "experiment": "R3-P4-L2-SHAPE-SF1-SF2",
   "directory": "kalshi_r3_p4_l2_shape_lab_20260922",
-  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
   "frozen_at": "2026-09-23T00:06:01Z",
   "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results and pnl stay null. This timestamp is the hypothesis freeze, not a test run.",
   "depends_on": [
@@ -46,7 +46,14 @@
     "fixtures/l2_shape_fixtures.json": "893821ef7a5511e12177912957d10676467947d6da0cd522a28b31a44a02af18",
     "results/EMPTY_RESULTS.json": "3a72535681fdaca867dd6c8827ef2b9044147b610d725641421e9b7f9a59eeb9"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "f7eca822f8c95f70b82f139062e50d20317bbd46cf3178a63bc8643b0b884edb",
+    "shape.py": "7f48f66c20a5d1270e571581fc921b3297df6247483a1b22d8048cd2e4f21a48",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_shape.py": "97e736cd68ebdad0f3f137b6174d4e2525f99d734e4436c07fc370db629d6774"
+  },
   "results": null,
-  "pnl": null
+  "pnl": null,
+  "source_frozen_at": "2026-09-23T00:09:03Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results and pnl remain null."
 }
