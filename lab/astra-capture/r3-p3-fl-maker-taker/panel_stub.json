@@ -1,0 +1,654 @@
+{
+  "schema_id": "astra.registry.r3_p3_fl_maker_taker_panel.v0",
+  "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "packet_id": "R3-P3-FL-MAKER-TAKER",
+  "purpose": "measurement_gate",
+  "cohort_kind": "c3_weather_first_panel_settled_tape_seed",
+  "freeze_cite": "lab/governance/astra/packets/R3-P3_FL_MAKER_TAKER_BANDS_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7",
+  "c3_prefer_cite": "lab/governance/astra/packets/C3_KXHIGHNY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "collector_stub_cite": "lab/governance/astra/packets/R3-P3_COLLECTOR_STUB_2026-09-22.md",
+  "admitted_at": null,
+  "stub_status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:19:20Z",
+  "stubbed_at_et": "2026-09-22 20:19:20 EDT",
+  "admit_gate": "WAIT_CLOCK_JOIN_CONDUCTOR \u2014 do not run admit.py; stub only; no backfill",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_channel_for_later_roi": "R1-P1 \u2014 Collector does NOT compute ROI",
+    "bands_registry": "astra.r3p3.fl_maker_taker.price_bands_10c.v0",
+    "bands_pre_registered_before_outcome_join": true,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_lee_ready": true,
+    "no_live_orders": true,
+    "refuse_paper_26pct_as_evidence": true
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/{ticker}",
+      "GET /markets/{ticker}",
+      "GET /markets?series_ticker=...&status=settled&limit=small",
+      "GET /events?series_ticker=...&status=settled&limit=small",
+      "GET /markets/trades?ticker=...&limit=small"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host",
+      "ADMIT-1 prospective recorder routes",
+      "Lee-Ready aggressor inference"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_pit_cle_poll_steal": true,
+      "no_c1_budget_steal": true,
+      "no_recorder_steal_admit1": true,
+      "hold_r3_p2": true
+    },
+    "throttle_policy": "sleep \u22658s between GETs; \u226520\u201330s after 429; small limits",
+    "schedule": {
+      "stub_only": true,
+      "recorder_started": false,
+      "admit_py_run": false
+    }
+  },
+  "series_preference": {
+    "preferred": [
+      "KXHIGHNY",
+      "KXHIGHCHI"
+    ],
+    "preferred_reason": "C3 weather first-panel for R3-P3 (Conductor); Climate and Weather",
+    "also_probed_econ": [
+      "KXFEDDECISION",
+      "KXGDP"
+    ],
+    "avoid_frozen_first_panel": [
+      "KXMLBGAME",
+      "KXNCAAFGAME",
+      "KXMVECROSSCATEGORY",
+      "KXNFLPASSYDS",
+      "KXNFLRECYDS",
+      "KXNFLRSHYDS"
+    ]
+  },
+  "cohort_counts": {
+    "series_n": 2,
+    "events_n": 2,
+    "markets_n": 3,
+    "trades_sampled_n": 15,
+    "trades_recent_extra_n": 3,
+    "settled_markets_resolved_n": 0,
+    "note": "Seed is C3 weather pre-settlement tape with native taker fields. Settled listing 429 \u2014 historical settled tickers not resolved this stub. Resolution join deferred."
+  },
+  "events": [
+    {
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "market_tickers": [
+        "KXHIGHNY-26SEP22-B67.5",
+        "KXHIGHNY-26SEP22-T70"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "r3p3_weather_eligible": true,
+      "c3_cite": "C3-KXHIGHNY-MEAS prefer weather first-panel"
+    },
+    {
+      "event_ticker": "KXHIGHCHI-26SEP22",
+      "series_ticker": "KXHIGHCHI",
+      "category_slice": "weather",
+      "market_tickers": [
+        "KXHIGHCHI-26SEP22-B64.5"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "r3p3_weather_eligible": true,
+      "c3_cite": "C3-KXHIGHNY-MEAS prefer weather first-panel"
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXHIGHNY-26SEP22-B67.5",
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "last_price_dollars_raw_get": "0.9900",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+      "r3p3_weather_eligible": true,
+      "resolution_join_status": "PRE_SETTLEMENT \u2014 result empty; close_time future vs stub clock; not joined",
+      "live_get_artifact": "packets/r3_p3_fl_maker_taker/live_get_2026-09-22/market_KXHIGHNY_26SEP22_B67_5.json"
+    },
+    {
+      "market_ticker": "KXHIGHNY-26SEP22-T70",
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "last_price_dollars_raw_get": "0.0100",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+      "r3p3_weather_eligible": true,
+      "resolution_join_status": "PRE_SETTLEMENT \u2014 result empty; close_time future vs stub clock; not joined",
+      "live_get_artifact": "packets/r3_p3_fl_maker_taker/live_get_2026-09-22/market_KXHIGHNY_26SEP22_T70.json"
+    },
+    {
+      "market_ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "event_ticker": "KXHIGHCHI-26SEP22",
+      "series_ticker": "KXHIGHCHI",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T06:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "last_price_dollars_raw_get": "0.9900",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+      "r3p3_weather_eligible": true,
+      "resolution_join_status": "PRE_SETTLEMENT \u2014 result empty; close_time future vs stub clock; not joined",
+      "live_get_artifact": "packets/r3_p3_fl_maker_taker/live_get_2026-09-22/market_KXHIGHCHI_26SEP22_B64_5.json"
+    }
+  ],
+  "trades_sample": [
+    {
+      "trade_id": "0723e4b4-6e69-9687-0f6d-4008aadcbfc6",
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "created_time": "2026-09-23T00:04:09.642574Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "2.18",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e4b9-f409-90a7-fad9-ba030ace1f0e",
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "created_time": "2026-09-23T00:01:02.144196Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "7.31",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e4cf-bc49-a45f-c753-f4b14063b1d6",
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "created_time": "2026-09-22T23:57:08.174238Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "3.71",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e4ed-eb49-9c6f-4ec0-3ec7756e944e",
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "created_time": "2026-09-22T23:49:00.133846Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "5.35",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e718-f069-8a83-c914-2cf96cc51b06",
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "created_time": "2026-09-22T23:34:33.316949Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "380.18",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e1ff-5c69-b02e-aa45-1e0cff96d64a",
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "created_time": "2026-09-22T20:33:16.937298Z",
+      "yes_price_dollars": "0.0100",
+      "no_price_dollars": "0.9900",
+      "count_fp": "0.93",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "taker_side": "yes",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e061-8fd9-9d72-42c7-9974d9ac42b8",
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "created_time": "2026-09-22T20:01:05.813849Z",
+      "yes_price_dollars": "0.0100",
+      "no_price_dollars": "0.9900",
+      "count_fp": "0.56",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e061-8fd9-8222-0dfc-2903b54d9130",
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "created_time": "2026-09-22T20:01:05.807112Z",
+      "yes_price_dollars": "0.0100",
+      "no_price_dollars": "0.9900",
+      "count_fp": "5.00",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e07b-2ac1-96cc-ab8e-f78e7353d7d5",
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "created_time": "2026-09-22T20:01:05.801357Z",
+      "yes_price_dollars": "0.0100",
+      "no_price_dollars": "0.9900",
+      "count_fp": "19.56",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e061-8fd9-93b6-9ee5-b0be8079e0e0",
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "created_time": "2026-09-22T20:01:05.801357Z",
+      "yes_price_dollars": "0.0100",
+      "no_price_dollars": "0.9900",
+      "count_fp": "5.44",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e51b-cae9-b629-e474-5cdd1bb53235",
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "created_time": "2026-09-23T00:00:48.215557Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "1.00",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e62f-55e9-bad1-cb48-7fbbacaa10ed",
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "created_time": "2026-09-22T23:05:12.567152Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "12.37",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e7af-4079-b546-6737-122f29a02a8f",
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "created_time": "2026-09-22T22:14:34.137954Z",
+      "yes_price_dollars": "0.9800",
+      "no_price_dollars": "0.0200",
+      "count_fp": "1.00",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e746-dff9-887f-dbaf-9f56384e3d6c",
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "created_time": "2026-09-22T21:46:36.715949Z",
+      "yes_price_dollars": "0.9900",
+      "no_price_dollars": "0.0100",
+      "count_fp": "2.01",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "taker_side": "yes",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    },
+    {
+      "trade_id": "0723e74e-3039-b973-d8ca-8fd91ebac320",
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "created_time": "2026-09-22T21:41:23.069324Z",
+      "yes_price_dollars": "0.9800",
+      "no_price_dollars": "0.0200",
+      "count_fp": "1.00",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "is_block_trade": false,
+      "aggressor_inference": null,
+      "lee_ready": "REFUSED",
+      "band_id": null,
+      "maker_vs_taker_slice": null,
+      "post_fee_roi": null
+    }
+  ],
+  "taker_field_map": {
+    "canonical": [
+      "taker_outcome_side",
+      "taker_book_side"
+    ],
+    "deprecated_alias": [
+      "taker_side"
+    ],
+    "not_present_on_trade": [
+      "taker_action"
+    ],
+    "audit": {
+      "taker_outcome_side": {
+        "present_n": 15,
+        "missing_n": 0
+      },
+      "taker_book_side": {
+        "present_n": 15,
+        "missing_n": 0
+      },
+      "taker_side": {
+        "present_n": 15,
+        "missing_n": 0,
+        "note": "deprecated; map honestly if present"
+      },
+      "taker_action": {
+        "present_n": 0,
+        "missing_n": 15,
+        "note": "not a Kalshi Trade schema field \u2014 absent expected"
+      }
+    },
+    "native_taker_fields_present": true,
+    "lee_ready": "REFUSED \u2014 native taker_outcome_side + taker_book_side present on all sampled trades; do not infer aggressor"
+  },
+  "bands_registry": {
+    "registry_id": "astra.r3p3.fl_maker_taker.price_bands_10c.v0",
+    "pre_registered_before_outcome_join": true,
+    "registered_at_utc": "2026-09-23T00:12:45Z",
+    "bands": [
+      {
+        "band_id": "b00",
+        "label": "[0-0.10)",
+        "price_lo": 0.0,
+        "price_hi": 0.1,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b01",
+        "label": "[0.10-0.20)",
+        "price_lo": 0.1,
+        "price_hi": 0.2,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b02",
+        "label": "[0.20-0.30)",
+        "price_lo": 0.2,
+        "price_hi": 0.3,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b03",
+        "label": "[0.30-0.40)",
+        "price_lo": 0.3,
+        "price_hi": 0.4,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b04",
+        "label": "[0.40-0.50)",
+        "price_lo": 0.4,
+        "price_hi": 0.5,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b05",
+        "label": "[0.50-0.60)",
+        "price_lo": 0.5,
+        "price_hi": 0.6,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b06",
+        "label": "[0.60-0.70)",
+        "price_lo": 0.6,
+        "price_hi": 0.7,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b07",
+        "label": "[0.70-0.80)",
+        "price_lo": 0.7,
+        "price_hi": 0.8,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b08",
+        "label": "[0.80-0.90)",
+        "price_lo": 0.8,
+        "price_hi": 0.9,
+        "lo_inclusive": true,
+        "hi_inclusive": false
+      },
+      {
+        "band_id": "b09",
+        "label": "[0.90-1.00]",
+        "price_lo": 0.9,
+        "price_hi": 1.0,
+        "lo_inclusive": true,
+        "hi_inclusive": true
+      }
+    ],
+    "path": "lab/astra-capture/r3-p3-fl-maker-taker/bands_registry_10c.json"
+  },
+  "measurement_objects": {
+    "MZ_mincer_zarnowitz": {
+      "spec": "Y-P = alpha + psi*P event-clustered",
+      "values": null,
+      "status": "null_until_Examiner"
+    },
+    "post_fee_ROI_by_10c_band": {
+      "fee_pin": "R1-P1 @22371178cb2663250b4762f328069571c48cb551",
+      "bands_locked": true,
+      "values_by_band": null,
+      "status": "null_until_Examiner \u2014 Collector does NOT compute ROI"
+    },
+    "maker_vs_taker_slice": {
+      "side_fields": [
+        "taker_outcome_side",
+        "taker_book_side"
+      ],
+      "values": null,
+      "status": "null_until_Examiner"
+    }
+  },
+  "http_429_notes": [
+    {
+      "name": "series_KXHIGHNY",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXHIGHNY",
+      "ts_et": "2026-09-22 20:13:00 EDT"
+    },
+    {
+      "name": "markets_settled_KXFEDDECISION",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXFEDDECISION&status=settled&limit=5",
+      "ts_et": "2026-09-22 20:13:31 EDT"
+    },
+    {
+      "name": "markets_settled_KXGDP",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXGDP&status=settled&limit=5",
+      "ts_et": "2026-09-22 20:13:52 EDT"
+    },
+    {
+      "name": "markets_settled_KXHIGHCHI",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXHIGHCHI&status=settled&limit=5",
+      "ts_et": "2026-09-22 20:14:12 EDT"
+    },
+    {
+      "name": "markets_settled_KXHIGHNY",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXHIGHNY&status=settled&limit=5",
+      "ts_et": "2026-09-22 20:14:41 EDT"
+    },
+    {
+      "name": "events_KXHIGHNY",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=KXHIGHNY&status=settled&limit=3",
+      "ts_et": "2026-09-22 20:15:33 EDT"
+    },
+    {
+      "name": "events_KXHIGHCHI",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=KXHIGHCHI&status=settled&limit=3",
+      "ts_et": "2026-09-22 20:15:59 EDT"
+    },
+    {
+      "name": "markets_settled_KXHIGHNY_lim2",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXHIGHNY&status=settled&limit=2",
+      "ts_et": "2026-09-22 20:18:26 EDT"
+    }
+  ],
+  "blocker_notes": {
+    "settled_listing": "All GET /markets?status=settled and /events?status=settled for weather/econ returned 429 this pass",
+    "prior_day_direct_tickers": "Guessed KXHIGHNY-26SEP21/20-* returned 404 \u2014 no invented settled tickers",
+    "resolution": "Seed markets still status=active; result empty; resolution join not performed",
+    "volume_oi_in_panel": "Kept null in panel (raw GET artifacts only under live_get/)"
+  },
+  "results": null,
+  "pnl": null,
+  "volume": null
+}
