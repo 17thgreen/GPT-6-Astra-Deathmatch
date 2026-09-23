@@ -1,0 +1,56 @@
+{
+  "experiment": "R3-P1-FEE-COST-VS-MODEL",
+  "packet_id": "R3-P1-FEE-COST-VS-MODEL",
+  "experiment_id": "r3_p1_fee_cost_vs_model_20260922",
+  "directory": "kalshi_r3_p1_fee_cost_lab_20260922",
+  "status": "HYPOTHESIS_FROZEN_BEFORE_SOURCE",
+  "frozen_at": "2026-09-23T00:06:37Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results, pnl, and fee_model_minus_venue_delta stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "not_a_strategy": true,
+  "depends_on": [
+    {
+      "directory": "kalshi_feebook_lab_20260922",
+      "commit": "22371178cb2663250b4762f328069571c48cb551",
+      "imported": true,
+      "copied": false,
+      "role": "order_fee, examiner_fee_channel, classify_scorecard"
+    }
+  ],
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "kalshi_capital_structure_lab_20260922",
+    "kalshi_r2p1_hygiene_000_lab_20260922",
+    "kalshi_queue_fragility_000_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "On synthetic Fill-shaped rows, does the harness score fee_model from the imported R1-P1 order_fee against venue fee_cost, and refuse a model-only completed net when fee_cost was available?",
+  "fee_model": "round_up(M*rate*C*P*(1-P))",
+  "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+  "prefer": "exchange-reported fee_cost when both fee_model and fee_cost exist",
+  "score": "fee_model_minus_venue_delta",
+  "live_orders": false,
+  "authenticated_portfolio_calls": false,
+  "signal_retune": false,
+  "q6_000_retune": false,
+  "forbid_naked_q7_fee_literals": true,
+  "forbid_invented_pnl": true,
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "d3d5039d659b33c5dacf884af1a053ec5c55e3327c94a42ba07eb84c6d64bf6f",
+    "SOURCE_PINS.json": "017532e9eb1ea364bff29933d8b70c889ad47921932eb3e4b57e482a59a1e3eb",
+    "results/EMPTY_RESULTS.json": "5c61a8e2903cda53bd9ad6eddde6466924dfddf8e4c4d5a30ec154038ddeb428"
+  },
+  "implementation_sha256": null,
+  "fee_model_minus_venue_delta": null,
+  "results": null,
+  "pnl": null
+}

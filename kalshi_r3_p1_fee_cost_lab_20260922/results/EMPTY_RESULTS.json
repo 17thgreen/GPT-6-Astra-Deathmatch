@@ -1,0 +1,7 @@
+{
+  "results": null,
+  "pnl": null,
+  "fee_model_minus_venue_delta": null,
+  "status": "EMPTY",
+  "note": "No fee-delta total and no profit are recorded here. Synthetic unit checks do not fill this file."
+}
