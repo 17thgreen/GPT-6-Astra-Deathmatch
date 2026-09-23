@@ -1,0 +1,15 @@
+{
+  "packet_id": "R3-P4-L2-SF-HARNESS",
+  "feature_family": "L2-SF",
+  "status": "FROZEN",
+  "arms": [
+    "R3P4S0",
+    "R3P4S1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "f00425261f085aef90e93b186810a0248165273f8bb923ef3597940a9e8345de",
+  "parent_freeze_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "panel_stub_sha256": "7477e023ab70c59a6739650155ddb9d77077766e3afd80443e540d60b5a86cbb",
+  "stamped_at_et": "2026-09-23T13:18:00-04:00"
+}

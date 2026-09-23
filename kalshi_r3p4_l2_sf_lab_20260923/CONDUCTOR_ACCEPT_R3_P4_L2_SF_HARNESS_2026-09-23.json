@@ -1,0 +1,55 @@
+{
+  "id": "CONDUCTOR_ACCEPT_R3_P4_L2_SF_HARNESS",
+  "status": "ACCEPT_IMPLEMENT_GO",
+  "feature_family": "L2-SF",
+  "packet_id": "R3-P4-L2-SF-HARNESS",
+  "freeze_path": "lab/governance/astra/packets/R3_P4_L2_SF_HARNESS_FREEZE_2026-09-23.md",
+  "freeze_sha256": "f00425261f085aef90e93b186810a0248165273f8bb923ef3597940a9e8345de",
+  "parent_freeze_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "panel_stub_sha256": "7477e023ab70c59a6739650155ddb9d77077766e3afd80443e540d60b5a86cbb",
+  "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+  "panel_events": 4,
+  "panel_markets": 6,
+  "admitted_at": null,
+  "knob": "shape_object",
+  "arms": [
+    "R3P4S0",
+    "R3P4S1"
+  ],
+  "arm_values": {
+    "R3P4S0": "sf1_half_spread",
+    "R3P4S1": "sf2_depth_kl"
+  },
+  "lab_dir": "kalshi_r3p4_l2_sf_lab_20260923/",
+  "results": null,
+  "pnl": null,
+  "does_not_ungate": [
+    "S2",
+    "R2-P4"
+  ],
+  "category_slice_is_arm": false,
+  "l2_cat_reopen": false,
+  "capital_structure_reopen": false,
+  "empty_ob_reopen": false,
+  "nearest_dead_card": "invent_depth_fills_EMPTY_OB_just_gated",
+  "commit_verbatim": [
+    "freeze",
+    "parent",
+    "panel_stub",
+    "live_get_ob_fixtures"
+  ],
+  "refuse": [
+    "invent_depth",
+    "invent_fills",
+    "invent_pnl",
+    "Lee-Ready",
+    "L2-CAT_reopen",
+    "PR13_dual_edit",
+    "Cap-SR/QF/PROP-LQ/SOT-ID/EMPTY-OB_reopen",
+    "000_retune",
+    "ATL@GB",
+    "live_orders"
+  ],
+  "post_empty_ob_main": "d7b935951c9ddd5e6c4d813fad69e401b6a7b6a3",
+  "stamped_at_et": "2026-09-23T13:18:00-04:00"
+}

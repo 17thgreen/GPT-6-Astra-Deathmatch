@@ -1,0 +1,33 @@
+{
+  "id": "EXAMINER_HOLD_R3_P4_L2_SF_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "R3-P4-L2-SF-HARNESS",
+  "feature_family": "L2-SF",
+  "status": "NOT_SCORED",
+  "stub_ready": false,
+  "hold": "pre-ACCEPT \u2014 file READY NOT_SCORED when PR lands",
+  "freeze_sha256": "f00425261f085aef90e93b186810a0248165273f8bb923ef3597940a9e8345de",
+  "arms": [
+    "R3P4S0",
+    "R3P4S1"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "sf1_median_half_spread_bps_by_mid_decile",
+    "sf2_l1_top10_depth_share",
+    "sf2_kl_vs_uniform_1_10",
+    "n_books",
+    "n_snapshots"
+  ],
+  "refuse": [
+    "no invent depth",
+    "no invent fills/PnL",
+    "no Lee-Ready",
+    "no L2-CAT reopen",
+    "no PR13 dual-edit into PnL",
+    "no Cap-SR/QF/PROP-LQ/SOT-ID/EMPTY-OB reopen",
+    "no 000 retune"
+  ],
+  "stamped_at_et": "2026-09-23T13:18:00-04:00"
+}
