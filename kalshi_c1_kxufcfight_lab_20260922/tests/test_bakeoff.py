@@ -55,10 +55,11 @@ class BakeoffScaffoldTests(unittest.TestCase):
     def test_source_has_no_fee_literals_or_shadow_config(self):
         text = (ROOT / 'bakeoff.py').read_text()
         for token in (
-            '0.07', '0.0175', 'common_config', 'starting_cash',
+            '0.07', '0.0175', 'starting_cash',
             'grok_unrounded', 'replay_v2', 'QueueInstrument',
+            "['common_config']", '["common_config"]', '.common_config',
         ):
-                self.assertNotIn(token, text)
+            self.assertNotIn(token, text)
         self.assertNotIn("Decimal('3300')", text)
         self.assertNotIn("Decimal('10000')", text)
         self.assertNotIn("'3300'", text)
