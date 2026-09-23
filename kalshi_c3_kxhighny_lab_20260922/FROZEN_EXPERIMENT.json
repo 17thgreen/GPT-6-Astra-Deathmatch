@@ -1,0 +1,79 @@
+{
+  "experiment": "C3-KXHIGHNY-MEAS",
+  "packet_id": "C3-KXHIGHNY-MEAS",
+  "experiment_id": "c3_kxhighny_meas_20260922",
+  "directory": "kalshi_c3_kxhighny_lab_20260922",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-23T00:47:04Z",
+  "note": "Hypothesis commit. implementation_sha256 is null until the source-freeze commit. results, pnl, MZ, and ROI stay null. This timestamp is the hypothesis freeze, not a test run.",
+  "not_a_strategy": true,
+  "panel_version": "2026-09-23.c3-kxhighny-meas-v0",
+  "collector": "READY",
+  "clock": "REFUSED",
+  "settled_n": 0,
+  "examiner": "NOT_NOW",
+  "border_rule_id": "astra.c3.kxhighny.bordering_strike.v0",
+  "github_weather_spread": "hypothesis_only",
+  "github_weather_blob_sha": "323463cd7538464dfe90ec8b6acea9c76e10ee29",
+  "algo_ported": false,
+  "depends_on": [
+    {
+      "directory": "kalshi_feebook_lab_20260922",
+      "commit": "22371178cb2663250b4762f328069571c48cb551",
+      "imported": true,
+      "copied": false,
+      "role": "reciprocal_book, order_fee"
+    },
+    {
+      "directory": "kalshi_rails_lab_20260922",
+      "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "imported": true,
+      "copied": false,
+      "role": "maker_quote_credit, judge_freshness, canonical_book_content"
+    }
+  ],
+  "later_r3_p3_panel": {
+    "preferred": true,
+    "joined_now": false
+  },
+  "does_not_modify": [
+    "kalshi_feebook_lab_20260922",
+    "kalshi_rails_lab_20260922",
+    "kalshi_capital_structure_lab_20260922",
+    "kalshi_r2p1_hygiene_000_lab_20260922",
+    "kalshi_queue_fragility_000_lab_20260922",
+    "kalshi_examiner_fee_queue_honesty_000_lab_20260922",
+    "kalshi_r3_p1_fee_cost_lab_20260922",
+    "kalshi_r3_p4_l2_shape_lab_20260922",
+    "kalshi_r3_p3_fl_maker_taker_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_paircheck_lab_20260922",
+    "nfl_prospective_recorder_20260922",
+    "nfl_adaptive_lab_20260921",
+    "nfl_timing_lab_20260921",
+    "nfl_measurement_lab_20260921",
+    "nfl_completion_lab_20260921",
+    "nfl_queue_lab_20260921",
+    "maker_replay_round2",
+    "stern_lab"
+  ],
+  "question": "On schema-only KXHIGHNY and KXHIGHCHI ladders, do bordering whole-degree strikes, the imported reciprocal book, and the maker-credit rail match the pins, while results, pnl, MZ, and ROI stay null and no settled fill is invented?",
+  "live_orders": false,
+  "authenticated_portfolio_calls": false,
+  "signal_retune": false,
+  "q6_000_retune": false,
+  "forbid_invented_pnl": true,
+  "forbid_invented_settled_fills": true,
+  "forbid_algo_port": true,
+  "specification_sha256": {
+    "EXPERIMENT_SPEC.md": "64a3b1b825c6eeb32910156ecb3022002cd63cef12416b0afc7db45e5f235296",
+    "SOURCE_PINS.json": "20ea1fe18c79caa5e8522299991ecf4b4f3bd655b3eed4f63bd7bff37018eb19",
+    "fixtures/schema_only_ladder.json": "cacc1bd2b5375714fee4d379b7ec551bb817a7ed54a7f3900e4f6210a65a0f17",
+    "results/EMPTY_RESULTS.json": "6f39868b35ec44734e3ee6f577470eee4b7a659479415353744d87bfd239f08a"
+  },
+  "implementation_sha256": null,
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "ROI": null
+}

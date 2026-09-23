@@ -1,0 +1,75 @@
+{
+  "packet_id": "C3-KXHIGHNY-MEAS",
+  "as_of": "2026-09-23T00:47:04Z",
+  "not_a_strategy": true,
+  "panel_version": "2026-09-23.c3-kxhighny-meas-v0",
+  "collector": "READY",
+  "clock": "REFUSED",
+  "settled_n": 0,
+  "examiner": "NOT_NOW",
+  "border_rule_id": "astra.c3.kxhighny.bordering_strike.v0",
+  "series": ["KXHIGHNY", "KXHIGHCHI"],
+  "stations": {
+    "KXHIGHNY": {"city": "New York City", "nws_station": "KNYC"},
+    "KXHIGHCHI": {"city": "Chicago", "nws_station": "KMDW", "identity_note": "Midway"}
+  },
+  "coordinates_copied": false,
+  "feebook_dependency": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "imported": true,
+    "copied": false,
+    "symbols": ["reciprocal_book", "order_fee"],
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_py_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7"
+  },
+  "rails_dependency": {
+    "directory": "kalshi_rails_lab_20260922",
+    "commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "imported": true,
+    "copied": false,
+    "symbols": ["maker_quote_credit", "judge_freshness", "canonical_book_content", "scenario_queue"],
+    "fee_credit_rule_id": "astra.r1p5.rails.maker_credit_floor_cent.v1",
+    "rails_py_sha256": "834386506dd72210d77ee063d4a96248d76ce09a4be6ce771b9609337d3388e1",
+    "queue_labels_are_a_knob": false
+  },
+  "github_weather_spread": {
+    "role": "hypothesis_only",
+    "repo": "17thgreen/Claude-SportsBetting-Competition-to-the-Death",
+    "path": "src/flatstake/providers/kalshi_weather.py",
+    "blob_sha": "323463cd7538464dfe90ec8b6acea9c76e10ee29",
+    "ref": "ce34417c1a2f3353225ed6e585e48217d41de96d",
+    "vendored": false,
+    "algo_ported": false,
+    "published_returns_are_evidence": false,
+    "sum_of_mids_computed_here": false
+  },
+  "later_r3_p3_panel": {
+    "preferred": true,
+    "joined_now": false,
+    "r3_p3_modified": false
+  },
+  "fixture": {
+    "file": "fixtures/schema_only_ladder.json",
+    "label": "SCHEMA_ONLY",
+    "admitted_settled_panel": false,
+    "invented_settled_fills": false
+  },
+  "live_orders": false,
+  "q6_000_retune": false,
+  "forbid": [
+    "live orders",
+    "forecast client",
+    "algo port of kalshi_weather.py",
+    "invented settled fills",
+    "invented PnL",
+    "queue fill award",
+    "000 retune",
+    "copy of feebook or rails",
+    "edit of R3-P3"
+  ],
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "ROI": null
+}

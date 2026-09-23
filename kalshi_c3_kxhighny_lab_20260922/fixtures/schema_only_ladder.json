@@ -1,0 +1,156 @@
+{
+  "label": "SCHEMA_ONLY",
+  "packet_id": "C3-KXHIGHNY-MEAS",
+  "panel_version": "2026-09-23.c3-kxhighny-meas-v0",
+  "collector": "READY",
+  "clock": "REFUSED",
+  "settled_n": 0,
+  "admitted_settled_panel": false,
+  "invented_fills": false,
+  "later_r3_p3_panel": {
+    "preferred": true,
+    "joined_now": false
+  },
+  "events": [
+    {
+      "schema_id": "ny_documented_shape",
+      "schema_only": true,
+      "series": "KXHIGHNY",
+      "event_ticker": "KXHIGHNY-26SEP23",
+      "schema_transaction_time": "schema-ny-t0",
+      "rungs": [
+        {
+          "ticker": "KXHIGHNY-26SEP23-T75",
+          "floor_strike": null,
+          "cap_strike": "75",
+          "orderbook_fp": {
+            "yes_dollars": [["0.12", "4"]],
+            "no_dollars": [["0.80", "4"]]
+          }
+        },
+        {
+          "ticker": "KXHIGHNY-26SEP23-B7677",
+          "floor_strike": "76",
+          "cap_strike": "77",
+          "orderbook_fp": {
+            "yes_dollars": [["0.40", "10"]],
+            "no_dollars": [["0.55", "8"]]
+          }
+        },
+        {
+          "ticker": "KXHIGHNY-26SEP23-B7879",
+          "floor_strike": "78",
+          "cap_strike": "79",
+          "orderbook_fp": {
+            "yes_dollars": [["0.22", "6"]],
+            "no_dollars": [["0.70", "6"]]
+          }
+        },
+        {
+          "ticker": "KXHIGHNY-26SEP23-T83",
+          "floor_strike": "83",
+          "cap_strike": null,
+          "orderbook_fp": {
+            "yes_dollars": [["0.08", "3"]],
+            "no_dollars": [["0.88", "3"]]
+          }
+        }
+      ]
+    },
+    {
+      "schema_id": "chi_interior_border",
+      "schema_only": true,
+      "series": "KXHIGHCHI",
+      "event_ticker": "KXHIGHCHI-26SEP23",
+      "schema_transaction_time": "schema-chi-t0",
+      "rungs": [
+        {
+          "ticker": "KXHIGHCHI-26SEP23-B6465",
+          "floor_strike": "64",
+          "cap_strike": "65",
+          "orderbook_fp": {
+            "yes_dollars": [["0.30", "5"]],
+            "no_dollars": [["0.60", "5"]]
+          }
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP23-B6667",
+          "floor_strike": "66",
+          "cap_strike": "67",
+          "orderbook_fp": {
+            "yes_dollars": [["0.25", "5"]],
+            "no_dollars": [["0.65", "5"]]
+          }
+        }
+      ]
+    },
+    {
+      "schema_id": "chi_fee_blind_cent",
+      "schema_only": true,
+      "series": "KXHIGHCHI",
+      "event_ticker": "KXHIGHCHI-26SEP24",
+      "schema_transaction_time": "schema-chi-cent",
+      "rungs": [
+        {
+          "ticker": "KXHIGHCHI-26SEP24-B7071",
+          "floor_strike": "70",
+          "cap_strike": "71",
+          "orderbook_fp": {
+            "yes_dollars": [["0.01", "1"]],
+            "no_dollars": [["0.50", "1"]]
+          }
+        }
+      ]
+    },
+    {
+      "schema_id": "ny_missing_yes",
+      "schema_only": true,
+      "series": "KXHIGHNY",
+      "event_ticker": "KXHIGHNY-26SEP24",
+      "schema_transaction_time": "schema-ny-noyes",
+      "rungs": [
+        {
+          "ticker": "KXHIGHNY-26SEP24-B7071",
+          "floor_strike": "70",
+          "cap_strike": "71",
+          "orderbook_fp": {
+            "no_dollars": [["0.62", "2"]]
+          }
+        }
+      ]
+    },
+    {
+      "schema_id": "chi_overlap",
+      "schema_only": true,
+      "series": "KXHIGHCHI",
+      "event_ticker": "KXHIGHCHI-26SEP25",
+      "schema_transaction_time": "schema-chi-overlap",
+      "rungs": [
+        {
+          "ticker": "KXHIGHCHI-26SEP25-B7678",
+          "floor_strike": "76",
+          "cap_strike": "78"
+        },
+        {
+          "ticker": "KXHIGHCHI-26SEP25-B7779",
+          "floor_strike": "77",
+          "cap_strike": "79"
+        }
+      ]
+    },
+    {
+      "schema_id": "mia_out_of_scope",
+      "schema_only": true,
+      "series": "KXHIGHMIA",
+      "event_ticker": "KXHIGHMIA-26SEP23",
+      "schema_transaction_time": "schema-mia",
+      "rungs": [
+        {
+          "ticker": "KXHIGHMIA-26SEP23-B8081",
+          "floor_strike": "80",
+          "cap_strike": "81"
+        }
+      ]
+    }
+  ]
+}
