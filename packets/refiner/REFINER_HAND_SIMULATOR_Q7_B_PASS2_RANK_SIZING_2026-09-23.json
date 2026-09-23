@@ -1,0 +1,50 @@
+{
+  "id": "REFINER_HAND_SIMULATOR_Q7_B_PASS2_RANK_SIZING_2026-09-23",
+  "packet_id": "Q7-B-REHAB-P2-PORTFOLIO-RANK-SIZING",
+  "feature_family": "Q7-B-REHAB-P2",
+  "corpse_id": "CEM-ASTRA-20260922-001",
+  "pass_n": 2,
+  "pass_budget": 3,
+  "from": "The Refiner \"KALSHI\"",
+  "to": "The Simulator \"KALSHI\"",
+  "action": "IMPLEMENT_FREEZE_UNITS",
+  "status": "GO_FROZEN_PRE_OUTCOME",
+  "one_knob": "portfolio_rank_sizing",
+  "freeze": "packets/refiner/REFINER_PASS2_FREEZE_Q7_B_PORTFOLIO_RANK_SIZING_2026-09-23.md",
+  "diagnosis": "packets/refiner/REFINER_PASS2_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
+  "results": null,
+  "pnl": null,
+  "need": [
+    "New lab (e.g. nfl_q7_rehab_p2_rank_sizing_20260923/) with EXPERIMENT_SPEC + FROZEN_EXPERIMENT.json results/pnl null",
+    "Arms B0 (Q7 Arm B pin) / B2 (B0 + portfolio_rank_sizing only) / D (Q7 Arm D / 000 pin)",
+    "B2: continuous admission \u2014 do NOT reintroduce Pass-1 admission_cadence gate; size via allocation capital-budget path with Q6-000 rank semantics (F/P/R off)",
+    "Import Q6/Q7 read-only; pin parent hashes; positive-control path vs PARENT_Q7_BD_LEDGER_SOURCE_PINS",
+    "Unit tests for sizing knob + invent-PnL refuse; first PR = freeze+units only; no tape walk / no Examiner-self / no invent"
+  ],
+  "held_fixed": [
+    "95%-of-D",
+    "B2>B0 bar",
+    "pair-check ON",
+    "choose()",
+    "order_size 250",
+    "fees/cohort/stresses",
+    "no Q6-000 edit",
+    "Pass-1 cadence freeze closed"
+  ],
+  "refuse": [
+    "invent fills/PnL",
+    "soften 95%-of-D",
+    "reopen Pass-1 cadence as Pass-2",
+    "multi-knob",
+    "Q6-000 retune",
+    "live orders",
+    "self-score"
+  ],
+  "cite": [
+    "packets/CONDUCTOR_KICK_REFINER_Q7_B_PASS2_2026-09-23.json",
+    "packets/EXAMINER_ACK_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.json",
+    "packets/refiner/REFINER_PASS1_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
+    "packets/refiner/REHAB_POLICY_3PASS_2026-09-23.md"
+  ],
+  "stamped_at_et": "2026-09-23T17:33:16-04:00"
+}
