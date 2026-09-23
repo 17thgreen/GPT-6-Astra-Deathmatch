@@ -1,0 +1,23 @@
+{
+  "status": "NOT_RUN",
+  "metrics": null,
+  "panel_version": "2026-09-22.c1-kxufcfight-v0",
+  "reciprocal_book": null,
+  "fee_channel": null,
+  "content_fresh_flag": null,
+  "maker_credit_floor_zero_refuse": null,
+  "queue_attribution_bin": null,
+  "timing_shape": null,
+  "volume_fp": null,
+  "volume_24h_fp": null,
+  "open_interest_fp": null,
+  "strategy_ev": null,
+  "beats_000": null,
+  "completed_profit": null,
+  "fill_rate": null,
+  "annualization": null,
+  "live_promotion": null,
+  "results": null,
+  "pnl": null,
+  "note": "NOT_RUN. Measurement fields stay null until Examiner GO. No invented PnL or open interest."
+}

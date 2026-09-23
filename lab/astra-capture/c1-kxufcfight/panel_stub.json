@@ -1,0 +1,272 @@
+{
+  "schema_id": "astra.registry.c1_kxufcfight_panel.v0",
+  "panel_version": "2026-09-22.c1-kxufcfight-v0",
+  "packet_id": "C1-KXUFCFIGHT-MEAS",
+  "series_ticker": "KXUFCFIGHT",
+  "series_glob": "KXUFCFIGHT*",
+  "purpose": "measurement_gate",
+  "cohort_kind": "bounded_fight_card_fee_queue_honesty_bakeoff_seed",
+  "freeze_cite": "lab/governance/astra/packets/C1_KXUFCFIGHT_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "a191c9b3f71030445d1d32684feb6dc1bf09abb7e09403d5dbdf1927eafc63c9",
+  "scout_cite": "lab/governance/astra/packets/scout_c1_kxufcfight/COLLECTOR_STUB.md",
+  "scout_hunt_cite": [
+    "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXUFCFIGHT.json"
+  ],
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "kalshi_public_get",
+  "stub_status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:33:00Z",
+  "stubbed_at_et": "2026-09-22 20:33:00 EDT",
+  "admit_gate": "WAIT_CLOCK_JOIN_CONDUCTOR \u2014 do not run admit.py; stub only; no backfill; admitted_at null until Clock",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_type_series_live_get": "quadratic",
+    "fee_multiplier_live_get": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_live_orders": true,
+    "bakeoff_capital_usd_label": 5000,
+    "bakeoff_capital_is_strategy_claim": false
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/KXUFCFIGHT",
+      "GET /markets/{ticker}",
+      "GET /markets?series_ticker=KXUFCFIGHT&status=open&limit=small",
+      "GET /markets/{ticker}/orderbook",
+      "GET /markets/trades?ticker=...&limit=small"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host",
+      "ADMIT-1 prospective recorder routes"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_recorder_steal_admit1": true,
+      "no_steal_s1_s4_s5_r2p3_c3_poll": true,
+      "idle_slot": "lab/astra-capture/c1-kxufcfight/"
+    },
+    "throttle_policy": "\u226545\u201390s between heavy list calls; ~12s between single-ticker GETs; on 429 shrink seed honestly",
+    "schedule": {
+      "stub_only": true,
+      "recorder_started": false,
+      "admit_py_run": false
+    }
+  },
+  "series_metadata_seed": {
+    "KXUFCFIGHT": {
+      "title": "UFC Fight",
+      "category": "Sports",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "http": 200,
+      "note": "first /series GET 429; retry 200"
+    }
+  },
+  "cohort_counts": {
+    "series_n": 1,
+    "events_n": 2,
+    "markets_n": 4,
+    "open_list_resolved_n": 0,
+    "dropped_n": 2,
+    "note": "Bounded fight-card seed. ORTDAS dropped after ORT 429 (honest shrink). CONGUA finalized at stub; DEGMOR active. volume/OI/pnl/panel-results null."
+  },
+  "dropped_from_seed": {
+    "KXUFCFIGHT-26SEP22ORTDAS-ORT": "HTTP 429 x2 \u2014 excluded",
+    "KXUFCFIGHT-26SEP22ORTDAS-DAS": "pair incomplete after ORT 429 \u2014 excluded (honest shrink)"
+  },
+  "events": [
+    {
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "market_tickers": [
+        "KXUFCFIGHT-26SEP22CONGUA-GUA",
+        "KXUFCFIGHT-26SEP22CONGUA-CON"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "status_mix_note": "both legs finalized at stub clock (fight settled); kept for fee+queue honesty objects \u2014 not strategy EV"
+    },
+    {
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "market_tickers": [
+        "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+        "KXUFCFIGHT-26SEP22DEGMOR-DEG"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "status_mix_note": "both legs active at stub clock"
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "status_at_stub": "finalized",
+      "result_observed_live_get": "yes",
+      "settlement_ts": null,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.9900",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "live_get_artifact": "packets/scout_c1_kxufcfight/live_get_2026-09-22/market_KXUFCFIGHT_26SEP22CONGUA_GUA.json",
+      "resolve_source": "kalshi_public_get",
+      "bakeoff_capital_label_usd": 5000,
+      "bakeoff_capital_note": "shared $5k measurement contrast sizing only \u2014 not a strategy bankroll claim"
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "status_at_stub": "finalized",
+      "result_observed_live_get": "no",
+      "settlement_ts": null,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.0100",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "live_get_artifact": "packets/scout_c1_kxufcfight/live_get_2026-09-22/market_KXUFCFIGHT_26SEP22CONGUA_CON.json",
+      "resolve_source": "kalshi_public_get",
+      "bakeoff_capital_label_usd": 5000,
+      "bakeoff_capital_note": "shared $5k measurement contrast sizing only \u2014 not a strategy bankroll claim"
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "status_at_stub": "active",
+      "result_observed_live_get": null,
+      "settlement_ts": null,
+      "close_time": "2026-10-06T23:40:00Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.0100",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "live_get_artifact": "packets/scout_c1_kxufcfight/live_get_2026-09-22/market_KXUFCFIGHT_26SEP22DEGMOR_MOR.json",
+      "resolve_source": "kalshi_public_get",
+      "bakeoff_capital_label_usd": 5000,
+      "bakeoff_capital_note": "shared $5k measurement contrast sizing only \u2014 not a strategy bankroll claim"
+    },
+    {
+      "market_ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "series_ticker": "KXUFCFIGHT",
+      "category_slice": "combat_ufc",
+      "status_at_stub": "active",
+      "result_observed_live_get": null,
+      "settlement_ts": null,
+      "close_time": "2026-10-06T23:40:00Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.9900",
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c1-kxufcfight-v0",
+      "live_get_artifact": "packets/scout_c1_kxufcfight/live_get_2026-09-22/market_KXUFCFIGHT_26SEP22DEGMOR_DEG.json",
+      "resolve_source": "kalshi_public_get",
+      "bakeoff_capital_label_usd": 5000,
+      "bakeoff_capital_note": "shared $5k measurement contrast sizing only \u2014 not a strategy bankroll claim"
+    }
+  ],
+  "measurement_objects": {
+    "reciprocal_book": {
+      "status": null,
+      "description": "bid_YES/NO + ask_YES=1-bid_NO; stress near extreme favorites; null until Simulator/Examiner"
+    },
+    "fee_channel_r1p1": {
+      "status": null,
+      "description": "order_fee on fill/hypothetical C at P via R1-P1 \u2014 Collector does not compute ROI"
+    },
+    "rails_labels": {
+      "status": null,
+      "content_fresh_flag": null,
+      "maker_credit_floor_zero_refuse": null,
+      "queue_attribution_bin": null
+    },
+    "timing_shape": {
+      "status": null,
+      "description": "minutes-to-occurrence/close; raw volume/OI only from live GET artifacts \u2014 not panel metrics"
+    },
+    "fee_queue_honesty_bakeoff_vs_000": {
+      "status": null,
+      "shared_5k_label": true,
+      "strategy_ev": null
+    }
+  },
+  "http_429_notes": [
+    {
+      "route": "/series/KXUFCFIGHT",
+      "http": 429,
+      "handling": "documented; seed shrunk"
+    },
+    {
+      "route": "/markets/KXUFCFIGHT-26SEP22ORTDAS-ORT",
+      "http": 429,
+      "handling": "documented; seed shrunk"
+    },
+    {
+      "route": "/markets/KXUFCFIGHT-26SEP22ORTDAS-ORT retry",
+      "http": 429,
+      "handling": "documented; seed shrunk"
+    },
+    {
+      "route": "/markets?series_ticker=KXUFCFIGHT&status=open&limit=6",
+      "http": 429,
+      "handling": "documented; seed shrunk"
+    }
+  ],
+  "blocker_notes": [
+    "First GET /series/KXUFCFIGHT \u2192 429; retry 200.",
+    "ORTDAS-ORT \u2192 429 x2; ORTDAS event dropped (DAS unpaired).",
+    "Open markets list \u2192 429 \u2014 seed not expanded.",
+    "results/pnl/volume/OI panel fields null \u2014 not invented."
+  ],
+  "results": null,
+  "pnl": null,
+  "volume": null
+}
