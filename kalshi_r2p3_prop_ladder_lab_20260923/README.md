@@ -1,7 +1,10 @@
 # R2-P3 KXNFLPASSYDS prop-ladder fee+queue honesty harness
 
-Status: hypothesis committed. Source is in this directory. A unit page is
-not recorded in this file yet. `EXPERIMENT_SPEC.md` is the hypothesis.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 8 tests in 0.046s at 2026-09-23T16:15:40Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `cross_strike_residual_rms`,
 `latent_fit_fragmentation`, `maker_credit_floor_zero_n`, `fresh_strike_n`,
@@ -38,5 +41,4 @@ From this directory, Python 3 standard library:
 python3 -m unittest -v tests.test_orchestrator
 ```
 
-No Logan keys. No live orders. A passing unit run, once recorded, is not
-an Examiner score.
+No Logan keys. No live orders. A passing unit run is not an Examiner score.
