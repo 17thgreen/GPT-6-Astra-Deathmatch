@@ -1,0 +1,27 @@
+{
+  "packet_id": "C3-KXHIGHNY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C3-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "lab_dir": "kalshi_c3_kxhighny_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "results": null,
+  "pnl": null,
+  "settled_nonempty_result_N_scout": 4,
+  "admitted_at": null,
+  "panel_version": "2026-09-22.c3-kxhighny-v0",
+  "does_not_run_admit_py": true,
+  "stamped_at_et": "2026-09-23T15:02:00-04:00",
+  "freeze_sha256": "56adcf592239b028aaa8bcffbf09815115b8454f78db39b43c578e64c160a4d5",
+  "scout_reget_sha256": "e8950352745007d3cb565050161430807fa5de70d15321bb00bede6ca9ac18ee",
+  "scout_summary_sha256": "b32bbf3200649bcea4fb61a98a4869d5123060a57702a9327262cccbc8e1ca93",
+  "panel_stub_sha256": "2a5da7fe85ca1adc6b7c4dcf9e09ed5c6bb62be6b5c9b42731e36e31d1e8dfea",
+  "settled_reget_capture_sha256": "0055faae508ba034eb49a12d52713566cbfe20bfbfbd2a16203ef350152ac24a"
+}
