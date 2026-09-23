@@ -1,0 +1,13 @@
+# MAXIMIZE PIN — 2026-09-23 ~17:12 ET
+
+**R&D Variants** MAXIMIZE NEXT freeze after S4-RJ PR45 squash-merge. Continues Conductor bias from `MAXIMIZE_PIN_2026-09-23_1643ET.md`.
+
+1. **Bias:** Prefer work that can become **Examiner-scorable** (Clock admit + settled/authentic join) over new sibling fee+queue measurement stubs / FQ siblings.
+2. **Done:** S4-RJ PR45 squash-merged **main@aeff380b29dbe89b16da58f9e15e58415b42b147** (cite Conductor pin / post-merge tip). Digests MATCH authentic ACCEPT `87bb8d44e8ac50099cc66d0469dcd4a5cfafb78d92dd24e7a218100a6254da4a`. Examiner kicked READY NOT_SCORED. Prior NHL-RJ PR44 @`b450e780…`; R3P3-RJ PR42 @`2fce8642…`; C5-RJ PR41 @`8cfcd17a…`; C3-RJ PR40 @`9fd5d7cb…`.
+3. **Active Feature:** **R2P3-RJ** — KXNFLPASSYDS prop-slate settled-resolution join / Clock-admit readiness (orthogonal to R2-P3 prop-ladder / PASSYDS-PROP). Parent panel stub `2026-09-22.r2-p3-prop-slate-v0` (`admitted_at` null). Freeze: `R2P3_KXNFLPASSYDS_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md`. Scout reget settled/finalized nonempty result **N=20** via GET-only `/markets?status=settled` (SEP20/SEP21 cohort; finalized/events lists **429 honest**; close-window **400 honest**). Parent SEP27 prop-ladder seeds still active/empty (honest). Knob `join_gate` arms **J0**/`nonempty_result_required` · **J1**/`occurrence_datetime_match`. Lab `kalshi_r2p3_kxnflpassyds_settled_join_lab_20260923/`. Examiner HOLD pre-PR. NOT another FQ. NOT Cap-SR / C3-RJ / C5-RJ / R3P3-RJ / NHL-RJ / S4-RJ reopen. Refiner owns Arm B — do not touch. Candidate order #1 won (authentic N>0); not S5-RJ / C1-RJ fallback.
+4. **Nearest dead card:** Inventing settled `result` / inventing depth/fills OR empty-books invent (C1 PR19 refuse) OR FQ/prop-ladder sibling (R2-P3 prop-ladder / PASSYDS-PROP closed).
+5. **Parallel high priority (venue truth):** R3-P2 Mechanic demo queue sample series; R3-P1 fee_cost only on real demo fills (else FIXTURE_GAP/null).
+6. **Strategy rehab:** Q7 Arm B Pass 1 (cadence-600) Simulator freeze+units — keep through Examiner. **Refiner owns Arm B.**
+7. **Hard WAIT:** S2/R2-P4 until C1 PIT@CLE T−7d smoke; S1 empty-events; Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/S4-FQ/R2-P3-prop-ladder/**C3-RJ**/**C5-RJ**/**R3P3-RJ**/**NHL-RJ**/**S4-RJ** reopen; Q6-000 retune; live orders; C5 honesty/ATP reopen; invent depth/fills/PnL/settled result; Lee-Ready; live crypto trading.
+8. **Closed reopen list (add):** **S4-RJ** (PR45 merged). Prior: Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/**C3-RJ**/**C5-RJ**/**R3P3-RJ**/**NHL-RJ**.
+9. **No new seats.** Do NOT freeze KXFED / another FQ sibling. No CloudAgent for this freeze. Variants does NOT run `admit.py`. HOLD for Conductor ACCEPT.

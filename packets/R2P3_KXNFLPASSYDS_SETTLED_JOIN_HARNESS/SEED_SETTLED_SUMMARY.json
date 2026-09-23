@@ -1,0 +1,239 @@
+{
+  "settled_nonempty_result_N": 20,
+  "settled_list_attempted_KXNFLPASSYDS": "200",
+  "finalized_list_attempted_KXNFLPASSYDS": "429_honest",
+  "events_closed_settled_attempted": "429_honest",
+  "method": "GET-only /markets?status=settled (finalized/events_closed/events_settled lists 429 honest; parent SEP27 event embeds active/empty)",
+  "parent_seed_tickers": [
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-150",
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-175",
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-175",
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-200"
+  ],
+  "parent_seeds_finalized_nonempty_N": 0,
+  "parent_seed_results": {
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-150": null,
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-175": null,
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-175": null,
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-200": null
+  },
+  "parent_seed_statuses": {
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-150": "active",
+    "KXNFLPASSYDS-26SEP27LACBUF-BUFJALLEN17-175": "active",
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-175": "active",
+    "KXNFLPASSYDS-26SEP27BALDAL-DALDPRESCOTT4-200": "active"
+  },
+  "overnight_finalized_nonempty_N": 20,
+  "occurrence_datetime_match_all_settled_seeds": true,
+  "markets": [
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-LARMSTAFFORD9-375",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:47Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-250",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:50Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-75",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-225",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:50Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJDART6-75",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:47Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJDART6-100",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:47Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-200",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-175",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-150",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-125",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJWINSTON19-100",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:49Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP21NYGLAR-NYGJDART6-125",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-22T03:19:48Z",
+      "occurrence_datetime": "2026-09-22T03:15:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP21NYGLAR",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20INDKC-KCPMAHOMES15-400",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T04:01:23Z",
+      "occurrence_datetime": "2026-09-21T03:20:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20INDKC",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20INDKC-KCPMAHOMES15-375",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T04:01:23Z",
+      "occurrence_datetime": "2026-09-21T03:20:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20INDKC",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20INDKC-INDDJONES17-125",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-21T04:01:23Z",
+      "occurrence_datetime": "2026-09-21T03:20:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20INDKC",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20SEAARI-ARIJBRISSETT7-125",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T23:27:35Z",
+      "occurrence_datetime": "2026-09-20T23:25:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20SEAARI",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20MIASF-MIAMWILLIS2-100",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T23:27:33Z",
+      "occurrence_datetime": "2026-09-20T23:25:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20MIASF",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20WASDAL-WASJDANIELS5-75",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T23:37:29Z",
+      "occurrence_datetime": "2026-09-20T23:25:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20WASDAL",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20WASDAL-WASJDANIELS5-100",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T23:37:29Z",
+      "occurrence_datetime": "2026-09-20T23:25:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20WASDAL",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    },
+    {
+      "ticker": "KXNFLPASSYDS-26SEP20CINHOU-HOUCSTROUD7-375",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T20:27:39Z",
+      "occurrence_datetime": "2026-09-20T20:00:00Z",
+      "event_ticker": "KXNFLPASSYDS-26SEP20CINHOU",
+      "source": "markets_settled_KXNFLPASSYDS_lim20.json"
+    }
+  ],
+  "prior_weekend_events": [
+    "KXNFLPASSYDS-26SEP20CINHOU",
+    "KXNFLPASSYDS-26SEP20INDKC",
+    "KXNFLPASSYDS-26SEP20MIASF",
+    "KXNFLPASSYDS-26SEP20SEAARI",
+    "KXNFLPASSYDS-26SEP20WASDAL",
+    "KXNFLPASSYDS-26SEP21NYGLAR"
+  ],
+  "note": "Scout N is a pin \u2014 do NOT copy into settled_join_n. results/pnl null."
+}

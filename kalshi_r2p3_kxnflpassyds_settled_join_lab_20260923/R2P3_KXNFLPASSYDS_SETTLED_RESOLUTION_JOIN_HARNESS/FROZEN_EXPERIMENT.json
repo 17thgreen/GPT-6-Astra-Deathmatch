@@ -1,0 +1,27 @@
+{
+  "packet_id": "R2P3-KXNFLPASSYDS-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "R2P3-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "lab_dir": "kalshi_r2p3_kxnflpassyds_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "results": null,
+  "pnl": null,
+  "settled_nonempty_result_N_scout": 20,
+  "admitted_at": null,
+  "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+  "does_not_run_admit_py": true,
+  "stamped_at_et": "2026-09-23T17:12:00-04:00",
+  "freeze_sha256": "9ad3b0112243c1020aec2bd6ef0df15011b065c30aa691a988da02eb08be1e0b",
+  "scout_reget_sha256": "2c3664ac240887026076a84e451ca798e0c2d10d42bdaf61a9a83844881681e5",
+  "scout_summary_sha256": "534a617bc3f18be501c07237d261e945b1bcf0301ac956cddae46e0431b75cd3",
+  "panel_stub_sha256": "70e879e8738d033f392d821849dee3537af3e7b8a916670779d238f78ce098be",
+  "settled_reget_capture_sha256": "2ce8426edb4ee5053f63bf2fe1439dbd046978eb76afa1e0537b17cca9b8b0e4"
+}
