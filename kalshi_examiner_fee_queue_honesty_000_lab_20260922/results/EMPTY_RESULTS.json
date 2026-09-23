@@ -1,0 +1,15 @@
+{
+  "status": "NOT_SCORED",
+  "metrics": null,
+  "pnl": null,
+  "results": null,
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "fill_rate_delta_vs_q3300": null,
+  "adverse_queue_exposure": null,
+  "participation_stress_gap": null,
+  "live_promotion": false,
+  "examiner_owner": "Examiner (Kalshi)",
+  "note": "All fields null until harness merges + Examiner-ready declaration. No invented PnL."
+}

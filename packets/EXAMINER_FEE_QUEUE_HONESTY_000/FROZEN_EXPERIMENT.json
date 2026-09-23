@@ -1,0 +1,20 @@
+{
+  "experiment_id": "examiner_fee_queue_honesty_000_20260922",
+  "status": "FROZEN_NOT_RUN",
+  "results": null,
+  "pnl": null,
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "queue_bin_mismatch_rate": null,
+  "fill_rate_delta_vs_q3300": null,
+  "adverse_queue_exposure": null,
+  "participation_stress_gap": null,
+  "packet_sha256": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
+  "strategy_pointer": "Q6-000",
+  "consumes": [
+    "kalshi_r2p1_hygiene_000_lab_20260922",
+    "kalshi_queue_fragility_000_lab_20260922"
+  ],
+  "production_fills_present_at_freeze": true,
+  "production_fills_sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f"
+}
