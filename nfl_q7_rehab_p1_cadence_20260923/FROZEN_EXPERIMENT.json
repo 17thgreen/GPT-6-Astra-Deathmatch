@@ -1,0 +1,191 @@
+{
+  "experiment": "Q7_ARM_B_REHAB_P1_CADENCE_600",
+  "directory": "nfl_q7_rehab_p1_cadence_20260923",
+  "status": "HYPOTHESIS_FROZEN_NOT_RUN",
+  "frozen_at": "2026-09-23T18:58:13Z",
+  "parent_corpse": "CEM-ASTRA-20260922-001",
+  "parent_verdict": "Q7 Arm B KILL",
+  "note": "Hypothesis commit only. implementation_sha256 is null until the source-freeze commit. results and pnl stay null until an Examiner replay. This timestamp is the hypothesis freeze, not an execution time. Conductor packet paths named by the GO were absent from origin/main at 438f4ab; this file does not invent those bytes.",
+  "conductor_packets": {
+    "freeze": "packets/refiner/REFINER_PASS1_FREEZE_Q7_B_CADENCE_600_2026-09-23.md",
+    "accept": "packets/refiner/CONDUCTOR_ACCEPT_Q7_B_REHAB_P1_CADENCE_600_2026-09-23.json",
+    "diagnosis": "packets/refiner/REFINER_PASS1_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
+    "present_in_checkout": false,
+    "origin_main": "438f4abf28a3c0156daf6c96ece5efda9557f1dc",
+    "implement_from_go": true
+  },
+  "does_not_modify": [
+    "nfl_paircheck_lab_20260922",
+    "nfl_factorial_lab_20260921",
+    "nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json"
+  ],
+  "question": "Does withholding new paired exposure on the original router until a 600-second entry-budget cadence, leaving route choice and the chosen-pair cost check unchanged, retain Q6 label 000 on the development cohort?",
+  "one_knob": "admission_cadence",
+  "admission_cadence_seconds": 600,
+  "arms": {
+    "B0": {
+      "architecture": "original_router",
+      "pair_check": true,
+      "admission_cadence_seconds": null,
+      "role": "positive_control_q7_arm_b",
+      "import": "nfl_paircheck_lab_20260922.OriginalPairCheck"
+    },
+    "B1": {
+      "architecture": "original_router",
+      "pair_check": true,
+      "admission_cadence_seconds": 600,
+      "role": "rehab_cadence_only",
+      "rule": "new paired exposure admitted only when now >= next_allocation; on admit attempt next_allocation = now + 600"
+    },
+    "D": {
+      "architecture": "q6_allocator_000",
+      "pair_check": true,
+      "role": "retention_reference_q7_arm_d",
+      "import": "nfl_paircheck_lab_20260922.AllocatorPairCheck",
+      "q6_factor_label": "000",
+      "edit_000_freeze": false
+    }
+  },
+  "unchanged": [
+    "choose()",
+    "per_direction_route_screen",
+    "combined_cost_margin",
+    "order_size",
+    "cushion",
+    "fees",
+    "cohort",
+    "stresses",
+    "selection_rule"
+  ],
+  "combined_cost_filter": {
+    "expression": "1 - sum(chosen_leg_costs) - 0.0002 - 2 * balance_precision / order_size",
+    "reject_when": "margin <= 0",
+    "cost_definition": "price + maker_coefficient * price * (1 - price)",
+    "quantity_in_cushion": "configured order_size",
+    "routes": "the two keys returned by choose()",
+    "source": "parent paircheck_policy.combined_cost_margin"
+  },
+  "fixed": {
+    "starting_cash": 5000,
+    "development_games": 31,
+    "week1_games": 16,
+    "week2_games": 15,
+    "order_size": 250,
+    "exposure_cap": 250,
+    "assumed_exit_depth": 250,
+    "quote_source": "candles",
+    "liquidation_lead_seconds": 300,
+    "early_queues": [
+      3300,
+      10000
+    ],
+    "submit_cancel_delays": [
+      0.25,
+      5
+    ]
+  },
+  "stresses": [
+    "q3300_d0.25",
+    "q3300_d5",
+    "q10000_d0.25",
+    "q10000_d5"
+  ],
+  "scenarios": [
+    "q3300_d0.25_B0",
+    "q3300_d0.25_B1",
+    "q3300_d0.25_D",
+    "q3300_d5_B0",
+    "q3300_d5_B1",
+    "q3300_d5_D",
+    "q10000_d0.25_B0",
+    "q10000_d0.25_B1",
+    "q10000_d0.25_D",
+    "q10000_d5_B0",
+    "q10000_d5_B1",
+    "q10000_d5_D"
+  ],
+  "scenario_count": 12,
+  "score_run_in_this_freeze": false,
+  "metrics": [
+    "completed_strategy_pnl",
+    "terminal_payout_bounds",
+    "unresolved_contracts",
+    "all_flat",
+    "week_contributions",
+    "unhedged_contract_hours",
+    "taker_contracts",
+    "maker_contracts",
+    "min_cash",
+    "max_reserved_cash",
+    "max_abs_event_exposure",
+    "pnl_excluding_top_two_games",
+    "pair_rejection_count",
+    "cadence_block_count"
+  ],
+  "selection_rule": {
+    "apply_only_if": "all 12 scenarios flat with non-null completed_strategy_pnl",
+    "otherwise": "NO_NEW_SELECTION",
+    "candidate_arm": "B1",
+    "require_B1_beats_B0_all_stresses": true,
+    "require_D_positive_and_B1_at_least_95pct_of_D": true,
+    "primary_weeks": "q3300_d0.25 both week contributions B1 > B0",
+    "inventory_hours": "B1 unhedged_contract_hours <= 1.25 * B0 in every stress",
+    "live_promotion": false,
+    "fallback_shadow_candidate": "q6 label 000",
+    "soften_after_peek": false
+  },
+  "positive_controls": {
+    "B0": {
+      "must_match": "Q7 Arm B summaries q{queue}_d{delay}_B and uncompressed fill/order/decision hashes where those bytes exist",
+      "parent_arm": "B",
+      "absence_is_not_a_pass": true
+    },
+    "D": {
+      "must_match": "Q7 Arm D summaries q{queue}_d{delay}_D and uncompressed fill/order/decision hashes where those bytes exist",
+      "parent_arm": "D",
+      "q6_label": "000",
+      "absence_is_not_a_pass": true
+    },
+    "comparable_fields": [
+      "completed_strategy_pnl",
+      "all_flat",
+      "unresolved_contracts",
+      "week_contributions",
+      "unhedged_contract_hours",
+      "taker_contracts",
+      "maker_contracts",
+      "fills",
+      "pnl_excluding_top_two_games"
+    ],
+    "comparable_ledgers": [
+      "fills",
+      "orders",
+      "decisions"
+    ],
+    "excluded_from_parent_hash": [
+      "cadence_blocks"
+    ],
+    "mismatch_is": "failed reproduction, not a rehab finding",
+    "parent_ledgers_in_checkout": false
+  },
+  "parent_q7_sha256": {
+    "paircheck_policy.py": "ae0a19e03acebd359e711fb13b5b47ca807d72632f3a2cd1c1c282ad5916d7a9",
+    "run_experiment.py": "55d6fafe860d68e8b84e59b37c8cd641b4ec835712632867eaebcd809ff626b6",
+    "EXPERIMENT_SPEC.md": "cdfba7817a4a13c51b3aec3dc2256e7de1cd61386d9e1b359d85b2b65a78344f",
+    "FROZEN_EXPERIMENT.json": "b0dd91699d2170e42c3a0ae9e27769a80f64f8121b116da030f253ac0d8a7f2b",
+    "README.md": "595deb359891e5eeb11cb02243340988dac57f0bd295ef1439345d1515cbac87",
+    "analyze.py": "2fcc5262197ccf1e1dd3eb241649c57581e7353046945427b6e01e8f14fa16d6",
+    "verify_results.py": "2b925a39941428ae6b33753445c531967b73025ed4b127d28c5080cfeb237c40"
+  },
+  "q6_000_freeze_sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+  "q6_behavior_sha256": {
+    "factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db"
+  },
+  "feebook_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+  "fee_channel": "imported kalshi_feebook_lab_20260922.feebook.classify_scorecard; missing channel refuses completed profit",
+  "spec_sha256": "4ea892d235a9ce3fd545cfba595b237e55df20b10f0e296de22b27731d39802b",
+  "implementation_sha256": null,
+  "results": null,
+  "pnl": null
+}
