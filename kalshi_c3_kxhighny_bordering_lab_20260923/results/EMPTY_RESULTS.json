@@ -1,0 +1,12 @@
+{
+  "experiment": "C3-KXHIGHNY-BORDERING-STRIKE-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "adjacent_spread_gap": null,
+  "bordering_depth_imbalance": null,
+  "fee_delta_vs_inherited_model": null,
+  "freshness_gap_sec": null,
+  "multi_city_inventory_join": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema/pins only. GitHub weather-spread = hypothesis only."
+}
