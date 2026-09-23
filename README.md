@@ -35,6 +35,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
 | `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check; frozen, not run |
 | `nfl_prospective_recorder_20260922` | GET-only prospective recorder; reviewed, not deployed |
+| `kalshi_c1_kxufcfight_lab_20260922` | C1 KXUFCFIGHT admit-wire scaffold. Clock accepts the admitted panel. Scorecard null. 16 unit tests green |
 | `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
 | `kalshi_soft_blended_reserves_000_lab_20260923` | Cap-SR soft-policy measurement on the A2 substrate. Scorecard null. Not a promotion claim |
 | `kalshi_r3p3_fl_maker_taker_lab_20260923` | R3-P3 maker/taker and 10¢ favorite–longshot bands. Supersedes draft PR15. Measurement only. Lee-Ready refused. Scorecard null. 14 unit tests green |
