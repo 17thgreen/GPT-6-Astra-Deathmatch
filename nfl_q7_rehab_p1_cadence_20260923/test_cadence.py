@@ -1,5 +1,7 @@
 """Cadence gate, null freeze, and one-knob checks. No historical tape and no P&L claim."""
+import hashlib
 import inspect
+import json
 import math
 import unittest
 from dataclasses import replace
@@ -239,6 +241,44 @@ class CadenceTests(unittest.TestCase):
         self.assertFalse(report['invented_hashes'])
         self.assertIn('q3300_d0.25_B', ' '.join(report['missing']))
         self.assertIn('q10000_d5_D', ' '.join(report['missing']))
+        frozen = load_frozen()
+        controls = frozen['positive_controls']
+        self.assertFalse(controls['waive_parent_ledger_hash_check'])
+        self.assertFalse(controls['parent_ledgers_in_checkout'])
+        self.assertFalse(controls['ledger_blobs_committed'])
+        self.assertTrue(controls['B0']['absence_is_not_a_pass'])
+        self.assertTrue(controls['D']['absence_is_not_a_pass'])
+        self.assertIsNone(frozen['results'])
+        self.assertIsNone(frozen['pnl'])
+        packets = frozen['conductor_packets']
+        self.assertTrue(packets['present_in_checkout'])
+        repo = ROOT.parent
+        for key, digest in packets['sha256'].items():
+            path = repo / packets[key]
+            self.assertTrue(path.is_file(), key)
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), digest)
+        decision = json.loads((repo / packets['parent_ledger_decision']).read_text())
+        pins = json.loads((repo / packets['parent_ledger_source_pins']).read_text())
+        self.assertEqual(decision['decision'], 'NO_WAIVE_RESTORE_PARENT_LEDGERS')
+        self.assertFalse(decision['waive_parent_ledger_hash_check'])
+        self.assertFalse(pins['waive'])
+        self.assertEqual(len(pins['artifacts']), 32)
+        match = controls['desk_verified_match']
+        self.assertEqual(match['q3300_d0.25_B.json'],
+                         '370ccbcf342db59aa1697d448d3274791cf17c015d8e9eead17d788fbe79ffb5')
+        self.assertEqual(match['q3300_d0.25_D.json'],
+                         'fc38cfbc134ca313a6cd2b8763ef49c3a56f6b5cc763c50f82e2b4545cda898f')
+        self.assertEqual(match['paircheck_effects.json'],
+                         '5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf')
+        self.assertEqual(pins['artifacts']['q3300_d0.25_B.json']['sha256'], match['q3300_d0.25_B.json'])
+        self.assertEqual(pins['artifacts']['q3300_d0.25_D.json']['sha256'], match['q3300_d0.25_D.json'])
+        self.assertEqual(pins['paircheck_effects.json']['sha256'], match['paircheck_effects.json'])
+        self.assertEqual(decision['desk_sources']['primary_B_sha256'], match['q3300_d0.25_B.json'])
+        self.assertEqual(decision['desk_sources']['primary_D_sha256'], match['q3300_d0.25_D.json'])
+        self.assertEqual(decision['desk_sources']['paircheck_effects_sha256'], match['paircheck_effects.json'])
+        parent_results = repo / controls['repo_results_path']
+        for name in list(pins['artifacts']) + ['paircheck_effects.json']:
+            self.assertFalse((parent_results / name).exists(), name)
 
     def test_selection_bar_does_not_soften_and_does_not_write_pnl(self):
         frozen_before = (ROOT / 'FROZEN_EXPERIMENT.json').read_text()

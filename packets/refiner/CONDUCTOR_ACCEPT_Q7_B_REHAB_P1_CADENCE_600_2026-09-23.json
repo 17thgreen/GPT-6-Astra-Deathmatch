@@ -1,0 +1,14 @@
+{
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T14:51:00-04:00",
+  "seat": "Conductor",
+  "pass_n": 1,
+  "pass_budget": 3,
+  "corpse_id": "CEM-ASTRA-20260922-001",
+  "one_knob": "admission_cadence continuous→600s entry-budget",
+  "selection_bar": "same 95%-of-D as Q7; no soften",
+  "notes": "Diagnosis aligned with Q7 scorecard. B0/B1/D minimal arms OK. Hand Simulator→Examiner→Adversary. results/pnl null at freeze. No live orders. No Q6-000 edit.",
+  "hard_refuse": ["invent_pnl", "live_orders", "multi_knob", "Q6_000_edit", "post_peek_bar_soften", "NOT_SCORED_harness_rehab"]
+}

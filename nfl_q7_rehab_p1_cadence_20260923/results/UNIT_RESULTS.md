@@ -8,7 +8,7 @@ Command, from `nfl_q7_rehab_p1_cadence_20260923/`:
 python3 -m unittest -v test_cadence
 ```
 
-Ran 10 tests in 0.008s at 2026-09-23T19:03:27Z. Result: OK. Failures: 0. Errors: 0.
+Ran 10 tests in 0.010s at 2026-09-23T19:11:11Z. Result: OK. Failures: 0. Errors: 0.
 
 Covered:
 
@@ -20,7 +20,7 @@ Covered:
 - Freeze `results` and `pnl` are null. A non-null stamp is refused.
 - `execute_score_run()` raises. `execute()` writes `NOT_RUN.json` with zero scenarios.
 - Imported `feebook.classify_scorecard` refuses a completed-profit label when the fee channel is missing.
-- Parent Q7 Arm B and Arm D ledgers are absent. `all_checks_passed` is null. Absence is not a pass.
+- Parent Q7 Arm B and Arm D ledger blobs are absent from this checkout. `all_checks_passed` is null. Absence is not a pass. `waive_parent_ledger_hash_check` is false. The conductor source-pin manifest is present; its hashes were not invented, and the blobs were not committed.
 - The selection helper returns `NO_NEW_SELECTION` when a stress misses the frozen bar. It does not write `pnl`.
 
 `FROZEN_EXPERIMENT.json` `results` and `pnl` stayed null after this run. Parent `nfl_paircheck_lab_20260922` and `SHADOW_CANDIDATE_FREEZE.json` were not edited. No live orders were sent.

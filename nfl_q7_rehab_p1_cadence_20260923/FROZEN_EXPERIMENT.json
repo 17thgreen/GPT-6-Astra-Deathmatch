@@ -5,15 +5,25 @@
   "frozen_at": "2026-09-23T18:58:13Z",
   "parent_corpse": "CEM-ASTRA-20260922-001",
   "parent_verdict": "Q7 Arm B KILL",
-  "note": "Source, tests, and the cadence gate were frozen after the hypothesis commit and before any rehab scenario execution. results and pnl remain null. Conductor packet paths named by the GO were absent from origin/main at 438f4ab; this file does not invent those bytes.",
+  "note": "Source, tests, and the cadence gate were frozen after the hypothesis commit and before any rehab scenario execution. results and pnl remain null. Conductor packet paths named by the GO were absent from origin/main at 438f4ab. Those packets, the NO_WAIVE parent-ledger decision, and the 32-artifact source-pin manifest are now present in this checkout and pinned under conductor_packets.sha256. The parent Arm B and Arm D ledger blobs are not on main and were not committed. Their sha256 values are the conductor manifest. waive_parent_ledger_hash_check is false. Absence of the blobs is not a pass. Examiner HOLD stands. This file does not invent ledger hashes or packet bytes.",
   "conductor_packets": {
     "freeze": "packets/refiner/REFINER_PASS1_FREEZE_Q7_B_CADENCE_600_2026-09-23.md",
     "accept": "packets/refiner/CONDUCTOR_ACCEPT_Q7_B_REHAB_P1_CADENCE_600_2026-09-23.json",
     "diagnosis": "packets/refiner/REFINER_PASS1_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
-    "present_in_checkout": false,
+    "parent_ledger_decision": "packets/refiner/CONDUCTOR_DECISION_Q7_B_P1_PARENT_LEDGERS_2026-09-23.json",
+    "parent_ledger_source_pins": "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "present_in_checkout": true,
+    "sha256": {
+      "freeze": "91506143c2f75e27dd8a2593e9b484457b61e5b1a8537002bf2b4f4be435ec97",
+      "accept": "6ff909e9e07c136a0b47d866ab54179e91080d514692c7bff9cb588e847dc1b9",
+      "diagnosis": "2f5beac53925ed9452c8cda05825c6da5b51593b183877a63770bbb0df9f584e",
+      "parent_ledger_decision": "78c4cf447d13c922540601d41ea11b12e5c90011622dcf92f25af4b8e1a580cf",
+      "parent_ledger_source_pins": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a"
+    },
     "origin_main": "438f4abf28a3c0156daf6c96ece5efda9557f1dc",
     "implement_from_go": true
   },
+  "examiner_hold": "EXAMINER_HOLD_Q7_B_REHAB_P1_CADENCE_600_PRE_MERGE",
   "does_not_modify": [
     "nfl_paircheck_lab_20260922",
     "nfl_factorial_lab_20260921",
@@ -166,7 +176,17 @@
       "cadence_blocks"
     ],
     "mismatch_is": "failed reproduction, not a rehab finding",
-    "parent_ledgers_in_checkout": false
+    "parent_ledgers_in_checkout": false,
+    "waive_parent_ledger_hash_check": false,
+    "ledger_blobs_committed": false,
+    "desk_path": "lab/astra-science/nfl_paircheck_lab_20260922/results/",
+    "repo_results_path": "nfl_paircheck_lab_20260922/results/",
+    "source_pins": "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "desk_verified_match": {
+      "q3300_d0.25_B.json": "370ccbcf342db59aa1697d448d3274791cf17c015d8e9eead17d788fbe79ffb5",
+      "q3300_d0.25_D.json": "fc38cfbc134ca313a6cd2b8763ef49c3a56f6b5cc763c50f82e2b4545cda898f",
+      "paircheck_effects.json": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf"
+    }
   },
   "parent_q7_sha256": {
     "paircheck_policy.py": "ae0a19e03acebd359e711fb13b5b47ca807d72632f3a2cd1c1c282ad5916d7a9",
@@ -190,7 +210,7 @@
     "selection.py": "c8195d09302b1491f69347f1936d8fa9db35b7564a899e28b546ebf4bf3c9a69",
     "positive_controls.py": "b2d2f8a9eec8370ee1eb39374f2a31e6586ce07793d5e9376cd7a2ea5c85829c",
     "run_experiment.py": "85adc1d890f989663393183acc92a0189680e4b61fbda9fed79b369f0afdf463",
-    "test_cadence.py": "ec30000c94f8f0abce01c618034ff47f27782497dffa6ca13dc8a097acae9f6e"
+    "test_cadence.py": "dc74fff7a5321fe4e35890ac2cf033f3fe1023d8392c059615211b244558a672"
   },
   "results": null,
   "pnl": null,

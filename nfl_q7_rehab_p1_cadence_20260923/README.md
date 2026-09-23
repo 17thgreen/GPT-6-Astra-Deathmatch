@@ -5,9 +5,10 @@ not contain rehab profit. `EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null. Q7 Arm B stays the
 killed parent, CEM-ASTRA-20260922-001.
 
-The Conductor paths named in the GO (`packets/refiner/REFINER_PASS1_*` and
-`CONDUCTOR_ACCEPT_Q7_B_REHAB_P1_CADENCE_600_2026-09-23.json`) are not in this
-checkout. This lab does not invent those bytes.
+The Conductor paths named in the GO are in this checkout under `packets/refiner/`,
+with the NO_WAIVE parent-ledger decision and the 32-artifact source-pin manifest.
+`FROZEN_EXPERIMENT.json` records `present_in_checkout` true and each verified
+sha256. Those packet bytes were copied. They were not invented.
 
 ## Knob
 
@@ -50,8 +51,10 @@ python3 run_experiment.py
 
 That writes `results/NOT_RUN.json` with `pnl` and `results` null and exits 3.
 `execute_score_run()` raises `ScoreRunRefused`. The Examiner runs the twelve
-scenarios in a later pass. Parent Q7 Arm B and Arm D ledgers are not in this
-checkout. That absence is not a positive-control pass, and this lab does not
-invent their hashes.
+scenarios in a later pass. Parent Q7 Arm B and Arm D ledger blobs are not on
+main and were not committed. `waive_parent_ledger_hash_check` is false. The
+conductor source-pin manifest records their sha256 values. That absence is not
+a positive-control pass, and this lab does not invent their hashes. Examiner
+HOLD stands until those controls can pass.
 
 No live orders, credentials, or holdout outcomes are used.
