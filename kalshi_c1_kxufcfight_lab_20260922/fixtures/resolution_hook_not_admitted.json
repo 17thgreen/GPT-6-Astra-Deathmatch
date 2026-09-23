@@ -1,0 +1,66 @@
+{
+  "label": "NOT_ADMITTED",
+  "awaiting": "CLOCK_ADMIT_PASS",
+  "packet_id": "C1-KXUFCFIGHT-MEAS",
+  "panel_version": "2026-09-22.c1-kxufcfight-meas-v0",
+  "collector": "READY",
+  "clock_rejoin": "KICKED",
+  "clock_admit": "NOT_ADMITTED",
+  "reported_settled_n": 4,
+  "admitted_settled_n": 0,
+  "events_finalized": 2,
+  "admitted_settled_panel": false,
+  "series": "KXUFCFIGHT",
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "roi": null,
+  "winner": null,
+  "note": "Placeholder slots for a later resolution join. No settlement value is stored. Reported settled N is 4. Admitted settled N is 0.",
+  "slots": [
+    {
+      "slot_id": "schema_event_1_a",
+      "event_index": 1,
+      "contract_index": 1,
+      "series": "KXUFCFIGHT",
+      "resolution": null,
+      "result": null,
+      "pnl": null,
+      "roi": null,
+      "MZ": null
+    },
+    {
+      "slot_id": "schema_event_1_b",
+      "event_index": 1,
+      "contract_index": 2,
+      "series": "KXUFCFIGHT",
+      "resolution": null,
+      "result": null,
+      "pnl": null,
+      "roi": null,
+      "MZ": null
+    },
+    {
+      "slot_id": "schema_event_2_a",
+      "event_index": 2,
+      "contract_index": 1,
+      "series": "KXUFCFIGHT",
+      "resolution": null,
+      "result": null,
+      "pnl": null,
+      "roi": null,
+      "MZ": null
+    },
+    {
+      "slot_id": "schema_event_2_b",
+      "event_index": 2,
+      "contract_index": 2,
+      "series": "KXUFCFIGHT",
+      "resolution": null,
+      "result": null,
+      "pnl": null,
+      "roi": null,
+      "MZ": null
+    }
+  ]
+}

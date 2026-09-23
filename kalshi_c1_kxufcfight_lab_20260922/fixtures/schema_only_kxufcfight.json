@@ -1,0 +1,200 @@
+{
+  "label": "SCHEMA_ONLY",
+  "packet_id": "C1-KXUFCFIGHT-MEAS",
+  "panel_version": "2026-09-22.c1-kxufcfight-meas-v0",
+  "collector": "READY",
+  "clock": "NOT_ADMITTED",
+  "clock_rejoin": "KICKED",
+  "awaiting": "CLOCK_ADMIT_PASS",
+  "reported_settled_n": 4,
+  "admitted_settled_n": 0,
+  "events_finalized": 2,
+  "settled_n": 0,
+  "examiner": "NOT_NOW",
+  "admitted_settled_panel": false,
+  "invented_fills": false,
+  "series": "KXUFCFIGHT",
+  "measurement_budget_usd": "5000",
+  "measurement_budget_role": "measurement_contrast_label",
+  "strategy_claim": false,
+  "winner": null,
+  "note": "Field shapes for a fee and queue label harness. Not captures, not fills, not a settled panel.",
+  "arms": [
+    {
+      "arm_id": "KXUFCFIGHT",
+      "kind": "ml_binary",
+      "series": "KXUFCFIGHT",
+      "instrument_id": "KXUFCFIGHT",
+      "measurement_budget_usd": "5000",
+      "measurement_budget_role": "measurement_contrast_label",
+      "rows": [
+        {
+          "schema_id": "schema_ufc_yes_bid",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-A",
+          "series": "KXUFCFIGHT",
+          "transaction_time": "2026-09-22T18:00:00Z",
+          "keepalive": false,
+          "taker_outcome_side": "yes",
+          "taker_book_side": "bid",
+          "schema_probe_contracts": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.4200", "12"]],
+            "no_dollars": [["0.5100", "9"]]
+          }
+        },
+        {
+          "schema_id": "schema_ufc_keepalive",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-A",
+          "series": "KXUFCFIGHT",
+          "transaction_time": "2026-09-22T18:00:01Z",
+          "keepalive": true,
+          "orderbook_fp": {
+            "yes_dollars": [["0.4200", "12"]],
+            "no_dollars": [["0.5100", "9"]]
+          }
+        },
+        {
+          "schema_id": "schema_ufc_time_changed",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-A",
+          "series": "KXUFCFIGHT",
+          "transaction_time": "2026-09-22T18:00:02Z",
+          "keepalive": false,
+          "taker_outcome_side": "yes",
+          "taker_book_side": "bid",
+          "schema_probe_contracts": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.4200", "12"]],
+            "no_dollars": [["0.5100", "9"]]
+          }
+        },
+        {
+          "schema_id": "schema_ufc_no_taker",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-B",
+          "series": "KXUFCFIGHT",
+          "transaction_time": "2026-09-22T18:00:03Z",
+          "keepalive": false,
+          "orderbook_fp": {
+            "yes_dollars": [["0.3000", "5"]],
+            "no_dollars": [["0.6000", "5"]]
+          }
+        },
+        {
+          "schema_id": "schema_ufc_taker_disagree",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-C",
+          "series": "KXUFCFIGHT",
+          "taker_outcome_side": "yes",
+          "taker_book_side": "ask"
+        },
+        {
+          "schema_id": "schema_ufc_incomplete_book",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-D",
+          "series": "KXUFCFIGHT",
+          "transaction_time": "2026-09-22T18:00:04Z",
+          "keepalive": false,
+          "taker_outcome_side": "yes",
+          "schema_probe_contracts": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.4000", "3"]],
+            "no_dollars": []
+          }
+        },
+        {
+          "schema_id": "schema_ufc_lee_ready",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-E",
+          "series": "KXUFCFIGHT",
+          "lee_ready": true,
+          "taker_outcome_side": "yes",
+          "yes_price_dollars": "0.60",
+          "mid": "0.50"
+        },
+        {
+          "schema_id": "schema_ufc_invented_fill",
+          "schema_only": true,
+          "ticker": "KXUFCFIGHT-SCHEMA-ML-F",
+          "series": "KXUFCFIGHT",
+          "taker_outcome_side": "yes",
+          "fill_count": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.4200", "12"]],
+            "no_dollars": [["0.5100", "9"]]
+          }
+        },
+        {
+          "schema_id": "schema_queue_q3300_vector",
+          "schema_only": true,
+          "queue_ahead": "3300",
+          "queue_ahead_role": "schema_vector",
+          "queue_ahead_is_observation": false,
+          "assumed_scenario": "q3300"
+        },
+        {
+          "schema_id": "schema_queue_outside_vector",
+          "schema_only": true,
+          "queue_ahead": "100",
+          "queue_ahead_role": "schema_vector",
+          "queue_ahead_is_observation": false,
+          "assumed_scenario": "q3300"
+        }
+      ]
+    },
+    {
+      "arm_id": "000",
+      "kind": "q6_000_pointer",
+      "series": null,
+      "instrument_id": "000",
+      "measurement_budget_usd": "5000",
+      "measurement_budget_role": "measurement_contrast_label",
+      "retune": false,
+      "rows": [
+        {
+          "schema_id": "schema_000_yes_bid",
+          "schema_only": true,
+          "ticker": "SCHEMA-000-INSTRUMENT",
+          "series": null,
+          "transaction_time": "2026-09-22T18:00:00Z",
+          "keepalive": false,
+          "taker_outcome_side": "yes",
+          "taker_book_side": "bid",
+          "schema_probe_contracts": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.5500", "4"]],
+            "no_dollars": [["0.4000", "6"]]
+          }
+        },
+        {
+          "schema_id": "schema_000_keepalive",
+          "schema_only": true,
+          "ticker": "SCHEMA-000-INSTRUMENT",
+          "series": null,
+          "transaction_time": "2026-09-22T18:00:01Z",
+          "keepalive": true,
+          "orderbook_fp": {
+            "yes_dollars": [["0.5500", "4"]],
+            "no_dollars": [["0.4000", "6"]]
+          }
+        },
+        {
+          "schema_id": "schema_000_unchanged",
+          "schema_only": true,
+          "ticker": "SCHEMA-000-INSTRUMENT",
+          "series": null,
+          "transaction_time": "2026-09-22T18:00:00Z",
+          "keepalive": false,
+          "taker_side": "no",
+          "schema_probe_contracts": "1",
+          "orderbook_fp": {
+            "yes_dollars": [["0.5500", "4"]],
+            "no_dollars": [["0.4000", "6"]]
+          }
+        }
+      ]
+    }
+  ]
+}
