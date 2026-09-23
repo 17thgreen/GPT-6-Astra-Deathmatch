@@ -1,0 +1,12 @@
+{
+  "experiment": "R3-P3-FL-MAKER-TAKER-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "mz_alpha": null,
+  "mz_psi": null,
+  "post_fee_roi_by_band": null,
+  "maker_vs_taker_roi_delta": null,
+  "settled_join_n": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema/pins only. Lee-Ready refused. Paper EV hypothesis only."
+}
