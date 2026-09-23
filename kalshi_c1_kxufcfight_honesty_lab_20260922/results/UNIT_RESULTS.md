@@ -60,3 +60,72 @@ Those rows were not copied into the freeze files.
 - `results` and `pnl` stay null. No strategy EV is recorded.
 
 No profit is reported.
+
+## Orderbook pin scaffold
+
+September 23, 2026. This section records a code check of the GET-only collector
+and the production pin gate. It is not a public GET and not an Examiner score.
+`ORDERBOOK_CAPTURE_SPEC.md` was committed before this source. The capture
+directory has no JSON file. `production_orderbook_status` is `FIXTURE_GAP`.
+`examiner_score_status` is `NOT_SCORED`. `results` and `pnl` stay null.
+
+From `kalshi_c1_kxufcfight_honesty_lab_20260922`, Python 3.12.3, standard
+library, at `2026-09-23T13:27:11Z`:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator tests.test_collect_orderbooks
+```
+
+Ran 17 tests in 0.030s. Result: OK. Failures: 0. Errors: 0.
+The same command was repeated after the empty-book pin, at
+`2026-09-23T13:30:55Z`: 17 tests in 0.029s, result OK. Failures: 0. Errors: 0.
+
+The new checks cover the public GET allowlist (method, host, query, dropped
+ORTDAS ticker, credential header, and a destination outside
+`lab/astra-capture/c1-kxufcfight/orderbooks/`), a failed ticker that writes
+nothing, an economics payload that is not stored, an existing JSON file that
+blocks a second write, a four-file pin whose sha256 matches and whose score
+stays `NOT_SCORED`, a tampered file that is refused, and synthetic scorecard
+fill that is refused. The earlier 12 checks still pass. Feebook and rails
+cores were not edited.
+
+C1 stays `NOT_SCORED` until pinned production orderbooks and an Examiner-ready
+scorecard both exist. This scaffold does not open that scorecard.
+
+## Public GET observation
+
+Recorded at `2026-09-23T13:29:40Z`. From
+`kalshi_c1_kxufcfight_honesty_lab_20260922`:
+
+```bash
+python3 collect_orderbooks.py
+```
+
+Wall time 36.352s. One GET per admitted ticker, 12 seconds apart, host
+`https://api.elections.kalshi.com`, path
+`/trade-api/v2/markets/{ticker}/orderbook`. No other route. No order.
+
+All four responses were HTTP 200. Each stored file is 51 bytes:
+
+`{"orderbook_fp":{"no_dollars":[],"yes_dollars":[]}}`
+
+sha256 `e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74`.
+The four files are byte-identical. Paths:
+
+- `lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22CONGUA-CON.json`
+- `lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22CONGUA-GUA.json`
+- `lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22DEGMOR-DEG.json`
+- `lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22DEGMOR-MOR.json`
+
+The admitted panel already marked these markets finalized. Empty bid lists
+were stored as received and were not filled in. This is not `FIXTURE_GAP`.
+It is also not depth, volume, open interest, fills, or PnL. `results` and
+`pnl` stay null. Examiner status stays `NOT_SCORED`. Pinned empty books do
+not open an Examiner-ready scorecard.
+
+## Limitations
+
+- The public books are empty. They cannot support a fee or queue score.
+- Label algebra in the unit run still uses `fixtures/synthetic_orderbooks.json`.
+  Those rows were not copied into the freeze files.
+- No live order was sent. Feebook, rails, and Q6-`000` were not edited.
