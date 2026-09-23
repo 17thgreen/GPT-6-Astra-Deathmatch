@@ -1,9 +1,13 @@
 # R3-P3 FL maker/taker settled-resolution join harness
 
-Status: hypothesis committed before a unit outcome. `EXPERIMENT_SPEC.md`
-is the hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl`
-null. `results/EMPTY_RESULTS.json` keeps `results`, `pnl`,
-`settled_join_n`, `occurrence_match_n`, and `admit_ready_flag` null.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 10 tests in 0.129s. Recorded at 2026-09-23T19:53:37Z. Result: OK.
+Failures: 0. Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
+`results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps `results`,
+`pnl`, `settled_join_n`, `occurrence_match_n`, and `admit_ready_flag`
+null.
 
 This lab is measurement-only. Feature family R3P3-RJ. The only knob is
 `join_gate`: J0 `nonempty_result_required` and J1
@@ -31,8 +35,7 @@ bytes.
 Feebook and rails commits are fixed path pins and are not imported.
 No fee arm. No live orders. No Logan keys.
 
-From this directory, Python 3.12 standard library, after the source
-commit:
+From this directory, Python 3.12 standard library:
 
 ```bash
 python3 -m unittest -v tests.test_orchestrator
