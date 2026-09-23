@@ -5,12 +5,17 @@
   "roi": null,
   "winner": null,
   "settled_n": 0,
-  "clock": "REFUSED",
+  "reported_settled_n": 4,
+  "admitted_settled_n": 0,
+  "events_finalized": 2,
+  "clock": "NOT_ADMITTED",
+  "clock_rejoin": "KICKED",
+  "awaiting": "CLOCK_ADMIT_PASS",
   "collector": "READY",
   "panel_version": "2026-09-22.c1-kxufcfight-meas-v0",
   "measurement_budget_usd": "5000",
   "measurement_budget_role": "measurement_contrast_label",
   "strategy_claim": false,
   "status": "EMPTY",
-  "note": "No Mincer-Zarnowitz statistic, no ROI, no winner, and no profit are recorded here. The 5000 figure is the shared measurement-contrast label, not a filled account. Schema-only unit checks do not fill this file. Settled N is 0."
+  "note": "No Mincer-Zarnowitz statistic, no ROI, no winner, and no profit are recorded here. The 5000 figure is the shared measurement-contrast label, not a filled account. Reported settled N is 4 and the clock re-join is KICKED. Admit status is NOT_ADMITTED. Those settles are not copied into results, pnl, MZ, or roi. Schema checks do not fill this file. Admitted settled N is 0."
 }

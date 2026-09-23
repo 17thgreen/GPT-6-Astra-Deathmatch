@@ -12,5 +12,9 @@
 - The `000` arm is the instrument pointer. It is not the production
   `q3300_d0.25_000` gzip and it is not a retune of that strategy.
 - The shared `5000` figure is the measurement-contrast label on both arms.
+- `resolution_hook_not_admitted.json` is a placeholder for a later resolution
+  join. Label `NOT_ADMITTED`. Clock re-join `KICKED`. Awaiting
+  `CLOCK_ADMIT_PASS`. Four slots, two events, every resolution null.
+  Reported settled N 4 is the conductor count. It is not a scorecard.
 
 This file does not contain ledger bytes.

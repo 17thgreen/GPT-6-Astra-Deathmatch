@@ -9,8 +9,14 @@
   "not_a_strategy": true,
   "panel_version": "2026-09-22.c1-kxufcfight-meas-v0",
   "collector": "READY",
-  "clock": "REFUSED",
+  "clock": "NOT_ADMITTED",
+  "clock_rejoin": "KICKED",
+  "awaiting": "CLOCK_ADMIT_PASS",
+  "reported_settled_n": 4,
+  "admitted_settled_n": 0,
+  "events_finalized": 2,
   "settled_n": 0,
+  "scorecard_filled_from_reported_settles": false,
   "examiner": "NOT_NOW",
   "series": "KXUFCFIGHT",
   "series_fee_resolution": "default_unknown_series",
@@ -74,11 +80,12 @@
   "forbid_naked_q6_q7_fee_literals": true,
   "forbid_invented_pnl": true,
   "specification_sha256": {
-    "EXPERIMENT_SPEC.md": "fa97bc3510196ff4d3a90c332193d2ec738cef777059c7249d3ce64227adb94f",
-    "SOURCE_PINS.json": "91bd833a86bc514599a94fc61e2da8326ceee1572ee3dc1f3705e65320b2e2d5",
-    "fixtures/PIN.md": "0e8d237d6a9460f8b9bb71379d537fb7ae1428a8757526c8995e246354a6137c",
-    "fixtures/schema_only_kxufcfight.json": "809c7facbd32675b268007dc53acb81b0efab841e5a17d39b758762daf4678da",
-    "results/EMPTY_RESULTS.json": "afce235556a40d992c603c6a4a68968d5a12104e569696af073ba5f3e481a1cf"
+    "EXPERIMENT_SPEC.md": "2304d7c5a6c133d1aca66149f091a41119a2454b2709203057e9efc2bcd075ab",
+    "SOURCE_PINS.json": "2afdbd46fb3510df2f9f9dfa3335af1653a0cbd7c8a60319bab664dec19eed2e",
+    "fixtures/PIN.md": "3d8d9aa75fcdc643b160af2afac59f40b2e29db7d268edfea8471764e5aff436",
+    "fixtures/schema_only_kxufcfight.json": "a6b441c9ee5ff0601cfdcf691eb207a4abc3f481f4793db7f8a28ae0275485e4",
+    "fixtures/resolution_hook_not_admitted.json": "93aa18a9f3ffef109e27d3400288c5d18890eafd10c25a4852c05b16539ef6db",
+    "results/EMPTY_RESULTS.json": "125cb27dbca042b04869a70295419c7dfb8e41c2a2dc425e1a7951daafc6f883"
   },
   "implementation_sha256": {
     "README.md": "cd94a4d9bf53c1741990be1aab6b0a40574dbb8755cbfc3f48ed307c0ec9bd4b",

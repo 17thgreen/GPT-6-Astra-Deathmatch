@@ -18,13 +18,38 @@ Collector stub: `READY`.
 
 `panel_version`: `2026-09-22.c1-kxufcfight-meas-v0`.
 
-Clock: `REFUSED`. Settled N is 0. The collector being ready does not admit a
-settled panel. `clock_admit` raises. An Examiner pass is not this scaffold.
-`MZ` and `roi` have no successful path while that refusal stands.
+Clock admit: `NOT_ADMITTED`, awaiting `CLOCK_ADMIT_PASS`. The collector
+being ready does not admit a settled panel. `clock_admit` raises on every
+input, including a caller that passes the string `ADMIT_PASS`. An Examiner
+pass is not this scaffold. `MZ` and `roi` have no successful path while that
+admit is outstanding.
+
+The original scaffold recorded Clock `REFUSED` at admitted settled N 0.
+A later conductor update, recorded below, does not replace that admit rule.
 
 `FROZEN_EXPERIMENT.json` keeps `results`, `pnl`, `MZ`, and `roi` null.
 `results/EMPTY_RESULTS.json` keeps the same four fields null. A schema walk
 does not fill either file. `winner` stays null. No fill is awarded.
+
+## Conductor update — rejoin kicked, admit still closed
+
+September 23, 2026, after the source freeze. The conductor reports that both
+KXUFCFIGHT events are finalized and that settled N is 4. The clock re-join
+is `KICKED`.
+
+That report is a status pin. It is not a resolution file, not a fill, and
+not a scorecard. This scaffold does not know which contracts settled, and it
+does not store a yes or no result. Admitted settled N stays 0. `results`,
+`pnl`, `MZ`, and `roi` stay null until a Clock `ADMIT_PASS` that this
+checkout does not contain.
+
+`fixtures/resolution_hook_not_admitted.json` is the placeholder path for a
+later wiring of resolution fixtures. Its label is `NOT_ADMITTED`. It has
+four slots, two events, and a null resolution on every slot.
+`wire_resolution_hook` returns those slot ids with `resolutions_applied` 0.
+`apply_resolutions` raises. A slot that already carries a resolution,
+result, pnl, roi, or MZ is refused before any of those values is copied
+into the return.
 
 ## Placement
 
@@ -186,10 +211,12 @@ is not an observed `000` queue. The shipped fixture rejects
 ## Pin E — schema-only fixture
 
 `fixtures/schema_only_kxufcfight.json` is a field-shape sheet. Its header
-says `SCHEMA_ONLY`, `admitted_settled_panel` false, collector `READY`, clock
-`REFUSED`, settled N 0, series `KXUFCFIGHT`, and the panel version above.
-The rows are not an admitted panel, not captures, and not fills. They have
-no resolution keys. `fixtures/PIN.md` says the same thing.
+says `SCHEMA_ONLY`, `admitted_settled_panel` false, collector `READY`,
+clock `NOT_ADMITTED`, clock re-join `KICKED`, awaiting `CLOCK_ADMIT_PASS`,
+reported settled N 4, admitted settled N 0, series `KXUFCFIGHT`, and the
+panel version above. The rows are not an admitted panel, not captures, and
+not fills. They have no resolution keys. `fixtures/PIN.md` says the same
+thing. The reported count on the header is not a scorecard.
 
 `walk_schema` labels both arms in memory. Its `results`, `pnl`, `MZ`, `roi`,
 and `winner` are null. It does not write `FROZEN_EXPERIMENT.json` or
@@ -210,5 +237,7 @@ After the source freeze, a result file may record whether the unit tests
 passed and may repeat these limitations. It may not report profit, may not
 fill `MZ` or `roi`, may not name a winner, may not relabel development
 games, and may not treat a schema row as a settled contract or a fill.
-`results`, `pnl`, `MZ`, and `roi` stay null until a Clock admit. This
-scaffold does not obtain that admit.
+`results`, `pnl`, `MZ`, and `roi` stay null until a Clock `ADMIT_PASS`. This
+scaffold does not obtain that pass. A unit file may say that the rejoin
+hook loaded four empty slots. It may not fill those fields from the
+reported settled N of 4.
