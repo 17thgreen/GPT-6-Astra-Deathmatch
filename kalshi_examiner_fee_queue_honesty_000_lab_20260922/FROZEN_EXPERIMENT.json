@@ -57,7 +57,7 @@
   ],
   "question": "Does one orchestrator import the hygiene join and the queue-fragility join on one Q6-000 fills stream while the six scorecard fields, results, and pnl stay null?",
   "specification_sha256": {
-    "EXPERIMENT_SPEC.md": "5007ec177c500465f6fddb14e82c4b616378f604e1c929dea5ab9247eec49596",
+    "EXPERIMENT_SPEC.md": "a012ee5ec379411b972b6f99634f77c318bf592934790f62c86fa981ad1be273",
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000_FREEZE_2026-09-22.md": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000/freeze.json": "008fcffdfaef63df8bf8f7927be6a7b8a499b19d09e7ecdb0078cf3991c31596",
     "results/EMPTY_RESULTS.json": "4c6068d8b9d901286d15979d6a21e59f9eea5fc0f27723c498b7e8185b100523"

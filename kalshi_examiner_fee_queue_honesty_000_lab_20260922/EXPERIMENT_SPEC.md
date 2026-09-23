@@ -47,8 +47,13 @@ does one thin orchestrator do all of the following on a code check:
    its matching orders when both files exist and match the pinned sha256
    `9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f` and
    `c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c`.
-3. When that gzip pair is absent from the checkout, read one synthetic schema
+   The orchestrator checks that pair on disk. The default root is the
+   repository. Both joins then read those paths with source
+   `production_pin`. A present pair whose sha256 is not the pin is refused.
+   The resolver does not switch that pair to the synthetic stand-in.
+3. When that gzip pair is absent from the root, read one synthetic schema
    stand-in through both joins, and still leave the scorecard null.
+   In-memory labels from that stand-in are not copied into freeze files.
 4. Refuse `write_scorecard` when any scorecard field is non-null, and refuse
    to store a scorecard in the freeze files in either case.
 5. Leave these fields null in `FROZEN_EXPERIMENT.json` and
@@ -56,10 +61,16 @@ does one thin orchestrator do all of the following on a code check:
    `freshness_gap_sec`, `queue_bin_mismatch_rate`, `fill_rate_delta_vs_q3300`,
    `adverse_queue_exposure`, `participation_stress_gap`, `results`, and `pnl`.
 
+A unit may place the same relative layout under a temporary root. Selection
+requires those names and a sha256 equal to the pin. The temporary bytes are
+not the indexed gzip unless the hashes say so. Either way, the six scorecard
+fields, `results`, and `pnl` stay null. The harsh twin
+`q10000_d0.25_000_*` is not the selected stream.
+
 This is a code-verification question. It is not a Q6 tape walk and not live
 trading. Unit tests may show that both joins label the same rows in memory.
 They may not copy those labels into the freeze files, and they may not invent
-walk P&L.
+walk P&L. Synthetic rows stay on the unit path.
 
 ## Constants
 
