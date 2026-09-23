@@ -60,7 +60,14 @@
     "fixtures/schema_only_public_trades.json": "b18171721e2e603f023bcb92a94f7d1dc153664d3e952f6b5c2aa5619fda6b60",
     "results/EMPTY_RESULTS.json": "6248a9eb51b175b3853c6b14db4bd2ec1dd6c7c43de9c83b0d0bfd3191382fe8"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "a2b70b4ca65007296f92f1df9fb18daf1287fa47a46bbf0399450ca3dda987a4",
+    "maker_taker.py": "f9911a2c31761e004f581a8bb6e4601e32836dd5b910e97dd99df971b45f8010",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_maker_taker.py": "5ba86ff17b3340d80e6a8b7e99f97a70701288b38c3c27c7b86710a3333a54e9"
+  },
+  "source_frozen_at": "2026-09-23T00:40:16Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. results, pnl, MZ, and band_roi remain null.",
   "results": null,
   "pnl": null,
   "MZ": null,
