@@ -1,0 +1,23 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "C3-KXHIGHNY-MEAS",
+  "packet_id": "C3-KXHIGHNY-MEAS",
+  "ran_at": "2026-09-23T00:50:40Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_ladder",
+  "cwd": "kalshi_c3_kxhighny_lab_20260922",
+  "tests_run": 17,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.006,
+  "sibling_regressions": {
+    "tests.test_feebook": {"tests_run": 37, "result": "OK", "elapsed_seconds": 0.004},
+    "tests.test_rails": {"tests_run": 44, "result": "OK", "elapsed_seconds": 0.004}
+  },
+  "results": null,
+  "pnl": null,
+  "MZ": null,
+  "ROI": null,
+  "note": "Code verification of bordering-strike helpers on a schema-only ladder. Not a simulated execution and not live validation. Freeze results, pnl, MZ, and ROI remain null. No settled fill was invented."
+}
