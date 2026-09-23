@@ -30,10 +30,14 @@ Bands registry: `lab/astra-capture/r3-p3-fl-maker-taker/bands_registry_10c.json`
 Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
 
+This directory supersedes draft PR15
+(https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/15).
+`kalshi_r3_p3_fl_maker_taker_lab_20260922/` is not created. Kernels are not dual-maintained.
+
 From this directory, Python 3.12 standard library:
 
 ```bash
-python3 -m unittest -v tests.test_orchestrator
+python3 -m unittest -v tests.test_orchestrator tests.test_pr15_absorption
 ```
 
 No Logan keys. No live orders. A passing unit run is not an Examiner score.

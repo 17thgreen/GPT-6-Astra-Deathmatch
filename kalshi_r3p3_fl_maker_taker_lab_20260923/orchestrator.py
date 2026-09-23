@@ -55,7 +55,7 @@ SCORECARD_FIELDS = (
 OUTPUT_KEYS = SCORECARD_FIELDS + ('results', 'pnl')
 ADVERSARY_LABELS = {
     'paper_ev': 'paper EV is hypothesis only',
-    'paper_26pct': 'paper +2.6% is hypothesis only',
+    'paper_26pct': 'paper percent claim is hypothesis only',
     'paper_maker_50c': 'paper maker at or above 50 cents is hypothesis only',
     'author_pnl': 'author PnL is hypothesis only',
     'lee_ready': 'Lee-Ready aggressor inference is refused',
@@ -101,6 +101,15 @@ PANEL_STUB = CAPTURE_DIR / 'panel_stub.json'
 PANEL_ADMITTED = CAPTURE_DIR / 'panel_admitted.json'
 BANDS_REGISTRY = CAPTURE_DIR / 'bands_registry_10c.json'
 SYNTHETIC_TRADES = ROOT / 'fixtures' / 'synthetic_trades.json'
+SCHEMA_FIXTURE = ROOT / 'fixtures' / 'schema_only_public_trades.json'
+SUPERSEDED_LAB = 'kalshi_r3_p3_fl_maker_taker_lab_20260922'
+SUPERSEDED_PR = 15
+PUBLIC_TAKER_FIELDS = ('taker_outcome_side', 'taker_book_side', 'taker_side')
+IGNORED_TAKER_KEYS = ('taker_action',)
+BOOK_TO_OUTCOME = {'bid': 'yes', 'ask': 'no'}
+QUOTE_FIELDS = ('mid', 'bid', 'ask', 'prev_price')
+SCHEMA_LABEL = 'SCHEMA_ONLY'
+_UNSET = object()
 C3_FROZEN = (
     PARENT / 'kalshi_c3_kxhighny_bordering_lab_20260923' / 'FROZEN_EXPERIMENT.json'
 )
@@ -216,6 +225,20 @@ class AdmitRefused(OrchestratorError):
         super().__init__('admit refused')
 
 
+class TakerFieldRefused(OrchestratorError):
+    """The row has no agreeing native public taker_* field."""
+
+    def __init__(self, detail='taker field'):
+        super().__init__(detail)
+
+
+class RebinRefused(OrchestratorError):
+    """Band edges are not refit after outcomes."""
+
+    def __init__(self):
+        super().__init__('do not rebin after outcomes')
+
+
 def sha256_file(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
@@ -230,6 +253,11 @@ def run_admit():
     raise AdmitRefused()
 
 
+def clock_admit(*_args, **_kwargs):
+    """The clock refused admit while settled join N is still closed."""
+    run_admit()
+
+
 def assert_public_get(method):
     """GET is the only public capture verb. This function does not open a socket."""
     if method != 'GET':
@@ -237,9 +265,29 @@ def assert_public_get(method):
     return None
 
 
-def infer_aggressor(*_args, **_kwargs):
-    """Lee-Ready and every other aggressor inference stay refused."""
+def lee_ready(*_args, **_kwargs):
+    """Quote test and tick rule are refused for every input."""
     raise LeeReadyRefused()
+
+
+def infer_aggressor(*args, **kwargs):
+    """Lee-Ready and every other aggressor inference stay refused."""
+    lee_ready(*args, **kwargs)
+
+
+def mincer_zarnowitz(*_args, **_kwargs):
+    """Mincer-Zarnowitz has no successful path in this harness."""
+    raise ScorecardPromotionRefused()
+
+
+def band_roi(*_args, **_kwargs):
+    """Per-band return has no successful path in this harness."""
+    raise ScorecardPromotionRefused()
+
+
+def rebin_after_outcomes(*_args, **_kwargs):
+    """Outcomes do not move the pinned edges."""
+    raise RebinRefused()
 
 
 def refuse_adversary(label):
@@ -260,21 +308,26 @@ def assert_examiner_quote(quote):
 
 def fee_schema_object():
     """Formula id and pin only. ROI and the numeric fee stay off the object."""
-    formula_ids = []
-    for role in ('maker', 'taker'):
-        quote = feebook.order_fee(role, '1', '0.50', round_up=True)
-        assert_examiner_quote(quote)
-        formula_ids.append(quote['formula_id'])
-    if formula_ids[0] != formula_ids[1]:
+    taker_quote = feebook.order_fee('taker', '1', '0.50', round_up=True)
+    maker_quote = feebook.order_fee('maker', '1', '0.50', round_up=True)
+    assert_examiner_quote(taker_quote)
+    assert_examiner_quote(maker_quote)
+    channel = feebook.examiner_fee_channel(taker_quote, maker_quote)
+    if channel.get('formula_id') != feebook.EXAMINER_FORMULA_ID:
         raise OrchestratorError('examiner formula')
+    if 'yes' not in feebook.TAKER_FILLS_RESTING or 'no' not in feebook.TAKER_FILLS_RESTING:
+        raise OrchestratorError('taker fills resting')
     return {
         'formula_id': feebook.EXAMINER_FORMULA_ID,
         'fee_pin': FEEBOOK_COMMIT,
         'fee_lab': 'kalshi_feebook_lab_20260922',
         'roles': ('maker', 'taker'),
+        'symbols': ('order_fee', 'examiner_fee_channel', 'TAKER_FILLS_RESTING'),
         'numeric_fee_stored': False,
         'roi': None,
         'post_fee_roi': None,
+        'MZ': None,
+        'band_roi': None,
     }
 
 
@@ -356,8 +409,10 @@ def load_bands_registry(path=None):
     return _validate_registry(json.loads(path.read_text()))
 
 
-def assign_band(price, bands=None):
-    """One registry band for a yes price. No outcome is consulted."""
+def assign_band(price, bands=None, outcome=_UNSET):
+    """One registry band for a price. An outcome argument is a rebin attempt."""
+    if outcome is not _UNSET:
+        raise RebinRefused()
     if bands is None:
         bands = load_bands_registry()
     price = feebook.as_decimal(price, 'yes_price_dollars')
@@ -380,24 +435,91 @@ def assign_band(price, bands=None):
     return matches[0]
 
 
+def _lee_ready_requested(row):
+    value = row.get('lee_ready')
+    if value is True:
+        return True
+    if isinstance(value, str) and value != 'REFUSED':
+        return True
+    classifier = row.get('classifier')
+    if isinstance(classifier, str) and classifier.lower().replace('_', '-') in ('lee-ready', 'leeready'):
+        return True
+    return False
+
+
+def _agree(current, value):
+    if current is None:
+        return value
+    if current != value:
+        raise TakerFieldRefused('taker_* fields disagree')
+    return current
+
+
+def classify_taker(row):
+    """Classify from native public taker_* fields. Quote fields do not vote."""
+    if not isinstance(row, dict):
+        raise OrchestratorError('row')
+    if _lee_ready_requested(row):
+        raise LeeReadyRefused()
+    unknown = [
+        key for key in row
+        if key.startswith('taker_')
+        and key not in PUBLIC_TAKER_FIELDS
+        and key not in IGNORED_TAKER_KEYS
+        and row.get(key) is not None
+    ]
+    if unknown:
+        raise TakerFieldRefused('unknown taker_* field')
+    if row.get('taker_action') is not None:
+        raise OrchestratorError('taker_action')
+    outcome = None
+    present = []
+    if row.get('taker_outcome_side') is not None:
+        side = row['taker_outcome_side']
+        if side not in ('yes', 'no'):
+            raise TakerFieldRefused('taker_outcome_side')
+        outcome = _agree(outcome, side)
+        present.append('taker_outcome_side')
+    if row.get('taker_book_side') is not None:
+        book = row['taker_book_side']
+        if book not in BOOK_TO_OUTCOME:
+            raise TakerFieldRefused('taker_book_side')
+        outcome = _agree(outcome, BOOK_TO_OUTCOME[book])
+        present.append('taker_book_side')
+    if row.get('taker_side') is not None:
+        side = row['taker_side']
+        if side not in ('yes', 'no'):
+            raise TakerFieldRefused('taker_side')
+        outcome = _agree(outcome, side)
+        present.append('taker_side')
+    if outcome is None:
+        raise TakerFieldRefused('native public taker_* field required')
+    return {
+        'taker_outcome_side': outcome,
+        'taker_book_side': 'bid' if outcome == 'yes' else 'ask',
+        'maker_outcome_side': feebook.TAKER_FILLS_RESTING[outcome],
+        'native_fields': present,
+        'classification': 'native_public_taker',
+        'lee_ready': None,
+    }
+
+
 def normalize_trade(trade, bands):
     """Native taker fields plus one band id. ROI stays null."""
     _refuse_evidence_labels(trade)
-    outcome = trade.get('taker_outcome_side')
-    book = trade.get('taker_book_side')
-    if outcome not in ('yes', 'no'):
-        raise OrchestratorError('taker_outcome_side')
-    if book not in ('bid', 'ask'):
-        raise OrchestratorError('taker_book_side')
-    alias = trade.get('taker_side')
-    if alias is not None and alias != outcome:
-        raise OrchestratorError('taker_side')
-    if trade.get('taker_action') is not None:
-        raise OrchestratorError('taker_action')
     if trade.get('lee_ready') != 'REFUSED':
         raise LeeReadyRefused()
     if trade.get('aggressor_inference') is not None:
         raise LeeReadyRefused()
+    classified = classify_taker(trade)
+    if 'taker_outcome_side' not in classified['native_fields']:
+        raise TakerFieldRefused('taker_outcome_side')
+    if 'taker_book_side' not in classified['native_fields']:
+        raise TakerFieldRefused('taker_book_side')
+    outcome = classified['taker_outcome_side']
+    book = trade.get('taker_book_side')
+    if book != classified['taker_book_side']:
+        raise TakerFieldRefused('taker_book_side')
     price = trade.get('yes_price_dollars')
     if price is None:
         raise OrchestratorError('yes_price_dollars')
@@ -419,6 +541,7 @@ def normalize_trade(trade, bands):
         'ticker': ticker,
         'taker_outcome_side': outcome,
         'taker_book_side': book,
+        'maker_outcome_side': classified['maker_outcome_side'],
         'band_id': band_id,
         'lee_ready': 'REFUSED',
         'aggressor_inference': None,
@@ -444,6 +567,7 @@ def partition_rows(trades):
         row = {
             'taker_outcome_side': outcome,
             'taker_book_side': book,
+            'maker_outcome_side': feebook.TAKER_FILLS_RESTING[outcome],
             'trade_n': len(trade_ids),
             'trade_ids': trade_ids,
             'lee_ready': 'REFUSED',
@@ -679,7 +803,9 @@ def instrument_binding(panel=None):
         raise OrchestratorError('examiner formula')
     if schema['numeric_fee_stored'] is not False:
         raise InventedRoiRefused()
-    if 'fee' in schema or 'raw' in schema or schema['roi'] is not None:
+    if 'fee' in schema or 'raw' in schema or 'taker_fee' in schema or 'maker_fee' in schema:
+        raise InventedRoiRefused()
+    if schema['roi'] is not None or schema['MZ'] is not None or schema['band_roi'] is not None:
         raise InventedRoiRefused()
     if rails.FEE_CREDIT_RULE_ID != 'astra.r1p5.rails.maker_credit_floor_cent.v1':
         raise OrchestratorError('rails rule')
@@ -700,7 +826,12 @@ def instrument_binding(panel=None):
         'fee_source': 'feebook',
         'rails_source': 'rails',
         'fee_schema_formula_id': schema['formula_id'],
+        'feebook_imported': True,
+        'feebook_copied': False,
+        'symbols': schema['symbols'],
         'numeric_fee_stored': False,
+        'supersedes_pr': SUPERSEDED_PR,
+        'superseded_lab_present': (PARENT / SUPERSEDED_LAB).exists(),
         'freshness_is_scorecard': False,
         'c3_prefer_cite': panel.get('c3_prefer_cite'),
         'c3_strategy_merge': False,
@@ -729,6 +860,8 @@ def published_scorecard():
     scorecard['status'] = 'EMPTY_RESULTS_PRE_EXAMINER'
     scorecard['lee_ready'] = 'REFUSED'
     scorecard['paper_ev'] = False
+    scorecard['MZ'] = None
+    scorecard['band_roi'] = None
     return scorecard
 
 
@@ -738,6 +871,9 @@ def assert_null_scorecard(payload):
         raise ScorecardPromotionRefused()
     for key in OUTPUT_KEYS:
         if key not in payload or payload[key] is not None:
+            raise ScorecardPromotionRefused()
+    for key in ('MZ', 'band_roi'):
+        if key in payload and payload[key] is not None:
             raise ScorecardPromotionRefused()
     return payload
 
@@ -760,7 +896,9 @@ def _assert_schema_rows(rows):
             raise InventedRoiRefused()
         if schema['numeric_fee_stored'] is not False:
             raise InventedRoiRefused()
-        if 'fee' in schema or 'raw' in schema:
+        if 'fee' in schema or 'raw' in schema or 'taker_fee' in schema or 'maker_fee' in schema:
+            raise InventedRoiRefused()
+        if schema.get('MZ') is not None or schema.get('band_roi') is not None:
             raise InventedRoiRefused()
         if row.get('lee_ready') != 'REFUSED' or row.get('aggressor_inference') is not None:
             raise LeeReadyRefused()
@@ -805,6 +943,8 @@ def _report(arm, trades, source, panel):
         _assert_schema_rows(report['bands'])
     for key in OUTPUT_KEYS:
         report[key] = None
+    report['MZ'] = None
+    report['band_roi'] = None
     assert_null_scorecard(report)
     assert_null_scorecard(published)
     if report['settled_join'] != []:
@@ -843,6 +983,137 @@ def conduct_synthetic(arm, path=None):
         raise UnknownSlice()
     trades = load_synthetic_trades(path)
     return _report(arm, trades, 'synthetic_schema_standin', None)
+
+
+def _schema_prices(row, taker_outcome):
+    if row.get('yes_price_dollars') is None or row.get('no_price_dollars') is None:
+        raise OrchestratorError('both dollar prices are required')
+    yes = feebook.as_decimal(row['yes_price_dollars'], 'yes_price_dollars')
+    no = feebook.as_decimal(row['no_price_dollars'], 'no_price_dollars')
+    if yes + no != feebook.ONE:
+        raise OrchestratorError('yes and no prices must sum to 1')
+    if taker_outcome == 'yes':
+        return yes, no
+    return no, yes
+
+
+def _schema_contracts(row):
+    if row.get('count_fp') is None and row.get('count') is None:
+        raise OrchestratorError('contracts')
+    fp = None if row.get('count_fp') is None else feebook.as_decimal(row['count_fp'], 'count_fp')
+    count = None if row.get('count') is None else feebook.as_decimal(row['count'], 'count')
+    if fp is not None and count is not None and fp != count:
+        raise OrchestratorError('count_fp and count disagree')
+    contracts = fp if fp is not None else count
+    if contracts <= 0:
+        raise OrchestratorError('contracts')
+    return contracts
+
+
+def join_schema_row(row):
+    """In-memory schema join. Numeric quotes are not copied onto the scorecard."""
+    if not isinstance(row, dict):
+        raise OrchestratorError('row')
+    _refuse_evidence_labels(row)
+    for key in ('resolution', 'result', 'outcome', 'roi', 'MZ', 'band_roi'):
+        if key in row and row[key] is not None:
+            raise ScorecardPromotionRefused()
+    classified = classify_taker(row)
+    contracts = _schema_contracts(row)
+    taker_price, maker_price = _schema_prices(row, classified['taker_outcome_side'])
+    taker_quote = feebook.order_fee('taker', contracts, taker_price, round_up=True)
+    maker_quote = feebook.order_fee('maker', contracts, maker_price, round_up=True)
+    assert_examiner_quote(taker_quote)
+    assert_examiner_quote(maker_quote)
+    channel = feebook.examiner_fee_channel(taker_quote, maker_quote)
+    if channel.get('formula_id') != feebook.EXAMINER_FORMULA_ID:
+        raise OrchestratorError('examiner formula')
+    joined = {
+        'schema_id': row.get('schema_id'),
+        'label': SCHEMA_LABEL,
+        'taker_outcome_side': classified['taker_outcome_side'],
+        'maker_outcome_side': classified['maker_outcome_side'],
+        'taker_book_side': classified['taker_book_side'],
+        'native_fields': classified['native_fields'],
+        'classification': classified['classification'],
+        'ignored_quote_fields': [key for key in QUOTE_FIELDS if key in row],
+        'contracts': contracts,
+        'taker_price': taker_price,
+        'maker_price': maker_price,
+        'taker_band': assign_band(taker_price),
+        'maker_band': assign_band(maker_price),
+        'yes_band': assign_band(feebook.as_decimal(row['yes_price_dollars'], 'yes_price_dollars')),
+        'formula_id': channel['formula_id'],
+        'taker_quote': taker_quote,
+        'maker_quote': maker_quote,
+        'scorecard_label': None,
+        'lee_ready': None,
+        'numeric_fee_on_scorecard': False,
+    }
+    for key in OUTPUT_KEYS:
+        joined[key] = None
+    joined['MZ'] = None
+    joined['band_roi'] = None
+    return joined
+
+
+def load_schema_fixture(path=None):
+    """Read the schema sheet. It is not the admitted panel and not a settlement."""
+    path = SCHEMA_FIXTURE if path is None else Path(path)
+    payload = json.loads(Path(path).read_text())
+    if payload.get('label') != SCHEMA_LABEL:
+        raise OrchestratorError('label')
+    if payload.get('admitted_settled_panel') is not False:
+        raise OrchestratorError('admitted settled panel')
+    if payload.get('panel_version') != PANEL_VERSION:
+        raise PanelVersionRefused()
+    if payload.get('settled_n') not in (0, None):
+        raise InventedSettlementRefused()
+    rows = payload.get('rows')
+    if not isinstance(rows, list) or not rows:
+        raise OrchestratorError('rows')
+    for row in rows:
+        if not isinstance(row, dict) or row.get('schema_only') is not True:
+            raise OrchestratorError('schema_only')
+        for key in ('resolution', 'result', 'outcome', 'pnl', 'roi', 'MZ', 'band_roi'):
+            if key in row:
+                raise InventedSettlementRefused()
+    return payload
+
+
+def walk_schema(path=None):
+    """Join schema rows in memory. Refusals carry no side and no scorecard fill."""
+    payload = load_schema_fixture(path)
+    joined = []
+    refused = []
+    for row in payload['rows']:
+        try:
+            joined.append(join_schema_row(row))
+        except (TakerFieldRefused, LeeReadyRefused) as exc:
+            refusal = {
+                'schema_id': row.get('schema_id'),
+                'reason': type(exc).__name__,
+                'lee_ready': None,
+            }
+            for key in OUTPUT_KEYS:
+                refusal[key] = None
+            refusal['MZ'] = None
+            refusal['band_roi'] = None
+            refused.append(refusal)
+    walked = {
+        'label': SCHEMA_LABEL,
+        'admitted_settled_panel': False,
+        'panel_version': payload['panel_version'],
+        'joined': joined,
+        'refusals': refused,
+        'lee_ready': None,
+        'supersedes_pr': SUPERSEDED_PR,
+    }
+    for key in OUTPUT_KEYS:
+        walked[key] = None
+    walked['MZ'] = None
+    walked['band_roi'] = None
+    return walked
 
 
 def frozen_output_snapshot():

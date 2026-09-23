@@ -194,6 +194,20 @@ An in-memory feebook probe checks the formula id. It is not a copy into
 8. No rebin of the 10¢ registry after outcomes.
 9. Do not edit the feebook, rails, capital, Cap-SR, C3, C5, or Q trees.
 
+## Supersedes draft PR15
+
+Draft https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/15 is a unit scaffold in `kalshi_r3_p3_fl_maker_taker_lab_20260922/`. That directory is not created here. This lab is the single kernel. Conductor should close #15 when this harness merges. The two trees are not dual-maintained.
+
+Ideas absorbed from that scaffold, still inside this directory:
+
+- Native public `taker_*` fields only. `bid` agrees with `yes` and `ask` agrees with `no`. Disagreeing fields, an unknown `taker_*` key, and a row with no native taker field are refused. Quote fields do not assign a side. The maker outcome side is `feebook.TAKER_FILLS_RESTING`, the other contract side, not an aggressor sign.
+- `lee_ready` raises `LeeReadyRefused` on every input. The panel string `REFUSED` means the algorithm was not applied. It is not a request to run it.
+- The collector bands registry stays the pin. `assign_band(..., outcome=...)` and `rebin_after_outcomes` raise `RebinRefused`.
+- Feebook import uses `order_fee`, `examiner_fee_channel`, and `TAKER_FILLS_RESTING`. The module is not copied. Arm fee-schema objects still store the formula id only. A schema-only sheet may hold in-memory quotes. Those quotes are not written into `results/EMPTY_RESULTS.json`.
+- `mincer_zarnowitz` and `band_roi` raise. `MZ` and `band_roi` on in-memory reports stay null. The freeze scorecard fields stay the five named in the harness freeze.
+
+`fixtures/schema_only_public_trades.json` is the absorbed field-shape sheet. It is not `panel_stub.json` and not an admitted settlement.
+
 ## Empty results
 
 `results/EMPTY_RESULTS.json`, the lab bundle `results.json`, and

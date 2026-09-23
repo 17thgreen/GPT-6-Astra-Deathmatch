@@ -1,0 +1,68 @@
+{
+  "label": "SCHEMA_ONLY",
+  "admitted_settled_panel": false,
+  "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "collector": "READY",
+  "clock": "REFUSED",
+  "settled_n": 0,
+  "note": "Field shapes absorbed from draft PR15. These rows are not the panel stub, not fills, and not resolutions.",
+  "rows": [
+    {
+      "schema_id": "schema_yes_bid",
+      "schema_only": true,
+      "ticker": "SCHEMA-ONLY",
+      "count_fp": "1",
+      "yes_price_dollars": "0.40",
+      "no_price_dollars": "0.60",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "created_time": "SCHEMA_ONLY",
+      "is_block_trade": false
+    },
+    {
+      "schema_id": "schema_no_ask",
+      "schema_only": true,
+      "ticker": "SCHEMA-ONLY",
+      "count_fp": "1",
+      "yes_price_dollars": "0.25",
+      "no_price_dollars": "0.75",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "created_time": "SCHEMA_ONLY",
+      "is_block_trade": false
+    },
+    {
+      "schema_id": "schema_legacy_taker_side",
+      "schema_only": true,
+      "ticker": "SCHEMA-ONLY",
+      "count_fp": "1",
+      "yes_price_dollars": "0.10",
+      "no_price_dollars": "0.90",
+      "taker_side": "yes",
+      "created_time": "SCHEMA_ONLY",
+      "is_block_trade": false
+    },
+    {
+      "schema_id": "schema_missing_taker",
+      "schema_only": true,
+      "ticker": "SCHEMA-ONLY",
+      "count_fp": "1",
+      "yes_price_dollars": "0.40",
+      "no_price_dollars": "0.60",
+      "created_time": "SCHEMA_ONLY",
+      "is_block_trade": false
+    },
+    {
+      "schema_id": "schema_taker_fields_disagree",
+      "schema_only": true,
+      "ticker": "SCHEMA-ONLY",
+      "count_fp": "1",
+      "yes_price_dollars": "0.40",
+      "no_price_dollars": "0.60",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "ask",
+      "created_time": "SCHEMA_ONLY",
+      "is_block_trade": false
+    }
+  ]
+}
