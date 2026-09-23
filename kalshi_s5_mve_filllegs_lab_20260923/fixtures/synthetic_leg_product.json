@@ -1,0 +1,32 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "Unit-only known product. Not a panel invent. Not a public fill. Scorecard stays null. YES 0.50 times NO flip of 0.20 times YES 0.25 equals 0.10.",
+  "known_product": "0.10",
+  "prints": [
+    {
+      "price": "0.12",
+      "contracts": "1",
+      "label": "synthetic_print_schema_only"
+    }
+  ],
+  "legs": [
+    {
+      "market_ticker": "SYN-YES-A",
+      "side": "yes",
+      "mid": "0.50",
+      "content_fresh": true
+    },
+    {
+      "market_ticker": "SYN-NO-B",
+      "side": "no",
+      "mid": "0.20",
+      "content_fresh": true
+    },
+    {
+      "market_ticker": "SYN-YES-C",
+      "side": "yes",
+      "mid": "0.25",
+      "content_fresh": true
+    }
+  ]
+}
