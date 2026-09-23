@@ -1,0 +1,76 @@
+{
+  "packet_id": "R3-P4-L2-SF-HARNESS",
+  "feature_family": "L2-SF",
+  "freeze_path": "R3_P4_L2_SF_HARNESS_FREEZE_2026-09-23.md",
+  "freeze_sha256": "f00425261f085aef90e93b186810a0248165273f8bb923ef3597940a9e8345de",
+  "parent_freeze_path": "R3-P4_L2_SHAPE_LONGSHOT_DEPTH_FREEZE_KERNEL_2026-09-22.md",
+  "parent_freeze_sha256": "4a4e7cc61efcb436955c566edc7a2681603a014725bc79047f9d825392064528",
+  "panel_stub_path": "lab/astra-capture/r3-p4-l2-shape/panel_stub.json",
+  "panel_stub_sha256": "7477e023ab70c59a6739650155ddb9d77077766e3afd80443e540d60b5a86cbb",
+  "panel_version": "2026-09-22.r3-p4-l2-shape-v0",
+  "admitted_at": null,
+  "events_n": 4,
+  "markets_n": 6,
+  "sports_n": 4,
+  "nonsports_n": 2,
+  "live_get_dirname": "live_get_2026-09-22",
+  "live_get_note": "Authentic ob_*.json bytes. The closed L2-CAT path packets/r3_p4_l2_shape/live_get_2026-09-22/ is left absent. Copies live in this lab and packets/R3_P4_L2_SF_HARNESS/live_get_2026-09-22/.",
+  "orderbooks": [
+    {
+      "file": "ob_KXNCAAFGAME-26SEP26BUCKPITT-PITT.json",
+      "ticker": "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+      "sha256": "9ab18dcdcb90ae60a41a264ddc91638783681473ce6d4136cee6f554437a2301",
+      "bytes": 916
+    },
+    {
+      "file": "ob_KXNCAAFGAME-26SEP26BUCKPITT-BUCK.json",
+      "ticker": "KXNCAAFGAME-26SEP26BUCKPITT-BUCK",
+      "sha256": "05c0e9e4725f79a8ce223eae3d5acd27f02319ec1e268eb9f65c2f8a3f3d1f45",
+      "bytes": 1279
+    },
+    {
+      "file": "ob_KXNCAAFGAME-26SEP26TEXTENN-TENN.json",
+      "ticker": "KXNCAAFGAME-26SEP26TEXTENN-TENN",
+      "sha256": "f7fa72f7c052caf93bd07c98117d09e68cefcbfa1298045a701fbffbe61d1d1c",
+      "bytes": 2079
+    },
+    {
+      "file": "ob_KXNCAAFGAME-26SEP26PREMRST-MRST.json",
+      "ticker": "KXNCAAFGAME-26SEP26PREMRST-MRST",
+      "sha256": "b71b8d9d4bd478c5ea3a6fb5f6cc56e3f734d73f47881ebb7580d8569b4bc824",
+      "bytes": 603
+    },
+    {
+      "file": "ob_KXBTC-26SEP2317-T76250.json",
+      "ticker": "KXBTC-26SEP2317-T76250",
+      "sha256": "3a2bcb5f8071d39688c765534366b94f3cea01064cda7393d37f06b85e64a2fd",
+      "bytes": 295
+    },
+    {
+      "file": "ob_KXBTC-26SEP2317-T95749.99.json",
+      "ticker": "KXBTC-26SEP2317-T95749.99",
+      "sha256": "dae4ef2855b9ce14092d9c1a14962348dcf70f2e78cccb137f9a8e0c70140839",
+      "bytes": 293
+    }
+  ],
+  "conductor_stamp_path": "CONDUCTOR_FROZEN_EXPERIMENT.json",
+  "conductor_stamp_sha256": "df5f52aa191ae31df81b95da3346b39e27f8870484f83826d3a9370f84835762",
+  "conductor_stamp_note": "Byte copy of the attached FROZEN_EXPERIMENT.json stamp. The lab FROZEN_EXPERIMENT.json is a separate freeze record.",
+  "pre_accept_empty_path": "PRE_ACCEPT_EMPTY_RESULTS.json",
+  "pre_accept_empty_sha256": "1362153d8ebb96d348184580a1d4fc4e5e6a0c030de3baf683f4664cef05fac0",
+  "pre_accept_empty_note": "Byte copy of the attached EMPTY_RESULTS.json. Refused as a scorecard. It omits n_books and n_snapshots.",
+  "conductor_accept_sha256": "4ebf316fce4dc9c6ce08893c7d09cdac9dc54b599bfd494c2f1e614c32172dcc",
+  "examiner_hold_sha256": "ab69b4665f75fb468bac75c9a193bdee8f89bd2f0d4aca6a5f9d48582deadf80",
+  "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "governance_tree": "absent",
+  "l2_cat_live_get_path_left_absent": true,
+  "category_slice_is_arm": false,
+  "sf1_median_half_spread_bps_by_mid_decile": null,
+  "sf2_l1_top10_depth_share": null,
+  "sf2_kl_vs_uniform_1_10": null,
+  "n_books": null,
+  "n_snapshots": null,
+  "results": null,
+  "pnl": null
+}
