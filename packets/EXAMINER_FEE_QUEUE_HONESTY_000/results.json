@@ -1,0 +1,10 @@
+{
+  "status": "NOT_SCORED",
+  "metrics": null,
+  "pnl": null,
+  "results": null,
+  "live_promotion": false,
+  "examiner_owner": "Examiner (Kalshi)",
+  "freeze": "lab/governance/astra/packets/EXAMINER_FEE_QUEUE_HONESTY_000_FREEZE_2026-09-22.md",
+  "note": "All fields null until harness merges + Examiner-ready declaration. No invented PnL."
+}
