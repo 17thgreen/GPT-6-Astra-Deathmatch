@@ -26,6 +26,11 @@ admitted filenames are present and each digest matches the map. A missing
 capture is `FIXTURE_GAP`. A matching pin stays `NOT_SCORED` until an
 Examiner-ready scorecard exists. This lab does not open that scorecard.
 
+The 2026-09-23 public GET stored four files. Each is the empty venue object
+`{"orderbook_fp":{"no_dollars":[],"yes_dollars":[]}}` with sha256
+`e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74`. The lists
+were not filled in. The pin is not an Examiner score.
+
 Absence of pinned bytes leaves the synthetic stand-in for in-memory labels:
 
 `kalshi_c1_kxufcfight_honesty_lab_20260922/fixtures/synthetic_orderbooks.json`

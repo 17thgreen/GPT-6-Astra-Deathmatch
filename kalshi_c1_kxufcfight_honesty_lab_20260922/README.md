@@ -34,10 +34,14 @@ Production orderbooks belong at
 `lab/astra-capture/c1-kxufcfight/orderbooks/`. The GET-only collector is
 `collect_orderbooks.py`. The hypothesis is `ORDERBOOK_CAPTURE_SPEC.md`.
 Unpinned JSON in that directory is refused. A sha256 pin is recorded in
-`FROZEN_EXPERIMENT.json` when a real four-market capture is present. Until
-then the score gate is `FIXTURE_GAP`. Either way Examiner status stays
-`NOT_SCORED` until those pinned books and an Examiner-ready scorecard both
-exist. Synthetic fixtures are refused for scorecard fill. Units for the
+`FROZEN_EXPERIMENT.json` when a real four-market capture is present. A missing
+capture is `FIXTURE_GAP`. The 2026-09-23 public GET pinned four HTTP 200
+files. Each file is the empty venue object
+`{"orderbook_fp":{"no_dollars":[],"yes_dollars":[]}}`, sha256
+`e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74`. Empty bid
+lists were not filled in. Examiner status stays `NOT_SCORED` until those
+pinned books and an Examiner-ready scorecard both exist. Pinned empty books
+are not that scorecard. Synthetic fixtures are refused for scorecard fill. Units for the
 label algebra use `fixtures/synthetic_orderbooks.json`. See `fixtures/PIN.md`.
 
 No live orders. This lab does not modify the feebook lab, the rails lab, the

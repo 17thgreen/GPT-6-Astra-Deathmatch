@@ -34,9 +34,13 @@ out of scope. This directory does not start a recorder and does not run
 `admit.py`.
 
 JSON in `orderbooks/` is refused unless `FROZEN_EXPERIMENT.json` pins each
-file's sha256. No pinned file is `FIXTURE_GAP`. A pin does not fill the
-Examiner scorecard. C1 stays `NOT_SCORED` until pinned books and an
-Examiner-ready scorecard both exist. The honesty harness uses
+file's sha256. No pinned file is `FIXTURE_GAP`. The 2026-09-23 public GET
+wrote four files here. Each body is
+`{"orderbook_fp":{"no_dollars":[],"yes_dollars":[]}}`, sha256
+`e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74`. Empty bid
+lists were not filled in. A pin does not fill the Examiner scorecard. C1
+stays `NOT_SCORED` until pinned books and an Examiner-ready scorecard both
+exist. These empty books are not that scorecard. The honesty harness uses
 `kalshi_c1_kxufcfight_honesty_lab_20260922/fixtures/synthetic_orderbooks.json`
 for in-memory label checks. Those fixtures are not live depth and are refused
 for scorecard fill. `volume_fp` and `open_interest_fp` on the stub stay null.

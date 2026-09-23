@@ -431,8 +431,11 @@ class PinTests(unittest.TestCase):
             finally:
                 orchestrator.PRODUCTION_ORDERBOOK_DIR = original
         choice = orchestrator.resolve_orderbooks()
+        status = orchestrator.production_orderbook_status()
         self.assertEqual(choice['source'], 'synthetic_schema_standin')
-        self.assertFalse(choice['production_orderbooks_present'])
+        self.assertEqual(choice['production_orderbooks_present'], status['status'] == 'PINNED')
+        self.assertEqual(choice['score_status'], 'NOT_SCORED')
+        self.assertIs(choice['examiner_ready'], False)
         pin = (ROOT / 'fixtures' / 'PIN.md').read_text()
         self.assertIn('lab/astra-capture/c1-kxufcfight/orderbooks/', pin)
         self.assertIn('24426d80', pin)

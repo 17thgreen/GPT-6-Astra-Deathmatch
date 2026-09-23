@@ -9,7 +9,7 @@
   "panel_admitted_sha256_prefix": "24426d80",
   "panel_admitted_present": true,
   "panel_admitted_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
-  "ran_at": "2026-09-23T13:27:11Z",
+  "ran_at": "2026-09-23T13:30:55Z",
   "python": "3.12.3",
   "command": "python3 -m unittest -v tests.test_orchestrator tests.test_collect_orderbooks",
   "cwd": "kalshi_c1_kxufcfight_honesty_lab_20260922",
@@ -17,7 +17,17 @@
   "failures": 0,
   "errors": 0,
   "result": "OK",
-  "elapsed_seconds": 0.030,
+  "elapsed_seconds": 0.029,
+  "scaffold_unit_run_before_capture": {
+    "ran_at": "2026-09-23T13:27:11Z",
+    "command": "python3 -m unittest -v tests.test_orchestrator tests.test_collect_orderbooks",
+    "tests_run": 17,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.030,
+    "note": "Checkout had no production orderbook file. Score gate was FIXTURE_GAP."
+  },
   "prior_unit_run": {
     "ran_at": "2026-09-23T02:06:09Z",
     "command": "python3 -m unittest -v tests.test_orchestrator",
@@ -44,12 +54,29 @@
   "results": null,
   "pnl": null,
   "production_orderbook_dir": "lab/astra-capture/c1-kxufcfight/orderbooks/",
-  "production_orderbook_status": "FIXTURE_GAP",
-  "production_orderbook_pins": {},
-  "production_orderbooks_present": false,
-  "public_get_observation": "not_run_in_this_unit_check",
+  "production_orderbook_status": "PINNED",
+  "production_orderbook_pins": {
+    "lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22CONGUA-CON.json": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+    "lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22CONGUA-GUA.json": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+    "lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22DEGMOR-DEG.json": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+    "lab/astra-capture/c1-kxufcfight/orderbooks/KXUFCFIGHT-26SEP22DEGMOR-MOR.json": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74"
+  },
+  "production_orderbooks_present": true,
+  "public_get_observation": {
+    "recorded_at": "2026-09-23T13:29:40Z",
+    "command": "python3 collect_orderbooks.py",
+    "cwd": "kalshi_c1_kxufcfight_honesty_lab_20260922",
+    "wall_seconds": 36.352,
+    "http_status": 200,
+    "files": 4,
+    "files_byte_identical": true,
+    "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+    "book_shape": "orderbook_fp yes_dollars [] and no_dollars []",
+    "filled_in": false,
+    "fixture_gap": false
+  },
   "examiner_score_status": "NOT_SCORED",
   "examiner_ready": false,
   "examiner_gate": "C1 stays NOT_SCORED until pinned production orderbooks under lab/astra-capture/c1-kxufcfight/orderbooks/ and an Examiner-ready scorecard. Synthetic fixtures are refused for scorecard fill.",
-  "note": "Code verification of the pin and refuse scaffold. No production orderbook file is pinned, so the score gate is FIXTURE_GAP. The public GET is a separate observation and is not claimed here. Admit of the panel is not an Examiner score. C1 remains NOT_SCORED. Not a simulated execution and not live validation. Freeze measurement fields, results, and pnl remain null."
+  "note": "Code verification of the pin and refuse scaffold, plus one public GET. All four admitted orderbooks returned HTTP 200 with empty bid lists. Those bytes are pinned. Empty lists were not filled in. Pinned empty books are not an Examiner-ready scorecard. C1 remains NOT_SCORED. Not a simulated execution and not live validation. Freeze measurement fields, results, and pnl remain null."
 }
