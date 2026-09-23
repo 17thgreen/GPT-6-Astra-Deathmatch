@@ -1,0 +1,51 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "Not a live GET. Not a panel fill. Not GitHub weather-spread EV. Instrument fields stay null.",
+  "markets": [
+    {
+      "event_ticker": "KXHIGHNY-SYN-MID",
+      "market_ticker": "KXHIGHNY-SYN-MID-A",
+      "series_ticker": "KXHIGHNY",
+      "floor_strike": 70,
+      "cap_strike": 71,
+      "strike_band": "mid_ladder",
+      "occurrence_datetime": "2026-09-25T14:00:00Z"
+    },
+    {
+      "event_ticker": "KXHIGHNY-SYN-MID",
+      "market_ticker": "KXHIGHNY-SYN-MID-B",
+      "series_ticker": "KXHIGHNY",
+      "floor_strike": 72,
+      "cap_strike": 73,
+      "strike_band": "mid_ladder",
+      "occurrence_datetime": "2026-09-25T14:00:00Z"
+    },
+    {
+      "event_ticker": "KXHIGHNY-SYN-EXT",
+      "market_ticker": "KXHIGHNY-SYN-EXT-A",
+      "series_ticker": "KXHIGHNY",
+      "floor_strike": 78,
+      "cap_strike": 79,
+      "strike_band": "near_extreme",
+      "occurrence_datetime": "2026-09-25T14:00:00Z"
+    },
+    {
+      "event_ticker": "KXHIGHNY-SYN-EXT",
+      "market_ticker": "KXHIGHNY-SYN-EXT-B",
+      "series_ticker": "KXHIGHNY",
+      "floor_strike": 80,
+      "cap_strike": null,
+      "strike_band": "near_extreme",
+      "occurrence_datetime": "2026-09-25T14:00:00Z"
+    },
+    {
+      "event_ticker": "KXHIGHCHI-SYN-EXT",
+      "market_ticker": "KXHIGHCHI-SYN-EXT-A",
+      "series_ticker": "KXHIGHCHI",
+      "floor_strike": 60,
+      "cap_strike": 61,
+      "strike_band": "near_extreme",
+      "occurrence_datetime": "2026-09-25T14:00:00Z"
+    }
+  ]
+}

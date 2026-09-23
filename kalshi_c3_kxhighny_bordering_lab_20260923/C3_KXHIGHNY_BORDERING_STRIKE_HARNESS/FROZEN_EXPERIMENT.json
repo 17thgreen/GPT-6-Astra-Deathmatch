@@ -1,0 +1,44 @@
+{
+  "experiment": "C3-KXHIGHNY-BORDERING-STRIKE-HARNESS",
+  "directory": "kalshi_c3_kxhighny_bordering_lab_20260923",
+  "status": "SOURCE_FROZEN_BEFORE_RESULTS",
+  "frozen_at": "2026-09-23T14:04:59Z",
+  "packet": "C3_KXHIGHNY_BORDERING_STRIKE_HARNESS_FREEZE_2026-09-23.md",
+  "packet_sha256": "27530d6427794a5559e40c7f56d6cd938d8c57cc8f51406fc26a5b0e36a5fdff",
+  "parent_freeze": "C3_KXHIGHNY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "parent_freeze_sha256": "0e79a0194e2371efae8d8cac0f4f2ec9ce4cf53f60dd870bae1a1ed7acff3604",
+  "panel_version": "2026-09-22.c3-kxhighny-v0",
+  "admitted_at": null,
+  "series_primary": "KXHIGHNY",
+  "series_proof": [
+    "KXHIGHCHI"
+  ],
+  "knob": "strike_band",
+  "arms": [
+    {
+      "id": "C3B0",
+      "strike_band": "near_extreme"
+    },
+    {
+      "id": "C3B1",
+      "strike_band": "mid_ladder"
+    }
+  ],
+  "fee_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "logan_keys_required": false,
+  "github_weather_spread_ev": false,
+  "structure_hyp_only": true,
+  "signal_retune_000": false,
+  "queue_fragility_reopen": false,
+  "scorecard_fields": [
+    "adjacent_spread_gap",
+    "bordering_depth_imbalance",
+    "fee_delta_vs_inherited_model",
+    "freshness_gap_sec",
+    "multi_city_inventory_join"
+  ],
+  "results": null,
+  "pnl": null,
+  "go": "Conductor 2026-09-23 MAXIMIZE NEXT after C5 PR21 @ee69245a"
+}
