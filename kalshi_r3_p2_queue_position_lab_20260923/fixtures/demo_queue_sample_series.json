@@ -1,0 +1,20 @@
+{
+  "schema": "astra.r3p2.mechanic_demo_queue_sample_series.sanitized.v1",
+  "source_desk_narrative": "MECHANIC_DEMO_QUEUE_SAMPLE_SERIES_2026-09-23.md",
+  "source_desk_json": "results/demo_queue_sample_series.json",
+  "checkout_contained_desk_bytes": false,
+  "sanitized": true,
+  "secrets": null,
+  "live_keys": null,
+  "host": "demo-api.kalshi.co",
+  "host_only": true,
+  "leftover_resting": "no",
+  "n_success_this_run": 4,
+  "prior_first_included": true,
+  "rows_total": 26,
+  "embedded_sample_bodies": 1,
+  "unembedded_row_bodies": 25,
+  "this_run_success_bodies_embedded": false,
+  "prior_first_ref": "first_demo_queue_poll.json",
+  "note": "Desk files MECHANIC_DEMO_QUEUE_SAMPLE_SERIES_2026-09-23.md and results/demo_queue_sample_series.json were absent from this checkout. Counts are the ingest brief: 4 successes this run, the prior first poll included, 26 rows total, leftover_resting no, host demo-api.kalshi.co only. The other 25 row bodies and the 4 this-run success payloads were not invented."
+}
