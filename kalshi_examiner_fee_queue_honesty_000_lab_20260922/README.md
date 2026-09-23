@@ -15,5 +15,12 @@ on `kalshi_feebook_lab_20260922` at
 `000`. Capital is the shared A1-equivalent 5000 USD pool. A2 and A3 stay
 closed. There is one Examiner packet.
 
-Hypothesis only. Source is not frozen in this commit. No unit outcome is
-recorded here.
+From this directory, Python 3.12 standard library:
+
+```bash
+python3 -m unittest -v tests.test_orchestrator
+```
+
+No live orders. This lab does not modify the feebook lab, the rails lab,
+`hygiene.py`, `queue_fragility.py`, or either fixture-join module. There is
+no second Examiner packet. The six scorecard fields stay null.

@@ -62,7 +62,15 @@
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000/freeze.json": "008fcffdfaef63df8bf8f7927be6a7b8a499b19d09e7ecdb0078cf3991c31596",
     "results/EMPTY_RESULTS.json": "4c6068d8b9d901286d15979d6a21e59f9eea5fc0f27723c498b7e8185b100523"
   },
-  "implementation_sha256": null,
+  "implementation_sha256": {
+    "README.md": "16135ed405945229c2b6775a72880b9bcf2d61074871bb9da989199890a5d6b8",
+    "orchestrator.py": "17593f67d34f96fb5dc5f7293dc02e8349aa93a5966d16b0f6b1c95856f02a79",
+    "fixtures/PIN.md": "54e07fbe1a6054f973f9de00e1b5fa37dea03fceaca69e02fcbb016bde859995",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_orchestrator.py": "ce69472b24eaa363d5f17382f52fb94e1fde95a344141db7277e32ee54f14e74"
+  },
+  "source_frozen_at": "2026-09-23T00:04:28Z",
+  "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. The six scorecard fields, results, and pnl remain null.",
   "fee_delta_vs_inherited_model": null,
   "freshness_gap_sec": null,
   "queue_bin_mismatch_rate": null,
