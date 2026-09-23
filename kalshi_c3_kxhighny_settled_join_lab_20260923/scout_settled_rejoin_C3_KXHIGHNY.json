@@ -1,0 +1,70 @@
+{
+  "packet": "C3-KXHIGHNY-SETTLED-JOIN",
+  "feature_family": "C3-RJ",
+  "series": [
+    "KXHIGHNY",
+    "KXHIGHCHI"
+  ],
+  "settled_nonempty_result_N": 4,
+  "markets": [
+    {
+      "ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T06:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "file": "market_KXHIGHCHI_26SEP22_B64_5.json"
+    },
+    {
+      "file": "market_KXHIGHCHI_26SEP22_B66_5.json",
+      "http_body_keys": [
+        "error"
+      ],
+      "nonempty_result": false,
+      "note": "no market object (likely 429)"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B65.5",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "file": "market_KXHIGHNY_26SEP22_B65_5.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-B67.5",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "file": "market_KXHIGHNY_26SEP22_B67_5.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP22-T70",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "file": "market_KXHIGHNY_26SEP22_T70.json"
+    },
+    {
+      "ticker": "KXHIGHNY-26SEP23-B67.5",
+      "status": "active",
+      "result": "",
+      "nonempty_result": false,
+      "close_time": "2026-09-24T05:00:00Z",
+      "occurrence_datetime": "2026-09-24T14:00:00Z",
+      "file": "market_KXHIGHNY_26SEP23_B67_5.json"
+    }
+  ],
+  "raw_capture": "lab/astra-capture/c3-kxhighny/settled_reget_2026-09-23.json",
+  "parent_panel_stub": "lab/governance/astra/packets/C3_KXHIGHNY_PANEL_STUB_2026-09-22.json",
+  "fetched_at_et": "2026-09-23T15:00:30-04:00",
+  "mode": "GET_only_public",
+  "results": null,
+  "pnl": null
+}

@@ -1,0 +1,351 @@
+{
+  "schema_id": "astra.registry.c3_kxhighny_panel.v0",
+  "panel_version": "2026-09-22.c3-kxhighny-v0",
+  "packet_id": "C3-KXHIGHNY-MEAS",
+  "series_ticker": "KXHIGHNY",
+  "series_glob": "KXHIGH*",
+  "multi_city_proof_series": [
+    "KXHIGHCHI"
+  ],
+  "purpose": "measurement_gate",
+  "cohort_kind": "weather_high_temp_ladder_bordering_strike_seed",
+  "freeze_cite": "lab/governance/astra/packets/C3_KXHIGHNY_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "0e79a0194e2371efae8d8cac0f4f2ec9ce4cf53f60dd870bae1a1ed7acff3604",
+  "scout_cite": "lab/governance/astra/packets/scout_c3_kxhighny/COLLECTOR_STUB.md",
+  "scout_hunt_cite": [
+    "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXHIGHNY.json",
+    "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXHIGHCHI.json"
+  ],
+  "r3p3_prefer_cite": "prefer this weather panel material as first-panel inventory for R3-P3 (freeze \u00a7Weather panel preference); kernels stay distinct \u2014 not a strategy merge",
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "kalshi_public_get",
+  "stub_status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:26:30Z",
+  "stubbed_at_et": "2026-09-22 20:26:30 EDT",
+  "admit_gate": "WAIT_CLOCK_JOIN_CONDUCTOR \u2014 do not run admit.py; stub only; no backfill; admitted_at null until Clock",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_type_series_live_get": "quadratic",
+    "fee_multiplier_live_get": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_live_orders": true,
+    "no_github_weather_spread_ev_as_evidence": true,
+    "structure_hyp_only": "bordering-strike ladder objects \u2014 hypothesis only"
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/{ticker}",
+      "GET /markets/{ticker}",
+      "GET /markets?series_ticker=KXHIGHNY|KXHIGHCHI&status=open&limit=small",
+      "GET /markets/{ticker}/orderbook",
+      "GET /markets/trades?ticker=...&limit=small"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host",
+      "ADMIT-1 prospective recorder routes",
+      "wholesale weather-spread algo import"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_recorder_steal_admit1": true,
+      "no_steal_s1_s4_s5_r2p3_poll": true,
+      "idle_slot": "lab/astra-capture/c3-kxhighny/"
+    },
+    "throttle_policy": "\u226545\u201390s between heavy list calls; ~10s between single-ticker GETs; on 429 shrink seed honestly",
+    "schedule": {
+      "stub_only": true,
+      "recorder_started": false,
+      "admit_py_run": false
+    }
+  },
+  "series_metadata_seed": {
+    "KXHIGHNY": {
+      "title": "Highest temperature in NYC",
+      "category": "Climate and Weather",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "http": 200
+    },
+    "KXHIGHCHI": {
+      "title": "Highest temperature in Chicago",
+      "category": "Climate and Weather",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "http": 200
+    }
+  },
+  "cohort_counts": {
+    "series_n": 2,
+    "events_n": 3,
+    "markets_n": 6,
+    "open_list_resolved_n": 0,
+    "note": "Bounded bordering-strike ladder seed via individual ticker GETs. Open list endpoints 429 \u2014 seed not expanded from list. volume/OI/pnl/results null in panel (raw API left in live_get only)."
+  },
+  "events": [
+    {
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "market_tickers": [
+        "KXHIGHNY-26SEP22-B67.5",
+        "KXHIGHNY-26SEP22-T70",
+        "KXHIGHNY-26SEP22-B65.5"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "r3p3_weather_eligible": true,
+      "c3_cite": "C3-KXHIGHNY-MEAS weather ladder + multi-city proof"
+    },
+    {
+      "event_ticker": "KXHIGHCHI-26SEP22",
+      "series_ticker": "KXHIGHCHI",
+      "category_slice": "weather",
+      "market_tickers": [
+        "KXHIGHCHI-26SEP22-B64.5",
+        "KXHIGHCHI-26SEP22-B66.5"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "r3p3_weather_eligible": true,
+      "c3_cite": "C3-KXHIGHNY-MEAS weather ladder + multi-city proof"
+    },
+    {
+      "event_ticker": "KXHIGHNY-26SEP23",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "market_tickers": [
+        "KXHIGHNY-26SEP23-B67.5"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "occurrence_datetime": "2026-09-24T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "r3p3_weather_eligible": true,
+      "c3_cite": "C3-KXHIGHNY-MEAS weather ladder + multi-city proof"
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXHIGHNY-26SEP22-B67.5",
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.9900",
+      "floor_strike": 67,
+      "cap_strike": 68,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "mid_ladder_anchor",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHNY_26SEP22_B67_5.json",
+      "resolve_source": "kalshi_public_get"
+    },
+    {
+      "market_ticker": "KXHIGHNY-26SEP22-T70",
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.0100",
+      "floor_strike": 70,
+      "cap_strike": null,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "threshold_T70_scout_sample",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHNY_26SEP22_T70.json",
+      "resolve_source": "kalshi_public_get"
+    },
+    {
+      "market_ticker": "KXHIGHNY-26SEP22-B65.5",
+      "event_ticker": "KXHIGHNY-26SEP22",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T05:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.0100",
+      "floor_strike": 65,
+      "cap_strike": 66,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "adjacent_down_from_B67.5",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHNY_26SEP22_B65_5.json",
+      "resolve_source": "kalshi_public_get"
+    },
+    {
+      "market_ticker": "KXHIGHCHI-26SEP22-B64.5",
+      "event_ticker": "KXHIGHCHI-26SEP22",
+      "series_ticker": "KXHIGHCHI",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T06:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.9900",
+      "floor_strike": 64,
+      "cap_strike": 65,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "chi_mid_anchor",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHCHI_26SEP22_B64_5.json",
+      "resolve_source": "kalshi_public_get"
+    },
+    {
+      "market_ticker": "KXHIGHCHI-26SEP22-B66.5",
+      "event_ticker": "KXHIGHCHI-26SEP22",
+      "series_ticker": "KXHIGHCHI",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T06:00:00Z",
+      "occurrence_datetime": "2026-09-23T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.0100",
+      "floor_strike": 66,
+      "cap_strike": 67,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "adjacent_up_from_B64.5",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHCHI_26SEP22_B66_5.json",
+      "resolve_source": "kalshi_public_get"
+    },
+    {
+      "market_ticker": "KXHIGHNY-26SEP23-B67.5",
+      "event_ticker": "KXHIGHNY-26SEP23",
+      "series_ticker": "KXHIGHNY",
+      "category_slice": "weather",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-24T05:00:00Z",
+      "occurrence_datetime": "2026-09-24T14:00:00Z",
+      "occurrence_source": "live_get_market",
+      "last_price_dollars_raw_get": "0.5200",
+      "floor_strike": 67,
+      "cap_strike": 68,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c3-kxhighny-v0",
+      "r3p3_weather_eligible": true,
+      "bordering_strike_role": "next_calendar_day_presence",
+      "live_get_artifact": "packets/scout_c3_kxhighny/live_get_2026-09-22/market_KXHIGHNY_26SEP23_B67_5.json",
+      "resolve_source": "kalshi_public_get"
+    }
+  ],
+  "measurement_objects": {
+    "reciprocal_book_threshold_strikes": {
+      "status": null,
+      "description": "bid/ask/spread on threshold strikes esp near 0/1; null until Simulator/Examiner"
+    },
+    "bordering_strike_ladder_objects": {
+      "status": null,
+      "description": "adjacent-strike mid/spread/depth raw API fields \u2014 structure hypothesis only; null until Examiner"
+    },
+    "fee_channel_r1p1": {
+      "status": null,
+      "description": "order_fee on hypothetical C at P via R1-P1; Collector does not compute ROI"
+    },
+    "rails_labels": {
+      "status": null,
+      "content_fresh_flag": null,
+      "maker_credit_floor_zero_refuse": null,
+      "queue_attribution_bin": null
+    },
+    "multi_city_proof_join": {
+      "status": null,
+      "description": "same calendar day NY vs CHI inventory presence \u2014 no invented cross-city arb PnL",
+      "ny_events": [
+        "KXHIGHNY-26SEP22",
+        "KXHIGHNY-26SEP23"
+      ],
+      "chi_events": [
+        "KXHIGHCHI-26SEP22"
+      ]
+    }
+  },
+  "http_429_notes": [
+    {
+      "route": "/markets?series_ticker=KXHIGHNY&status=open&limit=8",
+      "http": 429,
+      "handling": "shrink seed to individual ticker GETs; no invented list inventory"
+    },
+    {
+      "route": "/markets?series_ticker=KXHIGHCHI&status=open&limit=8",
+      "http": 429,
+      "handling": "shrink seed to individual ticker GETs; no invented list inventory"
+    }
+  ],
+  "blocker_notes": [
+    "Open markets list for KXHIGHNY and KXHIGHCHI returned 429 \u2014 seed shrunk to 6 Scout/live-resolved tickers.",
+    "results/pnl/volume/OI remain null \u2014 not invented from Scout \u03a3 or API raw into panel metrics.",
+    "GitHub weather-spread algo = structure pointer only; not imported."
+  ],
+  "results": null,
+  "pnl": null,
+  "volume": null
+}

@@ -49,6 +49,8 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_c2_kxnhlgame_feequue_lab_20260923` | C2 KXNHLGAME fee+queue honesty harness. Feature family NHL-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. 12 unit tests green |
 | `kalshi_c4_kxcpi_feequue_lab_20260923` | C4 KXCPI fee+queue honesty harness. Feature family CPI-FQ. Native taker partition and sparse-24h / missing-occurrence refuse bins. Lee-Ready refused. Scorecard null. 12 unit tests green |
 | `kalshi_atp_kxatpmatch_feequue_lab_20260923` | ATP KXATPMATCH fee+queue honesty harness. Feature family ATP-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Missing occurrence_datetime left as counted. Scorecard null. 13 unit tests green |
+| `kalshi_eth_kxeth15m_feequue_lab_20260923` | ETH KXETH15M fee+queue honesty harness. Feature family ETH-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Not live crypto trading |
+| `kalshi_c3_kxhighny_settled_join_lab_20260923` | C3-RJ KXHIGHNY settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. CHI B66.5 429 gap left empty. admit.py not run |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
