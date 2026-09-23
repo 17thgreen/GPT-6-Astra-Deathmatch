@@ -1,0 +1,12 @@
+{
+  "experiment": "R2-P3-KXNFLPASSYDS-PROP-LADDER-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "cross_strike_residual_rms": null,
+  "latent_fit_fragmentation": null,
+  "maker_credit_floor_zero_n": null,
+  "fresh_strike_n": null,
+  "settled_join_n": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner after Clock admit. Units assert schema and pins only. Not an Examiner score."
+}

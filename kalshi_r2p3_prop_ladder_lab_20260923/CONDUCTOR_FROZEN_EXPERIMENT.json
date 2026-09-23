@@ -1,0 +1,16 @@
+{
+  "packet_id": "R2-P3-KXNFLPASSYDS-PROP-LADDER-HARNESS",
+  "feature_family": "PROP-LQ",
+  "status": "FROZEN",
+  "arms": [
+    "R2P3A0",
+    "R2P3A1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "f8335eb0080cb1f82b1fad512509749134dd0e6e41ed85795347c3476796e87a",
+  "parent_freeze_sha256": "a30108f658359590e170c73ea00d1a1f0852d5751cb15c9f2a9c6389f4dd3eaa",
+  "panel_stub_sha256": "70e879e8738d033f392d821849dee3537af3e7b8a916670779d238f78ce098be",
+  "panel_events": 6,
+  "stamped_at_et": "2026-09-23T12:05:00-04:00"
+}
