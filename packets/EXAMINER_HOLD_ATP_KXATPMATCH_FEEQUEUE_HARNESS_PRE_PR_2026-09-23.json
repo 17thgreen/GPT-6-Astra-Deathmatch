@@ -1,0 +1,30 @@
+{
+  "id": "EXAMINER_HOLD_ATP_KXATPMATCH_FEEQUEUE_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "ATP-KXATPMATCH-FEEQUEUE-HARNESS",
+  "feature_family": "ATP-FQ",
+  "status": "NOT_SCORED",
+  "stub_ready": false,
+  "hold": "pre-ACCEPT \u2014 file READY NOT_SCORED when PR lands",
+  "freeze_sha256": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+  "arms": [
+    "ATPA0",
+    "ATPA1"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "maker_vs_taker_roi_delta",
+    "fresh_vs_stale_gap",
+    "settled_join_n",
+    "n_books"
+  ],
+  "refuse": [
+    "no invent depth/fills/fill-density/SoT/PnL",
+    "no Lee-Ready",
+    "no 000 retune",
+    "no Cap-SR/QF/L2/EMPTY-OB/SOT-ID/NHL-FQ/CPI-FQ reopen",
+    "does not ungate S1/S2/R2-P4"
+  ],
+  "stamped_at_et": "2026-09-23T14:12:00-04:00"
+}
