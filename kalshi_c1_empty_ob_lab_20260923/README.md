@@ -4,8 +4,9 @@ Status: hypothesis committed, then source frozen. Scorecard fields stay null.
 `EXPERIMENT_SPEC.md` is the hypothesis. `results/EMPTY_RESULTS.json` keeps
 `empty_book_n`, `scorecard_refuse_n`, `wait_fresh_depth_n`,
 `depth_present_n`, `results`, and `pnl` null. The unit page is
-`results/UNIT_RESULTS.md` after the code-verification run. That page is not
-an Examiner score.
+`results/UNIT_RESULTS.md` records the code-verification run. That page is not
+an Examiner score. `python3 -m unittest -v tests.test_orchestrator` ran 7
+tests in 0.026s at 2026-09-23T17:10:22Z. Result: OK. Failures: 0. Errors: 0.
 
 This lab is measurement-only. Feature family EMPTY-OB. The only knob is
 `empty_book_gate`: C1E0 `refuse_scorecard` and C1E1 `wait_fresh_depth`.
