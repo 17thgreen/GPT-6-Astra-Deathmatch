@@ -52,6 +52,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_eth_kxeth15m_feequue_lab_20260923` | ETH KXETH15M fee+queue honesty harness. Feature family ETH-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Not live crypto trading |
 | `kalshi_c3_kxhighny_settled_join_lab_20260923` | C3-RJ KXHIGHNY settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. CHI B66.5 429 gap left empty. admit.py not run |
 | `kalshi_r3_p2_queue_position_lab_20260923` | R3-P2 queue_position calibration ingest. Series schema `{meta, samples[]}`. Desk series pinned sha256 `74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4`, samples_n 38, leftover_resting `no`. Scorecard null. Status SAMPLE_INGESTED_CALIBRATION_NOT_RUN. Calibration not run. 6 unit tests green |
+| `kalshi_c5_kxbtc15m_settled_join_lab_20260923` | C5-RJ KXBTC15M settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. Scout N=20 is not settled_join_n. Finalized and closed list 429 gaps left empty. admit.py not run. Not live crypto trading |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

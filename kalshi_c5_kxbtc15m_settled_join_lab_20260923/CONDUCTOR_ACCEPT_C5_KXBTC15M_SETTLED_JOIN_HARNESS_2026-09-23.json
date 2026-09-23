@@ -1,0 +1,38 @@
+{
+  "packet_id": "C5-KXBTC15M-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C5-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T15:21:00-04:00",
+  "seat": "Conductor",
+  "orthogonal_pin": "packets/MAXIMIZE_PIN_2026-09-23_1518ET.md",
+  "lab": "kalshi_c5_kxbtc15m_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "digest_verify": {
+    "freeze": "7f4b36eca39d43ee7403628c2e525d5980fa40bcfc906550c7f00bb06ffd4f21",
+    "scout_reget": "7be17c44aef31abf7a0ab94938d0289f8766670ddacefdec566735818e044796",
+    "seed_summary": "b39c919809f709bcb81ff10a3d983b266bc7a1303c0de502c7c20be726415198",
+    "panel_stub": "60f613e8d775b66b9044ad31d2faf77bba84176f214a7bce599aa7a65b6905f8",
+    "settled_reget": "319d6d3e394089fd21fefbfaa52c58166e78c2d781077a3f876331d2c54de617",
+    "settled_nonempty_result_N": 20,
+    "match": true
+  },
+  "notes": "Scorable-first maximize after C3-RJ PR40. Measurement-only join. GET-only. Variants does NOT run admit.py. admitted_at stays null. results/pnl/settled_join_n null. Scout N=20 is a pin, not copied into settled_join_n. Finalized/closed list 429 honest. Not C5 honesty reopen; not FQ sibling; not Arm B.",
+  "hard_refuse": [
+    "invent_settled_result",
+    "invent_fills",
+    "Lee-Ready",
+    "FQ_reopen",
+    "Cap-SR_reopen",
+    "C5_honesty_reopen",
+    "C3_RJ_reopen",
+    "ungate_S1_S2_R2P4",
+    "Arm_B_touch",
+    "admit_py_by_Variants",
+    "live_orders"
+  ]
+}

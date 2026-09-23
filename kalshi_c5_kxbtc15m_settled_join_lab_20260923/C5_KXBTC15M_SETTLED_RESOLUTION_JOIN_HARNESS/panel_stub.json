@@ -1,0 +1,174 @@
+{
+  "schema_id": "astra.registry.c5_kxbtc15m_panel.v0",
+  "panel_version": "2026-09-22.c5-kxbtc15m-v0",
+  "packet_id": "C5-KXBTC15M-MEAS",
+  "series_ticker": "KXBTC15M",
+  "series_glob": "KXBTC15M*",
+  "purpose": "measurement_gate",
+  "cohort_kind": "bounded_rolling_btc_15m_fee_queue_honesty_stress_seed",
+  "freeze_cite": "lab/governance/astra/packets/C5_KXBTC15M_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "freeze_packet_sha256": "4d1b72a38603de181e71f80b3cc6515b170a2bffe11f8770dac1296373e50263",
+  "scout_cite": "lab/governance/astra/packets/scout_c5_kxbtc15m/COLLECTOR_STUB.md",
+  "scout_hunt_cite": [
+    "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXBTC15M.json"
+  ],
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "kalshi_public_get",
+  "stub_status": "PANEL_SCHEMA_STUB_SEED",
+  "stubbed_at_utc": "2026-09-23T00:39:30Z",
+  "stubbed_at_et": "2026-09-22 20:39:30 EDT",
+  "admit_gate": "WAIT_CLOCK_JOIN_CONDUCTOR \u2014 do not run admit.py; stub only; no backfill of expired windows; admitted_at null until Clock",
+  "hard_rule": "15m crypto fee/queue honesty stress \u2014 NOT live crypto trading",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_type_series_live_get": "quadratic",
+    "fee_multiplier_live_get": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_live_orders": true,
+    "no_live_crypto_trading": true,
+    "no_bacchus_or_kxeth15m_strategy_port": true,
+    "kxeth15m_watch_only": true
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/KXBTC15M",
+      "GET /markets/{ticker}",
+      "GET /markets?series_ticker=KXBTC15M&status=open&limit=small",
+      "GET /markets/{ticker}/orderbook",
+      "GET /markets/trades?ticker=...&limit=small"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host",
+      "ADMIT-1 prospective recorder routes",
+      "live crypto maker resting"
+    ],
+    "budget_isolation": {
+      "separate_from_admit1": true,
+      "no_recorder_steal_admit1": true,
+      "no_steal_s1_s4_s5_r2p3_c1_c3_poll": true,
+      "idle_slot": "lab/astra-capture/c5-kxbtc15m/"
+    },
+    "throttle_policy": "\u226545\u201390s between heavy list calls; ~12s between single-ticker GETs; on 429 shrink seed honestly",
+    "schedule": {
+      "stub_only": true,
+      "recorder_started": false,
+      "admit_py_run": false
+    }
+  },
+  "series_metadata_seed": {
+    "KXBTC15M": {
+      "title": "Bitcoin price up down",
+      "category": "Crypto",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "http": 200
+    }
+  },
+  "cohort_counts": {
+    "series_n": 1,
+    "events_n": 1,
+    "markets_n": 1,
+    "open_list_resolved_n": 1,
+    "note": "Bounded current rolling window only. Freeze sample ticker spelling differed (-15 vs live -45). No silent backfill of expired windows. volume/OI/pnl/results null in panel."
+  },
+  "events": [
+    {
+      "event_ticker": "KXBTC15M-26SEP222045",
+      "series_ticker": "KXBTC15M",
+      "category_slice": "crypto_btc_15m",
+      "market_tickers": [
+        "KXBTC15M-26SEP222045-45"
+      ],
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c5-kxbtc15m-v0",
+      "occurrence_datetime": "2026-09-23T00:50:00Z",
+      "occurrence_source": "live_get_open_list_market_object",
+      "volume_fp": null,
+      "open_interest_fp": null,
+      "window_note": "rolling 15m up/down; high-turnover fee/queue honesty stress subject \u2014 measurement only"
+    }
+  ],
+  "markets": [
+    {
+      "market_ticker": "KXBTC15M-26SEP222045-45",
+      "event_ticker": "KXBTC15M-26SEP222045",
+      "series_ticker": "KXBTC15M",
+      "category_slice": "crypto_btc_15m",
+      "status_at_stub": "active",
+      "result": null,
+      "settlement_ts": null,
+      "close_time": "2026-09-23T00:45:00Z",
+      "open_time": "2026-09-23T00:30:00Z",
+      "occurrence_datetime": "2026-09-23T00:50:00Z",
+      "occurrence_source": "live_get_open_list_market_object",
+      "last_price_dollars_raw_get": "0.8300",
+      "floor_strike_raw_get": 86440.57,
+      "volume_fp": null,
+      "volume_24h_fp": null,
+      "open_interest_fp": null,
+      "content_fresh_flag": null,
+      "admitted_at": null,
+      "panel_version": "2026-09-22.c5-kxbtc15m-v0",
+      "live_get_artifact": "packets/scout_c5_kxbtc15m/live_get_2026-09-22/market_KXBTC15M_26SEP222045_45_from_list.json",
+      "resolve_source": "kalshi_public_get_open_list_embedded",
+      "freeze_sample_spelling_diff": {
+        "freeze_or_scout_sample": "KXBTC15M-26SEP222015-15",
+        "live_ticker": "KXBTC15M-26SEP222045-45",
+        "note": "live open ticker suffix/window differs; live GET wins"
+      },
+      "not_live_crypto_trading": true
+    }
+  ],
+  "measurement_objects": {
+    "reciprocal_book_high_turnover": {
+      "status": null,
+      "description": "bid/ask/spread under rapid 15m rollover; null until Simulator/Examiner"
+    },
+    "fee_channel_r1p1": {
+      "status": null,
+      "description": "order_fee on hypothetical fills via R1-P1 \u2014 Collector does not compute ROI"
+    },
+    "rails_stress": {
+      "status": null,
+      "content_fresh_flag": null,
+      "queue_attribution_bin": null,
+      "maker_credit_floor_zero_refuse": null
+    },
+    "turnover_honesty_objects": {
+      "status": null,
+      "description": "raw API volume/OI stay in live_get only; stress whether sports-inherited maker/taker assumptions hold \u2014 null until Examiner"
+    }
+  },
+  "http_429_notes": [
+    {
+      "route": "/markets/KXBTC15M-26SEP222015-15",
+      "http": 429,
+      "handling": "retry also 429; abandoned guessed -15 suffix"
+    },
+    {
+      "route": "/markets/KXBTC15M-26SEP222045-45",
+      "http": 429,
+      "handling": "per-ticker GET 429; used open-list embedded market object (list HTTP 200)"
+    }
+  ],
+  "blocker_notes": [
+    "Guessed freeze/scout -15 suffix tickers 404/429 \u2014 live open list returned KXBTC15M-26SEP222045-45.",
+    "Per-ticker GET for live ticker 429; open-list HTTP 200 embedded full market object used as seed.",
+    "results/pnl/volume/OI remain null \u2014 not invented; raw OI left in live_get artifact only.",
+    "NOT live crypto trading; no bacchus/kxeth15m strategy port."
+  ],
+  "results": null,
+  "pnl": null,
+  "volume": null
+}
