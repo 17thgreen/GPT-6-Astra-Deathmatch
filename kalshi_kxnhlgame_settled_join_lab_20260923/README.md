@@ -1,10 +1,13 @@
 # NHL KXNHLGAME settled-resolution join harness
 
 Status: hypothesis committed, then source frozen. The unit page is
-`results/UNIT_RESULTS.md` after the structural check. `EXPERIMENT_SPEC.md`
-is the hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl`
-null. `results/EMPTY_RESULTS.json` keeps `results`, `pnl`,
-`settled_join_n`, `occurrence_match_n`, and `admit_ready_flag` null.
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 10 tests in 0.110s. Recorded at 2026-09-23T20:23:25Z. Result: OK.
+Failures: 0. Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
+`results` and `pnl` null. `results/EMPTY_RESULTS.json` keeps `results`,
+`pnl`, `settled_join_n`, `occurrence_match_n`, and `admit_ready_flag`
+null.
 
 This lab is measurement-only. Feature family NHL-RJ. The only knob is
 `join_gate`: J0 `nonempty_result_required` and J1
