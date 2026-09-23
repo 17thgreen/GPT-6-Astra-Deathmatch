@@ -51,7 +51,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_atp_kxatpmatch_feequue_lab_20260923` | ATP KXATPMATCH fee+queue honesty harness. Feature family ATP-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Missing occurrence_datetime left as counted. Scorecard null. 13 unit tests green |
 | `kalshi_eth_kxeth15m_feequue_lab_20260923` | ETH KXETH15M fee+queue honesty harness. Feature family ETH-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Not live crypto trading |
 | `kalshi_c3_kxhighny_settled_join_lab_20260923` | C3-RJ KXHIGHNY settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. CHI B66.5 429 gap left empty. admit.py not run |
-| `kalshi_r3_p2_queue_position_lab_20260923` | R3-P2 queue_position calibration ingest. Sanitized Mechanic demo samples. Scorecard null. Status SAMPLE_INGESTED_CALIBRATION_NOT_RUN. 4 unit tests green |
+| `kalshi_r3_p2_queue_position_lab_20260923` | R3-P2 queue_position calibration ingest. Series schema `{meta, samples[]}`. Desk series absent, samples not invented. Scorecard null. Status SAMPLE_INGESTED_CALIBRATION_NOT_RUN. 5 unit tests green |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

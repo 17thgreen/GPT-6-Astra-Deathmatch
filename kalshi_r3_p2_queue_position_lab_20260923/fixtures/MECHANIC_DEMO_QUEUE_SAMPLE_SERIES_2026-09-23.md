@@ -1,19 +1,17 @@
-# Mechanic demo queue sample series (sanitized)
+# Mechanic demo queue sample series
 
-Desk narrative `MECHANIC_DEMO_QUEUE_SAMPLE_SERIES_2026-09-23.md` and
-`results/demo_queue_sample_series.json` were not in this checkout. This page
-embeds the counts stated for that series. Individual row bodies beyond the
-prior first poll were not invented.
+The series document is `{meta, samples[]}`, not NDJSON. The desk path is:
 
-| Key | Value |
-|---|---|
-| host | `demo-api.kalshi.co` only |
-| n_success_this_run | 4 |
-| prior first | included |
-| rows_total | 26 |
-| leftover_resting | `no` |
-| embedded sample bodies | 1 (the prior first poll) |
-| unembedded row bodies | 25 |
+`lab/governance/astra/packets/r3_p2_queue_position/results/demo_queue_sample_series.json`
 
-Machine copy: `demo_queue_sample_series.json`. The prior first poll is
-`first_demo_queue_poll.json`.
+Checked on this checkout: that file is absent. `samples[]` was not invented.
+`fixtures/demo_queue_sample_series.json` is not a stand-in row list.
+
+When the desk file is present, the lab copies a sanitized body into
+`fixtures/demo_queue_sample_series.json` and pins its sha256. Each sample
+`queue_position_fp` must match `queue_positions` on `order_id`. `sample_id`
+0 cross-checks the first poll: `4207.00` on `KXNFLGAME-26OCT01PITCLE-PIT`,
+cancel confirmed, fill absent.
+
+`abs_err_contracts`, `signed_bias`, and `brier` stay null. `leftover_resting`
+must be false or `no`. Host `demo-api.kalshi.co` only.
