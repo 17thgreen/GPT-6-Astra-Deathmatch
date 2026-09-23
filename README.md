@@ -35,6 +35,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
 | `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check; frozen, not run |
 | `nfl_prospective_recorder_20260922` | GET-only prospective recorder; reviewed, not deployed |
+| `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original
