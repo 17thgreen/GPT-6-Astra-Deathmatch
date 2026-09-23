@@ -1,0 +1,78 @@
+{
+  "source": "synthetic_schema_standin",
+  "note": "In-memory band stand-in. Not a panel fill and not a settlement.",
+  "results": null,
+  "pnl": null,
+  "trades": [
+    {
+      "trade_id": "syn-b00",
+      "ticker": "SYN-B00",
+      "yes_price_dollars": "0",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "taker_side": "yes",
+      "taker_action": null,
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null,
+      "band_id": null,
+      "post_fee_roi": null,
+      "result": null
+    },
+    {
+      "trade_id": "syn-b01",
+      "ticker": "SYN-B01",
+      "yes_price_dollars": "0.10",
+      "taker_outcome_side": "no",
+      "taker_book_side": "ask",
+      "taker_side": "no",
+      "taker_action": null,
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null,
+      "band_id": null,
+      "post_fee_roi": null,
+      "result": null
+    },
+    {
+      "trade_id": "syn-b05",
+      "ticker": "SYN-B05",
+      "yes_price_dollars": "0.55",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "ask",
+      "taker_side": "yes",
+      "taker_action": null,
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null,
+      "band_id": null,
+      "post_fee_roi": null,
+      "result": null
+    },
+    {
+      "trade_id": "syn-b08",
+      "ticker": "SYN-B08",
+      "yes_price_dollars": "0.8999",
+      "taker_outcome_side": "no",
+      "taker_book_side": "bid",
+      "taker_side": "no",
+      "taker_action": null,
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null,
+      "band_id": null,
+      "post_fee_roi": null,
+      "result": null
+    },
+    {
+      "trade_id": "syn-b09",
+      "ticker": "SYN-B09",
+      "yes_price_dollars": "1.00",
+      "taker_outcome_side": "yes",
+      "taker_book_side": "bid",
+      "taker_side": "yes",
+      "taker_action": null,
+      "lee_ready": "REFUSED",
+      "aggressor_inference": null,
+      "band_id": null,
+      "post_fee_roi": null,
+      "result": null
+    }
+  ]
+}
