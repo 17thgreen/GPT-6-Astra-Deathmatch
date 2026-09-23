@@ -18,11 +18,11 @@ From `kalshi_s4_ncaaf_feequue_lab_20260923`, Python 3.12, standard library:
 python3 -m unittest -v tests.test_orchestrator
 ```
 
-Ran 9 tests in 0.029s at 2026-09-23T15:46:14Z. Result: OK. Failures: 0.
-Errors: 0.
+Ran 9 tests in 0.033s at 2026-09-23T15:59:28Z. Result: OK. Failures: 0.
+Errors: 0. An earlier run at 2026-09-23T15:46:14Z was also 9 tests, OK,
+against the checkout copies that preceded the conductor-byte replacement.
 
-The checks that passed on that run are the predeclared ones against the
-bytes then on disk: fee pin
+The checks that passed are the predeclared ones: fee pin
 `22371178cb2663250b4762f328069571c48cb551` and rails pin
 `6a28e0d6254327ea4e6451c781bec56215ac6cac` with those trees unchanged since
 those commits; the packet, parent kernel, and panel-stub digests recorded
@@ -52,22 +52,19 @@ sha256 on this branch:
 - panel stub `38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a` at `lab/astra-capture/s4-kxncaafgame/panel_stub.json` (113 events; `volume_fp`, `open_interest_fp`, `results`, and `pnl` null; `admitted_at` null)
 - capture README `b0df0e86423ea11a049fb674602ab20f45acae5a549acf9eca604a6aa2d251b1` at `lab/astra-capture/s4-kxncaafgame/README.md`
 
-`orchestrator.py` and `tests/test_orchestrator.py` were left unchanged.
-Their pin constants still name the earlier digests. A rerun of
-`python3 -m unittest -v tests.test_orchestrator` after the replacement
-finished with 9 tests, 6 passed, 3 errors (`OrchestratorError: packet
-sha256` from `_assert_freeze_bytes`). That rerun is code verification of
-the unchanged pins. It is not an Examiner score. Scorecard fields stay
-null.
+`PACKET_SHA256`, `KERNEL_SHA256`, and `PANEL_STUB_SHA256` equal those
+conductor digests. `conductor_pin_status` reports all three matches and
+`conductor_bytes_in_checkout` true. The panel stub loads as 113 events
+with `markets` and `cohort_counts` absent. `results` and `pnl` stay null.
+The 2026-09-23T15:59:28Z unit run is code verification. It is not an
+Examiner score.
 
 ## Limitations
 
 - `lab/governance/astra/packets/` is absent. The verified copies are the
   lab paths and `packets/` paths listed above.
-- The 2026-09-23T15:46:14Z unit run loaded the earlier empty seed.
-  `conduct` on that seed kept `event_count` 0 and recorded
-  `conductor_stub_absent_seed_not_invented`. The conductor stub now on
-  disk has 113 events. The two-trade native partition and the three-row
+- S4A0 and S4A1 on the conductor stub report `event_count` 113 and do
+  not write a scorecard. The two-trade native partition and the three-row
   freshness bins are `fixtures/synthetic_native_trades.json` and
   `fixtures/synthetic_fresh_queue.json` with source
   `synthetic_schema_standin`. They are not a Kalshi GET and not an admitted

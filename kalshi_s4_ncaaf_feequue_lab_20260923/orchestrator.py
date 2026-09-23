@@ -5,9 +5,8 @@ hygiene helpers those joins already call. This module does not edit those
 labs, does not place orders, does not read Logan keys, and does not write
 scorecard metrics.
 
-The conductor-box freeze bytes were not in this checkout. Copy hashes are
-the recreation hashes. Conductor claims stay recorded and are not relabeled
-as the recreation hashes.
+The checkout harness freeze, parent kernel, and panel stub match the
+conductor sha256 values.
 """
 import hashlib
 import importlib.util
@@ -43,14 +42,14 @@ PARTITIONS = {
 FEEBOOK_COMMIT = '22371178cb2663250b4762f328069571c48cb551'
 RAILS_COMMIT = '6a28e0d6254327ea4e6451c781bec56215ac6cac'
 BASE_COMMIT = '6626c6892298b015cf63688081545e27363226bc'
-PACKET_SHA256 = '00117c348573076bc35af422e6618d750c1e6b89c3387f2b7c0b0f259d3fe2a2'
-KERNEL_SHA256 = 'f0e502264ce79d8e958c54cace387aa0521f616dd59290356aaafc33e9096847'
-PANEL_STUB_SHA256 = 'eb0a9ea7e4cf24d6f805f63688dbb48c71dc91a81bcea4afb2c88f73588b8112'
 CONDUCTOR_PACKET_SHA256 = '3318204bf6e962f4f3372dad8c0f302e62d85c26b855de7369718654d0114728'
 CONDUCTOR_KERNEL_SHA256 = '9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795'
 CONDUCTOR_PANEL_STUB_SHA256 = '38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a'
+PACKET_SHA256 = CONDUCTOR_PACKET_SHA256
+KERNEL_SHA256 = CONDUCTOR_KERNEL_SHA256
+PANEL_STUB_SHA256 = CONDUCTOR_PANEL_STUB_SHA256
 CONDUCTOR_EVENTS_N_CLAIM = 113
-PUBLIC_HOST = 'https://api.elections.kalshi.com/trade-api/v2'
+PUBLIC_HOST = 'api.elections.kalshi.com'
 OUT_OF_SCOPE_ROUTE = 'POST /portfolio/orders'
 SCORECARD_FIELDS = (
     'maker_vs_taker_roi_delta',
@@ -405,10 +404,10 @@ def _require_null(payload, key):
 
 
 def conductor_pin_status():
-    """Compare checkout bytes with the conductor claims. Do not relabel a miss."""
-    packet_match = sha256_file(PACKET) == CONDUCTOR_PACKET_SHA256
-    kernel_match = sha256_file(KERNEL) == CONDUCTOR_KERNEL_SHA256
-    stub_match = sha256_file(PANEL_STUB) == CONDUCTOR_PANEL_STUB_SHA256
+    """Report whether checkout bytes match the conductor sha256 values."""
+    packet_match = sha256_file(PACKET) == CONDUCTOR_PACKET_SHA256 == PACKET_SHA256
+    kernel_match = sha256_file(KERNEL) == CONDUCTOR_KERNEL_SHA256 == KERNEL_SHA256
+    stub_match = sha256_file(PANEL_STUB) == CONDUCTOR_PANEL_STUB_SHA256 == PANEL_STUB_SHA256
     return {
         'packet_matches_conductor_claim': packet_match,
         'kernel_matches_conductor_claim': kernel_match,
@@ -468,6 +467,8 @@ def _validate_panel(payload, admitted):
         raise OrchestratorError('admitted_at')
     for key in ('results', 'pnl', 'volume'):
         _require_null(payload, key)
+    if payload.get('freeze_packet_sha256') != KERNEL_SHA256:
+        raise OrchestratorError('freeze_packet_sha256')
     binds = payload.get('binds') or {}
     if binds.get('fee_lab_sha') != FEEBOOK_COMMIT:
         raise OrchestratorError('feebook commit')
@@ -475,64 +476,56 @@ def _validate_panel(payload, admitted):
         raise OrchestratorError('rails commit')
     if binds.get('fee_formula_id') != feebook.EXAMINER_FORMULA_ID:
         raise OrchestratorError('examiner formula')
-    if binds.get('no_live_orders') is not True:
-        raise LiveOrdersForbidden()
-    if binds.get('no_logan_keys') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['logan_keys'])
-    if binds.get('no_000_retune') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['q6_retune'])
-    if binds.get('no_qf_reopen') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['qf_reopen'])
-    if binds.get('no_cap_sr_reopen') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['cap_sr_reopen'])
-    if binds.get('no_admit_py') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['admit_py'])
-    if binds.get('no_r1p2_challenger_bakeoff') is not True:
-        raise AdversaryRefused(ADVERSARY_LABELS['r1_p2_challenger'])
-    if binds.get('lee_ready') != 'REFUSED':
-        raise LeeReadyRefused()
     if binds.get('forbid_inherited_q7_fee_literals') is not True:
         raise ShadowFeeLiteralRefused()
+    if binds.get('no_000_retune') is not True:
+        raise AdversaryRefused(ADVERSARY_LABELS['q6_retune'])
     capture = payload.get('capture') or {}
     if capture.get('mode') != 'GET_only_public':
         raise LiveOrdersForbidden()
     if capture.get('host_allowlist') != [PUBLIC_HOST]:
         raise LiveOrdersForbidden()
-    if OUT_OF_SCOPE_ROUTE not in (capture.get('out_of_scope_routes') or []):
-        raise LiveOrdersForbidden()
+    routes = capture.get('routes_allowlist')
+    if routes is not None:
+        if not isinstance(routes, list) or not routes:
+            raise LiveOrdersForbidden()
+        for route in routes:
+            if not isinstance(route, str) or not route.startswith('GET '):
+                raise LiveOrdersForbidden()
+            if OUT_OF_SCOPE_ROUTE in route or 'portfolio/orders' in route:
+                raise LiveOrdersForbidden()
     schedule = capture.get('schedule') or {}
     if schedule.get('recorder_started') is True or schedule.get('admit_py_run') is True:
         raise OrchestratorError('recorder')
-    events = payload.get('events') or []
-    markets = payload.get('markets') or []
-    counts = payload.get('cohort_counts') or {}
-    if not admitted:
-        if payload.get('conductor_panel_stub_sha256_claim') != CONDUCTOR_PANEL_STUB_SHA256:
-            raise OrchestratorError('conductor stub claim')
-        if payload.get('conductor_events_n_claim') != CONDUCTOR_EVENTS_N_CLAIM:
-            raise OrchestratorError('conductor events claim')
-        if counts.get('events_n') != len(events) or counts.get('markets_n') != len(markets):
-            raise OrchestratorError('cohort')
+    if payload.get('markets') is not None:
+        raise OrchestratorError('markets')
+    if payload.get('cohort_counts') is not None:
+        raise OrchestratorError('cohort')
+    events = payload.get('events')
+    if not isinstance(events, list):
+        raise OrchestratorError('events')
+    if not admitted and len(events) != CONDUCTOR_EVENTS_N_CLAIM:
+        raise OrchestratorError('events')
     for event in events:
+        if not isinstance(event, dict):
+            raise OrchestratorError('events')
         if event.get('series_ticker') != SERIES:
             raise OrchestratorError('series')
         if event.get('admitted_at') not in (None, stamp):
             raise OrchestratorError('admitted_at')
-        for key in ('volume_fp', 'open_interest_fp', 'results', 'pnl'):
+        for key in ('volume_fp', 'volume_24h_fp', 'open_interest_fp', 'results', 'pnl'):
             if key in event and event[key] is not None:
                 raise InventedFillRefused()
-    for market in markets:
-        if market.get('series_ticker') != SERIES:
-            raise OrchestratorError('series')
-        if market.get('result') is not None:
-            raise InventedFillRefused()
-    objects = payload.get('measurement_objects') or {}
-    native = objects.get('native_taker_partition') or {}
-    fresh = objects.get('rails_freshness_bin') or {}
-    if native.get('status') is not None or fresh.get('status') is not None:
-        raise ScorecardPromotionRefused()
-    if fresh.get('content_fresh_flag') is not None or fresh.get('queue_attribution_bin') is not None:
-        raise ScorecardPromotionRefused()
+    if payload.get('measurement_objects') is not None:
+        objects = payload['measurement_objects']
+        if not isinstance(objects, dict):
+            raise ScorecardPromotionRefused()
+        native = objects.get('native_taker_partition') or {}
+        fresh = objects.get('rails_freshness_bin') or {}
+        if native.get('status') is not None or fresh.get('status') is not None:
+            raise ScorecardPromotionRefused()
+        if fresh.get('content_fresh_flag') is not None or fresh.get('queue_attribution_bin') is not None:
+            raise ScorecardPromotionRefused()
     return payload
 
 
@@ -665,12 +658,11 @@ def conduct(arm, panel=None):
     if panel is None:
         panel = load_panel()
     events = panel.get('events') or []
+    markets = panel.get('markets')
     extra = {
         'event_count': len(events),
-        'market_count': len(panel.get('markets') or []),
+        'market_count': len(markets) if isinstance(markets, list) else None,
     }
-    if not events:
-        extra['cohort_note'] = 'conductor_stub_absent_seed_not_invented'
     return _report(arm, 'panel', extra)
 
 

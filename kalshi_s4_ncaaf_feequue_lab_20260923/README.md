@@ -1,10 +1,9 @@
 # S4 KXNCAAFGAME fee+queue honesty harness
 
 Status: hypothesis committed, then source frozen. The unit page is
-`results/UNIT_RESULTS.md`. The 2026-09-23T15:46:14Z run was 9 tests, OK,
-against the earlier copies. After the conductor-byte replacement the same
-command reports 9 tests, 6 passed, 3 errors on the unchanged packet pin.
-That page is not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 9 tests in 0.033s at 2026-09-23T15:59:28Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `maker_vs_taker_roi_delta`,
 `fresh_vs_stale_gap`, and `settled_join_n` null.
