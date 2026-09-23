@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "astra.registry.r2_p5_admit_fields.v1",
+  "title": "R2-P5 admit fields \u2014 kickoff SoT + R1-P3 adverse join",
+  "description": "GET-only provenance/scorecard gate \u2014 not a strategy. Cite briefs/R2_DEEP_RESEARCH_2026-09-22.md \u00a7R2-P5; packets/R2-P5_ADVERSE_FIELD_LIST_2026-09-22.md; packets/R2-P5_SCHEMA_ACCEPT_2026-09-22.md (REG-R2-P5-SCHEMA-20260922); briefs/R1-P3-ADVERSE_2026-09-22.md. No ADMIT-1/PIT@CLE budget steal. No live orders.",
+  "packet": "R2-P5",
+  "registry_id": "REG-R2-P5-SCHEMA-20260922",
+  "status": "SCHEMA_STUB",
+  "stubbed_at_utc": "2026-09-22T23:01:07Z",
+  "owners": [
+    "Collector",
+    "Archivist"
+  ],
+  "clock_provenance": [
+    "Clock"
+  ],
+  "scorecard_refuse": [
+    "Adversary",
+    "Examiner (Kalshi)"
+  ],
+  "fee_pin": {
+    "when": "hedge_complete_flag is non-null",
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "cite": "packets/R1-P1-FEEBOOK_EXTRACT_2026-09-22.md"
+  },
+  "aliases": {
+    "delta_sec": "Conductor name \u2192 store as delta_kickoff_sec",
+    "window_clock_used": "Collector proposal \u2192 window_clock_source",
+    "t_minus_7d_start_utc": "Collector proposal \u2192 t_minus_7d_utc"
+  },
+  "type": "object",
+  "required": [
+    "schema_id",
+    "rows"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "astra.registry.r2_p5_admit_fields.v1"
+    },
+    "registry_id": {
+      "const": "REG-R2-P5-SCHEMA-20260922"
+    },
+    "panel_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "admit_stamp_utc": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generated_at_utc": {
+      "type": "string"
+    },
+    "rows": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/event_row"
+      }
+    }
+  },
+  "$defs": {
+    "event_row": {
+      "type": "object",
+      "required": [
+        "event_ticker",
+        "series_ticker",
+        "kalshi_occurrence_datetime",
+        "window_clock_source",
+        "t_minus_7d_utc",
+        "sot_pin",
+        "panel_version",
+        "external_odds_present"
+      ],
+      "properties": {
+        "event_ticker": {
+          "type": "string"
+        },
+        "series_ticker": {
+          "type": "string"
+        },
+        "holdout_kickoff_utc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "kalshi_occurrence_datetime": {
+          "type": "string"
+        },
+        "delta_kickoff_sec": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "occurrence \u2212 holdout, seconds, signed"
+        },
+        "window_clock_source": {
+          "type": "string",
+          "enum": [
+            "kalshi_occurrence",
+            "holdout_mixed",
+            "unknown"
+          ]
+        },
+        "t_minus_7d_utc": {
+          "type": "string"
+        },
+        "sot_pin": {
+          "type": "string",
+          "description": "Must equal kalshi_occurrence_datetime that drove windows"
+        },
+        "panel_version": {
+          "type": "string"
+        },
+        "external_odds_present": {
+          "type": "boolean"
+        },
+        "edge_at_quote": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "edge_at_fill": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "hedge_complete_flag": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "odds_age_sec": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "fee_model_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "de_vig_method": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "enum": [
+                "proportional",
+                "shin",
+                "other"
+              ]
+            }
+          ]
+        },
+        "edge_lost_cancel": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "hedge_complete_flag": {
+                "type": "boolean"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "fee_model_ref"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "external_odds_present": {
+                "const": false
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "edge_at_quote": {
+                "type": "null"
+              },
+              "edge_at_fill": {
+                "type": "null"
+              },
+              "hedge_complete_flag": {
+                "type": "null"
+              },
+              "odds_age_sec": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "scorecard_refuse_rule": {
+    "missing_r1p3_core": [
+      "edge_at_quote",
+      "edge_at_fill",
+      "hedge_complete_flag",
+      "odds_age_sec"
+    ],
+    "label": "measurement_gap",
+    "not": "strategy_failure",
+    "cite": "briefs/R1-P3-ADVERSE_2026-09-22.md"
+  },
+  "does_not_modify": [
+    "ADMIT-1 prospective recorder runtime",
+    "ADMIT-1 capture.sqlite / admitted panel",
+    "recorder poll budget"
+  ]
+}

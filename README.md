@@ -42,6 +42,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_s5_mve_filllegs_lab_20260923` | S5 KXMVECROSSCATEGORY fill-vs-legs harness. Feature family MVE-FL. Leg-mid knob only. Scorecard null. RFQ out of scope. 8 unit tests green |
 | `kalshi_s4_ncaaf_feequue_lab_20260923` | S4 KXNCAAFGAME fee+queue honesty harness. Feature family NCAAF-FQ. Native taker partition and content-fresh bins. Lee-Ready refused. Scorecard null. Conductor freeze bytes were not in this checkout |
 | `kalshi_r3p4_l2_cat_lab_20260923` | R3-P4 L2-CAT sports-versus-nonsports harness. Feature family L2-CAT. Category-slice knob only. Scorecard null. 7 unit tests green |
+| `kalshi_r2p5_sot_id_lab_20260923` | R2-P5 SOT-ID kickoff SoT identity harness. Feature family SOT-ID. Audit-slice knob only. Scorecard null. 8 unit tests green |
 
 Historical source files are imported without refactoring so their original hashes
 and regression anchors retain meaning. Archive READMEs may refer to their original

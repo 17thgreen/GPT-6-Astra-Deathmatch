@@ -1,0 +1,18 @@
+{
+  "packet_id": "R2-P5-SOT-ID-HARNESS",
+  "feature_family": "SOT-ID",
+  "status": "FROZEN",
+  "arms": [
+    "R2P5A0",
+    "R2P5A1"
+  ],
+  "results": null,
+  "pnl": null,
+  "freeze_sha256": "0424455f062b7c46c7c6161b84fb7b29702719acc45bf6a61b4e8f16c5e26457",
+  "parent_accept_sha256": "712e4771bf2783dbee1e4c553194cd2896a468184f2849f24e58c3eb350ff499",
+  "seed_instance_sha256": "1edfa91979ab5dac72e28cc5e2ad5ff08aab414b5574fe115f86fb7d85e2ac4b",
+  "schema_sha256": "da7f6badd37d52fbd977681924379c3552f0dbfec94729d86ea411fb473ce53c",
+  "pitcle_identity_sha256": "f5ca19f15940a80476d1590e506951df87df619160b477f1dff06cc3554cb520",
+  "seed_rows": 16,
+  "stamped_at_et": "2026-09-23T12:40:00-04:00"
+}
