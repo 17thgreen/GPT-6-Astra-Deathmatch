@@ -1,0 +1,20 @@
+{
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "decision": "NO_WAIVE_RESTORE_PARENT_LEDGERS",
+  "decided_at_et": "2026-09-23T15:07:00-04:00",
+  "seat": "Conductor",
+  "examiner_hold": "EXAMINER_HOLD_Q7_B_REHAB_P1_CADENCE_600_PRE_MERGE",
+  "waive_parent_ledger_hash_check": false,
+  "rationale": "Positive-control hash check is an integrity gate. Softening it is refuse. Authentic Q7 Arm B/D result ledgers exist on desk under nfl_paircheck_lab_20260922/results/ (16 B + 16 D artifacts). Restore/pin those bytes for positive controls before any 12-scenario score.",
+  "desk_sources": {
+    "lab": "lab/astra-science/nfl_paircheck_lab_20260922/results/",
+    "primary_B": "q3300_d0.25_B.json",
+    "primary_B_sha256": "370ccbcf342db59aa1697d448d3274791cf17c015d8e9eead17d788fbe79ffb5",
+    "primary_D": "q3300_d0.25_D.json",
+    "primary_D_sha256": "fc38cfbc134ca313a6cd2b8763ef49c3a56f6b5cc763c50f82e2b4545cda898f",
+    "paircheck_effects_sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+    "q7_verify_log_tail": "VERIFIED"
+  },
+  "next": "Simulator: during PR38 rebase, pin/import authentic parent B/D ledgers (or SOURCE_PINS to existing paircheck results path if already on main). Do not invent hashes. No tape walk until pins land. Examiner HOLD stands until merge + sha verify + positive controls PASS.",
+  "hard_refuse": ["waive_parent_ledger_hash", "invent_ledger_hashes", "soften_95pct_of_D", "live_orders"]
+}
