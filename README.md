@@ -34,6 +34,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_adaptive_lab_20260921` | Q5 adaptive policies and capital controls |
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
 | `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check; frozen, not run |
+| `nfl_q7_rehab_p1_cadence_20260923` | Q7 Arm B rehab pass 1. One knob: 600s admission cadence on new paired exposure. Scorecard null. Parent Q7 is imported, not edited |
 | `nfl_prospective_recorder_20260922` | GET-only prospective recorder; reviewed, not deployed |
 | `kalshi_c1_kxufcfight_lab_20260922` | C1 KXUFCFIGHT admit-wire scaffold. Clock accepts the admitted panel. Scorecard null. 16 unit tests green |
 | `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
