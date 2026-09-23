@@ -1,10 +1,13 @@
 # R2-P5 SOT-ID kickoff SoT identity harness
 
-Status: hypothesis committed. Source and the unit page follow in later
-commits on this branch. `EXPERIMENT_SPEC.md` is the hypothesis.
-`results/EMPTY_RESULTS.json` keeps `sot_pin_mismatch_n`,
-`holdout_mixed_refuse_n`, `delta_kickoff_sec_mode`, `identity_join_ok_n`,
-`external_odds_invent_refuse_n`, `results`, and `pnl` null.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 8 tests in 0.083s at 2026-09-23T16:51:09Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis. `results/EMPTY_RESULTS.json` keeps
+`sot_pin_mismatch_n`, `holdout_mixed_refuse_n`, `delta_kickoff_sec_mode`,
+`identity_join_ok_n`, `external_odds_invent_refuse_n`, `results`, and
+`pnl` null.
 
 This lab is measurement-only. Feature family SOT-ID. The only knob is the
 audit slice: R2P5A0 `sot_pin_match` and R2P5A1 `holdout_delta_bin`.
@@ -34,11 +37,11 @@ Fee pin `22371178cb2663250b4762f328069571c48cb551` (import only).
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac` (import only).
 Those trees are not edited. The ADMIT-1 recorder is not edited.
 
-From this directory, Python 3 standard library, once the source commit is
-present:
+From this directory, Python 3 standard library:
 
 ```bash
 python3 -m unittest -v tests.test_orchestrator
 ```
 
-A passing unit run is code verification. It is not an Examiner score.
+The 8-test run at 2026-09-23T16:51:09Z was OK. That run is code
+verification. It is not an Examiner score.
