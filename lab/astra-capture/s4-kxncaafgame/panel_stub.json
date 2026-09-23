@@ -1,0 +1,82 @@
+{
+  "schema_id": "astra.registry.s4_kxncaafgame_panel.v0",
+  "panel_version": "2026-09-22.s4-kxncaafgame-v0",
+  "packet_id": "S4-KXNCAAFGAME-MEAS",
+  "series_ticker": "KXNCAAFGAME",
+  "series_glob": "KXNCAAFGAME*",
+  "purpose": "measurement_gate",
+  "cohort_kind": "schema_seed_conductor_bytes_absent",
+  "freeze_cite": "lab/governance/astra/packets/S4_KXNCAAFGAME_MEASUREMENT_FREEZE_KERNEL_2026-09-22.md",
+  "conductor_freeze_packet_sha256_claim": "9e6556c150c726b679ac8393f1f5338cf983489259b0f34cdedf221c030be795",
+  "conductor_panel_stub_sha256_claim": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
+  "conductor_events_n_claim": 113,
+  "scout_cite": "lab/governance/astra/packets/scout_s4_kxncaafgame/",
+  "admitted_at": null,
+  "kickoff_sot": "kalshi_occurrence_datetime",
+  "occurrence_source": "schema_seed_not_a_panel_fill",
+  "stub_status": "PANEL_SCHEMA_SEED_CONDUCTOR_BYTES_ABSENT",
+  "admit_gate": {
+    "status": "WAIT_CLOCK_JOIN",
+    "admit_py_run": false,
+    "note": "Do not run admit.py. admitted_at stays null. The conductor stub (~113 events, sha256 38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a) was not in this checkout. This seed does not invent that cohort."
+  },
+  "hard_rule": "College football fee+queue honesty. GET-only. Lee-Ready refused. Not a strategy.",
+  "binds": {
+    "fee_lab": "kalshi_feebook_lab_20260922",
+    "fee_lab_sha": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_lab": "kalshi_rails_lab_20260922",
+    "rails_lab_sha": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "fee_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee_multiplier_live_get": 1,
+    "forbid_inherited_q7_fee_literals": true,
+    "no_000_retune": true,
+    "no_live_orders": true,
+    "no_logan_keys": true,
+    "no_qf_reopen": true,
+    "no_cap_sr_reopen": true,
+    "no_admit_py": true,
+    "no_r1p2_challenger_bakeoff": true,
+    "lee_ready": "REFUSED"
+  },
+  "capture": {
+    "mode": "GET_only_public",
+    "host_allowlist": [
+      "https://api.elections.kalshi.com/trade-api/v2"
+    ],
+    "routes_allowlist": [
+      "GET /series/KXNCAAFGAME",
+      "GET /events?series_ticker=KXNCAAFGAME",
+      "GET /markets?series_ticker=KXNCAAFGAME"
+    ],
+    "out_of_scope_routes": [
+      "POST /portfolio/orders",
+      "any signed trading host"
+    ],
+    "schedule": {
+      "stub_only": true,
+      "recorder_started": false,
+      "admit_py_run": false
+    }
+  },
+  "cohort_counts": {
+    "series_n": 1,
+    "events_n": 0,
+    "markets_n": 0,
+    "note": "Empty on purpose. Conductor claim is about 113 events. Those bytes are not this file. volume, open interest, results, and pnl stay null."
+  },
+  "events": [],
+  "markets": [],
+  "results": null,
+  "pnl": null,
+  "volume": null,
+  "measurement_objects": {
+    "native_taker_partition": {
+      "status": null
+    },
+    "rails_freshness_bin": {
+      "status": null,
+      "content_fresh_flag": null,
+      "queue_attribution_bin": null
+    }
+  }
+}
