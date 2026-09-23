@@ -1,8 +1,11 @@
 # C4 KXCPI fee+queue honesty harness
 
 Status: hypothesis committed, then source frozen. The unit page is
-`results/UNIT_RESULTS.md` after the code check. `EXPERIMENT_SPEC.md` is the
-hypothesis. `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
+`results/UNIT_RESULTS.md`. `python3 -m unittest -v tests.test_orchestrator`
+ran 12 tests in 0.069s at 2026-09-23T18:07:27Z. Result: OK. Failures: 0.
+Errors: 0. That page is not profit and not an Examiner pass.
+`EXPERIMENT_SPEC.md` is the hypothesis. `FROZEN_EXPERIMENT.json` keeps
+`results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `maker_vs_taker_roi_delta`,
 `sparse_vs_fresh_gap`, `missing_sot_n`, `settled_join_n`, and `n_books`
 null.

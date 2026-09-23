@@ -273,6 +273,7 @@ class PinTests(unittest.TestCase):
             )
             self.assertEqual(event['occurrence_datetime'], expected)
         nov = next(event for event in panel['events'] if event['event_ticker'] == 'KXCPI-26NOV')
+        self.assertIn('occurrence_datetime', nov)
         self.assertIsNone(nov['occurrence_datetime'])
         nov_markets = [
             market for market in panel['markets']
@@ -280,10 +281,10 @@ class PinTests(unittest.TestCase):
         ]
         self.assertEqual(len(nov_markets), 7)
         for market in nov_markets:
-            self.assertIsNone(market['occurrence_datetime'])
+            self.assertNotIn('occurrence_datetime', market)
         missing = [
             market for market in panel['markets']
-            if market['occurrence_datetime'] is None
+            if 'occurrence_datetime' not in market
         ]
         sparse = [
             market for market in panel['markets']
@@ -610,7 +611,7 @@ class RefuseTests(unittest.TestCase):
         panel = orchestrator.load_panel()
         market = next(
             row for row in panel['markets']
-            if row['occurrence_datetime'] is None
+            if 'occurrence_datetime' not in row
         )
         with self.assertRaises(orchestrator.InventedFillRefused):
             orchestrator.classify_native_taker({

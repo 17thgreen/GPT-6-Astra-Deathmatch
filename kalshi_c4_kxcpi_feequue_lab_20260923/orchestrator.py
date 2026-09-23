@@ -557,9 +557,15 @@ def _sparse_24h_refuse(row):
     raise OrchestratorError('volume_24h')
 
 
-def _missing_occurrence_refuse(row):
+def _missing_occurrence_refuse(row, absent_is_missing=False):
+    """A null value is a missing source of time.
+
+    Authentic scout markets omit the key. That omission is missing when
+    absent_is_missing is true. Synthetic book rows omit the key because they
+    are not market records, so the omission is not a SoT bin there.
+    """
     if 'occurrence_datetime' not in row:
-        return False
+        return absent_is_missing
     occ = row.get('occurrence_datetime')
     if occ is None:
         return True
@@ -624,7 +630,10 @@ def label_market_honesty(market):
     return {
         'ticker': market.get('ticker'),
         'sparse_24h_refuse': _sparse_24h_refuse(market),
-        'missing_occurrence_datetime_refuse': _missing_occurrence_refuse(market),
+        'missing_occurrence_datetime_refuse': _missing_occurrence_refuse(
+            market,
+            absent_is_missing=True,
+        ),
         'content_fresh_flag': None,
         'lee_ready': 'REFUSED',
         'sparse_vs_fresh_gap': None,
@@ -1122,9 +1131,11 @@ def _validate_panel(payload, admitted):
     missing = 0
     sparse = 0
     for market in markets:
-        if market.get('occurrence_datetime') is None:
+        if 'occurrence_datetime' not in market:
             missing += 1
-        elif not isinstance(market.get('occurrence_datetime'), str):
+        elif market.get('occurrence_datetime') is None:
+            missing += 1
+        elif not isinstance(market.get('occurrence_datetime'), str) or not market.get('occurrence_datetime').endswith('Z'):
             raise InventedSoTRefused()
         if market.get('volume_24h_fp') == SPARSE_24H_TOKEN:
             sparse += 1
