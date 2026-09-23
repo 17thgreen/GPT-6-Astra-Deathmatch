@@ -1,0 +1,38 @@
+{
+  "kind": "unit_test_verification",
+  "experiment": "R3-P4-L2-SHAPE-SF1-SF2",
+  "ran_at": "2026-09-23T00:09:30Z",
+  "python": "3.12.3",
+  "command": "python3 -m unittest -v tests.test_shape",
+  "cwd": "kalshi_r3_p4_l2_shape_lab_20260922",
+  "tests_run": 26,
+  "failures": 0,
+  "errors": 0,
+  "result": "OK",
+  "elapsed_seconds": 0.010,
+  "feebook_regression": {
+    "command": "python3 -m unittest tests.test_feebook",
+    "cwd": "kalshi_feebook_lab_20260922",
+    "tests_run": 37,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.004,
+    "note": "Unchanged feebook module. Not a shape profit result."
+  },
+  "rails_regression": {
+    "command": "python3 -m unittest tests.test_rails",
+    "cwd": "kalshi_rails_lab_20260922",
+    "tests_run": 44,
+    "failures": 0,
+    "errors": 0,
+    "result": "OK",
+    "elapsed_seconds": 0.004,
+    "note": "Unchanged rails module. Not a shape profit result."
+  },
+  "pnl": null,
+  "results": null,
+  "sf1": null,
+  "sf2": null,
+  "note": "Code verification of SF1/SF2 identities on synthetic books. Not a simulated execution and not live validation. Freeze results and pnl remain null."
+}
