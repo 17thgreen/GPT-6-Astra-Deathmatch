@@ -1,0 +1,15 @@
+{
+  "packet_id": "ETH-KXETH15M-FEEQUEUE-HARNESS",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T14:41:00-04:00",
+  "seat": "Conductor",
+  "digest_verify": {
+    "panel_stub_sha256": "b3379783c84eaa910f6a57f5318b8536f21220cfeaf0f73e9ff73ee0f20dd90d",
+    "scout_hunt_KXETH15M_sha256": "18f70001c8d68418d435e2016b756f90753e374a92d323f8e999f76215d9cf9c",
+    "panel_stub_match": true,
+    "hunt_match": true
+  },
+  "notes": "Digests match freeze pins. GET-only measurement. No live orders. R3-P2/R3-P1 now keys-unblocked in parallel (demo only) — do not conflate with ETH-FQ harness.",
+  "hard_refuse": ["invent_fills", "invent_depth", "Lee-Ready", "C5_reopen", "ATP_reopen", "Q6_000_retune", "live_orders", "ungate_S1_S2_R2P4"]
+}
