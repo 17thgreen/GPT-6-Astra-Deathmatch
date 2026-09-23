@@ -1,0 +1,11 @@
+{
+  "experiment": "C1-EMPTY-OB-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "empty_book_n": null,
+  "scorecard_refuse_n": null,
+  "wait_fresh_depth_n": null,
+  "depth_present_n": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner. Units assert schema and pins only. Not an Examiner score. The pre-ACCEPT empty payload is not this file."
+}
