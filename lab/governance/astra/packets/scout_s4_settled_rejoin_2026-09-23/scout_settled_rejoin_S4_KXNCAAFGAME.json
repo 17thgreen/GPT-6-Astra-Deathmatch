@@ -1,0 +1,220 @@
+{
+  "packet": "S4-KXNCAAFGAME-SETTLED-JOIN",
+  "feature_family": "S4-RJ",
+  "series": [
+    "KXNCAAFGAME"
+  ],
+  "settled_nonempty_result_N": 18,
+  "settled_list_limit": 20,
+  "settled_list_http": "429_honest",
+  "settled_list_cursor_present": false,
+  "method": "GET-only event embeds + single-market (list status=settled|finalized|open 429 honest)",
+  "host": "https://api.elections.kalshi.com/trade-api/v2",
+  "parent_seeds_finalized_nonempty_N": 0,
+  "parent_seed_tickers": [
+    "KXNCAAFGAME-26SEP26BUCKPITT-PITT",
+    "KXNCAAFGAME-26SEP26BUCKPITT-BUCK",
+    "KXNCAAFGAME-26SEP26TEXTENN-TEX"
+  ],
+  "parent_seed_results": {
+    "KXNCAAFGAME-26SEP26BUCKPITT-PITT": null,
+    "KXNCAAFGAME-26SEP26BUCKPITT-BUCK": null,
+    "KXNCAAFGAME-26SEP26TEXTENN-TEX": null
+  },
+  "parent_seed_statuses": {
+    "KXNCAAFGAME-26SEP26BUCKPITT-PITT": "active",
+    "KXNCAAFGAME-26SEP26BUCKPITT-BUCK": "active",
+    "KXNCAAFGAME-26SEP26TEXTENN-TEX": "active"
+  },
+  "parent_panel_seeds_note": "FQ parent panel SEP26 seeds still active/empty result (honest; future occ). Settled join uses prior-weekend SEP05/SEP12/SEP19 finalized cohort via GET /events embeds + single-market reget.",
+  "occurrence_datetime_sot_match_all_settled_seeds": true,
+  "open_list_n": null,
+  "open_list_http": "429_honest",
+  "markets": [
+    {
+      "ticker": "KXNCAAFGAME-26SEP05UCLACAL-CAL",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-06T06:29:58Z",
+      "occurrence_datetime": "2026-09-06T05:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP05UCLACAL_CAL.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP05UCLACAL-UCLA",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-06T06:29:58Z",
+      "occurrence_datetime": "2026-09-06T05:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP05UCLACAL_UCLA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12CAMPFLA-CAMP",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-13T01:00:28Z",
+      "occurrence_datetime": "2026-09-13T00:30:00Z",
+      "source": "event_KXNCAAFGAME_26SEP12CAMPFLA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12CAMPFLA-FLA",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-13T01:00:28Z",
+      "occurrence_datetime": "2026-09-13T00:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP12CAMPFLA_FLA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12OKLAMICH-MICH",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-12T19:43:55Z",
+      "occurrence_datetime": "2026-09-12T19:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP12OKLAMICH_MICH.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12OKLAMICH-OKLA",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-12T19:43:55Z",
+      "occurrence_datetime": "2026-09-12T19:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP12OKLAMICH_OKLA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12OSUTEX-OSU",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-13T03:15:25Z",
+      "occurrence_datetime": "2026-09-13T03:10:00Z",
+      "source": "market_KXNCAAFGAME_26SEP12OSUTEX_OSU.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP12OSUTEX-TEX",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-13T03:15:25Z",
+      "occurrence_datetime": "2026-09-13T03:10:00Z",
+      "source": "market_KXNCAAFGAME_26SEP12OSUTEX_TEX.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19COLONW-COLO",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T02:54:48Z",
+      "occurrence_datetime": "2026-09-20T02:30:00Z",
+      "source": "market_KXNCAAFGAME_26SEP19COLONW_COLO.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19COLONW-NW",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T02:54:48Z",
+      "occurrence_datetime": "2026-09-20T02:30:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19COLONW.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19FSUALA-ALA",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T01:20:12Z",
+      "occurrence_datetime": "2026-09-19T22:30:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19FSUALA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19FSUALA-FSU",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-20T01:20:12Z",
+      "occurrence_datetime": "2026-09-19T22:30:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19FSUALA.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19KENTOSU-KENT",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T19:40:37Z",
+      "occurrence_datetime": "2026-09-19T19:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19KENTOSU.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19KENTOSU-OSU",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T19:40:37Z",
+      "occurrence_datetime": "2026-09-19T19:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19KENTOSU.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19MEBC-BC",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T21:15:43Z",
+      "occurrence_datetime": "2026-09-19T21:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19MEBC.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19MEBC-ME",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T21:15:43Z",
+      "occurrence_datetime": "2026-09-19T21:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19MEBC.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19STANDUKE-DUKE",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T23:20:44Z",
+      "occurrence_datetime": "2026-09-19T23:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19STANDUKE.json"
+    },
+    {
+      "ticker": "KXNCAAFGAME-26SEP19STANDUKE-STAN",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-19T23:20:44Z",
+      "occurrence_datetime": "2026-09-19T23:00:00Z",
+      "source": "event_KXNCAAFGAME_26SEP19STANDUKE.json"
+    }
+  ],
+  "scouted_at_et": "2026-09-23T16:42:53-04:00",
+  "honest_gaps": [
+    "GET /markets?series_ticker=KXNCAAFGAME&status=settled|finalized|open list 429",
+    "GET /events?series_ticker=KXNCAAFGAME&status=settled list 429",
+    "FQ parent SEP26 panel seeds active/empty (not yet settled)",
+    "event_get event_KXNCAAFGAME_26SEP19AUBOM.json error={'code': 'not_found', 'message': 'not found'}",
+    "event_get event_KXNCAAFGAME_26SEP19EMUSTAN.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19LSUFLA.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19MIAMISF.json error={'code': 'not_found', 'message': 'not found'}",
+    "event_get event_KXNCAAFGAME_26SEP19NDARK.json error={'code': 'not_found', 'message': 'not found'}",
+    "event_get event_KXNCAAFGAME_26SEP19NDTEX.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19OSUIL.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19SELAULM.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19UGAARK.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "event_get event_KXNCAAFGAME_26SEP19USCMSU.json error={'code': 'not_found', 'message': 'not found'}",
+    "market_get market_KXNCAAFGAME_26SEP12CAMPFLA_CAMP.json error={'code': 'too_many_requests', 'message': 'too many requests'}",
+    "market_get market_KXNCAAFGAME_26SEP19COLONW_NW.json error={'code': 'too_many_requests', 'message': 'too many requests'}"
+  ],
+  "http_counts": {
+    "200": 21,
+    "429": 17,
+    "404": 4
+  }
+}

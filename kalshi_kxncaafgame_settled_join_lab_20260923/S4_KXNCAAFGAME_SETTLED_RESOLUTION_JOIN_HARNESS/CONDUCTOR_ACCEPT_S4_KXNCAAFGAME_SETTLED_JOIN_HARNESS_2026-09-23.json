@@ -1,0 +1,48 @@
+{
+  "packet_id": "S4-KXNCAAFGAME-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "S4-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "accepted_at_et": "2026-09-23T16:44:00-04:00",
+  "seat": "Conductor",
+  "orthogonal_pin": "packets/MAXIMIZE_PIN_2026-09-23_1643ET.md",
+  "lab": "kalshi_kxncaafgame_settled_join_lab_20260923/",
+  "prior_done": "NHL-RJ PR44 main@b450e780fd9752887579ee8d217b6dee76d918f8",
+  "knob": "join_gate",
+  "arms": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "digest_verify": {
+    "freeze": "3a8e8ba52edd6acdc342c6a2faabb08665fe8a7a76e1b28af1c8e18850b03d99",
+    "scout_reget": "57fa0b28325ac13015f49521a87661b3cc064d22a13cf960f4fcdfd9badaa3dc",
+    "seed_summary": "9e67cd16f3ec6536d5dae3fe07de6e6b073c1c8d1adc9bb7e9297090ef567ce1",
+    "panel_stub": "38167d11da5842bc4d39e6e7dcaab20a67294c735ba14d8bbeafde3154c6342a",
+    "settled_reget": "5bb0acfaa429e2ec1ad22e2e35e296540ac5b8e66eba4df6a0b2419d43257528",
+    "settled_nonempty_result_N": 18,
+    "match": true
+  },
+  "notes": "Scorable-first maximize after NHL-RJ PR44. Measurement-only S4 settled-resolution join. Orthogonal to S4-FQ/NCAAF-FQ. GET-only. Variants does NOT run admit.py. admitted_at stays null. results/pnl/settled_join_n null. Scout N=18 is a pin, not copied into settled_join_n. Series/settled list 429 honest. Parent SEP26 FQ seeds active/empty honest. Sole implement owner: Variants — Conductor will NOT launch a pulse CloudAgent (NHL-RJ dual-cloud lesson).",
+  "hard_refuse": [
+    "invent_settled_result",
+    "invent_fills",
+    "invent_depth",
+    "Lee-Ready",
+    "FQ_reopen",
+    "S4_FQ_reopen",
+    "NCAAF_FQ_reopen",
+    "Cap-SR_reopen",
+    "C3_RJ_reopen",
+    "C5_RJ_reopen",
+    "R3P3_RJ_reopen",
+    "NHL_RJ_reopen",
+    "ungate_S1_S2_R2P4",
+    "Arm_B_touch",
+    "admit_py_by_Variants",
+    "live_orders",
+    "copy_scout_N_into_settled_join_n",
+    "Conductor_pulse_cloud_kick"
+  ],
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false
+}
