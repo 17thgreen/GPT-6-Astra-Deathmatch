@@ -1,0 +1,12 @@
+{
+  "experiment": "R2-P5-SOT-ID-HARNESS",
+  "status": "EMPTY_RESULTS_PRE_EXAMINER",
+  "sot_pin_mismatch_n": null,
+  "holdout_mixed_refuse_n": null,
+  "delta_kickoff_sec_mode": null,
+  "identity_join_ok_n": null,
+  "external_odds_invent_refuse_n": null,
+  "results": null,
+  "pnl": null,
+  "note": "Null until Examiner. Units assert schema and pins only. Not an Examiner score. The pre-ACCEPT empty payload is not this file."
+}
