@@ -1,7 +1,8 @@
 # C5 KXBTC15M fee and queue honesty stress
 
-Status: hypothesis committed, then source frozen. No unit outcome is recorded
-in this file. `EXPERIMENT_SPEC.md` is the hypothesis.
+Status: hypothesis committed, then source frozen. The unit page is
+`results/UNIT_RESULTS.md` (8 tests, OK, 2026-09-23T14:01:54Z). That page is
+not profit and not an Examiner pass. `EXPERIMENT_SPEC.md` is the hypothesis.
 `FROZEN_EXPERIMENT.json` keeps `results` and `pnl` null.
 `results/EMPTY_RESULTS.json` keeps `freshness_gap_sec`,
 `queue_bin_mismatch_rate`, `fee_delta_vs_inherited_model`, and
