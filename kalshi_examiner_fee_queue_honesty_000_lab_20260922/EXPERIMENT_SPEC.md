@@ -95,6 +95,13 @@ One packet. The fields are:
 
 `write_scorecard` does not write these fields. A non-null value is refused.
 
+## Later question, not a result
+
+This packet is the frame for one later Examiner question: whether an honest
+queue treatment changes the modeled edge relative to the current model. The
+queue fields sit on the same scorecard as the fee fields, with the same
+refuse path. This file does not state a target ratio and does not record P&L.
+
 ## Do-not
 
 1. No live orders.

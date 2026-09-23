@@ -40,13 +40,21 @@ SHADOW_FREEZE = PARENT / 'nfl_factorial_lab_20260921' / 'SHADOW_CANDIDATE_FREEZE
 SHADOW_FREEZE_SHA256 = 'b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48'
 STRESS_ROLE = 'queue_label_only_not_a_fee_knob'
 CAPITAL_MODE = 'A1_shared_pool'
-OUTPUT_KEYS = (
-    'fee_delta_vs_inherited_model',
-    'freshness_gap_sec',
-    'queue_bin_mismatch_rate',
-    'fill_rate_delta_vs_q3300',
-    'adverse_queue_exposure',
-    'participation_stress_gap',
+FEE_CHANNEL = 'fee'
+QUEUE_CHANNEL = 'queue'
+# Value types describe a later Examiner fill. This harness stores None.
+# fill_rate_delta_vs_q3300 and adverse_queue_exposure are per-arm mappings
+# in the queue-fragility join. participation_stress_gap is one Decimal.
+# The fee trio are Decimals. None of those aggregates are computed here.
+SCORECARD_SCHEMA = (
+    ('fee_delta_vs_inherited_model', FEE_CHANNEL, 'Decimal'),
+    ('freshness_gap_sec', FEE_CHANNEL, 'Decimal'),
+    ('queue_bin_mismatch_rate', FEE_CHANNEL, 'Decimal'),
+    ('fill_rate_delta_vs_q3300', QUEUE_CHANNEL, 'mapping'),
+    ('adverse_queue_exposure', QUEUE_CHANNEL, 'mapping'),
+    ('participation_stress_gap', QUEUE_CHANNEL, 'Decimal'),
+)
+OUTPUT_KEYS = tuple(name for name, _channel, _value_type in SCORECARD_SCHEMA) + (
     'results',
     'pnl',
 )
@@ -141,14 +149,35 @@ def instrument_binding():
         'forbid_000_retune': True,
         'fee_is_knob': False,
         'stress_role': STRESS_ROLE,
+        'fee_fields': channel_fields(FEE_CHANNEL),
+        'queue_fields': channel_fields(QUEUE_CHANNEL),
     }
 
 
+def channel_fields(channel):
+    """Names and value types for one side of the single scorecard."""
+    if channel not in (FEE_CHANNEL, QUEUE_CHANNEL):
+        raise OrchestratorError('channel')
+    fields = tuple(
+        (name, value_type)
+        for name, owner, value_type in SCORECARD_SCHEMA
+        if owner == channel
+    )
+    if len(fields) != 3:
+        raise OrchestratorError('channel width')
+    return fields
+
+
 def published_scorecard():
-    """The freeze outputs. Always null in this harness."""
+    """The freeze outputs. Fee and queue fields are present and null."""
     scorecard = {key: None for key in OUTPUT_KEYS}
+    for name, _channel, _value_type in SCORECARD_SCHEMA:
+        if name not in scorecard or scorecard[name] is not None:
+            raise ScorecardPromotionRefused()
     scorecard['status'] = 'NOT_SCORED'
     scorecard['single_examiner_packet'] = True
+    scorecard['fee_fields'] = channel_fields(FEE_CHANNEL)
+    scorecard['queue_fields'] = channel_fields(QUEUE_CHANNEL)
     return scorecard
 
 
@@ -272,7 +301,23 @@ def conduct(choice=None):
         raise OrchestratorError('orders path')
     hygiene_join.assert_null_scorecard(hygiene_report['published'])
     qf_join.assert_null_scorecard(qf_report['published'])
+    if not qf_report['arms_run'] or tuple(qf_report['arms_run']) != tuple(queue_fragility_core.ARMS):
+        raise OrchestratorError('queue arms')
     published = assert_null_scorecard(published_scorecard())
+    channels = {
+        FEE_CHANNEL: {
+            'wired': True,
+            'fields': channel_fields(FEE_CHANNEL),
+            'row_count': hygiene_report['row_count'],
+        },
+        QUEUE_CHANNEL: {
+            'wired': True,
+            'fields': channel_fields(QUEUE_CHANNEL),
+            'row_count': qf_report['row_count'],
+        },
+    }
+    if channels[FEE_CHANNEL]['row_count'] != channels[QUEUE_CHANNEL]['row_count']:
+        raise OrchestratorError('row count')
     report = {
         'experiment_id': EXPERIMENT_ID,
         'source': source,
@@ -286,6 +331,7 @@ def conduct(choice=None):
         'taker_rows': hygiene_report['taker_rows'],
         'hygiene_join': hygiene_report,
         'qf_join': qf_report,
+        'channels': channels,
         'published': published,
         'promoted': False,
         'single_examiner_packet': True,

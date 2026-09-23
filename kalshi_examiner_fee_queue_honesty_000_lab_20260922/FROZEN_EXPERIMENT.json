@@ -57,17 +57,17 @@
   ],
   "question": "Does one orchestrator import the hygiene join and the queue-fragility join on one Q6-000 fills stream while the six scorecard fields, results, and pnl stay null?",
   "specification_sha256": {
-    "EXPERIMENT_SPEC.md": "5d63434be3b4b742ef665bed0ba2f582980e001b9cdd4055920bec6cb0959dd1",
+    "EXPERIMENT_SPEC.md": "dfb05d9a53692dfd54fda9c04f79843ac2ab18c2ac28ef592a1b977e673fbaf0",
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000_FREEZE_2026-09-22.md": "4799642e54cf233a925697e00c5a9e29f5cb39070962a2e011f0fbe090c169f2",
     "packets/EXAMINER_FEE_QUEUE_HONESTY_000/freeze.json": "008fcffdfaef63df8bf8f7927be6a7b8a499b19d09e7ecdb0078cf3991c31596",
     "results/EMPTY_RESULTS.json": "4c6068d8b9d901286d15979d6a21e59f9eea5fc0f27723c498b7e8185b100523"
   },
   "implementation_sha256": {
-    "README.md": "16135ed405945229c2b6775a72880b9bcf2d61074871bb9da989199890a5d6b8",
-    "orchestrator.py": "17593f67d34f96fb5dc5f7293dc02e8349aa93a5966d16b0f6b1c95856f02a79",
+    "README.md": "f20c2212bc539ffe203cb230a4cbe0a0315b1aa464076a369e029885b8c8efff",
+    "orchestrator.py": "098edbb574a0c540954c1d43ad6da698480f005bf737c129bb69511787473571",
     "fixtures/PIN.md": "54e07fbe1a6054f973f9de00e1b5fa37dea03fceaca69e02fcbb016bde859995",
     "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "tests/test_orchestrator.py": "ce69472b24eaa363d5f17382f52fb94e1fde95a344141db7277e32ee54f14e74"
+    "tests/test_orchestrator.py": "32d4890dcbe8d843d6b80fc954d25e163a5b0f2b6b67c42d6fdfb505037ef078"
   },
   "source_frozen_at": "2026-09-23T00:04:28Z",
   "source_frozen_note": "Source and tests were frozen after the hypothesis commit and before unit results. The six scorecard fields, results, and pnl remain null.",

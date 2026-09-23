@@ -21,6 +21,13 @@ From this directory, Python 3.12 standard library:
 python3 -m unittest -v tests.test_orchestrator
 ```
 
+`fill_rate_delta_vs_q3300`, `adverse_queue_exposure`, and
+`participation_stress_gap` are first-class scorecard slots beside
+`fee_delta_vs_inherited_model`, `freshness_gap_sec`, and
+`queue_bin_mismatch_rate`. The same `write_scorecard` path refuses a
+non-null value on either side. The lab does not state a target edge ratio
+and does not record P&L.
+
 No live orders. This lab does not modify the feebook lab, the rails lab,
 `hygiene.py`, `queue_fragility.py`, or either fixture-join module. There is
 no second Examiner packet. The six scorecard fields stay null.

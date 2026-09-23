@@ -184,10 +184,24 @@ class PinTests(unittest.TestCase):
         orchestrator.assert_null_scorecard(report)
         orchestrator.assert_null_scorecard(report['published'])
         for key in orchestrator.OUTPUT_KEYS:
+            self.assertIn(key, report)
+            self.assertIn(key, report['published'])
             self.assertIsNone(report[key])
             self.assertIsNone(report['published'][key])
-            self.assertIsNone(report['hygiene_join']['published'][key] if key in report['hygiene_join']['published'] else None)
-            self.assertIsNone(report['qf_join']['published'][key] if key in report['qf_join']['published'] else None)
+        for name, _value_type in orchestrator.channel_fields(orchestrator.FEE_CHANNEL):
+            self.assertIn(name, report['hygiene_join'])
+            self.assertIsNone(report['hygiene_join'][name])
+        for name, _value_type in orchestrator.channel_fields(orchestrator.QUEUE_CHANNEL):
+            self.assertIn(name, report['qf_join'])
+            self.assertIsNone(report['qf_join'][name])
+        self.assertIs(report['channels'][orchestrator.FEE_CHANNEL]['wired'], True)
+        self.assertIs(report['channels'][orchestrator.QUEUE_CHANNEL]['wired'], True)
+        self.assertEqual(
+            report['channels'][orchestrator.FEE_CHANNEL]['row_count'],
+            report['channels'][orchestrator.QUEUE_CHANNEL]['row_count'],
+        )
+        self.assertEqual(len(report['published']['fee_fields']), 3)
+        self.assertEqual(len(report['published']['queue_fields']), 3)
         self.assertEqual(report['published']['status'], 'NOT_SCORED')
         if choice['production_present']:
             self.assertEqual(choice['source'], 'production_pin')
@@ -199,6 +213,70 @@ class PinTests(unittest.TestCase):
             self.assertEqual(Path(choice['orders_path']), orchestrator.qf_join.SYNTHETIC_ORDERS)
         for path, payload in before.items():
             self.assertEqual(path.read_bytes(), payload)
+
+    def test_queue_fields_are_equal_to_fee_fields(self):
+        fee = orchestrator.channel_fields(orchestrator.FEE_CHANNEL)
+        queue = orchestrator.channel_fields(orchestrator.QUEUE_CHANNEL)
+        self.assertEqual(
+            [name for name, _value_type in fee],
+            [
+                'fee_delta_vs_inherited_model',
+                'freshness_gap_sec',
+                'queue_bin_mismatch_rate',
+            ],
+        )
+        self.assertEqual(
+            [name for name, _value_type in queue],
+            [
+                'fill_rate_delta_vs_q3300',
+                'adverse_queue_exposure',
+                'participation_stress_gap',
+            ],
+        )
+        self.assertEqual([value_type for _name, value_type in fee], ['Decimal', 'Decimal', 'Decimal'])
+        self.assertEqual(
+            [value_type for _name, value_type in queue],
+            ['mapping', 'mapping', 'Decimal'],
+        )
+        binding = orchestrator.instrument_binding()
+        self.assertEqual(binding['fee_fields'], fee)
+        self.assertEqual(binding['queue_fields'], queue)
+        self.assertEqual(len(binding['queue_fields']), len(binding['fee_fields']))
+        report = orchestrator.conduct()
+        self.assertEqual(report['published']['fee_fields'], fee)
+        self.assertEqual(report['published']['queue_fields'], queue)
+        fee_filled = dict(report['published'])
+        fee_filled[fee[0][0]] = Decimal('1')
+        with self.assertRaises(orchestrator.ScorecardPromotionRefused) as fee_caught:
+            orchestrator.write_scorecard(fee_filled)
+        makers = [row for row in report['qf_join']['labels'] if row['role'] == 'maker']
+        self.assertGreater(len(makers), 0)
+        arms = orchestrator.queue_fragility_core.ARMS
+        for row in makers:
+            self.assertEqual(set(row['arms']), set(arms))
+            for arm in arms:
+                self.assertIn('fill_rate', row['arms'][arm])
+                self.assertIn('slice_adverse_contracts', row['arms'][arm])
+                self.assertIsNone(row['arms'][arm]['results'])
+                self.assertIsNone(row['arms'][arm]['pnl'])
+        for name, _value_type in queue:
+            filled = dict(report['published'])
+            filled[name] = {arms[0]: Decimal('1')}
+            with self.assertRaises(orchestrator.ScorecardPromotionRefused) as caught:
+                orchestrator.write_scorecard(filled)
+            self.assertIs(type(caught.exception), type(fee_caught.exception))
+            self.assertIsNone(report['published'][name])
+            self.assertIsNone(report[name])
+        for path in (
+            ROOT / 'orchestrator.py',
+            ROOT / 'EXPERIMENT_SPEC.md',
+            ROOT / 'README.md',
+            ROOT / 'FROZEN_EXPERIMENT.json',
+            ROOT / 'results' / 'EMPTY_RESULTS.json',
+        ):
+            text = path.read_text()
+            self.assertNotIn('110%', text)
+            self.assertNotIn('110 %', text)
 
     def test_scorecard_promotion_is_refused(self):
         report = orchestrator.conduct()
