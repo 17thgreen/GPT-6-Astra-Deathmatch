@@ -1,0 +1,610 @@
+[
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Economics",
+      "Commodities"
+    ],
+    "category": "Economics",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/AAAGAS.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/AAAGAS.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "daily",
+    "last_updated_ts": "2026-09-23T20:55:17.36266Z",
+    "settlement_sources": [
+      {
+        "name": "AAA",
+        "url": "https://gasprices.aaa.com/?state=FL"
+      }
+    ],
+    "tags": [
+      "Oil and energy",
+      "Econ Daily"
+    ],
+    "ticker": "KXAAAGASDFL",
+    "title": "Florida gas price"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Commodities"
+    ],
+    "category": "Commodities",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/COMMODITIES.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/COMMODITIES.pdf",
+    "exchange_index": 2,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-21T23:22:49.617114Z",
+    "settlement_sources": [
+      {
+        "name": "Shanghai Metals Market - Ammonium Paratungstate",
+        "url": "https://www.metal.com/tungsten/201308090018"
+      }
+    ],
+    "tags": null,
+    "ticker": "KXAPSMM",
+    "title": "Ammonium Paratungstate"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Financials",
+      "Companies"
+    ],
+    "category": "Financials",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/QUARTERKPI.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/QUARTERKPI.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-16T19:07:12.342085Z",
+    "settlement_sources": [
+      {
+        "name": "Fiscal.ai",
+        "url": "https://fiscal.ai"
+      }
+    ],
+    "tags": [
+      "Companies",
+      "KPIs"
+    ],
+    "ticker": "KXBA",
+    "title": "Boeing KPI"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Climate and Weather"
+    ],
+    "category": "Climate and Weather",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/BIGGESTQUAKE.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/BIGGESTQUAKE.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "daily",
+    "last_updated_ts": "2026-09-13T00:06:56.968145Z",
+    "settlement_sources": [
+      {
+        "name": "the United States Geological Survey",
+        "url": "https://www.usgs.gov"
+      }
+    ],
+    "tags": null,
+    "ticker": "KXBIGGESTQUAKE",
+    "title": "Biggest earthquake"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract.",
+      "Any candidate currently listed as a market within this event."
+    ],
+    "categories": [
+      "Elections"
+    ],
+    "category": "Elections",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/POLITICALSTAT.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/POLITICALSTAT.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-23T19:29:09.990241Z",
+    "settlement_sources": [
+      {
+        "name": "Delaware Department of Elections",
+        "url": "https://elections.delaware.gov/"
+      },
+      {
+        "name": "Illinois State Board of Elections",
+        "url": "https://www.elections.il.gov/ElectionOperations/ElectionVoteTotals.aspx"
+      },
+      {
+        "name": "Georgia Secretary of State",
+        "url": "https://results.sos.ga.gov/"
+      },
+      {
+        "name": "Michigan Secretary of State",
+        "url": "https://www.michigan.gov/sos"
+      },
+      {
+        "name": "Maine Secretary of State, Division of Elections",
+        "url": "https://www.maine.gov/sos/elections-voting/upcoming-elections"
+      },
+      {
+        "name": "Massachusetts Secretary of the Commonwealth, Elections Division",
+        "url": "https://www.sec.state.ma.us/divisions/elections/elections-and-voting.htm"
+      },
+      {
+        "name": "Federal Election Commission",
+        "url": "https://www.fec.gov"
+      },
+      {
+        "name": "New Mexico Secretary of State, Elections Division",
+        "url": "https://www.sos.nm.gov/voting-and-elections/"
+      },
+      {
+        "name": "New Jersey Division of Elections",
+        "url": "https://www.nj.gov/state/elections/"
+      },
+      {
+        "name": "North Carolina State Board of Elections",
+        "url": "https://www.ncsbe.gov/results-data/election-results"
+      },
+      {
+        "name": "Rhode Island Board of Elections",
+        "url": "https://elections.ri.gov"
+      },
+      {
+        "name": "New Hampshire Secretary of State",
+        "url": "https://www.sos.nh.gov/elections"
+      },
+      {
+        "name": "Minnesota Secretary of State",
+        "url": "https://www.sos.mn.gov/elections-voting/election-results/"
+      },
+      {
+        "name": "Oregon Secretary of State, Elections Division",
+        "url": "https://sos.oregon.gov/elections/Pages/default.aspx"
+      },
+      {
+        "name": "Virginia Department of Elections",
+        "url": "https://www.elections.virginia.gov/"
+      },
+      {
+        "name": "Colorado Secretary of State",
+        "url": "https://www.sos.state.co.us/pubs/elections/"
+      }
+    ],
+    "tags": [
+      "Senate"
+    ],
+    "ticker": "KXBLUESTRSEN",
+    "title": "Bluest state to elect a Republican senator"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Crypto"
+    ],
+    "category": "Crypto",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/BTCPRICE.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/BTCPRICE.pdf",
+    "exchange_index": 2,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-08-29T21:43:47.37311Z",
+    "settlement_sources": [
+      {
+        "name": "CF Benchmarks",
+        "url": "https://www.cfbenchmarks.com/data/indices/BRTI?ref=blog.cfbenchmarks.com"
+      }
+    ],
+    "tags": [
+      "BTC"
+    ],
+    "ticker": "KXBTCPRICE",
+    "title": "will Bitcoin hit price target by date"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Financials",
+      "Companies"
+    ],
+    "category": "Companies",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/ANNUALKPI.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/ANNUALKPI.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-16T04:37:40.473572Z",
+    "settlement_sources": [
+      {
+        "name": "Fiscal.ai",
+        "url": "https://fiscal.ai"
+      }
+    ],
+    "tags": [
+      "KPIs"
+    ],
+    "ticker": "KXCCLA",
+    "title": "Carnival Cruise KPI"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Economics"
+    ],
+    "category": "Economics",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/YOYCPI.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/YOYCPI.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic_with_maker_fees",
+    "frequency": "monthly",
+    "last_updated_ts": "2026-08-29T22:03:17.121253Z",
+    "settlement_sources": [
+      {
+        "name": "Bureau of Labor Statistics",
+        "url": "https://www.bls.gov/cpi/"
+      }
+    ],
+    "tags": [
+      "Inflation"
+    ],
+    "ticker": "KXCPIYOY",
+    "title": "Inflation"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Financials"
+    ],
+    "category": "Financials",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/EURUSD.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/EURUSD.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "daily",
+    "last_updated_ts": "2026-08-29T22:27:15.071958Z",
+    "settlement_sources": [
+      {
+        "name": "ICE ",
+        "url": "https://www.tradingview.com/symbols/EURUSD/?exchange=FX_IDC"
+      }
+    ],
+    "tags": [
+      "Foreign Exchange"
+    ],
+    "ticker": "KXEURUSD",
+    "title": "EUR/USD daily range"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Science and Technology"
+    ],
+    "category": "Science and Technology",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/LLM1.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/LLM1.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic_with_maker_fees",
+    "frequency": "custom",
+    "last_updated_ts": "2026-09-23T17:44:34.832479Z",
+    "settlement_sources": [
+      {
+        "name": "LM Arena Leaderboard (Remove Style Control)",
+        "url": "https://arena.ai/leaderboard/text/overall-no-style-control"
+      }
+    ],
+    "tags": [
+      "AI"
+    ],
+    "ticker": "KXLLM1",
+    "title": "Year-end top LLM"
+  },
+  {
+    "additional_prohibitions": [
+      "Current players, coaches, and staff of the league, association, or organization(s) governing the event. For college leagues/associations specifically, or where otherwise appropriate (as identified by the Exchange), this applies to current players/coaches/staff of the specific sport in <event> rather than the league/association as a whole (e.g., if the Division I Gonzaga Men\u2019s Basketball Team is playing in <event>, this prohibition will restrict trades by current players/coaches/staff on NCAA Basketball, rather than all current players/coaches/staff in any NCAA sport).",
+      "Paid employees of the league and league participants",
+      "Owners of teams and the league",
+      "and household members and immediate family of all above",
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Sports"
+    ],
+    "category": "Sports",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/PLAYOFFHOST.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/PLAYOFFHOST.pdf",
+    "exchange_index": 3,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "custom",
+    "last_updated_ts": "2026-09-16T15:46:15.856725Z",
+    "settlement_sources": [
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com"
+      },
+      {
+        "name": "the Governing League",
+        "url": "https://www.mlb.com/"
+      }
+    ],
+    "tags": [
+      "Baseball"
+    ],
+    "ticker": "KXMLBPLAYOFFHOST",
+    "title": "MLB Playoff Games Hosted"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Climate and Weather"
+    ],
+    "category": "Climate and Weather",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/RAINGLOBALPERIOD.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RAINGLOBALPERIOD.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "daily",
+    "last_updated_ts": "2026-09-11T17:44:11.875745Z",
+    "settlement_sources": [
+      {
+        "name": "The Weather Company",
+        "url": "https://weather.com/kalshi"
+      }
+    ],
+    "tags": [
+      "Snow and rain"
+    ],
+    "ticker": "KXRAIN",
+    "title": "Where will it rain daily"
+  },
+  {
+    "additional_prohibitions": [
+      "Rotten Tomatoes",
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Entertainment"
+    ],
+    "category": "Entertainment",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/RT.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/RT.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "custom",
+    "last_updated_ts": "2026-09-16T04:38:12.195313Z",
+    "settlement_sources": [
+      {
+        "name": "Rotten Tomatoes",
+        "url": "https://www.rottentomatoes.com/"
+      }
+    ],
+    "tags": [
+      "Rotten Tomatoes"
+    ],
+    "ticker": "KXRT",
+    "title": "Rotten Tomatoes Scores"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Politics"
+    ],
+    "category": "Politics",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/AGENCYANNOUNCE.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/AGENCYANNOUNCE.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-22T23:36:10.058183Z",
+    "settlement_sources": [
+      {
+        "name": "Donald J. Trump",
+        "url": "https://kalshi.com/"
+      },
+      {
+        "name": "the White House",
+        "url": "https://kalshi.com/"
+      }
+    ],
+    "tags": [
+      "Trump"
+    ],
+    "ticker": "KXTRUMPAICZAR",
+    "title": "Trump AI czar selection"
+  },
+  {
+    "additional_prohibitions": [
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Mentions"
+    ],
+    "category": "Mentions",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/TRUMPSAY.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/TRUMPSAY.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "one_off",
+    "last_updated_ts": "2026-09-21T18:41:00.126811Z",
+    "settlement_sources": [
+      {
+        "name": "ABC",
+        "url": "https://abcnews.go.com/"
+      },
+      {
+        "name": "Fox News",
+        "url": "https://www.foxnews.com/"
+      },
+      {
+        "name": "MSNBC",
+        "url": "https://www.msnbc.com/"
+      },
+      {
+        "name": "The Wall Street Journal",
+        "url": "https://www.wsj.com/"
+      },
+      {
+        "name": "Semafor",
+        "url": "https://www.semafor.com/"
+      },
+      {
+        "name": "The Information",
+        "url": "https://www.theinformation.com/"
+      },
+      {
+        "name": "PBS",
+        "url": "https://www.pbs.org"
+      },
+      {
+        "name": "the President of the United States",
+        "url": "https://www.whitehouse.gov/"
+      },
+      {
+        "name": "CBS",
+        "url": "https://www.cbsnews.com/"
+      },
+      {
+        "name": "NBC",
+        "url": "https://www.nbcnews.com/"
+      },
+      {
+        "name": "Bloomberg",
+        "url": "https://www.bloomberg.com"
+      },
+      {
+        "name": "Axios",
+        "url": "https://www.axios.com/"
+      },
+      {
+        "name": "CNN",
+        "url": "https://www.cnn.com/"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://www.reuters.com/"
+      },
+      {
+        "name": "The Washington Post",
+        "url": "https://www.washingtonpost.com/"
+      },
+      {
+        "name": "the Associated Press",
+        "url": "https://apnews.com/"
+      },
+      {
+        "name": "Politico",
+        "url": "https://www.politico.com/"
+      },
+      {
+        "name": "The New York Times",
+        "url": "https://www.nytimes.com/"
+      }
+    ],
+    "tags": [
+      "Trump",
+      "Politicians"
+    ],
+    "ticker": "KXTRUMPSAY",
+    "title": "What will trump say"
+  },
+  {
+    "additional_prohibitions": [
+      "Current players, coaches, and staff of the league, association, or organization(s) governing the event. For college leagues/associations specifically, or where otherwise appropriate (as identified by the Exchange), this applies to current players/coaches/staff of the specific sport in <event> rather than the league/association as a whole (e.g., if the Division I Gonzaga Men\u2019s Basketball Team is playing in <event>, this prohibition will restrict trades by current players/coaches/staff on NCAA Basketball, rather than all current players/coaches/staff in any NCAA sport).",
+      "Paid employees of the league and league participants",
+      "Owners of teams and the league",
+      "and household members and immediate family of all above",
+      "Persons who are employed by any of the Source Agencies are not permitted to trade on the Contract.",
+      "Persons who hold any material, non-public information on the Underlying are not permitted to trade on the Contract."
+    ],
+    "categories": [
+      "Sports"
+    ],
+    "category": "Sports",
+    "contract_terms_url": "https://assets.kalshi.com/contract_terms/ACHIEVEMENTS.pdf",
+    "contract_url": "https://assets.kalshi.com/regulatory/product-certifications/ACHIEVEMENTS.pdf",
+    "exchange_index": 0,
+    "fee_multiplier": 1,
+    "fee_type": "quadratic",
+    "frequency": "custom",
+    "last_updated_ts": "2026-09-23T23:45:22.090335Z",
+    "settlement_sources": [
+      {
+        "name": "TT Elite Series",
+        "url": "https://www.tt-series.com/"
+      },
+      {
+        "name": "Sofascore",
+        "url": "https://www.sofascore.com/"
+      },
+      {
+        "name": "ESPN",
+        "url": "https://www.espn.com"
+      },
+      {
+        "name": "Flashscore",
+        "url": "https://www.flashscore.com/"
+      }
+    ],
+    "tags": [
+      "Table Tennis"
+    ],
+    "ticker": "KXTTELITEMATCH",
+    "title": "TT Elite Series Match"
+  }
+]
