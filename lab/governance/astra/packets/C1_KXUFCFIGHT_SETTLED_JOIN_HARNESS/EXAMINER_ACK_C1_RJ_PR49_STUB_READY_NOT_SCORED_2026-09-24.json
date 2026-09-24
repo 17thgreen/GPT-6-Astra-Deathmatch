@@ -1,0 +1,175 @@
+{
+  "id": "EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED",
+  "seat": "Examiner (Kalshi)",
+  "desk": "Astra",
+  "packet": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C1-RJ",
+  "status": "NOT_SCORED",
+  "verdict": "READY_NOT_SCORED",
+  "stub_ready": true,
+  "scored": false,
+  "promote": false,
+  "pre_pr_hold_superseded": true,
+  "supersedes_hold": "EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR",
+  "supersedes_hold_sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+  "supersedes_hold_path": "lab/governance/astra/packets/EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json",
+  "admit_alone_neq_score": true,
+  "pr49": {
+    "merged": true,
+    "state": "closed",
+    "main": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+    "main_is_origin_main_at_verify": true,
+    "head_sha_pre_merge": "7a10497b56718301d823fe2838c573df28b11fd6",
+    "head_ref": "cursor/c1-kxufcfight-settled-join-ebee",
+    "base_pre_merge": "a281adc944e4dacffcdb5677a140fabaed675a81",
+    "merge_method": "squash",
+    "merged_at_et": "2026-09-24T19:20:39-04:00",
+    "commits": 6,
+    "changed_files": 75,
+    "lab": "kalshi_c1_kxufcfight_settled_join_lab_20260923/",
+    "units": "10 OK (unittest tests.test_orchestrator; Examiner re-ran at main@34a27202: Ran 10, OK) ≠ Examiner score",
+    "units_ok": 10,
+    "arms": [
+      "J0",
+      "J1"
+    ],
+    "arm_values": {
+      "J0": "nonempty_result_required",
+      "J1": "occurrence_datetime_match"
+    },
+    "j1_clock_pin": "occurrence_datetime (no expected_expiration_time substitution)",
+    "sha_verify": "PASS",
+    "url": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/49",
+    "cloud_agent": "bc-986a32c2-882d-5ffe-94db-72b2ad8aebee",
+    "pin_commit_fixup_cloud": "bc-aa3db543 (Conductor, same branch, no new PR)",
+    "implement_owner": "R&D Variants"
+  },
+  "accept_sha256": "5c3d559a055482301340102246835c7657c6b5ba9b1ceb69022dbd04c9895ac3",
+  "merge_packet_sha256": "a726436b53826c30cb0686d9a5d0e7802e039d4dcce2cd32999a1925d196273f",
+  "pins": {
+    "freeze": {
+      "path": "lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md",
+      "sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1"
+    },
+    "accept": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.json",
+      "sha256": "5c3d559a055482301340102246835c7657c6b5ba9b1ceb69022dbd04c9895ac3"
+    },
+    "maximize_pin": {
+      "path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-23_1750ET.md",
+      "sha256": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df"
+    },
+    "scout_reget": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/scout_settled_rejoin_C1_KXUFCFIGHT.json",
+      "sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f"
+    },
+    "seed_summary": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/SEED_SETTLED_SUMMARY.json",
+      "sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600"
+    },
+    "panel_stub": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json",
+      "sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e"
+    },
+    "settled_reget": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/settled_reget_2026-09-23.json",
+      "sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23"
+    },
+    "examiner_hold": {
+      "path": "lab/governance/astra/packets/EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json",
+      "sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b"
+    }
+  },
+  "freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "scout_reget_sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+  "scout_summary_sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+  "panel_stub_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "settled_reget_capture_sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23",
+  "maximize_pin_sha256": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df",
+  "examiner_hold_sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+  "digest_verify": {
+    "freeze": "PASS",
+    "accept": "PASS",
+    "maximize_pin": "PASS",
+    "scout_reget": "PASS",
+    "seed_summary": "PASS",
+    "panel_stub": "PASS",
+    "settled_reget": "PASS",
+    "examiner_hold": "PASS",
+    "match_all": true,
+    "method": "Examiner independent sha256: box files + raw.githubusercontent at head 7a10497b and main 34a27202 (8/8 PASS on all three surfaces)"
+  },
+  "source_pins_copies": {
+    "blob": "cc2392d8f3632caa35836a96ee1f7762a0928a33",
+    "sha256": "785c9eb84fb2d97baf14242dd18b2340448fe4e4280186f86d585e2b636b0f2e",
+    "copies_match": "4/4 at head and main (git hash-object on main checkout)",
+    "paths": [
+      "kalshi_c1_kxufcfight_settled_join_lab_20260923/SOURCE_PINS.json",
+      "kalshi_c1_kxufcfight_settled_join_lab_20260923/C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS/SOURCE_PINS.json",
+      "lab/astra-science/kalshi_c1_kxufcfight_settled_join_lab_20260923/SOURCE_PINS.json",
+      "packets/C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS/SOURCE_PINS.json"
+    ],
+    "digest_all_match_claimed": true,
+    "note_box_desk_copies": "Box desk SOURCE_PINS.json (packets/C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS/ and lab/astra-science/kalshi_c1_..._20260923/) are the pre-PR Examiner/desk declaration, blob d339e3f8c7d73c34ceec408f8d58cc79dcb1b094 — not the repo harness copy; same 7 digests, not a pin mismatch."
+  },
+  "admitted_at": null,
+  "parent_panel_admitted_at_collector": "2026-09-23T00:49:43Z",
+  "panel_version": "2026-09-22.c1-kxufcfight-v0",
+  "settled_nonempty_result_N_scout": 4,
+  "settled_join_n": null,
+  "pnl": null,
+  "results": null,
+  "occurrence_match_n": null,
+  "admit_ready_flag": null,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "scout_N_is_pin_only_not_score": true,
+  "settled_list_http": "429_honest",
+  "finalized_events_list_http": "429_honest",
+  "occurrence_datetime_present_all_parent_seeds": true,
+  "admit_py_refused": true,
+  "arm_b_not_scored_here": true,
+  "orthogonal_to": [
+    "C1-EMPTY-OB",
+    "C1-MEAS",
+    "C1-ADMIT-WIRE"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": [
+    "Clock admit",
+    "measured settled_join_n>0 (not invented, not scout N)",
+    "Examiner-ready"
+  ],
+  "refuse": [
+    "invent settled result/fills/depth/PnL",
+    "empty-books invent (C1 PR19) / invent books / invent settled list books to pad N past authentic parent-seed N=4",
+    "Lee-Ready",
+    "Q6-000 retune",
+    "live orders",
+    "admit.py by Variants",
+    "copy scout N=4 into settled_join_n as score",
+    "10 units ≠ Examiner score (units as score refused)",
+    "invent occurrence_datetime / substitute expected_expiration_time",
+    "Cap-SR/FQ/C1-EMPTY-OB/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ/S5-RJ reopen",
+    "ungate S1/S2/R2-P4",
+    "Arm B score/touch here",
+    "Conductor pulse cloud kick"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "doc_nits_non_blocking": [
+    "UNIT_RESULTS.md at main still carries pre-fixup text ('Examiner status stays HOLD_PRE_PR', 'refuses to claim ALL_MATCH until a follow-up wires those bytes'); superseded by PIN_GAP.json gap_resolved_at_head 73e08514 + SOURCE_PINS digest_all_match_claimed=true. Not a pin failure."
+  ],
+  "stub_path": "lab/governance/astra/packets/EXAMINER_SCORECARD_STUB_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.md",
+  "ready_packet_path": "lab/governance/astra/packets/EXAMINER_READY_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PR49_NOT_SCORED_2026-09-24.json",
+  "merge_stamp": "lab/governance/astra/packets/CONDUCTOR_MERGE_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PR49_2026-09-24.json",
+  "stamped_at_et": "2026-09-24T19:22:36-04:00"
+}

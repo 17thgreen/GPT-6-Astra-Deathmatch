@@ -1,10 +1,16 @@
 # Q7 proposal: isolate chosen-pair price consistency
 
-Status: IMPLEMENTED, FROZEN, NOT RUN. The hypothesis was committed before the
-source freeze. No Q7 scenario has been executed and this file does not report
-Q7 P&L. The frozen lab is `nfl_paircheck_lab_20260922/`. Historical replay waits
-on the owner kit; see that directory's README. Live execution remains outside
-this experiment.
+Status: IMPLEMENTED and FROZEN in `nfl_paircheck_lab_20260922`. Later registry
+rows record a Q7 Arm B kill, plus frozen rehab pass 1 (PR38) and pass 2 (PR47),
+citing desk-verified `q3300_d0.25_B.json` and `q3300_d0.25_D.json` summary
+hashes. The in-tree pair-check result file remains `NOT_RUN_INPUTS_MISSING`
+with `scenarios_executed` 0, and the rehab result files in this checkout also
+record `scenarios_executed` 0. This file does not report Q7 P&L. The read-only
+reconciliation memo on main
+(`lab/governance/astra/packets/q7_reconciliation_20260924/Q7_RECONCILIATION_MEMO_2026-09-24.md`)
+is documentation and is not a score. The hypothesis was committed before the
+source freeze. Historical replay waits on the owner kit; see that directory's
+README. Live execution remains outside this experiment.
 
 ## Question
 

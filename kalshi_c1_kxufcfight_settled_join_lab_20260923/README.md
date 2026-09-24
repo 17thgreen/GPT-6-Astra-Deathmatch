@@ -22,9 +22,15 @@ The panel parent is the existing admitted panel, sha256
 This lab does not run `admit.py`. The declared scout N=4 is not
 `settled_join_n`. `results` and `pnl` stay null.
 
-Examiner status stays `HOLD_PRE_PR`. `stub_ready` is false. The authentic
-pins are in the tree. A later READY state is NOT_SCORED only, and only
-after a branch sha check and merge. This page is not that score.
+Examiner status is `READY_NOT_SCORED` (`stub_ready` true, `NOT_SCORED`).
+This supersedes the earlier `HOLD_PRE_PR` wording. Examiner ACK
+`lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS/EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json`
+sha256 `3eb4900dcdf72d34247f25dfb259bf74193267c1e3a2983e8c4fd486e278bdec`.
+Conductor ACCEPT
+`lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json`
+sha256 `a964146f34a32527b75fb64011ead9a6e6013078474f8a54e208ba7c543f06d4`.
+`results`, `pnl`, and the scorecard remain null. Nothing was scored.
+The authentic pins are in the tree. This page is not that score.
 
 From this directory, Python 3 standard library:
 
