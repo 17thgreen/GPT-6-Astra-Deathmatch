@@ -1,0 +1,11 @@
+{
+  "frozen_ns": 1790228493363592723,
+  "tests": "5 counting and financial scenario tests passed before aggregation",
+  "sha256": {
+    "SPEC.md": "ba7d04a194823d3b69f9079addd4ea8a574e53d1cbf2c83caf667e9cfa4b96ca",
+    "analyze.py": "b0a1979d4f70928f87030729cccdc7359979f5e1454d9c2c74b9f5df0538579c",
+    "test_analyze.py": "6cdc3548ab2440354c4a81c86cbe747789203710b481703ffe01a81f69c9f07a",
+    "../reward_boundary/screen.py": "f329202df35d2831866eac24d08ef857c17bed8eb777ba1d35b679836ca33134",
+    "../reward_competition/model.py": "e307f43ecb6e4dc3aedb7b5a240292e794620ce2a42302d4288f7aff1f7bac9c"
+  }
+}
