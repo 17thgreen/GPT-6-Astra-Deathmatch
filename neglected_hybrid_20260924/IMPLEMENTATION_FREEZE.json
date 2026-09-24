@@ -1,0 +1,25 @@
+{
+  "status": "implementation freeze before outcome scoring",
+  "frozen_at": "2026-09-24T05:12:55.672330+00:00",
+  "spec_remote_commit": "7daf8665bdf9a0a13d64a51e80a39442605aa00f",
+  "amendment_remote_commit": "b960d19726f21c20350393d5d90f0cea3811e1f8",
+  "verification": "22 focused unit tests passed before scoring",
+  "source_sha256": {
+    "AMENDMENT_A.md": "e2164897c1eb6798060a9b340c37500ee4657325894a1340ff13dacdcf64b53f",
+    "SPEC.md": "e1ca053be40a000758f32fdde7c50e85ba2b4030e4a6e6324015bbbf2b539aa6",
+    "acquire.py": "b4bf434508624c18ad61ba0a4098eacf9dd9d83916642d9a6ffd9d236012b7ea",
+    "acquire_v2.py": "3a3bb80de31a451aee3ab3632256dfbc8d48d208a33b7fbf4c86a05eff2e05b0",
+    "core.py": "0f58065615726c4195e3c172557c87676e70658482ecef03458e42bb3ee813b7",
+    "forecast_archive.py": "9fc5090dc08e081876cad29c11f38d09f206682f114f2e72f40efd2a2e49ea4d",
+    "normalize.py": "5dafdee0cc9f9dd4a4911a765250cfba2ee245a4bef69f727d983af78b69a0aa",
+    "run_study.py": "0e86f32acca4b0cc33f9a84037fc25b195a89e35c63fac5e1a50d407d8ca4956",
+    "test_core.py": "36b4e9113f1f627ffc58600139c0ce21c9e1a7d53e4ceca5e643adc3445e3047",
+    "test_normalize.py": "3353e69757fcba726eb3f7aafd6bf40a30a4ef665f2c9806b3b3a147ef77bf52"
+  },
+  "pre_score_clarifications": [
+    "Reject boundary quote bid <= 0 or ask >= 1; do not treat absent-side extremes as usable two-sided markets.",
+    "One unit per signal; unrounded illustrative fee; no depth or claimed fills.",
+    "Public outcomes are known; specification precedes this implementation scoring, not the historical election.",
+    "The interrupted original collector and v2 briefly overlapped on read-only metadata GET requests. All 323 final raw request bodies match their receipt hashes."
+  ]
+}
