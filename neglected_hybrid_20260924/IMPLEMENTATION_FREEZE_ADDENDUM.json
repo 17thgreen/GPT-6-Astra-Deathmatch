@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-09-24T05:14:12.278504+00:00",
+  "status": "before any outcome scoring; implementation freeze addendum",
+  "reason": "Strict normalizer rejected two semantically valid Democratic-party rules. Audit all 42 primary rules, add exact ticker-scoped text aliases for PA-7 Democrat and Minnesota Democratic (DFL), preserving independent exclusions. No score has been calculated.",
+  "verification": "23 focused tests pass",
+  "prior_remote_freeze": "faa0562f96cae08037715e2a6337fd2b647c1505",
+  "source_sha256": {
+    "acquire.py": "b4bf434508624c18ad61ba0a4098eacf9dd9d83916642d9a6ffd9d236012b7ea",
+    "acquire_v2.py": "3a3bb80de31a451aee3ab3632256dfbc8d48d208a33b7fbf4c86a05eff2e05b0",
+    "core.py": "0f58065615726c4195e3c172557c87676e70658482ecef03458e42bb3ee813b7",
+    "forecast_archive.py": "9fc5090dc08e081876cad29c11f38d09f206682f114f2e72f40efd2a2e49ea4d",
+    "normalize.py": "9f7e6433786912769c13ef288f869967a9f3c52173fd7de069a7a1660cd97327",
+    "run_study.py": "0e86f32acca4b0cc33f9a84037fc25b195a89e35c63fac5e1a50d407d8ca4956",
+    "test_core.py": "36b4e9113f1f627ffc58600139c0ce21c9e1a7d53e4ceca5e643adc3445e3047",
+    "test_normalize.py": "3e45790cd7abaa8861430c599205441ba969c46a95e2ad73dfb5b60ac531aa75"
+  }
+}

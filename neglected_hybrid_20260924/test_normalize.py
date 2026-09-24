@@ -1,8 +1,13 @@
 import hashlib,json,tempfile,unittest
 from pathlib import Path
-from normalize import forecast_rows,race_key
+from normalize import forecast_rows,race_key,reviewed_rule,REVIEWED_PARTY_RULES
 
 class SourceMappingTests(unittest.TestCase):
+    def test_rule_alias_is_exact_and_ticker_scoped(self):
+        for ticker,rule in REVIEWED_PARTY_RULES.items():
+            self.assertTrue(reviewed_rule(ticker,rule))
+            self.assertFalse(reviewed_rule('OTHER-24-D',rule))
+            self.assertFalse(reviewed_rule(ticker,rule.replace('2025','2027')))
     def write_source(self,root,data):
         blob=json.dumps(data).encode();(root/'source.json').write_bytes(blob)
         (root/'house_latest.receipt.json').write_text(json.dumps({'admitted':True,'chamber':'house',

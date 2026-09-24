@@ -5,6 +5,16 @@ from collections import defaultdict
 import argparse,hashlib,json,re
 from core import probability
 
+# Exact rule text audited before scoring. These are party naming/candidate
+# omission aliases, not guesses based on the eventual winner.
+REVIEWED_PARTY_RULES = {
+    'HOUSEPA7-24-D': 'If the House member sworn in for PA-7 for the term beginning in 2025 is a member of Democrat, then the market resolves to Yes.',
+    'SENATEMN-24-D': 'If a representative of the Democratic (DFL) party is sworn in as a Senator of Minnesota for the term beginning in 2025, then the market resolves to Yes.',
+}
+
+def reviewed_rule(ticker, rule):
+    return REVIEWED_PARTY_RULES.get(ticker) == rule
+
 def forecast_rows(root):
     rows=[]
     for file in sorted(root.glob('*latest*.receipt.json')):
@@ -49,13 +59,14 @@ def normalize(raw, forecasts, output):
         if key is None:rejected.append({'ticker':m['ticker'],'reason':'unrecognized_race_ticker'});continue
         rid,state,chamber=key
         rule=m.get('rules_primary','');low=rule.lower()
-        if 'democratic' not in low or 'sworn in' not in low or '2025' not in low:
+        alias=reviewed_rule(m['ticker'],rule)
+        if not alias and ('democratic' not in low or 'sworn in' not in low or '2025' not in low):
             rejected.append({'ticker':m['ticker'],'reason':'affirmative_rule_not_democratic_2025_member','rule':rule});continue
         if 'independent' in low:
             rejected.append({'ticker':m['ticker'],'reason':'independent_party_ambiguity','rule':rule});continue
         # Require Senate's named candidate to match the independent forecast.
         # House rules explicitly name the district and party rather than candidate.
-        if chamber=='senate' and fc[rid]:
+        if chamber=='senate' and fc[rid] and not alias:
             latest=max(fc[rid],key=lambda r:r['available_at'])
             name=latest['candidates'].get('dem','').lower()
             if not name or name not in low:
