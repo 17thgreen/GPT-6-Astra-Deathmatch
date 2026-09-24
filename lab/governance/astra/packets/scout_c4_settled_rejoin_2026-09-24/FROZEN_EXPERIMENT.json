@@ -1,0 +1,35 @@
+{
+  "packet_id": "C4-KXCPI-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C4-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "series_ticker": "KXCPI",
+  "lab_dir": "kalshi_c4_kxcpi_settled_join_lab_20260924/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "j1_fallback": "expected_expiration_time when occurrence_datetime null",
+  "results": null,
+  "pnl": null,
+  "settled_join_n": null,
+  "settled_nonempty_result_N_scout": 25,
+  "admitted_at": null,
+  "parent_panel_admitted_at": null,
+  "panel_version": "2026-09-23.c4-kxcpi-v0",
+  "does_not_run_admit_py": true,
+  "nearest_dead_card": "CPI-FQ (PR33)",
+  "base_main_sha": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+  "stamped_at_et": "2026-09-24T19:26:16-04:00",
+  "freeze_sha256": "5e37f81a8959e83c3d2c0c42739e1ca6c127c748442ac6fe28c0013edee12e2f",
+  "scout_reget_sha256": "bb72a2ebfa942026913687e4c040a9def598b5080294a346d71f8f7283ab5f7f",
+  "scout_summary_sha256": "8b749373c6949a1aa40b6852e313b0c626da0d0623fcafe167a8196ec228e0bf",
+  "panel_stub_sha256": "b20b0cbee50c127d2e9bb2548b574b7d643cc708f54019d53bd91775f9762c13",
+  "settled_reget_capture_sha256": "235c9dad7d244db4c91152c8ae3f6d043f6732d31f99b05bc836abaf2f5d3f56",
+  "examiner_hold_sha256": "8625cb4906b6dd1dd02bf2648178c8c3ae08c0d407cd9ca29bbe9f67bbb59dfd",
+  "maximize_pin_sha256": "4ee450ffe2b99154c08fd8619892ca2dc8efec92fb036fad2ad70d5c6e003e2f"
+}

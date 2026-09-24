@@ -1,0 +1,27 @@
+{
+  "packet_id": "C4-KXCPI-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C4-RJ",
+  "decision": "ACCEPT",
+  "implement": true,
+  "decided_by": "Conductor",
+  "decided_at_et": "2026-09-24T19:27:25.903798-04:00",
+  "base_main_sha": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+  "digest_verify": {
+    "freeze": "5e37f81a8959e83c3d2c0c42739e1ca6c127c748442ac6fe28c0013edee12e2f",
+    "scout_reget": "bb72a2ebfa942026913687e4c040a9def598b5080294a346d71f8f7283ab5f7f",
+    "seed_summary": "8b749373c6949a1aa40b6852e313b0c626da0d0623fcafe167a8196ec228e0bf",
+    "panel_stub": "b20b0cbee50c127d2e9bb2548b574b7d643cc708f54019d53bd91775f9762c13",
+    "settled_reget": "235c9dad7d244db4c91152c8ae3f6d043f6732d31f99b05bc836abaf2f5d3f56",
+    "examiner_hold": "8625cb4906b6dd1dd02bf2648178c8c3ae08c0d407cd9ca29bbe9f67bbb59dfd",
+    "maximize_pin": "4ee450ffe2b99154c08fd8619892ca2dc8efec92fb036fad2ad70d5c6e003e2f",
+    "settled_nonempty_result_N": 25
+  },
+  "digest_status": "ALL_MATCH (Conductor re-hashed box files 7/7; ping c4c025e7; bundle 9f675efd)",
+  "seat_target": "R&D Variants (sole implement cloud; bundle attached from first commit)",
+  "cloud_instruction": "IMPLEMENT only \u2014 GET-only settled-resolution join harness for C4 KXCPI; one knob join_gate J0/J1 (J1 fallback expected_expiration_time when occurrence_datetime null); commit authentic pins from bundle verbatim in-repo from first commit; results/pnl/settled_join_n null; do NOT run admit.py; do NOT invent settled result/depth/fills/occurrence_datetime; Examiner HOLD pre-PR until merge; refuse Cap-SR/FQ/CPI-FQ/sibling RJ reopen; refuse Arm B; refuse ungate S1/S2/R2-P4; no live orders.",
+  "freeze_path": "lab/governance/astra/packets/C4_KXCPI_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+  "maximize_pin": "MAXIMIZE_PIN_2026-09-24_1926ET.md",
+  "nearest_dead_card": "CPI-FQ PR33 (invent fill density on sparse 24h / invent occurrence_datetime) \u2014 C4-RJ orthogonal: join_gate on finalized 26JUL/26AUG cohort, no fee/queue/book/fill quantity",
+  "triage_hold_ruling": "SCOUT_TRIAGE C4 HOLD (sparse 24h / SoT gaps) is lifted for RJ only: a settled-result join reads no fills/books. Any C4 fill, tape, queue or fee metric stays HOLD. J1 fallback to expected_expiration_time must be labeled per-row; never written into occurrence_datetime.",
+  "scout_N_note": "settled_nonempty_result_N=25 is pin-only; never copied into settled_join_n. 26JUN/26MAY/26APR not backfilled."
+}
