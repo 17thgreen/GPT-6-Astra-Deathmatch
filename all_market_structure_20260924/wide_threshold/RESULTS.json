@@ -1,0 +1,202 @@
+{
+  "designation": "reused development snapshot; not independent holdout",
+  "open_usable_markets": 5432,
+  "grouped_contracts": 3268,
+  "pairable_groups": 312,
+  "pairs": 16436,
+  "counts": {
+    "complete": 32270,
+    "missing_depth": 17038
+  },
+  "positive_gross_cases": 5,
+  "positive_M1_fee_cases": 0,
+  "exclusions": {
+    "not_simple_upper_threshold": 1826,
+    "no_primary_strike_match": 338
+  },
+  "best_complete_cases": [
+    {
+      "low": "KXMSCOTTON-28JAN31-T800000",
+      "high": "KXMSCOTTON-28JAN31-T900000",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "dc459fdb11e9a86a315a589836a8a2de86fde0dbd0ec18ecf16fedff4c371c52",
+      "class": "complete",
+      "entry_cost": "0.9900",
+      "gross_floor_margin": "0.0100",
+      "M1_raw_fee": "0.0347130000",
+      "M1_raw_fee_margin": "-0.0247130000"
+    },
+    {
+      "low": "KXMSCOTTON-28JAN31-T800000",
+      "high": "KXMSCOTTON-28JAN31-T900000",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "dc459fdb11e9a86a315a589836a8a2de86fde0dbd0ec18ecf16fedff4c371c52",
+      "class": "complete",
+      "entry_cost": "9.9000",
+      "gross_floor_margin": "0.1000",
+      "M1_raw_fee": "0.3471300000",
+      "M1_raw_fee_margin": "-0.2471300000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "0.9900",
+      "gross_floor_margin": "0.0100",
+      "M1_raw_fee": "0.0163450000",
+      "M1_raw_fee_margin": "-0.0063450000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "9.9000",
+      "gross_floor_margin": "0.1000",
+      "M1_raw_fee": "0.1634500000",
+      "M1_raw_fee_margin": "-0.0634500000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 100,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "99.0000",
+      "gross_floor_margin": "1.0000",
+      "M1_raw_fee": "1.6345000000",
+      "M1_raw_fee_margin": "-0.6345000000"
+    },
+    {
+      "low": "KXAAAGASDIL-26SEP24-4.8700",
+      "high": "KXAAAGASDIL-26SEP24-4.8850",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "6f043df4235a4f21deb812fbe2210e2ece63e06370780ba0f791bf92dfe522ca",
+      "class": "complete",
+      "entry_cost": "1.0000",
+      "gross_floor_margin": "0.0000",
+      "M1_raw_fee": "0.0027440000",
+      "M1_raw_fee_margin": "-0.0027440000"
+    },
+    {
+      "low": "KXAAAGASDIL-26SEP24-4.8700",
+      "high": "KXAAAGASDIL-26SEP24-4.8850",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "6f043df4235a4f21deb812fbe2210e2ece63e06370780ba0f791bf92dfe522ca",
+      "class": "complete",
+      "entry_cost": "10.0000",
+      "gross_floor_margin": "0.0000",
+      "M1_raw_fee": "0.0274400000",
+      "M1_raw_fee_margin": "-0.0274400000"
+    },
+    {
+      "low": "KXAAAGASDIL-26SEP24-4.8750",
+      "high": "KXAAAGASDIL-26SEP24-4.8850",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "6f043df4235a4f21deb812fbe2210e2ece63e06370780ba0f791bf92dfe522ca",
+      "class": "complete",
+      "entry_cost": "1.0000",
+      "gross_floor_margin": "0.0000",
+      "M1_raw_fee": "0.0027440000",
+      "M1_raw_fee_margin": "-0.0027440000"
+    },
+    {
+      "low": "KXAAAGASDIL-26SEP24-4.8750",
+      "high": "KXAAAGASDIL-26SEP24-4.8850",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "6f043df4235a4f21deb812fbe2210e2ece63e06370780ba0f791bf92dfe522ca",
+      "class": "complete",
+      "entry_cost": "10.0000",
+      "gross_floor_margin": "0.0000",
+      "M1_raw_fee": "0.0274400000",
+      "M1_raw_fee_margin": "-0.0274400000"
+    },
+    {
+      "low": "KXAMUSEMENTADS-26OCT06-T111",
+      "high": "KXAMUSEMENTADS-26OCT06-T113",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "e6a55644b059f5a85328a874abd1d355d8f8bbbc7c4d5c12fe93e9e9734c7c0f",
+      "class": "complete",
+      "entry_cost": "1.0000",
+      "gross_floor_margin": "0.0000",
+      "M1_raw_fee": "0.0040740000",
+      "M1_raw_fee_margin": "-0.0040740000"
+    }
+  ],
+  "positive_cases": [
+    {
+      "low": "KXMSCOTTON-28JAN31-T800000",
+      "high": "KXMSCOTTON-28JAN31-T900000",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "dc459fdb11e9a86a315a589836a8a2de86fde0dbd0ec18ecf16fedff4c371c52",
+      "class": "complete",
+      "entry_cost": "0.9900",
+      "gross_floor_margin": "0.0100",
+      "M1_raw_fee": "0.0347130000",
+      "M1_raw_fee_margin": "-0.0247130000"
+    },
+    {
+      "low": "KXMSCOTTON-28JAN31-T800000",
+      "high": "KXMSCOTTON-28JAN31-T900000",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "dc459fdb11e9a86a315a589836a8a2de86fde0dbd0ec18ecf16fedff4c371c52",
+      "class": "complete",
+      "entry_cost": "9.9000",
+      "gross_floor_margin": "0.1000",
+      "M1_raw_fee": "0.3471300000",
+      "M1_raw_fee_margin": "-0.2471300000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 1,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "0.9900",
+      "gross_floor_margin": "0.0100",
+      "M1_raw_fee": "0.0163450000",
+      "M1_raw_fee_margin": "-0.0063450000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 10,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "9.9000",
+      "gross_floor_margin": "0.1000",
+      "M1_raw_fee": "0.1634500000",
+      "M1_raw_fee_margin": "-0.0634500000"
+    },
+    {
+      "low": "KXTEENCLOTHADS-26OCT06-T136",
+      "high": "KXTEENCLOTHADS-26OCT06-T140",
+      "qty": 100,
+      "receipt_skew_seconds": 0.0,
+      "rule_template_sha256": "df6f9e18feee34f6d5c26b30e9861eb3b324949dcb059203fd2109b7dde53b60",
+      "class": "complete",
+      "entry_cost": "99.0000",
+      "gross_floor_margin": "1.0000",
+      "M1_raw_fee": "1.6345000000",
+      "M1_raw_fee_margin": "-0.6345000000"
+    }
+  ],
+  "pnl": null
+}
