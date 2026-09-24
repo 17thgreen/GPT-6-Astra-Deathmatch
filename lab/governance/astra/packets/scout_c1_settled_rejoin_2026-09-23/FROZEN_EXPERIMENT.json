@@ -1,0 +1,28 @@
+{
+  "packet_id": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C1-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "lab_dir": "kalshi_c1_kxufcfight_settled_join_lab_20260923/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "results": null,
+  "pnl": null,
+  "settled_nonempty_result_N_scout": 4,
+  "admitted_at": null,
+  "parent_panel_admitted_at_collector": "2026-09-23T00:49:43Z",
+  "panel_version": "2026-09-22.c1-kxufcfight-v0",
+  "does_not_run_admit_py": true,
+  "stamped_at_et": "2026-09-23T17:53:00-04:00",
+  "freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "scout_reget_sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+  "scout_summary_sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+  "panel_stub_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "settled_reget_capture_sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23"
+}

@@ -1,0 +1,90 @@
+{
+  "packet_id": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C1-RJ",
+  "base_commit": "a281adc944e4dacffcdb5677a140fabaed675a81",
+  "panel_parent_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "panel_parent_bytes": 12396,
+  "panel_parent_source": "lab/astra-capture/c1-kxufcfight/panel_admitted.json",
+  "panel_stub_pre_admit_sha256": "2cc661d86202d3daf9ffa45320e39d249852a97490f458f72ab7ea8ec5c81a00",
+  "panel_stub_pre_admit_not_rewritten": true,
+  "cited_freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "freeze_bytes_in_checkout": true,
+  "accept_bytes_in_checkout": true,
+  "maximize_pin_2026_09_23_1750ET_bytes_in_checkout": true,
+  "scout_bytes_in_checkout": true,
+  "digest_all_match_claimed": true,
+  "scout_nonempty_result_N_declared": 4,
+  "settled_join_n": null,
+  "occurrence_match_n": null,
+  "admit_ready_flag": null,
+  "empty_orderbook_sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+  "empty_orderbook_n": 4,
+  "empty_books_invented": false,
+  "feebook_commit_fixed_not_loaded": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_commit_fixed_not_loaded": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "fee_import_used": false,
+  "rails_import_used": false,
+  "results": null,
+  "pnl": null,
+  "freeze_path": "lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md",
+  "freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "accept_path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.json",
+  "accept_sha256": "5c3d559a055482301340102246835c7657c6b5ba9b1ceb69022dbd04c9895ac3",
+  "maximize_pin_path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-23_1750ET.md",
+  "maximize_pin_sha256": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df",
+  "scout_dir": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23",
+  "scout_reget_path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/scout_settled_rejoin_C1_KXUFCFIGHT.json",
+  "scout_reget_sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+  "seed_summary_path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/SEED_SETTLED_SUMMARY.json",
+  "seed_summary_sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+  "panel_stub_path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json",
+  "panel_stub_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "settled_reget_path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/settled_reget_2026-09-23.json",
+  "settled_reget_sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23",
+  "examiner_hold_path": "lab/governance/astra/packets/EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json",
+  "examiner_hold_sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+  "examiner_hold_location": "in_repo",
+  "pins": {
+    "C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md": {
+      "path": "lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md",
+      "sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+      "bytes": 6479
+    },
+    "CONDUCTOR_ACCEPT_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.json",
+      "sha256": "5c3d559a055482301340102246835c7657c6b5ba9b1ceb69022dbd04c9895ac3",
+      "bytes": 1723
+    },
+    "MAXIMIZE_PIN_2026-09-23_1750ET.md": {
+      "path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-23_1750ET.md",
+      "sha256": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df",
+      "bytes": 2039
+    },
+    "scout_c1_settled_rejoin_2026-09-23/scout_settled_rejoin_C1_KXUFCFIGHT.json": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/scout_settled_rejoin_C1_KXUFCFIGHT.json",
+      "sha256": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+      "bytes": 6416
+    },
+    "scout_c1_settled_rejoin_2026-09-23/SEED_SETTLED_SUMMARY.json": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/SEED_SETTLED_SUMMARY.json",
+      "sha256": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+      "bytes": 3601
+    },
+    "scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json",
+      "sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+      "bytes": 12396
+    },
+    "scout_c1_settled_rejoin_2026-09-23/settled_reget_2026-09-23.json": {
+      "path": "lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/settled_reget_2026-09-23.json",
+      "sha256": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23",
+      "bytes": 5560
+    },
+    "EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json": {
+      "path": "lab/governance/astra/packets/EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json",
+      "sha256": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+      "bytes": 3057,
+      "location": "in_repo"
+    }
+  }
+}

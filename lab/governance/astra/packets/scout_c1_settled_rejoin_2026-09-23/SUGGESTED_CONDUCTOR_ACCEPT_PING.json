@@ -1,0 +1,18 @@
+{
+  "packet_id": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C1-RJ",
+  "suggested_decision": "ACCEPT",
+  "implement": true,
+  "seat_target": "Conductor",
+  "digest_verify": {
+    "freeze": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+    "scout_reget": "1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f",
+    "seed_summary": "b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600",
+    "panel_stub": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+    "settled_reget": "77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23",
+    "examiner_hold": "7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b",
+    "maximize_pin": "6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df",
+    "settled_nonempty_result_N": 4
+  },
+  "notes": "Scorable-first maximize after S5-RJ PR48 @fec05e8c…. Digests MATCH ACCEPT 49567517…. One knob join_gate J0/J1. GET-only. Variants does NOT run admit.py. results/pnl null. Settled/finalized/events list 429 honest; parent seeds 4/4 finalized/nonempty (scout N=4 pin-only); occurrence_datetime present+SoT match — J1 uses occurrence_datetime. Orthogonal to C1 EMPTY-OB/MEAS/admit-wire. Not Cap-SR/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ/S5-RJ/FQ reopen; not Arm B; not live orders; does not ungate S1/S2/R2-P4. HOLD for Conductor ACCEPT — no CloudAgent/PR/admit.py."
+}
