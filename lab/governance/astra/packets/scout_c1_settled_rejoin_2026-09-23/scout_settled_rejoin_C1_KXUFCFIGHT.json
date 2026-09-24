@@ -1,0 +1,155 @@
+{
+  "packet": "C1-KXUFCFIGHT-SETTLED-JOIN",
+  "feature_family": "C1-RJ",
+  "series": [
+    "KXUFCFIGHT"
+  ],
+  "sibling_series_noted": [],
+  "settled_nonempty_result_N": 4,
+  "settled_list_limit": 20,
+  "settled_list_http": "429_honest",
+  "settled_list_cursor_present": false,
+  "method": "GET-only parent-seed /markets/{ticker} (settled/finalized/events list attempts 429 honest; series 200; parent seeds 4/4 finalized/nonempty)",
+  "host": "https://api.elections.kalshi.com/trade-api/v2",
+  "parent_seeds_finalized_nonempty_N": 4,
+  "parent_seed_tickers": [
+    "KXUFCFIGHT-26SEP22CONGUA-GUA",
+    "KXUFCFIGHT-26SEP22CONGUA-CON",
+    "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+    "KXUFCFIGHT-26SEP22DEGMOR-DEG"
+  ],
+  "parent_seed_results": {
+    "KXUFCFIGHT-26SEP22CONGUA-GUA": "yes",
+    "KXUFCFIGHT-26SEP22CONGUA-CON": "no",
+    "KXUFCFIGHT-26SEP22DEGMOR-MOR": "no",
+    "KXUFCFIGHT-26SEP22DEGMOR-DEG": "yes"
+  },
+  "parent_seed_statuses": {
+    "KXUFCFIGHT-26SEP22CONGUA-GUA": "finalized",
+    "KXUFCFIGHT-26SEP22CONGUA-CON": "finalized",
+    "KXUFCFIGHT-26SEP22DEGMOR-MOR": "finalized",
+    "KXUFCFIGHT-26SEP22DEGMOR-DEG": "finalized"
+  },
+  "parent_panel_seeds_note": "Parent panel stub seeds (2026-09-22.c1-kxufcfight-v0) reget via GET /markets/{ticker}: all 4 status=finalized with nonempty result (honest). Panel has prior Collector admitted_at 2026-09-23T00:49:43Z — Variants does NOT run admit.py; FROZEN_EXPERIMENT.admitted_at remains null.",
+  "occurrence_datetime_present_on_settled_N": 4,
+  "expected_expiration_time_present_on_settled_N": 4,
+  "occurrence_datetime_sot_note": "occurrence_datetime present on all 4 parent seeds (honest). J1 uses occurrence_datetime_match vs panel SoT; expected_expiration_time also present — do not invent.",
+  "occurrence_datetime_sot_match_all_settled_seeds": true,
+  "expected_expiration_time_present_all_settled": true,
+  "related_series_settled_N": null,
+  "open_list_n": null,
+  "open_list_http": "not_attempted_avoid_429",
+  "markets": [
+    {
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "expiration_time": "2026-10-06T23:20:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22CONGUA-GUA_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "expiration_time": "2026-10-06T23:20:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22CONGUA-CON_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:30:04Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "expiration_time": "2026-10-06T23:40:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22DEGMOR-MOR_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:30:04Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "expiration_time": "2026-10-06T23:40:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22DEGMOR-DEG_parent_seed"
+    }
+  ],
+  "parent_seed_markets": [
+    {
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "expiration_time": "2026-10-06T23:20:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22CONGUA-GUA_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:04:31Z",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "expiration_time": "2026-10-06T23:20:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22CONGUA-CON_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "status": "finalized",
+      "result": "no",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:30:04Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "expiration_time": "2026-10-06T23:40:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22DEGMOR-MOR_parent_seed"
+    },
+    {
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "status": "finalized",
+      "result": "yes",
+      "nonempty_result": true,
+      "close_time": "2026-09-23T00:30:04Z",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "expiration_time": "2026-10-06T23:40:00Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR",
+      "source": "GET_/markets/KXUFCFIGHT-26SEP22DEGMOR-DEG_parent_seed"
+    }
+  ],
+  "http_honesty": {
+    "series_KXUFCFIGHT": "200",
+    "settled_list_KXUFCFIGHT": "429_honest",
+    "settled_list_retries": "429_honest_x3",
+    "finalized_list_KXUFCFIGHT": "429_honest",
+    "events_closed_KXUFCFIGHT": "429_honest",
+    "events_settled_KXUFCFIGHT": "429_honest",
+    "parent_seed_ticker_gets": "200_x4"
+  },
+  "scouted_at_et": "2026-09-23T17:53:00-04:00",
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "prior_resolution_capture_cite": "lab/astra-capture/c1-kxufcfight/resolutions/CONGUA_resolution_rows_latest.json",
+  "prior_clock_rejoin_cite": "packets/CLOCK_JOIN_C1_KXUFCFIGHT_REJOIN_2026-09-22.md"
+}

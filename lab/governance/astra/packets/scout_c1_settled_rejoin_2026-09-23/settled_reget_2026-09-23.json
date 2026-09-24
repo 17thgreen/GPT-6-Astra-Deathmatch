@@ -1,0 +1,143 @@
+{
+  "series": "KXUFCFIGHT",
+  "feature_family": "C1-RJ",
+  "fetched_at_et": "2026-09-23T17:53:00-04:00",
+  "host": "https://api.elections.kalshi.com/trade-api/v2",
+  "settled_nonempty_result_N": 4,
+  "settled_list_http": "429_honest",
+  "settled_list_retries_http": [
+    "429",
+    "429",
+    "429"
+  ],
+  "markets_nonempty": [
+    {
+      "file": "market_KXUFCFIGHT_26SEP22CONGUA_GUA.json",
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "close_time": "2026-09-23T00:04:31Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA"
+    },
+    {
+      "file": "market_KXUFCFIGHT_26SEP22CONGUA_CON.json",
+      "ticker": "KXUFCFIGHT-26SEP22CONGUA-CON",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T04:20:00Z",
+      "expected_expiration_time": "2026-09-23T04:20:00Z",
+      "close_time": "2026-09-23T00:04:31Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22CONGUA"
+    },
+    {
+      "file": "market_KXUFCFIGHT_26SEP22DEGMOR_MOR.json",
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "status": "finalized",
+      "result": "no",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "close_time": "2026-09-23T00:30:04Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR"
+    },
+    {
+      "file": "market_KXUFCFIGHT_26SEP22DEGMOR_DEG.json",
+      "ticker": "KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "status": "finalized",
+      "result": "yes",
+      "occurrence_datetime": "2026-09-23T04:40:00Z",
+      "expected_expiration_time": "2026-09-23T04:40:00Z",
+      "close_time": "2026-09-23T00:30:04Z",
+      "event_ticker": "KXUFCFIGHT-26SEP22DEGMOR"
+    }
+  ],
+  "parent_seeds_finalized_nonempty_N": 4,
+  "note": "Authentic GET-only. Settled/finalized/events list endpoints 429 recorded honest — do not invent list books. Scout N from parent seed ticker GETs only (N=4). No invent depth/fills/PnL/settled results.",
+  "http_log": [
+    {
+      "label": "series_KXUFCFIGHT",
+      "http": "200",
+      "file": "series_KXUFCFIGHT.json",
+      "et": "2026-09-23 17:51:14 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXUFCFIGHT"
+    },
+    {
+      "label": "markets_settled_KXUFCFIGHT",
+      "http": "429",
+      "file": "markets_settled_KXUFCFIGHT_lim20.json",
+      "et": "2026-09-23 17:51:18 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXUFCFIGHT&status=settled&limit=20"
+    },
+    {
+      "label": "markets_finalized_KXUFCFIGHT",
+      "http": "429",
+      "file": "markets_finalized_KXUFCFIGHT_lim20.json",
+      "et": "2026-09-23 17:51:21 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXUFCFIGHT&status=finalized&limit=20"
+    },
+    {
+      "label": "events_closed_KXUFCFIGHT",
+      "http": "429",
+      "file": "events_closed_KXUFCFIGHT_lim10.json",
+      "et": "2026-09-23 17:51:24 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=KXUFCFIGHT&status=closed&limit=10&with_nested_markets=true"
+    },
+    {
+      "label": "events_settled_KXUFCFIGHT",
+      "http": "429",
+      "file": "events_settled_KXUFCFIGHT_lim5.json",
+      "et": "2026-09-23 17:51:28 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/events?series_ticker=KXUFCFIGHT&status=settled&limit=5&with_nested_markets=true"
+    },
+    {
+      "label": "market_KXUFCFIGHT-26SEP22CONGUA-GUA",
+      "http": "200",
+      "file": "market_KXUFCFIGHT_26SEP22CONGUA_GUA.json",
+      "et": "2026-09-23 17:51:31 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP22CONGUA-GUA"
+    },
+    {
+      "label": "market_KXUFCFIGHT-26SEP22CONGUA-CON",
+      "http": "200",
+      "file": "market_KXUFCFIGHT_26SEP22CONGUA_CON.json",
+      "et": "2026-09-23 17:51:34 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP22CONGUA-CON"
+    },
+    {
+      "label": "market_KXUFCFIGHT-26SEP22DEGMOR-MOR",
+      "http": "200",
+      "file": "market_KXUFCFIGHT_26SEP22DEGMOR_MOR.json",
+      "et": "2026-09-23 17:51:38 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP22DEGMOR-MOR"
+    },
+    {
+      "label": "market_KXUFCFIGHT-26SEP22DEGMOR-DEG",
+      "http": "200",
+      "file": "market_KXUFCFIGHT_26SEP22DEGMOR_DEG.json",
+      "et": "2026-09-23 17:51:41 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets/KXUFCFIGHT-26SEP22DEGMOR-DEG"
+    },
+    {
+      "label": "markets_settled_retry1",
+      "http": "429",
+      "file": "markets_settled_KXUFCFIGHT_lim20_retry1.json",
+      "et": "2026-09-23 17:52:13 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXUFCFIGHT&status=settled&limit=20"
+    },
+    {
+      "label": "markets_settled_retry2",
+      "http": "429",
+      "file": "markets_settled_KXUFCFIGHT_lim20_retry2.json",
+      "et": "2026-09-23 17:52:34 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXUFCFIGHT&status=settled&limit=20"
+    },
+    {
+      "label": "markets_settled_retry3",
+      "http": "429",
+      "file": "markets_settled_KXUFCFIGHT_lim20_retry3.json",
+      "et": "2026-09-23 17:52:54 EDT",
+      "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXUFCFIGHT&status=settled&limit=20"
+    }
+  ]
+}
