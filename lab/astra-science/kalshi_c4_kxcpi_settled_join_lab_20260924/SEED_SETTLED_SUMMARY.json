@@ -1,0 +1,71 @@
+{
+  "settled_nonempty_result_N": 25,
+  "settled_list_attempted_KXCPI": "429_honest",
+  "settled_list_retries": "429_honest_x3",
+  "settled_events_list_attempted_KXCPI": "429_then_200_retry1",
+  "method": "GET-only prior-release cohort (KXCPI-26JUL released 2026-08-12, KXCPI-26AUG released 2026-09-11) via /events nested + single-event GETs; parent panel seeds are forward months (active) and are NOT settled",
+  "settled_event_tickers": [
+    "KXCPI-26AUG",
+    "KXCPI-26JUL"
+  ],
+  "settled_statuses": {
+    "finalized": 25
+  },
+  "settled_results": {
+    "KXCPI-26AUG-T-0.4": "yes",
+    "KXCPI-26AUG-T-0.3": "yes",
+    "KXCPI-26AUG-T-0.2": "yes",
+    "KXCPI-26AUG-T-0.1": "yes",
+    "KXCPI-26AUG-T0.0": "yes",
+    "KXCPI-26AUG-T0.1": "yes",
+    "KXCPI-26AUG-T0.2": "yes",
+    "KXCPI-26AUG-T0.3": "yes",
+    "KXCPI-26AUG-T0.4": "no",
+    "KXCPI-26AUG-T0.5": "no",
+    "KXCPI-26AUG-T0.6": "no",
+    "KXCPI-26AUG-T0.7": "no",
+    "KXCPI-26AUG-T0.8": "no",
+    "KXCPI-26AUG-T0.9": "no",
+    "KXCPI-26AUG-T1.0": "no",
+    "KXCPI-26JUL-T-0.4": "yes",
+    "KXCPI-26JUL-T-0.3": "yes",
+    "KXCPI-26JUL-T-0.2": "yes",
+    "KXCPI-26JUL-T-0.1": "yes",
+    "KXCPI-26JUL-T0.0": "yes",
+    "KXCPI-26JUL-T0.1": "no",
+    "KXCPI-26JUL-T0.2": "no",
+    "KXCPI-26JUL-T0.3": "no",
+    "KXCPI-26JUL-T0.4": "no",
+    "KXCPI-26JUL-T0.5": "no"
+  },
+  "occurrence_datetime_present_on_settled_N": 25,
+  "expected_expiration_time_present_all_settled": true,
+  "occurrence_datetime_equals_expected_expiration_on_settled_N": 0,
+  "parent_panel_version": "2026-09-23.c4-kxcpi-v0",
+  "parent_panel_admitted_at": null,
+  "parent_panel_missing_occurrence_datetime_n": 21,
+  "parent_seed_events": [
+    "KXCPI-26OCT",
+    "KXCPI-26DEC",
+    "KXCPI-26SEP",
+    "KXCPI-26NOV"
+  ],
+  "parent_seed_settled_N": 0,
+  "parent_KXCPI_26SEP_reget": {
+    "markets_n": 14,
+    "status": {
+      "active": 14
+    },
+    "occurrence_datetime_null_n": 7
+  },
+  "j1_clock_pin": "occurrence_datetime (fallback expected_expiration_time when occurrence_datetime null)",
+  "honest_gaps": [
+    "GET /markets?series_ticker=KXCPI&status=settled&limit=20 → 429 (x4 attempts incl 3 retries @20s) — do not invent list books",
+    "GET /events?series_ticker=KXCPI&status=settled&limit=5&with_nested_markets=true → 429 first attempt, 200 on retry1",
+    "events-settled list page 1 returned KXCPI-26JUN, KXCPI-26MAY, KXCPI-26APR with NO nested markets array (honest; not backfilled; cursor present, page 2 not fetched)",
+    "KXCPI-26JUN and earlier settled markets not fetched — N not padded past authentic 26JUL+26AUG nested markets",
+    "Settled cohort occurrence_datetime (actual determination ts) != expected_expiration_time on 25/25 — both recorded verbatim, not reconciled",
+    "Parent KXCPI-26SEP (panel seed event) reget: 14/14 active, result empty on 14, occurrence_datetime null on 7 — J1 fallback expected_expiration_time applies there; not settled, not counted"
+  ],
+  "note": "Scout N=25 pin-only — do NOT copy into settled_join_n. results/pnl null. No invent."
+}
