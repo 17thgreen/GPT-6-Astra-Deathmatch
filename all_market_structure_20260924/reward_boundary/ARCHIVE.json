@@ -1,0 +1,14 @@
+{
+  "filename": "AMS_011_Replay_Evidence.zip",
+  "bytes": 76381,
+  "sha256": "1c6cb100a8254a6875ff5b6f214c7eb755d98acdd93f703c8f2ed225050d0eae",
+  "dependencies": "Requires separately retained AMS-005, AMS-007, AMS-009 and AMS-010 raw books for scoring replay. No duplicate raw public captures included here.",
+  "container": {
+    "filename": "AMS_010_011_Evidence.zip",
+    "bytes": 3809546,
+    "sha256": "f670107a9113a60c7a4c82fa9c6482dc430ed026a6eac2d3aec00d0b4746945d"
+  },
+  "container_entry": "AMS_011_Replay_Evidence.zip",
+  "retained_container_file_id": "libfile_f9c524d81e0881919c80d74a16f1fa26",
+  "retained_container_filename": "AMS_010_011_Evidence.zip"
+}

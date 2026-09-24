@@ -1,0 +1,340 @@
+{
+  "designation": "reused development data and exploratory AMS-010 overlay; never an execution record",
+  "observations_by_source": {
+    "AMS-005": 55,
+    "AMS-007": 320,
+    "AMS-009": 115,
+    "AMS-010 exploratory overlay": 262
+  },
+  "candidate_quantity_cases": 873,
+  "passing_quantity_cases": 260,
+  "supported_cases": 516,
+  "passing_supported_cases": 43,
+  "realized_pnl": null,
+  "by_source": {
+    "AMS-005": {
+      "passing_side_observations": 0,
+      "unique_markets": 0,
+      "supported_side_observations": 0,
+      "supported_unique_markets": 0,
+      "supported_events": []
+    },
+    "AMS-007": {
+      "passing_side_observations": 78,
+      "unique_markets": 8,
+      "supported_side_observations": 8,
+      "supported_unique_markets": 1,
+      "supported_events": [
+        "KXTEMPMIAH-26SEP2401"
+      ]
+    },
+    "AMS-009": {
+      "passing_side_observations": 0,
+      "unique_markets": 0,
+      "supported_side_observations": 0,
+      "supported_unique_markets": 0,
+      "supported_events": []
+    },
+    "AMS-010 exploratory overlay": {
+      "passing_side_observations": 46,
+      "unique_markets": 6,
+      "supported_side_observations": 8,
+      "supported_unique_markets": 2,
+      "supported_events": [
+        "KXTEMPMIAH-26SEP2402"
+      ]
+    }
+  },
+  "supported_first": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2401",
+      "program_id": "a45e758a-a90a-4663-8321-33550b8adc36",
+      "book_received_ns": 1790222626468336329,
+      "pool_dollars": 100.0,
+      "side": "yes",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1060.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1060.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.04310344827586207,
+        "own_side": {
+          "own_share": 0.08620689655172414,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1160.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03205128205128205,
+        "own_side": {
+          "own_share": 0.0641025641025641,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "780.00000"
+        }
+      },
+      "removed_opposite_quantity": "99.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 2.09,
+      "stressed_half_uptime_reward": 1.56,
+      "conditional_cushion": 0.46,
+      "cushion_over_principal": 0.46,
+      "passes": true,
+      "source": "AMS-007",
+      "cycle": 3
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+      "book_received_ns": 1790226187929493448,
+      "pool_dollars": 100.0,
+      "side": "yes",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1000.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1000.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.045454545454545456,
+        "own_side": {
+          "own_share": 0.09090909090909091,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1100.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03333333333333333,
+        "own_side": {
+          "own_share": 0.06666666666666667,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "750.00000"
+        }
+      },
+      "removed_opposite_quantity": "50.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 2.23,
+      "stressed_half_uptime_reward": 1.63,
+      "conditional_cushion": 0.53,
+      "cushion_over_principal": 0.53,
+      "passes": true,
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 7
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+      "book_received_ns": 1790226247893665721,
+      "pool_dollars": 100.0,
+      "side": "no",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1080.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1080.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.0423728813559322,
+        "own_side": {
+          "own_share": 0.0847457627118644,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1180.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03164556962025317,
+        "own_side": {
+          "own_share": 0.06329113924050633,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "790.00000"
+        }
+      },
+      "removed_opposite_quantity": "1.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 2.04,
+      "stressed_half_uptime_reward": 1.52,
+      "conditional_cushion": 0.42,
+      "cushion_over_principal": 0.42,
+      "passes": true,
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 8
+    }
+  ],
+  "supported_last": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2401",
+      "program_id": "a45e758a-a90a-4663-8321-33550b8adc36",
+      "book_received_ns": 1790223106312043111,
+      "pool_dollars": 100.0,
+      "side": "yes",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1023.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1023.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.04452359750667854,
+        "own_side": {
+          "own_share": 0.08904719501335707,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1123.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03282994090610637,
+        "own_side": {
+          "own_share": 0.06565988181221274,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "761.50000"
+        }
+      },
+      "removed_opposite_quantity": "13.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 1.86,
+      "stressed_half_uptime_reward": 1.37,
+      "conditional_cushion": 0.27,
+      "cushion_over_principal": 0.27,
+      "passes": true,
+      "source": "AMS-007",
+      "cycle": 11
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+      "book_received_ns": 1790226187929493448,
+      "pool_dollars": 100.0,
+      "side": "yes",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1000.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1000.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.045454545454545456,
+        "own_side": {
+          "own_share": 0.09090909090909091,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1100.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03333333333333333,
+        "own_side": {
+          "own_share": 0.06666666666666667,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "750.00000"
+        }
+      },
+      "removed_opposite_quantity": "50.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 2.23,
+      "stressed_half_uptime_reward": 1.63,
+      "conditional_cushion": 0.53,
+      "cushion_over_principal": 0.53,
+      "passes": true,
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 7
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+      "book_received_ns": 1790226608283111148,
+      "pool_dollars": 100.0,
+      "side": "no",
+      "fraction": "0.10",
+      "quantity": "100.0000",
+      "classification": "supported_level",
+      "public_same_price_quantity": "1000.00",
+      "public_better_price_quantity": "0",
+      "public_side_total": "1000.00",
+      "principal": 1.0,
+      "fee_stress_reserve": 0.1,
+      "base": {
+        "qualified": true,
+        "overall_share": 0.045454545454545456,
+        "own_side": {
+          "own_share": 0.09090909090909091,
+          "reference": "0.0100",
+          "boundary": "0.0100",
+          "own_raw": "100.0000",
+          "total_raw": "1100.0000"
+        }
+      },
+      "stress": {
+        "qualified": true,
+        "overall_share": 0.03333333333333333,
+        "own_side": {
+          "own_share": 0.06666666666666667,
+          "reference": "0.02",
+          "boundary": "0.0100",
+          "own_raw": "50.00000",
+          "total_raw": "750.00000"
+        }
+      },
+      "removed_opposite_quantity": "66.00",
+      "competitor_price": "0.02",
+      "competitor_quantity": "200.00",
+      "base_half_uptime_reward": 1.95,
+      "stressed_half_uptime_reward": 1.43,
+      "conditional_cushion": 0.33,
+      "cushion_over_principal": 0.33,
+      "passes": true,
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 14
+    }
+  ]
+}

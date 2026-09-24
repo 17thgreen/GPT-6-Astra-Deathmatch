@@ -1,0 +1,14 @@
+{
+  "filename": "AMS_010_Raw_Evidence.zip",
+  "bytes": 3732162,
+  "sha256": "9db0d6cde04bbb06f7c95045b7fa53122ae4b872efa534ab74246b08b859f4c1",
+  "restoration": "Extract into reward_scanner. Scoring imports reward_competition/model.py and trade classification imports reward_tape/tape.py from the same research branch.",
+  "container": {
+    "filename": "AMS_010_011_Evidence.zip",
+    "bytes": 3809546,
+    "sha256": "f670107a9113a60c7a4c82fa9c6482dc430ed026a6eac2d3aec00d0b4746945d"
+  },
+  "container_entry": "AMS_010_Raw_Evidence.zip",
+  "retained_container_file_id": "libfile_f9c524d81e0881919c80d74a16f1fa26",
+  "retained_container_filename": "AMS_010_011_Evidence.zip"
+}

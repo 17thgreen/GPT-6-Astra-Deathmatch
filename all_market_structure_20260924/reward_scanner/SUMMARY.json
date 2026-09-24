@@ -1,0 +1,436 @@
+{
+  "run": {
+    "cycles": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "missed_scheduled_cycles": [],
+    "elapsed_seconds": 1087.941064790999,
+    "selected_programs": 32,
+    "first_alerts": 6,
+    "trade_tickers": 6,
+    "orders_submitted": 0,
+    "realized_pnl": null
+  },
+  "http_statuses": {
+    "None": 2,
+    "200": 41
+  },
+  "catalog_failed_cycles": 2,
+  "catalog_cursor_cycles": 0,
+  "selection_cap_cycles": 0,
+  "selected_unique_programs": 32,
+  "selected_series": {
+    "KXCOPPER15M": 1,
+    "KXEURUSD15M": 1,
+    "KXGBPUSD15M": 1,
+    "KXNATGAS15M": 1,
+    "KXPALLADIUM15M": 1,
+    "KXPLATINUM15M": 1,
+    "KXUSDJPY15M": 1,
+    "KXCRYPTOLEAD15M": 5,
+    "KXTTELITEMATCH": 10,
+    "KXTEMPMIAH": 10
+  },
+  "program_terms_changed_observations": 0,
+  "cycles": [
+    {
+      "cycle": 0,
+      "catalog_ok": false,
+      "selected": 0,
+      "active": 0,
+      "buffered_alerts": 0,
+      "classes": {}
+    },
+    {
+      "cycle": 1,
+      "catalog_ok": false,
+      "selected": 0,
+      "active": 0,
+      "buffered_alerts": 0,
+      "classes": {}
+    },
+    {
+      "cycle": 2,
+      "catalog_ok": true,
+      "selected": 0,
+      "active": 0,
+      "buffered_alerts": 0,
+      "classes": {}
+    },
+    {
+      "cycle": 3,
+      "catalog_ok": true,
+      "selected": 0,
+      "active": 0,
+      "buffered_alerts": 0,
+      "classes": {}
+    },
+    {
+      "cycle": 4,
+      "catalog_ok": true,
+      "selected": 14,
+      "active": 14,
+      "buffered_alerts": 0,
+      "classes": {
+        "both_meet": 11,
+        "resting_completion": 3
+      }
+    },
+    {
+      "cycle": 5,
+      "catalog_ok": true,
+      "selected": 14,
+      "active": 14,
+      "buffered_alerts": 0,
+      "classes": {
+        "both_meet": 14
+      }
+    },
+    {
+      "cycle": 6,
+      "catalog_ok": true,
+      "selected": 14,
+      "active": 14,
+      "buffered_alerts": 0,
+      "classes": {
+        "both_meet": 13,
+        "resting_completion": 1
+      }
+    },
+    {
+      "cycle": 7,
+      "catalog_ok": true,
+      "selected": 24,
+      "active": 24,
+      "buffered_alerts": 5,
+      "classes": {
+        "both_meet": 15,
+        "resting_completion": 7,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 8,
+      "catalog_ok": true,
+      "selected": 24,
+      "active": 24,
+      "buffered_alerts": 4,
+      "classes": {
+        "both_meet": 13,
+        "resting_completion": 9,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 9,
+      "catalog_ok": true,
+      "selected": 28,
+      "active": 28,
+      "buffered_alerts": 5,
+      "classes": {
+        "both_meet": 18,
+        "resting_completion": 8,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 10,
+      "catalog_ok": true,
+      "selected": 28,
+      "active": 28,
+      "buffered_alerts": 5,
+      "classes": {
+        "both_meet": 18,
+        "resting_completion": 8,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 11,
+      "catalog_ok": true,
+      "selected": 28,
+      "active": 28,
+      "buffered_alerts": 5,
+      "classes": {
+        "both_meet": 16,
+        "resting_completion": 10,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 12,
+      "catalog_ok": true,
+      "selected": 28,
+      "active": 28,
+      "buffered_alerts": 5,
+      "classes": {
+        "both_meet": 17,
+        "resting_completion": 9,
+        "one_cent_would_cross": 2
+      }
+    },
+    {
+      "cycle": 13,
+      "catalog_ok": true,
+      "selected": 28,
+      "active": 28,
+      "buffered_alerts": 4,
+      "classes": {
+        "both_meet": 16,
+        "resting_completion": 9,
+        "one_cent_would_cross": 3
+      }
+    },
+    {
+      "cycle": 14,
+      "catalog_ok": true,
+      "selected": 32,
+      "active": 32,
+      "buffered_alerts": 4,
+      "classes": {
+        "both_meet": 20,
+        "resting_completion": 9,
+        "one_cent_would_cross": 3
+      }
+    }
+  ],
+  "alert_markets": 6,
+  "alert_events": 1,
+  "event_groups": {
+    "KXTEMPMIAH-26SEP2402": 6
+  },
+  "candidates": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 7,
+      "first_alert_utc": "2026-09-24T05:03:07.929493+00:00",
+      "first_age_minutes": 1.0637072563171386,
+      "first_remaining_minutes": 56.86784177621205,
+      "initial_quantity": {
+        "no": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 16.36,
+      "initial_conditional_cushion": 4.26,
+      "observations_from_first_alert": 8,
+      "usable_books_from_first_alert": 8,
+      "recomputed_candidate_passes": 1,
+      "sampled_span_minutes": 7.005893628333333,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "both_meet",
+      "last_recomputed_buffered_pass": false,
+      "last_recomputed_cushion": null,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 6,
+      "public_trades_after_alert": 6,
+      "price_direction_compatible_contracts_after_alert": {
+        "no": "327.05"
+      },
+      "unclassified_trades_after_alert": {
+        "no": 0
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T80.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "08496997-9e2c-4ccf-96de-bd61b85f5bc5",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 7,
+      "first_alert_utc": "2026-09-24T05:03:07.929493+00:00",
+      "first_age_minutes": 1.0637072563171386,
+      "first_remaining_minutes": 56.86784177621205,
+      "initial_quantity": {
+        "yes": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 16.36,
+      "initial_conditional_cushion": 4.26,
+      "observations_from_first_alert": 8,
+      "usable_books_from_first_alert": 8,
+      "recomputed_candidate_passes": 8,
+      "sampled_span_minutes": 7.005893628333333,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "resting_completion",
+      "last_recomputed_buffered_pass": true,
+      "last_recomputed_cushion": 2.24,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 0,
+      "public_trades_after_alert": 0,
+      "price_direction_compatible_contracts_after_alert": {
+        "yes": "0"
+      },
+      "unclassified_trades_after_alert": {
+        "yes": 0
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T82.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "9d75941f-90b4-4c2d-b63f-242e8f65ee71",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 7,
+      "first_alert_utc": "2026-09-24T05:03:07.929493+00:00",
+      "first_age_minutes": 1.0637072563171386,
+      "first_remaining_minutes": 56.86784177621205,
+      "initial_quantity": {
+        "yes": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 16.36,
+      "initial_conditional_cushion": 4.26,
+      "observations_from_first_alert": 8,
+      "usable_books_from_first_alert": 8,
+      "recomputed_candidate_passes": 8,
+      "sampled_span_minutes": 7.005893628333333,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "resting_completion",
+      "last_recomputed_buffered_pass": true,
+      "last_recomputed_cushion": 2.24,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 0,
+      "public_trades_after_alert": 0,
+      "price_direction_compatible_contracts_after_alert": {
+        "yes": "0"
+      },
+      "unclassified_trades_after_alert": {
+        "yes": 0
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T83.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "66cf70ba-fc19-40e7-8f0e-aaa48a0faa41",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 7,
+      "first_alert_utc": "2026-09-24T05:03:07.929493+00:00",
+      "first_age_minutes": 1.0637072563171386,
+      "first_remaining_minutes": 56.86784177621205,
+      "initial_quantity": {
+        "yes": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 16.36,
+      "initial_conditional_cushion": 4.26,
+      "observations_from_first_alert": 8,
+      "usable_books_from_first_alert": 8,
+      "recomputed_candidate_passes": 8,
+      "sampled_span_minutes": 7.005893628333333,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "resting_completion",
+      "last_recomputed_buffered_pass": true,
+      "last_recomputed_cushion": 2.24,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 0,
+      "public_trades_after_alert": 0,
+      "price_direction_compatible_contracts_after_alert": {
+        "yes": "0"
+      },
+      "unclassified_trades_after_alert": {
+        "yes": 0
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T84.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "47c6aa7c-e838-4a75-b664-231685dbe830",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 7,
+      "first_alert_utc": "2026-09-24T05:03:07.929493+00:00",
+      "first_age_minutes": 1.0637072563171386,
+      "first_remaining_minutes": 56.86784177621205,
+      "initial_quantity": {
+        "yes": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 16.36,
+      "initial_conditional_cushion": 4.26,
+      "observations_from_first_alert": 8,
+      "usable_books_from_first_alert": 8,
+      "recomputed_candidate_passes": 8,
+      "sampled_span_minutes": 7.005893628333333,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "resting_completion",
+      "last_recomputed_buffered_pass": true,
+      "last_recomputed_cushion": 2.24,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 0,
+      "public_trades_after_alert": 0,
+      "price_direction_compatible_contracts_after_alert": {
+        "yes": "0"
+      },
+      "unclassified_trades_after_alert": {
+        "yes": 0
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+      "event_ticker": "KXTEMPMIAH-26SEP2402",
+      "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+      "pool_dollars": 100.0,
+      "first_alert_cycle": 9,
+      "first_alert_utc": "2026-09-24T05:05:08.183024+00:00",
+      "first_age_minutes": 3.0679327646891275,
+      "first_remaining_minutes": 54.863616267840065,
+      "initial_quantity": {
+        "yes": "1100.000"
+      },
+      "initial_principal": 11.0,
+      "initial_fee_stress_reserve": 1.1,
+      "initial_conditional_reward": 15.78,
+      "initial_conditional_cushion": 3.68,
+      "observations_from_first_alert": 6,
+      "usable_books_from_first_alert": 6,
+      "recomputed_candidate_passes": 4,
+      "sampled_span_minutes": 5.00166811955,
+      "last_observed_utc": "2026-09-24T05:10:08.283111+00:00",
+      "last_class": "one_cent_would_cross",
+      "last_recomputed_buffered_pass": false,
+      "last_recomputed_cushion": null,
+      "quote_quantity_changes": 0,
+      "public_trade_pages_usable": true,
+      "public_trade_cursor_remaining": false,
+      "returned_public_trades": 1,
+      "public_trades_after_alert": 0,
+      "price_direction_compatible_contracts_after_alert": {
+        "yes": "0"
+      },
+      "unclassified_trades_after_alert": {
+        "yes": 0
+      }
+    }
+  ],
+  "no_fill_or_reward_income_inferred": true,
+  "realized_pnl": null
+}

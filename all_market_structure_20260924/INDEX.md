@@ -16,15 +16,19 @@ are claimed. No background recorder is left running after the bounded studies.
 | AMS-007 | Frozen twelve-cycle fresh-window watch across categories; seven new Miami candidates, six passing ten strict checks, one small competing bid. | Setup replicated within one city and two consecutive hours; economics still unproven. See reward_replication/RESULTS.md. |
 | AMS-008 | 49,308 retained-data threshold cases; five gross positives, zero after standard fees; fixed current fee/quote/volume checks. | Keep static threshold taking parked. See wide_threshold/RESULTS.md. |
 | AMS-009 | Frozen competition model; 70 fresh short-window programs across ten series; six same-event candidates retain conditional economics, but thin opposite top levels expose competition. | Focus on early-window reward entry. Stronger stress needs about 38–42 minutes remaining for observed terms. See reward_competition/RESULTS.md and QUOTE_POLICY.md. |
+| AMS-010 | Frozen opening-window scanner; 32 new programs across ten series; six alerts, four passing eight sampled checks. | Retain early-window scanner. See reward_scanner/RESULTS.md. |
+| AMS-011 | Formal price-level clarification; smaller supported-level quotes passed in three program/side combinations across two Miami hours. | Refine quote size within the same reward strategy. See reward_boundary/RESULTS.md. |
 
-The current research focus is exclusively short-window missing-depth rewards,
-as requested. The candidate policy is in reward_competition/QUOTE_POLICY.md.
+The current focus is exclusively short-window liquidity rewards, including gap
+completion and smaller orders at already qualifying levels. SOURCE_UPDATE_20260924.md
+clarifies full-price-level scoring and supersedes the earlier boundary ambiguity.
+The capped calculations remain stricter stresses, with frozen results preserved.
 The separate mechanics evidence is specified in NEXT_VALIDATION.md. Passive data cannot
 establish our account's actual credited reward or the response to our inserted bid.
 No candidate has earned the label of a proven profitable strategy.
 
 Small evidence archives are checked into the corresponding experiment folders.
-AMS-005, AMS-007 and AMS-009 raw captures are retained separately; their ARCHIVE.json
+AMS-005, AMS-007, AMS-009, AMS-010 and AMS-011 captures/replays are retained separately; their ARCHIVE.json
 files identify the artifacts and SHA256 checksums. Restore those bytes before
 rerunning analyses that depend on raw receipts. Checksums alone do not contain data.
 
