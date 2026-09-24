@@ -1,0 +1,23 @@
+{
+  "environment": "demo",
+  "orders_placed": 0,
+  "attempts": [
+    {
+      "host": "external-api-ws.demo.kalshi.co",
+      "connected": true,
+      "message_counts": {
+        "subscribed": 2,
+        "orderbook_snapshot": 3
+      },
+      "connected_ns": 1790217463357734004,
+      "finished_ns": 1790217493369548239
+    }
+  ],
+  "selected": [
+    "KXMVECROSSCATEGORY-S202604BDC5AC4A9-946F73D0862",
+    "KXMVECROSSCATEGORY-S2026073CF583A1A-C633255A3A8",
+    "KXMVECROSSCATEGORY-S2026094AF5464E1-56A86CDC6B2"
+  ],
+  "pnl": null,
+  "selection_host": "https://external-api.demo.kalshi.co"
+}

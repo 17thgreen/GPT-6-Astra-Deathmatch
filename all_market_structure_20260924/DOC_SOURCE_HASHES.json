@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://docs.kalshi.com/websockets/cfbenchmarks-value-5hz.md",
+    "sha256": "270152ef547875b0632d9b799e9d8cfc6d5ba3584cbc34313ec3f9542376a8f0",
+    "read_ok": true
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/pyth-value.md",
+    "sha256": "6a08885680e5b94b26d6a0883ef5104f7a6a301ca3afc432bc1315b1f71d3935",
+    "read_ok": true
+  },
+  {
+    "url": "https://docs.kalshi.com/websockets/orderbook-updates.md",
+    "sha256": "cbdfb35ab734c224eb69900ba2546d9fde3ff22b2b775ee14956823764add7c3",
+    "read_ok": true
+  },
+  {
+    "url": "https://docs.kalshi.com/getting_started/rate_limits.md",
+    "sha256": "fbb87855470a6cf3f57758dc0ae489d9e68fbbdc69e1f88915fb4349500ef6e3",
+    "read_ok": true
+  },
+  {
+    "url": "https://docs.kalshi.com/fix/connectivity.md",
+    "sha256": "2297cf232367a329792012580c8b352e22bce31c3aded6deafd3557deb381692",
+    "read_ok": true
+  },
+  {
+    "url": "https://docs.kalshi.com/api-reference/orders/create-order-v2.md",
+    "sha256": "1d4f65afc7db607f2e4dad2797411c24a646b33677a2061df3bf46b079927814",
+    "read_ok": true
+  }
+]

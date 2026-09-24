@@ -1,0 +1,5 @@
+{"received_ns": 1790217463437883457, "monotonic_ns": 4185298034297, "message": {"type": "subscribed", "id": 1, "msg": {"channel": "orderbook_delta"}}}
+{"received_ns": 1790217463477498890, "monotonic_ns": 4185337647055, "message": {"type": "orderbook_snapshot", "sid": 1, "seq": 1, "msg": {"market_ticker": "KXMVECROSSCATEGORY-S202604BDC5AC4A9-946F73D0862"}}}
+{"received_ns": 1790217463477839531, "monotonic_ns": 4185337986889, "message": {"type": "orderbook_snapshot", "sid": 1, "seq": 2, "msg": {"market_ticker": "KXMVECROSSCATEGORY-S2026073CF583A1A-C633255A3A8"}}}
+{"received_ns": 1790217463478520654, "monotonic_ns": 4185338668035, "message": {"type": "orderbook_snapshot", "sid": 1, "seq": 3, "msg": {"market_ticker": "KXMVECROSSCATEGORY-S2026094AF5464E1-56A86CDC6B2"}}}
+{"received_ns": 1790217463479246580, "monotonic_ns": 4185339393942, "message": {"type": "subscribed", "id": 2, "msg": {"channel": "trade"}}}

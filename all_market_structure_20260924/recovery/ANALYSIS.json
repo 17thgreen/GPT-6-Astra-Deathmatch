@@ -1,0 +1,69 @@
+{
+  "status": "DISCOVERY_ONLY",
+  "scan_completed": false,
+  "series_count": 14330,
+  "series_category_memberships": {
+    "Politics": 2362,
+    "Economics": 872,
+    "Elections": 1871,
+    "Entertainment": 2490,
+    "Sports": 3896,
+    "Mentions": 448,
+    "Companies": 531,
+    "Financials": 1074,
+    "Crypto": 275,
+    "Climate and Weather": 409,
+    "Social": 52,
+    "Science and Technology": 381,
+    "Exotics": 15,
+    "Health": 98,
+    "Commodities": 151,
+    "World": 149,
+    "Transportation": 44,
+    "Education": 1
+  },
+  "perpetual_count": 25,
+  "perpetual_statuses": {
+    "active": 22,
+    "inactive": 3
+  },
+  "incentive_records": 5000,
+  "incentive_sample_complete": false,
+  "incentive_unique_markets": 5000,
+  "incentive_types": {
+    "liquidity": 5000
+  },
+  "incentive_primary_categories": {
+    "Sports": 159,
+    "Commodities": 11,
+    "Crypto": 16,
+    "Financials": 923,
+    "Science and Technology": 223,
+    "Climate and Weather": 161,
+    "Entertainment": 1478,
+    "Economics": 1411,
+    "Politics": 259,
+    "Elections": 168,
+    "Mentions": 137,
+    "Companies": 54
+  },
+  "incentive_windows_at_receipt": {
+    "within_window": 5000
+  },
+  "receipt_count": 204,
+  "http_statuses": {
+    "403": 102,
+    "200": 102
+  },
+  "nonempty_open_market_union": 1027,
+  "successful_book_receipts": 20,
+  "realized_pnl": null,
+  "taker_advantage": null,
+  "order_latency": null,
+  "limitations": [
+    "lexical access sample, not representative opportunity ranking",
+    "incentives capped at five pages",
+    "book observations are not fills",
+    "demo is not production performance"
+  ]
+}
