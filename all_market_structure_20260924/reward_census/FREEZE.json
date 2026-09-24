@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-09-24T03:41:37.556901+00:00",
+  "files": {
+    "SPEC.md": "b848da539ea5ef0388cf1191cfc547f600e66a124ae6831653e39cccb772bc35",
+    "census.py": "93a986167120a95f8bef72586066218bc6e4ec975df28d35ba1cd4d33a453dad",
+    "test_census.py": "cc633bd4eedfb620c7c2353cded22f3950af6246f904953d2e0f3967b2fcf2ca",
+    "../depth_survey/survey.py": "38e9e7e604398e7c4e3e665bb6b4727c447ea2e984bca05cdfdd6f965948a23c"
+  }
+}
