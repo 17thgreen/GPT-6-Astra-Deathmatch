@@ -1,0 +1,326 @@
+[
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 42.010329
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 42.010329
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 42.010329
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 36.328259
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 36.328259
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 36.328259
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 22.762725
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 22.762725
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 22.762725
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 78.338588
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 78.338588
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 78.338588
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 19.247604
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 19.247604
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 19.247604
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 59.090984
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 59.090984
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 1,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 59.090984
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 15.918025
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 15.918025
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2600",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 15.918025
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 117.390502
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 117.390502
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 117.390502
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 71.085592
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 71.085592
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2550",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 71.085592
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 101.472477
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 101.472477
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2650",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 101.472477
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 55.167567
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 55.167567
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2600",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 55.167567
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 1,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 46.30491
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 10,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 46.30491
+  },
+  {
+    "series": "KXAAAGASDFL",
+    "round": 2,
+    "low": "KXAAAGASDFL-26SEP24-4.2650",
+    "high": "KXAAAGASDFL-26SEP24-4.2700",
+    "quantity": 100,
+    "status": "INSUFFICIENT_DEPTH",
+    "receipt_skew_ms": 46.30491
+  }
+]
