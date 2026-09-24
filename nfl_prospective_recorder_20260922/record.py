@@ -126,7 +126,8 @@ def run(panel_path,database,seconds=86400,interval=5):
     status='complete';next_trade=0;poll=0
     try:
         if games is None:games=validate_panel(panel,now=now,resuming=True)
-        for game in games:
+        for i,game in enumerate(games):
+            if i: time.sleep(3.0)  # local ops throttle to avoid burst 429 on metadata
             row=get('events/'+game['event'],{'with_nested_markets':'true'})
             store.write([dict(kind='metadata',**row)])
             if row.get('error'):raise RuntimeError('Metadata missing')
