@@ -1,0 +1,784 @@
+{
+  "designation": "reused descriptive replay; no hypothetical execution or loss-rate estimate",
+  "admitted_observations_by_source": {
+    "AMS-005": 55,
+    "AMS-007": 320,
+    "AMS-009": 115,
+    "AMS-010": 262
+  },
+  "baseline_plan_observations_by_source": {
+    "AMS-005": 12,
+    "AMS-007": 80,
+    "AMS-009": 17,
+    "AMS-010": 73
+  },
+  "passing_observations": 107,
+  "unique_passing_pools": 13,
+  "passing_hourly_events": 2,
+  "max_coobserved_sets": 7,
+  "max_coobserved_side_orders": 7,
+  "max_coobserved_principal": 77.0,
+  "by_event": {
+    "KXTEMPMIAH-26SEP2401": {
+      "unique_pools": 7,
+      "passing_observations": 70,
+      "max_coobserved_sets": 7,
+      "max_coobserved_principal": 77.0,
+      "first_candidates": [
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T71.99",
+          "program_id": "d8f8be55-4aec-4430-add3-5b84d8a6bdc3",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T72.99",
+          "program_id": "71c6a80b-de98-4d0c-a4d9-422878dcdfba",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T73.99",
+          "program_id": "e0b2e801-9825-4964-95b9-12cca116b860",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T74.99",
+          "program_id": "0ed95e5d-d234-470e-8a25-f41dbf92b72a",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T75.99",
+          "program_id": "64295766-bfbb-4bfd-92bf-d02c9a2eba85",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T76.99",
+          "program_id": "2f41f239-a561-4af9-9e41-b6376d663a03",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "ticker": "KXTEMPMIAH-26SEP2401-T80.99",
+          "program_id": "785f2edc-a8af-4641-b18b-1be73f1131a8",
+          "event_ticker": "KXTEMPMIAH-26SEP2401",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T04:02:16.97535Z",
+          "end_date": "2026-09-24T05:00:00Z",
+          "remaining_minutes": 57.22316508690516,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.52,
+          "cushion": 4.42
+        }
+      ],
+      "passing_batches": [
+        {
+          "source": "AMS-007",
+          "cycle": 2,
+          "book_received_ns": 1790222566610094975,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 77.0,
+          "reserve": 7.7,
+          "reward": 115.64,
+          "cushion": 30.94,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 3,
+          "book_received_ns": 1790222626468336329,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 77.0,
+          "reserve": 7.7,
+          "reward": 113.61,
+          "cushion": 28.91,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 4,
+          "book_received_ns": 1790222689599011933,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 77.0,
+          "reserve": 7.7,
+          "reward": 111.51,
+          "cushion": 26.81,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 5,
+          "book_received_ns": 1790222746851440972,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 109.53,
+          "cushion": 24.841,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 6,
+          "book_received_ns": 1790222808498511292,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 107.44,
+          "cushion": 22.751,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 7,
+          "book_received_ns": 1790222866217682348,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 105.54,
+          "cushion": 20.851,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 8,
+          "book_received_ns": 1790222927035110117,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 103.45,
+          "cushion": 18.761,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 9,
+          "book_received_ns": 1790222986526396184,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 101.48,
+          "cushion": 16.791,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 10,
+          "book_received_ns": 1790223046175118623,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 99.45,
+          "cushion": 14.761,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 11,
+          "book_received_ns": 1790223106312043111,
+          "order_sets": 7,
+          "side_orders": 7,
+          "principal": 76.99,
+          "reserve": 7.699,
+          "reward": 97.42,
+          "cushion": 12.731,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2401-T71.99",
+            "KXTEMPMIAH-26SEP2401-T72.99",
+            "KXTEMPMIAH-26SEP2401-T73.99",
+            "KXTEMPMIAH-26SEP2401-T74.99",
+            "KXTEMPMIAH-26SEP2401-T75.99",
+            "KXTEMPMIAH-26SEP2401-T76.99",
+            "KXTEMPMIAH-26SEP2401-T80.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2401"
+          ]
+        }
+      ]
+    },
+    "KXTEMPMIAH-26SEP2402": {
+      "unique_pools": 6,
+      "passing_observations": 37,
+      "max_coobserved_sets": 5,
+      "max_coobserved_principal": 55.0,
+      "first_candidates": [
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "no": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 56.86784177621205,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.36,
+          "cushion": 4.26
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "ticker": "KXTEMPMIAH-26SEP2402-T80.99",
+          "program_id": "08496997-9e2c-4ccf-96de-bd61b85f5bc5",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 56.86784177621205,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.36,
+          "cushion": 4.26
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "ticker": "KXTEMPMIAH-26SEP2402-T82.99",
+          "program_id": "9d75941f-90b4-4c2d-b63f-242e8f65ee71",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 56.86784177621205,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.36,
+          "cushion": 4.26
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "ticker": "KXTEMPMIAH-26SEP2402-T83.99",
+          "program_id": "66cf70ba-fc19-40e7-8f0e-aaa48a0faa41",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 56.86784177621205,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.36,
+          "cushion": 4.26
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "ticker": "KXTEMPMIAH-26SEP2402-T84.99",
+          "program_id": "47c6aa7c-e838-4a75-b664-231685dbe830",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 56.86784177621205,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 16.36,
+          "cushion": 4.26
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 9,
+          "book_received_ns": 1790226308183023975,
+          "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+          "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+          "event_ticker": "KXTEMPMIAH-26SEP2402",
+          "quantity": {
+            "yes": "1100.000"
+          },
+          "start_date": "2026-09-24T05:02:04.107058Z",
+          "end_date": "2026-09-24T06:00:00Z",
+          "remaining_minutes": 54.863616267840065,
+          "principal": 11.0,
+          "reserve": 1.1,
+          "reward": 15.78,
+          "cushion": 3.68
+        }
+      ],
+      "passing_batches": [
+        {
+          "source": "AMS-010",
+          "cycle": 7,
+          "book_received_ns": 1790226187929493448,
+          "order_sets": 5,
+          "side_orders": 5,
+          "principal": 55.0,
+          "reserve": 5.5,
+          "reward": 81.8,
+          "cushion": 21.3,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T76.99",
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 8,
+          "book_received_ns": 1790226247893665721,
+          "order_sets": 4,
+          "side_orders": 4,
+          "principal": 44.0,
+          "reserve": 4.4,
+          "reward": 64.28,
+          "cushion": 15.88,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 9,
+          "book_received_ns": 1790226308183023975,
+          "order_sets": 5,
+          "side_orders": 5,
+          "principal": 55.0,
+          "reserve": 5.5,
+          "reward": 78.9,
+          "cushion": 18.4,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T79.99",
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 10,
+          "book_received_ns": 1790226367483790025,
+          "order_sets": 5,
+          "side_orders": 5,
+          "principal": 55.0,
+          "reserve": 5.5,
+          "reward": 77.45,
+          "cushion": 16.95,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T79.99",
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 11,
+          "book_received_ns": 1790226429318586809,
+          "order_sets": 5,
+          "side_orders": 5,
+          "principal": 55.0,
+          "reserve": 5.5,
+          "reward": 76.0,
+          "cushion": 15.5,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T79.99",
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 12,
+          "book_received_ns": 1790226487495827958,
+          "order_sets": 5,
+          "side_orders": 5,
+          "principal": 55.0,
+          "reserve": 5.5,
+          "reward": 74.6,
+          "cushion": 14.1,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T79.99",
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 13,
+          "book_received_ns": 1790226549470055977,
+          "order_sets": 4,
+          "side_orders": 4,
+          "principal": 44.0,
+          "reserve": 4.4,
+          "reward": 58.48,
+          "cushion": 10.08,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        },
+        {
+          "source": "AMS-010",
+          "cycle": 14,
+          "book_received_ns": 1790226608283111148,
+          "order_sets": 4,
+          "side_orders": 4,
+          "principal": 44.0,
+          "reserve": 4.4,
+          "reward": 57.36,
+          "cushion": 8.96,
+          "tickers": [
+            "KXTEMPMIAH-26SEP2402-T80.99",
+            "KXTEMPMIAH-26SEP2402-T82.99",
+            "KXTEMPMIAH-26SEP2402-T83.99",
+            "KXTEMPMIAH-26SEP2402-T84.99"
+          ],
+          "events": [
+            "KXTEMPMIAH-26SEP2402"
+          ]
+        }
+      ]
+    }
+  },
+  "illustrative_reference": {
+    "source": "AMS-010",
+    "cycle": 7,
+    "book_received_ns": 1790226187929493448,
+    "ticker": "KXTEMPMIAH-26SEP2402-T80.99",
+    "program_id": "08496997-9e2c-4ccf-96de-bd61b85f5bc5",
+    "event_ticker": "KXTEMPMIAH-26SEP2402",
+    "quantity": {
+      "yes": "1100.000"
+    },
+    "start_date": "2026-09-24T05:02:04.107058Z",
+    "end_date": "2026-09-24T06:00:00Z",
+    "remaining_minutes": 56.86784177621205,
+    "principal": 11.0,
+    "reserve": 1.1,
+    "reward": 16.36,
+    "cushion": 4.26
+  },
+  "all_in_5000_scenarios": [
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.0,
+      "zero_reward_equivalent_orders": 0.0,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 6756.68,
+      "net_cushion": 1759.38,
+      "return_on_5000_pct": 35.1876
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.1,
+      "zero_reward_equivalent_orders": 41.3,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 6081.012,
+      "net_cushion": 1083.712,
+      "return_on_5000_pct": 21.67424
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.2,
+      "zero_reward_equivalent_orders": 82.6,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 5405.344,
+      "net_cushion": 408.044,
+      "return_on_5000_pct": 8.16088
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.25,
+      "zero_reward_equivalent_orders": 103.25,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 5067.51,
+      "net_cushion": 70.21,
+      "return_on_5000_pct": 1.4042
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.3,
+      "zero_reward_equivalent_orders": 123.9,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 4729.676,
+      "net_cushion": -267.624,
+      "return_on_5000_pct": -5.35248
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 0.5,
+      "zero_reward_equivalent_orders": 206.5,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 3378.34,
+      "net_cushion": -1618.96,
+      "return_on_5000_pct": -32.3792
+    },
+    {
+      "order_sets": 413,
+      "zero_reward_fraction": 1.0,
+      "zero_reward_equivalent_orders": 413.0,
+      "quote_capital": 4543.0,
+      "fee_reserve": 454.3,
+      "funded": 4997.3,
+      "reward": 0.0,
+      "net_cushion": -4997.3,
+      "return_on_5000_pct": -99.946
+    }
+  ],
+  "all_in_5000_unallocated_cash": 2.7,
+  "quote_only_5000_scenario": {
+    "order_sets": 454,
+    "zero_reward_fraction": 0.0,
+    "zero_reward_equivalent_orders": 0.0,
+    "quote_capital": 4994.0,
+    "fee_reserve": 499.4,
+    "funded": 5493.4,
+    "reward": 7427.44,
+    "net_cushion": 1934.04,
+    "return_on_5000_pct": 38.6808
+  },
+  "zero_reward_break_even_fraction": 0.2603911980440098,
+  "measured_loss_rate": null,
+  "realized_pnl": null
+}

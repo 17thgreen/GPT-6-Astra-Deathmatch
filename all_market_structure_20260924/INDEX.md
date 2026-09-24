@@ -19,6 +19,7 @@ are claimed. No background recorder is left running after the bounded studies.
 | AMS-010 | Frozen opening-window scanner; 32 new programs across ten series; six alerts, four passing eight sampled checks. | Retain early-window scanner. See reward_scanner/RESULTS.md. |
 | AMS-011 | Formal price-level clarification; smaller supported-level quotes passed in three program/side combinations across two Miami hours. | Refine quote size within the same reward strategy. See reward_boundary/RESULTS.md. |
 | AMS-012 | Fixed $2.50 sizing found at most two candidates in one response ($5 quote capital); one was gap completion. Three distinct program/sides overall. | $5,000 returns are capacity counterfactuals, with unmeasured losses and strong sensitivity to early reward failure. See reward_capacity/RESULTS.md. |
+| AMS-013 | Original buffered gap strategy: 13 distinct passing pools across two hourly events, seven at once and $77 peak quote capital. | A strict $5,000 model needs 413 equivalent pools; 35.19% conditional return is not expected earnings. See reward_gap_capacity/RESULTS.md. |
 
 The current focus is exclusively short-window liquidity rewards, including gap
 completion and smaller orders at already qualifying levels. SOURCE_UPDATE_20260924.md
