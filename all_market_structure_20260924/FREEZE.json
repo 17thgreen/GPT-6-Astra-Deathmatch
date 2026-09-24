@@ -1,0 +1,9 @@
+{
+  "study": "AMS-001",
+  "files": {
+    "SPEC.md": "b1b2104efa57d4363e5418d06c0048b117d9ade7985d994779c06e857181ef95",
+    "core.py": "93c7b11d07bf4963384ed0b4b382d24c7924528997cca02b3fbd60e6ab4fe140",
+    "scan.py": "ee100bc53eef939b2fb1e8ca96771ec453efcc543dc25f35eddee43da9b2f29a",
+    "test_core.py": "badde08143feb0487a8d288e6a119ff6df909752e027fa7165cf6ea227bd11e3"
+  }
+}
