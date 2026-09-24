@@ -1,7 +1,10 @@
 # C4 KXCPI settled-resolution join harness
 
-Status: hypothesis committed. The unit page is not yet the recorded
-outcome. Measurement only. Feature family C4-RJ. The only knob is
+Status: hypothesis committed, then source, then the unit page.
+`python3 -m unittest -v tests.test_orchestrator` ran 10 tests in 0.026s.
+Recorded at 2026-09-24T23:38:32Z. Result: OK. Failures: 0. Errors: 0.
+That page is not profit and not an Examiner pass. Measurement only.
+Feature family C4-RJ. The only knob is
 `join_gate`: J0 `nonempty_result_required` and J1
 `occurrence_datetime_match`. When `occurrence_datetime` is null, J1 labels
 the row `join_source=expected_expiration_time_fallback` and does not write
