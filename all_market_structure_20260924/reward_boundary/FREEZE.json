@@ -1,0 +1,10 @@
+{
+  "frozen_ns": 1790226178462001648,
+  "tests": "5 boundary-scoring tests passed before dataset scoring",
+  "sha256": {
+    "SPEC.md": "182aca66cada64a386ce08a6b761d17f09a9526e6746eb1ef148c42aa628b254",
+    "screen.py": "f329202df35d2831866eac24d08ef857c17bed8eb777ba1d35b679836ca33134",
+    "test_screen.py": "8dc0997502d884d545a75bbb9a101dd1dbf65ca25a95a57ac955799cbd7ffb78",
+    "../reward_competition/model.py": "e307f43ecb6e4dc3aedb7b5a240292e794620ce2a42302d4288f7aff1f7bac9c"
+  }
+}
