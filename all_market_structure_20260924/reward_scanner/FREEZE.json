@@ -1,0 +1,12 @@
+{
+  "frozen_ns": 1790225525130990637,
+  "tests": "8 policy tests passed before acquisition",
+  "sha256": {
+    "SPEC.md": "cea692697a873ea7476b88078ed69fc9222337b95fb3ec2931cbafd2aada0441",
+    "START.json": "dd39e17bcee4c94c9df57da90d5ed1c9403f4350696b7ba88370c92c4703d5b2",
+    "policy.py": "2d8f43c3bb591f2a343a107b1f4eafc3bf6361209505f625beadbf682d15862c",
+    "scanner.py": "85fddaec773e1889800189bc566b8f68381ac7dcf2fc313601167d905db1594d",
+    "test_policy.py": "6d9c08971b06dfb2fea70ad7ec51d1b4940315e6e674147d88010ea025e49f20",
+    "../reward_competition/model.py": "e307f43ecb6e4dc3aedb7b5a240292e794620ce2a42302d4288f7aff1f7bac9c"
+  }
+}
