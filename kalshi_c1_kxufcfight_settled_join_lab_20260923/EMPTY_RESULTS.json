@@ -1,0 +1,8 @@
+{
+  "results": null,
+  "pnl": null,
+  "settled_join_n": null,
+  "occurrence_match_n": null,
+  "admit_ready_flag": null,
+  "note": "C1-RJ measurement join only. Scout N=4 is a declared pin and is not settled_join_n. Cited freeze bytes were absent and were not regenerated."
+}

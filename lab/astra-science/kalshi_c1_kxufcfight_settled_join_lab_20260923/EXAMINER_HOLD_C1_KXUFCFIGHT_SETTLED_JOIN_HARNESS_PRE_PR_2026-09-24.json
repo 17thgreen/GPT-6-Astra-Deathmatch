@@ -1,0 +1,38 @@
+{
+  "id": "EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "C1-RJ",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "hold": "HOLD pre-PR. Cited freeze sha256 3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1, Conductor ACCEPT, maximize pin 1750 ET, and scout reget bytes were absent. digest_all_match is not claimed. Do not score. READY NOT_SCORED only after the authentic pins are present, the branch sha is verified, and the PR merges.",
+  "lab_dir": "kalshi_c1_kxufcfight_settled_join_lab_20260923/",
+  "arms": ["J0", "J1"],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "knob": "join_gate",
+  "settled_nonempty_result_N_scout_declared": 4,
+  "admitted_at": "2026-09-23T00:49:43Z",
+  "panel_version": "2026-09-22.c1-kxufcfight-v0",
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": "Clock admit already present on the parent panel. Settled join stays unscored until authentic scout bytes exist and Examiner is ready.",
+  "ready_gate": "Authentic freeze bytes plus PR branch sha verify plus merge, then READY NOT_SCORED. Still not scored.",
+  "freeze_sha256_cited": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
+  "freeze_bytes_in_checkout": false,
+  "accept_bytes_in_checkout": false,
+  "digest_all_match_claimed": false,
+  "panel_parent_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
+  "scout_bytes_in_checkout": false,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "list_books_invented": false,
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false
+}
