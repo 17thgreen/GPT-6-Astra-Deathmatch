@@ -1,0 +1,50 @@
+[
+  {
+    "name": "AAAGAS",
+    "url": "https://assets.kalshi.com/contract_terms/AAAGAS.pdf",
+    "sha256": "337728c1b7ed05c1ccc3cdf2c0ed5207a10adc28a789da158661bbb90451102c",
+    "ok": true
+  },
+  {
+    "name": "COMMODITIES",
+    "url": "https://assets.kalshi.com/contract_terms/COMMODITIES.pdf",
+    "sha256": "43fc165f4afc5b6e6001efbc3516ec28f236f4835521720c8d5e46a855a1edef",
+    "ok": true
+  },
+  {
+    "name": "QUARTERKPI",
+    "url": "https://assets.kalshi.com/contract_terms/QUARTERKPI.pdf",
+    "sha256": "e910c4cbf67e26c95c43449635705ae0e332430e96604f51b9c3458f1f835f36",
+    "ok": true
+  },
+  {
+    "name": "BIGGESTQUAKE",
+    "url": "https://assets.kalshi.com/contract_terms/BIGGESTQUAKE.pdf",
+    "sha256": "4e406f95e8ab8991db34ff80784fd61d489553eb5701cc1bf168f26e38821331",
+    "ok": true
+  },
+  {
+    "name": "ANNUALKPI",
+    "url": "https://assets.kalshi.com/contract_terms/ANNUALKPI.pdf",
+    "sha256": "dd6080ad0e7cbc9d553cfce56c78e12e1a4fda11831757c375714fd78e6e7880",
+    "ok": true
+  },
+  {
+    "name": "YOYCPI",
+    "url": "https://assets.kalshi.com/contract_terms/YOYCPI.pdf",
+    "sha256": "00b843ff816f06fc397c1482d05c1164247cf186392269749c29ed3722c3a7ee",
+    "ok": true
+  },
+  {
+    "name": "PLAYOFFHOST",
+    "url": "https://assets.kalshi.com/contract_terms/PLAYOFFHOST.pdf",
+    "sha256": "6827cf8ac58793b40f8b85fd3d998f0c9133b58efe7246ba2c69dc538e0156f8",
+    "ok": true
+  },
+  {
+    "name": "RT",
+    "url": "https://assets.kalshi.com/contract_terms/RT.pdf",
+    "sha256": "f79568f6854fa05e07d6eef9a4dd244be2bfb6a3e1237551bdd624fec8261f36",
+    "ok": true
+  }
+]

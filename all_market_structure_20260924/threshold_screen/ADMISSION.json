@@ -1,0 +1,426 @@
+{
+  "groups": [
+    {
+      "series": "KXAAAGASDFL",
+      "category": "Economics",
+      "event": "KXAAAGASDFL-26SEP24",
+      "strike_type": "greater",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/AAAGAS.pdf",
+      "review": "AAA Florida regular gasoline on 2026-09-24; strict greater-than thresholds. Common last-available-data fallback. Generic outcome-review discretion remains. Last trading is before the target date in ET.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXAAAGASDFL-26SEP24-4.2550",
+          "event_ticker": "KXAAAGASDFL-26SEP24",
+          "strike_type": "greater",
+          "floor_strike": 4.255,
+          "cap_strike": null,
+          "close_time": "2026-09-24T03:59:00Z",
+          "expiration_time": "2026-10-01T14:00:00Z",
+          "rules_primary": "If average regular gas prices for Florida are strictly greater than $4.2550 on Sep 24, 2026 according to AAA, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAAAGASDFL-26SEP24-4.2600",
+          "event_ticker": "KXAAAGASDFL-26SEP24",
+          "strike_type": "greater",
+          "floor_strike": 4.26,
+          "cap_strike": null,
+          "close_time": "2026-09-24T03:59:00Z",
+          "expiration_time": "2026-10-01T14:00:00Z",
+          "rules_primary": "If average regular gas prices for Florida are strictly greater than $4.2600 on Sep 24, 2026 according to AAA, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAAAGASDFL-26SEP24-4.2650",
+          "event_ticker": "KXAAAGASDFL-26SEP24",
+          "strike_type": "greater",
+          "floor_strike": 4.265,
+          "cap_strike": null,
+          "close_time": "2026-09-24T03:59:00Z",
+          "expiration_time": "2026-10-01T14:00:00Z",
+          "rules_primary": "If average regular gas prices for Florida are strictly greater than $4.2650 on Sep 24, 2026 according to AAA, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAAAGASDFL-26SEP24-4.2700",
+          "event_ticker": "KXAAAGASDFL-26SEP24",
+          "strike_type": "greater",
+          "floor_strike": 4.27,
+          "cap_strike": null,
+          "close_time": "2026-09-24T03:59:00Z",
+          "expiration_time": "2026-10-01T14:00:00Z",
+          "rules_primary": "If average regular gas prices for Florida are strictly greater than $4.2700 on Sep 24, 2026 according to AAA, then the market resolves to Yes.",
+          "rules_secondary": "",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "series": "KXAPSMM",
+      "category": "Commodities",
+      "event": "KXAPSMM-26OCT3017",
+      "strike_type": "greater",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/COMMODITIES.pdf",
+      "review": "Same SMM APT daily average in USD/tonne for the same timestamp; strict thresholds. Formal corrections within 24h and delayed/missing publication provisions apply; first publication alone is not final.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXAPSMM-26OCT3017-T40000",
+          "event_ticker": "KXAPSMM-26OCT3017",
+          "strike_type": "greater",
+          "floor_strike": 40000,
+          "cap_strike": null,
+          "close_time": "2026-10-30T03:59:59Z",
+          "expiration_time": "2026-11-06T14:00:00Z",
+          "rules_primary": "If the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM) at 5:00 PM ET on Oct 30, 2026 is above $40,000/tonne, then the market resolves to Yes.",
+          "rules_secondary": "This market resolves based on the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM). The governing value is the Average figure SMM publishes for the assessment dated 5:00 PM ET on Oct 30, 2026, which is the midpoint of SMM's assessed High and Low for that day; the High and Low do not themselves govern. The price is taken in USD per tonne exactly as published by SMM, with no conversion or adjustment by Kalshi. SMM publishes on Chinese business days; if no assessment is published for the specified date, the COMMODITIES rules on missing and delayed publications apply. Kalshi is not affiliated with Shanghai Metals Market.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAPSMM-26OCT3017-T50000",
+          "event_ticker": "KXAPSMM-26OCT3017",
+          "strike_type": "greater",
+          "floor_strike": 50000,
+          "cap_strike": null,
+          "close_time": "2026-10-30T03:59:59Z",
+          "expiration_time": "2026-11-06T14:00:00Z",
+          "rules_primary": "If the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM) at 5:00 PM ET on Oct 30, 2026 is above $50,000/tonne, then the market resolves to Yes.",
+          "rules_secondary": "This market resolves based on the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM). The governing value is the Average figure SMM publishes for the assessment dated 5:00 PM ET on Oct 30, 2026, which is the midpoint of SMM's assessed High and Low for that day; the High and Low do not themselves govern. The price is taken in USD per tonne exactly as published by SMM, with no conversion or adjustment by Kalshi. SMM publishes on Chinese business days; if no assessment is published for the specified date, the COMMODITIES rules on missing and delayed publications apply. Kalshi is not affiliated with Shanghai Metals Market.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAPSMM-26OCT3017-T60000",
+          "event_ticker": "KXAPSMM-26OCT3017",
+          "strike_type": "greater",
+          "floor_strike": 60000,
+          "cap_strike": null,
+          "close_time": "2026-10-30T03:59:59Z",
+          "expiration_time": "2026-11-06T14:00:00Z",
+          "rules_primary": "If the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM) at 5:00 PM ET on Oct 30, 2026 is above $60,000/tonne, then the market resolves to Yes.",
+          "rules_secondary": "This market resolves based on the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM). The governing value is the Average figure SMM publishes for the assessment dated 5:00 PM ET on Oct 30, 2026, which is the midpoint of SMM's assessed High and Low for that day; the High and Low do not themselves govern. The price is taken in USD per tonne exactly as published by SMM, with no conversion or adjustment by Kalshi. SMM publishes on Chinese business days; if no assessment is published for the specified date, the COMMODITIES rules on missing and delayed publications apply. Kalshi is not affiliated with Shanghai Metals Market.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXAPSMM-26OCT3017-T65000",
+          "event_ticker": "KXAPSMM-26OCT3017",
+          "strike_type": "greater",
+          "floor_strike": 65000,
+          "cap_strike": null,
+          "close_time": "2026-10-30T03:59:59Z",
+          "expiration_time": "2026-11-06T14:00:00Z",
+          "rules_primary": "If the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM) at 5:00 PM ET on Oct 30, 2026 is above $65,000/tonne, then the market resolves to Yes.",
+          "rules_secondary": "This market resolves based on the daily average price of APT tungsten (SMM-WU-APT-001) as published by Shanghai Metals Market (SMM). The governing value is the Average figure SMM publishes for the assessment dated 5:00 PM ET on Oct 30, 2026, which is the midpoint of SMM's assessed High and Low for that day; the High and Low do not themselves govern. The price is taken in USD per tonne exactly as published by SMM, with no conversion or adjustment by Kalshi. SMM publishes on Chinese business days; if no assessment is published for the specified date, the COMMODITIES rules on missing and delayed publications apply. Kalshi is not affiliated with Shanghai Metals Market.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "series": "KXBA",
+      "category": "Financials",
+      "event": "KXBA-26OCTDELIV",
+      "strike_type": "greater",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/QUARTERKPI.pdf",
+      "review": "Same Boeing Q3 2026 commercial deliveries, strict thresholds. First official report, reporting hierarchy and range rules govern. Changed/stopped metric can settle at exchange-determined fair market prices: normal-resolution floor only.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXBA-26OCTDELIV-158",
+          "event_ticker": "KXBA-26OCTDELIV",
+          "strike_type": "greater",
+          "floor_strike": 158,
+          "cap_strike": null,
+          "close_time": "2027-02-19T04:00:00Z",
+          "expiration_time": "2027-02-19T04:00:00Z",
+          "rules_primary": "If The Boeing Company reports above 158 commercial deliveries in Q3 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBA-26OCTDELIV-160",
+          "event_ticker": "KXBA-26OCTDELIV",
+          "strike_type": "greater",
+          "floor_strike": 160,
+          "cap_strike": null,
+          "close_time": "2027-02-19T04:00:00Z",
+          "expiration_time": "2027-02-19T04:00:00Z",
+          "rules_primary": "If The Boeing Company reports above 160 commercial deliveries in Q3 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBA-26OCTDELIV-162",
+          "event_ticker": "KXBA-26OCTDELIV",
+          "strike_type": "greater",
+          "floor_strike": 162,
+          "cap_strike": null,
+          "close_time": "2027-02-19T04:00:00Z",
+          "expiration_time": "2027-02-19T04:00:00Z",
+          "rules_primary": "If The Boeing Company reports above 162 commercial deliveries in Q3 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBA-26OCTDELIV-164",
+          "event_ticker": "KXBA-26OCTDELIV",
+          "strike_type": "greater",
+          "floor_strike": 164,
+          "cap_strike": null,
+          "close_time": "2027-02-19T04:00:00Z",
+          "expiration_time": "2027-02-19T04:00:00Z",
+          "rules_primary": "If The Boeing Company reports above 164 commercial deliveries in Q3 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "series": "KXBIGGESTQUAKE",
+      "category": "Climate and Weather",
+      "event": "KXBIGGESTQUAKE-24SEP26",
+      "strike_type": "greater_or_equal",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/BIGGESTQUAKE.pdf",
+      "review": "Same worldwide UTC-day maximum USGS magnitude; at-least thresholds. Only reviewed ComCat events qualify; withdrawals and revisions before expiration matter. Automatic first alerts do not settle the market.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXBIGGESTQUAKE-24SEP26-5.2",
+          "event_ticker": "KXBIGGESTQUAKE-24SEP26",
+          "strike_type": "greater_or_equal",
+          "floor_strike": 5.2,
+          "cap_strike": null,
+          "close_time": "2026-09-24T23:59:59Z",
+          "expiration_time": "2026-10-24T14:00:00Z",
+          "rules_primary": "If the highest USGS-reported earthquake magnitude worldwide during Sep 24, 2026 from 12:00:00 AM through 11:59:59 PM UTC is 5.2 or higher, then the market resolves to Yes.",
+          "rules_secondary": "The determining value is the USGS-reported magnitude displayed at Expiration, preferentially moment magnitude (Mw) and otherwise the primary magnitude type reported by USGS. If multiple earthquakes tie for the highest magnitude, all tied earthquakes count. If USGS ComCat is unavailable at Expiration, settlement may be delayed under the Contract contingencies.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBIGGESTQUAKE-24SEP26-5.4",
+          "event_ticker": "KXBIGGESTQUAKE-24SEP26",
+          "strike_type": "greater_or_equal",
+          "floor_strike": 5.4,
+          "cap_strike": null,
+          "close_time": "2026-09-24T23:59:59Z",
+          "expiration_time": "2026-10-24T14:00:00Z",
+          "rules_primary": "If the highest USGS-reported earthquake magnitude worldwide during Sep 24, 2026 from 12:00:00 AM through 11:59:59 PM UTC is 5.4 or higher, then the market resolves to Yes.",
+          "rules_secondary": "The determining value is the USGS-reported magnitude displayed at Expiration, preferentially moment magnitude (Mw) and otherwise the primary magnitude type reported by USGS. If multiple earthquakes tie for the highest magnitude, all tied earthquakes count. If USGS ComCat is unavailable at Expiration, settlement may be delayed under the Contract contingencies.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBIGGESTQUAKE-24SEP26-5.6",
+          "event_ticker": "KXBIGGESTQUAKE-24SEP26",
+          "strike_type": "greater_or_equal",
+          "floor_strike": 5.6,
+          "cap_strike": null,
+          "close_time": "2026-09-24T23:59:59Z",
+          "expiration_time": "2026-10-24T14:00:00Z",
+          "rules_primary": "If the highest USGS-reported earthquake magnitude worldwide during Sep 24, 2026 from 12:00:00 AM through 11:59:59 PM UTC is 5.6 or higher, then the market resolves to Yes.",
+          "rules_secondary": "The determining value is the USGS-reported magnitude displayed at Expiration, preferentially moment magnitude (Mw) and otherwise the primary magnitude type reported by USGS. If multiple earthquakes tie for the highest magnitude, all tied earthquakes count. If USGS ComCat is unavailable at Expiration, settlement may be delayed under the Contract contingencies.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXBIGGESTQUAKE-24SEP26-5.8",
+          "event_ticker": "KXBIGGESTQUAKE-24SEP26",
+          "strike_type": "greater_or_equal",
+          "floor_strike": 5.8,
+          "cap_strike": null,
+          "close_time": "2026-09-24T23:59:59Z",
+          "expiration_time": "2026-10-24T14:00:00Z",
+          "rules_primary": "If the highest USGS-reported earthquake magnitude worldwide during Sep 24, 2026 from 12:00:00 AM through 11:59:59 PM UTC is 5.8 or higher, then the market resolves to Yes.",
+          "rules_secondary": "The determining value is the USGS-reported magnitude displayed at Expiration, preferentially moment magnitude (Mw) and otherwise the primary magnitude type reported by USGS. If multiple earthquakes tie for the highest magnitude, all tied earthquakes count. If USGS ComCat is unavailable at Expiration, settlement may be delayed under the Contract contingencies.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "series": "KXCCLA",
+      "category": "Companies",
+      "event": "KXCCLA-28JANALBD",
+      "strike_type": "greater",
+      "fee_type": "quadratic",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/ANNUALKPI.pdf",
+      "review": "Same Carnival 2026 available lower berth days, strict thresholds. Reporting hierarchy; quarterly aggregation may include intra-year revisions. Stopped metric can settle at fair market prices: normal-resolution floor only.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXCCLA-28JANALBD-97000000.0",
+          "event_ticker": "KXCCLA-28JANALBD",
+          "strike_type": "greater",
+          "floor_strike": 97000000,
+          "cap_strike": null,
+          "close_time": "2028-03-31T05:00:00Z",
+          "expiration_time": "2028-03-31T05:00:00Z",
+          "rules_primary": "If Carnival Corporation reports Above 97000000.0 available lower berth days in 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCCLA-28JANALBD-97100000.0",
+          "event_ticker": "KXCCLA-28JANALBD",
+          "strike_type": "greater",
+          "floor_strike": 97100000,
+          "cap_strike": null,
+          "close_time": "2028-03-31T05:00:00Z",
+          "expiration_time": "2028-03-31T05:00:00Z",
+          "rules_primary": "If Carnival Corporation reports Above 97100000.0 available lower berth days in 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCCLA-28JANALBD-97200000.0",
+          "event_ticker": "KXCCLA-28JANALBD",
+          "strike_type": "greater",
+          "floor_strike": 97200000,
+          "cap_strike": null,
+          "close_time": "2028-03-31T05:00:00Z",
+          "expiration_time": "2028-03-31T05:00:00Z",
+          "rules_primary": "If Carnival Corporation reports Above 97200000.0 available lower berth days in 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCCLA-28JANALBD-97300000.0",
+          "event_ticker": "KXCCLA-28JANALBD",
+          "strike_type": "greater",
+          "floor_strike": 97300000,
+          "cap_strike": null,
+          "close_time": "2028-03-31T05:00:00Z",
+          "expiration_time": "2028-03-31T05:00:00Z",
+          "rules_primary": "If Carnival Corporation reports Above 97300000.0 available lower berth days in 2026, then the market resolves to Yes.",
+          "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the underlying company. All trademarks, logos, and brand names are the property of their respective owners.",
+          "status": "active"
+        }
+      ]
+    },
+    {
+      "series": "KXCPIYOY",
+      "category": "Economics",
+      "event": "KXCPIYOY-26SEP",
+      "strike_type": "greater",
+      "fee_type": "quadratic_with_maker_fees",
+      "fee_multiplier": 1,
+      "fee_metadata_source": "AMS-001 series catalog; account-specific fees unverified",
+      "terms_url": "https://assets.kalshi.com/contract_terms/YOYCPI.pdf",
+      "review": "Same September 2026 all-items CPI-U nonseasonally adjusted 12-month percent change, one decimal BLS report; strict thresholds. Missing-data formula and shutdown extension apply. Trading closes at 8:29 AM ET before the scheduled release.",
+      "admission": "CONDITIONAL_NORMAL_RESOLUTION_ONLY",
+      "unconditional_payoff_floor_verified": false,
+      "markets": [
+        {
+          "ticker": "KXCPIYOY-26SEP-T3.0",
+          "event_ticker": "KXCPIYOY-26SEP",
+          "strike_type": "greater",
+          "floor_strike": 3,
+          "cap_strike": null,
+          "close_time": "2026-10-14T12:29:00Z",
+          "expiration_time": "2027-01-13T14:00:00Z",
+          "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.0% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
+          "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market\u2019s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCPIYOY-26SEP-T3.1",
+          "event_ticker": "KXCPIYOY-26SEP",
+          "strike_type": "greater",
+          "floor_strike": 3.1,
+          "cap_strike": null,
+          "close_time": "2026-10-14T12:29:00Z",
+          "expiration_time": "2027-01-13T14:00:00Z",
+          "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.1% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
+          "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market\u2019s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCPIYOY-26SEP-T3.2",
+          "event_ticker": "KXCPIYOY-26SEP",
+          "strike_type": "greater",
+          "floor_strike": 3.2,
+          "cap_strike": null,
+          "close_time": "2026-10-14T12:29:00Z",
+          "expiration_time": "2027-01-13T14:00:00Z",
+          "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.2% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
+          "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market\u2019s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
+          "status": "active"
+        },
+        {
+          "ticker": "KXCPIYOY-26SEP-T3.3",
+          "event_ticker": "KXCPIYOY-26SEP",
+          "strike_type": "greater",
+          "floor_strike": 3.3,
+          "cap_strike": null,
+          "close_time": "2026-10-14T12:29:00Z",
+          "expiration_time": "2027-01-13T14:00:00Z",
+          "rules_primary": "If the Consumer Price Index (CPI) increases by more than 3.3% in the twelve months ending September 2026 (as represented by the one-decimal place value reported by the Bureau of Labor Statistics), then the market resolves to Yes.",
+          "rules_secondary": "In the case of a delay in data caused by a federal government shutdown impacting the reliability of the Source Agency, the market\u2019s latest Expiration Date will be extended to the sooner of the release of the Underlying or six months after the end of the\ngovernment shutdown",
+          "status": "active"
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "series": "KXBLUESTRSEN",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXBTCPRICE",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXEURUSD",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXLLM1",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXMLBPLAYOFFHOST",
+      "reason": "six_group_lexical_cap_reached",
+      "candidate_event": "KXMLBPLAYOFFHOST-26BOS"
+    },
+    {
+      "series": "KXRAIN",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXRT",
+      "reason": "six_group_lexical_cap_reached",
+      "candidate_event": "KXRT-FOR"
+    },
+    {
+      "series": "KXTRUMPAICZAR",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXTRUMPSAY",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    },
+    {
+      "series": "KXTTELITEMATCH",
+      "reason": "no_same_event_same_time_comparator_group_with_distinct_strikes"
+    }
+  ]
+}
