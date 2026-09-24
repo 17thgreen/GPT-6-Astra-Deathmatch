@@ -1,0 +1,42 @@
+{
+  "designation": "unfitted theoretical sensitivity; no realized or simulated trading record",
+  "assumptions": [
+    "One 1100-contract one-cent order; all inventory loses if fully filled.",
+    "Constant effective reward rate after competition and 50% qualifying time.",
+    "Time to a full losing fill follows an assumed exponential distribution.",
+    "No partial fills, replenishment, cancellation latency, or changing competition modelled.",
+    "Unfilled exposure ends without cost at the horizon; payout floors/eligibility omitted.",
+    "The $1.10 fee component is a chosen stress, not an actual venue fee."
+  ],
+  "horizon_minutes": 57.7170775,
+  "effective_reward_per_hour": 17.325894576003087,
+  "loss_if_filled": 12.1,
+  "break_even_mean_fill_minutes": 41.90259826500001,
+  "cases": [
+    {
+      "assumed_mean_fill_minutes": 5,
+      "theoretical_expected_net": -10.656072090284294
+    },
+    {
+      "assumed_mean_fill_minutes": 15,
+      "theoretical_expected_net": -7.602850931446425
+    },
+    {
+      "assumed_mean_fill_minutes": 30,
+      "theoretical_expected_net": -2.935119518563301
+    },
+    {
+      "assumed_mean_fill_minutes": 45,
+      "theoretical_expected_net": 0.6463847121466177
+    },
+    {
+      "assumed_mean_fill_minutes": 60,
+      "theoretical_expected_net": 3.2288373654991713
+    },
+    {
+      "assumed_mean_fill_minutes": 120,
+      "theoretical_expected_net": 8.6107247479309
+    }
+  ],
+  "no_fill_ceiling": 16.666666666666664
+}
