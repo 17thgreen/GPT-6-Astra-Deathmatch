@@ -1,0 +1,676 @@
+{
+  "study": "AMS-003",
+  "basis": [
+    {
+      "round": 1,
+      "asset": "BTC",
+      "ticker": "KXBTCPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 1,
+      "asset": "ETH",
+      "ticker": "KXETHPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 1,
+      "asset": "SOL",
+      "ticker": "KXSOLPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 2,
+      "asset": "BTC",
+      "ticker": "KXBTCPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 2,
+      "asset": "ETH",
+      "ticker": "KXETHPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 2,
+      "asset": "SOL",
+      "ticker": "KXSOLPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 3,
+      "asset": "BTC",
+      "ticker": "KXBTCPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 3,
+      "asset": "ETH",
+      "ticker": "KXETHPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    },
+    {
+      "round": 3,
+      "asset": "SOL",
+      "ticker": "KXSOLPERP",
+      "status": "UNSCORED",
+      "reason": "missing_successful_source"
+    }
+  ],
+  "liquidity": [
+    {
+      "market": "KXRAINWKND-26SEP26-COL",
+      "category": "Climate and Weather",
+      "program_id": "c9e577c5-d3a0-4743-8231-4c953b2565a4",
+      "pool_dollars": "500",
+      "pool_dollars_per_hour": 3.670425128787039,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 106.69090072102017,
+      "market_status": "active",
+      "close_time": "2026-09-28T14:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "13172.99",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0200"
+        },
+        "no": {
+          "total_depth": "2142.09",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.7800"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.03670425128787039",
+          ".5": "0.018352125643935195"
+        },
+        ".05": {
+          "1": "0.18352125643935195",
+          ".5": "0.091760628219675975"
+        },
+        ".10": {
+          "1": "0.36704251287870390",
+          ".5": "0.183521256439351950"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXAPSMM-26OCT3017-T80000",
+      "category": "Commodities",
+      "program_id": "ff0a265c-92d1-45a0-a925-ac88ef0f17e0",
+      "pool_dollars": "145",
+      "pool_dollars_per_hour": 1.1244074285682306,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 72.69088893228107,
+      "market_status": "active",
+      "close_time": "2026-10-30T03:59:59Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "3748.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0800"
+        },
+        "no": {
+          "total_depth": "2635.41",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.6800"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.011244074285682306",
+          ".5": "0.0056220371428411530"
+        },
+        ".05": {
+          "1": "0.056220371428411530",
+          ".5": "0.0281101857142057650"
+        },
+        ".10": {
+          "1": "0.112440742856823060",
+          ".5": "0.0562203714284115300"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXBAA-28JANDELIV-560",
+      "category": "Companies",
+      "program_id": "faec6a2a-b3a8-4827-b043-b59b3d379fa6",
+      "pool_dollars": "500",
+      "pool_dollars_per_hour": 1.4880952380952381,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 185.4674933175246,
+      "market_status": "active",
+      "close_time": "2028-03-31T05:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "106634.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.9600"
+        },
+        "no": {
+          "total_depth": "369904.86",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0300"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.014880952380952381",
+          ".5": "0.0074404761904761905"
+        },
+        ".05": {
+          "1": "0.074404761904761905",
+          ".5": "0.0372023809523809525"
+        },
+        ".10": {
+          "1": "0.148809523809523810",
+          ".5": "0.0744047619047619050"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXBTCPRICE-130000-27JUL08",
+      "category": "Crypto",
+      "program_id": "83c6a40d-230a-47e3-994e-02538f468c77",
+      "pool_dollars": "80",
+      "pool_dollars_per_hour": 0.7698687788577531,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 72.68992501344945,
+      "market_status": "active",
+      "close_time": "2027-07-08T14:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "25936.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.1800"
+        },
+        "no": {
+          "total_depth": "7482.86",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.7300"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.007698687788577531",
+          ".5": "0.0038493438942887655"
+        },
+        ".05": {
+          "1": "0.038493438942887655",
+          ".5": "0.0192467194714438275"
+        },
+        ".10": {
+          "1": "0.076986877885775310",
+          ".5": "0.0384934389428876550"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXAAAGASDFL-26SEP24-4.4400",
+      "category": "Economics",
+      "program_id": "7b62491e-1782-4525-b7f3-49bfee348cc2",
+      "pool_dollars": "100",
+      "pool_dollars_per_hour": 24.096385542168672,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 0.6722155231237411,
+      "market_status": "active",
+      "close_time": "2026-09-24T03:59:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "0",
+          "target_met": false,
+          "target_deficit": "1000.00",
+          "reference_price": null
+        },
+        "no": {
+          "total_depth": "7132.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0100"
+        }
+      },
+      "depth_condition_met": false,
+      "snapshot_conditions_met": false,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.24096385542168672",
+          ".5": "0.120481927710843360"
+        },
+        ".05": {
+          "1": "1.20481927710843360",
+          ".5": "0.602409638554216800"
+        },
+        ".10": {
+          "1": "2.40963855421686720",
+          ".5": "1.204819277108433600"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXGENERICBALLOTVOTEHUB-26SEP25-T7.9",
+      "category": "Elections",
+      "program_id": "5cc6dbf3-1474-45aa-8043-34724c3db44a",
+      "pool_dollars": "100",
+      "pool_dollars_per_hour": 4.166666666666667,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 13.721420836713579,
+      "market_status": "active",
+      "close_time": "2026-09-25T13:59:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "31817.97",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.7600"
+        },
+        "no": {
+          "total_depth": "3390.68",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.1300"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.04166666666666667",
+          ".5": "0.020833333333333335"
+        },
+        ".05": {
+          "1": "0.20833333333333335",
+          ".5": "0.104166666666666675"
+        },
+        ".10": {
+          "1": "0.41666666666666670",
+          ".5": "0.208333333333333350"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXRT-AVE-45",
+      "category": "Entertainment",
+      "program_id": "90f97659-96f6-4330-989a-36846cf4e8d5",
+      "pool_dollars": "100",
+      "pool_dollars_per_hour": 4.166666666666667,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 13.7203128606081,
+      "market_status": "active",
+      "close_time": "2026-12-21T15:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "33846.96",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.9800"
+        },
+        "no": {
+          "total_depth": "107508.13",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0100"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.04166666666666667",
+          ".5": "0.020833333333333335"
+        },
+        ".05": {
+          "1": "0.20833333333333335",
+          ".5": "0.104166666666666675"
+        },
+        ".10": {
+          "1": "0.41666666666666670",
+          ".5": "0.208333333333333350"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXACQANNOUNCEGS-27JAN01-JAN01",
+      "category": "Financials",
+      "program_id": "209347bc-fa36-4970-a886-d3c0ff815ae8",
+      "pool_dollars": "170",
+      "pool_dollars_per_hour": 2.074369414435536,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 72.68776780294047,
+      "market_status": "active",
+      "close_time": "2027-01-01T04:59:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "6721.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.3600"
+        },
+        "no": {
+          "total_depth": "5275.14",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.5600"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.02074369414435536",
+          ".5": "0.010371847072177680"
+        },
+        ".05": {
+          "1": "0.10371847072177680",
+          ".5": "0.051859235360888400"
+        },
+        ".10": {
+          "1": "0.20743694144355360",
+          ".5": "0.103718470721776800"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXTRUMPMENTION-26SEP24-GREA",
+      "category": "Mentions",
+      "program_id": "345eaa38-098b-44b7-a93d-07a2b9fc7eaa",
+      "pool_dollars": "100",
+      "pool_dollars_per_hour": 5.343169885160635,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 12.436532626814312,
+      "market_status": "active",
+      "close_time": "2026-10-08T14:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "12263.34",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.2400"
+        },
+        "no": {
+          "total_depth": "24127.53",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.7400"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.05343169885160635",
+          ".5": "0.026715849425803175"
+        },
+        ".05": {
+          "1": "0.26715849425803175",
+          ".5": "0.133579247129015875"
+        },
+        ".10": {
+          "1": "0.53431698851606350",
+          ".5": "0.267158494258031750"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXTRUMPAPPROVE-26SEP24-A39.3",
+      "category": "Politics",
+      "program_id": "2858fa7e-260a-4e64-b3bb-91425964ec6b",
+      "pool_dollars": "600",
+      "pool_dollars_per_hour": 25.0,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 10.724833837880029,
+      "market_status": "active",
+      "close_time": "2026-09-24T16:59:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "62756.96",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.0100"
+        },
+        "no": {
+          "total_depth": "43564.94",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.9800"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.250",
+          ".5": "0.1250"
+        },
+        ".05": {
+          "1": "1.250",
+          ".5": "0.6250"
+        },
+        ".10": {
+          "1": "2.500",
+          ".5": "1.2500"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXANTHPERSONALAGENT-27JAN01-27JAN01",
+      "category": "Science and Technology",
+      "program_id": "0f4c4080-51bd-411d-bd9f-2819988fb0f8",
+      "pool_dollars": "150",
+      "pool_dollars_per_hour": 2.0281205384843912,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 72.68500665042136,
+      "market_status": "active",
+      "close_time": "2027-01-01T04:59:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "6598.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.6100"
+        },
+        "no": {
+          "total_depth": "7338.00",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.3000"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.020281205384843912",
+          ".5": "0.0101406026924219560"
+        },
+        ".05": {
+          "1": "0.101406026924219560",
+          ".5": "0.0507030134621097800"
+        },
+        ".10": {
+          "1": "0.202812053848439120",
+          ".5": "0.1014060269242195600"
+        }
+      },
+      "expected_reward": null
+    },
+    {
+      "market": "KXMLBSEASONGAMES-27-0",
+      "category": "Sports",
+      "program_id": "ec165bcf-c5ba-49ae-9eda-da96e45314aa",
+      "pool_dollars": "500",
+      "pool_dollars_per_hour": 20.833333333333332,
+      "target_size": "1000.00",
+      "discount_factor_bps": 5000,
+      "program_freshness": "retained AMS-001 definition; current program/account eligibility unverified",
+      "within_listed_window": true,
+      "hours_remaining_in_listed_window": 20.46084045946598,
+      "market_status": "active",
+      "close_time": "2027-11-07T14:00:00Z",
+      "market_open_at_receipt": true,
+      "sides": {
+        "yes": {
+          "total_depth": "58447.04",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.1800"
+        },
+        "no": {
+          "total_depth": "62445.73",
+          "target_met": true,
+          "target_deficit": "0",
+          "reference_price": "0.8100"
+        }
+      },
+      "depth_condition_met": true,
+      "snapshot_conditions_met": true,
+      "hypothetical_budget_per_hour": {
+        ".01": {
+          "1": "0.20833333333333332",
+          ".5": "0.104166666666666660"
+        },
+        ".05": {
+          "1": "1.04166666666666660",
+          ".5": "0.520833333333333300"
+        },
+        ".10": {
+          "1": "2.08333333333333320",
+          ".5": "1.041666666666666600"
+        }
+      },
+      "expected_reward": null
+    }
+  ],
+  "volume_bound": {
+    "multiplier": 1,
+    "lower_root": "0.0774228726357417112451908363",
+    "upper_root": "0.9225771273642582887548091637",
+    "examples": {
+      ".03": {
+        "raw_fee": "0.002037",
+        "max_reward": "0.005",
+        "reward_minus_fee": "0.002963"
+      },
+      ".05": {
+        "raw_fee": "0.003325",
+        "max_reward": "0.005",
+        "reward_minus_fee": "0.001675"
+      },
+      ".10": {
+        "raw_fee": "0.006300",
+        "max_reward": "0.005",
+        "reward_minus_fee": "-0.001300"
+      },
+      ".25": {
+        "raw_fee": "0.013125",
+        "max_reward": "0.005",
+        "reward_minus_fee": "-0.008125"
+      },
+      ".50": {
+        "raw_fee": "0.017500",
+        "max_reward": "0.005",
+        "reward_minus_fee": "-0.012500"
+      },
+      ".75": {
+        "raw_fee": "0.013125",
+        "max_reward": "0.005",
+        "reward_minus_fee": "-0.008125"
+      },
+      ".90": {
+        "raw_fee": "0.006300",
+        "max_reward": "0.005",
+        "reward_minus_fee": "-0.001300"
+      },
+      ".95": {
+        "raw_fee": "0.003325",
+        "max_reward": "0.005",
+        "reward_minus_fee": "0.001675"
+      },
+      ".97": {
+        "raw_fee": "0.002037",
+        "max_reward": "0.005",
+        "reward_minus_fee": "0.002963"
+      }
+    },
+    "interpretation": "Within roots, unrounded taker fee alone exceeds maximum reward. No spread or adverse movement needed to fail subsidy-only zero-edge trade."
+  },
+  "realized_pnl": null
+}

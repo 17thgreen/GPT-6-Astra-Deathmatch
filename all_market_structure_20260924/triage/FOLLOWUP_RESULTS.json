@@ -1,0 +1,95 @@
+{
+  "basis": [
+    {
+      "round": 1,
+      "asset": "BTC",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    },
+    {
+      "round": 1,
+      "asset": "ETH",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    },
+    {
+      "round": 1,
+      "asset": "SOL",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    },
+    {
+      "round": 2,
+      "asset": "BTC",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    },
+    {
+      "round": 2,
+      "asset": "ETH",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    },
+    {
+      "round": 2,
+      "asset": "SOL",
+      "status": "UNSCORED",
+      "timeliness_admitted": false,
+      "reason": "missing_usable_source"
+    }
+  ],
+  "reward_gap": [
+    {
+      "round": 1,
+      "scenario_valid": true,
+      "checks": {
+        "yes_empty": true,
+        "no_target_met": true,
+        "would_rest": true,
+        "tick_valid": true,
+        "listed_program_active": true,
+        "market_open": true
+      },
+      "received_ns": 1790220122489971475,
+      "hypothetical_quantity": "1000.00",
+      "hypothetical_price": "0.01",
+      "principal_at_risk": "10.0000",
+      "ideal_share": "0.5",
+      "ideal_reward_dollars_per_hour": "12.048192771084336",
+      "remaining_hours": "0.6159750079446368611111111111",
+      "ideal_remaining_gross_reward": "7.421385637887190266529038811",
+      "time_hours_to_match_full_principal": "0.8300000000000000929600000000",
+      "fees": "not included; account-specific",
+      "expected_profit": null
+    },
+    {
+      "round": 2,
+      "scenario_valid": true,
+      "checks": {
+        "yes_empty": true,
+        "no_target_met": true,
+        "would_rest": true,
+        "tick_valid": true,
+        "listed_program_active": true,
+        "market_open": true
+      },
+      "received_ns": 1790220136890328957,
+      "hypothetical_quantity": "1000.00",
+      "hypothetical_price": "0.01",
+      "principal_at_risk": "10.0000",
+      "ideal_share": "0.5",
+      "ideal_reward_dollars_per_hour": "12.048192771084336",
+      "remaining_hours": "0.6119749086432986666666666667",
+      "ideal_remaining_gross_reward": "7.373191670401187929222613237",
+      "time_hours_to_match_full_principal": "0.8300000000000000929600000000",
+      "fees": "not included; account-specific",
+      "expected_profit": null
+    }
+  ],
+  "realized_pnl": null
+}
