@@ -1,10 +1,13 @@
 {
   "packet_id": "C1-KXUFCFIGHT-SETTLED-RESOLUTION-JOIN-HARNESS",
   "feature_family": "C1-RJ",
-  "status": "HYPOTHESIS_COMMITTED_CITED_FREEZE_ABSENT",
+  "status": "HOLD_PRE_PR",
   "lab_dir": "kalshi_c1_kxufcfight_settled_join_lab_20260923/",
   "knob": "join_gate",
-  "arms": ["J0", "J1"],
+  "arms": [
+    "J0",
+    "J1"
+  ],
   "arm_values": {
     "J0": "nonempty_result_required",
     "J1": "occurrence_datetime_match"
@@ -20,9 +23,11 @@
   "panel_version": "2026-09-22.c1-kxufcfight-v0",
   "panel_parent_sha256": "24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e",
   "cited_freeze_sha256": "3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1",
-  "freeze_bytes_in_checkout": false,
-  "digest_all_match_claimed": false,
+  "freeze_bytes_in_checkout": true,
+  "digest_all_match_claimed": true,
   "does_not_run_admit_py": true,
   "j1_clock": "occurrence_datetime",
-  "does_not_invent_occurrence_datetime": true
+  "does_not_invent_occurrence_datetime": true,
+  "prior_status": "HYPOTHESIS_COMMITTED_CITED_FREEZE_ABSENT",
+  "gap_resolved_at_head": "73e085143d2fd2f80debfa7d57b65f788ad793da"
 }

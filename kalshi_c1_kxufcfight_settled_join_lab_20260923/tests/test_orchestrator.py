@@ -32,28 +32,55 @@ class PinTests(unittest.TestCase):
         with self.assertRaises(orchestrator.AdmitPyRefused):
             orchestrator.run_admit()
 
-    def test_pin_gap_freeze_accept_scout_maximize_absent(self):
-        status = orchestrator.digest_status()
-        self.assertFalse(status['freeze_bytes_in_checkout'])
-        self.assertIsNone(status['freeze_sha256'])
-        self.assertFalse(status['freeze_matches_cited'])
-        self.assertFalse(status['accept_bytes_in_checkout'])
-        self.assertFalse(status['scout_bytes_in_checkout'])
-        self.assertFalse(status['maximize_pin_bytes_in_checkout'])
-        self.assertFalse(status['digest_all_match_claimed'])
-        self.assertEqual(status['cited_freeze_sha256'], orchestrator.CITED_FREEZE_SHA256)
-        self.assertFalse(orchestrator.FREEZE_PATH.exists())
-        self.assertFalse(orchestrator.ACCEPT_PATH.exists())
-        self.assertFalse(orchestrator.SCOUT_DIR.exists())
-        gap = json.loads((ROOT / 'PIN_GAP.json').read_text())
-        self.assertFalse(gap['freeze_bytes_in_checkout'])
-        self.assertFalse(gap['digest_all_match_claimed'])
-        self.assertEqual(gap['scout_nonempty_result_N_declared'], 4)
-        self.assertFalse(gap['scout_n_copied_into_settled_join_n'])
-        with self.assertRaises(orchestrator.PinAbsent):
-            orchestrator.materialize_cited_freeze('regenerated')
-        with self.assertRaises(orchestrator.PinAbsent):
-            orchestrator.claim_digest_all_match()
+    def test_pins_present_and_digests_match(self):
+        pins = json.loads((ROOT / 'SOURCE_PINS.json').read_text())
+        cited = {
+            'C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md':
+                '3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1',
+            'CONDUCTOR_ACCEPT_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_2026-09-24.json':
+                '5c3d559a055482301340102246835c7657c6b5ba9b1ceb69022dbd04c9895ac3',
+            'MAXIMIZE_PIN_2026-09-23_1750ET.md':
+                '6fad9acbff410b36432c7f20f6d19adce37ee9703b9e42a7b0ba9e059f3990df',
+            'scout_c1_settled_rejoin_2026-09-23/scout_settled_rejoin_C1_KXUFCFIGHT.json':
+                '1175029927603a957a2ae2b1fcf1b59bb244118c1e090e53bf8278f4614a686f',
+            'scout_c1_settled_rejoin_2026-09-23/SEED_SETTLED_SUMMARY.json':
+                'b3e62f5902e5cf536d2635fdaee4613093ce0f397c26b3186b25d9c6eb742600',
+            'scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json':
+                '24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e',
+            'scout_c1_settled_rejoin_2026-09-23/settled_reget_2026-09-23.json':
+                '77457212b2427b9ef29499a6619cabf0b43955a569419acbb1abd468e2e79a23',
+            'EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json':
+                '7ceb4bedf6a3e132ae410992851eb977e6cbdf85a337949d223be4bdb5de8a0b',
+        }
+        self.assertTrue(pins['digest_all_match_claimed'])
+        self.assertEqual(pins['cited_freeze_sha256'], orchestrator.CITED_FREEZE_SHA256)
+        self.assertEqual(cited[
+            'C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md'
+        ], orchestrator.CITED_FREEZE_SHA256)
+        self.assertEqual(cited[
+            'scout_c1_settled_rejoin_2026-09-23/C1_KXUFCFIGHT_PANEL_STUB_2026-09-22.json'
+        ], orchestrator.PANEL_SHA256)
+        recorded = pins['pins']
+        self.assertEqual(set(recorded), set(cited))
+        for name, digest in cited.items():
+            entry = recorded[name]
+            self.assertEqual(entry['sha256'], digest)
+            path = REPO / entry['path']
+            self.assertTrue(path.is_file(), entry['path'])
+            self.assertEqual(orchestrator.sha256_file(path), digest)
+        hold = recorded[
+            'EXAMINER_HOLD_C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-23.json'
+        ]
+        self.assertEqual(hold['location'], 'in_repo')
+        self.assertEqual(pins['scout_nonempty_result_N_declared'], 4)
+        self.assertIsNone(pins['results'])
+        self.assertIsNone(pins['pnl'])
+        self.assertIsNone(pins['settled_join_n'])
+        self.assertNotEqual(pins['settled_join_n'], 4)
+        self.assertNotEqual(
+            pins['settled_join_n'],
+            pins['scout_nonempty_result_N_declared'],
+        )
 
     def test_empty_results_and_frozen_stay_null(self):
         snapshot = orchestrator.frozen_output_snapshot()
@@ -68,7 +95,7 @@ class PinTests(unittest.TestCase):
         )
         self.assertEqual(hold['status'], 'HOLD_PRE_PR')
         self.assertFalse(hold['stub_ready'])
-        self.assertFalse(hold['digest_all_match_claimed'])
+        self.assertTrue(hold['digest_all_match_claimed'])
 
 
 class ArmTests(unittest.TestCase):

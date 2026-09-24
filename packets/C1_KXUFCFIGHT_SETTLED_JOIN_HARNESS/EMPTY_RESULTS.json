@@ -4,5 +4,5 @@
   "settled_join_n": null,
   "occurrence_match_n": null,
   "admit_ready_flag": null,
-  "note": "C1-RJ measurement join only. Scout N=4 is a declared pin and is not settled_join_n. Cited freeze bytes were absent and were not regenerated."
+  "note": "C1-RJ measurement join only. Scout N=4 is a declared pin and is not settled_join_n. Cited freeze bytes were absent from origin/main at a281adc944e4dacffcdb5677a140fabaed675a81 and were not regenerated. Gap resolved at 73e085143d2fd2f80debfa7d57b65f788ad793da."
 }

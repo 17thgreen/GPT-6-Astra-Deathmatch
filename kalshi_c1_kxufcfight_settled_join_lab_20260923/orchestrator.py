@@ -654,9 +654,9 @@ def frozen_output_snapshot():
     pins = json.loads(SOURCE_PINS.read_text())
     for payload in (frozen, empty, pins):
         assert_null_scorecard(payload)
-    if gap.get('freeze_bytes_in_checkout') is not False:
+    if gap.get('freeze_bytes_in_checkout') is not True:
         raise PinMismatch('pin gap')
-    if gap.get('digest_all_match_claimed') is not False:
+    if gap.get('digest_all_match_claimed') is not True:
         raise PinMismatch('pin gap')
     if gap.get('cited_freeze_sha256') != CITED_FREEZE_SHA256:
         raise PinMismatch('pin gap')
