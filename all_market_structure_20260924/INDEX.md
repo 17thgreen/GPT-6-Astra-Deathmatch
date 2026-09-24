@@ -15,13 +15,16 @@ are claimed. No background recorder is left running after the bounded studies.
 | AMS-006 | Ten candidate trade histories; three Truflation tails show full-size one-cent prints within about three minutes of reward start. | Deprioritize slow subsidy-only versions; no-trade history is not a fill model. See reward_tape/RESULTS.md. |
 | AMS-007 | Frozen twelve-cycle fresh-window watch across categories; seven new Miami candidates, six passing ten strict checks, one small competing bid. | Setup replicated within one city and two consecutive hours; economics still unproven. See reward_replication/RESULTS.md. |
 | AMS-008 | 49,308 retained-data threshold cases; five gross positives, zero after standard fees; fixed current fee/quote/volume checks. | Keep static threshold taking parked. See wide_threshold/RESULTS.md. |
+| AMS-009 | Frozen competition model; 70 fresh short-window programs across ten series; six same-event candidates retain conditional economics, but thin opposite top levels expose competition. | Focus on early-window reward entry. Stronger stress needs about 38–42 minutes remaining for observed terms. See reward_competition/RESULTS.md and QUOTE_POLICY.md. |
 
-The next decisive evidence is specified in NEXT_VALIDATION.md. Passive data cannot
+The current research focus is exclusively short-window missing-depth rewards,
+as requested. The candidate policy is in reward_competition/QUOTE_POLICY.md.
+The separate mechanics evidence is specified in NEXT_VALIDATION.md. Passive data cannot
 establish our account's actual credited reward or the response to our inserted bid.
 No candidate has earned the label of a proven profitable strategy.
 
 Small evidence archives are checked into the corresponding experiment folders.
-AMS-005 and AMS-007 larger raw captures are retained separately; their ARCHIVE.json
+AMS-005, AMS-007 and AMS-009 raw captures are retained separately; their ARCHIVE.json
 files identify the artifacts and SHA256 checksums. Restore those bytes before
 rerunning analyses that depend on raw receipts. Checksums alone do not contain data.
 

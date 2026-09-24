@@ -1,0 +1,9 @@
+{
+  "filename": "AMS_009_Raw_Evidence.zip",
+  "bytes": 887752,
+  "sha256": "2039c49437b812a576d0e5c4434cd80272e5d85e8b6f4c3439b39db00b117671",
+  "dependencies": "Replay requires the separately retained AMS-005 and AMS-007 raw artifacts restored into their original experiment directories.",
+  "retained_file_id": "libfile_958c6b034fc88191a90601de1357386f",
+  "retained_filename": "AMS_009_Raw_Evidence.zip",
+  "restoration": "Retrieve retained artifact, verify bytes and SHA256, then extract into reward_competition. Restore separately retained AMS-005 and AMS-007 artifacts for replay. Code and report are on the GitHub research branch."
+}

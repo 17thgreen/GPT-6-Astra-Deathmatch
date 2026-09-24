@@ -1,0 +1,801 @@
+{
+  "designation": "post-hoc structural sensitivity after observing 12-contract top levels; not a preregistered success metric or fill simulation",
+  "input_hashes": {
+    "2_books_0.json": "79eaa9a5cf6b8bc7d2ad53fc0decb00bb873d3801c0cb94953af1f700cb2c751",
+    "2_books_50.json": "c77aeeec819d57cde0e63639863f6b842b03ea20a060aa85a6b2be22fce7b6a8"
+  },
+  "rows": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T71.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "yes",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "2515.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.7109377833992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.7109377833992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.7109377833992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.7109377833992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T72.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "yes",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "2514.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.6953127833992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.6953127833992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.6953127833992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.6953127833992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T73.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "yes",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "2513.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.1972659083992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.1972659083992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.1972659083992600750744558"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "454.1972659083992600750744559"
+                  },
+                  "no": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T74.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "yes",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "1502.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050180"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050181"
+                  },
+                  "no": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050180"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050181"
+                  },
+                  "no": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T75.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "yes",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "1502.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050180"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050181"
+                  },
+                  "no": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "no": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050180"
+                  },
+                  "no": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.1953127833992600745050181"
+                  },
+                  "no": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2401-T80.99",
+      "book_received_ns": 1790224229302940231,
+      "removed_side": "no",
+      "removed_price": "0.9800",
+      "removed_quantity": "12.00",
+      "remaining_opposite_depth": "2395.00",
+      "plans": [
+        {
+          "buffer_fraction": "0",
+          "principal": 10.0,
+          "fee_stress_reserve": 1.0,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "yes": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  },
+                  "no": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.9808886873507063352183229"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.35714285714285715,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.7142857142857143,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "500.000",
+                    "total_raw": "700.000"
+                  },
+                  "no": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.9808886873507063352183230"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 38.093271151065835
+        },
+        {
+          "buffer_fraction": "0.1",
+          "principal": 11.0,
+          "fee_stress_reserve": 1.1,
+          "scenario": {
+            "kind": "better_200",
+            "available": true,
+            "competitor_orders": {
+              "yes": {
+                "quantity": "200",
+                "price": "0.02",
+                "quantity_over_target": 0.2
+              }
+            },
+            "competitor_principal": 4.0,
+            "scores": {
+              "capped": {
+                "overall_share": 0.3333333333333333,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.6666666666666666,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "400.000",
+                    "total_raw": "600.000"
+                  },
+                  "no": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.9808886873507063352183229"
+                  }
+                }
+              },
+              "whole_level": {
+                "overall_share": 0.36666666666666664,
+                "sides": {
+                  "yes": {
+                    "own_share": 0.7333333333333333,
+                    "reference": "0.02",
+                    "boundary": "0.01",
+                    "own_raw": "550.0000",
+                    "total_raw": "750.0000"
+                  },
+                  "no": {
+                    "own_share": 0.0,
+                    "reference": "0.9700",
+                    "boundary": "0.0300",
+                    "own_raw": "0",
+                    "total_raw": "300.9808886873507063352183230"
+                  }
+                }
+              }
+            }
+          },
+          "capped_rate": 34.65178915103664,
+          "capped_remaining_gross": 17.043839213602123,
+          "capped_half_uptime_remaining": 8.521919606801061,
+          "minimum_remaining_minutes_at_half_uptime": 41.90259826617242
+        }
+      ]
+    }
+  ]
+}
