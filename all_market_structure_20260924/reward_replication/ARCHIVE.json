@@ -1,0 +1,8 @@
+{
+  "filename": "AMS_007_Raw_Evidence.zip",
+  "bytes": 3692922,
+  "sha256": "127bf9862408ed8b2586c03a367b50c8c9b57e5fd074eb20a3184e2cd9ff71ac",
+  "retained_file_id": "libfile_bebf513223e481919228e3ccdecaaef5",
+  "retained_filename": "AMS_007_Raw_Evidence.zip",
+  "restoration": "Retrieve the retained file by identity, verify bytes and SHA256, and extract into this experiment directory. Code remains in the GitHub research branch."
+}
