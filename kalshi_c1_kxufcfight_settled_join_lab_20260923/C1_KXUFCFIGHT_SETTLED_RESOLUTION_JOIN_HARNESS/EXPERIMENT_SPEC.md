@@ -16,7 +16,7 @@ The implement order cites these bytes and says to commit them verbatim:
 - Maximize pin `MAXIMIZE_PIN_2026-09-23_1750ET.md`
 - Scout reget directory `lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/`
 
-Those four were absent from `origin/main` at `a281adc944e4dacffcdb5677a140fabaed675a81` and from this checkout. They were not regenerated. `digest_all_match_claimed` stays false. This markdown is not that freeze, and its own sha256 is not the cited freeze digest.
+Those four were absent from `origin/main` at `a281adc944e4dacffcdb5677a140fabaed675a81`. They were not regenerated. They are present in this checkout under `lab/governance/astra/packets/`. `digest_all_match_claimed` is true. This markdown is not that freeze, and its own sha256 is not the cited freeze digest.
 
 ## What is on disk
 

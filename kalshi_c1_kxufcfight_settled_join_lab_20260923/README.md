@@ -13,8 +13,8 @@ The cited freeze sha256
 `3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1`,
 the Conductor ACCEPT, `MAXIMIZE_PIN_2026-09-23_1750ET.md`, and
 `lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/`
-were absent from this checkout. They were not regenerated.
-`digest_all_match_claimed` is false. See `PIN_GAP.json`.
+were absent from `origin/main` at `a281adc944e4dacffcdb5677a140fabaed675a81`.
+They were not regenerated. They are present in this checkout. `digest_all_match_claimed` is true. See `PIN_GAP.json`.
 
 The panel parent is the existing admitted panel, sha256
 `24426d804c51bde23cf2557a11a8481a12026da10024094c4ae546d1f7d3956e`,
@@ -22,9 +22,9 @@ The panel parent is the existing admitted panel, sha256
 This lab does not run `admit.py`. The declared scout N=4 is not
 `settled_join_n`. `results` and `pnl` stay null.
 
-Examiner status stays `HOLD_PRE_PR`. `stub_ready` is false. A later
-READY state is NOT_SCORED only, and only after the authentic pins are
-in the tree. This page is not that score.
+Examiner status stays `HOLD_PRE_PR`. `stub_ready` is false. The authentic
+pins are in the tree. A later READY state is NOT_SCORED only, and only
+after a branch sha check and merge. This page is not that score.
 
 From this directory, Python 3 standard library:
 

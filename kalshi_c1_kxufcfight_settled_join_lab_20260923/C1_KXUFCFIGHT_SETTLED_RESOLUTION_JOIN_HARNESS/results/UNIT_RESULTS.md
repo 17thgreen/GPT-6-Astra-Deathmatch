@@ -38,11 +38,12 @@ is not `settled_join_n`.
 
 The cited freeze path, Conductor ACCEPT path, maximize pin
 `MAXIMIZE_PIN_2026-09-23_1750ET.md`, and scout directory
-`lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/` are
-absent. Regenerating the freeze is refused. `digest_all_match_claimed`
-stays false. Cited freeze sha256
+`lab/governance/astra/packets/scout_c1_settled_rejoin_2026-09-23/` were
+absent from `origin/main` at `a281adc944e4dacffcdb5677a140fabaed675a81`.
+Regenerating the freeze is refused. Those bytes are present in this checkout.
+`digest_all_match_claimed` is true. Cited freeze sha256
 `3ea3362ad3c16951369d5f90497ec6079213dd54e5556340c4d3738744126cf1`
-is recorded as a cite, not as a hash of a file in this commit.
+matches `lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-23.md`.
 
 Settled, finalized, and events list books are not written. Backfill is
 refused. The four captured orderbooks stay sha256
