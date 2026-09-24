@@ -1,0 +1,209 @@
+{
+  "rows": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T75.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 0,
+      "contracts": "0",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": []
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T76.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 0,
+      "contracts": "0",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": []
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T80.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 1,
+      "contracts": "1.00",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": [
+        {
+          "trade": {
+            "count_fp": "1.00",
+            "created_time": "2026-09-24T03:00:00.306764Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.9500",
+            "taker_book_side": "ask",
+            "taker_outcome_side": "no",
+            "taker_side": "no",
+            "ticker": "KXTEMPMIAH-26SEP2400-T80.99",
+            "trade_id": "07239437-2581-a2be-0be6-65ea825334fc",
+            "yes_price_dollars": "0.0500"
+          },
+          "within_program": false,
+          "direction_price_compatible_with_quote": false
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T81.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 1,
+      "contracts": "1.00",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": [
+        {
+          "trade": {
+            "count_fp": "1.00",
+            "created_time": "2026-09-24T03:00:00.327318Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.9500",
+            "taker_book_side": "ask",
+            "taker_outcome_side": "no",
+            "taker_side": "no",
+            "ticker": "KXTEMPMIAH-26SEP2400-T81.99",
+            "trade_id": "07239437-2581-b278-fcd5-b7b62d974294",
+            "yes_price_dollars": "0.0500"
+          },
+          "within_program": false,
+          "direction_price_compatible_with_quote": false
+        }
+      ]
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T82.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 0,
+      "contracts": "0",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": []
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T83.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 0,
+      "contracts": "0",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": []
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T84.99",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 0,
+      "contracts": "0",
+      "within_program_contracts": "0",
+      "compatible_within_program_contracts": "0",
+      "detail": []
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1324.21",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 1,
+      "contracts": "1000.00",
+      "within_program_contracts": "1000.00",
+      "compatible_within_program_contracts": "1000.00",
+      "detail": [
+        {
+          "trade": {
+            "count_fp": "1000.00",
+            "created_time": "2026-09-24T01:04:59.182508Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.9900",
+            "taker_book_side": "ask",
+            "taker_outcome_side": "no",
+            "taker_side": "no",
+            "ticker": "KXTRUEV-26SEP24-T1324.21",
+            "trade_id": "07239329-8d69-95d9-eb17-d091062057d6",
+            "yes_price_dollars": "0.0100"
+          },
+          "within_program": true,
+          "direction_price_compatible_with_quote": true
+        }
+      ]
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1314.21",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 1,
+      "contracts": "1000.00",
+      "within_program_contracts": "1000.00",
+      "compatible_within_program_contracts": "1000.00",
+      "detail": [
+        {
+          "trade": {
+            "count_fp": "1000.00",
+            "created_time": "2026-09-24T01:05:06.428552Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.9900",
+            "taker_book_side": "ask",
+            "taker_outcome_side": "no",
+            "taker_side": "no",
+            "ticker": "KXTRUEV-26SEP24-T1314.21",
+            "trade_id": "07239328-13c9-9e1c-2461-4821bfd9475d",
+            "yes_price_dollars": "0.0100"
+          },
+          "within_program": true,
+          "direction_price_compatible_with_quote": true
+        }
+      ]
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1194.21",
+      "complete_returned_pagination": true,
+      "cursor_remaining": false,
+      "prints": 2,
+      "contracts": "1014.00",
+      "within_program_contracts": "1014.00",
+      "compatible_within_program_contracts": "1014.00",
+      "detail": [
+        {
+          "trade": {
+            "count_fp": "1000.00",
+            "created_time": "2026-09-24T01:04:52.172997Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.0100",
+            "taker_book_side": "bid",
+            "taker_outcome_side": "yes",
+            "taker_side": "yes",
+            "ticker": "KXTRUEV-26SEP24-T1194.21",
+            "trade_id": "07239329-e039-bc9a-6f2d-e1cfac0343cd",
+            "yes_price_dollars": "0.9900"
+          },
+          "within_program": true,
+          "direction_price_compatible_with_quote": true
+        },
+        {
+          "trade": {
+            "count_fp": "14.00",
+            "created_time": "2026-09-24T01:04:52.172997Z",
+            "is_block_trade": false,
+            "no_price_dollars": "0.0100",
+            "taker_book_side": "bid",
+            "taker_outcome_side": "yes",
+            "taker_side": "yes",
+            "ticker": "KXTRUEV-26SEP24-T1194.21",
+            "trade_id": "07239306-aba9-be4d-6a07-8514fccb770c",
+            "yes_price_dollars": "0.9900"
+          },
+          "within_program": true,
+          "direction_price_compatible_with_quote": true
+        }
+      ]
+    }
+  ],
+  "selected": 10,
+  "elapsed_seconds": 16.411957423000786,
+  "hypothetical_fills": null,
+  "pnl": null
+}

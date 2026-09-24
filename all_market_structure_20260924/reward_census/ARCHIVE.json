@@ -1,0 +1,8 @@
+{
+  "filename": "AMS_005_Raw_Evidence.zip",
+  "bytes": 2533876,
+  "sha256": "324cf1c176cf3210358eb76efdb8feae81af776c6ef6c30a970efce88d46fdb7",
+  "retained_file_id": "libfile_57dc2de5291881918aec96f07edb7f2e",
+  "retained_filename": "AMS_005_Raw_Evidence.zip",
+  "restoration": "Obtain the retained raw-evidence artifact by this identity; extract into the AMS-005 directory. Code remains in the git repository."
+}

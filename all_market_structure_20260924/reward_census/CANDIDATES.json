@@ -1,0 +1,5189 @@
+[
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T75.99",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T76.99",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T80.99",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T81.99",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T82.99",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 1,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T83.99",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 1,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTEMPMIAH-26SEP2400-T84.99",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 51.93794901890924,
+      "remaining_hours": 0.24570422338114845,
+      "ideal_remaining_gross": 12.761373427700775,
+      "hours_to_match_full_loss": 0.19253744494915007,
+      "priority": true,
+      "ideal_rate_per_principal": 5.193794901890923
+    },
+    "followup_rounds": 2,
+    "priority_followups": 1,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 5193.794901890924,
+      "share_retention_1_maker_M_1": 5105.344803175901,
+      "share_retention_1_maker_M_2": 5019.856861635262,
+      "share_retention_0.5_maker_M_0": 2596.897450945462,
+      "share_retention_0.5_maker_M_1": 2552.6724015879504,
+      "share_retention_0.5_maker_M_2": 2509.928430817631,
+      "share_retention_0.25_maker_M_0": 1298.448725472731,
+      "share_retention_0.25_maker_M_1": 1276.3362007939752,
+      "share_retention_0.25_maker_M_2": 1254.9642154088156
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 51.93794901890924
+      }
+    ]
+  },
+  {
+    "ticker": "KXTRUEV-26SEP24-T1324.21",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 1.1133688618723954,
+      "remaining_hours": 24.227792494429483,
+      "ideal_remaining_gross": 26.974469755203515,
+      "hours_to_match_full_loss": 8.981749303804504,
+      "priority": true,
+      "ideal_rate_per_principal": 0.11133688618723954
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 111.33688618723953,
+      "share_retention_1_maker_M_1": 109.44082391294772,
+      "share_retention_1_maker_M_2": 107.60825997896829,
+      "share_retention_0.5_maker_M_0": 55.668443093619764,
+      "share_retention_0.5_maker_M_1": 54.72041195647386,
+      "share_retention_0.5_maker_M_2": 53.804129989484146,
+      "share_retention_0.25_maker_M_0": 27.834221546809882,
+      "share_retention_0.25_maker_M_1": 27.36020597823693,
+      "share_retention_0.25_maker_M_2": 26.902064994742073
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 1.1133688618723954
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 1.1133688618723954
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 1.1133688618723954
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 1.1133688618723954
+      }
+    ]
+  },
+  {
+    "ticker": "KXTRUEV-26SEP24-T1314.21",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 1.1133688618286115,
+      "remaining_hours": 24.227792494429483,
+      "ideal_remaining_gross": 26.97446975414273,
+      "hours_to_match_full_loss": 8.981749304157717,
+      "priority": true,
+      "ideal_rate_per_principal": 0.11133688618286115
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 111.33688618286115,
+      "share_retention_1_maker_M_1": 109.44082390864389,
+      "share_retention_1_maker_M_2": 107.60825997473653,
+      "share_retention_0.5_maker_M_0": 55.668443091430575,
+      "share_retention_0.5_maker_M_1": 54.720411954321946,
+      "share_retention_0.5_maker_M_2": 53.80412998736826,
+      "share_retention_0.25_maker_M_0": 27.834221545715288,
+      "share_retention_0.25_maker_M_1": 27.360205977160973,
+      "share_retention_0.25_maker_M_2": 26.90206499368413
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 1.1133688618286115
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 1.1133688618286115
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 1.1133688618286115
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 1.1133688618286115
+      }
+    ]
+  },
+  {
+    "ticker": "KXTRUEV-26SEP24-T1194.21",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 1.1133688612648938,
+      "remaining_hours": 24.227792494429483,
+      "ideal_remaining_gross": 26.974469740485095,
+      "hours_to_match_full_loss": 8.98174930870533,
+      "priority": true,
+      "ideal_rate_per_principal": 0.11133688612648937
+    },
+    "followup_rounds": 2,
+    "priority_followups": 2,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 111.33688612648938,
+      "share_retention_1_maker_M_1": 109.44082385323213,
+      "share_retention_1_maker_M_2": 107.60825992025262,
+      "share_retention_0.5_maker_M_0": 55.66844306324469,
+      "share_retention_0.5_maker_M_1": 54.720411926616066,
+      "share_retention_0.5_maker_M_2": 53.80412996012631,
+      "share_retention_0.25_maker_M_0": 27.834221531622344,
+      "share_retention_0.25_maker_M_1": 27.360205963308033,
+      "share_retention_0.25_maker_M_2": 26.902064980063155
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 1.1133688612648938
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 1.1133688612648938
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 1.1133688612648938
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 1.1133688612648938
+      }
+    ]
+  },
+  {
+    "ticker": "KXTRUEV-26SEP24-T1184.21",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 1.1133688612074275,
+      "remaining_hours": 24.227799548904102,
+      "ideal_remaining_gross": 26.974477593325187,
+      "hours_to_match_full_loss": 8.98174930916892,
+      "priority": true,
+      "ideal_rate_per_principal": 0.11133688612074275
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 111.33688612074275,
+      "share_retention_1_maker_M_1": 109.44082384758337,
+      "share_retention_1_maker_M_2": 107.60825991469845,
+      "share_retention_0.5_maker_M_0": 55.668443060371374,
+      "share_retention_0.5_maker_M_1": 54.72041192379169,
+      "share_retention_0.5_maker_M_2": 53.804129957349225,
+      "share_retention_0.25_maker_M_0": 27.834221530185687,
+      "share_retention_0.25_maker_M_1": 27.360205961895844,
+      "share_retention_0.25_maker_M_2": 26.902064978674613
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 1.1133688612074275
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 1.1133688612074275
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 1.1133688612074275
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 1.1133688612074275
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-SHA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182965167771,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946311682007,
+      "hours_to_match_full_loss": 11.31198306573762,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182965167771
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018296516777,
+      "share_retention_1_maker_M_1": 86.89635038132131,
+      "share_retention_1_maker_M_2": 85.44128898823536,
+      "share_retention_0.5_maker_M_0": 44.20091482583885,
+      "share_retention_0.5_maker_M_1": 43.448175190660656,
+      "share_retention_0.5_maker_M_2": 42.72064449411768,
+      "share_retention_0.25_maker_M_0": 22.100457412919425,
+      "share_retention_0.25_maker_M_1": 21.724087595330328,
+      "share_retention_0.25_maker_M_2": 21.36032224705884
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182965167771
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182965167771
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182965167771
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182965167771
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-SAW",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182964874489,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946310971777,
+      "hours_to_match_full_loss": 11.311983066112905,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182964874489
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018296487449,
+      "share_retention_1_maker_M_1": 86.89635037843844,
+      "share_retention_1_maker_M_2": 85.44128898540076,
+      "share_retention_0.5_maker_M_0": 44.20091482437245,
+      "share_retention_0.5_maker_M_1": 43.44817518921922,
+      "share_retention_0.5_maker_M_2": 42.72064449270038,
+      "share_retention_0.25_maker_M_0": 22.100457412186223,
+      "share_retention_0.25_maker_M_1": 21.72408759460961,
+      "share_retention_0.25_maker_M_2": 21.36032224635019
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182964874489
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182964874489
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182964874489
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182964874489
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-TRA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018296444319,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946309927315,
+      "hours_to_match_full_loss": 11.311983066664801,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018296444319
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018296444319,
+      "share_retention_1_maker_M_1": 86.8963503741989,
+      "share_retention_1_maker_M_2": 85.4412889812322,
+      "share_retention_0.5_maker_M_0": 44.20091482221595,
+      "share_retention_0.5_maker_M_1": 43.44817518709945,
+      "share_retention_0.5_maker_M_2": 42.7206444906161,
+      "share_retention_0.25_maker_M_0": 22.100457411107975,
+      "share_retention_0.25_maker_M_1": 21.724087593549726,
+      "share_retention_0.25_maker_M_2": 21.36032224530805
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018296444319
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018296444319
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018296444319
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018296444319
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-GOL",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182964080898,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946309049965,
+      "hours_to_match_full_loss": 11.311983067128391,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182964080898
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182964080898,
+      "share_retention_1_maker_M_1": 86.89635037063769,
+      "share_retention_1_maker_M_2": 85.44128897773062,
+      "share_retention_0.5_maker_M_0": 44.20091482040449,
+      "share_retention_0.5_maker_M_1": 43.448175185318846,
+      "share_retention_0.5_maker_M_2": 42.72064448886531,
+      "share_retention_0.25_maker_M_0": 22.100457410202246,
+      "share_retention_0.25_maker_M_1": 21.724087592659423,
+      "share_retention_0.25_maker_M_2": 21.360322244432655
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182964080898
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182964080898
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182964080898
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182964080898
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-BAR",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182963787613,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946308339728,
+      "hours_to_match_full_loss": 11.311983067503682,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182963787613
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182963787612,
+      "share_retention_1_maker_M_1": 86.89635036775478,
+      "share_retention_1_maker_M_2": 85.44128897489598,
+      "share_retention_0.5_maker_M_0": 44.20091481893806,
+      "share_retention_0.5_maker_M_1": 43.44817518387739,
+      "share_retention_0.5_maker_M_2": 42.72064448744799,
+      "share_retention_0.25_maker_M_0": 22.10045740946903,
+      "share_retention_0.25_maker_M_1": 21.724087591938694,
+      "share_retention_0.25_maker_M_2": 21.360322243723996
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182963787613
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182963787613
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182963787613
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182963787613
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-BAS",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182963218298,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.40794630696104,
+      "hours_to_match_full_loss": 11.311983068232184,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182963218299
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182963218298,
+      "share_retention_1_maker_M_1": 86.89635036215859,
+      "share_retention_1_maker_M_2": 85.4412889693935,
+      "share_retention_0.5_maker_M_0": 44.20091481609149,
+      "share_retention_0.5_maker_M_1": 43.44817518107929,
+      "share_retention_0.5_maker_M_2": 42.72064448469675,
+      "share_retention_0.25_maker_M_0": 22.100457408045745,
+      "share_retention_0.25_maker_M_1": 21.724087590539646,
+      "share_retention_0.25_maker_M_2": 21.360322242348374
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182963218298
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182963218298
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182963218298
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182963218298
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-ZID",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018296270074,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.40794630570769,
+      "hours_to_match_full_loss": 11.311983068894456,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018296270074
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018296270074,
+      "share_retention_1_maker_M_1": 86.89635035707114,
+      "share_retention_1_maker_M_2": 85.44128896439125,
+      "share_retention_0.5_maker_M_0": 44.2009148135037,
+      "share_retention_0.5_maker_M_1": 43.44817517853557,
+      "share_retention_0.5_maker_M_2": 42.720644482195624,
+      "share_retention_0.25_maker_M_0": 22.10045740675185,
+      "share_retention_0.25_maker_M_1": 21.724087589267786,
+      "share_retention_0.25_maker_M_2": 21.360322241097812
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018296270074
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018296270074
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018296270074
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018296270074
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-NEW",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182962269441,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946304663227,
+      "hours_to_match_full_loss": 11.31198306944635,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182962269441
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182962269441,
+      "share_retention_1_maker_M_1": 86.8963503528316,
+      "share_retention_1_maker_M_2": 85.44128896022269,
+      "share_retention_0.5_maker_M_0": 44.200914811347204,
+      "share_retention_0.5_maker_M_1": 43.4481751764158,
+      "share_retention_0.5_maker_M_2": 42.720644480111346,
+      "share_retention_0.25_maker_M_0": 22.100457405673602,
+      "share_retention_0.25_maker_M_1": 21.7240875882079,
+      "share_retention_0.25_maker_M_2": 21.360322240055673
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182962269441
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182962269441
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182962269441
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182962269441
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-KAL",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182961838141,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946303618765,
+      "hours_to_match_full_loss": 11.311983069998245,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182961838142
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182961838141,
+      "share_retention_1_maker_M_1": 86.89635034859205,
+      "share_retention_1_maker_M_2": 85.44128895605414,
+      "share_retention_0.5_maker_M_0": 44.20091480919071,
+      "share_retention_0.5_maker_M_1": 43.448175174296026,
+      "share_retention_0.5_maker_M_2": 42.72064447802707,
+      "share_retention_0.25_maker_M_0": 22.100457404595353,
+      "share_retention_0.25_maker_M_1": 21.724087587148013,
+      "share_retention_0.25_maker_M_2": 21.360322239013534
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182961838141
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182961838141
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182961838141
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182961838141
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-YES",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018296147585,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946302741415,
+      "hours_to_match_full_loss": 11.311983070461837,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018296147585
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018296147585,
+      "share_retention_1_maker_M_1": 86.89635034503084,
+      "share_retention_1_maker_M_2": 85.44128895255255,
+      "share_retention_0.5_maker_M_0": 44.20091480737925,
+      "share_retention_0.5_maker_M_1": 43.44817517251542,
+      "share_retention_0.5_maker_M_2": 42.72064447627628,
+      "share_retention_0.25_maker_M_0": 22.100457403689624,
+      "share_retention_0.25_maker_M_1": 21.72408758625771,
+      "share_retention_0.25_maker_M_2": 21.36032223813814
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018296147585
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018296147585
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018296147585
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018296147585
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTDAILYTOPVIDEOG-26SEP24-XAM",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182961182564,
+      "remaining_hours": 24.216632614996698,
+      "ideal_remaining_gross": 21.407946302031178,
+      "hours_to_match_full_loss": 11.311983070837128,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182961182565
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182961182565,
+      "share_retention_1_maker_M_1": 86.89635034214793,
+      "share_retention_1_maker_M_2": 85.44128894971792,
+      "share_retention_0.5_maker_M_0": 44.200914805912824,
+      "share_retention_0.5_maker_M_1": 43.44817517107396,
+      "share_retention_0.5_maker_M_2": 42.72064447485896,
+      "share_retention_0.25_maker_M_0": 22.100457402956412,
+      "share_retention_0.25_maker_M_1": 21.72408758553698,
+      "share_retention_0.25_maker_M_2": 21.36032223742948
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182961182564
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182961182564
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182961182564
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182961182564
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-WTF",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182958801792,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752071265267,
+      "hours_to_match_full_loss": 11.311983073883587,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182958801793
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182958801792,
+      "share_retention_1_maker_M_1": 86.89635031874565,
+      "share_retention_1_maker_M_2": 85.44128892670751,
+      "share_retention_0.5_maker_M_0": 44.20091479400896,
+      "share_retention_0.5_maker_M_1": 43.44817515937282,
+      "share_retention_0.5_maker_M_2": 42.72064446335376,
+      "share_retention_0.25_maker_M_0": 22.10045739700448,
+      "share_retention_0.25_maker_M_1": 21.72408757968641,
+      "share_retention_0.25_maker_M_2": 21.36032223167688
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182958801792
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182958801792
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182958801792
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182958801792
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-BBY",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182958370493,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675207022086,
+      "hours_to_match_full_loss": 11.311983074435481,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182958370493
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182958370492,
+      "share_retention_1_maker_M_1": 86.89635031450611,
+      "share_retention_1_maker_M_2": 85.44128892253896,
+      "share_retention_0.5_maker_M_0": 44.20091479185246,
+      "share_retention_0.5_maker_M_1": 43.448175157253054,
+      "share_retention_0.5_maker_M_2": 42.72064446126948,
+      "share_retention_0.25_maker_M_0": 22.10045739592623,
+      "share_retention_0.25_maker_M_1": 21.724087578626527,
+      "share_retention_0.25_maker_M_2": 21.36032223063474
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182958370493
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182958370493
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182958370493
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182958370493
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-KATS",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182958008201,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752069343565,
+      "hours_to_match_full_loss": 11.311983074899073,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182958008201
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182958008201,
+      "share_retention_1_maker_M_1": 86.8963503109449,
+      "share_retention_1_maker_M_2": 85.44128891903738,
+      "share_retention_0.5_maker_M_0": 44.200914790041004,
+      "share_retention_0.5_maker_M_1": 43.44817515547245,
+      "share_retention_0.5_maker_M_2": 42.72064445951869,
+      "share_retention_0.25_maker_M_0": 22.100457395020502,
+      "share_retention_0.25_maker_M_1": 21.724087577736224,
+      "share_retention_0.25_maker_M_2": 21.360322229759344
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182958008201
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182958008201
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182958008201
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182958008201
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-KAT",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182957645911,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752068466268,
+      "hours_to_match_full_loss": 11.311983075362663,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182957645912
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182957645911,
+      "share_retention_1_maker_M_1": 86.89635030738368,
+      "share_retention_1_maker_M_2": 85.4412889155358,
+      "share_retention_0.5_maker_M_0": 44.200914788229554,
+      "share_retention_0.5_maker_M_1": 43.44817515369184,
+      "share_retention_0.5_maker_M_2": 42.7206444577679,
+      "share_retention_0.25_maker_M_0": 22.100457394114777,
+      "share_retention_0.25_maker_M_1": 21.72408757684592,
+      "share_retention_0.25_maker_M_2": 21.36032222888395
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182957645911
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182957645911
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182957645911
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182957645911
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-BLO",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182957283618,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752067588965,
+      "hours_to_match_full_loss": 11.311983075826257,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182957283618
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182957283618,
+      "share_retention_1_maker_M_1": 86.89635030382246,
+      "share_retention_1_maker_M_2": 85.4412889120342,
+      "share_retention_0.5_maker_M_0": 44.20091478641809,
+      "share_retention_0.5_maker_M_1": 43.44817515191123,
+      "share_retention_0.5_maker_M_2": 42.7206444560171,
+      "share_retention_0.25_maker_M_0": 22.100457393209044,
+      "share_retention_0.25_maker_M_1": 21.724087575955615,
+      "share_retention_0.25_maker_M_2": 21.36032222800855
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182957283618
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182957283618
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182957283618
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182957283618
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-LOR",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182956990335,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675206687877,
+      "hours_to_match_full_loss": 11.311983076201546,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182956990335
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182956990334,
+      "share_retention_1_maker_M_1": 86.89635030093957,
+      "share_retention_1_maker_M_2": 85.44128890919959,
+      "share_retention_0.5_maker_M_0": 44.20091478495167,
+      "share_retention_0.5_maker_M_1": 43.44817515046979,
+      "share_retention_0.5_maker_M_2": 42.72064445459979,
+      "share_retention_0.25_maker_M_0": 22.100457392475835,
+      "share_retention_0.25_maker_M_1": 21.724087575234893,
+      "share_retention_0.25_maker_M_2": 21.360322227299896
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182956990335
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182956990335
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182956990335
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182956990335
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-GOL",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182956697052,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675206616858,
+      "hours_to_match_full_loss": 11.311983076576832,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182956697053
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182956697052,
+      "share_retention_1_maker_M_1": 86.89635029805669,
+      "share_retention_1_maker_M_2": 85.44128890636497,
+      "share_retention_0.5_maker_M_0": 44.20091478348526,
+      "share_retention_0.5_maker_M_1": 43.448175149028344,
+      "share_retention_0.5_maker_M_2": 42.72064445318249,
+      "share_retention_0.25_maker_M_0": 22.10045739174263,
+      "share_retention_0.25_maker_M_1": 21.724087574514172,
+      "share_retention_0.25_maker_M_2": 21.360322226591244
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182956697052
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182956697052
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182956697052
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182956697052
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEO2D-26SEP24-SEP",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018295372971,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752058983077,
+      "hours_to_match_full_loss": 11.31198308037387,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182953729711
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018295372971,
+      "share_retention_1_maker_M_1": 86.89635026888861,
+      "share_retention_1_maker_M_2": 85.44128887768531,
+      "share_retention_0.5_maker_M_0": 44.20091476864855,
+      "share_retention_0.5_maker_M_1": 43.448175134444305,
+      "share_retention_0.5_maker_M_2": 42.720644438842655,
+      "share_retention_0.25_maker_M_0": 22.100457384324276,
+      "share_retention_0.25_maker_M_1": 21.724087567222153,
+      "share_retention_0.25_maker_M_2": 21.360322219421327
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018295372971
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018295372971
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018295372971
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018295372971
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-SHA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182952798106,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675205672717,
+      "hours_to_match_full_loss": 11.311983081565963,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182952798106
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182952798105,
+      "share_retention_1_maker_M_1": 86.89635025973121,
+      "share_retention_1_maker_M_2": 85.44128886868126,
+      "share_retention_0.5_maker_M_0": 44.200914763990525,
+      "share_retention_0.5_maker_M_1": 43.448175129865604,
+      "share_retention_0.5_maker_M_2": 42.72064443434063,
+      "share_retention_0.25_maker_M_0": 22.100457381995263,
+      "share_retention_0.25_maker_M_1": 21.724087564932802,
+      "share_retention_0.25_maker_M_2": 21.360322217170314
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182952798106
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182952798106
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182952798106
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182952798106
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-SAW",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018295250482,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675205601697,
+      "hours_to_match_full_loss": 11.311983081941253,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018295250482
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018295250482,
+      "share_retention_1_maker_M_1": 86.89635025684831,
+      "share_retention_1_maker_M_2": 85.44128886584662,
+      "share_retention_0.5_maker_M_0": 44.2009147625241,
+      "share_retention_0.5_maker_M_1": 43.448175128424154,
+      "share_retention_0.5_maker_M_2": 42.72064443292331,
+      "share_retention_0.25_maker_M_0": 22.10045738126205,
+      "share_retention_0.25_maker_M_1": 21.724087564212077,
+      "share_retention_0.25_maker_M_2": 21.360322216461654
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018295250482
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018295250482
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018295250482
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018295250482
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-TRA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182951987262,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.40675205476369,
+      "hours_to_match_full_loss": 11.311983082603525,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182951987262
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182951987262,
+      "share_retention_1_maker_M_1": 86.89635025176086,
+      "share_retention_1_maker_M_2": 85.44128886084437,
+      "share_retention_0.5_maker_M_0": 44.20091475993631,
+      "share_retention_0.5_maker_M_1": 43.44817512588043,
+      "share_retention_0.5_maker_M_2": 42.72064443042218,
+      "share_retention_0.25_maker_M_0": 22.100457379968155,
+      "share_retention_0.25_maker_M_1": 21.724087562940216,
+      "share_retention_0.25_maker_M_2": 21.36032221521109
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182951987262
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182951987262
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182951987262
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182951987262
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-GOL",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018295171123,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752054095268,
+      "hours_to_match_full_loss": 11.31198308295674,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018295171123
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182951711229,
+      "share_retention_1_maker_M_1": 86.89635024904754,
+      "share_retention_1_maker_M_2": 85.44128885817648,
+      "share_retention_0.5_maker_M_0": 44.200914758556145,
+      "share_retention_0.5_maker_M_1": 43.44817512452377,
+      "share_retention_0.5_maker_M_2": 42.72064442908824,
+      "share_retention_0.25_maker_M_0": 22.100457379278073,
+      "share_retention_0.25_maker_M_1": 21.724087562261886,
+      "share_retention_0.25_maker_M_2": 21.36032221454412
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018295171123
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018295171123
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018295171123
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018295171123
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-BAR",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182950693363,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752051630477,
+      "hours_to_match_full_loss": 11.31198308425921,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182950693362
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182950693362,
+      "share_retention_1_maker_M_1": 86.89635023904222,
+      "share_retention_1_maker_M_2": 85.44128884833869,
+      "share_retention_0.5_maker_M_0": 44.20091475346681,
+      "share_retention_0.5_maker_M_1": 43.44817511952111,
+      "share_retention_0.5_maker_M_2": 42.72064442416934,
+      "share_retention_0.25_maker_M_0": 22.100457376733406,
+      "share_retention_0.25_maker_M_1": 21.724087559760555,
+      "share_retention_0.25_maker_M_2": 21.36032221208467
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182950693363
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182950693363
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182950693363
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182950693363
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-BAS",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.0500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182950331071,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752050753177,
+      "hours_to_match_full_loss": 11.311983084722803,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08840182950331071
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182950331071,
+      "share_retention_1_maker_M_1": 86.89635023548101,
+      "share_retention_1_maker_M_2": 85.4412888448371,
+      "share_retention_0.5_maker_M_0": 44.200914751655354,
+      "share_retention_0.5_maker_M_1": 43.448175117740504,
+      "share_retention_0.5_maker_M_2": 42.72064442241855,
+      "share_retention_0.25_maker_M_0": 22.100457375827677,
+      "share_retention_0.25_maker_M_1": 21.724087558870252,
+      "share_retention_0.25_maker_M_2": 21.360322211209276
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182950331071
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182950331071
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182950331071
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182950331071
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-ZID",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8840182949968781,
+      "remaining_hours": 24.215286683771346,
+      "ideal_remaining_gross": 21.406756447048153,
+      "hours_to_match_full_loss": 11.311983085186393,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018294996878
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.4018294996878,
+      "share_retention_1_maker_M_1": 86.8963502319198,
+      "share_retention_1_maker_M_2": 85.44128884133553,
+      "share_retention_0.5_maker_M_0": 44.2009147498439,
+      "share_retention_0.5_maker_M_1": 43.4481751159599,
+      "share_retention_0.5_maker_M_2": 42.72064442066777,
+      "share_retention_0.25_maker_M_0": 22.10045737492195,
+      "share_retention_0.25_maker_M_1": 21.72408755797995,
+      "share_retention_0.25_maker_M_2": 21.360322210333884
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8840182949968781
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8840182949968781
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8840182949968781
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8840182949968781
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTTOPVIDEOG2D-26SEP24-NEW",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.884018294960649,
+      "remaining_hours": 24.21528170969751,
+      "ideal_remaining_gross": 21.406752048998584,
+      "hours_to_match_full_loss": 11.311983085649985,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0884018294960649
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 88.40182949606489,
+      "share_retention_1_maker_M_1": 86.89635022835859,
+      "share_retention_1_maker_M_2": 85.44128883783395,
+      "share_retention_0.5_maker_M_0": 44.200914748032446,
+      "share_retention_0.5_maker_M_1": 43.44817511417929,
+      "share_retention_0.5_maker_M_2": 42.720644418916976,
+      "share_retention_0.25_maker_M_0": 22.100457374016223,
+      "share_retention_0.25_maker_M_1": 21.724087557089646,
+      "share_retention_0.25_maker_M_2": 21.360322209458488
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.884018294960649
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.884018294960649
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.884018294960649
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.884018294960649
+      }
+    ]
+  },
+  {
+    "ticker": "KXALBUMLENGTH-26SEP25-TLOASG-46",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8341073882956538,
+      "remaining_hours": 48.27644330614143,
+      "ideal_remaining_gross": 40.267738042288826,
+      "hours_to_match_full_loss": 11.988863952438036,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08341073882956537
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 83.41073882956537,
+      "share_retention_1_maker_M_1": 81.9902576163619,
+      "share_retention_1_maker_M_2": 80.61734773069674,
+      "share_retention_0.5_maker_M_0": 41.70536941478269,
+      "share_retention_0.5_maker_M_1": 40.99512880818095,
+      "share_retention_0.5_maker_M_2": 40.30867386534837,
+      "share_retention_0.25_maker_M_0": 20.852684707391344,
+      "share_retention_0.25_maker_M_1": 20.497564404090475,
+      "share_retention_0.25_maker_M_2": 20.154336932674184
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      }
+    ]
+  },
+  {
+    "ticker": "KXALBUMLENGTH-26SEP25-TLOASG-47",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8341073882956538,
+      "remaining_hours": 48.27644330614143,
+      "ideal_remaining_gross": 40.267738042288826,
+      "hours_to_match_full_loss": 11.988863952438036,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08341073882956537
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 83.41073882956537,
+      "share_retention_1_maker_M_1": 81.9902576163619,
+      "share_retention_1_maker_M_2": 80.61734773069674,
+      "share_retention_0.5_maker_M_0": 41.70536941478269,
+      "share_retention_0.5_maker_M_1": 40.99512880818095,
+      "share_retention_0.5_maker_M_2": 40.30867386534837,
+      "share_retention_0.25_maker_M_0": 20.852684707391344,
+      "share_retention_0.25_maker_M_1": 20.497564404090475,
+      "share_retention_0.25_maker_M_2": 20.154336932674184
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      }
+    ]
+  },
+  {
+    "ticker": "KXALBUMLENGTH-26SEP25-TLOASG-48",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8341073882956538,
+      "remaining_hours": 48.27644330614143,
+      "ideal_remaining_gross": 40.267738042288826,
+      "hours_to_match_full_loss": 11.988863952438036,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08341073882956537
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 83.41073882956537,
+      "share_retention_1_maker_M_1": 81.9902576163619,
+      "share_retention_1_maker_M_2": 80.61734773069674,
+      "share_retention_0.5_maker_M_0": 41.70536941478269,
+      "share_retention_0.5_maker_M_1": 40.99512880818095,
+      "share_retention_0.5_maker_M_2": 40.30867386534837,
+      "share_retention_0.25_maker_M_0": 20.852684707391344,
+      "share_retention_0.25_maker_M_1": 20.497564404090475,
+      "share_retention_0.25_maker_M_2": 20.154336932674184
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      }
+    ]
+  },
+  {
+    "ticker": "KXALBUMLENGTH-26SEP25-TLOASG-49",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8341073882956538,
+      "remaining_hours": 48.27644330614143,
+      "ideal_remaining_gross": 40.267738042288826,
+      "hours_to_match_full_loss": 11.988863952438036,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08341073882956537
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 83.41073882956537,
+      "share_retention_1_maker_M_1": 81.9902576163619,
+      "share_retention_1_maker_M_2": 80.61734773069674,
+      "share_retention_0.5_maker_M_0": 41.70536941478269,
+      "share_retention_0.5_maker_M_1": 40.99512880818095,
+      "share_retention_0.5_maker_M_2": 40.30867386534837,
+      "share_retention_0.25_maker_M_0": 20.852684707391344,
+      "share_retention_0.25_maker_M_1": 20.497564404090475,
+      "share_retention_0.25_maker_M_2": 20.154336932674184
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      }
+    ]
+  },
+  {
+    "ticker": "KXALBUMLENGTH-26SEP25-TLOASG-50",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.8341073882956538,
+      "remaining_hours": 48.27644330614143,
+      "ideal_remaining_gross": 40.267738042288826,
+      "hours_to_match_full_loss": 11.988863952438036,
+      "priority": true,
+      "ideal_rate_per_principal": 0.08341073882956537
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 83.41073882956537,
+      "share_retention_1_maker_M_1": 81.9902576163619,
+      "share_retention_1_maker_M_2": 80.61734773069674,
+      "share_retention_0.5_maker_M_0": 41.70536941478269,
+      "share_retention_0.5_maker_M_1": 40.99512880818095,
+      "share_retention_0.5_maker_M_2": 40.30867386534837,
+      "share_retention_0.25_maker_M_0": 20.852684707391344,
+      "share_retention_0.25_maker_M_1": 20.497564404090475,
+      "share_retention_0.25_maker_M_2": 20.154336932674184
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.8341073882956538
+      }
+    ]
+  },
+  {
+    "ticker": "KXTOPMODEL-26SEP28-CLAU",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.6495767824944949,
+      "remaining_hours": 72.24446621530586,
+      "ideal_remaining_gross": 46.92832791717062,
+      "hours_to_match_full_loss": 15.394638893339371,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0649576782494495
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 64.95767824944949,
+      "share_retention_1_maker_M_1": 63.851451846213834,
+      "share_retention_1_maker_M_2": 62.7822725070792,
+      "share_retention_0.5_maker_M_0": 32.47883912472474,
+      "share_retention_0.5_maker_M_1": 31.925725923106917,
+      "share_retention_0.5_maker_M_2": 31.3911362535396,
+      "share_retention_0.25_maker_M_0": 16.23941956236237,
+      "share_retention_0.25_maker_M_1": 15.962862961553459,
+      "share_retention_0.25_maker_M_2": 15.6955681267698
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.6495767824944949
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.6495767824944949
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.6495767824944949
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.6495767824944949
+      }
+    ]
+  },
+  {
+    "ticker": "KXTOPMODEL-26SEP28-CL46H",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.6495767824878711,
+      "remaining_hours": 72.24446621530586,
+      "ideal_remaining_gross": 46.92832791669209,
+      "hours_to_match_full_loss": 15.394638893496351,
+      "priority": true,
+      "ideal_rate_per_principal": 0.0649576782487871
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 64.9576782487871,
+      "share_retention_1_maker_M_1": 63.851451845562735,
+      "share_retention_1_maker_M_2": 62.782272506439,
+      "share_retention_0.5_maker_M_0": 32.47883912439355,
+      "share_retention_0.5_maker_M_1": 31.925725922781368,
+      "share_retention_0.5_maker_M_2": 31.3911362532195,
+      "share_retention_0.25_maker_M_0": 16.239419562196776,
+      "share_retention_0.25_maker_M_1": 15.962862961390684,
+      "share_retention_0.25_maker_M_2": 15.69556812660975
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.6495767824878711
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.6495767824878711
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.6495767824878711
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.6495767824878711
+      }
+    ]
+  },
+  {
+    "ticker": "KXTOKENUSE-26SEP28-T124",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.6410941339886741,
+      "remaining_hours": 96.22902345624234,
+      "ideal_remaining_gross": 61.69186245725549,
+      "hours_to_match_full_loss": 15.598333333333331,
+      "priority": true,
+      "ideal_rate_per_principal": 0.06410941339886742
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 64.1094133988674,
+      "share_retention_1_maker_M_1": 63.01763290872377,
+      "share_retention_1_maker_M_2": 61.962415695034466,
+      "share_retention_0.5_maker_M_0": 32.0547066994337,
+      "share_retention_0.5_maker_M_1": 31.508816454361884,
+      "share_retention_0.5_maker_M_2": 30.981207847517233,
+      "share_retention_0.25_maker_M_0": 16.02735334971685,
+      "share_retention_0.25_maker_M_1": 15.754408227180942,
+      "share_retention_0.25_maker_M_2": 15.490603923758616
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.6410941339886741
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.6410941339886741
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.6410941339886741
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.6410941339886741
+      }
+    ]
+  },
+  {
+    "ticker": "KXLLM1-26SEP28-GOOG",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.6024096385542169,
+      "remaining_hours": 106.26502750462956,
+      "ideal_remaining_gross": 64.01507681001782,
+      "hours_to_match_full_loss": 16.599999999999998,
+      "priority": true,
+      "ideal_rate_per_principal": 0.06024096385542169
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 60.24096385542169,
+      "share_retention_1_maker_M_1": 59.21506289083793,
+      "share_retention_1_maker_M_2": 58.22351892468148,
+      "share_retention_0.5_maker_M_0": 30.120481927710845,
+      "share_retention_0.5_maker_M_1": 29.607531445418964,
+      "share_retention_0.5_maker_M_2": 29.11175946234074,
+      "share_retention_0.25_maker_M_0": 15.060240963855422,
+      "share_retention_0.25_maker_M_1": 14.803765722709482,
+      "share_retention_0.25_maker_M_2": 14.55587973117037
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      }
+    ]
+  },
+  {
+    "ticker": "KXLLM1-26SEP28-XAI",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.6024096385542169,
+      "remaining_hours": 106.26502750462956,
+      "ideal_remaining_gross": 64.01507681001782,
+      "hours_to_match_full_loss": 16.599999999999998,
+      "priority": true,
+      "ideal_rate_per_principal": 0.06024096385542169
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 60.24096385542169,
+      "share_retention_1_maker_M_1": 59.21506289083793,
+      "share_retention_1_maker_M_2": 58.22351892468148,
+      "share_retention_0.5_maker_M_0": 30.120481927710845,
+      "share_retention_0.5_maker_M_1": 29.607531445418964,
+      "share_retention_0.5_maker_M_2": 29.11175946234074,
+      "share_retention_0.25_maker_M_0": 15.060240963855422,
+      "share_retention_0.25_maker_M_1": 14.803765722709482,
+      "share_retention_0.25_maker_M_2": 14.55587973117037
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.6024096385542169
+      }
+    ]
+  },
+  {
+    "ticker": "KXVMA-BHH26-TIE",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.5706676811869889,
+      "remaining_hours": 96.21945520208942,
+      "ideal_remaining_gross": 54.90933338525172,
+      "hours_to_match_full_loss": 17.52333333333333,
+      "priority": true,
+      "ideal_rate_per_principal": 0.05706676811869889
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 57.06676811869888,
+      "share_retention_1_maker_M_1": 56.094923567885274,
+      "share_retention_1_maker_M_2": 55.15562568858927,
+      "share_retention_0.5_maker_M_0": 28.53338405934944,
+      "share_retention_0.5_maker_M_1": 28.047461783942637,
+      "share_retention_0.5_maker_M_2": 27.577812844294634,
+      "share_retention_0.25_maker_M_0": 14.26669202967472,
+      "share_retention_0.25_maker_M_1": 14.023730891971319,
+      "share_retention_0.25_maker_M_2": 13.788906422147317
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.5706676811869889
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.5706676811869889
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.5706676811869889
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.5706676811869889
+      }
+    ]
+  },
+  {
+    "ticker": "KXNETFLIXTOPVIEWSMOVIE-26SEP28-6",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3923198039954735,
+      "remaining_hours": 72.25991328246063,
+      "ideal_remaining_gross": 28.348995015704865,
+      "hours_to_match_full_loss": 25.489409145696296,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03923198039954735
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 39.231980399547346,
+      "share_retention_1_maker_M_1": 38.56386149907586,
+      "share_retention_1_maker_M_2": 37.918117623879915,
+      "share_retention_0.5_maker_M_0": 19.615990199773673,
+      "share_retention_0.5_maker_M_1": 19.28193074953793,
+      "share_retention_0.5_maker_M_2": 18.959058811939958,
+      "share_retention_0.25_maker_M_0": 9.807995099886837,
+      "share_retention_0.25_maker_M_1": 9.640965374768966,
+      "share_retention_0.25_maker_M_2": 9.479529405969979
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3923198039954735
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3923198039954735
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3923198039954735
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3923198039954735
+      }
+    ]
+  },
+  {
+    "ticker": "KXNETFLIXTOPVIEWSTV-26SEP28-35",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3923198039750867,
+      "remaining_hours": 72.25991328246063,
+      "ideal_remaining_gross": 28.34899501423172,
+      "hours_to_match_full_loss": 25.489409147020844,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03923198039750867
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 39.23198039750867,
+      "share_retention_1_maker_M_1": 38.5638614970719,
+      "share_retention_1_maker_M_2": 37.91811762190951,
+      "share_retention_0.5_maker_M_0": 19.615990198754336,
+      "share_retention_0.5_maker_M_1": 19.28193074853595,
+      "share_retention_0.5_maker_M_2": 18.959058810954755,
+      "share_retention_0.25_maker_M_0": 9.807995099377168,
+      "share_retention_0.25_maker_M_1": 9.640965374267974,
+      "share_retention_0.25_maker_M_2": 9.479529405477377
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3923198039750867
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3923198039750867
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3923198039750867
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3923198039750867
+      }
+    ]
+  },
+  {
+    "ticker": "KXNETFLIXTOPVIEWSTV-26SEP28-30",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3923198039697352,
+      "remaining_hours": 72.25991328246063,
+      "ideal_remaining_gross": 28.34899501384502,
+      "hours_to_match_full_loss": 25.489409147368537,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03923198039697352
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 39.23198039697352,
+      "share_retention_1_maker_M_1": 38.56386149654586,
+      "share_retention_1_maker_M_2": 37.91811762139228,
+      "share_retention_0.5_maker_M_0": 19.61599019848676,
+      "share_retention_0.5_maker_M_1": 19.28193074827293,
+      "share_retention_0.5_maker_M_2": 18.95905881069614,
+      "share_retention_0.25_maker_M_0": 9.80799509924338,
+      "share_retention_0.25_maker_M_1": 9.640965374136465,
+      "share_retention_0.25_maker_M_2": 9.47952940534807
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3923198039697352
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3923198039697352
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3923198039697352
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3923198039697352
+      }
+    ]
+  },
+  {
+    "ticker": "KXHOLBORNPLACE3RD-26OCT08-3-UKI",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3877266994087166,
+      "remaining_hours": 72.26744027038416,
+      "ideal_remaining_gross": 28.02001609075262,
+      "hours_to_match_full_loss": 25.791362872997922,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03877266994087166
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 38.77266994087166,
+      "share_retention_1_maker_M_1": 38.11237307730731,
+      "share_retention_1_maker_M_2": 37.47418928224198,
+      "share_retention_0.5_maker_M_0": 19.38633497043583,
+      "share_retention_0.5_maker_M_1": 19.056186538653655,
+      "share_retention_0.5_maker_M_2": 18.73709464112099,
+      "share_retention_0.25_maker_M_0": 9.693167485217915,
+      "share_retention_0.25_maker_M_1": 9.528093269326828,
+      "share_retention_0.25_maker_M_2": 9.368547320560495
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3877266994087166
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3877266994087166
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3877266994087166
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3877266994087166
+      }
+    ]
+  },
+  {
+    "ticker": "KXHOLBORNPLACE3RD-26OCT08-3-VOI",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.38772669939617205,
+      "remaining_hours": 72.26744027038416,
+      "ideal_remaining_gross": 28.020016089846056,
+      "hours_to_match_full_loss": 25.791362873832384,
+      "priority": true,
+      "ideal_rate_per_principal": 0.038772669939617206
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 38.7726699396172,
+      "share_retention_1_maker_M_1": 38.11237307607422,
+      "share_retention_1_maker_M_2": 37.47418928102953,
+      "share_retention_0.5_maker_M_0": 19.3863349698086,
+      "share_retention_0.5_maker_M_1": 19.05618653803711,
+      "share_retention_0.5_maker_M_2": 18.737094640514766,
+      "share_retention_0.25_maker_M_0": 9.6931674849043,
+      "share_retention_0.25_maker_M_1": 9.528093269018555,
+      "share_retention_0.25_maker_M_2": 9.368547320257383
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.38772669939617205
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.38772669939617205
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.38772669939617205
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.38772669939617205
+      }
+    ]
+  },
+  {
+    "ticker": "KXBTCPRICE-130000-26OCT01",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3849343893518429,
+      "remaining_hours": 72.28771461407344,
+      "ideal_remaining_gross": 27.826027282608646,
+      "hours_to_match_full_loss": 25.978453151037296,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03849343893518429
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 38.49343893518429,
+      "share_retention_1_maker_M_1": 37.83789736336401,
+      "share_retention_1_maker_M_2": 37.204309607291634,
+      "share_retention_0.5_maker_M_0": 19.246719467592143,
+      "share_retention_0.5_maker_M_1": 18.918948681682004,
+      "share_retention_0.5_maker_M_2": 18.602154803645817,
+      "share_retention_0.25_maker_M_0": 9.623359733796072,
+      "share_retention_0.25_maker_M_1": 9.459474340841002,
+      "share_retention_0.25_maker_M_2": 9.301077401822909
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3849343893518429
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3849343893518429
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3849343893518429
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3849343893518429
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-LIM",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8900",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042970396,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.767919635246308,
+      "hours_to_match_full_loss": 26.990137760423952,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03705057042970396
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042970396,
+      "share_retention_1_maker_M_1": 36.41960084506324,
+      "share_retention_1_maker_M_2": 35.80976217049626,
+      "share_retention_0.5_maker_M_0": 18.52528521485198,
+      "share_retention_0.5_maker_M_1": 18.20980042253162,
+      "share_retention_0.5_maker_M_2": 17.90488108524813,
+      "share_retention_0.25_maker_M_0": 9.26264260742599,
+      "share_retention_0.25_maker_M_1": 9.10490021126581,
+      "share_retention_0.25_maker_M_2": 8.952440542624066
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042970396
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042970396
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042970396
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042970396
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-TRA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8900",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042931758,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.76791963496716,
+      "hours_to_match_full_loss": 26.99013776070542,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03705057042931758
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042931758,
+      "share_retention_1_maker_M_1": 36.41960084468344,
+      "share_retention_1_maker_M_2": 35.80976217012282,
+      "share_retention_0.5_maker_M_0": 18.52528521465879,
+      "share_retention_0.5_maker_M_1": 18.20980042234172,
+      "share_retention_0.5_maker_M_2": 17.90488108506141,
+      "share_retention_0.25_maker_M_0": 9.262642607329395,
+      "share_retention_0.25_maker_M_1": 9.10490021117086,
+      "share_retention_0.25_maker_M_2": 8.952440542530706
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042931758
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042931758
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042931758
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042931758
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-OVE",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042895393,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.76791963470443,
+      "hours_to_match_full_loss": 26.990137760970327,
+      "priority": true,
+      "ideal_rate_per_principal": 0.037050570428953926
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.050570428953925,
+      "share_retention_1_maker_M_1": 36.41960084432598,
+      "share_retention_1_maker_M_2": 35.80976216977135,
+      "share_retention_0.5_maker_M_0": 18.525285214476963,
+      "share_retention_0.5_maker_M_1": 18.20980042216299,
+      "share_retention_0.5_maker_M_2": 17.904881084885677,
+      "share_retention_0.25_maker_M_0": 9.262642607238481,
+      "share_retention_0.25_maker_M_1": 9.104900211081494,
+      "share_retention_0.25_maker_M_2": 8.952440542442838
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042895393
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042895393
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042895393
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042895393
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-DIA",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042856755,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.767919634425283,
+      "hours_to_match_full_loss": 26.990137761251795,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03705057042856755
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.050570428567546,
+      "share_retention_1_maker_M_1": 36.41960084394618,
+      "share_retention_1_maker_M_2": 35.809762169397914,
+      "share_retention_0.5_maker_M_0": 18.525285214283773,
+      "share_retention_0.5_maker_M_1": 18.20980042197309,
+      "share_retention_0.5_maker_M_2": 17.904881084698957,
+      "share_retention_0.25_maker_M_0": 9.262642607141887,
+      "share_retention_0.25_maker_M_1": 9.104900210986544,
+      "share_retention_0.25_maker_M_2": 8.952440542349478
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042856755
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042856755
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042856755
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042856755
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-DIM",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042779478,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.767919633866985,
+      "hours_to_match_full_loss": 26.99013776181473,
+      "priority": true,
+      "ideal_rate_per_principal": 0.037050570427794784
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042779478,
+      "share_retention_1_maker_M_1": 36.41960084318657,
+      "share_retention_1_maker_M_2": 35.80976216865103,
+      "share_retention_0.5_maker_M_0": 18.52528521389739,
+      "share_retention_0.5_maker_M_1": 18.209800421593286,
+      "share_retention_0.5_maker_M_2": 17.904881084325513,
+      "share_retention_0.25_maker_M_0": 9.262642606948695,
+      "share_retention_0.25_maker_M_1": 9.104900210796643,
+      "share_retention_0.25_maker_M_2": 8.952440542162757
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042779478
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042779478
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042779478
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042779478
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-BAL",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042704475,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.767919633325107,
+      "hours_to_match_full_loss": 26.9901377623611,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03705057042704475
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042704475,
+      "share_retention_1_maker_M_1": 36.41960084244931,
+      "share_retention_1_maker_M_2": 35.80976216792611,
+      "share_retention_0.5_maker_M_0": 18.525285213522373,
+      "share_retention_0.5_maker_M_1": 18.209800421224656,
+      "share_retention_0.5_maker_M_2": 17.904881083963055,
+      "share_retention_0.25_maker_M_0": 9.262642606761187,
+      "share_retention_0.25_maker_M_1": 9.104900210612328,
+      "share_retention_0.25_maker_M_2": 8.952440541981527
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042704475
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042704475
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042704475
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042704475
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-BOR",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042665837,
+      "remaining_hours": 72.24698385152551,
+      "ideal_remaining_gross": 26.76791963304596,
+      "hours_to_match_full_loss": 26.99013776264257,
+      "priority": true,
+      "ideal_rate_per_principal": 0.037050570426658366
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042665837,
+      "share_retention_1_maker_M_1": 36.419600842069514,
+      "share_retention_1_maker_M_2": 35.80976216755267,
+      "share_retention_0.5_maker_M_0": 18.525285213329184,
+      "share_retention_0.5_maker_M_1": 18.209800421034757,
+      "share_retention_0.5_maker_M_2": 17.904881083776335,
+      "share_retention_0.25_maker_M_0": 9.262642606664592,
+      "share_retention_0.25_maker_M_1": 9.104900210517378,
+      "share_retention_0.25_maker_M_2": 8.952440541888167
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042665837
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042665837
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042665837
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042665837
+      }
+    ]
+  },
+  {
+    "ticker": "KXSTEAMTOPSELLER-26SEP29-ANI",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.7600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3705057042513557,
+      "remaining_hours": 72.2483336631457,
+      "ideal_remaining_gross": 26.76841974485073,
+      "hours_to_match_full_loss": 26.99013776375188,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03705057042513557
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 37.05057042513557,
+      "share_retention_1_maker_M_1": 36.41960084057265,
+      "share_retention_1_maker_M_2": 35.809762166080866,
+      "share_retention_0.5_maker_M_0": 18.525285212567784,
+      "share_retention_0.5_maker_M_1": 18.209800420286324,
+      "share_retention_0.5_maker_M_2": 17.904881083040433,
+      "share_retention_0.25_maker_M_0": 9.262642606283892,
+      "share_retention_0.25_maker_M_1": 9.104900210143162,
+      "share_retention_0.25_maker_M_2": 8.952440541520216
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3705057042513557
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3705057042513557
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3705057042513557
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3705057042513557
+      }
+    ]
+  },
+  {
+    "ticker": "KXSPRLVL-26SEP30-T290",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9100",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.35732623309812794,
+      "remaining_hours": 72.2483336631457,
+      "ideal_remaining_gross": 25.816224915468524,
+      "hours_to_match_full_loss": 27.985630703060718,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03573262330981279
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 35.732623309812794,
+      "share_retention_1_maker_M_1": 35.12409830665008,
+      "share_retention_1_maker_M_2": 34.53595255382283,
+      "share_retention_0.5_maker_M_0": 17.866311654906397,
+      "share_retention_0.5_maker_M_1": 17.56204915332504,
+      "share_retention_0.5_maker_M_2": 17.267976276911416,
+      "share_retention_0.25_maker_M_0": 8.933155827453199,
+      "share_retention_0.25_maker_M_1": 8.78102457666252,
+      "share_retention_0.25_maker_M_2": 8.633988138455708
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.35732623309812794
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.35732623309812794
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.35732623309812794
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.35732623309812794
+      }
+    ]
+  },
+  {
+    "ticker": "KXSPRLVL-26SEP30-T289",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.4600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3573262330933362,
+      "remaining_hours": 72.2483336631457,
+      "ideal_remaining_gross": 25.81622491512233,
+      "hours_to_match_full_loss": 27.985630703436,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03573262330933362
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 35.73262330933362,
+      "share_retention_1_maker_M_1": 35.12409830617907,
+      "share_retention_1_maker_M_2": 34.53595255335971,
+      "share_retention_0.5_maker_M_0": 17.86631165466681,
+      "share_retention_0.5_maker_M_1": 17.562049153089536,
+      "share_retention_0.5_maker_M_2": 17.267976276679853,
+      "share_retention_0.25_maker_M_0": 8.933155827333405,
+      "share_retention_0.25_maker_M_1": 8.781024576544768,
+      "share_retention_0.25_maker_M_2": 8.633988138339927
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3573262330933362
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3573262330933362
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3573262330933362
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3573262330933362
+      }
+    ]
+  },
+  {
+    "ticker": "KXSPRLVL-26SEP30-T288",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.2500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.35732623308995376,
+      "remaining_hours": 72.2483336631457,
+      "ideal_remaining_gross": 25.816224914877953,
+      "hours_to_match_full_loss": 27.985630703700917,
+      "priority": true,
+      "ideal_rate_per_principal": 0.035732623308995376
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 35.73262330899537,
+      "share_retention_1_maker_M_1": 35.12409830584659,
+      "share_retention_1_maker_M_2": 34.53595255303279,
+      "share_retention_0.5_maker_M_0": 17.866311654497686,
+      "share_retention_0.5_maker_M_1": 17.562049152923294,
+      "share_retention_0.5_maker_M_2": 17.267976276516396,
+      "share_retention_0.25_maker_M_0": 8.933155827248843,
+      "share_retention_0.25_maker_M_1": 8.781024576461647,
+      "share_retention_0.25_maker_M_2": 8.633988138258198
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.35732623308995376
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.35732623308995376
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.35732623308995376
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.35732623308995376
+      }
+    ]
+  },
+  {
+    "ticker": "KXSPRLVL-26SEP30-T287",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.1500",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.35732623308403455,
+      "remaining_hours": 72.2483336631457,
+      "ideal_remaining_gross": 25.8162249144503,
+      "hours_to_match_full_loss": 27.985630704164507,
+      "priority": true,
+      "ideal_rate_per_principal": 0.035732623308403454
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 35.732623308403454,
+      "share_retention_1_maker_M_1": 35.124098305264745,
+      "share_retention_1_maker_M_2": 34.53595255246069,
+      "share_retention_0.5_maker_M_0": 17.866311654201727,
+      "share_retention_0.5_maker_M_1": 17.562049152632373,
+      "share_retention_0.5_maker_M_2": 17.267976276230346,
+      "share_retention_0.25_maker_M_0": 8.933155827100864,
+      "share_retention_0.25_maker_M_1": 8.781024576316186,
+      "share_retention_0.25_maker_M_2": 8.633988138115173
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.35732623308403455
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.35732623308403455
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.35732623308403455
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.35732623308403455
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.3200",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.27766153183248,
+      "ideal_remaining_gross": 30.47765964191979,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.3400",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.27766153183248,
+      "ideal_remaining_gross": 30.47765964191979,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.5600",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.5800",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.6000",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.6200",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.6400",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.6600",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXAAAGASW-26SEP28-4.6800",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.3165600322754297,
+      "remaining_hours": 96.2776734001769,
+      "ideal_remaining_gross": 30.47766339896328,
+      "hours_to_match_full_loss": 31.589584851000044,
+      "priority": true,
+      "ideal_rate_per_principal": 0.03165600322754297
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 31.65600322754297,
+      "share_retention_1_maker_M_1": 31.11690288505932,
+      "share_retention_1_maker_M_2": 30.595856789777194,
+      "share_retention_0.5_maker_M_0": 15.828001613771486,
+      "share_retention_0.5_maker_M_1": 15.55845144252966,
+      "share_retention_0.5_maker_M_2": 15.297928394888597,
+      "share_retention_0.25_maker_M_0": 7.914000806885743,
+      "share_retention_0.25_maker_M_1": 7.77922572126483,
+      "share_retention_0.25_maker_M_2": 7.648964197444299
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.3165600322754297
+      }
+    ]
+  },
+  {
+    "ticker": "KXCPIYOY-26SEP-T3.9",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9700",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.31736813949215,
+      "ideal_remaining_gross": 31.939692898658375,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXCPIYOY-26SEP-T4.4",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.31736813949215,
+      "ideal_remaining_gross": 31.939692898658375,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXMOUNTAINDEWPOS-26OCT03-T85",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.29846090422737,
+      "ideal_remaining_gross": 31.934065745305766,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXONPOS-26OCT03-T98",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.29482713692718,
+      "ideal_remaining_gross": 31.932984266942615,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXREDBULLPOS-26OCT03-T97",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.29090349290107,
+      "ideal_remaining_gross": 31.931816515744366,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXSUPERBOWLHEADLINE-27-EDS",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 134.27835663106706,
+      "ideal_remaining_gross": 39.963796616389004,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXZYNPOS-26OCT03-T93",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2976190476190476,
+      "remaining_hours": 107.26384391923746,
+      "ideal_remaining_gross": 31.923763071201623,
+      "hours_to_match_full_loss": 33.6,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02976190476190476
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 29.761904761904763,
+      "share_retention_1_maker_M_1": 29.255060832973495,
+      "share_retention_1_maker_M_2": 28.76519089731287,
+      "share_retention_0.5_maker_M_0": 14.880952380952381,
+      "share_retention_0.5_maker_M_1": 14.627530416486747,
+      "share_retention_0.5_maker_M_2": 14.382595448656435,
+      "share_retention_0.25_maker_M_0": 7.440476190476191,
+      "share_retention_0.25_maker_M_1": 7.313765208243374,
+      "share_retention_0.25_maker_M_2": 7.1912977243282175
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2976190476190476
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-BAD26SEP27-25.5M",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9100",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.23031130532425,
+      "ideal_remaining_gross": 34.2711345540327,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-BAD26SEP27-26.0M",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.23031130532425,
+      "ideal_remaining_gross": 34.2711345540327,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-FUE26SEP27-20.0M",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.9100",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.23031130532425,
+      "ideal_remaining_gross": 34.2711345540327,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-KAT26SEP27-18.0M",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.4400",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.229068672657,
+      "ideal_remaining_gross": 34.27080754543605,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-KAT26SEP27-19.0M",
+    "quote": {
+      "side": "no",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.8800",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.229068672657,
+      "ideal_remaining_gross": 34.27080754543605,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-TAT26SEP27-5.0M",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.5200",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.22906211382812,
+      "ideal_remaining_gross": 34.27080581942845,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-YOU26SEP27-11.0M",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.3200",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.22776164783372,
+      "ideal_remaining_gross": 34.27046359153519,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  },
+  {
+    "ticker": "KXYTVIEWSW-YOU26SEP27-12.0M",
+    "quote": {
+      "side": "yes",
+      "price": "0.01",
+      "quantity": "1000.00",
+      "opposite_best_bid": "0.2600",
+      "linear_cent_verified": true,
+      "would_rest": true,
+      "principal": 10.0,
+      "ideal_rate": 0.2631578947368421,
+      "remaining_hours": 130.22776164783372,
+      "ideal_remaining_gross": 34.27046359153519,
+      "hours_to_match_full_loss": 38.0,
+      "priority": true,
+      "ideal_rate_per_principal": 0.02631578947368421
+    },
+    "followup_rounds": 0,
+    "priority_followups": 0,
+    "losing_contracts_per_hour_break_even": {
+      "share_retention_1_maker_M_0": 26.31578947368421,
+      "share_retention_1_maker_M_1": 25.86763273652393,
+      "share_retention_1_maker_M_2": 25.43448458288717,
+      "share_retention_0.5_maker_M_0": 13.157894736842104,
+      "share_retention_0.5_maker_M_1": 12.933816368261965,
+      "share_retention_0.5_maker_M_2": 12.717242291443585,
+      "share_retention_0.25_maker_M_0": 6.578947368421052,
+      "share_retention_0.25_maker_M_1": 6.466908184130983,
+      "share_retention_0.25_maker_M_2": 6.358621145721792
+    },
+    "buffer_scenarios": [
+      {
+        "quantity": 1000.0,
+        "principal": 10.0,
+        "fill_buffer_before_below_target": 0.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1100.0,
+        "principal": 11.0,
+        "fill_buffer_before_below_target": 100.00000000000009,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 1250.0,
+        "principal": 12.5,
+        "fill_buffer_before_below_target": 250.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      },
+      {
+        "quantity": 2000.0,
+        "principal": 20.0,
+        "fill_buffer_before_below_target": 1000.0,
+        "ideal_rate_unchanged": 0.2631578947368421
+      }
+    ]
+  }
+]
