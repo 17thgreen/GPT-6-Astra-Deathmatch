@@ -25,7 +25,9 @@ Implement the published one-fifth-target reference and distance discount. Becaus
 the help page does not fully specify treatment of a boundary order or same-price
 queues, report two allocation conventions: cap eligible quantity at target with
 all incumbent/competing orders ahead of ours; and include the entire boundary
-order. Neither convention is represented as verified account scoring. Normalize
+price level. The public book aggregates orders, so boundary-order identity is
+unavailable; the second convention is an intentionally generous level treatment.
+Neither convention is represented as verified account scoring. Normalize
 each qualifying side independently, and divide combined own share by two.
 
 Apply fixed same-side competitor scenarios independently on every proposed side:

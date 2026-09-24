@@ -1,0 +1,10 @@
+{
+  "frozen_ns": 1790224128056831925,
+  "tests": "8 focused tests passed before acquisition",
+  "sha256": {
+    "SPEC.md": "b59bcd87dd6c70f3bc29cc8b6bb7fd66a68cfdd627eca475b5212d792f0d1853",
+    "model.py": "e307f43ecb6e4dc3aedb7b5a240292e794620ce2a42302d4288f7aff1f7bac9c",
+    "capture.py": "9d904741b8937b12e1d4ff35a154bcf39edbf3cc2a250257673ed7e21371196a",
+    "test_model.py": "f2d608157cb76303a2186055ac90bac22d9da93722c1f848e5d1aaa6d07ad769"
+  }
+}
