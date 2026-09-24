@@ -1,0 +1,1480 @@
+{
+  "status": "RECONCILIATION_MEMO_READY_NOT_SCORED",
+  "examiner_stamp": null,
+  "packets_root": "lab/governance/astra/packets",
+  "packets_root_note": "Requested governance root already exists. Refiner diagnosis packets remain at packets/refiner/ and were not moved.",
+  "pins": {
+    "origin_main_HEAD": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+    "matches_pinned_main": true,
+    "reviewed_main_commit": "a281adc944e4dacffcdb5677a140fabaed675a81",
+    "reviewed_main_is_ancestor_of_origin_main": true,
+    "q7_relevant_paths_changed_since_reviewed_main": [],
+    "files_changed_since_reviewed_main": 75,
+    "research_commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+    "extractor_HEAD_at_runtime": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b"
+  },
+  "compared_files": [
+    {
+      "path": "nfl_paircheck_lab_20260922/paircheck_policy.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "ae0a19e03acebd359e711fb13b5b47ca807d72632f3a2cd1c1c282ad5916d7a9",
+      "bytes": 9513
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/EXPERIMENT_SPEC.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "cdfba7817a4a13c51b3aec3dc2256e7de1cd61386d9e1b359d85b2b65a78344f",
+      "bytes": 10419
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/FROZEN_EXPERIMENT.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "b0dd91699d2170e42c3a0ae9e27769a80f64f8121b116da030f253ac0d8a7f2b",
+      "bytes": 8884
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/README.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "595deb359891e5eeb11cb02243340988dac57f0bd295ef1439345d1515cbac87",
+      "bytes": 3106
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/run_experiment.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "55d6fafe860d68e8b84e59b37c8cd641b4ec835712632867eaebcd809ff626b6",
+      "bytes": 7248
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/analyze.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "2fcc5262197ccf1e1dd3eb241649c57581e7353046945427b6e01e8f14fa16d6",
+      "bytes": 4720
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/results/NOT_RUN.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "e9cb7084b71aa4cde64cdfd791ed6b3b138aadd425c925df3b35bdd60cf1c7b2",
+      "bytes": 1141
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/results/analysis_status.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "8acec3c77b86abce43b6eb01a941de317f1603a5a30c7ee4bc4582800c119ebb",
+      "bytes": 189
+    },
+    {
+      "path": "nfl_paircheck_lab_20260922/results/verification.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "9cde03dc3d52eb3ab9d18024155c341451de9e1e8836356cdcf3cf1d0ac006e4",
+      "bytes": 208
+    },
+    {
+      "path": "nfl_q7_rehab_p1_cadence_20260923/cadence_policy.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "e9e0a7a12dc7218208c116f378c56d57ae530a3eac9986201dcf57c443bd4091",
+      "bytes": 7405
+    },
+    {
+      "path": "nfl_q7_rehab_p1_cadence_20260923/EXPERIMENT_SPEC.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "4ea892d235a9ce3fd545cfba595b237e55df20b10f0e296de22b27731d39802b",
+      "bytes": 7856
+    },
+    {
+      "path": "nfl_q7_rehab_p1_cadence_20260923/FROZEN_EXPERIMENT.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "3183754c6880b20ad16b51b4595549409a24508ece6e3b21d507d51142ce3174",
+      "bytes": 9194
+    },
+    {
+      "path": "nfl_q7_rehab_p1_cadence_20260923/results/NOT_RUN.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "ff043ad08171e7d207507f44484bf2194eec3c476f4f94922bcc0fe9b26b1fd5",
+      "bytes": 538
+    },
+    {
+      "path": "nfl_q7_rehab_p1_cadence_20260923/results/UNIT_RESULTS.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "e04aec7f4deed276400c1f36f8e2cd66e3a1c5f960b5355830da1455bbef5d7f",
+      "bytes": 1670
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/rank_sizing_policy.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "2447fc4f777855270f2037be94aeae2367f1990c595678cc9bcc9a9872deb360",
+      "bytes": 8501
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/EXPERIMENT_SPEC.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "a114caf497382689ca5227b6b0307403861313049ad2d641c7690978af2b8885",
+      "bytes": 9607
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/FROZEN_EXPERIMENT.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "e3e4814abcbb92b5142c1e4783fed53b50372783aeb58f664361966d719bd7d7",
+      "bytes": 10919
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/selection.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "247a064d41895c29b837fbf454235d9f8b7b56261e532edbc8baead2e65519d6",
+      "bytes": 3155
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/results/NOT_RUN.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "5f52851b741619ee82ae1fbd70f92d5dcbb527cc16d3212f4295377e064d49b8",
+      "bytes": 539
+    },
+    {
+      "path": "nfl_q7_rehab_p2_rank_sizing_20260923/results/UNIT_RESULTS.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "b8282d077048ccaf76be9312294b717323ae206f93eb83c2eb0a4be2d66b7232",
+      "bytes": 2253
+    },
+    {
+      "path": "packets/refiner/CONDUCTOR_ACCEPT_Q7_B_REHAB_P1_CADENCE_600_2026-09-23.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "6ff909e9e07c136a0b47d866ab54179e91080d514692c7bff9cb588e847dc1b9",
+      "bytes": 663
+    },
+    {
+      "path": "packets/refiner/CONDUCTOR_DECISION_Q7_B_P1_PARENT_LEDGERS_2026-09-23.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "78c4cf447d13c922540601d41ea11b12e5c90011622dcf92f25af4b8e1a580cf",
+      "bytes": 1446
+    },
+    {
+      "path": "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+      "bytes": 5060
+    },
+    {
+      "path": "packets/refiner/REFINER_HAND_SIMULATOR_Q7_B_PASS2_RANK_SIZING_2026-09-23.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "8acc6811a880df96c943b53481743f14ca9240996b59e073f2ee2aacd81d3118",
+      "bytes": 1977
+    },
+    {
+      "path": "packets/refiner/REFINER_PASS1_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "2f5beac53925ed9452c8cda05825c6da5b51593b183877a63770bbb0df9f584e",
+      "bytes": 3518
+    },
+    {
+      "path": "packets/refiner/REFINER_PASS1_FREEZE_Q7_B_CADENCE_600_2026-09-23.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "91506143c2f75e27dd8a2593e9b484457b61e5b1a8537002bf2b4f4be435ec97",
+      "bytes": 3470
+    },
+    {
+      "path": "packets/refiner/REFINER_PASS2_DIAGNOSIS_Q7_ARM_B_2026-09-23.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "a9539677db0c775534f3b15c07bf572d3d8877844867561e49b059716f1af292",
+      "bytes": 3911
+    },
+    {
+      "path": "packets/refiner/REFINER_PASS2_FREEZE_Q7_B_PORTFOLIO_RANK_SIZING_2026-09-23.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "5f70d83abe5f45f01a29f5bf4bf10484f934715990aed4759630ee6f90392bfd",
+      "bytes": 4344
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/adaptive_policy.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+      "bytes": 11000
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/factorial_policy.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+      "bytes": 3624
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/queue_policies.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+      "bytes": 11366
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/replay_v2.py",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+      "bytes": 18973
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/inputs/manifest.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+      "bytes": 50950
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/inputs/markets.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+      "bytes": 9697
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/inputs/week_membership.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c",
+      "bytes": 1166
+    },
+    {
+      "path": "kalshi_capital_structure_lab_20260922/FROZEN_EXPERIMENT.json",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "cb9816d4dec5aa992958aeadec02f4bc7efd7ae77f6eb0a94bfa40051f1a204c",
+      "bytes": 4858
+    },
+    {
+      "path": "docs/EXPERIMENT_REGISTRY.md",
+      "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+      "present": true,
+      "recomputed_sha256": "f8e24c19b2299587603b784f33bdc037cea828eb57acd1e5acc9581aff265787",
+      "bytes": 81160
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/pair_policy.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "5b0c2b4438dbf016686fca82293f1825febce38799315ac14708b5a41a394abc",
+      "bytes": 5618
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/Q7_RESULTS.md",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "0b75b48fdb302dd86869e1516bade13f42a1611e5ab150889d1bb6420c8c38e9",
+      "bytes": 3504
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/EXPERIMENT_SPEC.md",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "fe978c80a00dfad52a5ea27ff734c8a26224fe708e5b52a31fb8d4701b533df0",
+      "bytes": 5695
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/FROZEN_EXPERIMENT.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "0a503c3ed0b6e7734ddb236fae687bce3c2cf3cf7138dc10b821262af11ce9a8",
+      "bytes": 1393
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/README.md",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "ef03704e996658771f0bffe7bfd39b5dbb695eeb2cc9659810505c1278ac4ead",
+      "bytes": 1545
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/run_experiment.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "9829f078f68d5ac38ec0b816fb38caffb895682e8aebdc9070804325d1fc8bd0",
+      "bytes": 4916
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/q7_analysis.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "7e8139179c74ddefc08d3d089327dad12e68016564907321ec0a0dd872e88342",
+      "bytes": 9679
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/EXTERNAL_ARTIFACTS.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "420a1d5ca5033bd0dd99239249891058a08d146a51224e238cf3814560c5f929",
+      "bytes": 13856
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/effects.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "90c9a2c95c59c03003fdb0653fc1a7f03dc56951f34f19fefa84e655404d57c0",
+      "bytes": 1799
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/selection.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "c88164646a7fc35962f90d32d496af211ec402c24dd0cbcc988ccc33b0b20587",
+      "bytes": 898
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/experiment_summary.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "c22a9ddec133820e23d29a21410cc7d88010faae336cd179cc9b851851cb653f",
+      "bytes": 206059
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/verification.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "4d5971ed28ade1d10bf24f701362389cc35fbbf161e5671ada4177c1803382e3",
+      "bytes": 12148
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/inputs/manifest.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+      "bytes": 50950
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/inputs/markets.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+      "bytes": 9697
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/inputs/week_membership.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c",
+      "bytes": 1166
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/adaptive_policy.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+      "bytes": 11000
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/factorial_policy.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+      "bytes": 3624
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/queue_policies.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+      "bytes": 11366
+    },
+    {
+      "path": "nfl_factorial_lab_20260921/replay_v2.py",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+      "bytes": 18973
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "9c38520c3f74ba885b0ec62f296187c907c2f5a1b10e7028e36d61ee8a420661",
+      "bytes": 11314
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "8e4785ab3390eca4e3f6e217acaacb2839b5a3079a6f91decfdcd233140c7fb2",
+      "bytes": 11303
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "c84e5ba6256ec19927f617e8cea73be725d10c6f9de543b9f8fbaeac46e8d0f8",
+      "bytes": 11434
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "04a7c22b5e09a45b17630346ecbb69efa1c91aeceb1df638d44af2bfb313a81f",
+      "bytes": 11419
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "9b08f766c746c912fe4722d37d1441d73a0c7a8f4e2c5b75aaf449a09634687b",
+      "bytes": 11331
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "695faf97e395aa344818bf30ddb4e4f98c7fa6d742b2cc7b39dc3ade8d2c9a75",
+      "bytes": 11314
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "06bf0df0d0b2f53de73f96b114cdee3beb7cc9f1657a8f300aa1711da5fb9802",
+      "bytes": 11459
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "f23cfb865ff22e6ba091d44aa75951398511ff9c1e3ec719627545cc45b4538b",
+      "bytes": 11439
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "c5d9aa44ed894090565ac86de607ebb93b62f785e47ad6552ec0aa23d6aac7f8",
+      "bytes": 11324
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "904806f25d84dbf1368b70e12ec89f58284395bd2fe37e26444ea17b98f68694",
+      "bytes": 11211
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "a213b86a9d72b07c41e4d19dc43d92ebff1a5a5ed83b0dcbb3a850a893132902",
+      "bytes": 11415
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "495a1dc9b61c83092b1f724ce028bb312b764ba04b119dcdae924c8320fb7e06",
+      "bytes": 11283
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "60cb503583ce2967bf4c965c905682d3a9ffb62e9bc1d35196aee7d49599d4b8",
+      "bytes": 11309
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "080e8f8e5fd3182a5f459e7d649c9410a653dca5033c029dca93239674c2bd66",
+      "bytes": 11179
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "d7c6626fdbd02f3faa42a9a9af0e5f0674a5f8259259a893aa07d5cfbc119fdc",
+      "bytes": 11419
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "present": true,
+      "recomputed_sha256": "47ffb39863dc0651371c25f539510b159b6e9f4df7703c8b02263b31162aaf1f",
+      "bytes": 11313
+    }
+  ],
+  "packet_files_excluding_this_manifest": [
+    {
+      "path": "lab/governance/astra/packets/q7_reconciliation_20260924/reconcile_extract.py",
+      "sha256": "b8695527a4a6e572e1cb125c13280d592e6a288831bf3850c5cfd9d5d749e031",
+      "bytes": 24096
+    },
+    {
+      "path": "lab/governance/astra/packets/q7_reconciliation_20260924/Q7_RECONCILIATION_MEMO_2026-09-24.md",
+      "sha256": "0fe219561592ac4c13584017609363f238a08b47069c677c600e4d1482c882c9",
+      "bytes": 47631
+    }
+  ],
+  "arm_crosswalk": [
+    {
+      "main_label": "A",
+      "main_definition": "Original AdaptiveReplay baseline router, pair_check false",
+      "branch_label": "router_off",
+      "branch_definition": "Untouched AdaptiveReplay baseline",
+      "relation": "code_path_counterpart",
+      "output_equality": "NOT_SCORED_MAIN_LEDGER_ABSENT"
+    },
+    {
+      "main_label": "B",
+      "main_definition": "Original router, pair_check true, quote() gate skips a new submit when the key is blocked and no working order exists",
+      "branch_label": "router_on",
+      "branch_definition": "GuardedRouter.choose filters the selected set and applies bounded_quantity on inventory offsets when margin fails",
+      "relation": "role_analogy_different_policy",
+      "label_collision": true,
+      "output_equality": "NOT_EQUIVALENT_POLICY"
+    },
+    {
+      "main_label": "C",
+      "main_definition": "Q6 allocator label 000 with the combined-cost veto removed",
+      "branch_label": "allocator_off",
+      "branch_definition": "PairAllocator guard false; rank_without_margin_rejection",
+      "relation": "code_path_counterpart_plus_logging_difference",
+      "output_equality": "NOT_SCORED_MAIN_LEDGER_ABSENT"
+    },
+    {
+      "main_label": "D",
+      "main_definition": "Untouched Q6 FactorialReplay label 000, pair_check true",
+      "branch_label": "allocator_on",
+      "branch_definition": "PairAllocator guard true; delegates portfolio_rank to FactorialReplay",
+      "relation": "code_path_counterpart_plus_logging_difference",
+      "output_equality": "NOT_SCORED_DECISION_PIN_HASHES_DIFFER_AND_BYTES_ABSENT"
+    },
+    {
+      "main_label": "B0",
+      "main_definition": "Rehab alias of Q7 Arm B",
+      "branch_label": null,
+      "relation": "no_branch_counterpart"
+    },
+    {
+      "main_label": "B1",
+      "main_definition": "Arm B plus 600-second new-exposure admission cadence; frozen not run",
+      "branch_label": null,
+      "relation": "no_branch_counterpart"
+    },
+    {
+      "main_label": "B2",
+      "main_definition": "Arm B plus portfolio_rank capital-budget sizing; frozen not run",
+      "branch_label": null,
+      "relation": "no_branch_counterpart"
+    }
+  ],
+  "inputs": {
+    "manifest_bytes_equal": true,
+    "markets_bytes_equal": true,
+    "week_membership_bytes_equal": true,
+    "manifest_sha256_field": {
+      "events.jsonl.gz": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4",
+      "markets.json": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+      "week_membership.json": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+    },
+    "main_manifest_sha256_field": {
+      "events.jsonl.gz": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4",
+      "markets.json": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+      "week_membership.json": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+    },
+    "cohort": {
+      "cohort": "combined",
+      "games": 31,
+      "markets": 62,
+      "trades": 681732,
+      "quotes": 364988,
+      "bankroll_note": "ONE shared $5,000 account; overlapping windows run chronologically."
+    },
+    "week_counts": {
+      "week1": 16,
+      "week2": 15
+    },
+    "game_count": 31,
+    "events_jsonl_gz_in_either_commit": false,
+    "same_declared_manifest": true
+  },
+  "seeds": "NOT_FOUND",
+  "main_in_tree_pnl": {
+    "paircheck_status": "NOT_RUN_INPUTS_MISSING",
+    "paircheck_scenarios_executed": 0,
+    "paircheck_pnl": null,
+    "rehab_p1_status": "NOT_RUN_FREEZE_SCORE_REFUSED",
+    "rehab_p1_pnl": null,
+    "rehab_p2_status": "NOT_RUN_FREEZE_SCORE_REFUSED",
+    "rehab_p2_pnl": null
+  },
+  "main_parent_ledger_pins": {
+    "source": "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "commit": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+    "paircheck_effects_stored_pin": {
+      "sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+      "bytes": 2237
+    },
+    "artifacts": [
+      {
+        "name": "q3300_d0.25_B.json",
+        "stored_pin_sha256": "370ccbcf342db59aa1697d448d3274791cf17c015d8e9eead17d788fbe79ffb5",
+        "stored_pin_bytes": 56907767,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_B_decisions.jsonl.gz",
+        "stored_pin_sha256": "c0bad55ee32de8ffcd51f6143cdec377c0e93c4730fc4a9297a83f8f8aa9eeea",
+        "stored_pin_bytes": 66,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_B_fills.jsonl.gz",
+        "stored_pin_sha256": "6c050d73f52e1cd8e4a2c582efdcfdb5f0933621611d09ad257a3f9bef2cddf4",
+        "stored_pin_bytes": 559974,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_B_orders.jsonl.gz",
+        "stored_pin_sha256": "47fba8c5d188e8b048ab150d744ecb4e259d93079854faeea1610b082fccfe15",
+        "stored_pin_bytes": 568542,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_D.json",
+        "stored_pin_sha256": "fc38cfbc134ca313a6cd2b8763ef49c3a56f6b5cc763c50f82e2b4545cda898f",
+        "stored_pin_bytes": 2356708,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_D_decisions.jsonl.gz",
+        "stored_pin_sha256": "c26827d0dbe1d9426343deeecc0d8b3e389ccf60f9dd24b683ff1ca1839066e4",
+        "stored_pin_bytes": 838293,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_D_fills.jsonl.gz",
+        "stored_pin_sha256": "52d27b67ef097b50171ef59acb8309fdf80f9c964fe7656d674d56000c927d23",
+        "stored_pin_bytes": 534943,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d0.25_D_orders.jsonl.gz",
+        "stored_pin_sha256": "9f3417777cdffa17d5caaa2d14463976afd3c0a643e4eefd902f817842534bc7",
+        "stored_pin_bytes": 569765,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_B.json",
+        "stored_pin_sha256": "fa2ccdb8514191276ff0a3792fc12a9e1d2ffdd5b550f9a08510f7af806899ad",
+        "stored_pin_bytes": 56896894,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_B_decisions.jsonl.gz",
+        "stored_pin_sha256": "90a3afd9fd508a5d4f7ed548286aed64fbd1fa2d97e86f84581953a1ef882367",
+        "stored_pin_bytes": 63,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_B_fills.jsonl.gz",
+        "stored_pin_sha256": "13d871cc02692e7c9d080c4e80eb104244210479fcfce8722a817d84fdb628ce",
+        "stored_pin_bytes": 532691,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_B_orders.jsonl.gz",
+        "stored_pin_sha256": "76ee281e81c57762c899276d7846541508f2ce8649a5679fdf9f93b7b8a32a8e",
+        "stored_pin_bytes": 562904,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_D.json",
+        "stored_pin_sha256": "a0a638407edd78e1bf282cda1012a2cb8a6929c98c03ced799538cda1efe2d33",
+        "stored_pin_bytes": 2356849,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_D_decisions.jsonl.gz",
+        "stored_pin_sha256": "af14f73e241d6b7dfebf90fa6e7a15729632c2fd6956bed1f8f6d8e391570d6e",
+        "stored_pin_bytes": 837745,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_D_fills.jsonl.gz",
+        "stored_pin_sha256": "fb07cdcab2ab36cf8229db77f962bd94e8952050e9365dd3b3fa472fcb1679dc",
+        "stored_pin_bytes": 509313,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q3300_d5_D_orders.jsonl.gz",
+        "stored_pin_sha256": "d215a015c356c62c250b770a2ca0825bae44786daeb38384da59a469702a28f2",
+        "stored_pin_bytes": 565589,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_B.json",
+        "stored_pin_sha256": "e79f367706849b3e4306cc541ac3993c90fbc5b69a7e41bee9b258f3f33ce590",
+        "stored_pin_bytes": 56496246,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_B_decisions.jsonl.gz",
+        "stored_pin_sha256": "034ec66d980a1e7e18159a40bd12746a3754d593429454c18ca968b31b7d068b",
+        "stored_pin_bytes": 67,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_B_fills.jsonl.gz",
+        "stored_pin_sha256": "5f020001eb359adbdfa4b3d8c6b8e87213ec38a61e84264c45cc44fa40fcaa8e",
+        "stored_pin_bytes": 183864,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_B_orders.jsonl.gz",
+        "stored_pin_sha256": "4d8e741da6cc6b516577577536bca43e2c1a4850ceecb7856b9f5473012e2972",
+        "stored_pin_bytes": 561341,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_D.json",
+        "stored_pin_sha256": "283648c2b536c7c55222df486839b51c1bbeb030d361640075672732626eff19",
+        "stored_pin_bytes": 2342036,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_D_decisions.jsonl.gz",
+        "stored_pin_sha256": "27e164f61889d261b072aa5b49aed3675b4daa04dbccf93c6ff6b05568862687",
+        "stored_pin_bytes": 827009,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_D_fills.jsonl.gz",
+        "stored_pin_sha256": "fa0633f1cb12659c3a2c384dad2b2e487046d8361aade1cc73762f34357175eb",
+        "stored_pin_bytes": 174314,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d0.25_D_orders.jsonl.gz",
+        "stored_pin_sha256": "6ccb4d370e8e2707cd7e61ea5d5bc95f363909d0afca5a702b83650380b53e4b",
+        "stored_pin_bytes": 553659,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_B.json",
+        "stored_pin_sha256": "5e7c2e5a48e0ed8815a05fdc9fcced103ebb669a169e12597248257d6df0c591",
+        "stored_pin_bytes": 56496255,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_B_decisions.jsonl.gz",
+        "stored_pin_sha256": "dbde156309f57b8a7735bfd7c1abd7d7f2d423ef51451f7e9b0fa74c06ef1260",
+        "stored_pin_bytes": 64,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_B_fills.jsonl.gz",
+        "stored_pin_sha256": "8281b8afe2c915f952e9225499cc8b95c1fcff51e862df935df6ab30b7207cad",
+        "stored_pin_bytes": 177384,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_B_orders.jsonl.gz",
+        "stored_pin_sha256": "f04aa0aad767eb35a4a10c58af53de0fa29a1a8280f22f5fbec124463ba07447",
+        "stored_pin_bytes": 557508,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_D.json",
+        "stored_pin_sha256": "9a6a600ddc7afd4bce16468d57bccf32a2b60875381ef8c4d3889e0a167dd87e",
+        "stored_pin_bytes": 2342066,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_D_decisions.jsonl.gz",
+        "stored_pin_sha256": "0c3c55742242d5a2cb13e569884d2eff3ff4c33de5e2aba10e84701f01f25ee2",
+        "stored_pin_bytes": 826245,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_D_fills.jsonl.gz",
+        "stored_pin_sha256": "73195f1392d28007fbaee2e7141e0383f4193e4c0f5b13d32919786f9f368497",
+        "stored_pin_bytes": 168092,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      },
+      {
+        "name": "q10000_d5_D_orders.jsonl.gz",
+        "stored_pin_sha256": "df134386a3f3b985a1157bd60c4110bffc76e927da73aa15796f169e21f99cc9",
+        "stored_pin_bytes": 550396,
+        "recomputed_sha256": "NOT_FOUND",
+        "present_in_main_commit": false
+      }
+    ],
+    "q7_packet_pins": {
+      "verification_sha256": "eb1586bf13b1631951a4f177293350cb89fc7948a50fbb7044f4f05313ebc06f",
+      "verification_status": "VERIFIED",
+      "paircheck_effects_sha256": "5d87ea610f22482c980868d8a31a228ca1931368d9eeab73add4256d2e117fdf",
+      "paircheck_effects_status": "COMPLETE",
+      "selection": "NO_NEW_SELECTION",
+      "fallback_shadow": "000",
+      "note": "Cited by the freeze packet. These blobs are not the files in this checkout."
+    },
+    "q7_checkout_observation": {
+      "base": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "verification_path": "nfl_paircheck_lab_20260922/results/verification.json",
+      "verification_sha256": "9cde03dc3d52eb3ab9d18024155c341451de9e1e8836356cdcf3cf1d0ac006e4",
+      "verification_status": "NOT_RUN_INPUTS_MISSING",
+      "paircheck_effects_path": "nfl_paircheck_lab_20260922/results/paircheck_effects.json",
+      "paircheck_effects_present": false,
+      "analysis_status_path": "nfl_paircheck_lab_20260922/results/analysis_status.json",
+      "analysis_status": "NOT_RUN_INPUTS_MISSING",
+      "analysis_status_sha256": "8acec3c77b86abce43b6eb01a941de317f1603a5a30c7ee4bc4582800c119ebb",
+      "note": "Observed on the base checkout. This lab does not rewrite Q7 artifacts and does not treat the in-tree file as the packet VERIFIED hash. Strategy pointer remains the on-tree Q6-000 shadow freeze."
+    }
+  },
+  "branch_scenarios": [
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "9c38520c3f74ba885b0ec62f296187c907c2f5a1b10e7028e36d61ee8a420661",
+      "bytes": 11314,
+      "completed_strategy_pnl": 201.52149999992344,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1437.4750999999899,
+      "fills": 14331,
+      "fills_field_type": "int",
+      "maker_contracts": 357441.87,
+      "taker_contracts": 2477.87,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "8e4785ab3390eca4e3f6e217acaacb2839b5a3079a6f91decfdcd233140c7fb2",
+      "bytes": 11303,
+      "completed_strategy_pnl": 354.33099999998285,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1313.7027999999939,
+      "fills": 13001,
+      "fills_field_type": "int",
+      "maker_contracts": 326041.18,
+      "taker_contracts": 2063.7,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "c84e5ba6256ec19927f617e8cea73be725d10c6f9de543b9f8fbaeac46e8d0f8",
+      "bytes": 11434,
+      "completed_strategy_pnl": 205.94219999993493,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1429.0538999999892,
+      "fills": 14209,
+      "fills_field_type": "int",
+      "maker_contracts": 355070.53,
+      "taker_contracts": 2482.83,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d0.25_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "04a7c22b5e09a45b17630346ecbb69efa1c91aeceb1df638d44af2bfb313a81f",
+      "bytes": 11419,
+      "completed_strategy_pnl": 345.24439999997867,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1309.016999999992,
+      "fills": 12853,
+      "fills_field_type": "int",
+      "maker_contracts": 324967.78,
+      "taker_contracts": 2068.66,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "9b08f766c746c912fe4722d37d1441d73a0c7a8f4e2c5b75aaf449a09634687b",
+      "bytes": 11331,
+      "completed_strategy_pnl": 198.4082999999182,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1437.8165999999912,
+      "fills": 14045,
+      "fills_field_type": "int",
+      "maker_contracts": 356377.24,
+      "taker_contracts": 2725.94,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "695faf97e395aa344818bf30ddb4e4f98c7fa6d742b2cc7b39dc3ade8d2c9a75",
+      "bytes": 11314,
+      "completed_strategy_pnl": 353.8933999999563,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1311.8981999999944,
+      "fills": 12716,
+      "fills_field_type": "int",
+      "maker_contracts": 325168.83,
+      "taker_contracts": 2128.93,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "06bf0df0d0b2f53de73f96b114cdee3beb7cc9f1657a8f300aa1711da5fb9802",
+      "bytes": 11459,
+      "completed_strategy_pnl": 203.26209999991897,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1430.646099999991,
+      "fills": 13917,
+      "fills_field_type": "int",
+      "maker_contracts": 354337.66,
+      "taker_contracts": 2730.9,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q3300_d5_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "f23cfb865ff22e6ba091d44aa75951398511ff9c1e3ec719627545cc45b4538b",
+      "bytes": 11439,
+      "completed_strategy_pnl": 345.417399999943,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 1306.7423999999926,
+      "fills": 12594,
+      "fills_field_type": "int",
+      "maker_contracts": 323972.15,
+      "taker_contracts": 2133.89,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 3300,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "c5d9aa44ed894090565ac86de607ebb93b62f785e47ad6552ec0aa23d6aac7f8",
+      "bytes": 11324,
+      "completed_strategy_pnl": 10.354599999961465,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 561.3920999999967,
+      "fills": 4696,
+      "fills_field_type": "int",
+      "maker_contracts": 132408.21,
+      "taker_contracts": 2491.1899999999996,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "904806f25d84dbf1368b70e12ec89f58284395bd2fe37e26444ea17b98f68694",
+      "bytes": 11211,
+      "completed_strategy_pnl": 90.44509999996444,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 504.94709999999776,
+      "fills": 4204,
+      "fills_field_type": "int",
+      "maker_contracts": 118059.95,
+      "taker_contracts": 2340.0299999999997,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "a213b86a9d72b07c41e4d19dc43d92ebff1a5a5ed83b0dcbb3a850a893132902",
+      "bytes": 11415,
+      "completed_strategy_pnl": 14.292899999959445,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 562.5955999999968,
+      "fills": 4754,
+      "fills_field_type": "int",
+      "maker_contracts": 132373.11,
+      "taker_contracts": 2547.6099999999997,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d0.25_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "495a1dc9b61c83092b1f724ce028bb312b764ba04b119dcdae924c8320fb7e06",
+      "bytes": 11283,
+      "completed_strategy_pnl": 75.9048999999668,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 509.4154999999978,
+      "fills": 4224,
+      "fills_field_type": "int",
+      "maker_contracts": 119123.19,
+      "taker_contracts": 2366.37,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 0.25,
+      "cancel_delay_seconds": 0.25,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "60cb503583ce2967bf4c965c905682d3a9ffb62e9bc1d35196aee7d49599d4b8",
+      "bytes": 11309,
+      "completed_strategy_pnl": 0.3238999999530279,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 565.116299999998,
+      "fills": 4675,
+      "fills_field_type": "int",
+      "maker_contracts": 132490.64,
+      "taker_contracts": 2648.3399999999997,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_router_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "080e8f8e5fd3182a5f459e7d649c9410a653dca5033c029dca93239674c2bd66",
+      "bytes": 11179,
+      "completed_strategy_pnl": 79.0757999999596,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 508.2775999999982,
+      "fills": 4184,
+      "fills_field_type": "int",
+      "maker_contracts": 117671.36,
+      "taker_contracts": 2581.08,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_off.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "d7c6626fdbd02f3faa42a9a9af0e5f0674a5f8259259a893aa07d5cfbc119fdc",
+      "bytes": 11419,
+      "completed_strategy_pnl": 6.690399999954934,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 566.0138999999978,
+      "fills": 4744,
+      "fills_field_type": "int",
+      "maker_contracts": 132380.01,
+      "taker_contracts": 2704.77,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    },
+    {
+      "path": "nfl_pair_price_lab_20260921/results/q10000_d5_allocator_on.json",
+      "commit": "01c726ae9244d801d359e00df67d6a71f4012669",
+      "recomputed_sha256": "47ffb39863dc0651371c25f539510b159b6e9f4df7703c8b02263b31162aaf1f",
+      "bytes": 11313,
+      "completed_strategy_pnl": 69.05739999996058,
+      "unresolved_contracts": 0.0,
+      "all_flat": true,
+      "fees": 510.58159999999833,
+      "fills": 4204,
+      "fills_field_type": "int",
+      "maker_contracts": 118594.39,
+      "taker_contracts": 2510.29,
+      "per_game_count": 31,
+      "matches_experiment_summary_completed_strategy_pnl": true,
+      "queue_early": 10000,
+      "queue_last12h": 1327847.005,
+      "order_delay_seconds": 5,
+      "cancel_delay_seconds": 5,
+      "fill_participation": 0.5,
+      "maker_coefficient": 0.0175,
+      "taker_coefficient": 0.07,
+      "quote_source": "candles"
+    }
+  ],
+  "recomputed_ratios": {
+    "branch_router_gap": {
+      "formula": "completed_strategy_pnl(router_on) - completed_strategy_pnl(router_off)",
+      "display_formula": "q7_analysis.money: f\"${x:+,.2f}\"",
+      "by_stress": [
+        {
+          "stress": "q3300_d0.25",
+          "formula_router_gap": "completed_strategy_pnl(router_on) - completed_strategy_pnl(router_off)",
+          "router_on": 354.33099999998285,
+          "router_off": 201.52149999992344,
+          "recomputed_router_gap": 152.80950000005942,
+          "stored_effects_guard_effect_router": 152.80950000005942,
+          "router_gap_matches_effects_json": true,
+          "formula_router_retention_vs_allocator_on": "completed_strategy_pnl(router_on) / completed_strategy_pnl(allocator_on)",
+          "allocator_on": 345.24439999997867,
+          "recomputed_router_on_over_allocator_on": 1.0263193262512142,
+          "router_on_ge_95pct_allocator_on": true,
+          "stored_selection_retains_allocator": true,
+          "retention_check_matches_selection_json": true,
+          "formula_allocator_gap": "completed_strategy_pnl(allocator_on) - completed_strategy_pnl(allocator_off)",
+          "recomputed_allocator_gap": 139.30220000004374,
+          "stored_effects_guard_effect_allocator": 139.30220000004374,
+          "allocator_gap_matches_effects_json": true,
+          "displayed_router_on": "$+354.33",
+          "displayed_router_off": "$+201.52",
+          "displayed_router_gap": "$+152.81"
+        },
+        {
+          "stress": "q3300_d5",
+          "formula_router_gap": "completed_strategy_pnl(router_on) - completed_strategy_pnl(router_off)",
+          "router_on": 353.8933999999563,
+          "router_off": 198.4082999999182,
+          "recomputed_router_gap": 155.48510000003807,
+          "stored_effects_guard_effect_router": 155.48510000003807,
+          "router_gap_matches_effects_json": true,
+          "formula_router_retention_vs_allocator_on": "completed_strategy_pnl(router_on) / completed_strategy_pnl(allocator_on)",
+          "allocator_on": 345.417399999943,
+          "recomputed_router_on_over_allocator_on": 1.024538428000485,
+          "router_on_ge_95pct_allocator_on": true,
+          "stored_selection_retains_allocator": true,
+          "retention_check_matches_selection_json": true,
+          "formula_allocator_gap": "completed_strategy_pnl(allocator_on) - completed_strategy_pnl(allocator_off)",
+          "recomputed_allocator_gap": 142.155300000024,
+          "stored_effects_guard_effect_allocator": 142.155300000024,
+          "allocator_gap_matches_effects_json": true,
+          "displayed_router_on": "$+353.89",
+          "displayed_router_off": "$+198.41",
+          "displayed_router_gap": "$+155.49"
+        },
+        {
+          "stress": "q10000_d0.25",
+          "formula_router_gap": "completed_strategy_pnl(router_on) - completed_strategy_pnl(router_off)",
+          "router_on": 90.44509999996444,
+          "router_off": 10.354599999961465,
+          "recomputed_router_gap": 80.09050000000298,
+          "stored_effects_guard_effect_router": 80.09050000000298,
+          "router_gap_matches_effects_json": true,
+          "formula_router_retention_vs_allocator_on": "completed_strategy_pnl(router_on) / completed_strategy_pnl(allocator_on)",
+          "allocator_on": 75.9048999999668,
+          "recomputed_router_on_over_allocator_on": 1.1915581207537853,
+          "router_on_ge_95pct_allocator_on": true,
+          "stored_selection_retains_allocator": true,
+          "retention_check_matches_selection_json": true,
+          "formula_allocator_gap": "completed_strategy_pnl(allocator_on) - completed_strategy_pnl(allocator_off)",
+          "recomputed_allocator_gap": 61.612000000007356,
+          "stored_effects_guard_effect_allocator": 61.612000000007356,
+          "allocator_gap_matches_effects_json": true,
+          "displayed_router_on": "$+90.45",
+          "displayed_router_off": "$+10.35",
+          "displayed_router_gap": "$+80.09"
+        },
+        {
+          "stress": "q10000_d5",
+          "formula_router_gap": "completed_strategy_pnl(router_on) - completed_strategy_pnl(router_off)",
+          "router_on": 79.0757999999596,
+          "router_off": 0.3238999999530279,
+          "recomputed_router_gap": 78.75190000000657,
+          "stored_effects_guard_effect_router": 78.75190000000657,
+          "router_gap_matches_effects_json": true,
+          "formula_router_retention_vs_allocator_on": "completed_strategy_pnl(router_on) / completed_strategy_pnl(allocator_on)",
+          "allocator_on": 69.05739999996058,
+          "recomputed_router_on_over_allocator_on": 1.1450735185513028,
+          "router_on_ge_95pct_allocator_on": true,
+          "stored_selection_retains_allocator": true,
+          "retention_check_matches_selection_json": true,
+          "formula_allocator_gap": "completed_strategy_pnl(allocator_on) - completed_strategy_pnl(allocator_off)",
+          "recomputed_allocator_gap": 62.367000000005646,
+          "stored_effects_guard_effect_allocator": 62.367000000005646,
+          "allocator_gap_matches_effects_json": true,
+          "displayed_router_on": "$+79.08",
+          "displayed_router_off": "$+0.32",
+          "displayed_router_gap": "$+78.75"
+        }
+      ],
+      "headline_display": [
+        {
+          "stress": "q3300_d0.25",
+          "q7_results_router_on": "$+354.33",
+          "recomputed_display_router_on": "$+354.33",
+          "router_on_display_matches": true,
+          "q7_results_router_off": "$+201.52",
+          "recomputed_display_router_off": "$+201.52",
+          "router_off_display_matches": true,
+          "q7_results_router_gap_line": null,
+          "q7_results_router_gap": "$+152.81",
+          "recomputed_display_router_gap": "$+152.81",
+          "router_gap_display_matches": true
+        },
+        {
+          "stress": "q3300_d5",
+          "q7_results_router_on": "$+353.89",
+          "recomputed_display_router_on": "$+353.89",
+          "router_on_display_matches": true,
+          "q7_results_router_off": "$+198.41",
+          "recomputed_display_router_off": "$+198.41",
+          "router_off_display_matches": true,
+          "q7_results_router_gap_line": null,
+          "q7_results_router_gap": "$+155.49",
+          "recomputed_display_router_gap": "$+155.49",
+          "router_gap_display_matches": true
+        },
+        {
+          "stress": "q10000_d0.25",
+          "q7_results_router_on": "$+90.45",
+          "recomputed_display_router_on": "$+90.45",
+          "router_on_display_matches": true,
+          "q7_results_router_off": "$+10.35",
+          "recomputed_display_router_off": "$+10.35",
+          "router_off_display_matches": true,
+          "q7_results_router_gap_line": null,
+          "q7_results_router_gap": "$+80.09",
+          "recomputed_display_router_gap": "$+80.09",
+          "router_gap_display_matches": true
+        },
+        {
+          "stress": "q10000_d5",
+          "q7_results_router_on": "$+79.08",
+          "recomputed_display_router_on": "$+79.08",
+          "router_on_display_matches": true,
+          "q7_results_router_off": "$+0.32",
+          "recomputed_display_router_off": "$+0.32",
+          "router_off_display_matches": true,
+          "q7_results_router_gap_line": null,
+          "q7_results_router_gap": "$+78.75",
+          "recomputed_display_router_gap": "$+78.75",
+          "router_gap_display_matches": true
+        }
+      ],
+      "reproduces_from_in_tree_scenario_json": true
+    },
+    "branch_router_on_over_allocator_on": {
+      "formula": "completed_strategy_pnl(router_on) / completed_strategy_pnl(allocator_on)",
+      "note": "This is not the main B/D ratio.",
+      "by_stress": [
+        {
+          "stress": "q3300_d0.25",
+          "ratio": 1.0263193262512142,
+          "router_on_ge_95pct_allocator_on": true,
+          "matches_selection_json": true
+        },
+        {
+          "stress": "q3300_d5",
+          "ratio": 1.024538428000485,
+          "router_on_ge_95pct_allocator_on": true,
+          "matches_selection_json": true
+        },
+        {
+          "stress": "q10000_d0.25",
+          "ratio": 1.1915581207537853,
+          "router_on_ge_95pct_allocator_on": true,
+          "matches_selection_json": true
+        },
+        {
+          "stress": "q10000_d5",
+          "ratio": 1.1450735185513028,
+          "router_on_ge_95pct_allocator_on": true,
+          "matches_selection_json": true
+        }
+      ]
+    },
+    "main_B_over_D": {
+      "stored_text_contains_0.843": true,
+      "stored_sentence": "1. Under the **pre-declared** selection rule, Arm B (original router \u00b7 pair check ON) is **not** eligible to displace shadow `000`: `retains_95pct_of_D=false` on **every** stress (primary B/D = **0.843**; harsh queues 0.600 / 0.548).",
+      "formula_that_would_apply": "completed_strategy_pnl(B) / completed_strategy_pnl(D)",
+      "primary_stress_named_by_diagnosis": "primary",
+      "numerator_completed_strategy_pnl_B": "NOT_FOUND",
+      "denominator_completed_strategy_pnl_D": "NOT_FOUND",
+      "recomputed_ratio": "NOT_FOUND",
+      "reproduces_from_ledger": false,
+      "reason": "B and D scenario JSON ledgers and paircheck_effects.json are absent from the pinned main commit"
+    },
+    "main_pass2_approximate_prose": {
+      "stored_sentence": "2. On primary stresses, B1 **destroyed** prior check lift vs continuous B0 (q3300_d0.25: B0\u2248291 \u00b7 B1\u2248176 \u00b7 D\u2248345; B1\u224851% of D). Cadence-600 is not a free add-on on this line.",
+      "recomputed_from_ledger": "NOT_FOUND"
+    }
+  },
+  "not_found": [
+    "events.jsonl.gz bytes on both pins",
+    "nfl_paircheck_lab_20260922/results/paircheck_effects.json",
+    "in-tree completed_strategy_pnl, unresolved_contracts, fees, fills, all_flat for main arms A B C D",
+    "parent B and D ledger bytes listed in PARENT_Q7_BD_LEDGER_SOURCE_PINS",
+    "main arms A and C ledger pins",
+    "decision counts inside main B decisions gzip pins",
+    "which harsh stress is 0.600 and which is 0.548",
+    "numerator and denominator of stored 0.843",
+    "rehab experiment_summary.json and B0 B1 B2 D scenario ledgers",
+    "exact values behind pass-2 prose B0\u2248291 B1\u2248176 D\u2248345 \u224851% \u224888%",
+    "packets/Q7_EXAMINER_SCORECARD_2026-09-22.md",
+    "reports/RPT-Q7.md",
+    "branch fills orders decisions pairs jsonl.gz bytes",
+    "RNG seed"
+  ]
+}
