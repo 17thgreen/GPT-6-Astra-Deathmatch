@@ -1,0 +1,24 @@
+{
+  "type": "CONDUCTOR_ACCEPT",
+  "experiment": "ATP-RJ (KXATPMATCH settled-resolution join harness)",
+  "issued_at_et": "2026-09-24T19:52-04:00",
+  "issuer": "The Conductor \"KALSHI\"",
+  "decision": "ACCEPT + IMPLEMENT GO",
+  "base_main": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "conductor_verified_sha256": {
+    "freeze": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+    "maximize_pin_1948ET": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+    "suggested_accept_ping": "a666102da44910288756896aaa30b3d2bfde4fff867fca9fff0cd1b75420c28b",
+    "pre_accept_bundle_tgz": "531d3b41d58f26a9c63eb0696853bbd6b40b74e3b2e8eb4adb9c9cae0eaf0075"
+  },
+  "knob": "join_gate only (J0 nonempty_result_required vs J1 occurrence_datetime_match; expected_expiration_time fallback labeled per row, never written into occurrence_datetime)",
+  "nearest_dead_card": "ATP-FQ PR34 merge 438f4abf (PR35 closed duplicate)",
+  "conditions": [
+    "Exactly one cloud agent, launched by Variants only after this file is in the bundle.",
+    "Scout N=30 is a pin; never copied into settled_join_n. No backfill of 429 gaps or events page 2.",
+    "Commit the v1.2 scorecard template bytes (56bcf626) in-repo in this PR so the pinned template resolves on main.",
+    "SCORABLE-FIRST: this is the last settled-join stub accepted without a measurement path. The PR must include a runnable measurement mode that computes settled_join_n / occurrence_match_n / fallback_join_n on KXATPMATCH markets settled AFTER this ACCEPT timestamp (untouched evaluation set), so Examiner can score it once Clock admits. ETH-RJ freeze will not be accepted until ATP-RJ has a measured settled_join_n or a documented blocker.",
+    "No live orders, no invented results/fills/PnL/books/occurrence_datetime."
+  ],
+  "holds_unchanged": "S1/S2/R2-P4 held pending C1 PIT@CLE T-7d smoke PASS."
+}

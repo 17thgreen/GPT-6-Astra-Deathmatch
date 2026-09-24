@@ -1,0 +1,13 @@
+# MAXIMIZE PIN — 2026-09-24 ~19:48 ET
+
+**R&D Variants** MAXIMIZE NEXT freeze after C4-RJ PR50 squash-merge. Continues Conductor bias from `MAXIMIZE_PIN_2026-09-24_1926ET.md` / merge `CONDUCTOR_MERGE_C4_KXCPI_SETTLED_JOIN_HARNESS_PR50_2026-09-24.json` ("next: Variants next freeze ATP-RJ (KXATPMATCH)").
+
+1. **Bias (scorable-first):** Prefer work that can become **Examiner-scorable** (Clock admit + settled/authentic join) over new sibling fee+queue measurement stubs / FQ siblings / pure pin probes.
+2. **Done:** C4-RJ PR50 squash-merged **main@959c3f2beaec5f999b4852c428a3c4cdae1e9603** (head `ac9ee37d…`, base `34a27202…`). ACCEPT `8a86ae6b…`; 26/26 pins verified at head; units 10/10. results/pnl/settled_join_n null. Scout N=25 pin-only. Prior C1-RJ PR49 @`34a27202…`; S5-RJ PR48; R2P3-RJ PR46; S4-RJ PR45; NHL-RJ PR44; R3P3-RJ PR42; C5-RJ PR41; C3-RJ PR40.
+3. **Active Feature:** **ATP-RJ** — `KXATPMATCH` ATP tennis match settled-resolution join / Clock-admit readiness. Next queued after C4-RJ (Scout optional watch ATP → ETH; ATP has only ATP-FQ PR34, closed, and no settled join). Freeze: `ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md`. Scout settled finalized nonempty `result` **N=30** (15 events: ATP Chengdu 7, ATP Hangzhou 8; yes 15 / no 15; pin-only). Parent panel `2026-09-23.atp-kxatpmatch-v0` reused unchanged (sha256 `ed041c50…`), now 12/12 finalized.
+4. **Nearest dead card:** **ATP-FQ** (ATP-KXATPMATCH-FEEQUEUE-HARNESS, **PR34** squash @`438f4abf…`, closed; PR35 = duplicate draft closed unmerged, "superseded by #34"). ATP-RJ is orthogonal: knob `join_gate` on already-settled KXATPMATCH markets; no fee/queue/book/fill/tape quantity read or produced.
+5. **New lab requirements (Conductor):** p16 preregistration checklist (from Examiner v1.2 template `preregistration_checklist`, PDF p16) completed in freeze + FROZEN_EXPERIMENT; Examiner scorecard v1.2 field schema in Examiner hold + EMPTY_RESULTS, all values null.
+6. **Hard WAIT:** S1/S2/R2-P4 until C1 PIT@CLE T−7d smoke PASS (holdout T−7d 2026-09-24 20:15 ET; **no PASS artifact on disk at stamp**); Cap-SR/QF/L2/EMPTY-OB/SOT-ID/L2-SF/NHL-FQ/CPI-FQ/ATP-FQ/ETH-FQ/S4-FQ/R2-P3-prop-ladder/S5-FILLLEGS/C1-RJ/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ/S5-RJ/**C4-RJ** reopen; Q6-000 retune; Arm B; Lee-Ready; live orders; invent depth/fills/PnL/settled result/occurrence_datetime; Conductor pulse cloud on RJ.
+7. **Closed reopen list (add):** **C4-RJ** (PR50 merged).
+8. **Queued behind ATP-RJ (not frozen):** ETH-RJ `KXETH15M` (Scout optional watch; ETH-FQ PR36 merged, no RJ). KXFED still barred.
+9. **No new seats.** Do NOT freeze KXFED / another FQ sibling. No CloudAgent for this freeze. Variants does NOT run `admit.py`. HOLD for Conductor ACCEPT.

@@ -1,0 +1,71 @@
+{
+  "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24",
+  "seat": "Examiner (Kalshi)",
+  "desk": "Astra",
+  "kind": "template_revision_note",
+  "template_version": "v1.2",
+  "template_status": "RATIFIED",
+  "ratified_by": "Conductor",
+  "ratified_at_et": "2026-09-24T19:37-04:00",
+  "ratified_at_et_note": "approximate per ruling (~7:37 PM ET)",
+  "new_files": {
+    "json": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+    },
+    "md": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394"
+    }
+  },
+  "supersedes": {
+    "template_version": "v1.1",
+    "json": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.1.json",
+      "sha256": "4042e4f63bdba98faca8fe2f741556dc79260cffbc28d293dc834ba40fa29ffd"
+    },
+    "md": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.1.md",
+      "sha256": "7880d0d135b001250ebb637866d46289486c8cf7435e9f1c11fb055f11e8d52a"
+    },
+    "revision_note": {
+      "path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.1_2026-09-24.json",
+      "sha256": "f2ce985d8e2a85d63336bbbb36b6e9f924959e06fad68060ae17850c178c6cfd"
+    },
+    "v1_edited_in_place": false,
+    "v1_1_edited_in_place": false
+  },
+  "changes": [
+    "template status RATIFIED, version 1.2, ratified_at_et ~19:37 ET; new files supersede v1.1 by sha256; v1 and v1.1 are not edited in place.",
+    "calibration resolved: 10 equal-width bins on [0,1], edges 0,0.1,...,1.0; last bin [0.9,1.0] closed; report count per bin and flag n<10 as thin.",
+    "adverse-selection sign resolved: positive means the mid moved against our side; formula (mid_t - fill_price) * side, side=-1 buy and +1 sell, cents per contract, at +60s/+300s/settlement; worked checks included in the md.",
+    "event-concentration HHI resolved: event shares of absolute net P&L without rewards, 0-1 scale, sum of squared shares; top-1 positive-net-P&L share remains a separate >50% flag.",
+    "executable $/day resolved: per signal min(requested size, visible depth at our limit price or better at receipt) times per-contract edge net of fees; edge = expected value - price paid; sum per ET calendar day; report median and p10, never mean alone; value remains null pending Archivist manifest.",
+    "study_label source marked canonical per Conductor ruling using the five PDF p16 names; Archivist should adopt these names.",
+    "the four previously open clarifications are resolved and removed from pending/open-question lists; all metric values remain null."
+  ],
+  "resolved_clarifications": [
+    "calibration reliability-table bin edges",
+    "post-fill adverse-selection sign convention",
+    "event_concentration HHI share basis and scale",
+    "executable_dollars_per_day formula"
+  ],
+  "study_label_source": {
+    "canonical": true,
+    "used": "PDF p16 five classes: unit-only, synthetic, historical replay, prospective shadow, live",
+    "archivist_action": "adopt these names"
+  },
+  "archivist_fee_account_version_manifest": {
+    "path": null,
+    "sha256": null,
+    "status": "pending",
+    "found_on_disk": false,
+    "values_populated": false
+  },
+  "all_metric_values_null": true,
+  "measured": false,
+  "existing_stamps_untouched": true,
+  "existing_stamps_statement": "Template revision only. Existing EXAMINER_* stamps and v1/v1.1 files were not modified, re-scored, or re-opened; this note is a new file.",
+  "messages_sent": false,
+  "stamped_at_et": "2026-09-24T19:37:00-04:00"
+}

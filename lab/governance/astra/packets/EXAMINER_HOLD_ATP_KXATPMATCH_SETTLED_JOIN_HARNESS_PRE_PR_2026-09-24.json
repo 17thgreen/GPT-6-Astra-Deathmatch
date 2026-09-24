@@ -1,0 +1,295 @@
+{
+  "id": "EXAMINER_HOLD_ATP_KXATPMATCH_SETTLED_JOIN_HARNESS_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "ATP-RJ",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "hold": "HOLD pre-PR — digests pending Conductor ACCEPT; stub_ready=false until PR merges; do not score; Variants sole implement (no Conductor pulse cloud)",
+  "lab_dir": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "j1_fallback": "expected_expiration_time when occurrence_datetime null; per-row join_source='expected_expiration_time_fallback'; never write expected_expiration_time into occurrence_datetime",
+  "knob": "join_gate",
+  "settled_nonempty_result_N_scout": 30,
+  "admitted_at": null,
+  "parent_panel_admitted_at": null,
+  "panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "fallback_join_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": "Clock admit + settled join N>0 + Examiner-ready",
+  "ready_gate": "PR branch sha verify + merge → READY NOT_SCORED (still not scored)",
+  "refuse": [
+    "invent settled result/depth/fills/fill-density/PnL",
+    "invent occurrence_datetime",
+    "write expected_expiration_time into occurrence_datetime",
+    "invent books",
+    "Lee-Ready",
+    "Cap-SR/FQ/ATP-FQ/C1-RJ/C3-RJ/C4-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ/S5-RJ reopen",
+    "ungate S1/S2/R2-P4",
+    "Arm B touch",
+    "admit.py by Variants",
+    "live orders",
+    "copy scout N=30 into settled_join_n as score",
+    "score before PR merge",
+    "Conductor pulse cloud kick",
+    "invent settled list books to pad N past authentic N=30",
+    "backfill /markets settled list 429s or fetch events-list page 2 to pad N",
+    "add outside-page-1 parent rows (KXATPMATCH-26SEP22HARGAL, KXATPMATCH-26SEP22MOCKOT) to N"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "orthogonal_pin": "MAXIMIZE_PIN_2026-09-24_1948ET.md",
+  "orthogonal_to": [
+    "ATP-FQ (ATP-KXATPMATCH-FEEQUEUE-HARNESS PR34 @438f4abf28a3c0156daf6c96ece5efda9557f1dc)"
+  ],
+  "nearest_dead_card": "ATP-FQ PR34 (squash 438f4abf…; PR35 duplicate closed unmerged) — invent depth/fills/fill density / invent occurrence_datetime",
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false,
+  "stamped_at_et": "2026-09-24T19:48:42-04:00",
+  "freeze_sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+  "scout_reget_sha256": "2982a245ebd4ff8430ef4b2fe13692c15211c2077e2460d6c0246480f59736df",
+  "scout_summary_sha256": "913fc5d646c51192e40869a68a64b4fe2b66f8231dd75b90f5467bd50559700e",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "settled_reget_capture_sha256": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+  "maximize_pin_sha256": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+  "empty_results_sha256": "31ba428810ce27384944856313ef6703a280d1487fc3ccc95e4b90f2e5c4fe2e",
+  "box_digest_match": true,
+  "scout_markets_settled_nonempty": 30,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "settled_list_http": "429_honest",
+  "settled_list_retries_http": "429_honest_x3",
+  "settled_events_list_http": "200_first_attempt_page1_only",
+  "http_counts": {
+    "200": 8,
+    "429": 4
+  },
+  "occurrence_datetime_present_on_settled_N": 30,
+  "occurrence_datetime_equals_expected_expiration_on_settled_N": 30,
+  "j1_fallback_rows_expected_on_settled_cohort": 0,
+  "parent_panel_missing_occurrence_datetime_n": 0,
+  "parent_reget_finalized_nonempty_n": 12,
+  "j1_clock_pin": "occurrence_datetime (fallback expected_expiration_time)",
+  "base_main_sha": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "prior_c4_rj_pr50_main": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "prior_c4_rj_accept_sha256": "8a86ae6b9dfb0e80d80de8404750501e44aeb873e7f31789ece5fddf8dd03fc5",
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "revision_note_path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24.json",
+      "revision_note_sha256": "cbcc419ced0922e2cc9dd3dd8408a0548526c4cf89874783de27f98089deef15",
+      "on_repo_main": false,
+      "on_repo_main_note": "GET contents lab/governance/astra/templates @main 959c3f2b → 404; box-only at stamp"
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+      "feature_family": "ATP-RJ",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "admit_alone_neq_score": true,
+      "units_neq_score": true,
+      "selection_status": null,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "head_sha_pre_merge": null,
+        "base_pre_merge": null,
+        "merge_method": null,
+        "merged_at_et": null,
+        "lab": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+        "units_ok": null,
+        "arms": [
+          "J0",
+          "J1"
+        ],
+        "arm_values": {
+          "J0": "nonempty_result_required",
+          "J1": "occurrence_datetime_match"
+        },
+        "url": null
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "settled_join_n": null,
+        "occurrence_match_n": null,
+        "fallback_join_n": null,
+        "admit_ready_flag": null
+      },
+      "metrics_fill_policy": "null_until_panel_and_units_examiner_ready"
+    },
+    "default_override_policy": {
+      "override_declared_in_freeze": false,
+      "override_declared_pre_outcome_evidence": null,
+      "post_outcome_override_admissible": false
+    },
+    "fee_regime": {
+      "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "fee_account_version_manifest": {
+        "path": null,
+        "sha256": null,
+        "status": "pending",
+        "owner": "Archivist"
+      },
+      "applies": false,
+      "note": "ATP-RJ reads/produces no fee quantity"
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "unit": "Brier score (dimensionless) + reliability table (10 bins: mean forecast probability vs observed settled frequency, count per bin)",
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A",
+        "note": "join harness emits no probabilities; v1.2 rule allows Examiner to record 'N/A' at scoring — left null pre-ACCEPT per Conductor null rule"
+      },
+      "fill_rate": {
+        "value": null,
+        "unit": "fraction (contracts filled / contracts requested)",
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "unit": "cents per contract (signed)",
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "unit": "fraction (depth-supported contracts / requested contracts)",
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "unit": "contracts (count) + USD (dollar risk)",
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "unit": "USD-hours",
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "unit": "fraction (top-1 share) + HHI (dimensionless)",
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "fill_model_ref": null
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": null,
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ],
+      "variants_note": "Examiner/Archivist records; harness PR would be 'unit-only' until a data run; scout bytes are post-outcome ('historical replay')"
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 7,
+        "n/a": 5
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "note": "no strategy → controls not applicable (declared pre-outcome)"
+    },
+    "all_score_values_null": true
+  }
+}
