@@ -1,0 +1,12 @@
+{
+  "frozen_ns": 1790230757838805331,
+  "tests": "4 capital and concurrency tests passed before aggregation",
+  "sha256": {
+    "SPEC.md": "e4518759ef874410db794c81a2e148ee5699e86eac09a819ff9c354ffc9ad139",
+    "analyze.py": "386e6e1481307b890a8be1351e94d96d7f85ec990db0f01bd80114eea51c9886",
+    "test_analyze.py": "b3e6ac076d2f89cabba16be6810f839eaef85c34900ef6c3c4648dbc685d885c",
+    "../reward_boundary/screen.py": "f329202df35d2831866eac24d08ef857c17bed8eb777ba1d35b679836ca33134",
+    "../reward_scanner/policy.py": "2d8f43c3bb591f2a343a107b1f4eafc3bf6361209505f625beadbf682d15862c",
+    "../reward_competition/model.py": "e307f43ecb6e4dc3aedb7b5a240292e794620ce2a42302d4288f7aff1f7bac9c"
+  }
+}
