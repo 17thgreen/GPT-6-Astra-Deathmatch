@@ -1,0 +1,496 @@
+{
+  "created_ns": 1790221580389590856,
+  "designation": "selected after census, before follow-up observations",
+  "rows": [
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T75.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "b7232774-3ad2-49df-b91e-8d3c53a670ac",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "3ced0032-9062-4d50-88c2-4f64eb1dd44b",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T75.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "no_short",
+      "title": "Will the temp in Miami be above 75.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 75.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "2958.00",
+        "no": "0"
+      },
+      "shortfall": {
+        "yes": "0",
+        "no": "1000.00"
+      },
+      "empty_sides": [
+        "no"
+      ],
+      "quote": {
+        "side": "no",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T76.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "fda36e41-fe35-4130-9c4e-12cf110745ba",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "19ed7235-a5a5-456d-8490-1c38fbd5c75f",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T76.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "no_short",
+      "title": "Will the temp in Miami be above 76.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 76.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "2563.00",
+        "no": "0"
+      },
+      "shortfall": {
+        "yes": "0",
+        "no": "1000.00"
+      },
+      "empty_sides": [
+        "no"
+      ],
+      "quote": {
+        "side": "no",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T80.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "cb9cf7c5-70d2-4c35-81f4-38ebcb1db940",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "90b35bd7-98fc-4316-9a5c-8b5e95142060",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T80.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "yes_short",
+      "title": "Will the temp in Miami be above 80.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 80.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "2485.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T81.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "3c32c77e-2dc2-461b-81eb-5483cf4702ed",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "d443efbb-8bd3-4d94-9ea3-0611fea71b2a",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T81.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "yes_short",
+      "title": "Will the temp in Miami be above 81.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 81.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "2559.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T82.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "3b0fec5f-15e6-4cc5-876b-df5c9ab94c0b",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "6b529698-0de4-42f7-82f1-4dbbd11e18bc",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T82.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "yes_short",
+      "title": "Will the temp in Miami be above 82.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 82.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "2984.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T83.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "fbe3a3ce-cd21-4bb3-a8eb-146ff3076dab",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "e3073025-e509-4db6-85d5-baf2d31315a9",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T83.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "yes_short",
+      "title": "Will the temp in Miami be above 83.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 83.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "2995.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTEMPMIAH-26SEP2400-T84.99",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-24T04:00:00Z",
+        "id": "c8e791d7-0cb8-4e6d-b79d-5dfa34d6a994",
+        "incentive_description": "series_lip",
+        "incentive_type": "liquidity",
+        "market_id": "27df7e98-0f39-4cb8-ac45-de25e33166f7",
+        "market_ticker": "KXTEMPMIAH-26SEP2400-T84.99",
+        "paid_out": false,
+        "period_reward": 1000000,
+        "start_date": "2026-09-24T03:02:14.325991Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221515464795996,
+      "class": "yes_short",
+      "title": "Will the temp in Miami be above 84.99\u00b0 on Sep 24, 2026 at 12am EDT?",
+      "rules_primary": "If the temperature recorded at Miami, FL for Sep 24, 2026 at 12 AM EDT as reported by Synoptic Data, is above 84.99\u00b0, then the market resolves to Yes.",
+      "rules_secondary": "The official final value for this market is determined strictly by the temperature reported by Synoptic Data, calculated in accordance with the Kalshi Weather Index Methodology. Alternative sources\u2014such as NWS Climatological Reports or Google Weather\u2014may serve as references, but are not authoritative and will not be used for market resolution.",
+      "close_time": "2026-09-24T04:00:00Z",
+      "expected_expiration_time": "2026-09-24T04:05:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "3191.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 51.93794901890924,
+        "remaining_hours": 0.24570422338114845,
+        "ideal_remaining_gross": 12.761373427700775,
+        "hours_to_match_full_loss": 0.19253744494915007,
+        "priority": true,
+        "ideal_rate_per_principal": 5.193794901890923
+      }
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1324.21",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-25T03:59:00Z",
+        "id": "5df8e604-54ea-4003-ad5f-2d45857090ee",
+        "incentive_description": "new_event",
+        "incentive_type": "liquidity",
+        "market_id": "5245a84f-e1b6-4b0e-bc2a-f07976fedf86",
+        "market_ticker": "KXTRUEV-26SEP24-T1324.21",
+        "paid_out": false,
+        "period_reward": 600000,
+        "start_date": "2026-09-24T01:02:17.107519Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221519947020117,
+      "class": "yes_short",
+      "title": "Will the Truflation EV Commodity Index on Sep 24, 2026 be above 1324.21?",
+      "rules_primary": "If the Truflation EV Commodity Index on Sep 24, 2026 is above 1324.21, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "close_time": "2026-09-25T03:59:00Z",
+      "expected_expiration_time": "2026-10-02T03:59:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "8066.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.8600",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 1.1133688618723954,
+        "remaining_hours": 24.227792494429483,
+        "ideal_remaining_gross": 26.974469755203515,
+        "hours_to_match_full_loss": 8.981749303804504,
+        "priority": true,
+        "ideal_rate_per_principal": 0.11133688618723954
+      }
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1314.21",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-25T03:59:00Z",
+        "id": "96d00710-6bb1-470b-bafe-5888b431c8fd",
+        "incentive_description": "new_event",
+        "incentive_type": "liquidity",
+        "market_id": "cc4de8f3-18c9-44b4-8451-5f3f4f4264c2",
+        "market_ticker": "KXTRUEV-26SEP24-T1314.21",
+        "paid_out": false,
+        "period_reward": 600000,
+        "start_date": "2026-09-24T01:02:17.107515Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221519947020117,
+      "class": "yes_short",
+      "title": "Will the Truflation EV Commodity Index on Sep 24, 2026 be above 1314.21?",
+      "rules_primary": "If the Truflation EV Commodity Index on Sep 24, 2026 is above 1314.21, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "close_time": "2026-09-25T03:59:00Z",
+      "expected_expiration_time": "2026-10-02T03:59:00Z",
+      "depth": {
+        "yes": "0",
+        "no": "8066.00"
+      },
+      "shortfall": {
+        "yes": "1000.00",
+        "no": "0"
+      },
+      "empty_sides": [
+        "yes"
+      ],
+      "quote": {
+        "side": "yes",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.8600",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 1.1133688618286115,
+        "remaining_hours": 24.227792494429483,
+        "ideal_remaining_gross": 26.97446975414273,
+        "hours_to_match_full_loss": 8.981749304157717,
+        "priority": true,
+        "ideal_rate_per_principal": 0.11133688618286115
+      }
+    },
+    {
+      "ticker": "KXTRUEV-26SEP24-T1194.21",
+      "program": {
+        "discount_factor_bps": 5000,
+        "end_date": "2026-09-25T03:59:00Z",
+        "id": "56a5d006-2253-4d4e-9923-8265a493bc60",
+        "incentive_description": "new_event",
+        "incentive_type": "liquidity",
+        "market_id": "c5b58c91-de26-4d2b-aead-0ecf903b0081",
+        "market_ticker": "KXTRUEV-26SEP24-T1194.21",
+        "paid_out": false,
+        "period_reward": 600000,
+        "start_date": "2026-09-24T01:02:17.107466Z",
+        "target_size_fp": "1000.00"
+      },
+      "book_received_ns": 1790221519947020117,
+      "class": "no_short",
+      "title": "Will the Truflation EV Commodity Index on Sep 24, 2026 be above 1194.21?",
+      "rules_primary": "If the Truflation EV Commodity Index on Sep 24, 2026 is above 1194.21, then the market resolves to Yes.",
+      "rules_secondary": "",
+      "close_time": "2026-09-25T03:59:00Z",
+      "expected_expiration_time": "2026-10-02T03:59:00Z",
+      "depth": {
+        "yes": "16893.00",
+        "no": "0"
+      },
+      "shortfall": {
+        "yes": "0",
+        "no": "1000.00"
+      },
+      "empty_sides": [
+        "no"
+      ],
+      "quote": {
+        "side": "no",
+        "price": "0.01",
+        "quantity": "1000.00",
+        "opposite_best_bid": "0.9800",
+        "linear_cent_verified": true,
+        "would_rest": true,
+        "principal": 10.0,
+        "ideal_rate": 1.1133688612648938,
+        "remaining_hours": 24.227792494429483,
+        "ideal_remaining_gross": 26.974469740485095,
+        "hours_to_match_full_loss": 8.98174930870533,
+        "priority": true,
+        "ideal_rate_per_principal": 0.11133688612648937
+      }
+    }
+  ]
+}
