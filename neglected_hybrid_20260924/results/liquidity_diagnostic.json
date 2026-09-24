@@ -1,0 +1,57 @@
+{
+  "post_score_descriptive_only": true,
+  "families": {
+    "house": [
+      {
+        "decision": "2024-11-04T22:00:00Z",
+        "races": 19,
+        "median_spread": 0.06,
+        "median_last_quote_bar_volume": 20.0,
+        "zero_volume_quote_bars": 5,
+        "quote_age_seconds_range": [
+          0.0,
+          3600.0
+        ],
+        "hybrid_brier_relative_improvement": 0.1236772038293864
+      },
+      {
+        "decision": "2024-11-05T16:00:00Z",
+        "races": 23,
+        "median_spread": 0.020000000000000018,
+        "median_last_quote_bar_volume": 28.0,
+        "zero_volume_quote_bars": 2,
+        "quote_age_seconds_range": [
+          0.0,
+          3600.0
+        ],
+        "hybrid_brier_relative_improvement": 0.09632565712671814
+      }
+    ],
+    "senate": [
+      {
+        "decision": "2024-11-04T22:00:00Z",
+        "races": 12,
+        "median_spread": 0.014999999999999958,
+        "median_last_quote_bar_volume": 825.0,
+        "zero_volume_quote_bars": 0,
+        "quote_age_seconds_range": [
+          0.0,
+          0.0
+        ],
+        "hybrid_brier_relative_improvement": -0.005427204930952723
+      },
+      {
+        "decision": "2024-11-05T16:00:00Z",
+        "races": 13,
+        "median_spread": 0.010000000000000009,
+        "median_last_quote_bar_volume": 784.0,
+        "zero_volume_quote_bars": 0,
+        "quote_age_seconds_range": [
+          0.0,
+          3600.0
+        ],
+        "hybrid_brier_relative_improvement": -0.043562261354052056
+      }
+    ]
+  }
+}

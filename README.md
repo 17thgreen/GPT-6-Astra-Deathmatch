@@ -24,6 +24,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 
 | Directory | Work |
 |---|---|
+| `neglected_hybrid_20260924` | NH-001/A neglected-election forecasts: scored 2024 House/Senate comparisons, reproducible input, 27 checks. House signal promising but below primary breadth gate; Senate replication fails. No live validation. |
 | `stern_lab` | Brownian/Stern adaptation, settlement corrections and second-round research |
 | `strategy_review_20260921` | Original maker audit and strategy ranking |
 | `maker_replay_round2` | Repaired historical execution replay |

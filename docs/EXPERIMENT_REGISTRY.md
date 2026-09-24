@@ -6,6 +6,7 @@ not presented as a pre-outcome Git preregistration of that historical work.
 
 | Stage | Evidence/status | Primary record |
 |---|---|---|
+| NH-001/A neglected-market forecasts | Prespecified retrospective 2024 election study. Original horizons fail admission. Amended House primary: 19 races, hybrid Brier −12.4% relative to midpoint, 2 hypothetical unit signals, +$0.88556 after illustrative fees/buffer. Secondary: 23 races, +$1.519439 across 3 signals; overlapping election, not independent replication. Senate replication fails. Primary breadth minimum fails. Fees, historical depth, fills and capacity unverified. 27 tests pass, 3 result files reproduce exactly, 29 decimal ledger checks. Current GET-only book recorder smoke-tested; no admitted current forecast, orders or recurring process. | `neglected_hybrid_20260924/RESULTS.md` |
 | Stern adaptation | Historical model and settlement research; consult each retained round's status | `stern_lab/MODEL_STATUS.json` |
 | Maker audit/replay | Original model defects and repaired execution accounting | `maker_replay_round2/NFL_Maker_REST_Replay_Results.md` |
 | Q1 | Queue sensitivity and routing; early queue remains an assumption | `nfl_queue_lab_20260921/NFL_Queue_Experiment_Results.md` |

@@ -1,0 +1,4302 @@
+{
+  "NH-001_house": {
+    "study": "NH-001",
+    "mode": "RETROSPECTIVE_QUOTED_COST_SCREEN_NOT_EXECUTION",
+    "live_validation": false,
+    "historical_fee_verified": false,
+    "warning": "One election; state intervals omit national common-factor risk. Quotes lack depth. No assumed fills.",
+    "horizons": [
+      {
+        "decision": "2024-10-29T16:00:00Z",
+        "admitted_races": 0,
+        "states": 0,
+        "excluded": [
+          {
+            "race_id": "2024-HOUSE-AK-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-6",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-13",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-22",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-27",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-41",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-45",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-CO-8",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-IA-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-IA-3",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-ME-2",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-MI-7",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-MI-8",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-NC-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-NE-2",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-NY-19",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-NY-4",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-OR-5",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-10",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-7",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-8",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-VA-7",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-HOUSE-WA-3",
+            "reason": "not_open_at_decision"
+          }
+        ],
+        "exclusion_counts": {
+          "not_open_at_decision": 24
+        },
+        "summary": null,
+        "competitive_subset": null,
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": []
+      },
+      {
+        "decision": "2024-11-04T16:00:00Z",
+        "admitted_races": 0,
+        "states": 0,
+        "excluded": [
+          {
+            "race_id": "2024-HOUSE-AK-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-6",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-13",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-22",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-27",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-41",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-45",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-CO-8",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-IA-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-IA-3",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-ME-2",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-MI-7",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-MI-8",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-NC-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-NE-2",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-NY-19",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-NY-4",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-OR-5",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-10",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-7",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-8",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-VA-7",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-HOUSE-WA-3",
+            "reason": "no_eligible_contemporaneous_forecast"
+          }
+        ],
+        "exclusion_counts": {
+          "no_eligible_contemporaneous_forecast": 24
+        },
+        "summary": null,
+        "competitive_subset": null,
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": []
+      }
+    ],
+    "family": "house"
+  },
+  "NH-001A_house": {
+    "study": "NH-001A",
+    "mode": "RETROSPECTIVE_QUOTED_COST_SCREEN_NOT_EXECUTION",
+    "live_validation": false,
+    "historical_fee_verified": false,
+    "warning": "One election; state intervals omit national common-factor risk. Quotes lack depth. No assumed fills.",
+    "horizons": [
+      {
+        "decision": "2024-11-04T22:00:00Z",
+        "admitted_races": 19,
+        "states": 12,
+        "excluded": [
+          {
+            "race_id": "2024-HOUSE-AK-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-HOUSE-CA-22",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-HOUSE-NC-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-HOUSE-NY-4",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-HOUSE-PA-7",
+            "reason": "no_fresh_two_sided_quote"
+          }
+        ],
+        "exclusion_counts": {
+          "no_fresh_two_sided_quote": 5
+        },
+        "summary": {
+          "market": {
+            "brier": 0.24175921052631577,
+            "log_loss": 0.6779769195486753,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.18804427157894738,
+            "log_loss": 0.5632537313238191,
+            "brier_delta_vs_market": -0.053714938947368396,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.0968664927272727,
+              -0.005028106153846143
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.06494221705882351,
+              -0.03827667882352939
+            ],
+            "signals": 6,
+            "hypothetical_net_dollars": 2.577394,
+            "capital_dollars": 3.422606,
+            "hypothetical_return_on_capital": 0.7530501611929623,
+            "extra_1c_cost_same_trades_net": 2.517394,
+            "extra_3c_cost_same_trades_net": 2.397394,
+            "excluding_best_two_winners_net": 1.5721699999999998,
+            "largest_loss_share": null
+          },
+          "hybrid_50": {
+            "brier": 0.21185910736842106,
+            "log_loss": 0.6153255029321331,
+            "brier_delta_vs_market": -0.029900103157894736,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.05334067112499998,
+              -0.004046805156250012
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.035767907205882354,
+              -0.0213058755882353
+            ],
+            "signals": 2,
+            "hypothetical_net_dollars": 0.88556,
+            "capital_dollars": 1.11444,
+            "hypothetical_return_on_capital": 0.7946233085675316,
+            "extra_1c_cost_same_trades_net": 0.86556,
+            "extra_3c_cost_same_trades_net": 0.8255600000000001,
+            "excluding_best_two_winners_net": 0.0,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.22604850052631578,
+            "log_loss": 0.6451200379235629,
+            "brier_delta_vs_market": -0.01571070999999999,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.027907864285714273,
+              -0.002379823928571422
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.018708153272058815,
+              -0.011194821838235284
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "competitive_subset": {
+          "market": {
+            "brier": 0.24175921052631577,
+            "log_loss": 0.6779769195486753,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.18804427157894738,
+            "log_loss": 0.5632537313238191,
+            "brier_delta_vs_market": -0.053714938947368396,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.0968664927272727,
+              -0.005028106153846143
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.06494221705882351,
+              -0.03827667882352939
+            ],
+            "signals": 6,
+            "hypothetical_net_dollars": 2.577394,
+            "capital_dollars": 3.422606,
+            "hypothetical_return_on_capital": 0.7530501611929623,
+            "extra_1c_cost_same_trades_net": 2.517394,
+            "extra_3c_cost_same_trades_net": 2.397394,
+            "excluding_best_two_winners_net": 1.5721699999999998,
+            "largest_loss_share": null
+          },
+          "hybrid_50": {
+            "brier": 0.21185910736842106,
+            "log_loss": 0.6153255029321331,
+            "brier_delta_vs_market": -0.029900103157894736,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.05334067112499998,
+              -0.004046805156250012
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.035767907205882354,
+              -0.0213058755882353
+            ],
+            "signals": 2,
+            "hypothetical_net_dollars": 0.88556,
+            "capital_dollars": 1.11444,
+            "hypothetical_return_on_capital": 0.7946233085675316,
+            "extra_1c_cost_same_trades_net": 0.86556,
+            "extra_3c_cost_same_trades_net": 0.8255600000000001,
+            "excluding_best_two_winners_net": 0.0,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.22604850052631578,
+            "log_loss": 0.6451200379235629,
+            "brier_delta_vs_market": -0.01571070999999999,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.027907864285714273,
+              -0.002379823928571422
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.018708153272058815,
+              -0.011194821838235284
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "historical_support_screen": true,
+        "minimum_20_race_breadth_met": false,
+        "rows": [
+          {
+            "race_id": "2024-HOUSE-AZ-1",
+            "ticker": "HOUSEAZ1-24-D",
+            "state": "AZ",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3551,
+            "p_market": 0.38,
+            "bid": 0.35,
+            "ask": 0.41,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.38,
+                "brier": 0.1444,
+                "log_loss": 0.4780358009429998,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3551,
+                "brier": 0.12609601,
+                "log_loss": 0.4386600129658053,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.36755000000000004,
+                "brier": 0.13509300250000003,
+                "log_loss": 0.4581541128885863,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.373775,
+                "brier": 0.13970775062500002,
+                "log_loss": 0.4680455475395739,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-6",
+            "ticker": "HOUSEAZ6-24-D",
+            "state": "AZ",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T21:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3732,
+            "p_market": 0.405,
+            "bid": 0.37,
+            "ask": 0.44,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.405,
+                "brier": 0.16402500000000003,
+                "log_loss": 0.5191938734365074,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3732,
+                "brier": 0.13927823999999997,
+                "log_loss": 0.46712776850027127,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.3891,
+                "brier": 0.15139881,
+                "log_loss": 0.4928219993264158,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.39705,
+                "brier": 0.15764870250000002,
+                "log_loss": 0.5059210044325355,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-13",
+            "ticker": "HOUSECA13-24-D",
+            "state": "CA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7216,
+            "p_market": 0.605,
+            "bid": 0.57,
+            "ask": 0.64,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.605,
+                "brier": 0.15602500000000002,
+                "log_loss": 0.5025268209512956,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7216,
+                "brier": 0.07750655999999999,
+                "log_loss": 0.3262843102337231,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.64,
+                  "fee": 0.016128000000000003,
+                  "execution_buffer": 0.02,
+                  "capital": 0.6761280000000001,
+                  "expected_net": 0.04547199999999996,
+                  "payout": 1,
+                  "net": 0.32387199999999994
+                }
+              },
+              "hybrid_50": {
+                "p": 0.6633,
+                "brier": 0.11336689,
+                "log_loss": 0.41052790245062676,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.63415,
+                "brier": 0.1338462225,
+                "log_loss": 0.4554697594686985,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-27",
+            "ticker": "HOUSECA27-24-D",
+            "state": "CA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6052,
+            "p_market": 0.515,
+            "bid": 0.49,
+            "ask": 0.54,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.515,
+                "brier": 0.235225,
+                "log_loss": 0.6635883783184009,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6052,
+                "brier": 0.15586704000000004,
+                "log_loss": 0.5021962970679362,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.5601,
+                "brier": 0.19351200999999996,
+                "log_loss": 0.5796399397663503,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.53755,
+                "brier": 0.21386000250000003,
+                "log_loss": 0.6207335000509,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-41",
+            "ticker": "HOUSECA41-24-D",
+            "state": "CA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3232,
+            "p_market": 0.45499999999999996,
+            "bid": 0.43,
+            "ask": 0.48,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.45499999999999996,
+                "brier": 0.20702499999999996,
+                "log_loss": 0.6069694843188929,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3232,
+                "brier": 0.10445824,
+                "log_loss": 0.3903794706901234,
+                "trade": {
+                  "side": "no",
+                  "price": 0.5700000000000001,
+                  "fee": 0.017157,
+                  "execution_buffer": 0.02,
+                  "capital": 0.6071570000000001,
+                  "expected_net": 0.06964300000000001,
+                  "payout": 1,
+                  "net": 0.39284299999999994
+                }
+              },
+              "hybrid_50": {
+                "p": 0.3891,
+                "brier": 0.15139881,
+                "log_loss": 0.4928219993264158,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.4220499999999999,
+                "brier": 0.17812620249999994,
+                "log_loss": 0.5482679192418607,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-45",
+            "ticker": "HOUSECA45-24-D",
+            "state": "CA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.4911,
+            "p_market": 0.46499999999999997,
+            "bid": 0.44,
+            "ask": 0.49,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.46499999999999997,
+                "brier": 0.286225,
+                "log_loss": 0.7657178733947808,
+                "trade": null
+              },
+              "model": {
+                "p": 0.4911,
+                "brier": 0.25897921,
+                "log_loss": 0.7111075059369382,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.47805,
+                "brier": 0.27243180250000004,
+                "log_loss": 0.738039949450682,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.47152499999999997,
+                "brier": 0.27928582562500004,
+                "log_loss": 0.7517831560449026,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CO-8",
+            "ticker": "HOUSECO8-24-D",
+            "state": "CO",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T21:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.643,
+            "p_market": 0.66,
+            "bid": 0.65,
+            "ask": 0.67,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.66,
+                "brier": 0.43560000000000004,
+                "log_loss": 1.07880966137193,
+                "trade": null
+              },
+              "model": {
+                "p": 0.643,
+                "brier": 0.413449,
+                "log_loss": 1.030019497202498,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.6515,
+                "brier": 0.42445225,
+                "log_loss": 1.0541170487815583,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.65575,
+                "brier": 0.43000806250000007,
+                "log_loss": 1.066387141373373,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-IA-1",
+            "ticker": "HOUSEIA1-24-D",
+            "state": "IA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3497,
+            "p_market": 0.575,
+            "bid": 0.54,
+            "ask": 0.61,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.575,
+                "brier": 0.33062499999999995,
+                "log_loss": 0.8556661100577201,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3497,
+                "brier": 0.12229009,
+                "log_loss": 0.4303214841070309,
+                "trade": {
+                  "side": "no",
+                  "price": 0.45999999999999996,
+                  "fee": 0.017388,
+                  "execution_buffer": 0.02,
+                  "capital": 0.497388,
+                  "expected_net": 0.152912,
+                  "payout": 1,
+                  "net": 0.5026120000000001
+                }
+              },
+              "hybrid_50": {
+                "p": 0.46235,
+                "brier": 0.21376752249999997,
+                "log_loss": 0.6205474881456018,
+                "trade": {
+                  "side": "no",
+                  "price": 0.45999999999999996,
+                  "fee": 0.017388,
+                  "execution_buffer": 0.02,
+                  "capital": 0.497388,
+                  "expected_net": 0.040261999999999964,
+                  "payout": 1,
+                  "net": 0.5026120000000001
+                }
+              },
+              "hybrid_25": {
+                "p": 0.518675,
+                "brier": 0.26902375562499997,
+                "log_loss": 0.7312125613667378,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-IA-3",
+            "ticker": "HOUSEIA3-24-D",
+            "state": "IA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3531,
+            "p_market": 0.535,
+            "bid": 0.51,
+            "ask": 0.56,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.535,
+                "brier": 0.286225,
+                "log_loss": 0.7657178733947808,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3531,
+                "brier": 0.12467961000000002,
+                "log_loss": 0.43556355593219725,
+                "trade": {
+                  "side": "no",
+                  "price": 0.49,
+                  "fee": 0.017493,
+                  "execution_buffer": 0.02,
+                  "capital": 0.527493,
+                  "expected_net": 0.11940700000000004,
+                  "payout": 1,
+                  "net": 0.472507
+                }
+              },
+              "hybrid_50": {
+                "p": 0.44405000000000006,
+                "brier": 0.19718040250000005,
+                "log_loss": 0.5870769168328789,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.489525,
+                "brier": 0.239634725625,
+                "log_loss": 0.6724136141730386,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-ME-2",
+            "ticker": "HOUSEME2-24-D",
+            "state": "ME",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6677,
+            "p_market": 0.6950000000000001,
+            "bid": 0.66,
+            "ask": 0.73,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.6950000000000001,
+                "brier": 0.09302499999999997,
+                "log_loss": 0.3638434334173448,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6677,
+                "brier": 0.11042329000000002,
+                "log_loss": 0.40391630811831397,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.68135,
+                "brier": 0.1015378225,
+                "log_loss": 0.38367915478630726,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.688175,
+                "brier": 0.09723483062500002,
+                "log_loss": 0.37371211292781564,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-MI-7",
+            "ticker": "HOUSEMI7-24-D",
+            "state": "MI",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T21:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3368,
+            "p_market": 0.28,
+            "bid": 0.25,
+            "ask": 0.31,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.28,
+                "brier": 0.07840000000000001,
+                "log_loss": 0.3285040669720361,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3368,
+                "brier": 0.11343423999999999,
+                "log_loss": 0.41067867516105183,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.3084,
+                "brier": 0.09511056000000001,
+                "log_loss": 0.36874752517300163,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.2942,
+                "brier": 0.08655364000000002,
+                "log_loss": 0.3484233677409674,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-MI-8",
+            "ticker": "HOUSEMI8-24-D",
+            "state": "MI",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5781,
+            "p_market": 0.64,
+            "bid": 0.62,
+            "ask": 0.66,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.64,
+                "brier": 0.1296,
+                "log_loss": 0.4462871026284195,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5781,
+                "brier": 0.17799961000000006,
+                "log_loss": 0.5480084148937068,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.60905,
+                "brier": 0.15284190250000002,
+                "log_loss": 0.49585491283616917,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.624525,
+                "brier": 0.140981475625,
+                "log_loss": 0.47076391819214436,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NE-2",
+            "ticker": "HOUSENE2-24-D",
+            "state": "NE",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.666,
+            "p_market": 0.75,
+            "bid": 0.72,
+            "ask": 0.78,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.75,
+                "brier": 0.5625,
+                "log_loss": 1.3862943611198906,
+                "trade": null
+              },
+              "model": {
+                "p": 0.666,
+                "brier": 0.44355600000000006,
+                "log_loss": 1.0966142860054366,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.708,
+                "brier": 0.5012639999999999,
+                "log_loss": 1.231001476713855,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.729,
+                "brier": 0.5314409999999999,
+                "log_loss": 1.305636458102436,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NY-19",
+            "ticker": "HOUSENY19-24-D",
+            "state": "NY",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5337,
+            "p_market": 0.5800000000000001,
+            "bid": 0.55,
+            "ask": 0.61,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.5800000000000001,
+                "brier": 0.17639999999999995,
+                "log_loss": 0.5447271754416719,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5337,
+                "brier": 0.21743569000000004,
+                "log_loss": 0.627921395642238,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.5568500000000001,
+                "brier": 0.19638192249999994,
+                "log_loss": 0.5854593751430277,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.5684250000000001,
+                "brier": 0.18625698062499993,
+                "log_loss": 0.5648859006159345,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-OR-5",
+            "ticker": "HOUSEOR5-24-D",
+            "state": "OR",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6148,
+            "p_market": 0.43000000000000005,
+            "bid": 0.4,
+            "ask": 0.46,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.43000000000000005,
+                "brier": 0.32489999999999997,
+                "log_loss": 0.8439700702945289,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6148,
+                "brier": 0.14837904,
+                "log_loss": 0.48645826731769626,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.46,
+                  "fee": 0.017388000000000004,
+                  "execution_buffer": 0.02,
+                  "capital": 0.49738800000000005,
+                  "expected_net": 0.11741199999999996,
+                  "payout": 1,
+                  "net": 0.502612
+                }
+              },
+              "hybrid_50": {
+                "p": 0.5224,
+                "brier": 0.22810176000000001,
+                "log_loss": 0.6493217010199158,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.4762,
+                "brier": 0.27436644000000004,
+                "log_loss": 0.7419173449293747,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-PA-10",
+            "ticker": "HOUSEPA10-24-D",
+            "state": "PA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.23870000000000002,
+            "p_market": 0.44999999999999996,
+            "bid": 0.42,
+            "ask": 0.48,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.44999999999999996,
+                "brier": 0.20249999999999996,
+                "log_loss": 0.5978370007556204,
+                "trade": null
+              },
+              "model": {
+                "p": 0.23870000000000002,
+                "brier": 0.05697769000000001,
+                "log_loss": 0.27272778066997017,
+                "trade": {
+                  "side": "no",
+                  "price": 0.5800000000000001,
+                  "fee": 0.017052,
+                  "execution_buffer": 0.02,
+                  "capital": 0.617052,
+                  "expected_net": 0.14424799999999993,
+                  "payout": 1,
+                  "net": 0.38294799999999996
+                }
+              },
+              "hybrid_50": {
+                "p": 0.34435,
+                "brier": 0.11857692249999999,
+                "log_loss": 0.42212816900470373,
+                "trade": {
+                  "side": "no",
+                  "price": 0.5800000000000001,
+                  "fee": 0.017052,
+                  "execution_buffer": 0.02,
+                  "capital": 0.617052,
+                  "expected_net": 0.03859800000000002,
+                  "payout": 1,
+                  "net": 0.38294799999999996
+                }
+              },
+              "hybrid_25": {
+                "p": 0.39717499999999994,
+                "brier": 0.15774798062499995,
+                "log_loss": 0.5061283399643681,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-PA-8",
+            "ticker": "HOUSEPA8-24-D",
+            "state": "PA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.647,
+            "p_market": 0.71,
+            "bid": 0.68,
+            "ask": 0.74,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.71,
+                "brier": 0.5041,
+                "log_loss": 1.2378743560016172,
+                "trade": null
+              },
+              "model": {
+                "p": 0.647,
+                "brier": 0.418609,
+                "log_loss": 1.0412872220488403,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.6785,
+                "brier": 0.46036225,
+                "log_loss": 1.1347577353044629,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.69425,
+                "brier": 0.48198306250000006,
+                "log_loss": 1.1849875044148555,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-VA-7",
+            "ticker": "HOUSEVA7-24-D",
+            "state": "VA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7514,
+            "p_market": 0.7849999999999999,
+            "bid": 0.75,
+            "ask": 0.82,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.7849999999999999,
+                "brier": 0.04622500000000004,
+                "log_loss": 0.24207156119972872,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7514,
+                "brier": 0.061801960000000024,
+                "log_loss": 0.2858171458422686,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7682,
+                "brier": 0.05373124,
+                "log_loss": 0.26370516307033265,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.7765999999999998,
+                "brier": 0.049907560000000066,
+                "log_loss": 0.25282986168457033,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-WA-3",
+            "ticker": "HOUSEWA3-24-D",
+            "state": "WA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-04T21:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.4508,
+            "p_market": 0.52,
+            "bid": 0.5,
+            "ask": 0.54,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.52,
+                "brier": 0.2304,
+                "log_loss": 0.6539264674066639,
+                "trade": null
+              },
+              "model": {
+                "p": 0.4508,
+                "brier": 0.30162064000000005,
+                "log_loss": 0.7967314968165159,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.4854,
+                "brier": 0.26481315999999994,
+                "log_loss": 0.722781985689636,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.5027,
+                "brier": 0.24730728999999996,
+                "log_loss": 0.6877617082836074,
+                "trade": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "decision": "2024-11-05T16:00:00Z",
+        "admitted_races": 23,
+        "states": 14,
+        "excluded": [
+          {
+            "race_id": "2024-HOUSE-AZ-1",
+            "reason": "no_fresh_two_sided_quote"
+          }
+        ],
+        "exclusion_counts": {
+          "no_fresh_two_sided_quote": 1
+        },
+        "summary": {
+          "market": {
+            "brier": 0.23091304347826086,
+            "log_loss": 0.6517010868148045,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.19170794521739132,
+            "log_loss": 0.5693637392916583,
+            "brier_delta_vs_market": -0.03920509826086956,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.08392780947368421,
+              -0.00013731263157894393
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.04803773523809524,
+              -0.019864855238095235
+            ],
+            "signals": 8,
+            "hypothetical_net_dollars": 2.7047599999999994,
+            "capital_dollars": 4.295240000000001,
+            "hypothetical_return_on_capital": 0.6297110289529803,
+            "extra_1c_cost_same_trades_net": 2.6247599999999993,
+            "extra_3c_cost_same_trades_net": 2.464759999999999,
+            "excluding_best_two_winners_net": 1.5880729999999994,
+            "largest_loss_share": 1.0
+          },
+          "hybrid_50": {
+            "brier": 0.20867019282608695,
+            "log_loss": 0.6061242977306527,
+            "brier_delta_vs_market": -0.02224285065217393,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.04745037906250001,
+              -0.0008409916666666785
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.02675274333333335,
+              -0.011253023333333353
+            ],
+            "signals": 3,
+            "hypothetical_net_dollars": 1.5194389999999998,
+            "capital_dollars": 1.4805610000000002,
+            "hypothetical_return_on_capital": 1.0262589653516467,
+            "extra_1c_cost_same_trades_net": 1.4894389999999997,
+            "extra_3c_cost_same_trades_net": 1.4294389999999997,
+            "excluding_best_two_winners_net": 0.4027519999999998,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.21913154277173913,
+            "log_loss": 0.6275531801358064,
+            "brier_delta_vs_market": -0.011781500706521732,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.02513161695652173,
+              -0.0006757636764705805
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.01405984059523809,
+              -0.005956660595238091
+            ],
+            "signals": 1,
+            "hypothetical_net_dollars": 0.6140749999999999,
+            "capital_dollars": 0.385925,
+            "hypothetical_return_on_capital": 1.591177042171406,
+            "extra_1c_cost_same_trades_net": 0.6040749999999999,
+            "extra_3c_cost_same_trades_net": 0.5840749999999999,
+            "excluding_best_two_winners_net": 0.0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "competitive_subset": {
+          "market": {
+            "brier": 0.23091304347826086,
+            "log_loss": 0.6517010868148045,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.19170794521739132,
+            "log_loss": 0.5693637392916583,
+            "brier_delta_vs_market": -0.03920509826086956,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.08392780947368421,
+              -0.00013731263157894393
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.04803773523809524,
+              -0.019864855238095235
+            ],
+            "signals": 8,
+            "hypothetical_net_dollars": 2.7047599999999994,
+            "capital_dollars": 4.295240000000001,
+            "hypothetical_return_on_capital": 0.6297110289529803,
+            "extra_1c_cost_same_trades_net": 2.6247599999999993,
+            "extra_3c_cost_same_trades_net": 2.464759999999999,
+            "excluding_best_two_winners_net": 1.5880729999999994,
+            "largest_loss_share": 1.0
+          },
+          "hybrid_50": {
+            "brier": 0.20867019282608695,
+            "log_loss": 0.6061242977306527,
+            "brier_delta_vs_market": -0.02224285065217393,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.04745037906250001,
+              -0.0008409916666666785
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.02675274333333335,
+              -0.011253023333333353
+            ],
+            "signals": 3,
+            "hypothetical_net_dollars": 1.5194389999999998,
+            "capital_dollars": 1.4805610000000002,
+            "hypothetical_return_on_capital": 1.0262589653516467,
+            "extra_1c_cost_same_trades_net": 1.4894389999999997,
+            "extra_3c_cost_same_trades_net": 1.4294389999999997,
+            "excluding_best_two_winners_net": 0.4027519999999998,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.21913154277173913,
+            "log_loss": 0.6275531801358064,
+            "brier_delta_vs_market": -0.011781500706521732,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.02513161695652173,
+              -0.0006757636764705805
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.01405984059523809,
+              -0.005956660595238091
+            ],
+            "signals": 1,
+            "hypothetical_net_dollars": 0.6140749999999999,
+            "capital_dollars": 0.385925,
+            "hypothetical_return_on_capital": 1.591177042171406,
+            "extra_1c_cost_same_trades_net": 0.6040749999999999,
+            "extra_3c_cost_same_trades_net": 0.5840749999999999,
+            "excluding_best_two_winners_net": 0.0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "historical_support_screen": true,
+        "minimum_20_race_breadth_met": true,
+        "rows": [
+          {
+            "race_id": "2024-HOUSE-AK-1",
+            "ticker": "HOUSEAKAL-24-D",
+            "state": "AK",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3978,
+            "p_market": 0.47,
+            "bid": 0.46,
+            "ask": 0.48,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.47,
+                "brier": 0.22089999999999999,
+                "log_loss": 0.6348782724359695,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3978,
+                "brier": 0.15824484,
+                "log_loss": 0.5071656629345035,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.43389999999999995,
+                "brier": 0.18826920999999996,
+                "log_loss": 0.5689845379395227,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.45194999999999996,
+                "brier": 0.20425880249999998,
+                "log_loss": 0.6013887553204046,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-AZ-6",
+            "ticker": "HOUSEAZ6-24-D",
+            "state": "AZ",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3732,
+            "p_market": 0.35,
+            "bid": 0.34,
+            "ask": 0.36,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.35,
+                "brier": 0.12249999999999998,
+                "log_loss": 0.4307829160924542,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3732,
+                "brier": 0.13927823999999997,
+                "log_loss": 0.46712776850027127,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.3616,
+                "brier": 0.13075456,
+                "log_loss": 0.4487902328465379,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.35579999999999995,
+                "brier": 0.12659363999999995,
+                "log_loss": 0.4397460420850384,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-13",
+            "ticker": "HOUSECA13-24-D",
+            "state": "CA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7216,
+            "p_market": 0.585,
+            "bid": 0.57,
+            "ask": 0.6,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.585,
+                "brier": 0.17222500000000002,
+                "log_loss": 0.5361434317502807,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7216,
+                "brier": 0.07750655999999999,
+                "log_loss": 0.3262843102337231,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.6,
+                  "fee": 0.016800000000000002,
+                  "execution_buffer": 0.02,
+                  "capital": 0.6368,
+                  "expected_net": 0.08479999999999999,
+                  "payout": 1,
+                  "net": 0.36319999999999997
+                }
+              },
+              "hybrid_50": {
+                "p": 0.6533,
+                "brier": 0.12020089,
+                "log_loss": 0.4257188371354324,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.61915,
+                "brier": 0.14504672250000003,
+                "log_loss": 0.4794077093210295,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-22",
+            "ticker": "HOUSECA22-24-D",
+            "state": "CA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.458,
+            "p_market": 0.445,
+            "bid": 0.44,
+            "ask": 0.45,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.445,
+                "brier": 0.198025,
+                "log_loss": 0.5887871652357026,
+                "trade": null
+              },
+              "model": {
+                "p": 0.458,
+                "brier": 0.209764,
+                "log_loss": 0.6124892775424908,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.4515,
+                "brier": 0.20385225,
+                "log_loss": 0.6005679992668521,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.44825,
+                "brier": 0.20092806249999998,
+                "log_loss": 0.5946602338452913,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-27",
+            "ticker": "HOUSECA27-24-D",
+            "state": "CA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6052,
+            "p_market": 0.515,
+            "bid": 0.51,
+            "ask": 0.52,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.515,
+                "brier": 0.235225,
+                "log_loss": 0.6635883783184009,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6052,
+                "brier": 0.15586704000000004,
+                "log_loss": 0.5021962970679362,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.52,
+                  "fee": 0.017472,
+                  "execution_buffer": 0.02,
+                  "capital": 0.5574720000000001,
+                  "expected_net": 0.04772799999999988,
+                  "payout": 1,
+                  "net": 0.4425279999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.5601,
+                "brier": 0.19351200999999996,
+                "log_loss": 0.5796399397663503,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.53755,
+                "brier": 0.21386000250000003,
+                "log_loss": 0.6207335000509,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-41",
+            "ticker": "HOUSECA41-24-D",
+            "state": "CA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3232,
+            "p_market": 0.395,
+            "bid": 0.39,
+            "ask": 0.4,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.395,
+                "brier": 0.15602500000000002,
+                "log_loss": 0.5025268209512956,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3232,
+                "brier": 0.10445824,
+                "log_loss": 0.3903794706901234,
+                "trade": {
+                  "side": "no",
+                  "price": 0.61,
+                  "fee": 0.016653,
+                  "execution_buffer": 0.02,
+                  "capital": 0.646653,
+                  "expected_net": 0.030147000000000035,
+                  "payout": 1,
+                  "net": 0.35334699999999997
+                }
+              },
+              "hybrid_50": {
+                "p": 0.3591,
+                "brier": 0.12895280999999997,
+                "log_loss": 0.44488184047195584,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.37705,
+                "brier": 0.1421667025,
+                "log_loss": 0.4732890202372648,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CA-45",
+            "ticker": "HOUSECA45-24-D",
+            "state": "CA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.4911,
+            "p_market": 0.475,
+            "bid": 0.47,
+            "ask": 0.48,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.475,
+                "brier": 0.275625,
+                "log_loss": 0.7444404749474959,
+                "trade": null
+              },
+              "model": {
+                "p": 0.4911,
+                "brier": 0.25897921,
+                "log_loss": 0.7111075059369382,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.48305,
+                "brier": 0.2672373025,
+                "log_loss": 0.7276351110186186,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.4790249999999999,
+                "brier": 0.2714149506250001,
+                "log_loss": 0.7360024908663747,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-CO-8",
+            "ticker": "HOUSECO8-24-D",
+            "state": "CO",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.643,
+            "p_market": 0.66,
+            "bid": 0.65,
+            "ask": 0.67,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.66,
+                "brier": 0.43560000000000004,
+                "log_loss": 1.07880966137193,
+                "trade": null
+              },
+              "model": {
+                "p": 0.643,
+                "brier": 0.413449,
+                "log_loss": 1.030019497202498,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.6515,
+                "brier": 0.42445225,
+                "log_loss": 1.0541170487815583,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.65575,
+                "brier": 0.43000806250000007,
+                "log_loss": 1.066387141373373,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-IA-1",
+            "ticker": "HOUSEIA1-24-D",
+            "state": "IA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3497,
+            "p_market": 0.655,
+            "bid": 0.65,
+            "ask": 0.66,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.655,
+                "brier": 0.42902500000000005,
+                "log_loss": 1.0642108619507773,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3497,
+                "brier": 0.12229009,
+                "log_loss": 0.4303214841070309,
+                "trade": {
+                  "side": "no",
+                  "price": 0.35,
+                  "fee": 0.015925,
+                  "execution_buffer": 0.02,
+                  "capital": 0.385925,
+                  "expected_net": 0.26437499999999997,
+                  "payout": 1,
+                  "net": 0.6140749999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.5023500000000001,
+                "brier": 0.2523555225000001,
+                "log_loss": 0.6978582602900646,
+                "trade": {
+                  "side": "no",
+                  "price": 0.35,
+                  "fee": 0.015925,
+                  "execution_buffer": 0.02,
+                  "capital": 0.385925,
+                  "expected_net": 0.11172499999999991,
+                  "payout": 1,
+                  "net": 0.6140749999999999
+                }
+              },
+              "hybrid_25": {
+                "p": 0.578675,
+                "brier": 0.33486475562500007,
+                "log_loss": 0.8643507716200535,
+                "trade": {
+                  "side": "no",
+                  "price": 0.35,
+                  "fee": 0.015925,
+                  "execution_buffer": 0.02,
+                  "capital": 0.385925,
+                  "expected_net": 0.03539999999999993,
+                  "payout": 1,
+                  "net": 0.6140749999999999
+                }
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-IA-3",
+            "ticker": "HOUSEIA3-24-D",
+            "state": "IA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3531,
+            "p_market": 0.55,
+            "bid": 0.54,
+            "ask": 0.56,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.55,
+                "brier": 0.30250000000000005,
+                "log_loss": 0.7985076962177717,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3531,
+                "brier": 0.12467961000000002,
+                "log_loss": 0.43556355593219725,
+                "trade": {
+                  "side": "no",
+                  "price": 0.45999999999999996,
+                  "fee": 0.017388,
+                  "execution_buffer": 0.02,
+                  "capital": 0.497388,
+                  "expected_net": 0.14951200000000003,
+                  "payout": 1,
+                  "net": 0.5026120000000001
+                }
+              },
+              "hybrid_50": {
+                "p": 0.45155,
+                "brier": 0.20389740250000002,
+                "log_loss": 0.6006591611247939,
+                "trade": {
+                  "side": "no",
+                  "price": 0.45999999999999996,
+                  "fee": 0.017388,
+                  "execution_buffer": 0.02,
+                  "capital": 0.497388,
+                  "expected_net": 0.051061999999999996,
+                  "payout": 1,
+                  "net": 0.5026120000000001
+                }
+              },
+              "hybrid_25": {
+                "p": 0.5007750000000001,
+                "brier": 0.2507756006250001,
+                "log_loss": 0.694698383052682,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-ME-2",
+            "ticker": "HOUSEME2-24-D",
+            "state": "ME",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6677,
+            "p_market": 0.66,
+            "bid": 0.65,
+            "ask": 0.67,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.66,
+                "brier": 0.11559999999999998,
+                "log_loss": 0.4155154439616658,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6677,
+                "brier": 0.11042329000000002,
+                "log_loss": 0.40391630811831397,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.66385,
+                "brier": 0.11299682249999997,
+                "log_loss": 0.40969905864022593,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.661925,
+                "brier": 0.114294705625,
+                "log_loss": 0.4126030225146309,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-MI-7",
+            "ticker": "HOUSEMI7-24-D",
+            "state": "MI",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T15:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.3368,
+            "p_market": 0.27,
+            "bid": 0.26,
+            "ask": 0.28,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.27,
+                "brier": 0.0729,
+                "log_loss": 0.31471074483970024,
+                "trade": null
+              },
+              "model": {
+                "p": 0.3368,
+                "brier": 0.11343423999999999,
+                "log_loss": 0.41067867516105183,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.3034,
+                "brier": 0.09205156,
+                "log_loss": 0.36154392105023625,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.2867,
+                "brier": 0.08219689000000001,
+                "log_loss": 0.33785318969814454,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-MI-8",
+            "ticker": "HOUSEMI8-24-D",
+            "state": "MI",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5781,
+            "p_market": 0.58,
+            "bid": 0.57,
+            "ask": 0.59,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.58,
+                "brier": 0.17640000000000003,
+                "log_loss": 0.5447271754416722,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5781,
+                "brier": 0.17799961000000006,
+                "log_loss": 0.5480084148937068,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.57905,
+                "brier": 0.17719890250000003,
+                "log_loss": 0.5463664493517505,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.579525,
+                "brier": 0.17679922562500003,
+                "log_loss": 0.5455464764943798,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NC-1",
+            "ticker": "HOUSENC1-24-D",
+            "state": "NC",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.8175,
+            "p_market": 0.79,
+            "bid": 0.78,
+            "ask": 0.8,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.79,
+                "brier": 0.044099999999999986,
+                "log_loss": 0.23572233352106983,
+                "trade": null
+              },
+              "model": {
+                "p": 0.8175,
+                "brier": 0.033306249999999996,
+                "log_loss": 0.2015043762107286,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.80375,
+                "brier": 0.038514062500000015,
+                "log_loss": 0.21846700343030795,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.796875,
+                "brier": 0.041259765625,
+                "log_loss": 0.22705745063534608,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NE-2",
+            "ticker": "HOUSENE2-24-D",
+            "state": "NE",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.666,
+            "p_market": 0.67,
+            "bid": 0.66,
+            "ask": 0.68,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.67,
+                "brier": 0.4489000000000001,
+                "log_loss": 1.1086626245216114,
+                "trade": null
+              },
+              "model": {
+                "p": 0.666,
+                "brier": 0.44355600000000006,
+                "log_loss": 1.0966142860054366,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.668,
+                "brier": 0.44622400000000007,
+                "log_loss": 1.1026203100656486,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.669,
+                "brier": 0.44756100000000004,
+                "log_loss": 1.1056369036050742,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NY-19",
+            "ticker": "HOUSENY19-24-D",
+            "state": "NY",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5337,
+            "p_market": 0.64,
+            "bid": 0.63,
+            "ask": 0.65,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.64,
+                "brier": 0.1296,
+                "log_loss": 0.4462871026284195,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5337,
+                "brier": 0.21743569000000004,
+                "log_loss": 0.627921395642238,
+                "trade": {
+                  "side": "no",
+                  "price": 0.37,
+                  "fee": 0.016317,
+                  "execution_buffer": 0.02,
+                  "capital": 0.40631700000000004,
+                  "expected_net": 0.05998300000000001,
+                  "payout": 0,
+                  "net": -0.40631700000000004
+                }
+              },
+              "hybrid_50": {
+                "p": 0.58685,
+                "brier": 0.1706929225,
+                "log_loss": 0.5329860284360042,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.613425,
+                "brier": 0.149440230625,
+                "log_loss": 0.48869727169298954,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-NY-4",
+            "ticker": "HOUSENY4-24-D",
+            "state": "NY",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7607,
+            "p_market": 0.805,
+            "bid": 0.8,
+            "ask": 0.81,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.805,
+                "brier": 0.03802499999999998,
+                "log_loss": 0.21691300156357363,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7607,
+                "brier": 0.05726448999999998,
+                "log_loss": 0.2735162169788815,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.78285,
+                "brier": 0.04715412249999998,
+                "log_loss": 0.24481417222460505,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.793925,
+                "brier": 0.042466905625,
+                "log_loss": 0.23076628063476773,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-OR-5",
+            "ticker": "HOUSEOR5-24-D",
+            "state": "OR",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.6148,
+            "p_market": 0.525,
+            "bid": 0.52,
+            "ask": 0.53,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.525,
+                "brier": 0.225625,
+                "log_loss": 0.6443570163905132,
+                "trade": null
+              },
+              "model": {
+                "p": 0.6148,
+                "brier": 0.14837904,
+                "log_loss": 0.48645826731769626,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.53,
+                  "fee": 0.017437,
+                  "execution_buffer": 0.02,
+                  "capital": 0.5674370000000001,
+                  "expected_net": 0.04736299999999993,
+                  "payout": 1,
+                  "net": 0.4325629999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.5699000000000001,
+                "brier": 0.18498600999999995,
+                "log_loss": 0.562294372141183,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.54745,
+                "brier": 0.2048015025,
+                "log_loss": 0.6024841456627031,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-PA-10",
+            "ticker": "HOUSEPA10-24-D",
+            "state": "PA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T15:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.23870000000000002,
+            "p_market": 0.45,
+            "bid": 0.44,
+            "ask": 0.46,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.45,
+                "brier": 0.2025,
+                "log_loss": 0.5978370007556204,
+                "trade": null
+              },
+              "model": {
+                "p": 0.23870000000000002,
+                "brier": 0.05697769000000001,
+                "log_loss": 0.27272778066997017,
+                "trade": {
+                  "side": "no",
+                  "price": 0.56,
+                  "fee": 0.017248,
+                  "execution_buffer": 0.02,
+                  "capital": 0.5972480000000001,
+                  "expected_net": 0.16405199999999986,
+                  "payout": 1,
+                  "net": 0.4027519999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.34435000000000004,
+                "brier": 0.11857692250000003,
+                "log_loss": 0.4221281690047039,
+                "trade": {
+                  "side": "no",
+                  "price": 0.56,
+                  "fee": 0.017248,
+                  "execution_buffer": 0.02,
+                  "capital": 0.5972480000000001,
+                  "expected_net": 0.05840199999999984,
+                  "payout": 1,
+                  "net": 0.4027519999999999
+                }
+              },
+              "hybrid_25": {
+                "p": 0.39717500000000006,
+                "brier": 0.15774798062500003,
+                "log_loss": 0.5061283399643683,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-PA-7",
+            "ticker": "HOUSEPA7-24-D",
+            "state": "PA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7099,
+            "p_market": 0.71,
+            "bid": 0.7,
+            "ask": 0.72,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.71,
+                "brier": 0.5041,
+                "log_loss": 1.2378743560016172,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7099,
+                "brier": 0.50395801,
+                "log_loss": 1.2375295878547787,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.70995,
+                "brier": 0.5040290024999999,
+                "log_loss": 1.2377019570700636,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.709975,
+                "brier": 0.5040645006250001,
+                "log_loss": 1.2377881528206667,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-PA-8",
+            "ticker": "HOUSEPA8-24-D",
+            "state": "PA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.647,
+            "p_market": 0.66,
+            "bid": 0.65,
+            "ask": 0.67,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.66,
+                "brier": 0.43560000000000004,
+                "log_loss": 1.07880966137193,
+                "trade": null
+              },
+              "model": {
+                "p": 0.647,
+                "brier": 0.418609,
+                "log_loss": 1.0412872220488403,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.6535,
+                "brier": 0.42706225,
+                "log_loss": 1.059872460352179,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.65675,
+                "brier": 0.43132056249999995,
+                "log_loss": 1.0692962343340564,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-VA-7",
+            "ticker": "HOUSEVA7-24-D",
+            "state": "VA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7514,
+            "p_market": 0.72,
+            "bid": 0.71,
+            "ask": 0.73,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.72,
+                "brier": 0.07840000000000001,
+                "log_loss": 0.3285040669720361,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7514,
+                "brier": 0.061801960000000024,
+                "log_loss": 0.2858171458422686,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7357,
+                "brier": 0.06985448999999999,
+                "log_loss": 0.3069328520439183,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.72785,
+                "brier": 0.0740656225,
+                "log_loss": 0.3176602959714672,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-HOUSE-WA-3",
+            "ticker": "HOUSEWA3-24-D",
+            "state": "WA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:57+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203857id_/https://projects.fivethirtyeight.com/2024-election-forecast/house/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.4508,
+            "p_market": 0.45999999999999996,
+            "bid": 0.45,
+            "ask": 0.47,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.45999999999999996,
+                "brier": 0.2916,
+                "log_loss": 0.7765287894989964,
+                "trade": null
+              },
+              "model": {
+                "p": 0.4508,
+                "brier": 0.30162064000000005,
+                "log_loss": 0.7967314968165159,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.45539999999999997,
+                "brier": 0.29658915999999996,
+                "log_loss": 0.7865791253524979,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.4577,
+                "brier": 0.29408929,
+                "log_loss": 0.7815413313225407,
+                "trade": null
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "family": "house"
+  },
+  "NH-001_senate": {
+    "study": "NH-001",
+    "mode": "RETROSPECTIVE_QUOTED_COST_SCREEN_NOT_EXECUTION",
+    "live_validation": false,
+    "historical_fee_verified": false,
+    "warning": "One election; state intervals omit national common-factor risk. Quotes lack depth. No assumed fills.",
+    "horizons": [
+      {
+        "decision": "2024-10-29T16:00:00Z",
+        "admitted_races": 0,
+        "states": 0,
+        "excluded": [
+          {
+            "race_id": "2024-SENATE-AZ-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-FL-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-IN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MD-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MI-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MO-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MS-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MT-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-ND-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-NV-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-OH-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-PA-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-TN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-TX-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-UT-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-WI-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-WY-1",
+            "reason": "not_open_at_decision"
+          }
+        ],
+        "exclusion_counts": {
+          "no_eligible_contemporaneous_forecast": 10,
+          "not_open_at_decision": 8
+        },
+        "summary": null,
+        "competitive_subset": null,
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": []
+      },
+      {
+        "decision": "2024-11-04T16:00:00Z",
+        "admitted_races": 0,
+        "states": 0,
+        "excluded": [
+          {
+            "race_id": "2024-SENATE-AZ-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-FL-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-IN-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MD-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MI-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MO-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MS-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-MT-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-ND-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-NV-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-OH-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-PA-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-TN-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-TX-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-UT-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-WI-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          },
+          {
+            "race_id": "2024-SENATE-WY-1",
+            "reason": "no_eligible_contemporaneous_forecast"
+          }
+        ],
+        "exclusion_counts": {
+          "no_eligible_contemporaneous_forecast": 17,
+          "not_open_at_decision": 1
+        },
+        "summary": null,
+        "competitive_subset": null,
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": []
+      }
+    ],
+    "family": "senate"
+  },
+  "NH-001A_senate": {
+    "study": "NH-001A",
+    "mode": "RETROSPECTIVE_QUOTED_COST_SCREEN_NOT_EXECUTION",
+    "live_validation": false,
+    "historical_fee_verified": false,
+    "warning": "One election; state intervals omit national common-factor risk. Quotes lack depth. No assumed fills.",
+    "horizons": [
+      {
+        "decision": "2024-11-04T22:00:00Z",
+        "admitted_races": 12,
+        "states": 12,
+        "excluded": [
+          {
+            "race_id": "2024-SENATE-MN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MS-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-ND-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-TN-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-UT-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-WY-1",
+            "reason": "no_fresh_two_sided_quote"
+          }
+        ],
+        "exclusion_counts": {
+          "not_open_at_decision": 1,
+          "no_fresh_two_sided_quote": 5
+        },
+        "summary": {
+          "market": {
+            "brier": 0.08855625,
+            "log_loss": 0.3106131006725316,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.09135311833333332,
+            "log_loss": 0.30003270913279284,
+            "brier_delta_vs_market": 0.00279686833333332,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.01577421916666676,
+              0.026276196666666665
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.006729090000000018,
+              0.0073639100000000065
+            ],
+            "signals": 3,
+            "hypothetical_net_dollars": -0.4543420000000001,
+            "capital_dollars": 1.454342,
+            "hypothetical_return_on_capital": -0.3124038224846701,
+            "extra_1c_cost_same_trades_net": -0.48434200000000005,
+            "extra_3c_cost_same_trades_net": -0.5443420000000001,
+            "excluding_best_two_winners_net": -0.6040099999999999,
+            "largest_loss_share": 0.7734259366566779
+          },
+          "hybrid_50": {
+            "brier": 0.08903686291666668,
+            "log_loss": 0.30423213932096743,
+            "brier_delta_vs_market": 0.0004806129166666768,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.008573917083333332,
+              0.01179057812500002
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0040761134090909045,
+              0.0027041138636363757
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.08856710114583333,
+            "log_loss": 0.30715897521455277,
+            "brier_delta_vs_market": 1.0851145833321691e-05,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.004464857500000027,
+              0.005550240156250001
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0022159488068181957,
+              0.001107596647727272
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "competitive_subset": {
+          "market": {
+            "brier": 0.1169361111111111,
+            "log_loss": 0.3946670356213353,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.12175243111111109,
+            "log_loss": 0.3964618893859193,
+            "brier_delta_vs_market": 0.0048163199999999825,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.020381203333333407,
+              0.0357192888888889
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.008029441250000026,
+              0.011348433750000008
+            ],
+            "signals": 3,
+            "hypothetical_net_dollars": -0.4543420000000001,
+            "capital_dollars": 1.454342,
+            "hypothetical_return_on_capital": -0.3124038224846701,
+            "extra_1c_cost_same_trades_net": -0.48434200000000005,
+            "extra_3c_cost_same_trades_net": -0.5443420000000001,
+            "excluding_best_two_winners_net": -0.6040099999999999,
+            "largest_loss_share": 0.7734259366566779
+          },
+          "hybrid_50": {
+            "brier": 0.11830502444444445,
+            "log_loss": 0.3942096506071138,
+            "brier_delta_vs_market": 0.0013689133333333473,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.010922939166666666,
+              0.01627362833333336
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.004785547812499993,
+              0.004537264687500017
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "hybrid_25": {
+            "brier": 0.11736075611111109,
+            "log_loss": 0.39411235536111816,
+            "brier_delta_vs_market": 0.0004246449999999847,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.005657071458333368,
+              0.007759809861111104
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.002585480703125019,
+              0.0019843942968749994
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": [
+          {
+            "race_id": "2024-SENATE-AZ-1",
+            "ticker": "SENATEAZ-24-D",
+            "state": "AZ",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7925,
+            "p_market": 0.735,
+            "bid": 0.73,
+            "ask": 0.74,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.735,
+                "brier": 0.07022500000000001,
+                "log_loss": 0.3078847797693004,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7925,
+                "brier": 0.043056250000000004,
+                "log_loss": 0.2325627732307014,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7637499999999999,
+                "brier": 0.05581406250000003,
+                "log_loss": 0.26951476849633205,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.749375,
+                "brier": 0.06281289062499999,
+                "log_loss": 0.2885157532003583,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-FL-1",
+            "ticker": "SENATEFL-24-D",
+            "state": "FL",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.1779,
+            "p_market": 0.1,
+            "bid": 0.09,
+            "ask": 0.11,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.1,
+                "brier": 0.010000000000000002,
+                "log_loss": 0.10536051565782628,
+                "trade": null
+              },
+              "model": {
+                "p": 0.1779,
+                "brier": 0.03164841,
+                "log_loss": 0.19589323682404927,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.11,
+                  "fee": 0.0068530000000000015,
+                  "execution_buffer": 0.02,
+                  "capital": 0.136853,
+                  "expected_net": 0.041047,
+                  "payout": 0,
+                  "net": -0.136853
+                }
+              },
+              "hybrid_50": {
+                "p": 0.13895000000000002,
+                "brier": 0.019307102500000006,
+                "log_loss": 0.1496027042312286,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.11947500000000001,
+                "brier": 0.014274275625000003,
+                "log_loss": 0.12723695849040237,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-IN-1",
+            "ticker": "SENATEIN-24-D",
+            "state": "IN",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0077,
+            "p_market": 0.04,
+            "bid": 0.03,
+            "ask": 0.05,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.04,
+                "brier": 0.0016,
+                "log_loss": 0.040821994520255166,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0077,
+                "brier": 5.929e-05,
+                "log_loss": 0.0077297980619412685,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.02385,
+                "brier": 0.0005688225,
+                "log_loss": 0.024139015853325826,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.031925,
+                "brier": 0.0010192056250000001,
+                "log_loss": 0.032445715368085985,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MD-1",
+            "ticker": "SENATEMD-24-D",
+            "state": "MD",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.9953,
+            "p_market": 0.945,
+            "bid": 0.94,
+            "ask": 0.95,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.945,
+                "brier": 0.0030250000000000055,
+                "log_loss": 0.05657035148839435,
+                "trade": null
+              },
+              "model": {
+                "p": 0.9953,
+                "brier": 2.2090000000000353e-05,
+                "log_loss": 0.004711079730119223,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.97015,
+                "brier": 0.0008910225000000026,
+                "log_loss": 0.03030458026485562,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.957575,
+                "brier": 0.0017998806250000038,
+                "log_loss": 0.04335123201316731,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MI-1",
+            "ticker": "SENATEMI-24-D",
+            "state": "MI",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7614,
+            "p_market": 0.78,
+            "bid": 0.77,
+            "ask": 0.79,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.78,
+                "brier": 0.04839999999999999,
+                "log_loss": 0.2484613592984996,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7614,
+                "brier": 0.056929960000000016,
+                "log_loss": 0.2725964350337401,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7706999999999999,
+                "brier": 0.052578490000000026,
+                "log_loss": 0.26045608619818955,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.77535,
+                "brier": 0.05046762250000001,
+                "log_loss": 0.2544407386719791,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MO-1",
+            "ticker": "SENATEMO-24-D",
+            "state": "MO",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0196,
+            "p_market": 0.075,
+            "bid": 0.06,
+            "ask": 0.09,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.075,
+                "brier": 0.005625,
+                "log_loss": 0.0779615414697118,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0196,
+                "brier": 0.00038416,
+                "log_loss": 0.019794627328179493,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.047299999999999995,
+                "brier": 0.0022372899999999994,
+                "log_loss": 0.04845522026940337,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.061149999999999996,
+                "brier": 0.0037393224999999995,
+                "log_loss": 0.06309955694331693,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MT-1",
+            "ticker": "SENATEMT-24-D",
+            "state": "MT",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0986,
+            "p_market": 0.185,
+            "bid": 0.18,
+            "ask": 0.19,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.185,
+                "brier": 0.034225,
+                "log_loss": 0.2045671657412744,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0986,
+                "brier": 0.009721959999999998,
+                "log_loss": 0.10380616872558918,
+                "trade": {
+                  "side": "no",
+                  "price": 0.8200000000000001,
+                  "fee": 0.010331999999999997,
+                  "execution_buffer": 0.02,
+                  "capital": 0.8503320000000001,
+                  "expected_net": 0.05106799999999989,
+                  "payout": 1,
+                  "net": 0.1496679999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.14179999999999998,
+                "brier": 0.020107239999999995,
+                "log_loss": 0.15291810642471262,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.1634,
+                "brier": 0.026699559999999997,
+                "log_loss": 0.178409219974039,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-NV-1",
+            "ticker": "SENATENV-24-D",
+            "state": "NV",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.8568000000000001,
+            "p_market": 0.81,
+            "bid": 0.8,
+            "ask": 0.82,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.81,
+                "brier": 0.03609999999999998,
+                "log_loss": 0.21072103131565253,
+                "trade": null
+              },
+              "model": {
+                "p": 0.8568000000000001,
+                "brier": 0.020506239999999967,
+                "log_loss": 0.1545507598485979,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.8334000000000001,
+                "brier": 0.027755559999999953,
+                "log_loss": 0.1822415599937838,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.8217000000000001,
+                "brier": 0.03179088999999997,
+                "log_loss": 0.19637991404499477,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-OH-1",
+            "ticker": "SENATEOH-24-D",
+            "state": "OH",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5329,
+            "p_market": 0.42,
+            "bid": 0.41,
+            "ask": 0.43,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.42,
+                "brier": 0.17639999999999997,
+                "log_loss": 0.5447271754416719,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5329,
+                "brier": 0.28398241,
+                "log_loss": 0.7612119114740749,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.43,
+                  "fee": 0.017157000000000002,
+                  "execution_buffer": 0.02,
+                  "capital": 0.467157,
+                  "expected_net": 0.06574300000000005,
+                  "payout": 0,
+                  "net": -0.467157
+                }
+              },
+              "hybrid_50": {
+                "p": 0.47645000000000004,
+                "brier": 0.22700460250000004,
+                "log_loss": 0.6471227422486661,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.448225,
+                "brier": 0.200905650625,
+                "log_loss": 0.5946149244956992,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-PA-1",
+            "ticker": "SENATEPA-24-D",
+            "state": "PA",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7228999999999999,
+            "p_market": 0.755,
+            "bid": 0.75,
+            "ask": 0.76,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.755,
+                "brier": 0.570025,
+                "log_loss": 1.40649706843741,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7228999999999999,
+                "brier": 0.5225844099999998,
+                "log_loss": 1.2833768271132038,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.73895,
+                "brier": 0.5460471025,
+                "log_loss": 1.3430433191255757,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.746975,
+                "brier": 0.5579716506249999,
+                "log_loss": 1.374266980907172,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-TX-1",
+            "ticker": "SENATETX-24-D",
+            "state": "TX",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.1732,
+            "p_market": 0.20500000000000002,
+            "bid": 0.2,
+            "ask": 0.21,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.20500000000000002,
+                "brier": 0.04202500000000001,
+                "log_loss": 0.22941316432780523,
+                "trade": null
+              },
+              "model": {
+                "p": 0.1732,
+                "brier": 0.02999824,
+                "log_loss": 0.19019245117452388,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.1891,
+                "brier": 0.035758809999999995,
+                "log_loss": 0.2096105370316255,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.19705,
+                "brier": 0.0388287025,
+                "log_loss": 0.219462833474637,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-WI-1",
+            "ticker": "SENATEWI-24-D",
+            "state": "WI",
+            "decision": "2024-11-04T22:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-04T22:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.688,
+            "p_market": 0.745,
+            "bid": 0.74,
+            "ask": 0.75,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.745,
+                "brier": 0.065025,
+                "log_loss": 0.29437106060257756,
+                "trade": null
+              },
+              "model": {
+                "p": 0.688,
+                "brier": 0.09734400000000003,
+                "log_loss": 0.37396644104879345,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7164999999999999,
+                "brier": 0.08037225000000005,
+                "log_loss": 0.33337703171391064,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.73075,
+                "brier": 0.0724955625,
+                "log_loss": 0.3136838749907817,
+                "trade": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "decision": "2024-11-05T16:00:00Z",
+        "admitted_races": 13,
+        "states": 13,
+        "excluded": [
+          {
+            "race_id": "2024-SENATE-MN-1",
+            "reason": "not_open_at_decision"
+          },
+          {
+            "race_id": "2024-SENATE-MS-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-ND-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-UT-1",
+            "reason": "no_fresh_two_sided_quote"
+          },
+          {
+            "race_id": "2024-SENATE-WY-1",
+            "reason": "no_fresh_two_sided_quote"
+          }
+        ],
+        "exclusion_counts": {
+          "not_open_at_decision": 1,
+          "no_fresh_two_sided_quote": 4
+        },
+        "summary": {
+          "market": {
+            "brier": 0.07524423076923077,
+            "log_loss": 0.27515577688984344,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.08432600461538461,
+            "log_loss": 0.2770302315328536,
+            "brier_delta_vs_market": 0.00908177384615383,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.010812304615384636,
+              0.038296510769230775
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0039078625000000195,
+              0.013019317499999983
+            ],
+            "signals": 5,
+            "hypothetical_net_dollars": -0.09145000000000009,
+            "capital_dollars": 3.09145,
+            "hypothetical_return_on_capital": -0.029581587927994982,
+            "extra_1c_cost_same_trades_net": -0.14145000000000008,
+            "extra_3c_cost_same_trades_net": -0.24145000000000008,
+            "excluding_best_two_winners_net": -0.4679300000000001,
+            "largest_loss_share": 0.7382196649438194
+          },
+          "hybrid_50": {
+            "brier": 0.0785220396153846,
+            "log_loss": 0.2745855698162024,
+            "brier_delta_vs_market": 0.0032778088461538355,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.006139134230769238,
+              0.016626821730769244
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0025867156250000134,
+              0.005266454374999987
+            ],
+            "signals": 1,
+            "hypothetical_net_dollars": -0.385925,
+            "capital_dollars": 0.385925,
+            "hypothetical_return_on_capital": -1.0,
+            "extra_1c_cost_same_trades_net": -0.395925,
+            "extra_3c_cost_same_trades_net": -0.415925,
+            "excluding_best_two_winners_net": -0.385925,
+            "largest_loss_share": 1.0
+          },
+          "hybrid_25": {
+            "brier": 0.07656736567307693,
+            "log_loss": 0.2745369492688685,
+            "brier_delta_vs_market": 0.0013231349038461569,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.0032625232211538507,
+              0.007692252500000004
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.001451553906249997,
+              0.002322426093750005
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "competitive_subset": {
+          "market": {
+            "brier": 0.10713333333333333,
+            "log_loss": 0.3716336735935836,
+            "brier_delta_vs_market": 0.0,
+            "state_bootstrap_95_conditional_on_one_election": [
+              0.0,
+              0.0
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              0.0,
+              0.0
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "model": {
+            "brier": 0.12175243111111109,
+            "log_loss": 0.3964618893859193,
+            "brier_delta_vs_market": 0.014619097777777756,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.013795433333333336,
+              0.05626764444444446
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.004173191250000029,
+              0.021217578749999976
+            ],
+            "signals": 4,
+            "hypothetical_net_dollars": -0.14629799999999998,
+            "capital_dollars": 2.146298,
+            "hypothetical_return_on_capital": -0.06816294848152493,
+            "extra_1c_cost_same_trades_net": -0.186298,
+            "extra_3c_cost_same_trades_net": -0.266298,
+            "excluding_best_two_winners_net": -0.522778,
+            "largest_loss_share": 0.7382196649438194
+          },
+          "hybrid_50": {
+            "brier": 0.11288971888888888,
+            "log_loss": 0.3820282288130427,
+            "brier_delta_vs_market": 0.005756385555555541,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.007662805277777817,
+              0.024801401388888877
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0027305790625000194,
+              0.00904917593749998
+            ],
+            "signals": 1,
+            "hypothetical_net_dollars": -0.385925,
+            "capital_dollars": 0.385925,
+            "hypothetical_return_on_capital": -1.0,
+            "extra_1c_cost_same_trades_net": -0.395925,
+            "extra_3c_cost_same_trades_net": -0.415925,
+            "excluding_best_two_winners_net": -0.385925,
+            "largest_loss_share": 1.0
+          },
+          "hybrid_25": {
+            "brier": 0.10962323527777779,
+            "log_loss": 0.37638662956306895,
+            "brier_delta_vs_market": 0.002489901944444449,
+            "state_bootstrap_95_conditional_on_one_election": [
+              -0.004028380902777775,
+              0.011570581388888897
+            ],
+            "leave_one_state_out_brier_delta_range": [
+              -0.0015262853906249957,
+              0.0041346846093750075
+            ],
+            "signals": 0,
+            "hypothetical_net_dollars": 0,
+            "capital_dollars": 0,
+            "hypothetical_return_on_capital": null,
+            "extra_1c_cost_same_trades_net": 0.0,
+            "extra_3c_cost_same_trades_net": 0.0,
+            "excluding_best_two_winners_net": 0,
+            "largest_loss_share": null
+          },
+          "no_trade": {
+            "signals": 0,
+            "capital_dollars": 0,
+            "hypothetical_net_dollars": 0
+          }
+        },
+        "historical_support_screen": false,
+        "minimum_20_race_breadth_met": false,
+        "rows": [
+          {
+            "race_id": "2024-SENATE-AZ-1",
+            "ticker": "SENATEAZ-24-D",
+            "state": "AZ",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7925,
+            "p_market": 0.715,
+            "bid": 0.71,
+            "ask": 0.72,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.715,
+                "brier": 0.08122500000000002,
+                "log_loss": 0.33547273628812946,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7925,
+                "brier": 0.043056250000000004,
+                "log_loss": 0.2325627732307014,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.72,
+                  "fee": 0.014112000000000001,
+                  "execution_buffer": 0.02,
+                  "capital": 0.754112,
+                  "expected_net": 0.03838799999999998,
+                  "payout": 1,
+                  "net": 0.245888
+                }
+              },
+              "hybrid_50": {
+                "p": 0.7537499999999999,
+                "brier": 0.06063906250000004,
+                "log_loss": 0.282694530940742,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.734375,
+                "brier": 0.070556640625,
+                "log_loss": 0.3087354816496133,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-FL-1",
+            "ticker": "SENATEFL-24-D",
+            "state": "FL",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.1779,
+            "p_market": 0.10500000000000001,
+            "bid": 0.1,
+            "ask": 0.11,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.10500000000000001,
+                "brier": 0.011025000000000002,
+                "log_loss": 0.11093156070728166,
+                "trade": null
+              },
+              "model": {
+                "p": 0.1779,
+                "brier": 0.03164841,
+                "log_loss": 0.19589323682404927,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.11,
+                  "fee": 0.0068530000000000015,
+                  "execution_buffer": 0.02,
+                  "capital": 0.136853,
+                  "expected_net": 0.041047,
+                  "payout": 0,
+                  "net": -0.136853
+                }
+              },
+              "hybrid_50": {
+                "p": 0.14145000000000002,
+                "brier": 0.020008102500000007,
+                "log_loss": 0.15251035922232553,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.12322500000000002,
+                "brier": 0.015184400625000004,
+                "log_loss": 0.1315048759686055,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-IN-1",
+            "ticker": "SENATEIN-24-D",
+            "state": "IN",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T15:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0077,
+            "p_market": 0.05,
+            "bid": 0.04,
+            "ask": 0.06,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.05,
+                "brier": 0.0025000000000000005,
+                "log_loss": 0.05129329438755058,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0077,
+                "brier": 5.929e-05,
+                "log_loss": 0.0077297980619412685,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.02885,
+                "brier": 0.0008323225,
+                "log_loss": 0.02927434270399525,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.03942500000000001,
+                "brier": 0.0015543306250000008,
+                "log_loss": 0.040223215490870885,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MD-1",
+            "ticker": "SENATEMD-24-D",
+            "state": "MD",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.9953,
+            "p_market": 0.945,
+            "bid": 0.94,
+            "ask": 0.95,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.945,
+                "brier": 0.0030250000000000055,
+                "log_loss": 0.05657035148839435,
+                "trade": null
+              },
+              "model": {
+                "p": 0.9953,
+                "brier": 2.2090000000000353e-05,
+                "log_loss": 0.004711079730119223,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.97015,
+                "brier": 0.0008910225000000026,
+                "log_loss": 0.03030458026485562,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.957575,
+                "brier": 0.0017998806250000038,
+                "log_loss": 0.04335123201316731,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MI-1",
+            "ticker": "SENATEMI-24-D",
+            "state": "MI",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7614,
+            "p_market": 0.78,
+            "bid": 0.77,
+            "ask": 0.79,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.78,
+                "brier": 0.04839999999999999,
+                "log_loss": 0.2484613592984996,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7614,
+                "brier": 0.056929960000000016,
+                "log_loss": 0.2725964350337401,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7706999999999999,
+                "brier": 0.052578490000000026,
+                "log_loss": 0.26045608619818955,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.77535,
+                "brier": 0.05046762250000001,
+                "log_loss": 0.2544407386719791,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MO-1",
+            "ticker": "SENATEMO-24-D",
+            "state": "MO",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0196,
+            "p_market": 0.08499999999999999,
+            "bid": 0.08,
+            "ask": 0.09,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.08499999999999999,
+                "brier": 0.007224999999999999,
+                "log_loss": 0.0888312137066157,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0196,
+                "brier": 0.00038416,
+                "log_loss": 0.019794627328179493,
+                "trade": {
+                  "side": "no",
+                  "price": 0.92,
+                  "fee": 0.005151999999999999,
+                  "execution_buffer": 0.02,
+                  "capital": 0.9451520000000001,
+                  "expected_net": 0.035247999999999946,
+                  "payout": 1,
+                  "net": 0.0548479999999999
+                }
+              },
+              "hybrid_50": {
+                "p": 0.0523,
+                "brier": 0.00273529,
+                "log_loss": 0.05371728250598787,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.06865,
+                "brier": 0.004712822500000001,
+                "log_loss": 0.07112013250312554,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-MT-1",
+            "ticker": "SENATEMT-24-D",
+            "state": "MT",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0986,
+            "p_market": 0.165,
+            "bid": 0.16,
+            "ask": 0.17,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.165,
+                "brier": 0.027225000000000003,
+                "log_loss": 0.18032355413128162,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0986,
+                "brier": 0.009721959999999998,
+                "log_loss": 0.10380616872558918,
+                "trade": {
+                  "side": "no",
+                  "price": 0.84,
+                  "fee": 0.009408000000000003,
+                  "execution_buffer": 0.02,
+                  "capital": 0.869408,
+                  "expected_net": 0.03199200000000002,
+                  "payout": 1,
+                  "net": 0.13059200000000004
+                }
+              },
+              "hybrid_50": {
+                "p": 0.1318,
+                "brier": 0.01737124,
+                "log_loss": 0.1413331761166439,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.1484,
+                "brier": 0.02202256,
+                "log_loss": 0.16063834596281262,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-NV-1",
+            "ticker": "SENATENV-24-D",
+            "state": "NV",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.8568000000000001,
+            "p_market": 0.805,
+            "bid": 0.8,
+            "ask": 0.81,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.805,
+                "brier": 0.03802499999999998,
+                "log_loss": 0.21691300156357363,
+                "trade": null
+              },
+              "model": {
+                "p": 0.8568000000000001,
+                "brier": 0.020506239999999967,
+                "log_loss": 0.1545507598485979,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.8309000000000001,
+                "brier": 0.02859480999999997,
+                "log_loss": 0.1852458283112013,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.8179500000000001,
+                "brier": 0.033142202499999975,
+                "log_loss": 0.2009540689419567,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-OH-1",
+            "ticker": "SENATEOH-24-D",
+            "state": "OH",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.5329,
+            "p_market": 0.345,
+            "bid": 0.34,
+            "ask": 0.35,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.345,
+                "brier": 0.11902499999999998,
+                "log_loss": 0.4231200433468851,
+                "trade": null
+              },
+              "model": {
+                "p": 0.5329,
+                "brier": 0.28398241,
+                "log_loss": 0.7612119114740749,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.35,
+                  "fee": 0.015925,
+                  "execution_buffer": 0.02,
+                  "capital": 0.385925,
+                  "expected_net": 0.14697500000000002,
+                  "payout": 0,
+                  "net": -0.385925
+                }
+              },
+              "hybrid_50": {
+                "p": 0.43895,
+                "brier": 0.1926771025,
+                "log_loss": 0.5779452508712617,
+                "trade": {
+                  "side": "yes",
+                  "price": 0.35,
+                  "fee": 0.015925,
+                  "execution_buffer": 0.02,
+                  "capital": 0.385925,
+                  "expected_net": 0.05302499999999999,
+                  "payout": 0,
+                  "net": -0.385925
+                }
+              },
+              "hybrid_25": {
+                "p": 0.39197499999999996,
+                "brier": 0.15364440062499998,
+                "log_loss": 0.49753927944025644,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-PA-1",
+            "ticker": "SENATEPA-24-D",
+            "state": "PA",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.7228999999999999,
+            "p_market": 0.725,
+            "bid": 0.72,
+            "ask": 0.73,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.725,
+                "brier": 0.525625,
+                "log_loss": 1.2909841813155656,
+                "trade": null
+              },
+              "model": {
+                "p": 0.7228999999999999,
+                "brier": 0.5225844099999998,
+                "log_loss": 1.2833768271132038,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7239499999999999,
+                "brier": 0.5241036024999998,
+                "log_loss": 1.287173270252083,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.724475,
+                "brier": 0.524864025625,
+                "log_loss": 1.2890769104045314,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-TN-1",
+            "ticker": "SENATETN-24-D",
+            "state": "TN",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T15:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.0008,
+            "p_market": 0.035,
+            "bid": 0.02,
+            "ask": 0.05,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.035,
+                "brier": 0.0012250000000000002,
+                "log_loss": 0.03562717764315116,
+                "trade": null
+              },
+              "model": {
+                "p": 0.0008,
+                "brier": 6.4e-07,
+                "log_loss": 0.0010005003335835344,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.017900000000000003,
+                "brier": 0.0003204100000000001,
+                "log_loss": 0.018062142818408518,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.02645,
+                "brier": 0.0006996025000000001,
+                "log_loss": 0.026806094420506934,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-TX-1",
+            "ticker": "SENATETX-24-D",
+            "state": "TX",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.1732,
+            "p_market": 0.195,
+            "bid": 0.19,
+            "ask": 0.2,
+            "outcome_dem": 0,
+            "arms": {
+              "market": {
+                "p": 0.195,
+                "brier": 0.038025,
+                "log_loss": 0.21691300156357377,
+                "trade": null
+              },
+              "model": {
+                "p": 0.1732,
+                "brier": 0.02999824,
+                "log_loss": 0.19019245117452388,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.18409999999999999,
+                "brier": 0.033892809999999995,
+                "log_loss": 0.20346348054738245,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.18955,
+                "brier": 0.0359292025,
+                "log_loss": 0.21016563002395258,
+                "trade": null
+              }
+            }
+          },
+          {
+            "race_id": "2024-SENATE-WI-1",
+            "ticker": "SENATEWI-24-D",
+            "state": "WI",
+            "decision": "2024-11-05T16:00:00Z",
+            "forecast_available_at": "2024-11-03T20:38:55+00:00",
+            "forecast_source": "https://web.archive.org/web/20241103203855id_/https://projects.fivethirtyeight.com/2024-election-forecast/senate/states_latest.json",
+            "quote_observed_at": "2024-11-05T16:00:00+00:00",
+            "quote_kind": "historical_hourly_quote_close_no_depth",
+            "p_model": 0.688,
+            "p_market": 0.725,
+            "bid": 0.72,
+            "ask": 0.73,
+            "outcome_dem": 1,
+            "arms": {
+              "market": {
+                "p": 0.725,
+                "brier": 0.07562500000000001,
+                "log_loss": 0.32158362412746233,
+                "trade": null
+              },
+              "model": {
+                "p": 0.688,
+                "brier": 0.09734400000000003,
+                "log_loss": 0.37396644104879345,
+                "trade": null
+              },
+              "hybrid_50": {
+                "p": 0.7064999999999999,
+                "brier": 0.08614225000000006,
+                "log_loss": 0.34743207685755506,
+                "trade": null
+              },
+              "hybrid_25": {
+                "p": 0.7157499999999999,
+                "brier": 0.08079806250000006,
+                "log_loss": 0.3344243350039128,
+                "trade": null
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "family": "senate"
+  }
+}

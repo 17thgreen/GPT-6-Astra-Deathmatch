@@ -1,0 +1,38 @@
+{
+  "post_score_diagnostic_only": true,
+  "question": "Does permitting one-hour-old quotes account for the observed forecasting improvement?",
+  "rows": [
+    {
+      "family": "house",
+      "decision": "2024-11-04T22:00:00Z",
+      "exact_decision_quote_rows": 15,
+      "market_brier": 0.24566666666666664,
+      "hybrid_brier": 0.205969884,
+      "delta": -0.03969678266666665
+    },
+    {
+      "family": "house",
+      "decision": "2024-11-05T16:00:00Z",
+      "exact_decision_quote_rows": 21,
+      "market_brier": 0.23979047619047622,
+      "hybrid_brier": 0.2185136167857143,
+      "delta": -0.021276859404761927
+    },
+    {
+      "family": "senate",
+      "decision": "2024-11-04T22:00:00Z",
+      "exact_decision_quote_rows": 12,
+      "market_brier": 0.08855625,
+      "hybrid_brier": 0.08903686291666668,
+      "delta": 0.0004806129166666784
+    },
+    {
+      "family": "senate",
+      "decision": "2024-11-05T16:00:00Z",
+      "exact_decision_quote_rows": 11,
+      "market_brier": 0.08858636363636364,
+      "hybrid_brier": 0.09269398022727272,
+      "delta": 0.00410761659090908
+    }
+  ]
+}

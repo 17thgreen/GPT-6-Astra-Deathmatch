@@ -1,0 +1,777 @@
+[
+  {
+    "series": "HOUSEAZ2",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEAKAL",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEAZ6",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA27",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA21",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEAZ1",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA13",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA22",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECA40",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECA41",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECA47",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECA9",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECA49",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECO3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSECA45",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECO8",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSECT5",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEFL13",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEFL1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEIA3",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEFL6",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEFL23",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEIA1",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEIL17",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEIN1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEME2",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEMI10",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEMI3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEMI4",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEMI7",
+    "status": "complete",
+    "markets_2024": 3
+  },
+  {
+    "series": "HOUSEMI8",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEMN2",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEMT1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENC1",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSENE2",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSENH1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENH2",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENJ09",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENJ5",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENJ7",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENJ9",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENM2",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENV1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENV3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENV4",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY17",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY18",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY19",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSENY21",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY22",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSENY4",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEOH1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEOH13",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEOH9",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEOR5",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEPA1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEPARTY-MI07",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEPA8",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEPA10",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSETX15",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEPA7",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEPA17",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSETN7",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSETX28",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEAK",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSETX34",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEWA3",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "HOUSEWI3",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEVA1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEVA2",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEWI1",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "HOUSEVA7",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEAL",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEDE",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATECA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEFL",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEAR",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEAZ",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATECO",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATECT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEGA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEIA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEKY",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEIN",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEHI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEKS",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEIL",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEID",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEMA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEME",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEMI",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEMS",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEMO",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATELA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEMN",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEMD",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEMT",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATENM",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATENJ",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATENE",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATENH",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATENC",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATENV",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEND",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEOK",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATENY",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEOH",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEPA",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEPARTY-AZ",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-FL",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-MD",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEOR",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-MI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-NE",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-NV",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-OH",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-WI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-PA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-TX",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTY-MT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYHI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYMA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYCA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYMN",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYME",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYDE",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYIN",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYCT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYMO",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYRI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYTN",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYNY",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYND",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYNM",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYMS",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYNJ",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATESC",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYUT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYVA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYWA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATESD",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYVT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATERI",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEPARTYWY",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEWI",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEVA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEWA",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATETN",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATETX",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEUT",
+    "status": "complete",
+    "markets_2024": 2
+  },
+  {
+    "series": "SENATEVT",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEWV",
+    "status": "complete",
+    "markets_2024": 0
+  },
+  {
+    "series": "SENATEWY",
+    "status": "complete",
+    "markets_2024": 2
+  }
+]

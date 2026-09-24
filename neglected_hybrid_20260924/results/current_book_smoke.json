@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-09-24T05:20:18.511240+00:00",
+  "live_trading": false,
+  "forecast_admitted": false,
+  "signals": [],
+  "reason": "Recorder has no forecast or fee admission and no order capability.",
+  "rows": [
+    {
+      "ticker": "KXHOUSERACE-AL01-26-D",
+      "mode": "OBSERVATION_ONLY",
+      "exchange_timestamp_available": false,
+      "book": {
+        "yes_bid": "0.0170",
+        "yes_ask": "0.0770",
+        "no_bid": "0.9230",
+        "no_ask": "0.9830",
+        "yes_ask_visible_quantity": "98.00",
+        "no_ask_visible_quantity": "50.00",
+        "spread": "0.0600",
+        "quantity_is_not_a_fill": true
+      },
+      "rules_sha256": "8b1b7ba84c46703e4abd5f09517d43bf0dbe7e54bd42b699f601b7bdc3671eb8",
+      "received_at": "2026-09-24T05:20:02.766951+00:00",
+      "request_started_at": "2026-09-24T05:19:58.747624+00:00",
+      "book_body_sha256": "51984346cdace874b3c9dda7ac701c6c662d4758e381222b3b8331e21097d095",
+      "admitted_book": true
+    },
+    {
+      "ticker": "KXHOUSERACE-AL02-26-D",
+      "mode": "OBSERVATION_ONLY",
+      "exchange_timestamp_available": false,
+      "book": {
+        "yes_bid": "0.2800",
+        "yes_ask": "0.2900",
+        "no_bid": "0.7100",
+        "no_ask": "0.7200",
+        "yes_ask_visible_quantity": "23211.90",
+        "no_ask_visible_quantity": "225.60",
+        "spread": "0.0100",
+        "quantity_is_not_a_fill": true
+      },
+      "rules_sha256": "6ee53713e9cd794ded7f547c3cc9cb5db02525a7b84ae2cd76d8059d2558246d",
+      "received_at": "2026-09-24T05:20:10.442532+00:00",
+      "request_started_at": "2026-09-24T05:20:06.545622+00:00",
+      "book_body_sha256": "83d4c8915256ac3911185669a5e20adc31fd35ec91d56d5a7ddc330dc0647845",
+      "admitted_book": true
+    },
+    {
+      "ticker": "KXHOUSERACE-AL03-26-D",
+      "mode": "OBSERVATION_ONLY",
+      "exchange_timestamp_available": false,
+      "book": {
+        "yes_bid": "0.0040",
+        "yes_ask": "0.0140",
+        "no_bid": "0.9860",
+        "no_ask": "0.9960",
+        "yes_ask_visible_quantity": "218.00",
+        "no_ask_visible_quantity": "8.00",
+        "spread": "0.0100",
+        "quantity_is_not_a_fill": true
+      },
+      "rules_sha256": "36a807ef117d10b91a4130cb877ed25b26486fec9739e07d97e7fccdc9372ab7",
+      "received_at": "2026-09-24T05:20:18.510683+00:00",
+      "request_started_at": "2026-09-24T05:20:13.880268+00:00",
+      "book_body_sha256": "3aa81440fcf2afe55f32677909512ced16eb39435f82aa2c5f8b77194e8902d4",
+      "admitted_book": true
+    }
+  ],
+  "sampling": "First three alphabetically sorted Democratic-party tickers from current KXHOUSERACE open listing. Connectivity/schema check only; not a representative liquidity study."
+}

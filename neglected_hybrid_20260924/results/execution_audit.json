@@ -1,0 +1,78 @@
+{
+  "classification": "POST_SCORE_QUOTE_PERSISTENCE_DIAGNOSTIC_NOT_EXECUTION",
+  "created_at": "2026-09-24T05:19:15.248599+00:00",
+  "rows": [
+    {
+      "ticker": "HOUSEIA1-24-D",
+      "decision": "2024-11-04T22:00:00Z",
+      "side": "no",
+      "original_price": 0.45999999999999996,
+      "original_net": 0.5026120000000001,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/HOUSEIA1-24-D/candlesticks?start_ts=1730757600&end_ts=1730757900&period_interval=1"
+    },
+    {
+      "ticker": "HOUSEPA10-24-D",
+      "decision": "2024-11-04T22:00:00Z",
+      "side": "no",
+      "original_price": 0.5800000000000001,
+      "original_net": 0.38294799999999996,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/HOUSEPA10-24-D/candlesticks?start_ts=1730757600&end_ts=1730757900&period_interval=1"
+    },
+    {
+      "ticker": "HOUSEIA1-24-D",
+      "decision": "2024-11-05T16:00:00Z",
+      "side": "no",
+      "original_price": 0.35,
+      "original_net": 0.6140749999999999,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/HOUSEIA1-24-D/candlesticks?start_ts=1730822400&end_ts=1730822700&period_interval=1"
+    },
+    {
+      "ticker": "HOUSEIA3-24-D",
+      "decision": "2024-11-05T16:00:00Z",
+      "side": "no",
+      "original_price": 0.45999999999999996,
+      "original_net": 0.5026120000000001,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/HOUSEIA3-24-D/candlesticks?start_ts=1730822400&end_ts=1730822700&period_interval=1"
+    },
+    {
+      "ticker": "HOUSEPA10-24-D",
+      "decision": "2024-11-05T16:00:00Z",
+      "side": "no",
+      "original_price": 0.56,
+      "original_net": 0.4027519999999999,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/HOUSEPA10-24-D/candlesticks?start_ts=1730822400&end_ts=1730822700&period_interval=1"
+    },
+    {
+      "ticker": "SENATEOH-24-D",
+      "decision": "2024-11-05T16:00:00Z",
+      "side": "yes",
+      "original_price": 0.35,
+      "original_net": -0.385925,
+      "request_success": true,
+      "observations": [],
+      "one_minute": null,
+      "proves_fill": false,
+      "source_url": "https://api.elections.kalshi.com/trade-api/v2/historical/markets/SENATEOH-24-D/candlesticks?start_ts=1730822400&end_ts=1730822700&period_interval=1"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "original_normalized_input_sha256": "ee7376aec961782fe697db05de26c2e91c0d6e981fae418955aaf23b336a197e",
+  "published_projection": "Retains all 42 mapped races and 252 quotes. Removes forecasts for races outside the fixed panel; replaces full rule text with hashes. No outcome-based filter.",
+  "forecasts_original": 904,
+  "forecasts_retained": 66,
+  "input_sha256": "ecd458383d6f7f853b84a3b920340af7ca1f07ca0dec3bfac994941585f13ee8",
+  "raw_bytes_in_git": false,
+  "raw_restoration": "Reacquire from receipt URLs using acquire_v2.py and forecast_archive.py. Upstream availability and exact byte identity are not guaranteed. These receipts are indexes, not raw bytes.",
+  "source_attribution": "Kalshi public historical market data and archived FiveThirtyEight probabilities; no upstream license invented. Only study-derived observations supplied."
+}
