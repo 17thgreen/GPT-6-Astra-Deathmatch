@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-09-24T04:00:33.549724+00:00",
+  "files": {
+    "SPEC.md": "7074b5540e85978b6b28fa642f9828e97dee4af67d276c86db052d4b644bd03b",
+    "START.json": "f9b6242c20a04ee6f51fc309774084d7dd5f55f4f306e999d8f3153bc56caa27",
+    "watch.py": "0d9c002e166ba2cc9b2543fee88f99eeae8ec87cfcaf9079dfbe3fc37cf77779",
+    "test_watch.py": "43a36dff45055a0e40e029b3088351674f561be204e42c33019e06f7f116bb06",
+    "../reward_census/census.py": "93a986167120a95f8bef72586066218bc6e4ec975df28d35ba1cd4d33a453dad",
+    "../depth_survey/survey.py": "38e9e7e604398e7c4e3e665bb6b4727c447ea2e984bca05cdfdd6f965948a23c",
+    "../reward_tape/tape.py": "8dabc9943d5b4d029315ba202d259f61bbc6a36350450c78b741349718e9f56a"
+  }
+}
