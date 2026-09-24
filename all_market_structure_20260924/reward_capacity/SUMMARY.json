@@ -1,0 +1,898 @@
+{
+  "designation": "reused descriptive evidence; counterfactual scaling, no actual orders",
+  "eligible_observations_by_source": {
+    "AMS-005": 55,
+    "AMS-007": 320,
+    "AMS-009": 115,
+    "AMS-010 exploratory overlay": 262
+  },
+  "baseline_qualified_fixed_quote_observations": 96,
+  "positive_cushion_observations": 17,
+  "nonpositive_cushion_observations": 79,
+  "by_source": {
+    "AMS-005": {
+      "baseline": 7,
+      "passing": 0
+    },
+    "AMS-007": {
+      "baseline": 47,
+      "passing": 8
+    },
+    "AMS-009": {
+      "baseline": 19,
+      "passing": 0
+    },
+    "AMS-010 exploratory overlay": {
+      "baseline": 23,
+      "passing": 9
+    }
+  },
+  "unique_passing_program_sides": 3,
+  "unique_passing_events": [
+    "KXTEMPMIAH-26SEP2401",
+    "KXTEMPMIAH-26SEP2402"
+  ],
+  "passing_classifications": {
+    "supported_level": 16,
+    "gap_completion": 1
+  },
+  "max_coobserved_orders": 2,
+  "passing_batches": [
+    {
+      "source": "AMS-007",
+      "cycle": 3,
+      "book_received_ns": 1790222626468336329,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.56,
+      "fee_reserve": 0.25,
+      "cushion": 0.81,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 5,
+      "book_received_ns": 1790222746851440972,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.41,
+      "fee_reserve": 0.25,
+      "cushion": 0.66,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 6,
+      "book_received_ns": 1790222808498511292,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.34,
+      "fee_reserve": 0.25,
+      "cushion": 0.59,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 7,
+      "book_received_ns": 1790222866217682348,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.26,
+      "fee_reserve": 0.25,
+      "cushion": 0.51,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 8,
+      "book_received_ns": 1790222927035110117,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.2,
+      "fee_reserve": 0.25,
+      "cushion": 0.45,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 9,
+      "book_received_ns": 1790222986526396184,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.25,
+      "fee_reserve": 0.25,
+      "cushion": 0.5,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 10,
+      "book_received_ns": 1790223046175118623,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.18,
+      "fee_reserve": 0.25,
+      "cushion": 0.43,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-007",
+      "cycle": 11,
+      "book_received_ns": 1790223106312043111,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.12,
+      "fee_reserve": 0.25,
+      "cushion": 0.37,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 7,
+      "book_received_ns": 1790226187929493448,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.71,
+      "fee_reserve": 0.25,
+      "cushion": 0.96,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+          "side": "yes",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 8,
+      "book_received_ns": 1790226247893665721,
+      "orders": 2,
+      "quote_capital": 5.0,
+      "reward": 7.75,
+      "fee_reserve": 0.5,
+      "cushion": 2.25,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        },
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+          "side": "yes",
+          "classification": "gap_completion"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 9,
+      "book_received_ns": 1790226308183023975,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.58,
+      "fee_reserve": 0.25,
+      "cushion": 0.83,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 10,
+      "book_received_ns": 1790226367483790025,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.12,
+      "fee_reserve": 0.25,
+      "cushion": 0.37,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 11,
+      "book_received_ns": 1790226429318586809,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.06,
+      "fee_reserve": 0.25,
+      "cushion": 0.31,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 12,
+      "book_received_ns": 1790226487495827958,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.0,
+      "fee_reserve": 0.25,
+      "cushion": 0.25,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 13,
+      "book_received_ns": 1790226549470055977,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 2.94,
+      "fee_reserve": 0.25,
+      "cushion": 0.19,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    },
+    {
+      "source": "AMS-010 exploratory overlay",
+      "cycle": 14,
+      "book_received_ns": 1790226608283111148,
+      "orders": 1,
+      "quote_capital": 2.5,
+      "reward": 3.26,
+      "fee_reserve": 0.25,
+      "cushion": 0.51,
+      "candidates": [
+        {
+          "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+          "side": "no",
+          "classification": "supported_level"
+        }
+      ]
+    }
+  ],
+  "tracks": [
+    {
+      "program_id": "a45e758a-a90a-4663-8321-33550b8adc36",
+      "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+      "side": "yes",
+      "first": {
+        "ticker": "KXTEMPMIAH-26SEP2401-T79.99",
+        "event_ticker": "KXTEMPMIAH-26SEP2401",
+        "program_id": "a45e758a-a90a-4663-8321-33550b8adc36",
+        "book_received_ns": 1790222626468336329,
+        "pool_dollars": 100.0,
+        "side": "yes",
+        "fraction": "0.25",
+        "quantity": "250.0000",
+        "classification": "supported_level",
+        "public_same_price_quantity": "1060.00",
+        "public_better_price_quantity": "0",
+        "public_side_total": "1060.00",
+        "principal": 2.5,
+        "fee_stress_reserve": 0.25,
+        "base": {
+          "qualified": true,
+          "overall_share": 0.09541984732824428,
+          "own_side": {
+            "own_share": 0.19083969465648856,
+            "reference": "0.0100",
+            "boundary": "0.0100",
+            "own_raw": "250.0000",
+            "total_raw": "1310.0000"
+          }
+        },
+        "stress": {
+          "qualified": true,
+          "overall_share": 0.07309941520467836,
+          "own_side": {
+            "own_share": 0.14619883040935672,
+            "reference": "0.02",
+            "boundary": "0.0100",
+            "own_raw": "125.00000",
+            "total_raw": "855.00000"
+          }
+        },
+        "removed_opposite_quantity": "99.00",
+        "competitor_price": "0.02",
+        "competitor_quantity": "200.00",
+        "base_half_uptime_reward": 4.64,
+        "stressed_half_uptime_reward": 3.56,
+        "conditional_cushion": 0.81,
+        "cushion_over_principal": 0.324,
+        "passes": true,
+        "source": "AMS-007",
+        "cycle": 3,
+        "duration_minutes": 57.71707750161489,
+        "remaining_minutes": 56.22552772760391,
+        "constant_score_qualifying_minutes_to_cover_stake_and_reserve": 21.71316455610752,
+        "roi_quote_pct": 32.4,
+        "roi_funded_pct": 29.454545
+      },
+      "later_observed_states": [
+        {
+          "source": "AMS-007",
+          "cycle": 3,
+          "ns": 1790222626468336329,
+          "status": "positive_cushion",
+          "cushion": 0.81
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 4,
+          "ns": 1790222689599011933,
+          "status": "nonpositive_cushion",
+          "cushion": -1.45
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 5,
+          "ns": 1790222746851440972,
+          "status": "positive_cushion",
+          "cushion": 0.66
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 6,
+          "ns": 1790222808498511292,
+          "status": "positive_cushion",
+          "cushion": 0.59
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 7,
+          "ns": 1790222866217682348,
+          "status": "positive_cushion",
+          "cushion": 0.51
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 8,
+          "ns": 1790222927035110117,
+          "status": "positive_cushion",
+          "cushion": 0.45
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 9,
+          "ns": 1790222986526396184,
+          "status": "positive_cushion",
+          "cushion": 0.5
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 10,
+          "ns": 1790223046175118623,
+          "status": "positive_cushion",
+          "cushion": 0.43
+        },
+        {
+          "source": "AMS-007",
+          "cycle": 11,
+          "ns": 1790223106312043111,
+          "status": "positive_cushion",
+          "cushion": 0.37
+        },
+        {
+          "source": "AMS-009",
+          "cycle": 1,
+          "ns": 1790224187976220244,
+          "status": "nonpositive_cushion",
+          "cushion": -0.77
+        },
+        {
+          "source": "AMS-009",
+          "cycle": 2,
+          "ns": 1790224229302940231,
+          "status": "nonpositive_cushion",
+          "cushion": -0.82
+        }
+      ]
+    },
+    {
+      "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+      "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+      "side": "yes",
+      "first": {
+        "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+        "event_ticker": "KXTEMPMIAH-26SEP2402",
+        "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+        "book_received_ns": 1790226187929493448,
+        "pool_dollars": 100.0,
+        "side": "yes",
+        "fraction": "0.25",
+        "quantity": "250.0000",
+        "classification": "supported_level",
+        "public_same_price_quantity": "1000.00",
+        "public_better_price_quantity": "0",
+        "public_side_total": "1000.00",
+        "principal": 2.5,
+        "fee_stress_reserve": 0.25,
+        "base": {
+          "qualified": true,
+          "overall_share": 0.1,
+          "own_side": {
+            "own_share": 0.2,
+            "reference": "0.0100",
+            "boundary": "0.0100",
+            "own_raw": "250.0000",
+            "total_raw": "1250.0000"
+          }
+        },
+        "stress": {
+          "qualified": true,
+          "overall_share": 0.07575757575757576,
+          "own_side": {
+            "own_share": 0.15151515151515152,
+            "reference": "0.02",
+            "boundary": "0.0100",
+            "own_raw": "125.00000",
+            "total_raw": "825.00000"
+          }
+        },
+        "removed_opposite_quantity": "50.00",
+        "competitor_price": "0.02",
+        "competitor_quantity": "200.00",
+        "base_half_uptime_reward": 4.9,
+        "stressed_half_uptime_reward": 3.71,
+        "conditional_cushion": 0.96,
+        "cushion_over_principal": 0.384,
+        "passes": true,
+        "source": "AMS-010 exploratory overlay",
+        "cycle": 7,
+        "duration_minutes": 57.9315490325292,
+        "remaining_minutes": 56.86784177621205,
+        "constant_score_qualifying_minutes_to_cover_stake_and_reserve": 21.0291522988081,
+        "roi_quote_pct": 38.4,
+        "roi_funded_pct": 34.909091
+      },
+      "later_observed_states": [
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 7,
+          "ns": 1790226187929493448,
+          "status": "positive_cushion",
+          "cushion": 0.96
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 8,
+          "ns": 1790226247893665721,
+          "status": "positive_cushion",
+          "cushion": 1.52
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 9,
+          "ns": 1790226308183023975,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 10,
+          "ns": 1790226367483790025,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 11,
+          "ns": 1790226429318586809,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 12,
+          "ns": 1790226487495827958,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 13,
+          "ns": 1790226549470055977,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 14,
+          "ns": 1790226608283111148,
+          "status": "no_baseline_qualifying_quote",
+          "cushion": null
+        }
+      ]
+    },
+    {
+      "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+      "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+      "side": "no",
+      "first": {
+        "ticker": "KXTEMPMIAH-26SEP2402-T76.99",
+        "event_ticker": "KXTEMPMIAH-26SEP2402",
+        "program_id": "5908c0bb-4dab-4692-8a37-9d8c307ece7d",
+        "book_received_ns": 1790226247893665721,
+        "pool_dollars": 100.0,
+        "side": "no",
+        "fraction": "0.25",
+        "quantity": "250.0000",
+        "classification": "supported_level",
+        "public_same_price_quantity": "1080.00",
+        "public_better_price_quantity": "0",
+        "public_side_total": "1080.00",
+        "principal": 2.5,
+        "fee_stress_reserve": 0.25,
+        "base": {
+          "qualified": true,
+          "overall_share": 0.09398496240601503,
+          "own_side": {
+            "own_share": 0.18796992481203006,
+            "reference": "0.0100",
+            "boundary": "0.0100",
+            "own_raw": "250.0000",
+            "total_raw": "1330.0000"
+          }
+        },
+        "stress": {
+          "qualified": true,
+          "overall_share": 0.07225433526011561,
+          "own_side": {
+            "own_share": 0.14450867052023122,
+            "reference": "0.02",
+            "boundary": "0.0100",
+            "own_raw": "125.00000",
+            "total_raw": "865.00000"
+          }
+        },
+        "removed_opposite_quantity": "1.00",
+        "competitor_price": "0.02",
+        "competitor_quantity": "200.00",
+        "base_half_uptime_reward": 4.53,
+        "stressed_half_uptime_reward": 3.48,
+        "conditional_cushion": 0.73,
+        "cushion_over_principal": 0.292,
+        "passes": true,
+        "source": "AMS-010 exploratory overlay",
+        "cycle": 8,
+        "duration_minutes": 57.9315490325292,
+        "remaining_minutes": 55.868438903490706,
+        "constant_score_qualifying_minutes_to_cover_stake_and_reserve": 22.048747561780612,
+        "roi_quote_pct": 29.2,
+        "roi_funded_pct": 26.545455
+      },
+      "later_observed_states": [
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 8,
+          "ns": 1790226247893665721,
+          "status": "positive_cushion",
+          "cushion": 0.73
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 9,
+          "ns": 1790226308183023975,
+          "status": "positive_cushion",
+          "cushion": 0.83
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 10,
+          "ns": 1790226367483790025,
+          "status": "positive_cushion",
+          "cushion": 0.37
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 11,
+          "ns": 1790226429318586809,
+          "status": "positive_cushion",
+          "cushion": 0.31
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 12,
+          "ns": 1790226487495827958,
+          "status": "positive_cushion",
+          "cushion": 0.25
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 13,
+          "ns": 1790226549470055977,
+          "status": "positive_cushion",
+          "cushion": 0.19
+        },
+        {
+          "source": "AMS-010 exploratory overlay",
+          "cycle": 14,
+          "ns": 1790226608283111148,
+          "status": "positive_cushion",
+          "cushion": 0.51
+        }
+      ]
+    }
+  ],
+  "illustration": {
+    "ticker": "KXTEMPMIAH-26SEP2402-T79.99",
+    "event_ticker": "KXTEMPMIAH-26SEP2402",
+    "program_id": "0551666c-396d-4b3c-98be-0f799072a6eb",
+    "book_received_ns": 1790226187929493448,
+    "pool_dollars": 100.0,
+    "side": "yes",
+    "fraction": "0.25",
+    "quantity": "250.0000",
+    "classification": "supported_level",
+    "public_same_price_quantity": "1000.00",
+    "public_better_price_quantity": "0",
+    "public_side_total": "1000.00",
+    "principal": 2.5,
+    "fee_stress_reserve": 0.25,
+    "base": {
+      "qualified": true,
+      "overall_share": 0.1,
+      "own_side": {
+        "own_share": 0.2,
+        "reference": "0.0100",
+        "boundary": "0.0100",
+        "own_raw": "250.0000",
+        "total_raw": "1250.0000"
+      }
+    },
+    "stress": {
+      "qualified": true,
+      "overall_share": 0.07575757575757576,
+      "own_side": {
+        "own_share": 0.15151515151515152,
+        "reference": "0.02",
+        "boundary": "0.0100",
+        "own_raw": "125.00000",
+        "total_raw": "825.00000"
+      }
+    },
+    "removed_opposite_quantity": "50.00",
+    "competitor_price": "0.02",
+    "competitor_quantity": "200.00",
+    "base_half_uptime_reward": 4.9,
+    "stressed_half_uptime_reward": 3.71,
+    "conditional_cushion": 0.96,
+    "cushion_over_principal": 0.384,
+    "passes": true,
+    "source": "AMS-010 exploratory overlay",
+    "cycle": 7,
+    "duration_minutes": 57.9315490325292,
+    "remaining_minutes": 56.86784177621205,
+    "constant_score_qualifying_minutes_to_cover_stake_and_reserve": 21.0291522988081,
+    "roi_quote_pct": 38.4,
+    "roi_funded_pct": 34.909091
+  },
+  "quote_capital_5000_scenarios": [
+    {
+      "orders": 2000,
+      "failure_fraction": 0.0,
+      "zero_reward_equivalent_orders": 0.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 7420.0,
+      "net_cushion": 1920.0,
+      "roi_quote_pct": 38.4,
+      "roi_funded_pct": 34.90909090909091
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 0.1,
+      "zero_reward_equivalent_orders": 200.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 6678.0,
+      "net_cushion": 1178.0,
+      "roi_quote_pct": 23.56,
+      "roi_funded_pct": 21.418181818181818
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 0.2,
+      "zero_reward_equivalent_orders": 400.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 5936.0,
+      "net_cushion": 436.0,
+      "roi_quote_pct": 8.72,
+      "roi_funded_pct": 7.927272727272728
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 0.25,
+      "zero_reward_equivalent_orders": 500.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 5565.0,
+      "net_cushion": 65.0,
+      "roi_quote_pct": 1.3,
+      "roi_funded_pct": 1.1818181818181819
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 0.3,
+      "zero_reward_equivalent_orders": 600.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 5194.0,
+      "net_cushion": -306.0,
+      "roi_quote_pct": -6.12,
+      "roi_funded_pct": -5.5636363636363635
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 0.5,
+      "zero_reward_equivalent_orders": 1000.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 3710.0,
+      "net_cushion": -1790.0,
+      "roi_quote_pct": -35.8,
+      "roi_funded_pct": -32.54545454545455
+    },
+    {
+      "orders": 2000,
+      "failure_fraction": 1.0,
+      "zero_reward_equivalent_orders": 2000.0,
+      "quote_capital": 5000.0,
+      "fee_reserve": 500.0,
+      "reward": 0.0,
+      "net_cushion": -5500.0,
+      "roi_quote_pct": -110.0,
+      "roi_funded_pct": -100.0
+    }
+  ],
+  "all_in_5000_scenarios": [
+    {
+      "orders": 1818,
+      "failure_fraction": 0.0,
+      "zero_reward_equivalent_orders": 0.0,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 6744.78,
+      "net_cushion": 1745.28,
+      "roi_quote_pct": 38.4,
+      "roi_funded_pct": 34.90909090909091
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 0.1,
+      "zero_reward_equivalent_orders": 181.8,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 6070.302,
+      "net_cushion": 1070.802,
+      "roi_quote_pct": 23.56,
+      "roi_funded_pct": 21.418181818181818
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 0.2,
+      "zero_reward_equivalent_orders": 363.6,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 5395.824,
+      "net_cushion": 396.324,
+      "roi_quote_pct": 8.72,
+      "roi_funded_pct": 7.927272727272728
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 0.25,
+      "zero_reward_equivalent_orders": 454.5,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 5058.585,
+      "net_cushion": 59.085,
+      "roi_quote_pct": 1.3,
+      "roi_funded_pct": 1.1818181818181819
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 0.3,
+      "zero_reward_equivalent_orders": 545.4,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 4721.346,
+      "net_cushion": -278.154,
+      "roi_quote_pct": -6.12,
+      "roi_funded_pct": -5.5636363636363635
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 0.5,
+      "zero_reward_equivalent_orders": 909.0,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 3372.39,
+      "net_cushion": -1627.11,
+      "roi_quote_pct": -35.8,
+      "roi_funded_pct": -32.54545454545455
+    },
+    {
+      "orders": 1818,
+      "failure_fraction": 1.0,
+      "zero_reward_equivalent_orders": 1818.0,
+      "quote_capital": 4545.0,
+      "fee_reserve": 454.5,
+      "reward": 0.0,
+      "net_cushion": -4999.5,
+      "roi_quote_pct": -110.0,
+      "roi_funded_pct": -100.0
+    }
+  ],
+  "all_in_5000_unallocated_cash": 0.5,
+  "zero_profit_failure_fraction": 0.2587601078167116,
+  "realized_pnl": null,
+  "measured_loss_rate": null
+}

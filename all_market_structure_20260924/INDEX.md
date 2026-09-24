@@ -18,6 +18,7 @@ are claimed. No background recorder is left running after the bounded studies.
 | AMS-009 | Frozen competition model; 70 fresh short-window programs across ten series; six same-event candidates retain conditional economics, but thin opposite top levels expose competition. | Focus on early-window reward entry. Stronger stress needs about 38–42 minutes remaining for observed terms. See reward_competition/RESULTS.md and QUOTE_POLICY.md. |
 | AMS-010 | Frozen opening-window scanner; 32 new programs across ten series; six alerts, four passing eight sampled checks. | Retain early-window scanner. See reward_scanner/RESULTS.md. |
 | AMS-011 | Formal price-level clarification; smaller supported-level quotes passed in three program/side combinations across two Miami hours. | Refine quote size within the same reward strategy. See reward_boundary/RESULTS.md. |
+| AMS-012 | Fixed $2.50 sizing found at most two candidates in one response ($5 quote capital); one was gap completion. Three distinct program/sides overall. | $5,000 returns are capacity counterfactuals, with unmeasured losses and strong sensitivity to early reward failure. See reward_capacity/RESULTS.md. |
 
 The current focus is exclusively short-window liquidity rewards, including gap
 completion and smaller orders at already qualifying levels. SOURCE_UPDATE_20260924.md
