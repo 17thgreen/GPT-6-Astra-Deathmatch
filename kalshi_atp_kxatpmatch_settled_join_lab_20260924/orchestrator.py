@@ -15,12 +15,17 @@ stays null. Fee, queue, book, fill, and tape metrics stay held.
 Measurement mode pages public GET reads for markets settled strictly after
 the Conductor ACCEPT instant. It logs every attempt, keeps 429 gaps empty,
 and writes counts only to the caller-supplied output path.
+
+The measure transport path asks /markets for min_settled_ts first and calls
+/events only after a /markets gap. Live GETs follow the Collector budget and
+fail closed without a grant. Join labelling is unchanged.
 """
 import hashlib
 import http.client
 import json
+import sqlite3
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -70,6 +75,44 @@ PUBLIC_PREFIX = '/trade-api/v2'
 PAGE_LIMIT = '100'
 BACKOFF_SECONDS = (10, 20, 40)
 MAX_GET_ATTEMPTS = 4
+MAX_LIVE_GET_ATTEMPTS = 2
+PAGE_CAP = 20
+EVENTS_LOOKBACK_S = 172800
+POLLER_NAME = 'atp_rj_measure'
+RATE_POLICY_BUDGET = 'collector_budget_2026-09-24'
+RATE_POLICY_LEGACY = 'legacy_stub_unit_only'
+BUDGET_DOC_REL = 'lab/governance/astra/COLLECTOR_KALSHI_GET_BUDGET_2026-09-24.md'
+BUDGET_DOC_SHA256 = '7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22'
+MEASURE_HARDENING_FREEZE_SHA256 = '1b7f3ab4705e00b9d2835ec759d23ef9434999b8e070d02010008dd653347c58'
+MEASURE_HARDENING_ACCEPT_SHA256 = '8c350baaffa0fae822ba86481eed2362bebd919413c0d3f42847264244ad5411'
+PHASE_B_START = datetime(2026, 9, 27, 16, 30, tzinfo=timezone.utc)
+BUDGET_CLOSED_AT = datetime(2026, 10, 2, 6, 15, tzinfo=timezone.utc)
+LIST_ENDPOINT_PATHS = ('/markets', '/events', '/markets/trades', '/series')
+COOLDOWN_BASE_S = 30
+COOLDOWN_CAP_S = 600
+PENALTY_SPACING_S = 2.0
+PENALTY_WINDOW_S = 30 * 60
+STORM_429_COUNT = 3
+STORM_WINDOW_S = 10 * 60
+STORM_PAUSE_S = 10 * 60
+QUIET_START = (22, 52)
+QUIET_END = (22, 56)
+PHASE_CEILING = {
+    'A': {'total_rpm': 10, 'min_spacing': 6.0, 'list_rpm': 4},
+    'B': {'total_rpm': 5, 'min_spacing': 12.0, 'list_rpm': 2},
+}
+AUDIT_CEILING = {'total_rpm': 3, 'min_spacing': 20.0, 'list_rpm': 3}
+JOIN_FUNCTION_SHA256 = {
+    '_occurrence_value': '39693e779790b6fc3443663ad2128582dc4075ae32b023d5bea8290a274e610d',
+    'j1_label': '86ac3b0ae29c144e25d29bbdffc7a54f8c13b63156a197a62094555e2832d843',
+    '_j0_pass': '4f2cb52cfcb024776e3dd48e09435ea4140a28f8100413844addff37c596b71d',
+    '_event_clocks_from': '8d46856dcec7ae7e7cf3986dc9c60b0138e8148559b6706322c216745a06c326',
+    'scout_pin_tickers': '4566c18e6d75609f92ea527ef0922c7b1959c34705c287c2df4792d605b35c57',
+    '_markets_from_pages': 'd8fb0d6e0a1670ec0a1e0ccf7a5f7c0a5c8005cd89418ee5652700d597ed735e',
+    '_markets_from_events': '1f2faf61af08cb4ccfcd80fff50f6d2608bcfc2ba34ce85e0cb057bf72fa7240',
+    '_agree': 'bda3de69db1082bf4e403cad8137aa2947d10a5b1e79e8560448ab2d8fda734b',
+    '_parse_utc': '06cd00597f05fb45f066159e2d38ab748b380632c43c5ada537d5dbcde21628d',
+}
 ADMIT_READY_PENDING = 'pending Clock'
 OUTPUT_KEYS = (
     'settled_join_n',
@@ -230,6 +273,14 @@ class PinAbsent(OrchestratorError):
 
 
 class PinMismatch(OrchestratorError):
+    pass
+
+
+class BudgetGrantMissing(OrchestratorError):
+    pass
+
+
+class LegacyStubLiveRefused(OrchestratorError):
     pass
 
 
@@ -971,6 +1022,443 @@ def frozen_output_snapshot():
     }
 
 
+def _format_utc(moment):
+    return moment.astimezone(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+
+
+def _floor_epoch(moment):
+    return int(moment.timestamp() // 1)
+
+
+def _default_clock():
+    return datetime.now(timezone.utc)
+
+
+def _budget_doc_matches():
+    path = REPO / BUDGET_DOC_REL
+    return path.is_file() and sha256_file(path) == BUDGET_DOC_SHA256
+
+
+def _grant_authorizes(grant, audit_slice=False):
+    if not isinstance(grant, dict):
+        return False
+    seat = grant.get('seat') or grant.get('author')
+    if seat != 'Collector':
+        return False
+    poller = grant.get('poller')
+    audit = bool(audit_slice or grant.get('audit_slice') is True or grant.get('mode') == 'audit_slice')
+    if poller == POLLER_NAME:
+        return True
+    return audit and poller in (None, POLLER_NAME, 'collector_audit')
+
+
+def _approval_ok(value):
+    return (
+        isinstance(value, dict)
+        and value.get('seat') == 'Conductor'
+        and value.get('approves') == 'atp_rj_measure_audit_phase_b'
+    )
+
+
+def load_collector_grant(path, expected_sha):
+    """Load a Collector grant. A sha mismatch or a non-Collector file fails closed."""
+    if not isinstance(expected_sha, str) or len(expected_sha) != 64:
+        raise BudgetGrantMissing('sha')
+    raw = Path(path).read_bytes()
+    digest = hashlib.sha256(raw).hexdigest()
+    if digest != expected_sha.lower():
+        raise BudgetGrantMissing('sha')
+    payload = json.loads(raw.decode('utf-8'))
+    if not _grant_authorizes(payload):
+        raise BudgetGrantMissing('grant')
+    granted = dict(payload)
+    granted['_path'] = str(Path(path))
+    granted['_sha256'] = digest
+    return granted
+
+
+def _optional_number(value, default):
+    if value is None:
+        return default
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _endpoint_path(url):
+    path = url.split('?', 1)[0]
+    prefix = PUBLIC_ORIGIN + PUBLIC_PREFIX
+    if path.startswith(prefix):
+        path = path[len(prefix):]
+    return path or '/'
+
+
+def _is_list_endpoint(path):
+    if path in LIST_ENDPOINT_PATHS:
+        return True
+    return path.startswith('/markets/') or path.startswith('/events/')
+
+
+def _retry_after_seconds(headers):
+    if not isinstance(headers, dict):
+        return None
+    raw = headers.get('Retry-After')
+    if raw is None or raw == '':
+        return None
+    try:
+        value = float(raw)
+    except (TypeError, ValueError):
+        return None
+    if value < 0:
+        return None
+    if value == int(value):
+        return int(value)
+    return value
+
+
+def _quiet_push(candidate):
+    start = candidate.replace(hour=QUIET_START[0], minute=QUIET_START[1], second=0, microsecond=0)
+    end = candidate.replace(hour=QUIET_END[0], minute=QUIET_END[1], second=0, microsecond=0)
+    if start <= candidate < end:
+        return end
+    return candidate
+
+
+class CollectorBudgetLimiter:
+    """Pace atp_rj_measure at or below the Collector ceiling. Never above it."""
+
+    def __init__(
+        self,
+        grant,
+        clock,
+        sleeper,
+        raw_dir=None,
+        recorder_capture=None,
+        flag_dir=None,
+        audit_slice=False,
+        phase_b_approval=None,
+    ):
+        audit = bool(audit_slice or (isinstance(grant, dict) and grant.get('audit_slice') is True))
+        if not _grant_authorizes(grant, audit_slice=audit):
+            raise BudgetGrantMissing()
+        self.grant = dict(grant)
+        self.clock = clock or _default_clock
+        self.sleeper = sleeper
+        self.raw_dir = raw_dir
+        self.recorder_capture = recorder_capture
+        self.flag_dir = flag_dir
+        self.audit_slice = audit or self.grant.get('mode') == 'audit_slice'
+        approval = phase_b_approval if phase_b_approval is not None else self.grant.get('phase_b_approval')
+        self.phase_b_approved = bool(self.grant.get('phase_b_audit_approved') is True or _approval_ok(approval))
+        self.issued = []
+        self.last_request_at = None
+        self.cooldown_step = 0
+        self.cooldown_until = None
+        self.penalty_until = None
+        self.storm_until = None
+        self.recent_429s = []
+        self.forced_phase_b = False
+        self.force_reason = None
+        self.storm_pauses = 0
+        self.skipped_budget = 0
+        self.skipped_cooldown = 0
+        self.hours = {}
+        self.run_started_unix = self.clock().timestamp()
+        self._refresh_tripwire()
+        self.phase_at_start = self._effective_phase(self.clock())
+        self.phase_at_end = self.phase_at_start
+
+    def _now(self):
+        moment = self.clock()
+        if moment.tzinfo is None:
+            raise OrchestratorError('clock')
+        return moment.astimezone(timezone.utc)
+
+    def _refresh_tripwire(self):
+        if self.forced_phase_b:
+            return
+        if self._flag_present():
+            self.forced_phase_b = True
+            self.force_reason = 'FORCE_PHASE_B'
+            return
+        try:
+            count = self._recorder_429_since_start()
+        except OrchestratorError:
+            self.forced_phase_b = True
+            self.force_reason = 'unreadable'
+            return
+        if count:
+            self.forced_phase_b = True
+            self.force_reason = 'recorder_429'
+
+    def _flag_present(self):
+        for folder in (self.flag_dir, self.raw_dir):
+            if folder and (Path(folder) / 'FORCE_PHASE_B').is_file():
+                return True
+        return False
+
+    def _recorder_429_since_start(self):
+        if not self.recorder_capture:
+            raise OrchestratorError('unreadable')
+        path = Path(self.recorder_capture)
+        if not path.is_file():
+            raise OrchestratorError('unreadable')
+        uri = 'file:' + path.resolve().as_posix() + '?mode=ro'
+        try:
+            connection = sqlite3.connect(uri, uri=True)
+        except sqlite3.Error as exc:
+            raise OrchestratorError('unreadable') from exc
+        try:
+            rows = connection.execute(
+                'SELECT payload FROM responses WHERE ok=0 AND received >= ?',
+                (self.run_started_unix,),
+            ).fetchall()
+        except sqlite3.Error as exc:
+            raise OrchestratorError('unreadable') from exc
+        finally:
+            connection.close()
+        count = 0
+        for (payload,) in rows:
+            if isinstance(payload, str) and 'HTTPError 429' in payload:
+                count += 1
+        return count
+
+    def _calendar_phase(self, now):
+        if now >= BUDGET_CLOSED_AT:
+            return 'CLOSED'
+        if now >= PHASE_B_START:
+            return 'B'
+        return 'A'
+
+    def _effective_phase(self, now):
+        phase = self._calendar_phase(now)
+        if phase == 'CLOSED':
+            return 'CLOSED'
+        if phase == 'B' or self.forced_phase_b:
+            return 'B'
+        return 'A'
+
+    def _penalty_active(self, now):
+        return self.penalty_until is not None and now < self.penalty_until
+
+    def _caps(self, phase, path, now):
+        ceiling = PHASE_CEILING[phase]
+        total_rpm = min(ceiling['total_rpm'], _optional_number(self.grant.get('total_rpm_max'), ceiling['total_rpm']))
+        list_rpm = min(ceiling['list_rpm'], _optional_number(self.grant.get('list_endpoint_rpm_max'), ceiling['list_rpm']))
+        floor = max(ceiling['min_spacing'], _optional_number(self.grant.get('min_spacing_s'), ceiling['min_spacing']))
+        if self.audit_slice:
+            total_rpm = min(total_rpm, AUDIT_CEILING['total_rpm'])
+            list_rpm = min(list_rpm, AUDIT_CEILING['list_rpm'])
+            floor = max(floor, AUDIT_CEILING['min_spacing'])
+        if total_rpm <= 0 or ( _is_list_endpoint(path) and list_rpm <= 0):
+            return None
+        if _is_list_endpoint(path):
+            spacing = max(floor, 60.0 / list_rpm, 60.0 / total_rpm)
+        else:
+            spacing = max(floor, 60.0 / total_rpm)
+            list_rpm = None
+        if self._penalty_active(now):
+            spacing += PENALTY_SPACING_S
+        return {
+            'spacing': spacing,
+            'list_rpm': list_rpm,
+            'total_rpm': total_rpm,
+        }
+
+    def _in_window(self, now, only_list):
+        found = []
+        for moment, is_list in self.issued:
+            if (now - moment).total_seconds() >= 60:
+                continue
+            if only_list and not is_list:
+                continue
+            found.append(moment)
+        return found
+
+    def _rpm_ready(self, now, cap, only_list):
+        if cap is None:
+            return now
+        window = self._in_window(now, only_list)
+        if len(window) < cap:
+            return now
+        ordered = sorted(window)
+        boundary = ordered[len(ordered) - int(cap)]
+        return boundary + timedelta(seconds=60)
+
+    def _refusal(self, now, path):
+        phase = self._effective_phase(now)
+        if phase == 'CLOSED':
+            return 'budget_closed'
+        if self.audit_slice and phase == 'B' and not self.phase_b_approved:
+            return 'audit_phase_b_pause'
+        if self.audit_slice and not _is_list_endpoint(path):
+            return 'audit_list_only'
+        if self._caps(phase, path, now) is None:
+            return 'grant_rpm_zero'
+        return None
+
+    def acquire(self, path):
+        """Wait until a GET is inside the cap, or refuse without sending."""
+        waited = 0.0
+        while True:
+            self._refresh_tripwire()
+            now = self._now()
+            phase = self._effective_phase(now)
+            self.phase_at_end = phase
+            refusal = self._refusal(now, path)
+            if refusal:
+                self.skipped_budget += 1
+                return {
+                    'ok': False,
+                    'reason': refusal,
+                    'spacing_now_s': None,
+                    'waited_s': waited,
+                    'phase': phase,
+                }
+            caps = self._caps(phase, path, now)
+            earliest = now
+            if self.last_request_at is not None:
+                earliest = max(earliest, self.last_request_at + timedelta(seconds=caps['spacing']))
+            earliest = max(earliest, self._rpm_ready(now, caps['total_rpm'], False))
+            if caps['list_rpm'] is not None:
+                earliest = max(earliest, self._rpm_ready(now, caps['list_rpm'], True))
+            cooldown_hit = self.cooldown_until is not None and self.cooldown_until > now
+            if cooldown_hit:
+                earliest = max(earliest, self.cooldown_until)
+            if self.storm_until is not None and self.storm_until > now:
+                earliest = max(earliest, self.storm_until)
+            earliest = _quiet_push(earliest)
+            delay = (earliest - now).total_seconds()
+            if delay <= 1e-9:
+                self.issued.append((now, _is_list_endpoint(path)))
+                self.last_request_at = now
+                self._count_hour(now, 'requests')
+                return {
+                    'ok': True,
+                    'reason': None,
+                    'spacing_now_s': caps['spacing'],
+                    'waited_s': waited,
+                    'phase': phase,
+                }
+            if cooldown_hit:
+                self.skipped_cooldown += 1
+            before = now
+            self.sleeper(delay)
+            after = self._now()
+            if after <= before:
+                raise OrchestratorError('clock')
+            waited += delay
+
+    def _next_cooldown(self):
+        value = COOLDOWN_BASE_S * (2 ** self.cooldown_step)
+        if value > COOLDOWN_CAP_S:
+            return COOLDOWN_CAP_S
+        return value
+
+    def note_429(self, path, retry_after, spacing_now_s):
+        now = self._now()
+        if retry_after is None:
+            cooldown = self._next_cooldown()
+        else:
+            cooldown = retry_after
+        self.cooldown_step += 1
+        self.cooldown_until = now + timedelta(seconds=float(cooldown))
+        self.penalty_until = now + timedelta(seconds=PENALTY_WINDOW_S)
+        self.recent_429s.append(now)
+        self._count_hour(now, 'http_429')
+        self._append_jsonl('http_429.jsonl', {
+            'ts_utc': _format_utc(now),
+            'poller': POLLER_NAME,
+            'path': path,
+            'status': 429,
+            'retry_after': retry_after,
+            'spacing_now_s': spacing_now_s,
+            'cooldown_s': cooldown,
+        })
+        self._maybe_storm(now)
+        return cooldown
+
+    def note_success(self):
+        now = self._now()
+        self.cooldown_step = 0
+        self.cooldown_until = None
+        self._count_hour(now, 'ok')
+
+    def note_other(self):
+        return None
+
+    def _recent_429_count(self, now):
+        return sum(1 for moment in self.recent_429s if (now - moment).total_seconds() <= STORM_WINDOW_S)
+
+    def _maybe_storm(self, now):
+        if self._recent_429_count(now) < STORM_429_COUNT:
+            return
+        if self.storm_until is not None and now < self.storm_until:
+            return
+        self.storm_until = now + timedelta(seconds=STORM_PAUSE_S)
+        self.storm_pauses += 1
+        self._append_jsonl('pause_429_storm.jsonl', {
+            'event': 'PAUSE_429_STORM',
+            'counts': self._recent_429_count(now),
+            'pause_s': STORM_PAUSE_S,
+            'ts_utc': _format_utc(now),
+            'poller': POLLER_NAME,
+        })
+
+    def _count_hour(self, now, key):
+        hour = now.strftime('%Y-%m-%dT%H')
+        bucket = self.hours.setdefault(hour, {'requests': 0, 'ok': 0, 'http_429': 0})
+        bucket[key] += 1
+
+    def _append_jsonl(self, name, payload):
+        if not self.raw_dir:
+            return
+        path = Path(self.raw_dir)
+        path.mkdir(parents=True, exist_ok=True)
+        with (path / name).open('a') as handle:
+            handle.write(json.dumps(payload, sort_keys=True) + '\n')
+
+    def write_hourly(self, raw_dir=None):
+        folder = Path(raw_dir or self.raw_dir)
+        folder.mkdir(parents=True, exist_ok=True)
+        payload = {
+            'poller': POLLER_NAME,
+            'hours': [
+                {'hour_utc': hour, 'requests': counts['requests'], 'ok': counts['ok'], 'http_429': counts['http_429']}
+                for hour, counts in sorted(self.hours.items())
+            ],
+        }
+        (folder / 'hourly.json').write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n')
+
+    def budget_report(self):
+        return {
+            'budget_doc_sha256': BUDGET_DOC_SHA256,
+            'grant_path': self.grant.get('_path'),
+            'grant_sha256': self.grant.get('_sha256'),
+            'phase_at_start': self.phase_at_start,
+            'phase_at_end': self.phase_at_end,
+            'forced_phase_b': self.forced_phase_b,
+            'storm_pauses': self.storm_pauses,
+            'skipped_budget': self.skipped_budget,
+            'skipped_cooldown': self.skipped_cooldown,
+        }
+
+
+def _empty_budget(grant=None):
+    return {
+        'budget_doc_sha256': BUDGET_DOC_SHA256,
+        'grant_path': None if not isinstance(grant, dict) else grant.get('_path'),
+        'grant_sha256': None if not isinstance(grant, dict) else grant.get('_sha256'),
+        'phase_at_start': None,
+        'phase_at_end': None,
+        'forced_phase_b': False,
+        'storm_pauses': 0,
+        'skipped_budget': 0,
+        'skipped_cooldown': 0,
+    }
+
+
 def _pct(value):
     encoded = []
     for byte in str(value).encode('utf-8'):
@@ -985,23 +1473,25 @@ def _query(items):
     return '&'.join(f'{key}={_pct(value)}' for key, value in items)
 
 
-def _markets_url(cursor):
+def _markets_url(cursor, min_settled_ts):
     items = (
         ('limit', PAGE_LIMIT),
         ('series_ticker', SERIES),
         ('status', 'settled'),
+        ('min_settled_ts', str(int(min_settled_ts))),
     )
     if cursor:
         items = items + (('cursor', cursor),)
     return PUBLIC_ORIGIN + PUBLIC_PREFIX + '/markets?' + _query(items)
 
 
-def _events_url(cursor):
+def _events_url(cursor, min_close_ts):
     items = (
         ('limit', PAGE_LIMIT),
         ('series_ticker', SERIES),
         ('status', 'settled'),
         ('with_nested_markets', 'true'),
+        ('min_close_ts', str(int(min_close_ts))),
     )
     if cursor:
         items = items + (('cursor', cursor),)
@@ -1042,7 +1532,11 @@ def live_public_get(url):
         connection.request('GET', target, headers={'Accept': 'application/json'})
         response = connection.getresponse()
         body = response.read()
-        return response.status, body
+        retry_after = response.getheader('Retry-After')
+        headers = {}
+        if retry_after is not None:
+            headers['Retry-After'] = retry_after
+        return response.status, body, headers
     finally:
         connection.close()
 
@@ -1052,10 +1546,21 @@ def public_exchange(method, url, transport=None):
     assert_public_get(method)
     _guard_url(url)
     getter = live_public_get if transport is None else transport
-    status, body = getter(url)
+    result = getter(url)
+    if isinstance(result, (tuple, list)) and len(result) == 2:
+        status, body = result
+        headers = {}
+    elif isinstance(result, (tuple, list)) and len(result) == 3:
+        status, body, headers = result
+        if headers is None:
+            headers = {}
+    else:
+        raise OrchestratorError('body')
     if not isinstance(body, (bytes, bytearray)):
         raise OrchestratorError('body')
-    return int(status), bytes(body)
+    if not isinstance(headers, dict):
+        raise OrchestratorError('headers')
+    return int(status), bytes(body), headers
 
 
 def _utc_now():
@@ -1091,7 +1596,7 @@ def _get_logged(url, transport, sleeper, http_log, raw_dir, label):
         if attempt:
             backoff = BACKOFF_SECONDS[attempt - 1]
             sleeper(backoff)
-        status, body = public_exchange('GET', url, transport)
+        status, body, _headers = public_exchange('GET', url, transport)
         http_log.append({
             'utc': _utc_now(),
             'method': 'GET',
@@ -1110,31 +1615,99 @@ def _get_logged(url, transport, sleeper, http_log, raw_dir, label):
     return last_status, last_body, MAX_GET_ATTEMPTS
 
 
-def _gap(kind, url, status, attempts, page_index):
-    backoffs = list(BACKOFF_SECONDS[:max(attempts - 1, 0)]) if status == 429 else []
-    return {
+def _gap(kind, url, status, attempts, page_index, reason=None, backoffs=None):
+    if backoffs is None:
+        backoffs = list(BACKOFF_SECONDS[:max(attempts - 1, 0)]) if status == 429 else []
+    gap = {
         'kind': kind,
         'url': url,
         'http': status,
         'attempts': attempts,
-        'backoffs_s': backoffs,
+        'backoffs_s': list(backoffs),
         'filled': False,
         'markets_invented': False,
         'page_index': page_index,
     }
+    if reason:
+        gap['reason'] = reason
+    return gap
 
 
-def _page_collection(kind, url_for, transport, sleeper, http_log, raw_dir):
+def _split_get(result):
+    if len(result) == 3:
+        status, body, attempts = result
+        return status, body, attempts, None, None
+    if len(result) != 5:
+        raise OrchestratorError('get')
+    return result
+
+
+def _get_logged_budget(url, transport, sleeper, http_log, raw_dir, label, limiter):
+    """One logical GET under the Collector budget: at most one retry."""
+    del sleeper
+    path = _endpoint_path(url)
+    backoffs = []
+    last_status = None
+    last_body = b''
+    attempts_used = 0
+    for attempt in range(MAX_LIVE_GET_ATTEMPTS):
+        decision = limiter.acquire(path)
+        if not decision['ok']:
+            if attempts_used == 0:
+                return None, b'', 0, backoffs, decision['reason']
+            return last_status, last_body, attempts_used, backoffs, decision['reason']
+        waited = decision.get('waited_s') or 0
+        if attempt and waited:
+            backoffs.append(waited)
+        status, body, headers = public_exchange('GET', url, transport)
+        attempts_used = attempt + 1
+        http_log.append({
+            'utc': _utc_now(),
+            'method': 'GET',
+            'url': url,
+            'http': status,
+            'attempt': attempt,
+            'bytes': len(body),
+            'backoff_s': waited if attempt else None,
+            'label': label,
+        })
+        (Path(raw_dir) / f'{label}_attempt{attempt}.json').write_bytes(body)
+        last_status = status
+        last_body = body
+        if status == 429:
+            retry_after = _retry_after_seconds(headers)
+            limiter.note_429(path, retry_after, decision['spacing_now_s'])
+            if attempt + 1 < MAX_LIVE_GET_ATTEMPTS:
+                continue
+            return status, body, attempts_used, backoffs, None
+        if status == 200:
+            limiter.note_success()
+        else:
+            limiter.note_other()
+        return status, body, attempts_used, backoffs, None
+    return last_status, last_body, attempts_used, backoffs, None
+
+
+def _page_collection(kind, url_for, transport, sleeper, http_log, raw_dir, getter=None):
+    fetch = getter or _get_logged
     pages = []
     cursor = None
     page_index = 0
     while True:
+        if page_index >= PAGE_CAP:
+            url = url_for(cursor)
+            return pages, _gap(kind, url, None, 0, page_index, reason='page_cap', backoffs=[])
         url = url_for(cursor)
-        status, body, attempts = _get_logged(
+        status, body, attempts, backoffs, stop_reason = _split_get(fetch(
             url, transport, sleeper, http_log, raw_dir, f'{kind}_p{page_index}'
-        )
+        ))
+        if status is None:
+            return pages, _gap(
+                kind, url, None, attempts, page_index,
+                reason=stop_reason or 'not_sent', backoffs=backoffs or [],
+            )
         if status != 200:
-            return pages, _gap(kind, url, status, attempts, page_index)
+            return pages, _gap(kind, url, status, attempts, page_index, reason=stop_reason, backoffs=backoffs)
         try:
             payload = json.loads(body.decode('utf-8'))
         except json.JSONDecodeError:
@@ -1225,26 +1798,287 @@ def _select_source(market_pages, market_gap, event_pages):
     return list(from_markets.values()), 'markets_list_partial'
 
 
-def measure(since, out, transport=None, sleeper=None):
+def _rows_of(pages, key):
+    rows = []
+    for page in pages:
+        if key == 'markets':
+            found = page.get('markets') or []
+        else:
+            found = []
+            for event in page.get('events') or []:
+                found.extend(event.get('markets') or [])
+        for row in found:
+            if isinstance(row, dict):
+                rows.append(row)
+    return rows
+
+
+def _filter_observed(rows, predicate):
+    if not rows:
+        return 'UNOBSERVED'
+    for row in rows:
+        if not predicate(row):
+            return 'OBSERVED_IGNORED'
+    return 'OBSERVED_HONORED'
+
+
+def _settlement_honors(min_settled_ts, market):
+    raw = market.get('settlement_ts')
+    if not raw:
+        return False
+    try:
+        when = _parse_utc(raw)
+    except OrchestratorError:
+        return False
+    return when.timestamp() > min_settled_ts
+
+
+def _close_honors(min_close_ts, market):
+    raw = market.get('close_time')
+    if raw is None:
+        raw = market.get('close_ts')
+    if not raw:
+        return False
+    try:
+        when = _parse_utc(raw) if isinstance(raw, str) else None
+    except OrchestratorError:
+        return False
+    if when is None:
+        try:
+            stamp = float(raw)
+        except (TypeError, ValueError):
+            return False
+        return stamp > min_close_ts
+    return when.timestamp() > min_close_ts
+
+
+def _server_filter(kind, pages, gap, min_settled_ts, min_close_ts, requested):
+    if not requested:
+        return {'param': None, 'value': None, 'observed': 'NOT_APPLIED'}
+    if gap is not None and gap.get('http') == 400:
+        if kind == 'markets':
+            return {'param': 'min_settled_ts', 'value': int(min_settled_ts), 'observed': 'REJECTED_400'}
+        return {'param': 'min_close_ts', 'value': int(min_close_ts), 'observed': 'REJECTED_400'}
+    if kind == 'markets':
+        observed = _filter_observed(_rows_of(pages, 'markets'), lambda row: _settlement_honors(min_settled_ts, row))
+        return {'param': 'min_settled_ts', 'value': int(min_settled_ts), 'observed': observed}
+    observed = _filter_observed(_rows_of(pages, 'events'), lambda row: _close_honors(min_close_ts, row))
+    return {'param': 'min_close_ts', 'value': int(min_close_ts), 'observed': observed}
+
+
+def _endpoint_pull_status(requested, pages, gap, server_filter):
+    if not requested:
+        return {
+            'requested': False,
+            'status': 'NOT_REQUESTED',
+            'pages_ok': 0,
+            'last_http': None,
+            'gap_page_index': None,
+            'server_filter': server_filter,
+        }
+    pages_ok = len(pages)
+    if gap is None:
+        status = 'COMPLETE'
+        gap_page = None
+        last_http = 200 if pages_ok else None
+    else:
+        status = 'PARTIAL' if pages_ok else 'FAILED'
+        gap_page = gap.get('page_index')
+        last_http = gap.get('http')
+    return {
+        'requested': True,
+        'status': status,
+        'pages_ok': pages_ok,
+        'last_http': last_http,
+        'gap_page_index': gap_page,
+        'server_filter': server_filter,
+    }
+
+
+def _cohort_completeness(cohort_source, market_pages, market_gap, event_pages, event_gap):
+    gaps = [gap for gap in (market_gap, event_gap) if gap is not None]
+    if cohort_source == 'events_nested':
+        selected_pages = event_pages
+    else:
+        selected_pages = market_pages
+    if not market_pages and not event_pages:
+        return 'INCOMPLETE'
+    if not gaps:
+        return 'COMPLETE'
+    if selected_pages:
+        return 'PARTIAL'
+    return 'INCOMPLETE'
+
+
+def _not_requested_filter():
+    return {'param': None, 'value': None, 'observed': 'NOT_APPLIED'}
+
+
+def _write_measure(destination, raw_dir, payload, http_log, limiter):
+    if payload['admitted_at'] is not None or payload['results'] is not None or payload['pnl'] is not None:
+        raise ScorecardPromotionRefused()
+    if payload['scout_n_copied_into_settled_join_n'] is not False:
+        raise ScorecardPromotionRefused()
+    text = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+    destination.write_text(text)
+    log_path = raw_dir / 'http_log.jsonl'
+    with log_path.open('w') as handle:
+        for entry in http_log:
+            handle.write(json.dumps(entry, sort_keys=True) + '\n')
+    if limiter is not None:
+        limiter.write_hourly(raw_dir)
+    return payload
+
+
+def _stopped_measure(since, since_utc, destination, raw_dir, live_fetch, stop_reason, grant, rate_policy):
+    gap = _gap('budget', None, None, 0, None, reason=stop_reason, backoffs=[])
+    pull = _endpoint_pull_status(False, [], None, _not_requested_filter())
+    payload = {
+        'experiment_id': EXPERIMENT_ID,
+        'mode': 'measurement',
+        'since': since,
+        'since_utc': since_utc.strftime('%Y-%m-%dT%H:%M:%S.%fZ'),
+        'accept_issued_at_utc': ACCEPT_ISSUED_AT_UTC,
+        'host': PUBLIC_ORIGIN + PUBLIC_PREFIX,
+        'series_ticker': SERIES,
+        'method': 'GET',
+        'live_fetch': live_fetch,
+        'cohort_source': None,
+        'cohort_source_qualified': 'INCOMPLETE',
+        'cohort_completeness': 'INCOMPLETE',
+        'pull_status': {'markets': pull, 'events': pull},
+        'counts_label': 'INCOMPLETE',
+        'counts_are_lower_bounds': True,
+        'zero_with_gaps': True,
+        'rate_policy': rate_policy,
+        'budget': _empty_budget(grant),
+        'stop_reason': stop_reason,
+        'settled_join_n': 0,
+        'occurrence_match_n': 0,
+        'fallback_join_n': 0,
+        'cohort_tickers': [],
+        'rows': [],
+        'excluded': [],
+        'gaps': [gap],
+        'events_page2_backfilled': False,
+        'list_429_backfilled': False,
+        'markets_invented': False,
+        'scout_nonempty_result_N_declared': SCOUT_NONEMPTY_N_DECLARED,
+        'scout_n_copied_into_settled_join_n': False,
+        'admitted_at': None,
+        'admit_ready': ADMIT_READY_PENDING,
+        'admit_ready_flag': None,
+        'results': None,
+        'pnl': None,
+        'http_log': [],
+    }
+    return _write_measure(destination, raw_dir, payload, [], None)
+
+
+def _resolve_grant(grant, budget_grant, budget_grant_sha256):
+    if grant is not None:
+        return grant
+    if not budget_grant:
+        return None
+    try:
+        return load_collector_grant(budget_grant, budget_grant_sha256)
+    except (OSError, json.JSONDecodeError, BudgetGrantMissing, UnicodeError):
+        return None
+
+
+def measure(
+    since,
+    out,
+    transport=None,
+    sleeper=None,
+    limiter=None,
+    clock=None,
+    grant=None,
+    budget_grant=None,
+    budget_grant_sha256=None,
+    recorder_capture=None,
+    audit_slice=False,
+    phase_b_approval=None,
+    rate_policy=None,
+):
     """Page settled KXATPMATCH markets and count the post-ACCEPT join.
 
     Counts are written only to `out`. The committed scorecard is not updated.
     `admitted_at` stays null. Admit stays pending Clock.
     """
     since_utc = _parse_utc(since)
+    live_fetch = transport is None
+    if rate_policy == RATE_POLICY_LEGACY and live_fetch:
+        raise LegacyStubLiveRefused(RATE_POLICY_LEGACY)
     destination = _assert_measurement_out(out)
     destination.parent.mkdir(parents=True, exist_ok=True)
     raw_dir = destination.with_name(destination.stem + '_raw')
     raw_dir.mkdir(parents=True, exist_ok=True)
     if sleeper is None:
         sleeper = time.sleep
+    resolved_grant = _resolve_grant(grant, budget_grant, budget_grant_sha256)
+    use_legacy = limiter is None and not live_fetch and rate_policy != RATE_POLICY_BUDGET
+    if rate_policy == RATE_POLICY_LEGACY:
+        use_legacy = True
+    if live_fetch:
+        use_legacy = False
+        if not _budget_doc_matches() or resolved_grant is None:
+            reason = 'BUDGET_GRANT_MISSING' if _budget_doc_matches() else 'BUDGET_DOC_MISMATCH'
+            return _stopped_measure(
+                since, since_utc, destination, raw_dir, True, reason, resolved_grant, RATE_POLICY_BUDGET,
+            )
+        if limiter is None:
+            limiter = CollectorBudgetLimiter(
+                resolved_grant,
+                clock or _default_clock,
+                sleeper,
+                raw_dir=raw_dir,
+                recorder_capture=recorder_capture,
+                flag_dir=destination.parent,
+                audit_slice=audit_slice,
+                phase_b_approval=phase_b_approval,
+            )
+    if limiter is not None and not use_legacy:
+        limiter.raw_dir = raw_dir
+        if limiter.flag_dir is None:
+            limiter.flag_dir = destination.parent
+        if recorder_capture and limiter.recorder_capture is None:
+            limiter.recorder_capture = recorder_capture
+        if limiter.sleeper is None:
+            limiter.sleeper = sleeper
+        limiter._refresh_tripwire()
+        if not limiter.issued:
+            limiter.phase_at_start = limiter._effective_phase(limiter._now())
+            limiter.phase_at_end = limiter.phase_at_start
+
+        def getter(url, transport, sleeper, http_log, raw_dir, label, _limiter=limiter):
+            return _get_logged_budget(url, transport, sleeper, http_log, raw_dir, label, _limiter)
+
+        active_policy = RATE_POLICY_BUDGET
+    else:
+        getter = None
+        active_policy = RATE_POLICY_LEGACY
+        limiter = None
+    min_settled_ts = _floor_epoch(since_utc)
+    min_close_ts = min_settled_ts - EVENTS_LOOKBACK_S
+
+    def markets_url(cursor, _ts=min_settled_ts):
+        return _markets_url(cursor, _ts)
+
+    def events_url(cursor, _ts=min_close_ts):
+        return _events_url(cursor, _ts)
+
     http_log = []
     market_pages, market_gap = _page_collection(
-        'markets', _markets_url, transport, sleeper, http_log, raw_dir
+        'markets', markets_url, transport, sleeper, http_log, raw_dir, getter=getter,
     )
-    event_pages, event_gap = _page_collection(
-        'events', _events_url, transport, sleeper, http_log, raw_dir
-    )
+    event_pages = []
+    event_gap = None
+    events_requested = market_gap is not None
+    if events_requested:
+        event_pages, event_gap = _page_collection(
+            'events', events_url, transport, sleeper, http_log, raw_dir, getter=getter,
+        )
     received, cohort_source = _select_source(market_pages, market_gap, event_pages)
     scout_tickers = scout_pin_tickers()
     excluded = []
@@ -1291,6 +2125,12 @@ def measure(since, out, transport=None, sleeper=None):
     for gap in gaps:
         if gap.get('filled') is not False or gap.get('markets_invented') is not False:
             raise InventedMarketRefused()
+    completeness = _cohort_completeness(cohort_source, market_pages, market_gap, event_pages, event_gap)
+    counts_label = 'COMPLETE' if completeness == 'COMPLETE' else 'INCOMPLETE'
+    markets_filter = _server_filter('markets', market_pages, market_gap, min_settled_ts, min_close_ts, True)
+    events_filter = _server_filter(
+        'events', event_pages, event_gap, min_settled_ts, min_close_ts, events_requested,
+    )
     payload = {
         'experiment_id': EXPERIMENT_ID,
         'mode': 'measurement',
@@ -1300,8 +2140,20 @@ def measure(since, out, transport=None, sleeper=None):
         'host': PUBLIC_ORIGIN + PUBLIC_PREFIX,
         'series_ticker': SERIES,
         'method': 'GET',
-        'live_fetch': transport is None,
+        'live_fetch': live_fetch,
         'cohort_source': cohort_source,
+        'cohort_source_qualified': f'{cohort_source}:{completeness}',
+        'cohort_completeness': completeness,
+        'pull_status': {
+            'markets': _endpoint_pull_status(True, market_pages, market_gap, markets_filter),
+            'events': _endpoint_pull_status(events_requested, event_pages, event_gap, events_filter),
+        },
+        'counts_label': counts_label,
+        'counts_are_lower_bounds': bool(gaps),
+        'zero_with_gaps': settled_join_n == 0 and bool(gaps),
+        'rate_policy': active_policy,
+        'budget': limiter.budget_report() if limiter is not None else _empty_budget(resolved_grant),
+        'stop_reason': None,
         'settled_join_n': settled_join_n,
         'occurrence_match_n': occurrence_match_n,
         'fallback_join_n': fallback_join_n,
@@ -1321,17 +2173,7 @@ def measure(since, out, transport=None, sleeper=None):
         'pnl': None,
         'http_log': http_log,
     }
-    if payload['admitted_at'] is not None or payload['results'] is not None or payload['pnl'] is not None:
-        raise ScorecardPromotionRefused()
-    if payload['scout_n_copied_into_settled_join_n'] is not False:
-        raise ScorecardPromotionRefused()
-    text = json.dumps(payload, indent=2, sort_keys=True) + '\n'
-    destination.write_text(text)
-    log_path = raw_dir / 'http_log.jsonl'
-    with log_path.open('w') as handle:
-        for entry in http_log:
-            handle.write(json.dumps(entry, sort_keys=True) + '\n')
-    return payload
+    return _write_measure(destination, raw_dir, payload, http_log, limiter)
 
 
 def main(argv=None):
@@ -1346,6 +2188,11 @@ def main(argv=None):
         raise OrchestratorError(args[0])
     since = None
     out = None
+    budget_grant = None
+    budget_grant_sha256 = None
+    recorder_capture = None
+    phase_b_approval = None
+    audit_slice = False
     index = 1
     while index < len(args):
         if args[index] == '--since' and index + 1 < len(args):
@@ -1356,10 +2203,50 @@ def main(argv=None):
             out = args[index + 1]
             index += 2
             continue
+        if args[index] == '--budget-grant' and index + 1 < len(args):
+            budget_grant = args[index + 1]
+            index += 2
+            continue
+        if args[index] == '--budget-grant-sha256' and index + 1 < len(args):
+            budget_grant_sha256 = args[index + 1]
+            index += 2
+            continue
+        if args[index] == '--recorder-capture' and index + 1 < len(args):
+            recorder_capture = args[index + 1]
+            index += 2
+            continue
+        if args[index] == '--audit-slice':
+            audit_slice = True
+            index += 1
+            continue
+        if args[index] == '--phase-b-approval' and index + 1 < len(args):
+            approval_path = args[index + 1]
+            index += 2
+            if index >= len(args) or args[index] != '--phase-b-approval-sha256' or index + 1 >= len(args):
+                raise OrchestratorError('phase-b-approval')
+            expected = args[index + 1]
+            index += 2
+            raw = Path(approval_path).read_bytes()
+            digest = hashlib.sha256(raw).hexdigest()
+            if digest != expected or not _approval_ok(json.loads(raw.decode('utf-8'))):
+                raise BudgetGrantMissing('approval')
+            phase_b_approval = json.loads(raw.decode('utf-8'))
+            continue
         raise OrchestratorError(args[index])
     if not since or not out:
         raise OrchestratorError('measure')
-    return measure(since, out)
+    payload = measure(
+        since,
+        out,
+        budget_grant=budget_grant,
+        budget_grant_sha256=budget_grant_sha256,
+        recorder_capture=recorder_capture,
+        audit_slice=audit_slice,
+        phase_b_approval=phase_b_approval,
+    )
+    if payload.get('stop_reason') == 'BUDGET_GRANT_MISSING':
+        raise SystemExit('BUDGET_GRANT_MISSING')
+    return payload
 
 
 if __name__ == '__main__':

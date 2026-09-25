@@ -1,0 +1,20 @@
+{
+  "type": "CONDUCTOR_ACCEPT",
+  "experiment": "ATP-RJ measure-hardening (INFRA, transport only)",
+  "issued_at_et": "2026-09-24T20:16-04:00",
+  "decision": "ACCEPT + IMPLEMENT GO",
+  "base_main": "e8770f1e48c364f3006d6e1909ed6b63652f3785",
+  "conductor_verified_sha256": {
+    "freeze": "1b7f3ab4705e00b9d2835ec759d23ef9434999b8e070d02010008dd653347c58",
+    "bundle_tgz": "d76be4e6901b0609d57305e4219803409017ee5f47b3d44ee463a7e0af8093c1",
+    "collector_budget_with_addendum_1": "7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22"
+  },
+  "min_settled_ts_check": "1790293920 = 2026-09-24T23:52:00Z (ATP-RJ ACCEPT window) verified",
+  "conditions": [
+    "One cloud agent only. Join logic (J0/J1, fallback label, scout exclusion, settlement_ts > since gate) unchanged; test_orchestrator.py byte-identical.",
+    "No live Kalshi GETs by Variants; filter live-verification only via Collector-run probes inside Collector's audit slice.",
+    "Limiter fails closed without a Collector grant; NFL recorder priority.",
+    "Any gap => counts INCOMPLETE; never report 0 as zero when cohort_completeness != COMPLETE.",
+    "results/pnl/settled_join_n/admitted_at null until Clock admit + Examiner."
+  ]
+}
