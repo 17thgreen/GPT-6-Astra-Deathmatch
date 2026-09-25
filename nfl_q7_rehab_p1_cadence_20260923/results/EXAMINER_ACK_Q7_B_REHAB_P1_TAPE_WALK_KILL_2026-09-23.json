@@ -1,0 +1,120 @@
+{
+  "id": "EXAMINER_ACK_Q7_B_REHAB_P1_TAPE_WALK_KILL",
+  "seat": "Examiner (Kalshi)",
+  "packet": "Q7-B-REHAB-P1-CADENCE-600",
+  "feature_family": "Q7-B-REHAB-P1",
+  "verdict": "KILL",
+  "status": "SCORED",
+  "promote": false,
+  "selection_status": "NO_NEW_SELECTION",
+  "selection_reason": "b1_vs_b0:q3300_d0.25",
+  "fallback_shadow_candidate": "000",
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "soften_95pct_of_D": false,
+  "waive_parent_ledger_hash": false,
+  "main_pin": "9b8fb184a8f1d556e400188127f1753bf35e571e",
+  "lab": "nfl_q7_rehab_p1_cadence_20260923/",
+  "parent_source_pins": {
+    "sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+    "verified_count": 33,
+    "fail_count": 0,
+    "missing_count": 0,
+    "status": "PASS"
+  },
+  "positive_control": {
+    "status": "PASS",
+    "hash_basis": "uncompressed_jsonl",
+    "n_scenario_pairs": 8,
+    "independent_checks_ok": true
+  },
+  "scenarios_executed": 12,
+  "bar_table": [
+    {
+      "stress": "q3300_d0.25",
+      "B0": 290.9933999999721,
+      "B1": 176.40239999994992,
+      "D": 345.24439999997867,
+      "pct_of_D": 51.09,
+      "b1_gt_b0": false,
+      "b1_ge_95pct_D": false,
+      "bar_0_95_D": 327.98217999997973
+    },
+    {
+      "stress": "q3300_d5",
+      "B0": 291.19619999995666,
+      "B1": 176.5575999999428,
+      "D": 345.417399999943,
+      "pct_of_D": 51.11,
+      "b1_gt_b0": false,
+      "b1_ge_95pct_D": false,
+      "bar_0_95_D": 328.14652999994587
+    },
+    {
+      "stress": "q10000_d0.25",
+      "B0": 45.53099999996266,
+      "B1": 66.83629999999721,
+      "D": 75.9048999999668,
+      "pct_of_D": 88.05,
+      "b1_gt_b0": true,
+      "b1_ge_95pct_D": false,
+      "bar_0_95_D": 72.10965499996846
+    },
+    {
+      "stress": "q10000_d5",
+      "B0": 37.83349999996699,
+      "B1": 66.22539999999026,
+      "D": 69.05739999996058,
+      "pct_of_D": 95.9,
+      "b1_gt_b0": true,
+      "b1_ge_95pct_D": true,
+      "bar_0_95_D": 65.60452999996255
+    }
+  ],
+  "pnl_by_scenario": {
+    "q3300_d0.25_B0": 290.9933999999721,
+    "q3300_d0.25_B1": 176.40239999994992,
+    "q3300_d0.25_D": 345.24439999997867,
+    "q3300_d5_B0": 291.19619999995666,
+    "q3300_d5_B1": 176.5575999999428,
+    "q3300_d5_D": 345.417399999943,
+    "q10000_d0.25_B0": 45.53099999996266,
+    "q10000_d0.25_B1": 66.83629999999721,
+    "q10000_d0.25_D": 75.9048999999668,
+    "q10000_d5_B0": 37.83349999996699,
+    "q10000_d5_B1": 66.22539999999026,
+    "q10000_d5_D": 69.05739999996058
+  },
+  "evidence_tags": [
+    "[V]",
+    "[H]",
+    "[A]",
+    "[U]"
+  ],
+  "corpse_route": "Refiner Pass-2 salvage (\u22643-pass); Conductor kick next leftover \u2014 no idle after KILL",
+  "refuse": [
+    "soften 95%-of-D",
+    "invent fills/PnL",
+    "waive parent hash",
+    "Q6-000 retune",
+    "live orders",
+    "treat Simulator arithmetic_preview as score"
+  ],
+  "cite": [
+    "packets/SIMULATOR_HANDOFF_EXAMINER_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23.json",
+    "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/experiment_summary.json",
+    "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/selection.py",
+    "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "packets/refiner/REFINER_PASS1_FREEZE_Q7_B_CADENCE_600_2026-09-23.md",
+    "packets/SIMULATOR_READY_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23.json",
+    "packets/CONDUCTOR_ROUTE_Q7_B_REHAB_P1_TAPE_WALK_EXAMINER_2026-09-23.json"
+  ],
+  "supersedes_stub": "EXAMINER_ACK_Q7_B_REHAB_P1_PR38_STUB_READY_NOT_SCORED",
+  "stub_path": "lab/governance/astra/packets/EXAMINER_SCORECARD_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.md",
+  "stamped_at_et": "2026-09-23T17:32:00-04:00",
+  "canonical_ready_packet": "packets/SIMULATOR_READY_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23.json",
+  "canonical_ready_sha256": "8edc708dc7727c7132578f221a79372b7f8c3622826759516509f7a14ca8e642",
+  "conductor_route": "packets/CONDUCTOR_ROUTE_Q7_B_REHAB_P1_TAPE_WALK_EXAMINER_2026-09-23.json",
+  "route_confirm_at_et": "2026-09-23T17:33:00-04:00",
+  "route_confirm_note": "Conductor ROUTE + Simulator canonical READY arrived after KILL stamp; digests unchanged; verdict KILL stands; no re-score."
+}

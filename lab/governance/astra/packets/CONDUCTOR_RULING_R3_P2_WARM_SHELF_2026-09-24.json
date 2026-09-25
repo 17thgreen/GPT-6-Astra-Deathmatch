@@ -1,0 +1,10 @@
+{
+  "type": "CONDUCTOR_RULING",
+  "experiment": "R3-P2 queue-position trade-step",
+  "ruling": "(b) PLUMBING PASS, WARM_SHELF",
+  "decided_at_et": "2026-09-24 (session ~19:30-19:45 ET, communicated to Mechanic and Archivist by message)",
+  "filed_at_et": "2026-09-24T19:52-04:00",
+  "note": "Ruling was issued by message before this file existed; this file backfills provenance. PARKED_SPEC_R3_P2_TRADE_STEP_FILL_LABEL_v2.md citing ruling (b) is authorized as a PARKED spec only (write, do not run).",
+  "examiner_stamp_consistent": "EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING_2026-09-24.json e66d2636 (MEASUREMENT_PLUMBING_PASS, promote=false)",
+  "reopen_bar": "v2 freeze filed before outcomes + series with trades/cancels/positive fills + explicit Conductor fill-label GO. Mechanic stays on card 03."
+}

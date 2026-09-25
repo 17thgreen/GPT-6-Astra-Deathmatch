@@ -1,0 +1,506 @@
+{
+  "id": "SIMULATOR_READY_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23",
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "feature_family": "Q7-B-REHAB-P1",
+  "corpse_id": "CEM-ASTRA-20260922-001",
+  "to": "The Examiner \"KALSHI\"",
+  "cc": [
+    "The Refiner \"KALSHI\"",
+    "The Conductor"
+  ],
+  "action": "TAPE_WALK_12_SCENARIO_COMPLETE_EXAMINER_MUST_SCORE",
+  "status": "READY_FOR_EXAMINER",
+  "main_pin": "9b8fb184a8f1d556e400188127f1753bf35e571e",
+  "lab": "nfl_q7_rehab_p1_cadence_20260923",
+  "knob_only": "admission_cadence=600",
+  "arms": [
+    "B0",
+    "B1",
+    "D"
+  ],
+  "stresses": [
+    "q3300_d0.25",
+    "q3300_d5",
+    "q10000_d0.25",
+    "q10000_d5"
+  ],
+  "scenario_cells": 12,
+  "scenarios_executed": 12,
+  "parent_hash_reverify": {
+    "status": "PASS",
+    "verified_count": 33,
+    "fail_count": 0,
+    "missing_count": 0,
+    "pins_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+    "waive": false,
+    "path": "/workspace/lab/governance/astra/packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "artifact": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/parent_source_pins_reverify.json"
+  },
+  "positive_control_compare": {
+    "status": "PASS",
+    "all_checks_passed": true,
+    "n_comparisons": 8,
+    "comparisons_match": [
+      "q3300_d0.25_B0",
+      "q3300_d0.25_D",
+      "q3300_d5_B0",
+      "q3300_d5_D",
+      "q10000_d0.25_B0",
+      "q10000_d0.25_D",
+      "q10000_d5_B0",
+      "q10000_d5_D"
+    ],
+    "mismatches": [],
+    "ledger_hash_mode": "uncompressed_jsonl",
+    "mismatch_is": "failed reproduction, not a rehab finding",
+    "artifact": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/positive_control_compare.json",
+    "note": "B0 vs parent B and D vs parent D: all 8 comparable cells MATCH on COMPARE_FIELDS + uncompressed fill/order/decision hashes."
+  },
+  "twelve_cell_table": [
+    {
+      "scenario": "q3300_d0.25_B0",
+      "completed_strategy_pnl": 290.9933999999721,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q3300_d0.25_B1",
+      "completed_strategy_pnl": 176.40239999994992,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q3300_d0.25_D",
+      "completed_strategy_pnl": 345.24439999997867,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q3300_d5_B0",
+      "completed_strategy_pnl": 291.19619999995666,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q3300_d5_B1",
+      "completed_strategy_pnl": 176.5575999999428,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q3300_d5_D",
+      "completed_strategy_pnl": 345.417399999943,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d0.25_B0",
+      "completed_strategy_pnl": 45.53099999996266,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d0.25_B1",
+      "completed_strategy_pnl": 66.83629999999721,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d0.25_D",
+      "completed_strategy_pnl": 75.9048999999668,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d5_B0",
+      "completed_strategy_pnl": 37.83349999996699,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d5_B1",
+      "completed_strategy_pnl": 66.22539999999026,
+      "all_flat": true,
+      "status": "COMPLETE"
+    },
+    {
+      "scenario": "q10000_d5_D",
+      "completed_strategy_pnl": 69.05739999996058,
+      "all_flat": true,
+      "status": "COMPLETE"
+    }
+  ],
+  "scenario_paths": {
+    "q3300_d0.25_B0": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B0.json",
+      "sha256": "9c0fb40a49a52c5cb1b5bfb3f0276f4406d938853c81b0d7b5cc05e720aff2c1",
+      "bytes": 56907796,
+      "completed_strategy_pnl": 290.9933999999721,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 13443,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B0_fills.jsonl.gz",
+          "sha256": "5bf6f3d068f10fcd2ff078b7b8c4a1023e625fd6922f09ab68a6db00ed2603b6",
+          "bytes": 559975
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B0_orders.jsonl.gz",
+          "sha256": "df41ddfd4f8019c3d34882ac442a35ec669f6cfe3f57b4afff431cf7b42bd12d",
+          "bytes": 568543
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B0_decisions.jsonl.gz",
+          "sha256": "e34220273ce4a2622ab5458aed4be114569b813a682f7691cbe1c83d28268ca8",
+          "bytes": 67
+        }
+      }
+    },
+    "q3300_d0.25_B1": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B1.json",
+      "sha256": "0c505fae29b579cf6dfe2ff5a3aa45b0fffa6d674ff1f9fef4ac71ffab3c2a8c",
+      "bytes": 374957293,
+      "completed_strategy_pnl": 176.40239999994992,
+      "all_flat": true,
+      "cadence_block_count": 614134,
+      "fills": 5325,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B1_fills.jsonl.gz",
+          "sha256": "1d0f2c9b0b0ed31d1a1709db0f02e2d72978fbfbf7938bfbd4801145debe0bf4",
+          "bytes": 208808
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B1_orders.jsonl.gz",
+          "sha256": "7afa7d5c88aed45a164f3ebe91713bd7028512224b0f8cd8a0f3791e249f2e83",
+          "bytes": 30206
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B1_decisions.jsonl.gz",
+          "sha256": "76568b876905fe8ce408a3edfb7fc4caf7f99e088528e938c4fa8c1e103cee47",
+          "bytes": 67
+        }
+      }
+    },
+    "q3300_d0.25_D": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_D.json",
+      "sha256": "21b433a9645914e589491fafa5109b3b1d6c7333c3f425cecd7dd22ef4c69e91",
+      "bytes": 2356736,
+      "completed_strategy_pnl": 345.24439999997867,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 12853,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_D_fills.jsonl.gz",
+          "sha256": "43b0a2cda996875b5fc591c660853457c244f39a244c81250a69ec78afffb2ab",
+          "bytes": 534943
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_D_orders.jsonl.gz",
+          "sha256": "28c9fe6eaf1fdc920ff44f7a3923b64f690860c9dd6d90e2bc04fc3484970fba",
+          "bytes": 569765
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_D_decisions.jsonl.gz",
+          "sha256": "d9027386ef8bb9c16009516286781d87398698cf860f82a42f77d34368769a25",
+          "bytes": 838293
+        }
+      }
+    },
+    "q3300_d5_B0": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B0.json",
+      "sha256": "29c288889c7219d1531bc6ed9fb987da1b54695b13bd7d97c6f62ce450c2f30d",
+      "bytes": 56896923,
+      "completed_strategy_pnl": 291.19619999995666,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 13168,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B0_fills.jsonl.gz",
+          "sha256": "1a2ed482435ad674f5e6b36b8a283d46e035a2847292d3bdfa2e76d3ccbaeef5",
+          "bytes": 532692
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B0_orders.jsonl.gz",
+          "sha256": "c370bd9b633a848bdedbea1ac1ee9b313c606896f3dfb351ed60495c11d74dcf",
+          "bytes": 562905
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B0_decisions.jsonl.gz",
+          "sha256": "149ec5028974cfb0228852c11fbfe89adc259e869ccc15f816b13b403860e60c",
+          "bytes": 64
+        }
+      }
+    },
+    "q3300_d5_B1": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B1.json",
+      "sha256": "a67222c876aa51ae876d4004aa0f9630a630cae2defc06ab95fd3f4daaaa498e",
+      "bytes": 374940624,
+      "completed_strategy_pnl": 176.5575999999428,
+      "all_flat": true,
+      "cadence_block_count": 614104,
+      "fills": 5315,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B1_fills.jsonl.gz",
+          "sha256": "12a92972f19660422b09407e279354aa1abeca6aa69fcbc283f2ceafb3fcef4f",
+          "bytes": 201545
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B1_orders.jsonl.gz",
+          "sha256": "08650c8774b43e2f6dd6692f2f758ab3b83072e8ccf087dd568a20931a2c66f2",
+          "bytes": 30103
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B1_decisions.jsonl.gz",
+          "sha256": "a5d6fbaf1f137311322effd8689d57992c2aa2c00498f0de8bbbd0ec2a41d427",
+          "bytes": 64
+        }
+      }
+    },
+    "q3300_d5_D": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_D.json",
+      "sha256": "9515226b12110bc2830750c8309b27e57f996ae0d29878fc21422de3e68f3acf",
+      "bytes": 2356877,
+      "completed_strategy_pnl": 345.417399999943,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 12594,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_D_fills.jsonl.gz",
+          "sha256": "777c3f74a8742b5b2381c1028a2ae081a2526db9d4b676bf99157a663e3c3a58",
+          "bytes": 509313
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_D_orders.jsonl.gz",
+          "sha256": "b10620b641b1d466ceb5584d96e23f986d6421f0531de030bbd6696c92bf43aa",
+          "bytes": 565589
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_D_decisions.jsonl.gz",
+          "sha256": "b2eecfcfb1adf9aee32829e263874e98422f02729164d90ad654cada55b21f20",
+          "bytes": 837745
+        }
+      }
+    },
+    "q10000_d0.25_B0": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B0.json",
+      "sha256": "029e45d592e1d310098d507574814b319500fdaab0f96adf6e92f4ed5c93fb7d",
+      "bytes": 56496276,
+      "completed_strategy_pnl": 45.53099999996266,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 4457,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B0_fills.jsonl.gz",
+          "sha256": "1db67bd179f17a90c72dbb26fe2a9f5a1cf1fd4d8b75cdf1fa301b2478b155d5",
+          "bytes": 183865
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B0_orders.jsonl.gz",
+          "sha256": "bcdd495939eb616462c3b29eb6f9bec783a55b21426f381e7867e66c44a923f5",
+          "bytes": 561342
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B0_decisions.jsonl.gz",
+          "sha256": "60b341e89468fd04e14ada298247d6213a10ce38e42731e02f13a82f49491676",
+          "bytes": 68
+        }
+      }
+    },
+    "q10000_d0.25_B1": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B1.json",
+      "sha256": "0e70397d54764e82629294d338582a9eccabdd598f5d0bc82b2a4b6c33cd8f4c",
+      "bytes": 374946853,
+      "completed_strategy_pnl": 66.83629999999721,
+      "all_flat": true,
+      "cadence_block_count": 614311,
+      "fills": 2362,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B1_fills.jsonl.gz",
+          "sha256": "e12fd1d49ac343e8b206d7347ab9186d9c42b60271221e4b62a34ae068d21587",
+          "bytes": 92997
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B1_orders.jsonl.gz",
+          "sha256": "06a5ce655aea55cbb36894f975c959b3853f27ee0fac8d70fd732ce73865266e",
+          "bytes": 23157
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B1_decisions.jsonl.gz",
+          "sha256": "54b04fb0820e0584cb665bcf9507e29547c52b92aee389ad101620e7320abb06",
+          "bytes": 68
+        }
+      }
+    },
+    "q10000_d0.25_D": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_D.json",
+      "sha256": "7903147db0ed6a0c908987115273293a363a5ebec6169853c7167a523fbbfdd5",
+      "bytes": 2342063,
+      "completed_strategy_pnl": 75.9048999999668,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 4224,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_D_fills.jsonl.gz",
+          "sha256": "4db1a6ec477810e8b70e9b157a71ebf5e689052cdf126c30e061573cc79bf158",
+          "bytes": 174314
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_D_orders.jsonl.gz",
+          "sha256": "ec6c59b5d78c0a6a0478d6cecd62eefc51745b8f996c1a256375fa7a0ef8331c",
+          "bytes": 553659
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_D_decisions.jsonl.gz",
+          "sha256": "aca82c5246f631b27d587c94aa736ea95889fb6a4625eaea8f2c2d6347f48615",
+          "bytes": 827009
+        }
+      }
+    },
+    "q10000_d5_B0": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B0.json",
+      "sha256": "e611001dae9ea39b10506d48b4cfc90cbffbe5501669ea9d3a658f75bb2eec2a",
+      "bytes": 56496284,
+      "completed_strategy_pnl": 37.83349999996699,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 4432,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B0_fills.jsonl.gz",
+          "sha256": "1f264c35bda2d86e449610a90787b734b368e808200808adf12b65237ffe1433",
+          "bytes": 177385
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B0_orders.jsonl.gz",
+          "sha256": "d33bd72e6a9688f150e5fde1131654ceb901dd467459522b744520d697562cbe",
+          "bytes": 557509
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B0_decisions.jsonl.gz",
+          "sha256": "826e1e838023d7cc15ef27f2963e3b5e328a28a400e06dc0903ab464ad51ff8b",
+          "bytes": 65
+        }
+      }
+    },
+    "q10000_d5_B1": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B1.json",
+      "sha256": "6234227aacae28e1b9003da1a54e12205e493e0d870c549c776b53c4f5c76fea",
+      "bytes": 374931398,
+      "completed_strategy_pnl": 66.22539999999026,
+      "all_flat": true,
+      "cadence_block_count": 614284,
+      "fills": 2341,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B1_fills.jsonl.gz",
+          "sha256": "c8ea3e923f6280e73f4f5fb9124b807cbde7cb0890a92f4c58b247a2883997ba",
+          "bytes": 89280
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B1_orders.jsonl.gz",
+          "sha256": "7415585a94a7cc4dfe6da943d68b90c078598b499ae42e7ec07259ca8dc4e3a2",
+          "bytes": 23170
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B1_decisions.jsonl.gz",
+          "sha256": "182733846b34d40275592f1b75b75c49b57fa49e37940d1272294bda163d535b",
+          "bytes": 65
+        }
+      }
+    },
+    "q10000_d5_D": {
+      "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_D.json",
+      "sha256": "0bc704dc8df4c1a8529182b7f7cf89a3abcdff58c508320030841bc58dd74c25",
+      "bytes": 2342094,
+      "completed_strategy_pnl": 69.05739999996058,
+      "all_flat": true,
+      "cadence_block_count": null,
+      "fills": 4204,
+      "ledgers": {
+        "fills": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_D_fills.jsonl.gz",
+          "sha256": "c42be0c49c03e5c57160104e9bde389106707115aa8f4f82fe15ca6322b46291",
+          "bytes": 168092
+        },
+        "orders": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_D_orders.jsonl.gz",
+          "sha256": "f25a19bef1cd24752a42e6a7d7e73c682f7ef69875665357ad2a067ead56bbbf",
+          "bytes": 550396
+        },
+        "decisions": {
+          "path": "astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_D_decisions.jsonl.gz",
+          "sha256": "94d006c9bc650faa3cd3cbaf356fd63075e0b7236147c22404fc8d343018bbeb",
+          "bytes": 826245
+        }
+      }
+    }
+  },
+  "summary_files": {
+    "experiment_summary.json": {
+      "path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/experiment_summary.json",
+      "sha256": "8ca717cff8a138a5e045645a3ddb89bf84b9cf0f2815962936a8305f4b058886",
+      "bytes": 13965
+    },
+    "parent_source_pins_reverify.json": {
+      "path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/parent_source_pins_reverify.json",
+      "sha256": "11077c6d85dc73d73d929972208e54296faed291ca24a66cbe31fb41031485db",
+      "bytes": 583
+    },
+    "positive_control_compare.json": {
+      "path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/positive_control_compare.json",
+      "sha256": "d334cb2efbca694c4224df11de6383af2afee1b5e1979907523c61b86a3fe049",
+      "bytes": 5247
+    },
+    "selection_status.json": {
+      "path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/selection_status.json",
+      "sha256": "94ea32f8a89fc90dee02af635c9f25e4f89b3a7d2ea932a6a9c292ede31877ce",
+      "bytes": 701
+    },
+    "TAPE_WALK_ARTIFACT_DIGEST.json": {
+      "path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/TAPE_WALK_ARTIFACT_DIGEST.json",
+      "sha256": "b4657e3aa0120ca4540693b90a899beb75c2011bee121627aa314f588bbd6714",
+      "bytes": 8366
+    }
+  },
+  "selection": {
+    "status": "NOT_SCORED",
+    "pending": "Examiner",
+    "simulator_self_score": false,
+    "live_promotion": false,
+    "soften_95pct_of_D": false,
+    "artifact": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/selection_status.json",
+    "note": "Simulator does not declare KEEP/KILL. selection.py arithmetic_preview is preview only."
+  },
+  "refuses": [
+    "invent fills/PnL",
+    "soften 95%-of-D",
+    "Q6-000 retune",
+    "live orders",
+    "waive parent hash",
+    "self-score or promote",
+    "Examiner-self"
+  ],
+  "cite": [
+    "packets/refiner/REFINER_HAND_SIMULATOR_ARM_B_TAPE_WALK_2026-09-23.json",
+    "packets/CONDUCTOR_KICK_ARM_B_TAPE_WALK_2026-09-23.json",
+    "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "packets/refiner/REFINER_POSITIVE_CONTROL_HASH_PASS_Q7_B_REHAB_P1_2026-09-23.json",
+    "packets/EXAMINER_ACK_Q7_B_REHAB_P1_PR38_STUB_READY_NOT_SCORED_2026-09-23.json",
+    "packets/refiner/REFINER_PASS1_FREEZE_Q7_B_CADENCE_600_2026-09-23.md",
+    "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/run_tape_walk.py"
+  ],
+  "runner": "nfl_q7_rehab_p1_cadence_20260923/run_tape_walk.py",
+  "log": "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/logs/tape_walk_20260923.log",
+  "note": "Arm B Pass 1 cadence-600 12-scenario tape walk complete. Parent SOURCE_PINS re-verify PASS 33/33 before scenarios. Positive-control B0/D reproduction PASS (uncompressed ledgers). Examiner must score. Simulator does not soften 95%-of-D, does not invent PnL, does not promote, does not Examiner-self.",
+  "stamped_at_et": "2026-09-23T17:29:57-04:00",
+  "from": "The Simulator \"KALSHI\""
+}

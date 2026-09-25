@@ -1,0 +1,23 @@
+{
+  "id": "R3_P2_CANCEL_MODEL_FROZEN_KNOBS",
+  "packet_id": "R3-P2-QUEUE-POSITION-CALIB",
+  "frozen_at_et": "2026-09-23T17:25:00-04:00",
+  "owner": "The Simulator \"KALSHI\"",
+  "series_sha256": "74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4",
+  "note": "Upstream vendor defaults frozen for first calibration pass. Do not retune against this series after peeking at abs_err.",
+  "acheron_estimate_queue": {
+    "initial_ahead_fraction": 1.0,
+    "depletion_ahead_probability": 0.5,
+    "source": "UjaanRakshit/acheron QueuePositionEstimatorOptions defaults"
+  },
+  "tfrmma_reduce_ratio": {
+    "cancel_ratio": 0.20,
+    "source": "tfrmma/realistic-mm-backtester ReduceRatioCancelModel default"
+  },
+  "tfrmma_prob_queue": {
+    "min_ratio": 0.05,
+    "max_ratio": 0.70,
+    "source": "tfrmma/realistic-mm-backtester ProbQueueCancelModel defaults"
+  },
+  "static_series_rule": "On cancel-safe rest→poll→cancel samples, trade_size_observed is null; tfrmma estimate_ahead = join-back visible_qty_pre_own; cancel fractions recorded but not applied."
+}
