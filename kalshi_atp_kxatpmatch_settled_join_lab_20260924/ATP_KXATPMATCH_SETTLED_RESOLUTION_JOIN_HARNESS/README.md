@@ -1,8 +1,9 @@
 # ATP KXATPMATCH settled-resolution join harness
 
-Status: hypothesis committed, then source. The unit page is
-`results/UNIT_RESULTS.md`. That page is not profit and not an Examiner
-pass. Measurement only. Feature family ATP-RJ. The only knob is
+Status: hypothesis committed, then source, then the unit page.
+`python3 -m unittest -v tests.test_orchestrator` ran 13 tests in 0.031s.
+Recorded at 2026-09-25T00:01:05Z. Result: OK. Failures: 0. Errors: 0.
+That page is not profit and not an Examiner pass. Measurement only. Feature family ATP-RJ. The only knob is
 `join_gate`: J0 `nonempty_result_required` and J1
 `occurrence_datetime_match`. When `occurrence_datetime` is null, J1 labels
 the row `join_source=expected_expiration_time_fallback` and does not write
