@@ -1,0 +1,166 @@
+{
+  "id": "LEDGER_HASH_REGISTER_EXTRACT_2026-09-24",
+  "purpose": "Hash-only public anchor of LEDGER_2026-09-24.md § Hash register (Amendment B session), so git timestamps Amendment B's hash set before 2026-11-02T22:00Z / any outcome. Archivist request 2026-09-24 ~20:23 ET.",
+  "hash_only": true,
+  "contains_source_bytes": false,
+  "contains_electindex_bytes": false,
+  "source_ledger": {
+    "path": "lab/governance/astra/packets/card01_hybrid_forecast/LEDGER_2026-09-24.md",
+    "sha256": "d8ddfda72bdc6aaedd5627c78da99d6f360c48746b16c662d7ae3263a3d14fe1",
+    "section": "Hash register (Amendment B session, 2026-09-25T00:11–00:17Z / ~20:11–20:17 ET)"
+  },
+  "recorded_by": "Steward",
+  "recorded_at": "2026-09-24T20:24:00-04:00",
+  "entries": [
+    {
+      "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+      "path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md"
+    },
+    {
+      "sha256": "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2",
+      "path": "packets/card01_hybrid_forecast/amendment_b/NH002H_AMENDMENT_B_national_miss.py"
+    },
+    {
+      "sha256": "a06f1e23d0802e4ff8472109aec8740b4da7c8e5d01d80eac3a0b7fc56338567",
+      "path": "packets/card01_hybrid_forecast/amendment_b/SELFTEST_unit_checks.py"
+    },
+    {
+      "sha256": "b16ba92bde540a9623f815654bd33b531536aad8b986c4614a08f36dd27cf65e",
+      "path": "packets/card01_hybrid_forecast/amendment_b/SELFTEST_SYNTHETIC_input.json"
+    },
+    {
+      "sha256": "0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23",
+      "path": "packets/card01_hybrid_forecast/amendment_b/SELFTEST_SYNTHETIC_output.json"
+    },
+    {
+      "sha256": "8d37c4bb80585de6933575cdb3490af1152adab6506536ad9d897a1fb0eea06d",
+      "path": "packets/card01_hybrid_forecast/amendment_b/EXPLORATION_2024_house_primary_crosscheck_input.json"
+    },
+    {
+      "sha256": "c2d227ac8cb6b5a49b68c099cd66295c07821c865171cc37950044ce238dbed5",
+      "path": "packets/card01_hybrid_forecast/amendment_b/EXPLORATION_2024_house_primary_crosscheck_output.json"
+    },
+    {
+      "sha256": "c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c",
+      "path": "packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md"
+    },
+    {
+      "sha256": "58c44c4fb144968ba57e4c8b4a2018026a123d17a02e2e6c09fdfd38f465a353",
+      "path": "packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md.reconstructed-58c44c4f"
+    },
+    {
+      "sha256": "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48",
+      "path": "packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md"
+    },
+    {
+      "sha256": "9624ab2498e88896c46e8fd984211b4b8839e613567209841358d7cf5059e5d6",
+      "path": "packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md.reconstructed-9624ab24"
+    },
+    {
+      "sha256": "817a70f2183eb187408cb0013f76c9fbb294454ea4c17608108225820db1dce9",
+      "path": "briefs/EDGE_RESEARCH_CARDS_01_02_FREEZE_ACK_2026-09-24.md"
+    },
+    {
+      "sha256": "2b38699de9f3bbb178675442fe5db4ed7d3941bba2ccb8386744ad85906610eb",
+      "path": "packets/card01_hybrid_forecast/SOURCE_MAP_2026-09-24.md"
+    },
+    {
+      "sha256": "44cb582fd6f4612574d1a0b58b2d4f24cdf421eddc61e32a681663bf1b16c910",
+      "path": "packets/card01_hybrid_forecast/FROZEN_EXPERIMENT.json"
+    },
+    {
+      "sha256": "16f96d3d4e11e3e17eb0a76a8e4cdcbe097773d8b34cdaf50faf9c0de85b7d18",
+      "path": "packets/card01_hybrid_forecast/MANIFEST.md"
+    },
+    {
+      "sha256": "938b503eda0d2d5551c385f9c2cda652f1d87c9de25fa49ecb3f478f5ea5a904",
+      "path": "packets/card01_hybrid_forecast/README.md"
+    },
+    {
+      "sha256": "beea299c25911b0831f7619dd01050ca69137c32e41f830dd23e6863ac4fda34",
+      "path": "packets/card02_station_weather/FROZEN_EXPERIMENT.json"
+    },
+    {
+      "sha256": "62c8b254b01e4a1fad81cadb19765362e0f8fb3ed2b957e8f9e781c793e9cb99",
+      "path": "packets/card02_station_weather/MANIFEST.md"
+    },
+    {
+      "sha256": "2eb5b4684c7ccae32a3c55a1a91b166ec1381f05b7c3710d22ebb559791cb798",
+      "path": "packets/card02_station_weather/LEDGER_2026-09-24.md"
+    },
+    {
+      "sha256": "feffec5104882174031b43026e629e45771925c05272ee6e51b927dd5dafd144",
+      "path": "packets/card01_hybrid_forecast/EXPLORE_DIAG_national_factor_recentered_2253c03c.py"
+    },
+    {
+      "sha256": "275f4b8d7cd7c0eedd3fe5357ad52caacbc0985a53dc7e257a7c274adad77e47",
+      "path": "briefs/EDGE_RESEARCH_CARDS_01_02_FREEZE_ACK_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "d59c26420713ef728a306efc0bb12761584125e96ba6a87e84fe0c3e57c69688",
+      "path": "packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "8412439f9a31211acbd66125275734afdf8e42e7a95ba7d9d5534003e587adfb",
+      "path": "packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "feffec5104882174031b43026e629e45771925c05272ee6e51b927dd5dafd144",
+      "path": "packets/card01_hybrid_forecast/EXPLORE_DIAG_national_factor_recentered_2253c03c.py.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "4b90eedcc934df0b84dcee796d964ac3a25593b782bcd9fea18bf29e8e2fb045",
+      "path": "packets/card01_hybrid_forecast/FROZEN_EXPERIMENT.json.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "e3d44bfbfd14344d04d5346e38ef25c05544f3fcf488657255bd993929b0d888",
+      "path": "packets/card01_hybrid_forecast/LEDGER_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "4a757483b2ee57510a54dd3b8aabfbc47d502646bc61acf1aab2d903be2ab7b3",
+      "path": "packets/card01_hybrid_forecast/MANIFEST.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "1155619944c4294f73880ccc539a21f05049560c2860a078be8ca97be5b328eb",
+      "path": "packets/card01_hybrid_forecast/README.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "29ca593abc981b69d1832cc12e16931ce0b8f015af8f6b5222559b4e6fceb1ad",
+      "path": "packets/card01_hybrid_forecast/SOURCE_MAP_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "4c9910229473b3a280ea51909dd682915a20b6481858a97ea6c8d1d40d45f93a",
+      "path": "packets/card02_station_weather/FROZEN_EXPERIMENT.json.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "a3d8ca073787df5f565a488b7865ed45d3a7e805dbd4877116f6d407e7a28708",
+      "path": "packets/card02_station_weather/LEDGER_2026-09-24.md.pre-20260925T001140Z"
+    },
+    {
+      "sha256": "2841d320c6196954f879e1f39d6db4e0dc377b0cf565438bff45548aaa37074c",
+      "path": "packets/card02_station_weather/MANIFEST.md.pre-20260925T001140Z"
+    }
+  ],
+  "key_pins": [
+    {
+      "role": "Amendment B",
+      "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6"
+    },
+    {
+      "role": "Pinned script",
+      "sha256": "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2"
+    },
+    {
+      "role": "Decision packet (current)",
+      "sha256": "c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c"
+    },
+    {
+      "role": "Card 02 kernel (current)",
+      "sha256": "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48"
+    },
+    {
+      "role": "feffec51 (NOT pinned; pre-copy kept)",
+      "sha256": "feffec5104882174031b43026e629e45771925c05272ee6e51b927dd5dafd144"
+    }
+  ]
+}
