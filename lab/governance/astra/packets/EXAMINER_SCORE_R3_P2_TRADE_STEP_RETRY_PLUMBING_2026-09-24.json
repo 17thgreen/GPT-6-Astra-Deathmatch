@@ -1,0 +1,226 @@
+{
+  "packet_id": "EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING_2026-09-24",
+  "id": "EXAMINER_SCORE_R3_P2_TRADE_STEP_RETRY_PLUMBING",
+  "packet": "R3-P2-QUEUE-POSITION-CALIB",
+  "feature_family": "R3-P2-TRADE-STEP",
+  "seat": "Examiner KALSHI",
+  "created_at": "2026-09-24T19:49:09-04:00",
+  "created_at_source": "box `date --iso-8601=seconds` (America/New_York)",
+  "template": "templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json (defaults; no pre-outcome override declared)",
+  "status": "SCORED",
+  "verdict": "MEASUREMENT_PLUMBING_PASS",
+  "verdict_enum_note": "Not a template verdict_enum value by design: this is deliberately NOT a KEEP of any cancel or queue model. Scope-limited pass on pins + reproducibility only.",
+  "scored_scope": "Measurement/plumbing only: (a) pins verify against files and pre-outcome freeze/knobs; (b) abs_err_contracts and signed_bias reproduce exactly from the results rows, the Simulator labels, and the raw series. NOT a calibration score, NOT a policy ranking, NOT fill evidence, NOT a KEEP of any cancel or queue model.",
+  "promote": false,
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "retune": false,
+  "cancel_model_status": "NOT_SCORED_ITERATE",
+  "queue_model_status": "NOT_SCORED",
+  "policy_ranking": null,
+  "brier": null,
+  "brier_status": "NULL_DEGENERATE (fill_binary=0 on all 13 labeled samples; no positive labels) and still waits fill-label GO",
+  "pnl": null,
+  "pnl_status": "NULL_NOT_INVENTED",
+  "calibration": "N/A",
+  "calibration_reason": "no forecast probabilities emitted and fill labels degenerate (all 0); template v1.2 rule",
+  "pins": {
+    "results_abs_err_signed_bias": {
+      "path": "lab/governance/astra/packets/r3_p2_queue_position/results/abs_err_signed_bias_trade_step_retry.json",
+      "claimed_sha256": "755244e25cb0cc387347896d88b708e10d58e001eed40024fc78396c3e384857",
+      "actual_sha256": "755244e25cb0cc387347896d88b708e10d58e001eed40024fc78396c3e384857",
+      "match": true
+    },
+    "series": {
+      "path": "lab/governance/astra/packets/r3_p2_queue_position/results/demo_trade_step_sample_series_retry.json",
+      "claimed_sha256": "6e2c82570e72efd19c4c77cac01c8727965938dfbceefec7a8a7d2f2db667db1",
+      "actual_sha256": "6e2c82570e72efd19c4c77cac01c8727965938dfbceefec7a8a7d2f2db667db1",
+      "match": true
+    },
+    "simulator_labels": {
+      "path": "lab/governance/astra/packets/r3_p2_queue_position/results/estimate_ahead_labels_trade_step_retry.json",
+      "claimed_sha256": "e109ac02183abdf8b350e56b5e865250855a3caa55c474d76be32f7e4e1422b1",
+      "actual_sha256": "e109ac02183abdf8b350e56b5e865250855a3caa55c474d76be32f7e4e1422b1",
+      "match": true
+    },
+    "frozen_knobs": {
+      "path": "lab/governance/astra/packets/r3_p2_queue_position/harness/FROZEN_KNOBS.json",
+      "claimed_sha256": "9a3534219b9be6cbfccb259b23e1245cec682dcee754b5f6a004c55d5354d2a6",
+      "actual_sha256": "9a3534219b9be6cbfccb259b23e1245cec682dcee754b5f6a004c55d5354d2a6",
+      "match": true
+    }
+  },
+  "pins_all_match": true,
+  "harness_pins": {
+    "trade_step.py": "24038fb0693e2bee1bec19cca7c154b74d46a71594b58928f242b4fc640f62d7",
+    "cancel_models.py": "4731e876b7a097633ee06ca11f72eca8b074f6178fb2d3511337f8201d4f78f7",
+    "scripts/simulator_trade_step_labels_retry.py": "26fb91d87c0edbf14cbf5c72b74bcd53d91a8d19b62327be0a1cae3c4b7805db",
+    "declared_in_labels_json_match": true
+  },
+  "pin_provenance": {
+    "series_6e2c8257_vs_pr37_74ef9a9b": "Different artifacts. 74ef9a9b is results/demo_queue_sample_series.json (PR37 static cancel-safe rest->poll->cancel series; 38 samples, 18 null queue_position_fp; recomputed). 6e2c8257 is results/demo_trade_step_sample_series_retry.json, the NEW trade-step series (protocol R3_P2_TRADE_STEP_FILL_LABEL_v1, rest->hold 45s->poll->cancel with trade tape), collected 2026-09-23T17:41:06-04:00 to 17:54:29-04:00 ET (series meta), after the 28/28-503 first pass (8c8d34e6, results/demo_trade_step_sample_series.json, identical copies in _503_blocked and archive/).",
+    "series_declared_pre_outcome": "NO series sha is (or could be) declared in a pre-outcome freeze: FROZEN_TRADE_STEP_FILL_LABEL.json (frozen_at_et 2026-09-23T17:30:00-04:00, sha256 518cd9814696b1a2000dce0580fe787ecea6c20c6f5b4a4c26561244bf37af5d) freezes the protocol, knobs sha and sampling, not a series hash; its artifacts.series_json names results/demo_trade_step_sample_series.json (the 503-blocked pass), not the _retry file. What IS pre-outcome: protocol freeze 17:30 ET < series collection start 17:41:06 ET; series meta.protocol_id=R3_P2_TRADE_STEP_FILL_LABEL_v1 and meta.frozen_knobs_sha256=9a353421... match the freeze. 6e2c8257 is first pinned post-collection by scripts/simulator_trade_step_labels_retry.py EXPECT_SERIES and the labels/results JSON.",
+    "series_embedded_sha_da80afa3": "series meta.series_sha256 = da80afa3aa98... (also quoted in MECHANIC_DEMO_TRADE_STEP_SERIES_2026-09-23.md) != file sha 6e2c8257. Examiner reproduced da80afa3 exactly as sha256 of json.dumps({meta without series_sha256, samples}, indent=2)+newline, i.e. the pre-embed content hash. Consistent provenance, not tampering; but the report's quoted sha is not the on-disk file sha.",
+    "frozen_knobs": "sha 9a353421... matches; frozen_at_et 2026-09-23T17:25:00-04:00 (owner Simulator); same sha cited pre-outcome in EXAMINER_ACK_R3_P2_ABS_ERR_SIGNED_BIAS_SCORED (17:28 ET), SIMULATOR_ACK_R3_P2_TRADE_STEP_CANCEL_MODEL (17:29:52 ET), FROZEN_TRADE_STEP_FILL_LABEL frozen_knobs_sha256_do_not_retune (17:30 ET), and series meta. Values are vendor defaults (reduce_ratio cancel_ratio 0.20; prob_queue min 0.05 max 0.70; acheron 1.0/0.5). The knobs file has no retune field; retune=false is declared in labels and results JSON and is confirmed by hash identity to the pre-outcome knobs. Knobs frozen_at 2026-09-23T17:25 ET and mtime 2026-09-24 10:40:32 ET both predate results stamped_at 2026-09-24T19:46:08 ET / mtime 19:46:08 ET. Note: knobs field series_sha256 still names 74ef9a9b (the static series it was first frozen for); stale field, not a pin failure.",
+    "labels": "sha e109ac02... matches; labels JSON declares series 6e2c8257 and knobs 9a353421 and harness shas, all of which match files on disk. Examiner re-ran harness/trade_step.py in memory (no writes, bytecode disabled) on the series: 26/26 estimate_ahead values reproduced, 0 mismatches."
+  },
+  "freeze_refs": {
+    "FROZEN_TRADE_STEP_FILL_LABEL.json": "518cd9814696b1a2000dce0580fe787ecea6c20c6f5b4a4c26561244bf37af5d",
+    "MECHANIC_TRADE_STEP_FILL_LABEL_FREEZE_2026-09-23.md": "a2cf4bec526f93c021b56605eca819fed1804218a1a8840324bf56c82704ad4a",
+    "mechanic_packet_md": {
+      "path": "lab/governance/astra/packets/r3_p2_queue_position/MECHANIC_TRADE_STEP_RETRY_ABS_ERR_SIGNED_BIAS_2026-09-24.md",
+      "sha256": "a74b64fe357131f5cbeda7e0a34870588f8ba7d6d2e4bcdbcabc9e2076b3f41a"
+    }
+  },
+  "recomputed_metrics": {
+    "source": "lab/governance/astra/packets/r3_p2_queue_position/results/abs_err_signed_bias_trade_step_retry.json rows (26), cross-checked against results/estimate_ahead_labels_trade_step_retry.json and results/demo_trade_step_sample_series_retry.json (qp_t0, qp_t1, ticker, trade_size_observed, fill_binary all match per row)",
+    "definitions": "abs_err=|estimate_ahead - qp_t1_observed|; signed_bias=estimate_ahead - qp_t1_observed",
+    "signed_bias_sign_convention": "POSITIVE = model OVER-estimates contracts ahead (observed queue at t1 is smaller than predicted, i.e. we moved up more than the model said). +20.08 here comes entirely from sample 5 where the queue shrank 261 with no trade at our price.",
+    "by_policy": {
+      "tfrmma_prob_queue": {
+        "n": 13,
+        "mean_abs_err_contracts": 20.0769,
+        "median_abs_err_contracts": 0.0,
+        "max_abs_err_contracts": 261.0,
+        "zero_err_n": 12,
+        "mean_signed_bias": 20.0769,
+        "median_signed_bias": 0.0,
+        "sample_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14
+        ]
+      },
+      "tfrmma_reduce_ratio": {
+        "n": 13,
+        "mean_abs_err_contracts": 20.0769,
+        "median_abs_err_contracts": 0.0,
+        "max_abs_err_contracts": 261.0,
+        "zero_err_n": 12,
+        "mean_signed_bias": 20.0769,
+        "median_signed_bias": 0.0,
+        "sample_ids": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          13,
+          14
+        ]
+      }
+    },
+    "overall": {
+      "n": 26,
+      "mean_abs_err_contracts": 20.0769,
+      "median_abs_err_contracts": 0.0,
+      "max_abs_err_contracts": 261.0,
+      "zero_err_n": 24,
+      "mean_signed_bias": 20.0769,
+      "median_signed_bias": 0.0
+    },
+    "stored_row_values_match_recompute": "26/26",
+    "nonzero_error_rows": [
+      {
+        "sample_id": 5,
+        "ticker": "KXNFLGAME-26SEP24ATLGB-ATL",
+        "qp_t0": "8011.00",
+        "estimate_ahead": "8011.00",
+        "qp_t1_observed": "7750.00",
+        "abs_err": 261.0,
+        "signed_bias": 261.0,
+        "l2_size_at_0.0100_t0_t1": [
+          "8012.00",
+          "7751.00"
+        ],
+        "trade_size_observed": "0.00",
+        "trades_in_window": "1 public trade at yes_price 0.2900, taker_book_side bid, count_fp 0.71, counted_toward_trade_size=false (not at our 0.0100 limit, not hitting bids)",
+        "qp_change_seen_at_poll_t_rel_s": 43.29
+      }
+    ],
+    "trade_size_observed": "0.00 on all 13 labeled samples (26 rows); n_trade_size_positive=0",
+    "fill_binary": "0 on all 13 labeled samples",
+    "policies_identical": "tfrmma_reduce_ratio and tfrmma_prob_queue estimate_ahead are identical on all 13 samples and equal qp_t0 on every row (consumed = 0 * (1+frac) = 0). cancelled_fraction differs (0.20 vs 0.05, or 0.0 at qp_t0=0) but is multiplied by trade_size 0, so the trade step never updated the estimate.",
+    "sensitivity_not_a_score": {
+      "excluding_sample_11_series_unsuccessful": {
+        "n": 12,
+        "mean_abs_err_contracts": 21.75
+      },
+      "qp_t0_gt_0_only": {
+        "n": 8,
+        "mean_abs_err_contracts": 32.625,
+        "zero_err_n": 7,
+        "front_of_queue_qp_t0_0_samples": [
+          9,
+          10,
+          11,
+          13,
+          14
+        ]
+      }
+    }
+  },
+  "mechanic_claims_vs_recompute": {
+    "rows_ok": "claimed 26 (13+13) | recomputed 26 (13+13) | MATCH",
+    "mean_abs_err": "claimed 20.08 | recomputed 20.0769 (=261/13) | MATCH (rounded)",
+    "median_abs_err": "claimed 0 | 0.0 | MATCH",
+    "max_abs_err": "claimed 261 | 261.0 | MATCH",
+    "zero_err_n": "claimed 12 of 13 | 12 of 13 per policy | MATCH",
+    "mean_signed_bias": "claimed +20.08 | +20.0769 | MATCH",
+    "only_error": "claimed sample 5 ATL 8011->7750 cancel-ahead no trade | confirmed (no trade at our limit; one off-price trade in market tape) | MATCH",
+    "trade_size_observed": "claimed 0.00 every row | confirmed | MATCH",
+    "brier_pnl": "claimed null/null | confirmed null | MATCH",
+    "discrepancies": "None numeric. Doc nit: Mechanic md omits that sample 11 (NEBUF-NE, success=false, failure_mode ok|cancel_fail_503) is among the 13 scored rows although series n_success=12."
+  },
+  "row_count_explanation": "The 38/18 figures belong to the PR37 static series (74ef9a9b), not this one. The trade-step retry series (6e2c8257) has 14 attempted samples (meta n_attempted=14, n_success=12). Sample 12 (KXNFLGAME-26OCT04DENSF-DEN) was place-rejected with demo 503: null qp_t0/qp_t1/trade_size, refused by Simulator ('refuse invent'). 13 samples x 3 models = 39 label rows; the 13 acheron_estimate_queue rows are NOT_DEFINED_IN_TRADE_STEP_HARNESS (null estimate), leaving 26 OK rows = 13 per tfrmma policy. Sample 11 (KXNFLGAME-26OCT04NEBUF-NE) is marked success=false in the series (cancel returned 503, order canceled at end-of-run leftover sweep, cancel_http 200) but has valid qp_t0=qp_t1=0.00 and trade_size 0.00, so it is included; it contributes a trivial zero error.",
+  "caveats": [
+    "TRADE_FREE_SERIES: trade_size_observed=0.00 on all 13 labeled samples; the only public trade in any hold window (sample 5) was at 0.2900 hitting asks, not our 0.0100 bid. Trade step exercised but never moved an estimate.",
+    "CANCEL_DYNAMICS_UNOBSERVED: cancel fractions never applied (consume = trade_size*(1+frac) with trade_size 0); the single queue move (sample 5, -261 at t+43s with matching L2 drop 8012->7751) is a trade-free cancel-ahead the FIFO trade-step algebra cannot represent. n=1; cancel dynamics not measured.",
+    "POLICIES_INDISTINGUISHABLE_ON_THIS_SERIES: reduce_ratio and prob_queue produce identical estimates (=qp_t0) on every row; this series cannot rank them or test trade-step logic. acheron not evaluated (NOT_DEFINED_IN_TRADE_STEP_HARNESS).",
+    "DEMO_QUEUE_NOT_PRODUCTION_FILL_EVIDENCE: demo-api.kalshi.co exchange_index 0 queue at 1c deep bids; 0 fills; not production fill or queue evidence."
+  ],
+  "examiner_notes": [
+    "5 of 13 scored samples (9,10,11,13,14) sat at the front of the queue (qp_t0=0.00); their zero error is trivial.",
+    "Mean abs_err is driven by one row of 13; median 0 is the more honest summary, and neither is a model score.",
+    "Conductor kick CONDUCTOR_KICK_R3_P2_TRADE_STEP_CANCEL_MODEL required 'cancel fractions must APPLY'; on this series they did not have any effect. Kick objective not met; ITERATE stands."
+  ],
+  "does_not_authorize": [
+    "calibration score",
+    "Brier score",
+    "policy ranking",
+    "fill evidence",
+    "KEEP/promote of any cancel or queue model",
+    "knob retune",
+    "live orders",
+    "P&L"
+  ],
+  "whats_next": "Before any calibration, cancel-model or Brier score: (1) a new pre-outcome freeze (v2) and a series with observed trades at our resting price AND observed cancels inside the hold window (e.g. at/near touch in active markets, longer hold), with positive fill labels; (2) the fill-label GO from Conductor; then Mechanic abs_err/signed_bias under applied dynamics and re-route to Examiner. Knobs stay frozen 9a353421... unless a new pre-outcome freeze changes them.",
+  "cite": [
+    "lab/governance/astra/packets/r3_p2_queue_position/MECHANIC_TRADE_STEP_RETRY_ABS_ERR_SIGNED_BIAS_2026-09-24.md",
+    "lab/governance/astra/packets/r3_p2_queue_position/FROZEN_TRADE_STEP_FILL_LABEL.json",
+    "lab/governance/astra/packets/r3_p2_queue_position/harness/FROZEN_KNOBS.json",
+    "lab/governance/astra/packets/EXAMINER_ACK_R3_P2_ABS_ERR_SIGNED_BIAS_SCORED_2026-09-23.json",
+    "lab/governance/astra/packets/EXAMINER_ACK_R3_P2_PR37_STUB_READY_NOT_SCORED_2026-09-23.json",
+    "lab/governance/astra/packets/CONDUCTOR_KICK_R3_P2_TRADE_STEP_CANCEL_MODEL_2026-09-23.json"
+  ],
+  "evidence_tags": [
+    "[V]",
+    "[H]"
+  ]
+}
