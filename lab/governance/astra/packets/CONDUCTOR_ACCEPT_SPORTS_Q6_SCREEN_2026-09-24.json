@@ -1,0 +1,111 @@
+{
+  "type": "CONDUCTOR_ACCEPT",
+  "subject": "Sports / microstructure candidate screen vs Q6-000",
+  "issued_at_et": "2026-09-25 00:02 ET",
+  "decision": "ACCEPT_SCREEN",
+  "freeze_path": "packets/scout_sports_q6_screen/FREEZE_SPORTS_Q6_SCREEN_2026-09-24.md",
+  "freeze_sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+  "freeze_time_ET": "2026-09-24 23:46:51 EDT",
+  "brief_path": "SCOUT_SPORTS_Q6_SCREEN_2026-09-24.md",
+  "brief_sha256": "fae1d7cb85279a900e20043da697ab189c77c7cf4f7131f8607b6310548f0047",
+  "raw_dir": "packets/scout_sports_q6_screen/raw/",
+  "slots": {
+    "Q6S5": {
+      "series": "KXMLBSPREAD",
+      "rec": "TRY",
+      "dead_overlap": "low",
+      "fee_cache": {
+        "fee_type": "quadratic",
+        "multiplier": 0.5
+      },
+      "inventory": {
+        "http": 200,
+        "n_markets": 93,
+        "n_events": 15,
+        "vol24_approx": 1617900.0,
+        "oi_approx": 1124600.0
+      },
+      "rank_among_try": 1,
+      "note": "Distinct vs occupied S1 KXMLBGAME ML; strongest fee-channel stress this screen."
+    },
+    "Q6S1": {
+      "series": "KXATPMATCH",
+      "rec": "TRY",
+      "dead_overlap": "low",
+      "fee_cache": {
+        "fee_type": "quadratic_with_maker_fees",
+        "multiplier": 1
+      },
+      "inventory": {
+        "http": 200,
+        "n_markets": 28,
+        "n_events": 14,
+        "vol24_approx": 341190.0,
+        "oi_approx": 330570.0
+      },
+      "rank_among_try": 2,
+      "note": "Inventory re-proof for existing ATP fee/queue + settled-join lane; bakeoff candidacy when settlements land. Not a new cash-cow C* re-nominate."
+    },
+    "Q6S2": {
+      "series": "KXNHLGAME",
+      "rec": "TRY",
+      "dead_overlap": "low",
+      "fee_cache": {
+        "fee_type": "quadratic_with_maker_fees",
+        "multiplier": 1
+      },
+      "inventory": {
+        "http": 200,
+        "n_markets": 40,
+        "n_events": 20,
+        "vol24_approx": 264860.0,
+        "oi_approx": 202170.0
+      },
+      "rank_among_try": 3,
+      "note": "C2 reinforce/refine only; do not steal ADMIT-1; no new sibling freeze this wave."
+    },
+    "Q6S4": {
+      "series": "KXBUNDESLIGAGAME",
+      "rec": "HOLD",
+      "dead_overlap": "none/low",
+      "reason": "Structure live; oi\u224812 too thin for bakeoff. UCL/EPL empty."
+    },
+    "Q6S3": {
+      "series": "KXNFLANYTD",
+      "alternates": [
+        "KXNFLFIRSTTD",
+        "KXNFL2TD"
+      ],
+      "rec": "DEFER",
+      "dead_overlap": "medium",
+      "reason": "ANYTD/FIRSTTD 429; 2TD empty. No invented inventory."
+    }
+  },
+  "rulings": [
+    "Screen ACCEPT. Freeze bytes verified sha256 552314d2\u2026 matches Scout claim.",
+    "Card 06 open-window differentiator remains CLOSED. No Cap-SR/FQ/RFQ reopen. No SHADOW_CANDIDATE_FREEZE / Q6-000 retune.",
+    "TRY priority for maximize: Q6S5 KXMLBSPREAD fee\u00d70.5 honesty harness (distinct from S1 ML) \u2192 Variants FREEZE then Conductor ACCEPT then IMPLEMENT. Examiner scores. No invent fills/PnL. No live orders.",
+    "Q6S1 = inventory re-proof for ATP bakeoff vs Q6-000 once settlements/measure path ready; do not duplicate ATP measure-hardening INFRA.",
+    "Q6S2 = C2 reinforce only this wave.",
+    "Q6S4 HOLD thin tape; Q6S3 DEFER until 429 clears.",
+    "S2/R2-P4 KXNFLSPREAD(+TOTAL) remains TRY-after-C1 narrative only \u2014 no hard poll / no ADMIT-1 theft.",
+    "Fee pins labeled cache (live /series not pulled) \u2014 Adversary note: cache \u2260 R1-P1 until Examiner tests."
+  ],
+  "cemetery_id": null,
+  "maximize_next": {
+    "owner": "R&D Variants",
+    "action": "FREEZE",
+    "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+    "series": "KXMLBSPREAD",
+    "kernel": "Fee-honest maker/taker + queue/freshness instruments on MLB spread books under fee_type=quadratic multiplier=0.5 (cache-labeled until live pin), distinct from occupied S1 KXMLBGAME ML, scored to stress or beat Q6-000 KEEP under shared $5k bakeoff rules.",
+    "dead_card_named": "nearest dead: Card 06 open-window (CLOSED) / S1 ML retune (forbidden)",
+    "constraints": [
+      "Not KXMLBGAME game-ML retune",
+      "GET-only / no orders / no invent fills or PnL",
+      "Prefer /events while /markets hot",
+      "Freeze before implement; Examiner HOLD_PRE_PR until merge",
+      "No dual-cloud"
+    ]
+  },
+  "scoreboard_unchanged": "Q6-000 / Arm D KEEP +$345.24 / +6.90%"
+}

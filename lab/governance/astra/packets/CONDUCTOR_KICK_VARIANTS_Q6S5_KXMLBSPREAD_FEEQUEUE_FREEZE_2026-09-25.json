@@ -1,0 +1,18 @@
+{
+  "id": "CONDUCTOR_KICK_VARIANTS_Q6S5_KXMLBSPREAD_FEEQUEUE_FREEZE",
+  "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "decision": "FREEZE",
+  "freeze_owner": "R&D Variants",
+  "parent_accept": "packets/CONDUCTOR_ACCEPT_SPORTS_Q6_SCREEN_2026-09-24.json",
+  "scout_freeze_sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+  "series": "KXMLBSPREAD",
+  "rank": 1,
+  "kernel_one_sentence": "On MLB spread (not S1 game-ML), do fee-honest fills + queue/freshness under quadratic\u00d70.5 produce completed-net / unresolved-inventory stats that beat or stress Q6-000 under shared $5k bakeoff?",
+  "pattern_cite": [
+    "packets/ATP_KXATPMATCH_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
+    "packets/C2_KXNHLGAME_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md"
+  ],
+  "note": "Maximize-next after sports screen ACCEPT. File FREEZE first (hashes on disk). Do not implement until Conductor ACCEPT of your freeze. Distinct from S1 KXMLBGAME ML. Fee pin starts cache-labeled; live /series pin when rate budget allows. No orders. No invent. Queue behind in-flight S5-RJ only if needed \u2014 do not sit idle after that lands.",
+  "stamped_at_et": "2026-09-25T00:02:00-04:00"
+}
