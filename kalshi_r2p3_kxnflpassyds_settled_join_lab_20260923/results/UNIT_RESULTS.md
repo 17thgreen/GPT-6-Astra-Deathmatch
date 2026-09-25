@@ -105,3 +105,7 @@ hold is false and is not a score.
   lab, the S4-RJ lab, and Arm B were not modified. This packet does not
   ungate S1, S2, or R2-P4. Clock admit is still closed, so Examiner
   scoring stays closed.
+
+## Status update (2026-09-24)
+
+The Examiner has since issued `READY_NOT_SCORED` (`stub_ready` true, `NOT_SCORED`). This supersedes the earlier `HOLD_PRE_PR` wording above. Examiner ACK `lab/governance/astra/packets/R2P3_KXNFLPASSYDS_SETTLED_JOIN_HARNESS/EXAMINER_ACK_R2P3_RJ_PR46_STUB_READY_NOT_SCORED_2026-09-23.json` sha256 `d05b5abdff35c056ef5ace069d3941a523eb81909b64dfcd4f8ebcdb19b657d7`. `results`, `pnl`, and the scorecard remain null. Nothing was scored.

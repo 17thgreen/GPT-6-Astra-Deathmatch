@@ -55,8 +55,15 @@ One knob: `join_gate`.
 | J1 | Occurrence datetime match | market `occurrence_datetime` equals the event clock when both are present |
 
 `results`, `pnl`, `settled_join_n`, `occurrence_match_n`, and
-`admit_ready_flag` stay null. Examiner status stays `HOLD_PRE_PR`.
-`stub_ready` stays false.
+`admit_ready_flag` stay null. Examiner status is `READY_NOT_SCORED`
+(`stub_ready` true, `NOT_SCORED`). This supersedes the earlier
+`HOLD_PRE_PR` wording. Examiner ACK
+`lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS/EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json`
+sha256 `3eb4900dcdf72d34247f25dfb259bf74193267c1e3a2983e8c4fd486e278bdec`.
+Conductor ACCEPT
+`lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json`
+sha256 `a964146f34a32527b75fb64011ead9a6e6013078474f8a54e208ba7c543f06d4`.
+The scorecard remains null. Nothing was scored.
 
 Feebook `22371178cb2663250b4762f328069571c48cb551` and rails
 `6a28e0d6254327ea4e6451c781bec56215ac6cac` are fixed commits and are not

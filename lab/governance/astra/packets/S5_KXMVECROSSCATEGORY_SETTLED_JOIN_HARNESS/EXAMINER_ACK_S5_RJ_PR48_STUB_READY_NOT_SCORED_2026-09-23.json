@@ -1,0 +1,104 @@
+{
+  "id": "EXAMINER_ACK_S5_RJ_PR48_STUB_READY_NOT_SCORED",
+  "seat": "Examiner (Kalshi)",
+  "packet": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "S5-RJ",
+  "status": "NOT_SCORED",
+  "verdict": "READY_NOT_SCORED",
+  "stub_ready": true,
+  "scored": false,
+  "promote": false,
+  "pre_pr_hold_superseded": true,
+  "supersedes_hold": "EXAMINER_HOLD_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_PRE_PR",
+  "supersedes_pin_ack": "EXAMINER_ACK_S5_RJ_PIN_CONFIRM_CD264A4D",
+  "admit_alone_neq_score": true,
+  "pr48": {
+    "main": "fec05e8cf7c11f1c975ab791fda64f896d40d1cd",
+    "head_sha_pre_merge": "4b20bdf6f33a9481bb995b2944a0656b97cea716",
+    "base_pre_merge": "b2c1639a77f62114572fd41182f8a3c5ef70cad1",
+    "merge_method": "squash",
+    "lab": "kalshi_s5_kxmvecrosscategory_settled_join_lab_20260923/",
+    "units": "10 OK (unittest tests.test_orchestrator) ≠ Examiner score",
+    "units_ok": 10,
+    "arms": [
+      "J0",
+      "J1"
+    ],
+    "arm_values": {
+      "J0": "nonempty_result_required",
+      "J1": "occurrence_datetime_match (expected_expiration_time when occurrence_datetime null honest)"
+    },
+    "sha_verify": "PASS",
+    "url": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/48",
+    "cloud_agent": "bc-eecc10ef-a069-50f6-923c-e470e28b646e",
+    "conductor_pulse_cloud": false,
+    "implement_owner": "R&D Variants"
+  },
+  "freeze_sha256": "cd264a4d41ef055d1cbca80a5dbe6756746211537fb24799dca9dde8980cb799",
+  "scout_reget_sha256": "33db60a50f2e7746315f4603b9f78a9260145cb49d0250e141471de46f4df9e3",
+  "scout_summary_sha256": "3bc4aa5f44d7d31295dfd25f7bac3a3e39463c237315e8228c3fcf434d08419a",
+  "panel_stub_sha256": "4918b820d454c5f997ea100917859f7e9467d92933bed1bc8a55c81ab8ce5b8e",
+  "settled_reget_capture_sha256": "91111f20586a1b684e430baa0e8b62a3fffc7d510de99e43bab7d213dfeb26da",
+  "accept_sha256": "495675175589c08122bc57375dd8e7d00aea9f4a154df3aff086b015a2513a8c",
+  "digest_verify": {
+    "freeze": "PASS",
+    "scout_reget": "PASS",
+    "seed_summary": "PASS",
+    "panel_stub": "PASS",
+    "settled_reget": "PASS",
+    "accept": "PASS",
+    "match_all": true
+  },
+  "admitted_at": null,
+  "panel_version": "2026-09-22.s5-kxmvecrosscategory-v0",
+  "settled_nonempty_result_N_scout": 20,
+  "settled_join_n": null,
+  "pnl": null,
+  "results": null,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "settled_list_http": "200",
+  "earlier_settled_finalized_events_list_http": "429_honest",
+  "occurrence_datetime_null_on_settled_lim20_honest": true,
+  "j1_clock_pin": "expected_expiration_time when occurrence_datetime null",
+  "admit_py_refused": true,
+  "arm_b_not_scored_here": true,
+  "orthogonal_to": [
+    "S5-FILLLEGS",
+    "MVE-FL"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": [
+    "Clock admit",
+    "settled join N>0 (measured)",
+    "Examiner-ready"
+  ],
+  "refuse": [
+    "invent settled result/fills/depth/PnL",
+    "Lee-Ready",
+    "Cap-SR/FQ/S5-FILLLEGS/MVE-FL/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ/R2P3-RJ reopen",
+    "Q6-000 retune",
+    "ungate S1/S2/R2-P4",
+    "Arm B score here",
+    "live orders",
+    "admit.py",
+    "copy scout N=20 into settled_join_n as score",
+    "10 units ≠ Examiner score",
+    "Conductor pulse cloud kick",
+    "invent occurrence_datetime when API null"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "stub_path": "lab/governance/astra/packets/EXAMINER_SCORECARD_STUB_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_2026-09-23.md",
+  "ready_packet_path": "lab/governance/astra/packets/EXAMINER_READY_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_PR48_NOT_SCORED_2026-09-23.json",
+  "merge_stamp": "lab/governance/astra/packets/CONDUCTOR_MERGE_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_PR48_2026-09-23.json",
+  "stamped_at_et": "2026-09-23T17:51:30-04:00"
+}

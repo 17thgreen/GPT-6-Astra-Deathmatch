@@ -1,0 +1,80 @@
+{
+  "id": "EXAMINER_ACK_R2P3_RJ_PR46_STUB_READY_NOT_SCORED",
+  "seat": "Examiner (Kalshi)",
+  "packet": "R2P3-KXNFLPASSYDS-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "R2P3-RJ",
+  "status": "NOT_SCORED",
+  "stub_ready": true,
+  "supersedes_hold": "EXAMINER_HOLD_R2P3_KXNFLPASSYDS_SETTLED_JOIN_HARNESS_PRE_PR",
+  "admit_alone_neq_score": true,
+  "pr46": {
+    "main": "b2c1639a77f62114572fd41182f8a3c5ef70cad1",
+    "head_sha_pre_merge": "4131cc33f70bc7ee10da10c8d5c02bb5fc7e9385",
+    "base_pre_merge": "aeff380b29dbe89b16da58f9e15e58415b42b147",
+    "merge_method": "squash",
+    "lab": "kalshi_r2p3_kxnflpassyds_settled_join_lab_20260923/",
+    "units": "10 OK (unittest tests.test_orchestrator) \u2260 Examiner score",
+    "arms": [
+      "J0",
+      "J1"
+    ],
+    "sha_verify": "PASS",
+    "url": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/46",
+    "cloud_agent": "bc-7d89b4b5-c4af-5b5f-b60e-bd2681d220be",
+    "conductor_pulse_cloud": false,
+    "implement_owner": "R&D Variants"
+  },
+  "freeze_sha256": "9ad3b0112243c1020aec2bd6ef0df15011b065c30aa691a988da02eb08be1e0b",
+  "scout_reget_sha256": "2c3664ac240887026076a84e451ca798e0c2d10d42bdaf61a9a83844881681e5",
+  "scout_summary_sha256": "534a617bc3f18be501c07237d261e945b1bcf0301ac956cddae46e0431b75cd3",
+  "panel_stub_sha256": "70e879e8738d033f392d821849dee3537af3e7b8a916670779d238f78ce098be",
+  "settled_reget_capture_sha256": "2ce8426edb4ee5053f63bf2fe1439dbd046978eb76afa1e0537b17cca9b8b0e4",
+  "accept_sha256": "e5218cf2511607211ec1d825a9dad36abaee3d9cfda24488524c3d6bcbe3a565",
+  "admitted_at": null,
+  "panel_version": "2026-09-22.r2-p3-prop-slate-v0",
+  "settled_nonempty_result_N_scout": 20,
+  "settled_join_n": null,
+  "note_scout_N_not_copied_into_settled_join_n": true,
+  "settled_list_http": "200",
+  "finalized_list_http": "429_honest",
+  "events_closed_settled_http": "429_honest",
+  "admit_py_refused": true,
+  "arm_b_not_scored_here": true,
+  "orthogonal_to": [
+    "R2-P3-PROP-LADDER",
+    "PASSYDS-PROP"
+  ],
+  "metrics_null": [
+    "results",
+    "pnl",
+    "settled_join_n",
+    "occurrence_match_n",
+    "admit_ready_flag"
+  ],
+  "score_gate": [
+    "Clock admit",
+    "settled join N>0 (measured)",
+    "Examiner-ready"
+  ],
+  "refuse": [
+    "invent settled result/fills/depth/PnL",
+    "Lee-Ready",
+    "Cap-SR/FQ/R2-P3-prop-ladder/PASSYDS-PROP/C3-RJ/C5-RJ/R3P3-RJ/NHL-RJ/S4-RJ reopen",
+    "Q6-000 retune",
+    "ungate S1/S2/R2-P4",
+    "Arm B score here",
+    "live orders",
+    "admit.py",
+    "copy scout N=20 into settled_join_n as score",
+    "10 units \u2260 Examiner score",
+    "Conductor pulse cloud kick"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "stub_path": "lab/governance/astra/packets/EXAMINER_SCORECARD_STUB_R2P3_KXNFLPASSYDS_SETTLED_JOIN_HARNESS_2026-09-23.md",
+  "merge_stamp": "lab/governance/astra/packets/CONDUCTOR_MERGE_R2P3_KXNFLPASSYDS_SETTLED_JOIN_HARNESS_PR46_2026-09-23.json",
+  "stamped_at_et": "2026-09-23T17:29:00-04:00"
+}

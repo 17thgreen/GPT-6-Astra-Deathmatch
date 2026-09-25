@@ -1,0 +1,22 @@
+{
+  "id": "CONDUCTOR_ACCEPT_EXAMINER_S5_RJ_PR48_STUB_READY_NOT_SCORED",
+  "decision": "ACCEPT",
+  "feature_family": "S5-RJ",
+  "packet_id": "S5-KXMVECROSSCATEGORY-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "examiner_ack": "EXAMINER_ACK_S5_RJ_PR48_STUB_READY_NOT_SCORED",
+  "ready_packet": "packets/EXAMINER_READY_S5_KXMVECROSSCATEGORY_SETTLED_JOIN_HARNESS_PR48_NOT_SCORED_2026-09-23.json",
+  "pr48_merge_sha": "fec05e8cf7c11f1c975ab791fda64f896d40d1cd",
+  "accept_sha256": "495675175589c08122bc57375dd8e7d00aea9f4a154df3aff086b015a2513a8c",
+  "digest_verify_match": true,
+  "units_ok_neq_score": true,
+  "results_null": true,
+  "pnl_null": true,
+  "settled_join_n_null": true,
+  "scout_N_pin_only": 20,
+  "promote": false,
+  "scored": false,
+  "pre_pr_hold_superseded": true,
+  "score_gate": "Clock admit + measured settled_join_n>0 + Examiner-ready",
+  "next_maximize": "C1-RJ (Variants; pin MAXIMIZE_PIN_2026-09-23_1750ET.md)",
+  "stamped_at_et": "2026-09-23T17:52:28-04:00"
+}

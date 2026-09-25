@@ -62,3 +62,7 @@ It does not claim those reads are the absent scout file. If the cited
 freeze, ACCEPT, maximize pin, and scout directory later appear together
 and the ACCEPT says digests match, this revision still refuses to claim
 ALL_MATCH until a follow-up wires those bytes. Absence is not a score.
+
+## Status update (2026-09-24)
+
+The Examiner has since issued `READY_NOT_SCORED` (`stub_ready` true, `NOT_SCORED`). This supersedes the earlier `HOLD_PRE_PR` wording above. Examiner ACK `lab/governance/astra/packets/C1_KXUFCFIGHT_SETTLED_JOIN_HARNESS/EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json` sha256 `3eb4900dcdf72d34247f25dfb259bf74193267c1e3a2983e8c4fd486e278bdec`. Conductor ACCEPT `lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_C1_RJ_PR49_STUB_READY_NOT_SCORED_2026-09-24.json` sha256 `a964146f34a32527b75fb64011ead9a6e6013078474f8a54e208ba7c543f06d4`. `results`, `pnl`, and the scorecard remain null. Nothing was scored.

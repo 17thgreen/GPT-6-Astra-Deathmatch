@@ -33,9 +33,9 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_timing_lab_20260921` | Q4 size, early entry, stability and event-cap experiments |
 | `nfl_adaptive_lab_20260921` | Q5 adaptive policies and capital controls |
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
-| `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check; frozen, not run |
+| `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check. Later registry rows record a Q7 Arm B kill and frozen rehab pass 1 (PR38) and pass 2 (PR47), with desk-verified `q3300_d0.25_B.json` / `q3300_d0.25_D.json` summary hashes. In-tree `results/NOT_RUN.json` stays `NOT_RUN_INPUTS_MISSING` (`scenarios_executed` 0). The reconciliation memo is not a score |
 | `nfl_q7_rehab_p1_cadence_20260923` | Q7 Arm B rehab pass 1. One knob: 600s admission cadence on new paired exposure. Scorecard null. Parent Q7 is imported, not edited |
-| `nfl_prospective_recorder_20260922` | GET-only prospective recorder; reviewed, not deployed |
+| `nfl_prospective_recorder_20260922` | GET-only prospective recorder (ADMIT-1); deployed and running since 2026-09-22. Fleet evidence: `17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c` |
 | `kalshi_c1_kxufcfight_lab_20260922` | C1 KXUFCFIGHT admit-wire scaffold. Clock accepts the admitted panel. Scorecard null. 16 unit tests green |
 | `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
 | `kalshi_soft_blended_reserves_000_lab_20260923` | Cap-SR soft-policy measurement on the A2 substrate. Scorecard null. Not a promotion claim |
@@ -54,7 +54,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `kalshi_r3_p2_queue_position_lab_20260923` | R3-P2 queue_position calibration ingest. Series schema `{meta, samples[]}`. Desk series pinned sha256 `74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4`, samples_n 38, leftover_resting `no`. Scorecard null. Status SAMPLE_INGESTED_CALIBRATION_NOT_RUN. Calibration not run. 6 unit tests green |
 | `kalshi_c5_kxbtc15m_settled_join_lab_20260923` | C5-RJ KXBTC15M settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. Scout N=20 is not settled_join_n. Finalized and closed list 429 gaps left empty. admit.py not run. Not live crypto trading. 10 unit tests green |
 | `kalshi_r3p3_fl_settled_join_lab_20260923` | R3P3-RJ FL maker/taker settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match. Scorecard null. Scout N=20 is not settled_join_n. CHI settled list and NY open list 429 gaps left empty. admit.py not run. 10 unit tests green |
-| `kalshi_c1_kxufcfight_settled_join_lab_20260923` | C1-RJ KXUFCFIGHT settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match on the four admitted parent seeds. Scorecard null. Cited freeze, ACCEPT, 1750 ET pin, and scout reget were absent and were not regenerated. Declared scout N=4 is not settled_join_n. admit.py not run. 10 unit tests green |
+| `kalshi_c1_kxufcfight_settled_join_lab_20260923` | C1-RJ KXUFCFIGHT settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match on the four admitted parent seeds. Scorecard null. Cited freeze, ACCEPT, 1750 ET pin, and scout reget are present (PR49). `digest_all_match_claimed` is true. Examiner status is `READY_NOT_SCORED` (`stub_ready` true, `NOT_SCORED`). Declared scout N=4 is not settled_join_n. admit.py not run. 10 unit tests green |
 | `kalshi_c4_kxcpi_settled_join_lab_20260924` | C4-RJ KXCPI settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match, with expected_expiration_time fallback labeled per row when occurrence_datetime is null. Scorecard null. Scout N=25 is a pin and is not settled_join_n. admitted_at stays null. admit.py not run. CPI-FQ stays closed. 10 unit tests green |
 | `kalshi_atp_kxatpmatch_settled_join_lab_20260924` | ATP-RJ KXATPMATCH settled-resolution join harness. One knob: join_gate. J0 nonempty result required. J1 occurrence datetime match, with expected_expiration_time fallback labeled per row when occurrence_datetime is null. Scorecard null. Scout N=30 is a pin and is not settled_join_n. Measurement mode pages public GET reads for markets settled after the ACCEPT instant and does not commit those counts. admitted_at stays null. admit.py not run. ATP-FQ stays closed. 13 unit tests green |
 
@@ -97,8 +97,19 @@ failed attempts and negative outcomes. See [AGENTS.md](AGENTS.md).
 
 The next research step is an isolated test of the **actual chosen-pair price
 check**, with the original router's timing and sizing held fixed. That check
-is frozen and not run in `nfl_paircheck_lab_20260922`. Fresh-game
-validation and a durable public recorder remain separate unmet gates. A
-reviewed prospective recorder, not deployed by this commit, is in
-`nfl_prospective_recorder_20260922/`. PHI@CHI's full T−7d window is already
-missed and is not backfilled.
+is frozen in `nfl_paircheck_lab_20260922`. The registry records a Q7 Arm B
+kill (Cap-SR row and S4 KXNCAAFGAME fee+queue row) and records frozen rehab
+pass 1 (PR38) and pass 2 (PR47), with desk-verified `q3300_d0.25_B.json` sha256
+`370ccbcf342db59aa1697d448d3274791cf17c015d8e9eead17d788fbe79ffb5` and
+`q3300_d0.25_D.json` sha256
+`fc38cfbc134ca313a6cd2b8763ef49c3a56f6b5cc763c50f82e2b4545cda898f`. The
+in-tree pair-check result file remains `NOT_RUN_INPUTS_MISSING`
+(`scenarios_executed` 0). Rehab result files in this checkout also record
+`scenarios_executed` 0. The read-only reconciliation memo
+`lab/governance/astra/packets/q7_reconciliation_20260924/Q7_RECONCILIATION_MEMO_2026-09-24.md`
+(PR51, on main) is documentation and is not a score. This paragraph does not
+report Q7 P&L. Fresh-game validation remains a separate gate. The prospective
+recorder (ADMIT-1) in `nfl_prospective_recorder_20260922/` has been deployed
+and running since 2026-09-22. Fleet evidence is
+`17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c`. PHI@CHI's
+full T−7d window is already missed and is not backfilled.

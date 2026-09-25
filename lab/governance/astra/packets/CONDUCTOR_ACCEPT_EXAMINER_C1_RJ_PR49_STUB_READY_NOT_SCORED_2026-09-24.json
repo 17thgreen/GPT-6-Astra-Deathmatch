@@ -1,0 +1,16 @@
+{
+  "packet_id": "CONDUCTOR_ACCEPT_EXAMINER_C1_RJ_PR49_STUB_READY_NOT_SCORED",
+  "decision": "ACCEPT",
+  "examiner_ack": "EXAMINER_ACK_C1_RJ_PR49_STUB_READY_NOT_SCORED",
+  "main_sha": "34a2720218b4f4f2d6dd0cbde6334ee672a3684b",
+  "pins_8_of_8": "PASS",
+  "scored": false,
+  "promote": false,
+  "score_gate": "Clock admit + measured settled_join_n>0 + Examiner-ready",
+  "hold_superseded": "7ceb4bed",
+  "non_blocking": [
+    "UNIT_RESULTS.md stale HOLD wording (superseded by PIN_GAP.json + SOURCE_PINS)",
+    "box SOURCE_PINS copies are pre-PR desk blob d339e3f8; same digests"
+  ],
+  "decided_at_et": "2026-09-24T19:23:00.458519-04:00"
+}
