@@ -1,0 +1,86 @@
+{
+  "id": "EXAMINER_HOLD_Q6S1_KXATPMATCH_INVENTORY_REPROOF_PRE_PR",
+  "seat": "Examiner (Kalshi)",
+  "packet": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "hold": "HOLD pre-PR — digests pending Conductor ACCEPT; stub_ready=false until PR merges; do not score; Variants sole implement (no Conductor pulse cloud); no dual-cloud; Q7-B Pass-2 KEEP / B2 shadow — do not touch Pass-3/Refiner/B2 promote",
+  "lab_dir": "kalshi_q6s1_kxatpmatch_inventory_reproof_lab_20260925/",
+  "arms": [
+    "Q6S1A0",
+    "Q6S1A1"
+  ],
+  "arm_values": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "knob": "inventory_slice",
+  "fee_cache": {
+    "fee_type": "quadratic_with_maker_fees",
+    "multiplier": 1,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1_until_examiner_series_pin": true
+  },
+  "admitted_at": null,
+  "panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "metrics_null": [
+    "results",
+    "pnl",
+    "inventory_delta_flat_vs_binned",
+    "unresolved_inventory",
+    "position_bucket_gap",
+    "settled_join_n",
+    "n_books"
+  ],
+  "score_gate": "Clock admit + Examiner-ready after PR merge",
+  "ready_gate": "PR branch sha verify + merge → READY NOT_SCORED (still not scored)",
+  "refuse": [
+    "invent fills/PnL/depth/settlement_ts/inventory deltas",
+    "Cap-SR reopen",
+    "ATP-FQ reopen",
+    "ETH-FQ / Q6S5 reopen",
+    "PR57 INFRA duplicate",
+    "Q6-000 retune",
+    "S1 ML retune",
+    "Pass-3 / Refiner / B2 promote",
+    "Lee-Ready",
+    "admit.py by Variants",
+    "live orders",
+    "dual-cloud",
+    "claim cache fee = R1-P1 live without Examiner /series test",
+    "score before PR merge",
+    "Conductor pulse cloud kick"
+  ],
+  "does_not_ungate": [
+    "S1",
+    "S2",
+    "R2-P4"
+  ],
+  "nearest_dead_cards": [
+    "Cap-SR reopen FORBIDDEN",
+    "ATP-FQ reopen FORBIDDEN",
+    "Card 06 CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "implement_owner": "R&D Variants",
+  "conductor_cloud_kick": false,
+  "stamped_at_et": "2026-09-25T00:39:00-04:00",
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "kick_sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+  "maximize_pin_0031ET_sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+  "maximize_pin_0033ET_sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "sports_screen_freeze_sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+  "sports_screen_accept_sha256": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+  "empty_results_sha256": "b6fab2cf7e2f4cee9889658ea2acebd6bdeab887fddf370c8081e8eddf3cffa6",
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "panel_admitted.json (ATP panel remains NOT_ADMITTED; admitted_at null; Variants does not run admit.py)",
+    "live /series fee pin (fee remains CACHE-LABELED quadratic_with_maker_fees×1 until Examiner live /series)",
+    "fresh sports-screen ATP panel subset matching screen inventory 28mkts/14ev (reuse authentic 6/12 stub; do not invent markets)",
+    "invented fills / PnL / depth / settlement_ts / inventory deltas (null until Clock+Examiner)",
+    "Q6S1-specific scout PDF / archivist index prior entry (none on disk at freeze; Archivist ping only)"
+  ]
+}

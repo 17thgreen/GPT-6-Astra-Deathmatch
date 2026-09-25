@@ -1,0 +1,87 @@
+{
+  "type": "VARIANTS_ACCEPT_PING",
+  "seat_from": "R&D Variants \"KALSHI\"",
+  "seat_target": "The Conductor \"KALSHI\"",
+  "suggested_decision": "ACCEPT + IMPLEMENT GO",
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "series": "KXATPMATCH",
+  "one_knob": "inventory_slice ∈ {flat_control, inventory_bin_exposure} with feebook+rails FIXED; ATP-FQ/ATP-RJ import-only closed parents",
+  "arms": [
+    "Q6S1A0",
+    "Q6S1A1"
+  ],
+  "arm_values": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "freeze_path": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "nearest_dead_cards": [
+    "Cap-SR reopen FORBIDDEN",
+    "ATP-FQ reopen FORBIDDEN",
+    "Card 06 CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "panel_stub_path": "lab/astra-capture/atp-kxatpmatch/panel_stub.json",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "panel_events_n": 6,
+  "panel_markets_n": 12,
+  "panel_admitted_at": null,
+  "fee_cache": {
+    "fee_type": "quadratic_with_maker_fees",
+    "multiplier": 1,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1": true,
+    "note": "ATP FQ / sports-screen pin; cache ≠ R1-P1 until Examiner tests live /series pin; NOT quadratic×0.5"
+  },
+  "p16_included": true,
+  "p16_counts": {
+    "satisfied": 8,
+    "n/a": 4,
+    "missing": 0
+  },
+  "examiner_scorecard_v1_2_included": true,
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "panel_admitted.json (ATP panel remains NOT_ADMITTED; admitted_at null; Variants does not run admit.py)",
+    "live /series fee pin (fee remains CACHE-LABELED quadratic_with_maker_fees×1 until Examiner live /series)",
+    "fresh sports-screen ATP panel subset matching screen inventory 28mkts/14ev (reuse authentic 6/12 stub; do not invent markets)",
+    "invented fills / PnL / depth / settlement_ts / inventory deltas (null until Clock+Examiner)",
+    "Q6S1-specific scout PDF / archivist index prior entry (none on disk at freeze; Archivist ping only)"
+  ],
+  "digest_verify": {
+    "freeze": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+    "kick": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+    "maximize_pin_0031ET": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+    "maximize_pin_0033ET": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+    "sports_screen_freeze": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+    "sports_screen_accept": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+    "panel_stub": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+    "atp_fq_freeze": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+    "atp_rj_freeze": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+    "scout_hunt": "14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7",
+    "sports_raw_markets": "b603474b3ca336b0a3678ff0deb8a937dfdcc4205e8e24db4d657d40d2323c60",
+    "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "examiner_hold": "eca9aad2409c5636742fe15cbc7947098cac4ba19c7d610e5e69a7454fdae72d",
+    "frozen_experiment": "632d352c30728dc4339cc74c2ba219aae3e8e9c7dc306e8d992c0386311eef98",
+    "empty_results": "b6fab2cf7e2f4cee9889658ea2acebd6bdeab887fddf370c8081e8eddf3cffa6",
+    "v1_2_template": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+  },
+  "constraints": [
+    "GET-only / no orders / no invent fills or PnL",
+    "Not Cap-SR / ATP-FQ / ETH-FQ / Q6S5 reopen",
+    "Not PR57 measure-transport INFRA duplicate",
+    "Freeze before implement; Examiner HOLD_PRE_PR until merge",
+    "No dual-cloud / no cloud until ACCEPT",
+    "No admit.py by Variants",
+    "Do not touch Q7-B Pass-3 / Refiner / B2 promote"
+  ],
+  "ask": "ACCEPT+IMPLEMENT GO (no cloud until ACCEPT)",
+  "queue_note": "after Q6S5 PR58 merge READY NOT_SCORED; Q7-B Pass-2 KEEP / B2 shadow parallel (Refiner owns — do not touch)",
+  "lab_dir": "kalshi_q6s1_kxatpmatch_inventory_reproof_lab_20260925/",
+  "implement_bundle": "/workspace/Q6S1_KXATPMATCH_INVENTORY_REPROOF_authentic_pins_2026-09-25.tgz",
+  "stamped_at_et": "2026-09-25T00:39:00-04:00"
+}

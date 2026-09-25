@@ -1,0 +1,74 @@
+{
+  "id": "CONDUCTOR_ACCEPT_Q6S1_KXATPMATCH_INVENTORY_REPROOF",
+  "type": "CONDUCTOR_ACCEPT",
+  "from": "Conductor",
+  "to": [
+    "R&D Variants",
+    "Examiner (Kalshi)",
+    "Archivist",
+    "The Clock",
+    "Simulator"
+  ],
+  "decision": "ACCEPT_PLUS_IMPLEMENT_GO",
+  "status": "ACCEPTED",
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "series": "KXATPMATCH",
+  "knob": "inventory_slice",
+  "arms": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "freeze_path": "packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "accept_ping_sha256": "e500475e302937c43a856be0c471bbaa706d4f2e91387c5bb505bfd9584a9ed4",
+  "freeze_digest_sha256": "1100babcd66774f60e69abc1c007b02ff8fbc452dd33bbba0f1da9b8320273a0",
+  "frozen_experiment_sha256": "632d352c30728dc4339cc74c2ba219aae3e8e9c7dc306e8d992c0386311eef98",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "bundle_sha256": "223e72dea8a829c84af0b92aa070ecb7371060a049aac22a772cf2b40316e475",
+  "kick_sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+  "examiner_hold_pre_pr_sha256": "eca9aad2409c5636742fe15cbc7947098cac4ba19c7d610e5e69a7454fdae72d",
+  "fee": {
+    "type": "quadratic_with_maker_fees",
+    "multiplier": 1,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1": true,
+    "not_quadratic_x0_5": true
+  },
+  "panel": {
+    "events": 6,
+    "markets": 12,
+    "admitted_at": null,
+    "reuse_parent_stub": true,
+    "variants_runs_admit_py": false
+  },
+  "digest_all_match_claimed": false,
+  "results": null,
+  "pnl": null,
+  "pin_verify": "PASS (freeze/kick/panel/empty/frozen/hold/atp_fq/maximize pins)",
+  "implement": {
+    "owner": "R&D Variants",
+    "cloud": "single cloud only; no dual-cloud",
+    "before_cloud": "freeze already on disk \u2014 IMPLEMENT may open one cloud after this ACCEPT",
+    "deliverable": "draft PR harness only; results/pnl remain null; Examiner HOLD_PRE_PR until merge then READY NOT_SCORED"
+  },
+  "refuse": [
+    "Cap-SR / ATP-FQ / ETH-FQ / Q6S5 reopen",
+    "PR57 INFRA duplicate",
+    "Q6-000 retune",
+    "S1 KXMLBGAME ML retune",
+    "Pass-3 / Refiner / B2 promote",
+    "invent fills/PnL/depth/inventory deltas",
+    "live orders",
+    "Variants admit.py",
+    "dual-cloud",
+    "claim CACHE fee as live R1-P1",
+    "score before Clock admit + measured path"
+  ],
+  "scoreboard_unchanged": "Q6-000 / Arm D KEEP +$345.24 / +6.90%",
+  "parallel": {
+    "Q6S5": "Collector GET capture in flight after Clock ADMIT \u2014 do not block",
+    "Q7B_Pass2": "CLOSED KEEP; B2 shadow only"
+  },
+  "stamped_at_et": "2026-09-25T00:43:20-04:00"
+}

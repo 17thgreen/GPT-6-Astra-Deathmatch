@@ -1,0 +1,199 @@
+{
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "stamped_at_et": "2026-09-25T00:39:00-04:00",
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "panel_admitted.json (ATP panel remains NOT_ADMITTED; admitted_at null; Variants does not run admit.py)",
+    "live /series fee pin (fee remains CACHE-LABELED quadratic_with_maker_fees\u00d71 until Examiner live /series)",
+    "fresh sports-screen ATP panel subset matching screen inventory 28mkts/14ev (reuse authentic 6/12 stub; do not invent markets)",
+    "invented fills / PnL / depth / settlement_ts / inventory deltas (null until Clock+Examiner)",
+    "Q6S1-specific scout PDF / archivist index prior entry (none on disk at freeze; Archivist ping only)"
+  ],
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "kick_sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+  "maximize_pin_0031ET_sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+  "maximize_pin_0033ET_sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+  "members": [
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+      "sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+      "bytes": 14499
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/FROZEN_EXPERIMENT.json",
+      "sha256": "632d352c30728dc4339cc74c2ba219aae3e8e9c7dc306e8d992c0386311eef98",
+      "bytes": 4273
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/EMPTY_RESULTS.json",
+      "sha256": "b6fab2cf7e2f4cee9889658ea2acebd6bdeab887fddf370c8081e8eddf3cffa6",
+      "bytes": 5068
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/SOURCE_PINS.json",
+      "sha256": "cddb85e83e679a101108c45cd82b2e9b59e68f9afd0d89d141a5bee0460376e7",
+      "bytes": 3816
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/DIGESTS.txt",
+      "sha256": "1ce3a64bd0ed58c99d514bf3f7fe348a53e60474edbc944f3f757eafd0f60cc6",
+      "bytes": 3306
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/EXAMINER_HOLD_Q6S1_KXATPMATCH_INVENTORY_REPROOF_PRE_PR_2026-09-25.json",
+      "sha256": "eca9aad2409c5636742fe15cbc7947098cac4ba19c7d610e5e69a7454fdae72d",
+      "bytes": 3595
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/EXAMINER_SCORECARD_STUB_Q6S1_KXATPMATCH_INVENTORY_REPROOF_2026-09-25.md",
+      "sha256": "f8353cc1feca5add9988f38406a2def56d621f053b5044d59f7032a85b06525b",
+      "bytes": 673
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/EXAMINER_SCORECARD_STUB_Q6S1_KXATPMATCH_INVENTORY_REPROOF_2026-09-25.json",
+      "sha256": "2f72464583253ca3e5d3d3c8fbfd593e3fc94acc1f31396420074c85a8934e24",
+      "bytes": 501
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/Q6S1_KXATPMATCH_INVENTORY_REPROOF_CAPTURE_PLAN_2026-09-25.md",
+      "sha256": "353efc7ce11fe7e753bd4814251cf1a5b9867385c0158ff5e492cd4f7c31d14f",
+      "bytes": 1169
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/SUGGESTED_CONDUCTOR_ACCEPT_PING.json",
+      "sha256": "41daf73f3c18c23d135426f1979fee2a208c9d7259e4c351969b0ddaabaedbad",
+      "bytes": 4570
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json",
+      "sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+      "bytes": 35140
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/CONDUCTOR_KICK_VARIANTS_Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.json",
+      "sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+      "bytes": 1658
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/MAXIMIZE_PIN_2026-09-25_0031ET.md",
+      "sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+      "bytes": 1604
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/MAXIMIZE_PIN_2026-09-25_0033ET.md",
+      "sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+      "bytes": 1475
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+      "sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+      "bytes": 14499
+    },
+    {
+      "arcname": "lab/governance/astra/packets/EXAMINER_HOLD_Q6S1_KXATPMATCH_INVENTORY_REPROOF_PRE_PR_2026-09-25.json",
+      "sha256": "eca9aad2409c5636742fe15cbc7947098cac4ba19c7d610e5e69a7454fdae72d",
+      "bytes": 3595
+    },
+    {
+      "arcname": "lab/governance/astra/packets/VARIANTS_ACCEPT_PING_Q6S1_KXATPMATCH_INVENTORY_REPROOF_2026-09-25.json",
+      "sha256": "41daf73f3c18c23d135426f1979fee2a208c9d7259e4c351969b0ddaabaedbad",
+      "bytes": 4570
+    },
+    {
+      "arcname": "lab/governance/astra/packets/VARIANTS_ARCHIVIST_REGISTRY_PING_Q6S1_KXATPMATCH_INVENTORY_REPROOF_2026-09-25.json",
+      "sha256": "e744c0959d17f2e5e4f7771bca63df052c89c3b41244666961e3b224bd1f3a23",
+      "bytes": 2854
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_DIGEST_2026-09-25.json",
+      "sha256": "1100babcd66774f60e69abc1c007b02ff8fbc452dd33bbba0f1da9b8320273a0",
+      "bytes": 4395
+    },
+    {
+      "arcname": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_CAPTURE_PLAN_2026-09-25.md",
+      "sha256": "353efc7ce11fe7e753bd4814251cf1a5b9867385c0158ff5e492cd4f7c31d14f",
+      "bytes": 1169
+    },
+    {
+      "arcname": "lab/astra-capture/atp-kxatpmatch/panel_stub.json",
+      "sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+      "bytes": 35140
+    },
+    {
+      "arcname": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.json",
+      "sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+      "bytes": 1658
+    },
+    {
+      "arcname": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-25_0031ET.md",
+      "sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+      "bytes": 1604
+    },
+    {
+      "arcname": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-25_0033ET.md",
+      "sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+      "bytes": 1475
+    },
+    {
+      "arcname": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_SPORTS_Q6_SCREEN_2026-09-24.json",
+      "sha256": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+      "bytes": 4367
+    },
+    {
+      "arcname": "lab/governance/astra/packets/scout_sports_q6_screen/FREEZE_SPORTS_Q6_SCREEN_2026-09-24.md",
+      "sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+      "bytes": 9777
+    },
+    {
+      "arcname": "lab/governance/astra/packets/scout_cashcow_hunt_2026-09-22/scout_hunt_KXATPMATCH.json",
+      "sha256": "14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7",
+      "bytes": 112834
+    },
+    {
+      "arcname": "lab/governance/astra/packets/scout_sports_q6_screen/raw/markets_open_KXATPMATCH.json",
+      "sha256": "b603474b3ca336b0a3678ff0deb8a937dfdcc4205e8e24db4d657d40d2323c60",
+      "bytes": 65998
+    },
+    {
+      "arcname": "lab/governance/astra/packets/scout_sports_q6_screen/raw/markets_open_KXATPMATCH_SUMMARY.json",
+      "sha256": "d5aee9c9254a0c9178b3ecc4fbd84f6db7bc29f6bc11af4df8690e4242ebe647",
+      "bytes": 1207
+    },
+    {
+      "arcname": "lab/governance/astra/packets/ATP_KXATPMATCH_FEEQUEUE_HARNESS_FREEZE_2026-09-23.md",
+      "sha256": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+      "bytes": 4893
+    },
+    {
+      "arcname": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+      "sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+      "bytes": 14498
+    },
+    {
+      "arcname": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "bytes": 38172
+    },
+    {
+      "arcname": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "bytes": 12484
+    },
+    {
+      "arcname": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "bytes": 124157
+    },
+    {
+      "arcname": "pins/feebook_commit.txt",
+      "sha256": "4b6686fabcfa246291104333bbe1299ab9623543d6c420778f5fc0fcfb3637a6",
+      "bytes": 41
+    },
+    {
+      "arcname": "pins/rails_commit.txt",
+      "sha256": "6fda6f36c6843e435a685c821d8630b2f977e84b10a4cf54dbdba74199d70fde",
+      "bytes": 41
+    }
+  ]
+}
