@@ -1,0 +1,36 @@
+{
+  "id": "CONDUCTOR_ROUTE_R3_P2_ABS_ERR_SIGNED_BIAS_EXAMINER",
+  "feature_family": "R3-P2",
+  "packet_id": "R3-P2-QUEUE-POSITION-CALIB",
+  "decision": "ROUTE_EXAMINER_SCORECARD",
+  "scope": "abs_err_contracts + signed_bias only",
+  "owner_score": "Examiner \"KALSHI\"",
+  "status": "METRICS_NON_NULL_STATIC_SERIES",
+  "series_sha256": "74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4",
+  "labels_sha256": "f89c06dc1639b194c9d026e157fbfbc2a8b527853afe698dd1f77389eb34c964",
+  "frozen_knobs_sha256": "9a3534219b9be6cbfccb259b23e1245cec682dcee754b5f6a004c55d5354d2a6",
+  "cite": [
+    "packets/r3_p2_queue_position/MECHANIC_ABS_ERR_SIGNED_BIAS_2026-09-23.md",
+    "packets/r3_p2_queue_position/results/abs_err_signed_bias.json",
+    "packets/SIMULATOR_HANDOFF_R3_P2_ESTIMATE_AHEAD_2026-09-23.json",
+    "packets/CONDUCTOR_KICK_R3_P2_CANCEL_MODEL_HARNESS_2026-09-23.json"
+  ],
+  "measured": {
+    "n_metric_ok": 51,
+    "n_skipped": 63,
+    "mean_abs_err": 0.0,
+    "mean_signed_bias": 0.0,
+    "zero_err_n": 51,
+    "brier": null,
+    "pnl": null
+  },
+  "required_caveat_on_card": "STATIC_SERIES_IDENTITY_MATCH \u2014 cancel fractions recorded not applied; estimate_ahead = visible_qty_pre_own (= qp) on cancel-safe rest\u2192poll\u2192cancel samples. Zero abs_err is expected join-back integrity, NOT a trade-step cancel-model stress and NOT a promote. Brier/pnl remain null until fill-label GO.",
+  "score_constraints": [
+    "Score abs_err/signed_bias measurement honesty only",
+    "Do not promote on zero-err identity match",
+    "Do not invent Brier/PnL",
+    "Do not retune frozen knobs after peek",
+    "Do not soft-kill-bar / Q6-000 retune / live orders"
+  ],
+  "stamped_at_et": "2026-09-23T17:25:00-04:00"
+}

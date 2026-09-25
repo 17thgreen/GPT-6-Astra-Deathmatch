@@ -1,0 +1,18 @@
+{
+  "id": "CONDUCTOR_ACCEPT_Q7_B_REHAB_P1_TAPE_WALK_KILL",
+  "feature_family": "Q7-B-REHAB-P1",
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "decision": "ACCEPT_KILL",
+  "verdict": "KILL",
+  "promote": false,
+  "soften_95pct_of_D": false,
+  "fallback_shadow": "000",
+  "first_hard_fail": "b1_vs_b0:q3300_d0.25",
+  "examiner_ack": "packets/EXAMINER_ACK_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.json",
+  "scorecard": "packets/EXAMINER_SCORECARD_Q7_B_REHAB_P1_TAPE_WALK_KILL_2026-09-23.md",
+  "pass1_knob": "admission_cadence continuous\u2192600s",
+  "what_kill_proved": "Cadence-600 alone does not clear frozen B1>B0 and 95%-of-D bars on primary stresses",
+  "what_kill_did_not_prove": "That pair-check is worthless; that rank/sizing cannot salvage; that 000 must be retuned",
+  "corpse_route": "Refiner Pass-2 salvage (pass 2 of 3)",
+  "stamped_at_et": "2026-09-23T17:33:00-04:00"
+}

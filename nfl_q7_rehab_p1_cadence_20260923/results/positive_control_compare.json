@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "all_checks_passed": true,
+  "compare_fields": [
+    "completed_strategy_pnl",
+    "all_flat",
+    "unresolved_contracts",
+    "week_contributions",
+    "unhedged_contract_hours",
+    "taker_contracts",
+    "maker_contracts",
+    "fills",
+    "pnl_excluding_top_two_games"
+  ],
+  "compare_ledgers": [
+    "fills",
+    "orders",
+    "decisions"
+  ],
+  "arm_map": {
+    "B0": "B",
+    "D": "D"
+  },
+  "excluded_from_parent_hash": [
+    "cadence_blocks"
+  ],
+  "comparisons": [
+    {
+      "rehab_scenario": "q3300_d0.25_B0",
+      "parent_scenario": "q3300_d0.25_B",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_B0.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q3300_d0.25_B.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q3300_d0.25_D",
+      "parent_scenario": "q3300_d0.25_D",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d0.25_D.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q3300_d0.25_D.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q3300_d5_B0",
+      "parent_scenario": "q3300_d5_B",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_B0.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q3300_d5_B.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q3300_d5_D",
+      "parent_scenario": "q3300_d5_D",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q3300_d5_D.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q3300_d5_D.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q10000_d0.25_B0",
+      "parent_scenario": "q10000_d0.25_B",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_B0.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q10000_d0.25_B.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q10000_d0.25_D",
+      "parent_scenario": "q10000_d0.25_D",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d0.25_D.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q10000_d0.25_D.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q10000_d5_B0",
+      "parent_scenario": "q10000_d5_B",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_B0.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q10000_d5_B.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    },
+    {
+      "rehab_scenario": "q10000_d5_D",
+      "parent_scenario": "q10000_d5_D",
+      "rehab_path": "/workspace/lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/q10000_d5_D.json",
+      "parent_path": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results/q10000_d5_D.json",
+      "status": "MATCH",
+      "match": true,
+      "field_mismatches": [],
+      "ledger_mismatches": [],
+      "ledger_matches": [
+        "fills",
+        "orders",
+        "decisions"
+      ],
+      "mismatch_is": "failed reproduction, not a rehab finding"
+    }
+  ],
+  "invented_hashes": false,
+  "waive": false,
+  "note": "Uncompressed JSONL content hashes (gzip header/mtime may differ from parent SOURCE_PINS gzip bytes)."
+}
