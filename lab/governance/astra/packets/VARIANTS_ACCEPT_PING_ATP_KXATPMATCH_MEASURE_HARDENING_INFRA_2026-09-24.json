@@ -1,0 +1,45 @@
+{
+  "type": "VARIANTS_ACCEPT_PING",
+  "seat_from": "R&D Variants \"KALSHI\"",
+  "seat_target": "The Conductor \"KALSHI\"",
+  "packet_id": "ATP-KXATPMATCH-MEASURE-HARDENING-INFRA",
+  "feature_family": "ATP-RJ",
+  "freeze_class": "INFRA (one-knob-NEUTRAL)",
+  "suggested_decision": "ACCEPT + IMPLEMENT GO",
+  "base_main_sha": "e8770f1e48c364f3006d6e1909ed6b63652f3785",
+  "freeze_path": "lab/governance/astra/packets/VARIANTS_FREEZE_ATP_KXATPMATCH_MEASURE_HARDENING_INFRA_2026-09-24.json",
+  "freeze_sha256": "1b7f3ab4705e00b9d2835ec759d23ef9434999b8e070d02010008dd653347c58",
+  "freeze_md_path": "lab/governance/astra/packets/VARIANTS_FREEZE_ATP_KXATPMATCH_MEASURE_HARDENING_INFRA_2026-09-24.md",
+  "freeze_md_sha256": "e7c643a2b9a07b310cc589ba6d36ba189f6202d73ace595a1a3d38e9e40760a9",
+  "digest_verify": {
+    "atp_rj_accept": "e42d75834086f34090581aee88563ab9849d60864c2d9e59c4ef495b3e8e5af5",
+    "atp_rj_merge_pr54": "d02674a0c91430fcf98ba50e921cf097ade4caa27e28ff080aff806dd80de8fb",
+    "collector_get_budget": "7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22",
+    "examiner_scorecard_template_v1_2": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "atp_rj_freeze": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69"
+  },
+  "changes": [
+    "/markets gets min_settled_ts=floor(epoch(since)); single-endpoint-first, /events only on a /markets gap (min_close_ts since-48h); no unfiltered re-sweep on 400",
+    "Collector-budget limiter: fails closed without a grant; list 4 rpm / total 10 rpm / 6 s floor now; list 2 / total 5 / 12 s from 2026-09-27T16:30Z; audit slice 3 rpm / 20 s; refuses after 2026-10-02T06:15Z; NFL-recorder 429 or FORCE_PHASE_B flag -> Phase B; 1 retry, 30/60/120/240 s cap 600, +2 s penalty, storm pause",
+    "new output fields cohort_completeness {COMPLETE, PARTIAL, INCOMPLETE}, per-endpoint pull_status, counts_label; any gap -> INCOMPLETE; 0 with gaps is not zero"
+  ],
+  "does_not_change": [
+    "join_gate J0/J1",
+    "j1_label fallback",
+    "30 scout-ticker exclusion",
+    "settlement_ts > since gate (still authoritative)",
+    "13 existing tests (file byte-identical)",
+    "results/pnl/settled_join_n/admitted_at null"
+  ],
+  "api_filter_finding": "Docs: /markets min_settled_ts is compatible with status=settled; min_close_ts is compatible only with closed/empty (not used). Live probe not run: 0 GETs, because budget Addendum 1 bars Variants direct GETs. Probes are drafted for Collector. Filter support is documented but not live-verified.",
+  "post_accept_settlements": "None on the one already-received page (smoke /events p0 00:07:04Z; max settlement_ts 2026-09-24T14:40:28.099145Z). Gaps remain (/markets p0, /events p1), so the result is INCOMPLETE, not zero.",
+  "p16_counts": {
+    "satisfied": 7,
+    "n/a": 5,
+    "missing": 0
+  },
+  "examiner_scorecard_v1_2": "embedded in freeze JSON; all values null",
+  "implement_bundle": "/workspace/ATP_MEASURE_HARDENING_authentic_pins_2026-09-24.tgz (sha256 in .sha256 sidecar; ping is inside the bundle, so the bundle sha is reported out-of-band)",
+  "ask": "ACCEPT + IMPLEMENT GO; route the 4 probe URLs to Collector (or grant atp_rj_measure a budget slice) before any live measure run.",
+  "stamped_at_et": "2026-09-24T20:15:03-04:00"
+}

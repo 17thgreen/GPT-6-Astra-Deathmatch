@@ -1,0 +1,666 @@
+{
+  "type": "VARIANTS_FREEZE",
+  "freeze_class": "INFRA",
+  "packet_id": "ATP-KXATPMATCH-MEASURE-HARDENING-INFRA",
+  "feature_family": "ATP-RJ",
+  "parent_experiment": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "series_ticker": "KXATPMATCH",
+  "owner": "R&D Variants \"KALSHI\" (freeze) -> Conductor ACCEPT -> implement -> Examiner",
+  "status": "FROZEN - HOLD for Conductor ACCEPT (no CloudAgent, no PR, no repo edit, no admit.py, no live orders)",
+  "stamped_at_et": "2026-09-24T20:14:43-04:00",
+  "repo": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch",
+  "base_main_sha": "e8770f1e48c364f3006d6e1909ed6b63652f3785",
+  "base_verified": {
+    "method": "git clone + checkout e8770f1e; git rev-parse HEAD == origin/main == e8770f1e48c364f3006d6e1909ed6b63652f3785",
+    "checkout": "/workspace/tmp/atp_hardening_checkout/repo",
+    "existing_units": "13/13 OK (python3 -m unittest discover -s tests, from lab dir, stdlib only, no network)"
+  },
+  "lab_dir": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+  "files_in_scope": [
+    "kalshi_atp_kxatpmatch_settled_join_lab_20260924/orchestrator.py (measure transport path only)",
+    "kalshi_atp_kxatpmatch_settled_join_lab_20260924/tests/test_measure_hardening.py (NEW)"
+  ],
+  "files_out_of_scope_byte_identical": [
+    "kalshi_atp_kxatpmatch_settled_join_lab_20260924/tests/test_orchestrator.py (sha256 b1c6dbe0df135bf20e6dbc958f82f9e57501ef801de4cfd218bfbb6537bdcf7a)",
+    "FROZEN_EXPERIMENT.json",
+    "EMPTY_RESULTS.json",
+    "results/*",
+    "all pinned scout / panel / capture bytes",
+    "every other lab and governance file"
+  ],
+  "knob": null,
+  "one_knob_neutral": true,
+  "one_knob_neutral_statement": "join_gate remains the sole experimental knob (J0 nonempty_result_required / J1 occurrence_datetime_match). This freeze adds no knob, arm, metric or cohort rule; it changes only how GETs are issued, paced and labelled.",
+  "problems_addressed": {
+    "a_unfiltered_full_history_and_dual_endpoint": {
+      "finding": "measure pages ALL settled KXATPMATCH via /markets AND /events (limit 100, cursors) with no server-side time filter, always calling both endpoints.",
+      "evidence": {
+        "smoke_window_et": "2026-09-24 20:04:41-20:08:15 ET (00:04:41Z-00:08:15Z)",
+        "smoke_http_log": "/workspace/tmp/atprun/measure_smoke/measure_smoke_UNADMITTED_raw/http_log.jsonl",
+        "smoke_http_log_sha256": "37c52003869526350e049ebd79981ab13310f2773e484080313d3ed7552c2b32",
+        "counts": {
+          "requests": 12,
+          "http_200": 1,
+          "http_429": 11
+        },
+        "detail": "/markets p0 429x4; /events p0 429x3 then 200 (539008 bytes, 100 events / 200 markets, cursor present); /events p1 429x4",
+        "label": "UNADMITTED code-path smoke, not a result"
+      }
+    },
+    "b_partial_events_unlabelled": {
+      "finding": "when /markets fails and /events stops partway, output says cohort_source=events_nested with no PARTIAL marker.",
+      "evidence": "smoke output measure_smoke_UNADMITTED.json (sha256 cb4b78b7007376871816b7fea04c0fc889016e82798e301725ff83813bfdb75e): cohort_source events_nested, gaps markets p0 + events p1, no completeness field."
+    },
+    "c_zero_with_gaps_reported_as_zero": {
+      "finding": "settled_join_n 0 is emitted as 0 even with 2 gaps.",
+      "evidence": "same smoke output: settled_join_n 0, occurrence_match_n 0, fallback_join_n 0 with gaps present."
+    }
+  },
+  "api_filter_evidence": {
+    "docs_checked": [
+      {
+        "url": "https://docs.kalshi.com/api-reference/market/get-markets",
+        "saved": "/workspace/tmp/atp_hardening_probe/docs/api-reference_market_get-markets.md",
+        "sha256": "1e692342bea2dfa20d2df870beda954a507d011513ecf903f96e3b5b05f83dc4",
+        "finding": "GET /markets documents min_settled_ts / max_settled_ts (\"Filter items that settled after/before this Unix timestamp\") as compatible with status=settled. min_close_ts / max_close_ts are documented compatible ONLY with status closed or empty; timestamp filters are mutually exclusive with each other and with certain status filters."
+      },
+      {
+        "url": "https://docs.kalshi.com/api-reference/events/get-events",
+        "saved": "/workspace/tmp/atp_hardening_probe/docs/api-reference_events_get-events.md",
+        "sha256": "11fb27958e69c24db87190f3ea59a06b99d9b0753618eea741034a206c77ef2c",
+        "finding": "GET /events documents min_close_ts (\"events with at least one market with close timestamp greater than this Unix timestamp\") and min_updated_ts; no settled-time filter; limit max 200."
+      },
+      {
+        "url": "https://docs.kalshi.com/getting_started/rate_limits",
+        "saved": "/workspace/tmp/atp_hardening_probe/docs/getting_started_rate_limits.md",
+        "sha256": "fbb87855470a6cf3f57758dc0ae489d9e68fbbdc69e1f88915fb4349500ef6e3",
+        "finding": "429 body {\"error\": \"too many requests\"}; 429 responses do not currently include Retry-After or X-RateLimit-* headers. Unauthenticated/IP limits are not documented."
+      }
+    ],
+    "live_probe": {
+      "sent": 0,
+      "log": "/workspace/tmp/atp_hardening_probe/probe_log.jsonl",
+      "log_sha256": "d469c9caafe9f4d2b7aa6f2811aa4082ac873da5005c4aaa85e23e7fa63f54b1",
+      "status": "NOT RUN - all 4 planned probes recorded as gaps (sent=false, status null)",
+      "reason": "Collector budget Addendum 1 (2026-09-25T00:05Z): \"No other seat polls Kalshi directly from this IP. That includes Deep Research, Scout and Variants. Ad-hoc GETs are routed to Collector.\" Also table row \"Any new poller: 0 until Collector amends this file\".",
+      "routing_draft": "/workspace/tmp/atp_hardening_probe/COLLECTOR_ROUTING_REQUEST_DRAFT.json"
+    },
+    "honored_status": {
+      "min_settled_ts_on_markets_status_settled": "DOCUMENTED [V docs]; LIVE-UNVERIFIED [U]",
+      "min_close_ts_on_markets_status_settled": "DOCUMENTED INCOMPATIBLE [V docs] - not used",
+      "min_close_ts_on_events": "DOCUMENTED [V docs]; LIVE-UNVERIFIED [U]"
+    },
+    "post_accept_settlement_evidence": {
+      "new_gets": 0,
+      "reused_existing_body": {
+        "path": "/workspace/tmp/atprun/measure_smoke/measure_smoke_UNADMITTED_raw/events_p0_attempt3.json",
+        "sha256": "4b7e5c587b352d5665e808db5c937e5ef88c499d835a1605c43707f645b491ac",
+        "received_utc": "2026-09-25T00:07:04.175454Z",
+        "content": "100 events / 200 markets, all status finalized, every market has settlement_ts; max settlement_ts 2026-09-24T14:40:28.099145Z (KXATPMATCH-26SEP21BORUGO-BOR / -UGO); markets with settlement_ts > 2026-09-24T23:52:00Z on this page: 0"
+      },
+      "gaps": [
+        "/markets p0 429x4 (00:04:41Z-00:05:52Z)",
+        "/events p1 429x4 (00:07:04Z-00:08:15Z), cursor page not received"
+      ],
+      "conclusion": "NONE OBSERVED on the one page received; INCOMPLETE (gaps present) - this is not evidence of zero post-ACCEPT settlements."
+    }
+  },
+  "spec": {
+    "i_server_side_time_filter": {
+      "primary": {
+        "endpoint": "GET /markets",
+        "params": {
+          "series_ticker": "KXATPMATCH",
+          "status": "settled",
+          "limit": "100 (PAGE_LIMIT unchanged)",
+          "min_settled_ts": "floor(epoch(--since)) = 1790293920 for --since 2026-09-24T23:52:00Z",
+          "cursor": "as returned"
+        },
+        "why": "only settled-time filter documented as compatible with status=settled; turns a full-history sweep into a sweep of markets settled after ACCEPT."
+      },
+      "not_used": {
+        "min_close_ts_on_markets_with_status_settled": "documented incompatible (min/max_close_ts compatible only with status closed/empty)"
+      },
+      "endpoint_order": "SINGLE-ENDPOINT-FIRST: /markets only. /events?with_nested_markets=true is called ONLY when the /markets pull ends in a gap (429 after allowed retry, 400, non-200, or unparseable body). When both are fetched, the existing _agree cross-check still runs unchanged.",
+      "events_fallback_filter": {
+        "param": "min_close_ts",
+        "value": "floor(epoch(--since)) - 172800 (48 h lookback)",
+        "lookback_basis": "pinned scout (sha256 2982a245) close_time->settlement_ts lag 120.1 s to 7180.2 s over 30 markets (<= 2 h); 48 h = 24x margin so a market that closed before --since but settled after it is still returned."
+      },
+      "filter_rejected_or_ignored": {
+        "http_400_on_filtered_request": "record pull_status.<endpoint>.server_filter='REJECTED_400'; do NOT re-issue an unfiltered full-history sweep; go to /events fallback (if /markets) or stop; counts_label INCOMPLETE.",
+        "ignored": "if any returned row has settlement_ts <= the min_settled_ts value, record server_filter='OBSERVED_IGNORED' (rows still pass through the unchanged client gate); page cap = 20 pages per endpoint per run, excess = gap 'page_cap' (counts INCOMPLETE).",
+        "honored": "server_filter='OBSERVED_HONORED' when every returned row satisfies it; 'UNOBSERVED' when zero rows returned."
+      },
+      "authoritative_gate": "The client-side settlement_ts > since filter in measure() REMAINS the authoritative cohort gate. The server filter narrows transport only and can never add a row."
+    },
+    "ii_rate_limiter_collector_budget": {
+      "budget_doc": {
+        "path": "lab/governance/astra/COLLECTOR_KALSHI_GET_BUDGET_2026-09-24.md",
+        "sha256": "7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22"
+      },
+      "poller_name": "atp_rj_measure",
+      "grant_required": true,
+      "grant_rule": "Budget table row \"Any new poller: 0 until Collector amends this file\" and Addendum 1 (Variants GETs routed to Collector). Live measure (transport=None) REFUSES to issue any GET unless a Collector grant is supplied: --budget-grant <path> --budget-grant-sha256 <sha>, a Collector-authored amendment/addendum naming atp_rj_measure or a Collector-run invocation inside its audit slice. No grant -> exit with BUDGET_GRANT_MISSING, zero GETs, output counts_label INCOMPLETE.",
+      "caps_ceiling_encoded_from_budget": {
+        "phase_A": {
+          "window_utc": "from publication until 2026-09-27T16:30:00Z (Sun Sep 27 12:30 ET)",
+          "total_rpm_max": 10,
+          "min_spacing_s": 6.0,
+          "list_endpoint_rpm_max": 4,
+          "list_endpoints": [
+            "/markets",
+            "/events",
+            "/markets/trades",
+            "/series"
+          ]
+        },
+        "phase_B": {
+          "window_utc": "2026-09-27T16:30:00Z until 2026-10-02T06:15:00Z (Fri Oct 2 02:15 ET, supervised capture end)",
+          "total_rpm_max": 5,
+          "min_spacing_s": 12.0,
+          "list_endpoint_rpm_max": 2
+        },
+        "after_2026-10-02T06:15:00Z": "REFUSE live GETs until a re-issued budget file is pinned (budget says any extension needs Conductor say-so and a re-issue).",
+        "effective_for_measure": "measure calls only list endpoints, so the binding cap is the list cap: <=4 rpm (>=15 s between GETs) in Phase A, <=2 rpm (>=30 s) in Phase B; the 6 s / 12 s floors also apply.",
+        "collector_audit_slice_addendum_1": "If run as a Collector one-off audit: <=3 rpm, >=20 s spacing, list endpoints only, counted inside the weather archive 10 rpm Phase A slice; in Phase B audits PAUSE unless Conductor approves -> measure refuses in Phase B without a pinned Conductor approval.",
+        "rule": "limiter enforces min(grant, ceiling) at every GET; it may lengthen the sweep or stop, never raise the rate; any shortfall is a gap row, never filled."
+      },
+      "phase_switch": "Phase is recomputed before every GET from UTC wall clock; at 2026-09-27T16:30:00Z the caps step down mid-run with no restart.",
+      "nfl_recorder_priority_yield": {
+        "rule_from_budget": "ADMIT-1 NFL recorder (record.py) has top priority and is never throttled or modified; if the recorder logs any new 429, non-recorder pollers drop to Phase B caps immediately.",
+        "tripwire_inputs": [
+          "FORCE_PHASE_B flag file in the run output dir (mirrors card03_tape.py)",
+          "read-only (sqlite URI mode=ro) count of recorder capture.sqlite responses rows with ok=0 whose attempts[] contains HTTPError 429, path supplied via --recorder-capture (Collector names the ADMIT-1 file); never written"
+        ],
+        "behavior": "any new recorder 429 since run start, or flag present -> Phase B caps for the rest of the run; tripwire unreadable -> assume Phase B (fail conservative).",
+        "relaunch_quiet_window": "no measure GET during supervisor relaunch bursts (daily ~22:53Z / 18:53 ET, 16 metadata GETs over ~45 s): quiet window [22:52Z, 22:56Z]; a GET that would fall inside it waits."
+      },
+      "backoff_rule_encoded": {
+        "on_429": "honor Retry-After if present (docs: currently absent) else cool the endpoint class 30 s, then 60, 120, 240, cap 600 s; reset after one success",
+        "max_retries_per_logical_request": 1,
+        "no_parallel_or_burst_retry": true,
+        "penalty": "+2 s to own minimum spacing for 30 min after any 429",
+        "storm": ">=3 429 within 10 min -> pause all Kalshi GETs from this poller 10 min and log PAUSE_429_STORM with counts",
+        "gap_rule": "skipped or failed poll is a gap row with reason; never backfill, interpolate or reuse stale data"
+      },
+      "replaces_in_live_path": "BACKOFF_SECONDS (10,20,40) x MAX_GET_ATTEMPTS 4 no longer governs live GETs (it violates the budget: 3 retries, 10 s first cooldown).",
+      "legacy_stub_unit_only": "To keep the 13 existing tests byte-identical (test_429_gap_is_recorded_and_not_filled asserts sleeps [10,20,40,10,20,40], attempts 4): when a stub transport is injected and no limiter is passed, measure() keeps the legacy retry schedule with a null limiter and records rate_policy='legacy_stub_unit_only'. Invariant: rate_policy='legacy_stub_unit_only' with live_fetch=true raises (refused before any socket).",
+      "logging": {
+        "jsonl_429_fields_exact": [
+          "ts_utc",
+          "poller",
+          "path",
+          "status",
+          "retry_after",
+          "spacing_now_s",
+          "cooldown_s"
+        ],
+        "hourly_rollup": [
+          "requests",
+          "ok",
+          "http_429"
+        ],
+        "where": "<out>_raw/http_429.jsonl and <out>_raw/hourly.json; existing http_log.jsonl kept"
+      }
+    },
+    "iii_output_labels": {
+      "new_fields": {
+        "cohort_completeness": "enum {COMPLETE, PARTIAL, INCOMPLETE}",
+        "pull_status": "per endpoint {markets, events}: {requested: bool, status: COMPLETE|PARTIAL|FAILED|NOT_REQUESTED, pages_ok: int, last_http: int|null, gap_page_index: int|null, server_filter: {param, value, observed: OBSERVED_HONORED|OBSERVED_IGNORED|REJECTED_400|UNOBSERVED|NOT_APPLIED}}",
+        "counts_label": "enum {COMPLETE, INCOMPLETE}",
+        "counts_are_lower_bounds": "bool",
+        "zero_with_gaps": "bool (true iff settled_join_n == 0 and any gap)",
+        "cohort_source_qualified": "e.g. 'markets_list:COMPLETE', 'events_nested:PARTIAL'",
+        "rate_policy": "'collector_budget_2026-09-24' | 'legacy_stub_unit_only'",
+        "budget": "{budget_doc_sha256, grant_path, grant_sha256, phase_at_start, phase_at_end, forced_phase_b, storm_pauses, skipped_budget, skipped_cooldown}"
+      },
+      "rules": [
+        "COMPLETE: the selected source endpoint paged to an empty cursor with zero gaps (and no page_cap / deadline / budget stop).",
+        "PARTIAL: at least one page was received from the selected source but a gap stopped the pull (e.g. /markets failed and /events stopped after page 0 -> cohort_source events_nested, cohort_completeness PARTIAL).",
+        "INCOMPLETE: no page received from any endpoint (all gaps, BUDGET_GRANT_MISSING, deadline or pause before first page).",
+        "ANY gap -> counts_label INCOMPLETE and counts_are_lower_bounds true. 0 with gaps is NOT zero: zero_with_gaps true and the report/scorecard hand-off must render it as INCOMPLETE, never as a measured 0.",
+        "counts_label COMPLETE iff cohort_completeness COMPLETE.",
+        "Existing cohort_source values (markets_list / markets_list_partial / events_nested) are unchanged; the qualifier is a new field."
+      ]
+    },
+    "iv_invariants": {
+      "no_join_logic_change": true,
+      "j0_j1_unchanged": "JOIN_GATE {J0: nonempty_result_required, J1: occurrence_datetime_match}; KNOB join_gate; ARMS (J0, J1)",
+      "j1_label_fallback_unchanged": "expected_expiration_time fallback labelled per row join_source='expected_expiration_time_fallback'; never written into occurrence_datetime",
+      "scout_exclusion_unchanged": "30 pinned scout tickers excluded (scout sha256 2982a245...)",
+      "since_filter_unchanged": "settlement_ts > since, parsed by _parse_utc; exclusion reasons unchanged",
+      "function_source_sha256_must_match_e8770f1e": {
+        "_occurrence_value": "39693e779790b6fc3443663ad2128582dc4075ae32b023d5bea8290a274e610d",
+        "j1_label": "86ac3b0ae29c144e25d29bbdffc7a54f8c13b63156a197a62094555e2832d843",
+        "_j0_pass": "4f2cb52cfcb024776e3dd48e09435ea4140a28f8100413844addff37c596b71d",
+        "_event_clocks_from": "8d46856dcec7ae7e7cf3986dc9c60b0138e8148559b6706322c216745a06c326",
+        "scout_pin_tickers": "4566c18e6d75609f92ea527ef0922c7b1959c34705c287c2df4792d605b35c57",
+        "_markets_from_pages": "d8fb0d6e0a1670ec0a1e0ccf7a5f7c0a5c8005cd89418ee5652700d597ed735e",
+        "_markets_from_events": "1f2faf61af08cb4ccfcd80fff50f6d2608bcfc2ba34ce85e0cb057bf72fa7240",
+        "_agree": "bda3de69db1082bf4e403cad8137aa2947d10a5b1e79e8560448ab2d8fda734b",
+        "_parse_utc": "06cd00597f05fb45f066159e2d38ab748b380632c43c5ada537d5dbcde21628d"
+      },
+      "cohort_loop": "the per-market exclusion/cohort loop and count partition in measure() stay semantically identical; only the page-collection call and new payload fields change",
+      "existing_tests": "13 tests in tests/test_orchestrator.py pass UNCHANGED (file sha256 b1c6dbe0df135bf20e6dbc958f82f9e57501ef801de4cfd218bfbb6537bdcf7a byte-identical)",
+      "new_tests_file": "tests/test_measure_hardening.py - stub transport, injected clock/sleeper, no network, stdlib only",
+      "new_tests": [
+        "test_markets_url_has_min_settled_ts_and_no_min_close_ts",
+        "test_events_called_only_on_markets_gap_with_min_close_ts_48h_lookback",
+        "test_server_filter_ignored_detected_client_since_gate_still_authoritative",
+        "test_filter_400_no_unfiltered_full_history_resweep",
+        "test_limiter_phase_a_caps_list_4rpm_total_10rpm_6s_floor",
+        "test_limiter_collector_audit_slice_3rpm_20s",
+        "test_limiter_steps_down_at_2026_09_27T16_30Z",
+        "test_limiter_refuses_after_2026_10_02T06_15Z_and_without_grant",
+        "test_nfl_tripwire_flag_or_recorder_429_forces_phase_b_unreadable_assumes_b",
+        "test_429_one_retry_cooldown_30_60_120_240_cap600_penalty_storm_pause",
+        "test_429_jsonl_fields_exact_and_hourly_rollup",
+        "test_partial_events_after_markets_fail_is_PARTIAL_counts_INCOMPLETE",
+        "test_zero_with_gaps_is_INCOMPLETE_not_zero",
+        "test_complete_single_endpoint_pull_is_COMPLETE",
+        "test_join_rows_and_counts_identical_to_e8770f1e_fixture",
+        "test_join_function_sources_match_pinned_sha256",
+        "test_legacy_stub_policy_refused_on_live_fetch"
+      ]
+    },
+    "v_scope_limits": {
+      "get_only": true,
+      "host": "https://api.elections.kalshi.com/trade-api/v2 only (existing guard kept)",
+      "no_auth": true,
+      "no_orders_no_portfolio": true,
+      "no_admit_py": true,
+      "does_not_run_measure_now": true,
+      "results": null,
+      "pnl": null,
+      "settled_join_n": null,
+      "admitted_at": null,
+      "no_invented_counts_or_pnl": true
+    }
+  },
+  "results": null,
+  "pnl": null,
+  "settled_join_n": null,
+  "occurrence_match_n": null,
+  "fallback_join_n": null,
+  "admit_ready_flag": null,
+  "admitted_at": null,
+  "pins": {
+    "atp_rj_accept": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_2026-09-24.json",
+      "sha256": "e42d75834086f34090581aee88563ab9849d60864c2d9e59c4ef495b3e8e5af5"
+    },
+    "atp_rj_merge_pr54": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_MERGE_ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_PR54_2026-09-24.json",
+      "sha256": "d02674a0c91430fcf98ba50e921cf097ade4caa27e28ff080aff806dd80de8fb",
+      "on_repo_main": false
+    },
+    "collector_get_budget": {
+      "path": "lab/governance/astra/COLLECTOR_KALSHI_GET_BUDGET_2026-09-24.md",
+      "sha256": "7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22",
+      "note": "Pinned bytes are the on-disk file at stamp (includes Addendum 1, Collector 2026-09-25T00:05Z). Earlier revision sha256 11eeeaf25809b067d4d459425e0b5894b7012b0b7a0c023b1f36b97348c85dbc (cited by card03 AMENDMENT_01 / card03_tape.py) is NOT on disk; this freeze pins the current revision 7cb43886.",
+      "superseded_revision_sha256": "11eeeaf25809b067d4d459425e0b5894b7012b0b7a0c023b1f36b97348c85dbc",
+      "on_repo_main": false
+    },
+    "examiner_scorecard_template_v1_2": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+    },
+    "atp_rj_freeze": {
+      "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+      "sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69"
+    }
+  },
+  "p16_preregistration_checklist": {
+    "source_template": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "block": "preregistration_checklist"
+    },
+    "source_pdf": {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "page": 16,
+      "section": "Minimum preregistration"
+    },
+    "source_quote_p16": "Freeze the market universe, exclusions, receipt-time information set, fee regime, order timing, sizing, fill model, stopping rules and evaluation metrics before the test. Limit candidate variants; log every attempted variant. Separate discovery, tuning and untouched evaluation periods. Sampling more prints from the same event does not solve small-sample uncertainty.",
+    "applicability_note": "v1.2 marks the checklist REQUIRED for cards 01-04; this ATP-RJ INFRA freeze is not a card 01-04 study and is included per the Conductor all-new-freeze rule. Statuses are Variants pre-outcome declarations; Examiner gate_status stays null.",
+    "declared_pre_outcome_at_et": "2026-09-24T20:14:43-04:00",
+    "status_enum": [
+      "satisfied",
+      "missing",
+      "n/a"
+    ],
+    "gate_status": null,
+    "items": [
+      {
+        "id": 1,
+        "key": "market_universe",
+        "item": "Freeze the market universe",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "UNCHANGED from ATP-RJ freeze dc9fcb32 / measure mode at e8770f1e: KXATPMATCH markets with settlement_ts strictly > --since (2026-09-24T23:52:00Z = ACCEPT instant), excluding the 30 pinned scout tickers. Server-side min_settled_ts only narrows transport; the client-side settlement_ts > since gate stays authoritative."
+      },
+      {
+        "id": 2,
+        "key": "exclusions",
+        "item": "Freeze the exclusions",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "UNCHANGED reasons scout_pin / settlement_ts_absent / settled_at_or_before_since / j0_not_nonempty. Added data-quality labelling only: any gap -> counts_label INCOMPLETE; no row is added or removed by the label."
+      },
+      {
+        "id": 3,
+        "key": "receipt_time_information_set",
+        "item": "Freeze the receipt-time information set",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "Raw GET bodies saved per attempt with UTC ts (unchanged); new 429 JSONL + hourly roll-up per Collector budget; request URLs now include min_settled_ts (or min_close_ts lookback on /events fallback) and are logged verbatim."
+      },
+      {
+        "id": 4,
+        "key": "fee_regime",
+        "item": "Freeze the fee regime",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "No fee quantity read or produced."
+      },
+      {
+        "id": 5,
+        "key": "order_timing",
+        "item": "Freeze the order timing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "No orders; GET-only."
+      },
+      {
+        "id": 6,
+        "key": "sizing",
+        "item": "Freeze the sizing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "No orders / no sizing."
+      },
+      {
+        "id": 7,
+        "key": "fill_model",
+        "item": "Freeze the fill model",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "No fills."
+      },
+      {
+        "id": 8,
+        "key": "stopping_rules",
+        "item": "Freeze the stopping rules",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "One sweep per run: /markets (min_settled_ts) to empty cursor; /events only on /markets gap; <=1 retry per logical request; cooldown Retry-After else 30/60/120/240 s cap 600; PAUSE_429_STORM 10 min after >=3 429 in 10 min; run wall deadline; shortfall = gap, never backfilled."
+      },
+      {
+        "id": 9,
+        "key": "evaluation_metrics",
+        "item": "Freeze the evaluation metrics",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "UNCHANGED: settled_join_n, occurrence_match_n, fallback_join_n, admit_ready_flag (null until Clock admit + Examiner). New fields cohort_completeness / pull_status / counts_label are completeness annotations, not metrics."
+      },
+      {
+        "id": 10,
+        "key": "limit_candidate_variants",
+        "item": "Limit candidate variants",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "Zero new variants. join_gate remains the only knob; arms J0/J1 unchanged. This freeze is one-knob-NEUTRAL INFRA."
+      },
+      {
+        "id": 11,
+        "key": "log_every_attempted_variant",
+        "item": "Log every attempted variant",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "J0/J1 are still the only variants; every HTTP attempt (and every budget skip) logged as a row or a gap."
+      },
+      {
+        "id": 12,
+        "key": "separate_discovery_tuning_evaluation_periods",
+        "item": "Separate discovery, tuning and untouched evaluation periods",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "No tunable parameter. Untouched evaluation set unchanged: KXATPMATCH markets settled after the ACCEPT instant 2026-09-24T23:52:00Z."
+      }
+    ],
+    "counts": {
+      "satisfied": 7,
+      "n/a": 5,
+      "missing": 0
+    }
+  },
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "revision_note_path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24.json",
+      "revision_note_sha256": "cbcc419ced0922e2cc9dd3dd8408a0548526c4cf89874783de27f98089deef15",
+      "on_repo_main": false,
+      "on_repo_main_note": "GET contents lab/governance/astra/templates @main 959c3f2b → 404; box-only at stamp"
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "ATP-KXATPMATCH-MEASURE-HARDENING-INFRA",
+      "feature_family": "ATP-RJ (INFRA amendment)",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "admit_alone_neq_score": true,
+      "units_neq_score": true,
+      "selection_status": null,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "head_sha_pre_merge": null,
+        "base_pre_merge": "e8770f1e48c364f3006d6e1909ed6b63652f3785",
+        "merge_method": null,
+        "merged_at_et": null,
+        "lab": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+        "units_ok": null,
+        "arms": [
+          "J0",
+          "J1"
+        ],
+        "arm_values": {
+          "J0": "nonempty_result_required",
+          "J1": "occurrence_datetime_match"
+        },
+        "url": null
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "settled_join_n": null,
+        "occurrence_match_n": null,
+        "fallback_join_n": null,
+        "admit_ready_flag": null
+      },
+      "metrics_fill_policy": "null_until_panel_and_units_examiner_ready",
+      "accept_sha256": "e42d75834086f34090581aee88563ab9849d60864c2d9e59c4ef495b3e8e5af5",
+      "merge_packet_sha256": "d02674a0c91430fcf98ba50e921cf097ade4caa27e28ff080aff806dd80de8fb",
+      "freeze_sha256": null,
+      "freeze_sha256_note": "self-referential; this freeze JSON sha256 is recorded in the ACCEPT ping and bundle MANIFEST"
+    },
+    "default_override_policy": {
+      "override_declared_in_freeze": false,
+      "override_declared_pre_outcome_evidence": null,
+      "post_outcome_override_admissible": false
+    },
+    "fee_regime": {
+      "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "fee_account_version_manifest": {
+        "path": null,
+        "sha256": null,
+        "status": "pending",
+        "owner": "Archivist"
+      },
+      "applies": false,
+      "note": "ATP-RJ reads/produces no fee quantity"
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "unit": "Brier score (dimensionless) + reliability table (10 bins: mean forecast probability vs observed settled frequency, count per bin)",
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A",
+        "note": "join harness emits no probabilities; v1.2 rule allows Examiner to record 'N/A' at scoring — left null pre-ACCEPT per Conductor null rule"
+      },
+      "fill_rate": {
+        "value": null,
+        "unit": "fraction (contracts filled / contracts requested)",
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "unit": "cents per contract (signed)",
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "unit": "fraction (depth-supported contracts / requested contracts)",
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "unit": "contracts (count) + USD (dollar risk)",
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "unit": "USD-hours",
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "unit": "fraction (top-1 share) + HHI (dimensionless)",
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "fill_model_ref": null
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": null,
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ],
+      "variants_note": "Examiner/Archivist records; harness PR would be 'unit-only' until a data run; scout bytes are post-outcome ('historical replay')"
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 7,
+        "n/a": 5
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "note": "no strategy → controls not applicable (declared pre-outcome)"
+    },
+    "all_score_values_null": true,
+    "infra_note": "INFRA freeze: adds no metric, arm or knob. Every v1.2 value stays null / measured=false. Examiner may record calibration N/A at scoring (emits_probabilities=false). Completeness labels (cohort_completeness, counts_label) are data-quality annotations, not scorecard metrics."
+  },
+  "scope_notes_for_conductor": [
+    "GET budget file on disk is sha256 7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22, not 11eeeaf2: Addendum 1 (Collector, 2026-09-25T00:05Z) was appended. This freeze pins the current bytes.",
+    "The rates in the dispatch (10 rpm now / 5 rpm from Sep 27 12:30 ET; list 4 / 2) are the per-poller caps for the weather archive and card 03. For a new poller the file says 0 until Collector amends, and Addendum 1 routes Variants GETs through Collector. So the spec treats those numbers as a ceiling and requires a Collector grant before any live GET.",
+    "The step-2 live API probe was NOT run because Addendum 1 bars Variants from direct GETs. Filter support is documented but not live-verified, and the 4 probe URLs are drafted for Collector.",
+    "Existing test_429 hard-codes the legacy 10/20/40 x4 schedule. The budget backoff therefore applies to the live path, and the legacy schedule is kept only for injected-stub unit runs (rate_policy legacy_stub_unit_only, refused when live)."
+  ],
+  "refuse_binds": [
+    "change join_gate / J0 / J1 / j1_label / fallback / scout exclusion / since gate",
+    "invent settled result, counts, PnL, books, occurrence_datetime",
+    "backfill 429 gaps or cursor pages",
+    "report 0-with-gaps as zero",
+    "raise rate above Collector grant or budget ceiling",
+    "direct Variants GETs outside Collector routing",
+    "admit.py",
+    "live orders / auth / portfolio",
+    "CloudAgent before Conductor ACCEPT"
+  ],
+  "merge_gates": "HOLD for Conductor ACCEPT + IMPLEMENT GO. After implement: 13 existing + new tests green, function-source digests match, results/pnl/settled_join_n null, Examiner stays READY NOT_SCORED until Clock admit."
+}
