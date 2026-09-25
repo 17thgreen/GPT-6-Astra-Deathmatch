@@ -31,6 +31,8 @@ Fee pin `22371178cb2663250b4762f328069571c48cb551`.
 Rails pin `6a28e0d6254327ea4e6451c781bec56215ac6cac`.
 Those trees are not edited. This harness does not run `admit.py`.
 
+Code verification `python3 -m unittest -v tests.test_orchestrator`: Ran 13 tests in 0.047s, recorded at 2026-09-25T04:53:15Z. Result: OK. Failures: 0. Errors: 0. That run is not an Examiner score. See `results/UNIT_RESULTS.md`.
+
 From this directory, Python 3.12 standard library:
 
 ```bash
