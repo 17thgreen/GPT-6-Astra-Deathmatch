@@ -29,14 +29,25 @@ Measurement mode, after Clock admit, pages public GET reads and writes
 counts only to the given output path. This checkout does not commit those
 counts. `admitted_at` stays null and admit_ready stays `pending Clock`.
 
+Measure-hardening INFRA (one-knob-neutral) is Conductor ACCEPT sha256
+`8c350baaffa0fae822ba86481eed2362bebd919413c0d3f42847264244ad5411`
+on freeze sha256
+`1b7f3ab4705e00b9d2835ec759d23ef9434999b8e070d02010008dd653347c58`.
+`/markets` sends `min_settled_ts`. `/events` is called only after a
+`/markets` gap, with `min_close_ts` 48 hours earlier. A live run sends no
+GET unless a Collector grant is supplied. The Collector budget file sha256
+is `7cb4388681b950cf535a0d30a4bec44191ef809c40ef6f36b887de399fa30d22`.
+Join logic is unchanged.
+
 ```bash
-python3 orchestrator.py measure --since 2026-09-24T23:52:00Z --out <path>
+python3 orchestrator.py measure --since 2026-09-24T23:52:00Z --out <path> \
+  --budget-grant <grant.json> --budget-grant-sha256 <sha256>
 ```
 
 From this directory, Python 3 standard library:
 
 ```bash
-python3 -m unittest -v tests.test_orchestrator
+python3 -m unittest discover -s tests -v
 ```
 
 No Logan keys. No live orders. A passing unit run is not an Examiner score.
