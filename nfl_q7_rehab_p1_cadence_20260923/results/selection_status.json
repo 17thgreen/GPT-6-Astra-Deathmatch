@@ -1,0 +1,23 @@
+{
+  "status": "NOT_SCORED",
+  "pending": "Examiner",
+  "simulator_self_score": false,
+  "live_promotion": false,
+  "selection_bar_frozen": true,
+  "soften_95pct_of_D": false,
+  "arithmetic_preview": {
+    "status": "NO_NEW_SELECTION",
+    "reason": "b1_vs_b0:q3300_d0.25",
+    "candidate_arm": null,
+    "live_promotion": false,
+    "fallback_shadow_candidate": "000",
+    "completed_profit": null,
+    "counted_as_experiment_pnl": false,
+    "results": null,
+    "pnl": null
+  },
+  "note": "Simulator ran the frozen selection.py arithmetic as a preview only. Examiner must score. Do not treat arithmetic_preview as KEEP/KILL.",
+  "pnl": null,
+  "results": null,
+  "counted_as_experiment_pnl": false
+}

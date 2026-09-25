@@ -1,0 +1,90 @@
+{
+  "id": "SIMULATOR_HANDOFF_EXAMINER_R3_P2_ABS_ERR_2026-09-23",
+  "packet_id": "R3-P2-QUEUE-POSITION-CALIB",
+  "feature_family": "R3-P2",
+  "from": "The Simulator \"KALSHI\"",
+  "to": "Examiner \"KALSHI\"",
+  "cc": [
+    "The Conductor \"KALSHI\"",
+    "The Mechanic \"KALSHI\""
+  ],
+  "status": "READY_FOR_EXAMINER_SCORE_ABS_ERR_BIAS",
+  "stamped_at_et": "2026-09-23T17:24:31.715418-04:00",
+  "pr37": "MERGED SAMPLE_INGESTED",
+  "calibration_scope": {
+    "abs_err_contracts": "SCORED_INPUT_READY",
+    "signed_bias": "SCORED_INPUT_READY",
+    "brier": "NULL_WAIT_FILL_LABEL_GO",
+    "pnl": "NULL_NOT_INVENTED"
+  },
+  "pins": {
+    "series_sha256": "74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4",
+    "labels_sha256": "f89c06dc1639b194c9d026e157fbfbc2a8b527853afe698dd1f77389eb34c964",
+    "frozen_knobs_sha256": "9a3534219b9be6cbfccb259b23e1245cec682dcee754b5f6a004c55d5354d2a6",
+    "abs_err_signed_bias_sha256": "f7e83a28abbf2f216fafe316a153aff27a94a27f231f5aa65bfd8310e6224141"
+  },
+  "paths": {
+    "series": "packets/r3_p2_queue_position/results/demo_queue_sample_series.json",
+    "labels": "packets/r3_p2_queue_position/results/estimate_ahead_labels.json",
+    "knobs": "packets/r3_p2_queue_position/harness/FROZEN_KNOBS.json",
+    "abs_err": "packets/r3_p2_queue_position/results/abs_err_signed_bias.json",
+    "mechanic_md": "packets/r3_p2_queue_position/MECHANIC_ABS_ERR_SIGNED_BIAS_2026-09-23.md",
+    "simulator_labels_handoff": "packets/SIMULATOR_HANDOFF_R3_P2_ESTIMATE_AHEAD_2026-09-23.json",
+    "prior_stub": "packets/EXAMINER_ACK_R3_P2_PR37_STUB_READY_NOT_SCORED_2026-09-23.json"
+  },
+  "mechanic_summary": {
+    "by_model": {
+      "acheron_estimate_queue": {
+        "n": 17,
+        "mean_abs_err_contracts": 0.0,
+        "median_abs_err_contracts": 0.0,
+        "mean_signed_bias": 0.0,
+        "median_signed_bias": 0.0,
+        "max_abs_err_contracts": 0.0,
+        "zero_err_n": 17
+      },
+      "tfrmma_prob_queue": {
+        "n": 17,
+        "mean_abs_err_contracts": 0.0,
+        "median_abs_err_contracts": 0.0,
+        "mean_signed_bias": 0.0,
+        "median_signed_bias": 0.0,
+        "max_abs_err_contracts": 0.0,
+        "zero_err_n": 17
+      },
+      "tfrmma_reduce_ratio": {
+        "n": 17,
+        "mean_abs_err_contracts": 0.0,
+        "median_abs_err_contracts": 0.0,
+        "mean_signed_bias": 0.0,
+        "median_signed_bias": 0.0,
+        "max_abs_err_contracts": 0.0,
+        "zero_err_n": 17
+      }
+    },
+    "overall": {
+      "n": 51,
+      "mean_abs_err_contracts": 0.0,
+      "median_abs_err_contracts": 0.0,
+      "mean_signed_bias": 0.0,
+      "median_signed_bias": 0.0,
+      "max_abs_err_contracts": 0.0,
+      "zero_err_n": 51
+    }
+  },
+  "n_metric_ok": 51,
+  "interpretation_for_examiner_not_a_score": "Under static cancel-safe join-back (no trade_size), all three models are identity vs queue_position_fp on 17 success rows (mean/median/max abs_err=0, signed_bias=0). This validates L2 depth\u2194venue qp join algebra + label plumbing; it does NOT validate cancel-fraction dynamics. Do not promote as fill-model KEEP. Do not retune knobs on this peek. Brier remains null.",
+  "need": "Score abs_err/signed_bias channel only; keep brier/pnl null; stamp KEEP/ITERATE/KILL or NOT_SCORED_PARTIAL with explicit static-series caveat; no invent.",
+  "refuse": [
+    "self-score by Simulator",
+    "knob retune after peek",
+    "live orders",
+    "Q6-000 retune",
+    "treat zero-err static identity as cancel-model proven"
+  ],
+  "evidence_tags": [
+    "[V]",
+    "[H]",
+    "[A]"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "status": "COMPLETE",
+  "scenarios_executed": 16,
+  "effects": {
+    "q3300_d0.25": {
+      "status": "COMPARED",
+      "pnl": {
+        "A": 201.52149999992344,
+        "B": 290.9933999999721,
+        "C": 205.94219999993493,
+        "D": 345.24439999997867
+      },
+      "original_guard": 89.47190000004866,
+      "allocator_guard": 139.30220000004374,
+      "interaction": 49.83029999999508,
+      "architecture_check_off": 4.420700000011493,
+      "architecture_check_on": 54.25100000000657
+    },
+    "q3300_d5": {
+      "status": "COMPARED",
+      "pnl": {
+        "A": 198.4082999999182,
+        "B": 291.19619999995666,
+        "C": 203.26209999991897,
+        "D": 345.417399999943
+      },
+      "original_guard": 92.78790000003846,
+      "allocator_guard": 142.155300000024,
+      "interaction": 49.36739999998554,
+      "architecture_check_off": 4.853800000000774,
+      "architecture_check_on": 54.22119999998631
+    },
+    "q10000_d0.25": {
+      "status": "COMPARED",
+      "pnl": {
+        "A": 10.354599999961465,
+        "B": 45.53099999996266,
+        "C": 14.292899999959445,
+        "D": 75.9048999999668
+      },
+      "original_guard": 35.176400000001195,
+      "allocator_guard": 61.612000000007356,
+      "interaction": 26.43560000000616,
+      "architecture_check_off": 3.93829999999798,
+      "architecture_check_on": 30.37390000000414
+    },
+    "q10000_d5": {
+      "status": "COMPARED",
+      "pnl": {
+        "A": 0.3238999999530279,
+        "B": 37.83349999996699,
+        "C": 6.690399999954934,
+        "D": 69.05739999996058
+      },
+      "original_guard": 37.50960000001396,
+      "allocator_guard": 62.367000000005646,
+      "interaction": 24.857399999991685,
+      "architecture_check_off": 6.366500000001906,
+      "architecture_check_on": 31.22389999999359
+    }
+  },
+  "selection": {
+    "selected": null,
+    "status": "NO_NEW_SELECTION",
+    "conditions": {
+      "beats_original_all": true,
+      "retains_95pct_of_D": false,
+      "improves_both_primary_weeks": true,
+      "inventory_within_limit": true
+    },
+    "live_promotion": false,
+    "fallback_shadow_candidate": "000"
+  },
+  "pnl": null,
+  "note": "pnl on this document is not a headline result; read effects.pnl per arm."
+}

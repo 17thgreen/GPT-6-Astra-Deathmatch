@@ -1,0 +1,70 @@
+{
+  "id": "SIMULATOR_HANDOFF_EXAMINER_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23",
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "from": "The Simulator \"KALSHI\"",
+  "to": "Examiner \"KALSHI\"",
+  "cc": [
+    "The Conductor \"KALSHI\"",
+    "The Refiner \"KALSHI\""
+  ],
+  "status": "READY_NOT_SCORED",
+  "stamped_at_et": "2026-09-23T17:30:02.994473-04:00",
+  "lab": "nfl_q7_rehab_p1_cadence_20260923/",
+  "main_pin": "9b8fb184a8f1d556e400188127f1753bf35e571e",
+  "scenarios_executed": 12,
+  "selection_status": "NOT_SCORED",
+  "parent_source_pins_reverify": {
+    "status": "PASS",
+    "waive": false,
+    "pins_path": "/workspace/lab/governance/astra/packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "pins_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+    "expected_pins_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+    "verified_count": 33,
+    "fail_count": 0,
+    "missing_count": 0,
+    "fail": [],
+    "missing": [],
+    "desk_results": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results",
+    "note": "Parent SOURCE_PINS re-verify before any rehab scenario."
+  },
+  "positive_control_compare": {
+    "status": "PASS",
+    "all_checks_passed": true,
+    "n": 8,
+    "hash_basis": null,
+    "note": "Uncompressed JSONL content hashes (gzip header/mtime may differ from parent SOURCE_PINS gzip bytes)."
+  },
+  "pnl_by_scenario": {
+    "q3300_d0.25_B0": 290.9933999999721,
+    "q3300_d0.25_B1": 176.40239999994992,
+    "q3300_d0.25_D": 345.24439999997867,
+    "q3300_d5_B0": 291.19619999995666,
+    "q3300_d5_B1": 176.5575999999428,
+    "q3300_d5_D": 345.417399999943,
+    "q10000_d0.25_B0": 45.53099999996266,
+    "q10000_d0.25_B1": 66.83629999999721,
+    "q10000_d0.25_D": 75.9048999999668,
+    "q10000_d5_B0": 37.83349999996699,
+    "q10000_d5_B1": 66.22539999999026,
+    "q10000_d5_D": 69.05739999996058
+  },
+  "paths": {
+    "summary": "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/experiment_summary.json",
+    "positive_control": "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/positive_control_compare.json",
+    "digest": "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/TAPE_WALK_ARTIFACT_DIGEST.json",
+    "results_dir": "lab/astra-science/nfl_q7_rehab_p1_cadence_20260923/results/"
+  },
+  "need": "Score KEEP/ITERATE/KILL under frozen 95%-of-D bar; Simulator does not self-score or promote",
+  "refuse": [
+    "invent fills/pnl",
+    "soften 95%-of-D",
+    "Q6-000 retune",
+    "live orders",
+    "waive parent hash"
+  ],
+  "cite": [
+    "packets/refiner/REFINER_HANDOFF_SIMULATOR_ARM_B_TAPE_WALK_2026-09-23.json",
+    "packets/CONDUCTOR_KICK_ARM_B_TAPE_WALK_2026-09-23.json",
+    "packets/EXAMINER_ACK_Q7_B_REHAB_P1_PR38_STUB_READY_NOT_SCORED_2026-09-23.json"
+  ]
+}

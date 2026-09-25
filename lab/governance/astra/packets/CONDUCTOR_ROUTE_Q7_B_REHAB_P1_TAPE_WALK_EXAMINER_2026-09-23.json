@@ -1,0 +1,15 @@
+{
+  "id": "CONDUCTOR_ROUTE_Q7_B_REHAB_P1_TAPE_WALK_EXAMINER",
+  "feature_family": "Q7-B-REHAB-P1",
+  "packet_id": "Q7-B-REHAB-P1-CADENCE-600",
+  "decision": "ROUTE_EXAMINER_SCORECARD",
+  "status": "TAPE_WALK_COMPLETE_12_OF_12",
+  "from": "The Simulator \"KALSHI\"",
+  "cite": [
+    "packets/SIMULATOR_HANDOFF_EXAMINER_Q7_B_REHAB_P1_TAPE_WALK_2026-09-23.json",
+    "packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+    "packets/REFINER_POSITIVE_CONTROL_HASH_PASS_Q7_B_REHAB_P1_2026-09-23.json"
+  ],
+  "notes": "Parent SOURCE_PINS re-verify PASS 33/33. Positive controls PASS on gunzip payload hashes. Selection NOT_SCORED until Examiner. No invent. No soften 95%-of-D. No Q6-000 retune. No live orders.",
+  "stamped_at_et": "2026-09-23T17:30:00-04:00"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "CARD01_HASH_ANCHOR_MANIFEST_2026-09-24",
+  "purpose": "Hash-only anchor of the card 01 NH-002-H freeze set, landed in the public repo so git gives it an outside timestamp (Adversary request, Conductor ruling 2026-09-24 ~20:09 ET).",
+  "hash_only": true,
+  "contains_source_bytes": false,
+  "results": null,
+  "pnl": null,
+  "recorded_by": "Archivist",
+  "recorded_at": "2026-09-24T20:10:43-04:00",
+  "files": [
+    {
+      "role": "freeze",
+      "path": "governance/astra/packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md",
+      "sha256": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+      "bytes": 24988
+    },
+    {
+      "role": "amendment_a",
+      "path": "governance/astra/packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_A.md",
+      "sha256": "4e36d0db5728148d5bb4688fd8626eca9907a8933747f85e0bc17ede0ac0936b",
+      "bytes": 3525
+    },
+    {
+      "role": "precommit_universe_weight",
+      "path": "governance/astra/packets/card01_hybrid_forecast/PRECOMMIT_UNIVERSE_WEIGHT_2026-09-24.json",
+      "sha256": "2968f389050341a8734bed76c60fbcb4f7d70feb96cf5f9da88ef4c19e50e77e",
+      "bytes": 1791
+    },
+    {
+      "role": "universe",
+      "path": "governance/astra/packets/card01_hybrid_forecast/UNIVERSE_2026_HOUSE_FROZEN.json",
+      "sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
+      "bytes": 1421
+    },
+    {
+      "role": "decision_packet_canonical",
+      "path": "governance/astra/packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md",
+      "sha256": "d59c26420713ef728a306efc0bb12761584125e96ba6a87e84fe0c3e57c69688",
+      "bytes": 17539
+    }
+  ],
+  "superseded": [
+    {
+      "path": "governance/astra/packets/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md",
+      "sha256": "58c44c4fb144968ba57e4c8b4a2018026a123d17a02e2e6c09fdfd38f465a353",
+      "status": "SUPERSEDED, bytes missing, docs-only claim UNVERIFIED"
+    }
+  ],
+  "electindex_relocation_stub": {
+    "path": "governance/astra/packets/card01_hybrid_forecast/source_probe_electindex/RELOCATED_TO_PRIVATE_STUB.json",
+    "sha256": "996824ae797eb44abe5cfb95acf52996a6b9fff737937ecfd975f7d33b6c70d2"
+  }
+}

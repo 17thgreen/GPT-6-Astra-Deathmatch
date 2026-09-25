@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "waive": false,
+  "pins_path": "/workspace/lab/governance/astra/packets/refiner/PARENT_Q7_BD_LEDGER_SOURCE_PINS_2026-09-23.json",
+  "pins_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+  "expected_pins_sha256": "5ee602ba5d6537956c87eca0d5af5bf4443b80e935e85d1c7c61279f4fed432a",
+  "verified_count": 33,
+  "fail_count": 0,
+  "missing_count": 0,
+  "fail": [],
+  "missing": [],
+  "desk_results": "/workspace/lab/astra-science/nfl_paircheck_lab_20260922/results",
+  "note": "Parent SOURCE_PINS re-verify before any rehab scenario."
+}
