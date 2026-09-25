@@ -1,0 +1,93 @@
+{
+  "settled_nonempty_result_N": 30,
+  "settled_list_attempted_KXATPMATCH": "429_honest",
+  "settled_list_retries": "429_honest_x3",
+  "settled_events_list_attempted_KXATPMATCH": "200_first_attempt_page1_only",
+  "method": "GET-only already-settled KXATPMATCH cohort via /events?status=settled nested page 1 (15 events, ATP Chengdu + ATP Hangzhou, match dates 2026-09-22..24) + parent panel single-event regets",
+  "settled_event_tickers": [
+    "KXATPMATCH-26SEP24HARKOV",
+    "KXATPMATCH-26SEP24DAMMOC",
+    "KXATPMATCH-26SEP24KOUMUL",
+    "KXATPMATCH-26SEP24KECBAS",
+    "KXATPMATCH-26SEP24CINUGO",
+    "KXATPMATCH-26SEP24SWEDAN",
+    "KXATPMATCH-26SEP24SUNSAF",
+    "KXATPMATCH-26SEP24MARBOL",
+    "KXATPMATCH-26SEP24HIJSVR",
+    "KXATPMATCH-26SEP23BASCIN",
+    "KXATPMATCH-26SEP23TOMSUN",
+    "KXATPMATCH-26SEP23MULBAR",
+    "KXATPMATCH-26SEP23DANMAT",
+    "KXATPMATCH-26SEP23BOLSAN",
+    "KXATPMATCH-26SEP22SVRNOG"
+  ],
+  "settled_statuses": {
+    "finalized": 30
+  },
+  "settled_results": {
+    "KXATPMATCH-26SEP24HARKOV-HAR": "yes",
+    "KXATPMATCH-26SEP24HARKOV-KOV": "no",
+    "KXATPMATCH-26SEP24DAMMOC-DAM": "yes",
+    "KXATPMATCH-26SEP24DAMMOC-MOC": "no",
+    "KXATPMATCH-26SEP24KOUMUL-KOU": "no",
+    "KXATPMATCH-26SEP24KOUMUL-MUL": "yes",
+    "KXATPMATCH-26SEP24KECBAS-KEC": "no",
+    "KXATPMATCH-26SEP24KECBAS-BAS": "yes",
+    "KXATPMATCH-26SEP24CINUGO-CIN": "yes",
+    "KXATPMATCH-26SEP24CINUGO-UGO": "no",
+    "KXATPMATCH-26SEP24SWEDAN-SWE": "no",
+    "KXATPMATCH-26SEP24SWEDAN-DAN": "yes",
+    "KXATPMATCH-26SEP24SUNSAF-SUN": "no",
+    "KXATPMATCH-26SEP24SUNSAF-SAF": "yes",
+    "KXATPMATCH-26SEP24MARBOL-MAR": "yes",
+    "KXATPMATCH-26SEP24MARBOL-BOL": "no",
+    "KXATPMATCH-26SEP24HIJSVR-HIJ": "yes",
+    "KXATPMATCH-26SEP24HIJSVR-SVR": "no",
+    "KXATPMATCH-26SEP23BASCIN-BAS": "yes",
+    "KXATPMATCH-26SEP23BASCIN-CIN": "no",
+    "KXATPMATCH-26SEP23TOMSUN-TOM": "no",
+    "KXATPMATCH-26SEP23TOMSUN-SUN": "yes",
+    "KXATPMATCH-26SEP23MULBAR-MUL": "yes",
+    "KXATPMATCH-26SEP23MULBAR-BAR": "no",
+    "KXATPMATCH-26SEP23DANMAT-DAN": "yes",
+    "KXATPMATCH-26SEP23DANMAT-MAT": "no",
+    "KXATPMATCH-26SEP23BOLSAN-BOL": "yes",
+    "KXATPMATCH-26SEP23BOLSAN-SAN": "no",
+    "KXATPMATCH-26SEP22SVRNOG-SVR": "yes",
+    "KXATPMATCH-26SEP22SVRNOG-NOG": "no"
+  },
+  "occurrence_datetime_present_on_settled_N": 30,
+  "expected_expiration_time_present_all_settled": true,
+  "occurrence_datetime_equals_expected_expiration_on_settled_N": 30,
+  "j1_fallback_rows_expected_on_settled_cohort": 0,
+  "parent_panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "parent_panel_admitted_at": null,
+  "parent_panel_missing_occurrence_datetime_n": 0,
+  "parent_seed_events": [
+    "KXATPMATCH-26SEP23BASCIN",
+    "KXATPMATCH-26SEP23TOMSUN",
+    "KXATPMATCH-26SEP22MOCKOT",
+    "KXATPMATCH-26SEP22SVRNOG",
+    "KXATPMATCH-26SEP22HARGAL",
+    "KXATPMATCH-26SEP23DANMAT"
+  ],
+  "parent_seed_settled_nonempty_N": 12,
+  "parent_seed_in_list_N": 8,
+  "parent_reget": {
+    "markets_n": 12,
+    "status": {
+      "finalized": 12
+    },
+    "occurrence_datetime_null_n": 0
+  },
+  "j1_clock_pin": "occurrence_datetime (fallback expected_expiration_time when occurrence_datetime null; fallback rows labeled join_source='expected_expiration_time_fallback'; never write expected_expiration_time into occurrence_datetime)",
+  "honest_gaps": [
+    "GET /markets?series_ticker=KXATPMATCH&status=settled&limit=30 → 429 (x4 attempts: initial + 3 retries @10s/20s/40s backoff) — do not invent list books; not backfilled",
+    "GET /events?series_ticker=KXATPMATCH&status=settled&limit=15&with_nested_markets=true → 200 first attempt; page 1 only (cursor present, page 2 NOT fetched) — N not padded past page-1 nested markets",
+    "Parent panel events KXATPMATCH-26SEP22HARGAL, KXATPMATCH-26SEP22MOCKOT are finalized per single-event GET but are NOT on events-list page 1 — recorded in parent reget only, NOT added to N",
+    "occurrence_datetime == expected_expiration_time on 30/30 settled rows (scheduled match start, not determination ts) — J1 fallback path not exercised by this cohort (0 null occurrence_datetime); both fields kept verbatim",
+    "settlement_ts earlier than occurrence_datetime on 8/30 settled rows (4/12 parent rows) — scheduled start drift; recorded verbatim, not reconciled",
+    "No 404s observed; no ERR; every attempt logged in http_log.jsonl with real UTC timestamps"
+  ],
+  "note": "Scout N=30 pin-only — do NOT copy into settled_join_n. results/pnl null. No invent."
+}

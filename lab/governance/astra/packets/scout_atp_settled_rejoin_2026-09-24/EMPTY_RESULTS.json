@@ -1,0 +1,213 @@
+{
+  "results": null,
+  "pnl": null,
+  "settled_join_n": null,
+  "occurrence_match_n": null,
+  "fallback_join_n": null,
+  "admit_ready_flag": null,
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "revision_note_path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24.json",
+      "revision_note_sha256": "cbcc419ced0922e2cc9dd3dd8408a0548526c4cf89874783de27f98089deef15",
+      "on_repo_main": false,
+      "on_repo_main_note": "GET contents lab/governance/astra/templates @main 959c3f2b → 404; box-only at stamp"
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+      "feature_family": "ATP-RJ",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "admit_alone_neq_score": true,
+      "units_neq_score": true,
+      "selection_status": null,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "head_sha_pre_merge": null,
+        "base_pre_merge": null,
+        "merge_method": null,
+        "merged_at_et": null,
+        "lab": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+        "units_ok": null,
+        "arms": [
+          "J0",
+          "J1"
+        ],
+        "arm_values": {
+          "J0": "nonempty_result_required",
+          "J1": "occurrence_datetime_match"
+        },
+        "url": null
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "settled_join_n": null,
+        "occurrence_match_n": null,
+        "fallback_join_n": null,
+        "admit_ready_flag": null
+      },
+      "metrics_fill_policy": "null_until_panel_and_units_examiner_ready"
+    },
+    "default_override_policy": {
+      "override_declared_in_freeze": false,
+      "override_declared_pre_outcome_evidence": null,
+      "post_outcome_override_admissible": false
+    },
+    "fee_regime": {
+      "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "fee_account_version_manifest": {
+        "path": null,
+        "sha256": null,
+        "status": "pending",
+        "owner": "Archivist"
+      },
+      "applies": false,
+      "note": "ATP-RJ reads/produces no fee quantity"
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "unit": "Brier score (dimensionless) + reliability table (10 bins: mean forecast probability vs observed settled frequency, count per bin)",
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A",
+        "note": "join harness emits no probabilities; v1.2 rule allows Examiner to record 'N/A' at scoring — left null pre-ACCEPT per Conductor null rule"
+      },
+      "fill_rate": {
+        "value": null,
+        "unit": "fraction (contracts filled / contracts requested)",
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "unit": "cents per contract (signed)",
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "unit": "fraction (depth-supported contracts / requested contracts)",
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "unit": "contracts (count) + USD (dollar risk)",
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "unit": "USD-hours",
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "unit": "fraction (top-1 share) + HHI (dimensionless)",
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "fill_model_ref": null
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": null,
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ],
+      "variants_note": "Examiner/Archivist records; harness PR would be 'unit-only' until a data run; scout bytes are post-outcome ('historical replay')"
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 7,
+        "n/a": 5
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "note": "no strategy → controls not applicable (declared pre-outcome)"
+    },
+    "all_score_values_null": true
+  },
+  "note": "pre-ACCEPT empty; ATP-RJ measurement join only; scout N=30 is a pin, not a score; all Examiner v1.2 score values null"
+}

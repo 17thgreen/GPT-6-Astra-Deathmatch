@@ -1,0 +1,213 @@
+{
+  "packet_id": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "ATP-RJ",
+  "base_commit": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "branch_base_commit": "37ad5b7b366c10dcdf278c2325611e6f426a62c6",
+  "panel_parent_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "panel_parent_source": "lab/astra-capture/atp-kxatpmatch/panel_stub.json",
+  "cited_freeze_sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+  "freeze_sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+  "freeze_path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+  "accept_path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_2026-09-24.json",
+  "accept_sha256": "e42d75834086f34090581aee88563ab9849d60864c2d9e59c4ef495b3e8e5af5",
+  "maximize_pin_path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-24_1948ET.md",
+  "maximize_pin_sha256": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+  "examiner_hold_path": "lab/governance/astra/packets/EXAMINER_HOLD_ATP_KXATPMATCH_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-24.json",
+  "examiner_hold_sha256": "214fb8c1b54d1dfd14cdcff39c4a35e227eafe7e35ba96ff2e6e636b04f2ba76",
+  "examiner_hold_location": "in_repo",
+  "suggested_ping_path": "lab/governance/astra/packets/SUGGESTED_CONDUCTOR_ACCEPT_PING_ATP_RJ_2026-09-24.json",
+  "suggested_ping_sha256": "a666102da44910288756896aaa30b3d2bfde4fff867fca9fff0cd1b75420c28b",
+  "scorecard_template_v1_2_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+  "scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "scout_dir": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24",
+  "scout_reget_path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/scout_settled_rejoin_ATP_KXATPMATCH.json",
+  "scout_reget_sha256": "2982a245ebd4ff8430ef4b2fe13692c15211c2077e2460d6c0246480f59736df",
+  "seed_summary_path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/SEED_SETTLED_SUMMARY.json",
+  "seed_summary_sha256": "913fc5d646c51192e40869a68a64b4fe2b66f8231dd75b90f5467bd50559700e",
+  "panel_stub_path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "settled_reget_path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/settled_reget_2026-09-24.json",
+  "settled_reget_sha256": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+  "freeze_bytes_in_checkout": true,
+  "accept_bytes_in_checkout": true,
+  "maximize_pin_bytes_in_checkout": true,
+  "scout_bytes_in_checkout": true,
+  "examiner_hold_bytes_in_checkout": true,
+  "digest_all_match_claimed": true,
+  "scout_nonempty_result_N_declared": 30,
+  "settled_join_n": null,
+  "occurrence_match_n": null,
+  "fallback_join_n": null,
+  "admit_ready_flag": null,
+  "admitted_at": null,
+  "results": null,
+  "pnl": null,
+  "feebook_commit_fixed_not_loaded": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_commit_fixed_not_loaded": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "fee_import_used": false,
+  "rails_import_used": false,
+  "fee_queue_book_fill_tape": "HELD",
+  "pins": {
+    "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md": {
+      "path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+      "sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+      "bytes": 14498
+    },
+    "lab/governance/astra/packets/CONDUCTOR_ACCEPT_ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_2026-09-24.json",
+      "sha256": "e42d75834086f34090581aee88563ab9849d60864c2d9e59c4ef495b3e8e5af5",
+      "bytes": 1890
+    },
+    "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-24_1948ET.md": {
+      "path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-24_1948ET.md",
+      "sha256": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+      "bytes": 2774
+    },
+    "lab/governance/astra/packets/EXAMINER_HOLD_ATP_KXATPMATCH_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/EXAMINER_HOLD_ATP_KXATPMATCH_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-24.json",
+      "sha256": "214fb8c1b54d1dfd14cdcff39c4a35e227eafe7e35ba96ff2e6e636b04f2ba76",
+      "bytes": 10415,
+      "location": "in_repo"
+    },
+    "lab/governance/astra/packets/SUGGESTED_CONDUCTOR_ACCEPT_PING_ATP_RJ_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/SUGGESTED_CONDUCTOR_ACCEPT_PING_ATP_RJ_2026-09-24.json",
+      "sha256": "a666102da44910288756896aaa30b3d2bfde4fff867fca9fff0cd1b75420c28b",
+      "bytes": 3713
+    },
+    "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.2_2026-09-24.json",
+      "sha256": "cbcc419ced0922e2cc9dd3dd8408a0548526c4cf89874783de27f98089deef15",
+      "bytes": 3751
+    },
+    "lab/governance/astra/packets/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json": {
+      "path": "lab/governance/astra/packets/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json",
+      "sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+      "bytes": 35140
+    },
+    "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "bytes": 38172
+    },
+    "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "bytes": 12484
+    },
+    "lab/astra-capture/atp-kxatpmatch/panel_stub.json": {
+      "path": "lab/astra-capture/atp-kxatpmatch/panel_stub.json",
+      "sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+      "bytes": 35140
+    },
+    "lab/astra-capture/atp-kxatpmatch/settled_reget_2026-09-24.json": {
+      "path": "lab/astra-capture/atp-kxatpmatch/settled_reget_2026-09-24.json",
+      "sha256": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+      "bytes": 40021
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/ATP_KXATPMATCH_PANEL_STUB_2026-09-23.json",
+      "sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+      "bytes": 35140
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/DIGESTS.txt": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/DIGESTS.txt",
+      "sha256": "e72add7818b65edd32ee0132104611d166934688092c23fce762db4f0a5f8745",
+      "bytes": 3486
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/EMPTY_RESULTS.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/EMPTY_RESULTS.json",
+      "sha256": "31ba428810ce27384944856313ef6703a280d1487fc3ccc95e4b90f2e5c4fe2e",
+      "bytes": 6614
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/FROZEN_EXPERIMENT.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/FROZEN_EXPERIMENT.json",
+      "sha256": "802b40b308724ae0980da123843d6a0655d087af2f162b3cc3a0f66d25e1d690",
+      "bytes": 8062
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/SEED_SETTLED_SUMMARY.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/SEED_SETTLED_SUMMARY.json",
+      "sha256": "913fc5d646c51192e40869a68a64b4fe2b66f8231dd75b90f5467bd50559700e",
+      "bytes": 4497
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/SUGGESTED_CONDUCTOR_ACCEPT_PING.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/SUGGESTED_CONDUCTOR_ACCEPT_PING.json",
+      "sha256": "a666102da44910288756896aaa30b3d2bfde4fff867fca9fff0cd1b75420c28b",
+      "bytes": 3713
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/http_log.jsonl": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/http_log.jsonl",
+      "sha256": "261284f0e4dbbc137a595294427012cc2d2822fb10ab219315ea48969fdb8420",
+      "bytes": 4098
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22HARGAL_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22HARGAL_parent.json",
+      "sha256": "4c734743aa2b3dd6068ad9fa8db973403d2e7b32dd8112e7891f935ab59b6799",
+      "bytes": 5402
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22MOCKOT_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22MOCKOT_parent.json",
+      "sha256": "d2f8148aaeb8b3b8110350635b5473047931380a04dcba80d286c0405c1f98df",
+      "bytes": 5412
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22SVRNOG_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP22SVRNOG_parent.json",
+      "sha256": "dd226b4cf0a5d4415d5619eb348ee5e7f55e4e0111bafde2c612a8135d5979bc",
+      "bytes": 5401
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23BASCIN_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23BASCIN_parent.json",
+      "sha256": "c12ab187f0c8be6fdb26477736accca2de703966143ae54ef498602221870855",
+      "bytes": 5444
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23DANMAT_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23DANMAT_parent.json",
+      "sha256": "f29e6e7fb8ac788a4d73fd48fdbed28540bb419c7bd6893d0b01b98405cfb4ec",
+      "bytes": 5394
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23TOMSUN_parent.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/event_KXATPMATCH_26SEP23TOMSUN_parent.json",
+      "sha256": "d11196d0a800fccc827d96365e2c7482d2588c32674cb2b72b6ab3867de9ac65",
+      "bytes": 5344
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/events_settled_KXATPMATCH_lim15.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/events_settled_KXATPMATCH_lim15.json",
+      "sha256": "e2c1d25b2dd24588ff7762b455292834fc2dc588819d578dda75380ceed3b775",
+      "bytes": 80749
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30.json",
+      "sha256": "48f95fa1fbd68fcc35ed6d2fd91d2b17181b63463a3fc278e40f0b34e6cb5e92",
+      "bytes": 68
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry1.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry1.json",
+      "sha256": "48f95fa1fbd68fcc35ed6d2fd91d2b17181b63463a3fc278e40f0b34e6cb5e92",
+      "bytes": 68
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry2.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry2.json",
+      "sha256": "48f95fa1fbd68fcc35ed6d2fd91d2b17181b63463a3fc278e40f0b34e6cb5e92",
+      "bytes": 68
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry3.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/markets_settled_KXATPMATCH_lim30_retry3.json",
+      "sha256": "48f95fa1fbd68fcc35ed6d2fd91d2b17181b63463a3fc278e40f0b34e6cb5e92",
+      "bytes": 68
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/series_KXATPMATCH.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/raw/series_KXATPMATCH.json",
+      "sha256": "b9bb0fddf5774b0e9990e94704f179b0881ccc30e79fd2d5c15f63a30511008b",
+      "bytes": 2103
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/scout_settled_rejoin_ATP_KXATPMATCH.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/scout_settled_rejoin_ATP_KXATPMATCH.json",
+      "sha256": "2982a245ebd4ff8430ef4b2fe13692c15211c2077e2460d6c0246480f59736df",
+      "bytes": 30846
+    },
+    "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/settled_reget_2026-09-24.json": {
+      "path": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/settled_reget_2026-09-24.json",
+      "sha256": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+      "bytes": 40021
+    }
+  }
+}

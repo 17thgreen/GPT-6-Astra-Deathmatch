@@ -1,0 +1,171 @@
+{
+  "packet_id": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "ATP-RJ",
+  "status": "FROZEN_EXPERIMENT",
+  "series_ticker": "KXATPMATCH",
+  "lab_dir": "kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+  "knob": "join_gate",
+  "arms": [
+    "J0",
+    "J1"
+  ],
+  "arm_values": {
+    "J0": "nonempty_result_required",
+    "J1": "occurrence_datetime_match"
+  },
+  "j1_fallback": "expected_expiration_time when occurrence_datetime null",
+  "j1_fallback_row_label": {
+    "field": "join_source",
+    "fallback_value": "expected_expiration_time_fallback",
+    "primary_value": "occurrence_datetime"
+  },
+  "j1_never_write_expected_expiration_into_occurrence_datetime": true,
+  "results": null,
+  "pnl": null,
+  "settled_join_n": null,
+  "settled_nonempty_result_N_scout": 30,
+  "admitted_at": null,
+  "parent_panel_admitted_at": null,
+  "panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "does_not_run_admit_py": true,
+  "nearest_dead_card": "ATP-FQ (PR34 @438f4abf28a3c0156daf6c96ece5efda9557f1dc; PR35 duplicate closed unmerged)",
+  "base_main_sha": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "stamped_at_et": "2026-09-24T19:48:42-04:00",
+  "freeze_sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+  "scout_reget_sha256": "2982a245ebd4ff8430ef4b2fe13692c15211c2077e2460d6c0246480f59736df",
+  "scout_summary_sha256": "913fc5d646c51192e40869a68a64b4fe2b66f8231dd75b90f5467bd50559700e",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "settled_reget_capture_sha256": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+  "examiner_hold_sha256": "214fb8c1b54d1dfd14cdcff39c4a35e227eafe7e35ba96ff2e6e636b04f2ba76",
+  "maximize_pin_sha256": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "p16_preregistration_checklist": {
+    "source_template": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "block": "preregistration_checklist"
+    },
+    "source_pdf": {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "page": 16,
+      "section": "Minimum preregistration"
+    },
+    "source_quote_p16": "Freeze the market universe, exclusions, receipt-time information set, fee regime, order timing, sizing, fill model, stopping rules and evaluation metrics before the test. Limit candidate variants; log every attempted variant. Separate discovery, tuning and untouched evaluation periods. Sampling more prints from the same event does not solve small-sample uncertainty.",
+    "applicability_note": "v1.2 template marks the checklist REQUIRED for cards 01-04; ATP-RJ is not a card 01-04 study \u2014 included per Conductor new-lab requirement (all new freezes). Statuses are Variants' pre-outcome declaration; Examiner gate_status stays null.",
+    "declared_pre_outcome_at_et": "2026-09-24T19:48:42-04:00",
+    "status_enum": [
+      "satisfied",
+      "missing",
+      "n/a"
+    ],
+    "items": [
+      {
+        "id": 1,
+        "key": "market_universe",
+        "item": "Freeze the market universe",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "KXATPMATCH (series GET 200) already-settled markets: 30 finalized nonempty-result markets from /events?status=settled page 1 (15 events, tickers frozen in scout_settled_rejoin_ATP_KXATPMATCH.json) + parent panel 2026-09-23.atp-kxatpmatch-v0 (6 events/12 markets, sha256 ed041c50\u2026) reused unchanged"
+      },
+      {
+        "id": 2,
+        "key": "exclusions",
+        "item": "Freeze the exclusions",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "exclude empty result; exclude status not in {finalized, settled}; exclude events beyond list page 1 (cursor not followed); exclude outside-list parent rows from N; /markets settled list 429 not backfilled; no fair-price/void rows observed (all results yes/no) \u2014 any future such row excluded from J0/J1 and logged"
+      },
+      {
+        "id": 3,
+        "key": "receipt_time_information_set",
+        "item": "Freeze the receipt-time information set",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "raw GET bodies exactly as received at the UTC timestamps in http_log.jsonl (raw/ saved per attempt); no post-receipt enrichment. Data is post-outcome by construction (historical replay of settled markets)"
+      },
+      {
+        "id": 4,
+        "key": "fee_regime",
+        "item": "Freeze the fee regime",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "no fee quantity read or produced; series fee_type quadratic_with_maker_fees x1 recorded as metadata only; feebook @22371178 import-only if ever needed"
+      },
+      {
+        "id": 5,
+        "key": "order_timing",
+        "item": "Freeze the order timing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "no orders; GET-only measurement join"
+      },
+      {
+        "id": 6,
+        "key": "sizing",
+        "item": "Freeze the sizing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "no orders / no sizing"
+      },
+      {
+        "id": 7,
+        "key": "fill_model",
+        "item": "Freeze the fill model",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "no fills; fill/fill-density/queue metrics refused"
+      },
+      {
+        "id": 8,
+        "key": "stopping_rules",
+        "item": "Freeze the stopping rules",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "single GET pass; \u22643 retries per request with 10/20/40s backoff, every attempt logged; list page 1 only; no backfill of gaps; N fixed as pin at freeze stamp"
+      },
+      {
+        "id": 9,
+        "key": "evaluation_metrics",
+        "item": "Freeze the evaluation metrics",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "settled_join_n, occurrence_match_n, fallback_join_n (rows with join_source='expected_expiration_time_fallback'), admit_ready_flag \u2014 all null until Clock admit + Examiner"
+      },
+      {
+        "id": 10,
+        "key": "limit_candidate_variants",
+        "item": "Limit candidate variants",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "one knob join_gate; two arms J0 nonempty_result_required / J1 occurrence_datetime_match (+ fallback)"
+      },
+      {
+        "id": 11,
+        "key": "log_every_attempted_variant",
+        "item": "Log every attempted variant",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "satisfied",
+        "evidence_ref": "J0 and J1 are the only variants and are both declared here; any further variant requires a new freeze/addendum logged before outcome; all HTTP attempts logged"
+      },
+      {
+        "id": 12,
+        "key": "separate_discovery_tuning_evaluation_periods",
+        "item": "Separate discovery, tuning and untouched evaluation periods",
+        "source": "PDF p16 Minimum preregistration",
+        "status": "n/a",
+        "evidence_ref": "no tunable parameter and no outcome-dependent selection in a measurement join; scout cohort is a pin, not a tuning set. Examiner note: if ever scored beyond harness readiness, use KXATPMATCH markets settled AFTER this freeze stamp as the untouched evaluation set"
+      }
+    ],
+    "counts": {
+      "satisfied": 7,
+      "n/a": 5
+    },
+    "missing_n": 0,
+    "gate_status": null
+  },
+  "occurrence_match_n": null,
+  "fallback_join_n": null,
+  "admit_ready_flag": null,
+  "scout_n_copied_into_settled_join_n": false
+}

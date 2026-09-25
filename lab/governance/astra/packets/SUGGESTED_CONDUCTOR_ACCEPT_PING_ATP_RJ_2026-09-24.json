@@ -1,0 +1,38 @@
+{
+  "packet_id": "ATP-KXATPMATCH-SETTLED-RESOLUTION-JOIN-HARNESS",
+  "feature_family": "ATP-RJ",
+  "series_ticker": "KXATPMATCH",
+  "suggested_decision": "ACCEPT",
+  "implement": true,
+  "seat_target": "Conductor",
+  "base_main_sha": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+  "digest_verify": {
+    "base_sha": "959c3f2beaec5f999b4852c428a3c4cdae1e9603",
+    "freeze": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+    "scout_reget": "2982a245ebd4ff8430ef4b2fe13692c15211c2077e2460d6c0246480f59736df",
+    "seed_summary": "913fc5d646c51192e40869a68a64b4fe2b66f8231dd75b90f5467bd50559700e",
+    "panel_stub": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+    "settled_reget": "068ff00fe420d3365cc798549ef2e89aac96fa7e841846f73e67d5103c49760a",
+    "examiner_hold": "214fb8c1b54d1dfd14cdcff39c4a35e227eafe7e35ba96ff2e6e636b04f2ba76",
+    "maximize_pin": "70020baf5599f7afcd4c8335d5f084c34784c5b4b1b44ffabce1041e41cbc84a",
+    "settled_nonempty_result_N": 30
+  },
+  "freeze_path": "lab/governance/astra/packets/ATP_KXATPMATCH_SETTLED_RESOLUTION_JOIN_HARNESS_FREEZE_2026-09-24.md",
+  "maximize_pin": "MAXIMIZE_PIN_2026-09-24_1948ET.md",
+  "examiner_hold_path": "lab/governance/astra/packets/EXAMINER_HOLD_ATP_KXATPMATCH_SETTLED_JOIN_HARNESS_PRE_PR_2026-09-24.json",
+  "scout_dir": "lab/governance/astra/packets/scout_atp_settled_rejoin_2026-09-24/",
+  "lab_dir": "lab/astra-science/kalshi_atp_kxatpmatch_settled_join_lab_20260924/",
+  "implement_bundle": "/workspace/ATP_RJ_authentic_pins_2026-09-24.tgz (freeze + maximize pin + examiner hold + ping + full scout dir + lab dir, repo-relative lab/...; add CONDUCTOR_ACCEPT once filed — bundle sha changes then)",
+  "nearest_dead_card": "ATP-FQ PR34 @438f4abf… (PR35 = duplicate draft closed unmerged) — ATP-RJ orthogonal: join_gate on already-settled KXATPMATCH, no fee/queue/book/fill/tape metric",
+  "new_lab_requirements": {
+    "p16_preregistration_checklist": "completed in freeze §p16 + FROZEN_EXPERIMENT.p16_preregistration_checklist (7 satisfied / 0 missing / 5 n/a)",
+    "p16_counts": {
+      "satisfied": 7,
+      "n/a": 5
+    },
+    "examiner_scorecard_v1_2": "schema in examiner hold + EMPTY_RESULTS (template sha256 56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc); all values null"
+  },
+  "cloud_instruction": "IMPLEMENT only — GET-only settled-resolution join harness for ATP KXATPMATCH; one knob join_gate J0/J1 (J1 fallback expected_expiration_time when occurrence_datetime null, per-row join_source='expected_expiration_time_fallback', never write expected_expiration_time into occurrence_datetime); commit authentic pins from bundle verbatim in-repo from first commit; results/pnl/settled_join_n null; do NOT run admit.py; do NOT invent settled result/depth/fills/occurrence_datetime; Examiner HOLD pre-PR until merge; refuse Cap-SR/FQ/ATP-FQ/sibling RJ reopen; refuse Arm B; refuse ungate S1/S2/R2-P4; no live orders.",
+  "notes": "Scorable-first maximize after C4-RJ PR50 @959c3f2b…. One knob join_gate J0/J1. GET-only. Variants does NOT run admit.py. results/pnl null. /markets settled list 429x4 honest; /events settled list 200 page 1 → 15 events x2 finalized nonempty N=30 (pin-only); page 2 not fetched; parent panel 12/12 finalized (4 events in list, 2 outside — not added). occurrence_datetime present 30/30, == expected_expiration_time 30/30 (J1 fallback rows 0 in cohort). Orthogonal to ATP-FQ (PR34; note PR35 was the closed duplicate). Does not ungate S1/S2/R2-P4 (C1 PIT@CLE T-7d smoke PASS not on disk at stamp). HOLD for Conductor ACCEPT — no CloudAgent/PR/admit.py. Queue after: ETH-RJ (KXETH15M).",
+  "stamped_at_et": "2026-09-24T19:48:42-04:00"
+}
