@@ -1,0 +1,44 @@
+{
+  "as_of": "2026-09-22T17:30:00-04:00",
+  "claude_repo": "17thgreen/Claude-SportsBetting-Competition-to-the-Death",
+  "claude_ref": "claude/kind-hamilton-gdfr9q",
+  "claude_tip": "11e00f182e0fa1f97ed80eb69fec1269d43d8f5a",
+  "claude_fees": "src/flatstake/paper/fees.py",
+  "claude_execution": "src/flatstake/paper/execution.py",
+  "claude_account": "src/flatstake/paper/account.py",
+  "grok_repo": "17thgreen/Grok-Deathmatch",
+  "grok_ref": "main",
+  "grok_tip": "2b343c2af2917ba1c98076eb6d9b5ff635a6532c",
+  "grok_fees": "src/lib/linewright/fees.ts",
+  "grok_micro": "src/lib/linewright/micro.ts",
+  "grok_config": "src/lib/linewright/config.ts",
+  "rates": {"taker": 0.07, "maker": 0.0175, "per_contract_cap": 0.035},
+  "queue_defaults": {"queue_ahead_contracts": 3300, "fill_participation": 0.5, "astra_stress_queue": 10000},
+  "MICRO_V1": {
+    "id": "micro-tape-v1",
+    "hash": "micro-tape-v1.0.0:taker0.07:maker0.0175:ls0.15:fav0.85:nflInplay3.25h:thin500:skipBlock",
+    "longshotMax": 0.15,
+    "favoriteMin": 0.85,
+    "favoriteMax": 0.95,
+    "nflInplayHours": 3.25,
+    "thinN": 500,
+    "surviveRoi": 0,
+    "skipBlockTrades": true
+  },
+  "leave_alone": ["HX_SPREAD_V1", "weather cheap YES lottery", "directional pickers", "Q6/Q7 retune"],
+  "retrieved_blobs": {
+    "retrieved": "2026-09-22",
+    "vendored": false,
+    "claude_execution_py": "8d9827657001aac6a3dfc2ffdc84f0bf121f0310",
+    "claude_fees_py": "5a50f1775c4e05f10ba22e67626f996e8ee27eb6",
+    "grok_fees_ts": "95032ef7d7c2d13bf450ea9b2ea8f288bdfcc8c9",
+    "grok_micro_ts": "e4190b6e8c6d27c6f682cf14956e388681ec7051",
+    "grok_config_ts": "125beb4ecec90e068a0b2362b93090b91c7c3e6e"
+  },
+  "feebook_dependency": {
+    "directory": "kalshi_feebook_lab_20260922",
+    "commit": "22371178cb2663250b4762f328069571c48cb551",
+    "examiner_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "grok_comparator_formula_id": "grok.fees_ts.unrounded_per_unit.v1"
+  }
+}

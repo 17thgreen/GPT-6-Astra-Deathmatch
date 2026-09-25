@@ -1,0 +1,62 @@
+{
+  "id": "Q6S5_KXMLBSPREAD_FEEQUEUE_FREEZE_DIGEST",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "stamped_at_et": "2026-09-25T00:22:00-04:00",
+  "files": {
+    "freeze_md": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_FREEZE_2026-09-25.md",
+      "sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e"
+    },
+    "panel_stub": {
+      "path": "lab/astra-capture/q6s5-kxmlbspread/panel_stub.json",
+      "sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc"
+    },
+    "frozen_experiment": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS/FROZEN_EXPERIMENT.json",
+      "sha256": "55472bb9c6262f75f3e135456e4afbf3f2054b9ed8277cd082cfc4a987745b83"
+    },
+    "empty_results": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS/EMPTY_RESULTS.json",
+      "sha256": "2b9421931ef40b8f283149ac1e488d05e40a3783d1d83bdf79da6d34498d0e12"
+    },
+    "source_pins": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS/SOURCE_PINS.json",
+      "sha256": "588fdbd0a293823cf96b66ace00145ad10f56efb40badc4b2007b5e4bc832fde"
+    },
+    "examiner_hold": {
+      "path": "lab/governance/astra/packets/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_PRE_PR_2026-09-25.json",
+      "sha256": "57bbd3ddf8e99fe790eb827f3167f529528f0a30ae27ece1ff909617b2091aa8"
+    },
+    "maximize_pin": {
+      "path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-09-25_0022ET.md",
+      "sha256": "917ec545c0dc1cca5c32a3cdf9da0615d09b3871d782dbd4b8ee57ac733b83b9"
+    },
+    "accept_ping": {
+      "path": "lab/governance/astra/packets/VARIANTS_ACCEPT_PING_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_2026-09-25.json",
+      "sha256": "bdbe46edbf04b985c907f8690afe736bd66a5e8de4e69d6594f7117b9363221f"
+    },
+    "archivist_ping": {
+      "path": "lab/governance/astra/packets/VARIANTS_ARCHIVIST_REGISTRY_PING_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_2026-09-25.json",
+      "sha256": "80ed8dd1bfce3316d5a7086d3ca52fc0dd68bfe2ca777545a1e92e0ffbe8119a"
+    },
+    "capture_plan": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_CAPTURE_PLAN_2026-09-25.md",
+      "sha256": "b7ab235ebf4baf198cca2c48103395c611b0f99c36640b17f442ca2f0d377814"
+    },
+    "digests": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS/DIGESTS.txt",
+      "sha256": "ecd6f9e04bba99c41f0fefcb93c9f047776ee7e8c3e80f97bb08845e284c7d8c"
+    }
+  },
+  "external_pins": {
+    "sports_screen_freeze": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+    "sports_screen_accept": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+    "kick": "9c68ab12f6f5561ee176c5669b17ef40c4f5be20299687823ad7f0e9b67701c8",
+    "scout_markets": "80b52f47c836248d5869806d7f59617535e6b78258367ebe6045af4275fff7e7",
+    "scout_summary": "c9e871b3c4edbc648972f9313b3bbcd6784efc46ca847e1f0de4c2847ce85ebe",
+    "v1_2_template": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "p16_pdf": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e"
+  }
+}

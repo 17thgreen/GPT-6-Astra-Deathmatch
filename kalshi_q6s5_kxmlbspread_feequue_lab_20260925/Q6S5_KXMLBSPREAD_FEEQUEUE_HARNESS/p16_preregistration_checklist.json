@@ -1,0 +1,106 @@
+{
+  "source_template": {
+    "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+    "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "block": "preregistration_checklist"
+  },
+  "source_pdf": {
+    "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+    "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+    "page": 16,
+    "section": "Minimum preregistration"
+  },
+  "applicability_note": "v1.2 marks checklist REQUIRED for cards 01-04; Q6S5 is not card 01-04 \u2014 included per Conductor all-new-freeze rule.",
+  "declared_pre_outcome_at_et": "2026-09-25T00:22:00-04:00",
+  "counts": {
+    "satisfied": 8,
+    "n/a": 4,
+    "missing": 0
+  },
+  "items": [
+    {
+      "id": 1,
+      "key": "market_universe",
+      "item": "Freeze the market universe",
+      "status": "satisfied",
+      "evidence_ref": "KXMLBSPREAD scout raw 93/15 sha256 80b52f47c836248d5869806d7f59617535e6b78258367ebe6045af4275fff7e7; panel 2026-09-25.q6s5-kxmlbspread-v0 authentic subset 6/12 sha256 c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc"
+    },
+    {
+      "id": 2,
+      "key": "exclusions",
+      "item": "Freeze the exclusions",
+      "status": "satisfied",
+      "evidence_ref": "KXMLBSPREAD ONLY; exclude KXMLBGAME ML/S1 retune; exclude invent fills/PnL/depth; exclude Cap-SR/Q6-000 retune; panel=first-6 events\u00d7lowest-floor per side"
+    },
+    {
+      "id": 3,
+      "key": "receipt_time_information_set",
+      "item": "Freeze the receipt-time information set",
+      "status": "satisfied",
+      "evidence_ref": "Scout raw GET bodies as received; panel markets verbatim from raw"
+    },
+    {
+      "id": 4,
+      "key": "fee_regime",
+      "item": "Freeze the fee regime",
+      "status": "satisfied",
+      "evidence_ref": "quadratic\u00d70.5 CACHE-LABELED (fee_src=cache:house_fee_nonstandard); feebook FIXED @22371178cb2663250b4762f328069571c48cb551; cache \u2260 R1-P1 live until Examiner /series test"
+    },
+    {
+      "id": 5,
+      "key": "order_timing",
+      "item": "Freeze the order timing",
+      "status": "n/a",
+      "evidence_ref": "no orders; GET-only"
+    },
+    {
+      "id": 6,
+      "key": "sizing",
+      "item": "Freeze the sizing",
+      "status": "n/a",
+      "evidence_ref": "no orders / no sizing"
+    },
+    {
+      "id": 7,
+      "key": "fill_model",
+      "item": "Freeze the fill model",
+      "status": "n/a",
+      "evidence_ref": "no fills; invent fills REFUSED"
+    },
+    {
+      "id": 8,
+      "key": "stopping_rules",
+      "item": "Freeze the stopping rules",
+      "status": "satisfied",
+      "evidence_ref": "freeze-before-implement; Examiner HOLD_PRE_PR until merge; no dual-cloud; queue behind in-flight S5-RJ only if needed; ATP measure INFRA standing down until post-ACCEPT settles"
+    },
+    {
+      "id": 9,
+      "key": "evaluation_metrics",
+      "item": "Freeze the evaluation metrics",
+      "status": "satisfied",
+      "evidence_ref": "maker_vs_taker_roi_delta, fresh_vs_stale_gap, settled_join_n, n_books, results, pnl \u2014 all null until Clock admit + Examiner; plus v1.2 common_scorecard nulls"
+    },
+    {
+      "id": 10,
+      "key": "limit_candidate_variants",
+      "item": "Limit candidate variants",
+      "status": "satisfied",
+      "evidence_ref": "one knob analysis_slice; arms Q6S5A0 maker_vs_taker_native / Q6S5A1 content_fresh_vs_stale_bin; feebook+rails FIXED"
+    },
+    {
+      "id": 11,
+      "key": "log_every_attempted_variant",
+      "item": "Log every attempted variant",
+      "status": "satisfied",
+      "evidence_ref": "Q6S5A0 and Q6S5A1 are the only variants declared; any further variant requires new freeze/addendum before outcome"
+    },
+    {
+      "id": 12,
+      "key": "separate_discovery_tuning_evaluation_periods",
+      "item": "Separate discovery, tuning and untouched evaluation periods",
+      "status": "n/a",
+      "evidence_ref": "measurement harness with no tunable parameter; scout inventory is a pin not a tuning set"
+    }
+  ]
+}

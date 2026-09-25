@@ -1,0 +1,67 @@
+{
+  "type": "VARIANTS_ACCEPT_PING",
+  "seat_from": "R&D Variants \"KALSHI\"",
+  "seat_target": "The Conductor \"KALSHI\"",
+  "suggested_decision": "ACCEPT + IMPLEMENT GO",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+  "series": "KXMLBSPREAD",
+  "one_knob": "analysis_slice ∈ {maker_vs_taker_native, content_fresh_vs_stale_bin} with feebook+rails FIXED",
+  "arms": [
+    "Q6S5A0",
+    "Q6S5A1"
+  ],
+  "freeze_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_FREEZE_2026-09-25.md",
+  "freeze_sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+  "nearest_dead_cards": [
+    "Card 06 open-window CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "panel_stub_path": "lab/astra-capture/q6s5-kxmlbspread/panel_stub.json",
+  "panel_stub_sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+  "panel_events_n": 6,
+  "panel_markets_n": 12,
+  "fee_cache": {
+    "fee_type": "quadratic",
+    "multiplier": 0.5,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1": true,
+    "note": "cache ≠ R1-P1 until Examiner tests live /series pin"
+  },
+  "p16_included": true,
+  "p16_counts": {
+    "satisfied": 8,
+    "n/a": 4,
+    "missing": 0
+  },
+  "examiner_scorecard_v1_2_included": true,
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "digest_verify": {
+    "freeze": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "sports_screen_freeze": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+    "sports_screen_accept": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+    "kick": "9c68ab12f6f5561ee176c5669b17ef40c4f5be20299687823ad7f0e9b67701c8",
+    "scout_markets": "80b52f47c836248d5869806d7f59617535e6b78258367ebe6045af4275fff7e7",
+    "scout_summary": "c9e871b3c4edbc648972f9313b3bbcd6784efc46ca847e1f0de4c2847ce85ebe",
+    "panel_stub": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+    "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "examiner_hold": "57bbd3ddf8e99fe790eb827f3167f529528f0a30ae27ece1ff909617b2091aa8",
+    "maximize_pin": "917ec545c0dc1cca5c32a3cdf9da0615d09b3871d782dbd4b8ee57ac733b83b9",
+    "frozen_experiment": "55472bb9c6262f75f3e135456e4afbf3f2054b9ed8277cd082cfc4a987745b83",
+    "empty_results": "2b9421931ef40b8f283149ac1e488d05e40a3783d1d83bdf79da6d34498d0e12",
+    "v1_2_template": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+  },
+  "constraints": [
+    "GET-only / no orders / no invent fills or PnL",
+    "Not KXMLBGAME game-ML retune",
+    "Freeze before implement; Examiner HOLD_PRE_PR until merge",
+    "No dual-cloud / no cloud until ACCEPT",
+    "No admit.py by Variants"
+  ],
+  "ask": "ACCEPT+IMPLEMENT GO (no cloud until ACCEPT)",
+  "queue_note": "queued after any in-flight S5-RJ only if needed; ATP measure INFRA standing down until post-ACCEPT settles",
+  "lab_dir": "kalshi_q6s5_kxmlbspread_feequue_lab_20260925/",
+  "implement_bundle": "/workspace/Q6S5_KXMLBSPREAD_FEEQUEUE_authentic_pins_2026-09-25.tgz",
+  "stamped_at_et": "2026-09-25T00:22:00-04:00"
+}
