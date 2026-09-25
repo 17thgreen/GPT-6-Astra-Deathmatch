@@ -1,0 +1,43 @@
+{
+  "name": "markets_open_KXATPMATCH",
+  "series": "KXATPMATCH",
+  "http": 200,
+  "n_markets": 28,
+  "n_events": 14,
+  "events_sample": [
+    "KXATPMATCH-26SEP24FARGAS",
+    "KXATPMATCH-26SEP24HALSAF",
+    "KXATPMATCH-26SEP24MARDAN",
+    "KXATPMATCH-26SEP25BASVAN",
+    "KXATPMATCH-26SEP25BROSON",
+    "KXATPMATCH-26SEP25CERDAV",
+    "KXATPMATCH-26SEP25CINMUL",
+    "KXATPMATCH-26SEP25DAMHUR"
+  ],
+  "sum_volume_fp": 348278.36,
+  "sum_volume_24h_fp": 341188.07,
+  "sum_open_interest_fp": 330567.67,
+  "page_capped": false,
+  "cursor_present": false,
+  "fee_type": "quadratic_with_maker_fees",
+  "fee_multiplier": "1",
+  "fee_src": "cache:house_fee_nonstandard",
+  "samples": [
+    {
+      "ticker": "KXATPMATCH-26SEP25KOPSHA-SHA",
+      "volume_fp": "39661.02",
+      "volume_24h_fp": "39379.06",
+      "open_interest_fp": "39103.30",
+      "occurrence_datetime": "2026-09-25T10:00:00Z",
+      "occurrence_et": "2026-09-25 06:00 ET"
+    },
+    {
+      "ticker": "KXATPMATCH-26SEP25JACETC-ETC",
+      "volume_fp": "39850.09",
+      "volume_24h_fp": "38979.32",
+      "open_interest_fp": "37391.64",
+      "occurrence_datetime": "2026-09-25T08:00:00Z",
+      "occurrence_et": "2026-09-25 04:00 ET"
+    }
+  ]
+}

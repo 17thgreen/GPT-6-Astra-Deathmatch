@@ -1,0 +1,35 @@
+{
+  "id": "CONDUCTOR_KICK_VARIANTS_Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE",
+  "type": "CONDUCTOR_KICK",
+  "from": "Conductor",
+  "to": "R&D Variants",
+  "action": "FREEZE",
+  "reason": "Q6S5 PR58 merged READY NOT_SCORED \u2014 continuous maximize; sports screen rank-2 TRY is Q6S1",
+  "after_merge": {
+    "pr": 58,
+    "merge_sha": "f349ffa819960b8f641725fbf259f5430dffcff7",
+    "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS"
+  },
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "series": "KXATPMATCH",
+  "kernel": "Inventory re-proof for existing ATP fee/queue + settled-join lane vs Q6-000 KEEP under shared $5k bakeoff rules; not a new cash-cow C* re-nominate; do not duplicate ATP measure-hardening INFRA (PR57).",
+  "dead_card_named": "nearest dead: Cap-SR / ATP-FQ reopen (FORBIDDEN) / Card 06 CLOSED / S1 ML retune FORBIDDEN",
+  "one_knob_required": true,
+  "orthogonal_feature_family": "must name family \u2260 F1/F2/F3 and nearest dead card on disk before wave opens",
+  "constraints": [
+    "GET-only / no orders / no invent fills or PnL",
+    "Not Cap-SR / ATP-FQ / ETH-FQ / Q6S5 reopen",
+    "Not duplicate PR57 measure-transport INFRA",
+    "Prefer /events while /markets hot",
+    "Freeze before implement; Examiner HOLD_PRE_PR until merge",
+    "No dual-cloud",
+    "results/pnl stay null until Clock+Examiner path",
+    "Fee pins CACHE-LABELED until Examiner live /series"
+  ],
+  "screen_pin": {
+    "accept": "CONDUCTOR_ACCEPT_SPORTS_Q6_SCREEN_2026-09-24.json",
+    "accept_sha256": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+    "rank_among_try": 2
+  },
+  "stamped_at_et": "2026-09-25T00:31:50-04:00"
+}

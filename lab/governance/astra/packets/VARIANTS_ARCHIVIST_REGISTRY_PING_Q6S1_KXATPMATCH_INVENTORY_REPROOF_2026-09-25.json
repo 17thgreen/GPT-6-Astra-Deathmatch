@@ -1,0 +1,46 @@
+{
+  "type": "VARIANTS_ARCHIVIST_REGISTRY_PING",
+  "seat_from": "R&D Variants \"KALSHI\"",
+  "seat_target": "Archivist",
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "experiment_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "freeze_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "freeze_path": "lab/governance/astra/packets/Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.md",
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "panel_stub_path": "lab/astra-capture/atp-kxatpmatch/panel_stub.json",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "kick_path": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S1_KXATPMATCH_INVENTORY_REPROOF_FREEZE_2026-09-25.json",
+  "kick_sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+  "maximize_pin_0031ET_sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+  "maximize_pin_0033ET_sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "one_knob": "inventory_slice",
+  "arms": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "nearest_dead_cards": [
+    "Cap-SR reopen FORBIDDEN",
+    "ATP-FQ reopen FORBIDDEN",
+    "Card 06 CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "digest_all_match_claimed": false,
+  "note": "new files only; RULE-FROZEN-EDIT-PREV-BYTES-001: no prior frozen Q6S1 bytes to stash (except freeze-MD typo fix under harness/_prev/); panel stub reused unchanged; cite both maximize pins 0031ET+0033ET",
+  "new_files_sha256": {
+    "freeze_md": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+    "panel_stub": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+    "frozen_experiment": "632d352c30728dc4339cc74c2ba219aae3e8e9c7dc306e8d992c0386311eef98",
+    "empty_results": "b6fab2cf7e2f4cee9889658ea2acebd6bdeab887fddf370c8081e8eddf3cffa6",
+    "examiner_hold": "eca9aad2409c5636742fe15cbc7947098cac4ba19c7d610e5e69a7454fdae72d",
+    "accept_ping": "41daf73f3c18c23d135426f1979fee2a208c9d7259e4c351969b0ddaabaedbad",
+    "capture_plan": "353efc7ce11fe7e753bd4814251cf1a5b9867385c0158ff5e492cd4f7c31d14f",
+    "scorecard_stub_md": "f8353cc1feca5add9988f38406a2def56d621f053b5044d59f7032a85b06525b",
+    "scorecard_stub_json": "2f72464583253ca3e5d3d3c8fbfd593e3fc94acc1f31396420074c85a8934e24",
+    "kick": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+    "maximize_pin_0031ET": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+    "maximize_pin_0033ET": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+    "source_pins": "1b2f188f0024b01b7182f2a5bae6d9ab22249d54adacb912bf4b35413414fd13"
+  },
+  "stamped_at_et": "2026-09-25T00:39:00-04:00"
+}
