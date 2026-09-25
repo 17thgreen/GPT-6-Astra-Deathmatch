@@ -1,0 +1,183 @@
+{
+  "results": null,
+  "pnl": null,
+  "maker_vs_taker_roi_delta": null,
+  "fresh_vs_stale_gap": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "note": "pre-ACCEPT empty; no invent fills/PnL",
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "on_repo_main": false
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+      "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "lab": "kalshi_q6s5_kxmlbspread_feequue_lab_20260925/",
+        "arms": [
+          "Q6S5A0",
+          "Q6S5A1"
+        ],
+        "arm_values": {
+          "Q6S5A0": "maker_vs_taker_native",
+          "Q6S5A1": "content_fresh_vs_stale_bin"
+        }
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "maker_vs_taker_roi_delta": null,
+        "fresh_vs_stale_gap": null,
+        "settled_join_n": null,
+        "n_books": null
+      },
+      "metrics_fill_policy": "null_until_panel_and_units_examiner_ready"
+    },
+    "fee_regime": {
+      "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "fee_cache_label": "quadratic×0.5 CACHE-LABELED (not live R1-P1 until Examiner /series pin)",
+      "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+      "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "applies": true
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A"
+      },
+      "fill_rate": {
+        "value": null,
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "fill_model_ref": null
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": null,
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ]
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 8,
+        "n/a": 4,
+        "missing": 0
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "note": "no strategy → controls not applicable (declared pre-outcome)"
+    },
+    "all_score_values_null": true
+  }
+}

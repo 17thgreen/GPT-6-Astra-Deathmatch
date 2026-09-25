@@ -1,0 +1,807 @@
+{
+  "schema_id": "astra.panel_stub.v0",
+  "panel_version": "2026-09-25.q6s5-kxmlbspread-v0",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "purpose": "GET-only MLB spread fee+queue honesty harness seed from Scout sports Q6 screen KXMLBSPREAD raw markets (authentic subset)",
+  "cohort_kind": "scout_screen_subset",
+  "series_ticker": "KXMLBSPREAD",
+  "admitted_at": null,
+  "stub_status": "NOT_ADMITTED",
+  "scout_cite": "packets/scout_sports_q6_screen/raw/markets_open_KXMLBSPREAD.json",
+  "scout_sha256": "80b52f47c836248d5869806d7f59617535e6b78258367ebe6045af4275fff7e7",
+  "scout_summary_cite": "packets/scout_sports_q6_screen/raw/markets_open_KXMLBSPREAD_SUMMARY.json",
+  "subset_selection": {
+    "method": "first_6_events_by_event_ticker_lexicographic; per event one market per team-side at lowest floor_strike (even YES-side pair across the two teams); markets copied verbatim from scout raw",
+    "events_n": 6,
+    "markets_n": 12,
+    "source_events_n": 15,
+    "source_markets_n": 93,
+    "rows": [
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP242140HOUATH",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+          "KXMLBSPREAD-26SEP242140HOUATH-HOU2"
+        ],
+        "picked_yes_sub_titles": [
+          "A's wins by over 1.5 runs",
+          "Houston wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 8
+      },
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP242140LAASEA",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+          "KXMLBSPREAD-26SEP242140LAASEA-SEA2"
+        ],
+        "picked_yes_sub_titles": [
+          "Los Angeles A wins by over 1.5 runs",
+          "Seattle wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 7
+      },
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP242210SDLAD",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+          "KXMLBSPREAD-26SEP242210SDLAD-SD2"
+        ],
+        "picked_yes_sub_titles": [
+          "Los Angeles D wins by over 1.5 runs",
+          "San Diego wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 6
+      },
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP251840PITDET-DET2",
+          "KXMLBSPREAD-26SEP251840PITDET-PIT2"
+        ],
+        "picked_yes_sub_titles": [
+          "Detroit wins by over 1.5 runs",
+          "Pittsburgh wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 6
+      },
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+          "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+        ],
+        "picked_yes_sub_titles": [
+          "Philadelphia wins by over 1.5 runs",
+          "Tampa Bay wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 6
+      },
+      {
+        "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+        "picked_tickers": [
+          "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+          "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+        ],
+        "picked_yes_sub_titles": [
+          "New York M wins by over 1.5 runs",
+          "Washington wins by over 1.5 runs"
+        ],
+        "picked_floor_strikes": [
+          1.5,
+          1.5
+        ],
+        "source_markets_n_for_event": 6
+      }
+    ]
+  },
+  "rules": [
+    "measurement_only",
+    "GET_only",
+    "no_Logan_keys",
+    "no_invent_depth_fills_pnl",
+    "results_pnl_null",
+    "does_not_ungate_S1_S2",
+    "not_KXMLBGAME_ML_retune",
+    "fee_cache_quadratic_x0.5_not_live_R1P1_until_Examiner"
+  ],
+  "cohort_summary": {
+    "events_n": 6,
+    "markets_n": 12,
+    "source_markets_n": 93,
+    "source_events_n": 15
+  },
+  "events": [
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP242140HOUATH",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-25T04:40:00Z"
+    },
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP242140LAASEA",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-25T04:40:00Z"
+    },
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP242210SDLAD",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-25T05:10:00Z"
+    },
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-26T01:40:00Z"
+    },
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-26T01:40:00Z"
+    },
+    {
+      "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+      "markets_n": 2,
+      "occurrence_datetime": "2026-09-26T01:45:00Z"
+    }
+  ],
+  "markets": [
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T01:40:00Z",
+      "created_time": "2026-09-24T06:50:51.179903Z",
+      "custom_strike": {
+        "baseball_team": "cd1bf455-5181-4740-9e7c-d88eb72baa3e"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242140HOUATH",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T04:40:00Z",
+      "expiration_time": "2026-09-28T01:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.0300",
+      "latest_expiration_time": "2026-09-28T01:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.9700",
+      "no_bid_dollars": "0.9600",
+      "no_sub_title": "A's wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T04:40:00Z",
+      "open_interest_fp": "74879.22",
+      "open_time": "2026-09-24T07:00:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If A's wins by more than 1.5 runs in the Houston vs A's professional baseball game originally scheduled for Sep 24, 2026 at 9:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+      "title": "A's wins by over 1.5 runs?",
+      "updated_time": "2026-09-25T02:05:46.350765Z",
+      "volume_24h_fp": "110639.21",
+      "volume_fp": "110948.24",
+      "yes_ask_dollars": "0.0400",
+      "yes_ask_size_fp": "3588.00",
+      "yes_bid_dollars": "0.0300",
+      "yes_bid_size_fp": "4356.30",
+      "yes_sub_title": "A's wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T01:40:00Z",
+      "created_time": "2026-09-24T06:50:51.179903Z",
+      "custom_strike": {
+        "baseball_team": "9f4268d7-a294-4698-98c5-c16e37e4ac3d"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242140HOUATH",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T04:40:00Z",
+      "expiration_time": "2026-09-28T01:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.6900",
+      "latest_expiration_time": "2026-09-28T01:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.3200",
+      "no_bid_dollars": "0.3100",
+      "no_sub_title": "Houston wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T04:40:00Z",
+      "open_interest_fp": "233709.23",
+      "open_time": "2026-09-24T07:00:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Houston wins by more than 1.5 runs in the Houston vs A's professional baseball game originally scheduled for Sep 24, 2026 at 9:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242140HOUATH-HOU2",
+      "title": "Houston wins by over 1.5 runs?",
+      "updated_time": "2026-09-25T02:05:46.350765Z",
+      "volume_24h_fp": "342809.86",
+      "volume_fp": "368201.02",
+      "yes_ask_dollars": "0.6900",
+      "yes_ask_size_fp": "6598.00",
+      "yes_bid_dollars": "0.6800",
+      "yes_bid_size_fp": "5625.56",
+      "yes_sub_title": "Houston wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T01:40:00Z",
+      "created_time": "2026-09-24T01:30:49.444783Z",
+      "custom_strike": {
+        "baseball_team": "ed037614-6769-4195-9d5f-776b26a7fe62"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242140LAASEA",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T04:40:00Z",
+      "expiration_time": "2026-09-28T01:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.2800",
+      "latest_expiration_time": "2026-09-28T01:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.7100",
+      "no_bid_dollars": "0.6900",
+      "no_sub_title": "Los Angeles A wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T04:40:00Z",
+      "open_interest_fp": "27849.13",
+      "open_time": "2026-09-24T01:40:00Z",
+      "previous_price_dollars": "0.2400",
+      "previous_yes_ask_dollars": "0.2400",
+      "previous_yes_bid_dollars": "0.2300",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Los Angeles A wins by more than 1.5 runs in the Los Angeles A vs Seattle professional baseball game originally scheduled for Sep 24, 2026 at 9:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+      "title": "Los Angeles A wins by over 1.5 runs?",
+      "updated_time": "2026-09-25T02:25:42.200089Z",
+      "volume_24h_fp": "34471.10",
+      "volume_fp": "35772.01",
+      "yes_ask_dollars": "0.3100",
+      "yes_ask_size_fp": "117.00",
+      "yes_bid_dollars": "0.2900",
+      "yes_bid_size_fp": "1703.96",
+      "yes_sub_title": "Los Angeles A wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T01:40:00Z",
+      "created_time": "2026-09-24T01:30:49.444783Z",
+      "custom_strike": {
+        "baseball_team": "00ca8318-b0fe-45c4-82c7-f43901a96114"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242140LAASEA",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T04:40:00Z",
+      "expiration_time": "2026-09-28T01:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.0800",
+      "latest_expiration_time": "2026-09-28T01:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.9400",
+      "no_bid_dollars": "0.9300",
+      "no_sub_title": "Seattle wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T04:40:00Z",
+      "open_interest_fp": "114974.72",
+      "open_time": "2026-09-24T01:40:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.4500",
+      "previous_yes_bid_dollars": "0.4300",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Seattle wins by more than 1.5 runs in the Los Angeles A vs Seattle professional baseball game originally scheduled for Sep 24, 2026 at 9:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242140LAASEA-SEA2",
+      "title": "Seattle wins by over 1.5 runs?",
+      "updated_time": "2026-09-25T02:25:42.200089Z",
+      "volume_24h_fp": "172879.07",
+      "volume_fp": "173942.81",
+      "yes_ask_dollars": "0.0700",
+      "yes_ask_size_fp": "10.00",
+      "yes_bid_dollars": "0.0600",
+      "yes_bid_size_fp": "2783.00",
+      "yes_sub_title": "Seattle wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T02:10:00Z",
+      "created_time": "2026-09-23T20:41:01.421519Z",
+      "custom_strike": {
+        "baseball_team": "5ee3dc32-f192-4b80-ac4a-fd285f36dc1a"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242210SDLAD",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T05:10:00Z",
+      "expiration_time": "2026-09-28T02:10:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.1900",
+      "latest_expiration_time": "2026-09-28T02:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.8600",
+      "no_bid_dollars": "0.8100",
+      "no_sub_title": "Los Angeles D wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T05:10:00Z",
+      "open_interest_fp": "379287.72",
+      "open_time": "2026-09-23T20:50:00Z",
+      "previous_price_dollars": "0.4400",
+      "previous_yes_ask_dollars": "0.4400",
+      "previous_yes_bid_dollars": "0.4300",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Los Angeles D wins by more than 1.5 runs in the San Diego vs Los Angeles D professional baseball game originally scheduled for Sep 24, 2026 at 10:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+      "title": "Los Angeles D wins by over 1.5 runs?",
+      "updated_time": "2026-09-23T20:50:01.078787Z",
+      "volume_24h_fp": "588961.05",
+      "volume_fp": "601840.70",
+      "yes_ask_dollars": "0.1900",
+      "yes_ask_size_fp": "33.67",
+      "yes_bid_dollars": "0.1400",
+      "yes_bid_size_fp": "758.00",
+      "yes_sub_title": "Los Angeles D wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T02:10:00Z",
+      "created_time": "2026-09-23T20:41:01.421519Z",
+      "custom_strike": {
+        "baseball_team": "807fa239-87eb-4e89-a969-649ab2027bc4"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP242210SDLAD",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-25T05:10:00Z",
+      "expiration_time": "2026-09-28T02:10:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.3200",
+      "latest_expiration_time": "2026-09-28T02:10:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.7500",
+      "no_bid_dollars": "0.6800",
+      "no_sub_title": "San Diego wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-25T05:10:00Z",
+      "open_interest_fp": "40814.56",
+      "open_time": "2026-09-23T20:50:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.2800",
+      "previous_yes_bid_dollars": "0.2700",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If San Diego wins by more than 1.5 runs in the San Diego vs Los Angeles D professional baseball game originally scheduled for Sep 24, 2026 at 10:10 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP242210SDLAD-SD2",
+      "title": "San Diego wins by over 1.5 runs?",
+      "updated_time": "2026-09-23T20:50:01.078787Z",
+      "volume_24h_fp": "43405.38",
+      "volume_fp": "58563.50",
+      "yes_ask_dollars": "0.3200",
+      "yes_ask_size_fp": "568.00",
+      "yes_bid_dollars": "0.2500",
+      "yes_bid_size_fp": "29.00",
+      "yes_sub_title": "San Diego wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:40:00Z",
+      "created_time": "2026-09-24T19:51:49.197101Z",
+      "custom_strike": {
+        "baseball_team": "8905d233-d4fc-485d-9df7-3092bb192b3e"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:40:00Z",
+      "expiration_time": "2026-09-28T22:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-09-28T22:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.6900",
+      "no_bid_dollars": "0.6700",
+      "no_sub_title": "Detroit wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:40:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-09-24T20:01:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Detroit wins by more than 1.5 runs in the Pittsburgh vs Detroit professional baseball game originally scheduled for Sep 25, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "title": "Detroit wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T20:01:00.408184Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.3300",
+      "yes_ask_size_fp": "14507.51",
+      "yes_bid_dollars": "0.3100",
+      "yes_bid_size_fp": "6114.06",
+      "yes_sub_title": "Detroit wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:40:00Z",
+      "created_time": "2026-09-24T19:51:49.197101Z",
+      "custom_strike": {
+        "baseball_team": "7f7b33bd-0aa9-4128-a9ba-94adc9bacc29"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:40:00Z",
+      "expiration_time": "2026-09-28T22:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.3600",
+      "latest_expiration_time": "2026-09-28T22:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.6400",
+      "no_bid_dollars": "0.6200",
+      "no_sub_title": "Pittsburgh wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:40:00Z",
+      "open_interest_fp": "1.50",
+      "open_time": "2026-09-24T20:01:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Pittsburgh wins by more than 1.5 runs in the Pittsburgh vs Detroit professional baseball game originally scheduled for Sep 25, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "title": "Pittsburgh wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T20:01:00.408184Z",
+      "volume_24h_fp": "1.50",
+      "volume_fp": "1.50",
+      "yes_ask_dollars": "0.3800",
+      "yes_ask_size_fp": "11949.11",
+      "yes_bid_dollars": "0.3600",
+      "yes_bid_size_fp": "7924.17",
+      "yes_sub_title": "Pittsburgh wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:40:00Z",
+      "created_time": "2026-09-24T19:51:51.828492Z",
+      "custom_strike": {
+        "baseball_team": "bf277158-b28d-4a0e-aa3b-54fd3acd3009"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:40:00Z",
+      "expiration_time": "2026-09-28T22:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.3900",
+      "latest_expiration_time": "2026-09-28T22:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.6200",
+      "no_bid_dollars": "0.6100",
+      "no_sub_title": "Philadelphia wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:40:00Z",
+      "open_interest_fp": "303.69",
+      "open_time": "2026-09-24T20:01:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Philadelphia wins by more than 1.5 runs in the Tampa Bay vs Philadelphia professional baseball game originally scheduled for Sep 25, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "title": "Philadelphia wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T20:01:00.408184Z",
+      "volume_24h_fp": "336.69",
+      "volume_fp": "336.69",
+      "yes_ask_dollars": "0.3900",
+      "yes_ask_size_fp": "2169.00",
+      "yes_bid_dollars": "0.3800",
+      "yes_bid_size_fp": "6672.02",
+      "yes_sub_title": "Philadelphia wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:40:00Z",
+      "created_time": "2026-09-24T19:51:51.828492Z",
+      "custom_strike": {
+        "baseball_team": "942f3f85-869a-4f7a-8e5a-336365c5294b"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:40:00Z",
+      "expiration_time": "2026-09-28T22:40:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-09-28T22:40:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.7300",
+      "no_bid_dollars": "0.7200",
+      "no_sub_title": "Tampa Bay wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:40:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-09-24T20:01:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Tampa Bay wins by more than 1.5 runs in the Tampa Bay vs Philadelphia professional baseball game originally scheduled for Sep 25, 2026 at 6:40 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "title": "Tampa Bay wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T20:01:00.408184Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.2800",
+      "yes_ask_size_fp": "14071.07",
+      "yes_bid_dollars": "0.2700",
+      "yes_bid_size_fp": "585.00",
+      "yes_sub_title": "Tampa Bay wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:45:00Z",
+      "created_time": "2026-09-24T21:31:00.16725Z",
+      "custom_strike": {
+        "baseball_team": "c4a480e0-1cf0-4326-981f-dcf507692bf6"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:45:00Z",
+      "expiration_time": "2026-09-28T22:45:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.4100",
+      "latest_expiration_time": "2026-09-28T22:45:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.5900",
+      "no_bid_dollars": "0.5800",
+      "no_sub_title": "New York M wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:45:00Z",
+      "open_interest_fp": "35.00",
+      "open_time": "2026-09-24T21:40:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If New York M wins by more than 1.5 runs in the New York M vs Washington professional baseball game originally scheduled for Sep 25, 2026 at 6:45 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "title": "New York M wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T21:40:00.214034Z",
+      "volume_24h_fp": "35.00",
+      "volume_fp": "35.00",
+      "yes_ask_dollars": "0.4200",
+      "yes_ask_size_fp": "697.00",
+      "yes_bid_dollars": "0.4100",
+      "yes_bid_size_fp": "3113.82",
+      "yes_sub_title": "New York M wins by over 1.5 runs"
+    },
+    {
+      "can_close_early": true,
+      "close_time": "2026-09-28T22:45:00Z",
+      "created_time": "2026-09-24T21:31:00.16725Z",
+      "custom_strike": {
+        "baseball_team": "517134f6-9c3a-4fbe-bad5-3fbe925f9a02"
+      },
+      "early_close_condition": "This market will close and expire after a winner is declared.",
+      "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+      "exchange_index": 3,
+      "expected_expiration_time": "2026-09-26T01:45:00Z",
+      "expiration_time": "2026-09-28T22:45:00Z",
+      "expiration_value": "",
+      "floor_strike": 1.5,
+      "last_price_dollars": "0.0000",
+      "latest_expiration_time": "2026-09-28T22:45:00Z",
+      "liquidity_dollars": "0.0000",
+      "market_type": "binary",
+      "no_ask_dollars": "0.7300",
+      "no_bid_dollars": "0.7000",
+      "no_sub_title": "Washington wins by over 1.5 runs",
+      "notional_value_dollars": "1.0000",
+      "occurrence_datetime": "2026-09-26T01:45:00Z",
+      "open_interest_fp": "0.00",
+      "open_time": "2026-09-24T21:40:00Z",
+      "previous_price_dollars": "0.0000",
+      "previous_yes_ask_dollars": "0.0000",
+      "previous_yes_bid_dollars": "0.0000",
+      "price_level_structure": "linear_cent",
+      "price_ranges": [
+        {
+          "end": "1.0000",
+          "start": "0.0000",
+          "step": "0.0100"
+        }
+      ],
+      "result": "",
+      "rules_primary": "If Washington wins by more than 1.5 runs in the New York M vs Washington professional baseball game originally scheduled for Sep 25, 2026 at 6:45 PM EDT, then the market resolves to Yes.",
+      "rules_secondary": "Kalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "settlement_timer_seconds": 60,
+      "status": "active",
+      "strike_type": "greater",
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "title": "Washington wins by over 1.5 runs?",
+      "updated_time": "2026-09-24T21:40:00.214034Z",
+      "volume_24h_fp": "0.00",
+      "volume_fp": "0.00",
+      "yes_ask_dollars": "0.3000",
+      "yes_ask_size_fp": "20526.95",
+      "yes_bid_dollars": "0.2700",
+      "yes_bid_size_fp": "2750.14",
+      "yes_sub_title": "Washington wins by over 1.5 runs"
+    }
+  ],
+  "results": null,
+  "pnl": null,
+  "stubbed_at_et": "2026-09-25T00:15:00-04:00"
+}
