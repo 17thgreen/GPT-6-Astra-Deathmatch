@@ -1,0 +1,107 @@
+{
+  "source_template": {
+    "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+    "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "block": "preregistration_checklist"
+  },
+  "source_pdf": {
+    "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+    "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+    "page": 16,
+    "section": "Minimum preregistration"
+  },
+  "applicability_note": "v1.2 marks checklist REQUIRED for cards 01-04; Q6S1 is not card 01-04 — included per Conductor all-new-freeze rule.",
+  "declared_pre_outcome_at_et": "2026-09-25T00:39:00-04:00",
+  "gate_status": null,
+  "counts": {
+    "satisfied": 8,
+    "n/a": 4,
+    "missing": 0
+  },
+  "items": [
+    {
+      "id": 1,
+      "key": "market_universe",
+      "item": "Freeze the market universe",
+      "status": "satisfied",
+      "evidence_ref": "KXATPMATCH panel stub 2026-09-23.atp-kxatpmatch-v0 6/12 sha256 ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f + scout hunt 48/24 sha256 14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7 + sports-screen raw 28/14 sha256 b603474b3ca336b0a3678ff0deb8a937dfdcc4205e8e24db4d657d40d2323c60 (pin; panel not reinvented)"
+    },
+    {
+      "id": 2,
+      "key": "exclusions",
+      "item": "Freeze the exclusions",
+      "status": "satisfied",
+      "evidence_ref": "KXATPMATCH ONLY; exclude Cap-SR/ATP-FQ/ETH-FQ/Q6S5 reopen; exclude PR57 INFRA duplicate; exclude invent fills/PnL/depth/settlement_ts; exclude S1 ML retune; exclude Pass-3/B2 promote"
+    },
+    {
+      "id": 3,
+      "key": "receipt_time_information_set",
+      "item": "Freeze the receipt-time information set",
+      "status": "satisfied",
+      "evidence_ref": "Parent ATP panel + scout/sports raw GET bodies as received; in-memory GET stub at implement (live_gets=0)"
+    },
+    {
+      "id": 4,
+      "key": "fee_regime",
+      "item": "Freeze the fee regime",
+      "status": "satisfied",
+      "evidence_ref": "quadratic_with_maker_fees×1 CACHE-LABELED; feebook @22371178cb2663250b4762f328069571c48cb551 FIXED; cache ≠ R1-P1 live until Examiner /series test"
+    },
+    {
+      "id": 5,
+      "key": "order_timing",
+      "item": "Freeze the order timing",
+      "status": "n/a",
+      "evidence_ref": "no orders; GET-only; refuse /orders"
+    },
+    {
+      "id": 6,
+      "key": "sizing",
+      "item": "Freeze the sizing",
+      "status": "n/a",
+      "evidence_ref": "no orders / no sizing; $5k bakeoff is shared rule pointer only"
+    },
+    {
+      "id": 7,
+      "key": "fill_model",
+      "item": "Freeze the fill model",
+      "status": "n/a",
+      "evidence_ref": "no fills; invent fills REFUSED"
+    },
+    {
+      "id": 8,
+      "key": "stopping_rules",
+      "item": "Freeze the stopping rules",
+      "status": "satisfied",
+      "evidence_ref": "freeze-before-implement; HOLD_PRE_PR; no dual-cloud; no cloud until ACCEPT"
+    },
+    {
+      "id": 9,
+      "key": "evaluation_metrics",
+      "item": "Freeze the evaluation metrics",
+      "status": "satisfied",
+      "evidence_ref": "inventory_delta_flat_vs_binned / unresolved_inventory / position_bucket_gap / settled_join_n / n_books / results / pnl + v1.2 common_scorecard — all null"
+    },
+    {
+      "id": 10,
+      "key": "limit_candidate_variants",
+      "item": "Limit candidate variants",
+      "status": "satisfied",
+      "evidence_ref": "one knob inventory_slice; arms Q6S1A0 / Q6S1A1"
+    },
+    {
+      "id": 11,
+      "key": "log_every_attempted_variant",
+      "item": "Log every attempted variant",
+      "status": "satisfied",
+      "evidence_ref": "only Q6S1A0/Q6S1A1 declared; further variants need new freeze"
+    },
+    {
+      "id": 12,
+      "key": "separate_discovery_tuning_evaluation_periods",
+      "item": "Separate discovery, tuning and untouched evaluation periods",
+      "status": "n/a",
+      "evidence_ref": "measurement-only; panel/scout cohorts are pins"
+    }
+  ]
+}

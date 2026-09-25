@@ -1,0 +1,15 @@
+{
+  "packet": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "scored": false,
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "template_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "metrics_all_null": true,
+  "arms": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "stamped_at_et": "2026-09-25T00:39:00-04:00"
+}

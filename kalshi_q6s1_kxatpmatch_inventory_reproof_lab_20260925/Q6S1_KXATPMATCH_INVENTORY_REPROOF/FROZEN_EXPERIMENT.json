@@ -1,0 +1,94 @@
+{
+  "packet_id": "Q6S1-KXATPMATCH-INVENTORY-REPROOF",
+  "feature_family": "Q6S1-ATP-INVENTORY",
+  "status": "FROZEN",
+  "series_ticker": "KXATPMATCH",
+  "lab_dir": "kalshi_q6s1_kxatpmatch_inventory_reproof_lab_20260925/",
+  "knob": "inventory_slice",
+  "arms": [
+    "Q6S1A0",
+    "Q6S1A1"
+  ],
+  "arm_values": {
+    "Q6S1A0": "flat_control",
+    "Q6S1A1": "inventory_bin_exposure"
+  },
+  "fee_cache": {
+    "fee_type": "quadratic_with_maker_fees",
+    "multiplier": 1,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1_until_examiner_series_pin": true,
+    "fee_src": "cache:sports_screen_Q6S1_and_ATP_FQ_pin",
+    "note": "Honest ATP FQ / sports-screen pin; NOT quadratic×0.5; NOT live R1-P1"
+  },
+  "results": null,
+  "pnl": null,
+  "inventory_delta_flat_vs_binned": null,
+  "unresolved_inventory": null,
+  "position_bucket_gap": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "admitted_at": null,
+  "panel_version": "2026-09-23.atp-kxatpmatch-v0",
+  "does_not_run_admit_py": true,
+  "nearest_dead_cards": [
+    "Cap-SR reopen FORBIDDEN",
+    "ATP-FQ reopen FORBIDDEN",
+    "Card 06 CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "stamped_at_et": "2026-09-25T00:39:00-04:00",
+  "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+  "kick_sha256": "63eab2f727c9636196e08092339d5efc10439396bc9a7d3f696b7344ac746cb6",
+  "maximize_pin_0031ET_sha256": "7629b19f9a9e2d2aabf83bf46918963d118f6333ffc35f4af5bd227f72b9c09e",
+  "maximize_pin_0033ET_sha256": "d36b57761fa1ca3d84af1b8c58e03618e94e283857fbade5ff3f82666f0d463d",
+  "sports_screen_freeze_sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+  "sports_screen_accept_sha256": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+  "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+  "atp_fq_freeze_sha256": "4d4ce944946e72dd40567d14388fe11c6145fbbb32505a880bcf80a4c8b4dffe",
+  "atp_rj_freeze_sha256": "dc9fcb326a97ce24267ed96438bf403687bc9aef6b79dccef3483d0e4cdeeb69",
+  "scout_hunt_sha256": "14c99ec8ea00bae507a21d0e6a1879fb94d32ef69ad4b5e3b40a9952821e5da7",
+  "sports_raw_markets_sha256": "b603474b3ca336b0a3678ff0deb8a937dfdcc4205e8e24db4d657d40d2323c60",
+  "sports_raw_summary_sha256": "d5aee9c9254a0c9178b3ecc4fbd84f6db7bc29f6bc11af4df8690e4242ebe647",
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+  "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "after_merge_main": "f349ffa819960b8f641725fbf259f5430dffcff7",
+  "transport": {
+    "mode": "in_memory_GET_stub",
+    "live_gets": 0,
+    "refuse": [
+      "/orders",
+      "/portfolio"
+    ],
+    "prefer": "/events_when_/markets_hot"
+  },
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "panel_admitted.json (ATP panel remains NOT_ADMITTED; admitted_at null; Variants does not run admit.py)",
+    "live /series fee pin (fee remains CACHE-LABELED quadratic_with_maker_fees×1 until Examiner live /series)",
+    "fresh sports-screen ATP panel subset matching screen inventory 28mkts/14ev (reuse authentic 6/12 stub; do not invent markets)",
+    "invented fills / PnL / depth / settlement_ts / inventory deltas (null until Clock+Examiner)",
+    "Q6S1-specific scout PDF / archivist index prior entry (none on disk at freeze; Archivist ping only)"
+  ],
+  "p16_preregistration_checklist": {
+    "source_template": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "block": "preregistration_checklist"
+    },
+    "source_pdf": {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "page": 16,
+      "section": "Minimum preregistration"
+    },
+    "applicability_note": "v1.2 marks checklist REQUIRED for cards 01-04; Q6S1 is not card 01-04 — included per Conductor all-new-freeze rule.",
+    "declared_pre_outcome_at_et": "2026-09-25T00:39:00-04:00",
+    "counts": {
+      "satisfied": 8,
+      "n/a": 4,
+      "missing": 0
+    }
+  }
+}
