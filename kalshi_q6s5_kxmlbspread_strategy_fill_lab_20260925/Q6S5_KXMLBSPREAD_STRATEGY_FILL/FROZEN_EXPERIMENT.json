@@ -1,0 +1,358 @@
+{
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+  "feature_family": "strategy_fill_pnl_path",
+  "series_ticker": "KXMLBSPREAD",
+  "status": "FROZEN",
+  "action": "FREEZE_ONLY",
+  "lab_dir_proposed": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/",
+  "lab_dir_created": false,
+  "knob": "fill_model",
+  "knob_orthogonal_to": "analysis_slice",
+  "knob_values": {
+    "public_trade_through_conservative": {
+      "fill_source": "MODEL: maker legs filled only by a pinned public trade printing strictly through the resting price after displayed queue-ahead at placement is conservatively depleted (no cancel credit); taker legs at displayed touch of pinned measured orderbook snapshot at receipt time",
+      "inputs": [
+        "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c000N__*.json (29 dated snapshots)",
+        "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/* (11744 trades / 12 tickers)",
+        "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/* (status/result)"
+      ],
+      "availability_on_disk": "AVAILABLE",
+      "label": "simulated",
+      "tag": "replay",
+      "observed": false,
+      "counts_toward_keep": false,
+      "counts_toward_keep_note": "v1.2 simulated_fills.counts_toward_keep=false — NOT overridden"
+    },
+    "mechanic_demo_observed": {
+      "fill_source": "OBSERVED on Kalshi demo only: fills from The Mechanic's own resting path (rest→poll→cancel, demo-api.kalshi.co) on KXMLBSPREAD tickers; Mechanic-owned, explicit; Variants places nothing",
+      "inputs": [],
+      "availability_on_disk": "UNAVAILABLE",
+      "unavailable_reason": "No Mechanic demo KXMLBSPREAD resting/fill artifact on disk. Existing Mechanic demo artifacts are R3-P2 KXNFLGAME/KXNFLSPREAD queue/trade-step samples (packets/r3_p2_queue_position/results/demo_queue_sample_series.json sha256 74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4; demo_trade_step_sample_series_retry.json sha256 6e2c82570e72efd19c4c77cac01c8727965938dfbceefec7a8a7d2f2db667db1) with zero rows fill_count>0 — not borrowed",
+      "label": "demo",
+      "observed": true,
+      "counts_toward_keep": "eligible for common_scorecard.fill_rate (demo) only if/when a Mechanic KXMLBSPREAD demo artifact is pinned by amendment",
+      "cells": "null/UNAVAILABLE"
+    }
+  },
+  "arms": [
+    "Q6S5A0",
+    "Q6S5A1"
+  ],
+  "arm_values": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin"
+  },
+  "grid_cells": {
+    "Q6S5A0|public_trade_through_conservative": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5A0|mechanic_demo_observed": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "UNAVAILABLE"
+    },
+    "Q6S5A1|public_trade_through_conservative": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5A1|mechanic_demo_observed": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "UNAVAILABLE"
+    }
+  },
+  "strategy_fixed": {
+    "id": "two_sided_touch_1lot_hold_to_settle",
+    "knob": false,
+    "universe": "panel_admitted 12 KXMLBSPREAD markets verbatim",
+    "placement": "each dated measured orderbook snapshot where latest measured market GET at/before captured_utc has status=='active'",
+    "maker": "1-lot post-only bid at best displayed bid per side (yes,no), back of queue; queue_ahead=displayed size at price; cancel/replace at next same-ticker snapshot; last rests until status≠active or per-ticker trades request ts_utc; unfilled → no position",
+    "taker": "1-lot buy per side at displayed best ask (=1−best opposite bid) at captured_utc; requires displayed opposite bid size ≥1 else no fill",
+    "exit": "hold to settlement",
+    "maker_fill_rule": {
+      "our_side_prints_for_yes_bid": "native taker_side=='no' (≡ taker_book_side=='ask' per R3_P2_TRADE_STEP_FILL_LABEL_v1); rows with conflicting native fields excluded",
+      "window": "created_time > t0 and < cancel time",
+      "cum": "Σcount_fp of our-side prints with yes_price_dollars ≤ p since t0; no cancel credit",
+      "fill": "first our-side print with yes_price_dollars < p (strictly through) where cum incl. that print ≥ queue_ahead+1; qty=1; price=p; time=print created_time",
+      "no_side": "symmetric using no_price_dollars and taker_side=='yes'"
+    },
+    "pnl": "settle_value($1 if our side == observed finalized result else $0) − fill_price − fee; unresolved → null + unresolved_inventory",
+    "roi": "Σpnl/Σ(fill_price+fee) over resolved filled contracts",
+    "settlement_source": "measured raw/markets status=='finalized' with non-empty result (6/12 on disk); Sep-25 6 markets absent",
+    "stresses": {
+      "one_tick_worse": "$0.01 against our side on every fill",
+      "fees_2x": "2× fee"
+    }
+  },
+  "fee": {
+    "fee_pin_path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+    "fee_pin_sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "observed_fee_type": "quadratic",
+    "observed_fee_multiplier": 0.5,
+    "feebook_formula_id_observed": null,
+    "label": "CACHE_NOT_R1P1",
+    "cache_labeled": true,
+    "fee_honest": false,
+    "claim_as_live_R1P1": false,
+    "fee_function": "feebook.order_fee(role, 1, price) @22371178cb2663250b4762f328069571c48cb551 using only FEE_PIN-observed series terms; maker role via feebook.resolve_terms (value not asserted by freeze)",
+    "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+  },
+  "admit1_gap_exclusion": {
+    "ruling": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+      "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "status": "PINNED"
+    },
+    "gap_record": {
+      "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+      "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+      "status": "PINNED_MATCH_RULING"
+    },
+    "ruling_gap_utc": [
+      "2026-09-27T13:31:52Z",
+      "2026-09-29T20:39:41Z"
+    ],
+    "enforced_exclusion_window_utc": {
+      "start_inclusive": "2026-09-27T00:00:00Z",
+      "end_exclusive": "2026-09-30T04:00:00Z",
+      "note": "calendar superset of ruling gap covering Sep 27–29 in UTC and ET; packet-local; does not alter ruling"
+    },
+    "applies_to": [
+      "book captured_utc / filename stamp",
+      "trade created_time",
+      "market GET captured_utc",
+      "settlement GET captured_utc",
+      "settlement_ts / determination time"
+    ],
+    "enforcement": [
+      "closed input manifest: only SOURCE_PINS sha-verified inputs; fail-closed on mismatch",
+      "per-row window filter; excluded rows counted in excluded_admit1_window_n by source; never imputed",
+      "ADMIT-1 prospective capture.sqlite REFUSED as input",
+      "pre-run assertion: pinned inputs span 2026-09-23T22:06:01Z..2026-09-25T06:03:02Z → expected excluded_admit1_window_n=0; non-zero must be reported",
+      "future settled re-GET admissible only if captured outside window and pinned by amendment before run",
+      "required unit test: synthetic in-window row rejected"
+    ],
+    "backfill": false,
+    "interpolation": false
+  },
+  "results": null,
+  "pnl": null,
+  "maker_vs_taker_roi_delta": null,
+  "fresh_vs_stale_gap": null,
+  "fill_rate_simulated": null,
+  "filled_contracts_simulated": null,
+  "requested_contracts_simulated": null,
+  "unresolved_inventory": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "excluded_admit1_window_n": null,
+  "panel_admitted": {
+    "path": "lab/astra-capture/q6s5-kxmlbspread/panel_admitted.json",
+    "sha256": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+    "admitted_at": "2026-09-25T04:37:47Z",
+    "events": 6,
+    "markets": 12
+  },
+  "kick_pins": {
+    "measured_ready": {
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/READY_NOT_SCORED.json",
+      "sha256": "0617d540763d71a813672c9f9aa6766072c8461a1290c124b89e9fb3f2bf5de2",
+      "rehash_on_box": "0617d540763d71a813672c9f9aa6766072c8461a1290c124b89e9fb3f2bf5de2",
+      "result": "MATCH",
+      "rehashed_at_et": "2026-09-29T16:52:00-04:00"
+    },
+    "trades_ready": {
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/COLLECTOR_READY_TRADES_NOT_SCORED.json",
+      "sha256": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+      "rehash_on_box": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+      "result": "MATCH",
+      "rehashed_at_et": "2026-09-29T16:52:00-04:00"
+    },
+    "fee_pin": {
+      "path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+      "sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+      "rehash_on_box": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+      "result": "MATCH",
+      "rehashed_at_et": "2026-09-29T16:52:00-04:00"
+    },
+    "examiner_trades_join_score": {
+      "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+      "sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+      "rehash_on_box": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+      "result": "MATCH",
+      "rehashed_at_et": "2026-09-29T16:52:00-04:00"
+    }
+  },
+  "queue_pin": {
+    "path": "lab/governance/astra/packets/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+    "cited_sha256": "08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6",
+    "on_disk_sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "result": "MISMATCH",
+    "note": "on-disk queue carries post-kick fields (not_kicked_yet=false, kicked_at_et, kick_packet, kick_sha256); no file under /workspace/lab hashes to 08aa54de…; no _prev copy; NOT recreated"
+  },
+  "kick_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+  "authority_accept_sha256": "ac713e5fcbdda218d98e88bf4faab340204d8ad47dc9f0613d3762feca69b50d",
+  "merge_pr59": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "merge_pr59_github_verified": true,
+  "harness_freeze_sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+  "harness_accept_sha256": "5adc42f9c9533238a2187aafe7593bdf1b8cdec6d12b8d3e9b12cb5ab29000fc",
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "nearest_dead_cards": [
+    "invent fills/PnL REFUSED (nearest dead card)",
+    "S1 KXMLBGAME ML retune FORBIDDEN",
+    "Q6-000 retune FORBIDDEN",
+    "Cap-SR reopen FORBIDDEN",
+    "Refiner routing NONE",
+    "Q6S1 retune FORBIDDEN",
+    "Card 06 open-window CLOSED",
+    "Lee-Ready REFUSED"
+  ],
+  "refuse": [
+    "invent fills/PnL",
+    "Lee-Ready",
+    "live orders",
+    "Variants demo orders (Mechanic only)",
+    "dual-cloud",
+    "claim CACHE as R1-P1",
+    "S1 KXMLBGAME ML retune",
+    "Q6-000 retune",
+    "Cap-SR reopen",
+    "Refiner routing",
+    "Q6S1 retune",
+    "admit.py",
+    "read ADMIT-1 capture.sqlite",
+    "any data in ADMIT-1 window",
+    "backfill/interpolate",
+    "edit prior SCORE/ACCEPT/FEE_PIN/HOLD/READY bytes",
+    "count simulated fills toward KEEP",
+    "cloud/PR before Conductor ACCEPT"
+  ],
+  "does_not_run_admit_py": true,
+  "live_http": false,
+  "orders": false,
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "CONDUCTOR_QUEUE bytes sha256 08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6 (on-disk queue = 7472b8ac…, post-kick fields; no _prev; not recreated)",
+    "Mechanic demo KXMLBSPREAD resting/cancel/fill artifact (fill_model=mechanic_demo_observed UNAVAILABLE; existing Mechanic demo artifacts are R3-P2 NFL tickers only, 0 rows fill_count>0)",
+    "Examiner-pinned KXMLBSPREAD feebook formula_id (FEE_PIN formula_id null → CACHE_NOT_R1P1)",
+    "Settlement results for 6/12 panel markets (Sep-25 PITDET/TBPHI/NYMWSH ×2) — not on disk; unresolved_inventory until a Collector settled re-GET is pinned by amendment",
+    "Archivist fee/account-version manifest (v1.2 pending)",
+    "Untouched evaluation period (p16 item 12 missing)",
+    "ADMIT-1 capture 2026-09-27T13:31:52Z → 2026-09-29T20:39:41Z (permanent gap per ruling ac7cfe63…; excluded, never backfilled)"
+  ],
+  "freeze_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+  "freeze_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+  "p16_preregistration_checklist": {
+    "source_template": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "block": "preregistration_checklist"
+    },
+    "source_pdf": {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "page": 16,
+      "section": "Minimum preregistration"
+    },
+    "applicability_note": "v1.2 REQUIRED for cards 01-04; Q6S5 not card 01-04 — included per Conductor all-new-freeze rule",
+    "declared_pre_outcome_at_et": "2026-09-29T16:52:00-04:00",
+    "counts": {
+      "satisfied": 11,
+      "n/a": 0,
+      "missing": 1
+    },
+    "items": [
+      {
+        "id": 1,
+        "key": "market_universe",
+        "item": "Freeze the market universe",
+        "status": "satisfied",
+        "evidence_ref": "panel_admitted 6e/12m e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1; KXMLBSPREAD only"
+      },
+      {
+        "id": 2,
+        "key": "exclusions",
+        "item": "Freeze the exclusions",
+        "status": "satisfied",
+        "evidence_ref": "KXMLBSPREAD only; non-active at placement excluded; ADMIT-1 window [2026-09-27T00:00Z,2026-09-30T04:00Z) excluded; ADMIT-1 capture.sqlite refused; conflicting native taker fields excluded; no S1/Q6-000/Cap-SR/Q6S1"
+      },
+      {
+        "id": 3,
+        "key": "receipt_time_information_set",
+        "item": "Freeze the receipt-time information set",
+        "status": "satisfied",
+        "evidence_ref": "book snapshot at t0 + trades created_time>t0 only; sha-pinned inputs"
+      },
+      {
+        "id": 4,
+        "key": "fee_regime",
+        "item": "Freeze the fee regime",
+        "status": "satisfied",
+        "evidence_ref": "feebook@22371178 with FEE_PIN terms quadratic×0.5; CACHE_NOT_R1P1; fees_2x stress"
+      },
+      {
+        "id": 5,
+        "key": "order_timing",
+        "item": "Freeze the order timing",
+        "status": "satisfied",
+        "evidence_ref": "placement at each eligible dated measured snapshot; maker cancel/replace at next snapshot / tape end / status≠active; taker at t0"
+      },
+      {
+        "id": 6,
+        "key": "sizing",
+        "item": "Freeze the sizing",
+        "status": "satisfied",
+        "evidence_ref": "1 contract per leg per side; fixed"
+      },
+      {
+        "id": 7,
+        "key": "fill_model",
+        "item": "Freeze the fill model",
+        "status": "satisfied",
+        "evidence_ref": "one knob fill_model ∈ {public_trade_through_conservative (AVAILABLE, MODEL), mechanic_demo_observed (UNAVAILABLE)}; rules in freeze"
+      },
+      {
+        "id": 8,
+        "key": "stopping_rules",
+        "item": "Freeze the stopping rules",
+        "status": "satisfied",
+        "evidence_ref": "freeze-before-implement; ACCEPT before cloud; single cloud; Examiner HOLD_PRE_PR; hold to settlement; unresolved stays null"
+      },
+      {
+        "id": 9,
+        "key": "evaluation_metrics",
+        "item": "Freeze the evaluation metrics",
+        "status": "satisfied",
+        "evidence_ref": "maker_vs_taker_roi_delta, fresh_vs_stale_gap, simulated_fills, unresolved_inventory, stresses, v1.2 nulls"
+      },
+      {
+        "id": 10,
+        "key": "limit_candidate_variants",
+        "item": "Limit candidate variants",
+        "status": "satisfied",
+        "evidence_ref": "one knob fill_model × 2 values; arms Q6S5A0/A1 unchanged"
+      },
+      {
+        "id": 11,
+        "key": "log_every_attempted_variant",
+        "item": "Log every attempted variant",
+        "status": "satisfied",
+        "evidence_ref": "only 2 values declared; any other value needs new freeze"
+      },
+      {
+        "id": 12,
+        "key": "separate_discovery_tuning_evaluation_periods",
+        "item": "Separate discovery, tuning and untouched evaluation periods",
+        "status": "missing",
+        "evidence_ref": "no untouched evaluation period: pinned 2026-09-25 books/trades already observed for classification counts (not fills/PnL); no tuned parameters; clean holdout needs new post-freeze capture outside ADMIT-1 window"
+      }
+    ]
+  },
+  "prev_bytes_rule": "RULE-FROZEN-EDIT-PREV-BYTES-001 — create-only; no frozen file edited; no _prev write",
+  "stamped_at_et": "2026-09-29T16:52:00-04:00"
+}

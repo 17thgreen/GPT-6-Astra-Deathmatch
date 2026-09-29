@@ -1,0 +1,269 @@
+{
+  "results": null,
+  "pnl": null,
+  "maker_vs_taker_roi_delta": null,
+  "fresh_vs_stale_gap": null,
+  "fill_rate_simulated": null,
+  "filled_contracts_simulated": null,
+  "requested_contracts_simulated": null,
+  "unresolved_inventory": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "excluded_admit1_window_n": null,
+  "grid_cells": {
+    "Q6S5A0|public_trade_through_conservative": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5A0|mechanic_demo_observed": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "UNAVAILABLE"
+    },
+    "Q6S5A1|public_trade_through_conservative": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5A1|mechanic_demo_observed": {
+      "arm_roi": null,
+      "gap_or_delta": null,
+      "status": "UNAVAILABLE"
+    }
+  },
+  "note": "pre-ACCEPT empty; no invent fills/PnL; results/pnl/arm ROI/gap null until Examiner-scored run",
+  "freeze_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "on_repo_main": false
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+      "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+      "feature_family": "strategy_fill_pnl_path",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "lab": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/",
+        "knob": "fill_model",
+        "knob_values": [
+          "public_trade_through_conservative",
+          "mechanic_demo_observed"
+        ],
+        "arms": [
+          "Q6S5A0",
+          "Q6S5A1"
+        ],
+        "arm_values": {
+          "Q6S5A0": "maker_vs_taker_native",
+          "Q6S5A1": "content_fresh_vs_stale_bin"
+        }
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "maker_vs_taker_roi_delta": null,
+        "fresh_vs_stale_gap": null,
+        "fill_rate_simulated": null,
+        "filled_contracts_simulated": null,
+        "requested_contracts_simulated": null,
+        "unresolved_inventory": null,
+        "settled_join_n": null,
+        "n_books": null,
+        "excluded_admit1_window_n": null
+      },
+      "grid_cells": {
+        "Q6S5A0|public_trade_through_conservative": {
+          "arm_roi": null,
+          "gap_or_delta": null,
+          "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+        },
+        "Q6S5A0|mechanic_demo_observed": {
+          "arm_roi": null,
+          "gap_or_delta": null,
+          "status": "UNAVAILABLE"
+        },
+        "Q6S5A1|public_trade_through_conservative": {
+          "arm_roi": null,
+          "gap_or_delta": null,
+          "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+        },
+        "Q6S5A1|mechanic_demo_observed": {
+          "arm_roi": null,
+          "gap_or_delta": null,
+          "status": "UNAVAILABLE"
+        }
+      },
+      "metrics_fill_policy": "null_until_examiner_scored_run"
+    },
+    "fee_regime": {
+      "feebook_formula_id": null,
+      "feebook_formula_id_lab_claim_path": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "fee_label": "CACHE_NOT_R1P1 (FEE_PIN 9c0f3554… formula_id absent)",
+      "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+      "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "applies": true,
+      "archivist_manifest": null
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "measured": false,
+        "unit": "USD"
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "measured": false,
+        "unit": "USD"
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "measured": false,
+        "unit": "USD"
+      },
+      "calibration": {
+        "value": null,
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A"
+      },
+      "fill_rate": {
+        "value": null,
+        "measured": false,
+        "note": "demo/shadow/live only; mechanic_demo_observed UNAVAILABLE"
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "label": "simulated",
+      "included_fill_tags": [
+        "replay",
+        "simulated"
+      ],
+      "counts_toward_keep": false,
+      "counts_toward_keep_overridden": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "filled_contracts_simulated": null,
+      "requested_contracts_simulated": null,
+      "fill_model_ref": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md#fill_model=public_trade_through_conservative",
+      "fill_model_ref_freeze_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d"
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false,
+        "tick_size_ref": "$0.01"
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": null,
+      "variants_proposed_for_model_value": "historical replay",
+      "owner": "Archivist (labeling); Examiner records",
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ]
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 11,
+        "n/a": 0,
+        "missing": 1
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": true,
+        "result": null,
+        "declared_in_freeze": true,
+        "note": "PnL 0 baseline"
+      },
+      "note": "fixed two-sided execution strategy; no forecast"
+    },
+    "admit1_gap": {
+      "ruling_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "enforced_exclusion_window_utc": {
+        "start_inclusive": "2026-09-27T00:00:00Z",
+        "end_exclusive": "2026-09-30T04:00:00Z",
+        "note": "calendar superset of ruling gap covering Sep 27–29 in UTC and ET; packet-local; does not alter ruling"
+      },
+      "excluded_admit1_window_n": null
+    },
+    "all_score_values_null": true
+  }
+}

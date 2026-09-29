@@ -1,0 +1,147 @@
+{
+  "checked_against": "vendored pin directory",
+  "vendored_pin_dir": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL",
+  "origin_main_checked_commit": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "checked_before_strategy_fill_code": true,
+  "governance_paths_recreated": false,
+  "bytes_recreated": false,
+  "digest_all_match_claimed": true,
+  "primary_authentic_bundle": {
+    "version": "v2",
+    "role": "primary",
+    "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_v2_2026-09-25.tgz",
+    "sha256": "739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a",
+    "note": "Variants authentic pin bundle v2. Superset of v1 6602e07e. Contains ACCEPT a5398129, QUEUE_LINEAGE 86fad73c, and the Variants pings."
+  },
+  "v1_subset_bundle": {
+    "version": "v1",
+    "role": "subset",
+    "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_2026-09-25.tgz",
+    "sha256": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993",
+    "note": "Variants authentic pin bundle v1. Subset of v2 739d81d6."
+  },
+  "pins": [
+    {
+      "key": "conductor_accept",
+      "role": "implementation ACCEPT",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+      "claimed_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3"
+    },
+    {
+      "key": "conductor_accept_companion",
+      "role": "companion rulings",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json",
+      "claimed_sha256": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4"
+    },
+    {
+      "key": "reconcile_dual_accept",
+      "role": "dual ACCEPT reconcile",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_RECONCILE_Q6S5_STRATEGY_FILL_DUAL_ACCEPT_SOLE_CLOUD_2026-09-29.json",
+      "claimed_sha256": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0"
+    },
+    {
+      "key": "freeze_md",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+      "claimed_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d"
+    },
+    {
+      "key": "kick",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+      "claimed_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8"
+    },
+    {
+      "key": "admit1_gap_ruling",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+      "claimed_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "window_start": "2026-09-27T00:00:00Z",
+      "window_end": "2026-09-30T04:00:00Z",
+      "window_end_exclusive": true
+    },
+    {
+      "key": "queue_after_q6s1",
+      "role": "routing-only; supersedes 08aa54de per ACCEPT a5398129",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+      "claimed_sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61"
+    },
+    {
+      "key": "packet_frozen_experiment",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+      "claimed_sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff"
+    },
+    {
+      "key": "packet_source_pins",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+      "claimed_sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1"
+    },
+    {
+      "key": "packet_empty_results",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EMPTY_RESULTS.json",
+      "claimed_sha256": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc"
+    },
+    {
+      "key": "freeze_digest",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST_2026-09-25.json",
+      "claimed_sha256": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed"
+    },
+    {
+      "key": "queue_lineage",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/QUEUE_LINEAGE.md",
+      "claimed_sha256": "86fad73cc18a2edc374279d6c9ff3e2c393f3e4dc2ad32e2de94180c2fd378b4"
+    },
+    {
+      "key": "authentic_bundle_v1",
+      "role": "v1 subset",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_2026-09-25.tgz",
+      "claimed_sha256": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993"
+    },
+    {
+      "key": "authentic_bundle_v2",
+      "role": "primary authentic bundle",
+      "path": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_v2_2026-09-25.tgz",
+      "claimed_sha256": "739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a"
+    }
+  ],
+  "superseded_not_recreated": {
+    "key": "queue_bytes_08aa54de",
+    "claimed_sha256": "08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6",
+    "recreated": false,
+    "superseded_by_sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "note": "Original queue bytes are unrecoverable and were not recreated. 7472b8ac supersedes 08aa54de per companion ACCEPT a5398129. The queue packet is routing-only. See QUEUE_LINEAGE.md."
+  },
+  "measurement_absent": [
+    {
+      "key": "mechanic_demo_artifact",
+      "item": "Mechanic demo KXMLBSPREAD artifact",
+      "invented": false
+    },
+    {
+      "key": "examiner_formula_id",
+      "item": "Examiner KXMLBSPREAD formula_id",
+      "invented": false
+    },
+    {
+      "key": "sep25_settlements_6_of_12",
+      "item": "Sep-25 settlements for 6/12 markets",
+      "invented": false
+    },
+    {
+      "key": "untouched_evaluation_period",
+      "item": "untouched evaluation period",
+      "invented": false
+    },
+    {
+      "key": "admit1_window_data",
+      "item": "ADMIT-1 window data from 2026-09-27T13:31:52Z to 2026-09-29T20:39:41Z",
+      "invented": false
+    }
+  ],
+  "absence_at_origin_main": {
+    "checked_commit": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+    "digest_all_match_claimed": false,
+    "governance_paths_recreated": false,
+    "note": "Cited lab/governance/astra/packets paths were absent at origin/main cb8957d. Those paths were not recreated. Vendored copies under the lab pin directory are a separate byte-for-byte deposit."
+  },
+  "results": null,
+  "pnl": null,
+  "roi": null
+}
