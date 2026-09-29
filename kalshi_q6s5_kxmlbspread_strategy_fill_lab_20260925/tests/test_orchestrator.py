@@ -32,25 +32,29 @@ def _row(**overrides):
 
 
 class AuthorityTests(unittest.TestCase):
-    def test_claimed_conductor_pins_are_absent_and_not_recreated(self):
+    def test_governance_paths_stay_unrecreated_and_vendored_pins_match(self):
         self.assertFalse((PARENT / orchestrator.ACCEPT_PATH).exists())
         self.assertFalse((PARENT / orchestrator.FREEZE_PATH).exists())
         self.assertFalse((PARENT / orchestrator.KICK_PATH).exists())
         bundle = PARENT / 'lab' / 'governance' / 'astra' / 'packets' / 'Q6S5_KXMLBSPREAD_STRATEGY_FILL'
         self.assertFalse(bundle.exists())
         pins = orchestrator.digest_status()
-        self.assertIs(pins['digest_all_match_claimed'], False)
+        self.assertIs(pins['digest_all_match_claimed'], True)
+        self.assertEqual(pins['missing'], [])
+        self.assertEqual(pins['mismatch'], [])
         self.assertIs(pins['bytes_recreated'], False)
-        self.assertIn('conductor_accept', pins['missing'])
-        self.assertIn('freeze_md', pins['missing'])
-        self.assertIn('kick', pins['missing'])
+        self.assertEqual(len(pins['pins']), 14)
         binding = orchestrator.instrument_binding()
         self.assertEqual(binding['conductor_accept_sha256'], orchestrator.ACCEPT_SHA256)
         self.assertEqual(binding['freeze_sha256'], orchestrator.FREEZE_SHA256)
         self.assertEqual(binding['kick_sha256_prefix'], 'dc19794b')
         self.assertEqual(binding['admit1_ruling_prefix'], 'ac7cfe63')
         self.assertIs(binding['parent_freeze_intact'], True)
-        self.assertIs(binding['digest_all_match_claimed'], False)
+        self.assertIs(binding['digest_all_match_claimed'], True)
+        self.assertEqual(binding['live_gets'], 0)
+        self.assertIsNone(binding['results'])
+        self.assertIsNone(binding['pnl'])
+        self.assertIsNone(binding['roi'])
 
     def test_digest_claim_is_true_only_when_every_row_matches(self):
         rows = [

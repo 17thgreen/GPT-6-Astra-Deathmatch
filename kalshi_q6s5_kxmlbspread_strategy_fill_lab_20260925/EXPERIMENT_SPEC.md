@@ -11,18 +11,23 @@ with `stub_ready` false until merge and a later Conductor/Examiner kick.
 ## Authority check before code
 
 Checked on `origin/main` at `cb8957d7086c9ab82a1d25090bf90d6c17fbc217`
-(fetched 2026-09-29). The cited conductor bytes are absent from this
-checkout and were not recreated:
+(fetched 2026-09-29). The cited `lab/governance/astra/packets/` paths
+were absent there and were not recreated at those paths.
 
-| Pin | Path | Claimed sha256 |
-|---|---|---|
-| Conductor ACCEPT | `lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json` | `c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3` |
-| Freeze markdown | `lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md` | `9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d` |
-| Kick | `lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json` | prefix `dc19794b` (full digest not supplied; not invented) |
-| ADMIT-1 gap ruling | cited as `ac7cfe63` | prefix only (full digest not supplied; not invented) |
-| Packet bundle | `lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/` (`FROZEN_EXPERIMENT`, `SOURCE_PINS`, `EMPTY_RESULTS`) | absent; hashes not supplied |
+The same bytes are vendored under
+`kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/`.
+Fourteen pins re-hash from committed bytes. `digest_all_match_claimed`
+is true for that set. Primary authentic bundle is v2
+`739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a`.
+v1 `6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993`
+is its subset. Implementation ACCEPT is `c6f95b32…`. Companion rulings
+ACCEPT is `a5398129…`. Reconcile is `0f33a94c…`. Queue `7472b8ac`
+supersedes `08aa54de` and is routing-only. The `08aa54de` bytes were
+not recreated.
 
-`digest_all_match_claimed` stays false until those bytes re-hash on disk.
+Measurement gaps stay absent and were not invented: Mechanic demo
+KXMLBSPREAD artifact, Examiner `formula_id`, Sep-25 settlements for
+6/12 markets, an untouched evaluation period, and ADMIT-1 window data.
 Parent Q6S5 fee+queue pins that are already in this checkout stay import-only.
 
 ## Knob
