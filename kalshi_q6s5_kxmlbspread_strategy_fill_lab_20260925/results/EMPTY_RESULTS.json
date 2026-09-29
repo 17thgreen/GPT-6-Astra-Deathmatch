@@ -1,0 +1,108 @@
+{
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "Q6S5A0_roi": null,
+  "Q6S5A1_roi": null,
+  "note": "lab empty scorecard; conductor EMPTY_RESULTS bytes were absent and were not recreated",
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+      "feature_family": "Q6S5-MLBSPREAD-STRATEGY-FILL",
+      "status": "HOLD_PRE_PR",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "signed_by_examiner": false,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "lab": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/",
+        "arms": ["Q6S5A0", "Q6S5A1"],
+        "arm_values": {
+          "Q6S5A0": "maker_vs_taker_native",
+          "Q6S5A1": "content_fresh_vs_stale_bin"
+        }
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "Q6S5A0_roi": null,
+        "Q6S5A1_roi": null
+      },
+      "metrics_fill_policy": "null_until_examiner_after_merge"
+    },
+    "fee_regime": {
+      "label": "CACHE_NOT_R1P1",
+      "fee_type": "quadratic",
+      "multiplier": "0.5",
+      "formula_id": null,
+      "cache_labeled": true,
+      "live_r1p1": false,
+      "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+      "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {"value": null, "unit": "USD", "measured": false},
+      "net_pnl_with_rewards": {"value": null, "unit": "USD", "measured": false},
+      "rewards_actually_earned": {"value": null, "unit": "USD", "measured": false},
+      "calibration": {
+        "value": null,
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A"
+      },
+      "fill_rate": {"value": null, "measured": false},
+      "adverse_selection_after_fills": {"value": null, "measured": false},
+      "feasible_vs_requested_size": {"value": null, "measured": false},
+      "unresolved_inventory": {"value": null, "measured": false},
+      "capital_hours": {"value": null, "measured": false},
+      "drawdown": {"value": null, "measured": false},
+      "event_concentration": {"value": null, "measured": false}
+    },
+    "rewards_rule": {"rewards_thesis_declared_in_freeze": false},
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {"value": null, "measured": false},
+      "fill_model_ref": null
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {"value": null},
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {"satisfied": 9, "n/a": 3, "missing": 0}
+    },
+    "all_score_values_null": true
+  }
+}

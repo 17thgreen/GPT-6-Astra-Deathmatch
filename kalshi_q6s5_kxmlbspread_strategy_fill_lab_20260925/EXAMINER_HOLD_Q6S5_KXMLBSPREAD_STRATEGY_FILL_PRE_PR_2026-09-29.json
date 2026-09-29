@@ -1,0 +1,14 @@
+{
+  "id": "EXAMINER_HOLD_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PRE_PR",
+  "packet": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "scored": false,
+  "verdict": null,
+  "signed_by_examiner": false,
+  "ready_marked_by_implementer": false,
+  "note": "Implementer hold only. READY waits on merge plus a Conductor/Examiner kick.",
+  "results": null,
+  "pnl": null,
+  "roi": null
+}
