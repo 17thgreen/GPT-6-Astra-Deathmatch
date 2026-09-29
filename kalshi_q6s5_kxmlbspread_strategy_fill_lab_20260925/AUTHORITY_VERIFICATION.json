@@ -1,0 +1,71 @@
+{
+  "checked_against": "origin/main",
+  "checked_commit": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "checked_before_strategy_fill_code": true,
+  "digest_all_match_claimed": false,
+  "bytes_recreated": false,
+  "pins": [
+    {
+      "key": "conductor_accept",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+      "claimed_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "freeze_md",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+      "claimed_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "kick",
+      "path": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+      "claimed_sha256": null,
+      "claimed_sha256_prefix": "dc19794b",
+      "full_digest_supplied": false,
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "admit1_gap_ruling",
+      "path": null,
+      "claimed_sha256": null,
+      "claimed_sha256_prefix": "ac7cfe63",
+      "full_digest_supplied": false,
+      "present": false,
+      "match": false,
+      "window_start": "2026-09-27T00:00:00Z",
+      "window_end": "2026-09-30T04:00:00Z",
+      "window_end_exclusive": true
+    },
+    {
+      "key": "packet_frozen_experiment",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+      "claimed_sha256": null,
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "packet_source_pins",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+      "claimed_sha256": null,
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "packet_empty_results",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EMPTY_RESULTS.json",
+      "claimed_sha256": null,
+      "present": false,
+      "match": false
+    },
+    {
+      "key": "missing_queue_bytes",
+      "claimed_sha256_prefix": "08aa54de",
+      "full_digest_supplied": false,
+      "recreated": false
+    }
+  ]
+}
