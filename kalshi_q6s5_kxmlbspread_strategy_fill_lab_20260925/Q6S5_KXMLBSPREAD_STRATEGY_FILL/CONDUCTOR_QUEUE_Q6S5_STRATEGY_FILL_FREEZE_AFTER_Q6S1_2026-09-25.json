@@ -1,0 +1,46 @@
+{
+  "id": "CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1",
+  "type": "CONDUCTOR_QUEUE",
+  "from": "Conductor",
+  "to": [
+    "R&D Variants",
+    "Examiner (Kalshi)",
+    "The Simulator (Kalshi)",
+    "Archivist"
+  ],
+  "status": "UNDONE_KICKED",
+  "priority": "NEXT_AFTER_Q6S1_DRAFT_PR",
+  "reason": "Q6S5 trades-join ITERATE-3 ACCEPT \u2014 KEEP requires strategy fills/PnL; freeze currently Strategy=None / invent fills REFUSED. New one-knob fill_model freeze needed. Variants sole cloud is Q6S1 IMPLEMENT \u2014 do not dual-cloud.",
+  "authority": "packets/CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_ITERATE_2026-09-25.json",
+  "examiner_score_sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "series": "KXMLBSPREAD",
+  "when_to_kick": "Immediately after Q6S1 draft PR sha-verify / Examiner READY path is unblocked enough that Variants cloud is free \u2014 freeze-before-implement; one cloud.",
+  "intended_freeze": {
+    "owner": "R&D Variants",
+    "knob": "fill_model (one orthogonal family \u2260 current analysis_slice)",
+    "arms_keep": [
+      "Q6S5A0 maker_vs_taker_native",
+      "Q6S5A1 content_fresh_vs_stale_bin"
+    ],
+    "must": [
+      "Declare fill_model that can emit strategy fill/PnL series against measured books + public trades without inventing fills",
+      "Pin digests to existing measured READY 0617d540\u2026 / trades READY 57194f27\u2026 / FEE_PIN 9c0f3554\u2026",
+      "Lee-Ready REFUSED; live orders REFUSED; results/pnl null until Examiner after run",
+      "Name dead-card overlap (nearest: invent-fills refused; S1 ML retune forbidden)"
+    ],
+    "must_not": [
+      "invent fills/PnL",
+      "retune Q6-000 / Cap-SR / S1 KXMLBGAME ML",
+      "claim CACHE as R1-P1",
+      "dual-cloud",
+      "start before Q6S1 draft PR frees the cloud"
+    ]
+  },
+  "not_kicked_yet": false,
+  "stamped_at_et": "2026-09-25T02:20:15-04:00",
+  "authority_sha256": "ac713e5fcbdda218d98e88bf4faab340204d8ad47dc9f0613d3762feca69b50d",
+  "kicked_at_et": "2026-09-25T02:24:30-04:00",
+  "kick_packet": "packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+  "kick_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8"
+}

@@ -1,0 +1,98 @@
+{
+  "id": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST",
+  "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "stamped_at_et": "2026-09-29T16:52:00-04:00",
+  "digest_all_match_claimed": false,
+  "absent_pins": [
+    "CONDUCTOR_QUEUE bytes sha256 08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6 (on-disk queue = 7472b8ac…, post-kick fields; no _prev; not recreated)",
+    "Mechanic demo KXMLBSPREAD resting/cancel/fill artifact (fill_model=mechanic_demo_observed UNAVAILABLE; existing Mechanic demo artifacts are R3-P2 NFL tickers only, 0 rows fill_count>0)",
+    "Examiner-pinned KXMLBSPREAD feebook formula_id (FEE_PIN formula_id null → CACHE_NOT_R1P1)",
+    "Settlement results for 6/12 panel markets (Sep-25 PITDET/TBPHI/NYMWSH ×2) — not on disk; unresolved_inventory until a Collector settled re-GET is pinned by amendment",
+    "Archivist fee/account-version manifest (v1.2 pending)",
+    "Untouched evaluation period (p16 item 12 missing)",
+    "ADMIT-1 capture 2026-09-27T13:31:52Z → 2026-09-29T20:39:41Z (permanent gap per ruling ac7cfe63…; excluded, never backfilled)"
+  ],
+  "files": {
+    "freeze_md": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+      "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d"
+    },
+    "frozen_experiment": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+      "sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff"
+    },
+    "empty_results": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EMPTY_RESULTS.json",
+      "sha256": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc"
+    },
+    "source_pins": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+      "sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1"
+    },
+    "examiner_hold_stub": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PRE_PR_2026-09-25.json",
+      "sha256": "0e1ec2002e7aa3571b0944b273554ddc1fed4e5f822f4c7daef0d6a1801cf05c"
+    },
+    "scorecard_stub_json": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EXAMINER_SCORECARD_STUB_Q6S5_KXMLBSPREAD_STRATEGY_FILL_2026-09-25.json",
+      "sha256": "fdf269f49b982c0e98e6056b325ea605533c932ff128019c43316379527ea19d"
+    },
+    "scorecard_stub_md": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EXAMINER_SCORECARD_STUB_Q6S5_KXMLBSPREAD_STRATEGY_FILL_2026-09-25.md",
+      "sha256": "e8f16df7818388b0cb32690f2f5161a07acef5496c7ecf3bbf5ab75ed2d2188f"
+    },
+    "digests": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/DIGESTS.txt",
+      "sha256": "e99e1a281488a0d86ba8444736cfb87d0e60b5ca2555060414d670bd9aaf422d"
+    },
+    "copies_in_packet_folder": {
+      "Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+      "CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+      "MAXIMIZE_PIN_2026-09-25_0224ET.md": "2eac2200cb03d958a7bc047749809373cf20535ec49ac273bf341aabdd038612",
+      "MAXIMIZE_PIN_2026-09-25_0224ET.json": "bdae9cd790131e68192f07766300fdd12a754ec691fd1c1a2bf2fab8eb6a875a",
+      "CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+    }
+  },
+  "external_pins": {
+    "kick": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+    "authority_accept_trades_join_iterate": "ac713e5fcbdda218d98e88bf4faab340204d8ad47dc9f0613d3762feca69b50d",
+    "authority_queue_on_disk": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "authority_merge_pr59": "ef037c2c628f98a4db87fc05ffefb6a985ab525fcdfcd5ec84e003ef46f8098f",
+    "examiner_trades_join_score": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+    "examiner_trades_join_scorecard": "e3eeb1a07fddc08824a02a78a68b7f4aba69d77d8cbe5edb0b970bc61c69a9d1",
+    "examiner_ack_accept_iterate": "8fd52262d14c7eb74f0b77dc093a667100d25681c700515d74a910bb6457e8f9",
+    "simulator_ready_trades_join": "5b47dea926a57e3f1c424e8df62f56ef9b1f02eea87bdd426b4e9248c21465f4",
+    "clock_admit": "f73bbaf3faaaa73186a233bfc21699d8ee3c47779253902ccc86159b3cbd7422",
+    "harness_freeze": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "harness_accept": "5adc42f9c9533238a2187aafe7593bdf1b8cdec6d12b8d3e9b12cb5ab29000fc",
+    "q6s1_freeze_pattern": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+    "maximize_0220_md": "cd0831180b2673aa8184659354ba703d8a59629ca216f7f01a7f44c94f293aa9",
+    "maximize_0220_json": "f23653fbf0ac82e6dc66dcf058553057ea7bcafae069d7b35d5f31e04321a6c5",
+    "maximize_0224_md": "2eac2200cb03d958a7bc047749809373cf20535ec49ac273bf341aabdd038612",
+    "maximize_0224_json": "bdae9cd790131e68192f07766300fdd12a754ec691fd1c1a2bf2fab8eb6a875a",
+    "admit1_ruling": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "admit1_gap_record": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+    "v1_2_template_json": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "v1_2_template_md": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+    "p16_pdf": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+    "panel_stub": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+    "trades_join_runner": "9a52bcb7eb72466f8189c835062cb54216d73ddc5ca6c88e2909a3c553b31c88",
+    "trades_join_orchestrator": "e224686a1bbe4173f00e62c3d2cba78a3c48eecef45ed77c678564def9d5bbfc",
+    "mechanic_seat": "5bac80fec5c20dce38c0ca843b5f645c456be6f347470c49a08e27b5109c6e53",
+    "mechanic_r3p2_fill_label_freeze": "518cd9814696b1a2000dce0580fe787ecea6c20c6f5b4a4c26561244bf37af5d",
+    "mechanic_r3p2_demo_trade_step_report": "f926cc5f31900e03f0c604aae7c7f6101918bb413abf570eee33f710bda14f00",
+    "mechanic_r3p2_demo_trade_step_retry_series": "6e2c82570e72efd19c4c77cac01c8727965938dfbceefec7a8a7d2f2db667db1",
+    "mechanic_r3p2_demo_queue_series": "74ef9a9bb54054691e26b7b752568c8e833f51d21292034b1f40b9f3ca4ba8b4",
+    "feebook_py": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7"
+  },
+  "kick_pins_verify": {
+    "measured_ready": "MATCH",
+    "trades_ready": "MATCH",
+    "fee_pin": "MATCH",
+    "examiner_trades_join_score": "MATCH"
+  },
+  "queue_verify": "MISMATCH (cited 08aa54de…; on disk 7472b8ac…)",
+  "admit1_ruling": "PINNED ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+  "note": "ACCEPT ping and Archivist ping are written after the bundle (they carry bundle sha) and are therefore not listed here nor inside the bundle."
+}

@@ -1,0 +1,49 @@
+{
+  "id": "CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE",
+  "type": "CONDUCTOR_KICK",
+  "from": "Conductor",
+  "to": "R&D Variants",
+  "action": "FREEZE_ONLY",
+  "priority": "SOLE_CLOUD_NOW",
+  "reason": "Q6S1 PR59 squash-merged; Variants cloud free. Q6S5 trades-join ITERATE-3 KEEP blocked on strategy fills/PnL. Queue 08aa54de\u2026 UNDONE \u2192 kick freeze.",
+  "authority": [
+    "packets/CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_ITERATE_2026-09-25.json",
+    "packets/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+    "packets/CONDUCTOR_MERGE_Q6S1_KXATPMATCH_INVENTORY_REPROOF_PR59_2026-09-25.json"
+  ],
+  "queue_sha256": "08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6",
+  "merge_pr59": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "series": "KXMLBSPREAD",
+  "knob": "fill_model",
+  "orthogonal_family": "strategy_fill_pnl_path (not analysis_slice; names dead-card invent-fills-refused)",
+  "arms_keep": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin"
+  },
+  "pin_existing": {
+    "measured_ready_sha256": "0617d540763d71a813672c9f9aa6766072c8461a1290c124b89e9fb3f2bf5de2",
+    "trades_ready_sha256": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+    "fee_pin_sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "examiner_trades_join_score_sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a"
+  },
+  "must": [
+    "FREEZE one-knob fill_model that can emit strategy fill/PnL series against measured books + public trades without inventing fills",
+    "Declare how fills are obtained (demo Mechanic resting path OR other non-invent source) \u2014 do not invent",
+    "results/pnl null until after Examiner-scored run",
+    "Name dead-card overlap: invent-fills refused; S1 KXMLBGAME ML retune forbidden; Q6-000 retune forbidden",
+    "Single cloud only; freeze-before-implement; ping Conductor ACCEPT before implement"
+  ],
+  "must_not": [
+    "invent fills/PnL",
+    "Lee-Ready",
+    "live orders (demo ok only if Mechanic-owned and explicit)",
+    "dual-cloud",
+    "claim CACHE as R1-P1",
+    "retune Q6-000 / Cap-SR / S1 ML",
+    "route to Refiner",
+    "start Q6S1 retune"
+  ],
+  "deliverable": "freeze md + digest + ACCEPT ping; WAIT Conductor ACCEPT before implement cloud",
+  "stamped_at_et": "2026-09-25T02:24:30-04:00"
+}
