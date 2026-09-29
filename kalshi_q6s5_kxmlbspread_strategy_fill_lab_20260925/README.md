@@ -19,3 +19,5 @@ Examiner status is `HOLD_PRE_PR`. This lab does not mark READY.
 ```bash
 python3 -m unittest -v tests.test_orchestrator
 ```
+
+Code verification `python3 -m unittest -v tests.test_orchestrator`: Ran 11 tests in 0.007s at 2026-09-29T21:04:24Z. Result: OK. Failures: 0. Errors: 0. That run is not an Examiner score. `results`, `pnl`, and arm ROI stay null.
