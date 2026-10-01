@@ -1,0 +1,317 @@
+{
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "freeze_id": "Q6S5-KXMLBSPREAD-GAME-PHASE-SETTLED-TAPE",
+  "feature_family": "settled_tape_game_phase",
+  "series_ticker": "KXMLBSPREAD",
+  "id": "Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_EMPTY_RESULTS",
+  "status": "NOT_RUN",
+  "results": null,
+  "pnl": null,
+  "metrics": {
+    "results": null,
+    "pnl": null,
+    "maker_gross_roi_delta_GP1_minus_GP0": null,
+    "maker_gross_roi_delta_GP1_minus_GP0_within_FL1": null,
+    "loeo_delta_GP1_minus_GP0": null,
+    "lomo_delta_GP1_minus_GP0": null,
+    "loeo_delta_GP1_minus_GP0_within_FL1": null,
+    "lomo_delta_GP1_minus_GP0_within_FL1": null,
+    "per_market_table": null,
+    "per_event_table": null,
+    "stress_one_tick_worse": null,
+    "stress_start_shift_plus_30m": null,
+    "stress_fees_2x_cache": null,
+    "n_trades_in_scope": null,
+    "excluded_admit1_window_n": null,
+    "excluded_post_close_n": null,
+    "excluded_block_n": null,
+    "excluded_taker_conflict_n": null,
+    "excluded_price_inconsistent_n": null,
+    "excluded_market_result_not_yes_no_n": null,
+    "mincer_zarnowitz": "NOT_IN_SCOPE (3 event clusters)",
+    "evidence_class": "IN_SAMPLE_DEV",
+    "reading": null
+  },
+  "grid_cells": {
+    "Q6S5GP0": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_events": null,
+      "pre_admitted_at_n": null,
+      "post_admitted_at_n": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5GP1": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_events": null,
+      "pre_admitted_at_n": null,
+      "post_admitted_at_n": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    }
+  },
+  "examiner_scorecard_v1_2": {
+    "template": {
+      "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+      "version": "v1.2",
+      "status": "RATIFIED",
+      "json_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "json_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "md_path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "md_sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "on_repo_main": false
+    },
+    "scorecard": {
+      "id": null,
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+      "freeze_id": "Q6S5-KXMLBSPREAD-GAME-PHASE-SETTLED-TAPE",
+      "feature_family": "settled_tape_game_phase",
+      "status": "FROZEN_AWAITING_ACCEPT",
+      "verdict": null,
+      "stub_ready": false,
+      "scored": false,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "pr": {
+        "number": null,
+        "merged": null,
+        "main": null,
+        "lab": "kalshi_q6s5_kxmlbspread_game_phase_settled_tape_lab_20261001/",
+        "knob": "game_phase",
+        "knob_values": [
+          "Q6S5GP0",
+          "Q6S5GP1"
+        ],
+        "arm_values": {
+          "Q6S5GP0": "pregame",
+          "Q6S5GP1": "inplay"
+        }
+      },
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "maker_gross_roi_delta_GP1_minus_GP0": null,
+        "maker_gross_roi_delta_GP1_minus_GP0_within_FL1": null,
+        "loeo_delta_GP1_minus_GP0": null,
+        "lomo_delta_GP1_minus_GP0": null,
+        "loeo_delta_GP1_minus_GP0_within_FL1": null,
+        "lomo_delta_GP1_minus_GP0_within_FL1": null,
+        "per_market_table": null,
+        "per_event_table": null,
+        "stress_one_tick_worse": null,
+        "stress_start_shift_plus_30m": null,
+        "stress_fees_2x_cache": null,
+        "n_trades_in_scope": null,
+        "excluded_admit1_window_n": null,
+        "excluded_post_close_n": null,
+        "excluded_block_n": null,
+        "excluded_taker_conflict_n": null,
+        "excluded_price_inconsistent_n": null,
+        "excluded_market_result_not_yes_no_n": null,
+        "mincer_zarnowitz": "NOT_IN_SCOPE (3 event clusters)",
+        "evidence_class": "IN_SAMPLE_DEV",
+        "reading": null
+      },
+      "grid_cells": {
+        "Q6S5GP0": {
+          "maker_gross_roi": null,
+          "taker_gross_roi": null,
+          "maker_gross_return_usd": null,
+          "maker_capital_usd": null,
+          "maker_net_roi_cache": null,
+          "taker_net_roi_cache": null,
+          "n_trades": null,
+          "contracts": null,
+          "n_markets": null,
+          "n_events": null,
+          "pre_admitted_at_n": null,
+          "post_admitted_at_n": null,
+          "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+        },
+        "Q6S5GP1": {
+          "maker_gross_roi": null,
+          "taker_gross_roi": null,
+          "maker_gross_return_usd": null,
+          "maker_capital_usd": null,
+          "maker_net_roi_cache": null,
+          "taker_net_roi_cache": null,
+          "n_trades": null,
+          "contracts": null,
+          "n_markets": null,
+          "n_events": null,
+          "pre_admitted_at_n": null,
+          "post_admitted_at_n": null,
+          "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+        }
+      },
+      "metrics_fill_policy": "null_until_examiner_scored_run",
+      "evidence_class": "IN_SAMPLE_DEV",
+      "verdict_ceiling": "ITERATE"
+    },
+    "fee_regime": {
+      "feebook_formula_id": null,
+      "fee_label": "CACHE_NOT_R1P1 (FEE_PIN 9c0f3554… formula_id absent); primary metric gross/fee-free",
+      "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+      "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "applies": "secondary only",
+      "archivist_manifest": null
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "measured": false
+      },
+      "fill_rate": {
+        "value": null,
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A"
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "applies": false,
+      "label": null,
+      "counts_toward_keep": false,
+      "counts_toward_keep_overridden": false,
+      "fill_model_ref": null,
+      "note": "no Astra fills modeled; observations are public prints (public_counterparty_realized)"
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "maker_gross_roi_deltas": null,
+        "measured": false,
+        "tick_size_ref": "$0.01"
+      },
+      "start_shift_plus_30m": {
+        "maker_gross_roi_delta_GP1_minus_GP0": null,
+        "measured": false,
+        "note": "single pre-registered boundary shift; stress only, never an arm"
+      },
+      "fees_2x": {
+        "maker_net_roi_cache": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false,
+      "note": "not our executions"
+    },
+    "study_label": {
+      "value": null,
+      "variants_proposed": "historical replay",
+      "owner": "Archivist (labeling); Examiner records",
+      "allowed": [
+        "unit-only",
+        "synthetic",
+        "historical replay",
+        "prospective shadow",
+        "live"
+      ],
+      "evidence_class": "IN_SAMPLE_DEV"
+    },
+    "preregistration_checklist": {
+      "gate_status": null,
+      "variants_declared_counts": {
+        "satisfied": 8,
+        "n/a": 3,
+        "missing": 1
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze §p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": true,
+        "result": null,
+        "declared_in_freeze": true,
+        "note": "price = implied probability; phase ROI is the market-only calibration residual by game phase"
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true,
+        "note": "not a strategy"
+      }
+    },
+    "admit1_gap": {
+      "ruling_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "enforced_exclusion_window_utc": {
+        "start_inclusive": "2026-09-27T00:00:00Z",
+        "end_exclusive": "2026-09-30T04:00:00Z",
+        "note": "calendar superset of ruling gap covering Sep 27–29 in UTC and ET; packet-local; does not alter ruling"
+      },
+      "excluded_admit1_window_n": null
+    },
+    "all_score_values_null": true
+  },
+  "freeze_sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a",
+  "fee_label": "CACHE_NOT_R1P1",
+  "evidence_class": "IN_SAMPLE_DEV",
+  "verdict_ceiling": "ITERATE",
+  "counts_toward_keep": false,
+  "promote": false,
+  "stamped_at_et": "2026-10-01T19:20:29-04:00"
+}

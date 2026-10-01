@@ -1,0 +1,19 @@
+{
+  "ticker": "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+  "http_outcomes": [
+    200,
+    200
+  ],
+  "n_pages": 2,
+  "n_trades_total": 1105,
+  "empty_honest": false,
+  "first_created_time": "2026-09-24T01:57:43.331153Z",
+  "last_created_time": "2026-09-25T04:31:13.159312Z",
+  "taker_field_keys_observed": [
+    "taker_book_side",
+    "taker_outcome_side",
+    "taker_side"
+  ],
+  "gap_reasons": [],
+  "status": "ok"
+}

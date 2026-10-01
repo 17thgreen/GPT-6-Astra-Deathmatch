@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBSPREAD-26SEP242140LAASEA-SEA2&limit=1000&cursor=EhIKEAcjhJ8G6aBiFqoTwUvQAmcaDAjIzNbVBhCIooXrAQ",
+  "ts_utc": "2026-09-25T05:57:51Z",
+  "sha256_of_body": "53ffb263b7ba6872d06a3bb9fbc0e37fe703d72ebcf259ac89f9d070e9db60b6",
+  "cursor_in": "EhIKEAcjhJ8G6aBiFqoTwUvQAmcaDAjIzNbVBhCIooXrAQ",
+  "cursor_out": null,
+  "n_trades_page": 173,
+  "retry_count": 0
+}

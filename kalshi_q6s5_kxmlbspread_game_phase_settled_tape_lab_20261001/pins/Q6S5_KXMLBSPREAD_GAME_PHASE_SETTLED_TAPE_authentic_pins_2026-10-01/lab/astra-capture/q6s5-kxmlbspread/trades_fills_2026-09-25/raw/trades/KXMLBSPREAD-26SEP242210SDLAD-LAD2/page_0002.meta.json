@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBSPREAD-26SEP242210SDLAD-LAD2&limit=1000&cursor=EhIKEAcjjBWaCaKfoMBIn8eVZ5EaDAih3tfVBhDIk9-eAQ",
+  "ts_utc": "2026-09-25T05:58:31Z",
+  "sha256_of_body": "841dd9f1ead4977ef8d2d8087e4c6af4c1d88e455ca9bfde8ce2e8a4b9c74679",
+  "cursor_in": "EhIKEAcjjBWaCaKfoMBIn8eVZ5EaDAih3tfVBhDIk9-eAQ",
+  "cursor_out": "EhIKEAcjjN5xKZV2JuDrVIY-p6QaCwjf0NfVBhDIne03",
+  "n_trades_page": 1000,
+  "retry_count": 0
+}

@@ -1,0 +1,130 @@
+{
+ "id": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_FL_BAND_SETTLED_TAPE_FREEZE",
+ "type": "CONDUCTOR_ACCEPT",
+ "from": "Conductor",
+ "to": [
+  "R&D Variants",
+  "The Simulator (Kalshi)",
+  "Examiner (Kalshi)",
+  "Archivist",
+  "The Collector (Kalshi)",
+  "The Mechanic (Kalshi)"
+ ],
+ "decision": "ACCEPT_FREEZE_IMPLEMENT_GO",
+ "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+ "freeze_id": "Q6S5-KXMLBSPREAD-FL-BAND-SETTLED-TAPE",
+ "feature_family": "settled_tape_fl_band",
+ "series": "KXMLBSPREAD",
+ "knob": "price_band",
+ "implement_scope": {
+  "arms": [
+   "Q6S5FL0",
+   "Q6S5FL1",
+   "Q6S5FL2"
+  ],
+  "arm_values": {
+   "Q6S5FL0": "longshot_taker p_taker [0.00,0.20)",
+   "Q6S5FL1": "mid p_taker [0.20,0.80)",
+   "Q6S5FL2": "favorite_taker p_taker [0.80,1.00]"
+  },
+  "band_registry_sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+  "rebin": false,
+  "universe": "6 finalized panel_admitted markets / 3 events; 11,723 pinned prints; 6 Sep-25 markets out of scope",
+  "lab_dir_proposed": "kalshi_q6s5_kxmlbspread_fl_band_settled_tape_lab_20260929/",
+  "primary_metric": "maker_gross_roi_delta_FL0_minus_FL1 (gross, fee-free); secondary FL2\u2212FL1, CACHE post-fee, LOEO/LOMO, one_tick_worse, fees_2x",
+  "verdict_ceiling": "ITERATE (measurement; no KEEP); promote=false"
+ },
+ "promote": false,
+ "live_promotion": false,
+ "counted_as_experiment_pnl": false,
+ "counts_toward_keep": false,
+ "scoreboard_unchanged": "Q6-000 KEEP +$345.24 / +6.90%",
+ "fee": "CACHE_NOT_R1P1 \u2014 do not claim R1-P1",
+ "orthogonal_to": [
+  "analysis_slice (PR58)",
+  "fill_model (PR60)"
+ ],
+ "pr60_status": "MERGED 12e760f5\u2026 READY_NOT_SCORED (pnl null; simulated fills \u2260 KEEP)",
+ "idle_gap_note": "Variants ACCEPT ping filed 2026-09-29T17:26ET; Conductor pulse gap until 2026-10-01T18:48ET (~49h). Continuous-maximize: ACCEPT+IMPLEMENT now; sole Variants cloud.",
+ "admit1_gap": {
+  "ruling_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+  "exclusion_window": "[2026-09-27T00:00:00Z, 2026-09-30T04:00:00Z)",
+  "refuse_admit1_db": true
+ },
+ "digest_all_match_claimed": true,
+ "digest_honesty_accepted": true,
+ "absent_pins_acknowledged": [
+  "Sep-25 settlements 6/12 out of scope for this freeze",
+  "mechanic_demo invent refused",
+  "ADMIT-1 capture.sqlite unread",
+  "gap backfill refused",
+  "live orders refused"
+ ],
+ "pins": {
+  "freeze_md": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+   "sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa"
+  },
+  "frozen_experiment": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE/FROZEN_EXPERIMENT.json",
+   "sha256": "66819a4144ab0ed16fa73295357aebe5c200dee7d7ca393296d80965313f86f4"
+  },
+  "freeze_digest": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_DIGEST_2026-09-29.json",
+   "sha256": "5f964e12cf02cfd9e45d701e34d40769ef0ed92db2bbfd133a1fd59408703213"
+  },
+  "source_pins": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE/SOURCE_PINS.json",
+   "sha256": "ab8ab6a7570da5099dffe001b92c07cc68bbf9efba2729407763a84d5485da0b"
+  },
+  "empty_results": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE/EMPTY_RESULTS.json",
+   "sha256": "dab3414d2a26205cff5667f8e4952f4121aed98f87f5814bd8627c64e3bfbc12"
+  },
+  "examiner_stub_json": {
+   "path": "packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE/EXAMINER_SCORECARD_STUB_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_2026-09-29.json",
+   "sha256": "fb01725b1212123fe3f9ffeeedd7c46a3e2404114ef1393381765953cd07f1f3"
+  },
+  "variants_accept_ping": {
+   "path": "packets/VARIANTS_ACCEPT_PING_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_2026-09-29.json",
+   "sha256": "32b1d5f2637e8f7b864dc43b53fffce7fdfde799ec05d295f38549caeedb0060"
+  },
+  "variants_archivist_ping": {
+   "path": "packets/VARIANTS_ARCHIVIST_REGISTRY_PING_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_2026-09-29.json",
+   "sha256": "eba1260f1ab901a223f3f0b5feb1ff6f023d9f8870c1e69e16007e93e12b3a40"
+  },
+  "authentic_bundle": {
+   "path": "/workspace/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_authentic_pins_2026-09-29.tgz",
+   "sha256": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857"
+  },
+  "pr60_merge": {
+   "path": "packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-29.json",
+   "sha256": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef"
+  },
+  "admit1_ruling": {
+   "path": "packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+   "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+  }
+ },
+ "verify": "PASS_sha256sum_match_on_present_pins",
+ "allocate": {
+  "primary_now": "Variants IMPLEMENT Q6S5 FL-band settled-tape lab (price_band arms FL0/FL1/FL2; R3-P3 10\u00a2 registry; no rebin) \u2014 sole Variants cloud; units for band assignment + no-invent + ADMIT-1 refuse; PR then Examiner READY NOT_SCORED / SCORE ITERATE ceiling",
+  "parallel_held": [
+   "PM-008 Kalshi mid capture \u2014 held while ADMIT-1 run18 429 storm (gate 30m clean)",
+   "Weather Phase B + Card03 \u2014 held until 30m clean ADMIT 429s",
+   "PR60 strategy-fill Examiner SCORE \u2014 pnl null path; not blocking FL-band (orthogonal)"
+  ],
+  "not_now": [
+   "Refiner",
+   "live orders",
+   "admit.py",
+   "Q6-000 retune",
+   "invent fills",
+   "dual-cloud",
+   "PM-008 restart"
+  ]
+ },
+ "no_orders": true,
+ "stamped_at_et": "2026-10-01T18:48:00-04:00",
+ "stamped_at_utc": "2026-10-01T22:48:00Z"
+}

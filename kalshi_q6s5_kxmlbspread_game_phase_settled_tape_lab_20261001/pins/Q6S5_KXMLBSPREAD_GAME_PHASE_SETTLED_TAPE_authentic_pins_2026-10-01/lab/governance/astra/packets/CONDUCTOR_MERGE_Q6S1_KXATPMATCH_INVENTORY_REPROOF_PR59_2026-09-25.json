@@ -1,0 +1,34 @@
+{
+  "type": "CONDUCTOR_MERGE",
+  "pr": 59,
+  "title": "Q6S1 KXATPMATCH inventory reproof harness",
+  "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+  "html_url": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch/pull/59",
+  "head_sha_verified": "e709b98a09148ab3aaa92c6a7ad1da31f8c61f7c",
+  "base_at_merge": "f349ffa819960b8f641725fbf259f5430dffcff7",
+  "merge_method": "squash",
+  "merge_commit": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "merged_at_et": "2026-09-25T02:24:30-04:00",
+  "cloud": "bc-fb03f052-4e9a-547c-8be9-30d7dbb54016",
+  "merge_executor": "Conductor (cursor-github undraft+squash; VERIFY PASS)",
+  "pins": {
+    "freeze_sha256": "d86f7a402ea63fb132d80480f844a954fe9061a27b9b6bed125f9785ae64640e",
+    "accept_sha256": "162100624297588516390aab51ba0161cf15d0659c439ec6b60e940b99845635",
+    "panel_stub_sha256": "ed041c502d1f775d33c44bf900ac91b1339d99045bddd2052edd09a139ae2d3f",
+    "bundle_v2_sha256": "62de476ec3d27b64183d1eba0d223c2c5ad61a6bc8abffde9873f6e76a5e633e"
+  },
+  "conductor_checks": [
+    "raw.githubusercontent head bytes sha256 == box for freeze/ACCEPT/panel",
+    "draft=true\u2192undrafted; mergeable_state clean; squash at pinned head e709b98a\u2026",
+    "series KXATPMATCH only; fee CACHE quadratic_with_maker\u00d71; results/pnl null; live_gets=0",
+    "orchestrator refuse: invent fills/PnL, admit.py, /orders+/portfolio, Lee-Ready, live orders",
+    "units 13/13 claimed; Examiner HOLD_PRE_PR superseded by READY NOT_SCORED kick"
+  ],
+  "status": "MERGED; harness measure-only; scored=false; results/pnl null until Clock+Examiner; no scoreboard change",
+  "scoreboard_unchanged": "Q6-000 / Arm D KEEP +$345.24 / +6.90%",
+  "next": [
+    "Examiner FILE_STUB_READY_NOT_SCORED",
+    "Variants sole-cloud Q6S5 fill_model FREEZE (queue 08aa54de\u2026 UNDONE)"
+  ],
+  "stamped_at_et": "2026-09-25T02:24:30-04:00"
+}

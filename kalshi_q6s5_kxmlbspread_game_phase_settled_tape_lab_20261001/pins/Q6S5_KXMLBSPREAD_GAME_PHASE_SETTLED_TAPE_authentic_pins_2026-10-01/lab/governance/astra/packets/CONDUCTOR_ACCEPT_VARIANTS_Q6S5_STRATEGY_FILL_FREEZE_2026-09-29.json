@@ -1,0 +1,94 @@
+{
+ "id": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE",
+ "type": "CONDUCTOR_ACCEPT",
+ "from": "Conductor",
+ "to": [
+  "R&D Variants",
+  "The Simulator (Kalshi)",
+  "Examiner (Kalshi)",
+  "Archivist",
+  "The Collector (Kalshi)",
+  "The Mechanic (Kalshi)"
+ ],
+ "decision": "ACCEPT_FREEZE_IMPLEMENT_GO",
+ "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+ "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+ "feature_family": "strategy_fill_pnl_path",
+ "series": "KXMLBSPREAD",
+ "knob": "fill_model",
+ "implement_scope": {
+  "fill_model_values_in_scope": [
+   "public_trade_through_conservative"
+  ],
+  "fill_model_unavailable_null_cells": [
+   "mechanic_demo_observed"
+  ],
+  "reason_unavailable": "No Mechanic demo KXMLBSPREAD artifact on disk; do not invent or borrow R3-P2"
+ },
+ "promote": false,
+ "live_promotion": false,
+ "counted_as_experiment_pnl": false,
+ "counts_toward_keep": false,
+ "scoreboard_unchanged": "Q6-000 KEEP +$345.24 / +6.90%",
+ "fee": "CACHE_NOT_R1P1 \u2014 do not claim R1-P1",
+ "admit1_gap": {
+  "ruling_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+  "gap_record_sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+  "exclusion_window": "[2026-09-27T00:00:00Z, 2026-09-30T04:00:00Z)",
+  "refuse_admit1_db": true
+ },
+ "digest_all_match_claimed": false,
+ "digest_honesty_accepted": true,
+ "absent_pins_acknowledged": [
+  "queue bytes 08aa54de\u2026 (on-disk queue 7472b8ac\u2026 post-kick; do not recreate)",
+  "mechanic_demo_observed UNAVAILABLE",
+  "FEE_PIN formula_id null \u2192 CACHE_NOT_R1P1",
+  "settlement missing 6/12 \u2192 unresolved_inventory null until Collector settled re-GET amendment",
+  "p16 item 12 missing untouched eval period \u2014 KEEP barred; measurement ITERATE only",
+  "ADMIT-1 permanent gap Sep27\u201329"
+ ],
+ "pins": {
+  "freeze_md": {
+   "path": "packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+   "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d"
+  },
+  "frozen_experiment": {
+   "path": "packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+   "sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff"
+  },
+  "freeze_digest": {
+   "path": "packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST_2026-09-25.json",
+   "sha256": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed"
+  },
+  "examiner_hold_pre_pr": {
+   "path": "packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PRE_PR_2026-09-25.json",
+   "sha256": "0e1ec2002e7aa3571b0944b273554ddc1fed4e5f822f4c7daef0d6a1801cf05c"
+  },
+  "kick": {
+   "path": "packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+   "sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8"
+  },
+  "admit1_ruling": {
+   "path": "packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+   "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+  }
+ },
+ "verify": "PASS_sha256sum_match_on_present_pins",
+ "allocate": {
+  "primary_now": "Variants IMPLEMENT Q6S5 strategy-fill lab (fill_model=public_trade_through_conservative only) \u2014 sole Variants cloud; units incl. ADMIT-1 window / lookahead / Lee-Ready refuse / no-invent tests; PR then Examiner READY NOT_SCORED",
+  "parallel_held": [
+   "PM-008 Kalshi mid capture \u2014 held while ADMIT-1 run13 429 storm (gate 30m clean)",
+   "Weather Phase B + Card03 \u2014 held per ruling until 30m clean ADMIT 429s",
+   "Q6S1 Examiner READY NOT_SCORED stub \u2014 Examiner-owned, not dual-cloud"
+  ],
+  "not_now": [
+   "Refiner",
+   "live orders",
+   "admit.py",
+   "Q6-000 retune",
+   "invent fills"
+  ]
+ },
+ "no_orders": true,
+ "stamped_at_et": "2026-09-29T16:55:00-04:00"
+}
