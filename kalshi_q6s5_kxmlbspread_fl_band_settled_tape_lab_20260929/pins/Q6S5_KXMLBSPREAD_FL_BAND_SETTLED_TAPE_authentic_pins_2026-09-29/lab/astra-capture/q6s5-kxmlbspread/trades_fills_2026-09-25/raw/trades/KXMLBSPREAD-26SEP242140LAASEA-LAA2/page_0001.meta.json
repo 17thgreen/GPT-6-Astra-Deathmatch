@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBSPREAD-26SEP242140LAASEA-LAA2&limit=1000",
+  "ts_utc": "2026-09-25T05:56:51Z",
+  "sha256_of_body": "21ecb52d2b177dde090b72b309b3101e664b592a942d33d4a50a9cdd8eb03987",
+  "cursor_in": null,
+  "cursor_out": "EhIKEAcjjKmwaYFvzAuwCLzkuSUaCwj-ytfVBhCop40N",
+  "n_trades_page": 1000,
+  "retry_count": 0
+}

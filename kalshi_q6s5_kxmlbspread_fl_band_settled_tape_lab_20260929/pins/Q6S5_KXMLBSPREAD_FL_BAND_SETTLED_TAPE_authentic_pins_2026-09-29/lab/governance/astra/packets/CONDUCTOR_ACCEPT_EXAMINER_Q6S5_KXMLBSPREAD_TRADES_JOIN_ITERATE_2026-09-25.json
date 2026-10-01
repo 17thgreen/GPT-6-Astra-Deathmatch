@@ -1,0 +1,73 @@
+{
+  "id": "CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_ITERATE",
+  "type": "CONDUCTOR_ACCEPT",
+  "from": "Conductor",
+  "to": [
+    "Examiner (Kalshi)",
+    "The Simulator (Kalshi)",
+    "The Collector (Kalshi)",
+    "R&D Variants",
+    "Archivist",
+    "The Clock"
+  ],
+  "decision": "ACCEPT_ITERATE",
+  "verdict": "ITERATE",
+  "iterate_index": 3,
+  "iterate_kind": "TRADES_JOIN_NATIVE_CLASSIFIED_ROI_NULL_HONEST",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "series": "KXMLBSPREAD",
+  "promote": false,
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "not_refiner": true,
+  "scoreboard_unchanged": "Q6-000 KEEP +$345.24 / +6.90%",
+  "examiner_score": {
+    "path": "packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+    "sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a"
+  },
+  "examiner_scorecard": {
+    "path": "packets/EXAMINER_SCORECARD_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.md",
+    "sha256": "e3eeb1a07fddc08824a02a78a68b7f4aba69d77d8cbe5edb0b970bc61c69a9d1"
+  },
+  "verify": "PASS_sha256sum_match",
+  "prior_harness_iterate_untouched": {
+    "score_sha256": "348e2981d191fda5a228ef77fc578b0821bd731ae6aa38b1b8004d9d82ba3d62",
+    "accept_sha256": "54b0b1b7d57d42f3a2f2d0caefd72be734532eaae8d8c54fbcb8817a7df99a71",
+    "note": "bytes untouched; superseded in context only by this ACCEPT"
+  },
+  "why_not_keep": [
+    "maker_vs_taker_roi_delta=null (11744 native classified \u2260 ROI; no strategy fill/PnL)",
+    "fresh_vs_stale_gap=null (content_fresh counts \u2260 gap)",
+    "results/pnl=null",
+    "fee CACHE_NOT_R1P1 (FEE_PIN 9c0f3554\u2026 formula_id absent)",
+    "coverage / settled_join_n / classification \u2260 KEEP"
+  ],
+  "why_not_kill": [
+    "freeze does not fail-closed KILL on honest null after invent-fills refused",
+    "measurement progressed: 0 native taker hits \u2192 11744 classified",
+    "not strategy-corporeal \u2014 Not Refiner"
+  ],
+  "allocate": {
+    "primary_now": "Variants Q6S1 KXATPMATCH inventory reproof IMPLEMENT \u2014 sole Variants cloud; chase draft PR",
+    "queued_next_for_q6s5": "Variants FREEZE one-knob strategy-fill/PnL path (fill_model) after Q6S1 draft PR lands \u2014 required for non-null arm ROI/gap; invent fills still REFUSED",
+    "parallel_not_now": [
+      "Refiner \u2014 measurement ITERATE not strategy rehab",
+      "Collector re-trades \u2014 public tape exhausted for ROI",
+      "Simulator re-join \u2014 nothing new to join until strategy fills exist",
+      "re-kick Examiner fee pin \u2014 already stamped CACHE_NOT_R1P1 formula_id absent"
+    ],
+    "queue_packet": "packets/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json"
+  },
+  "progress_note": "capture ITERATE \u2192 harness ITERATE \u2192 trades-join ITERATE: classification complete; KEEP blocked only on strategy fills/PnL (+ optional formula_id)",
+  "refuse": [
+    "KEEP with null arm ROI/gap",
+    "invent fills/PnL",
+    "claim CACHE as R1-P1",
+    "live orders",
+    "Q6-000 / Cap-SR / S1 ML retune",
+    "route to Refiner",
+    "dual-cloud Variants while Q6S1 implement runs",
+    "edit prior SCORE/ACCEPT/FEE_PIN/HOLD bytes"
+  ],
+  "stamped_at_et": "2026-09-25T02:20:15-04:00"
+}

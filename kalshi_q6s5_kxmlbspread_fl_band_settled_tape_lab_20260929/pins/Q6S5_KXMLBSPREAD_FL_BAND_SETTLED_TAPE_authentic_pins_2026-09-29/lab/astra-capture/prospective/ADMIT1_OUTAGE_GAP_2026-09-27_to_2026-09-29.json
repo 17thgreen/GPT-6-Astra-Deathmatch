@@ -1,0 +1,23 @@
+{
+  "id": "ADMIT1_OUTAGE_GAP_20260927",
+  "type": "COLLECTOR_GAP_RECORD",
+  "cause": "Box reboot 2026-09-27T13:34:27Z (pid 1 start) killed recorder pid 1559594 (run 10) and admit1_supervisor; /workspace/lab/.venv also missing after reboot",
+  "last_response_utc": "2026-09-27T13:31:52Z",
+  "gap_start_utc": "2026-09-27T13:31:52Z",
+  "gap_end_utc": "2026-09-29T20:39:41Z",
+  "gap_hours_approx": 55.1,
+  "stale_run_row": "runs.id=10 status=running ended=NULL (process dead; left as-is, not rewritten)",
+  "failed_relaunch_runs": [11, 12],
+  "failed_reason": "RuntimeError Metadata missing on startup metadata GETs; supervisor retried after 20s",
+  "live_run": 13,
+  "live_pid": 1204224,
+  "relaunch_utc": "2026-09-29T20:39:41Z",
+  "record_py": "/workspace/lab/astra-src/prospective-recorder-main/record.py sha256 bdbd06b403b627efa4c97d14717b041e221241db68270137db5a099bf40db676",
+  "panel": "prospective_panel_admitted.json (stamped admitted_at 2026-09-22T21:18:13Z, unchanged) sha256 d0b28e69ccd965418f05346351d330c5f26b2530d673ceb48ce9132223d30baa",
+  "db": "capture.sqlite (same path)",
+  "venv": "recreated stdlib-only python3 -m venv at /workspace/lab/.venv (Python 3.13.5); record.py imports stdlib only",
+  "admit_py_rerun": false,
+  "backfill": false,
+  "orders": false,
+  "note": "Gap is permanent; books cannot be backfilled. RESTART_POLICY on-restart path."
+}

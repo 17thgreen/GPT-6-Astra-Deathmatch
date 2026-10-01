@@ -1,0 +1,128 @@
+{
+  "id": "EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES",
+  "packet_id": "EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25",
+  "type": "EXAMINER_FEE_PIN",
+  "seat": "Examiner (Kalshi)",
+  "desk": "Astra",
+  "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+  "series": "KXMLBSPREAD",
+  "status": "PINNED_FROM_MEASURED_GET",
+  "live_get_attempted": false,
+  "live_get_happened": false,
+  "budget_or_429": {
+    "deferred": false,
+    "skipped_no_budget": false,
+    "reason": null,
+    "note": "No new live GET — attributable measured /series body preferred per kick; avoids /events budget and recent capture 429 window"
+  },
+  "conductor_refs": {
+    "kick": {
+      "id": "CONDUCTOR_KICK_EXAMINER_Q6S5_KXMLBSPREAD_LIVE_SERIES_FEE_PIN",
+      "path": "lab/governance/astra/packets/CONDUCTOR_KICK_EXAMINER_Q6S5_KXMLBSPREAD_LIVE_SERIES_FEE_PIN_2026-09-25.json",
+      "sha256": "abbc2bf1cc789922b882dce0fe3cf9b926a1099d69de24d7757e183b420d6f49",
+      "verify": "PASS"
+    },
+    "authority_accept": {
+      "id": "CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_MEASURED_ITERATE",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_MEASURED_ITERATE_2026-09-25.json",
+      "sha256": "4122d100fe27ac855d3c186a2d7e048dbe2d2da547fb25545ed67e13b8e530de",
+      "verify": "PASS"
+    },
+    "prior_score_cite_only": {
+      "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED",
+      "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED_2026-09-25.json",
+      "sha256": "db9bd220b5dd61229b6481a27d03222f36ac0ec816efa3402ef35404a0d4fb8e",
+      "note": "cited read-only; this FEE_PIN does NOT re-SCORE"
+    }
+  },
+  "pin_source": {
+    "kind": "measured_artifact_get_body",
+    "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXMLBSPREAD",
+    "method": "GET",
+    "http": 200,
+    "captured_utc": "2026-09-25T04:41:35Z",
+    "captured_et": "2026-09-25T00:41:35-04:00",
+    "cycle": 1,
+    "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/series/KXMLBSPREAD.json",
+    "dated_path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/series/2026-09-25__c0001__20260925T044135Z__KXMLBSPREAD.json",
+    "meta_path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/series/KXMLBSPREAD.meta.json",
+    "response_sha256": "2bb5e759f812b205839463d0a38d2eb766ab99bbcad0ef543337dde702d6e619",
+    "meta_sha256": "9bf619e7478c26c01d8b34e087abe519b74fa7c820d44032d90e4ae45e6e5d02",
+    "bytes": 1535,
+    "attributable_via": [
+      "measured/raw/series/KXMLBSPREAD.meta.json (http=200, sha256 match)",
+      "measured/requests.jsonl line1 kind=series GET /series/KXMLBSPREAD",
+      "measured/DIGESTS.txt entries for raw/series/*"
+    ],
+    "also_matches_live_get_admit_sha": true,
+    "live_get_admit_path": "lab/astra-capture/q6s5-kxmlbspread/live_get_admit_2026-09-25/series_KXMLBSPREAD.json",
+    "note": "Honest on-disk GET body preferred over fresh live GET (kick); body identical sha across measured latest/dated + live_get_admit"
+  },
+  "observed": {
+    "fee_type": "quadratic",
+    "fee_multiplier": 0.5,
+    "feebook_formula_id": null,
+    "series_keys_fee_related": [
+      "fee_type",
+      "fee_multiplier"
+    ],
+    "kalshi_series_ticker": "KXMLBSPREAD",
+    "last_updated_ts": "2026-09-16T00:29:24.467894Z",
+    "matches_house_cache_quadratic_x0_5": true
+  },
+  "fee_honesty": {
+    "label": "CACHE_NOT_R1P1",
+    "fee_honest": false,
+    "feebook_formula_id_observed": null,
+    "feebook_formula_id_lab_claim_path": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "reason": "Kalshi GET /series/KXMLBSPREAD body contains fee_type=quadratic and fee_multiplier=0.5 but NO formula_id/feebook_formula_id. Per kick/hard rules: do not invent formula_id; fee_honest=true ONLY if observed formula_id matches astra.r1p1.feebook.claude_order_level_ceil.v1 (freeze claim path). Therefore CACHE_NOT_R1P1 / fee_honest=false. Observed quadratic×0.5 confirms house-cache label but does not promote CACHE to R1-P1."
+  },
+  "fee": {
+    "label": "CACHE",
+    "observed_fee_type": "quadratic",
+    "observed_fee_multiplier": 0.5,
+    "observed_source": "measured GET /series/KXMLBSPREAD @ 2026-09-25T04:41:35Z (sha 2bb5e759…)",
+    "claim_as_live_R1P1": false,
+    "fee_honest_under_r1p1_formula": false,
+    "feebook_formula_id_claimed": null,
+    "feebook_formula_id_lab_pin_only": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_pin_lab": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin_lab": "6a28e0d6254327ea4e6451c781bec56215ac6cac"
+  },
+  "does_not_unlock_arm_metrics": true,
+  "no_rescore_until_simulator": true,
+  "does_not_re_score": true,
+  "results": null,
+  "pnl": null,
+  "blockers_remaining": [
+    "fee_class=CACHE_NOT_R1P1 (no formula_id in /series body; not invented)",
+    "arm_metrics_null pending Simulator harness on measured books",
+    "results=null",
+    "pnl=null"
+  ],
+  "refuse": [
+    "invent formula_id",
+    "claim CACHE as R1-P1 / astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "re-SCORE measured path",
+    "invent results/pnl",
+    "live orders",
+    "edit existing packets"
+  ],
+  "integrity_before": {
+    "measured_DIGESTS_txt": {
+      "ok": 159,
+      "fail": 1,
+      "fail_paths": [
+        "STATUS.json"
+      ],
+      "note": "pre-existing STATUS.json drift after DIGESTS freeze (SCORE_CLOSEOUT/post-READY); series bodies OK"
+    },
+    "series_body_sha256_match_meta": true,
+    "series_body_sha256": "2bb5e759f812b205839463d0a38d2eb766ab99bbcad0ef543337dde702d6e619",
+    "kick_sha256_verified": "abbc2bf1cc789922b882dce0fe3cf9b926a1099d69de24d7757e183b420d6f49",
+    "accept_sha256_verified": "4122d100fe27ac855d3c186a2d7e048dbe2d2da547fb25545ed67e13b8e530de"
+  },
+  "stamped_at_et": "2026-09-25T01:41:39-04:00",
+  "artifact": "EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES"
+}

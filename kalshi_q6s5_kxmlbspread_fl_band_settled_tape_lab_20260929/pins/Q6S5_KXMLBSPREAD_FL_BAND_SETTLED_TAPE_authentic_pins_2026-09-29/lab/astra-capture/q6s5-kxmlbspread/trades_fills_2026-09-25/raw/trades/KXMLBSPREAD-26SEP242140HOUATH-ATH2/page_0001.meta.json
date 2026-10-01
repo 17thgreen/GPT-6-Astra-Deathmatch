@@ -1,0 +1,10 @@
+{
+  "http_status": 200,
+  "url": "https://api.elections.kalshi.com/trade-api/v2/markets/trades?ticker=KXMLBSPREAD-26SEP242140HOUATH-ATH2&limit=1000",
+  "ts_utc": "2026-09-25T05:55:31Z",
+  "sha256_of_body": "2fa98476dab539a0cf19381c27f480bdaad80ec8d241d105699d0efed8a2c65c",
+  "cursor_in": null,
+  "cursor_out": null,
+  "n_trades_page": 497,
+  "retry_count": 0
+}

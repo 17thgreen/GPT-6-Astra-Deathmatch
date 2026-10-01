@@ -1,0 +1,534 @@
+{
+  "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN",
+  "packet_id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25",
+  "type": "EXAMINER_SCORE",
+  "seat": "Examiner (Kalshi)",
+  "desk": "Astra",
+  "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+  "series": "KXMLBSPREAD",
+  "scorecard_template_version": "v1.2",
+  "template": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+  "template_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "status": "SCORED",
+  "verdict": "ITERATE",
+  "scored": true,
+  "promote": false,
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "stub_ready": false,
+  "admit_alone_neq_score": true,
+  "coverage_neq_keep": true,
+  "selection_status": "ITERATE_TRADES_JOIN_NATIVE_CLASSIFIED_ROI_NULL_HONEST",
+  "desk_headline": "Trades-join re-SCORE=ITERATE (3rd): n_trades_joined=11744 native classified (side counts yes=6947/no=4797); maker_vs_taker_roi_delta=null (classification\u2260ROI; no strategy fill/PnL); fresh_vs_stale_gap=null (content_fresh True=29); settled_join_n=6 observational; n_books=12; results/pnl=null; lee_ready=REFUSED. Fee CACHE\u00d70.5 / CACHE_NOT_R1P1 (FEE_PIN 9c0f3554\u2026 formula_id absent). promote=false. Q6-000 unchanged. Prior harness SCORE 348e2981\u2026 untouched; ACCEPT harness iterate 54b0b1b7\u2026 superseded in context only. Capture SCORE db9bd220\u2026 earlier lineage.",
+  "supersedes_score_context": [
+    "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED_HARNESS_2026-09-25.json"
+  ],
+  "supersede_note": "Follow-up re-SCORE on Simulator trades-join READY. Prior harness SCORE 348e2981\u2026 remains on disk immutable (bytes untouched); this packet owns the trades-join re-verdict. ACCEPT harness iterate 54b0b1b7\u2026 superseded in context only. HOLD bd34d207\u2026 and FEE_PIN 9c0f3554\u2026 untouched.",
+  "prior_score": {
+    "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED_HARNESS",
+    "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED_HARNESS_2026-09-25.json",
+    "sha256": "348e2981d191fda5a228ef77fc578b0821bd731ae6aa38b1b8004d9d82ba3d62",
+    "verdict": "ITERATE",
+    "bytes_untouched": true,
+    "note": "Prior 2nd ITERATE was harness-present / 0 native taker hits / arm-ROI honest-null; this 3rd ITERATE is trades-join native classified (11744) / ROI still honest-null"
+  },
+  "prior_score_lineage_capture": {
+    "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED",
+    "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_MEASURED_2026-09-25.json",
+    "sha256": "db9bd220b5dd61229b6481a27d03222f36ac0ec816efa3402ef35404a0d4fb8e",
+    "verdict": "ITERATE",
+    "bytes_untouched": true,
+    "note": "Earlier capture-complete / harness-absent ITERATE; cite lineage only"
+  },
+  "prior_hold": {
+    "id": "EXAMINER_HOLD_Q6S5_KXMLBSPREAD_MEASURED_INCOMPLETE_HONEST",
+    "path": "lab/governance/astra/packets/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_MEASURED_INCOMPLETE_HONEST_2026-09-25.json",
+    "sha256": "bd34d2075dc285b2bd2e2a83b15fdb85715b24389aa41e99f46b20672c8a91eb",
+    "bytes_untouched": true,
+    "note": "Already cleared by prior SCORE; cite only"
+  },
+  "fee_pin": {
+    "id": "EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES",
+    "path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+    "sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "fee_honest": false,
+    "label": "CACHE_NOT_R1P1",
+    "feebook_formula_id_observed": null,
+    "bytes_untouched": true
+  },
+  "conductor_refs": {
+    "rescore_kick": {
+      "id": "CONDUCTOR_KICK_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_RESCORE",
+      "path": "lab/governance/astra/packets/CONDUCTOR_KICK_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_RESCORE_2026-09-25.json",
+      "sha256": "650283a7a69b4e6411b51c036e876694f27eb8db7908a52325092a1e2142e96f",
+      "action": "RESCORE_TRADES_JOIN",
+      "verify": "PASS"
+    },
+    "simulator_ack_ready": {
+      "id": "CONDUCTOR_ACK_SIMULATOR_Q6S5_KXMLBSPREAD_TRADES_JOIN_READY",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACK_SIMULATOR_Q6S5_KXMLBSPREAD_TRADES_JOIN_READY_2026-09-25.json",
+      "sha256": "f338a09652f1da4442bdfcf579087660f435529885eb110a884b87acda3a23f2",
+      "verify": "PASS"
+    },
+    "simulator_kick": {
+      "id": "CONDUCTOR_KICK_SIMULATOR_Q6S5_KXMLBSPREAD_TRADES_JOIN",
+      "path": "lab/governance/astra/packets/CONDUCTOR_KICK_SIMULATOR_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+      "sha256": "76de2f1fa2461008bc1205e5004230ffd45fd2d3e6193d6cc0c11c616b499006",
+      "action": "RUN_TRADES_JOIN",
+      "verify": "PASS",
+      "note": "Conductor Simulator kick cited by READY; path+sha verified on disk"
+    },
+    "accept_harness_iterate": {
+      "id": "CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_MEASURED_HARNESS_ITERATE",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_MEASURED_HARNESS_ITERATE_2026-09-25.json",
+      "sha256": "54b0b1b7d57d42f3a2f2d0caefd72be734532eaae8d8c54fbcb8817a7df99a71",
+      "decision": "ACCEPT_ITERATE",
+      "verify": "PASS",
+      "note": "Prior harness ITERATE ACCEPT; superseded in context only; bytes untouched"
+    },
+    "trades_ready": {
+      "id": "COLLECTOR_READY_TRADES_NOT_SCORED",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/COLLECTOR_READY_TRADES_NOT_SCORED.json",
+      "sha256": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+      "digests_sha256": "12b537a25b02fb33177d5a41c821f94677f1da88e8d1dd63178c3c9f59fac12b",
+      "verify": "PASS"
+    },
+    "examiner_ack_simulator_ready": {
+      "id": "EXAMINER_ACK_SIMULATOR_READY_Q6S5_KXMLBSPREAD_TRADES_JOIN",
+      "path": "lab/governance/astra/packets/EXAMINER_ACK_SIMULATOR_READY_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+      "sha256": "5e2235c1d3ee100c5b7dcb1cb7c93579046f5d515b3e52d3cf0fa77d9bc7aacf",
+      "verify": "PASS",
+      "note": "Optional cite; Examiner ACK of Simulator trades-join READY"
+    },
+    "accept_harness": {
+      "id": "CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_2026-09-25.json",
+      "sha256": "5adc42f9c9533238a2187aafe7593bdf1b8cdec6d12b8d3e9b12cb5ab29000fc",
+      "verify": "PASS",
+      "arms": [
+        "Q6S5A0",
+        "Q6S5A1"
+      ],
+      "quoted": "Fee remains CACHE-LABELED quadratic\u00d70.5 until Examiner /series pin \u2014 do not claim R1-P1."
+    }
+  },
+  "freeze": {
+    "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_FREEZE_2026-09-25.md",
+    "sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "arms_score_bar": {
+      "Q6S5A0": "Native taker \u2014 Partition on native taker_* fields only; Lee-Ready REFUSED",
+      "Q6S5A1": "Freshness bin \u2014 Rails content_fresh_flag / queue-attribution bins; no fee invent; no invent fills"
+    },
+    "quoted_clauses": [
+      "Hard rules: Measurement-only. No invent fills/PnL/depth/settled counts. results/pnl null until Examiner after Clock admit.",
+      "Fee (FIXED lab pin): series fee CACHE-LABELED quadratic\u00d70.5 (not R1-P1 live until Examiner tests /series pin)",
+      "Refuse binds: claim cache fee = R1-P1 live without Examiner /series test",
+      "Scorecard fields (null now): maker_vs_taker_roi_delta, fresh_vs_stale_gap, settled_join_n, n_books, results, pnl \u2014 null until Clock admit + Examiner.",
+      "Strategy: None \u2014 measurement contrast only; invent fills REFUSED",
+      "Arms Q6S5A0/Q6S5A1 \u2014 native taker_* only / content_fresh bins; invent fills REFUSED",
+      "No freeze fail-closed KILL when arm ROI null after honest harness attempt with invent-fills refused"
+    ]
+  },
+  "simulator_ready": {
+    "path": "lab/governance/astra/packets/SIMULATOR_READY_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+    "sha256": "5b47dea926a57e3f1c424e8df62f56ef9b1f02eea87bdd426b4e9248c21465f4",
+    "status": "READY_NOT_SCORED",
+    "scored": false,
+    "keep_claim": false,
+    "verify": "PASS"
+  },
+  "lab": {
+    "root": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_feequue_trades_join_20260925",
+    "results_path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_feequue_trades_join_20260925/results",
+    "runner_sha256": "9a52bcb7eb72466f8189c835062cb54216d73ddc5ca6c88e2909a3c553b31c88",
+    "orchestrator_sha256": "e224686a1bbe4173f00e62c3d2cba78a3c48eecef45ed77c678564def9d5bbfc"
+  },
+  "artifact_digest_verified": {
+    "TRADES_JOIN_RUN_RESULTS.json": {
+      "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_feequue_trades_join_20260925/results/TRADES_JOIN_RUN_RESULTS.json",
+      "sha256": "f707bcbdfddbc1505c0b22464200d07747656e703efba1c9cc66aa80eb0819ef",
+      "verify": "PASS"
+    },
+    "TRADES_JOIN_METRICS.json": {
+      "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_feequue_trades_join_20260925/results/TRADES_JOIN_METRICS.json",
+      "sha256": "3dcdf2ab5af1cc58a60f9664f9313ccb2cd95e87f346a009f7e2be2fcc491c32",
+      "verify": "PASS"
+    },
+    "DIGESTS.txt": {
+      "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_feequue_trades_join_20260925/results/DIGESTS.txt",
+      "sha256": "02478c879bba61f1e634742c0df31e9fb0bc038b9d90cc0cc3324e313192732c",
+      "verify": "PASS"
+    }
+  },
+  "arms": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin",
+    "arm_score_status": "TRADES_JOIN_NATIVE_CLASSIFIED_ROI_NULL_HONEST",
+    "Q6S5A0_detail": {
+      "n_trades_joined": 11744,
+      "n_classified_native": 11744,
+      "taker_outcome_side_counts": {
+        "yes": 6947,
+        "no": 4797
+      },
+      "empty_honest": [
+        {
+          "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+          "n_trades": 0,
+          "empty_honest": true
+        }
+      ],
+      "maker_vs_taker_roi_delta": null,
+      "lee_ready": "REFUSED",
+      "reason": "Native public taker_* classified for partition counts only; ROI refused without strategy fill/PnL series; progress vs prior harness 0 taker hits"
+    },
+    "Q6S5A1_detail": {
+      "rows_classified": 29,
+      "arm_a1_rows_classified": 29,
+      "content_fresh_flag_counts": {
+        "True": 29
+      },
+      "fresh_vs_stale_gap": null,
+      "reason": "content_fresh flags countable; gap is not ROI without fills/PnL series"
+    }
+  },
+  "fee": {
+    "label": "CACHE",
+    "observed_fee_type": "quadratic",
+    "observed_fee_multiplier": 0.5,
+    "claim_as_live_R1P1": false,
+    "fee_honest_under_r1p1_formula": false,
+    "feebook_formula_id_claimed": null,
+    "feebook_formula_id_lab_pin_only": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_pin_lab": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin_lab": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+    "note": "CACHE\u00d70.5 \u2014 NEVER claim as live R1-P1; FEE_PIN confirmed formula_id absent"
+  },
+  "fee_honesty": {
+    "label": "CACHE_NOT_R1P1",
+    "fee_honest": false,
+    "feebook_formula_id": null,
+    "fee_pin_sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "reason": "FEE_PIN 9c0f3554\u2026: GET /series body has fee_type=quadratic fee_multiplier=0.5 but no formula_id; fee_honest=false; CACHE_NOT_R1P1 stands"
+  },
+  "metrics": {
+    "maker_vs_taker_roi_delta": null,
+    "fresh_vs_stale_gap": null,
+    "settled_join_n": 6,
+    "settled_join_n_note": "Observational join of panel tickers to measured raw/markets status+result \u2014 not fills, not PnL",
+    "n_books": 12,
+    "n_books_note": "panel-admitted tickers with >=1 dated measured orderbook (12/12)",
+    "n_trades_joined": 11744,
+    "n_classified_native": 11744,
+    "arm_a0_taker_outcome_side_counts": {
+      "yes": 6947,
+      "no": 4797
+    },
+    "arm_a0_side_counts_source": "TRADES_JOIN_RUN_RESULTS.json arm_reports.Q6S5A0 (verified; matches kick metrics_observed)",
+    "content_fresh_flag_counts": {
+      "True": 29
+    },
+    "arm_a1_rows_classified": 29,
+    "empty_honest": [
+      {
+        "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+        "n_trades": 0,
+        "empty_honest": true
+      }
+    ],
+    "results": null,
+    "pnl": null,
+    "lee_ready": "REFUSED",
+    "source": "TRADES_JOIN_METRICS.json + TRADES_JOIN_RUN_RESULTS.json on disk (not READY ping alone)",
+    "metrics_null_not_invented": [
+      "maker_vs_taker_roi_delta",
+      "fresh_vs_stale_gap",
+      "results",
+      "pnl"
+    ]
+  },
+  "results": null,
+  "pnl": null,
+  "coverage": {
+    "series": "1/1",
+    "events": "6/6",
+    "markets": "12/12",
+    "orderbooks": "12/12",
+    "trades_tickers": "12/12",
+    "n_trades": 11744,
+    "empty_honest_n": 1,
+    "gaps": [],
+    "honest_full_sweep": true,
+    "note": "coverage / n_trades / classification \u2260 KEEP (kick + ACCEPT)"
+  },
+  "verdict_rationale": {
+    "not_KEEP": [
+      "Arm KEEP metrics maker_vs_taker_roi_delta and fresh_vs_stale_gap remain null after trades-join \u2014 native classification present but classification \u2260 ROI; inventing fills REFUSED",
+      "results/pnl null \u2014 freeze hard rules + kick refuse invent; unresolved inventory \u2260 profit",
+      "Fee CACHE_NOT_R1P1 \u2014 FEE_PIN 9c0f3554\u2026 formula_id absent; freeze refuse claim cache=R1-P1; ACCEPT harness 'do not claim R1-P1'",
+      "RESCORE kick: n_books=12, settled_join_n=6, n_trades_joined/n_classified_native=11744 are coverage/join/classification observations, not KEEP; admit\u2260score; coverage\u2260score; promote=false unless KEEP bar met",
+      "KEEP gates fail when required arm ROI/gap metrics are null"
+    ],
+    "not_KILL": [
+      "Freeze does not fail-closed KILL when arm ROI null after honest harness with invent-fills refused; measurement plumbing still open",
+      "Measurement progressing: native classification now present (n_classified_native=11744) vs prior harness 0 taker hits \u2014 ITERATE path, not corporeal fail",
+      "ACCEPT harness iterate: measurement ITERATE not strategy-corporeal rehab; not Refiner",
+      "Trades join + native classification complete with honest null ROI/gap documented \u2014 digests PASS",
+      "CACHE allowed until live /series pin delivers formula_id"
+    ],
+    "ITERATE": [
+      "Trades join + native classification complete; KEEP gates still blocked (ROI/gap/results/pnl null; fee CACHE_NOT_R1P1)",
+      "Wait strategy fills/PnL path so ROI/gap can be non-null (classification \u2260 ROI) + optional R1-P1 formula_id if fee-honest KEEP sought",
+      "3rd ITERATE: prior capture db9bd220\u2026 \u2192 harness 348e2981\u2026 \u2192 this trades-join SCORE; prior bytes untouched",
+      "Conductor ACCEPT of this ITERATE or further allocate (Not Refiner)"
+    ]
+  },
+  "gates_passed": [
+    "rescore_kick_sha_verified",
+    "simulator_ack_ready_sha_verified",
+    "simulator_kick_sha_verified",
+    "simulator_ready_sha_verified",
+    "trades_join_results_sha_verified",
+    "trades_join_metrics_sha_verified",
+    "digests_sha_verified",
+    "trades_ready_sha_verified",
+    "trades_digests_sha_verified",
+    "freeze_sha_verified",
+    "accept_harness_sha_verified",
+    "accept_harness_iterate_sha_verified",
+    "fee_pin_CACHE_NOT_R1P1",
+    "prior_harness_score_untouched",
+    "hold_untouched",
+    "n_books_12_from_disk",
+    "settled_join_n_6_observational_from_disk",
+    "n_trades_joined_11744_from_disk",
+    "n_classified_native_11744_from_disk",
+    "arm_a0_side_counts_verified_results",
+    "no_invent_results_pnl",
+    "coverage_12_of_12_honest_full_sweep",
+    "runner_orch_sha_verified"
+  ],
+  "gates_failed_or_blocked": [
+    "KEEP_requires_non_null_maker_vs_taker_roi_delta",
+    "KEEP_requires_non_null_fresh_vs_stale_gap",
+    "results_non_null",
+    "pnl_non_null",
+    "fee_honest_R1P1_formula_id_pin",
+    "strategy_fills_pnl_path_for_roi_gap",
+    "classification_neq_roi"
+  ],
+  "study_label": {
+    "value": "historical replay",
+    "note": "Measured GET-only capture + trades join + feequeue harness on measured books (not live trading)"
+  },
+  "calibration": "N/A",
+  "calibration_reason": "emits_probabilities=false; measurement-only; no forecast probabilities",
+  "examiner_scorecard_v1_2": {
+    "scorecard": {
+      "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN",
+      "seat": "Examiner (Kalshi)",
+      "desk": "Astra",
+      "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+      "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+      "status": "SCORED",
+      "verdict": "ITERATE",
+      "stub_ready": false,
+      "scored": true,
+      "promote": false,
+      "live_promotion": false,
+      "counted_as_experiment_pnl": false,
+      "metrics": {
+        "results": null,
+        "pnl": null,
+        "maker_vs_taker_roi_delta": null,
+        "fresh_vs_stale_gap": null,
+        "settled_join_n": 6,
+        "n_books": 12,
+        "n_trades_joined": 11744,
+        "n_classified_native": 11744
+      }
+    },
+    "fee_regime": {
+      "feebook_formula_id": null,
+      "fee_cache_label": "quadratic\u00d70.5 CACHE (FEE_PIN CACHE_NOT_R1P1; NOT live R1-P1)",
+      "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+      "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "applies": true,
+      "note": "Lab feebook pin cited; formula_id NOT claimed (CACHE class per FEE_PIN)"
+    },
+    "common_scorecard": {
+      "net_pnl_without_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "net_pnl_with_rewards": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "rewards_actually_earned": {
+        "value": null,
+        "unit": "USD",
+        "measured": false
+      },
+      "calibration": {
+        "value": null,
+        "measured": false,
+        "emits_probabilities": false,
+        "value_if_not_probabilistic": "N/A"
+      },
+      "fill_rate": {
+        "value": null,
+        "measured": false
+      },
+      "adverse_selection_after_fills": {
+        "value": null,
+        "measured": false
+      },
+      "feasible_vs_requested_size": {
+        "value": null,
+        "measured": false
+      },
+      "unresolved_inventory": {
+        "value": null,
+        "measured": false
+      },
+      "capital_hours": {
+        "value": null,
+        "measured": false
+      },
+      "drawdown": {
+        "value": null,
+        "measured": false
+      },
+      "event_concentration": {
+        "value": null,
+        "measured": false
+      }
+    },
+    "rewards_rule": {
+      "rewards_thesis_declared_in_freeze": false
+    },
+    "simulated_fills": {
+      "counts_toward_keep": false,
+      "fill_rate_simulated": {
+        "value": null,
+        "measured": false
+      },
+      "fill_model_ref": null,
+      "note": "invent fills REFUSED; trades-join classifies native taker_* for partition counts only \u2014 not strategy fills/PnL"
+    },
+    "stress_sensitivity": {
+      "one_tick_worse": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      },
+      "fees_2x": {
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "measured": false
+      }
+    },
+    "executable_dollars_per_day": {
+      "value": null,
+      "median_day": null,
+      "p10_day": null,
+      "measured": false
+    },
+    "study_label": {
+      "value": "historical replay"
+    },
+    "preregistration_checklist": {
+      "gate_status": "ITERATE_TRADES_JOIN_NATIVE_CLASSIFIED_ROI_NULL_FEE_CACHE",
+      "variants_declared_counts": {
+        "satisfied": 8,
+        "n/a": 4,
+        "missing": 0
+      },
+      "items_ref": "FROZEN_EXPERIMENT.json p16_preregistration_checklist + freeze \u00a7p16"
+    },
+    "controls": {
+      "market_only": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "simple_model": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "no_trade": {
+        "applies": false,
+        "result": null,
+        "declared_in_freeze": true
+      },
+      "note": "no strategy \u2192 controls not applicable (declared pre-outcome)"
+    }
+  },
+  "wait_for": [
+    "Strategy fills/PnL path so Q6S5A0 maker_vs_taker_roi_delta can be non-null (native classification \u2260 ROI; invent fills still REFUSED)",
+    "Fill/PnL series (or freeze-allowed gap definition that is not ROI) so Q6S5A1 fresh_vs_stale_gap can be non-null; content_fresh counts alone \u2260 gap",
+    "Examiner live /series R1-P1 feebook formula_id pin IF fee-honest KEEP is sought (FEE_PIN remains CACHE_NOT_R1P1 until formula_id observed)",
+    "Conductor ACCEPT of this ITERATE or further allocate (not Refiner unless freeze forces strategy rehab)"
+  ],
+  "blockers": [
+    "maker_vs_taker_roi_delta=null (native classified 11744; classification\u2260ROI; no strategy fill/PnL)",
+    "fresh_vs_stale_gap=null (flags countable 29; gap\u2260ROI without fills)",
+    "results=null",
+    "pnl=null",
+    "fee_class=CACHE_NOT_R1P1 (formula_id absent per FEE_PIN 9c0f3554\u2026)"
+  ],
+  "scoreboard_unchanged": "Q6-000 / Arm D KEEP +$345.24 / +6.90%",
+  "q6_000_unchanged": true,
+  "refuse": [
+    "KEEP with null arm ROI/gap or null results/pnl",
+    "invent fills/PnL/ROI/gap",
+    "treat native classification counts as ROI/KEEP",
+    "claim CACHE as R1-P1 / astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "fee-honest KEEP without feebook formula_id (R2-P5)",
+    "treat n_books/settled_join_n/n_trades/classification/coverage/admit as KEEP",
+    "live orders",
+    "retune Q6-000 / Cap-SR / S1 KXMLBGAME ML",
+    "edit/delete prior harness SCORE 348e2981\u2026 / capture SCORE db9bd220\u2026 / FEE_PIN 9c0f3554\u2026 / HOLD bd34d207\u2026 / ACCEPT 54b0b1b7\u2026",
+    "route to Refiner"
+  ],
+  "does_not_ungate": [
+    "S1_KXMLBGAME_ML",
+    "S2",
+    "R2-P4",
+    "Card06_open_window",
+    "Q6-000_retune",
+    "Cap-SR"
+  ],
+  "no_orders": true,
+  "integrity_before": {
+    "rescore_kick": "650283a7a69b4e6411b51c036e876694f27eb8db7908a52325092a1e2142e96f",
+    "ack_ready": "f338a09652f1da4442bdfcf579087660f435529885eb110a884b87acda3a23f2",
+    "simulator_ready": "5b47dea926a57e3f1c424e8df62f56ef9b1f02eea87bdd426b4e9248c21465f4",
+    "trades_join_results": "f707bcbdfddbc1505c0b22464200d07747656e703efba1c9cc66aa80eb0819ef",
+    "trades_join_metrics": "3dcdf2ab5af1cc58a60f9664f9313ccb2cd95e87f346a009f7e2be2fcc491c32",
+    "digests": "02478c879bba61f1e634742c0df31e9fb0bc038b9d90cc0cc3324e313192732c",
+    "trades_ready": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+    "trades_digests": "12b537a25b02fb33177d5a41c821f94677f1da88e8d1dd63178c3c9f59fac12b",
+    "fee_pin": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "prior_harness_score": "348e2981d191fda5a228ef77fc578b0821bd731ae6aa38b1b8004d9d82ba3d62",
+    "accept_harness_iterate": "54b0b1b7d57d42f3a2f2d0caefd72be734532eaae8d8c54fbcb8817a7df99a71",
+    "freeze": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "template": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "examiner_ack_simulator_ready": "5e2235c1d3ee100c5b7dcb1cb7c93579046f5d515b3e52d3cf0fa77d9bc7aacf",
+    "simulator_kick": "76de2f1fa2461008bc1205e5004230ffd45fd2d3e6193d6cc0c11c616b499006",
+    "capture_score_lineage": "db9bd220b5dd61229b6481a27d03222f36ac0ec816efa3402ef35404a0d4fb8e",
+    "hold": "bd34d2075dc285b2bd2e2a83b15fdb85715b24389aa41e99f46b20672c8a91eb",
+    "accept_harness": "5adc42f9c9533238a2187aafe7593bdf1b8cdec6d12b8d3e9b12cb5ab29000fc",
+    "runner": "9a52bcb7eb72466f8189c835062cb54216d73ddc5ca6c88e2909a3c553b31c88",
+    "orchestrator": "e224686a1bbe4173f00e62c3d2cba78a3c48eecef45ed77c678564def9d5bbfc",
+    "verify": "PASS_all_match_expected"
+  },
+  "integrity_after_note": "CREATE-only new EXAMINER_SCORE_* + SCORECARD_*; prior harness SCORE/ACCEPT/FEE_PIN/HOLD/READY/metrics/results bytes untouched",
+  "stamped_at_et": "2026-09-25T02:17:39-04:00",
+  "artifact": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN"
+}

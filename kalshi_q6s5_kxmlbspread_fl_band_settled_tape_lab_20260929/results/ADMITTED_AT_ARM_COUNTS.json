@@ -1,0 +1,24 @@
+{
+  "arms": {
+    "Q6S5FL0": {
+      "post_admitted_at": 391,
+      "pre_admitted_at": 1004
+    },
+    "Q6S5FL1": {
+      "post_admitted_at": 127,
+      "pre_admitted_at": 8441
+    },
+    "Q6S5FL2": {
+      "post_admitted_at": 519,
+      "pre_admitted_at": 1235
+    }
+  },
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV",
+  "panel_admitted_at": "2026-09-25T04:37:47Z",
+  "pnl": null,
+  "promote": false,
+  "results": null,
+  "rule": "pre_admitted_at = created_time < 2026-09-25T04:37:47Z; post_admitted_at is the complement",
+  "verdict_ceiling": "ITERATE"
+}
