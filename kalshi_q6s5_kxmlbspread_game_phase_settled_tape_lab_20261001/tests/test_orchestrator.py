@@ -637,8 +637,8 @@ class ScorecardTests(unittest.TestCase):
         self.assertIs(stub['hypothesis_generating_only'], True)
         self.assertIs(stub['universe_cap_last_knob'], True)
         self.assertEqual(stub['first_pitch_source'], 'SCHEDULED_START_PROXY')
-        self.assertIsNone(stub['results'])
-        self.assertIsNone(stub['pnl'])
+        self.assertIsNone(stub['metrics']['results'])
+        self.assertIsNone(stub['metrics']['pnl'])
         self.assertIsNone(stub['metrics']['maker_gross_roi_delta_GP1_minus_GP0'])
         self.assertIsNone(stub['metrics']['reading'])
         for arm in ('Q6S5GP0', 'Q6S5GP1'):

@@ -1,0 +1,37 @@
+{
+  "evidence_class": "IN_SAMPLE_DEV",
+  "first_pitch_source": "SCHEDULED_START_PROXY",
+  "family_size": 4,
+  "hypothesis_generating_only": true,
+  "universe_cap_last_knob": true,
+  "counts_only": true,
+  "rule": "timestamp-only: GP0 created_time < scheduled start; GP1 scheduled start <= created_time < close_time; else post-close",
+  "arms": {
+    "Q6S5GP0": 1865,
+    "Q6S5GP1": 9852
+  },
+  "post_close": 6,
+  "pre_admitted_at_by_arm": {
+    "Q6S5GP0": {
+      "pre_admitted_at": 1865,
+      "post_admitted_at": 0
+    },
+    "Q6S5GP1": {
+      "pre_admitted_at": 8815,
+      "post_admitted_at": 1037
+    }
+  },
+  "per_market": {
+    "KXMLBSPREAD-26SEP242140HOUATH-ATH2": {"Q6S5GP0": 22, "Q6S5GP1": 475, "post_close": 0},
+    "KXMLBSPREAD-26SEP242140HOUATH-HOU2": {"Q6S5GP0": 498, "Q6S5GP1": 2057, "post_close": 2},
+    "KXMLBSPREAD-26SEP242140LAASEA-LAA2": {"Q6S5GP0": 50, "Q6S5GP1": 1054, "post_close": 1},
+    "KXMLBSPREAD-26SEP242140LAASEA-SEA2": {"Q6S5GP0": 386, "Q6S5GP1": 785, "post_close": 2},
+    "KXMLBSPREAD-26SEP242210SDLAD-LAD2": {"Q6S5GP0": 836, "Q6S5GP1": 3308, "post_close": 0},
+    "KXMLBSPREAD-26SEP242210SDLAD-SD2": {"Q6S5GP0": 73, "Q6S5GP1": 2173, "post_close": 1}
+  },
+  "promote": false,
+  "counts_toward_keep": false,
+  "verdict_ceiling": "ITERATE",
+  "results": null,
+  "pnl": null
+}
