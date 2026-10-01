@@ -1,0 +1,26 @@
+{
+  "packet": "CONDUCTOR_MERGE",
+  "experiment": "Q6S5_KXMLBSPREAD_STRATEGY_FILL",
+  "pr": 60,
+  "verified_head": "f8264ad793674df14593d383dde5844c08f153e9",
+  "merge_commit_sha": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+  "merge_method": "squash",
+  "merged_stamp_utc": "2026-09-29T21:18:39Z",
+  "merged_stamp_et": "2026-09-29 17:18 EDT",
+  "base_before": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "conductor_verify": {
+    "pins_rehash_match": "14/14",
+    "byte_identical_to_conductor_packets": ["a5398129","c6f95b32","dc19794b","7472b8ac","0f33a94c","ac7cfe63","9f50ba19","739d81d6 (v2 tgz vs /workspace original)"],
+    "manifest_sha256": "13/13 OK", "manifest_v2": "OK",
+    "unit_tests": "14/14 OK",
+    "non_test_py_changed_since_b05c41c": "none",
+    "network_imports_non_test": "none",
+    "main_tree_equals_verified_head": true
+  },
+  "digest_all_match_claimed": true,
+  "results": null, "pnl": null, "roi": null,
+  "fee_label": "CACHE_NOT_R1P1",
+  "counts_toward_keep": false,
+  "examiner_next": "READY_NOT_SCORED stub (model evidence only; best outcome ITERATE)",
+  "sole_cloud": "bc-c45d800a-47b9-56ff-a157-6517f27290d3 (vendoring run bc-ecc70b9b done)"
+}

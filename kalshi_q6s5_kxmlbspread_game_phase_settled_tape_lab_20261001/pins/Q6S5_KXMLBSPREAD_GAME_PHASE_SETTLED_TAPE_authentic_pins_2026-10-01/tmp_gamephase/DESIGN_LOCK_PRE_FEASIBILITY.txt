@@ -1,0 +1,5 @@
+Design locked before any feasibility count (counts only; no price, no result read):
+knob game_phase; arms Q6S5GP0 PREGAME [open, scheduled_start) / Q6S5GP1 INPLAY [scheduled_start, close_time)
+scheduled_start = parse(rules_primary "originally scheduled for <Mon D, YYYY> at <H:MM AM|PM> EDT"), cross-check event_ticker YYMONDDHHMM (ET); mismatch = hard fail
+primary maker_gross_roi_delta_GP1_minus_GP0; H1 < 0
+2026-10-01T19:17:39-04:00

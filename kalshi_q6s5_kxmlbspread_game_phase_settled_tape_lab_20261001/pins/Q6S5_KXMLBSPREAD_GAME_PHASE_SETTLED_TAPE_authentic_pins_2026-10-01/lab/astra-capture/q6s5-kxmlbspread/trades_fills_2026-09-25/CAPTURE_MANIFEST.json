@@ -1,0 +1,337 @@
+{
+  "schema_id": "astra.q6s5_trades_fills.manifest.v0",
+  "series": "KXMLBSPREAD",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "capture_root": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/",
+  "stamped_at_utc": "2026-09-25T06:04:16Z",
+  "files": [
+    {
+      "path": "COLLECTOR_READY_TRADES_NOT_SCORED.json",
+      "sha256": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+      "size": 1989
+    },
+    {
+      "path": "STATUS.json",
+      "sha256": "e8e23f7d341c2d236243054663caf684c9e3fca40975dd48842d6b4052893e9a",
+      "size": 3056
+    },
+    {
+      "path": "capture.pid",
+      "sha256": "ac706715247b671e21c288cfea892ad01e1deb1b1151396dc7b9fa36322e6d8e",
+      "size": 7
+    },
+    {
+      "path": "capture.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "capture.stdout.log",
+      "sha256": "a539d838fc18c89bc7056cf86a33cc7d6c3e2d74efc7776c53c87d368f86ffff",
+      "size": 3782
+    },
+    {
+      "path": "http_429.jsonl",
+      "sha256": "3bedf552330772d18330a68c86a3102ff1a0cab9adac391db7481b87e7e29304",
+      "size": 225
+    },
+    {
+      "path": "kick_pin.json",
+      "sha256": "b05291d545aaae635a2f8086a7131c3741e9485e03b1ae107c1c5297ad3a3dd5",
+      "size": 881
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "6f2584372f7c3e7e8b7ad7d502352636fb68163a58a0b99f973883bda29860b6",
+      "size": 405
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "5564ae7fb4768cdc928d8d49e96eb7a25524b923666ccaee4b13e35c97d5ea83",
+      "size": 424
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "697eb4aab47a2272c199b57ed602a364b7ce672c1c1643b635ed8d34e243e956",
+      "size": 415
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242140LAASEA-SEA2.json",
+      "sha256": "139344d8f9ef0b016c58ae12ef0f967d4fc7dc9ba5805c71adfc02821de78e7f",
+      "size": 413
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "145c2d215deafc11d5ab958c8efbcd29c69c806c8c1962126be1b84b6741f20a",
+      "size": 440
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "32e59dca6c27b0949acfb7bcc861a81cfdadcbd0c0d329191935dd3c840eba65",
+      "size": 422
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "34d330011373ee79dad0c1e975ef09391cff4776f927f75f44208d8404b303b6",
+      "size": 403
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "dd5823045f2aed8d459fda17847a0e09fe3a7dd7a6804a44ab6de42069b2b866",
+      "size": 402
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "e35adfdc07acdabe3f18e25642d96320fd11bfb8bb93e0d756f7fff2050c0fd3",
+      "size": 403
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "a02a2bc8de5bfd2554c2207731788f937f365e0fa8662d26baef7143248c8c8f",
+      "size": 291
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "c2d7fb6bf2eed11ada25715c3df012d6b0f18ae87cee4e5a81c537aa557dd996",
+      "size": 402
+    },
+    {
+      "path": "per_ticker/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "bb8599cd71c4825566981aacbeb13bf16236f0132f596a606c5b41b47a23d5e3",
+      "size": 412
+    },
+    {
+      "path": "q6s5_trades_capture.py",
+      "sha256": "f23162da31814368899e2520e7213be0637212f47fc5f127bd8f1602ab1ef1d8",
+      "size": 31163
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-ATH2/page_0001.json",
+      "sha256": "89698fd4e642b1c49b31345c8eb8c51f204eca22c55c9b7005f9f9e713709f2a",
+      "size": 199280
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-ATH2/page_0001.meta.json",
+      "sha256": "a53407f194cacf06768c6edae0dcf47660209ca7efbba6890dde44e0c21b8666",
+      "size": 362
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0001.json",
+      "sha256": "ecd753cfb2790c0bf2f88e8c123116a7399d496679a54cb10f9f544d266b4a03",
+      "size": 401107
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0001.meta.json",
+      "sha256": "4af6c497648c74aa6d327bdc18574b89e848ba85ba33e21bd6fa1dd1c4f900b3",
+      "size": 407
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0002.json",
+      "sha256": "bfa1b915366907ddb497bc79ca418d82b51816c06ef62168b0ee7625a4b2dbde",
+      "size": 401127
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0002.meta.json",
+      "sha256": "8b1f708f38bdc8659becd517d695a7e6ce0ad932d847247bce33f47775963a6e",
+      "size": 505
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0003.json",
+      "sha256": "7125aa29e960e9c10c73aa3028421d75d02343090841704c3083fc6f67fcbb2a",
+      "size": 223847
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0003.meta.json",
+      "sha256": "286f3e81b92b536b528dfdfb4e1e9a317e5a6801275f62cc56ea48aef9143bb6",
+      "size": 460
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0001.json",
+      "sha256": "f1a54c168e43a256fccae32d1c77a0d20ea88df2d5853b49025a37728b565a75",
+      "size": 400988
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0001.meta.json",
+      "sha256": "03cce49a962ae1de4b0506c88c9a2099db04be820139319517655b6435609722",
+      "size": 405
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0002.json",
+      "sha256": "096889ba835b376dedc3d617b15e7955bc04d31f2e89520fb34e8054182e4c0b",
+      "size": 42131
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0002.meta.json",
+      "sha256": "99542c4f4db113f3daee2dee51f10d9a61a28c294d62e3d866cb5a9ec88e8521",
+      "size": 456
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0001.json",
+      "sha256": "3980c9feb24674f7301ff0feb550c0ec7d79d2afa0a62240ffb58a672101a26c",
+      "size": 401249
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0001.meta.json",
+      "sha256": "bc4e5228843ca7d769d02f9315d86d64ec4355368ff3909894fe0808d3941873",
+      "size": 407
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0002.json",
+      "sha256": "e2e5d68a184f9e1c12adacabc0b3c20564a58563029dc6b00c70644bf3776591",
+      "size": 69503
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0002.meta.json",
+      "sha256": "3f15e1fb2e2c41006ad89c4b772853c456df73a4b44301312adff1a6ed41b66c",
+      "size": 460
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0001.json",
+      "sha256": "1df0e189d0f83caee7644df59ab7336af7635fadf1d0e6b667222538cbb4775b",
+      "size": 399860
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0001.meta.json",
+      "sha256": "f5257271136d7a687e26f92346e8dedcb7c9b00f0dafbf9bea21f93c1acebab5",
+      "size": 406
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0002.json",
+      "sha256": "86844f951fa6fa781f9766a1a05ac462c48a7a15869862a6292e551ee45584e5",
+      "size": 400462
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0002.meta.json",
+      "sha256": "0aacf3031f251fd94d5935b08944dca9a6277ab2cf9df83cb07eeb8cba21c890",
+      "size": 502
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0003.json",
+      "sha256": "1aeafe208560f19a175c36f9141b01c4c96bc8d9a08611507505103826375b6d",
+      "size": 400461
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0003.meta.json",
+      "sha256": "4caaa613bd52f456b5d925193fd5b3e538f7a8f04fda579723d6b6d3c92d8c31",
+      "size": 500
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0004.json",
+      "sha256": "8790f4d95c853b9e4c102e7321a755f0fc1a35a136b75e08ebb01e5146320a92",
+      "size": 400763
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0004.meta.json",
+      "sha256": "3b47487c3f0bce557a2ff83e2d15e9329672a7462dca1470ffca4556f6a6be1f",
+      "size": 504
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0005.json",
+      "sha256": "d0757c117f2f15fe3becf042db99d85dab314577b10b91ede79e3b382f354f20",
+      "size": 57720
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0005.meta.json",
+      "sha256": "893d42d4f911bacdfd0f65ccdf21ce9224f097539596a977bf1e5945ce211a7d",
+      "size": 459
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0001.json",
+      "sha256": "ac631b5051728883c01a8bea76d18b89040981d9d3903f136d9d5194c34f3655",
+      "size": 399172
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0001.meta.json",
+      "sha256": "13ac6cf4d517046ae4f4f5bafa014eb813c2aa910bf24f6b32cae0e547755193",
+      "size": 405
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0002.json",
+      "sha256": "a21e8201c12a3a0b3968afe3a7f5cb272886099d18ce037257fbde7dece6054c",
+      "size": 399259
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0002.meta.json",
+      "sha256": "ed1d91d22f53f07835dc902f18038b0dbed34e587c71c0386913f2f56a793fd4",
+      "size": 501
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0003.json",
+      "sha256": "2c8c62c2ec83a806147d93201c615d988ba095efe0274e0544d6da5253a3d170",
+      "size": 98691
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0003.meta.json",
+      "sha256": "cf0b3a405c2e34b6507af23b3aa744f9dc8a9f4752b9f68f9807acb34f730887",
+      "size": 454
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840PITDET-DET2/page_0001.json",
+      "sha256": "df03880ba36d0a068a82a49495bea39e994e595e883c3efa919ffc85ae8a4c31",
+      "size": 440
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840PITDET-DET2/page_0001.meta.json",
+      "sha256": "8d52ec3d75c57d611a6117affd5747b3c7ed65148301b5bfcda6be172366581d",
+      "size": 360
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840PITDET-PIT2/page_0001.json",
+      "sha256": "9c812f07463ad663525dc3c1a3ddf1037f3b15d80de0690c0d8ff39bd846b5f9",
+      "size": 1636
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840PITDET-PIT2/page_0001.meta.json",
+      "sha256": "e534d884c926b6d231587435733f820c0c8230feccf8528ec1ce08a9c2ac3961",
+      "size": 360
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840TBPHI-PHI2/page_0001.json",
+      "sha256": "21aa1b3e6f0d6e4714c1fb641a8b9dc5e52c59d1f13d675a17d6e9d80ad4b62a",
+      "size": 4042
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840TBPHI-PHI2/page_0001.meta.json",
+      "sha256": "01c5c16e034e6940021ff68955f26cb41faadbf42f89c898252300dbea30acd1",
+      "size": 360
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840TBPHI-TB2/page_0001.json",
+      "sha256": "c822994d1f81f16541c4b8019c33a70ef3a2a33fd56beef89132a78598111b36",
+      "size": 35
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251840TBPHI-TB2/page_0001.meta.json",
+      "sha256": "f67cfddfcb58b777456cead00271ab6a09deb8fbc347ae52132b21c14c8c16a6",
+      "size": 358
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-NYM2/page_0001.json",
+      "sha256": "598e7fe394a483319462880321e61a334af9880ee586a1a9a81e1165a9df4aac",
+      "size": 2035
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-NYM2/page_0001.meta.json",
+      "sha256": "de6287fb2464c634fbc031abdee999514f31bff51eb000bcfd3f794a5857e98b",
+      "size": 360
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-WSH2/page_0001.json",
+      "sha256": "d3f15fefba125a4d5a05e5d605d564569025236fd8d97c805cd3e804775213e7",
+      "size": 440
+    },
+    {
+      "path": "raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-WSH2/page_0001.meta.json",
+      "sha256": "af3acbaec37704beb0dfffade50c6d687caef9af9d8b4f528cd31867d77e69ea",
+      "size": 360
+    },
+    {
+      "path": "requests.jsonl",
+      "sha256": "33d88f1cd6532f5eb0f80d8ad9a30e84820345d33126ca45fd45f5573d788a3d",
+      "size": 8438
+    }
+  ],
+  "kick_sha256": "b7b741745ef513ec5f9b7e31554263baec54518add1da25201e4de8c7665b836",
+  "accept_sha256": "54b0b1b7d57d42f3a2f2d0caefd72be734532eaae8d8c54fbcb8817a7df99a71",
+  "n_files": 65
+}

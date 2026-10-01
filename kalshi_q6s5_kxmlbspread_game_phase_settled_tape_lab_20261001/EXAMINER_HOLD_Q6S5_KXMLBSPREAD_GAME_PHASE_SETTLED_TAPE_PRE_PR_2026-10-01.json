@@ -1,0 +1,23 @@
+{
+  "id": "EXAMINER_HOLD_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_PRE_PR",
+  "packet": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "freeze_id": "Q6S5-KXMLBSPREAD-GAME-PHASE-SETTLED-TAPE",
+  "feature_family": "settled_tape_game_phase",
+  "status": "HOLD_PRE_PR",
+  "examiner_path_after_pr": "READY_NOT_SCORED",
+  "stub_ready": false,
+  "scored": false,
+  "verdict": null,
+  "signed_by_examiner": false,
+  "ready_marked_by_implementer": false,
+  "promote": false,
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV",
+  "first_pitch_source": "SCHEDULED_START_PROXY",
+  "family_size": 4,
+  "hypothesis_generating_only": true,
+  "universe_cap_last_knob": true,
+  "note": "Implementer hold only. READY_NOT_SCORED waits on Examiner after this PR. This file does not score.",
+  "results": null,
+  "pnl": null
+}

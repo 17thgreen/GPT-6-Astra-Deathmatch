@@ -1,0 +1,21 @@
+{
+  "type": "CONDUCTOR_MERGE",
+  "pr": 54,
+  "experiment": "ATP-RJ KXATPMATCH settled-resolution join harness",
+  "head_sha_verified": "f499ee3062283f7b60b1622f982c39c5fb94aeb5",
+  "merge_method": "squash",
+  "merge_commit": "e8770f1e48c364f3006d6e1909ed6b63652f3785",
+  "merged_at_et": "2026-09-24T20:11-04:00",
+  "conductor_verified_head_eq_box_sha256_prefix": {
+    "CONDUCTOR_ACCEPT (e42d7583)": "e42d75834086f340",
+    "freeze (dc9fcb32)": "dc9fcb326a97ce24",
+    "maximize_pin_1948ET (70020baf)": "70020baf5599f7af",
+    "EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2 (56bcf626)": "56bcf6269a42031d"
+  },
+  "files_changed": 78,
+  "private_or_electindex_files_in_pr": 0,
+  "accept_timestamp_note": "ACCEPT file mtime 19:49:55 ET precedes commit-1 19:51:26 ET; issued_at 19:52 was minute-rounded. No provenance issue.",
+  "conditions_met": ["v1.2 template in-repo", "measure mode present (--since 2026-09-24T23:52:00Z, GET-only, v2-host guard)", "results/pnl/settled_join_n null"],
+  "smoke_20:04-20:08": "UNADMITTED code-path smoke, not a result; 0/0/0 because nothing settled after ACCEPT yet; heavy 429s",
+  "next": "Examiner READY NOT_SCORED stamp; Variants runs measure mode under Collector GET budget once post-ACCEPT settlements exist; ETH-RJ unfrozen until measured settled_join_n or documented blocker"
+}

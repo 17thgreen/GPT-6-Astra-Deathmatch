@@ -1,0 +1,469 @@
+{
+ "id": "EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60",
+ "seat": "Examiner (Kalshi)",
+ "desk": "Astra/Kalshi",
+ "type": "READY_NOT_SCORED",
+ "status": "READY_NOT_SCORED",
+ "experiment": "Q6S5 KXMLBSPREAD strategy-fill",
+ "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+ "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+ "series": "KXMLBSPREAD",
+ "knob": "fill_model",
+ "fill_model_in_scope": [
+  "public_trade_through_conservative"
+ ],
+ "fill_model_unavailable": [
+  "mechanic_demo_observed"
+ ],
+ "filed_at_et": "2026-09-29T17:21:40-04:00",
+ "filed_at_utc": "2026-09-29T21:21:40Z",
+ "pr": 60,
+ "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+ "merge_sha": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+ "head": "f8264ad",
+ "head_full": "f8264ad793674df14593d383dde5844c08f153e9",
+ "merge_method": "squash",
+ "base_before": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+ "merged_stamp": {
+  "conductor_utc": "2026-09-29T21:18:39Z",
+  "conductor_et": "2026-09-29 17:18 EDT",
+  "git_commit_time_et": "2026-09-29T17:18:30-04:00",
+  "git_commit_time_utc": "2026-09-29T21:18:30Z"
+ },
+ "merge_sha_verified_via": "local_git_object_only",
+ "merge_sha_git_check": {
+  "checkout": "/workspace/tmp/pr57-verify/repo (stale local checkout; read-only; no fetch/clone/push)",
+  "commit_object_present": true,
+  "commit_subject": "Q6S5 KXMLBSPREAD strategy-fill measurement path (#60)",
+  "parent": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+  "parent_matches_base_before": true,
+  "merge_tree": "963d42770b4a64a116038cb93ef0f0a9ddf227cb",
+  "head_f8264ad_tree": "963d42770b4a64a116038cb93ef0f0a9ddf227cb",
+  "merge_tree_equals_head_tree": true,
+  "files_changed": 30,
+  "insertions": 3262,
+  "main_contains_merge_sha_confirmed_locally": false,
+  "reason": "local refs/heads/main and refs/remotes/origin/main are stale at 47f0ec58157a3036ee7992d5efb20fac85f63c98; no fetch performed",
+  "main_containment": "conductor_attested (CONDUCTOR_MERGE packet 3486a2fe\u2026; main_tree_equals_verified_head=true per Conductor)"
+ },
+ "conductor_packets": {
+  "merge_packet": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-29.json",
+   "sha256": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef",
+   "expected_prefix": "3486a2fe",
+   "on_disk_match": true
+  },
+  "ready_not_scored_kick": {
+   "path": null,
+   "sha256": null,
+   "found": false,
+   "note": "No CONDUCTOR_KICK_EXAMINER_* for Q6S5 strategy-fill READY NOT_SCORED found in P (ls/rg). Filing on merge packet field examiner_next: \"READY_NOT_SCORED stub (model evidence only; best outcome ITERATE)\"."
+  },
+  "freeze_md": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+   "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+   "expected_prefix": "9f50ba19",
+   "on_disk_match": true
+  },
+  "freeze_md_lab_copy": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+   "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+   "expected_prefix": "9f50ba19",
+   "on_disk_match": true
+  },
+  "implementation_accept": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+   "sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+   "expected_prefix": "c6f95b32",
+   "on_disk_match": true
+  },
+  "companion_accept": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json",
+   "sha256": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+   "expected": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+   "on_disk_match": true
+  },
+  "reconcile": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_RECONCILE_Q6S5_STRATEGY_FILL_DUAL_ACCEPT_SOLE_CLOUD_2026-09-29.json",
+   "sha256": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+   "expected_prefix": "0f33a94c",
+   "on_disk_match": true
+  },
+  "variants_freeze_kick": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+   "sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+   "expected_prefix": "dc19794b",
+   "on_disk_match": true
+  },
+  "queue_on_disk": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+   "sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+   "expected_prefix": "7472b8ac",
+   "on_disk_match": true
+  },
+  "admit1_ruling": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+   "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+   "expected_prefix": "ac7cfe63",
+   "on_disk_match": true
+  },
+  "admit1_ruling_erratum_card03": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_ERRATUM_CARD03_GAP_WINDOW_2026-09-29.json",
+   "sha256": "31da5974867ee6230928b641e4a939171bce44260a4b87ee9161ffc8f30477d9"
+  },
+  "queue_lineage": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/QUEUE_LINEAGE.md",
+   "sha256": "86fad73cc18a2edc374279d6c9ff3e2c393f3e4dc2ad32e2de94180c2fd378b4",
+   "expected_prefix": "86fad73c",
+   "on_disk_match": true
+  }
+ },
+ "hold_pre_pr_lifted": true,
+ "hold_pre_pr": {
+  "top_level_examiner_hold_in_P": null,
+  "top_level_note": "rg -l 'STRATEGY_FILL' P/EXAMINER_* matched only EXAMINER_ACK_CONDUCTOR_ACCEPT_Q6S5_TRADES_JOIN_ITERATE_2026-09-25.json (an ACK, not a HOLD). No top-level Examiner-authored HOLD_PRE_PR for strategy-fill exists in P.",
+  "lifted_hold": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PRE_PR_2026-09-25.json",
+   "sha256_before": "0e1ec2002e7aa3571b0944b273554ddc1fed4e5f822f4c7daef0d6a1801cf05c",
+   "sha256_after": "0e1ec2002e7aa3571b0944b273554ddc1fed4e5f822f4c7daef0d6a1801cf05c",
+   "bytes_untouched": true,
+   "drafted_by": "R&D Variants (pre-PR stub for Examiner; Examiner owns status)",
+   "status_in_file": "HOLD_PRE_PR",
+   "pinned_by": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json pins.examiner_hold_pre_pr = 0e1ec2002e7aa3571b0944b273554ddc1fed4e5f822f4c7daef0d6a1801cf05c",
+   "pin_match": true
+  },
+  "implementer_hold_in_git": {
+   "path": "git:12e760f5bd3b622d8f0d70a74c28655464e2b93c:kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/EXAMINER_HOLD_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PRE_PR_2026-09-29.json",
+   "sha256": "39c57c8e80a74ec600aac4f6fd93c6bb286a0b7d7b97f757e951fca9548d11ac",
+   "note": "Implementer hold only (\"READY waits on merge plus a Conductor/Examiner kick\"); git object only, no box working copy edited."
+  },
+  "note": "READY lifts only the pre-PR condition (PR #60 merged). It is not a score. HOLD bytes not edited."
+ },
+ "prior_lineage_cited": {
+  "trades_join_score": {
+   "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+   "sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+   "expected_prefix": "a18f2ad2",
+   "on_disk_match": true
+  },
+  "conductor_accept_iterate_3rd": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_Q6S5_KXMLBSPREAD_TRADES_JOIN_ITERATE_2026-09-25.json",
+   "sha256": "ac713e5fcbdda218d98e88bf4faab340204d8ad47dc9f0613d3762feca69b50d",
+   "expected_prefix": "ac713e5f",
+   "on_disk_match": true
+  },
+  "queue_08aa54de": {
+   "path": null,
+   "sha256_cited": "08aa54de2b47314e9d27342c1bf3824400d3c434770d339f2e3c253ee90084f6",
+   "on_disk": false,
+   "on_disk_match": null,
+   "note": "Not on box. Per QUEUE_LINEAGE.md and ACCEPT a5398129 queue_lineage.ruling: original bytes overwritten in place, unrecoverable; superseded by on-disk 7472b8ac\u2026; routing-only, not an evidence pin."
+  },
+  "fee_pin": {
+   "path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+   "sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+   "expected_prefix": "9c0f3554",
+   "on_disk_match": true
+  }
+ },
+ "vendored_pins": {
+  "lab_dir": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/Q6S5_KXMLBSPREAD_STRATEGY_FILL/",
+  "source": "git objects at merge 12e760f5bd3b622d8f0d70a74c28655464e2b93c in /workspace/tmp/pr57-verify/repo (read-only); working copy /workspace/tmp/pr60-verify/repo @ f8264ad also matched",
+  "manifests": [
+   "MANIFEST.sha256 (13 entries)",
+   "MANIFEST_V2.sha256 (1 entry)"
+  ],
+  "count": 14,
+  "all_manifest_match": true,
+  "all_box_original_match": true,
+  "digest_all_match_claimed_by_conductor": true,
+  "digest_all_match_examiner_recomputed": true,
+  "pins": [
+   {
+    "file": "CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json",
+    "manifest_sha256": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+    "git_blob_sha256_at_merge": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json",
+    "box_original_sha256": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+    "box_original_match": true
+   },
+   {
+    "file": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+    "manifest_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+    "git_blob_sha256_at_merge": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+    "box_original_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+    "box_original_match": true
+   },
+   {
+    "file": "CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+    "manifest_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+    "git_blob_sha256_at_merge": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+    "box_original_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+    "box_original_match": true
+   },
+   {
+    "file": "CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+    "manifest_sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "git_blob_sha256_at_merge": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json",
+    "box_original_sha256": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+    "box_original_match": true
+   },
+   {
+    "file": "CONDUCTOR_RECONCILE_Q6S5_STRATEGY_FILL_DUAL_ACCEPT_SOLE_CLOUD_2026-09-29.json",
+    "manifest_sha256": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+    "git_blob_sha256_at_merge": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_RECONCILE_Q6S5_STRATEGY_FILL_DUAL_ACCEPT_SOLE_CLOUD_2026-09-29.json",
+    "box_original_sha256": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+    "box_original_match": true
+   },
+   {
+    "file": "CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+    "manifest_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "git_blob_sha256_at_merge": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+    "box_original_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "box_original_match": true
+   },
+   {
+    "file": "EMPTY_RESULTS.json",
+    "manifest_sha256": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc",
+    "git_blob_sha256_at_merge": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/EMPTY_RESULTS.json",
+    "box_original_sha256": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc",
+    "box_original_match": true
+   },
+   {
+    "file": "FROZEN_EXPERIMENT.json",
+    "manifest_sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+    "git_blob_sha256_at_merge": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+    "box_original_sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+    "box_original_match": true
+   },
+   {
+    "file": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+    "manifest_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "git_blob_sha256_at_merge": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+    "box_original_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "box_original_match": true
+   },
+   {
+    "file": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST_2026-09-25.json",
+    "manifest_sha256": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed",
+    "git_blob_sha256_at_merge": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST_2026-09-25.json",
+    "box_original_sha256": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed",
+    "box_original_match": true
+   },
+   {
+    "file": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_2026-09-25.tgz",
+    "manifest_sha256": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993",
+    "git_blob_sha256_at_merge": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993",
+    "manifest_match": true,
+    "box_original_path": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_2026-09-25.tgz",
+    "box_original_sha256": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993",
+    "box_original_match": true
+   },
+   {
+    "file": "QUEUE_LINEAGE.md",
+    "manifest_sha256": "86fad73cc18a2edc374279d6c9ff3e2c393f3e4dc2ad32e2de94180c2fd378b4",
+    "git_blob_sha256_at_merge": "86fad73cc18a2edc374279d6c9ff3e2c393f3e4dc2ad32e2de94180c2fd378b4",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/QUEUE_LINEAGE.md",
+    "box_original_sha256": "86fad73cc18a2edc374279d6c9ff3e2c393f3e4dc2ad32e2de94180c2fd378b4",
+    "box_original_match": true
+   },
+   {
+    "file": "SOURCE_PINS.json",
+    "manifest_sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+    "git_blob_sha256_at_merge": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+    "manifest_match": true,
+    "box_original_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+    "box_original_sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+    "box_original_match": true
+   },
+   {
+    "file": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_v2_2026-09-25.tgz",
+    "manifest_sha256": "739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a",
+    "git_blob_sha256_at_merge": "739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a",
+    "manifest_match": true,
+    "box_original_path": "Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_v2_2026-09-25.tgz",
+    "box_original_sha256": "739d81d6ab29d1b3964d3c4d1d72c02e0db202e8646777f8c484152d4816e02a",
+    "box_original_match": true
+   }
+  ]
+ },
+ "scorecard_template": {
+  "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+  "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "expected_prefix": "56bcf626"
+ },
+ "scored": false,
+ "verdict": null,
+ "verdict_ceiling": "ITERATE",
+ "verdict_ceiling_reason": "Model fills (public_trade_through_conservative) counts_toward_keep=false per scorecard v1.2; KEEP ineligible (KEEP-grade requires observed Mechanic demo fills under a separate future freeze). Ceiling is not a verdict.",
+ "counts_toward_keep": false,
+ "promote": false,
+ "live_promotion": false,
+ "counted_as_experiment_pnl": false,
+ "fee_label": "CACHE_NOT_R1P1",
+ "formula_id": null,
+ "fee_honest": false,
+ "fee_note": "R2-P5 requires formula_id astra.r1p1.feebook.claude_order_level_ceil.v1 for any fee-honest claim; FEE_PIN 9c0f3554\u2026 records feebook_formula_id null.",
+ "metrics": {
+  "results": {
+   "value": null,
+   "measured": false
+  },
+  "pnl": {
+   "value": null,
+   "measured": false
+  },
+  "roi": {
+   "value": null,
+   "measured": false
+  },
+  "net_pnl_without_rewards": {
+   "value": null,
+   "measured": false,
+   "unit": "USD"
+  },
+  "net_pnl_with_rewards": {
+   "value": null,
+   "measured": false,
+   "unit": "USD"
+  },
+  "rewards_actually_earned": {
+   "value": null,
+   "measured": false,
+   "unit": "USD"
+  },
+  "fill_rate": {
+   "value": null,
+   "measured": false,
+   "scope": "demo/shadow/live only; no observed fills exist"
+  },
+  "simulated_fills": {
+   "value": null,
+   "measured": false,
+   "reported_separately": true,
+   "counts_toward_keep": false,
+   "note": "model evidence only; never merged into fill_rate"
+  },
+  "maker_vs_taker_roi_delta": {
+   "value": null,
+   "measured": false
+  },
+  "fresh_vs_stale_gap": {
+   "value": null,
+   "measured": false
+  },
+  "settled_join_n": {
+   "value": null,
+   "measured": false
+  },
+  "n_books": {
+   "value": null,
+   "measured": false
+  },
+  "calibration": {
+   "value": null,
+   "measured": false
+  },
+  "adverse_selection_after_fills": {
+   "+60s": {
+    "value": null,
+    "measured": false
+   },
+   "+300s": {
+    "value": null,
+    "measured": false
+   },
+   "settlement": {
+    "value": null,
+    "measured": false
+   }
+  },
+  "capital_hours": {
+   "value": null,
+   "measured": false
+  },
+  "drawdown": {
+   "value": null,
+   "measured": false
+  },
+  "event_concentration": {
+   "value": null,
+   "measured": false
+  },
+  "stress_sensitivity": {
+   "value": null,
+   "measured": false
+  },
+  "executable_dollars_per_day": {
+   "value": null,
+   "measured": false,
+   "unit": "USD/day"
+  }
+ },
+ "measurement_gaps": [
+  "Mechanic demo KXMLBSPREAD artifact absent (mechanic_demo_observed UNAVAILABLE)",
+  "formula_id absent (FEE_PIN 9c0f3554\u2026 feebook_formula_id null -> CACHE_NOT_R1P1)",
+  "Sep-25 settlements absent (Collector settlement-only GET fetch pending; unresolved stays unresolved_inventory, never imputed)",
+  "ADMIT-1 window 2026-09-27T13:31:52Z\u20132026-09-29T20:39:41Z excluded (permanent gap; no backfill/interpolation)"
+ ],
+ "admit1_window_excluded": {
+  "gap_utc": [
+   "2026-09-27T13:31:52Z",
+   "2026-09-29T20:39:41Z"
+  ],
+  "gap_et": [
+   "2026-09-27T09:31:52-04:00",
+   "2026-09-29T16:39:41-04:00"
+  ],
+  "accepted_fail_closed_superset_utc": "[2026-09-27T00:00:00Z, 2026-09-30T04:00:00Z)",
+  "accepted_fail_closed_superset_et": "[2026-09-26T20:00:00-04:00, 2026-09-30T00:00:00-04:00)",
+  "ruling": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+   "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+  },
+  "gap_record": {
+   "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+   "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198"
+  },
+  "note": "Per ACCEPT a5398129 all pinned inputs lie 2026-09-23..2026-09-25, so no pinned row is affected."
+ },
+ "units": "14/14 unit tests OK claimed by Conductor; Examiner did not re-run; a unit count is not an Examiner score.",
+ "wait_for": [
+  "Mechanic demo KXMLBSPREAD artifact or declared absent",
+  "Collector Sep-25 settlements fetch",
+  "Simulator READY on merged runner",
+  "Conductor SCORE kick"
+ ],
+ "do": null,
+ "do_not": null,
+ "do_do_not_note": "No Examiner READY kick exists for PR60, so there are no kick do/do_not clauses to copy verbatim.",
+ "anomalies": [
+  "No CONDUCTOR_KICK_EXAMINER for PR60 READY NOT_SCORED on disk; stub filed on merge packet examiner_next.",
+  "No top-level P/EXAMINER_* HOLD_PRE_PR for strategy-fill; the HOLD is the Variants-drafted Examiner-seat stub in the P/Q6S5_KXMLBSPREAD_STRATEGY_FILL/ subdir (mtime 2026-09-29 16:52 ET despite 2026-09-25 filename), pinned 0e1ec200 by ACCEPT c6f95b32.",
+  "Queue 08aa54de\u2026 not on box (overwritten in place; superseded by 7472b8ac\u2026 per Conductor ruling).",
+  "ACCEPT c6f95b32 records digest_all_match_claimed=false (pre-vendoring); MERGE packet records true (post-vendoring). Examiner recompute: 14/14 match.",
+  "Local git main refs stale; main containment of 12e760f5 is conductor-attested only."
+ ],
+ "no_orders": true,
+ "no_messages_sent": true
+}

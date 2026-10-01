@@ -1,0 +1,27 @@
+{
+  "id": "CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL",
+  "type": "CONDUCTOR_RULING_ADDENDUM",
+  "from": "Conductor",
+  "to": ["R&D Variants", "Examiner (Kalshi)", "Archivist"],
+  "addendum_to_accept_sha256": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+  "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pr": 61,
+  "ruling": {
+    "historical_tape_admissible": true,
+    "evidence_class": "IN_SAMPLE_DEV",
+    "precedent": "ITERATE-3 score a18f2ad2 (all 11,744 prints)",
+    "panel_admitted_at": "2026-09-25T04:37:47Z",
+    "required": [
+      "per-row boolean pre_admitted_at = trade created_time < panel admitted_at",
+      "evidence_class=IN_SAMPLE_DEV on every output row, summary and scorecard stub",
+      "counts of pre/post admitted_at rows reported per arm (counts only, no outcome values)",
+      "unit test covering the flag boundary (strict <) and the label's presence on the card"
+    ],
+    "never": ["usable toward KEEP", "rebin", "results/pnl non-null before Examiner SCORE"]
+  },
+  "sep25_markets": "permanently out of scope for FL-band; no re-GET under this experiment",
+  "verdict_ceiling": "ITERATE",
+  "counts_toward_keep": false,
+  "promote": false,
+  "stamped_at_et": "2026-10-01T19:05:00-04:00"
+}

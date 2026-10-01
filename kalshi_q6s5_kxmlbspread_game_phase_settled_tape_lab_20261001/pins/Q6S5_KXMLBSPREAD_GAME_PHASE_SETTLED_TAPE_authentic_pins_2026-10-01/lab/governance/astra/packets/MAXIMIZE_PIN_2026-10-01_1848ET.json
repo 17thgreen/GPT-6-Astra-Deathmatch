@@ -1,0 +1,14 @@
+{
+ "id": "MAXIMIZE_PIN_2026-10-01_1848ET",
+ "stamped_at_et": "2026-10-01T18:48:00-04:00",
+ "primary": "Q6S5_FL_BAND_SETTLED_TAPE_IMPLEMENT",
+ "accept_sha256": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+ "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+ "bundle_sha256": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857",
+ "scoreboard": "Q6-000 KEEP +6.90%",
+ "held": [
+  "PM-008",
+  "weather",
+  "card03"
+ ]
+}

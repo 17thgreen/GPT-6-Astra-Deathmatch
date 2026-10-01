@@ -1,0 +1,19 @@
+{
+  "packet": "CONDUCTOR_MERGE",
+  "experiment": "Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE",
+  "pr": 61,
+  "verified_head": "4114c7644d218a0cdcbf44df9634c65817d8dde7",
+  "merge_commit_sha": "d7558fc4b92256c68eaea66b9700021206de0a2d",
+  "merge_method": "squash",
+  "merged_stamp_utc": "2026-10-01T23:14:07Z",
+  "merged_stamp_et": "2026-10-01 19:14 EDT",
+  "base_before": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+  "pins": {"accept": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b", "addendum_in_sample_dev": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754", "freeze": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa", "bundle": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857", "band_registry": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312"},
+  "conductor_verify": {"byte_identical": ["accept", "addendum", "freeze", "bundle tgz (at 8c6f843)"], "pins_manifest": "OK", "unit_tests": "16/16 OK", "network_imports_non_test": "none", "pre_admitted_at": "strict < 2026-09-25T04:37:47Z", "arm_counts_pre_post": {"FL0": [1004, 391], "FL1": [8441, 127], "FL2": [1235, 519]}, "main_tree_equals_verified_head": true},
+  "variants_verify": "PASS at 4114c76",
+  "evidence_class": "IN_SAMPLE_DEV",
+  "results": null, "pnl": null, "promote": false, "counts_toward_keep": false,
+  "verdict_ceiling": "ITERATE", "fee_label": "CACHE_NOT_R1P1",
+  "clouds": "bc-74da3094 (implement), bc-7ada1737 (addendum follow-up); both finished",
+  "examiner_next": "READY_NOT_SCORED stub"
+}

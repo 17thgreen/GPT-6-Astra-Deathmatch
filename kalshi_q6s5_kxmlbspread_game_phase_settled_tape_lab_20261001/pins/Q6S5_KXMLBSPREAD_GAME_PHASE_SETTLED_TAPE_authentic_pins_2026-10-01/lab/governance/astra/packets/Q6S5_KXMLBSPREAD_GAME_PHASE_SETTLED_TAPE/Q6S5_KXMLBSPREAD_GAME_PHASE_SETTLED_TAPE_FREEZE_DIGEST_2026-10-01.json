@@ -1,0 +1,65 @@
+{
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "freeze_id": "Q6S5-KXMLBSPREAD-GAME-PHASE-SETTLED-TAPE",
+  "feature_family": "settled_tape_game_phase",
+  "series_ticker": "KXMLBSPREAD",
+  "id": "Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_DIGEST",
+  "stamped_at_et": "2026-10-01T19:20:29-04:00",
+  "digest_all_match_claimed": true,
+  "pins_rehashed_n": 109,
+  "pins_mismatch_n": 0,
+  "absent_pins": [
+    "Examiner-pinned KXMLBSPREAD feebook formula_id (→ CACHE_NOT_R1P1; primary gross/fee-free)",
+    "Untouched evaluation set (p16 item 12 missing): approved KXMLBSPREAD holdout queued, no capture on disk",
+    "Settlements for 6 Sep-25 panel markets: permanently OUT OF SCOPE (close_time in ADMIT-1 window; no re-GET)",
+    "Observed first-pitch times (no external/live GET; scheduled start proxy)",
+    "Archivist fee/account-version manifest (v1.2 pending)",
+    "ADMIT-1 capture 2026-09-27T13:31:52Z → 2026-09-29T20:39:41Z (permanent gap; capture.sqlite never read)"
+  ],
+  "files": {
+    "freeze_md": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a"
+    },
+    "freeze_md_copy": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a"
+    },
+    "frozen_experiment": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/FROZEN_EXPERIMENT.json",
+      "sha256": "b8ba41d570211a49adabe28f21c37e33b21e76341fb2fb50662429e83fc70ea3"
+    },
+    "source_pins": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/SOURCE_PINS.json",
+      "sha256": "d0bb5c5ea881204cc045a3319898ae697df83c7637fbf2516924547759cfb472"
+    },
+    "empty_results": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/EMPTY_RESULTS.json",
+      "sha256": "ebe019063ad56384fe6030ead5f6a77fa0f1c78d0a2b8e9373d700cf92b57fb5"
+    },
+    "scorecard_stub_json": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/EXAMINER_SCORECARD_STUB_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_2026-10-01.json",
+      "sha256": "d9f4727d914949b53fcdb3a0e3173ec005f6e14feadabc8ebd1d58b141718b8f"
+    },
+    "scorecard_stub_md": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE/EXAMINER_SCORECARD_STUB_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_2026-10-01.md",
+      "sha256": "2785f8122c6d42757035524f885f1f74b296fbaaa47c538def58ff00ed7dda04"
+    }
+  },
+  "key_pins": {
+    "merge_pr61": "469de2376ae413f66684df26c08656e705a7fb5a0a1d128a4270d789c841df32",
+    "main_sha": "d7558fc4b92256c68eaea66b9700021206de0a2d",
+    "maximize_1848_md": "a3f2d63698727458d6b59522ec52239534e399666cc9ccbc2376cdd124b86b15",
+    "fl_band_accept": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+    "in_sample_dev_ruling": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+    "fl_band_freeze": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+    "admit1_ruling": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "admit1_gap_record": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+    "panel_admitted": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+    "trades_ready": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+    "measured_ready": "0617d540763d71a813672c9f9aa6766072c8461a1290c124b89e9fb3f2bf5de2",
+    "fee_pin": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "bands_registry": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+    "v1_2_template": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+  }
+}

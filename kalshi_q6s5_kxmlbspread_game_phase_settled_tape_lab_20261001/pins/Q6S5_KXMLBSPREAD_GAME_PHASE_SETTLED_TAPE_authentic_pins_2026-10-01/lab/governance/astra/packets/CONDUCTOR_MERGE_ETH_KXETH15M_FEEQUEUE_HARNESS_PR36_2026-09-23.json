@@ -1,0 +1,19 @@
+{
+  "packet_id": "ETH-KXETH15M-FEEQUEUE-HARNESS",
+  "pr": 36,
+  "decision": "MERGED",
+  "merge_method": "squash",
+  "merged_at_et": "2026-09-23T14:57:00-04:00",
+  "merge_tip": "82bf7bb99bcc618b912255cc24022b23f9f15047",
+  "head_sha_merged": "bd71bea5056f49a8a1269fe6d11f153e3d9a9457",
+  "base_was": "438f4abf28a3c0156daf6c96ece5efda9557f1dc",
+  "digest_verify": {
+    "freeze": "9cae3bad089e6e18bee22694a36a1a2c18db33935a315766cd6bd8f8476aa83a",
+    "scout": "18f70001c8d68418d435e2016b756f90753e374a92d323f8e999f76215d9cf9c",
+    "panel": "b3379783c84eaa910f6a57f5318b8536f21220cfeaf0f73e9ff73ee0f20dd90d",
+    "accept": "3e553395a47d5ced1a4b48d81b8d0d760d984becdbcb6c1dd574dafc39621a5e",
+    "match": true
+  },
+  "scorecard": "READY_NOT_SCORED_expected",
+  "notes": "GET-only measurement. results/pnl null. Maximize next: scorable join / Clock-admit leftover — no new FQ sibling."
+}

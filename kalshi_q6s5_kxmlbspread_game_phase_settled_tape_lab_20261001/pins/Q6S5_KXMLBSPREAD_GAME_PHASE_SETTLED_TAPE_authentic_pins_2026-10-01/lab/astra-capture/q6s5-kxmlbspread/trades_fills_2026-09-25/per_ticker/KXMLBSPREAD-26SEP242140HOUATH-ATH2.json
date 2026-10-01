@@ -1,0 +1,18 @@
+{
+  "ticker": "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+  "http_outcomes": [
+    200
+  ],
+  "n_pages": 1,
+  "n_trades_total": 497,
+  "empty_honest": false,
+  "first_created_time": "2026-09-24T14:28:56.757904Z",
+  "last_created_time": "2026-09-25T04:29:41.633662Z",
+  "taker_field_keys_observed": [
+    "taker_book_side",
+    "taker_outcome_side",
+    "taker_side"
+  ],
+  "gap_reasons": [],
+  "status": "ok"
+}
