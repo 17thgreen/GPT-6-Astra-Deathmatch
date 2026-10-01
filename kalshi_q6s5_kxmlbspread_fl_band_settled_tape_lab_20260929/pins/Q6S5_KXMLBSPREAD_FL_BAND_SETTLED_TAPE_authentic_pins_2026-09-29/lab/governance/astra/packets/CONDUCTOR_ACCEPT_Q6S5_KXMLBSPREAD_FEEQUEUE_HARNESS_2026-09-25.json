@@ -1,0 +1,73 @@
+{
+  "id": "CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS",
+  "type": "CONDUCTOR_ACCEPT",
+  "status": "ACCEPT_IMPLEMENT_GO",
+  "decision": "ACCEPT",
+  "implement": true,
+  "cloud_until_accept": false,
+  "dual_cloud": false,
+  "feature_family": "Q6S5-MLBSPREAD-FEEQUEUE",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "series": "KXMLBSPREAD",
+  "freeze_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_FREEZE_2026-09-25.md",
+  "freeze_sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+  "parent_screen_accept": "packets/CONDUCTOR_ACCEPT_SPORTS_Q6_SCREEN_2026-09-24.json",
+  "parent_screen_accept_sha256": "2aefbc1712a0389d65f565439d5599a7275688e872e8bc67d5c6dde3b1cd81f8",
+  "kick_sha256": "9c68ab12f6f5561ee176c5669b17ef40c4f5be20299687823ad7f0e9b67701c8",
+  "scout_freeze_sha256": "552314d2822f86bf4127be5de03b8d64aa8c16d6c0c81887bdc0cfbd411571df",
+  "panel_stub_path": "lab/astra-capture/q6s5-kxmlbspread/panel_stub.json",
+  "panel_stub_sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+  "panel_version": "2026-09-25.q6s5-kxmlbspread-v0",
+  "panel_events": 6,
+  "panel_markets": 12,
+  "panel_full_scout": false,
+  "panel_note": "authentic scout subset 6/12 from 93/15 open page; admitted_at null",
+  "admitted_at": null,
+  "knob": "analysis_slice",
+  "arms": [
+    "Q6S5A0",
+    "Q6S5A1"
+  ],
+  "arm_values": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin"
+  },
+  "fee_cache": {
+    "fee_type": "quadratic",
+    "multiplier": 0.5,
+    "label": "CACHE-LABELED",
+    "not_live_R1_P1": true,
+    "note": "cache \u2260 R1-P1 until Examiner live /series pin"
+  },
+  "lab_dir": "kalshi_q6s5_kxmlbspread_feequue_lab_20260925/",
+  "results": null,
+  "pnl": null,
+  "nearest_dead_cards": [
+    "Card 06 open-window CLOSED",
+    "S1 KXMLBGAME ML retune FORBIDDEN"
+  ],
+  "does_not_ungate": [
+    "S1_KXMLBGAME_ML",
+    "S2",
+    "R2-P4",
+    "Card06_open_window",
+    "Q6-000_retune",
+    "Cap-SR"
+  ],
+  "examiner": "HOLD_PRE_PR",
+  "implement_owner": "R&D Variants",
+  "implement_bundle": "/workspace/Q6S5_KXMLBSPREAD_FEEQUEUE_authentic_pins_2026-09-25.tgz",
+  "implement_bundle_sha256": "d5454dc8cd0a37f942afff812a182a7c90c2d84c3a4badf27aa3f12de3208342",
+  "variants_ping_sha256": "bdbe46edbf04b985c907f8690afe736bd66a5e8de4e69d6594f7117b9363221f",
+  "rulings": [
+    "Freeze sha verified. Panel stub KXMLBSPREAD-only 6e/12m, admitted_at null, results/pnl null.",
+    "One knob analysis_slice with feebook+rails FIXED. Not S1 ML retune.",
+    "Fee remains CACHE-LABELED quadratic\u00d70.5 until Examiner /series pin \u2014 do not claim R1-P1.",
+    "IMPLEMENT GO. No dual-cloud. No admit.py by Variants. No invent fills/PnL. No live orders.",
+    "Examiner HOLD_PRE_PR until merge; score only after READY NOT_SCORED with authentic pins.",
+    "Queue behind in-flight S5-RJ only if needed; do not sit idle.",
+    "Scoreboard unchanged: Q6-000 / Arm D KEEP +6.90%."
+  ],
+  "scoreboard_unchanged": "Q6-000 / Arm D KEEP +$345.24 / +6.90%",
+  "stamped_at_et": "2026-09-25T00:13:39-04:00"
+}

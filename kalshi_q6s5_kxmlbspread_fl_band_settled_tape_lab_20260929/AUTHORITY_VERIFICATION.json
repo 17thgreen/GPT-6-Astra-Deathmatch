@@ -1,0 +1,33 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-FL-BAND-SETTLED-TAPE",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "feature_family": "settled_tape_fl_band",
+  "knob": "price_band",
+  "decision": "ACCEPT_FREEZE_IMPLEMENT_GO",
+  "accept_sha256": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+  "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "authentic_bundle_sha256": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857",
+  "band_registry_sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+  "rebin": false,
+  "digest_all_match_claimed": true,
+  "promote": false,
+  "counts_toward_keep": false,
+  "verdict_ceiling": "ITERATE",
+  "fee_label": "CACHE_NOT_R1P1",
+  "fee_honest": false,
+  "claim_as_live_R1P1": false,
+  "examiner_status": "HOLD_PRE_PR",
+  "examiner_path_after_pr": "READY_NOT_SCORED",
+  "scored": false,
+  "results": null,
+  "pnl": null,
+  "governance_packet_recreated": false,
+  "absent_not_invented": [
+    "packets/VARIANTS_ACCEPT_PING_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_2026-09-29.json",
+    "packets/VARIANTS_ARCHIVIST_REGISTRY_PING_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_2026-09-29.json",
+    "Examiner-pinned KXMLBSPREAD formula_id",
+    "Sep-25 settlements for 6 markets",
+    "ADMIT-1 capture.sqlite",
+    "gap backfill"
+  ]
+}

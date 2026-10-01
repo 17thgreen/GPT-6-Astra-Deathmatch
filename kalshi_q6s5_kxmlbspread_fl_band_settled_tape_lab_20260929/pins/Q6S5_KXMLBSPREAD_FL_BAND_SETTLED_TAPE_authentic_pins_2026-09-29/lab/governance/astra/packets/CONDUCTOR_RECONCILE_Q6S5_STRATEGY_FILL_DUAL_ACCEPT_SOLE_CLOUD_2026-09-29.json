@@ -1,0 +1,22 @@
+{
+ "type": "CONDUCTOR_RECONCILE",
+ "subject": "Q6S5 strategy-fill: dual Conductor ACCEPT + sole cloud",
+ "issued_at_et": "2026-09-29T17:06:24-04:00",
+ "finding": "Two Conductor ACCEPTs were stamped ~4 min apart (hourly pulse c6f95b32; main thread a5398129). Substance consistent (one knob fill_model; public_trade_through_conservative only; counts_toward_keep=false; CACHE_NOT_R1P1; ADMIT-1 window excluded).",
+ "canonical": "c6f95b32 = implementation ACCEPT (already cited by PR60); a5398129 = companion rulings (queue lineage 7472b8ac supersedes 08aa54de; settlement-only Collector GET). Both authentic; PR must vendor both.",
+ "sole_cloud": "bc-c45d800a-47b9-56ff-a157-6517f27290d3 / PR #60 (head b05c41c7, base cb8957d7). Variants launches NO second cloud. PR60 not merge-eligible until authentic pin bytes are vendored and digests match.",
+ "pins": {
+  "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+  "CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+  "Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+  "CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+  "CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+  "CONDUCTOR_QUEUE_Q6S5_STRATEGY_FILL_FREEZE_AFTER_Q6S1_2026-09-25.json": "7472b8ac01fd906577c49eb4d96b8fd5dbb2d7766c5a87fa86e47b3bffad2c61",
+  "Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+  "Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+  "Q6S5_KXMLBSPREAD_STRATEGY_FILL/EMPTY_RESULTS.json": "9b5752893c714ff8fc8e2e1867f902eb5c06c5d6aab35e46e1c786b925bd97bc",
+  "Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_DIGEST_2026-09-25.json": "da84339141cef2cb52bfbd33629eb4896b98c3581a55ef8a3f286a3f631d87ed",
+  "/workspace/Q6S5_KXMLBSPREAD_STRATEGY_FILL_authentic_pins_2026-09-25.tgz": "6602e07ef9b444b8b242086d0cb338025507d117aa0874f24e99390cd9d01993"
+ },
+ "no_orders": true
+}

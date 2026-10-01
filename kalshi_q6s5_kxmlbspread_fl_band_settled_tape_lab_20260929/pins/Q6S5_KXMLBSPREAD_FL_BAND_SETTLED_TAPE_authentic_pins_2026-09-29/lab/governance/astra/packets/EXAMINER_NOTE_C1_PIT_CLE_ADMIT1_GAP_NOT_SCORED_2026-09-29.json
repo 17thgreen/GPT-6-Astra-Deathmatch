@@ -1,0 +1,54 @@
+{
+  "id": "EXAMINER_NOTE_C1_PIT_CLE_ADMIT1_GAP_NOT_SCORED",
+  "seat": "Examiner (Kalshi)",
+  "desk": "Astra",
+  "type": "EXAMINER_NOTE",
+  "event": "C1 PIT@CLE",
+  "gap_start_utc": "2026-09-27T13:31Z",
+  "gap_end_utc": "2026-09-29T20:39Z",
+  "gap_et": {
+    "start": "2026-09-27T09:31:00-04:00",
+    "end": "2026-09-29T16:39:00-04:00"
+  },
+  "gap_precise_per_collector_record": {
+    "start_utc": "2026-09-27T13:31:52Z",
+    "end_utc": "2026-09-29T20:39:41Z",
+    "start_et": "2026-09-27T09:31:52-04:00",
+    "end_et": "2026-09-29T16:39:41-04:00",
+    "hours_approx": 55.1
+  },
+  "cause_per_collector_record": "Box reboot 2026-09-27T13:34:27Z killed recorder run 10 and admit1_supervisor. Run 13 relaunched 2026-09-29T20:39:41Z on the same record.py, panel, and DB.",
+  "permanent": true,
+  "backfill": false,
+  "interpolation": false,
+  "re_admit": false,
+  "collector_gap_record": {
+    "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+    "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+    "expected_prefix": "4f2a5e26",
+    "verified": true,
+    "on_disk_verified": true
+  },
+  "conductor_ruling": {
+    "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+    "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "expected_prefix": "ac7cfe63",
+    "verified": true,
+    "on_disk_verified": true,
+    "issued_at_et": "2026-09-29T16:42:52-04:00",
+    "ruling_quote_c1": "C1 PIT@CLE: in-window book lost -> that event is NOT_SCORED for any book-dependent metric; no substitute event, no bar change"
+  },
+  "disposition": "C1_PIT_CLE_BOOK_DEPENDENT_METRICS_NOT_SCORED",
+  "substitute_event": false,
+  "bars_moved": false,
+  "non_book_metrics": "only metrics that do not depend on the book may be scored later, under an explicit Conductor kick",
+  "other_events_note": "Per the ruling, any ramp-dependent feature for the other 14 events is NOT_SCORED for Sep 27-29, and post-relaunch capture is scorable as normal. This note records that and does not act on it.",
+  "score": false,
+  "scored": false,
+  "verdict": null,
+  "promote": false,
+  "no_orders": true,
+  "db_rows_edited": false,
+  "prior_bytes_edited": false,
+  "stamped_at_et": "2026-09-29T16:45:46-04:00"
+}

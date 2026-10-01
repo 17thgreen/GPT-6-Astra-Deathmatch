@@ -1,0 +1,444 @@
+{
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "freeze_id": "Q6S5-KXMLBSPREAD-FL-BAND-SETTLED-TAPE",
+  "feature_family": "settled_tape_fl_band",
+  "series_ticker": "KXMLBSPREAD",
+  "status": "FROZEN",
+  "action": "FREEZE_ONLY",
+  "lab_dir_proposed": "kalshi_q6s5_kxmlbspread_fl_band_settled_tape_lab_20260929/",
+  "lab_dir_created": false,
+  "knob": "price_band",
+  "knob_applies_to": "p_taker = price of taker-purchased side (native taker_outcome_side)",
+  "knob_orthogonal_to": [
+    "analysis_slice (PR58)",
+    "fill_model (PR60)"
+  ],
+  "arms": [
+    "Q6S5FL0",
+    "Q6S5FL1",
+    "Q6S5FL2"
+  ],
+  "arm_values": {
+    "Q6S5FL0": {
+      "label": "longshot_taker",
+      "p_taker_range": "[0.00,0.20)",
+      "registry_bands": [
+        "b00",
+        "b01"
+      ],
+      "maker_holds": "favorite side at 1-p_taker in (0.80,1.00]"
+    },
+    "Q6S5FL1": {
+      "label": "mid",
+      "p_taker_range": "[0.20,0.80)",
+      "registry_bands": [
+        "b02",
+        "b03",
+        "b04",
+        "b05",
+        "b06",
+        "b07"
+      ],
+      "maker_holds": "opposite side at (0.20,0.80]"
+    },
+    "Q6S5FL2": {
+      "label": "favorite_taker",
+      "p_taker_range": "[0.80,1.00]",
+      "registry_bands": [
+        "b08",
+        "b09"
+      ],
+      "maker_holds": "longshot side at 1-p_taker in [0.00,0.20]"
+    }
+  },
+  "band_registry": {
+    "path": "lab/governance/astra/packets/r3_p3_fl_maker_taker/bands_registry_10c.json",
+    "sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+    "registered_at_utc": "2026-09-23T00:12:45Z",
+    "rebin": false
+  },
+  "grid_cells": {
+    "Q6S5FL0": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_events": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5FL1": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_events": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "Q6S5FL2": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_events": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    }
+  },
+  "universe": {
+    "markets": [
+      "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+      "KXMLBSPREAD-26SEP242140HOUATH-HOU2",
+      "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+      "KXMLBSPREAD-26SEP242140LAASEA-SEA2",
+      "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+      "KXMLBSPREAD-26SEP242210SDLAD-SD2"
+    ],
+    "events": [
+      "KXMLBSPREAD-26SEP242140HOUATH",
+      "KXMLBSPREAD-26SEP242140LAASEA",
+      "KXMLBSPREAD-26SEP242210SDLAD"
+    ],
+    "selection": "panel_admitted markets whose latest pinned measured market GET has status=='finalized' and non-empty result",
+    "excluded_markets": [
+      "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+    ],
+    "excluded_reason": "pinned GET status=active, no result, close_time 2026-09-28T22:40/45Z inside ADMIT-1 exclusion window → permanently out of scope, no re-GET"
+  },
+  "row_rules": {
+    "rows": "every public trade in pinned raw trade pages of the 6 in-scope tickers (Collector per-ticker n_trades_total 497/2557/1105/1173/4144/2247 = 11723; pins not results)",
+    "side": "s = taker_outcome_side; require taker_side==taker_outcome_side and (s=yes⇔taker_book_side=bid, s=no⇔taker_book_side=ask); else exclude+count; Lee-Ready REFUSED",
+    "p_taker": "yes_price_dollars if s=yes else no_price_dollars; exclude if |yes+no-1|>1e-9",
+    "exclusions": [
+      "is_block_trade==true",
+      "created_time >= close_time of pinned market GET",
+      "ADMIT-1 window",
+      "market result not in {yes,no} (whole market)"
+    ],
+    "weight": "q = count_fp (decimal contracts as published)",
+    "settlement": "Y_s = 1 if observed result == s else 0; settlement_ts read as-is, never invented",
+    "information_set": "band from print's own price at its created_time; settlement only as ex-post label; no outcome-dependent row selection"
+  },
+  "metrics_def": {
+    "maker_gross_return_usd[A]": "Σ q·(p_taker − Y_s)",
+    "maker_capital_usd[A]": "Σ q·(1 − p_taker)",
+    "maker_gross_roi[A]": "maker_gross_return_usd/maker_capital_usd",
+    "taker_gross_roi[A]": "Σ q·(Y_s − p_taker)/Σ q·p_taker",
+    "primary": "maker_gross_roi_delta_FL0_minus_FL1",
+    "secondary": "maker_gross_roi_delta_FL2_minus_FL1",
+    "descriptive": "maker_gross_roi by 10 registry bands; per-market/per-event tables",
+    "fee_secondary_cache": "maker_net_roi_cache / taker_net_roi_cache via feebook.order_fee(role,q,price)@22371178 with FEE_PIN terms only; maker role via resolve_terms (value not asserted)",
+    "robustness": "LOEO (3) and LOMO (6) of both deltas",
+    "stresses": {
+      "one_tick_worse": "maker charged $0.01/contract (capital +0.01, return −0.01)",
+      "fees_2x": "on CACHE secondary"
+    },
+    "not_in_scope": [
+      "Mincer–Zarnowitz (3 clusters)",
+      "executable_dollars_per_day"
+    ],
+    "label": "public_counterparty_realized (never Astra pnl)"
+  },
+  "hypothesis": {
+    "H1": "maker_gross_roi_delta_FL0_minus_FL1 > 0 (favorite–longshot bias; paper +2.6% maker≥50¢ is HYPOTHESIS ONLY)",
+    "H2": "maker_gross_roi_delta_FL2_minus_FL1 <= 0",
+    "reading_rule_variants_proposed": "supports_H1 if full-sample delta>0 AND ≥2/3 LOEO deltas>0; contradicts_H1 if full-sample ≤0 AND ≥2/3 LOEO ≤0; else inconclusive",
+    "verdict_ceiling": "ITERATE (measurement; no KEEP); contradicts_H1 supports KILL of FL-band maker thesis for KXMLBSPREAD only",
+    "power_caveat": "effective N = 3 events (6 same-game-sibling markets), not 11,723 prints",
+    "declared_pre_outcome_at_et": "2026-09-29T17:26:35-04:00"
+  },
+  "fee": {
+    "fee_pin_path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+    "fee_pin_sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "observed_fee_type": "quadratic",
+    "observed_fee_multiplier": 0.5,
+    "feebook_formula_id_observed": null,
+    "label": "CACHE_NOT_R1P1",
+    "cache_labeled": true,
+    "fee_honest": false,
+    "claim_as_live_R1P1": false,
+    "primary_metric_fee_free": true,
+    "feebook_pin": "22371178cb2663250b4762f328069571c48cb551",
+    "rails_pin": "6a28e0d6254327ea4e6451c781bec56215ac6cac (unused)"
+  },
+  "admit1_gap_exclusion": {
+    "ruling": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+      "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "status": "PINNED"
+    },
+    "erratum": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_ERRATUM_CARD03_GAP_WINDOW_2026-09-29.json",
+      "sha256": "31da5974867ee6230928b641e4a939171bce44260a4b87ee9161ffc8f30477d9",
+      "scope": "card03 only"
+    },
+    "gap_record": {
+      "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+      "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+      "status": "PINNED_MATCH_RULING"
+    },
+    "ruling_gap_utc": [
+      "2026-09-27T13:31:52Z",
+      "2026-09-29T20:39:41Z"
+    ],
+    "enforced_exclusion_window_utc": {
+      "start_inclusive": "2026-09-27T00:00:00Z",
+      "end_exclusive": "2026-09-30T04:00:00Z",
+      "note": "calendar superset of ruling gap covering Sep 27–29 in UTC and ET; packet-local; does not alter ruling"
+    },
+    "applies_to": [
+      "trade created_time",
+      "market GET captured_utc (filename stamp)",
+      "close_time",
+      "settlement_ts"
+    ],
+    "enforcement": [
+      "closed sha-pinned input manifest; fail-closed on mismatch",
+      "per-row window filter; counted in excluded_admit1_window_n by source; never imputed",
+      "ADMIT-1 prospective capture.sqlite REFUSED",
+      "pre-run assertion: in-scope trades 2026-09-23T22:06:01Z..2026-09-25T05:07:00Z; settlement GETs 20260925T051602Z..051942Z; settlement_ts 2026-09-25T04:32:18Z..05:08:48Z → expected excluded=0; non-zero reported",
+      "Sep-25 markets permanently out of scope (close_time in window)",
+      "unit tests: synthetic in-window trade AND settlement rejected"
+    ],
+    "backfill": false,
+    "interpolation": false
+  },
+  "panel_admitted": {
+    "path": "lab/astra-capture/q6s5-kxmlbspread/panel_admitted.json",
+    "sha256": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+    "admitted_at": "2026-09-25T04:37:47Z",
+    "events": 6,
+    "markets": 12,
+    "in_scope_markets": 6,
+    "in_scope_events": 3
+  },
+  "clock_note": "most in-scope prints predate admitted_at (retrospective public tape); study label must be 'historical replay'; Conductor ask to confirm admissibility (precedent ITERATE-3 a18f2ad2… scored all 11,744 native prints)",
+  "lineage": {
+    "r3p3_freeze_kernel": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7",
+    "r3p3_adversary_bind": "6b6690cd6bf3b7e4833919a8f16be497027902ca726d22a64ef4bde2b29d5636",
+    "r3p3_examiner_stub": "d67348b92d925aaae104779e4855f75fa460058894912af072a03c5ec315de1d",
+    "q6s5_harness_freeze": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "q6s5_harness_accept": "5adc42f9c9533238a2187aafe7593bdf1b8cdec6d12b8d3e9b12cb5ab29000fc",
+    "examiner_trades_join_iterate3": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+    "strategy_fill_freeze": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "strategy_fill_accept": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+    "merge_pr60": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef",
+    "main_sha": "12e760f5bd3b622d8f0d70a74c28655464e2b93c"
+  },
+  "selection_ranking": [
+    {
+      "rank": 1,
+      "candidate": "Q6S5 FL-band settled-tape (price_band)",
+      "pick": true,
+      "data_needed": "none new; 11,723 pinned prints on 6 finalized markets"
+    },
+    {
+      "rank": 2,
+      "candidate": "Q6S5 strategy-fill follow-on knob (quote_offset / cancel_horizon)",
+      "pick": false,
+      "data_needed": "Examiner score of PR60; Sep-25 settlements (close_time inside ADMIT-1 window); only 21 prints on active markets"
+    },
+    {
+      "rank": 3,
+      "candidate": "ETH-RJ KXETH15M settled join",
+      "pick": false,
+      "data_needed": "new Scout/Collector settled re-GET; sequenced behind ATP-RJ per MERGE PR54 d02674a0…; ATP settlements_after_accept=[] per ACK b9824df1…"
+    }
+  ],
+  "examiner_scorecard_template_v1_2_sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+  "nearest_dead_cards": [
+    "invent fills/PnL REFUSED",
+    "R3-P3 lineage (not reopen; Adversary bind carried)",
+    "S1 KXMLBGAME ML retune FORBIDDEN",
+    "Q6-000 retune FORBIDDEN",
+    "Cap-SR reopen FORBIDDEN",
+    "Refiner routing NONE",
+    "Q6S1 retune FORBIDDEN",
+    "Card 06 open-window CLOSED",
+    "Lee-Ready REFUSED"
+  ],
+  "refuse": [
+    "invent fills/PnL/settlement_ts/markets/depth",
+    "label public-counterparty return as Astra PnL",
+    "Lee-Ready",
+    "live orders",
+    "Variants demo orders",
+    "dual-cloud",
+    "claim CACHE as R1-P1 or fee-honest",
+    "paper EV as Astra evidence",
+    "rebin after outcomes",
+    "S1 KXMLBGAME ML retune",
+    "Q6-000 retune",
+    "Cap-SR reopen",
+    "Refiner routing",
+    "Q6S1 retune",
+    "admit.py",
+    "read ADMIT-1 capture.sqlite",
+    "any data in ADMIT-1 window",
+    "backfill/interpolate",
+    "re-GET Sep-25 settlements for this packet",
+    "lookahead in row selection",
+    "edit prior SCORE/ACCEPT/FEE_PIN/HOLD/READY bytes",
+    "KEEP from this measurement",
+    "cloud/PR before Conductor ACCEPT"
+  ],
+  "does_not_run_admit_py": true,
+  "live_http": false,
+  "orders": false,
+  "counts_toward_keep": false,
+  "digest_all_match_claimed": true,
+  "absent_pins": [
+    "Examiner-pinned KXMLBSPREAD feebook formula_id (FEE_PIN formula_id null → CACHE_NOT_R1P1; primary metric is gross/fee-free)",
+    "Untouched evaluation set (p16 item 12 missing): needs post-freeze settled KXMLBSPREAD markets captured outside ADMIT-1 window by Collector, pinned by amendment",
+    "Settlements for 6 Sep-25 panel markets: permanently OUT OF SCOPE for this packet (close_time 2026-09-28T22:40/45Z inside ADMIT-1 exclusion window; no re-GET)",
+    "Archivist fee/account-version manifest (v1.2 pending)",
+    "ADMIT-1 capture 2026-09-27T13:31:52Z → 2026-09-29T20:39:41Z (permanent gap per ruling ac7cfe63…; excluded; never backfilled; capture.sqlite never read)"
+  ],
+  "freeze_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+  "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "p16_preregistration_checklist": {
+    "source_template": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "block": "preregistration_checklist"
+    },
+    "source_pdf": {
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "page": 16
+    },
+    "declared_pre_outcome_at_et": "2026-09-29T17:26:35-04:00",
+    "counts": {
+      "satisfied": 8,
+      "n/a": 3,
+      "missing": 1
+    },
+    "items": [
+      {
+        "id": 1,
+        "key": "market_universe",
+        "status": "satisfied",
+        "evidence_ref": "6 finalized panel_admitted markets (3 events) of e36de2d1…; KXMLBSPREAD only"
+      },
+      {
+        "id": 2,
+        "key": "exclusions",
+        "status": "satisfied",
+        "evidence_ref": "6 Sep-25 markets (no result; close_time in ADMIT-1 window); post-close prints; block trades; native-field conflicts; price-inconsistent rows; ADMIT-1 window; ADMIT-1 capture.sqlite refused"
+      },
+      {
+        "id": 3,
+        "key": "receipt_time_information_set",
+        "status": "satisfied",
+        "evidence_ref": "band from print's own price at created_time; settlement only as ex-post label; sha-pinned closed manifest"
+      },
+      {
+        "id": 4,
+        "key": "fee_regime",
+        "status": "satisfied",
+        "evidence_ref": "primary gross (fee-free); secondary feebook@22371178 FEE_PIN quadratic×0.5 CACHE_NOT_R1P1; fees_2x"
+      },
+      {
+        "id": 5,
+        "key": "order_timing",
+        "status": "n/a",
+        "evidence_ref": "no Astra orders; public prints only"
+      },
+      {
+        "id": 6,
+        "key": "sizing",
+        "status": "n/a",
+        "evidence_ref": "no Astra sizing; rows weighted by published count_fp"
+      },
+      {
+        "id": 7,
+        "key": "fill_model",
+        "status": "n/a",
+        "evidence_ref": "no Astra fills modeled or claimed"
+      },
+      {
+        "id": 8,
+        "key": "stopping_rules",
+        "status": "satisfied",
+        "evidence_ref": "freeze-before-implement; ACCEPT before cloud; single cloud after PR60 cloud closes; single pass over closed manifest; no rerun with altered bands"
+      },
+      {
+        "id": 9,
+        "key": "evaluation_metrics",
+        "status": "satisfied",
+        "evidence_ref": "primary/secondary maker gross ROI deltas; per-band table; LOEO/LOMO; stresses; v1.2 nulls"
+      },
+      {
+        "id": 10,
+        "key": "limit_candidate_variants",
+        "status": "satisfied",
+        "evidence_ref": "one knob price_band × 3 values fixed from 2026-09-23 registry"
+      },
+      {
+        "id": 11,
+        "key": "log_every_attempted_variant",
+        "status": "satisfied",
+        "evidence_ref": "only 3 arms + 10-band descriptive declared; other cut needs new freeze"
+      },
+      {
+        "id": 12,
+        "key": "separate_discovery_tuning_evaluation_periods",
+        "status": "missing",
+        "evidence_ref": "no untouched evaluation set; prints seen for side-classification counts in ITERATE-3 (not band×settlement); no tuned params; holdout needs post-freeze settled capture outside ADMIT-1 window"
+      }
+    ]
+  },
+  "metrics": {
+    "results": null,
+    "pnl": null,
+    "maker_gross_roi_delta_FL0_minus_FL1": null,
+    "maker_gross_roi_delta_FL2_minus_FL1": null,
+    "maker_gross_roi_by_registry_band": {
+      "b00": null,
+      "b01": null,
+      "b02": null,
+      "b03": null,
+      "b04": null,
+      "b05": null,
+      "b06": null,
+      "b07": null,
+      "b08": null,
+      "b09": null
+    },
+    "loeo_delta_FL0_minus_FL1": null,
+    "lomo_delta_FL0_minus_FL1": null,
+    "loeo_delta_FL2_minus_FL1": null,
+    "lomo_delta_FL2_minus_FL1": null,
+    "stress_one_tick_worse": null,
+    "stress_fees_2x_cache": null,
+    "n_trades_in_scope": null,
+    "excluded_admit1_window_n": null,
+    "excluded_post_close_n": null,
+    "excluded_block_n": null,
+    "excluded_taker_conflict_n": null,
+    "excluded_price_inconsistent_n": null,
+    "excluded_market_result_not_yes_no_n": null,
+    "mincer_zarnowitz": "NOT_IN_SCOPE (3 event clusters)",
+    "reading": null
+  },
+  "prev_bytes_rule": "RULE-FROZEN-EDIT-PREV-BYTES-001 — create-only; no frozen file edited; no _prev write",
+  "stamped_at_et": "2026-09-29T17:26:35-04:00"
+}

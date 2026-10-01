@@ -1,0 +1,9 @@
+{
+ "type": "CONDUCTOR_ERRATUM",
+ "amends": "CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json (sha ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2)",
+ "issued_at_et": "2026-09-29T16:44:22-04:00",
+ "correction": "card03 tape gap starts 2026-09-25T19:37:33Z (PID 463797 self-stop, book_fail_streak during PAUSE_429_STORM, forced_phase_b), not 2026-09-27; runs to v4 relaunch; permanent, no backfill, open episodes censored",
+ "source": "Mechanic report citing tape/run_log.jsonl (1157 cycles, 226,222 rows, 2,042 requests, 206 x 429)",
+ "affirmed": "v4 at <=3 rpm, >=20 s, lists <=1 rpm, /markets off; launch after weather 30-min clean; if 429 starvation recurs, fail-streak stop holds and Mechanic escalates; no retune without Conductor",
+ "ruling_otherwise_unchanged": true
+}

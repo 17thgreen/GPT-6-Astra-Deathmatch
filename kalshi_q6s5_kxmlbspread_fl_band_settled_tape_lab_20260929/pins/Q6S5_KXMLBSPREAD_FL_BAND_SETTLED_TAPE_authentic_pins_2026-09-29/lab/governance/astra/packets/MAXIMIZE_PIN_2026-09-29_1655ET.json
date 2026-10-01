@@ -1,0 +1,24 @@
+{
+ "id": "MAXIMIZE_PIN_2026-09-29_1655ET",
+ "stamped_at_et": "2026-09-29T16:55:00-04:00",
+ "scoreboard": "Q6-000 KEEP +$345.24 / +6.90%",
+ "primary": "Q6S5 strategy-fill IMPLEMENT (public_trade_through_conservative)",
+ "accept_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+ "freeze_md_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+ "kick_sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+ "held": [
+  "PM-008",
+  "weather Phase B",
+  "card03",
+  "ADMIT 429 gate 30m"
+ ],
+ "refuse": [
+  "invent fills",
+  "live orders",
+  "dual-cloud",
+  "Q6-000 retune",
+  "KEEP on simulated",
+  "ADMIT-1 DB",
+  "gap backfill"
+ ]
+}

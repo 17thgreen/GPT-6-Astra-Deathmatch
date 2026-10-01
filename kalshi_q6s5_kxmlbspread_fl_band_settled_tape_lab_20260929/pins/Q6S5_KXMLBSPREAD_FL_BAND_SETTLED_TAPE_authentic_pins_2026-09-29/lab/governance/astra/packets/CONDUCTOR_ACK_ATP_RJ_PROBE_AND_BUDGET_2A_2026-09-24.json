@@ -1,0 +1,18 @@
+{
+  "type": "CONDUCTOR_ACK",
+  "subject": "ATP-RJ 4-probe complete + GET budget Addendum 2a",
+  "issued_at_et": "2026-09-24T20:29:47-04:00",
+  "decision": "ACK",
+  "probe_summary_sha256": "f3297eec0ad623bdd01e026a821c426b80834213a73ec72da1f30523b2cb2cae",
+  "probe_summary_path": "tmp/atp_hardening_probe/results_collector/SUMMARY.json",
+  "budget_sha256": "6fcdfa2e2f18727a5d2fdd50c5853852f973a1d6b65556fc491dd0dd4484a61d",
+  "findings": [
+    "P1-P3 /markets HTTP 429 gaps \u2014 min_settled_ts honor UNEVALUABLE",
+    "P4 /events min_close_ts HONOREd on close_time; 33 events / 66 markets",
+    "settlements_after_accept=[] (latest nested settlement_ts 2026-09-24T14:40:28Z)",
+    "atp_rj Addendum 2 slice remains INACTIVE until post-ACCEPT settlement",
+    "INCOMPLETE all-endpoint determination because P1-P3 gapped"
+  ],
+  "ruling_to_variants": "NO SCOPE CHANGE on hardening implement: keep min_settled_ts on /markets as specified; /events+min_close_ts fallback live-confirmed; client-side settlement_ts>since remains the gate",
+  "affirmed_budget_2a": "shared-IP contention note; prefer /events nested for discovery; ADMIT-1 reservation unchanged"
+}
