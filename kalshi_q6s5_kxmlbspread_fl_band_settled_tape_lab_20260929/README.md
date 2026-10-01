@@ -14,6 +14,8 @@ Conductor ACCEPT sha256 is
 `8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b`.
 Freeze sha256 is
 `fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa`.
+The IN_SAMPLE_DEV addendum sha256 is
+`09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754`.
 `digest_all_match_claimed` is true for those vendored bytes. Variants
 ping files cited by ACCEPT and not present in the bundle were not invented.
 `lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE` was

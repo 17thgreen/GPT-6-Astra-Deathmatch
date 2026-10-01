@@ -97,6 +97,25 @@ class PinTests(unittest.TestCase):
         self.assertIn('MANIFEST.json: OK', completed.stdout)
         capture_copy = PARENT / 'lab' / 'astra-capture' / 'r3-p3-fl-maker-taker' / 'bands_registry_10c.json'
         self.assertEqual(orchestrator.sha256_file(capture_copy), orchestrator.BAND_REGISTRY_SHA256)
+        self.assertEqual(
+            orchestrator.sha256_file(orchestrator.ADDENDUM_PATH),
+            orchestrator.ADDENDUM_SHA256,
+        )
+        addendum = orchestrator.verify_pins_manifest()
+        self.assertEqual(addendum['ruling']['evidence_class'], 'IN_SAMPLE_DEV')
+        self.assertEqual(addendum['ruling']['panel_admitted_at'], '2026-09-25T04:37:47Z')
+        pins_manifest = subprocess.run(
+            ['sha256sum', '-c', 'MANIFEST.sha256'],
+            cwd=str(orchestrator.PINS),
+            check=False,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual(pins_manifest.returncode, 0, pins_manifest.stderr[-500:])
+        self.assertIn(
+            'CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL_2026-10-01.json: OK',
+            pins_manifest.stdout,
+        )
 
     def test_sha_mismatch_fails_closed_before_parse(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -117,6 +136,27 @@ class PinTests(unittest.TestCase):
             target.write_bytes(data)
             with self.assertRaises(orchestrator.ManifestShaMismatch):
                 orchestrator.verify_closed_manifest(dest)
+
+    def test_addendum_pin_fails_closed_on_a_tampered_byte(self):
+        self.assertEqual(
+            orchestrator.sha256_file(orchestrator.ADDENDUM_PATH),
+            orchestrator.ADDENDUM_SHA256,
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            target = root / orchestrator.ADDENDUM_PATH.name
+            data = bytearray(orchestrator.ADDENDUM_PATH.read_bytes())
+            data[0] ^= 0xFF
+            target.write_bytes(data)
+            manifest = root / 'MANIFEST.sha256'
+            manifest.write_text(
+                '%s  %s\n' % (orchestrator.ADDENDUM_SHA256, orchestrator.ADDENDUM_PATH.name),
+                encoding='utf-8',
+            )
+            with self.assertRaises(orchestrator.ManifestShaMismatch):
+                orchestrator.verify_pins_manifest(manifest)
+            with self.assertRaises(orchestrator.ManifestShaMismatch):
+                orchestrator.load_pinned_json(target, orchestrator.ADDENDUM_SHA256)
 
 
 class BandTests(unittest.TestCase):
@@ -340,6 +380,27 @@ class AlgebraTests(unittest.TestCase):
         self.assertEqual(same_band['row']['band_id'], yes_row['row']['band_id'])
         self.assertEqual(same_band['row']['y_s'], 1)
 
+    def test_pre_admitted_at_is_strictly_before_the_panel_instant(self):
+        market = _market(
+            close_time='2026-09-25T06:00:00Z',
+            settlement_ts='2026-09-25T06:01:00Z',
+        )
+        cases = (
+            ('2026-09-25T04:37:46Z', True),
+            ('2026-09-25T04:37:46.999999Z', True),
+            ('2026-09-25T04:37:47Z', False),
+            ('2026-09-25T04:37:47.000000Z', False),
+            ('2026-09-25T04:37:47.000001Z', False),
+            ('2026-09-25T04:37:48Z', False),
+        )
+        for created, expected in cases:
+            self.assertIs(orchestrator.pre_admitted_at(created), expected, created)
+            got = orchestrator.classify_trade(_trade(created_time=created), market)
+            self.assertIs(got['included'], True, created)
+            self.assertIs(got['row']['pre_admitted_at'], expected, created)
+            self.assertEqual(got['row']['evidence_class'], 'IN_SAMPLE_DEV')
+            self.assertNotIn('pnl', got['row'])
+
 
 class ScorecardTests(unittest.TestCase):
     def test_published_card_stays_null_and_refuses_are_closed(self):
@@ -385,6 +446,25 @@ class ScorecardTests(unittest.TestCase):
             orchestrator.set_knob('fill_model')
         self.assertEqual(orchestrator.set_knob('price_band'), 'price_band')
 
+    def test_in_sample_dev_label_is_on_the_card_and_summary(self):
+        card = orchestrator.published_scorecard()
+        summary = orchestrator.measure_rows([])
+        self.assertEqual(card['evidence_class'], 'IN_SAMPLE_DEV')
+        self.assertEqual(
+            card['examiner_scorecard_v1_2']['scorecard']['evidence_class'],
+            'IN_SAMPLE_DEV',
+        )
+        self.assertEqual(summary['evidence_class'], 'IN_SAMPLE_DEV')
+        self.assertIsNone(card['results'])
+        self.assertIsNone(card['pnl'])
+        self.assertIsNone(card['metrics']['maker_gross_roi_delta_FL0_minus_FL1'])
+        self.assertIsNone(card['metrics']['reading'])
+        self.assertIsNone(summary['results'])
+        self.assertIsNone(summary['pnl'])
+        self.assertIsNone(summary['reading'])
+        self.assertIs(summary['promote'], False)
+        self.assertIs(summary['counts_toward_keep'], False)
+
     def test_pinned_print_count_is_a_pin_and_conduct_does_not_score(self):
         report = orchestrator.conduct()
         self.assertEqual(report['n_prints_pinned'], 11723)
@@ -400,6 +480,8 @@ class ScorecardTests(unittest.TestCase):
         self.assertEqual(report['live_gets'], 0)
         self.assertEqual(report['orders'], 0)
         self.assertEqual(report['fee_label'], 'CACHE_NOT_R1P1')
+        self.assertEqual(report['evidence_class'], 'IN_SAMPLE_DEV')
+        self.assertEqual(report['scorecard_evidence_class'], 'IN_SAMPLE_DEV')
         source = (ROOT / 'orchestrator.py').read_text(encoding='utf-8')
         for banned in ('urlopen', 'import sqlite3', 'requests.get'):
             self.assertNotIn(banned, source)

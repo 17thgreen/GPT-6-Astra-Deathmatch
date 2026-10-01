@@ -57,6 +57,9 @@ EMPTY_RESULTS_SHA256 = 'dab3414d2a26205cff5667f8e4952f4121aed98f87f5814bd8627c64
 EXAMINER_STUB_SHA256 = 'fb01725b1212123fe3f9ffeeedd7c46a3e2404114ef1393381765953cd07f1f3'
 FEE_PIN_SHA256 = '9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a'
 ADMIT1_RULING_SHA256 = 'ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2'
+ADDENDUM_SHA256 = '09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754'
+EVIDENCE_CLASS = 'IN_SAMPLE_DEV'
+PANEL_ADMITTED_AT = '2026-09-25T04:37:47Z'
 FEE_TYPE = 'quadratic'
 FEE_MULTIPLIER = '0.5'
 FEE_LABEL = 'CACHE_NOT_R1P1'
@@ -70,6 +73,7 @@ TICK = Decimal('0.01')
 PRICE_TOLERANCE = Decimal('1e-9')
 ADMIT1_WINDOW_START = datetime(2026, 9, 27, 0, 0, tzinfo=timezone.utc)
 ADMIT1_WINDOW_END = datetime(2026, 9, 30, 4, 0, tzinfo=timezone.utc)
+PANEL_ADMITTED_AT_UTC = datetime(2026, 9, 25, 4, 37, 47, tzinfo=timezone.utc)
 CAPTURE_STAMP = re.compile(r'(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})Z')
 
 IN_SCOPE = {
@@ -101,6 +105,8 @@ PINS = ROOT / 'pins'
 BUNDLE = PINS / 'Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_authentic_pins_2026-09-29'
 BUNDLE_TGZ = PINS / 'Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_authentic_pins_2026-09-29.tgz'
 ACCEPT_PATH = PINS / 'CONDUCTOR_ACCEPT_VARIANTS_Q6S5_FL_BAND_SETTLED_TAPE_FREEZE_2026-10-01.json'
+ADDENDUM_PATH = PINS / 'CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL_2026-10-01.json'
+PINS_MANIFEST = PINS / 'MANIFEST.sha256'
 PACKET_REL = Path('lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE')
 FREEZE_REL = Path('lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md')
 BAND_REL = Path('lab/governance/astra/packets/r3_p3_fl_maker_taker/bands_registry_10c.json')
@@ -225,6 +231,47 @@ def load_pinned_json(path, expected_sha256):
     """Hash first. A mismatch raises before the bytes are parsed."""
     pinned = assert_pinned_sha(path, expected_sha256)
     return json.loads(pinned.read_text(encoding='utf-8'))
+
+
+def verify_pins_manifest(manifest_path=None):
+    """Hash each pins MANIFEST entry before that file is parsed.
+
+    A tampered addendum byte raises ManifestShaMismatch and is not parsed.
+    """
+    manifest_path = Path(manifest_path or PINS_MANIFEST)
+    if not manifest_path.is_file():
+        raise ManifestShaMismatch('missing %s' % manifest_path)
+    root = manifest_path.parent
+    saw_addendum = False
+    for line_no, line in enumerate(manifest_path.read_text(encoding='utf-8').splitlines(), 1):
+        if not line.strip() or line.startswith('#'):
+            continue
+        parts = line.split()
+        if len(parts) != 2:
+            raise ManifestShaMismatch('pins manifest line %s' % line_no)
+        digest, name = parts
+        if len(digest) != 64 or any(ch not in '0123456789abcdef' for ch in digest):
+            raise ManifestShaMismatch('pins manifest line %s' % line_no)
+        pinned = assert_pinned_sha(root / name, digest)
+        if pinned.name == ADDENDUM_PATH.name:
+            if digest != ADDENDUM_SHA256:
+                raise ManifestShaMismatch('addendum pin')
+            saw_addendum = True
+    if not saw_addendum:
+        raise ManifestShaMismatch('addendum missing')
+    payload = load_pinned_json(root / ADDENDUM_PATH.name, ADDENDUM_SHA256)
+    ruling = payload.get('ruling') if isinstance(payload, dict) else None
+    if not isinstance(ruling, dict) or ruling.get('evidence_class') != EVIDENCE_CLASS:
+        raise ManifestShaMismatch('addendum evidence_class')
+    if ruling.get('panel_admitted_at') != PANEL_ADMITTED_AT:
+        raise ManifestShaMismatch('addendum panel_admitted_at')
+    return payload
+
+
+def pre_admitted_at(created_time):
+    """True iff created_time is strictly before the panel admitted_at instant."""
+    ts = created_time if isinstance(created_time, datetime) else parse_ts(created_time)
+    return ts < PANEL_ADMITTED_AT_UTC
 
 
 def parse_ts(value):
@@ -578,6 +625,7 @@ def measure_rows(rows):
     bands = {band_id: _finalize(gross_bands[band_id], with_fee=False) for band_id in BAND_IDS}
     return {
         'label': LABEL,
+        'evidence_class': EVIDENCE_CLASS,
         'knob': KNOB,
         'results': None,
         'pnl': None,
@@ -739,6 +787,8 @@ def classify_trade(trade, market, captured_utc=None):
             'ticker': ticker,
             'event': IN_SCOPE[ticker],
             'created_time': created,
+            'pre_admitted_at': pre_admitted_at(created),
+            'evidence_class': EVIDENCE_CLASS,
             'label': LABEL,
         },
     }
@@ -789,7 +839,17 @@ def published_scorecard():
         raise ScorecardPromotionRefused('reading')
     if payload['metrics']['maker_gross_roi_delta_FL0_minus_FL1'] is not None:
         raise ScorecardPromotionRefused('primary')
-    return payload
+    card = copy.deepcopy(payload)
+    if card.get('results') is not None or card.get('pnl') is not None:
+        raise ScorecardPromotionRefused('results')
+    card['evidence_class'] = EVIDENCE_CLASS
+    stub = card.get('examiner_scorecard_v1_2', {}).get('scorecard')
+    if not isinstance(stub, dict):
+        raise ScorecardPromotionRefused('stub')
+    if stub.get('results') is not None or stub.get('pnl') is not None:
+        raise ScorecardPromotionRefused('results')
+    stub['evidence_class'] = EVIDENCE_CLASS
+    return card
 
 
 def write_scorecard(payload, path):
@@ -831,6 +891,7 @@ def digest_status():
         ('fee_pin', BUNDLE / FEE_PIN_REL, FEE_PIN_SHA256),
         ('admit1_ruling', BUNDLE / ADMIT1_RULING_REL, ADMIT1_RULING_SHA256),
         ('authentic_bundle', BUNDLE_TGZ, BUNDLE_SHA256),
+        ('in_sample_dev_addendum', ADDENDUM_PATH, ADDENDUM_SHA256),
     )
     present = []
     missing = []
@@ -854,6 +915,11 @@ def digest_status():
         })
     claimed = not missing and not mismatch and all(not item['present'] for item in absent)
     claimed = claimed and not capture.exists() and not GOVERNANCE_PACKET.exists()
+    try:
+        verify_pins_manifest()
+    except ManifestShaMismatch:
+        claimed = False
+        mismatch.append('pins_manifest')
     return {
         'digest_all_match_claimed': claimed,
         'present': present,
@@ -867,6 +933,7 @@ def digest_status():
 
 def conduct():
     """Pin check and null scorecard. Does not join the tape to settlement ROI."""
+    verify_pins_manifest()
     inventory = inventory_pinned_prints()
     card = published_scorecard()
     hold = examiner_status()
@@ -892,8 +959,72 @@ def conduct():
         'maker_gross_roi_delta_FL0_minus_FL1': None,
         'reading': None,
         'digest_all_match_claimed': True,
+        'evidence_class': EVIDENCE_CLASS,
+        'scorecard_evidence_class': card['evidence_class'],
         'live_gets': 0,
         'orders': 0,
         'scorecard_results': card['results'],
         'scorecard_pnl': card['pnl'],
+    }
+
+
+def _load_in_scope_markets(bundle):
+    """Pinned market GETs for the six in-scope tickers. Sep-25 files are skipped."""
+    root = bundle / 'lab' / 'astra-capture' / 'q6s5-kxmlbspread' / 'measured' / 'raw' / 'markets'
+    found = {}
+    for path in sorted(root.glob('*.json')):
+        payload = json.loads(path.read_text(encoding='utf-8'))
+        body = payload.get('market') if isinstance(payload, dict) else None
+        if not isinstance(body, dict):
+            raise NoInvent('market')
+        ticker = body.get('ticker')
+        if ticker not in IN_SCOPE:
+            continue
+        if ticker in found:
+            raise NoInvent(ticker)
+        found[ticker] = payload
+    if set(found) != set(IN_SCOPE):
+        raise NoInvent('markets')
+    return found
+
+
+def admitted_at_arm_counts(bundle=None):
+    """Count included output rows before and after panel admitted_at.
+
+    Counts only. The return has no outcome, return, PnL, or win rate.
+    """
+    bundle = Path(bundle or BUNDLE)
+    verify_closed_manifest(bundle)
+    markets = _load_in_scope_markets(bundle)
+    counts = {
+        arm: {'pre_admitted_at': 0, 'post_admitted_at': 0}
+        for arm in ARMS
+    }
+    for ticker in IN_SCOPE:
+        trade_dir = bundle / TRADES_ROOT_REL / 'raw' / 'trades' / ticker
+        pages = sorted(trade_dir.glob('page_*.json'))
+        pages = [page for page in pages if not page.name.endswith('.meta.json')]
+        for page in pages:
+            payload = json.loads(page.read_text(encoding='utf-8'))
+            for trade in payload['trades']:
+                got = classify_trade(trade, markets[ticker])
+                if got['included'] is not True:
+                    continue
+                row = got['row']
+                if row.get('evidence_class') != EVIDENCE_CLASS:
+                    raise OrchestratorError('evidence_class')
+                if row['arm'] not in counts:
+                    raise RebinRefused(row['arm'])
+                key = 'pre_admitted_at' if row['pre_admitted_at'] is True else 'post_admitted_at'
+                counts[row['arm']][key] += 1
+    return {
+        'evidence_class': EVIDENCE_CLASS,
+        'panel_admitted_at': PANEL_ADMITTED_AT,
+        'rule': 'pre_admitted_at = created_time < 2026-09-25T04:37:47Z; post_admitted_at is the complement',
+        'arms': counts,
+        'promote': False,
+        'counts_toward_keep': False,
+        'verdict_ceiling': VERDICT_CEILING,
+        'results': None,
+        'pnl': None,
     }

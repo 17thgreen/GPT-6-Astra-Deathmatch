@@ -8,6 +8,8 @@
   "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
   "authentic_bundle_sha256": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857",
   "band_registry_sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+  "in_sample_dev_addendum_sha256": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+  "evidence_class": "IN_SAMPLE_DEV",
   "rebin": false,
   "digest_all_match_claimed": true,
   "promote": false,

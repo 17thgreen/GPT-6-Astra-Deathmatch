@@ -20,3 +20,7 @@ Freeze sha256 `fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa`
 Authentic bundle sha256 `63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857`.
 
 Examiner status at implement: `HOLD_PRE_PR`. The post-PR examiner path is `READY_NOT_SCORED`. This lab does not mark SCORED.
+
+## Conductor addendum 2026-10-01
+
+Ruling `CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL` sha256 `09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754` is an addendum to ACCEPT `8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b`. Historical tape is admissible with `evidence_class` `IN_SAMPLE_DEV`. `pre_admitted_at` is true iff trade `created_time` is strictly before `2026-09-25T04:37:47Z`. A trade at that instant is false. The label is on every output row, the summary, and the scorecard stub. Counts of pre- and post-admitted_at rows are reported per arm with no outcome values. `promote` stays false. `counts_toward_keep` stays false. Verdict ceiling stays ITERATE. `results` and `pnl` stay null. The price_band registry is not rebinned.
