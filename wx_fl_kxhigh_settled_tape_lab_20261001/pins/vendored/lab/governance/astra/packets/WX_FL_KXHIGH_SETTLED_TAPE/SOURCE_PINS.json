@@ -1,0 +1,60 @@
+{
+  "packet_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "freeze_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "id": "WX_FL_KXHIGH_SETTLED_TAPE_SOURCE_PINS",
+  "lab_dir_proposed": "kalshi_wx_fl_kxhigh_settled_tape_lab_20261001/",
+  "declared_at_et": "2026-10-01T19:46:31-04:00",
+  "closed_input_manifest_note": "Runner may read ONLY inputs_core; verify sha256 before read; fail-closed on mismatch. Snapshot opened mode=ro&immutable=1. Gap exports must be regenerated from the snapshot and match byte-for-byte. Live weather db and ADMIT-1 capture.sqlite are NOT inputs.",
+  "inputs_core": {
+    "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/snapshot/archive.sqlite": "d20d5e7d0cedc79ed77c92e905b2824f0ca1d79f8e524635bfd3a8f0e3c6eae2",
+    "lab/governance/astra/packets/r3_p3_fl_maker_taker/bands_registry_10c.json": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+    "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/GAP_LOG_gaps_table_export_2026-10-01.jsonl": "0211f5ca2fc6e9ec3ed0c889c5ed50e3ba35360f048a28986116892f090447f6",
+    "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/GAP_LOG_trades_polls_export_2026-10-01.jsonl": "a287572c53a69da5baa99f4f6746c9e31c2f58648a10fe9128ef381261d81cf8"
+  },
+  "live_source_shas_at_copy_never_inputs": {
+    "lab/astra-capture/weather-nowcast/archive.sqlite": "974ce4b5339b010ee28819f35f365693bfc55dd337ab0d7a192aff668714f60f",
+    "lab/astra-capture/weather-nowcast/archive.sqlite-wal": "df9765a5444b2f84dc59590520b544c4ea5f29b0af24951d4ff8ce118f70cdbf",
+    "lab/astra-capture/weather-nowcast/archive.sqlite-shm": "6af7afeb2786fcdb974308b1dd732d56628d95064161bc9fa60aa691fd89d891"
+  },
+  "context_pins": {
+    "lab/governance/astra/packets/CONDUCTOR_RULING_VARIANTS_WX_FL_PREFREEZE_2026-10-01.json": "0e37f91b60289084f4e660b74bcb12a04f83f66fc93410add3a26baf0dd9f6af",
+    "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+    "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json": "2e74f17b1307b8b57f33a6475cd7ce8af48c470099478cadfb07877b0d70745f",
+    "lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXAMINER_KILL_Q6S5_KXMLBSPREAD_FL_BAND_PR61_2026-10-01.json": "be2357773ca7a842e6896676e3ba0291f40ef8e0b8f997d46f7124d4b2705229",
+    "lab/governance/astra/packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md": "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48",
+    "lab/governance/astra/packets/card02_station_weather/FROZEN_EXPERIMENT.json": "beea299c25911b0831f7619dd01050ca69137c32e41f830dd23e6863ac4fda34",
+    "lab/governance/astra/packets/card02_station_weather/LEDGER_2026-09-24.md": "2eb5b4684c7ccae32a3c55a1a91b166ec1381f05b7c3710d22ebb559791cb798",
+    "lab/governance/astra/packets/card02_station_weather/SOURCE_MAP_2026-09-24.md": "2fa868de7fd6c4e0c5816d85837d25aacca3c02d47af16b1cde614e23ad9ed72",
+    "lab/governance/astra/packets/card02_station_weather/MANIFEST.md": "62c8b254b01e4a1fad81cadb19765362e0f8fb3ed2b957e8f9e781c793e9cb99",
+    "lab/governance/astra/packets/card02_station_weather/README.md": "af69882363570af1497ab67f582964bf6b0e6a3d71bd4505362314e7e7472a01",
+    "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md": "fd9d2a37ea8299048eb3903fda94da16f96ab6bf19f4ff4d358a093784644520",
+    "lab/governance/astra/packets/card02_station_weather/COLLECTOR_STUB.md": "1b371e0e8e05db36a0a24aa23d7d42b02ecbed9ee87b3dc422980450cc732642",
+    "lab/governance/astra/packets/card02_station_weather/results.json": "014abea06cc2a8aa97c7b48be580e1c43d4bd8351cdf2a33844b13a86644a583",
+    "lab/astra-capture/weather-nowcast/collector.py": "7bd1bddb47079f215502c4600d070497b24da9018e5b06903476062d442db493",
+    "lab/astra-capture/weather-nowcast/MANIFEST.json": "5214f50a3603c5f6be0c72c07ea91dbe96049fbc4278d1d27d1730ecc5883759",
+    "lab/astra-capture/weather-nowcast/README.md": "b8f2bf29b7b111363aac63c78ec90fc24c7c38ca524220f32b6b8960d86a262a",
+    "lab/astra-capture/weather-nowcast/logs/collector_20260925T000729Z.log": "b39d1fcc407254defe0c38591778da36dae070ea161ef2f8d5a1a8a46b2fcdb0",
+    "lab/astra-capture/weather-nowcast/logs/kalshi_429.jsonl": "9b9a2d5e98c202a0b7e5d6b3f3c158a2937c46b0661a618c7d7789d4741d019e",
+    "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+    "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_PR62_2026-10-01.json": "fa361354aa284b36482b0c4a67715ff6cda63fcf70f2d0c535bd1f7bdc465d5b",
+    "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.json": "08d23b363d72b8c8599772ee6fc6736cb90f13e8ed814b12c59b58fd5c7dc91e",
+    "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.json": "9a987a77e6cd6293ddaeb14fadbf33a25c1a6cc392af25f46eaaaaae33ebb273",
+    "lab/governance/astra/packets/CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL_2026-10-01.json": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+    "lab/governance/astra/packets/R3-P3_FL_MAKER_TAKER_BANDS_FREEZE_KERNEL_2026-09-22.md": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7",
+    "lab/governance/astra/packets/R3-P3_ADVERSARY_REFUSE_BIND_2026-09-22.md": "6b6690cd6bf3b7e4833919a8f16be497027902ca726d22a64ef4bde2b29d5636",
+    "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+    "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+    "lab/governance/astra/registry/RULE_FROZEN_EDIT_PREV_BYTES_2026-09-24.md": "f0aab7d15ca78a097644008db02013eae3a56cb81b2a6aef2cfe6faf21e3e6d1",
+    "tmp/examiner_scratch_pr61_score/runner_tree/kalshi_q6s5_kxmlbspread_fl_band_settled_tape_lab_20260929/orchestrator.py": "01a0bf5a3343eb5e9f12eaae9ac64120899603513bffd552f7eb4e616885f80c"
+  },
+  "context_pin_notes": {
+    "tmp/examiner_scratch_pr61_score/runner_tree/.../orchestrator.py": "PR61 merged runner (= d7558fc4 blob) formula reference; bundled at lab/kalshi_q6s5_kxmlbspread_fl_band_settled_tape_lab_20260929/orchestrator.py"
+  },
+  "refused_inputs": [
+    "lab/astra-capture/weather-nowcast/archive.sqlite{,-wal,-shm} (live; never opened)",
+    "lab/astra-capture/prospective/capture.sqlite (never opened)",
+    "any network source"
+  ],
+  "all_rehash_match": true,
+  "rehashed_at_et": "2026-10-01T19:46:31-04:00"
+}

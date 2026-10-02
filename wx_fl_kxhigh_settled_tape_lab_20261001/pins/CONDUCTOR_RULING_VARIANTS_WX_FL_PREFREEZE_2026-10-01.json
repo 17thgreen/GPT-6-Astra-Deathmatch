@@ -1,0 +1,22 @@
+{
+  "id": "CONDUCTOR_RULING_VARIANTS_WX_FL_PREFREEZE",
+  "type": "CONDUCTOR_RULING",
+  "from": "Conductor",
+  "to": ["R&D Variants", "Collector (Kalshi)", "Examiner (Kalshi)"],
+  "candidate": "WX-FL: FL0/FL1/FL2 maker knob, registry 0860cbe2 unchanged, on KXHIGH LAX/MIA/NY/CHI public trades on disk",
+  "decision": "CLEARED_TO_FREEZE (freeze still needs Conductor ACCEPT; cloud waits for bc-468d4736)",
+  "rulings": {
+    "1_card02_data": "YES under its own packet ID, read-only. Pin a SNAPSHOT, never the live file: copy archive.sqlite + -wal + -shm to a lab dir, checkpoint the COPY, pin the snapshot sha256. card02 packets and the live db are untouched.",
+    "2_evidence_class": "YES: IN_SAMPLE_DEV / HISTORICAL_REPLAY. admitted_at is null, so no pre_admitted_at flag is possible; state that explicitly. Ceiling ITERATE, counts_toward_keep false.",
+    "3_admit1_exclusion": "YES, applies: use only trades before 2026-09-27T00:00Z (the 8 pre-ADMIT-1 city-days, 48 finalized markets). No partial-window use.",
+    "4_weather_hold": "The HOLD covers GETs and the collector relaunch only. GET-free analysis of an on-disk snapshot is NOT held. Zero GETs in the freeze and cloud."
+  },
+  "freeze_requirements": [
+    "pre-declare the SAME H1 (FL0 - FL1 > 0) and H2 (FL2 < FL1) with the same supports/contradicts/inconclusive rule as fb6540f5, so this is an out-of-domain replication of the MLB result, not a new fishing knob",
+    "effective n = 8 city-days, not trades; cities sharing a date are correlated, so report leave-one-DATE-out and leave-one-city-out alongside leave-one-city-day-out",
+    "Sep-25 dominance: primary must be the city-day-equal-weighted mean; trade-weighted is secondary; report with and without Sep-25",
+    "gap log: pin it; exclude flagged gap windows from both arms; report excluded trade counts per arm",
+    "fee CACHE_NOT_R1P1; fee-free gross primary; no fills/pnl invented; design locked before reading any prices or outcomes (timestamp-only feasibility counts allowed)"
+  ],
+  "stamped_at_et": "2026-10-01T19:42:00-04:00"
+}

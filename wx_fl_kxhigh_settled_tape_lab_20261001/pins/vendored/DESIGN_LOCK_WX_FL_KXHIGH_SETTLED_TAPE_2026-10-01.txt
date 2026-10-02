@@ -1,0 +1,3 @@
+WX-FL-KXHIGH-SETTLED-TAPE design lock (bundle note)
+Design locked 2026-10-01T19:41:14-04:00 (DESIGN_LOCK_PRE_FEASIBILITY.txt sha 4ff6bf2cb79ded3ecb77be57a7502392d1295d8a7cfacfc77b926809e671947c), before snapshot creation (19:41:25) and before any count.
+Freeze declared 2026-10-01T19:46:31-04:00. No price / side / count_fp / result value / ROI column was read by Variants. Per-arm counts omitted (cloud computes).

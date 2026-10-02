@@ -1,0 +1,233 @@
+{
+  "D01_city_days": [
+    "KXHIGHCHI-26SEP25",
+    "KXHIGHMIA-26SEP25",
+    "KXHIGHNY-26SEP25"
+  ],
+  "D21_city_days": [
+    "KXHIGHCHI-26SEP25",
+    "KXHIGHMIA-26SEP25",
+    "KXHIGHNY-26SEP25"
+  ],
+  "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "addendum_sha256": "68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153",
+  "caveats": [
+    "Sep-24 covers only its last ~5-8 h",
+    "Sep-25 lacks its first ~10 h",
+    "Sep-25 carries 33,119 of 33,757 trades"
+  ],
+  "claim_as_live_R1P1": false,
+  "counts_toward_keep": false,
+  "date_level_n": 1,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "fee_honest": false,
+  "fee_label": "CACHE_NOT_R1P1",
+  "gm_lit": {
+    "components_timestamp_only": {
+      "budget_only": {
+        "dropped_n": 18097,
+        "dropped_pct": "53.61",
+        "kept_n": 15660
+      },
+      "per_ticker_429_only": {
+        "dropped_n": 4043,
+        "dropped_pct": "11.98",
+        "kept_n": 29714
+      },
+      "storm_only": {
+        "dropped_n": 19750,
+        "dropped_pct": "58.51",
+        "kept_n": 14007
+      }
+    },
+    "decisive": false,
+    "excluded_gap_n_unassignable": 0,
+    "per_arm": {
+      "dropped_n": 27199,
+      "dropped_per_arm": {
+        "WXFL0": 9330,
+        "WXFL1": 10536,
+        "WXFL2": 7333
+      },
+      "dropped_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 48,
+          "KXHIGHCHI-26SEP25": 637,
+          "KXHIGHLAX-26SEP24": 244,
+          "KXHIGHLAX-26SEP25": 4927,
+          "KXHIGHMIA-26SEP24": 138,
+          "KXHIGHMIA-26SEP25": 1935,
+          "KXHIGHNY-26SEP24": 51,
+          "KXHIGHNY-26SEP25": 1350
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 2218,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 4980,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 3338
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 744,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 3468,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 1775,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 1346
+        }
+      },
+      "kept_n": 6558,
+      "kept_per_arm": {
+        "WXFL0": 2409,
+        "WXFL1": 2507,
+        "WXFL2": 1642
+      },
+      "kept_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 12,
+          "KXHIGHCHI-26SEP25": 167,
+          "KXHIGHLAX-26SEP24": 97,
+          "KXHIGHLAX-26SEP25": 1269,
+          "KXHIGHMIA-26SEP24": 34,
+          "KXHIGHMIA-26SEP25": 414,
+          "KXHIGHNY-26SEP24": 14,
+          "KXHIGHNY-26SEP25": 402
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 446,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 983,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 1078
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 162,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 940,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 304,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 236
+        }
+      }
+    },
+    "role": "sensitivity",
+    "timestamp_only": {
+      "dropped_by_city_day": {
+        "KXHIGHCHI-26SEP24": 48,
+        "KXHIGHCHI-26SEP25": 3599,
+        "KXHIGHLAX-26SEP24": 244,
+        "KXHIGHLAX-26SEP25": 8395,
+        "KXHIGHMIA-26SEP24": 138,
+        "KXHIGHMIA-26SEP25": 8690,
+        "KXHIGHNY-26SEP24": 51,
+        "KXHIGHNY-26SEP25": 6034
+      },
+      "dropped_n": 27199,
+      "kept_by_city_day": {
+        "KXHIGHCHI-26SEP24": 12,
+        "KXHIGHCHI-26SEP25": 775,
+        "KXHIGHLAX-26SEP24": 97,
+        "KXHIGHLAX-26SEP25": 2209,
+        "KXHIGHMIA-26SEP24": 34,
+        "KXHIGHMIA-26SEP25": 1701,
+        "KXHIGHNY-26SEP24": 14,
+        "KXHIGHNY-26SEP25": 1716
+      },
+      "kept_n": 6558,
+      "scope": "timestamp_only_before_row_rules"
+    },
+    "windows": {
+      "budget": {
+        "n_windows": 1050,
+        "not_proven": 1050,
+        "open_ended": 36,
+        "proven": 0,
+        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+      },
+      "collector": {
+        "n_windows": 0,
+        "not_proven": 0,
+        "open_ended": 0,
+        "proven": 0,
+        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+      },
+      "per_ticker_429": {
+        "n_windows": 131,
+        "not_proven": 131,
+        "open_ended": 9,
+        "proven": 0,
+        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+      },
+      "storm": {
+        "n_windows": 225,
+        "not_proven": 225,
+        "open_ended": 0,
+        "proven": 0,
+        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+      }
+    }
+  },
+  "kill_mapping_disabled": true,
+  "locdo_need_h1": 2,
+  "locdo_need_h2": 2,
+  "locdo_rule": "n = n_eff = |D|; need = ceil(2n/3); inconclusive if n_eff < 3. H1 votes only over D01 and H2 only over D21. Addendum 68e1ff7a supersedes the ACCEPT >= 6 of 8 wording with this freeze formula.",
+  "maker_net_roi_cache": null,
+  "n_eff_D01": 3,
+  "n_eff_D21": 3,
+  "net": null,
+  "nonempty_city_days_per_arm": {
+    "WXFL0": [
+      "KXHIGHCHI-26SEP24",
+      "KXHIGHLAX-26SEP24",
+      "KXHIGHMIA-26SEP24",
+      "KXHIGHNY-26SEP24",
+      "KXHIGHCHI-26SEP25",
+      "KXHIGHLAX-26SEP25",
+      "KXHIGHMIA-26SEP25",
+      "KXHIGHNY-26SEP25"
+    ],
+    "WXFL1": [
+      "KXHIGHCHI-26SEP25",
+      "KXHIGHMIA-26SEP25",
+      "KXHIGHNY-26SEP25"
+    ],
+    "WXFL2": [
+      "KXHIGHCHI-26SEP25",
+      "KXHIGHLAX-26SEP25",
+      "KXHIGHMIA-26SEP25",
+      "KXHIGHNY-26SEP25"
+    ]
+  },
+  "not_an_examiner_score": true,
+  "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pnl": null,
+  "pre_admitted_at": null,
+  "pre_admitted_at_flag_possible": false,
+  "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "primary": false,
+  "promote": false,
+  "reading_scope": "CHI/MIA/NY 2026-09-25 only",
+  "reading_scope_D21": "CHI/MIA/NY 2026-09-25 only",
+  "results": null,
+  "study_label": "HISTORICAL_REPLAY",
+  "taker_net_roi_cache": null,
+  "variants_proposed_reading_H1": null,
+  "variants_proposed_reading_H2": null,
+  "verdict_cap": "ITERATE",
+  "verdict_ceiling": "ITERATE",
+  "without_sep25_n_eff_D01": 0,
+  "without_sep25_n_eff_D21": 0,
+  "without_sep25_reading_h1": "inconclusive",
+  "without_sep25_reading_h2": "inconclusive"
+}

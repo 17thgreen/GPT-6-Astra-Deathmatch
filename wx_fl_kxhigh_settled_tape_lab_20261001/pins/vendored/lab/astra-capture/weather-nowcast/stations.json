@@ -1,0 +1,106 @@
+{
+  "config_version": "2026-09-24.final-v1",
+  "status": "FINAL - Deep Research station list (matches provisional v0 exactly)",
+  "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md",
+  "supersedes": "2026-09-24.provisional-v0",
+  "notes": "Edit to swap series/stations. Collector reloads on SIGHUP, on mtime change (checked every 60 s) and at least daily; each distinct load is versioned in archive.sqlite config_versions. Removing a series stops polling it; archived rows are never deleted. Required per entry: series_ticker, nws_station, cli_location. Optional: cf6_location, wfo, timezone, lat, lon, climate_day, source.",
+  "settlement_note": "Kalshi series/event settlement_sources = The Weather Company (weather.com/kalshi); rules_primary names the NWS CLI site (e.g. CLINYC); contract terms GLOBALTEMPERATURE list NWS as Source Agency. The Weather Company page is NOT captured by this archive.",
+  "series": [
+    {
+      "rank": 1,
+      "series_ticker": "KXHIGHLAX",
+      "kind": "daily_high",
+      "nws_station": "KLAX",
+      "station_name": "Los Angeles Intl",
+      "cli_location": "LAX",
+      "cf6_location": "LAX",
+      "wfo": "LOX",
+      "timezone": "America/Los_Angeles",
+      "lat": 33.93806,
+      "lon": -118.38889,
+      "climate_day": {
+        "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+        "iana_timezone": "America/Los_Angeles",
+        "standard_utc_offset": "-08:00",
+        "local_clock_window_during_dst": "01:00-00:59 PDT (next calendar day 00:59)",
+        "local_clock_window_outside_dst": "00:00-23:59 PST",
+        "utc_window": "00:00 to 24:00 at UTC-08:00 i.e. [D 00:00-08:00, D+1 00:00-08:00)",
+        "note": "metadata only; archived data is stored untransformed with source timestamps"
+      },
+      "cli_html": "https://forecast.weather.gov/product.php?site=LOX&product=CLI&issuedby=LAX",
+      "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md (rank 1); cross-checked: Kalshi rules_primary 'Los Angeles (CLILAX)'; CLI LAX header 'LOS ANGELES INTL AIRPORT CA'; lat/lon from api.weather.gov/stations/KLAX"
+    },
+    {
+      "rank": 2,
+      "series_ticker": "KXHIGHMIA",
+      "kind": "daily_high",
+      "nws_station": "KMIA",
+      "station_name": "Miami Intl",
+      "cli_location": "MIA",
+      "cf6_location": "MIA",
+      "wfo": "MFL",
+      "timezone": "America/New_York",
+      "lat": 25.79056,
+      "lon": -80.31639,
+      "climate_day": {
+        "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+        "iana_timezone": "America/New_York",
+        "standard_utc_offset": "-05:00",
+        "local_clock_window_during_dst": "01:00-00:59 EDT (next calendar day 00:59)",
+        "local_clock_window_outside_dst": "00:00-23:59 EST",
+        "utc_window": "00:00 to 24:00 at UTC-05:00 i.e. [D 00:00-05:00, D+1 00:00-05:00)",
+        "note": "metadata only; archived data is stored untransformed with source timestamps"
+      },
+      "cli_html": "https://forecast.weather.gov/product.php?site=MFL&product=CLI&issuedby=MIA",
+      "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md (rank 2); cross-checked: Kalshi rules_primary 'Miami (CLIMIA)'; CLI MIA header 'THE MIAMI CLIMATE SUMMARY'; lat/lon from api.weather.gov/stations/KMIA"
+    },
+    {
+      "rank": 3,
+      "series_ticker": "KXHIGHNY",
+      "kind": "daily_high",
+      "nws_station": "KNYC",
+      "station_name": "Central Park",
+      "cli_location": "NYC",
+      "cf6_location": "NYC",
+      "wfo": "OKX",
+      "timezone": "America/New_York",
+      "lat": 40.78333,
+      "lon": -73.96667,
+      "climate_day": {
+        "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+        "iana_timezone": "America/New_York",
+        "standard_utc_offset": "-05:00",
+        "local_clock_window_during_dst": "01:00-00:59 EDT (next calendar day 00:59)",
+        "local_clock_window_outside_dst": "00:00-23:59 EST",
+        "utc_window": "00:00 to 24:00 at UTC-05:00 i.e. [D 00:00-05:00, D+1 00:00-05:00)",
+        "note": "metadata only; archived data is stored untransformed with source timestamps"
+      },
+      "cli_html": "https://forecast.weather.gov/product.php?site=OKX&product=CLI&issuedby=NYC",
+      "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md (rank 3); cross-checked: Kalshi rules_primary 'New York City (CLINYC)'; CLI NYC header 'THE CENTRAL PARK NY CLIMATE SUMMARY'; lat/lon from api.weather.gov/stations/KNYC"
+    },
+    {
+      "rank": 4,
+      "series_ticker": "KXHIGHCHI",
+      "kind": "daily_high",
+      "nws_station": "KMDW",
+      "station_name": "Chicago Midway",
+      "cli_location": "MDW",
+      "cf6_location": "MDW",
+      "wfo": "LOT",
+      "timezone": "America/Chicago",
+      "lat": 41.78417,
+      "lon": -87.75528,
+      "climate_day": {
+        "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+        "iana_timezone": "America/Chicago",
+        "standard_utc_offset": "-06:00",
+        "local_clock_window_during_dst": "01:00-00:59 CDT (next calendar day 00:59)",
+        "local_clock_window_outside_dst": "00:00-23:59 CST",
+        "utc_window": "00:00 to 24:00 at UTC-06:00 i.e. [D 00:00-06:00, D+1 00:00-06:00)",
+        "note": "metadata only; archived data is stored untransformed with source timestamps"
+      },
+      "cli_html": "https://forecast.weather.gov/product.php?site=LOT&product=CLI&issuedby=MDW",
+      "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md (rank 4); cross-checked: Kalshi rules_primary 'Chicago (CLIMDW)'; CLI MDW header 'THE CHICAGO-MIDWAY CLIMATE SUMMARY'; lat/lon from api.weather.gov/stations/KMDW"
+    }
+  ]
+}

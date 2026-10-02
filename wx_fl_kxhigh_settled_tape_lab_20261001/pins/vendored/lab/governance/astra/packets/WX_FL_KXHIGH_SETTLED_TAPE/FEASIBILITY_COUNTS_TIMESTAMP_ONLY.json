@@ -1,0 +1,297 @@
+{
+ "snapshot_sha256": "d20d5e7d0cedc79ed77c92e905b2824f0ca1d79f8e524635bfd3a8f0e3c6eae2",
+ "W0": "2026-09-27T00:00:00Z",
+ "W1": "2026-09-30T04:00:00Z",
+ "runs": [
+  {
+   "run_id": 1,
+   "started_at": "2026-09-25T00:07:29.494Z",
+   "last_heartbeat": "2026-09-27T13:31:22.892Z",
+   "ended_at": null,
+   "end_reason": null
+  }
+ ],
+ "markets_ever_finalized_with_result": 66,
+ "events_ever_finalized_with_result": 11,
+ "in_scope_markets_n": 48,
+ "in_scope_city_days": {
+  "KXHIGHCHI-26SEP24": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-23T14:00:00Z",
+   "close_time_max": "2026-09-25T06:00:00Z",
+   "settlement_ts_min": "2026-09-25T12:09:48.150971Z",
+   "settlement_ts_max": "2026-09-25T12:09:48.150971Z",
+   "first_finalized_receipt_max": "2026-09-25T15:15:12.455Z"
+  },
+  "KXHIGHCHI-26SEP25": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-24T14:00:00Z",
+   "close_time_max": "2026-09-26T06:00:00Z",
+   "settlement_ts_min": "2026-09-26T12:09:36.45368Z",
+   "settlement_ts_max": "2026-09-26T12:09:36.45368Z",
+   "first_finalized_receipt_max": "2026-09-26T12:17:38.818Z"
+  },
+  "KXHIGHLAX-26SEP24": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-23T14:00:00Z",
+   "close_time_max": "2026-09-25T08:00:00Z",
+   "settlement_ts_min": "2026-09-25T14:09:28.112817Z",
+   "settlement_ts_max": "2026-09-25T14:09:28.112817Z",
+   "first_finalized_receipt_max": "2026-09-25T15:15:24.483Z"
+  },
+  "KXHIGHLAX-26SEP25": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-24T14:00:00Z",
+   "close_time_max": "2026-09-26T08:00:00Z",
+   "settlement_ts_min": "2026-09-26T14:21:36.457911Z",
+   "settlement_ts_max": "2026-09-26T14:21:36.457911Z",
+   "first_finalized_receipt_max": "2026-09-26T18:30:52.882Z"
+  },
+  "KXHIGHMIA-26SEP24": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-23T14:00:00Z",
+   "close_time_max": "2026-09-25T05:00:00Z",
+   "settlement_ts_min": "2026-09-25T11:10:38.10307Z",
+   "settlement_ts_max": "2026-09-25T11:10:38.10307Z",
+   "first_finalized_receipt_max": "2026-09-25T15:15:36.505Z"
+  },
+  "KXHIGHMIA-26SEP25": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-24T14:00:00Z",
+   "close_time_max": "2026-09-26T05:00:00Z",
+   "settlement_ts_min": "2026-09-26T11:20:06.456387Z",
+   "settlement_ts_max": "2026-09-26T11:20:06.456387Z",
+   "first_finalized_receipt_max": "2026-09-26T12:17:54.797Z"
+  },
+  "KXHIGHNY-26SEP24": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-23T14:00:00Z",
+   "close_time_max": "2026-09-25T05:00:00Z",
+   "settlement_ts_min": "2026-09-25T11:10:08.10454Z",
+   "settlement_ts_max": "2026-09-25T11:10:08.10454Z",
+   "first_finalized_receipt_max": "2026-09-25T17:45:03.485Z"
+  },
+  "KXHIGHNY-26SEP25": {
+   "markets": 6,
+   "latest_status": {
+    "finalized": 6
+   },
+   "open_time_min": "2026-09-24T14:00:00Z",
+   "close_time_max": "2026-09-26T05:00:00Z",
+   "settlement_ts_min": "2026-09-26T11:19:36.457361Z",
+   "settlement_ts_max": "2026-09-26T11:19:36.457361Z",
+   "first_finalized_receipt_max": "2026-09-26T12:18:10.822Z"
+  }
+ },
+ "in_scope_city_days_n": 8,
+ "settlement_ts_in_window_n": 0,
+ "settlement_ts_null_n": 0,
+ "trades_on_scope_markets_total": 33757,
+ "trades_created_ge_W0_dropped": 0,
+ "trades_in_scope_pre_W0": 33757,
+ "trades_received_ge_W0_n": 0,
+ "trades_post_close_n_timestamp_only": 0,
+ "trades_before_archive_start_n": 0,
+ "trades_by_city_day": {
+  "KXHIGHCHI-26SEP24": 60,
+  "KXHIGHCHI-26SEP25": 4374,
+  "KXHIGHLAX-26SEP24": 341,
+  "KXHIGHLAX-26SEP25": 10604,
+  "KXHIGHMIA-26SEP24": 172,
+  "KXHIGHMIA-26SEP25": 10391,
+  "KXHIGHNY-26SEP24": 65,
+  "KXHIGHNY-26SEP25": 7750
+ },
+ "trades_by_date": {
+  "26SEP24": 638,
+  "26SEP25": 33119
+ },
+ "created_time_min": "2026-09-25T00:07:48.491056+00:00",
+ "created_time_max": "2026-09-26T07:56:23.196542+00:00",
+ "trades_logical_polls": {
+  "logical_polls": 3261,
+  "complete": 2821
+ },
+ "coverage_holes_archive_start_to_close": 0,
+ "coverage_holes_detail": [],
+ "trades_inside_complete_poll_coverage": 33757,
+ "flagged_windows_on_scope_tickers": {
+  "kalshi_trades": 131,
+  "kalshi_trades_budget": 1050
+ },
+ "flagged_windows_open_ended_on_scope_tickers": {
+  "kalshi_trades": 9,
+  "kalshi_trades_budget": 36
+ },
+ "flagged_windows_all_ticker": {
+  "kalshi_all/pause_429_storm": 225
+ },
+ "gap_mappings": {
+  "GM-COV (PRIMARY)": {
+   "rule": "exclude trade iff created_time in a flagged window for its ticker (or all-ticker window) AND outside every complete-poll coverage interval of its ticker",
+   "excluded_n": 0,
+   "kept_n": 33757,
+   "excluded_pct": 0.0,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 60,
+    "KXHIGHCHI-26SEP25": 4374,
+    "KXHIGHLAX-26SEP24": 341,
+    "KXHIGHLAX-26SEP25": 10604,
+    "KXHIGHMIA-26SEP24": 172,
+    "KXHIGHMIA-26SEP25": 10391,
+    "KXHIGHNY-26SEP24": 65,
+    "KXHIGHNY-26SEP25": 7750
+   },
+   "excluded_by_city_day": {}
+  },
+  "GM-LIT (sensitivity)": {
+   "rule": "exclude trade iff created_time in any flagged window [started_at, ended_at or +inf) for its ticker or all tickers, regardless of recovery",
+   "excluded_n": 27199,
+   "kept_n": 6558,
+   "excluded_pct": 80.57,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 12,
+    "KXHIGHCHI-26SEP25": 775,
+    "KXHIGHLAX-26SEP24": 97,
+    "KXHIGHLAX-26SEP25": 2209,
+    "KXHIGHMIA-26SEP24": 34,
+    "KXHIGHMIA-26SEP25": 1701,
+    "KXHIGHNY-26SEP24": 14,
+    "KXHIGHNY-26SEP25": 1716
+   },
+   "excluded_by_city_day": {
+    "KXHIGHCHI-26SEP24": 48,
+    "KXHIGHCHI-26SEP25": 3599,
+    "KXHIGHLAX-26SEP24": 244,
+    "KXHIGHLAX-26SEP25": 8395,
+    "KXHIGHMIA-26SEP24": 138,
+    "KXHIGHMIA-26SEP25": 8690,
+    "KXHIGHNY-26SEP24": 51,
+    "KXHIGHNY-26SEP25": 6034
+   }
+  },
+  "GM-LIT-PAD (sensitivity)": {
+   "rule": "as GM-LIT, budget windows widened to [started_at-1920s, ended_at)",
+   "excluded_n": 33622,
+   "kept_n": 135,
+   "excluded_pct": 99.6,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 0,
+    "KXHIGHCHI-26SEP25": 23,
+    "KXHIGHLAX-26SEP24": 7,
+    "KXHIGHLAX-26SEP25": 35,
+    "KXHIGHMIA-26SEP24": 6,
+    "KXHIGHMIA-26SEP25": 46,
+    "KXHIGHNY-26SEP24": 0,
+    "KXHIGHNY-26SEP25": 18
+   },
+   "excluded_by_city_day": {
+    "KXHIGHCHI-26SEP24": 60,
+    "KXHIGHCHI-26SEP25": 4351,
+    "KXHIGHLAX-26SEP24": 334,
+    "KXHIGHLAX-26SEP25": 10569,
+    "KXHIGHMIA-26SEP24": 166,
+    "KXHIGHMIA-26SEP25": 10345,
+    "KXHIGHNY-26SEP24": 65,
+    "KXHIGHNY-26SEP25": 7732
+   }
+  },
+  "GM-LIT component only: kalshi_trades_budget": {
+   "rule": "GM-LIT restricted to stream kalshi_trades_budget",
+   "excluded_n": 18097,
+   "kept_n": 15660,
+   "excluded_pct": 53.61,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 29,
+    "KXHIGHCHI-26SEP25": 1906,
+    "KXHIGHLAX-26SEP24": 187,
+    "KXHIGHLAX-26SEP25": 4762,
+    "KXHIGHMIA-26SEP24": 55,
+    "KXHIGHMIA-26SEP25": 4845,
+    "KXHIGHNY-26SEP24": 30,
+    "KXHIGHNY-26SEP25": 3846
+   },
+   "excluded_by_city_day": {
+    "KXHIGHCHI-26SEP24": 31,
+    "KXHIGHCHI-26SEP25": 2468,
+    "KXHIGHLAX-26SEP24": 154,
+    "KXHIGHLAX-26SEP25": 5842,
+    "KXHIGHMIA-26SEP24": 117,
+    "KXHIGHMIA-26SEP25": 5546,
+    "KXHIGHNY-26SEP24": 35,
+    "KXHIGHNY-26SEP25": 3904
+   }
+  },
+  "GM-LIT component only: kalshi_trades": {
+   "rule": "GM-LIT restricted to stream kalshi_trades",
+   "excluded_n": 4043,
+   "kept_n": 29714,
+   "excluded_pct": 11.98,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 60,
+    "KXHIGHCHI-26SEP25": 3840,
+    "KXHIGHLAX-26SEP24": 318,
+    "KXHIGHLAX-26SEP25": 9098,
+    "KXHIGHMIA-26SEP24": 135,
+    "KXHIGHMIA-26SEP25": 9426,
+    "KXHIGHNY-26SEP24": 65,
+    "KXHIGHNY-26SEP25": 6772
+   },
+   "excluded_by_city_day": {
+    "KXHIGHCHI-26SEP25": 534,
+    "KXHIGHLAX-26SEP24": 23,
+    "KXHIGHLAX-26SEP25": 1506,
+    "KXHIGHMIA-26SEP24": 37,
+    "KXHIGHMIA-26SEP25": 965,
+    "KXHIGHNY-26SEP25": 978
+   }
+  },
+  "GM-LIT component only: kalshi_all": {
+   "rule": "GM-LIT restricted to stream kalshi_all",
+   "excluded_n": 19750,
+   "kept_n": 14007,
+   "excluded_pct": 58.51,
+   "kept_by_city_day": {
+    "KXHIGHCHI-26SEP24": 32,
+    "KXHIGHCHI-26SEP25": 1789,
+    "KXHIGHLAX-26SEP24": 179,
+    "KXHIGHLAX-26SEP25": 4462,
+    "KXHIGHMIA-26SEP24": 77,
+    "KXHIGHMIA-26SEP25": 4131,
+    "KXHIGHNY-26SEP24": 26,
+    "KXHIGHNY-26SEP25": 3311
+   },
+   "excluded_by_city_day": {
+    "KXHIGHCHI-26SEP24": 28,
+    "KXHIGHCHI-26SEP25": 2585,
+    "KXHIGHLAX-26SEP24": 162,
+    "KXHIGHLAX-26SEP25": 6142,
+    "KXHIGHMIA-26SEP24": 95,
+    "KXHIGHMIA-26SEP25": 6260,
+    "KXHIGHNY-26SEP24": 39,
+    "KXHIGHNY-26SEP25": 4439
+   }
+  }
+ }
+}

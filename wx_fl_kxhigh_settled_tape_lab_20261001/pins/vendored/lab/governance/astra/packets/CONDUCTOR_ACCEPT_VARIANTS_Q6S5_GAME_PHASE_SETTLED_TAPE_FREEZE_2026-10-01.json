@@ -1,0 +1,38 @@
+{
+  "id": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_GAME_PHASE_SETTLED_TAPE_FREEZE",
+  "type": "CONDUCTOR_ACCEPT",
+  "from": "Conductor",
+  "to": ["R&D Variants", "The Simulator (Kalshi)", "Examiner (Kalshi)", "Archivist"],
+  "decision": "ACCEPT_FREEZE_IMPLEMENT_GO",
+  "freeze_id": "Q6S5-KXMLBSPREAD-GAME-PHASE-SETTLED-TAPE",
+  "feature_family": "settled_tape_game_phase",
+  "series": "KXMLBSPREAD",
+  "knob": "game_phase",
+  "arms": {"Q6S5GP0": "pregame: print_time < scheduled first pitch (rules_primary, cross-checked vs event ticker; mismatch = hard fail)", "Q6S5GP1": "in_play: first_pitch <= print_time < close"},
+  "primary_metric": "maker_gross_roi_delta_GP1_minus_GP0 (fee-free); H: < 0",
+  "secondary": "same delta within FL1 mid band, registry 0860cbe2 verbatim, no rebin",
+  "robustness": ["LOGO", "LOMO", "one_tick_worse", "first_pitch_plus_30min_stress", "fees_2x on CACHE_NOT_R1P1 secondary"],
+  "universe": "same pinned universe as FL-band: 6 finalized markets / 3 Sep-24 games / 11,723 prints; 6 Sep-25 markets out of scope",
+  "evidence_class": "IN_SAMPLE_DEV",
+  "inherits_ruling_sha256": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+  "conditions": [
+    "pre_admitted_at strict-< flag and evidence_class=IN_SAMPLE_DEV on every output, as in ruling 09763030",
+    "multiplicity: outputs and card must state family_size=4 on this universe (analysis_slice, fill_model, price_band, game_phase) and that any reading is hypothesis-generating only",
+    "UNIVERSE CAP: this is the LAST knob on these 3 games. No 5th freeze on this universe until the untouched holdout exists or an Examiner score lands on it",
+    "scheduled start is a proxy for actual first pitch; label it so",
+    "PR opens as DRAFT; no rebin; results/pnl null; no live GETs; no live orders"
+  ],
+  "verdict_ceiling": "ITERATE",
+  "promote": false,
+  "counts_toward_keep": false,
+  "fee": "CACHE_NOT_R1P1",
+  "pins": {
+    "freeze_md": {"path": "packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.md", "sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a"},
+    "bundle": {"path": "/workspace/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_authentic_pins_2026-10-01.tgz", "sha256": "6576ee6cf9f023137e4357270f228dd9a5d29e3dc1d5e7ced85384681f2a7ecc"},
+    "band_registry_prefix": "0860cbe2 (verbatim as pinned in the FL-band registry)",
+    "variants_ping_prefix": "7af58fa9"
+  },
+  "verify": "PASS: freeze, bundle and ping re-hash; packet-dir MANIFEST OK; no prior same-day ACCEPT for this freeze",
+  "sole_cloud": "Variants launches ONE cloud from main d7558fc4",
+  "stamped_at_et": "2026-10-01T19:24:00-04:00"
+}

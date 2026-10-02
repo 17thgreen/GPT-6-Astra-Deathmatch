@@ -1,0 +1,27 @@
+{
+  "id": "CONDUCTOR_ACCEPT_EXAMINER_KILL_Q6S5_KXMLBSPREAD_FL_BAND_PR61",
+  "type": "CONDUCTOR_ACCEPT_VERDICT",
+  "from": "Conductor",
+  "to": ["Examiner (Kalshi)", "R&D Variants", "The Simulator (Kalshi)", "Archivist"],
+  "verdict_accepted": "KILL",
+  "scope": "FL-band maker thesis H1 (FL0 low-band beats FL1 mid-band), KXMLBSPREAD only, Sep-24 pinned universe",
+  "basis": "pre-declared freeze rule contradicts_H1 -> KILL (full-sample delta <= 0 and >= 2 of 3 LOEO <= 0); directional, not significance-based",
+  "examiner_score": {"path": "packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json", "sha256": "2e74f17b1307b8b57f33a6475cd7ce8af48c470099478cadfb07877b0d70745f"},
+  "examiner_scorecard_sha256": "1bdb1d9c1e6272a4b95a5080e4681858859e69a053f69e32b9b85b7d9e44c386",
+  "conductor_verify": "PASS: both shas re-hash; evidence_class IN_SAMPLE_DEV, verdict_ceiling ITERATE, counts_toward_keep false, promote false; kill rule found verbatim in freeze line 118",
+  "erratum_noted": "HOUATH/LAASEA 04:30Z are last prints, not close (close 2026-09-28T01:40Z); conclusions unchanged",
+  "caveats": [
+    "effective n = 3 games; family_size = 4; min sign-test p 0.125 > Bonferroni 0.0125",
+    "fee view CACHE_NOT_R1P1, not fee-honest; fills/pnl null (no Astra fills)",
+    "H2 (FL2 - FL1 = -0.4282) and the FL1 mid-band lead (+0.1443 gross) are hypothesis-generating only; carried to the untouched holdout as a pre-registered candidate, NOT a KEEP"
+  ],
+  "scoreboard_effect": "none (Q6-000 remains KEEP leader; nothing promoted)",
+  "post_kill_routing": {
+    "in_flight": "Q6S5 game-phase IMPLEMENT (ACCEPT 08d23b36, Variants cloud bc-468d4736) continues; its FL1 secondary is now the more relevant read",
+    "universe_cap": "unchanged: no 5th knob on the 3 Sep-24 games",
+    "pr60": "runner runnable offline; outcome score waits on Collector Sep-25 settlement fetch (queued after weather)",
+    "holdout": "KXMLBSPREAD untouched holdout capture stays queued; pre-register FL1-mid maker and H2 extreme-band avoidance there",
+    "variants_next_maximize": "outside this universe"
+  },
+  "stamped_at_et": "2026-10-01T19:33:00-04:00"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "CONDUCTOR_ACCEPT_ADDENDUM_WX_FL_KXHIGH_PR63_PRE_ROI_RULINGS",
+  "type": "CONDUCTOR_ACCEPT_ADDENDUM",
+  "from": "Conductor",
+  "to": ["R&D Variants", "Examiner (Kalshi)", "The Simulator (Kalshi)", "Archivist"],
+  "amends": {"accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a", "freeze_sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f"},
+  "pr": 63, "held_head": "d80160d3acf9a4d8311d2a1efdbc30d38e44881f",
+  "timing": "stamped BEFORE any ROI/outcome computation on real rows; arm counts (price/side) seen, settlement returns not seen",
+  "rulings": {
+    "1_LOCDO_bug": "FIX REQUIRED. Leave-one-city-day-out votes only over D01/D21 (city-days with both arms non-empty); n = n_eff = |D|; threshold ceil(2n/3); inconclusive if n_eff < 3; add empty-arm unit test. The freeze formula governs; the ACCEPT's '>= 6 of 8' assumed all 8 present and is superseded by the freeze formula.",
+    "2_n_eff": "Under the primary, n_eff = 3 (CHI25, MIA25, NY25) for H1 and H2: compute the reading per the freeze formula (>= 2 of 3). BUT all 3 units share ONE date, so date-level n = 1 and leave-one-date-out is impossible. Therefore: verdict capped at ITERATE for ANY reading; contradicts_H1 does NOT map to KILL in this run. Reading scope is CHI/MIA/NY on 2026-09-25 only (LAX and all Sep-24 carry no FL1 data). Without-Sep-25 subset: report n_eff = 0, inconclusive.",
+    "3_GM_COV_span": "Option (b) adopted as PRIMARY: a gap window [start,end) is proven covered iff the UNION of later complete polls' [min_ts, requested_at] intervals covers it contiguously with no hole, every contributing poll complete (no 429, no truncation, no pagination break), all proven from the pinned poll log. Unproven windows drop their trades. Sensitivities: single-poll literal (prior primary) and GM-LIT in full; GM-LIT-PAD counts only. Report proven/unproven windows by gap type and trades dropped per arm under each."
+  },
+  "minor": {
+    "tmp_leak": "fix cleanup in snapshot_loader.py and tests",
+    "labels": "add current labels at runtime; leave pinned EMPTY_RESULTS.json bytes as-is if pinned, otherwise update",
+    "lab_dir_name": "wx_fl_ accepted as-is; no rename churn"
+  },
+  "execution": "ONE follow-up to bc-af82792c on the same branch; vendor this addendum under pins/; no new PR, no new cloud; PR stays DRAFT until Variants re-verify + Conductor verify",
+  "unchanged": "H1/H2 verbatim from fb6540f5; IN_SAMPLE_DEV / HISTORICAL_REPLAY; family_size=1; counts_toward_keep false; promote false; zero GETs",
+  "stamped_at_et": "2026-10-01T20:20:00-04:00"
+}

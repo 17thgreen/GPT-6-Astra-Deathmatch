@@ -1,0 +1,22 @@
+{
+  "id": "CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_PR62",
+  "type": "CONDUCTOR_MERGE",
+  "from": "Conductor",
+  "to": ["R&D Variants", "Examiner (Kalshi)", "The Simulator (Kalshi)", "Archivist"],
+  "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+  "pr": 62,
+  "verified_head": "ba1ef80b641cb625a3f39c0fc95215cb03ba3156",
+  "base": "d7558fc4b92256c68eaea66b9700021206de0a2d",
+  "merge_method": "squash",
+  "merge_commit": "749bc1464764fda03dcddd1162177ef062b2ece3",
+  "accept_sha256": "08d23b363d72b8c8599772ee6fc6736cb90f13e8ed814b12c59b58fd5c7dc91e",
+  "conductor_verify": "PASS: 135 A + 1 M (docs/EXPERIMENT_REGISTRY.md) only, all A under lab dir; 20/20 pytest on fresh checkout; pins re-hash ACCEPT 08d23b36, ruling 09763030, tgz 6576ee6c, freeze 5beba803; network/sqlite imports appear only in forbidden-import test",
+  "minor_notes_ruled_nonblocking": {
+    "a": "condition (2) 'every output' means measurement outputs (rows, count files, scorecard); AUTHORITY_VERIFICATION and EXAMINER_HOLD are provenance, not outputs; card pre_admitted_at_n slots fill at scoring",
+    "b": "EMPTY_RESULTS.json is a pinned byte copy; runtime labeling accepted",
+    "c": "substring test assertion noted; coverage holds via tgz hash and tree diff"
+  },
+  "status": "MERGED, READY_NOT_SCORED pending Examiner READY then Simulator run then SCORE kick",
+  "results": null, "pnl": null, "counts_toward_keep": false, "promote": false,
+  "stamped_at_et": "2026-10-01T19:47:00-04:00"
+}

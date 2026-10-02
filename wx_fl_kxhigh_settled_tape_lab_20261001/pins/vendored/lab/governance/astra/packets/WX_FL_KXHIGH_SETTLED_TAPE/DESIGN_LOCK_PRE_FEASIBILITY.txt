@@ -1,0 +1,11 @@
+WX-FL design locked BEFORE snapshot feasibility counts (schema / counts / timestamps / status only; NO price, yes/no price, result value, count_fp-weighted or ROI-relevant column read):
+experiment WX-FL-KXHIGH-SETTLED-TAPE; series KXHIGHLAX KXHIGHMIA KXHIGHNY KXHIGHCHI (card02 pilot archive snapshot)
+knob price_band; arms WXFL0 p_taker [0.00,0.20) b00-b01 / WXFL1 [0.20,0.80) b02-b07 / WXFL2 [0.80,1.00] b08-b09; registry 0860cbe2 verbatim, no rebin (bands identical to fb6540f5)
+p_taker = native taker_outcome_side price (fb6540f5 row rules verbatim; Lee-Ready refused)
+unit = city-day = event_ticker (e.g. KXHIGHNY-26SEP25); effective n = 8 city-days (pre-ADMIT-1: trades AND settlement receipt < 2026-09-27T00:00:00Z)
+H1 maker_gross_roi_delta_FL0_minus_FL1 > 0; H2 maker_gross_roi_delta_FL2_minus_FL1 <= 0; reading rule = fb6540f5 line 118 verbatim (event := city-day)
+PRIMARY = city-day-equal-weighted mean of per-city-day maker_gross_roi (Examiner 2e74f17b formula); SECONDARY = trade-weighted pooled maker_gross_roi
+robustness: leave-one-city-day-out (8), leave-one-date-out (2), leave-one-city-out (4); all reported with and without Sep-25 city-days; one_tick_worse
+gap exclusion: collector gaps table streams kalshi_trades / kalshi_trades_budget / kalshi_all / collector, mapped to (ticker,created_time) windows, excluded from all arms
+gross only; fee label CACHE_NOT_R1P1; ceiling ITERATE; counts_toward_keep false; family_size 1; evidence_class IN_SAMPLE_DEV / HISTORICAL_REPLAY; no pre_admitted_at flag possible (admitted_at null)
+2026-10-01T19:41:14-04:00
