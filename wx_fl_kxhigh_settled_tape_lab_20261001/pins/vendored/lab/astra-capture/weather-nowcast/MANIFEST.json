@@ -1,0 +1,188 @@
+{
+ "panel_version": "2026-09-24.cw-weather-nowcast-v0",
+ "archive_started_at": "2026-09-25T00:07:29Z",
+ "archive_started_at_source": "box clock (UTC) at launch; nothing received before this timestamp counts",
+ "stop_at": "2026-11-24T00:07:29Z",
+ "design": {
+  "pilot": {
+   "window_utc": [
+    "2026-09-25T00:07:29Z",
+    "2026-11-24T00:07:29Z"
+   ],
+   "length_days": 60,
+   "definition": "collection window; the Deep Research spec counts 60 consecutive climate days from the first FULL climate day (LST) inside this window"
+  },
+  "evaluation_holdout": {
+   "window_utc": [
+    "2026-11-24T00:07:29Z",
+    "2027-01-23T00:07:29Z"
+   ],
+   "length_days": 60,
+   "definition": "next 60 days untouched, reserved for the Examiner; this collector does NOT collect them (it exits at stop_at); a separately admitted capture would be needed",
+   "status": "reserved_untouched"
+  },
+  "data_failure_flag": ">30% of station-days excluded over any 14 consecutive days -> report to Conductor, do not patch (per handoff)"
+ },
+ "admitted_at": null,
+ "status": "RUNNING_UNADMITTED (admitted_at null)",
+ "stations_config": {
+  "path": "stations.json",
+  "config_version": "2026-09-24.final-v1",
+  "sha256_at_start": "3ea4c18c20582aa484cec500d12bb82c7d7c65fc2330a195b76b6015ff5b2cbe",
+  "source": "lab/governance/astra/packets/card02_station_weather/COLLECTOR_HANDOFF_STATION_LIST_2026-09-24.md",
+  "reload": "SIGHUP, mtime change (60 s check), daily"
+ },
+ "series": [
+  {
+   "rank": 1,
+   "series_ticker": "KXHIGHLAX",
+   "nws_station": "KLAX",
+   "station_name": "Los Angeles Intl",
+   "cli_location": "LAX",
+   "cf6_location": "LAX",
+   "wfo": "LOX",
+   "timezone": "America/Los_Angeles",
+   "climate_day": {
+    "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+    "iana_timezone": "America/Los_Angeles",
+    "standard_utc_offset": "-08:00",
+    "local_clock_window_during_dst": "01:00-00:59 PDT (next calendar day 00:59)",
+    "local_clock_window_outside_dst": "00:00-23:59 PST",
+    "utc_window": "00:00 to 24:00 at UTC-08:00 i.e. [D 00:00-08:00, D+1 00:00-08:00)",
+    "note": "metadata only; archived data is stored untransformed with source timestamps"
+   }
+  },
+  {
+   "rank": 2,
+   "series_ticker": "KXHIGHMIA",
+   "nws_station": "KMIA",
+   "station_name": "Miami Intl",
+   "cli_location": "MIA",
+   "cf6_location": "MIA",
+   "wfo": "MFL",
+   "timezone": "America/New_York",
+   "climate_day": {
+    "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+    "iana_timezone": "America/New_York",
+    "standard_utc_offset": "-05:00",
+    "local_clock_window_during_dst": "01:00-00:59 EDT (next calendar day 00:59)",
+    "local_clock_window_outside_dst": "00:00-23:59 EST",
+    "utc_window": "00:00 to 24:00 at UTC-05:00 i.e. [D 00:00-05:00, D+1 00:00-05:00)",
+    "note": "metadata only; archived data is stored untransformed with source timestamps"
+   }
+  },
+  {
+   "rank": 3,
+   "series_ticker": "KXHIGHNY",
+   "nws_station": "KNYC",
+   "station_name": "Central Park",
+   "cli_location": "NYC",
+   "cf6_location": "NYC",
+   "wfo": "OKX",
+   "timezone": "America/New_York",
+   "climate_day": {
+    "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+    "iana_timezone": "America/New_York",
+    "standard_utc_offset": "-05:00",
+    "local_clock_window_during_dst": "01:00-00:59 EDT (next calendar day 00:59)",
+    "local_clock_window_outside_dst": "00:00-23:59 EST",
+    "utc_window": "00:00 to 24:00 at UTC-05:00 i.e. [D 00:00-05:00, D+1 00:00-05:00)",
+    "note": "metadata only; archived data is stored untransformed with source timestamps"
+   }
+  },
+  {
+   "rank": 4,
+   "series_ticker": "KXHIGHCHI",
+   "nws_station": "KMDW",
+   "station_name": "Chicago Midway",
+   "cli_location": "MDW",
+   "cf6_location": "MDW",
+   "wfo": "LOT",
+   "timezone": "America/Chicago",
+   "climate_day": {
+    "definition": "midnight-to-midnight LOCAL STANDARD TIME (NWS CLI climate day)",
+    "iana_timezone": "America/Chicago",
+    "standard_utc_offset": "-06:00",
+    "local_clock_window_during_dst": "01:00-00:59 CDT (next calendar day 00:59)",
+    "local_clock_window_outside_dst": "00:00-23:59 CST",
+    "utc_window": "00:00 to 24:00 at UTC-06:00 i.e. [D 00:00-06:00, D+1 00:00-06:00)",
+    "note": "metadata only; archived data is stored untransformed with source timestamps"
+   }
+  }
+ ],
+ "station_pick_evidence": "station_pick_provisional.json",
+ "settlement_source_note": "Kalshi series/event settlement_sources = The Weather Company (weather.com/kalshi); rules_primary names the NWS CLI site (e.g. CLINYC); contract terms GLOBALTEMPERATURE list NWS as Source Agency. The Weather Company page is NOT captured by this archive.",
+ "endpoints": {
+  "kalshi_base": "https://api.elections.kalshi.com/trade-api/v2 (public, unauthenticated, GET only)",
+  "kalshi": [
+   "GET /events/{event_ticker}?with_nested_markets=true  (discovery of predicted today/tomorrow tickers + metadata refresh)",
+   "GET /events?series_ticker=S&status=open&with_nested_markets=true  (list cross-check, 6 h)",
+   "GET /markets/orderbooks?tickers=...  (public batch orderbook; fallback GET /markets/{t}/orderbook)",
+   "GET /markets/trades?ticker=T&min_ts=...&limit=1000 (+cursor)",
+   "GET /series/{S}"
+  ],
+  "nws": [
+   "GET https://api.weather.gov/stations/{ICAO}/observations/latest",
+   "GET .../stations/{ICAO}/observations?limit=12",
+   "GET .../products/types/CLI/locations/{LOC} + GET .../products/{id}",
+   "GET .../products/types/CF6/locations/{LOC} + GET .../products/{id}",
+   "GET .../points/{lat},{lon} (daily) + forecast and forecastHourly URLs (hourly)"
+  ],
+  "iem_asos_1min_5min": "NOT USED: mesonet.agron.iastate.edu returned a 302 to iowamesonet.github.io/sorry/?mode=blocked for this box IP on 2026-09-24"
+ },
+ "poll_intervals_s": {
+  "kalshi_orderbook_batch": 60,
+  "kalshi_trades": "continuous single-poll queue, list-budget paced (book-changed markets first; every market at least every 1800 s in Phase A / 3600 s in Phase B, else budget_shortfall gap)",
+  "kalshi_event_meta_open": 900,
+  "kalshi_event_meta_closed_until_result": 1800,
+  "kalshi_discover_predicted_events": 1800,
+  "kalshi_events_list_crosscheck": 21600,
+  "kalshi_series_meta": 43200,
+  "nws_obs": 300,
+  "nws_cli": 1800,
+  "nws_cf6": 3600,
+  "nws_forecast": 3600,
+  "stations_config_check": 60
+ },
+ "kalshi_budget": {
+  "governing_file": "/workspace/lab/governance/astra/COLLECTOR_KALSHI_GET_BUDGET_2026-09-24.md",
+  "phase_A": "min 6.0 s between Kalshi GETs (<=10 rpm); list endpoints (events list, trades, series) >= 15 s apart (<=4 rpm)",
+  "phase_B": "2026-09-27T16:30Z to 2026-10-02T06:15Z (automatic time switch): min 12.0 s (<=5 rpm); list >= 30 s apart (<=2 rpm)",
+  "tonight_audit_window": "until 2026-09-25T03:10Z: min 9.0 s spacing and list >= 60 s apart (a separate <=3 rpm audit counts inside this slice)",
+  "force_phase_B": "touch FORCE_PHASE_B in this directory to drop to Phase B caps immediately (tripwire if the ADMIT-1 recorder logs a 429)",
+  "backoff": "honor Retry-After, else per-endpoint-class cooldown 30/60/120/240 s capped 600, reset after one success; no immediate retries (a failed poll is a gap; the next scheduled poll is the single retry)",
+  "penalty": "+2 s spacing per 429 in the trailing 30 min (cap +10 s)",
+  "storm": ">=3 429s in 10 min -> pause all Kalshi GETs 600 s, log PAUSE_429_STORM",
+  "logs": [
+   "logs/kalshi_429.jsonl (one line per 429: ts_utc, poller, path, status, retry_after, spacing_now_s, cooldown_s)",
+   "logs/kalshi_hourly.jsonl (requests, ok, http_429 per UTC hour)"
+  ]
+ },
+ "rules": {
+  "get_only": true,
+  "no_kalshi_auth": true,
+  "no_orders": true,
+  "no_portfolio_routes": true,
+  "no_fill_no_interpolation_no_backfill": true,
+  "missing_errored_429_stale_recorded_as_gap_rows": true,
+  "receipt_timestamp": "received_at (UTC, box clock at receipt) on every stored record; source timestamp fields and raw bodies stored untouched",
+  "prospective_only": "nothing before archive_started_at counts; trades min_ts starts at archive_started_at; CLI/CF6 products already listed before start are indexed as pre_archive_baseline and their bodies NOT fetched; obs with source timestamp < start flagged pre_archive_start=1",
+  "future_days_reserved_for_evaluation": true,
+  "stations_chosen_by_volume_only_no_outcomes_read": true,
+  "separate_from_admit1_and_pit_at_cle": "separate DB (weather-nowcast/archive.sqlite) and processes; never touches astra-capture/prospective/ or record.py / admit1_supervisor.sh",
+  "station_list": "FINAL per Deep Research handoff (matched provisional exactly)"
+ },
+ "files": {
+  "archive": "archive.sqlite (WAL)",
+  "collector": "collector.py",
+  "collector_sha256_at_start": "7bd1bddb47079f215502c4600d070497b24da9018e5b06903476062d442db493",
+  "supervisor": "supervisor.sh",
+  "pids": [
+   "collector.pid",
+   "supervisor.pid"
+  ],
+  "status": "status.json",
+  "logs": "logs/",
+  "health": "tools/health.py"
+ }
+}

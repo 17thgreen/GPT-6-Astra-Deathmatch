@@ -1,0 +1,35 @@
+{
+  "id": "WX_FL_KXHIGH_SETTLED_TAPE_SNAPSHOT_PROVENANCE",
+  "freeze_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "authority": {"ruling_path": "lab/governance/astra/packets/CONDUCTOR_RULING_VARIANTS_WX_FL_PREFREEZE_2026-10-01.json", "ruling_sha256": "0e37f91b60289084f4e660b74bcb12a04f83f66fc93410add3a26baf0dd9f6af", "ruling_item": "1_card02_data"},
+  "live_source_dir": "lab/astra-capture/weather-nowcast/",
+  "live_collector_running": false,
+  "live_collector_note": "collector.pid / supervisor.pid processes (430807 / 430799) not running at copy time; archive last heartbeat 2026-09-27T13:31:22.892Z",
+  "live_shas_pre_copy": {
+    "recorded_at_et": "2026-10-01T19:41:18-04:00",
+    "archive.sqlite": {"sha256": "974ce4b5339b010ee28819f35f365693bfc55dd337ab0d7a192aff668714f60f", "bytes": 94568448, "mtime_et": "2026-09-27T09:35:49-04:00"},
+    "archive.sqlite-wal": {"sha256": "df9765a5444b2f84dc59590520b544c4ea5f29b0af24951d4ff8ce118f70cdbf", "bytes": 4165352, "mtime_et": "2026-09-27T09:39:51-04:00"},
+    "archive.sqlite-shm": {"sha256": "6af7afeb2786fcdb974308b1dd732d56628d95064161bc9fa60aa691fd89d891", "bytes": 32768, "mtime_et": "2026-10-01T19:36:06-04:00"}
+  },
+  "live_shas_post_copy": {"recorded_at_et": "2026-10-01T19:41:18-04:00", "identical_to_pre_copy": true},
+  "live_shas_rechecked": {"recorded_at_et": "2026-10-01T19:45-04:00 (approx; re-hash only, no open)", "identical_to_pre_copy": true},
+  "copy_method": "cp --preserve=timestamps of the 3 live files (byte copy only; the live files were never opened by sqlite during or after the copy); copy shas == live shas",
+  "checkpoint_on_copy_only": {
+    "steps": ["PRAGMA wal_checkpoint(TRUNCATE) -> (0,0,0)", "PRAGMA journal_mode=DELETE", "PRAGMA integrity_check -> ok", "chmod 444"],
+    "applied_to": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/snapshot/archive.sqlite (copy)",
+    "precheckpoint_wal_shm_copies_kept_in_bundle": {
+      "archive.sqlite-wal": "df9765a5444b2f84dc59590520b544c4ea5f29b0af24951d4ff8ce118f70cdbf",
+      "archive.sqlite-shm": "6af7afeb2786fcdb974308b1dd732d56628d95064161bc9fa60aa691fd89d891"
+    }
+  },
+  "snapshot": {
+    "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/snapshot/archive.sqlite",
+    "sha256": "d20d5e7d0cedc79ed77c92e905b2824f0ca1d79f8e524635bfd3a8f0e3c6eae2",
+    "bytes": 94629888,
+    "journal_mode": "delete (single file; no -wal/-shm)",
+    "made_at_et": "2026-10-01T19:41:25-04:00",
+    "open_rule_for_cloud": "sqlite3.connect('file:<path>?mode=ro&immutable=1', uri=True) after sha256 verify; never write"
+  },
+  "disclosure_live_shm_touched_before_ruling": "During the 2026-10-01 Variants leftover survey (before ruling 0e37f91b was stamped), read-only sqlite opens (mode=ro, not immutable) of the LIVE archive.sqlite rewrote the live -shm index file (mtime 2026-09-29 16:44 ET -> 2026-10-01 19:36:06 ET). The live archive.sqlite and -wal bytes were not modified (mtimes 2026-09-27). The -shm is a derived WAL index that SQLite rebuilds from the -wal; its prior bytes are not recoverable. The snapshot's content is determined by db + wal; the checkpointed snapshot does not depend on -shm bytes.",
+  "card02_packets_touched": false
+}

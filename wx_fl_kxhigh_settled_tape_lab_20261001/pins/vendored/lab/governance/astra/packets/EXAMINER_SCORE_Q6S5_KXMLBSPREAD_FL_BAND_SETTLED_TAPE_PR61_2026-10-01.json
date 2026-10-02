@@ -1,0 +1,1057 @@
+{
+ "id": "EXAMINER_SCORE_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61",
+ "seat": "Examiner (Kalshi)",
+ "desk": "Astra",
+ "type": "EXAMINER_SCORE",
+ "template": {
+  "id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+  "version": "v1.2",
+  "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+  "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc"
+ },
+ "filed_at_et": "2026-10-01T19:30:46-04:00",
+ "filed_at_utc": "2026-10-01T23:30:46Z",
+ "experiment": "Q6S5 KXMLBSPREAD FL-band settled-tape",
+ "freeze_id": "Q6S5-KXMLBSPREAD-FL-BAND-SETTLED-TAPE",
+ "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+ "feature_family": "settled_tape_fl_band",
+ "series": "KXMLBSPREAD",
+ "knob": "price_band",
+ "status": "SCORED",
+ "scored": true,
+ "verdict": "KILL",
+ "verdict_scope": "FL-band maker thesis (H1: maker_gross_roi_delta_FL0_minus_FL1 > 0) for KXMLBSPREAD only, per freeze. Not a kill of Q6S5, of the parent harness, of PR58/PR60, or of any other series.",
+ "verdict_ceiling": "ITERATE",
+ "verdict_ceiling_note": "Ceiling bars KEEP only; KEEP impossible. The freeze's pre-declared rule maps contradicts_H1 to KILL.",
+ "decision_rule_verbatim": "**Variants-proposed reading (Examiner owns the verdict):** `supports_H1` if the full-sample delta > 0 **and** ≥2 of 3 leave-one-event-out deltas > 0. `contradicts_H1` if the full-sample delta ≤ 0 **and** ≥2 of 3 LOEO deltas ≤ 0. Otherwise `inconclusive`. **Verdict ceiling ITERATE:** measurement only, no KEEP, `counts_toward_keep=false`. `contradicts_H1` supports a KILL of the FL-band maker thesis **for KXMLBSPREAD only**.",
+ "decision_rule_source": {
+  "freeze_path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+  "freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "section": "Hypothesis and reading rule (written before outcomes)"
+ },
+ "reading": "contradicts_H1",
+ "reading_runner": "contradicts_H1 (orchestrator.reading_rule on pre rows)",
+ "reading_basis": {
+  "full_sample_delta_FL0_minus_FL1_pre": "-0.1047637736778767728273017230",
+  "full_le_0": true,
+  "loeo_deltas_pre": {
+   "KXMLBSPREAD-26SEP242140HOUATH": "-0.2401440124247902460803514294",
+   "KXMLBSPREAD-26SEP242140LAASEA": "0.03111135680625500204675339482",
+   "KXMLBSPREAD-26SEP242210SDLAD": "-0.1225382213971756226290756467"
+  },
+  "loeo_le_0_count": 2,
+  "loeo_n": 3
+ },
+ "runner_verdict_for_note": "Merged orchestrator.verdict_for() returns 'ITERATE' unconditionally (ceiling constant); Examiner owns the verdict per freeze and applies the freeze's reading rule.",
+ "labels": {
+  "evidence_class": "IN_SAMPLE_DEV",
+  "study_label": "historical replay",
+  "label": "public_counterparty_realized",
+  "effective_n_games": 3,
+  "family_size": 4,
+  "counts_toward_keep": false,
+  "promote": false,
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "keep_possible": false
+ },
+ "kick": {
+  "path": "lab/governance/astra/packets/CONDUCTOR_SCORE_KICK_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json",
+  "sha256": "0f8de7cd6b2187076e2bd8f914c4de51b3d8bfecdd59e324a41a9f030f5f26b6",
+  "expected": "0f8de7cd6b2187076e2bd8f914c4de51b3d8bfecdd59e324a41a9f030f5f26b6",
+  "instructions_followed": [
+   "Score against the frozen primary/secondary exactly as pinned; no rebin of registry 0860cbe2",
+   "Use only pre_admitted_at (strict <) prints; report post_admitted_at separately, never pooled",
+   "evidence_class IN_SAMPLE_DEV; effective n = 3 games; family_size on this universe = 4; verdict ceiling ITERATE; counts_toward_keep false; promote false",
+   "Fee CACHE_NOT_R1P1; report fee-free gross plus cache-fee view, labeled",
+   "Model/simulated fills never count toward KEEP (scorecard v1.2)",
+   "Never invent fills or pnl; if any metric is not computable from pinned inputs, report null with reason"
+  ],
+  "pr60_note_followed": "PR60 NOT scored"
+ },
+ "readies": {
+  "simulator_ready": {
+   "path": "lab/governance/astra/packets/SIMULATOR_READY_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json",
+   "sha256": "8e8a17566747cb29077c2f7abccb49640739ae873d3d5c20fbfa819bbde36e1b",
+   "expected": "8e8a17566747cb29077c2f7abccb49640739ae873d3d5c20fbfa819bbde36e1b",
+   "match": true
+  },
+  "examiner_ready": {
+   "path": "lab/governance/astra/packets/EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json",
+   "sha256": "bf9aafa3363a45388aa8ebac2fffbaa0a556dba56d1cb59914119f6f78cfbffc",
+   "expected": "bf9aafa3363a45388aa8ebac2fffbaa0a556dba56d1cb59914119f6f78cfbffc",
+   "match": true
+  },
+  "examiner_ack_simulator_ready": {
+   "path": "lab/governance/astra/packets/EXAMINER_ACK_SIMULATOR_READY_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json",
+   "sha256": "26684451a2cc11070090c06068b8e96f740fc0965616b7fa003d22d2eb897a27",
+   "expected": "26684451a2cc11070090c06068b8e96f740fc0965616b7fa003d22d2eb897a27",
+   "match": true
+  }
+ },
+ "inputs": {
+  "accept": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_FL_BAND_SETTLED_TAPE_FREEZE_2026-10-01.json",
+   "sha256": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+   "expected": "8e4fbac7d0426bc67c1f53fb8057a382fe46da738bd701cb970a9812a6dc2a3b",
+   "match": true
+  },
+  "addendum_in_sample_dev": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL_2026-10-01.json",
+   "sha256": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+   "expected": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+   "match": true
+  },
+  "freeze": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+   "sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+   "expected": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+   "match": true
+  },
+  "merge_packet": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_PR61_2026-10-01.json",
+   "sha256": "469de2376ae413f66684df26c08656e705a7fb5a0a1d128a4270d789c841df32",
+   "expected": "469de2376ae413f66684df26c08656e705a7fb5a0a1d128a4270d789c841df32",
+   "match": true
+  },
+  "bundle_tgz": {
+   "path": "Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_authentic_pins_2026-09-29.tgz",
+   "sha256": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857",
+   "expected": "63b5d981bc06f684eebb69a8ac29394534f8ae52c101f3018557544f14e29857",
+   "match": true
+  },
+  "band_registry": {
+   "path": "lab/governance/astra/packets/r3_p3_fl_maker_taker/bands_registry_10c.json",
+   "sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+   "expected": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+   "match": true
+  },
+  "fee_pin": {
+   "path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+   "sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+   "expected": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+   "match": true
+  },
+  "admit1_ruling": {
+   "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+   "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+   "expected": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+   "match": true
+  },
+  "runner": {
+   "path": "tmp/examiner_scratch_pr61_score/runner_tree/kalshi_q6s5_kxmlbspread_fl_band_settled_tape_lab_20260929/orchestrator.py",
+   "sha256": "01a0bf5a3343eb5e9f12eaae9ac64120899603513bffd552f7eb4e616885f80c",
+   "expected": "01a0bf5a3343eb5e9f12eaae9ac64120899603513bffd552f7eb4e616885f80c",
+   "source": "verbatim copy of Simulator lab runner_tree (= git d7558fc4 blob)"
+  },
+  "feebook": {
+   "sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+   "note": "= git d7558fc4 blob eaf5aac7… per Simulator provenance"
+  },
+  "merge_sha": "d7558fc4b92256c68eaea66b9700021206de0a2d"
+ },
+ "method": {
+  "runner_call": "orchestrator.verify_closed_manifest + _load_in_scope_markets + classify_trade over all pinned pages → rows; split by row['pre_admitted_at']; orchestrator.measure_rows(pre) and measure_rows(post) separately; reading_rule on pre",
+  "scratch_dir": "/workspace/tmp/examiner_scratch_pr61_score",
+  "driver": {
+   "path": "/workspace/tmp/examiner_scratch_pr61_score/score_pr61.py",
+   "sha256": "d6f52f0197b8ad63e96aa449f957d4c4a54bc69df00129d227eabd606a0bd975"
+  },
+  "output": {
+   "path": "/workspace/tmp/examiner_scratch_pr61_score/out/measure_pre_post.json",
+   "sha256": "5dd5ea93d10c18636cb8530ff762afa1993feef0e73dfc3ea5e9ae9eb74f1a79"
+  },
+  "rows_digest_sha256": "d31d2f861e0f588e31f00a51be66687ed92b6830750ebcdb977a3933fada6a7c",
+  "independent_recompute": {
+   "script": {
+    "path": "/workspace/tmp/examiner_scratch_pr61_score/independent_recompute.py",
+    "sha256": "36fd44de3916b66c6689495a1e0f28a9d37ca94d5d810ded7295be42dc934c8f"
+   },
+   "output": {
+    "path": "/workspace/tmp/examiner_scratch_pr61_score/out/independent_recompute.json",
+    "sha256": "f457107439c23c6e1d453f2c3e96ba5badb0b8f59d1693f3ba00ebeaa8aac969"
+   },
+   "method": "no orchestrator import; tarfile in-memory read of box tgz; own band assignment from registry; own row filters; maker ROI = Σq(p−Y)/Σq(1−p)",
+   "primary_pre_match": true,
+   "secondary_pre_match": true,
+   "loeo_match": true,
+   "post_primary_match": true
+  }
+ },
+ "rows": {
+  "pinned_prints": 11723,
+  "included": 11717,
+  "pre_admitted_at": 10680,
+  "post_admitted_at": 1037,
+  "counts_by_arm": {
+   "Q6S5FL0": {
+    "post": 391,
+    "pre": 1004
+   },
+   "Q6S5FL1": {
+    "post": 127,
+    "pre": 8441
+   },
+   "Q6S5FL2": {
+    "post": 519,
+    "pre": 1235
+   }
+  },
+  "cutoff_utc": "2026-09-25T04:37:47Z",
+  "cutoff_et": "2026-09-25T00:37:47-04:00",
+  "rule": "pre_admitted_at = created_time < cutoff (strict)",
+  "excluded": {
+   "post_close": 6,
+   "block": 0,
+   "taker_conflict": 0,
+   "price_inconsistent": 0,
+   "market_result_not_yes_no": 0,
+   "admit1_window": 0,
+   "out_of_scope_sep25_markets": "6 markets not loaded (permanently out of scope)"
+  }
+ },
+ "primary": {
+  "name": "maker_gross_roi_delta_FL0_minus_FL1",
+  "definition": "maker_gross_roi[FL0] − maker_gross_roi[FL1]; maker_gross_roi[A] = Σ q·(p_taker − Y_s) / Σ q·(1 − p_taker); gross, fee-free",
+  "H1": "> 0",
+  "pre_value": "-0.1047637736778767728273017230",
+  "pre_value_pct_points": -10.48,
+  "post_value_separate": "-0.02163463599471576997766220300",
+  "post_note": "post rows come from 1 game (SDLAD) only; not pooled"
+ },
+ "secondary": {
+  "name": "maker_gross_roi_delta_FL2_minus_FL1",
+  "H2": "≤ 0",
+  "pre_value": "-0.4281683091282962424687748774",
+  "post_value_separate": "-1.116276526685495183021330701",
+  "pre_loeo": {
+   "KXMLBSPREAD-26SEP242140HOUATH": "-1.098389327491034327679342871",
+   "KXMLBSPREAD-26SEP242140LAASEA": "-0.3467549708175794609003373770",
+   "KXMLBSPREAD-26SEP242210SDLAD": "0.6294196061930356819804558678"
+  },
+  "reading_H2": "consistent with H2 (full ≤ 0; 2/3 LOEO ≤ 0)"
+ },
+ "pre": {
+  "arms": {
+   "Q6S5FL0": {
+    "contracts": "167465.95",
+    "maker_capital_usd": "148690.257600",
+    "maker_gross_return_usd": "5885.712400",
+    "maker_gross_roi": "0.03958371244357841505279630372",
+    "maker_net_roi_cache": "0.03859514733936408218314903235",
+    "n_events": 3,
+    "n_markets": 6,
+    "n_trades": 1004,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "-0.3134751184994913955876269042",
+    "taker_net_roi_cache": "-0.3439331164159890050179986971"
+   },
+   "Q6S5FL1": {
+    "contracts": "1592282.74",
+    "maker_capital_usd": "808186.351800",
+    "maker_gross_return_usd": "116659.668200",
+    "maker_gross_roi": "0.1443474861214551878800980267",
+    "maker_net_roi_cache": "0.1403234018335225244767614003",
+    "n_events": 3,
+    "n_markets": 6,
+    "n_trades": 8441,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "-0.1487823052824004833236394189",
+    "taker_net_roi_cache": "-0.1652039087915798666345648651"
+   },
+   "Q6S5FL2": {
+    "contracts": "181746.93",
+    "maker_capital_usd": "20394.267900",
+    "maker_gross_return_usd": "-5788.317900",
+    "maker_gross_roi": "-0.2838208230068410545886768507",
+    "maker_net_roi_cache": "-0.2916892103785691664862360664",
+    "n_events": 3,
+    "n_markets": 6,
+    "n_trades": 1235,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "0.03587370561269469132607512151",
+    "taker_net_roi_cache": "0.03203119076397314674363838711"
+   }
+  },
+  "maker_gross_roi_by_registry_band": {
+   "b00": "0.03999728207331522734677590305",
+   "b01": "0.03935768346391233906894192032",
+   "b02": "-0.09413210150902002820378851074",
+   "b03": "0.2217704291196408926689592061",
+   "b04": "0.5362542310590584085347739934",
+   "b05": "-0.5709241855233526536966062005",
+   "b06": "-0.2084575981526202987250222104",
+   "b07": "1.281953633460388545161709734",
+   "b08": "-0.8261503881379917179856341307",
+   "b09": "1.595068634499620314107028012"
+  },
+  "loeo": [
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140HOUATH",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.2401440124247902460803514294",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-1.098389327491034327679342871"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140LAASEA",
+    "maker_gross_roi_delta_FL0_minus_FL1": "0.03111135680625500204675339482",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-0.3467549708175794609003373770"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.1225382213971756226290756467",
+    "maker_gross_roi_delta_FL2_minus_FL1": "0.6294196061930356819804558678"
+   }
+  ],
+  "lomo": [
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.1399890699143114421017322310",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-0.4178105871179560946187272894"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140HOUATH-HOU2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.1849571590997049507588192014",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-1.062780367838638655309155677"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.0090362452120781795544125538",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-0.4145954272452037797254363418"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242140LAASEA-SEA2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.08184845968107317952300174929",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-0.3686107284515663797597179115"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.05344641860697607149855335085",
+    "maker_gross_roi_delta_FL2_minus_FL1": "0.2474168210259731771258903272"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD-SD2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.1499924149236211015993411784",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-0.3762767345252815367035091813"
+   }
+  ],
+  "per_game": {
+   "KXMLBSPREAD-26SEP242140HOUATH": {
+    "arms": {
+     "Q6S5FL0": {
+      "maker_gross_roi": "0.1085770027347739072823787473",
+      "taker_gross_roi": "-1",
+      "maker_gross_return_usd": "3390.236900",
+      "maker_capital_usd": "31224.263100",
+      "contracts": "34614.50",
+      "n_trades": 234,
+      "n_markets": 2
+     },
+     "Q6S5FL1": {
+      "maker_gross_roi": "-0.08073994672662303474942645287",
+      "taker_gross_roi": "0.07025163380689130992120722577",
+      "maker_gross_return_usd": "-22322.778500",
+      "maker_capital_usd": "276477.498500",
+      "contracts": "594232.08",
+      "n_trades": 2477,
+      "n_markets": 2
+     },
+     "Q6S5FL2": {
+      "maker_gross_roi": "1.341839562970587608756324514",
+      "taker_gross_roi": "-0.1708877934062751097854264745",
+      "maker_gross_return_usd": "6947.841700",
+      "maker_capital_usd": "5177.848300",
+      "contracts": "45835.18",
+      "n_trades": 341,
+      "n_markets": 2
+     }
+    },
+    "delta_FL0_minus_FL1": "0.1893169494613969420318052002",
+    "delta_FL2_minus_FL1": "1.422579509697210643505750967"
+   },
+   "KXMLBSPREAD-26SEP242140LAASEA": {
+    "arms": {
+     "Q6S5FL0": {
+      "maker_gross_roi": "-0.1464389151035795679775118091",
+      "taker_gross_roi": "1.101074317314417962716940742",
+      "maker_gross_return_usd": "-6755.032800",
+      "maker_capital_usd": "46128.672800",
+      "contracts": "52263.62",
+      "n_trades": 306,
+      "n_markets": 2
+     },
+     "Q6S5FL1": {
+      "maker_gross_roi": "0.3711568986207225700149044106",
+      "taker_gross_roi": "-0.4798290418244384398837752936",
+      "maker_gross_return_usd": "56127.865800",
+      "maker_capital_usd": "151224.094200",
+      "contracts": "268198.81",
+      "n_trades": 1659,
+      "n_markets": 2
+     },
+     "Q6S5FL2": {
+      "maker_gross_roi": "-0.4683380232828804778907940335",
+      "taker_gross_roi": "0.05283634896382497133145730422",
+      "maker_gross_return_usd": "-1305.185900",
+      "maker_capital_usd": "2786.845900",
+      "contracts": "27489.27",
+      "n_trades": 310,
+      "n_markets": 2
+     }
+    },
+    "delta_FL0_minus_FL1": "-0.5175958137243021379924162197",
+    "delta_FL2_minus_FL1": "-0.8394949219036030479056984441"
+   },
+   "KXMLBSPREAD-26SEP242210SDLAD": {
+    "arms": {
+     "Q6S5FL0": {
+      "maker_gross_roi": "0.1296727726743349267063946977",
+      "taker_gross_roi": "-1",
+      "maker_gross_return_usd": "9250.508300",
+      "maker_capital_usd": "71337.321700",
+      "contracts": "80587.83",
+      "n_trades": 464,
+      "n_markets": 2
+     },
+     "Q6S5FL1": {
+      "maker_gross_roi": "0.2177605775747352399009666403",
+      "taker_gross_roi": "-0.2371562263822828768901656158",
+      "maker_gross_return_usd": "82854.580900",
+      "maker_capital_usd": "380484.759100",
+      "contracts": "729851.85",
+      "n_trades": 4305,
+      "n_markets": 2
+     },
+     "Q6S5FL2": {
+      "maker_gross_roi": "-0.9196593524361981939895492956",
+      "taker_gross_roi": "0.1190814419585918923261103513",
+      "maker_gross_return_usd": "-11430.973700",
+      "maker_capital_usd": "12429.573700",
+      "contracts": "108422.48",
+      "n_trades": 584,
+      "n_markets": 2
+     }
+    },
+    "delta_FL0_minus_FL1": "-0.0880878049004003131945719426",
+    "delta_FL2_minus_FL1": "-1.137419930010933433890515936"
+   }
+  },
+  "per_market": {
+   "KXMLBSPREAD-26SEP242140HOUATH-ATH2": {
+    "Q6S5FL0": {
+     "contracts": "14229.24",
+     "maker_capital_usd": "12768.556200",
+     "maker_gross_return_usd": "1460.683800",
+     "maker_gross_roi": "0.1143969433286435313649635657",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 119,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-1",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "90319.95",
+     "maker_capital_usd": "39696.457700",
+     "maker_gross_return_usd": "-15939.257700",
+     "maker_gross_roi": "-0.4015284643395272016928603682",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 260,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.3148589118574105168955323140",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "13072.57",
+     "maker_capital_usd": "1041.825700",
+     "maker_gross_return_usd": "-1041.825700",
+     "maker_gross_roi": "-1",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 118,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.08659694479584276427519118663",
+     "taker_net_roi_cache": null
+    }
+   },
+   "KXMLBSPREAD-26SEP242140HOUATH-HOU2": {
+    "Q6S5FL0": {
+     "contracts": "20385.26",
+     "maker_capital_usd": "18455.706900",
+     "maker_gross_return_usd": "1929.553100",
+     "maker_gross_roi": "0.1045504845983439409736183012",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 115,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-1",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "503912.13",
+     "maker_capital_usd": "236781.040800",
+     "maker_gross_return_usd": "-6383.520800",
+     "maker_gross_roi": "-0.02695959430887001996825414748",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 2217,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.02389658507782552776713643557",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "32762.61",
+     "maker_capital_usd": "4136.022600",
+     "maker_gross_return_usd": "7989.667400",
+     "maker_gross_roi": "1.931727210581489569230110106",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 223,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-0.2790995408694785603400285149",
+     "taker_net_roi_cache": null
+    }
+   },
+   "KXMLBSPREAD-26SEP242140LAASEA-LAA2": {
+    "Q6S5FL0": {
+     "contracts": "31408.47",
+     "maker_capital_usd": "27537.760500",
+     "maker_gross_return_usd": "-9019.270500",
+     "maker_gross_roi": "-0.3275237468929254432291253314",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 183,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "2.330133661541895613711129704",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "114065.26",
+     "maker_capital_usd": "71437.314700",
+     "maker_gross_return_usd": "19362.475300",
+     "maker_gross_roi": "0.2710414771511561310128584662",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 730,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-0.4542202342555788162747783201",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "17392.18",
+     "maker_capital_usd": "2101.744500",
+     "maker_gross_return_usd": "-620.084500",
+     "maker_gross_roi": "-0.2950332450019495709397598043",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 191,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.04055375008775910928109274585",
+     "taker_net_roi_cache": null
+    }
+   },
+   "KXMLBSPREAD-26SEP242140LAASEA-SEA2": {
+    "Q6S5FL0": {
+     "contracts": "20855.15",
+     "maker_capital_usd": "18590.912300",
+     "maker_gross_return_usd": "2264.237700",
+     "maker_gross_roi": "0.1217927158959272805563178306",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 123,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-1",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "154133.55",
+     "maker_capital_usd": "79786.779500",
+     "maker_gross_return_usd": "36765.390500",
+     "maker_gross_roi": "0.4607955193880209189293070790",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 929,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-0.4945122734013039611451582823",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "10097.09",
+     "maker_capital_usd": "685.101400",
+     "maker_gross_return_usd": "-685.101400",
+     "maker_gross_roi": "-1",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 119,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.07279029215993738028964463472",
+     "taker_net_roi_cache": null
+    }
+   },
+   "KXMLBSPREAD-26SEP242210SDLAD-LAD2": {
+    "Q6S5FL0": {
+     "contracts": "58180.98",
+     "maker_capital_usd": "51987.163900",
+     "maker_gross_return_usd": "6193.816100",
+     "maker_gross_roi": "0.1191412578673098187608576201",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 315,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-1",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "563474.13",
+     "maker_capital_usd": "298820.788000",
+     "maker_gross_return_usd": "91058.782000",
+     "maker_gross_roi": "0.3047270660433436779505447258",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 3147,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-0.3440681357426425395376265454",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "81800.05",
+     "maker_capital_usd": "9138.810500",
+     "maker_gross_return_usd": "-9138.810500",
+     "maker_gross_roi": "-1",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 451,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.1257728406903931221817376237",
+     "taker_net_roi_cache": null
+    }
+   },
+   "KXMLBSPREAD-26SEP242210SDLAD-SD2": {
+    "Q6S5FL0": {
+     "contracts": "22406.85",
+     "maker_capital_usd": "19350.157800",
+     "maker_gross_return_usd": "3056.692200",
+     "maker_gross_roi": "0.1579673009178250732404879923",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 149,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "-1",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL1": {
+     "contracts": "166377.72",
+     "maker_capital_usd": "81663.971100",
+     "maker_gross_return_usd": "-8204.201100",
+     "maker_gross_roi": "-0.1004629212796143341111659460",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 1158,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.09684615787319973039228818735",
+     "taker_net_roi_cache": null
+    },
+    "Q6S5FL2": {
+     "contracts": "26622.43",
+     "maker_capital_usd": "3290.763200",
+     "maker_gross_return_usd": "-2292.163200",
+     "maker_gross_roi": "-0.6965445584173300588750962087",
+     "maker_net_roi_cache": null,
+     "n_events": 1,
+     "n_markets": 1,
+     "n_trades": 133,
+     "pnl": null,
+     "results": null,
+     "taker_gross_roi": "0.09824258248021954436620018935",
+     "taker_net_roi_cache": null
+    }
+   }
+  },
+  "stress_one_tick_worse": {
+   "maker_gross_roi_delta_FL0_minus_FL1": "-0.09423169662755971609164006190",
+   "maker_gross_roi_delta_FL2_minus_FL1": "-0.4646592388524209064730252820"
+  },
+  "stress_fees_2x_cache": {
+   "claim_as_live_R1P1": false,
+   "fee_honest": false,
+   "label": "CACHE_NOT_R1P1",
+   "maker_net_roi_cache_delta_FL0_minus_FL1": "-0.09869273531044011175992301301",
+   "maker_net_roi_cache_delta_FL2_minus_FL1": "-0.4358569152958871394572200560"
+  }
+ },
+ "post_separate": {
+  "never_pooled": true,
+  "arms": {
+   "Q6S5FL0": {
+    "contracts": "80945.10",
+    "maker_capital_usd": "73946.649300",
+    "maker_gross_return_usd": "6998.450700",
+    "maker_gross_roi": "0.09464189069077941304366849790",
+    "maker_net_roi_cache": "0.09389892261149417624795610584",
+    "n_events": 1,
+    "n_markets": 2,
+    "n_trades": 391,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "-1",
+    "taker_net_roi_cache": "-1.030519612004982759970003075"
+   },
+   "Q6S5FL1": {
+    "contracts": "18855.42",
+    "maker_capital_usd": "10059.210000",
+    "maker_gross_return_usd": "1169.650000",
+    "maker_gross_roi": "0.1162765266854951830213307009",
+    "maker_net_roi_cache": "0.1132335441848813177177929480",
+    "n_events": 1,
+    "n_markets": 1,
+    "n_trades": 127,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "-0.1329720413678163663668784624",
+    "taker_net_roi_cache": "-0.1466665757184059953093434559"
+   },
+   "Q6S5FL2": {
+    "contracts": "95600.90",
+    "maker_capital_usd": "7667.468500",
+    "maker_gross_return_usd": "-7667.468500",
+    "maker_gross_roi": "-1",
+    "maker_net_roi_cache": "-1.008044376054495691765802494",
+    "n_events": 1,
+    "n_markets": 2,
+    "n_trades": 519,
+    "pnl": null,
+    "results": null,
+    "taker_gross_roi": "0.08719628438473938094864408880",
+    "taker_net_roi_cache": "0.08450004023782467763696905198"
+   }
+  },
+  "maker_gross_roi_by_registry_band": {
+   "b00": "0.03515698674190147106635396004",
+   "b01": "0.1761826869212789170962525277",
+   "b02": "0.2843969198094615125561685805",
+   "b03": "0.5886925738943511498867133575",
+   "b04": "0.7049888935582637929999399652",
+   "b05": "1.059618858284969164502303310",
+   "b06": null,
+   "b07": "-1",
+   "b08": "-1",
+   "b09": "-1"
+  },
+  "per_game": {
+   "KXMLBSPREAD-26SEP242210SDLAD": {
+    "arms": {
+     "Q6S5FL0": {
+      "maker_gross_roi": "0.09464189069077941304366849790",
+      "taker_gross_roi": "-1",
+      "maker_gross_return_usd": "6998.450700",
+      "maker_capital_usd": "73946.649300",
+      "contracts": "80945.10",
+      "n_trades": 391,
+      "n_markets": 2
+     },
+     "Q6S5FL1": {
+      "maker_gross_roi": "0.1162765266854951830213307009",
+      "taker_gross_roi": "-0.1329720413678163663668784624",
+      "maker_gross_return_usd": "1169.650000",
+      "maker_capital_usd": "10059.210000",
+      "contracts": "18855.42",
+      "n_trades": 127,
+      "n_markets": 1
+     },
+     "Q6S5FL2": {
+      "maker_gross_roi": "-1",
+      "taker_gross_roi": "0.08719628438473938094864408880",
+      "maker_gross_return_usd": "-7667.468500",
+      "maker_capital_usd": "7667.468500",
+      "contracts": "95600.90",
+      "n_trades": 519,
+      "n_markets": 2
+     }
+    },
+    "delta_FL0_minus_FL1": "-0.02163463599471576997766220300",
+    "delta_FL2_minus_FL1": "-1.116276526685495183021330701"
+   }
+  },
+  "loeo": [
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD",
+    "maker_gross_roi_delta_FL0_minus_FL1": null,
+    "maker_gross_roi_delta_FL2_minus_FL1": null
+   }
+  ],
+  "lomo": [
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+    "maker_gross_roi_delta_FL0_minus_FL1": "-0.0085769009889879354878295463",
+    "maker_gross_roi_delta_FL2_minus_FL1": "-1.116276526685495183021330701"
+   },
+   {
+    "held_out": "KXMLBSPREAD-26SEP242210SDLAD-SD2",
+    "maker_gross_roi_delta_FL0_minus_FL1": null,
+    "maker_gross_roi_delta_FL2_minus_FL1": null
+   }
+  ],
+  "stress_one_tick_worse": {
+   "maker_gross_roi_delta_FL0_minus_FL1": "-0.01294832010950831398219685499",
+   "maker_gross_roi_delta_FL2_minus_FL1": "-1.095737546342059666048912406"
+  },
+  "stress_fees_2x_cache": {
+   "claim_as_live_R1P1": false,
+   "fee_honest": false,
+   "label": "CACHE_NOT_R1P1",
+   "maker_net_roi_cache_delta_FL0_minus_FL1": "-0.01703460715205851296201148123",
+   "maker_net_roi_cache_delta_FL2_minus_FL1": "-1.126279313793258835945860183"
+  },
+  "note": "Only SDLAD prints fall after the cutoff (HOUATH/LAASEA closed 04:30Z, before it). FL1 post has 1 market; LOEO/one LOMO cell undefined (null)."
+ },
+ "fee_views": {
+  "fee_free_gross": {
+   "label": "gross (fee-free)",
+   "pre_delta_FL0_minus_FL1": "-0.1047637736778767728273017230",
+   "pre_delta_FL2_minus_FL1": "-0.4281683091282962424687748774"
+  },
+  "cache_fee": {
+   "label": "CACHE_NOT_R1P1",
+   "fee_honest": false,
+   "formula_id": null,
+   "claim_as_live_R1P1": false,
+   "basis": "orchestrator.cache_order_fee → feebook.order_fee(role, q, price, round_up=True) with table default M=0.5 (FEE_PIN 9c0f3554 observed fee_type=quadratic, fee_multiplier=0.5 from measured /series body); maker fee on (1−p_taker), taker fee on p_taker; per public print",
+   "pre_maker_net_roi_cache": {
+    "Q6S5FL0": "0.03859514733936408218314903235",
+    "Q6S5FL1": "0.1403234018335225244767614003",
+    "Q6S5FL2": "-0.2916892103785691664862360664"
+   },
+   "pre_taker_net_roi_cache": {
+    "Q6S5FL0": "-0.3439331164159890050179986971",
+    "Q6S5FL1": "-0.1652039087915798666345648651",
+    "Q6S5FL2": "0.03203119076397314674363838711"
+   },
+   "pre_delta_FL0_minus_FL1": "-0.1017282544941584422936123680",
+   "pre_delta_FL2_minus_FL1": "-0.4320126122120916909629974667",
+   "post_delta_FL0_minus_FL1": "-0.01933462157338714146983684216",
+   "note": "Per-print order-level ceil rounding is a CACHE convention, not recorded fee components."
+  }
+ },
+ "multiplicity": {
+  "family_size": 4,
+  "family_size_source": "Conductor SCORE kick 0f8de7cd",
+  "p_values": null,
+  "p_values_reason": "freeze: event-clustered inference with 3 clusters not meaningful (NOT_IN_SCOPE)",
+  "context": "With 3 independent games, the smallest attainable one-sided sign-test p is 0.5^3 = 0.125, above an uncorrected 0.05 and far above a Bonferroni α/4 = 0.0125 for family_size 4. No result on this universe can be statistically significant; effects are directional IN_SAMPLE_DEV evidence only.",
+  "per_game_H1_sign": "1 of 3 games positive (HOUATH +), 2 of 3 negative (LAASEA, SDLAD)"
+ },
+ "thin_sample_note": "10,680 pre rows but effective n = 3 games; same-game sibling markets are mirror images; band ROI hinges on 3 binary game outcomes. Per-band ROIs (e.g., b07 +1.28, b09 +1.60, b08 −0.83) swing on single outcomes.",
+ "common_scorecard": {
+  "net_pnl_without_rewards": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra orders/fills; observations are public counterparties' prints (public_counterparty_realized), never Astra P&L"
+  },
+  "net_pnl_with_rewards": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra P&L; no rewards thesis"
+  },
+  "rewards_actually_earned": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra activity; no rewards cash"
+  },
+  "calibration": {
+   "value": "N/A",
+   "emits_probabilities": false,
+   "measured": false,
+   "reason": "Not a probability-emitting strategy (freeze: emits_probabilities=false); band ROI is the market-only calibration residual, reported under controls"
+  },
+  "fill_rate": {
+   "value": null,
+   "measured": false,
+   "reason": "No demo/shadow/live Astra fills exist"
+  },
+  "adverse_selection_after_fills": {
+   "+60s": null,
+   "+300s": null,
+   "settlement": null,
+   "measured": false,
+   "reason": "No real Astra fills; null per kick/template"
+  },
+  "feasible_vs_requested_size": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra orders; no requested size"
+  },
+  "unresolved_inventory": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra positions"
+  },
+  "capital_hours": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra positions; public counterparties' holding periods not observable"
+  },
+  "drawdown": {
+   "value": null,
+   "measured": false,
+   "reason": "No Astra cumulative P&L series"
+  },
+  "event_concentration": {
+   "value": null,
+   "measured": false,
+   "reason": "Template metric is top-1 share of positive net P&L; no Astra P&L",
+   "descriptive_exposure_concentration_pre": {
+    "maker_capital_share": {
+     "HOUATH": 0.3202,
+     "LAASEA": 0.2048,
+     "SDLAD": 0.475
+    },
+    "hhi_maker_capital": 0.3701,
+    "top1_maker_capital_share": 0.475,
+    "hhi_contracts": 0.3769,
+    "top1_contracts_share": 0.4733,
+    "hhi_trades": 0.3783,
+    "top1_trades_share": 0.5012,
+    "top1_trades_flag_gt_50pct": true
+   },
+   "descriptive_public_counterparty_return_concentration_pre": {
+    "maker_gross_return_usd_by_game_all_arms": {
+     "HOUATH": "-11984.6999",
+     "LAASEA": "48067.6471",
+     "SDLAD": "80674.1155"
+    },
+    "top1_share_of_positive": 0.6266,
+    "hhi_over_positive": 0.5321,
+    "flag_top1_gt_50pct": true,
+    "label": "public_counterparty_realized, not Astra P&L"
+   }
+  }
+ },
+ "simulated_fills": {
+  "value": null,
+  "label": "simulated",
+  "counts_toward_keep": false,
+  "reason": "n/a — no fills modeled (fill_model_ref null)"
+ },
+ "stress_sensitivity": {
+  "one_tick_worse_pre": {
+   "maker_gross_roi_delta_FL0_minus_FL1": "-0.09423169662755971609164006190",
+   "maker_gross_roi_delta_FL2_minus_FL1": "-0.4646592388524209064730252820"
+  },
+  "fees_2x_cache_pre": {
+   "claim_as_live_R1P1": false,
+   "fee_honest": false,
+   "label": "CACHE_NOT_R1P1",
+   "maker_net_roi_cache_delta_FL0_minus_FL1": "-0.09869273531044011175992301301",
+   "maker_net_roi_cache_delta_FL2_minus_FL1": "-0.4358569152958871394572200560"
+  },
+  "net_pnl_columns": null,
+  "reason_pnl_null": "no Astra P&L; freeze-defined ROI-delta stresses reported instead",
+  "direction_robust": "H1 delta stays negative under both stresses"
+ },
+ "executable_dollars_per_day": {
+  "value": null,
+  "measured": false,
+  "reason": "Not our executions (freeze); no signals/book depth at receipt"
+ },
+ "controls": {
+  "market_only": {
+   "applies": true,
+   "result": "band ROI is the market-only calibration residual; reported in pre.arms / by band",
+   "declared_in_freeze": true
+  },
+  "no_trade": {
+   "applies": false
+  },
+  "simple_model": {
+   "applies": false
+  }
+ },
+ "preregistration_checklist": {
+  "satisfied": 8,
+  "na": 3,
+  "missing": 1,
+  "missing_item": "12 separate_discovery_tuning_evaluation_periods (no untouched evaluation set)",
+  "gate_status": "not a card 01-04 study; item 12 missing bars KEEP (already impossible)"
+ },
+ "mincer_zarnowitz": "NOT_IN_SCOPE (3 event clusters)",
+ "admit1": {
+  "rows_in_window": 0,
+  "excluded_admit1_window_n": 0,
+  "data_span_utc": [
+   "2026-09-23T22:06:01Z",
+   "2026-09-25T05:07:00Z"
+  ],
+  "ruling_sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+ },
+ "results": null,
+ "pnl": null,
+ "results_pnl_reason": "Astra results/pnl stay null: measurement of public counterparties, not Astra trading",
+ "lineage": {
+  "examiner_ready_pr61": "bf9aafa3363a45388aa8ebac2fffbaa0a556dba56d1cb59914119f6f78cfbffc",
+  "examiner_ack_sim_ready": "26684451a2cc11070090c06068b8e96f740fc0965616b7fa003d22d2eb897a27",
+  "pr60_ready_stub": {
+   "path": "lab/governance/astra/packets/EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-25.json",
+   "sha256": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698",
+   "expected": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698",
+   "match": true
+  },
+  "trades_join_score_iterate3": {
+   "path": "lab/governance/astra/packets/EXAMINER_SCORE_Q6S5_KXMLBSPREAD_TRADES_JOIN_2026-09-25.json",
+   "sha256": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+   "expected": "a18f2ad2f704d10ec526ccd2808edf8088f88de307ff8b3fe9845fa14ddde05a",
+   "match": true
+  },
+  "r3p3_registry_parent_kernel": "0ed697149136acb3aa840aeeb79d11c8f6ef80f37ce4dd692a3cb690212206a7 (cited in freeze)"
+ },
+ "pr60": {
+  "scored": false,
+  "note": "Not scored per kick; outcome scoring waits on Collector Sep-25 settlements"
+ },
+ "next": "Per freeze: H1 money path (band filter on Q6S5 maker leg) is not opened; any re-test needs a new freeze with an untouched post-freeze settled set (p16 item 12).",
+ "anomalies": [
+  "Merged runner verdict_for() hard-codes ITERATE; freeze rule maps contradicts_H1 → KILL; Examiner applied the freeze rule.",
+  "Post-cutoff FL0 taker_gross_roi = −1 and FL2 maker_gross_roi = −1: all post rows in those arms are in SDLAD markets whose outcome made every FL0 taker lose; single-game artifact.",
+  "Kick stamped_at_et 19:29:00 ET is later than the kick file mtime 19:27:51 ET.",
+  "Scoring and scratch writes were authorized by the dispatcher's update after the user's original task said no scoring; flagged for the user."
+ ],
+ "no_orders": true,
+ "no_messages_sent": true,
+ "no_fetch": true
+}

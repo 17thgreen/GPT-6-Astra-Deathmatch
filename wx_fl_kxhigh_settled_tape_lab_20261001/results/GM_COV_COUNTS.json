@@ -1,0 +1,169 @@
+{
+  "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "caveats": [
+    "Sep-24 covers only its last ~5-8 h",
+    "Sep-25 lacks its first ~10 h",
+    "Sep-25 carries 33,119 of 33,757 trades"
+  ],
+  "claim_as_live_R1P1": false,
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "fee_honest": false,
+  "fee_label": "CACHE_NOT_R1P1",
+  "gm_cov": {
+    "excluded_gap_n_unassignable": 0,
+    "near_miss_complete_poll_requested_at_before_window_end": 677,
+    "near_miss_note": "Counted and left not proven. The span rule was not loosened.",
+    "per_arm": {
+      "dropped_n": 18110,
+      "dropped_per_arm": {
+        "WXFL0": 6581,
+        "WXFL1": 6592,
+        "WXFL2": 4937
+      },
+      "dropped_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 31,
+          "KXHIGHCHI-26SEP25": 485,
+          "KXHIGHLAX-26SEP24": 163,
+          "KXHIGHLAX-26SEP25": 3492,
+          "KXHIGHMIA-26SEP24": 118,
+          "KXHIGHMIA-26SEP25": 1285,
+          "KXHIGHNY-26SEP24": 35,
+          "KXHIGHNY-26SEP25": 972
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 1482,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 3092,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 2018
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 504,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 2350,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 1169,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 914
+        }
+      },
+      "kept_n": 15647,
+      "kept_per_arm": {
+        "WXFL0": 5158,
+        "WXFL1": 6451,
+        "WXFL2": 4038
+      },
+      "kept_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 29,
+          "KXHIGHCHI-26SEP25": 319,
+          "KXHIGHLAX-26SEP24": 178,
+          "KXHIGHLAX-26SEP25": 2704,
+          "KXHIGHMIA-26SEP24": 54,
+          "KXHIGHMIA-26SEP25": 1064,
+          "KXHIGHNY-26SEP24": 30,
+          "KXHIGHNY-26SEP25": 780
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 1182,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 2871,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 2398
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 402,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 2058,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 910,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 668
+        }
+      }
+    },
+    "rule": "A gap window is covered only if a later poll cursor range [min_ts, requested_at) spans the whole window and that poll completed with no 429, no truncation, and no pagination break. Trades whose created_time falls in an unproven window are dropped from all arms. Coverage is not assumed from cursor-minus-1s.",
+    "timestamp_only": {
+      "dropped_by_city_day": {
+        "KXHIGHCHI-26SEP24": 31,
+        "KXHIGHCHI-26SEP25": 2471,
+        "KXHIGHLAX-26SEP24": 163,
+        "KXHIGHLAX-26SEP25": 5842,
+        "KXHIGHMIA-26SEP24": 118,
+        "KXHIGHMIA-26SEP25": 5546,
+        "KXHIGHNY-26SEP24": 35,
+        "KXHIGHNY-26SEP25": 3904
+      },
+      "dropped_n": 18110,
+      "kept_by_city_day": {
+        "KXHIGHCHI-26SEP24": 29,
+        "KXHIGHCHI-26SEP25": 1903,
+        "KXHIGHLAX-26SEP24": 178,
+        "KXHIGHLAX-26SEP25": 4762,
+        "KXHIGHMIA-26SEP24": 54,
+        "KXHIGHMIA-26SEP25": 4845,
+        "KXHIGHNY-26SEP24": 30,
+        "KXHIGHNY-26SEP25": 3846
+      },
+      "kept_n": 15647,
+      "scope": "timestamp_only_before_row_rules"
+    },
+    "windows": {
+      "budget": {
+        "n_windows": 1050,
+        "not_proven": 632,
+        "open_ended": 36,
+        "proven": 418,
+        "proven_means": "that ticker has a later complete poll whose cursor range spans the whole window"
+      },
+      "collector": {
+        "n_in_scope_tickers": 48,
+        "n_windows": 0,
+        "not_proven": 0,
+        "open_ended": 0,
+        "proven": 0,
+        "proven_means": "every in-scope ticker has a later complete poll whose cursor range spans the whole window"
+      },
+      "per_ticker_429": {
+        "n_windows": 131,
+        "not_proven": 90,
+        "open_ended": 9,
+        "proven": 41,
+        "proven_means": "that ticker has a later complete poll whose cursor range spans the whole window"
+      },
+      "storm": {
+        "n_in_scope_tickers": 48,
+        "n_windows": 225,
+        "not_proven": 182,
+        "open_ended": 0,
+        "proven": 43,
+        "proven_means": "every in-scope ticker has a later complete poll whose cursor range spans the whole window"
+      }
+    }
+  },
+  "maker_net_roi_cache": null,
+  "net": null,
+  "not_an_examiner_score": true,
+  "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pnl": null,
+  "pre_admitted_at": null,
+  "pre_admitted_at_flag_possible": false,
+  "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "primary": true,
+  "promote": false,
+  "results": null,
+  "study_label": "HISTORICAL_REPLAY",
+  "taker_net_roi_cache": null,
+  "verdict_ceiling": "ITERATE"
+}

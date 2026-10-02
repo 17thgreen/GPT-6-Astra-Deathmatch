@@ -1,0 +1,67 @@
+{
+  "experiment_id": "CARD02-STATION-WX-NOWCAST-v0",
+  "packet_id": "CARD02-STATION-WX-NOWCAST",
+  "packet_path": "packets/CARD02_STATION_WEATHER_NOWCAST_FREEZE_KERNEL_2026-09-24.md",
+  "status": "FROZEN_NOT_RUN",
+  "results": null,
+  "pnl": null,
+  "packet_sha256": "9624ab2498e88896c46e8fd984211b4b8839e613567209841358d7cf5059e5d6",
+  "charter": "charters/DEEP_RESEARCH_MASTER_BRIEF_v1_2026-09-24.md",
+  "charter_sha256": "6a02cb468a4b6c600fc3a16078a216a6095321c6bc92c24b2a7aca58f149daa8",
+  "series": [
+    "KXHIGHLAX",
+    "KXHIGHMIA",
+    "KXHIGHNY",
+    "KXHIGHCHI"
+  ],
+  "knob": {
+    "name": "nowcast_issue_time_before_LST_close",
+    "levels_hours": [
+      14,
+      10,
+      6
+    ],
+    "headline_hours": 10
+  },
+  "forecasters": [
+    "market_ask_implied",
+    "simple_forecast_error_distribution",
+    "conditional_nowcast"
+  ],
+  "controls": [
+    "market_only",
+    "simple_model",
+    "no_trade"
+  ],
+  "fee_instrument": "R1-P1 kalshi_feebook_lab_20260922 @ 22371178cb2663250b4762f328069571c48cb551",
+  "rails_instrument": "R1-P5 kalshi_rails_lab_20260922 @ 6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "study_label": "prospective shadow (once collection starts)",
+  "status_ladder_rung": "none (pre-rung, design frozen)",
+  "no_live_orders": true,
+  "orthogonal_to": [
+    "Q6-000",
+    "S2",
+    "R2-P4",
+    "CEM-ASTRA-20260922-001"
+  ],
+  "shares_panel_with": [
+    "C3-KXHIGHNY-MEAS",
+    "C3-RJ",
+    "R3-P3"
+  ],
+  "nearest_dead_card": "FEAT-20260913-002 / TEST-20260913-003 (no cemetery record)",
+  "frozen_at_utc": "2026-09-24T23:47:00Z",
+  "packet_sha256_at_freeze": "9624ab2498e88896c46e8fd984211b4b8839e613567209841358d7cf5059e5d6",
+  "packet_sha256_after_v1_1_charter_bump": "8412439f9a31211acbd66125275734afdf8e42e7a95ba7d9d5534003e587adfb",
+  "charter_v1_1": {
+    "path": "charters/DEEP_RESEARCH_MASTER_BRIEF_v1_1_2026-09-24.md",
+    "sha256": "02272754b01da5b65edd837545e485f4fd4dff2903a7ae1f52d9cb5e616fec5d",
+    "note": "doc-only reference bump 2026-09-24 ~20:05 ET; no frozen parameter changed; frozen under v1 (charter_sha256 field)"
+  },
+  "packet_sha256_after_changelog": "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48",
+  "packet_sha256_lineage": [
+    "9624ab2498e88896c46e8fd984211b4b8839e613567209841358d7cf5059e5d6",
+    "8412439f9a31211acbd66125275734afdf8e42e7a95ba7d9d5534003e587adfb",
+    "6b36dacb84f92524b18c3799c50c5818ee44fee89ac1743ceafb1092cd4c7e48"
+  ]
+}

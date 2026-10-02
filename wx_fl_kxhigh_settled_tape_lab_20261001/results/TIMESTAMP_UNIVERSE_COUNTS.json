@@ -1,0 +1,51 @@
+{
+  "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "caveats": [
+    "Sep-24 covers only its last ~5-8 h",
+    "Sep-25 lacks its first ~10 h",
+    "Sep-25 carries 33,119 of 33,757 trades"
+  ],
+  "claim_as_live_R1P1": false,
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "fee_honest": false,
+  "fee_label": "CACHE_NOT_R1P1",
+  "maker_net_roi_cache": null,
+  "net": null,
+  "not_an_examiner_score": true,
+  "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pnl": null,
+  "pre_admitted_at": null,
+  "pre_admitted_at_flag_possible": false,
+  "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "promote": false,
+  "results": null,
+  "study_label": "HISTORICAL_REPLAY",
+  "taker_net_roi_cache": null,
+  "timestamp_universe": {
+    "by_city_day": {
+      "KXHIGHCHI-26SEP24": 60,
+      "KXHIGHCHI-26SEP25": 4374,
+      "KXHIGHLAX-26SEP24": 341,
+      "KXHIGHLAX-26SEP25": 10604,
+      "KXHIGHMIA-26SEP24": 172,
+      "KXHIGHMIA-26SEP25": 10391,
+      "KXHIGHNY-26SEP24": 65,
+      "KXHIGHNY-26SEP25": 7750
+    },
+    "by_date": {
+      "26SEP24": 638,
+      "26SEP25": 33119
+    },
+    "n_city_days": 8,
+    "n_markets": 48,
+    "pnl": null,
+    "post_close_timestamp_only": 0,
+    "results": null,
+    "trades_created_ge_w0": 0,
+    "trades_in_scope_pre_w0": 33757,
+    "trades_received_ge_w0": 0
+  },
+  "verdict_ceiling": "ITERATE"
+}

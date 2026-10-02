@@ -1,0 +1,139 @@
+{
+  "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "caveats": [
+    "Sep-24 covers only its last ~5-8 h",
+    "Sep-25 lacks its first ~10 h",
+    "Sep-25 carries 33,119 of 33,757 trades"
+  ],
+  "claim_as_live_R1P1": false,
+  "counts_only": true,
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "fee_honest": false,
+  "fee_label": "CACHE_NOT_R1P1",
+  "gm_lit_pad": {
+    "decisive": false,
+    "excluded_gap_n_unassignable": 0,
+    "not_interpretable_for_ew": true,
+    "pad_seconds": 1920,
+    "per_arm": {
+      "dropped_n": 33622,
+      "dropped_per_arm": {
+        "WXFL0": 11644,
+        "WXFL1": 13011,
+        "WXFL2": 8967
+      },
+      "dropped_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 60,
+          "KXHIGHCHI-26SEP25": 783,
+          "KXHIGHLAX-26SEP24": 334,
+          "KXHIGHLAX-26SEP25": 6165,
+          "KXHIGHMIA-26SEP24": 166,
+          "KXHIGHMIA-26SEP25": 2330,
+          "KXHIGHNY-26SEP24": 65,
+          "KXHIGHNY-26SEP25": 1741
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 2662,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 5938,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 4411
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 906,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 4404,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 2077,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 1580
+        }
+      },
+      "kept_n": 135,
+      "kept_per_arm": {
+        "WXFL0": 95,
+        "WXFL1": 32,
+        "WXFL2": 8
+      },
+      "kept_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 21,
+          "KXHIGHLAX-26SEP24": 7,
+          "KXHIGHLAX-26SEP25": 31,
+          "KXHIGHMIA-26SEP24": 6,
+          "KXHIGHMIA-26SEP25": 19,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 11
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 2,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 25,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 5
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 0,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 4,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 2,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 2
+        }
+      }
+    },
+    "role": "counts_only",
+    "timestamp_only": {
+      "dropped_by_city_day": {
+        "KXHIGHCHI-26SEP24": 60,
+        "KXHIGHCHI-26SEP25": 4351,
+        "KXHIGHLAX-26SEP24": 334,
+        "KXHIGHLAX-26SEP25": 10569,
+        "KXHIGHMIA-26SEP24": 166,
+        "KXHIGHMIA-26SEP25": 10345,
+        "KXHIGHNY-26SEP24": 65,
+        "KXHIGHNY-26SEP25": 7732
+      },
+      "dropped_n": 33622,
+      "kept_by_city_day": {
+        "KXHIGHCHI-26SEP24": 0,
+        "KXHIGHCHI-26SEP25": 23,
+        "KXHIGHLAX-26SEP24": 7,
+        "KXHIGHLAX-26SEP25": 35,
+        "KXHIGHMIA-26SEP24": 6,
+        "KXHIGHMIA-26SEP25": 46,
+        "KXHIGHNY-26SEP24": 0,
+        "KXHIGHNY-26SEP25": 18
+      },
+      "kept_n": 135,
+      "scope": "timestamp_only_before_row_rules"
+    }
+  },
+  "maker_net_roi_cache": null,
+  "net": null,
+  "not_an_examiner_score": true,
+  "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pnl": null,
+  "pre_admitted_at": null,
+  "pre_admitted_at_flag_possible": false,
+  "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "primary": false,
+  "promote": false,
+  "results": null,
+  "study_label": "HISTORICAL_REPLAY",
+  "taker_net_roi_cache": null,
+  "verdict_ceiling": "ITERATE"
+}

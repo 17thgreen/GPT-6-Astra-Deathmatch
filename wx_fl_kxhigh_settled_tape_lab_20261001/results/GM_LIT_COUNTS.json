@@ -1,0 +1,153 @@
+{
+  "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "caveats": [
+    "Sep-24 covers only its last ~5-8 h",
+    "Sep-25 lacks its first ~10 h",
+    "Sep-25 carries 33,119 of 33,757 trades"
+  ],
+  "claim_as_live_R1P1": false,
+  "counts_toward_keep": false,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "fee_honest": false,
+  "fee_label": "CACHE_NOT_R1P1",
+  "gm_lit": {
+    "components_timestamp_only": {
+      "budget_only": {
+        "dropped_n": 18097,
+        "dropped_pct": "53.61",
+        "kept_n": 15660
+      },
+      "per_ticker_429_only": {
+        "dropped_n": 4043,
+        "dropped_pct": "11.98",
+        "kept_n": 29714
+      },
+      "storm_only": {
+        "dropped_n": 19750,
+        "dropped_pct": "58.51",
+        "kept_n": 14007
+      }
+    },
+    "decisive": false,
+    "excluded_gap_n_unassignable": 0,
+    "per_arm": {
+      "dropped_n": 27199,
+      "dropped_per_arm": {
+        "WXFL0": 9330,
+        "WXFL1": 10536,
+        "WXFL2": 7333
+      },
+      "dropped_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 48,
+          "KXHIGHCHI-26SEP25": 637,
+          "KXHIGHLAX-26SEP24": 244,
+          "KXHIGHLAX-26SEP25": 4927,
+          "KXHIGHMIA-26SEP24": 138,
+          "KXHIGHMIA-26SEP25": 1935,
+          "KXHIGHNY-26SEP24": 51,
+          "KXHIGHNY-26SEP25": 1350
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 2218,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 4980,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 3338
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 744,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 3468,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 1775,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 1346
+        }
+      },
+      "kept_n": 6558,
+      "kept_per_arm": {
+        "WXFL0": 2409,
+        "WXFL1": 2507,
+        "WXFL2": 1642
+      },
+      "kept_per_arm_city_day": {
+        "WXFL0": {
+          "KXHIGHCHI-26SEP24": 12,
+          "KXHIGHCHI-26SEP25": 167,
+          "KXHIGHLAX-26SEP24": 97,
+          "KXHIGHLAX-26SEP25": 1269,
+          "KXHIGHMIA-26SEP24": 34,
+          "KXHIGHMIA-26SEP25": 414,
+          "KXHIGHNY-26SEP24": 14,
+          "KXHIGHNY-26SEP25": 402
+        },
+        "WXFL1": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 446,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 0,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 983,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 1078
+        },
+        "WXFL2": {
+          "KXHIGHCHI-26SEP24": 0,
+          "KXHIGHCHI-26SEP25": 162,
+          "KXHIGHLAX-26SEP24": 0,
+          "KXHIGHLAX-26SEP25": 940,
+          "KXHIGHMIA-26SEP24": 0,
+          "KXHIGHMIA-26SEP25": 304,
+          "KXHIGHNY-26SEP24": 0,
+          "KXHIGHNY-26SEP25": 236
+        }
+      }
+    },
+    "role": "sensitivity",
+    "timestamp_only": {
+      "dropped_by_city_day": {
+        "KXHIGHCHI-26SEP24": 48,
+        "KXHIGHCHI-26SEP25": 3599,
+        "KXHIGHLAX-26SEP24": 244,
+        "KXHIGHLAX-26SEP25": 8395,
+        "KXHIGHMIA-26SEP24": 138,
+        "KXHIGHMIA-26SEP25": 8690,
+        "KXHIGHNY-26SEP24": 51,
+        "KXHIGHNY-26SEP25": 6034
+      },
+      "dropped_n": 27199,
+      "kept_by_city_day": {
+        "KXHIGHCHI-26SEP24": 12,
+        "KXHIGHCHI-26SEP25": 775,
+        "KXHIGHLAX-26SEP24": 97,
+        "KXHIGHLAX-26SEP25": 2209,
+        "KXHIGHMIA-26SEP24": 34,
+        "KXHIGHMIA-26SEP25": 1701,
+        "KXHIGHNY-26SEP24": 14,
+        "KXHIGHNY-26SEP25": 1716
+      },
+      "kept_n": 6558,
+      "scope": "timestamp_only_before_row_rules"
+    }
+  },
+  "maker_net_roi_cache": null,
+  "net": null,
+  "not_an_examiner_score": true,
+  "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+  "pnl": null,
+  "pre_admitted_at": null,
+  "pre_admitted_at_flag_possible": false,
+  "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "primary": false,
+  "promote": false,
+  "results": null,
+  "study_label": "HISTORICAL_REPLAY",
+  "taker_net_roi_cache": null,
+  "verdict_ceiling": "ITERATE"
+}

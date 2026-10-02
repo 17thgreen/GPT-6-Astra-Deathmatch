@@ -1,0 +1,95 @@
+{
+  "registry_id": "astra.r3p3.fl_maker_taker.price_bands_10c.v0",
+  "panel_version": "2026-09-22.r3-p3-fl-maker-taker-v0",
+  "packet_id": "R3-P3-FL-MAKER-TAKER",
+  "pre_registered_before_outcome_join": true,
+  "registered_at_utc": "2026-09-23T00:12:45Z",
+  "registered_at_et": "2026-09-22 20:12:45 EDT",
+  "unit": "yes_price_dollars_0_to_1",
+  "band_width": 0.1,
+  "bands": [
+    {
+      "band_id": "b00",
+      "label": "[0-0.10)",
+      "price_lo": 0.0,
+      "price_hi": 0.1,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b01",
+      "label": "[0.10-0.20)",
+      "price_lo": 0.1,
+      "price_hi": 0.2,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b02",
+      "label": "[0.20-0.30)",
+      "price_lo": 0.2,
+      "price_hi": 0.3,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b03",
+      "label": "[0.30-0.40)",
+      "price_lo": 0.3,
+      "price_hi": 0.4,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b04",
+      "label": "[0.40-0.50)",
+      "price_lo": 0.4,
+      "price_hi": 0.5,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b05",
+      "label": "[0.50-0.60)",
+      "price_lo": 0.5,
+      "price_hi": 0.6,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b06",
+      "label": "[0.60-0.70)",
+      "price_lo": 0.6,
+      "price_hi": 0.7,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b07",
+      "label": "[0.70-0.80)",
+      "price_lo": 0.7,
+      "price_hi": 0.8,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b08",
+      "label": "[0.80-0.90)",
+      "price_lo": 0.8,
+      "price_hi": 0.9,
+      "lo_inclusive": true,
+      "hi_inclusive": false
+    },
+    {
+      "band_id": "b09",
+      "label": "[0.90-1.00]",
+      "price_lo": 0.9,
+      "price_hi": 1.0,
+      "lo_inclusive": true,
+      "hi_inclusive": true
+    }
+  ],
+  "assignment_rule": "Assign trade yes_price (or equivalent) to unique band via lo/hi inclusivity above. No rebin after looking at outcomes.",
+  "measurement_roi_by_band": null,
+  "note": "Bands locked before Collector samples markets/trades/resolutions. No Lee-Ready. No invented ROI."
+}

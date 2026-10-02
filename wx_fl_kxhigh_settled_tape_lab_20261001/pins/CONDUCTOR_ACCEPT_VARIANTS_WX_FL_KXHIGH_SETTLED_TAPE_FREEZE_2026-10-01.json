@@ -1,0 +1,43 @@
+{
+  "id": "CONDUCTOR_ACCEPT_VARIANTS_WX_FL_KXHIGH_SETTLED_TAPE_FREEZE",
+  "type": "CONDUCTOR_ACCEPT",
+  "from": "Conductor",
+  "to": ["R&D Variants", "The Simulator (Kalshi)", "Examiner (Kalshi)", "Collector (Kalshi)", "Archivist"],
+  "decision": "ACCEPT_FREEZE_IMPLEMENT_GO",
+  "freeze_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "arms": ["WXFL0", "WXFL1", "WXFL2"],
+  "ruling_prefix": "0e37f91b",
+  "pins": {
+    "freeze_md": {"path": "packets/WX_FL_KXHIGH_SETTLED_TAPE_FREEZE_2026-10-01.md", "sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f"},
+    "bundle": {"path": "/workspace/WX_FL_KXHIGH_SETTLED_TAPE_authentic_pins_2026-10-01.tgz", "sha256": "febc74af09b06db83fb686e904d6f3e305fe30414e4c4f67c05705f0de597807"},
+    "packet_manifest_prefix": "21beb0b5", "ping_prefix": "2fbc2515", "snapshot_prefix": "d20d5e7d", "design_lock_prefix": "4ff6bf2c",
+    "fl_band_freeze_sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+    "band_registry_prefix": "0860cbe2"
+  },
+  "verify": "PASS: freeze, bundle, ping, manifest, snapshot re-hash; packet MANIFEST OK; live db 974ce4b5 and wal df9765a5 unchanged; no prior WX-FL ACCEPT",
+  "decisions": {
+    "1_gap_mapping": {
+      "primary": "GM-COV",
+      "condition": "coverage must be PROVEN per gap window from the pinned poll log, not assumed from the cursor-1s design: a window counts as covered only if a later poll's cursor range spans it and that poll completed with no 429/truncation/pagination break. Any window not proven covered drops its trades. Cloud reports windows proven / not proven and trades dropped per arm.",
+      "sensitivity": "GM-LIT reported in full as sensitivity; GM-LIT-PAD counts only",
+      "reason": "the ruling's intent was to exclude trades that may be MISSING; trades re-captured by a later complete poll are not missing, and GM-LIT (80.6% dropped, min 12 trades per city-day) would select quiet periods. Choice made on timestamp-only counts; no prices or outcomes read."
+    },
+    "2_H2_wording": "CONFIRMED verbatim from fb6540f5: maker_gross_roi_delta_FL2_minus_FL1 <= 0. My ruling's paraphrase was loose; the freeze text governs.",
+    "3_leave_one_out": "CONFIRMED: >= 6 of 8 leave-one-city-day-out deltas is the verdict rule. Leave-one-date-out (2) and leave-one-city-out (4) are robustness reports, not verdict inputs. KILL scope = the 4 KXHIGH series (CHI/LAX/MIA/NY) only."
+  },
+  "disclosures_accepted": {
+    "a": "sqlite3 import allowed in the snapshot loader ONLY, opened mode=ro&immutable=1 after sha check; network imports forbidden",
+    "b": "no KXHIGH fee data: net null, CACHE_NOT_R1P1 label kept",
+    "c": "per-arm counts computed by the cloud",
+    "d": "live -shm rewrite by Variants' read-only survey open is benign and logged; no further opens of the live db by Variants"
+  },
+  "caveats": [
+    "effective n = 8 city-days over only 2 dates; Sep-24 covers only its last ~5-8h and Sep-25 lacks its first ~10h",
+    "Sep-25 carries 33,119 of 33,757 trades; with/without Sep-25 both reported (without = Sep-24 only, 638 trades)"
+  ],
+  "family_size_this_universe": 1,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY (no pre_admitted_at flag possible)",
+  "verdict_ceiling": "ITERATE", "counts_toward_keep": false, "promote": false, "results": null, "pnl": null,
+  "sole_cloud": "Variants launches ONE cloud from main 749bc1464764fda03dcddd1162177ef062b2ece3; draft PR; zero GETs, zero orders",
+  "stamped_at_et": "2026-10-01T19:54:00-04:00"
+}

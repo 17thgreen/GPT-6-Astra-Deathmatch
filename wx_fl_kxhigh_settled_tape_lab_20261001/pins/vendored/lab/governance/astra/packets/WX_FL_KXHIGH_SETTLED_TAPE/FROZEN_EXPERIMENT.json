@@ -1,0 +1,431 @@
+{
+  "packet_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "freeze_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "experiment_id": "WX-FL-KXHIGH-SETTLED-TAPE",
+  "data_lineage": "CARD02-STATION-WEATHER-NOWCAST pilot archive (read-only snapshot)",
+  "feature_family": "settled_tape_price_band",
+  "series_tickers": [
+    "KXHIGHCHI",
+    "KXHIGHLAX",
+    "KXHIGHMIA",
+    "KXHIGHNY"
+  ],
+  "status": "FROZEN",
+  "action": "FREEZE_ONLY",
+  "authority_ruling": {
+    "path": "lab/governance/astra/packets/CONDUCTOR_RULING_VARIANTS_WX_FL_PREFREEZE_2026-10-01.json",
+    "sha256": "0e37f91b60289084f4e660b74bcb12a04f83f66fc93410add3a26baf0dd9f6af",
+    "decision": "CLEARED_TO_FREEZE"
+  },
+  "implement_base": {
+    "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+    "main": "749bc1464764fda03dcddd1162177ef062b2ece3",
+    "per": "CONDUCTOR_MERGE PR62 fa361354aa284b36482b0c4a67715ff6cda63fcf70f2d0c535bd1f7bdc465d5b"
+  },
+  "lab_dir_proposed": "kalshi_wx_fl_kxhigh_settled_tape_lab_20261001/",
+  "lab_dir_created": false,
+  "cloud_waits_for": "bc-468d4736 (per ruling)",
+  "knob": "price_band",
+  "knob_applies_to": "p_taker of native taker-purchased side (fb6540f5 verbatim)",
+  "arms": [
+    "WXFL0",
+    "WXFL1",
+    "WXFL2"
+  ],
+  "arm_values": {
+    "WXFL0": {
+      "label": "longshot_taker",
+      "p_taker": "[0.00,0.20)",
+      "bands": "b00,b01"
+    },
+    "WXFL1": {
+      "label": "mid",
+      "p_taker": "[0.20,0.80)",
+      "bands": "b02-b07"
+    },
+    "WXFL2": {
+      "label": "favorite_taker",
+      "p_taker": "[0.80,1.00]",
+      "bands": "b08,b09"
+    }
+  },
+  "registry": {
+    "path": "lab/governance/astra/packets/r3_p3_fl_maker_taker/bands_registry_10c.json",
+    "sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
+    "rebin": false
+  },
+  "snapshot": {
+    "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/snapshot/archive.sqlite",
+    "sha256": "d20d5e7d0cedc79ed77c92e905b2824f0ca1d79f8e524635bfd3a8f0e3c6eae2",
+    "bytes": 94629888,
+    "open": "mode=ro&immutable=1 after sha verify",
+    "provenance": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/SNAPSHOT_PROVENANCE.json"
+  },
+  "grid_cells": {
+    "WXFL0": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_city_days": null,
+      "excluded_gap_n_GM_LIT": null,
+      "excluded_gap_n_GM_COV": null,
+      "excluded_gap_n_GM_LIT_PAD": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "WXFL1": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_city_days": null,
+      "excluded_gap_n_GM_LIT": null,
+      "excluded_gap_n_GM_COV": null,
+      "excluded_gap_n_GM_LIT_PAD": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    },
+    "WXFL2": {
+      "maker_gross_roi": null,
+      "taker_gross_roi": null,
+      "maker_gross_return_usd": null,
+      "maker_capital_usd": null,
+      "maker_net_roi_cache": null,
+      "taker_net_roi_cache": null,
+      "n_trades": null,
+      "contracts": null,
+      "n_markets": null,
+      "n_city_days": null,
+      "excluded_gap_n_GM_LIT": null,
+      "excluded_gap_n_GM_COV": null,
+      "excluded_gap_n_GM_LIT_PAD": null,
+      "status": "NULL_UNTIL_EXAMINER_SCORED_RUN"
+    }
+  },
+  "universe": {
+    "markets": [
+      "KXHIGHCHI-26SEP24-B66.5",
+      "KXHIGHCHI-26SEP24-B68.5",
+      "KXHIGHCHI-26SEP24-B70.5",
+      "KXHIGHCHI-26SEP24-B72.5",
+      "KXHIGHCHI-26SEP24-T66",
+      "KXHIGHCHI-26SEP24-T73",
+      "KXHIGHCHI-26SEP25-B64.5",
+      "KXHIGHCHI-26SEP25-B66.5",
+      "KXHIGHCHI-26SEP25-B68.5",
+      "KXHIGHCHI-26SEP25-B70.5",
+      "KXHIGHCHI-26SEP25-T64",
+      "KXHIGHCHI-26SEP25-T71",
+      "KXHIGHLAX-26SEP24-B78.5",
+      "KXHIGHLAX-26SEP24-B80.5",
+      "KXHIGHLAX-26SEP24-B82.5",
+      "KXHIGHLAX-26SEP24-B84.5",
+      "KXHIGHLAX-26SEP24-T78",
+      "KXHIGHLAX-26SEP24-T85",
+      "KXHIGHLAX-26SEP25-B81.5",
+      "KXHIGHLAX-26SEP25-B83.5",
+      "KXHIGHLAX-26SEP25-B85.5",
+      "KXHIGHLAX-26SEP25-B87.5",
+      "KXHIGHLAX-26SEP25-T81",
+      "KXHIGHLAX-26SEP25-T88",
+      "KXHIGHMIA-26SEP24-B84.5",
+      "KXHIGHMIA-26SEP24-B86.5",
+      "KXHIGHMIA-26SEP24-B88.5",
+      "KXHIGHMIA-26SEP24-B90.5",
+      "KXHIGHMIA-26SEP24-T84",
+      "KXHIGHMIA-26SEP24-T91",
+      "KXHIGHMIA-26SEP25-B85.5",
+      "KXHIGHMIA-26SEP25-B87.5",
+      "KXHIGHMIA-26SEP25-B89.5",
+      "KXHIGHMIA-26SEP25-B91.5",
+      "KXHIGHMIA-26SEP25-T85",
+      "KXHIGHMIA-26SEP25-T92",
+      "KXHIGHNY-26SEP24-B66.5",
+      "KXHIGHNY-26SEP24-B68.5",
+      "KXHIGHNY-26SEP24-B70.5",
+      "KXHIGHNY-26SEP24-B72.5",
+      "KXHIGHNY-26SEP24-T66",
+      "KXHIGHNY-26SEP24-T73",
+      "KXHIGHNY-26SEP25-B67.5",
+      "KXHIGHNY-26SEP25-B69.5",
+      "KXHIGHNY-26SEP25-B71.5",
+      "KXHIGHNY-26SEP25-B73.5",
+      "KXHIGHNY-26SEP25-T67",
+      "KXHIGHNY-26SEP25-T74"
+    ],
+    "city_days": [
+      "KXHIGHCHI-26SEP24",
+      "KXHIGHCHI-26SEP25",
+      "KXHIGHLAX-26SEP24",
+      "KXHIGHLAX-26SEP25",
+      "KXHIGHMIA-26SEP24",
+      "KXHIGHMIA-26SEP25",
+      "KXHIGHNY-26SEP24",
+      "KXHIGHNY-26SEP25"
+    ],
+    "n_markets": 48,
+    "n_city_days": 8,
+    "selection": "first kalshi_markets row with status=='finalized' and non-empty result received < 2026-09-27T00:00Z; settlement_ts < W0; close_time not in window",
+    "excluded_events": [
+      "KXHIGHCHI-26SEP26",
+      "KXHIGHMIA-26SEP26",
+      "KXHIGHNY-26SEP26"
+    ],
+    "excluded_reason": "first finalized receipt >= 2026-09-27T00:00Z (ADMIT-1; no partial-window use)",
+    "sampling_frame": "archive started 2026-09-25T00:07:29Z; markets open 14:00Z day before; 26SEP24 city-days = final ~4.9-7.9 h before close only; 26SEP25 first ~10.1 h unobserved; not a gap window (nothing captured in any arm)"
+  },
+  "row_rules": {
+    "source": "kalshi_trades.raw (verbatim trade JSON); market fields from first finalized-with-result kalshi_markets row (later finalized rows must agree on result, else hard fail)",
+    "side": "s = taker_outcome_side; require taker_side==taker_outcome_side and (s=yes⇔taker_book_side=bid, s=no⇔taker_book_side=ask); else exclude+count; Lee-Ready REFUSED",
+    "p_taker": "yes_price_dollars if s=yes else no_price_dollars; exclude if |yes+no-1|>1e-9",
+    "exclusions": [
+      "is_block_trade==true",
+      "created_time >= close_time",
+      "ADMIT-1 window [2026-09-27T00:00Z,2026-09-30T04:00Z)",
+      "gap windows (PRIMARY GM-LIT)",
+      "market result not in {yes,no} (whole market)"
+    ],
+    "weight": "q = count_fp",
+    "settlement": "Y_s = 1 if result == s else 0; settlement_ts as-is",
+    "city_day": "event_ticker; date = event date code; city = series",
+    "clock_flags": "pre_admitted_at = null on every row (admitted_at null; card02 never admitted); evidence_class=IN_SAMPLE_DEV on rows/summary/card"
+  },
+  "feasibility_counts_timestamp_only": {
+    "source": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/FEASIBILITY_COUNTS_TIMESTAMP_ONLY.json",
+    "sha256": "2f019a94b3487e6acc32c71abc6daac3b6852f91861c5e1463cb1d849e671914",
+    "tool": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/tools/wx_fl_timestamp_feasibility.py",
+    "tool_sha256": "95e1ccc6071b7bb30099a2f71612e91819c8da458c75e19cd387c2d7894bc70f",
+    "trades_in_scope_pre_W0": 33757,
+    "by_city_day": {
+      "KXHIGHCHI-26SEP24": 60,
+      "KXHIGHCHI-26SEP25": 4374,
+      "KXHIGHLAX-26SEP24": 341,
+      "KXHIGHLAX-26SEP25": 10604,
+      "KXHIGHMIA-26SEP24": 172,
+      "KXHIGHMIA-26SEP25": 10391,
+      "KXHIGHNY-26SEP24": 65,
+      "KXHIGHNY-26SEP25": 7750
+    },
+    "by_date": {
+      "26SEP24": 638,
+      "26SEP25": 33119
+    },
+    "trades_ge_W0": 0,
+    "trades_received_ge_W0": 0,
+    "post_close_timestamp_only": 0,
+    "settlement_ts_in_window": 0,
+    "per_arm_counts": "OMITTED (computed by implement cloud)"
+  },
+  "metrics_def": {
+    "maker_gross_return_usd[d,A]": "Σ q·(p_taker − Y_s)",
+    "maker_capital_usd[d,A]": "Σ q·(1 − p_taker)",
+    "maker_gross_roi[d,A]": "return/capital (Examiner 2e74f17b formula)",
+    "taker_gross_roi[d,A]": "Σ q·(Y_s − p_taker)/Σ q·p_taker",
+    "primary": "EW_delta_FL0_minus_FL1 = mean_{d∈D01}(roi[d,WXFL0] − roi[d,WXFL1]); D01 = city-days with capital>0 in both arms",
+    "primary_H2": "EW_delta_FL2_minus_FL1 over D21",
+    "secondary": "TW (pooled) deltas = Examiner arms.maker_gross_roi",
+    "robustness": "LOCDO (n_eff), LODO (2), LOCO (4) for EW and TW, both deltas",
+    "with_without_sep25": "all of the above also on 26SEP24-only subset (LODO null there)",
+    "stresses": {
+      "one_tick_worse": "maker charged $0.01/contract (capital +0.01, return −0.01)",
+      "fees_2x": "n/a (no fee view computed)"
+    },
+    "descriptive": "per city-day × arm; per market; per 10 registry bands",
+    "not_in_scope": [
+      "Mincer–Zarnowitz",
+      "clustered inference",
+      "executable_dollars_per_day",
+      "NWS/temperature features"
+    ],
+    "label": "public_counterparty_realized (never Astra pnl)"
+  },
+  "hypothesis": {
+    "H1": "maker_gross_roi_delta_FL0_minus_FL1 > 0 (fb6540f5 line 116 verbatim)",
+    "H2": "maker_gross_roi_delta_FL2_minus_FL1 <= 0 (fb6540f5 line 117 verbatim; ruling paraphrase 'FL2 < FL1' superseded by 'SAME as fb6540f5')",
+    "reading_rule_verbatim": "**Variants-proposed reading (Examiner owns the verdict):** `supports_H1` if the full-sample delta > 0 **and** ≥2 of 3 leave-one-event-out deltas > 0. `contradicts_H1` if the full-sample delta ≤ 0 **and** ≥2 of 3 LOEO deltas ≤ 0. Otherwise `inconclusive`. **Verdict ceiling ITERATE:** measurement only, no KEEP, `counts_toward_keep=false`. `contradicts_H1` supports a KILL of the FL-band maker thesis **for KXMLBSPREAD only**.",
+    "reading_rule_source": {
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+      "sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+      "line": 118
+    },
+    "domain_substitutions": [
+      "event := city-day (event_ticker); full-sample delta := PRIMARY EW_delta under PRIMARY gap mapping",
+      "≥2 of 3 LOEO := ≥ ceil(2n/3) of n LOCDO deltas, n = n_eff (n=8 → 6); n_eff < 3 → inconclusive",
+      "KILL scope 'for KXMLBSPREAD only' := for KXHIGHCHI/LAX/MIA/NY only (this snapshot universe)",
+      "H2 reading per Examiner 2e74f17b secondary.reading_H2 form: consistent_with_H2 if EW ≤ 0 and ≥ ceil(2n/3) LOCDO ≤ 0; inconsistent_with_H2 if > 0 and ≥ ceil(2n/3) LOCDO > 0; else inconclusive"
+    ],
+    "non_decisive_applications": [
+      "TW secondary",
+      "26SEP24-only subset",
+      "LODO/LOCO sign counts",
+      "GM-COV sensitivity",
+      "one_tick_worse"
+    ],
+    "replication_framing": "contradicts_H1 = MLB KILL be235777 replicates out of domain (supports KILL for 4 KXHIGH series); supports_H1 = non-replication (domain-dependent; hypothesis-generating; any build needs untouched post-relaunch weather capture)",
+    "verdict_ceiling": "ITERATE",
+    "evidence_class": "IN_SAMPLE_DEV",
+    "study_label_proposed": "HISTORICAL_REPLAY",
+    "family_size": 1,
+    "family_note": "WX-TTC NOT frozen alongside; no other knob pre-registered on this snapshot",
+    "effective_n": "8 city-days (26SEP24 ×4, 26SEP25 ×4); 26SEP25 = 98.1% of prints",
+    "declared_pre_outcome_at_et": "2026-10-01T19:46:31-04:00"
+  },
+  "gap_exclusion": {
+    "gap_log_source": "snapshot gaps table (collector.py gap_open/gap_close); echoed as 'GAP open/close' in logs/collector_20260925T000729Z.log",
+    "gap_log_export": {
+      "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/GAP_LOG_gaps_table_export_2026-10-01.jsonl",
+      "sha256": "0211f5ca2fc6e9ec3ed0c889c5ed50e3ba35360f048a28986116892f090447f6",
+      "rows": 13558,
+      "serialization": "json.dumps(row, sort_keys=True, separators=(',',':')) per line, ORDER BY id; columns id,stream,key,started_at,ended_at,reason,detail,n_polls; runner must regenerate and assert byte equality"
+    },
+    "trades_polls_export": {
+      "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/GAP_LOG_trades_polls_export_2026-10-01.jsonl",
+      "sha256": "a287572c53a69da5baa99f4f6746c9e31c2f58648a10fe9128ef381261d81cf8",
+      "rows": 3261,
+      "serialization": "same; polls WHERE stream='kalshi_trades' ORDER BY id; columns id,run_id,stream,key,url,requested_at,received_at,http_status,ok,n_items,n_new,latency_ms,error"
+    },
+    "flagged_streams": {
+      "per_ticker": [
+        "kalshi_trades (http_429; trades_page_limit 0 rows)",
+        "kalshi_trades_budget (budget_shortfall_sweep_late)"
+      ],
+      "all_tickers": [
+        "kalshi_all (pause_429_storm)",
+        "collector (0 rows)"
+      ]
+    },
+    "not_mapped": [
+      "kalshi_orderbook*",
+      "kalshi_events",
+      "kalshi_discover",
+      "kalshi_event_meta",
+      "kalshi_series_meta",
+      "nws_*"
+    ],
+    "primary_mapping": {
+      "id": "GM-LIT",
+      "rule": "exclude trade on ticker t from ALL arms iff created_time ∈ [started_at, ended_at) of any flagged window keyed t or any all-ticker window; started_at inclusive, ended_at exclusive, ended_at null → +inf; no padding; no recovery credit",
+      "expected_timestamp_only": {
+        "excluded": 27199,
+        "kept": 6558,
+        "excluded_pct": 80.57,
+        "kept_by_city_day": {
+          "KXHIGHCHI-26SEP24": 12,
+          "KXHIGHCHI-26SEP25": 775,
+          "KXHIGHLAX-26SEP24": 97,
+          "KXHIGHLAX-26SEP25": 2209,
+          "KXHIGHMIA-26SEP24": 34,
+          "KXHIGHMIA-26SEP25": 1701,
+          "KXHIGHNY-26SEP24": 14,
+          "KXHIGHNY-26SEP25": 1716
+        }
+      }
+    },
+    "sensitivities": {
+      "GM-COV": {
+        "rule": "GM-LIT AND outside every complete-poll coverage interval of t; logical poll = page run starting at URL without '&cursor='; complete iff all pages ok=1 and last page n_items<1000; coverage [min_ts, first-page requested_at)",
+        "expected": {
+          "excluded": 0,
+          "logical_polls": 3261,
+          "complete": 2821,
+          "trades_in_coverage": 33757,
+          "coverage_holes": 0
+        }
+      },
+      "GM-LIT-PAD": {
+        "rule": "GM-LIT with budget windows [started_at-1920s, ended_at)",
+        "expected": {
+          "excluded": 33622,
+          "kept": 135,
+          "kept_by_city_day": {
+            "KXHIGHCHI-26SEP24": 0,
+            "KXHIGHCHI-26SEP25": 23,
+            "KXHIGHLAX-26SEP24": 7,
+            "KXHIGHLAX-26SEP25": 35,
+            "KXHIGHMIA-26SEP24": 6,
+            "KXHIGHMIA-26SEP25": 46,
+            "KXHIGHNY-26SEP24": 0,
+            "KXHIGHNY-26SEP25": 18
+          }
+        },
+        "status": "counts only; NOT_INTERPRETABLE for EW (CHI24, NY24 empty)"
+      },
+      "components": {
+        "budget_only_pct": 53.61,
+        "trades_429_only_pct": 11.98,
+        "storm_only_pct": 58.51
+      }
+    },
+    "conductor_choice_at_accept": "Conductor may designate GM-COV as primary at ACCEPT (pre-outcome); absent that, GM-LIT governs",
+    "per_arm_excluded_counts": "OMITTED at freeze (need native-side + p_taker, beyond band assignment); implement cloud reports excluded_gap_n[arm][mapping] + excluded_gap_n_unassignable before any ROI"
+  },
+  "fee": {
+    "label": "CACHE_NOT_R1P1",
+    "cache_labeled": true,
+    "fee_honest": false,
+    "claim_as_live_R1P1": false,
+    "primary_metric_fee_free": true,
+    "kxhigh_fee_pin": null,
+    "note": "no KXHIGH FEE_PIN on disk (kalshi_series_meta 0 rows); no GET allowed; maker_net_roi_cache/taker_net_roi_cache null, not computed"
+  },
+  "admit1_gap_exclusion": {
+    "ruling": {
+      "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+      "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2"
+    },
+    "enforced_exclusion_window_utc": {
+      "start_inclusive": "2026-09-27T00:00:00Z",
+      "end_exclusive": "2026-09-30T04:00:00Z"
+    },
+    "applies_to": [
+      "trade created_time",
+      "first finalized receipt received_at",
+      "close_time",
+      "settlement_ts"
+    ],
+    "expected_excluded_admit1_window_n": 0,
+    "partial_window_use": false
+  },
+  "refused_inputs": [
+    "lab/astra-capture/weather-nowcast/archive.sqlite{,-wal,-shm} (live; never opened)",
+    "lab/astra-capture/prospective/capture.sqlite (never opened)",
+    "any network source"
+  ],
+  "runner_imports": {
+    "sqlite3": "permitted only in snapshot loader (deviation from PR61/PR62 forbidden-import convention; input is a pinned sqlite file)",
+    "network": "forbidden (urllib/requests/http/socket) — forbidden-import test required"
+  },
+  "p16_preregistration_checklist": {
+    "satisfied": 8,
+    "n/a": 3,
+    "missing": 1,
+    "missing_item": "12 separate_discovery_tuning_evaluation_periods (no untouched weather set until relaunch)"
+  },
+  "verdict_ceiling": "ITERATE",
+  "counts_toward_keep": false,
+  "promote": false,
+  "evidence_class": "IN_SAMPLE_DEV",
+  "study_label_proposed": "HISTORICAL_REPLAY",
+  "family_size": 1,
+  "results": null,
+  "pnl": null,
+  "freeze_md": {
+    "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE_FREEZE_2026-10-01.md",
+    "sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f"
+  },
+  "declared_pre_outcome_at_et": "2026-10-01T19:46:31-04:00",
+  "design_locked_at_et": "2026-10-01T19:41:14-04:00",
+  "design_lock": {
+    "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE/DESIGN_LOCK_PRE_FEASIBILITY.txt",
+    "sha256": "4ff6bf2cb79ded3ecb77be57a7502392d1295d8a7cfacfc77b926809e671947c"
+  }
+}
