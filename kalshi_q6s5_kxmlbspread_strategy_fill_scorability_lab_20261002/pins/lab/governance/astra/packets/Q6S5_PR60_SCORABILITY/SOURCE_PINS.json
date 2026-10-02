@@ -1,0 +1,919 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
+  "paths_relative_to": "/workspace",
+  "verified_at_et": "2026-10-01 23:41-23:51 ET",
+  "all_match": true,
+  "settlement_folder_digest": {
+    "method": "sha256 of sorted `find . -type f | sort | xargs sha256sum` listing inside settlement_only_2026-10-02/",
+    "sha256": "65cfe9e4855038263853b236df8eb4852d85d789546215a59f350c6a91feed03",
+    "listing": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c  ./COLLECTOR_READY_SETTLEMENT_ONLY.json\n5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044  ./DIGESTS.txt\n2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79  ./SETTLEMENT_SUMMARY.json\n0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf  ./raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json\nb60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c  ./raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json\n99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb  ./raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json\nf380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3  ./raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json\n378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json\na721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json\n27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317  ./requests.jsonl\n"
+  },
+  "inputs": [
+    {
+      "role": "pr60_freeze",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+      "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+      "bytes": 22983
+    },
+    {
+      "role": "pr60_freeze_subfolder_copy",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+      "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+      "bytes": 22983
+    },
+    {
+      "role": "parent_freeze",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FEEQUEUE_HARNESS_FREEZE_2026-09-25.md",
+      "sha256": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+      "bytes": 10177
+    },
+    {
+      "role": "pr60_accept_implementation",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-29.json",
+      "sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+      "bytes": 3812
+    },
+    {
+      "role": "pr60_accept_companion_rulings",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-29.json",
+      "sha256": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+      "bytes": 1962
+    },
+    {
+      "role": "pr60_reconcile",
+      "path": "lab/governance/astra/packets/CONDUCTOR_RECONCILE_Q6S5_STRATEGY_FILL_DUAL_ACCEPT_SOLE_CLOUD_2026-09-29.json",
+      "sha256": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+      "bytes": 2400
+    },
+    {
+      "role": "pr60_merge",
+      "path": "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-29.json",
+      "sha256": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef",
+      "bytes": 1177
+    },
+    {
+      "role": "pr60_frozen_experiment",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/FROZEN_EXPERIMENT.json",
+      "sha256": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+      "bytes": 17258
+    },
+    {
+      "role": "pr60_kick",
+      "path": "lab/governance/astra/packets/CONDUCTOR_KICK_VARIANTS_Q6S5_STRATEGY_FILL_FREEZE_2026-09-25.json",
+      "sha256": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+      "bytes": 2461
+    },
+    {
+      "role": "simulator_ready_settled",
+      "path": "lab/governance/astra/packets/SIMULATOR_READY_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SETTLED_2026-10-02.json",
+      "sha256": "973692b0c83e8068f4623d7e47168f40c5cd8d3da85c7a66dac86710259c40b0",
+      "bytes": 19465
+    },
+    {
+      "role": "examiner_ack_not_scorable",
+      "path": "lab/governance/astra/packets/EXAMINER_ACK_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SETTLED_NOT_SCORABLE_2026-10-01.json",
+      "sha256": "1f72dd05536070a7aeac3c4b7311f781e47d955c05952a51689d1a1071e05e43",
+      "bytes": 22708
+    },
+    {
+      "role": "examiner_ready_not_scored_pr60",
+      "path": "lab/governance/astra/packets/EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-25.json",
+      "sha256": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698",
+      "bytes": 21572
+    },
+    {
+      "role": "source_pins_tape",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+      "sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+      "bytes": 30433
+    },
+    {
+      "role": "panel_stub",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/panel_stub.json",
+      "sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+      "bytes": 33159
+    },
+    {
+      "role": "admit1_ruling",
+      "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+      "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+      "bytes": 2011
+    },
+    {
+      "role": "admit1_gap_record",
+      "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+      "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+      "bytes": 1369
+    },
+    {
+      "role": "v12_template_json",
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+      "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+      "bytes": 38172
+    },
+    {
+      "role": "v12_template_md",
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+      "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+      "bytes": 12484
+    },
+    {
+      "role": "in_sample_dev_ruling",
+      "path": "lab/governance/astra/packets/CONDUCTOR_RULING_Q6S5_FL_BAND_IN_SAMPLE_DEV_LABEL_2026-10-01.json",
+      "sha256": "09763030c67df066f2b59346200813e181777670cd46fcee6b8877a6dd74d754",
+      "bytes": 1291
+    },
+    {
+      "role": "holdout_addendum_md",
+      "path": "lab/governance/astra/packets/VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.md",
+      "sha256": "370dc31df17191446013b6cebb52d44ee8346f47d2f5b543a1c73049ba52c063",
+      "bytes": 22921
+    },
+    {
+      "role": "holdout_addendum_accept",
+      "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.json",
+      "sha256": "9a987a77e6cd6293ddaeb14fadbf33a25c1a6cc392af25f46eaaaaae33ebb273",
+      "bytes": 2393
+    },
+    {
+      "role": "house_style_game_phase_freeze",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_GAME_PHASE_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "sha256": "5beba803f3f6d33410409acc23ad3b782be62dc8829a0f54584e1da8ac18575a",
+      "bytes": 27569
+    },
+    {
+      "role": "fl_band_freeze_sep25_scope_wording",
+      "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_FL_BAND_SETTLED_TAPE_FREEZE_2026-09-29.md",
+      "sha256": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
+      "bytes": 24386
+    },
+    {
+      "role": "house_style_wx_fl_freeze",
+      "path": "lab/governance/astra/packets/WX_FL_KXHIGH_SETTLED_TAPE_FREEZE_2026-10-01.md",
+      "sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f",
+      "bytes": 31392
+    },
+    {
+      "role": "rule_frozen_edit_prev_bytes",
+      "path": "lab/governance/astra/registry/RULE_FROZEN_EDIT_PREV_BYTES_2026-09-24.md",
+      "sha256": "f0aab7d15ca78a097644008db02013eae3a56cb81b2a6aef2cfe6faf21e3e6d1",
+      "bytes": 1282
+    },
+    {
+      "role": "p16_pdf",
+      "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+      "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+      "bytes": 124157
+    },
+    {
+      "role": "maximize_pin_2145et",
+      "path": "lab/governance/astra/packets/MAXIMIZE_PIN_2026-10-01_2145ET.json",
+      "sha256": "e14591c2112f381902c8c1addb4793f8a1201e9bed8a70920bf2ca455463b0a9",
+      "bytes": 574
+    },
+    {
+      "role": "collector_settlement_ready",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/COLLECTOR_READY_SETTLEMENT_ONLY.json",
+      "sha256": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+      "bytes": 612
+    },
+    {
+      "role": "settlement_digests",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/DIGESTS.txt",
+      "sha256": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+      "bytes": 828
+    },
+    {
+      "role": "settlement_summary",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/SETTLEMENT_SUMMARY.json",
+      "sha256": "2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79",
+      "bytes": 2595
+    },
+    {
+      "role": "settlement_requests",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/requests.jsonl",
+      "sha256": "27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317",
+      "bytes": 2661
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf",
+      "bytes": 1996
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "b60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c",
+      "bytes": 2008
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb",
+      "bytes": 2020
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "f380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3",
+      "bytes": 2007
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6",
+      "bytes": 2010
+    },
+    {
+      "role": "settlement_raw_KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "a721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b",
+      "bytes": 2010
+    },
+    {
+      "role": "join_manifest",
+      "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/outputs/SETTLEMENT_JOIN_MANIFEST_SEP25.json",
+      "sha256": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17",
+      "bytes": 7334
+    },
+    {
+      "role": "simulator_run_digests",
+      "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DIGESTS.txt",
+      "sha256": "4e670303d576678fce40568f45d60059ca6078e0001e697129de7a04750ee530",
+      "bytes": 1387
+    },
+    {
+      "role": "simulator_run_output",
+      "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/outputs/PR60_RUN_OUTPUT.json",
+      "sha256": "9cf242e761662bc7f146c96d66f7e6dcff605c2d06fbd949f514732f32dd4998",
+      "bytes": 19384
+    },
+    {
+      "role": "simulator_run_deviations",
+      "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DEVIATIONS.md",
+      "sha256": "535c6f2ffb36dccc491cd7e8f99d99d5c8e0e24afd3ee5e6d84444c3dd9392c0",
+      "bytes": 3335
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/panel_admitted.json",
+      "sha256": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+      "bytes": 36313
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/READY_NOT_SCORED.json",
+      "sha256": "0617d540763d71a813672c9f9aa6766072c8461a1290c124b89e9fb3f2bf5de2",
+      "bytes": 3023
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/CAPTURE_MANIFEST.json",
+      "sha256": "2591dda5b73331f0328cf3d8a52d6021d22c5076800af27b454524d43027c6d2",
+      "bytes": 2501
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/DIGESTS.txt",
+      "sha256": "6e6898ce956b7d97e71ec675accc52fb29b73843a16b58f4620cf513e1c7d94b",
+      "bytes": 21859
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/COLLECTOR_READY_TRADES_NOT_SCORED.json",
+      "sha256": "57194f272ab6bbe7a4d116c1fd4aabd5199e3a02a6cd96ed5cc6b7bd4bafb867",
+      "bytes": 1989
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/DIGESTS.txt",
+      "sha256": "12b537a25b02fb33177d5a41c821f94677f1da88e8d1dd63178c3c9f59fac12b",
+      "bytes": 8370
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/CAPTURE_MANIFEST.json",
+      "sha256": "db7257d59faa4bb75acf21e0c5d2326b151d6ecf2a9690ffad13ffeb3744038f",
+      "bytes": 12635
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/requests.jsonl",
+      "sha256": "33d88f1cd6532f5eb0f80d8ad9a30e84820345d33126ca45fd45f5573d788a3d",
+      "bytes": 8438
+    },
+    {
+      "role": "tape_core",
+      "path": "lab/governance/astra/packets/EXAMINER_FEE_PIN_Q6S5_KXMLBSPREAD_LIVE_SERIES_2026-09-25.json",
+      "sha256": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+      "bytes": 5872
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044415Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044455Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044619Z__KXMLBSPREAD-26SEP242140LAASEA-SEA2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044747Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "92f066d4035150ac4b2369653c6c72e5a4218fa58a4df1bb7bb4f068dea5aaf0",
+      "bytes": 418
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044831Z__KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "12d3cdc01538b6904e97fa50ff6848f7fcb3a647396e10e1db3f1db07de9d759",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044915Z__KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "61a38285fc3787ebb6c7df60058a095f19a512cbbbe3b2029629b9078507182c",
+      "bytes": 470
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T044959Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "161b82928e9d69f77aeb440b4120e929acd3642485158fc8df59d7bbddf8ca24",
+      "bytes": 473
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T045043Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "19c89153e65bb48e44a7a850d1e2756602083660c6dfd81fee5e5fac333e6f25",
+      "bytes": 468
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0001__20260925T045127Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "fcf74b62bc8b4566ecca9eaf4fd189266ad66961f5dccca41df4c378ac80efcc",
+      "bytes": 465
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050445Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050530Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050614Z__KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050741Z__KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "73e72b4c0c31219628b7c801885e95d8c0ac498c42422f4a62c7f0b2137c3c7e",
+      "bytes": 250
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050826Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050910Z__KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "6b6955c8b131f6a8d76ca2eeaacebad77215558b6f6f471f40948f09c978a063",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T050954Z__KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "e874ed1af7ec53407167a7b6a60bfdb52c0aff0ac228e64f164617c9df132732",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T051038Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "3d477906b4c2ae6956326003251d3098631d67cf2574616d1779da442e370f35",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T051122Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "ab0e6c6922397ea32a1076b5ca27357d242b69a23e7eed4f7804ca98884619d3",
+      "bytes": 467
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0002__20260925T051205Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "172e2131e16623875509fcbb1345579e30eef328870cd0e68729dda46e7c07a4",
+      "bytes": 465
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T051624Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T051708Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T051752Z__KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T051920Z__KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T052004Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "e07d09f130e604a9e1acfc736fb57cbdfc33d8a5a253466a0cbd5c98cf6c9f74",
+      "bytes": 51
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T053026Z__KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "072377681abdd82dbd0ab2ffbeb0e1816b772c3810bb7d9a6d7908f7f63968a0",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T053154Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "48686256edc95d1a97cec0137810f50bebd670821da102d804b2ae74c7c1ff80",
+      "bytes": 472
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T053238Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "474fd565d20e39508db926cf64244ba0479936b09427e2d84d283c7703818338",
+      "bytes": 467
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T053322Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "c919e4e941eadc57075002c5db03790a76cf9545b4f5f575995eebd39681de73",
+      "bytes": 466
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/orderbooks/2026-09-25__c0003__20260925T053406Z__KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "4043b51922c0ca5e95926f516ac9f689125b2cdf320d95328b6d53aba308034e",
+      "bytes": 461
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044355Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "87ca16e2a8e6b42dfc3298105244cdab75c5dce3a539dd1546d941c2cf4f8478",
+      "bytes": 1973
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044435Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "763e32995fa9e3c4b3270aebea87abbb99cfd8d7b26f3d091c2b80f010d72eb3",
+      "bytes": 1991
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044515Z__KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "71d7a081bd079a7f9f1f4ff8a0d9b1fbd6cf9153b5aea22c63c78baaf1930c57",
+      "bytes": 2025
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044557Z__KXMLBSPREAD-26SEP242140LAASEA-SEA2.json",
+      "sha256": "84488b509f0586bc34d88405713b6d71df8e1efb47efc3e867be106c6724324a",
+      "bytes": 2000
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044641Z__KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "9ff17858eebb135f31eac3e6b156bdc04d2bdeb2334eace8d0587fe6c4ac9068",
+      "bytes": 1943
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044725Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "9738ffd23f6e1f1b46a349b0ea71b7c8c4577a33130f878d213758fa060ac001",
+      "bytes": 1926
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044809Z__KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "a5550675491700d1abc2342af0622176d95ffbb9737cc0c656c2efbd8bc0e3f9",
+      "bytes": 1901
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044853Z__KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "7a937b8ad36abdad84a0b18de81f32d68764ed80ffe0b4e414b6f502e304f2a9",
+      "bytes": 1914
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T044937Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "58ba189e3fb341406412060b6b60fec6044103660c41d5a42edd1917405e9b45",
+      "bytes": 1929
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T045021Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "91afb8cbd3d3cff6e059081ee3ec371f9773b008729cf3e68366145f9407790c",
+      "bytes": 1910
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T045105Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "4da624444ec781c6d820b4eaaa6dac7ec43b6dab5ba1f4eadf0c6981066cc1b4",
+      "bytes": 1919
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0001__20260925T045149Z__KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "8b1346e96b010e41a1117d6b9d1e672893bedfb1d12d0bac53d166f3f8252356",
+      "bytes": 1915
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050424Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "87ca16e2a8e6b42dfc3298105244cdab75c5dce3a539dd1546d941c2cf4f8478",
+      "bytes": 1973
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050507Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "763e32995fa9e3c4b3270aebea87abbb99cfd8d7b26f3d091c2b80f010d72eb3",
+      "bytes": 1991
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050552Z__KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "71d7a081bd079a7f9f1f4ff8a0d9b1fbd6cf9153b5aea22c63c78baaf1930c57",
+      "bytes": 2025
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050636Z__KXMLBSPREAD-26SEP242140LAASEA-SEA2.json",
+      "sha256": "84488b509f0586bc34d88405713b6d71df8e1efb47efc3e867be106c6724324a",
+      "bytes": 2000
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050719Z__KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "a242a04832414ae17b850533c5c7c62a82330db3812aa2faa98283c2641d53cd",
+      "bytes": 1941
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050803Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "01561ba5fa918caac22ef765b91b9fa7f881f24d3c8dd339cb0c5038aed2e786",
+      "bytes": 1963
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050848Z__KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "sha256": "a1cc913f959f593fb4e3807f53fbd9ed4d02c052c0d9b4f46965510645756cda",
+      "bytes": 1901
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T050931Z__KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "34b44c6a090c77d0533d084ac45206b254bdf092e6a6d7aadf2b3e432f8f54ed",
+      "bytes": 1917
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T051016Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "c5f9e6a90c49a9064f3231f800096f367b80effef63032bb2159c797d85c0d8f",
+      "bytes": 1929
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T051100Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "1104a4740cf16ff6e47936884af075d99af4cb846fa3b2a875ee2656c583b274",
+      "bytes": 1910
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T051144Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "1d7579329166d92099f95cf757e2233f2fafae6d647f7e6f407814a3380d6d6d",
+      "bytes": 1919
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0002__20260925T051228Z__KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "74f4b80dbfa3203801853afebf185768138f325b89f690984755d2a0d138fa61",
+      "bytes": 1919
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051602Z__KXMLBSPREAD-26SEP242140HOUATH-ATH2.json",
+      "sha256": "87ca16e2a8e6b42dfc3298105244cdab75c5dce3a539dd1546d941c2cf4f8478",
+      "bytes": 1973
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051646Z__KXMLBSPREAD-26SEP242140HOUATH-HOU2.json",
+      "sha256": "763e32995fa9e3c4b3270aebea87abbb99cfd8d7b26f3d091c2b80f010d72eb3",
+      "bytes": 1991
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051730Z__KXMLBSPREAD-26SEP242140LAASEA-LAA2.json",
+      "sha256": "71d7a081bd079a7f9f1f4ff8a0d9b1fbd6cf9153b5aea22c63c78baaf1930c57",
+      "bytes": 2025
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051814Z__KXMLBSPREAD-26SEP242140LAASEA-SEA2.json",
+      "sha256": "a2dd065b95cfd111655a9321633918826b2a705aa03b877912a80c795a4082e9",
+      "bytes": 2000
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051858Z__KXMLBSPREAD-26SEP242210SDLAD-LAD2.json",
+      "sha256": "1cecbdb155b910c2f0eb14e317b034ed8071adac214179ac419af7ddee3dd1b5",
+      "bytes": 2025
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T051942Z__KXMLBSPREAD-26SEP242210SDLAD-SD2.json",
+      "sha256": "01f2317c49f55820d807bd87987df6c6dcf985cbfed90610b3703aff03e3b386",
+      "bytes": 2009
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T053048Z__KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "sha256": "c3317af0220fbc83e104d1fb0932dd8c94fa9ece2b35fc5eb2ba3ca5ee939454",
+      "bytes": 1916
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T053132Z__KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "sha256": "6e246960890d1d1aaa0237964c2a67b7ed931ff2a0bbedf2d96f634b9d44f958",
+      "bytes": 1929
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T053216Z__KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "sha256": "1104a4740cf16ff6e47936884af075d99af4cb846fa3b2a875ee2656c583b274",
+      "bytes": 1910
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T053300Z__KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "sha256": "1d7579329166d92099f95cf757e2233f2fafae6d647f7e6f407814a3380d6d6d",
+      "bytes": 1919
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/markets/2026-09-25__c0003__20260925T053344Z__KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "sha256": "1517f79e3df080c91903865778bb4c55041a8a2521210076e5b0f114ce66caab",
+      "bytes": 1919
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/measured/raw/series/2026-09-25__c0001__20260925T044135Z__KXMLBSPREAD.json",
+      "sha256": "2bb5e759f812b205839463d0a38d2eb766ab99bbcad0ef543337dde702d6e619",
+      "bytes": 1535
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140HOUATH-ATH2/page_0001.json",
+      "sha256": "89698fd4e642b1c49b31345c8eb8c51f204eca22c55c9b7005f9f9e713709f2a",
+      "bytes": 199280
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0001.json",
+      "sha256": "ecd753cfb2790c0bf2f88e8c123116a7399d496679a54cb10f9f544d266b4a03",
+      "bytes": 401107
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0002.json",
+      "sha256": "bfa1b915366907ddb497bc79ca418d82b51816c06ef62168b0ee7625a4b2dbde",
+      "bytes": 401127
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140HOUATH-HOU2/page_0003.json",
+      "sha256": "7125aa29e960e9c10c73aa3028421d75d02343090841704c3083fc6f67fcbb2a",
+      "bytes": 223847
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0001.json",
+      "sha256": "f1a54c168e43a256fccae32d1c77a0d20ea88df2d5853b49025a37728b565a75",
+      "bytes": 400988
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140LAASEA-LAA2/page_0002.json",
+      "sha256": "096889ba835b376dedc3d617b15e7955bc04d31f2e89520fb34e8054182e4c0b",
+      "bytes": 42131
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0001.json",
+      "sha256": "3980c9feb24674f7301ff0feb550c0ec7d79d2afa0a62240ffb58a672101a26c",
+      "bytes": 401249
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242140LAASEA-SEA2/page_0002.json",
+      "sha256": "e2e5d68a184f9e1c12adacabc0b3c20564a58563029dc6b00c70644bf3776591",
+      "bytes": 69503
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0001.json",
+      "sha256": "1df0e189d0f83caee7644df59ab7336af7635fadf1d0e6b667222538cbb4775b",
+      "bytes": 399860
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0002.json",
+      "sha256": "86844f951fa6fa781f9766a1a05ac462c48a7a15869862a6292e551ee45584e5",
+      "bytes": 400462
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0003.json",
+      "sha256": "1aeafe208560f19a175c36f9141b01c4c96bc8d9a08611507505103826375b6d",
+      "bytes": 400461
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0004.json",
+      "sha256": "8790f4d95c853b9e4c102e7321a755f0fc1a35a136b75e08ebb01e5146320a92",
+      "bytes": 400763
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-LAD2/page_0005.json",
+      "sha256": "d0757c117f2f15fe3becf042db99d85dab314577b10b91ede79e3b382f354f20",
+      "bytes": 57720
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0001.json",
+      "sha256": "ac631b5051728883c01a8bea76d18b89040981d9d3903f136d9d5194c34f3655",
+      "bytes": 399172
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0002.json",
+      "sha256": "a21e8201c12a3a0b3968afe3a7f5cb272886099d18ce037257fbde7dece6054c",
+      "bytes": 399259
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP242210SDLAD-SD2/page_0003.json",
+      "sha256": "2c8c62c2ec83a806147d93201c615d988ba095efe0274e0544d6da5253a3d170",
+      "bytes": 98691
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251840PITDET-DET2/page_0001.json",
+      "sha256": "df03880ba36d0a068a82a49495bea39e994e595e883c3efa919ffc85ae8a4c31",
+      "bytes": 440
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251840PITDET-PIT2/page_0001.json",
+      "sha256": "9c812f07463ad663525dc3c1a3ddf1037f3b15d80de0690c0d8ff39bd846b5f9",
+      "bytes": 1636
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251840TBPHI-PHI2/page_0001.json",
+      "sha256": "21aa1b3e6f0d6e4714c1fb641a8b9dc5e52c59d1f13d675a17d6e9d80ad4b62a",
+      "bytes": 4042
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251840TBPHI-TB2/page_0001.json",
+      "sha256": "c822994d1f81f16541c4b8019c33a70ef3a2a33fd56beef89132a78598111b36",
+      "bytes": 35
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-NYM2/page_0001.json",
+      "sha256": "598e7fe394a483319462880321e61a334af9880ee586a1a9a81e1165a9df4aac",
+      "bytes": 2035
+    },
+    {
+      "role": "tape_raw",
+      "path": "lab/astra-capture/q6s5-kxmlbspread/trades_fills_2026-09-25/raw/trades/KXMLBSPREAD-26SEP251845NYMWSH-WSH2/page_0001.json",
+      "sha256": "d3f15fefba125a4d5a05e5d605d564569025236fd8d97c805cd3e804775213e7",
+      "bytes": 440
+    },
+    {
+      "role": "code_f233079d:pr60_runner",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/orchestrator.py",
+      "sha256": "296cfe64ff24c2fad0437ce9a9ec11458f557ee94ee900bd621160dc283fa597",
+      "bytes": 23390,
+      "git_blob_f233079d": "2f4ca4e3d5521e0057c969532618a760f63b0bba"
+    },
+    {
+      "role": "code_f233079d:pr60_tests",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/tests/test_orchestrator.py",
+      "sha256": "0877f7d142ea04ee568a81bf878d8b13ebab88076b75d59aa254bdd04ae970b3",
+      "bytes": 12917,
+      "git_blob_f233079d": "21ab27c77bedca3b544d0dad74135b4884123e34"
+    },
+    {
+      "role": "code_f233079d:pr60_experiment_spec",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/EXPERIMENT_SPEC.md",
+      "sha256": "33806f416c7c21acebbd0b32e632ded7567d5bccb48f2af5f8c2c57270a4517a",
+      "bytes": 3656,
+      "git_blob_f233079d": "a7e2a75bd32029143059e9181720d2ad11485526"
+    },
+    {
+      "role": "code_f233079d:pr60_lab_frozen_experiment",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/FROZEN_EXPERIMENT.json",
+      "sha256": "23fddbcdd90184f188741fc38e72087be7235ab7c4229382b52f715983b40854",
+      "bytes": 3522,
+      "git_blob_f233079d": "6176a77acf1486169e3588c5ea06796a3e3c06ba"
+    },
+    {
+      "role": "code_f233079d:parent_feequeue_orchestrator",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_feequue_lab_20260925/orchestrator.py",
+      "sha256": "e224686a1bbe4173f00e62c3d2cba78a3c48eecef45ed77c678564def9d5bbfc",
+      "bytes": 59409,
+      "git_blob_f233079d": "d4223e05904fa847e5a6849d130137291365619f"
+    },
+    {
+      "role": "code_f233079d:feebook",
+      "path": "pr60s_main/kalshi_feebook_lab_20260922/feebook.py",
+      "sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+      "bytes": 11059,
+      "git_blob_f233079d": "f6438083ef738dcb99c83115544d2ee8ce505746"
+    },
+    {
+      "role": "code_f233079d:feebook_series_table_stub",
+      "path": "pr60s_main/kalshi_feebook_lab_20260922/series_fee_table.stub.json",
+      "sha256": "600d56beda64c2edd9af2c9d220398ff1a7158dba140603a42f7cb7f95212384",
+      "bytes": 948,
+      "git_blob_f233079d": "21ab882d38ca1f26abff348cdbd1a47f6ef54b7e"
+    },
+    {
+      "role": "code_f233079d:rails",
+      "path": "pr60s_main/kalshi_rails_lab_20260922/rails.py",
+      "sha256": "834386506dd72210d77ee063d4a96248d76ce09a4be6ce771b9609337d3388e1",
+      "bytes": 15531,
+      "git_blob_f233079d": "ade53ec9e09da5de9573e9362bb1e3e72bded4c4"
+    },
+    {
+      "role": "code_f233079d:hygiene",
+      "path": "pr60s_main/kalshi_r2p1_hygiene_000_lab_20260922/hygiene.py",
+      "sha256": "65310a88ec7602a3fa2e50f2444e64c431dd29ef648992cb7861a5b74ca3b69f",
+      "bytes": 15751,
+      "git_blob_f233079d": "bef10e81b10dc3b6112c1d85a4b34806f58c8814"
+    },
+    {
+      "role": "code_f233079d:pr62_orchestrator_cache_fee_precedent",
+      "path": "pr60s_main/kalshi_q6s5_kxmlbspread_game_phase_settled_tape_lab_20261001/orchestrator.py",
+      "sha256": "c6c4c0a13be65e51250c011cca58c22a000e0d2cc65163520a3ad719a1646521",
+      "bytes": 56599,
+      "git_blob_f233079d": "9cd5cfad7493ae281b6b64f51f8598be99c94610"
+    },
+    {
+      "role": "code_f233079d:repo_panel_stub",
+      "path": "pr60s_main/lab/astra-capture/q6s5-kxmlbspread/panel_stub.json",
+      "sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+      "bytes": 33159,
+      "git_blob_f233079d": "8188121824593f993fe783d508d5bb6d1139577c"
+    },
+    {
+      "role": "code_f233079d:experiment_registry",
+      "path": "pr60s_main/docs/EXPERIMENT_REGISTRY.md",
+      "sha256": "8d8e702e0845577a3ee51b2f31d464efdf978be2d0a2ca2ce1b1fcd3efabb337",
+      "bytes": 109752,
+      "git_blob_f233079d": "a5e268a180b0219f81ba8f8e88f7f3de254ce7b4"
+    }
+  ]
+}

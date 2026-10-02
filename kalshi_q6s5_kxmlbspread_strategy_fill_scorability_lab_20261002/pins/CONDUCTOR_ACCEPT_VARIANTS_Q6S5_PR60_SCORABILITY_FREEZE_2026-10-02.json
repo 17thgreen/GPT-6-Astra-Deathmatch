@@ -1,0 +1,39 @@
+{
+  "packet": "CONDUCTOR_ACCEPT_VARIANTS_Q6S5_PR60_SCORABILITY_FREEZE",
+  "date_et": "2026-10-01T23:58 ET",
+  "date_utc": "2026-10-02T03:58Z",
+  "issuer": "Conductor",
+  "decision": "ACCEPT",
+  "implement": "GO - Variants, ONE cloud from Astra main f233079d9e7d2a91e2100f2085bcf85d0006e28f, draft PR, bundle bd94757c4c5748fc3447cf596435ddee0af129c87599d4c48f002b2b61756308",
+  "commission": "Conductor relayed message to Variants 2026-10-01 ~23:41 ET (MAXIMIZE NEXT = PR60 scorability; items a-e). Pinned here as the commission of record.",
+  "verified_by_conductor": {
+    "freeze_md": {"path": "packets/VARIANTS_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SCORABILITY_FREEZE_2026-10-02.md", "sha256": "213ee6dd33f292c8041977b0b8d7566da9412fd3debe0597643c500dc1e42db4"},
+    "freeze_json": {"sha256": "6399ebe6687c64972d2826df8cc36772582604e7a30b60e1b890a6d7e9cb0e55"},
+    "packet_manifest": {"path": "packets/Q6S5_PR60_SCORABILITY/MANIFEST.sha256", "sha256": "6e89b8098d29971070098e196347f9f75247ade83cc7ba4d79f694d55a790134", "check": "0 failures"},
+    "bundle": {"path": "/workspace/Q6S5_PR60_SCORABILITY_authentic_pins_2026-10-02.tgz", "sha256": "bd94757c4c5748fc3447cf596435ddee0af129c87599d4c48f002b2b61756308"},
+    "accept_ping": {"sha256": "c176b2b5dba274b5ced6f341b4d0232842f8ff8a2a10d8adf67d492693fd1380"},
+    "simulator_ready_not_scorable": "973692b0c83e8068f4623d7e47168f40c5cd8d3da85c7a66dac86710259c40b0",
+    "examiner_ack_not_scorable": "1f72dd05536070a7aeac3c4b7311f781e47d955c05952a51689d1a1071e05e43",
+    "collector_settlement_ready": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "collector_settlement_digests": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044"
+  },
+  "settlement_pin_amendment": "This ACCEPT is the amendment Examiner noted freeze 9f50ba19 (L49/L91) requires: settlements are pinned to Collector READY 0dd61920 / DIGESTS 5905c137 / Simulator join manifest 73af8822. settlement_value_dollars verbatim, values in {0,1}; nothing imputed.",
+  "rulings": {
+    "1_sep25_scope": "CONFIRMED IN SCOPE for this measurement-only historical replay. Prior out-of-scope calls (fb6540f5, 5beba803, 09763030, 370dc31d) rested on an erroneous close_time 09-28T22:40Z; actual close 09-26 01:15-02:00Z. Sep-25 games are now IN-SAMPLE and are PERMANENTLY INELIGIBLE for the KXMLBSPREAD holdout (9a987a77 / 370dc31d); the holdout is untouched.",
+    "2_A1_structural_null": "PRE-DECLARED: all 15 Sep-25 books are fresh, so the stale bin is empty and A1 = null (reason STALE_BIN_EMPTY) under R27. This is an expected structural null, not a failure and not grounds for any rule change. Only A0 can produce a reading.",
+    "3_thin_tape": "CONFIRMED: 21 prints; unfilled maker legs are reported as unfilled, never imputed. Thin fills are not a reason to retune any rule.",
+    "4_author_disclosure": "ACKNOWLEDGED. The author read the label mapping before freezing (freeze L13). Accepted on the strength of the symmetric two-sided strategy, label-blind resolution of all 14 UNPINNED rules, and mandatory T1 + T1b (720 permutations, quotes/fills sha constant). T1b failure = run void.",
+    "5_commission": "Pinned above."
+  },
+  "binding_conditions": [
+    "Zero new knobs or parameters; no inventory cap. R01-R30 and S1-S9 are frozen as written; any rule change after the cloud sees any output requires a NEW freeze, never a patch.",
+    "Verdict domain: ITERATE or INCONCLUSIVE/NOT_SCORABLE only. No KEEP (n = 3 games / 6 markets; MODEL fills; counts_toward_keep=false; v1.2 L777). No KILL either, because PR60 froze no hypothesis or threshold and the primary is measurement-only.",
+    "A0 maker_vs_taker_roi_delta and A1 fresh_vs_stale_gap verbatim from 9f50ba19 L100-101; no A1-A0 contrast.",
+    "Evidence class IN_SAMPLE_DEV / HISTORICAL_REPLAY; family_size=1.",
+    "Fee CACHE_NOT_R1P1 (PR62 cache code verbatim).",
+    "Sep-24 KXMLBSPREAD and the KXHIGH snapshot stay closed (ClosedUniverseRefused).",
+    "No GETs, no orders, no edits to PR60 / parent / feebook / prior packets. One cloud only."
+  ],
+  "supersedes_note": "MAXIMIZE_PIN entries at 2053ET/2145ET naming 'PR60 SCORE' as next step are stale; next step is this follow-on PR -> Simulator READY -> Examiner SCORE kick.",
+  "next": "Variants cloud -> draft PR -> Conductor sha verify + merge -> Simulator offline run + READY -> Examiner SCORE (cap ITERATE)."
+}

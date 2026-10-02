@@ -1,0 +1,22 @@
+{
+  "pin_id": "MAXIMIZE_PIN_2026-10-01_2145ET",
+  "et": "2026-10-01T21:45:00-04:00",
+  "quiet_hours": true,
+  "primary": "COLLECTOR_OVERNIGHT_WEATHER_RELAUNCH_THEN_CARD03_THEN_PR60_SCORE",
+  "chain": [
+    "overnight_weather_relaunch_~0639Z",
+    "card03_clean_gate",
+    "q6s5_sep25_settlement_fetch",
+    "PR60_strategy_fill_SCORE"
+  ],
+  "held": [
+    "PM-008",
+    "weather",
+    "card03",
+    "ADMIT_429_budget"
+  ],
+  "logan_blocker": false,
+  "wake_parent": false,
+  "wake_reason": "quiet_hours_capture_healthy_no_control_fail",
+  "incumbent": "Q6-000 KEEP +6.90%"
+}

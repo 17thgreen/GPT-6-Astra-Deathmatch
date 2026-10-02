@@ -1,0 +1,140 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
+  "parent_experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+  "feature_family": "strategy_fill_pnl_path",
+  "knob": "fill_model",
+  "knob_value_implemented": "public_trade_through_conservative",
+  "knob_value_unavailable": "mechanic_demo_observed",
+  "new_knobs": 0,
+  "new_parameters": 0,
+  "frozen_at_et": "2026-10-01T23:51:21-04:00",
+  "status": "FROZEN_FREEZE_ONLY_AWAITING_CONDUCTOR_ACCEPT",
+  "base_main": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+  "proposed_lab_dir": "kalshi_q6s5_kxmlbspread_strategy_fill_scorability_lab_20261002/",
+  "universe": {
+    "date": "2026-09-25",
+    "series": "KXMLBSPREAD",
+    "games": {
+      "KXMLBSPREAD-26SEP251840PITDET": [
+        "KXMLBSPREAD-26SEP251840PITDET-DET2",
+        "KXMLBSPREAD-26SEP251840PITDET-PIT2"
+      ],
+      "KXMLBSPREAD-26SEP251840TBPHI": [
+        "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+        "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+      ],
+      "KXMLBSPREAD-26SEP251845NYMWSH": [
+        "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+        "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+      ]
+    },
+    "n_games": 3,
+    "n_markets": 6,
+    "outcome_counts": {
+      "YES": 1,
+      "NO": 5
+    },
+    "per_ticker_outcomes": "in pinned files only (settlement folder 0dd61920 / join manifest 73af8822); not restated",
+    "closed": [
+      "Sep-24 KXMLBSPREAD universe",
+      "KXHIGH snapshot"
+    ]
+  },
+  "arms_verbatim": {
+    "A0_9f50ba19_line100": "| **Q6S5A0** | `maker_vs_taker_native` | Splits the fill/PnL series into maker legs vs taker legs; produces `maker_vs_taker_roi_delta` |",
+    "A1_9f50ba19_line101": "| **Q6S5A1** | `content_fresh_vs_stale_bin` | Splits placements by rails `content_fresh_flag` at the placement snapshot; produces `fresh_vs_stale_gap` |",
+    "parent_4f65dcdf_line47": "| **Q6S5A0** | Native taker | Partition on native `taker_*` fields only; Lee-Ready **REFUSED** |",
+    "parent_4f65dcdf_line48": "| **Q6S5A1** | Freshness bin | Rails `content_fresh_flag` / queue-attribution bins; no fee invent; no invent fills |",
+    "metric_9f50ba19_line93": "- **Arm metrics:** `maker_vs_taker_roi_delta` = ROI(maker legs) − ROI(taker legs), where ROI = Σpnl / Σ(fill_price + fee) over resolved filled contracts. `fresh_vs_stale_gap` = ROI(content_fresh placements) − ROI(stale placements), using the rails `content_fresh_flag` at the placement snapshot.",
+    "pr60_code_ARMS_lines31_34": "ARMS = {\n    Q6S5A0: 'maker_vs_taker_native',\n    Q6S5A1: 'content_fresh_vs_stale_bin',\n}"
+  },
+  "verbatim_sha256_no_trailing_newline": {
+    "9f50ba19_L93": "ba172cbc5d84a2c2223c56eb6c73bf341b8dd662f99473de6599c57a3c831a99",
+    "9f50ba19_L100_A0": "e5e87a86a2c8a02b66a67751a3fe1d097561cdfa723b4795b357665ed4a65b9c",
+    "9f50ba19_L101_A1": "e54414e3bae1b02428948853672a57e217dfb7ade6b917abf06b8b4d1d4ee7be",
+    "4f65dcdf_L47": "38155ab16fd6764ffcaf57263abf00dcf4a3a317592d686960ac295244430178",
+    "4f65dcdf_L48": "273b7ca8564791fa46055b3908526038c008914da7f1f6e963451deeadf2bf12"
+  },
+  "unpinned_rule_ids": [
+    "R04",
+    "R08",
+    "R09",
+    "R11",
+    "R12",
+    "R13",
+    "R15",
+    "R16",
+    "R20",
+    "R21",
+    "R23",
+    "R26",
+    "R27",
+    "R28"
+  ],
+  "blockers": [],
+  "settled_join_pins": {
+    "collector_ready": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "settlement_digests": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+    "settlement_folder_digest": "65cfe9e4855038263853b236df8eb4852d85d789546215a59f350c6a91feed03",
+    "settlement_folder_listing": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c  ./COLLECTOR_READY_SETTLEMENT_ONLY.json\n5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044  ./DIGESTS.txt\n2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79  ./SETTLEMENT_SUMMARY.json\n0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf  ./raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json\nb60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c  ./raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json\n99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb  ./raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json\nf380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3  ./raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json\n378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json\na721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json\n27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317  ./requests.jsonl\n",
+    "join_manifest": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17",
+    "value_field": "settlement_value_dollars",
+    "fields_never_read": [
+      "result"
+    ],
+    "post_close_guard": "status==finalized and close_time < settlement_ts < response_utc and fill_time < close_time"
+  },
+  "verdict": {
+    "ceiling": "ITERATE",
+    "keep_possible": false,
+    "counts_toward_keep": false,
+    "promote": false,
+    "live_promotion": false,
+    "evidence_class": [
+      "IN_SAMPLE_DEV",
+      "HISTORICAL_REPLAY"
+    ],
+    "family_size": 1,
+    "effective_n_games": 3,
+    "n_markets": 6,
+    "simulated_fills_rule_v1_2": "fill_rate counts only fills tagged demo, shadow or live. Replay/simulated fills go to simulated_fills, labeled \"simulated\", and never count toward KEEP.",
+    "pr60_outcome_hypothesis": null,
+    "primary": "measurement-only co-primary per 9f50ba19 L93: Q6S5A0 maker_vs_taker_roi_delta (CACHE-fee-net) and Q6S5A1 fresh_vs_stale_gap (expected NOT_ESTIMABLE)",
+    "a1_minus_a0_contrast": null,
+    "new_thresholds": null,
+    "reading": "descriptive, ITERATE-capped; Examiner owns verdict in {ITERATE, KILL per a5398129, NOT_SCORED}"
+  },
+  "fees": {
+    "label": "CACHE_NOT_R1P1",
+    "fee_pin": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "formula_id": null,
+    "fee_honest": false,
+    "claim_as_live_R1P1": false,
+    "stresses": [
+      "fees_2x",
+      "one_tick_worse"
+    ]
+  },
+  "cloud": {
+    "count": 1,
+    "base": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+    "pr": "draft",
+    "after": "Conductor ACCEPT + IMPLEMENT GO",
+    "sqlite": "none (no sqlite input; no sqlite3 import)",
+    "network": "none",
+    "committed_results": "null"
+  },
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "freeze_md": {
+    "path": "lab/governance/astra/packets/VARIANTS_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SCORABILITY_FREEZE_2026-10-02.md",
+    "sha256": "213ee6dd33f292c8041977b0b8d7566da9412fd3debe0597643c500dc1e42db4"
+  },
+  "freeze_json_twin": {
+    "path": "lab/governance/astra/packets/VARIANTS_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SCORABILITY_FREEZE_2026-10-02.json",
+    "sha256": "6399ebe6687c64972d2826df8cc36772582604e7a30b60e1b890a6d7e9cb0e55"
+  }
+}

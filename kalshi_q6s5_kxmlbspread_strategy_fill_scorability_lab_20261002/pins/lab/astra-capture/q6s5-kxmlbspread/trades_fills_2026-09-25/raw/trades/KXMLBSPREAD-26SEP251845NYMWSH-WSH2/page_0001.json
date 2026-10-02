@@ -1,0 +1,17 @@
+{
+  "cursor": "",
+  "trades": [
+    {
+      "count_fp": "168.23",
+      "created_time": "2026-09-25T05:08:16.183241Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.7100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "trade_id": "07238d3e-eb49-a759-d421-b0f7d4608a68",
+      "yes_price_dollars": "0.2900"
+    }
+  ]
+}

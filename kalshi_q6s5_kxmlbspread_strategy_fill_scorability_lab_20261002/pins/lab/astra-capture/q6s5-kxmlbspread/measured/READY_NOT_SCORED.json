@@ -1,0 +1,73 @@
+{
+  "schema_id": "astra.q6s5_get_capture.ready_not_scored.v0",
+  "status": "READY_NOT_SCORED",
+  "series": "KXMLBSPREAD",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "arms": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin"
+  },
+  "panel_sha256": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+  "kick_sha256": "83cc234ca1ee511bd38fb3041cb79c99f9d9bdd6a24b7467600884a56f979cb6",
+  "start_utc": "2026-09-25T04:41:35Z",
+  "end_utc": "2026-09-25T05:34:06Z",
+  "n_polls": 3,
+  "n_200": 83,
+  "n_429": 8,
+  "n_other": 0,
+  "fee_observation": {
+    "source": "GET /series/KXMLBSPREAD",
+    "observed_fee_type": "quadratic",
+    "observed_fee_multiplier": 0.5,
+    "label": "CACHE",
+    "claim_as_live_R1P1": false,
+    "note": "CACHE\u00d70.5 until Examiner live /series pin \u2014 observed values recorded, not claimed R1-P1",
+    "observed_at_utc": "2026-09-25T04:41:35Z"
+  },
+  "fee_label": "CACHE",
+  "fee_claim_as_live_R1P1": false,
+  "first_cycle": {
+    "start_utc": "2026-09-25T04:41:35Z",
+    "end_utc": "2026-09-25T04:52:11Z",
+    "n_200": 28,
+    "n_429": 3,
+    "n_other": 0,
+    "series_http": 200,
+    "events_200": 6,
+    "markets_200": 12,
+    "orderbooks_200": 9
+  },
+  "coverage": {
+    "series_ok": true,
+    "events_ok_n": 6,
+    "markets_ok_n": 12,
+    "orderbooks_ok_n": 12,
+    "events_total": 6,
+    "markets_total": 12,
+    "orderbooks_total": 12,
+    "honest_full_sweep": true
+  },
+  "gaps": [],
+  "settled_markets": {
+    "KXMLBSPREAD-26SEP242140HOUATH-ATH2": "finalized",
+    "KXMLBSPREAD-26SEP242140HOUATH-HOU2": "finalized",
+    "KXMLBSPREAD-26SEP242140LAASEA-LAA2": "finalized",
+    "KXMLBSPREAD-26SEP242140LAASEA-SEA2": "finalized",
+    "KXMLBSPREAD-26SEP242210SDLAD-SD2": "finalized",
+    "KXMLBSPREAD-26SEP242210SDLAD-LAD2": "finalized"
+  },
+  "artifact_digests": {
+    "CAPTURE_MANIFEST.json": "2591dda5b73331f0328cf3d8a52d6021d22c5076800af27b454524d43027c6d2",
+    "STATUS.json": "dc7f22e69b06a5d90bcb5a5deb0515cd35343bed8506b5688400da5b31623f62",
+    "requests.jsonl": "7bc94004cdda6b5e7eb84f46d0459305bafaf8696ea67dd5559d7722d21a900b",
+    "http_429.jsonl": "4bc9af43b17a7bd10174093c0726d3fb6d21b9ff5b9eb5abd29a7830692824fb",
+    "DIGESTS.txt": "06513dc7c82988e5e16f99df7b0aebb1048e4f51016a767917ea388f6cd0d74a",
+    "CONDUCTOR_CONTINUE.json": "22d0360c1ba537a9a22f187bbbda8ecb1796385b529f881506f9ad4ef531f466",
+    "READY_NOT_SCORED.json": "f5c7ec2a64f9d0c264804e5242db831171e134fbcd8277cac45b3a06b1db6e8b"
+  },
+  "results": null,
+  "pnl": null,
+  "note": "Honest GET-only measured capture. 429 gaps logged, never invented. Fee labeled CACHE \u2014 not live R1-P1. Examiner owns SCORE.",
+  "conductor_continue_ack_sha256": "cc4d95062f0cdfb59381311961daa2a8e995814ad3f31f6be24a43f7d12aaa93",
+  "babysit_note": "CONTINUE babysit: wall_deadline armed; SIGTERM at 2026-09-25T05:26:48Z; poller finished cycle 3 and filled final WSH2 orderbook -> READY_NOT_SCORED 12/12. ADMIT-1 untouched. Fee CACHE\u00d70.5. results/pnl null."
+}

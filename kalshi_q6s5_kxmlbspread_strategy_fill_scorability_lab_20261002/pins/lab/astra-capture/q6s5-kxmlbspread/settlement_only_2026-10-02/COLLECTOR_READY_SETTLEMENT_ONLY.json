@@ -1,0 +1,18 @@
+{
+  "id": "COLLECTOR_READY_SETTLEMENT_ONLY_Q6S5_KXMLBSPREAD_SEP25",
+  "authority": "a5398129",
+  "source_pins_sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+  "tickers_n": 6,
+  "n_requests": 6,
+  "n_200": 6,
+  "n_429": 0,
+  "n_other_status": 0,
+  "settled": 6,
+  "unsettled": 0,
+  "not_fetched": 0,
+  "stopped_on_429": false,
+  "digests_txt_sha256": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+  "written_utc": "2026-10-02T03:31:56.117487Z",
+  "tag": "NOT_SCORED",
+  "rules": "GET-only public; no auth; no retry; >=30s spacing; no backfill; no imputation"
+}

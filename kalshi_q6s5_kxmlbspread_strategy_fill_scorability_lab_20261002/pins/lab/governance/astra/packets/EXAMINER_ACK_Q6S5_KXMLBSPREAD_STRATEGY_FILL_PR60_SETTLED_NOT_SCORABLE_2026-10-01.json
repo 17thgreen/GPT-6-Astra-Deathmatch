@@ -1,0 +1,338 @@
+{
+ "id": "EXAMINER_ACK_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SETTLED_NOT_SCORABLE",
+ "seat": "Examiner (Kalshi)",
+ "desk": "Astra/Kalshi",
+ "type": "EXAMINER_ACK",
+ "disposition": "NOT_SCORABLE_STAND_BY_FOLLOW_ON_FREEZE",
+ "status": "NOT_SCORED",
+ "scored": false,
+ "verdict": null,
+ "filed_at_et": "2026-10-01T23:43:41-04:00",
+ "filed_at_utc": "2026-10-02T03:43:41Z",
+ "experiment": "Q6S5 KXMLBSPREAD strategy-fill",
+ "freeze_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+ "pr": 60,
+ "knob": "fill_model",
+ "acknowledges": {
+  "simulator_ready": {
+   "path": "lab/governance/astra/packets/SIMULATOR_READY_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SETTLED_2026-10-02.json",
+   "sha256": "973692b0c83e8068f4623d7e47168f40c5cd8d3da85c7a66dac86710259c40b0",
+   "status_in_file": "READY_NOT_SCORED",
+   "created_at": "2026-10-01T23:40:26-04:00"
+  }
+ },
+ "basis": {
+  "conductor_instruction": "Conductor: do NOT score PR60. Simulator settled READY 973692b0 is NOT_SCORABLE because merged PR60 has no settled-join and no tape-to-quote path. Follow-on freeze routed to Variants (ceiling ITERATE); a scoring kick comes only after it lands.",
+  "conductor_instruction_source": "Relayed to Examiner by the parent agent (steering message 2026-10-01 ~23:41 ET). No Conductor packet carrying this instruction was found in packets/ at filing (searched for PR60 / STRATEGY_FILL / NOT_SCORABLE / follow-on).",
+  "conductor_instruction_on_disk": null,
+  "examiner_concurs": true,
+  "examiner_findings": [
+   "Merged PR60 orchestrator (blob 2f4ca4e3, sha256 296cfe64) has no settlement loader/arg/join. The only \"settle\" reference is LOOKAHEAD_KEYS containing settlement_ts (lines [65]), which makes classify_fill refuse rows carrying it.",
+   "There is no tape/book loader. Module-level functions: sha256_file, parse_ts, in_admit1_window, _parent_module, parent_arms, fee_output, claim_live_r1p1, live_order, run_admit_py, dual_cloud, retune, recreate_queue_bytes, read_admit1_capture, _mentions_capture, _mentions_missing_queue, _lee_ready_requested, infer_lee_ready, _as_price, _timestamp_fields, _guard_row, _null_fill_cells, mechanic_demo_observed, _through, public_trade_through_conservative, classify_fill, public_get, load_panel, panel_tickers, _pin_row, digest_status, parent_freeze_intact, assert_null_scorecard, assert_v12_null, instrument_binding, conduct, published_scorecard, write_scorecard. classify_fill only accepts caller-built rows; building strategy quote rows outside the runner would invent quotes.",
+   "Freeze 9f50ba19 line 91 makes Sep-25 settlements admissible only if a Collector settled re-GET is \"pinned by amendment\"; line 49 says \"pinned by amendment before the run\". No such amendment was found in packets/.",
+   "No PR60 settled SCORE kick packet exists on disk. Simulator READY kick_ref (state \"UNBLOCKED (Sep-25 settlements fetched)\") carries no path or sha."
+  ]
+ },
+ "verification": {
+  "step1_merge_and_git": {
+   "merge_packet": {
+    "path": "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-29.json",
+    "sha256": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef"
+   },
+   "merge_commit": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+   "verified_head": "f8264ad793674df14593d383dde5844c08f153e9",
+   "base_before": "cb8957d7086c9ab82a1d25090bf90d6c17fbc217",
+   "prior_examiner_ready": {
+    "path": "lab/governance/astra/packets/EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-25.json",
+    "sha256": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698"
+   },
+   "prior_ready_git_check": "on 2026-09-29 Examiner verified 12e760f5 parent cb8957d7 and tree 963d4277 = head f8264ad tree (local_git_object_only)",
+   "commit_12e760f5_object_present_now": false,
+   "commit_12e760f5_note": "Not present in any local object store now. /workspace/repo_f233079 is shallow at 749bc146, and the earlier checkout no longer has the object. Not re-fetched (no fetch).",
+   "current_main_check": "f233079d (local_git_object_only via a scratch copy of /workspace/repo_f233079/.git with empty refs/ restored, because the original .git lost refs/ on the box restore; the original checkout was untouched)",
+   "pr60_lab_tree_at_f233079d": "78fca23c47fd8475771bec39bddc516efd92b06d",
+   "pr60_orchestrator_blob_at_f233079d": "2f4ca4e3d5521e0057c969532618a760f63b0bba",
+   "lab_tree_unchanged_since_12e760f5": "Simulator attests 78fca23c at 12e760f5, d7558fc4 and f233079d. Consistent with the PR61/62/63 squash diffs Examiner verified, which touch only their own lab dirs plus docs/EXPERIMENT_REGISTRY.md. Not re-verified at 12e760f5 directly."
+  },
+  "step2_simulator_ready_and_lab": {
+   "lab": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/",
+   "lab_DIGESTS_txt": {
+    "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DIGESTS.txt",
+    "sha256": "4e670303d576678fce40568f45d60059ca6078e0001e697129de7a04750ee530",
+    "check": "14/14 OK (sha256sum -c by Examiner)"
+   },
+   "output_sha256_check": "14/14 OK (Simulator READY output_sha256 re-hashed by Examiner)",
+   "runner_sha256": "296cfe64ff24c2fad0437ce9a9ec11458f557ee94ee900bd621160dc283fa597",
+   "runner_equals_git_blob_at_f233079d": true,
+   "settlement_join_manifest": {
+    "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/outputs/SETTLEMENT_JOIN_MANIFEST_SEP25.json",
+    "sha256": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17"
+   },
+   "run_output": {
+    "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/outputs/PR60_RUN_OUTPUT.json",
+    "sha256": "9cf242e761662bc7f146c96d66f7e6dcff605c2d06fbd949f514732f32dd4998"
+   },
+   "deviations_md": {
+    "path": "lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DEVIATIONS.md",
+    "sha256": "535c6f2ffb36dccc491cd7e8f99d99d5c8e0e24afd3ee5e6d84444c3dd9392c0"
+   },
+   "simulator_situation": "B_NO_SANCTIONED_PATH__RUNNER_AS_DESIGNED_PLUS_SEPARATE_MANIFEST",
+   "runner_outputs": "all metric cells null (results/pnl/roi null); not an Examiner score"
+  },
+  "step3_settlement_mapping_check": {
+   "inputs": {
+    "collector_ready": {
+     "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/COLLECTOR_READY_SETTLEMENT_ONLY.json",
+     "sha256": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c"
+    },
+    "digests": {
+     "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/DIGESTS.txt",
+     "sha256": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+     "check": "8/8 OK (sha256sum -c by Examiner)"
+    },
+    "settlement_summary": {
+     "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/SETTLEMENT_SUMMARY.json",
+     "sha256": "2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79"
+    },
+    "requests_jsonl": {
+     "path": "lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/requests.jsonl",
+     "sha256": "27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317"
+    }
+   },
+   "rule_examiner": "Read each raw GET body (market object) myself. Mapping settlement_value_dollars \"1.0000\"->YES, \"0.0000\"->NO. Cross-check result (the freeze line 90 settlement field: settle_value $1.00 if our side matches the observed result). Require status finalized, raw sha equal to requests.jsonl sha, ticker in the PR60 panel stub c7f1f1f4, and settlement_ts and GET capture outside ADMIT-1 [2026-09-27T00:00Z, 2026-09-30T04:00Z).",
+   "rows": [
+    {
+     "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+     "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+     "yes_sub_title": "Detroit wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "0.0000",
+     "result": "no",
+     "mapped_outcome_examiner": "NO",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T02:02:46.599505Z",
+     "close_time": "2026-09-26T02:00:40Z",
+     "get_response_utc": "2026-10-02T03:29:21.110655Z",
+     "raw_sha256": "0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "NO",
+     "manifest_mapped": "NO",
+     "summary_svd": "0.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    },
+    {
+     "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+     "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+     "yes_sub_title": "Pittsburgh wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "0.0000",
+     "result": "no",
+     "mapped_outcome_examiner": "NO",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T02:02:46.60128Z",
+     "close_time": "2026-09-26T02:00:40Z",
+     "get_response_utc": "2026-10-02T03:29:52.174024Z",
+     "raw_sha256": "b60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "NO",
+     "manifest_mapped": "NO",
+     "summary_svd": "0.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    },
+    {
+     "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+     "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+     "yes_sub_title": "Philadelphia wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "0.0000",
+     "result": "no",
+     "mapped_outcome_examiner": "NO",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T01:17:56.404927Z",
+     "close_time": "2026-09-26T01:15:52Z",
+     "get_response_utc": "2026-10-02T03:30:23.121872Z",
+     "raw_sha256": "99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "NO",
+     "manifest_mapped": "NO",
+     "summary_svd": "0.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    },
+    {
+     "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+     "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+     "yes_sub_title": "Tampa Bay wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "1.0000",
+     "result": "yes",
+     "mapped_outcome_examiner": "YES",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T01:17:56.40621Z",
+     "close_time": "2026-09-26T01:15:52Z",
+     "get_response_utc": "2026-10-02T03:30:54.118303Z",
+     "raw_sha256": "f380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "YES",
+     "manifest_mapped": "YES",
+     "summary_svd": "1.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    },
+    {
+     "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+     "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+     "yes_sub_title": "New York M wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "0.0000",
+     "result": "no",
+     "mapped_outcome_examiner": "NO",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T01:52:16.449203Z",
+     "close_time": "2026-09-26T01:50:12Z",
+     "get_response_utc": "2026-10-02T03:31:25.139925Z",
+     "raw_sha256": "378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "NO",
+     "manifest_mapped": "NO",
+     "summary_svd": "0.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    },
+    {
+     "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+     "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+     "yes_sub_title": "Washington wins by over 1.5 runs",
+     "status": "finalized",
+     "settlement_value_dollars": "0.0000",
+     "result": "no",
+     "mapped_outcome_examiner": "NO",
+     "result_agrees": true,
+     "settlement_ts": "2026-09-26T01:52:16.448688Z",
+     "close_time": "2026-09-26T01:50:12Z",
+     "get_response_utc": "2026-10-02T03:31:56.116235Z",
+     "raw_sha256": "a721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b",
+     "requests_jsonl_sha_match": true,
+     "settlement_ts_in_admit1_window": false,
+     "get_capture_in_admit1_window": false,
+     "simulator_mapped": "NO",
+     "manifest_mapped": "NO",
+     "summary_svd": "0.0000",
+     "agrees_simulator_manifest_summary": true,
+     "in_pr60_panel_stub": true
+    }
+   ],
+   "summary": {
+    "n": 6,
+    "finalized": 6,
+    "yes": [
+     "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+    ],
+    "no_n": 5,
+    "result_field_agrees": "6/6",
+    "agrees_simulator_manifest_summary": "6/6",
+    "agrees_conductor_stated": "6/6 (per Simulator conductor_stated fields)",
+    "yes_per_event": {
+     "KXMLBSPREAD-26SEP251840PITDET": 0,
+     "KXMLBSPREAD-26SEP251840TBPHI": 1,
+     "KXMLBSPREAD-26SEP251845NYMWSH": 0
+    },
+    "at_most_one_yes_per_event": true,
+    "admit1_overlap": 0,
+    "get_capture_window_utc": "2026-10-02T03:29Z-03:31Z (2026-10-01 23:29-23:31 ET)",
+    "settlement_ts_range_utc": "2026-09-26T01:17:56Z-02:02:46Z"
+   },
+   "scope": "Sep-25 panel markets only (PITDET, TBPHI, NYMWSH x2). The Sep-24 universe is closed (family_size 4) and not used.",
+   "admissibility_note": "The mapping is verified, but these settlements are not yet pinned by a freeze amendment (freeze lines 49 and 91), and no sanctioned runner path consumes them. Verified data only; not joined; no PnL/ROI computed."
+  }
+ },
+ "freeze_metric_definitions_verbatim": {
+  "freeze": {
+   "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL_FREEZE_2026-09-25.md",
+   "sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d"
+  },
+  "pnl_arithmetic": "For each filled contract with an **observed** settlement: `pnl = settle_value − fill_price − fee`, with `settle_value = $1.00` if our side matches the observed `result`, else `$0`.",
+  "settlement_source": "- **Settlement source:** measured raw/markets GET bodies with `status == \"finalized\"` and a non-empty `result` (on disk now for 6 of 12: HOUATH ×2, LAASEA ×2, SDLAD ×2). The 6 Sep-25 markets (PITDET, TBPHI, NYMWSH ×2 each) have **no settlement on disk**. Their positions are `unresolved_inventory`, and their PnL is **null** unless a Collector settled re-GET is pinned by amendment (ADMIT-1 window rule applies).",
+  "fee": "- **Fee:** `feebook.order_fee(role, 1, price)` @ `22371178…`, using **only** the FEE_PIN-observed series terms `fee_type=quadratic`, `fee_multiplier=0.5`. The maker role resolves through `feebook.resolve_terms`, and this freeze does not assert its value. Label **CACHE_NOT_R1P1** (see Fee).",
+  "arm_metrics": "- **Arm metrics:** `maker_vs_taker_roi_delta` = ROI(maker legs) − ROI(taker legs), where ROI = Σpnl / Σ(fill_price + fee) over resolved filled contracts. `fresh_vs_stale_gap` = ROI(content_fresh placements) − ROI(stale placements), using the rails `content_fresh_flag` at the placement snapshot.",
+  "net_pnl_v12": "- v1.2 `common_scorecard.net_pnl_*` stays null because its formula is `pending_definition` and must not be invented. Rewards are not modeled (no rewards thesis).",
+  "maker_fill_rule": [
+   "For a resting **YES** bid at price `p` placed at `t0` (use NO / `no_price_dollars` symmetrically for a resting NO bid):",
+   "1. **Receipt-time information set:** only the snapshot at `t0`, plus public trades with `created_time > t0` and before the order's cancel time. Trades at or before `t0` are ignored (no lookahead or backfill).",
+   "2. **Our-side prints:** native `taker_side == \"no\"` (taker sells YES and hits YES bids; equivalently `taker_book_side == \"ask\"` per Mechanic `R3_P2_TRADE_STEP_FILL_LABEL_v1`). If a row's native taker fields disagree, the row is excluded. **Lee-Ready REFUSED.** No direction is ever inferred.",
+   "3. **Conservative queue depletion:** `cum` = sum of `count_fp` over our-side prints with `yes_price_dollars ≤ p` since `t0`. No credit is given for cancels or modifies ahead of us. Displayed fractional sizes are used as-is.",
+   "4. **Fill:** at the **first** our-side print with `yes_price_dollars < p` (strictly through) at which `cum` (including that print) is ≥ `queue_ahead + 1`. Fill quantity = 1, fill price = **p** (our limit, not the through price), fill time = that print's `created_time`.",
+   "5. **Labels on every modeled fill row:** `fill_source=\"MODEL:public_trade_through_conservative\"`, `observed=false`, `tag=\"replay\"`. **Stated assumptions:** price-time priority holds; our order joins at the back; no hidden liquidity or latency advantage; the public tape is complete for our window (429 gaps and empty tickers such as `TBPHI-TB2` count as no prints and are never imputed)."
+  ],
+  "fixed_strategy": [
+   "There is no forecasting signal in this packet (the harness freeze had Strategy=None). To measure execution/fill economics **without adding a directional model**, which would be a new signal and in S1/Q6-000 retune territory, the strategy is **symmetric, two-sided, 1 contract, at the touch, held to settlement**:",
+   "",
+   "- **Universe:** the 12 panel_admitted KXMLBSPREAD markets (`e36de2d1…`), verbatim. No other series.",
+   "- **Placement instants:** each dated measured orderbook snapshot `(ticker, captured_utc)` under `measured/raw/orderbooks/`, but **only** if the latest measured market GET for that ticker at or before `captured_utc` shows `status == \"active\"`. Finalized, determined or closed markets get no placement. The undated \"latest\" copies are duplicates and are ignored.",
+   "- **Maker legs (per placement × side ∈ {yes, no}):** a 1-contract post-only limit bid at the **best displayed bid** for that side (`orderbook_fp.yes_dollars` / `no_dollars`), joining the **back** of the queue. `queue_ahead = displayed size at that price in the snapshot`. **Cancel/replace:** the order is cancelled (model) at the next measured snapshot of the same ticker. So at most one live maker order per (ticker, side) at any time, and the same prints are never reused across our orders. The last order rests until the earliest of: a market GET showing status ≠ active, or the per-ticker trades request `ts_utc` (tape end) in `trades_fills_2026-09-25/requests.jsonl`. An unfilled order ends unfilled, with zero position and no PnL.",
+   "- **Taker legs (per placement × side):** buy 1 contract at the **displayed best ask** for that side (= 1 − best opposite bid), at `captured_utc`. This needs a displayed opposite-bid size ≥ 1. If there is no displayed opposite bid, there is no taker fill (null, not invented).",
+   "- **Hold to settlement.** No exits, no sizing changes, no parameter search."
+  ],
+  "arms": [
+   "| **Q6S5A0** | `maker_vs_taker_native` | Splits the fill/PnL series into maker legs vs taker legs; produces `maker_vs_taker_roi_delta` |",
+   "| **Q6S5A1** | `content_fresh_vs_stale_bin` | Splits placements by rails `content_fresh_flag` at the placement snapshot; produces `fresh_vs_stale_gap` |"
+  ],
+  "grid": "Grid = 2 arms × 2 `fill_model` values. Cells for `mechanic_demo_observed` stay **null / UNAVAILABLE**. All cells stay **null** until the run is Examiner-scored.",
+  "fee_section": "The FEE_PIN (`9c0f3554…`) observed `fee_type=quadratic`, `fee_multiplier=0.5` in GET `/series/KXMLBSPREAD` (captured 2026-09-25T04:41:35Z), but **`feebook_formula_id` = null**. So the fee is **CACHE-LABELED / `CACHE_NOT_R1P1`**, with `fee_honest=false` and `claim_as_live_R1P1=false`. **Not R1-P1.** Stresses: `fees_2x` and `one_tick_worse` (one tick = $0.01 against our side on every fill), both declared pre-outcome.",
+  "scorecard_fields_null": "`results`, `pnl`, `maker_vs_taker_roi_delta`, `fresh_vs_stale_gap`, `fill_rate_simulated`, `filled_contracts_simulated`, `requested_contracts_simulated`, `unresolved_inventory`, `settled_join_n`, `n_books`, `excluded_admit1_window_n`, plus the per-cell arm ROI. All stay **null** until an Examiner-scored run. Prior ITERATE-3 counts (11,744 / 6 / 12) are pins, **not** copied into this scorecard."
+ },
+ "not_computed": {
+  "maker_vs_taker_roi_delta": null,
+  "fresh_vs_stale_gap": null,
+  "pnl": null,
+  "results": null,
+  "fill_rate_simulated": null,
+  "filled_contracts_simulated": null,
+  "requested_contracts_simulated": null,
+  "unresolved_inventory": null,
+  "settled_join_n": null,
+  "n_books": null,
+  "excluded_admit1_window_n": null,
+  "reason": "Conductor do-not-score instruction; no settled-join or tape-to-quote path in merged PR60; settlements not pinned by amendment. Nothing invented."
+ },
+ "wait_for": [
+  "Variants follow-on freeze (ceiling ITERATE)",
+  "Conductor ACCEPT of the follow-on freeze",
+  "merged PR implementing it",
+  "Simulator READY on the merged PR",
+  "Conductor SCORE kick"
+ ],
+ "verdict_ceiling": "ITERATE",
+ "counts_toward_keep": false,
+ "promote": false,
+ "live_promotion": false,
+ "counted_as_experiment_pnl": false,
+ "evidence_class": "IN_SAMPLE_DEV",
+ "fee_label": "CACHE_NOT_R1P1",
+ "fee_honest": false,
+ "pr63_files_note": "No PR60 SCORE or SCORECARD was written by Examiner. The only Examiner SCORE/SCORECARD written this session are for WX-FL PR63, which the Conductor accepted (CONDUCTOR_ACCEPT_EXAMINER_ITERATE_WX_FL_KXHIGH_PR63 5059678…); those files were not touched.",
+ "anomalies": [
+  "The Conductor do-not-score instruction is not on disk; this ACK cites the parent-relayed instruction.",
+  "The Simulator READY kick_ref says PR60 is \"UNBLOCKED (Sep-25 settlements fetched)\", but no kick packet exists on disk and no amendment pins the settlements as freeze 9f50ba19 requires.",
+  "MAXIMIZE_PIN 2053ET/2145ET list PR60_strategy_fill_SCORE as the next step after the settlement fetch; that step is now superseded by the do-not-score instruction.",
+  "The box restore (~23:12-23:13 ET) reset mtimes across packets/ and dropped refs/ from /workspace/repo_f233079/.git. The 12e760f5 commit object is no longer in any local store. Examiner PR63 file shas are unchanged (READY 6ffae37a, SCORE 3ab89d3a, SCORECARD 81f5a9b0).",
+  "Freeze line 91 still says the Sep-25 markets \"have no settlement on disk\"; that is now stale (settlements were captured 2026-10-02T03:29-03:31Z), but they are not pinned by amendment."
+ ],
+ "results": null,
+ "pnl": null,
+ "no_orders": true,
+ "no_messages_sent": true,
+ "no_fetch": true
+}
