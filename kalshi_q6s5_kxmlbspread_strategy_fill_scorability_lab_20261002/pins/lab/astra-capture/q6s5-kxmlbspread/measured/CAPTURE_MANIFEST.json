@@ -1,0 +1,73 @@
+{
+  "schema_id": "astra.q6s5_get_capture.manifest.v0",
+  "series": "KXMLBSPREAD",
+  "packet_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "panel_sha256": "e36de2d1ce6286dff90d25f2fae680170c8a469c443c1beed974ffe80383fba1",
+  "kick_sha256": "83cc234ca1ee511bd38fb3041cb79c99f9d9bdd6a24b7467600884a56f979cb6",
+  "accept_admit_sha256": "64ea00aa682b191d4bd3d39264389e5d813b9b8ae3883ac4337ee258925ab501",
+  "panel_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/panel_admitted.json",
+  "kick_path": "/workspace/lab/governance/astra/packets/CONDUCTOR_KICK_COLLECTOR_Q6S5_KXMLBSPREAD_GET_CAPTURE_2026-09-25.json",
+  "start_utc": "2026-09-25T04:41:35Z",
+  "arms": {
+    "Q6S5A0": "maker_vs_taker_native",
+    "Q6S5A1": "content_fresh_vs_stale_bin"
+  },
+  "api_base": "https://api.elections.kalshi.com/trade-api/v2",
+  "spacing_policy": {
+    "max_rpm": 3.0,
+    "min_gap_s": 20.0,
+    "after_429_extra_s": 2.0,
+    "after_429_window_s": 1800,
+    "storm_n": 3,
+    "storm_window_s": 600,
+    "storm_pause_s": 600,
+    "prefer_quieter_than_mechanic": true
+  },
+  "runtime_policy": {
+    "max_runtime_s": 21600,
+    "stop_when": "all_12_markets_settled OR 6h elapsed",
+    "terminal_ready": "READY_NOT_SCORED if honest full sweep of all 12 tickers (429 gaps OK)",
+    "terminal_incomplete": "INCOMPLETE_HONEST with gap list if still thin"
+  },
+  "events": [
+    "KXMLBSPREAD-26SEP242140HOUATH",
+    "KXMLBSPREAD-26SEP242140LAASEA",
+    "KXMLBSPREAD-26SEP242210SDLAD",
+    "KXMLBSPREAD-26SEP251840PITDET",
+    "KXMLBSPREAD-26SEP251840TBPHI",
+    "KXMLBSPREAD-26SEP251845NYMWSH"
+  ],
+  "markets": [
+    "KXMLBSPREAD-26SEP242140HOUATH-ATH2",
+    "KXMLBSPREAD-26SEP242140HOUATH-HOU2",
+    "KXMLBSPREAD-26SEP242140LAASEA-LAA2",
+    "KXMLBSPREAD-26SEP242140LAASEA-SEA2",
+    "KXMLBSPREAD-26SEP242210SDLAD-LAD2",
+    "KXMLBSPREAD-26SEP242210SDLAD-SD2",
+    "KXMLBSPREAD-26SEP251840PITDET-DET2",
+    "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+    "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+    "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+    "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+    "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+  ],
+  "fee_policy": {
+    "label": "CACHE",
+    "expected_cache": {
+      "fee_type": "quadratic",
+      "fee_multiplier": 0.5
+    },
+    "claim_as_live_R1P1": false,
+    "note": "Record observed from GET /series/KXMLBSPREAD but label CACHE until Examiner live pin"
+  },
+  "refuse": [
+    "orders",
+    "admit.py",
+    "score",
+    "invent",
+    "PnL",
+    "touch_ADMIT1"
+  ],
+  "results": null,
+  "pnl": null
+}

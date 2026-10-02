@@ -1,0 +1,38 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
+  "status": "NOT_RUN",
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "verdict_domain": "ITERATE|INCONCLUSIVE",
+  "counts_toward_keep": false,
+  "promote": false,
+  "fills_are_MODEL": true,
+  "fee": "CACHE_NOT_R1P1",
+  "accept_sha256": "9c6e19ca11a855015fb4e3e63cd65ae5e5c334875240e817e164e988426df9f5",
+  "freeze_sha256": "213ee6dd33f292c8041977b0b8d7566da9412fd3debe0597643c500dc1e42db4",
+  "A1_null_reason": "STALE_BIN_EMPTY",
+  "live_promotion": false,
+  "counted_as_experiment_pnl": false,
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "metrics": {
+    "Q6S5A0_maker_vs_taker_roi_delta": null,
+    "Q6S5A1_fresh_vs_stale_gap": null,
+    "requested_contracts_simulated": null,
+    "filled_contracts_simulated": null,
+    "fill_rate_simulated": null,
+    "unresolved_inventory": null,
+    "settled_join_n": null,
+    "n_books": null,
+    "fees_2x": null,
+    "one_tick_worse": null
+  },
+  "simulated_fills": null,
+  "common_scorecard": {
+    "net_pnl_without_rewards": null,
+    "net_pnl_with_rewards": null,
+    "fill_rate": null
+  },
+  "verdict": null
+}

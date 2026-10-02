@@ -1,0 +1,53 @@
+{
+  "cursor": "",
+  "trades": [
+    {
+      "count_fp": "1.00",
+      "created_time": "2026-09-25T04:56:05.829493Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6200",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "trade_id": "07238e22-0491-9140-bf7c-b6e507a12435",
+      "yes_price_dollars": "0.3800"
+    },
+    {
+      "count_fp": "24.00",
+      "created_time": "2026-09-25T04:56:05.829493Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6200",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "trade_id": "07238da2-b6a9-9753-b8df-4e8c1ab44f5a",
+      "yes_price_dollars": "0.3800"
+    },
+    {
+      "count_fp": "0.50",
+      "created_time": "2026-09-25T03:18:40.59151Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6400",
+      "taker_book_side": "ask",
+      "taker_outcome_side": "no",
+      "taker_side": "no",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "trade_id": "07238f13-16c9-9bbd-7f43-92a50147f03f",
+      "yes_price_dollars": "0.3600"
+    },
+    {
+      "count_fp": "1.00",
+      "created_time": "2026-09-25T03:18:40.59151Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6400",
+      "taker_book_side": "ask",
+      "taker_outcome_side": "no",
+      "taker_side": "no",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "trade_id": "07238f13-16c9-9618-4b91-416a3acdc70b",
+      "yes_price_dollars": "0.3600"
+    }
+  ]
+}

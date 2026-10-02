@@ -1,0 +1,170 @@
+{
+  "id": "SETTLEMENT_JOIN_MANIFEST_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SEP25",
+  "created_at": "2026-10-01T23:40:00-04:00",
+  "label": "SEPARATE settlement-join manifest for Examiner. NOT consumed by the PR60 runner (no sanctioned settlement path). No PnL/ROI computed. NOT_SCORED.",
+  "source": {
+    "ready": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/COLLECTOR_READY_SETTLEMENT_ONLY.json",
+    "ready_sha256": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "digests": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/DIGESTS.txt",
+    "digests_sha256": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044"
+  },
+  "scope": "Sep-25 panel markets only (6). Sep-24 universe closed and excluded.",
+  "rows": [
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T02:02:46.599505Z",
+      "close_time": "2026-09-26T02:00:40Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "no",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "0.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json",
+      "raw_sha256": "0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "event_ticker": "KXMLBSPREAD-26SEP251840PITDET",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T02:02:46.60128Z",
+      "close_time": "2026-09-26T02:00:40Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "no",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "0.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json",
+      "raw_sha256": "b60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T01:17:56.404927Z",
+      "close_time": "2026-09-26T01:15:52Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "no",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "0.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json",
+      "raw_sha256": "99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "event_ticker": "KXMLBSPREAD-26SEP251840TBPHI",
+      "settlement_value_dollars": "1.0000",
+      "mapped_outcome": "YES",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T01:17:56.40621Z",
+      "close_time": "2026-09-26T01:15:52Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "yes",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "1.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "YES",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json",
+      "raw_sha256": "f380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T01:52:16.449203Z",
+      "close_time": "2026-09-26T01:50:12Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "no",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "0.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json",
+      "raw_sha256": "378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "event_ticker": "KXMLBSPREAD-26SEP251845NYMWSH",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "mapping_rule": "settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; otherwise null",
+      "status": "finalized",
+      "settlement_ts": "2026-09-26T01:52:16.448688Z",
+      "close_time": "2026-09-26T01:50:12Z",
+      "cross_check_only_not_used_for_mapping": {
+        "result": "no",
+        "result_agrees_with_mapping": true,
+        "summary_settlement_value_dollars": "0.0000",
+        "summary_agrees_with_raw": true
+      },
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "finalized": true,
+      "raw_path": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json",
+      "raw_sha256": "a721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b",
+      "in_pr60_panel": true,
+      "sep25": true,
+      "sep24": false
+    }
+  ],
+  "n_rows": 6,
+  "all_finalized": true,
+  "all_mapped": true,
+  "all_agree_with_conductor": true,
+  "all_sep25_in_panel_no_sep24": true,
+  "yes_tickers": [
+    "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+  ],
+  "pnl": null,
+  "roi": null,
+  "results": null,
+  "counts_toward_keep": false
+}

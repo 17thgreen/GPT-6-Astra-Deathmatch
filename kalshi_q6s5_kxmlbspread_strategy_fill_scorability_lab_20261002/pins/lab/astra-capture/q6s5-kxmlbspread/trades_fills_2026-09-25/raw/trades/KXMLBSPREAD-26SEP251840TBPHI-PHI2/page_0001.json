@@ -1,0 +1,125 @@
+{
+  "cursor": "",
+  "trades": [
+    {
+      "count_fp": "7.00",
+      "created_time": "2026-09-25T05:50:48.479253Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "072389d5-b4e1-8bad-2d26-f340ada8ec2d",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "2.00",
+      "created_time": "2026-09-25T05:47:51.940527Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "072389ce-e281-8b55-a473-2d4dd878e169",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "25.10",
+      "created_time": "2026-09-25T05:25:26.841119Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "072389b8-9a21-953d-1298-a25aa8abbcb5",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "5.00",
+      "created_time": "2026-09-25T04:57:58.695128Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238e17-3021-9551-020e-ab20621735c1",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "25.10",
+      "created_time": "2026-09-25T04:19:27.945164Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238e8a-3d81-a4e5-2716-e661a6e51dc9",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "17.57",
+      "created_time": "2026-09-25T04:05:53.732596Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238f54-4c41-8bb1-e8ed-e7a10d409421",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "2.41",
+      "created_time": "2026-09-25T03:19:08.702383Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238f48-f139-92bc-158b-83dfcb1591ab",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "251.05",
+      "created_time": "2026-09-25T03:15:50.157843Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238f3c-c779-b89c-cdc1-f4d77786753b",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "50.23",
+      "created_time": "2026-09-25T02:56:22.466102Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6100",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238ff5-3c29-b69d-6a9c-617e55124274",
+      "yes_price_dollars": "0.3900"
+    },
+    {
+      "count_fp": "33.00",
+      "created_time": "2026-09-25T00:43:58.962452Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6300",
+      "taker_book_side": "ask",
+      "taker_outcome_side": "no",
+      "taker_side": "no",
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "trade_id": "07238d10-2c79-817f-dbac-a7013c90b01a",
+      "yes_price_dollars": "0.3700"
+    }
+  ]
+}

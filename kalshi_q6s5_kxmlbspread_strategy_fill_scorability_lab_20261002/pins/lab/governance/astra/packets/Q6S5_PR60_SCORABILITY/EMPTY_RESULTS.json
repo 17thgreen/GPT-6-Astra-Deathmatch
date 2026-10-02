@@ -1,0 +1,25 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
+  "status": "NOT_RUN",
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "metrics": {
+    "Q6S5A0_maker_vs_taker_roi_delta": null,
+    "Q6S5A1_fresh_vs_stale_gap": null,
+    "requested_contracts_simulated": null,
+    "filled_contracts_simulated": null,
+    "fill_rate_simulated": null,
+    "unresolved_inventory": null,
+    "settled_join_n": null,
+    "fees_2x": null,
+    "one_tick_worse": null
+  },
+  "simulated_fills": null,
+  "common_scorecard": {
+    "net_pnl": null,
+    "fill_rate": null
+  },
+  "counts_toward_keep": false,
+  "verdict": null
+}

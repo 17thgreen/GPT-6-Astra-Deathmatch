@@ -1,0 +1,439 @@
+{
+  "id": "SIMULATOR_READY_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SETTLED_2026-10-02",
+  "role": "SIMULATOR",
+  "status": "READY_NOT_SCORED",
+  "scored": false,
+  "keep_claim": false,
+  "no_gets": true,
+  "no_orders": true,
+  "pnl": null,
+  "roi": null,
+  "results": null,
+  "created_at": "2026-10-01T23:40:26-04:00",
+  "created_at_utc": "2026-10-02T03:40:26+00:00",
+  "kick_ref": {
+    "from": "Conductor",
+    "pr": 60,
+    "experiment": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+    "state": "UNBLOCKED (Sep-25 settlements fetched)",
+    "main": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+    "pr60_merge_commit": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+    "merge_packet": "lab/governance/astra/packets/CONDUCTOR_MERGE_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-29.json",
+    "merge_packet_sha256": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef"
+  },
+  "head_verification": {
+    "checkout": "/workspace/repo_f233079",
+    "head": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+    "worktree_clean": true,
+    "note": ".git lacks refs/ (empty dir lost on box restore); verified via read-only copy /tmp/gitcheck_f233079.git with empty refs restored; checkout untouched; no network"
+  },
+  "lab": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002",
+  "runner": {
+    "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/runner_tree/kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925/orchestrator.py",
+    "sha256": "296cfe64ff24c2fad0437ce9a9ec11458f557ee94ee900bd621160dc283fa597",
+    "git_blob": "2f4ca4e3d5521e0057c969532618a760f63b0bba",
+    "byte_identical_to_merged_pr60_12e760f5": true,
+    "byte_identical_to_pr61_pr60_check_copy": true,
+    "lab_tree_id_f233079d_eq_12e760f5": "78fca23c47fd8475771bec39bddc516efd92b06d",
+    "parent_feequeue_orchestrator_sha256": "e224686a1bbe4173f00e62c3d2cba78a3c48eecef45ed77c678564def9d5bbfc",
+    "recorded_before_run": [
+      "provenance/runner_sha256_BEFORE_RUN.txt",
+      "provenance/runner_sha256_BEFORE_RUN_ADDENDUM_merged_pr60.txt"
+    ],
+    "runner_code_edited": false,
+    "PARENT": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/runner_tree",
+    "driver": {
+      "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/run_pr60.py",
+      "sha256": "c13d0b61a3567800d8b6cea031c3c97741578f8e47f61a8b61d698f0c55994cf"
+    },
+    "unit_tests": "14/14 OK offline (logs/unit_tests.txt)",
+    "network_attempts": 0
+  },
+  "input_sha256": {
+    "COLLECTOR_READY_SETTLEMENT_ONLY.json": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "settlement DIGESTS.txt": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+    "DIGESTS entry SETTLEMENT_SUMMARY.json": "2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json": "0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json": "b60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json": "99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json": "f380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json": "378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6",
+    "DIGESTS entry raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json": "a721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b",
+    "DIGESTS entry requests.jsonl": "27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317",
+    "SOURCE_PINS.json (packets)": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+    "SOURCE_PINS.json (runner vendored)": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1",
+    "PR60 freeze md (packets)": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "PR60 freeze md (packets subfolder)": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "PR60 freeze md (runner vendored)": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+    "PR60 implementation ACCEPT (packets)": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+    "PR60 companion rulings ACCEPT (packets)": "a5398129aa45c5dee5fdd15656a252bb6c460d00e4f5b06360ce522de0f968b4",
+    "PR60 dual-ACCEPT reconcile (packets)": "0f33a94c970eec6a9863041396071c78ce64b58abc8a7ab91f48062fbfc052b0",
+    "PR60 MERGE packet": "3486a2fe71da0be40a3cb6202abcc30e1783515180e20f594b3c25b034414bef",
+    "PR60 Variants kick (packets)": "dc19794bdb8e26c3a3f4fe86eadc9bec1b02db97d508fca9426e3c3eddfb6bc8",
+    "PR60 FROZEN_EXPERIMENT (packets subfolder)": "7383b4836a378b1da8afe889d82a13997b9b3a4584bdc454ae1c67785eab5fff",
+    "Examiner PR60 READY_NOT_SCORED": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698",
+    "panel_stub.json (capture)": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+    "panel_stub.json (runner_tree, used by runner)": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+    "parent feequeue freeze (packets)": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "parent feequeue freeze (runner_tree, used by runner)": "4f65dcdf536755b9f7dc2449c2dcd90b2df74cdf99a441b676f1a71c4d709c6e",
+    "EXAMINER_FEE_PIN (CACHE quadratic x0.5)": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a"
+  },
+  "tape_pins": "SOURCE_PINS 1846a971: inputs_core 9/9 and inputs_raw 87/87 re-hash PASS (Sep-24 raw pins hashed for integrity only; out of scope)",
+  "settlement_inputs": {
+    "ready": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/COLLECTOR_READY_SETTLEMENT_ONLY.json",
+    "ready_sha256": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "digests": "/workspace/lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/DIGESTS.txt",
+    "digests_sha256": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+    "digests_entries_verified": "8/8 sha256sum -c OK"
+  },
+  "scope_tickers_sep25_only": [
+    "KXMLBSPREAD-26SEP251840PITDET-DET2",
+    "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+    "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+    "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+    "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+    "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+  ],
+  "sep24_excluded": true,
+  "settlement_mapping": [
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "status": "finalized",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "settlement_ts": "2026-09-26T02:02:46.599505Z",
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "raw_sha256": "0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf"
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "status": "finalized",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "settlement_ts": "2026-09-26T02:02:46.60128Z",
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "raw_sha256": "b60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c"
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "status": "finalized",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "settlement_ts": "2026-09-26T01:17:56.404927Z",
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "raw_sha256": "99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb"
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "status": "finalized",
+      "settlement_value_dollars": "1.0000",
+      "mapped_outcome": "YES",
+      "settlement_ts": "2026-09-26T01:17:56.40621Z",
+      "conductor_stated": "YES",
+      "agrees_with_conductor": true,
+      "raw_sha256": "f380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3"
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "status": "finalized",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "settlement_ts": "2026-09-26T01:52:16.449203Z",
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "raw_sha256": "378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6"
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "status": "finalized",
+      "settlement_value_dollars": "0.0000",
+      "mapped_outcome": "NO",
+      "settlement_ts": "2026-09-26T01:52:16.448688Z",
+      "conductor_stated": "NO",
+      "agrees_with_conductor": true,
+      "raw_sha256": "a721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b"
+    }
+  ],
+  "settlement_mapping_rule": "Kalshi settlement_value_dollars verbatim: \"1.0000\"->YES, \"0.0000\"->NO; nothing else used (result field cross-checked only: agrees 6/6)",
+  "conductor_claim_check": {
+    "all_finalized": true,
+    "agrees": true,
+    "yes": [
+      "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+    ],
+    "disagreements": []
+  },
+  "settlement_consumption_situation": {
+    "situation": "B_NO_SANCTIONED_PATH__RUNNER_AS_DESIGNED_PLUS_SEPARATE_MANIFEST",
+    "evidence": [
+      "PR60 orchestrator has no settlement arg/config/loader/join; LOOKAHEAD_KEYS includes settlement_ts",
+      "probe classify_fill(row with settlement_ts) -> LookaheadRefused: ",
+      "probe classify_fill(row with only settlement_value_dollars) -> status INCOMPLETE_NOT_INVENTED (field ignored)",
+      "sibling parent feequeue settled_join(panel) -> None by design (\"No settlement join is published\")",
+      "PR60 runner has no tape loader; designed entry points = instrument_binding, digest_status, conduct(arm), published_scorecard; no quote/trade rows constructed by Simulator"
+    ],
+    "separate_manifest": {
+      "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/outputs/SETTLEMENT_JOIN_MANIFEST_SEP25.json",
+      "sha256": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17",
+      "label": "SEPARATE, not consumed by runner, for Examiner join; no PnL/ROI"
+    }
+  },
+  "metrics_verbatim": {
+    "instrument_binding": {
+      "admit1_ruling_prefix": "ac7cfe63",
+      "admit_py_run": false,
+      "admitted_at": null,
+      "arms": [
+        {
+          "analysis_slice": "maker_vs_taker_native",
+          "id": "Q6S5A0"
+        },
+        {
+          "analysis_slice": "content_fresh_vs_stale_bin",
+          "id": "Q6S5A1"
+        }
+      ],
+      "cache_labeled": true,
+      "conductor_accept_sha256": "c6f95b32a9224a6beede1a8c0e3d7f0a5a4530cc8b3d0b9d997995f65d64f8f3",
+      "counts_toward_keep": false,
+      "digest_all_match_claimed": true,
+      "digest_missing": [],
+      "dual_cloud": false,
+      "events_n": 6,
+      "examiner_status": "HOLD_PRE_PR",
+      "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+      "feature_family": "Q6S5-MLBSPREAD-STRATEGY-FILL",
+      "fee_cache": {
+        "cache_labeled": true,
+        "fee_dollars": null,
+        "fee_type": "quadratic",
+        "formula_id": null,
+        "label": "CACHE_NOT_R1P1",
+        "live_r1p1": false,
+        "multiplier": "0.5",
+        "pnl": null,
+        "results": null,
+        "series": "KXMLBSPREAD"
+      },
+      "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
+      "fill_model": "public_trade_through_conservative",
+      "formula_id": null,
+      "freeze_sha256": "9f50ba19694083c774bbe2a6cff491d1a2f81ed3a6f9cc21a3641a938c84955d",
+      "kick_sha256_prefix": "dc19794b",
+      "knob": "fill_model",
+      "lab_directory": "kalshi_q6s5_kxmlbspread_strategy_fill_lab_20260925",
+      "lee_ready": "REFUSED",
+      "live_gets": 0,
+      "live_orders": false,
+      "live_r1p1": false,
+      "markets_n": 12,
+      "mechanic_demo_observed": "UNAVAILABLE",
+      "panel_stub_sha256": "c7f1f1f4ca263838c4600ed46db8f525b68efc5399a567bd60929d18d76803cc",
+      "panel_version": "2026-09-25.q6s5-kxmlbspread-v0",
+      "parent_freeze_intact": true,
+      "pnl": null,
+      "rails_commit": "6a28e0d6254327ea4e6451c781bec56215ac6cac",
+      "results": null,
+      "roi": null,
+      "series_ticker": "KXMLBSPREAD",
+      "stub_ready": false
+    },
+    "conduct_Q6S5A0": {
+      "analysis_slice": "maker_vs_taker_native",
+      "arm": "Q6S5A0",
+      "counts_toward_keep": false,
+      "examiner_status": "HOLD_PRE_PR",
+      "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+      "fee_cache": {
+        "cache_labeled": true,
+        "fee_dollars": null,
+        "fee_type": "quadratic",
+        "formula_id": null,
+        "label": "CACHE_NOT_R1P1",
+        "live_r1p1": false,
+        "multiplier": "0.5",
+        "pnl": null,
+        "results": null,
+        "series": "KXMLBSPREAD"
+      },
+      "fill_model": "public_trade_through_conservative",
+      "formula_id": null,
+      "knob": "fill_model",
+      "lee_ready": "REFUSED",
+      "live_gets": 0,
+      "live_orders": false,
+      "mechanic_demo_observed": "UNAVAILABLE",
+      "pnl": null,
+      "results": null,
+      "roi": null,
+      "series_ticker": "KXMLBSPREAD",
+      "stub_ready": false
+    },
+    "conduct_Q6S5A1": {
+      "analysis_slice": "content_fresh_vs_stale_bin",
+      "arm": "Q6S5A1",
+      "counts_toward_keep": false,
+      "examiner_status": "HOLD_PRE_PR",
+      "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+      "fee_cache": {
+        "cache_labeled": true,
+        "fee_dollars": null,
+        "fee_type": "quadratic",
+        "formula_id": null,
+        "label": "CACHE_NOT_R1P1",
+        "live_r1p1": false,
+        "multiplier": "0.5",
+        "pnl": null,
+        "results": null,
+        "series": "KXMLBSPREAD"
+      },
+      "fill_model": "public_trade_through_conservative",
+      "formula_id": null,
+      "knob": "fill_model",
+      "lee_ready": "REFUSED",
+      "live_gets": 0,
+      "live_orders": false,
+      "mechanic_demo_observed": "UNAVAILABLE",
+      "pnl": null,
+      "results": null,
+      "roi": null,
+      "series_ticker": "KXMLBSPREAD",
+      "stub_ready": false
+    },
+    "digest_status_summary": {
+      "digest_all_match_claimed": true,
+      "missing": [],
+      "mismatch": [],
+      "bytes_recreated": false
+    },
+    "published_scorecard_metrics": {
+      "Q6S5A0_roi": null,
+      "Q6S5A1_roi": null,
+      "pnl": null,
+      "results": null
+    },
+    "common_scorecard": {
+      "adverse_selection_after_fills": {
+        "measured": false,
+        "value": null
+      },
+      "calibration": {
+        "emits_probabilities": false,
+        "measured": false,
+        "value": null,
+        "value_if_not_probabilistic": "N/A"
+      },
+      "capital_hours": {
+        "measured": false,
+        "value": null
+      },
+      "drawdown": {
+        "measured": false,
+        "value": null
+      },
+      "event_concentration": {
+        "measured": false,
+        "value": null
+      },
+      "feasible_vs_requested_size": {
+        "measured": false,
+        "value": null
+      },
+      "fill_rate": {
+        "measured": false,
+        "value": null
+      },
+      "net_pnl_with_rewards": {
+        "measured": false,
+        "unit": "USD",
+        "value": null
+      },
+      "net_pnl_without_rewards": {
+        "measured": false,
+        "unit": "USD",
+        "value": null
+      },
+      "rewards_actually_earned": {
+        "measured": false,
+        "unit": "USD",
+        "value": null
+      },
+      "unresolved_inventory": {
+        "measured": false,
+        "value": null
+      }
+    },
+    "simulated_fills_block": {
+      "counts_toward_keep": false,
+      "fill_model_ref": null,
+      "fill_rate_simulated": {
+        "measured": false,
+        "value": null
+      }
+    },
+    "Q6S5A0_roi": null,
+    "Q6S5A1_roi": null,
+    "fee": {
+      "cache_labeled": true,
+      "fee_dollars": null,
+      "fee_type": "quadratic",
+      "formula_id": null,
+      "label": "CACHE_NOT_R1P1",
+      "live_r1p1": false,
+      "multiplier": "0.5",
+      "pnl": null,
+      "results": null,
+      "series": "KXMLBSPREAD"
+    },
+    "mechanic_demo_observed": "UNAVAILABLE",
+    "write_scorecard": "ScorecardPromotionRefused: "
+  },
+  "metric_flags": {
+    "coverage_and_simulated_fill_metrics_keep_eligible": false,
+    "counts_toward_keep": false,
+    "note": "All coverage/simulated-fill fields (fill_rate, simulated_fills, through flags) are NON-KEEP-ELIGIBLE; all are null in runner output. Nulls kept null. Unresolved inventory is not profit."
+  },
+  "fee": "CACHE_NOT_R1P1 (quadratic x0.5, formula_id null), fee pin EXAMINER_FEE_PIN 9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a; not R1-P1",
+  "output_sha256": {
+    "DEVIATIONS.md": "535c6f2ffb36dccc491cd7e8f99d99d5c8e0e24afd3ee5e6d84444c3dd9392c0",
+    "logs/run_stdout.txt": "91e0f1e02cf32b9217e11d26f9a2990d22f9043a446b1b7975e127898257756a",
+    "logs/unit_tests.txt": "f3c93f227156ed5f2c8abfa84e1b9aea4382eaaf3b3adf06b391909922966b89",
+    "outputs/PR60_RUN_OUTPUT.json": "9cf242e761662bc7f146c96d66f7e6dcff605c2d06fbd949f514732f32dd4998",
+    "outputs/SETTLEMENT_JOIN_MANIFEST_SEP25.json": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17",
+    "provenance/digest_verification.json": "0454976dc9c85f537559d4f8a3e5bd88b60e6b8db3e519b6ee4f9f3f90040ad1",
+    "provenance/make_digest_verification.py": "2b332eba660fcf6e00eebfbf40e299c4e979662dc80b69509e9f1f0395eb8054",
+    "provenance/make_digests.py": "e6b7ca638ba7156c9b35958f7691fd736a18b7be3bb7bb0c1c4892cbb425f434",
+    "provenance/make_settlement_join_manifest.py": "f638a4996cb0874c6870e5d3304cc97dbae964f558b7aa5c6561b9dd37330448",
+    "provenance/runner_sha256_BEFORE_RUN.txt": "9327a7dcf1d290ad83932d15000733afae32072791e301a03ab0ebbd1c6c9f32",
+    "provenance/runner_sha256_BEFORE_RUN_ADDENDUM_merged_pr60.txt": "1b9aaf32fe38641355f3930f134452cce2fadf83763b38ba3c151c12b4000d3b",
+    "provenance/runner_tree_files_sha256_BEFORE_RUN.txt": "b698e6bcded855a4a3b3447e4b99bc9e2013df9124e0b878ffde5ac3f9c95b16",
+    "run_pr60.py": "c13d0b61a3567800d8b6cea031c3c97741578f8e47f61a8b61d698f0c55994cf",
+    "run_unit_tests_guarded.py": "adf80f36b73fdc9f89221389384158b203f914ed4e96d1527f0b2e80e205bab5"
+  },
+  "digests_txt": {
+    "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DIGESTS.txt",
+    "sha256": "4e670303d576678fce40568f45d60059ca6078e0001e697129de7a04750ee530",
+    "entries": 14,
+    "sha256sum_c": "OK",
+    "recheck_identical": true
+  },
+  "digest_verification": {
+    "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/provenance/digest_verification.json",
+    "sha256": "0454976dc9c85f537559d4f8a3e5bd88b60e6b8db3e519b6ee4f9f3f90040ad1",
+    "n_items": 132,
+    "n_pass": 132,
+    "all_pass": true
+  },
+  "deviations": {
+    "path": "/workspace/lab/astra-science/kalshi_q6s5_kxmlbspread_strategy_fill_settled_run_20261002/DEVIATIONS.md",
+    "sha256": "535c6f2ffb36dccc491cd7e8f99d99d5c8e0e24afd3ee5e6d84444c3dd9392c0"
+  },
+  "examiner_ref": {
+    "path": "lab/governance/astra/packets/EXAMINER_READY_NOT_SCORED_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_2026-09-25.json",
+    "sha256": "85cdd05c3333da3eb373212d1bb4647729f6586185d518288df417e8de963698"
+  },
+  "not_an_examiner_score": true
+}

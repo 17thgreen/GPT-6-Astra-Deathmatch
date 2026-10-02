@@ -1,0 +1,17 @@
+{
+  "cursor": "",
+  "trades": [
+    {
+      "count_fp": "357.00",
+      "created_time": "2026-09-25T05:36:21.458678Z",
+      "is_block_trade": false,
+      "no_price_dollars": "0.6700",
+      "taker_book_side": "bid",
+      "taker_outcome_side": "yes",
+      "taker_side": "yes",
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "trade_id": "0723892b-6c39-84f0-e3dd-b84a0f0e4bfd",
+      "yes_price_dollars": "0.3300"
+    }
+  ]
+}

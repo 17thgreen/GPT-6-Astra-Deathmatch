@@ -1,0 +1,84 @@
+{
+  "id": "Q6S5_KXMLBSPREAD_SEP25_SETTLEMENT_ONLY_2026-10-02",
+  "authority": "a5398129",
+  "source_pins": {
+    "path": "lab/governance/astra/packets/Q6S5_KXMLBSPREAD_STRATEGY_FILL/SOURCE_PINS.json",
+    "sha256": "1846a9710375dd418983e1a03e05ac15386138ada7c405923b7fd0514cf116a1"
+  },
+  "note": "Fields copied exactly from GET /trade-api/v2/markets/{ticker}; null if absent; nothing imputed. settled := status in {settled,finalized} and result non-empty.",
+  "tag": "NOT_SCORED",
+  "rows": [
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-DET2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "no",
+      "settlement_ts": "2026-09-26T02:02:46.599505Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "0.0000",
+      "expiration_value": "1",
+      "settled": true
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840PITDET-PIT2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "no",
+      "settlement_ts": "2026-09-26T02:02:46.60128Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "0.0000",
+      "expiration_value": "1",
+      "settled": true
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "no",
+      "settlement_ts": "2026-09-26T01:17:56.404927Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "0.0000",
+      "expiration_value": "2",
+      "settled": true
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251840TBPHI-TB2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "yes",
+      "settlement_ts": "2026-09-26T01:17:56.40621Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "1.0000",
+      "expiration_value": "2",
+      "settled": true
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "no",
+      "settlement_ts": "2026-09-26T01:52:16.449203Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "0.0000",
+      "expiration_value": "1",
+      "settled": true
+    },
+    {
+      "ticker": "KXMLBSPREAD-26SEP251845NYMWSH-WSH2",
+      "fetched": true,
+      "http_status": 200,
+      "status": "finalized",
+      "result": "no",
+      "settlement_ts": "2026-09-26T01:52:16.448688Z",
+      "settlement_value": null,
+      "settlement_value_dollars": "0.0000",
+      "expiration_value": "1",
+      "settled": true
+    }
+  ]
+}
