@@ -35,7 +35,7 @@ Start with [Q6 results](nfl_factorial_lab_20260921/NFL_Allocation_Factorial_Resu
 | `nfl_factorial_lab_20260921` | Q6 eight-combination allocation study |
 | `nfl_paircheck_lab_20260922` | Q7 chosen-pair cost check. Later registry rows record a Q7 Arm B kill and frozen rehab pass 1 (PR38) and pass 2 (PR47), with desk-verified `q3300_d0.25_B.json` / `q3300_d0.25_D.json` summary hashes. In-tree `results/NOT_RUN.json` stays `NOT_RUN_INPUTS_MISSING` (`scenarios_executed` 0). The reconciliation memo is not a score |
 | `nfl_q7_rehab_p1_cadence_20260923` | Q7 Arm B rehab pass 1. One knob: 600s admission cadence on new paired exposure. Scorecard null. Parent Q7 is imported, not edited |
-| `nfl_prospective_recorder_20260922` | GET-only prospective recorder (ADMIT-1); deployed and running since 2026-09-22. Fleet evidence: `17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c` |
+| `nfl_prospective_recorder_20260922` | GET-only prospective recorder (ADMIT-1). Deployed 2026-09-22 (fleet evidence: `17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c`). ADMIT-1 is now CLOSED/DOWN per Conductor ruling; no recorder is running. Run 18 closed truncated: record `lab/incidents/ADMIT1_TRUNCATION_BOX_REBUILD_2026-10-02_v2_CORRECTED.json` sha256 `52a6b8a1378b120a241ce9c6b302ca214b0a04b7360773269293d845b8623d3d`. Burst-profile spec: `lab/astra-capture/prospective/ADMIT1_POST_RUN_NOTE_2026-10-02.md` sha256 `9a2870dba116645900809026be14303b61cf53913920688197f27d94cbd43362` |
 | `kalshi_c1_kxufcfight_lab_20260922` | C1 KXUFCFIGHT admit-wire scaffold. Clock accepts the admitted panel. Scorecard null. 16 unit tests green |
 | `kalshi_c1_kxufcfight_honesty_lab_20260922` | C1 UFC fee+queue honesty bakeoff. Scorecard null. Admitted panel bytes not in this checkout |
 | `kalshi_soft_blended_reserves_000_lab_20260923` | Cap-SR soft-policy measurement on the A2 substrate. Scorecard null. Not a promotion claim |
@@ -112,7 +112,13 @@ in-tree pair-check result file remains `NOT_RUN_INPUTS_MISSING`
 `lab/governance/astra/packets/q7_reconciliation_20260924/Q7_RECONCILIATION_MEMO_2026-09-24.md`
 (PR51, on main) is documentation and is not a score. This paragraph does not
 report Q7 P&L. Fresh-game validation remains a separate gate. The prospective
-recorder (ADMIT-1) in `nfl_prospective_recorder_20260922/` has been deployed
-and running since 2026-09-22. Fleet evidence is
-`17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c`. PHI@CHI's
+recorder (ADMIT-1) in `nfl_prospective_recorder_20260922/` was deployed on
+2026-09-22. Fleet evidence is
+`17thgreen/Grokbot-Deathmatch-Dedicated-Repo` commit `1825ec8c`. ADMIT-1 is now
+CLOSED/DOWN per Conductor ruling and no recorder is running. Run 18 closed
+truncated: record
+`lab/incidents/ADMIT1_TRUNCATION_BOX_REBUILD_2026-10-02_v2_CORRECTED.json`
+sha256 `52a6b8a1378b120a241ce9c6b302ca214b0a04b7360773269293d845b8623d3d`.
+Burst-profile spec: `lab/astra-capture/prospective/ADMIT1_POST_RUN_NOTE_2026-10-02.md`
+sha256 `9a2870dba116645900809026be14303b61cf53913920688197f27d94cbd43362`. PHI@CHI's
 full T−7d window is already missed and is not backfilled.

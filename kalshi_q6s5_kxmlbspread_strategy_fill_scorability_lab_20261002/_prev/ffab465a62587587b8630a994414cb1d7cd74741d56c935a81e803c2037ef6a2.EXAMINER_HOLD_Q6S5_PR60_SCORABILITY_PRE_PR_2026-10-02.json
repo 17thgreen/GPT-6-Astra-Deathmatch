@@ -1,7 +1,7 @@
 {
   "id": "EXAMINER_HOLD_Q6S5_PR60_SCORABILITY_PRE_PR",
   "packet": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
-  "status": "SUPERSEDED (PR64 merged eb33f094; Examiner SCORE 961f72fa ITERATE)",
+  "status": "HOLD_PRE_PR",
   "stub_ready": false,
   "scored": false,
   "verdict": null,
