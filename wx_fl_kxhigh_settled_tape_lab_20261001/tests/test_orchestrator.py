@@ -64,12 +64,14 @@ class AuthorityTests(unittest.TestCase):
         self.assertIsNone(report['results'])
         self.assertIsNone(report['pnl'])
         self.assertEqual(orchestrator.ACCEPT_SHA256, snapshot_loader.sha256_file(orchestrator.ACCEPT_PATH))
+        self.assertEqual(orchestrator.ADDENDUM_SHA256, snapshot_loader.sha256_file(orchestrator.ADDENDUM_PATH))
         self.assertEqual(orchestrator.RULING_SHA256, snapshot_loader.sha256_file(orchestrator.RULING_PATH))
         self.assertEqual(orchestrator.BUNDLE_SHA256, snapshot_loader.sha256_file(orchestrator.BUNDLE_TGZ))
         authority = json.loads(
             (orchestrator.ROOT / 'AUTHORITY_VERIFICATION.json').read_text(encoding='utf-8')
         )
         self.assertEqual(authority['accept_sha256'], orchestrator.ACCEPT_SHA256)
+        self.assertEqual(authority['addendum_sha256'], orchestrator.ADDENDUM_SHA256)
         self.assertEqual(authority['ruling_sha256'], orchestrator.RULING_SHA256)
         self.assertEqual(authority['freeze_sha256'], orchestrator.FREEZE_SHA256)
         self.assertEqual(authority['snapshot_sha256'], orchestrator.SNAPSHOT_SHA256)
@@ -204,6 +206,7 @@ class RefusalTests(unittest.TestCase):
 class SyntheticMetricTests(unittest.TestCase):
     def test_threshold_is_six_of_eight_and_h2_is_less_or_equal(self):
         self.assertEqual(orchestrator.locdo_vote_threshold(8), 6)
+        self.assertEqual(orchestrator.locdo_vote_threshold(3), 2)
         self.assertIsNone(orchestrator.locdo_vote_threshold(2))
         self.assertEqual(orchestrator.H2, 'maker_gross_roi_delta_FL2_minus_FL1 <= 0')
         votes = [Decimal('-1')] * 6 + [Decimal('1'), Decimal('1')]
@@ -212,7 +215,34 @@ class SyntheticMetricTests(unittest.TestCase):
         self.assertEqual(orchestrator.reading_h2(Decimal('-0.1'), votes), 'consistent_with_H2')
         self.assertEqual(orchestrator.reading_h2(Decimal('0.1'), [Decimal('1')] * 6 + [Decimal('-1')] * 2), 'inconsistent_with_H2')
         self.assertEqual(orchestrator.reading_h1(Decimal('1'), [Decimal('1'), Decimal('1')]), 'inconclusive')
+        self.assertEqual(
+            orchestrator.reading_h1(Decimal('0.1'), [Decimal('0.1'), Decimal('0.2'), Decimal('-1')]),
+            'supports_H1',
+        )
+        self.assertEqual(
+            orchestrator.reading_h1(
+                Decimal('0.074'),
+                [Decimal('-0.44'), Decimal('-0.44'), Decimal('1.11')],
+            ),
+            'inconclusive',
+        )
         self.assertEqual(orchestrator.verdict_for('contradicts_H1'), 'ITERATE')
+        self.assertEqual(
+            orchestrator.verdict_for('contradicts_H1', date_level_n=1, kill_mapping_disabled=True),
+            'ITERATE',
+        )
+        self.assertNotEqual(
+            orchestrator.verdict_for('contradicts_H1', date_level_n=1, kill_mapping_disabled=True),
+            'KILL',
+        )
+        self.assertEqual(
+            orchestrator.verdict_for('contradicts_H1', date_level_n=2, kill_mapping_disabled=False),
+            'KILL',
+        )
+        self.assertEqual(
+            orchestrator.verdict_for('supports_H1', date_level_n=2, kill_mapping_disabled=False),
+            'ITERATE',
+        )
         self.assertEqual(orchestrator.KILL_SCOPE, 'KXHIGHCHI/KXHIGHLAX/KXHIGHMIA/KXHIGHNY only')
 
     def test_equal_weighted_differs_from_trade_weighted_and_sep25_split(self):
@@ -280,6 +310,57 @@ class SyntheticMetricTests(unittest.TestCase):
         )
         self.assertEqual(measured['verdict'], 'ITERATE')
 
+    def test_empty_arm_city_days_do_not_vote_and_small_n_is_inconclusive(self):
+        # Three D01 city-days produce LOCDO deltas -0.44, -0.44, +1.11.
+        # Their mean is 0.23/3. Five other city-days have no WXFL1 capital, so
+        # they are outside D01 and must not each copy the full delta as a vote.
+        rows = []
+        winners = ('KXHIGHCHI-26SEP25', 'KXHIGHMIA-26SEP25')
+        for event in winners:
+            rows.append(_obs('WXFL0', event, Decimal('0.11') / Decimal('1.11'), 0, '1'))
+            rows.append(_obs('WXFL1', event, '0.50', 1, '1'))
+        rows.append(_obs('WXFL0', 'KXHIGHNY-26SEP25', '0.05', 1, '1'))
+        rows.append(_obs(
+            'WXFL1', 'KXHIGHNY-26SEP25', Decimal('0.99') / Decimal('1.99'), 0, '1',
+        ))
+        for event in (
+            'KXHIGHCHI-26SEP24',
+            'KXHIGHLAX-26SEP24',
+            'KXHIGHMIA-26SEP24',
+            'KXHIGHNY-26SEP24',
+            'KXHIGHLAX-26SEP25',
+        ):
+            rows.append(_obs('WXFL0', event, '0.05', 0, '1'))
+        measured = orchestrator.measure_synthetic(rows)
+        self.assertEqual(len({row['event'] for row in rows}), 8)
+        self.assertEqual(measured['full']['n_eff_D01'], 3)
+        self.assertEqual(measured['full']['EW_delta_FL0_minus_FL1'], Decimal('0.23') / Decimal('3'))
+        votes = [item['EW_delta_FL0_minus_FL1'] for item in measured['locdo']]
+        self.assertEqual(votes, [Decimal('-0.44'), Decimal('-0.44'), Decimal('1.11')])
+        self.assertEqual(measured['variants_proposed_reading_H1'], 'inconclusive')
+        self.assertNotEqual(measured['variants_proposed_reading_H1'], 'supports_H1')
+        pair = orchestrator.measure_synthetic([
+            _obs('WXFL0', 'KXHIGHCHI-26SEP25', '0.10', 0, '1'),
+            _obs('WXFL1', 'KXHIGHCHI-26SEP25', '0.50', 1, '1'),
+            _obs('WXFL0', 'KXHIGHNY-26SEP25', '0.10', 0, '1'),
+            _obs('WXFL1', 'KXHIGHNY-26SEP25', '0.50', 1, '1'),
+        ])
+        self.assertEqual(pair['full']['n_eff_D01'], 2)
+        self.assertEqual(len(pair['locdo']), 2)
+        self.assertEqual(pair['variants_proposed_reading_H1'], 'inconclusive')
+        sep24_only = [
+            _obs('WXFL0', 'KXHIGHCHI-26SEP25', '0.10', 0, '1'),
+            _obs('WXFL1', 'KXHIGHCHI-26SEP25', '0.50', 1, '1'),
+            _obs('WXFL0', 'KXHIGHCHI-26SEP24', '0.05', 0, '1'),
+        ]
+        withheld = orchestrator.measure_synthetic(sep24_only)
+        self.assertEqual(withheld['without_sep25']['n_eff_D01'], 0)
+        self.assertEqual(withheld['without_sep25']['n_eff_D21'], 0)
+        self.assertIsNone(withheld['without_sep25']['full']['EW_delta_FL0_minus_FL1'])
+        self.assertIsNone(withheld['without_sep25']['locdo'])
+        self.assertEqual(withheld['without_sep25']['reading_h1'], 'inconclusive')
+        self.assertEqual(withheld['without_sep25']['reading_h2'], 'inconclusive')
+
 
 class RealTapeCountTests(unittest.TestCase):
     @classmethod
@@ -308,26 +389,66 @@ class RealTapeCountTests(unittest.TestCase):
         )
 
     def test_gm_cov_reports_unproven_windows_without_loosening(self):
-        windows = self.counts['gm_cov']['windows']
-        budget = windows['budget']
-        ticker_429 = windows['per_ticker_429']
-        storm = windows['storm']
-        self.assertEqual(budget['n_windows'], budget['proven'] + budget['not_proven'])
-        self.assertEqual(ticker_429['n_windows'], ticker_429['proven'] + ticker_429['not_proven'])
-        self.assertEqual(storm['n_windows'], storm['proven'] + storm['not_proven'])
-        self.assertGreater(budget['not_proven'], 0)
-        self.assertGreater(ticker_429['not_proven'], 0)
-        self.assertGreater(storm['not_proven'], 0)
-        self.assertEqual(budget['open_ended'], 36)
-        self.assertEqual(ticker_429['open_ended'], 9)
+        self.assertIn('union', self.counts['gm_cov']['rule'])
+        self.assertIn('requested_at is strictly after start', self.counts['gm_cov']['rule'])
         self.assertFalse(self.counts['cursor_minus_1s_assumed'])
-        self.assertGreater(self.counts['gm_cov']['near_miss_complete_poll_requested_at_before_window_end'], 0)
-        dropped = self.counts['gm_cov']['per_arm']['dropped_per_arm']
-        kept = self.counts['gm_cov']['per_arm']['kept_per_arm']
-        self.assertEqual(set(dropped), {'WXFL0', 'WXFL1', 'WXFL2'})
+        for name in ('gm_cov', 'gm_cov_single', 'gm_lit', 'gm_lit_pad'):
+            windows = self.counts[name]['windows']
+            for kind in ('budget', 'per_ticker_429', 'storm'):
+                bucket = windows[kind]
+                self.assertEqual(bucket['n_windows'], bucket['proven'] + bucket['not_proven'])
+                self.assertGreaterEqual(bucket['open_ended'], 0)
+            dropped = self.counts[name]['per_arm']['dropped_per_arm']
+            kept = self.counts[name]['per_arm']['kept_per_arm']
+            self.assertEqual(set(dropped), {'WXFL0', 'WXFL1', 'WXFL2'})
+            self.assertEqual(
+                sum(dropped.values()) + sum(kept.values()),
+                self.counts['row_rule_included_n'],
+            )
+        single = self.counts['gm_cov_single']
+        self.assertGreater(single['windows']['budget']['not_proven'], 0)
+        self.assertGreater(single['windows']['per_ticker_429']['not_proven'], 0)
+        self.assertEqual(single['windows']['budget']['open_ended'], 36)
+        self.assertEqual(single['windows']['per_ticker_429']['open_ended'], 9)
+        self.assertGreater(single['near_miss_complete_poll_requested_at_before_window_end'], 0)
+        self.assertFalse(single['decisive'])
+        self.assertEqual(self.counts['gm_cov']['windows']['budget']['open_ended'], 36)
+        union_budget = self.counts['gm_cov']['windows']['budget']
+        union_429 = self.counts['gm_cov']['windows']['per_ticker_429']
+        union_storm = self.counts['gm_cov']['windows']['storm']
+        self.assertEqual((union_budget['proven'], union_budget['not_proven']), (966, 84))
+        self.assertEqual((union_429['proven'], union_429['not_proven']), (115, 16))
+        self.assertEqual((union_storm['proven'], union_storm['not_proven']), (43, 182))
+        self.assertEqual(self.counts['gm_cov']['timestamp_only']['dropped_n'], 0)
+        self.assertEqual(self.counts['gm_cov']['timestamp_only']['kept_n'], 33757)
         self.assertEqual(
-            sum(dropped.values()) + sum(kept.values()),
-            self.counts['row_rule_included_n'],
+            self.counts['gm_cov']['per_arm']['dropped_per_arm'],
+            {'WXFL0': 0, 'WXFL1': 0, 'WXFL2': 0},
+        )
+        self.assertEqual(single['windows']['budget']['proven'], 418)
+        self.assertEqual(single['windows']['per_ticker_429']['proven'], 41)
+        self.assertEqual(single['timestamp_only']['dropped_n'], 18110)
+        self.assertEqual(
+            single['per_arm']['dropped_per_arm'],
+            {'WXFL0': 6581, 'WXFL1': 6592, 'WXFL2': 4937},
+        )
+        scope = self.counts['run_scope']
+        self.assertEqual(scope['reading_scope'], 'CHI/MIA/NY 2026-09-25 only')
+        self.assertEqual(scope['date_level_n'], 1)
+        self.assertEqual(scope['verdict_cap'], 'ITERATE')
+        self.assertTrue(scope['kill_mapping_disabled'])
+        self.assertEqual(scope['n_eff_D01'], 3)
+        self.assertEqual(scope['n_eff_D21'], 3)
+        self.assertEqual(scope['locdo_need_h1'], 2)
+        self.assertEqual(scope['locdo_need_h2'], 2)
+        self.assertIsNone(scope['variants_proposed_reading_H1'])
+        self.assertEqual(scope['without_sep25_n_eff_D01'], 0)
+        self.assertEqual(scope['without_sep25_n_eff_D21'], 0)
+        self.assertEqual(scope['without_sep25_reading_h1'], 'inconclusive')
+        self.assertEqual(scope['without_sep25_reading_h2'], 'inconclusive')
+        self.assertEqual(
+            scope['nonempty_city_days_per_arm'],
+            self.counts['gm_cov']['nonempty_city_days_per_arm'],
         )
         city = self.counts['gm_lit']['per_arm']['kept_per_arm_city_day']
         for arm in orchestrator.ARMS:
@@ -351,6 +472,13 @@ class RealTapeCountTests(unittest.TestCase):
                 self.assertEqual(payload['fee_label'], 'CACHE_NOT_R1P1')
                 self.assertEqual(payload['out_of_domain_replication_of'], orchestrator.FL_BAND_FREEZE_SHA256)
                 self.assertEqual(payload['accept_sha256'], orchestrator.ACCEPT_SHA256)
+                self.assertEqual(payload['addendum_sha256'], orchestrator.ADDENDUM_SHA256)
+                self.assertEqual(payload['reading_scope'], 'CHI/MIA/NY 2026-09-25 only')
+                self.assertEqual(payload['date_level_n'], 1)
+                self.assertEqual(payload['verdict_cap'], 'ITERATE')
+                self.assertTrue(payload['kill_mapping_disabled'])
+                self.assertEqual(payload['without_sep25_n_eff_D01'], 0)
+                self.assertEqual(payload['without_sep25_reading_h1'], 'inconclusive')
                 self.assertEqual(payload['caveats'][2], 'Sep-25 carries 33,119 of 33,757 trades')
                 self.assertNotIn('yes_price_dollars', payload)
                 self.assertNotIn('no_price_dollars', payload)
@@ -362,18 +490,21 @@ class RealTapeCountTests(unittest.TestCase):
         frame = snapshot_loader.load_frame()
         self.assertEqual(frame['snapshot_sha256'], orchestrator.SNAPSHOT_SHA256)
         self.assertEqual(frame['snapshot_uri_suffix'], 'mode=ro&immutable=1')
-        root = Path(tempfile.mkdtemp(prefix='wxfl-ro-'))
         archive_module = __import__('tarfile')
-        with archive_module.open(orchestrator.BUNDLE_TGZ, 'r:*') as archive:
-            archive.extractall(root, filter='data')
-        snapshot = root / snapshot_loader.BUNDLE_DIRNAME / snapshot_loader.SNAPSHOT_REL
-        connection = snapshot_loader.open_snapshot(snapshot, orchestrator.SNAPSHOT_SHA256)
-        try:
-            with self.assertRaises(Exception) as caught:
-                connection.execute('CREATE TABLE wxfl_refused(x INT)')
-            self.assertIn('readonly', str(caught.exception).lower())
-        finally:
-            connection.close()
+        with tempfile.TemporaryDirectory(prefix='wxfl-ro-') as tmp:
+            root = Path(tmp)
+            with archive_module.open(orchestrator.BUNDLE_TGZ, 'r:*') as archive:
+                archive.extractall(root, filter='data')
+            snapshot = root / snapshot_loader.BUNDLE_DIRNAME / snapshot_loader.SNAPSHOT_REL
+            connection = snapshot_loader.open_snapshot(snapshot, orchestrator.SNAPSHOT_SHA256)
+            try:
+                with self.assertRaises(Exception) as caught:
+                    connection.execute('CREATE TABLE wxfl_refused(x INT)')
+                self.assertIn('readonly', str(caught.exception).lower())
+            finally:
+                connection.close()
+        loader_source = Path(snapshot_loader.__file__).read_text(encoding='utf-8')
+        self.assertNotIn('mkdtemp', loader_source)
 
     def test_published_card_stays_null(self):
         card = orchestrator.published_scorecard()

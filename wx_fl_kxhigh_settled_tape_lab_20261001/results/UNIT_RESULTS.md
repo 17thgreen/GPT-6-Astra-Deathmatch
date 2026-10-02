@@ -4,7 +4,7 @@ Not an Examiner score. Code verification only. `results` and `pnl` stay null. Ze
 
 Command: `python3 -m unittest discover -s tests -v`
 
-Run at: 2026-10-02T00:06:52Z
+Run at: 2026-10-02T00:26:20Z
 
 ```
 test_gm_cov_requires_a_spanning_complete_later_poll (test_gap_mapping.GapMappingTests.test_gm_cov_requires_a_spanning_complete_later_poll) ... ok
@@ -12,6 +12,7 @@ test_gm_lit_boundaries_and_open_and_storm (test_gap_mapping.GapMappingTests.test
 test_gm_lit_pad_widens_budget_only (test_gap_mapping.GapMappingTests.test_gm_lit_pad_widens_budget_only) ... ok
 test_open_window_is_never_proven_and_cursor_minus_one_is_not_assumed (test_gap_mapping.GapMappingTests.test_open_window_is_never_proven_and_cursor_minus_one_is_not_assumed) ... ok
 test_storm_proof_is_per_ticker (test_gap_mapping.GapMappingTests.test_storm_proof_is_per_ticker) ... ok
+test_union_chains_complete_polls_and_rejects_holes_and_open_windows (test_gap_mapping.GapMappingTests.test_union_chains_complete_polls_and_rejects_holes_and_open_windows) ... ok
 test_no_module_imports_a_network_client (test_imports.ImportBoundaryTests.test_no_module_imports_a_network_client) ... ok
 test_sqlite3_is_imported_only_by_the_snapshot_loader (test_imports.ImportBoundaryTests.test_sqlite3_is_imported_only_by_the_snapshot_loader) ... ok
 test_live_db_and_capture_are_refused_before_open (test_orchestrator.AuthorityTests.test_live_db_and_capture_are_refused_before_open) ... ok
@@ -28,12 +29,13 @@ test_live_order_http_get_lee_ready_and_rebin_raise (test_orchestrator.RefusalTes
 test_registry_boundaries (test_orchestrator.RefusalTests.test_registry_boundaries) ... ok
 test_result_disagreement_is_a_hard_fail (test_orchestrator.RefusalTests.test_result_disagreement_is_a_hard_fail) ... ok
 test_measure_synthetic_is_the_only_roi_entry_and_conduct_does_not_call_it_on_tape (test_orchestrator.SourceShapeTests.test_measure_synthetic_is_the_only_roi_entry_and_conduct_does_not_call_it_on_tape) ... ok
+test_empty_arm_city_days_do_not_vote_and_small_n_is_inconclusive (test_orchestrator.SyntheticMetricTests.test_empty_arm_city_days_do_not_vote_and_small_n_is_inconclusive) ... ok
 test_equal_weighted_differs_from_trade_weighted_and_sep25_split (test_orchestrator.SyntheticMetricTests.test_equal_weighted_differs_from_trade_weighted_and_sep25_split) ... ok
 test_locdo_reading_ignores_lodo_and_loco (test_orchestrator.SyntheticMetricTests.test_locdo_reading_ignores_lodo_and_loco) ... ok
 test_threshold_is_six_of_eight_and_h2_is_less_or_equal (test_orchestrator.SyntheticMetricTests.test_threshold_is_six_of_eight_and_h2_is_less_or_equal) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 12.977s
+Ran 26 tests in 18.365s
 
 OK
 ```

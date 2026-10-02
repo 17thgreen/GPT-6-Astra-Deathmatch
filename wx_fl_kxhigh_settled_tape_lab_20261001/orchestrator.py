@@ -5,10 +5,11 @@ This module does not place orders, does not perform HTTP GETs, does not open
 capture.sqlite or the live weather database, and does not compute ROI, deltas,
 or PnL on the pinned trades. results and pnl stay null.
 
-PRIMARY gap mapping is GM-COV under Conductor ACCEPT
-b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a.
-That decision overrides the freeze's GM-LIT primary. GM-LIT and GM-LIT-PAD
-are sensitivities. GM-LIT-PAD is counts only.
+PRIMARY gap mapping is GM-COV union coverage under Conductor addendum
+68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153
+ruling 3 option (b). That addendum also supersedes the ACCEPT's ">= 6 of 8"
+wording with the freeze formula n = n_eff = |D|, need = ceil(2n/3).
+GM-COV-SINGLE and GM-LIT are full sensitivities. GM-LIT-PAD is counts only.
 """
 
 import hashlib
@@ -27,6 +28,7 @@ PINS = ROOT / 'pins'
 RESULTS = ROOT / 'results'
 BUNDLE_TGZ = snapshot_loader.BUNDLE_TGZ
 ACCEPT_PATH = PINS / 'CONDUCTOR_ACCEPT_VARIANTS_WX_FL_KXHIGH_SETTLED_TAPE_FREEZE_2026-10-01.json'
+ADDENDUM_PATH = PINS / 'CONDUCTOR_ACCEPT_ADDENDUM_WX_FL_KXHIGH_PR63_PRE_ROI_RULINGS_2026-10-01.json'
 RULING_PATH = PINS / 'CONDUCTOR_RULING_VARIANTS_WX_FL_PREFREEZE_2026-10-01.json'
 PINS_MANIFEST = PINS / 'MANIFEST.sha256'
 VENDORED_REGISTRY = (
@@ -56,6 +58,7 @@ ARM_LABELS = {
     WXFL2: 'favorite_taker',
 }
 ACCEPT_SHA256 = 'b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a'
+ADDENDUM_SHA256 = '68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153'
 RULING_SHA256 = '0e37f91b60289084f4e660b74bcb12a04f83f66fc93410add3a26baf0dd9f6af'
 FREEZE_SHA256 = 'aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f'
 BUNDLE_SHA256 = snapshot_loader.BUNDLE_SHA256
@@ -76,6 +79,14 @@ KILL_SCOPE = 'KXHIGHCHI/KXHIGHLAX/KXHIGHMIA/KXHIGHNY only'
 H1 = 'maker_gross_roi_delta_FL0_minus_FL1 > 0'
 H2 = 'maker_gross_roi_delta_FL2_minus_FL1 <= 0'
 PRIMARY_MAPPING = 'GM-COV'
+SINGLE_MAPPING = 'GM-COV-SINGLE'
+LOCDO_RULE = (
+    'n = n_eff = |D|; need = ceil(2n/3); inconclusive if n_eff < 3. '
+    'H1 votes only over D01 and H2 only over D21. '
+    'Addendum 68e1ff7a supersedes the ACCEPT >= 6 of 8 wording with this freeze formula.'
+)
+READING_SCOPE_CHI_MIA_NY_SEP25 = 'CHI/MIA/NY 2026-09-25 only'
+VERDICT_CAP = 'ITERATE'
 CAVEATS = (
     'Sep-24 covers only its last ~5-8 h',
     'Sep-25 lacks its first ~10 h',
@@ -203,6 +214,7 @@ def stamp_labels(payload):
     body['pnl'] = None
     body['out_of_domain_replication_of'] = FL_BAND_FREEZE_SHA256
     body['accept_sha256'] = ACCEPT_SHA256
+    body['addendum_sha256'] = ADDENDUM_SHA256
     body['caveats'] = list(CAVEATS)
     body['not_an_examiner_score'] = True
     return body
@@ -227,12 +239,15 @@ def verify_pins_manifest(path=None):
     expected = {
         BUNDLE_TGZ.name,
         ACCEPT_PATH.name,
+        ADDENDUM_PATH.name,
         RULING_PATH.name,
     }
     if set(seen) != expected:
         raise snapshot_loader.ManifestShaMismatch('pins manifest set')
     if sha256_file(ACCEPT_PATH) != ACCEPT_SHA256:
         raise snapshot_loader.SnapshotShaMismatch('accept')
+    if sha256_file(ADDENDUM_PATH) != ADDENDUM_SHA256:
+        raise snapshot_loader.SnapshotShaMismatch('addendum')
     if sha256_file(RULING_PATH) != RULING_SHA256:
         raise snapshot_loader.SnapshotShaMismatch('ruling')
     if sha256_file(BUNDLE_TGZ) != BUNDLE_SHA256:
@@ -375,7 +390,12 @@ def assert_outside_admit1(value, source):
 
 
 def locdo_vote_threshold(n_eff):
-    """ceil(2n/3). n=8 returns 6. n_eff < 3 returns None (inconclusive)."""
+    """ceil(2n/3) with n = n_eff = |D|. n_eff < 3 returns None (inconclusive).
+
+    n = 8 returns 6 and n = 3 returns 2. The ACCEPT's fixed ">= 6 of 8" assumed
+    every city-day was in D. Addendum 68e1ff7a supersedes that wording with
+    this freeze formula.
+    """
     if n_eff < 3:
         return None
     return (2 * n_eff + 2) // 3
@@ -476,7 +496,17 @@ def _delta_pair(rows, one_tick=False):
     }
 
 
+def _domain_events(rows, left, right, one_tick=False):
+    """City-days where both arms have capital > 0. Empty-arm city-days are not in D."""
+    _, by_event = _accumulate(rows, one_tick=one_tick)
+    return sorted(
+        event for event, arms in by_event.items()
+        if arms[left]['capital'] > 0 and arms[right]['capital'] > 0
+    )
+
+
 def _leave_one_out(rows, key, one_tick=False):
+    """Robustness holdout for date or city. Not the LOCDO verdict vote."""
     values = []
     for row in rows:
         if row[key] not in values:
@@ -493,16 +523,36 @@ def _leave_one_out(rows, key, one_tick=False):
             'EW_delta_FL2_minus_FL1': pair['EW_delta_FL2_minus_FL1'],
             'TW_delta_FL0_minus_FL1': pair['TW_delta_FL0_minus_FL1'],
             'TW_delta_FL2_minus_FL1': pair['TW_delta_FL2_minus_FL1'],
-            'verdict_input': key == 'event',
+            'verdict_input': False,
+        })
+    return reports
+
+
+def _locdo_reports(rows, domain, one_tick=False):
+    """Leave-one-city-day-out only over the passed domain D. n = |D|."""
+    reports = []
+    for held in domain:
+        kept = [row for row in rows if row['event'] != held]
+        pair = _delta_pair(kept, one_tick=one_tick)
+        reports.append({
+            'held_out': held,
+            'EW_delta_FL0_minus_FL1': pair['EW_delta_FL0_minus_FL1'],
+            'EW_delta_FL2_minus_FL1': pair['EW_delta_FL2_minus_FL1'],
+            'TW_delta_FL0_minus_FL1': pair['TW_delta_FL0_minus_FL1'],
+            'TW_delta_FL2_minus_FL1': pair['TW_delta_FL2_minus_FL1'],
+            'n_eff_D01': pair['n_eff_D01'],
+            'n_eff_D21': pair['n_eff_D21'],
+            'verdict_input': True,
         })
     return reports
 
 
 def reading_h1(full_delta, locdo_deltas):
-    """supports_H1 / contradicts_H1 / inconclusive from fb6540f5 with city-day substitution.
+    """supports_H1 / contradicts_H1 / inconclusive from the freeze formula.
 
-    The vote is >= ceil(2n/3) of the leave-one-city-day-out deltas. n=8 requires 6.
-    Leave-one-date-out and leave-one-city-out are not inputs.
+    Votes are the LOCDO deltas on D01 only. n = n_eff = |D01|. The vote needs
+    ceil(2n/3) of those deltas. n_eff < 3 is inconclusive. Leave-one-date-out
+    and leave-one-city-out are not inputs.
     """
     if full_delta is None or locdo_deltas is None:
         return 'inconclusive'
@@ -520,7 +570,7 @@ def reading_h1(full_delta, locdo_deltas):
 
 
 def reading_h2(full_delta, locdo_deltas):
-    """H2 uses <= 0, the fb6540f5 text, not the ruling's loose paraphrase."""
+    """H2 uses <= 0. Votes are LOCDO deltas on D21 only, with the same threshold."""
     if full_delta is None or locdo_deltas is None:
         return 'inconclusive'
     n_eff = len(locdo_deltas)
@@ -536,10 +586,49 @@ def reading_h2(full_delta, locdo_deltas):
     return 'inconclusive'
 
 
-def verdict_for(reading):
-    """Ceiling is ITERATE. A reading is not a KEEP."""
-    del reading
-    return VERDICT_CEILING
+def verdict_for(reading, date_level_n=1, kill_mapping_disabled=True):
+    """Map a reading to a verdict.
+
+    This run's three D units share one date, so date_level_n is 1 and
+    kill_mapping_disabled is true. Every reading, including contradicts_H1,
+    is capped at ITERATE and does not map to KILL. A contradicts_H1 reading
+    maps to KILL only when the cap is off and date-level n is at least 2.
+    """
+    if kill_mapping_disabled or date_level_n < 2:
+        return VERDICT_CAP
+    if reading == 'contradicts_H1':
+        return 'KILL'
+    return VERDICT_CAP
+
+
+def _subset_reading(rows, one_tick=False):
+    """EW pair plus D01/D21 LOCDO readings. Empty D yields a null vote list."""
+    if not rows:
+        return {
+            'full': None,
+            'locdo': None,
+            'locdo_h2': None,
+            'n_eff_D01': 0,
+            'n_eff_D21': 0,
+            'reading_h1': 'inconclusive',
+            'reading_h2': 'inconclusive',
+        }
+    full = _delta_pair(rows, one_tick=one_tick)
+    d01 = _domain_events(rows, WXFL0, WXFL1, one_tick=one_tick)
+    d21 = _domain_events(rows, WXFL2, WXFL1, one_tick=one_tick)
+    locdo = _locdo_reports(rows, d01, one_tick=one_tick) if d01 else None
+    locdo_h2 = _locdo_reports(rows, d21, one_tick=one_tick) if d21 else None
+    h1_votes = [item['EW_delta_FL0_minus_FL1'] for item in locdo] if locdo else None
+    h2_votes = [item['EW_delta_FL2_minus_FL1'] for item in locdo_h2] if locdo_h2 else None
+    return {
+        'full': full,
+        'locdo': locdo,
+        'locdo_h2': locdo_h2,
+        'n_eff_D01': full['n_eff_D01'],
+        'n_eff_D21': full['n_eff_D21'],
+        'reading_h1': reading_h1(full['EW_delta_FL0_minus_FL1'], h1_votes),
+        'reading_h2': reading_h2(full['EW_delta_FL2_minus_FL1'], h2_votes),
+    }
 
 
 def measure_synthetic(rows, one_tick=False):
@@ -547,30 +636,32 @@ def measure_synthetic(rows, one_tick=False):
     for row in rows:
         if row.get('synthetic') is not True:
             raise RealTapeRoiRefused()
-    full = _delta_pair(rows, one_tick=one_tick)
-    locdo = _leave_one_out(rows, 'event', one_tick=one_tick)
-    h1_votes = [item['EW_delta_FL0_minus_FL1'] for item in locdo] if locdo else []
-    h2_votes = [item['EW_delta_FL2_minus_FL1'] for item in locdo] if locdo else []
+    full_report = _subset_reading(rows, one_tick=one_tick)
     without = [row for row in rows if row.get('date') == '26SEP24']
-    without_report = _delta_pair(without, one_tick=one_tick) if without else None
-    without_locdo = _leave_one_out(without, 'event', one_tick=one_tick) if without else None
+    without_report = _subset_reading(without, one_tick=one_tick)
     return {
         'synthetic': True,
         'one_tick_worse': one_tick,
-        'full': full,
-        'locdo': locdo,
+        'full': full_report['full'],
+        'locdo': full_report['locdo'],
+        'locdo_h2': full_report['locdo_h2'],
         'lodo': _leave_one_out(rows, 'date', one_tick=one_tick),
         'loco': _leave_one_out(rows, 'city', one_tick=one_tick),
         'without_sep25': {
-            'full': without_report,
-            'locdo': without_locdo,
+            'full': without_report['full'],
+            'locdo': without_report['locdo'],
+            'locdo_h2': without_report['locdo_h2'],
+            'n_eff_D01': without_report['n_eff_D01'],
+            'n_eff_D21': without_report['n_eff_D21'],
+            'reading_h1': without_report['reading_h1'],
+            'reading_h2': without_report['reading_h2'],
             'lodo': None,
             'loco': _leave_one_out(without, 'city', one_tick=one_tick) if without else None,
         },
-        'variants_proposed_reading_H1': reading_h1(full['EW_delta_FL0_minus_FL1'], h1_votes),
-        'variants_proposed_reading_H2': reading_h2(full['EW_delta_FL2_minus_FL1'], h2_votes),
+        'variants_proposed_reading_H1': full_report['reading_h1'],
+        'variants_proposed_reading_H2': full_report['reading_h2'],
         'reading': None,
-        'verdict': VERDICT_CEILING,
+        'verdict': verdict_for(full_report['reading_h1']),
         'kill_scope': KILL_SCOPE,
         'h1': H1,
         'h2': H2,
@@ -774,6 +865,86 @@ def assert_timestamp_universe(timestamp):
     return True
 
 
+def _unproven_window_inventory(windows):
+    """GM-LIT does not prove coverage. Every flagged window is not proven."""
+    summary = {}
+    for kind in ('budget', 'per_ticker_429', 'storm', 'collector'):
+        rows = [window for window in windows if window['gap_type'] == kind]
+        open_ended = sum(1 for window in rows if window['end'] is None)
+        summary[kind] = {
+            'n_windows': len(rows),
+            'proven': 0,
+            'not_proven': len(rows),
+            'open_ended': open_ended,
+            'proven_means': (
+                'this mapping does not prove coverage; every flagged window can drop trades'
+            ),
+        }
+    return summary
+
+
+def _nonempty_city_days(arm_city_counts):
+    return [event for event in CITY_DAYS if arm_city_counts[event] > 0]
+
+
+def _both_nonempty(left_events, right_events):
+    right = set(right_events)
+    return [event for event in left_events if event in right]
+
+
+def _reading_scope_for(events):
+    expected = ('KXHIGHCHI-26SEP25', 'KXHIGHMIA-26SEP25', 'KXHIGHNY-26SEP25')
+    if tuple(events) == expected:
+        return READING_SCOPE_CHI_MIA_NY_SEP25
+    if not events:
+        return 'empty'
+    return '/'.join(events)
+
+
+def _count_domain_reading(n_eff):
+    """Sign readings stay null on real rows. n_eff < 3 is inconclusive by formula."""
+    if locdo_vote_threshold(n_eff) is None:
+        return 'inconclusive'
+    return None
+
+
+def _run_scope_from_kept(kept_per_arm_city_day):
+    """n_eff from non-empty kept city-days. Real-row capital is not computed."""
+    nonempty = {
+        arm: _nonempty_city_days(kept_per_arm_city_day[arm]) for arm in ARMS
+    }
+    d01 = _both_nonempty(nonempty[WXFL0], nonempty[WXFL1])
+    d21 = _both_nonempty(nonempty[WXFL2], nonempty[WXFL1])
+    dates = {event.rsplit('-', 1)[1] for event in d01} | {
+        event.rsplit('-', 1)[1] for event in d21
+    }
+    date_level_n = len(dates)
+    sep24 = [event for event in CITY_DAYS if event.endswith('-26SEP24')]
+    d01_sep24 = [event for event in d01 if event in sep24]
+    d21_sep24 = [event for event in d21 if event in sep24]
+    return {
+        'reading_scope': _reading_scope_for(d01),
+        'reading_scope_D21': _reading_scope_for(d21),
+        'D01_city_days': d01,
+        'D21_city_days': d21,
+        'date_level_n': date_level_n,
+        'verdict_cap': VERDICT_CAP,
+        'kill_mapping_disabled': True if date_level_n < 2 else False,
+        'n_eff_D01': len(d01),
+        'n_eff_D21': len(d21),
+        'locdo_need_h1': locdo_vote_threshold(len(d01)),
+        'locdo_need_h2': locdo_vote_threshold(len(d21)),
+        'locdo_rule': LOCDO_RULE,
+        'variants_proposed_reading_H1': _count_domain_reading(len(d01)),
+        'variants_proposed_reading_H2': _count_domain_reading(len(d21)),
+        'without_sep25_n_eff_D01': len(d01_sep24),
+        'without_sep25_n_eff_D21': len(d21_sep24),
+        'without_sep25_reading_h1': _count_domain_reading(len(d01_sep24)),
+        'without_sep25_reading_h2': _count_domain_reading(len(d21_sep24)),
+        'nonempty_city_days_per_arm': nonempty,
+    }
+
+
 def build_counts(frame=None):
     """Counts only. Does not call measure_synthetic and does not emit prices."""
     frame = frame or snapshot_loader.load_frame()
@@ -793,14 +964,27 @@ def build_counts(frame=None):
         else:
             exclusions[classified['reason']] += 1
             unassigned_trades.append(trade)
-    windows = gap_mapping.flagged_windows(frame['gap_rows'], _frozen_ticker_set())
-    proven = gap_mapping.attach_proof(windows, frame['poll_rows'], sorted(_frozen_ticker_set()))
-    summary = gap_mapping.window_summary(proven, sorted(_frozen_ticker_set()))
-    near_miss = gap_mapping.near_miss_requested_before_end(proven, frame['poll_rows'])
+    tickers = sorted(_frozen_ticker_set())
+    windows = gap_mapping.flagged_windows(frame['gap_rows'], tickers)
+    proven = gap_mapping.attach_proof(
+        windows, frame['poll_rows'], tickers, mode=gap_mapping.MODE_UNION
+    )
+    proven_single = gap_mapping.attach_proof(
+        windows, frame['poll_rows'], tickers, mode=gap_mapping.MODE_SINGLE
+    )
+    summary = gap_mapping.window_summary(proven, tickers, mode=gap_mapping.MODE_UNION)
+    summary_single = gap_mapping.window_summary(
+        proven_single, tickers, mode=gap_mapping.MODE_SINGLE
+    )
+    near_miss = gap_mapping.near_miss_requested_before_end(proven_single, frame['poll_rows'])
 
     def cov(created, ticker, _windows=None):
         del _windows
         return gap_mapping.gm_cov_drops(created, ticker, proven)
+
+    def cov_single(created, ticker, _windows=None):
+        del _windows
+        return gap_mapping.gm_cov_drops(created, ticker, proven_single)
 
     def lit(created, ticker, _windows=None):
         del _windows
@@ -829,6 +1013,7 @@ def build_counts(frame=None):
     timestamp_lit = _timestamp_mapping(frame['trades_pre_w0'], windows, lit)
     timestamp_pad = _timestamp_mapping(frame['trades_pre_w0'], windows, pad)
     timestamp_cov = _timestamp_mapping(frame['trades_pre_w0'], proven, cov)
+    timestamp_single = _timestamp_mapping(frame['trades_pre_w0'], proven_single, cov_single)
     if timestamp_lit['dropped_n'] != GM_LIT_DROPPED or timestamp_lit['kept_n'] != GM_LIT_KEPT:
         raise OrchestratorError('GM-LIT %s' % (timestamp_lit['dropped_n'], timestamp_lit['kept_n']))
     if timestamp_lit['kept_by_city_day'] != GM_LIT_KEPT_BY_CITY_DAY:
@@ -848,15 +1033,20 @@ def build_counts(frame=None):
         if str(pct) != expected_pct:
             raise OrchestratorError('%s %s != %s (%s)' % (name, pct, expected_pct, dropped))
     cov_arm = _mapping_arm_counts(included, proven, cov)
+    single_arm = _mapping_arm_counts(included, proven_single, cov_single)
     lit_arm = _mapping_arm_counts(included, windows, lit)
     pad_arm = _mapping_arm_counts(included, windows, pad)
-    for arm_counts in (cov_arm, lit_arm, pad_arm):
+    for arm_counts in (cov_arm, single_arm, lit_arm, pad_arm):
         if arm_counts['kept_n'] + arm_counts['dropped_n'] != len(included):
             raise OrchestratorError('arm partition')
+    run_scope = _run_scope_from_kept(cov_arm['kept_per_arm_city_day'])
     payload = {
         'experiment_id': EXPERIMENT_ID,
         'primary_mapping': PRIMARY_MAPPING,
-        'primary_mapping_source': 'ACCEPT decision 1 overrides freeze GM-LIT primary',
+        'primary_mapping_source': (
+            'Addendum 68e1ff7a ruling 3 option (b): GM-COV union coverage is primary. '
+            'ACCEPT decision 1 named GM-COV; the single-poll literal rule is now GM-COV-SINGLE.'
+        ),
         'cursor_minus_1s_assumed': False,
         'zero_gets': True,
         'zero_orders': True,
@@ -865,26 +1055,51 @@ def build_counts(frame=None):
         'row_rule_trade_counts_per_arm': _arm_totals(row_counts),
         'row_rule_exclusions': dict(exclusions),
         'row_rule_included_n': len(included),
+        'run_scope': run_scope,
         'gm_cov': {
             'rule': (
-                'A gap window is covered only if a later poll cursor range '
-                '[min_ts, requested_at) spans the whole window and that poll '
-                'completed with no 429, no truncation, and no pagination break. '
-                'Trades whose created_time falls in an unproven window are dropped '
-                'from all arms. Coverage is not assumed from cursor-minus-1s.'
+                'A gap window [start, end) is proven covered iff the union of '
+                'later complete polls\' closed cursor intervals [min_ts, requested_at] '
+                'covers it contiguously with no hole. Later means first-page '
+                'requested_at is strictly after start. Every contributing poll is '
+                'complete: all pages ok and HTTP 200, no 429, last page under 1000 '
+                'items, at most 10 pages, cursor chain intact. Incomplete polls are '
+                'excluded. Open windows are never proven. Trades in an unproven '
+                'window are dropped from all arms. Coverage is not assumed from '
+                'cursor-minus-1s.'
             ),
+            'role': 'primary',
             'windows': summary,
-            'near_miss_complete_poll_requested_at_before_window_end': near_miss,
-            'near_miss_note': (
-                'Counted and left not proven. The span rule was not loosened.'
-            ),
             'timestamp_only': timestamp_cov,
             'per_arm': cov_arm,
+            'nonempty_city_days_per_arm': run_scope['nonempty_city_days_per_arm'],
             'excluded_gap_n_unassignable': _unassignable(unassigned_trades, proven, cov),
+        },
+        'gm_cov_single': {
+            'rule': (
+                'GM-COV-SINGLE sensitivity: one later complete poll\'s half-open '
+                'cursor range [min_ts, requested_at) spans the whole window. Later '
+                'means requested_at > start. This was the previous primary. It is '
+                'not decisive.'
+            ),
+            'role': 'sensitivity',
+            'decisive': False,
+            'windows': summary_single,
+            'near_miss_complete_poll_requested_at_before_window_end': near_miss,
+            'near_miss_note': (
+                'Single-poll diagnostic only. Windows in this count stay not proven '
+                'under GM-COV-SINGLE. The union primary does not use this counter.'
+            ),
+            'timestamp_only': timestamp_single,
+            'per_arm': single_arm,
+            'excluded_gap_n_unassignable': _unassignable(
+                unassigned_trades, proven_single, cov_single
+            ),
         },
         'gm_lit': {
             'role': 'sensitivity',
             'decisive': False,
+            'windows': _unproven_window_inventory(windows),
             'timestamp_only': timestamp_lit,
             'per_arm': lit_arm,
             'excluded_gap_n_unassignable': _unassignable(unassigned_trades, windows, lit),
@@ -905,6 +1120,7 @@ def build_counts(frame=None):
             'pad_seconds': gap_mapping.BUDGET_PAD_SECONDS,
             'decisive': False,
             'not_interpretable_for_ew': True,
+            'windows': _unproven_window_inventory(windows),
             'timestamp_only': timestamp_pad,
             'per_arm': pad_arm,
             'excluded_gap_n_unassignable': _unassignable(unassigned_trades, windows, pad),
@@ -955,9 +1171,10 @@ def published_scorecard():
     return payload
 
 
-def scorecard_shell():
+def scorecard_shell(run_scope=None):
     """Lab scorecard shell. Metrics that would be ROI stay null."""
-    return stamp_labels({
+    scope = dict(run_scope or {})
+    body = {
         'id': 'WX_FL_KXHIGH_SETTLED_TAPE_SCORECARD_SHELL',
         'status': EXAMINER_STATUS,
         'examiner_path_after_pr': EXAMINER_PATH_AFTER_PR,
@@ -974,15 +1191,42 @@ def scorecard_shell():
         'EW_delta_FL2_minus_FL1': None,
         'TW_delta_FL0_minus_FL1': None,
         'TW_delta_FL2_minus_FL1': None,
-        'n_eff_D01': None,
-        'n_eff_D21': None,
+        'n_eff_D01': scope.get('n_eff_D01'),
+        'n_eff_D21': scope.get('n_eff_D21'),
+        'reading_scope': scope.get('reading_scope'),
+        'date_level_n': scope.get('date_level_n'),
+        'verdict_cap': scope.get('verdict_cap', VERDICT_CAP),
+        'kill_mapping_disabled': scope.get('kill_mapping_disabled', True),
+        'locdo_rule': LOCDO_RULE,
+        'locdo_need_h1': scope.get('locdo_need_h1'),
+        'locdo_need_h2': scope.get('locdo_need_h2'),
+        'variants_proposed_reading_H1': scope.get('variants_proposed_reading_H1'),
+        'variants_proposed_reading_H2': scope.get('variants_proposed_reading_H2'),
+        'without_sep25_n_eff_D01': scope.get('without_sep25_n_eff_D01'),
+        'without_sep25_n_eff_D21': scope.get('without_sep25_n_eff_D21'),
+        'without_sep25_reading_h1': scope.get('without_sep25_reading_h1'),
+        'without_sep25_reading_h2': scope.get('without_sep25_reading_h2'),
+        'nonempty_city_days_per_arm': scope.get('nonempty_city_days_per_arm'),
+        'D01_city_days': scope.get('D01_city_days'),
+        'D21_city_days': scope.get('D21_city_days'),
         'implement_base': IMPLEMENT_BASE,
         'freeze_sha256': FREEZE_SHA256,
         'bundle_sha256': BUNDLE_SHA256,
         'snapshot_sha256': SNAPSHOT_SHA256,
         'ruling_sha256': RULING_SHA256,
-        'note': 'Implementer shell only. Counts live in sibling JSON files and are not ROI.',
-    })
+        'note': (
+            'Implementer shell only. Counts live in sibling JSON files and are not ROI. '
+            'Sign readings on real rows stay null. n_eff is the count of city-days with '
+            'both arms non-empty under the primary mapping.'
+        ),
+    }
+    return stamp_labels(body)
+
+
+def _with_run_scope(body, ready):
+    scoped = dict(body)
+    scoped.update(ready['run_scope'])
+    return stamp_labels(scoped)
 
 
 def write_count_files(counts, results_dir=None):
@@ -991,30 +1235,34 @@ def write_count_files(counts, results_dir=None):
     ready = _json_ready(counts)
     _reject_price_keys(ready)
     files = {
-        'TIMESTAMP_UNIVERSE_COUNTS.json': stamp_labels({
+        'TIMESTAMP_UNIVERSE_COUNTS.json': _with_run_scope({
             'timestamp_universe': ready['timestamp_universe'],
-        }),
-        'ARM_CITY_DAY_COUNTS.json': stamp_labels({
+        }, ready),
+        'ARM_CITY_DAY_COUNTS.json': _with_run_scope({
             'row_rule_trade_counts_per_arm_city_day': ready['row_rule_trade_counts_per_arm_city_day'],
             'row_rule_trade_counts_per_arm': ready['row_rule_trade_counts_per_arm'],
             'row_rule_included_n': ready['row_rule_included_n'],
             'row_rule_exclusions': ready['row_rule_exclusions'],
             'note': 'Row-rule arm assignment before gap drops. Not ROI.',
-        }),
-        'GM_COV_COUNTS.json': stamp_labels({
+        }, ready),
+        'GM_COV_COUNTS.json': _with_run_scope({
             'primary': True,
             'gm_cov': ready['gm_cov'],
-        }),
-        'GM_LIT_COUNTS.json': stamp_labels({
+        }, ready),
+        'GM_COV_SINGLE_COUNTS.json': _with_run_scope({
+            'primary': False,
+            'gm_cov_single': ready['gm_cov_single'],
+        }, ready),
+        'GM_LIT_COUNTS.json': _with_run_scope({
             'primary': False,
             'gm_lit': ready['gm_lit'],
-        }),
-        'GM_LIT_PAD_COUNTS.json': stamp_labels({
+        }, ready),
+        'GM_LIT_PAD_COUNTS.json': _with_run_scope({
             'primary': False,
             'counts_only': True,
             'gm_lit_pad': ready['gm_lit_pad'],
-        }),
-        'SCORECARD.json': scorecard_shell(),
+        }, ready),
+        'SCORECARD.json': scorecard_shell(ready['run_scope']),
     }
     for name, payload in files.items():
         _reject_price_keys(payload)
@@ -1038,6 +1286,9 @@ def conduct(results_dir=None):
         'gm_cov_windows': counts['gm_cov']['windows'],
         'gm_cov_dropped_per_arm': counts['gm_cov']['per_arm']['dropped_per_arm'],
         'gm_cov_kept_per_arm': counts['gm_cov']['per_arm']['kept_per_arm'],
+        'gm_cov_single_windows': counts['gm_cov_single']['windows'],
+        'gm_cov_single_dropped_per_arm': counts['gm_cov_single']['per_arm']['dropped_per_arm'],
+        'run_scope': counts['run_scope'],
         'gm_lit_timestamp': counts['gm_lit']['timestamp_only'],
         'gm_lit_per_arm': counts['gm_lit']['per_arm'],
         'gm_lit_pad_timestamp': counts['gm_lit_pad']['timestamp_only'],
@@ -1054,6 +1305,7 @@ def authority_report():
         'implement_base': IMPLEMENT_BASE,
         'lab_directory': LAB_DIRECTORY,
         'accept_sha256': ACCEPT_SHA256,
+        'addendum_sha256': ADDENDUM_SHA256,
         'ruling_sha256': RULING_SHA256,
         'freeze_sha256': FREEZE_SHA256,
         'bundle_sha256': BUNDLE_SHA256,
@@ -1069,7 +1321,13 @@ def authority_report():
         'h1': H1,
         'h2': H2,
         'kill_scope': KILL_SCOPE,
+        'locdo_rule': LOCDO_RULE,
+        'locdo_threshold_n3': locdo_vote_threshold(3),
         'locdo_threshold_n8': locdo_vote_threshold(8),
+        'primary_coverage': gap_mapping.MODE_UNION,
+        'kill_mapping_disabled': True,
+        'verdict_cap': VERDICT_CAP,
+        'date_level_n': 1,
         'zero_gets': True,
         'zero_orders': True,
         'sqlite3_module': 'snapshot_loader.py',

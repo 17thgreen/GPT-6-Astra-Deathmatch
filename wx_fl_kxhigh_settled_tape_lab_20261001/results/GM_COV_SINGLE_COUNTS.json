@@ -17,150 +17,156 @@
     "Sep-25 carries 33,119 of 33,757 trades"
   ],
   "claim_as_live_R1P1": false,
-  "counts_only": true,
   "counts_toward_keep": false,
   "date_level_n": 1,
   "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
   "family_size": 1,
   "fee_honest": false,
   "fee_label": "CACHE_NOT_R1P1",
-  "gm_lit_pad": {
+  "gm_cov_single": {
     "decisive": false,
     "excluded_gap_n_unassignable": 0,
-    "not_interpretable_for_ew": true,
-    "pad_seconds": 1920,
+    "near_miss_complete_poll_requested_at_before_window_end": 677,
+    "near_miss_note": "Single-poll diagnostic only. Windows in this count stay not proven under GM-COV-SINGLE. The union primary does not use this counter.",
     "per_arm": {
-      "dropped_n": 33622,
+      "dropped_n": 18110,
       "dropped_per_arm": {
-        "WXFL0": 11644,
-        "WXFL1": 13011,
-        "WXFL2": 8967
+        "WXFL0": 6581,
+        "WXFL1": 6592,
+        "WXFL2": 4937
       },
       "dropped_per_arm_city_day": {
         "WXFL0": {
-          "KXHIGHCHI-26SEP24": 60,
-          "KXHIGHCHI-26SEP25": 783,
-          "KXHIGHLAX-26SEP24": 334,
-          "KXHIGHLAX-26SEP25": 6165,
-          "KXHIGHMIA-26SEP24": 166,
-          "KXHIGHMIA-26SEP25": 2330,
-          "KXHIGHNY-26SEP24": 65,
-          "KXHIGHNY-26SEP25": 1741
+          "KXHIGHCHI-26SEP24": 31,
+          "KXHIGHCHI-26SEP25": 485,
+          "KXHIGHLAX-26SEP24": 163,
+          "KXHIGHLAX-26SEP25": 3492,
+          "KXHIGHMIA-26SEP24": 118,
+          "KXHIGHMIA-26SEP25": 1285,
+          "KXHIGHNY-26SEP24": 35,
+          "KXHIGHNY-26SEP25": 972
         },
         "WXFL1": {
           "KXHIGHCHI-26SEP24": 0,
-          "KXHIGHCHI-26SEP25": 2662,
+          "KXHIGHCHI-26SEP25": 1482,
           "KXHIGHLAX-26SEP24": 0,
           "KXHIGHLAX-26SEP25": 0,
           "KXHIGHMIA-26SEP24": 0,
-          "KXHIGHMIA-26SEP25": 5938,
+          "KXHIGHMIA-26SEP25": 3092,
           "KXHIGHNY-26SEP24": 0,
-          "KXHIGHNY-26SEP25": 4411
+          "KXHIGHNY-26SEP25": 2018
         },
         "WXFL2": {
           "KXHIGHCHI-26SEP24": 0,
-          "KXHIGHCHI-26SEP25": 906,
+          "KXHIGHCHI-26SEP25": 504,
           "KXHIGHLAX-26SEP24": 0,
-          "KXHIGHLAX-26SEP25": 4404,
+          "KXHIGHLAX-26SEP25": 2350,
           "KXHIGHMIA-26SEP24": 0,
-          "KXHIGHMIA-26SEP25": 2077,
+          "KXHIGHMIA-26SEP25": 1169,
           "KXHIGHNY-26SEP24": 0,
-          "KXHIGHNY-26SEP25": 1580
+          "KXHIGHNY-26SEP25": 914
         }
       },
-      "kept_n": 135,
+      "kept_n": 15647,
       "kept_per_arm": {
-        "WXFL0": 95,
-        "WXFL1": 32,
-        "WXFL2": 8
+        "WXFL0": 5158,
+        "WXFL1": 6451,
+        "WXFL2": 4038
       },
       "kept_per_arm_city_day": {
         "WXFL0": {
-          "KXHIGHCHI-26SEP24": 0,
-          "KXHIGHCHI-26SEP25": 21,
-          "KXHIGHLAX-26SEP24": 7,
-          "KXHIGHLAX-26SEP25": 31,
-          "KXHIGHMIA-26SEP24": 6,
-          "KXHIGHMIA-26SEP25": 19,
-          "KXHIGHNY-26SEP24": 0,
-          "KXHIGHNY-26SEP25": 11
+          "KXHIGHCHI-26SEP24": 29,
+          "KXHIGHCHI-26SEP25": 319,
+          "KXHIGHLAX-26SEP24": 178,
+          "KXHIGHLAX-26SEP25": 2704,
+          "KXHIGHMIA-26SEP24": 54,
+          "KXHIGHMIA-26SEP25": 1064,
+          "KXHIGHNY-26SEP24": 30,
+          "KXHIGHNY-26SEP25": 780
         },
         "WXFL1": {
           "KXHIGHCHI-26SEP24": 0,
-          "KXHIGHCHI-26SEP25": 2,
+          "KXHIGHCHI-26SEP25": 1182,
           "KXHIGHLAX-26SEP24": 0,
           "KXHIGHLAX-26SEP25": 0,
           "KXHIGHMIA-26SEP24": 0,
-          "KXHIGHMIA-26SEP25": 25,
+          "KXHIGHMIA-26SEP25": 2871,
           "KXHIGHNY-26SEP24": 0,
-          "KXHIGHNY-26SEP25": 5
+          "KXHIGHNY-26SEP25": 2398
         },
         "WXFL2": {
           "KXHIGHCHI-26SEP24": 0,
-          "KXHIGHCHI-26SEP25": 0,
+          "KXHIGHCHI-26SEP25": 402,
           "KXHIGHLAX-26SEP24": 0,
-          "KXHIGHLAX-26SEP25": 4,
+          "KXHIGHLAX-26SEP25": 2058,
           "KXHIGHMIA-26SEP24": 0,
-          "KXHIGHMIA-26SEP25": 2,
+          "KXHIGHMIA-26SEP25": 910,
           "KXHIGHNY-26SEP24": 0,
-          "KXHIGHNY-26SEP25": 2
+          "KXHIGHNY-26SEP25": 668
         }
       }
     },
-    "role": "counts_only",
+    "role": "sensitivity",
+    "rule": "GM-COV-SINGLE sensitivity: one later complete poll's half-open cursor range [min_ts, requested_at) spans the whole window. Later means requested_at > start. This was the previous primary. It is not decisive.",
     "timestamp_only": {
       "dropped_by_city_day": {
-        "KXHIGHCHI-26SEP24": 60,
-        "KXHIGHCHI-26SEP25": 4351,
-        "KXHIGHLAX-26SEP24": 334,
-        "KXHIGHLAX-26SEP25": 10569,
-        "KXHIGHMIA-26SEP24": 166,
-        "KXHIGHMIA-26SEP25": 10345,
-        "KXHIGHNY-26SEP24": 65,
-        "KXHIGHNY-26SEP25": 7732
+        "KXHIGHCHI-26SEP24": 31,
+        "KXHIGHCHI-26SEP25": 2471,
+        "KXHIGHLAX-26SEP24": 163,
+        "KXHIGHLAX-26SEP25": 5842,
+        "KXHIGHMIA-26SEP24": 118,
+        "KXHIGHMIA-26SEP25": 5546,
+        "KXHIGHNY-26SEP24": 35,
+        "KXHIGHNY-26SEP25": 3904
       },
-      "dropped_n": 33622,
+      "dropped_n": 18110,
       "kept_by_city_day": {
-        "KXHIGHCHI-26SEP24": 0,
-        "KXHIGHCHI-26SEP25": 23,
-        "KXHIGHLAX-26SEP24": 7,
-        "KXHIGHLAX-26SEP25": 35,
-        "KXHIGHMIA-26SEP24": 6,
-        "KXHIGHMIA-26SEP25": 46,
-        "KXHIGHNY-26SEP24": 0,
-        "KXHIGHNY-26SEP25": 18
+        "KXHIGHCHI-26SEP24": 29,
+        "KXHIGHCHI-26SEP25": 1903,
+        "KXHIGHLAX-26SEP24": 178,
+        "KXHIGHLAX-26SEP25": 4762,
+        "KXHIGHMIA-26SEP24": 54,
+        "KXHIGHMIA-26SEP25": 4845,
+        "KXHIGHNY-26SEP24": 30,
+        "KXHIGHNY-26SEP25": 3846
       },
-      "kept_n": 135,
+      "kept_n": 15647,
       "scope": "timestamp_only_before_row_rules"
     },
     "windows": {
       "budget": {
+        "coverage_mode": "single",
         "n_windows": 1050,
-        "not_proven": 1050,
+        "not_proven": 632,
         "open_ended": 36,
-        "proven": 0,
-        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+        "proven": 418,
+        "proven_means": "that ticker has one later complete poll whose half-open cursor range [min_ts, requested_at) spans the whole window"
       },
       "collector": {
+        "coverage_mode": "single",
+        "n_in_scope_tickers": 48,
         "n_windows": 0,
         "not_proven": 0,
         "open_ended": 0,
         "proven": 0,
-        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+        "proven_means": "every in-scope ticker has one later complete poll whose cursor range spans the whole window"
       },
       "per_ticker_429": {
+        "coverage_mode": "single",
         "n_windows": 131,
-        "not_proven": 131,
+        "not_proven": 90,
         "open_ended": 9,
-        "proven": 0,
-        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+        "proven": 41,
+        "proven_means": "that ticker has one later complete poll whose half-open cursor range [min_ts, requested_at) spans the whole window"
       },
       "storm": {
+        "coverage_mode": "single",
+        "n_in_scope_tickers": 48,
         "n_windows": 225,
-        "not_proven": 225,
+        "not_proven": 182,
         "open_ended": 0,
-        "proven": 0,
-        "proven_means": "this mapping does not prove coverage; every flagged window can drop trades"
+        "proven": 43,
+        "proven_means": "every in-scope ticker has one later complete poll whose cursor range spans the whole window"
       }
     }
   },

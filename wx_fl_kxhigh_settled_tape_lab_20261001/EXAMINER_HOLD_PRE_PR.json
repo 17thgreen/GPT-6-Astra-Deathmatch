@@ -27,6 +27,11 @@
   "taker_net_roi_cache": null,
   "out_of_domain_replication_of": "fb6540f52ed5f819ccf6e80bf0cf7eb6d951e065416b9d550fead0c6d06043fa",
   "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "addendum_sha256": "68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153",
+  "reading_scope": "CHI/MIA/NY 2026-09-25 only",
+  "date_level_n": 1,
+  "verdict_cap": "ITERATE",
+  "kill_mapping_disabled": true,
   "ruling_sha256": "0e37f91b60289084f4e660b74bcb12a04f83f66fc93410add3a26baf0dd9f6af",
   "freeze_sha256": "aec5b760f8539ea9f30aa1c3601534dccf78a62ee2026cb939842656e3c20e0f",
   "caveats": [

@@ -211,58 +211,65 @@ def _load_frame(bundle_tgz, dest):
     bundle_tgz = Path(bundle_tgz)
     assert_path_allowed(bundle_tgz)
     assert_sha256(bundle_tgz, BUNDLE_SHA256)
+    owned = None
     if dest is None:
-        dest = Path(tempfile.mkdtemp(prefix='wxfl-bundle-'))
+        owned = tempfile.TemporaryDirectory(prefix='wxfl-bundle-')
+        dest = Path(owned.name)
     else:
         dest = Path(dest)
         dest.mkdir(parents=True, exist_ok=True)
-    with tarfile.open(bundle_tgz, 'r:*') as archive:
-        archive.extractall(dest, filter='data')
-    root = dest / BUNDLE_DIRNAME
-    verify_manifest(root)
-    snapshot = root / SNAPSHOT_REL
-    if snapshot.stat().st_size != SNAPSHOT_BYTES:
-        raise SnapshotShaMismatch('snapshot bytes')
-    connection = open_snapshot(snapshot, SNAPSHOT_SHA256)
     try:
-        gap_bytes, poll_bytes, gap_rows, poll_rows = regenerate_gap_exports(connection)
-        if hashlib.sha256(gap_bytes).hexdigest() != GAPS_SHA256:
-            raise ManifestShaMismatch('gap export')
-        if hashlib.sha256(poll_bytes).hexdigest() != POLLS_SHA256:
-            raise ManifestShaMismatch('poll export')
-        pinned_gaps = (root / GAPS_REL).read_bytes()
-        pinned_polls = (root / POLLS_REL).read_bytes()
-        if pinned_gaps != gap_bytes or hashlib.sha256(pinned_gaps).hexdigest() != GAPS_SHA256:
-            raise ManifestShaMismatch('pinned gap export')
-        if pinned_polls != poll_bytes or hashlib.sha256(pinned_polls).hexdigest() != POLLS_SHA256:
-            raise ManifestShaMismatch('pinned poll export')
-        frozen_path = root / FROZEN_REL
-        assert_sha256(frozen_path, FROZEN_SHA256)
-        frozen = json.loads(frozen_path.read_text(encoding='utf-8'))
-        registry_path = root / REGISTRY_REL
-        assert_sha256(registry_path, REGISTRY_SHA256)
-        registry = json.loads(registry_path.read_text(encoding='utf-8'))
-        markets, trades, timestamp = _read_universe(connection, frozen)
+        with tarfile.open(bundle_tgz, 'r:*') as archive:
+            archive.extractall(dest, filter='data')
+        root = dest / BUNDLE_DIRNAME
+        verify_manifest(root)
+        snapshot = root / SNAPSHOT_REL
+        if snapshot.stat().st_size != SNAPSHOT_BYTES:
+            raise SnapshotShaMismatch('snapshot bytes')
+        connection = open_snapshot(snapshot, SNAPSHOT_SHA256)
+        try:
+            gap_bytes, poll_bytes, gap_rows, poll_rows = regenerate_gap_exports(connection)
+            if hashlib.sha256(gap_bytes).hexdigest() != GAPS_SHA256:
+                raise ManifestShaMismatch('gap export')
+            if hashlib.sha256(poll_bytes).hexdigest() != POLLS_SHA256:
+                raise ManifestShaMismatch('poll export')
+            pinned_gaps = (root / GAPS_REL).read_bytes()
+            pinned_polls = (root / POLLS_REL).read_bytes()
+            if pinned_gaps != gap_bytes or hashlib.sha256(pinned_gaps).hexdigest() != GAPS_SHA256:
+                raise ManifestShaMismatch('pinned gap export')
+            if pinned_polls != poll_bytes or hashlib.sha256(pinned_polls).hexdigest() != POLLS_SHA256:
+                raise ManifestShaMismatch('pinned poll export')
+            frozen_path = root / FROZEN_REL
+            assert_sha256(frozen_path, FROZEN_SHA256)
+            frozen = json.loads(frozen_path.read_text(encoding='utf-8'))
+            registry_path = root / REGISTRY_REL
+            assert_sha256(registry_path, REGISTRY_SHA256)
+            registry = json.loads(registry_path.read_text(encoding='utf-8'))
+            markets, trades, timestamp = _read_universe(connection, frozen)
+        finally:
+            connection.close()
+        payload = {
+            'bundle_sha256': BUNDLE_SHA256,
+            'snapshot_sha256': SNAPSHOT_SHA256,
+            'snapshot_uri_suffix': 'mode=ro&immutable=1',
+            'gaps_sha256': GAPS_SHA256,
+            'polls_sha256': POLLS_SHA256,
+            'frozen_sha256': FROZEN_SHA256,
+            'registry_sha256': REGISTRY_SHA256,
+            'registry': registry,
+            'frozen_markets': list(frozen['universe']['markets']),
+            'gap_rows': gap_rows,
+            'poll_rows': poll_rows,
+            'markets': markets,
+            'trades_pre_w0': trades,
+            'timestamp': timestamp,
+            'results': None,
+            'pnl': None,
+        }
+        return payload
     finally:
-        connection.close()
-    return {
-        'bundle_sha256': BUNDLE_SHA256,
-        'snapshot_sha256': SNAPSHOT_SHA256,
-        'snapshot_uri_suffix': 'mode=ro&immutable=1',
-        'gaps_sha256': GAPS_SHA256,
-        'polls_sha256': POLLS_SHA256,
-        'frozen_sha256': FROZEN_SHA256,
-        'registry_sha256': REGISTRY_SHA256,
-        'registry': registry,
-        'frozen_markets': list(frozen['universe']['markets']),
-        'gap_rows': gap_rows,
-        'poll_rows': poll_rows,
-        'markets': markets,
-        'trades_pre_w0': trades,
-        'timestamp': timestamp,
-        'results': None,
-        'pnl': None,
-    }
+        if owned is not None:
+            owned.cleanup()
 
 
 def _read_universe(connection, frozen):

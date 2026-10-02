@@ -162,6 +162,49 @@ class GapMappingTests(unittest.TestCase):
         self.assertEqual(summary['storm']['proven'], 0)
         self.assertEqual(summary['storm']['not_proven'], 1)
 
+    def test_union_chains_complete_polls_and_rejects_holes_and_open_windows(self):
+        window_rows = [{
+            'id': 1, 'stream': 'kalshi_trades_budget', 'key': 'T',
+            'reason': 'budget_shortfall_sweep_late',
+            'started_at': T0, 'ended_at': T1,
+        }]
+        mid = '2026-09-25T01:05:00Z'
+        mid_epoch = gap_mapping.parse_epoch(mid)
+        chained = [
+            _poll(1, 'T', int(START) - 1, mid),
+            _poll(2, 'T', int(mid_epoch), T1),
+        ]
+        windows = gap_mapping.flagged_windows(window_rows, ['T'])
+        union = gap_mapping.attach_proof(windows, chained, ['T'], mode='union')
+        single = gap_mapping.attach_proof(windows, chained, ['T'], mode='single')
+        self.assertTrue(union[0]['proven'])
+        self.assertFalse(single[0]['proven'])
+        self.assertFalse(gap_mapping.gm_cov_drops(START, 'T', union))
+        hole = [
+            _poll(3, 'T', int(START) - 1, mid),
+            _poll(4, 'T', int(mid_epoch) + 30, T1),
+        ]
+        holed = gap_mapping.attach_proof(windows, hole, ['T'], mode='union')
+        self.assertFalse(holed[0]['proven'])
+        self.assertTrue(gap_mapping.gm_cov_drops(START, 'T', holed))
+        incomplete = [
+            _poll(5, 'T', int(START) - 1, mid),
+            _poll(6, 'T', int(mid_epoch), T1, ok=0, status=429, n_items=None, error='HTTP 429'),
+        ]
+        broken = gap_mapping.attach_proof(windows, incomplete, ['T'], mode='union')
+        self.assertFalse(broken[0]['proven'])
+        self.assertFalse(gap_mapping.logical_polls(incomplete)[1]['complete'])
+        open_rows = [{
+            'id': 8, 'stream': 'kalshi_trades', 'key': 'T', 'reason': 'http_429',
+            'started_at': T0, 'ended_at': None,
+        }]
+        covering = [_poll(9, 'T', int(START) - 5, '2026-09-26T00:00:00Z')]
+        opened = gap_mapping.attach_proof(
+            gap_mapping.flagged_windows(open_rows, ['T']), covering, ['T'], mode='union'
+        )
+        self.assertFalse(opened[0]['proven'])
+        self.assertTrue(gap_mapping.gm_cov_drops(START + 10, 'T', opened))
+
 
 if __name__ == '__main__':
     unittest.main()

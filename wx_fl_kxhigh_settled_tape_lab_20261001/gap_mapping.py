@@ -1,11 +1,15 @@
 """Gap-window mappings for WX-FL-KXHIGH-SETTLED-TAPE.
 
-PRIMARY mapping is GM-COV, per Conductor ACCEPT decision 1. A flagged gap
-window is covered only when a later poll's cursor range spans the whole
-window and that poll completed with no 429, no truncation, and no pagination
-break. The collector's cursor-minus-1-second retry is not treated as proof.
+PRIMARY mapping is GM-COV union coverage, Conductor addendum
+68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153 ruling 3
+option (b). A gap window [start, end) is proven when the union of later
+complete polls' closed cursor intervals [min_ts, requested_at] covers it
+with no hole. Later means the poll's first-page requested_at is strictly
+after the window start (poll_is_later). Open windows stay unproven.
 
-GM-LIT and GM-LIT-PAD are sensitivities. They do not decide the verdict.
+GM-COV-SINGLE is the previous single-poll literal rule, kept as a full
+sensitivity. GM-LIT is a full sensitivity. GM-LIT-PAD is counts only.
+The collector's cursor-minus-1-second retry is not treated as proof.
 """
 
 import re
@@ -14,6 +18,8 @@ from datetime import datetime
 
 PAGE_LIMIT = 1000
 BUDGET_PAD_SECONDS = 1920
+MODE_UNION = 'union'
+MODE_SINGLE = 'single'
 PER_TICKER_STREAMS = ('kalshi_trades', 'kalshi_trades_budget')
 ALL_TICKER_STREAMS = ('kalshi_all', 'collector')
 _TS = re.compile(r'^(.*T\d\d:\d\d:\d\d)(\.\d+)?(\+00:00)$')
@@ -169,12 +175,26 @@ def logical_polls(poll_rows):
     return polls
 
 
+def poll_is_later(poll, start):
+    """A poll is later when its first-page requested_at is strictly after window start.
+
+    This is the meaning shared by the single-poll span test and the union
+    coverage test. A poll requested at or before the window opened does not
+    contribute, even when its cursor range overlaps the window.
+    """
+    requested_at = poll.get('requested_at')
+    if start is None or requested_at is None:
+        return False
+    return requested_at > start
+
+
 def poll_spans_window(poll, start, end):
-    """True only when a complete later poll's cursor range contains the window.
+    """GM-COV-SINGLE: one complete later poll's cursor range contains the window.
 
     Cursor range is the half-open interval [min_ts, requested_at). It is not
-    widened by the collector's cursor-minus-1-second design. An open window
-    (end is None) is never spanned.
+    widened by the collector's cursor-minus-1-second design. Later means
+    poll_is_later: requested_at > start. An open window (end is None) is
+    never spanned.
     """
     if not poll.get('complete'):
         return False
@@ -184,7 +204,7 @@ def poll_spans_window(poll, start, end):
     requested_at = poll.get('requested_at')
     if min_ts is None or requested_at is None:
         return False
-    if not (requested_at > start):
+    if not poll_is_later(poll, start):
         return False
     if min_ts > start:
         return False
@@ -193,14 +213,76 @@ def poll_spans_window(poll, start, end):
     return True
 
 
-def attach_proof(windows, poll_rows, in_scope_tickers):
+def _closed_cursor_interval(poll):
+    """Closed cursor interval [min_ts, requested_at] for one logical poll."""
+    min_ts = poll.get('min_ts')
+    requested_at = poll.get('requested_at')
+    if min_ts is None or requested_at is None:
+        return None
+    lo = float(min_ts)
+    hi = float(requested_at)
+    if hi < lo:
+        return None
+    return lo, hi
+
+
+def union_covers_window(polls, start, end):
+    """GM-COV primary: union of later complete polls covers [start, end) with no hole.
+
+    Each contributing poll must already be complete (every page ok and HTTP 200,
+    no 429, last page under 1000 items, at most 10 pages, cursor chain intact).
+    Incomplete polls are excluded and cannot fill a hole. Each complete later
+    poll contributes the closed interval [min_ts, requested_at]. Later is
+    poll_is_later (requested_at > start). Open windows are never covered.
+    Touching endpoints count as contiguous. A gap between intervals does not.
+    """
+    if end is None or start is None:
+        return False
+    end_f = float(end)
+    intervals = []
+    for poll in polls:
+        if not poll.get('complete'):
+            continue
+        if not poll_is_later(poll, start):
+            continue
+        interval = _closed_cursor_interval(poll)
+        if interval is None:
+            continue
+        lo, hi = interval
+        if lo < end_f and hi >= float(start):
+            intervals.append((lo, hi))
+    if not intervals:
+        return False
+    intervals.sort()
+    cursor = float(start)
+    for lo, hi in intervals:
+        if lo > cursor:
+            return False
+        if hi >= end_f:
+            return True
+        if hi > cursor:
+            cursor = hi
+    return False
+
+
+def _ticker_proven(polls, window, mode):
+    if mode == MODE_SINGLE:
+        return any(poll_spans_window(poll, window['start'], window['end']) for poll in polls)
+    if mode == MODE_UNION:
+        return union_covers_window(polls, window['start'], window['end'])
+    raise GapMappingError('coverage mode')
+
+
+def attach_proof(windows, poll_rows, in_scope_tickers, mode=MODE_UNION):
     """Copy windows with per-ticker proof flags.
 
-    A per-ticker window is proven when that ticker has a spanning complete poll.
-    An all-ticker window is proven for a ticker on the same test. The window's
-    headline `proven` flag is true only when every in-scope ticker is proven,
-    which for a per-ticker window is that one ticker.
+    mode 'union' is the primary: the union of later complete polls covers the
+    window. mode 'single' is GM-COV-SINGLE: one later complete poll spans it.
+    An all-ticker window is judged per ticker. The headline `proven` flag is
+    true only when every applicable ticker is proven. Open windows are not.
     """
+    if mode not in (MODE_UNION, MODE_SINGLE):
+        raise GapMappingError('coverage mode')
     polls = logical_polls(poll_rows)
     by_key = {}
     for poll in polls:
@@ -214,11 +296,9 @@ def attach_proof(windows, poll_rows, in_scope_tickers):
         else:
             keys = [window['key']]
         for ticker in keys:
-            flags[ticker] = any(
-                poll_spans_window(poll, window['start'], window['end'])
-                for poll in by_key.get(ticker, ())
-            )
+            flags[ticker] = _ticker_proven(by_key.get(ticker, ()), window, mode)
         copied = dict(window)
+        copied['coverage_mode'] = mode
         copied['proven_tickers'] = flags
         copied['proven'] = bool(keys) and all(flags.values())
         stamped.append(copied)
@@ -297,37 +377,43 @@ def near_miss_requested_before_end(windows, poll_rows):
     return count
 
 
-def window_summary(proven_windows, in_scope_tickers):
+def window_summary(proven_windows, in_scope_tickers, mode=MODE_UNION):
     """Proven versus not-proven counts by gap type. No prices."""
+    if mode not in (MODE_UNION, MODE_SINGLE):
+        raise GapMappingError('coverage mode')
     tickers = list(in_scope_tickers)
     buckets = ('budget', 'per_ticker_429', 'storm', 'collector')
+    if mode == MODE_UNION:
+        per_ticker_means = (
+            'the union of that ticker\'s later complete polls covers '
+            '[start, end) with closed intervals [min_ts, requested_at] and no hole'
+        )
+        all_ticker_means = (
+            'every in-scope ticker has union coverage from its later complete polls'
+        )
+    else:
+        per_ticker_means = (
+            'that ticker has one later complete poll whose half-open cursor '
+            'range [min_ts, requested_at) spans the whole window'
+        )
+        all_ticker_means = (
+            'every in-scope ticker has one later complete poll whose cursor '
+            'range spans the whole window'
+        )
     summary = {}
     for kind in buckets:
         rows = [window for window in proven_windows if window['gap_type'] == kind]
         open_ended = sum(1 for window in rows if window['end'] is None)
+        proven = sum(1 for window in rows if window['proven'])
+        body = {
+            'n_windows': len(rows),
+            'proven': proven,
+            'not_proven': len(rows) - proven,
+            'open_ended': open_ended,
+            'coverage_mode': mode,
+            'proven_means': all_ticker_means if kind in ('storm', 'collector') else per_ticker_means,
+        }
         if kind in ('storm', 'collector'):
-            proven = sum(1 for window in rows if window['proven'])
-            summary[kind] = {
-                'n_windows': len(rows),
-                'proven': proven,
-                'not_proven': len(rows) - proven,
-                'open_ended': open_ended,
-                'proven_means': (
-                    'every in-scope ticker has a later complete poll whose '
-                    'cursor range spans the whole window'
-                ),
-                'n_in_scope_tickers': len(tickers),
-            }
-        else:
-            proven = sum(1 for window in rows if window['proven'])
-            summary[kind] = {
-                'n_windows': len(rows),
-                'proven': proven,
-                'not_proven': len(rows) - proven,
-                'open_ended': open_ended,
-                'proven_means': (
-                    'that ticker has a later complete poll whose cursor range '
-                    'spans the whole window'
-                ),
-            }
+            body['n_in_scope_tickers'] = len(tickers)
+        summary[kind] = body
     return summary

@@ -1,5 +1,6 @@
 {
   "accept_sha256": "b5bd4f046b3a48cffc5617e5f8680a8b8d9d1688568a6fd723fd3b46a845045a",
+  "addendum_sha256": "68e1ff7a3f170a90b74a72448809558c3ce7364e32a8b5296a1d10c3b2590153",
   "band_registry_sha256": "0860cbe28d28ecc6142ddf6f1ebb67792084264ed82e0b4d868c3b3138ea5312",
   "bundle_sha256": "febc74af09b06db83fb686e904d6f3e305fe30414e4c4f67c05705f0de597807",
   "caveats": [
@@ -13,6 +14,7 @@
   },
   "claim_as_live_R1P1": false,
   "counts_toward_keep": false,
+  "date_level_n": 1,
   "design_lock_sha256": "4ff6bf2cb79ded3ecb77be57a7502392d1295d8a7cfacfc77b926809e671947c",
   "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
   "examiner_score_sha256": "2e74f17b1307b8b57f33a6475cd7ce8af48c470099478cadfb07877b0d70745f",
@@ -26,9 +28,12 @@
   "h1": "maker_gross_roi_delta_FL0_minus_FL1 > 0",
   "h2": "maker_gross_roi_delta_FL2_minus_FL1 <= 0",
   "implement_base": "749bc1464764fda03dcddd1162177ef062b2ece3",
+  "kill_mapping_disabled": true,
   "kill_scope": "KXHIGHCHI/KXHIGHLAX/KXHIGHMIA/KXHIGHNY only",
   "kill_sha256": "be2357773ca7a842e6896676e3ba0291f40ef8e0b8f997d46f7124d4b2705229",
   "lab_directory": "wx_fl_kxhigh_settled_tape_lab_20261001",
+  "locdo_rule": "n = n_eff = |D|; need = ceil(2n/3); inconclusive if n_eff < 3. H1 votes only over D01 and H2 only over D21. Addendum 68e1ff7a supersedes the ACCEPT >= 6 of 8 wording with this freeze formula.",
+  "locdo_threshold_n3": 2,
   "locdo_threshold_n8": 6,
   "maker_net_roi_cache": null,
   "net": null,
@@ -39,6 +44,7 @@
   "pre_admitted_at": null,
   "pre_admitted_at_flag_possible": false,
   "pre_admitted_at_reason": "admitted_at null; card02 never admitted",
+  "primary_coverage": "union",
   "primary_mapping": "GM-COV",
   "promote": false,
   "results": null,
@@ -48,6 +54,7 @@
   "sqlite3_module": "snapshot_loader.py",
   "study_label": "HISTORICAL_REPLAY",
   "taker_net_roi_cache": null,
+  "verdict_cap": "ITERATE",
   "verdict_ceiling": "ITERATE",
   "zero_gets": true,
   "zero_orders": true
