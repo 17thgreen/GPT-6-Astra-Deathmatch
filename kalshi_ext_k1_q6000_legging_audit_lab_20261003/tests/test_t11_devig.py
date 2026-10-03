@@ -1,11 +1,16 @@
+import hashlib
 import json
 import unittest
+from pathlib import Path
 
 import support  # noqa: F401
 from consensus import join_cohort
 from constants import PINS_REL
-from orchestrator import RESULTS, measure
+from orchestrator import measure
 from pins_io import verified_bytes
+
+FIXTURE = Path(__file__).resolve().parents[1] / "fixtures" / "CONSENSUS_FIXTURE.json"
+FIXTURE_SHA256 = "9996b19888bf49cffdd9a35d1cc05d45f7bb28c77af06d9f85d977babfac3c38"
 
 
 class T11Devig(unittest.TestCase):
@@ -28,8 +33,11 @@ class T11Devig(unittest.TestCase):
             measurement["weeks"],
             verified_bytes(PINS_REL["games"]).decode("utf-8"),
         )
-        fixture = json.loads((RESULTS / "CONSENSUS_FIXTURE.json").read_text(encoding="utf-8"))
-        by_id = {row["game_id"]: row for row in fixture["rows"]}
+        raw = FIXTURE.read_bytes()
+        self.assertEqual(hashlib.sha256(raw).hexdigest(), FIXTURE_SHA256)
+        frozen = json.loads(raw.decode("utf-8"))
+        by_id = {row["game_id"]: row for row in frozen}
+        self.assertEqual(len(by_id), 31)
         for left, right in zip(measurement["joined"]["rows"], again["rows"]):
             self.assertAlmostEqual(left["p_home_prop"], right["p_home_prop"], delta=1e-6)
             self.assertAlmostEqual(left["p_home_shin"], right["p_home_shin"], delta=1e-6)
@@ -37,7 +45,8 @@ class T11Devig(unittest.TestCase):
             stored = by_id[left["game_id"]]
             self.assertAlmostEqual(stored["p_home_prop"], left["p_home_prop"], delta=1e-6)
             self.assertAlmostEqual(stored["p_home_shin"], left["p_home_shin"], delta=1e-6)
-            self.assertAlmostEqual(stored["overround"], left["overround"], delta=1e-6)
+            # Frozen fixture overround is q_away + q_home - 1. This lab stores q_away + q_home.
+            self.assertAlmostEqual(stored["overround"], left["overround"] - 1.0, delta=1e-6)
 
 
 if __name__ == "__main__":

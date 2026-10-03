@@ -227,8 +227,18 @@ def decide_verdict(
     censored_against,
     open_at_window_end_contracts,
     ci_excludes_0,
+    delta_star,
+    ci_low,
+    ci_high,
 ):
-    """R32. Only Δ* can move a non-inconclusive verdict. Domain is closed."""
+    """R32. Only Δ* can move a non-inconclusive verdict. Domain is closed.
+
+    Conductor ruling CONDUCTOR_RULING_EXT_K1_N6_UNDEFINED_DELTA_2026-10-03,
+    sha256 prefix 0b68c4bf. Prospective only: if Δ* is None or its CI is None,
+    the verdict is INCONCLUSIVE. The ruling sets no dropped-resample share
+    threshold. The PR66 run (ON 2664, AGAINST 2578, 0 of 10_000 resamples
+    dropped) keeps a defined Δ* and CI, so this branch does not fire there.
+    """
     reasons = []
     if not join_ok:
         reasons.append("join")
@@ -242,6 +252,8 @@ def decide_verdict(
         reasons.append("censored_ON_at_Hstar")
     if censored_against is not None and censored_against > 0.20:
         reasons.append("censored_AGAINST_at_Hstar")
+    if delta_star is None or ci_low is None or ci_high is None:
+        reasons.append("delta_star_or_ci_undefined")
     if reasons:
         verdict = "INCONCLUSIVE"
     elif ci_excludes_0:

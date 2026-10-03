@@ -73,7 +73,7 @@ Headline maker-order fee total is $1,286.22, label `CACHE_NOT_R1P1`, name `NON_D
 
 ## Invariance
 
-One thousand `Random(20261003)` shuffles of the 31-game `(away_score, home_score)` pairs, plus a shift-1 derangement, left these artifacts byte-identical. The shift-1 derangement changes only the settlement artifact, which is outside the constancy hash.
+T01(b) applies one thousand `Random(20261003)` shuffles of the 31-game `(away_score, home_score)` pairs, plus a shift-1 derangement, to the cached portion table. That check covers `settle_artifact` only. Join, consensus, the refusal gate and horizon markouts are not rebuilt there, so the four constancy artifacts do not read the permuted scores and stay byte-identical for that reason. The shift-1 derangement on that cached path changes the settlement artifact, which is outside the constancy hash. End-to-end rebuild coverage is in T01: `Random(7)`, 25 shuffles plus a shift-1 derangement, permutes the score columns of the games csv and rebuilds join, consensus, gate and markouts. Those rebuilt artifact shas stay at the constancy sha below. A moneyline-column permutation changes the artifacts. The recorded permutation count, seed and derangement below remain the cached T01(b) run.
 
 | Artifact | sha256 |
 |---|---|

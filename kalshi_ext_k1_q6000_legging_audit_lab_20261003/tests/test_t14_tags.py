@@ -19,13 +19,25 @@ DERIVED = {
 }
 
 
+R33_FLAGS = (
+    "DEV_GRADE_REUSED_31_GAME_COHORT",
+    "HYPOTHETICAL_REPLAY_FILLS",
+    "IN_SAMPLE_DEV",
+)
+
+
 class T14Tags(unittest.TestCase):
     def test_consensus_objects_carry_the_ex_post_sentence(self):
         measure(write=True)
         saw_derived = False
+        names = []
         for path in sorted(RESULTS.glob("*.json")):
+            names.append(path.name)
             payload = json.loads(path.read_text(encoding="utf-8"))
+            for flag in R33_FLAGS:
+                self.assertIs(payload.get(flag), True, path.name)
             saw_derived = self._walk(payload, path.name) or saw_derived
+        self.assertIn("INVARIANCE.json", names)
         self.assertTrue(saw_derived)
 
     def _walk(self, obj, name):
