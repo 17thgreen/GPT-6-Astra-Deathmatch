@@ -1,0 +1,33 @@
+{
+ "type": "CONDUCTOR_RULING",
+ "subject": "ADMIT-1 reboot outage gap ACK + weather/card03 relaunch ruling",
+ "issued_at_et": "2026-09-29T16:42:52-04:00",
+ "gap_record": {
+  "path": "lab/astra-capture/prospective/ADMIT1_OUTAGE_GAP_2026-09-27_to_2026-09-29.json",
+  "sha256": "4f2a5e2693f809e592238c0bf58ecac93f982fb8809c98ca81e51a41d8a65198",
+  "sha_verified_on_box": true
+ },
+ "gap_ack": [
+  "2026-09-27T13:31:52Z to 2026-09-29T20:39:41Z (~55.1h) is a permanent honest gap: no backfill, no interpolation, no re-admit",
+  "Recorder run 13 relaunch on same record.py bdbd06b4, same stamped panel d0b28e69 (admitted_at 2026-09-22T21:18:13Z), same DB: ACCEPTED as continuation, not a new admission",
+  "Run 10 stale row (running/ended NULL): leave as-is; annotate via gap record only; do not edit DB rows",
+  "C1 PIT@CLE: in-window book lost -> that event is NOT_SCORED for any book-dependent metric; no substitute event, no bar change",
+  "Other 14 events: T-7d ramp window missing; any ramp-dependent feature is NOT_SCORED for Sep 27-29; post-relaunch capture scorable as normal"
+ ],
+ "weather_ruling": {
+  "decision": "GO_STAGED",
+  "cap": "Phase B table row: <=5 rpm, >=12 s between Kalshi GETs, lists <=2 rpm",
+  "precondition": "30 consecutive minutes of recorder run 13 with zero new 429s since relaunch",
+  "tripwire": "any new recorder 429 -> weather pauses Kalshi GETs (NWS continues) and Collector escalates; no retry bursts"
+ },
+ "card03_ruling": {
+  "decision": "GO_REDUCED",
+  "owner": "Mechanic",
+  "cap": "<=3 rpm, >=20 s, lists <=1 rpm, /markets stays off hot path (AMENDMENT_02)",
+  "reason": "Phase B non-recorder combined cap is 10 rpm: weather 5 + atp_rj 2 + card03 3 = 10",
+  "start_after": "weather has run 30 min clean under the same tripwire",
+  "note": "card03 tape gap Sep 27-29 is permanent; record as gap, no fill"
+ },
+ "budget_rebalance": "Mechanic card03 Phase B row 5 -> 3 rpm until 2026-10-02T06:15Z; all other rows unchanged; recorder reservation unchanged",
+ "no_orders": true
+}
