@@ -1,0 +1,22 @@
+{
+ "experiment_id": "EXT-K1-Q6000-LEGGING-RISK-AUDIT",
+ "status": "FREEZE_ONLY_NOT_RUN",
+ "results": null,
+ "pnl": null,
+ "roi": null,
+ "uch_by_split": null,
+ "markouts": null,
+ "gate": null,
+ "primary_contrast_delta_star": null,
+ "verdict": null,
+ "counts_toward_keep": false,
+ "promote": false,
+ "examiner_pin_account_class": null,
+ "fee_label": "CACHE_NOT_R1P1",
+ "tags": [
+  "EX_POST_ANCHOR_U",
+  "DEV_GRADE_REUSED_31_GAME_COHORT",
+  "HYPOTHETICAL_REPLAY_FILLS",
+  "IN_SAMPLE_DEV"
+ ]
+}

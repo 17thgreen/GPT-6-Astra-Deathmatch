@@ -1,0 +1,37 @@
+{
+ "experiment_id": "EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS",
+ "status": "FREEZE_ONLY_NOT_RUN",
+ "results": null,
+ "pnl": null,
+ "roi": null,
+ "part_a": {
+  "markouts_by_tercile": null,
+  "uch_by_tercile": null,
+  "fills_by_tercile": null,
+  "primary_contrast_delta_star_a": null,
+  "verdict": null
+ },
+ "part_b": {
+  "taker_yes_share_by_week": null,
+  "taker_yes_share_by_band": null,
+  "maker_no_excess_gross_by_week": null,
+  "maker_no_excess_net_by_week": null,
+  "maker_no_excess_by_band": null,
+  "dispersion": null,
+  "verdict": null
+ },
+ "verdict": null,
+ "counts_toward_keep": false,
+ "promote": false,
+ "feeds_gate": false,
+ "examiner_pin_account_class": null,
+ "fee_label": "CACHE_NOT_R1P1",
+ "tags": [
+  "DEV_GRADE_REUSED_31_GAME_COHORT",
+  "HYPOTHETICAL_REPLAY_FILLS",
+  "IN_SAMPLE_DEV",
+  "BECKER_EXTERNAL_PRIOR_A",
+  "BECKER_LABEL_DEPENDENT_DESCRIPTIVE_ONLY",
+  "CACHE_NOT_R1P1"
+ ]
+}

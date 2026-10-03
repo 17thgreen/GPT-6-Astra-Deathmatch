@@ -1,0 +1,153 @@
+{
+ "experiment_id": "EXT-K1-Q6000-LEGGING-RISK-AUDIT",
+ "frozen_at_et": "2026-10-03T16:14:59-04:00",
+ "freeze_md_sha256": "5c40fb9d03a924e40577a81f262231701e331c98922f60f6dc7ab65a2dbed6d3",
+ "status": "FROZEN_FREEZE_ONLY_AWAITING_CONDUCTOR_ACCEPT_IMPLEMENT_GO",
+ "universe": {
+  "events": 31,
+  "tickers": 62,
+  "game_ids": [
+   "2026_01_NE_SEA",
+   "2026_01_SF_LA",
+   "2026_01_ARI_LAC",
+   "2026_01_ATL_PIT",
+   "2026_01_BAL_IND",
+   "2026_01_BUF_HOU",
+   "2026_01_CHI_CAR",
+   "2026_01_CLE_JAX",
+   "2026_01_DAL_NYG",
+   "2026_01_GB_MIN",
+   "2026_01_MIA_LV",
+   "2026_01_NO_DET",
+   "2026_01_NYJ_TEN",
+   "2026_01_TB_CIN",
+   "2026_01_WAS_PHI",
+   "2026_01_DEN_KC",
+   "2026_02_DET_BUF",
+   "2026_02_CAR_ATL",
+   "2026_02_CIN_HOU",
+   "2026_02_CLE_TB",
+   "2026_02_GB_NYJ",
+   "2026_02_IND_KC",
+   "2026_02_JAX_DEN",
+   "2026_02_LV_LAC",
+   "2026_02_MIA_SF",
+   "2026_02_MIN_CHI",
+   "2026_02_NO_BAL",
+   "2026_02_PHI_TEN",
+   "2026_02_PIT_NE",
+   "2026_02_SEA_ARI",
+   "2026_02_WAS_DAL"
+  ],
+  "alias_map": {
+   "JAC": "JAX",
+   "LAR": "LA"
+  }
+ },
+ "primary": {
+  "split": "S_DEV",
+  "delta": 0.005,
+  "horizon_s": 1800,
+  "contrast": "MO_1800(AGAINST) - MO_1800(ON), contract-weighted, gross (net beside)",
+  "bootstrap": {
+   "B": 10000,
+   "seed": 20261003,
+   "ci": 0.95,
+   "cluster": "game"
+  }
+ },
+ "horizons_s": [
+  60,
+  300,
+  1800,
+  3600
+ ],
+ "gate": {
+  "primary": {
+   "x": 0.02,
+   "E": 0,
+   "devig": "proportional"
+  },
+  "grid": {
+   "x": [
+    0.01,
+    0.02,
+    0.03,
+    0.05
+   ],
+   "E": [
+    0,
+    125
+   ],
+   "devig": [
+    "proportional",
+    "shin"
+   ]
+  },
+  "inputs": [
+   "nflverse moneylines",
+   "ledger outcome_mid_at_fill",
+   "ledger inventory_after"
+  ],
+  "static_attribution_only": true
+ },
+ "fees": {
+  "maker_coefficient": 0.0175,
+  "M_KXNFLGAME": 1,
+  "headline": "non-direct: per maker order ceil to $0.01 of sum of ceil_6dp model fees, pro rata",
+  "sensitivity": "direct member $0.0001 = ledger fee/size",
+  "label": "CACHE_NOT_R1P1",
+  "examiner_pin_account_class": null,
+  "cache_sha256": {
+   "schedule": "d9435b8b7e30fecbe1a07539990667b23b828a8175962c0882d6c7bce93980ec",
+   "rounding": "7591cf0fb277eaf8fac8aedaf1645e58b61dacb22b5fed20ba7d8ea9f76ffa22",
+   "nonstandard": "558a4fa75516cc68b31568ca83aeb15e1b5f301c2696b32647315668e464c5be"
+  }
+ },
+ "verdict_domain": [
+  "DESCRIPTIVE",
+  "ITERATE",
+  "INCONCLUSIVE"
+ ],
+ "counts_toward_keep": false,
+ "promote": false,
+ "unpinned_rule_ids": [
+  "R06",
+  "R08",
+  "R10",
+  "R12",
+  "R14",
+  "R16",
+  "R18",
+  "R21",
+  "R23",
+  "R24",
+  "R25",
+  "R27",
+  "R28",
+  "R30",
+  "R31",
+  "R32"
+ ],
+ "exclusions": {
+  "admit1_window_utc": [
+   "2026-09-27T00:00:00Z",
+   "2026-09-30T04:00:00Z"
+  ],
+  "nfl_reserved_holdout_sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+  "kxmlbspread_prereg_accept_sha256": "9a987a77e6cd6293ddaeb14fadbf33a25c1a6cc392af25f46eaaaaae33ebb273",
+  "refused_paths": [
+   "lab/astra-capture/prospective/capture.sqlite",
+   "lab/astra-capture/weather-nowcast/archive.sqlite"
+  ]
+ },
+ "tags": [
+  "EX_POST_ANCHOR_U",
+  "DEV_GRADE_REUSED_31_GAME_COHORT",
+  "HYPOTHETICAL_REPLAY_FILLS",
+  "IN_SAMPLE_DEV"
+ ],
+ "results": null,
+ "pnl": null,
+ "roi": null
+}

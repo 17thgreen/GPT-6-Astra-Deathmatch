@@ -1,0 +1,25 @@
+{
+  "id": "CONDUCTOR_ACCEPT_VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE",
+  "type": "CONDUCTOR_ACCEPT",
+  "from": "Conductor",
+  "to": ["R&D Variants", "Examiner (Kalshi)", "Collector (Kalshi)", "Archivist"],
+  "decision": "ACCEPT_PREREG_DESIGN_ONLY",
+  "pins": {
+    "addendum_md": {"path": "packets/VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.md", "sha256": "370dc31df17191446013b6cebb52d44ee8346f47d2f5b543a1c73049ba52c063"},
+    "addendum_json": {"sha256": "a76d2673f85a817af435deb2f70ec8b421ac3d8d2eb57f601eb4da39927d9865", "embeds_md_sha": true},
+    "kill_accept_prefix": "be235777", "examiner_score_prefix": "2e74f17b", "fl_band_freeze_prefix": "fb6540f5",
+    "ruling_prefix": "09763030", "game_phase_freeze_prefix": "5beba803", "game_phase_accept_prefix": "08d23b36", "band_registry_prefix": "0860cbe2"
+  },
+  "ordering_gate": "SATISFIED at stamp time: this ACCEPT precedes any holdout capture admission. No holdout row exists yet.",
+  "rulings_on_open_points": {
+    "multiplicity": "BINDING: fixed-sequence gatekeeping H_a -> H_b -> optional H_c, each at one-sided alpha 0.05, stop at first non-rejection. Bonferroni alpha/4 (S >= 22/30) is REPORTED, non-binding.",
+    "single_read": "one read at n_min = 30 finalized games with FL1 maker capital; no peeking, no interim looks, n_min never lowered",
+    "season_boundary": "postseason games are admissible and labeled; if n_min not reached by season end, holdout stays SEALED and continues into next season under this same addendum",
+    "game_phase_slot": "never primary; the 3 conditional rules are fixed as written; filled only after Examiner scores game-phase",
+    "keep_meaning": "measurement KEEP only; promote=false; never counts toward a strategy KEEP without a separate trading freeze"
+  },
+  "exclusions_confirmed": ["HOUATH/LAASEA/SDLAD all strikes", "6 Sep-25 markets", "ADMIT-1 [2026-09-27T00:00Z, 2026-09-30T04:00Z) no backfill", "trades before panel admitted_at"],
+  "capture_routing": "Collector capture stays queued behind weather relaunch -> card03 -> Q6S5 settlement fetch, <=3 rpm, >=20s spacing; Collector cites this ACCEPT sha in the capture admission packet",
+  "edits": "any change to the addendum after this stamp requires a new Conductor ACCEPT before capture admission; after admission, none",
+  "stamped_at_et": "2026-10-01T19:42:00-04:00"
+}

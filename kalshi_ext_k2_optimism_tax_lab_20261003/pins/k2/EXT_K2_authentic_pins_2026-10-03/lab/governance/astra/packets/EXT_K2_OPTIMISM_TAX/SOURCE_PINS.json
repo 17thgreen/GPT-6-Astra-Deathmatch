@@ -1,0 +1,282 @@
+{
+ "experiment_id": "EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS",
+ "hashed_at_et": "2026-10-03T16:45-04:00",
+ "root": "/workspace (paths relative)",
+ "cloud_part_a_inputs": {
+  "reused_bundle": {
+   "path": "EXT_K1_authentic_pins_2026-10-03.tgz",
+   "sha256": "0f8f529733bfd1ccb01b36f312cdc20865cc2811c04dcd3c812d50c67295db38",
+   "bytes": 25008407,
+   "parts": [
+    {
+     "path": "EXT_K1_authentic_pins_2026-10-03.tgz.part-00",
+     "sha256": "3fd70f7ba7c3543877e3608b9d1f3c7532307f8d7869590d8d02e9dc8e9ca027",
+     "bytes": 20000000
+    },
+    {
+     "path": "EXT_K1_authentic_pins_2026-10-03.tgz.part-01",
+     "sha256": "1f8b2ac11ffe3ff26b784351c9fc7519848d96c605d71aef633abe98d24c914b",
+     "bytes": 5008407
+    }
+   ],
+   "inner_manifest_sha256": "a041561e130fb97eaa8d7bfab5dd6fa53963fa4fbdb13c00cd4f71089e0e3db5",
+   "verified_on_box_2026_10_03": "concat parts == 0f8f5297; inner MANIFEST 37/37 OK; on-box K1 SOURCE_PINS 38/38 match",
+   "files_used_by_k2": [
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/BASELINE_HASHES.json",
+     "sha256": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335",
+     "bytes": 912
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json",
+     "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+     "bytes": 7446
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/SHADOW_CANDIDATE_FREEZE.json",
+     "sha256": "b55ff36cb161c824a3d1b490795c8ac6891f01489456f61da311ac863366af48",
+     "bytes": 3057
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/inputs/events.jsonl.gz",
+     "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4",
+     "bytes": 22967126
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/inputs/manifest.json",
+     "sha256": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+     "bytes": 50950
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/inputs/markets.json",
+     "sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f",
+     "bytes": 9697
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/inputs/week_membership.json",
+     "sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c",
+     "bytes": 1166
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/queue_policies.py",
+     "sha256": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+     "bytes": 11366
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/replay_v2.py",
+     "sha256": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+     "bytes": 18973
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d0.25_000.json",
+     "sha256": "78b94ae5a846dfa81a1baec8fdc0b7992e479af1ddbc67908195f47500a7930a",
+     "bytes": 11357
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+     "sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f",
+     "bytes": 534945
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d0.25_000_orders.jsonl.gz",
+     "sha256": "c390801b9a7cf6d182d2d097123ed944792980524a7975e6e59a904a530f4b1c",
+     "bytes": 569767
+    },
+    {
+     "path": "lab/astra-science/nfl_factorial_lab_20260921/run_experiment.py",
+     "sha256": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc",
+     "bytes": 4503
+    },
+    {
+     "path": "lab/governance/astra/SCOUT_EXTERNAL_HUNT_2026-10-03.md",
+     "sha256": "13e442892d27466f3ee3082509a47ac9706c7f3448aa079de798bec8cb1a1dfb",
+     "bytes": 22360
+    },
+    {
+     "path": "lab/governance/astra/_prev/bfb1b7f353bc89cfd82c6d56abfeac7755f7d96e2aa0ae95007cca4160193d0f.SCOUT_EXTERNAL_HUNT_2026-10-03.md",
+     "sha256": "bfb1b7f353bc89cfd82c6d56abfeac7755f7d96e2aa0ae95007cca4160193d0f",
+     "bytes": 22200
+    },
+    {
+     "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.json",
+     "sha256": "9a987a77e6cd6293ddaeb14fadbf33a25c1a6cc392af25f46eaaaaae33ebb273",
+     "bytes": 2393
+    },
+    {
+     "path": "lab/governance/astra/packets/CONDUCTOR_KICK_SCOUT_EXTERNAL_HUNT_WHILE_BOX_IP_CLOSED_2026-10-03.json",
+     "sha256": "9c583e82aec1c5d622f222875c19c1edc5f4c11de4908fe32f503494aa7f60c9",
+     "bytes": 874
+    },
+    {
+     "path": "lab/governance/astra/packets/CONDUCTOR_RULING_ADMIT1_OUTAGE_GAP_WEATHER_CARD03_RELAUNCH_2026-09-29.json",
+     "sha256": "ac7cfe63623ca342ab5b4285ff58382a8138b58fb6cd8e95310a5d30d90304f2",
+     "bytes": 2011
+    },
+    {
+     "path": "lab/governance/astra/packets/CONDUCTOR_RULING_SCOUT_EXTERNAL_HUNT_2026-10-03.json",
+     "sha256": "870895a58e80fd1442d0ce97e42df02426bf7e38f64dcd091efc6fbf26b74ebf",
+     "bytes": 1735
+    },
+    {
+     "path": "lab/governance/astra/packets/RESERVED_HOLDOUT_REPIN_2026-09-24.md",
+     "sha256": "f4ee77b8274bfd712fe030f4d6415df93c2b8dab61cfc6393f658cd0c828a8df",
+     "bytes": 6434
+    },
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_HOLDOUT_PREREG_ADDENDUM_Q6S5_KXMLBSPREAD_UNTOUCHED_CAPTURE_2026-10-01.md",
+     "sha256": "370dc31df17191446013b6cebb52d44ee8346f47d2f5b543a1c73049ba52c063",
+     "bytes": 22921
+    },
+    {
+     "path": "lab/governance/astra/packets/scout_house_fee_2026-09-24/raw/docs/docs_fee_rounding.txt",
+     "sha256": "7591cf0fb277eaf8fac8aedaf1645e58b61dacb22b5fed20ba7d8ea9f76ffa22",
+     "bytes": 4041
+    },
+    {
+     "path": "lab/governance/astra/packets/scout_house_fee_2026-09-24/raw/docs/kalshi_fee_schedule.txt",
+     "sha256": "d9435b8b7e30fecbe1a07539990667b23b828a8175962c0882d6c7bce93980ec",
+     "bytes": 18656
+    },
+    {
+     "path": "lab/governance/astra/packets/scout_house_fee_2026-09-24/raw/docs/nonstandard_fee_series.json",
+     "sha256": "558a4fa75516cc68b31568ca83aeb15e1b5f301c2696b32647315668e464c5be",
+     "bytes": 4335793
+    },
+    {
+     "path": "lab/governance/astra/registry/RULE_FROZEN_EDIT_PREV_BYTES_2026-09-24.md",
+     "sha256": "f0aab7d15ca78a097644008db02013eae3a56cb81b2a6aef2cfe6faf21e3e6d1",
+     "bytes": 1282
+    },
+    {
+     "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.json",
+     "sha256": "56bcf6269a42031d9d90496e9a65c2292321aed2165033f6fb44ff8cc4d6b1cc",
+     "bytes": 38172
+    },
+    {
+     "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.2.md",
+     "sha256": "ad1dd2834652b8e9be331ddf2f3ec900ea587efb042251fde6452532b2e36394",
+     "bytes": 12484
+    }
+   ]
+  },
+  "k2_delta_bundle": {
+   "path": "EXT_K2_authentic_pins_2026-10-03.tgz",
+   "note": "sha/bytes in BUNDLE_RECEIPT.json (cannot be inside itself)",
+   "bundled_inputs": [
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_EXT_K1_Q6000_LEGGING_RISK_AUDIT_FREEZE_2026-10-03.md",
+     "sha256": "5c40fb9d03a924e40577a81f262231701e331c98922f60f6dc7ab65a2dbed6d3",
+     "bytes": 48357
+    },
+    {
+     "path": "lab/governance/astra/packets/VARIANTS_EXT_K1_Q6000_LEGGING_RISK_AUDIT_FREEZE_2026-10-03.json",
+     "sha256": "be3e88336389bc62c40413785e6ffb4a572e1dbd006d7cf3dfbc962f8184efaa",
+     "bytes": 15417
+    },
+    {
+     "path": "lab/governance/astra/packets/CONDUCTOR_ACCEPT_EXT_K1_FREEZE_2026-10-03.json",
+     "sha256": "021290077cbbed277455145d2e56e1335f6ae331d56c2ad79d4d85b405559397",
+     "bytes": 1429
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/BUNDLE_RECEIPT.json",
+     "sha256": "0f51d36a88eb10f3da38529a1dea139cb782e5b06a4dc98b53066b06a88e6ef2",
+     "bytes": 1184
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/CONSENSUS_FIXTURE.json",
+     "sha256": "9996b19888bf49cffdd9a35d1cc05d45f7bb28c77af06d9f85d977babfac3c38",
+     "bytes": 10439
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/EMPTY_RESULTS.json",
+     "sha256": "b4a7616d65cb0e93682662040f3a9e6a9ff42e7db8100c9c686b8492c0c5020d",
+     "bytes": 489
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/FROZEN_EXPERIMENT.json",
+     "sha256": "5156bf1ff65c8ffb9ba22b9abfd637797446bdf3762d8c47e7192b31560b5c01",
+     "bytes": 3209
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/MANIFEST.sha256",
+     "sha256": "5e8f79063f132fe2db97ad3ecff5fea463d429f167abed09c58398a87fcadf01",
+     "bytes": 872
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/SOURCE_PINS.json",
+     "sha256": "e58e6568b1484d2de89877fb49237a6295a702cfda81428a62d327f27da8c508",
+     "bytes": 8041
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/STRUCTURAL_VERIFY.json",
+     "sha256": "e2b408e471b4fb5012a9cbb9faccd7651c72da1c929fe4d9b2c108c1b2c0f311",
+     "bytes": 13033
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K1_LEGGING_AUDIT/structural_verify.py",
+     "sha256": "13e40be364be1526bca00630269a723d5d572c0a781a6e156e3f82844f46f481",
+     "bytes": 7831
+    },
+    {
+     "path": "EXT_K1_authentic_pins_2026-10-03.tgz.PARTS.sha256",
+     "sha256": "a92df01da7de46d4fcc635ef8b66c58c464c3a08c84e1ecf7df7d86217fe8afc",
+     "bytes": 222
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K2_OPTIMISM_TAX/structural_verify_devtape.py",
+     "sha256": "cf7112e43b54d78b997596d89afa472aa0c11019f6a36fc7e7cc8970c7fb86bf",
+     "bytes": 5912
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K2_OPTIMISM_TAX/STRUCTURAL_VERIFY_DEVTAPE.json",
+     "sha256": "a687a883300c11c09c6d3ac7cc8ee5e0e7d10fc7ad5124d8dc6cb9a54c2d401d",
+     "bytes": 632
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K2_OPTIMISM_TAX/TERCILE_FIXTURE.json",
+     "sha256": "4acbb826ba58a4c8334dcc026eb5b51f74af494a26945976e7036395085013a8",
+     "bytes": 3861
+    },
+    {
+     "path": "lab/governance/astra/packets/EXT_K2_OPTIMISM_TAX/TERCILE_BUCKETS.json",
+     "sha256": "9acb52888a411be801bb701d12f3982e1e2f1c884accc162ca6f1f1d8fef6a14",
+     "bytes": 1766937
+    }
+   ]
+  },
+  "becker_bytes_in_cloud_inputs": 0
+ },
+ "box_only_part_b_inputs": {
+  "manifest": "lab/astra-capture/external/ext_k2_becker_boxonly_2026-10-03/BECKER_BOXONLY_PIN_MANIFEST.json",
+  "manifest_sha256": "fd5e10531f488f30baf05e2dd6f17c8f8823603ecbae457170dbbde66126fb95",
+  "bundled": false,
+  "cloud_allowed": false
+ },
+ "pinned_not_used": [
+  {
+   "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d0.25_000_decisions.jsonl.gz",
+   "sha256": "e6db52374f834bba210d5c17836828ac3bf0dd54ca9feb5836ea71a611c61b71",
+   "bytes": 838295,
+   "note": "not an input to K2 (B2 restricted to the q3300_d0.25_000 arm)"
+  },
+  {
+   "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d5_000.json",
+   "sha256": "88204ef683f535dc0097bc7a9482f0c05792dd3ea262e8701169e2952c753573",
+   "bytes": 11376,
+   "note": "not an input to K2 (B2 restricted to the q3300_d0.25_000 arm)"
+  },
+  {
+   "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q10000_d0.25_000.json",
+   "sha256": "29ae23f504b2e0c6af13cb749c887b1f77980e98cddf0d4c0bf20103eaa24eb8",
+   "bytes": 11218,
+   "note": "not an input to K2 (B2 restricted to the q3300_d0.25_000 arm)"
+  },
+  {
+   "path": "lab/astra-science/nfl_factorial_lab_20260921/results/q10000_d0.25_000_fills.jsonl.gz",
+   "sha256": "678d6cb602fb832f8a77ac7a0cfefd9a4d8390002b0962ddc956ba1f19f4b59d",
+   "bytes": 174316,
+   "note": "not an input to K2 (B2 restricted to the q3300_d0.25_000 arm)"
+  }
+ ]
+}

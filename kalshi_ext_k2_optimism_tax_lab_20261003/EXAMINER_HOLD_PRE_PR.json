@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS",
+  "status": "HOLD_PRE_PR",
+  "stub_ready": false,
+  "scored": false,
+  "signed_by_examiner": false,
+  "examiner_pin_account_class": null,
+  "verdict": null,
+  "part_b_label": null,
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "counts_toward_keep": false,
+  "promote": false,
+  "feeds_gate": false,
+  "note": "Implementation packet. The Examiner scores part (a) inside DESCRIPTIVE, ITERATE, or INCONCLUSIVE. Part (b) stays unscored until a box run."
+}
