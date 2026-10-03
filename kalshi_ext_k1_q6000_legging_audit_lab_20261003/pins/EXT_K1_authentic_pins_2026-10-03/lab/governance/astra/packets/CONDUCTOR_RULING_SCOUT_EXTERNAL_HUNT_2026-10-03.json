@@ -1,0 +1,15 @@
+{
+  "ruling": "SCOUT_EXTERNAL_HUNT_TRIAGE",
+  "issued_et": "2026-10-03T16:10:00-04:00",
+  "inputs": {"brief": "SCOUT_EXTERNAL_HUNT_2026-10-03.md 13e44289", "freeze": "FREEZE_EXTERNAL_HUNT_2026-10-03.md 15e2d2e4"},
+  "kernels": {
+    "EXT-K1": "TRY first. Variants freezes a measurement-only legging-risk audit of Q6-000 (unhedged contract-hours vs nflverse consensus side; refusal gate). Dev-grade, ex-post anchor only (nflverse line timing undocumented [U]). No retune of 000.",
+    "EXT-K2": "TRY box part second (flow-mix tercile stress on B1/B2). Season-scale via Becker archive after extract + Clock audit.",
+    "EXT-K3": "TRY box half third (Wed-Fri injury-report windows). Inactives half HOLD on egress.",
+    "EXT-K4": "DEFER (egress or Becker+nflverse pbp).",
+    "EXT-K5": "SKIP (W2-B overlap; costs eat gap)."
+  },
+  "becker_archive": "ALLOWED under dd1d7039: public third-party research dataset, not a Kalshi endpoint and not throttle evasion. Collector owns a streamed filtered extract (Kalshi NFL/sports series only) - never store the full 36 GB tar; extract output cap 5 GB; abort if box free disk < 12 GB; record URL, HEAD size/Last-Modified, license from repo README, and sha256 of extract. Clock provenance audit required before any Examiner use. Trade-only, gross-of-fee, no quotes: an external prior [A], can never replay or promote 000.",
+  "fee_rounding": "Examiner pins. Until account member-type is resolved, score with the conservative non-direct-member rule (fees rounded up to $0.01 per order); may also report the $0.0001 direct-member figure as a sensitivity, never as the headline.",
+  "dev_grade": "All box-scorable results on the reused 31-game dev cohort are dev-grade, not OOS; no KEEP from them."
+}

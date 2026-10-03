@@ -1,0 +1,419 @@
+{
+  "experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL-PR60-SCORABILITY",
+  "parent_experiment_id": "Q6S5-KXMLBSPREAD-STRATEGY-FILL",
+  "grandparent_experiment_id": "Q6S5-KXMLBSPREAD-FEEQUEUE-HARNESS",
+  "feature_family": "strategy_fill_pnl_path",
+  "knob": "fill_model",
+  "knob_value_implemented": "public_trade_through_conservative",
+  "knob_value_unavailable": "mechanic_demo_observed",
+  "new_knobs": 0,
+  "new_parameters": 0,
+  "scope": "plumbing only: settled-join + tape-to-quote builder + 9f50ba19 fill engine (never implemented in PR60)",
+  "amendment_role": "pins the Collector settled re-GET by amendment per 9f50ba19 line 49 (rule 6) and line 91",
+  "frozen_at_et": "2026-10-01T23:51:21-04:00",
+  "file_date_utc": "2026-10-02",
+  "owner_seat": "R&D Variants",
+  "status": "FROZEN_FREEZE_ONLY_AWAITING_CONDUCTOR_ACCEPT",
+  "repo": "https://github.com/17thgreen/GPT-6-Astra-Deathmatch",
+  "base_main": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+  "pr60_squash_merge": "12e760f5bd3b622d8f0d70a74c28655464e2b93c",
+  "pr60_lab_tree": "78fca23c47fd8475771bec39bddc516efd92b06d",
+  "pr60_runner_sha256": "296cfe64ff24c2fad0437ce9a9ec11458f557ee94ee900bd621160dc283fa597",
+  "proposed_lab_dir": "kalshi_q6s5_kxmlbspread_strategy_fill_scorability_lab_20261002/",
+  "universe": {
+    "date": "2026-09-25",
+    "series": "KXMLBSPREAD",
+    "games": {
+      "KXMLBSPREAD-26SEP251840PITDET": [
+        "KXMLBSPREAD-26SEP251840PITDET-DET2",
+        "KXMLBSPREAD-26SEP251840PITDET-PIT2"
+      ],
+      "KXMLBSPREAD-26SEP251840TBPHI": [
+        "KXMLBSPREAD-26SEP251840TBPHI-PHI2",
+        "KXMLBSPREAD-26SEP251840TBPHI-TB2"
+      ],
+      "KXMLBSPREAD-26SEP251845NYMWSH": [
+        "KXMLBSPREAD-26SEP251845NYMWSH-NYM2",
+        "KXMLBSPREAD-26SEP251845NYMWSH-WSH2"
+      ]
+    },
+    "n_games": 3,
+    "n_markets": 6,
+    "outcome_counts": {
+      "YES": 1,
+      "NO": 5
+    },
+    "per_ticker_outcomes": "in pinned files only (settlement folder 0dd61920 / join manifest 73af8822); not restated",
+    "closed": [
+      "Sep-24 KXMLBSPREAD universe",
+      "KXHIGH snapshot"
+    ]
+  },
+  "arms_verbatim": {
+    "A0_9f50ba19_line100": "| **Q6S5A0** | `maker_vs_taker_native` | Splits the fill/PnL series into maker legs vs taker legs; produces `maker_vs_taker_roi_delta` |",
+    "A1_9f50ba19_line101": "| **Q6S5A1** | `content_fresh_vs_stale_bin` | Splits placements by rails `content_fresh_flag` at the placement snapshot; produces `fresh_vs_stale_gap` |",
+    "parent_4f65dcdf_line47": "| **Q6S5A0** | Native taker | Partition on native `taker_*` fields only; Lee-Ready **REFUSED** |",
+    "parent_4f65dcdf_line48": "| **Q6S5A1** | Freshness bin | Rails `content_fresh_flag` / queue-attribution bins; no fee invent; no invent fills |",
+    "metric_9f50ba19_line93": "- **Arm metrics:** `maker_vs_taker_roi_delta` = ROI(maker legs) − ROI(taker legs), where ROI = Σpnl / Σ(fill_price + fee) over resolved filled contracts. `fresh_vs_stale_gap` = ROI(content_fresh placements) − ROI(stale placements), using the rails `content_fresh_flag` at the placement snapshot.",
+    "pr60_code_ARMS_lines31_34": "ARMS = {\n    Q6S5A0: 'maker_vs_taker_native',\n    Q6S5A1: 'content_fresh_vs_stale_bin',\n}"
+  },
+  "verbatim_sha256_no_trailing_newline": {
+    "9f50ba19_L93": "ba172cbc5d84a2c2223c56eb6c73bf341b8dd662f99473de6599c57a3c831a99",
+    "9f50ba19_L100_A0": "e5e87a86a2c8a02b66a67751a3fe1d097561cdfa723b4795b357665ed4a65b9c",
+    "9f50ba19_L101_A1": "e54414e3bae1b02428948853672a57e217dfb7ade6b917abf06b8b4d1d4ee7be",
+    "4f65dcdf_L47": "38155ab16fd6764ffcaf57263abf00dcf4a3a317592d686960ac295244430178",
+    "4f65dcdf_L48": "273b7ca8564791fa46055b3908526038c008914da7f1f6e963451deeadf2bf12"
+  },
+  "verbatim_sha256_all_keys": {
+    "L44": "3367aa412122cc938919f86c65c557808118c15e2cce8b6890232c8b3801bb07",
+    "L45": "e9944d877c189d748fe40cc29831d12bb5f6bd040c1a0ac6aec9d4b6ac13e2b2",
+    "L49": "073c9653984051fdccd996b5f1745d8741a7b758d40e1ec3225fd82bdef82a03",
+    "L73": "88e95fd5667b6c0b96c7687d14de4184e9b43d8b29cff86cd31ed0c2af54fea3",
+    "L74": "ccebad59f0e97c0a4e1cc2a43c2677415a5117005a3ecb8065dc0a0fa38de58e",
+    "L75": "94fb5f23c332ff4512147105459cb1bd0566b58ed18ef0a753783b0304f2b179",
+    "L76": "f7520453fa491fc6d177cd9102b9870bfb149cd3108be9c456a02792ef171219",
+    "L77": "18d8452b0a8ff046f5626a5d9452531b81d399bb6abe714759d974663e673681",
+    "L81": "a0d9e190c0b1fb57c98bcc3745671e0a645964097b25e51d5a7453e8585ce8f6",
+    "L82": "71046fce1dc1221f8b04a7c241efe65bfe96a951ddc7588cc04b24958bba5148",
+    "L83": "6fd452d393be079d3dc0ca4bf6cd8c33ae9828afdd16698015afb1ccdcbcafc7",
+    "L84": "2cee3f9e968db9a10eacf6909f48c958869675506bbb0628e230defdc1519161",
+    "L85": "4ece8660322298fc042d0091d878023888701f8431dd841c4ce51d1a080148ad",
+    "L86": "663dc0044506df33a0b898b6e66c141530732a191ab89a1ed6dfee5e6107fc7a",
+    "L90": "98b0a5444ee2b896e94d0a3c3f86e53163188398728da843fce0c2c2d50e4a51",
+    "L91": "532adffc979c4cf82870b5dd8308ef133ef673116620ea1cc1069643210a7621",
+    "L92": "9f19274051ff10d3bcbf69f2f8741ff6d0edbb979a11476d92e7b5e293852cfa",
+    "L93": "ba172cbc5d84a2c2223c56eb6c73bf341b8dd662f99473de6599c57a3c831a99",
+    "L100": "e5e87a86a2c8a02b66a67751a3fe1d097561cdfa723b4795b357665ed4a65b9c",
+    "L107": "718cc388ee614e83999aafd55749d72bdfc463577446da713f10c59a76e85f92",
+    "P47": "38155ab16fd6764ffcaf57263abf00dcf4a3a317592d686960ac295244430178",
+    "P48": "273b7ca8564791fa46055b3908526038c008914da7f1f6e963451deeadf2bf12",
+    "C31_34": "042e24b73d10616b31ef9ce263ff389af5666033bb51db9d2bce2cb664c77a49",
+    "C64_70": "fdaeae81daa8143413df0cb491c7647e8cacdbdc3b7273988a9be6f178a6ba44",
+    "L101": "e54414e3bae1b02428948853672a57e217dfb7ade6b917abf06b8b4d1d4ee7be"
+  },
+  "rules_tape_quote_fill": [
+    {
+      "id": "R01",
+      "unpinned": false,
+      "rule": "Universe = the 6 Sep-25 tickers above",
+      "source_or_resolution": "9f50ba19 L73 (12 panel_admitted) ∩ Conductor commission \"Sep-25 only\". PR60 L431–432 requires panel membership (all 6 present)."
+    },
+    {
+      "id": "R02",
+      "unpinned": false,
+      "rule": "Closed input manifest; sha-check before read; fail-closed",
+      "source_or_resolution": "9f50ba19 L45: 2. **Closed input manifest:** the runner may read only the sha-pinned inputs in `SOURCE_PINS.json` and must check each sha256 before reading. A mismatch is a hard fail. Nothing is filled in to cover a gap."
+    },
+    {
+      "id": "R03",
+      "unpinned": false,
+      "rule": "Placement instants = each dated measured orderbook snapshot of a universe ticker; undated \"latest\" copies ignored",
+      "source_or_resolution": "9f50ba19 L74"
+    },
+    {
+      "id": "R04",
+      "unpinned": true,
+      "rule": "`captured_utc` of a snapshot",
+      "source_or_resolution": "**UNPINNED** → the filename stamp `YYYYMMDDTHHMMSSZ` (e.g. `20260925T044831Z`). The book body holds only `orderbook_fp`. `measured/requests.jsonl` is not in SOURCE_PINS. This is the only pinned capture time, and no sub-second precision is invented."
+    },
+    {
+      "id": "R05",
+      "unpinned": false,
+      "rule": "Status gate: place only if the latest dated market GET for that ticker with stamp ≤ `captured_utc` shows `status==\"active\"`; no such GET ⇒ no placement",
+      "source_or_resolution": "9f50ba19 L74 (\"only if\"). Expected: 15/15 eligible."
+    },
+    {
+      "id": "R06",
+      "unpinned": false,
+      "rule": "Maker price = best displayed bid of that side = **max** price level in `orderbook_fp.yes_dollars` / `no_dollars`",
+      "source_or_resolution": "9f50ba19 L75. Implemented as max, not as \"last element\", so no ordering of the arrays is assumed."
+    },
+    {
+      "id": "R07",
+      "unpinned": false,
+      "rule": "`queue_ahead` = displayed size at that price, Decimal as-is",
+      "source_or_resolution": "9f50ba19 L75 + L84"
+    },
+    {
+      "id": "R08",
+      "unpinned": true,
+      "rule": "Side with no displayed bid",
+      "source_or_resolution": "**UNPINNED** → no maker order on that side (nothing to join; not invented). Expected 0 occurrences."
+    },
+    {
+      "id": "R09",
+      "unpinned": true,
+      "rule": "Crossed or locked snapshot (best yes bid + best no bid ≥ 1)",
+      "source_or_resolution": "**UNPINNED** → no placement for either leg at that snapshot, counted. A post-only bid would be rejected, and the derived ask would sit at or through our own bid. Expected 0 occurrences."
+    },
+    {
+      "id": "R10",
+      "unpinned": false,
+      "rule": "Size = 1 contract per leg per side",
+      "source_or_resolution": "9f50ba19 L75, L76; p16 item 6"
+    },
+    {
+      "id": "R11",
+      "unpinned": true,
+      "rule": "Cancel/replace at the next dated snapshot of the same ticker; the replacement joins the **back** with a fresh `queue_ahead` (no priority carried)",
+      "source_or_resolution": "9f50ba19 L75. **Resolution (UNPINNED detail):** the next dated snapshot is the cancel time even if that snapshot were ineligible (earliest cancel)."
+    },
+    {
+      "id": "R12",
+      "unpinned": true,
+      "rule": "Last order rests until the earliest of (a later pinned GET showing status ≠ active, tape end)",
+      "source_or_resolution": "9f50ba19 L75. **UNPINNED detail:** tape end = the **earliest** `ts_utc` among all rows for that ticker in `trades_fills_2026-09-25/requests.jsonl`, any status. Only WSH2 has two rows (429 at `06:02:31Z`, 200 at `06:03:02Z`) → `06:02:31Z`. Shorter rest ⇒ fewer or equal fills. Rest end uses only SOURCE_PINS GETs; the settlement folder is never read by the builder or the engine."
+    },
+    {
+      "id": "R13",
+      "unpinned": true,
+      "rule": "Print window for an order placed at `t0`: `created_time > t0` and `created_time <` cancel time",
+      "source_or_resolution": "9f50ba19 L82. **UNPINNED precision:** `t0` is a whole-second stamp, so a print qualifies only if `created_time` truncated to whole seconds is **strictly greater** than the `t0` stamp. Prints in the stamped second itself are excluded, because the book may already reflect them. The upper bounds (cancel, tape end) are strict at full precision. A print at exactly the next snapshot stamp belongs to neither order."
+    },
+    {
+      "id": "R14",
+      "unpinned": false,
+      "rule": "Our-side prints: YES bid ← native `taker_side==\"no\"`; NO bid ← `taker_side==\"yes\"`. Native fields must agree (parent `classify_native_taker`, feequeue orchestrator L781–837); disagreement ⇒ row excluded and counted. Lee-Ready REFUSED.",
+      "source_or_resolution": "9f50ba19 L83 + L81 (\"symmetrically\"). Expected native conflicts in the Sep-25 tape: 0."
+    },
+    {
+      "id": "R15",
+      "unpinned": true,
+      "rule": "Block trades (`is_block_trade=true`)",
+      "source_or_resolution": "**UNPINNED** → excluded from both queue depletion and the fill trigger, counted. They are negotiated off-book and cannot execute against or deplete a resting book order, so excluding them can only reduce fills. Expected 0 (0 block rows in the Sep-25 tape)."
+    },
+    {
+      "id": "R16",
+      "unpinned": true,
+      "rule": "Price consistency",
+      "source_or_resolution": "**UNPINNED** → rows with `yes_price_dollars + no_price_dollars ≠ 1` (exact Decimal; **no tolerance number**) are excluded and counted. This is needed because the PR60 classifier works in the YES frame while 9f50ba19 states the NO rule in `no_price_dollars`. Expected 0."
+    },
+    {
+      "id": "R17",
+      "unpinned": false,
+      "rule": "Queue depletion and fill trigger",
+      "source_or_resolution": "9f50ba19 L84–L85 verbatim: 3. **Conservative queue depletion:** `cum` = sum of `count_fp` over our-side prints with `yes_price_dollars ≤ p` since `t0`. No credit is given for cancels or modifies ahead of us. Displayed fractional sizes are used as-is. / 4. **Fill:** at the **first** our-side print with `yes_price_dollars < p` (strictly through) at which `cum` (including that print) is ≥ `queue_ahead + 1`. Fill quantity = 1, fill price = **p** (our limit, not the through price), fill time = that print's `created_time`. NO bid at `q`: the same with `no_price_dollars` (L81)."
+    },
+    {
+      "id": "R18",
+      "unpinned": false,
+      "rule": "Through flag comes from PR60 `classify_fill`",
+      "source_or_resolution": "PR60 L395–446. YES bid `p` → `resting_side='bid'`, `resting_price=p`; NO bid `q` → `resting_side='ask'`, `resting_price=1−q` (YES frame); `trade_yes_price` = print `yes_price_dollars`; `quote_ts`=`t0` stamp, `trade_ts`=print `created_time`. The engine asserts that PR60's `through` equals its own `no_price` comparison; any disagreement is a hard fail. No settlement field is ever in these rows."
+    },
+    {
+      "id": "R19",
+      "unpinned": false,
+      "rule": "Labels on every modeled fill row",
+      "source_or_resolution": "9f50ba19 L86: 5. **Labels on every modeled fill row:** `fill_source=\"MODEL:public_trade_through_conservative\"`, `observed=false`, `tag=\"replay\"`. **Stated assumptions:** price-time priority holds; our order joins at the back; no hidden liquidity or latency advantage; the public tape is complete for our window (429 gaps and empty tickers such as `TBPHI-TB2` count as no prints and are never imputed). Taker rows carry `fill_source=\"MODEL:displayed_touch\"`, `observed=false`, `tag=\"replay\"`."
+    },
+    {
+      "id": "R20",
+      "unpinned": true,
+      "rule": "Taker leg",
+      "source_or_resolution": "9f50ba19 L76: - **Taker legs (per placement × side):** buy 1 contract at the **displayed best ask** for that side (= 1 − best opposite bid), at `captured_utc`. This needs a displayed opposite-bid size ≥ 1. If there is no displayed opposite bid, there is no taker fill (null, not invented). **UNPINNED detail:** \"displayed opposite-bid size\" = the size at the **best** opposite level only (no aggregation, no book walk)."
+    },
+    {
+      "id": "R21",
+      "unpinned": true,
+      "rule": "Taker vs our own maker order at the same snapshot",
+      "source_or_resolution": "**UNPINNED** → the taker executes first against pre-existing displayed size, and the maker order then joins the back. `queue_ahead` is **not** reduced by our own taker contract (no credit), and a self-match is impossible by this ordering."
+    },
+    {
+      "id": "R22",
+      "unpinned": false,
+      "rule": "Hold to settlement; inventory",
+      "source_or_resolution": "9f50ba19 L77. No inventory cap is frozen, and none is added (a cap would be a new number). The bound is structural: at most 1 maker + 1 taker contract per (ticker, side, placement)."
+    },
+    {
+      "id": "R23",
+      "unpinned": true,
+      "rule": "Fee per filled contract",
+      "source_or_resolution": "9f50ba19 L92 + L107. **Mechanism UNPINNED in 9f50ba19 → resolved by merged precedent:** PR62 `cache_fee_table` / `cache_order_fee` (orchestrator `c6c4c0a1…` L680–704) verbatim, i.e. `feebook.order_fee(role, 1, fill_price, round_up=True, series='KXMLBSPREAD', table=stub with default M='0.5', formula_id=None)`. Maker terms come from `resolve_terms` and are not asserted. Label CACHE_NOT_R1P1."
+    },
+    {
+      "id": "R24",
+      "unpinned": false,
+      "rule": "PnL per filled contract",
+      "source_or_resolution": "9f50ba19 L90: For each filled contract with an **observed** settlement: `pnl = settle_value − fill_price − fee`, with `settle_value = $1.00` if our side matches the observed `result`, else `$0`. **Source substitution (commission (a)):** `settle_value` for a YES leg = `settlement_value_dollars`; for a NO leg = `1 − settlement_value_dollars`. `result` is not read by the runner. For finalized binary markets the two are identical (Examiner ACK: 6/6 agreement)."
+    },
+    {
+      "id": "R25",
+      "unpinned": false,
+      "rule": "Arm metrics",
+      "source_or_resolution": "9f50ba19 L93 verbatim (see §PR60 as merged)"
+    },
+    {
+      "id": "R26",
+      "unpinned": true,
+      "rule": "A1 freshness flag at the placement snapshot",
+      "source_or_resolution": "rails `content_fresh_flag` via `hygiene.content_fresh_flag(previous, current, keepalive=False)` (hygiene L246–252, rails L302–316). **UNPINNED inputs:** `current.content = rails.canonical_book_content(orderbook_fp)`; `previous` = the immediately preceding dated snapshot of the same ticker in SOURCE_PINS (none ⇒ rails `initial` ⇒ fresh); `transaction_time=None` for both (no exchange transaction time exists in the pinned bytes, and a capture stamp is not a transaction time). **Structural consequence (book bytes only):** all 15 Sep-25 placements are fresh (5 `initial` + 9 content changed + WSH2 `initial`), and they would be under the stamp-as-transaction-time alternative too. So the stale bin is empty and `fresh_vs_stale_gap` is **NOT_ESTIMABLE (null, reason `stale_bin_empty`)**. This resolution cannot move any outcome."
+    },
+    {
+      "id": "R27",
+      "unpinned": true,
+      "rule": "Empty bin or zero ROI denominator",
+      "source_or_resolution": "**UNPINNED** → metric null with a reason, never 0"
+    },
+    {
+      "id": "R28",
+      "unpinned": true,
+      "rule": "Stresses",
+      "source_or_resolution": "9f50ba19 L107 (`fees_2x`, `one_tick_worse`). `fees_2x` = fee × 2 (PR62 `times=2`). `one_tick_worse` = fill price + $0.01 on every fill (every leg is a buy). **UNPINNED:** fee under one_tick_worse = max(fee(p), fee(p+0.01)), so the stress never lowers cost. Stresses never change the fill set."
+    },
+    {
+      "id": "R29",
+      "unpinned": false,
+      "rule": "Clock flag",
+      "source_or_resolution": "Each placement and fill row carries `pre_admitted_at = t < 2026-09-25T04:37:47Z` (strict; ruling `09763030…` precedent). Label only. Expected: all Sep-25 placements are post-admission."
+    },
+    {
+      "id": "R30",
+      "unpinned": false,
+      "rule": "ADMIT-1 window on books, GETs, prints, settlement response and `settlement_ts`",
+      "source_or_resolution": "9f50ba19 L44–L50 verbatim"
+    }
+  ],
+  "unpinned_rule_ids": [
+    "R04",
+    "R08",
+    "R09",
+    "R11",
+    "R12",
+    "R13",
+    "R15",
+    "R16",
+    "R20",
+    "R21",
+    "R23",
+    "R26",
+    "R27",
+    "R28"
+  ],
+  "blockers": [],
+  "settled_join": [
+    {
+      "id": "S1",
+      "unpinned": false,
+      "text": "**Inputs (pinned):** the 10 files of `lab/astra-capture/q6s5-kxmlbspread/settlement_only_2026-10-02/` (READY `0dd61920…`, DIGESTS `5905c137…`, folder digest `65cfe9e4…`) and join manifest `73af8822…`. Every sha is checked before read; any mismatch is a hard fail."
+    },
+    {
+      "id": "S2",
+      "unpinned": false,
+      "text": "**Value field:** `settlement_value_dollars` only, from each raw GET body `raw/<ticker>.json`. **Guard-only fields** (never emitted into any quote, fill or PnL row, never passed to PR60): `ticker`, `status`, `close_time`, `settlement_ts` from the raw body, plus `response_utc`, `http_status`, `sha256` from `requests.jsonl`. `result` is not read. The join manifest is a cross-check only: same 6 tickers, same raw shas, same `settlement_value_dollars` strings, otherwise hard fail."
+    },
+    {
+      "id": "S3",
+      "unpinned": false,
+      "text": "**Integrity chain:** `http_status==200`; raw file sha == `requests.jsonl` sha == DIGESTS entry; READY `digests_txt_sha256` == DIGESTS sha."
+    },
+    {
+      "id": "S4",
+      "unpinned": false,
+      "text": "**Post-close guard:** `status==\"finalized\"` **and** `close_time < settlement_ts < response_utc` **and** `close_time < response_utc` (the read is post-close) **and** every joined fill has `fill_time < close_time`. Any failure ⇒ `PreCloseJoinRefused`. Here the settlement-GET `close_time` values are `2026-09-26T01:15:52Z..02:00:40Z` (2026-09-25 21:15–22:00 ET), early close per `can_close_early=true`, and every fill time is ≤ tape end `2026-09-25T06:03Z`."
+    },
+    {
+      "id": "S5",
+      "unpinned": false,
+      "text": "**ADMIT-1:** `response_utc` and `settlement_ts` outside `[2026-09-27T00:00Z, 2026-09-30T04:00Z)`. `expiration_time` / `latest_expiration_time` (`2026-09-28T22:40/45Z`) are contract-schedule fields, not capture or determination timestamps; they are not read by the join."
+    },
+    {
+      "id": "S6",
+      "unpinned": false,
+      "text": "**Value domain:** `Decimal(settlement_value_dollars) ∈ {1, 0}`, otherwise refused. Nothing fractional or void is imputed."
+    },
+    {
+      "id": "S7",
+      "unpinned": false,
+      "text": "**Refusal effect:** a refused ticker's fills become `unresolved_inventory` with PnL null. They are never imputed and never dropped silently (counted)."
+    },
+    {
+      "id": "S8",
+      "unpinned": false,
+      "text": "**Ordering:** `settled_join(fills_bytes, fills_sha256, settlement_dir)` accepts only the serialized, hashed fills artifact produced by the engine. The builder and engine modules must not import the join module or reference the settlement folder (import-graph test)."
+    },
+    {
+      "id": "S9",
+      "unpinned": false,
+      "text": "**Scope:** Sep-24 tickers ⇒ `ClosedUniverseRefused`. PR60 behavior is unchanged: a `classify_fill` row with `settlement_ts` still raises `LookaheadRefused`."
+    }
+  ],
+  "settled_join_pins": {
+    "collector_ready": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c",
+    "settlement_digests": "5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044",
+    "settlement_folder_digest": "65cfe9e4855038263853b236df8eb4852d85d789546215a59f350c6a91feed03",
+    "settlement_folder_listing": "0dd61920f8e622c336cf9ab2ac88d0d78b04d4152c93cf98cecb14550b7d924c  ./COLLECTOR_READY_SETTLEMENT_ONLY.json\n5905c137089d42ae07c53720762b9dcc9c8b0ad9c4f17ebe51340d18198a1044  ./DIGESTS.txt\n2c3bbc88236958b77b2e221d5763a245379e1216884735f41e3be7c5affd5d79  ./SETTLEMENT_SUMMARY.json\n0ad4a9eeaea00580617f07cabe202a39692759b433f0d9ac96448e455b8eb2cf  ./raw/KXMLBSPREAD-26SEP251840PITDET-DET2.json\nb60ab4d1e94b95a8f125078691c24da977b96cb798d778ba943051974f765a5c  ./raw/KXMLBSPREAD-26SEP251840PITDET-PIT2.json\n99a9843f68cdd40356cfe8ab4d803d48feb19b55e22943e8f844cdcaedbd59cb  ./raw/KXMLBSPREAD-26SEP251840TBPHI-PHI2.json\nf380064c612b95f9f23ea32035ecff6c952143870105f0d9bdb8a345a6aa22e3  ./raw/KXMLBSPREAD-26SEP251840TBPHI-TB2.json\n378ada8150398f15adca4bd9b6a750326aa3e140db2a60be52510a184c9f49e6  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-NYM2.json\na721caf70df3510d9a2f8ae1aa5b21f22eec8eed3f52d18be86dcb3f8464458b  ./raw/KXMLBSPREAD-26SEP251845NYMWSH-WSH2.json\n27527989ee673c42e4ef65413146ae38373e54d355cb12b715f7f4c74956e317  ./requests.jsonl\n",
+    "join_manifest": "73af8822508ce95f5a6765ba0dd3949b58e0cbc8df8cce8301b313337a722e17",
+    "value_field": "settlement_value_dollars",
+    "fields_never_read": [
+      "result"
+    ],
+    "post_close_guard": "status==finalized and close_time < settlement_ts < response_utc and fill_time < close_time"
+  },
+  "lookahead": {
+    "label_blind": true,
+    "required_property": "quotes.json and fills.json canonical bytes are functions of SOURCE_PINS bytes only; permuting settlement_value_dollars across the 6 tickers leaves them byte-identical and changes PnL whenever a filled ticker label flips",
+    "disclosure": "author read Simulator READY 973692b0 and Examiner ACK 1f72dd05 (per-ticker mapping known: 1 YES / 5 NO); no quote/print comparison, no fill/PnL/ROI computed"
+  },
+  "required_tests": {
+    "T1": "label permutation on synthetic fixture: quotes+fills byte-identical, PnL differs; T1b all 720 permutations of real vector: quotes/fills sha constant (identity only, prints nothing)",
+    "T2": "pre-close join refusal (PreCloseJoinRefused; svd not in {0,1} refused; Sep-24 -> ClosedUniverseRefused)",
+    "T3": "tape-prints-after-quote refusal (builder takes no trades arg; later stamps cannot change quote; print at t0 or within t0 second never used; classify_fill trade_ts==quote_ts raises LookaheadRefused; print at cancel stamp unused)",
+    "T4": "A0/A1 verbatim: 9f50ba19 L93/L100/L101 and 4f65dcdf L47-48 sha match; PR60 ARMS == parent ANALYSIS_SLICE; PR60 runner sha 296cfe64 and lab tree 78fca23c unchanged"
+  },
+  "verdict": {
+    "ceiling": "ITERATE",
+    "keep_possible": false,
+    "counts_toward_keep": false,
+    "promote": false,
+    "live_promotion": false,
+    "evidence_class": [
+      "IN_SAMPLE_DEV",
+      "HISTORICAL_REPLAY"
+    ],
+    "family_size": 1,
+    "effective_n_games": 3,
+    "n_markets": 6,
+    "simulated_fills_rule_v1_2": "fill_rate counts only fills tagged demo, shadow or live. Replay/simulated fills go to simulated_fills, labeled \"simulated\", and never count toward KEEP.",
+    "pr60_outcome_hypothesis": null,
+    "primary": "measurement-only co-primary per 9f50ba19 L93: Q6S5A0 maker_vs_taker_roi_delta (CACHE-fee-net) and Q6S5A1 fresh_vs_stale_gap (expected NOT_ESTIMABLE)",
+    "a1_minus_a0_contrast": null,
+    "new_thresholds": null,
+    "reading": "descriptive, ITERATE-capped; Examiner owns verdict in {ITERATE, KILL per a5398129, NOT_SCORED}"
+  },
+  "fees": {
+    "label": "CACHE_NOT_R1P1",
+    "fee_pin": "9c0f3554eedc582ed4bed940575bf7ee6c0540ce5134140c5ea19e7c458d2b6a",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "formula_id": null,
+    "fee_honest": false,
+    "claim_as_live_R1P1": false,
+    "stresses": [
+      "fees_2x",
+      "one_tick_worse"
+    ]
+  },
+  "cloud": {
+    "count": 1,
+    "base": "f233079d9e7d2a91e2100f2085bcf85d0006e28f",
+    "pr": "draft",
+    "after": "Conductor ACCEPT + IMPLEMENT GO",
+    "sqlite": "none (no sqlite input; no sqlite3 import)",
+    "network": "none",
+    "committed_results": "null"
+  },
+  "attention_items": [
+    "Sep-25 \"permanently out of scope\" wording in fb6540f5 / 5beba803 / 09763030 / 370dc31d (scoped to those packets; pre-close close_time 2026-09-28T22:40/45Z vs actual early close 2026-09-26T01:15-02:00Z) - Conductor ACCEPT should confirm scoping",
+    "No Conductor commission packet on disk (relayed)",
+    "A1 structurally NOT_ESTIMABLE (all 15 Sep-25 books fresh)",
+    "Thin tape: 21 Sep-25 prints"
+  ],
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "freeze_md": {
+    "path": "lab/governance/astra/packets/VARIANTS_Q6S5_KXMLBSPREAD_STRATEGY_FILL_PR60_SCORABILITY_FREEZE_2026-10-02.md",
+    "sha256": "213ee6dd33f292c8041977b0b8d7566da9412fd3debe0597643c500dc1e42db4"
+  },
+  "source_pins_count": 149
+}
