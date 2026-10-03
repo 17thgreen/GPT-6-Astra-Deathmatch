@@ -73,15 +73,22 @@ def freeze_pin_shas():
     return doc["freeze_md_sha256"], doc["freeze_json_sha256"]
 
 
-def resolve_item_path(manifest, item):
-    """Resolve a manifest path against manifest['root'], not the process cwd."""
+def resolve_item_path(manifest, item, root_override=None):
+    """Resolve a manifest path against the root, not the process cwd.
+
+    A trailing parenthetical annotation on the root is not part of the path.
+    ``--root`` replaces the manifest root before that strip.
+    """
     raw = item.get("path")
     if not raw:
         raise InconclusiveNoOutput("box manifest item has no path")
     path = Path(raw)
     if path.is_absolute():
         return path
-    root = manifest.get("root")
+    root = manifest.get("root") if root_override is None else root_override
+    if not isinstance(root, str):
+        raise InconclusiveNoOutput("manifest root")
+    root = root.split(" (", 1)[0].strip()
     if not root:
         raise InconclusiveNoOutput("manifest root")
     return Path(root) / path
@@ -106,7 +113,7 @@ def table_kind(item):
     return "other"
 
 
-def verify_runner_item_shas(manifest):
+def verify_runner_item_shas(manifest, root_override=None):
     """Sha-check only items the runner is allowed to read. Hashing a pin is not a mix."""
     items = manifest.get("items") if isinstance(manifest, dict) else None
     if not isinstance(items, list):
@@ -115,7 +122,7 @@ def verify_runner_item_shas(manifest):
     for item in items:
         if item.get("read_by_part_b_runner") is not True:
             continue
-        path = resolve_item_path(manifest, item)
+        path = resolve_item_path(manifest, item, root_override=root_override)
         expected = item.get("sha256")
         if not isinstance(expected, str) or sha256_file(path) != expected:
             raise ManifestTamper(str(path))
@@ -136,9 +143,9 @@ def refuse_data_items(verified, cloud_shas):
                 raise BeckerQuoteFieldRefused(name)
 
 
-def open_runner_tables(manifest, cloud_shas, loader):
+def open_runner_tables(manifest, cloud_shas, loader, root_override=None):
     """Verify pins, refuse data paths, and only then call loader."""
-    verified = verify_runner_item_shas(manifest)
+    verified = verify_runner_item_shas(manifest, root_override=root_override)
     refuse_data_items(verified, cloud_shas)
     tables = {}
     for item, path in verified:
@@ -250,8 +257,9 @@ def counts_match(expected, actual, n_eligible_events):
         (expected["n_closed_tickers"], actual["n_closed_tickers"]),
         (expected["n_closed_rows"], actual["n_closed_rows"]),
         (expected["n_orphan_tickers"], actual["n_orphan_tickers"]),
+        # Freeze excluded-ticker count is the event-level list. Sibling closure
+        # can make that longer than the ticker-level list.
         (expected["n_excluded_tickers"], actual["n_excluded_tickers_event"]),
-        (expected["n_excluded_tickers"], actual["n_excluded_tickers_direct"]),
         (expected["n_excluded_events"], actual["n_excluded_events"]),
         (expected["n_excluded_rows"], actual["n_excluded_rows"]),
         (expected["n_eligible_tickers"], actual["n_eligible_tickers"]),
@@ -410,7 +418,7 @@ def publish_or_refuse(out_dir, target, before_sha, download_dir):
     return digest
 
 
-def start_box_run(manifest_path, exclusion_path, freeze_md_path, run_dir, repo=None):
+def start_box_run(manifest_path, exclusion_path, freeze_md_path, run_dir, repo=None, root_override=None):
     """Hash pins, write the receipt, refuse on mismatch, and only then read tables."""
     manifest_path = Path(manifest_path)
     exclusion_path = Path(exclusion_path)
@@ -444,7 +452,7 @@ def start_box_run(manifest_path, exclusion_path, freeze_md_path, run_dir, repo=N
         )
         raise ReceiptMismatchRefused("INCONCLUSIVE")
     (trade_item, trade_path), (market_item, market_path) = _data_paths([
-        (item, resolve_item_path(manifest, item))
+        (item, resolve_item_path(manifest, item, root_override=root_override))
         for item in manifest.get("items", [])
         if isinstance(item, dict) and item.get("read_by_part_b_runner") is True
     ])
@@ -460,7 +468,7 @@ def start_box_run(manifest_path, exclusion_path, freeze_md_path, run_dir, repo=N
         _receipt(commit, runner_sha, manifest_sha, exclusion_sha, freeze_sha, pinned_json, dir_sha),
     )
     cloud_shas = cloud_input_shas()
-    verified = verify_runner_item_shas(manifest)
+    verified = verify_runner_item_shas(manifest, root_override=root_override)
     refuse_data_items(verified, cloud_shas)
     (trade_item, trade_path), (market_item, market_path) = _data_paths(verified)
     return _run_after_receipt(
@@ -497,8 +505,9 @@ def _run_after_receipt(manifest, verified, exclusion_path, freeze_md_path, run_d
             note_trade(scan, row)
     except IntegrityRefused as exc:
         raise InconclusiveNoOutput("integrity") from exc
+    traded_markets = [market for market in markets if market.get("ticker") in scan["n_rows"]]
     recomputed = exclusion_from_scan(
-        markets, scan, source_trades_sha256=trades_sha, source_markets_sha256=markets_sha, rule=pinned.get("rule", ""),
+        traded_markets, scan, source_trades_sha256=trades_sha, source_markets_sha256=markets_sha, rule=pinned.get("rule", ""),
     )
     compare_exclusion(pinned, recomputed, trades_sha, markets_sha)
     actual = summarize_counts(recomputed, scan["n_rows"])
@@ -559,8 +568,11 @@ def main(argv=None):
     parser.add_argument("--exclusion", required=True)
     parser.add_argument("--freeze-md", required=True)
     parser.add_argument("--run-dir", required=True)
+    parser.add_argument("--root", default=None)
     args = parser.parse_args(argv)
-    start_box_run(args.manifest, args.exclusion, args.freeze_md, args.run_dir)
+    start_box_run(
+        args.manifest, args.exclusion, args.freeze_md, args.run_dir, root_override=args.root,
+    )
 
 
 if __name__ == "__main__":

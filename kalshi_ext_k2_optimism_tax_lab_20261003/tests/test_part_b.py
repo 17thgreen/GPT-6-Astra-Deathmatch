@@ -762,6 +762,33 @@ class TestBoxRunnerFixes(unittest.TestCase):
             finally:
                 os.chdir(previous)
 
+    def test_b3_annotated_root_string_and_cli_override(self):
+        from unittest.mock import patch
+
+        from becker_pipeline.run_part_b import main, resolve_item_path
+
+        manifest = {
+            "root": "/workspace (paths relative)",
+            "items": [{"path": "data/trades.parquet"}],
+        }
+        resolved = resolve_item_path(manifest, manifest["items"][0])
+        self.assertEqual(resolved, Path("/workspace/data/trades.parquet"))
+        overridden = resolve_item_path(
+            manifest, manifest["items"][0], root_override="/box/other (paths relative)",
+        )
+        self.assertEqual(overridden, Path("/box/other/data/trades.parquet"))
+        with patch("becker_pipeline.run_part_b.start_box_run") as start:
+            main([
+                "--manifest", "m.json",
+                "--exclusion", "e.json",
+                "--freeze-md", "f.md",
+                "--run-dir", "/tmp/ext-k2-root",
+                "--root", "/workspace",
+            ])
+        start.assert_called_once_with(
+            "m.json", "e.json", "f.md", "/tmp/ext-k2-root", root_override="/workspace",
+        )
+
     def test_b4_cli_and_run_dir_outside_the_repo(self):
         from becker_pipeline.run_part_b import main, start_box_run
         from shared.exceptions import BoxOnlyRefused
@@ -825,6 +852,144 @@ class TestBoxRunnerFixes(unittest.TestCase):
                 publish_or_refuse(out, target, before, data)
             self.assertFalse(target.exists())
             self.assertFalse((out / "BOX_ONLY_OUTPUT_SHA256.json").exists())
+
+    def test_counts_match_uses_the_event_level_excluded_ticker_list(self):
+        from becker_pipeline.run_part_b import counts_match
+
+        expected = {
+            "n_trade_rows": 3,
+            "n_traded_tickers": 3,
+            "n_open_tickers": 0,
+            "n_open_rows": 0,
+            "n_open_missing": 0,
+            "n_closed_tickers": 1,
+            "n_closed_rows": 1,
+            "n_orphan_tickers": 0,
+            "n_excluded_tickers": 2,
+            "n_excluded_events": 1,
+            "n_excluded_rows": 2,
+            "n_eligible_tickers": 1,
+            "n_eligible_events": 1,
+            "n_eligible_rows": 1,
+        }
+        actual = {
+            "n_traded_rows": 3,
+            "n_traded_tickers": 3,
+            "n_open_tickers": 0,
+            "n_open_rows": 0,
+            "n_open_missing": 0,
+            "n_closed_tickers": 1,
+            "n_closed_rows": 1,
+            "n_orphan_tickers": 0,
+            "n_excluded_tickers_event": 2,
+            "n_excluded_tickers_direct": 1,
+            "n_excluded_events": 1,
+            "n_excluded_rows": 2,
+            "n_eligible_tickers": 1,
+            "n_eligible_rows": 1,
+        }
+        self.assertTrue(counts_match(expected, actual, 1))
+        sibling_drift = dict(actual)
+        sibling_drift["n_excluded_tickers_event"] = 3
+        self.assertFalse(counts_match(expected, sibling_drift, 1))
+
+    def test_active_untraded_markets_publish(self):
+        from unittest.mock import patch
+
+        from becker_pipeline.exclusion import exclusion_from_scan, empty_scan, note_trade
+        from becker_pipeline.run_part_b import _run_after_receipt, directory_hash
+        from shared.canonical import canon_bytes
+
+        keep_event = "KXNFLGAME-25SEP04AAAAAA"
+        excl_event = "KXNFLGAME-25SEP04BBBBBB"
+        alone_event = "KXNFLGAME-25SEP05CCCCCC"
+        keep = "KXNFLGAME-25SEP04AAAAAA-AA"
+        direct = "KXNFLGAME-25SEP04BBBBBB-BB"
+        sibling = "KXNFLGAME-25SEP04BBBBBB-CC"
+        alone = "KXNFLGAME-25SEP05CCCCCC-DD"
+        inside = "KXNFLGAME-25SEP04BBBBBB-EE"
+        earlier = "2025-11-01T00:00:00Z"
+        later = "2025-12-16T01:15:00Z"
+        markets = [
+            _market(keep, keep_event, "no", earlier),
+            _market(direct, excl_event, "", earlier),
+            _market(sibling, excl_event, "yes", earlier),
+            _market(alone, alone_event, "", later),
+            _market(inside, excl_event, "", later),
+        ]
+        markets[-2]["status"] = "active"
+        markets[-1]["status"] = "active"
+        trades = [
+            _trade("syn-keep", keep),
+            _trade("syn-direct", direct),
+            _trade("syn-sibling", sibling),
+        ]
+        scan = empty_scan()
+        for row in trades:
+            note_trade(scan, row)
+        traded = [market for market in markets if market["ticker"] in scan["n_rows"]]
+        pinned = exclusion_from_scan(
+            traded, scan, source_trades_sha256="aa" * 32, source_markets_sha256="bb" * 32, rule="event level",
+        )
+        for ticker in (alone, inside):
+            self.assertNotIn(ticker, pinned["no_yes_no_result_closed_tickers"])
+            self.assertNotIn(ticker, pinned["excluded_tickers_ticker_level"])
+            self.assertNotIn(ticker, pinned["excluded_tickers_event_level"])
+        self.assertNotIn(alone_event, pinned["excluded_events"])
+        self.assertIn(excl_event, pinned["excluded_events"])
+        self.assertIn(sibling, pinned["excluded_tickers_event_level"])
+        self.assertNotIn(sibling, pinned["excluded_tickers_ticker_level"])
+        full = exclusion_from_scan(
+            markets, scan, source_trades_sha256="aa" * 32, source_markets_sha256="bb" * 32, rule="event level",
+        )
+        self.assertEqual(full, pinned)
+        freeze = "\n".join([
+            "| Trade rows / traded tickers / traded events | **3 / 3 / 2** |",
+            "| **Open at trade fetch** (clock) | **0 tickers**, 0 rows |",
+            "| No yes/no `result` | 0 open + **1 closed** (1 rows) |",
+            "| **Excluded** (ticker-level union = event-level closure) | **2 tickers / 1 events / 2 rows** |",
+            "| **Eligible** | **1 tickers / 1 events / 1 rows** |",
+            "",
+            "or it has no markets row (0).",
+            "",
+            "Selection-bias statement (binding): synthetic selection text for the untraded fixture.",
+            "",
+            "coverage statement: synthetic coverage sentence.",
+            "",
+        ])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            data = root / "data"
+            data.mkdir()
+            trade_path = data / "trades.parquet"
+            market_path = data / "markets.parquet"
+            trade_path.write_bytes(b"synthetic-trades")
+            market_path.write_bytes(b"synthetic-markets")
+            exclusion = root / "exclusion.json"
+            exclusion.write_bytes(canon_bytes(pinned))
+            freeze_path = root / "freeze.md"
+            freeze_path.write_text(freeze, encoding="utf-8")
+            out = root / "out"
+            calls = {"n": 0}
+
+            def fake_rows(path, columns):
+                del path, columns
+                calls["n"] += 1
+                if calls["n"] == 1:
+                    return iter(markets)
+                return iter(trades)
+
+            with patch("becker_pipeline.run_part_b.iter_parquet_rows", fake_rows):
+                digest = _run_after_receipt(
+                    {}, [], exclusion, freeze_path, out, data, directory_hash(data),
+                    {"sha256": "aa" * 32}, trade_path,
+                    {"sha256": "bb" * 32}, market_path,
+                    frozenset(),
+                )
+            self.assertTrue((out / "PART_B_AGGREGATES.json").is_file())
+            pointer = json.loads((out / "BOX_ONLY_OUTPUT_SHA256.json").read_text(encoding="utf-8"))
+            self.assertEqual(pointer["box_only_output_sha256"], digest)
+            self.assertEqual(len(digest), 64)
 
     def test_unit_bootstrap_matches_row_bootstrap(self):
         from becker_pipeline.metrics import (

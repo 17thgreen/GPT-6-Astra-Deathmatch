@@ -62,13 +62,17 @@ def note_trade(scan, row):
 
 
 def exclusion_from_scan(markets, scan, source_trades_sha256="", source_markets_sha256="", rule=""):
-    """Build the pinned exclusion document from ticker aggregates.
+    """Build the pinned exclusion document from traded tickers.
 
-    A market is open at trade fetch when close_time is after that ticker's
-    maximum trade _fetched_at. That comparison is the only use of close_time.
+    The generator uses tickers with at least one trade row (``ticker in
+    scan["n_rows"]``). An active market with no trades is not an exclusion
+    member. A market is open at trade fetch when close_time is after that
+    ticker's maximum trade _fetched_at. That comparison is the only use of
+    close_time.
     """
     fetch = scan["fetch"]
     n_rows = scan["n_rows"]
+    markets = [market for market in markets if market.get("ticker") in n_rows]
     market_by = {}
     for market in markets:
         market_by[market["ticker"]] = market
