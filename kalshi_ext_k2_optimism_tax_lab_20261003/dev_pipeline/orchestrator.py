@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 
 from dev_pipeline.load import load_dev
+from dev_pipeline.pins import verify_bundles
 from dev_pipeline.lots import reconstruct
 from dev_pipeline.markouts import (
     PRIMARY_H,
@@ -191,6 +192,8 @@ def decide_verdict(gate, primary_cells, boot):
             reasons.append("games_" + name)
     if boot["dropped_share"] is not None and boot["dropped_share"] > 0.05:
         reasons.append("bootstrap_dropped")
+    if boot.get("delta_gross") is None or boot.get("ci95_gross") is None:
+        reasons.append("undefined_contrast")
     if reasons:
         return "INCONCLUSIVE", reasons
     if ci_excludes_zero(boot["ci95_gross"]):
@@ -206,6 +209,7 @@ def refuse_becker_value(value, provenance):
 
 
 def run_part_a(out_dir=None):
+    verify_bundles()
     dev = load_dev()
     multiplier = read_kxnflgame_multiplier(dev["fee_schedule_text"])
     built = flow_terciles(dev["flow"])

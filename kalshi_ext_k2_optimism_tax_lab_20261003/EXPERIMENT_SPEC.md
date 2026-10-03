@@ -2,9 +2,9 @@
 
 Frozen experiment `EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS`.
 
-The binding specification is the vendored freeze:
+The binding specification is pinned by sha256 only. The freeze markdown and JSON twin are not vendored. Part (b) checks the box copy of the markdown at run time.
 
-`pins/governance/VARIANTS_EXT_K2_OPTIMISM_TAX_DEPENDENCE_STRESS_FREEZE_2026-10-03.md`
+`pins/governance/FREEZE_SHA256.json`
 
 sha256 `d69a4f627cb420b59bbc961b072d28242faeb9d21d5d29b9f90a77f6825acbce`
 
@@ -14,7 +14,7 @@ Conductor ACCEPT sha256 `d76779e1a309388e6bc7f401a2c992a3be2015ae81ba910b8f5655f
 
 Commission sha256 `1f2c7f68396131d65ef31e492355c2937a9a0a91fb6cdf67c7d66e220f0b51f5`
 
-Built from main `761eaaedc153dca9807d7630adcea1ae3387d9c1`.
+Built from main `761eaaedc153dca9807d7630adcea1ae3387d9c1`, then merged with main `09b56273eb3b11ec3968e273a28767569e368561`.
 
 ## Execution split
 

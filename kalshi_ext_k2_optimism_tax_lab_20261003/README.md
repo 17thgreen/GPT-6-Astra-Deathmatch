@@ -11,6 +11,6 @@ python3 -m dev_pipeline.orchestrator
 
 The orchestrator writes `results_a/`. It does not write a per-fill dump.
 
-`python3 -m becker_pipeline.run_part_b` refuses in this checkout: the Becker directory is not on disk. The Simulator runs that module on the box after the receipt shas match. Box outputs stay outside the git repo. This tree commits a receipt template and a null output-sha placeholder only.
+`python3 -m becker_pipeline.run_part_b` takes `--manifest`, `--exclusion`, `--freeze-md`, and `--run-dir`. It reads Becker tables from the manifest paths and writes only under `--run-dir`, which must sit outside this repo. This checkout does not contain those tables. The Simulator runs that module on the box after the receipt shas match. This tree commits a receipt template and a null output-sha placeholder only.
 
 Pins are under `pins/` and are checked against `MANIFEST.sha256` before parse. `*.jsonl.gz` inputs are force-added and must stay byte-identical to the bundles.

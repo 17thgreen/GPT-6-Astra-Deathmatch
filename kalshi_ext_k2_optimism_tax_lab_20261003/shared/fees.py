@@ -25,8 +25,17 @@ PROXY_OVERSTATEMENT = (
 )
 
 
+def D(value):
+    """K1 conversion. Floats go through str() so a binary price does not ceil an extra cent."""
+    if isinstance(value, Decimal):
+        return value
+    if isinstance(value, int) and not isinstance(value, bool):
+        return Decimal(value)
+    return Decimal(str(value))
+
+
 def _ceil(value, quantum):
-    return Decimal(value).quantize(Decimal(quantum), rounding=ROUND_CEILING)
+    return D(value).quantize(Decimal(quantum), rounding=ROUND_CEILING)
 
 
 def ceil_6dp(value):
@@ -59,10 +68,10 @@ def read_kxnflgame_multiplier(schedule_text):
 
 def model_quadratic(coef, contracts, price, multiplier):
     """coef * M * C * p * (1-p) as an exact Decimal. price is a probability."""
-    c = Decimal(contracts)
-    p = Decimal(price)
-    m = Decimal(multiplier)
-    return Decimal(coef) * m * c * p * (Decimal(1) - p)
+    c = D(contracts)
+    p = D(price)
+    m = D(multiplier)
+    return D(coef) * m * c * p * (Decimal(1) - p)
 
 
 def part_a_order_headline(fills, multiplier):
@@ -73,7 +82,7 @@ def part_a_order_headline(fills, multiplier):
     total_c = Decimal(0)
     acc = Decimal(0)
     for contracts, price in fills:
-        total_c += Decimal(contracts)
+        total_c += D(contracts)
         acc += ceil_6dp(model_quadratic(MAKER_COEF, contracts, price, multiplier))
     headline = ceil_cent(acc)
     per_contract = (headline / total_c) if total_c != 0 else None
@@ -82,7 +91,7 @@ def part_a_order_headline(fills, multiplier):
 
 def part_b_row_fee(coef, contracts, yes_cents, multiplier=Decimal(1)):
     """Per-trade proxy. Returns (model, cent_headline, subcent_sensitivity)."""
-    price = Decimal(int(yes_cents)) / Decimal(100)
+    price = D(int(yes_cents)) / Decimal(100)
     model = model_quadratic(coef, contracts, price, multiplier)
     return model, ceil_cent(model), ceil_subcent(model)
 
@@ -94,6 +103,6 @@ def part_b_group_cent(rows, coef, multiplier=Decimal(1)):
     """
     acc = Decimal(0)
     for contracts, yes_cents in rows:
-        price = Decimal(int(yes_cents)) / Decimal(100)
+        price = D(int(yes_cents)) / Decimal(100)
         acc += model_quadratic(coef, contracts, price, multiplier)
     return ceil_cent(acc)

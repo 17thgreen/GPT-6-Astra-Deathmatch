@@ -182,12 +182,16 @@ class TestT07Exclusion(unittest.TestCase):
             row["_fetched_at"] = fetch
         doc = recompute_exclusion(markets, trades)
         self.assertIn("OPEN-YES", doc["open_at_trade_fetch_tickers"])
-        self.assertIn("BLANK", doc["closed_no_result_tickers"])
-        self.assertIn("VOID", doc["closed_no_result_tickers"])
-        self.assertIn("OPEN-SIB", doc["excluded_tickers"])
-        self.assertNotIn("KEEP", doc["excluded_tickers"])
+        self.assertNotIn("OPEN-YES", doc["no_yes_no_result_open_tickers"])
+        self.assertIn("BLANK", doc["no_yes_no_result_closed_tickers"])
+        self.assertIn("VOID", doc["no_yes_no_result_closed_tickers"])
+        self.assertIn("OPEN-SIB", doc["excluded_tickers_event_level"])
+        self.assertNotIn("OPEN-SIB", doc["excluded_tickers_ticker_level"])
+        self.assertNotIn("KEEP", doc["excluded_tickers_event_level"])
+        self.assertIn("EVT-OPEN", doc["excluded_events"])
+        self.assertNotIn("excluded_tickers", doc)
         with self.assertRaises(OpenTickerRefused):
-            assert_none_excluded(["KEEP", "OPEN-SIB"], doc["excluded_tickers"])
+            assert_none_excluded(["KEEP", "OPEN-SIB"], doc["excluded_tickers_event_level"])
         box = repo_root() / "lab/astra-capture/external/becker_2026-10-03/data"
         self.assertFalse(box.exists())
 
@@ -413,9 +417,11 @@ class TestT10ManifestTamper(unittest.TestCase):
             exclusion = root / "BECKER_EXCLUSION_LIST_KXNFLGAME.json"
             manifest.write_text("{}\n", encoding="utf-8")
             exclusion.write_text("{}\n", encoding="utf-8")
+            freeze = root / "freeze.md"
+            freeze.write_text("synthetic\n", encoding="utf-8")
             out = root / "out"
             with self.assertRaises(ReceiptMismatchRefused) as caught:
-                start_box_run(data, manifest, exclusion, out, repo=repo_root())
+                start_box_run(manifest, exclusion, freeze, out, repo=repo_root())
             self.assertIn("INCONCLUSIVE", str(caught.exception))
             self.assertTrue((out / "PRE_RUN_RECEIPT.json").is_file())
             self.assertFalse((out / "PART_B_AGGREGATES.json").exists())
@@ -531,7 +537,7 @@ class TestT13CloseTime(unittest.TestCase):
                 segment = ast.get_source_segment((root / "exclusion.py").read_text(encoding="utf-8"), node)
                 if segment and "close_time" in segment:
                     holders.append(node.name)
-        self.assertEqual(sorted(holders), ["market_columns", "recompute_exclusion"])
+        self.assertEqual(sorted(holders), ["exclusion_from_scan", "market_columns"])
 
 
 class TestT14TiersWeeksBands(unittest.TestCase):
@@ -623,16 +629,235 @@ class TestT17ExecutionSplit(unittest.TestCase):
         self.assertFalse(missing.exists())
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "out"
+            absent = Path(tmp) / "missing.json"
             with self.assertRaises(BoxOnlyRefused):
-                start_box_run(missing, Path(tmp) / "manifest.json", Path(tmp) / "exclusion.json", out)
+                start_box_run(absent, absent, absent, out)
             self.assertFalse(out.exists())
-            data = Path(tmp) / "data"
-            data.mkdir()
-            (data / "placeholder.txt").write_text("not becker", encoding="utf-8")
+            root = Path(tmp)
+            for name in ("manifest.json", "exclusion.json", "freeze.md"):
+                (root / name).write_text("synthetic\n", encoding="utf-8")
             with self.assertRaises(BoxOnlyRefused):
-                start_box_run(data, data / "placeholder.txt", data / "placeholder.txt", lab_root() / "results_b")
+                start_box_run(
+                    root / "manifest.json", root / "exclusion.json", root / "freeze.md",
+                    lab_root() / "results_b",
+                )
             self.assertFalse((lab_root() / "results_b" / "PRE_RUN_RECEIPT.json").exists())
             self.assertFalse((lab_root() / "results_b" / "PART_B_AGGREGATES.json").exists())
+
+
+class TestBoxRunnerFixes(unittest.TestCase):
+    def test_b1_pin_hash_is_not_a_mix_and_refusals_precede_load(self):
+        from becker_pipeline.pins import cloud_input_shas
+        from becker_pipeline.run_part_b import open_runner_tables
+        from shared.canonical import sha256_file
+        from shared.exceptions import BeckerMixRefused, TierRefused
+
+        cloud = cloud_input_shas()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            pin = root / "fee_schedule.txt"
+            pin.write_text("synthetic pin\n", encoding="utf-8")
+            pin_sha = sha256_file(pin)
+            ignored = root / "ignored.txt"
+            ignored.write_text("do-not-hash\n", encoding="utf-8")
+            called = []
+
+            def loader(path, columns):
+                called.append((path, columns))
+                return []
+
+            manifest = {
+                "root": str(root),
+                "items": [
+                    {
+                        "path": "fee_schedule.txt",
+                        "sha256": pin_sha,
+                        "read_by_part_b_runner": True,
+                        "becker_data_or_derived": False,
+                        "role": "fee",
+                    },
+                    {
+                        "path": "ignored.txt",
+                        "sha256": "0" * 64,
+                        "read_by_part_b_runner": False,
+                        "becker_data_or_derived": False,
+                    },
+                ],
+            }
+            tables, _verified = open_runner_tables(manifest, frozenset(set(cloud) | {pin_sha}), loader)
+            self.assertEqual(tables, {})
+            self.assertEqual(called, [])
+            data = root / "astra-science" / "rows.parquet"
+            data.parent.mkdir()
+            data.write_bytes(b"synthetic")
+            manifest["items"].append({
+                "path": "astra-science/rows.parquet",
+                "sha256": sha256_file(data),
+                "read_by_part_b_runner": True,
+                "becker_data_or_derived": True,
+                "role": "trades",
+            })
+            with self.assertRaises(BeckerMixRefused):
+                open_runner_tables(manifest, frozenset(), loader)
+            self.assertEqual(called, [])
+            tier = root / "becker_kalshi_trades_t1_KXNFLGAME.parquet"
+            tier.write_bytes(b"synthetic-tier")
+            manifest["items"] = [{
+                "path": tier.name,
+                "sha256": sha256_file(tier),
+                "read_by_part_b_runner": True,
+                "becker_data_or_derived": True,
+                "role": "trades",
+            }]
+            with self.assertRaises(TierRefused):
+                open_runner_tables(manifest, frozenset(), loader)
+            self.assertEqual(called, [])
+
+    def test_b2_exclusion_schema_and_source_shas(self):
+        from becker_pipeline.exclusion import LIST_KEYS, recompute_exclusion
+        from becker_pipeline.run_part_b import compare_exclusion
+        from shared.exceptions import InconclusiveNoOutput
+
+        fetch = "2025-11-25T12:00:00Z"
+        later = "2025-12-16T01:15:00Z"
+        earlier = "2025-11-01T00:00:00Z"
+        markets = [
+            _market("OPEN-YES", "EVT-OPEN", "yes", later),
+            _market("OPEN-SIB", "EVT-OPEN", "yes", earlier),
+            _market("KEEP", "EVT-KEEP", "no", earlier),
+        ]
+        trades = [_trade("t-open", "OPEN-YES"), _trade("t-sib", "OPEN-SIB"), _trade("t-keep", "KEEP")]
+        for row in trades:
+            row["_fetched_at"] = fetch
+        doc = recompute_exclusion(
+            markets, trades, source_trades_sha256="aa" * 32, source_markets_sha256="bb" * 32, rule="event level",
+        )
+        self.assertEqual(
+            set(doc),
+            set(LIST_KEYS) | {"experiment_id", "rule", "source_markets_sha256", "source_trades_sha256"},
+        )
+        compare_exclusion(doc, doc, "aa" * 32, "bb" * 32)
+        shifted = dict(doc)
+        shifted["source_trades_sha256"] = "cc" * 32
+        with self.assertRaises(InconclusiveNoOutput):
+            compare_exclusion(shifted, doc, "aa" * 32, "bb" * 32)
+        missing = dict(doc)
+        missing.pop("excluded_tickers_event_level")
+        with self.assertRaises(InconclusiveNoOutput):
+            compare_exclusion(missing, doc, "aa" * 32, "bb" * 32)
+
+    def test_b3_paths_resolve_against_manifest_root(self):
+        from becker_pipeline.run_part_b import resolve_item_path
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "boxroot"
+            (root / "nested").mkdir(parents=True)
+            previous = os.getcwd()
+            try:
+                os.chdir("/")
+                manifest = {"root": str(root), "items": [{"path": "nested/trades.parquet"}]}
+                resolved = resolve_item_path(manifest, manifest["items"][0])
+                self.assertEqual(resolved, root / "nested" / "trades.parquet")
+                self.assertNotEqual(resolved, Path("/nested/trades.parquet"))
+            finally:
+                os.chdir(previous)
+
+    def test_b4_cli_and_run_dir_outside_the_repo(self):
+        from becker_pipeline.run_part_b import main, start_box_run
+        from shared.exceptions import BoxOnlyRefused
+
+        with self.assertRaises(SystemExit):
+            main([])
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("manifest.json", "exclusion.json", "freeze.md"):
+                (root / name).write_text("{}\n", encoding="utf-8")
+            with self.assertRaises(BoxOnlyRefused):
+                start_box_run(
+                    root / "manifest.json", root / "exclusion.json", root / "freeze.md",
+                    lab_root() / "results_b", repo=repo_root(),
+                )
+            self.assertFalse((lab_root() / "results_b" / "PRE_RUN_RECEIPT.json").exists())
+            self.assertFalse(Path("/tmp/ext-k2-part-b-refused").exists())
+
+    def test_freeze_text_supplies_counts_and_selection_bias(self):
+        from becker_pipeline.run_part_b import parse_freeze_expectations
+
+        text = "\n".join([
+            "| Trade rows / traded tickers / traded events | **4 / 2 / 1** |",
+            "| **Open at trade fetch** (clock) | **1 tickers**, 2 rows |",
+            "| No yes/no `result` | 1 open + **0 closed** (0 rows) |",
+            "| **Excluded** (ticker-level union = event-level closure) | **1 tickers / 1 events / 2 rows** |",
+            "| **Eligible** | **1 tickers / 1 events / 2 rows** |",
+            "",
+            "or it has no markets row (0).",
+            "",
+            "Selection-bias statement (binding): synthetic selection text for the fixture.",
+            "",
+            "coverage statement: synthetic coverage sentence.",
+            "",
+        ])
+        parsed = parse_freeze_expectations(text)
+        self.assertEqual(parsed["n_trade_rows"], 4)
+        self.assertEqual(parsed["n_open_tickers"], 1)
+        self.assertEqual(parsed["n_excluded_rows"], 2)
+        self.assertEqual(parsed["n_eligible_events"], 1)
+        self.assertEqual(parsed["n_orphan_tickers"], 0)
+        self.assertIn("synthetic selection text", parsed["selection_bias"])
+        self.assertEqual(parsed["coverage"], "synthetic coverage sentence.")
+
+    def test_changed_download_dir_is_not_published(self):
+        from becker_pipeline.run_part_b import directory_hash, publish_or_refuse
+        from shared.exceptions import InconclusiveNoOutput
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            data = root / "data"
+            data.mkdir()
+            (data / "a.txt").write_text("one", encoding="utf-8")
+            before = directory_hash(data)
+            out = root / "out"
+            out.mkdir()
+            target = out / "PART_B_AGGREGATES.json"
+            target.write_text("{}", encoding="utf-8")
+            (data / "a.txt").write_text("two", encoding="utf-8")
+            with self.assertRaises(InconclusiveNoOutput):
+                publish_or_refuse(out, target, before, data)
+            self.assertFalse(target.exists())
+            self.assertFalse((out / "BOX_ONLY_OUTPUT_SHA256.json").exists())
+
+    def test_unit_bootstrap_matches_row_bootstrap(self):
+        from becker_pipeline.metrics import (
+            cluster_bootstrap_rows,
+            cluster_bootstrap_units,
+            prepare_trade,
+            stats_from_prepared,
+        )
+
+        registry = _registry()
+        rows_by_event = {}
+        for index in range(6):
+            day = 4 + index
+            event = "KXNFLGAME-25SEP%02dAAAA" % day
+            ticker = event + "-AA"
+            market = _market(ticker, event, "no" if index % 2 == 0 else "yes", "2025-09-05T00:00:00Z")
+            bucket = []
+            for k in range(4):
+                raw = _trade(
+                    "id-%d-%d" % (index, k), ticker,
+                    side="yes" if k % 2 == 0 else "no",
+                    yes_price=50 if k < 2 else 40,
+                    count=2 + k,
+                    created="2025-09-%02dT18:00:%02dZ" % (day, k),
+                )
+                bucket.append(prepare_trade(raw, market, registry, Decimal(1)))
+            rows_by_event[event] = bucket
+        units = {event: stats_from_prepared(rows) for event, rows in rows_by_event.items()}
+        for field in ("S", "MNO", "MNO_net"):
+            self.assertEqual(
+                cluster_bootstrap_rows(rows_by_event, field, 30, 20261003),
+                cluster_bootstrap_units(units, field, 30, 20261003),
+            )
 
 
 if __name__ == "__main__":

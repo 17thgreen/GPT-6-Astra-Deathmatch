@@ -58,25 +58,27 @@ class TestT01LabelPermutation(unittest.TestCase):
         self.assertEqual(before, after)
 
     def test_pinned_permutations_leave_shas_constant(self):
-        from dev_pipeline.terciles import flow_terciles
+        from dev_pipeline import load as load_mod
+        from dev_pipeline.load import load_dev
+        from dev_pipeline.lots import reconstruct
+        from dev_pipeline.terciles import bucket_document, flow_terciles, index_trades, portion_labels
+        from shared.canonical import canon_sha256
         from shared.exceptions import LabelInputRefused
+        from tests import support
 
-        state = dev_state()
-        dev = state["dev"]
-        shas = state["shas"]
-        print("tercile_cuts", shas["tercile_cuts"])
-        print("bucket_terciles", shas["bucket_terciles"])
-        print("portion_terciles", shas["portion_terciles"])
-        print("constancy", shas["constancy"])
+        support._STATE.clear()
+        load_mod._CACHE.clear()
+        dev = load_dev()
         rng = random.Random(20261003)
         games = list(dev["games"])
+        attached = {}
         for _ in range(1000):
             permuted = list(games)
             rng.shuffle(permuted)
             attached = {game: permuted[i] for i, game in enumerate(games)}
             with self.assertRaises(LabelInputRefused):
                 flow_terciles(dev["flow"], result=attached)
-        rotated = games[1:] + games[:1]
+        rotated = {game: games[(i + 1) % len(games)] for i, game in enumerate(games)}
         with self.assertRaises(LabelInputRefused):
             flow_terciles(dev["flow"], result=rotated)
         quotes = []
@@ -86,18 +88,45 @@ class TestT01LabelPermutation(unittest.TestCase):
         rng.shuffle(quotes)
         with self.assertRaises(LabelInputRefused):
             flow_terciles(dev["flow"], quote=quotes)
-        mids = [row.get("outcome_mid_at_fill") for row in dev["fills"]]
+        fills = [dict(row) for row in dev["fills"]]
+        mids = [row.get("outcome_mid_at_fill") for row in fills]
         rng.shuffle(mids)
+        for row, mid in zip(fills, mids):
+            row["outcome_mid_at_fill"] = mid
         with self.assertRaises(LabelInputRefused):
             flow_terciles(dev["flow"], fill=mids)
         with self.assertRaises(LabelInputRefused):
             flow_terciles(dev["flow"], score={"home": 1})
-        again = dev_state()
-        self.assertEqual(again["shas"], shas)
-        self.assertEqual(again["cuts_bytes"], state["cuts_bytes"])
-        self.assertEqual(again["document_bytes"], state["document_bytes"])
-        self.assertEqual(again["portion_bytes"], state["portion_bytes"])
-        built = state["built"]
+        # Labels, quotes, and mids are not inputs. The rebuild uses the flow projection only.
+        flow = []
+        for ticker, at, side, size in dev["flow"]:
+            _ = (attached, quotes, mids)
+            flow.append((ticker, at, side, size))
+        self.assertEqual(flow, list(dev["flow"]))
+        built = flow_terciles(flow)
+        document = bucket_document(built)
+        lots = reconstruct(fills, dev["markets"])
+        labels = portion_labels(lots["portions"], built, index_trades(flow))
+        shas = {
+            "tercile_cuts": canon_sha256({
+                "c1": built["c1"], "c2": built["c2"], "e1": built["e1"], "e2": built["e2"],
+            }),
+            "bucket_terciles": canon_sha256(document),
+            "portion_terciles": canon_sha256(labels),
+        }
+        constancy = canon_sha256({
+            "bucket_terciles_sha256": shas["bucket_terciles"],
+            "portion_terciles_sha256": shas["portion_terciles"],
+            "tercile_cuts_sha256": shas["tercile_cuts"],
+        })
+        print("tercile_cuts", shas["tercile_cuts"])
+        print("bucket_terciles", shas["bucket_terciles"])
+        print("portion_terciles", shas["portion_terciles"])
+        print("constancy", constancy)
+        self.assertEqual(
+            constancy,
+            "523f840babd3e57d8a305ecc458f979d9288e69082210edaf8648e3132101968",
+        )
         self.assertAlmostEqual(built["c1"], 0.9271702456462422, delta=1e-12)
         self.assertAlmostEqual(built["c2"], 0.989881659505818, delta=1e-12)
 
@@ -169,8 +198,61 @@ class TestT04Structural(unittest.TestCase):
         self.assertEqual(gate["quote_rows"], 364988)
         self.assertEqual(gate["tickers"], 62)
         self.assertEqual(gate["events"], 31)
-        k1_labs = list(repo_root().glob("kalshi_ext_k1*"))
-        self.assertEqual(k1_labs, [])
+        import json
+        import sys
+        from collections import defaultdict
+        from decimal import Decimal
+
+        from shared.fees import part_a_order_headline
+
+        k1_root = repo_root() / "kalshi_ext_k1_q6000_legging_audit_lab_20261003"
+        structural = json.loads((k1_root / "results" / "STRUCTURAL.json").read_text(encoding="utf-8"))
+        self.assertEqual(structural["opening_portions"], gate["n_portions"])
+        self.assertAlmostEqual(structural["maker_no_share_raw"], gate["maker_no_share"], delta=1e-9)
+        self.assertAlmostEqual(structural["ledger_uch_raw"], gate["uch_integral"], delta=1e-6)
+        self.assertEqual(structural["fees"]["headline_maker_order_fee_total_raw"], "1286.22")
+        groups = defaultdict(list)
+        for fill in state["dev"]["fills"]:
+            if fill["kind"] != "maker":
+                continue
+            groups[fill["order_id"]].append((fill["size"], fill["price"]))
+        total = sum(
+            (part_a_order_headline(pairs, Decimal(1))[0] for pairs in groups.values()),
+            Decimal(0),
+        )
+        self.assertEqual(total, Decimal(structural["fees"]["headline_maker_order_fee_total_raw"]))
+        sys.path.insert(0, str(k1_root))
+        try:
+            import importlib
+            k1_fees = importlib.import_module("fees")
+            order_fee, _per, _six = k1_fees.headline_order_fee([(Decimal("247.5"), Decimal("0.37"))])
+            self.assertEqual(order_fee, Decimal("1.01"))
+        finally:
+            sys.path.remove(str(k1_root))
+            for name in ("fees", "constants", "errors"):
+                sys.modules.pop(name, None)
+
+    def test_undefined_contrast_is_inconclusive(self):
+        from dev_pipeline.orchestrator import decide_verdict
+
+        def cell(name, opening):
+            return {
+                "tercile": name,
+                "opening_contracts": opening,
+                "distinct_games": 10,
+                "horizons": {"1800": {"censored_contracts": 0.0}},
+            }
+
+        cells = [
+            cell("T1_LOW", 100.0), cell("T2_MID", 100.0),
+            cell("T3_HIGH", 100.0), cell("UNCLASSIFIED", 1.0),
+        ]
+        missing = {"dropped_share": 0.0, "delta_gross": None, "ci95_gross": None}
+        verdict, reasons = decide_verdict({"ok": True}, cells, missing)
+        self.assertEqual(verdict, "INCONCLUSIVE")
+        self.assertIn("undefined_contrast", reasons)
+        present = {"dropped_share": 0.0, "delta_gross": -0.000301641, "ci95_gross": [-0.001030989, 0.000450135]}
+        self.assertEqual(decide_verdict({"ok": True}, cells, present)[0], "DESCRIPTIVE")
 
     def test_dev_pipeline_has_no_becker_import(self):
         root = lab_root() / "dev_pipeline"

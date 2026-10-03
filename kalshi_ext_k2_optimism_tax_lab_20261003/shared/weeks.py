@@ -11,7 +11,7 @@ _MONTHS = {
 
 
 def ticker_date_from_event(event_ticker):
-    """The YYMMMDD token, e.g. KXNFLGAME-25SEP28GBDAL -> 2025-09-28."""
+    """The YYMMMDD token, e.g. KXNFLGAME-25SEP07AAAA -> 2025-09-07."""
     token = event_ticker.split("-", 1)[1][:7]
     year = 2000 + int(token[:2])
     month = _MONTHS[token[2:5]]
