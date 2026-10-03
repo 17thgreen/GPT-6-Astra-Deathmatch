@@ -1,0 +1,15 @@
+{
+  "record": "CONDUCTOR_KICK_SCOUT_EXTERNAL_HUNT_WHILE_BOX_IP_CLOSED_2026-10-03",
+  "written_et": "2026-10-03 15:51 ET",
+  "owner": "Market Scout / Deep Research",
+  "reviewer": "Conductor",
+  "why": "Continuous-maximize: weather/card03/holdout blocked on Logan egress after r2e LAST box-IP 429; do not sit idle",
+  "task": "Scour GitHub/open-source/internet for viable Kalshi/sports-microstructure candidates aimed at a real fee-honest cash-cow edge. Extract kernels only; file Scout triage packets. No Kalshi GET from box. No live orders. No invented inventory/PnL.",
+  "success": "At least one Scout triage artifact on disk with confirmed-or-explicitly-unconfirmed inventory and a Conductor-ready TRY/SKIP/DEFER call",
+  "constraints": [
+    "no box Kalshi GET",
+    "no live orders",
+    "measurement honesty stays",
+    "do not clear weather marker or relaunch"
+  ]
+}

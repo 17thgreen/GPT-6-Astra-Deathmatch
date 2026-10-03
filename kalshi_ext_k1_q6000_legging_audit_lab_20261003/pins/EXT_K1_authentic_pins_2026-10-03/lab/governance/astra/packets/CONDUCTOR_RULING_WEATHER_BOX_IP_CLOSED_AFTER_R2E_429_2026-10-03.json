@@ -1,0 +1,24 @@
+{
+  "record": "CONDUCTOR_RULING_WEATHER_BOX_IP_CLOSED_AFTER_R2E_429_2026-10-03",
+  "written_et": "2026-10-03 15:51 ET",
+  "authority": "STOP_R2E_AFTER_RELAUNCH_429_2026-10-03.json sha b33ada1c68ba7572a0ff88c9cfb710cf56bb8cc12818bf1b5a1d18162ff4b1b0; marker e55d6094a801131728399cefe08a1e23850f6d734c00030f625b817ccc1019ba; standing memory do-not-re-widget after skipped 09:31 egress widget",
+  "ruling": "BOX_IP_KALSHI_CLOSED",
+  "facts": {
+    "probes_both_200": true,
+    "relaunch_et": "2026-10-03 15:17:30 EDT",
+    "seconds_to_429": 0.5,
+    "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXHIGHLAX-26OCT03?with_nested_markets=true",
+    "last_box_ip_attempt": true
+  },
+  "forbidden_until_logan_bc": [
+    "any Kalshi GET from this box IP",
+    "clear KALSHI_429_STOP",
+    "launch_r2e or any weather relaunch",
+    "re-raise egress widget",
+    "rotate IPs / spin cloud VM to dodge throttle"
+  ],
+  "resume_when": "Logan says (b) read-only production key or (c) alternate host in plain words; then Conductor issues a fresh ruling before any GET",
+  "seats_held": ["card03", "holdout capture", "Q6S5 live", "ADMIT-1 re-admit"],
+  "maximize_while_blocked": "Market Scout / Deep Research external hunt (no box Kalshi GET)",
+  "no_live_orders": true
+}
