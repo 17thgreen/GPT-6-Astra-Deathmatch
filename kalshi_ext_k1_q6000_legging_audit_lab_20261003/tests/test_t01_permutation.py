@@ -9,6 +9,8 @@ from orchestrator import RESULTS, _common_header, games_for_artifacts, invarianc
 from tools.probe_invariance import (
     CONSTANCY_SHA256,
     MONEYLINE_COLUMNS,
+    PROBE_SEED,
+    PROBE_SHUFFLES,
     RECORDED_ARTIFACT_SHAS,
     SCORE_COLUMNS,
     games_csv_text,
@@ -153,7 +155,27 @@ class T01LabelPermutation(unittest.TestCase):
             "IN_SAMPLE_DEV": header["IN_SAMPLE_DEV"],
         }
         from report import stamp_ex_post
-        write_json(RESULTS / "INVARIANCE.json", stamp_ex_post(record))
+        stamped = stamp_ex_post(record)
+        # Label the cached 1000-shuffle fields. They are not the end-to-end rebuild.
+        stamped["cached_test_scope"] = "settle_artifact_only_cached_portions"
+        stamped["end_to_end_rebuild"] = {
+            "seed": PROBE_SEED,
+            "shuffles": PROBE_SHUFFLES,
+            "derangement": "shift-1",
+            "rebuilds": ["join", "consensus", "gate", "markouts"],
+            "moneyline_positive_control": True,
+            "constancy_sha256": constancy,
+        }
+        write_json(RESULTS / "INVARIANCE.json", stamped)
+        written = __import__("json").loads((RESULTS / "INVARIANCE.json").read_text(encoding="utf-8"))
+        self.assertEqual(written["permutations"], 1000)
+        self.assertEqual(written["seed"], 20261003)
+        self.assertEqual(written["derangement"], "shift-1")
+        self.assertEqual(written["cached_test_scope"], "settle_artifact_only_cached_portions")
+        self.assertEqual(written["end_to_end_rebuild"]["constancy_sha256"], CONSTANCY_SHA256)
+        self.assertEqual(written["constancy_sha256"], CONSTANCY_SHA256)
+        for flag in ("DEV_GRADE_REUSED_31_GAME_COHORT", "HYPOTHETICAL_REPLAY_FILLS", "IN_SAMPLE_DEV"):
+            self.assertIs(written[flag], True)
         print(base_four["gate_assignments"])
         print(base_four["splits"])
         print(base_four["uch"])

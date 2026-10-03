@@ -4,7 +4,7 @@ Code verification from this directory:
 
 `python3 -m unittest discover -s tests -v`
 
-Ran 22 tests in 106.526s at 2026-10-03T20:39:33Z. Result: OK. Failures: 0. Errors: 0. This run is not an Examiner score. The suite covers T01–T14: label-permutation invariance, lookahead, the 31/31 join, holdout and ADMIT-1 refusals, fee formula, structural reproduction, unhedged contract-hours, markout nulls, Lee-Ready refusal, manifest tamper, de-vig examples, framing, untouched 000 files, and the ex-post `[U]` tag.
+Ran 26 tests in 123.193s at 2026-10-03T23:38:52Z. Result: OK. Failures: 0. Errors: 0. This run is not an Examiner score. The suite covers T01–T14: label-permutation invariance, lookahead, the 31/31 join, holdout and ADMIT-1 refusals, fee formula, structural reproduction, unhedged contract-hours, markout nulls, Lee-Ready refusal, manifest tamper, de-vig examples, framing, untouched 000 files, and the ex-post `[U]` tag.
 
 Built on `761eaaedc153dca9807d7630adcea1ae3387d9c1`.
 
