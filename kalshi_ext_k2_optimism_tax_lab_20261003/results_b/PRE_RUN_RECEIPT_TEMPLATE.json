@@ -1,0 +1,10 @@
+{
+  "type": "EXT-K2-PART-B-PRE-RUN-RECEIPT-TEMPLATE",
+  "commit_sha": null,
+  "runner_file_sha256": null,
+  "becker_boxonly_manifest_sha256": "fd5e10531f488f30baf05e2dd6f17c8f8823603ecbae457170dbbde66126fb95",
+  "exclusion_list_sha256": "61a4c993fbea5940e5999177ffb5a0e3161219a8f84812af2d2f44d9f556641b",
+  "becker_dir_all_files_sha256": null,
+  "box_only_output_sha256": null,
+  "note": "Template. The Simulator writes the real receipt outside the repo, before reading a Becker price, side, or result. Null fields are filled on the box."
+}

@@ -1,0 +1,30 @@
+{
+ "admit1_window_rows": 0,
+ "all_contracts": 47319551.36,
+ "events": 31,
+ "experiment_id": "EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS",
+ "k1_repro": {
+  "quote_rows_k1": 364988,
+  "taker_yes_contract_share_k1": 0.916882,
+  "trade_rows_k1": 681732
+ },
+ "markets_json_tickers": 62,
+ "not_read": [
+  "quotes bid/ask",
+  "000 ledgers",
+  "nflverse",
+  "Becker",
+  "settlement",
+  "scores"
+ ],
+ "quote_rows": 364988,
+ "reads": [
+  "B1 trades only",
+  "markets.json"
+ ],
+ "taker_yes_contract_share": 0.9168821893496498,
+ "taker_yes_contracts": 43386453.85,
+ "taker_yes_trade_rows": 636251,
+ "tickers_with_trades": 62,
+ "trade_rows": 681732
+}

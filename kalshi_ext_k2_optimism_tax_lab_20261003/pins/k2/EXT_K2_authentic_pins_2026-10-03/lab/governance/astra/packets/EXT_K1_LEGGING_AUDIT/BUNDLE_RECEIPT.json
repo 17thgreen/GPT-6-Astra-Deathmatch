@@ -1,0 +1,27 @@
+{
+ "bundle": "/workspace/EXT_K1_authentic_pins_2026-10-03.tgz",
+ "sha256": "0f8f529733bfd1ccb01b36f312cdc20865cc2811c04dcd3c812d50c67295db38",
+ "bytes": 25008407,
+ "files_in_bundle": 38,
+ "inner_manifest_sha256": "a041561e130fb97eaa8d7bfab5dd6fa53963fa4fbdb13c00cd4f71089e0e3db5",
+ "over_25MB_decimal": true,
+ "split_parts": [
+  {
+   "path": "/workspace/EXT_K1_authentic_pins_2026-10-03.tgz.part-00",
+   "sha256": "3fd70f7ba7c3543877e3608b9d1f3c7532307f8d7869590d8d02e9dc8e9ca027",
+   "bytes": 20000000
+  },
+  {
+   "path": "/workspace/EXT_K1_authentic_pins_2026-10-03.tgz.part-01",
+   "sha256": "1f8b2ac11ffe3ff26b784351c9fc7519848d96c605d71aef633abe98d24c914b",
+   "bytes": 5008407
+  }
+ ],
+ "parts_manifest": {
+  "path": "/workspace/EXT_K1_authentic_pins_2026-10-03.tgz.PARTS.sha256",
+  "sha256": "a92df01da7de46d4fcc635ef8b66c58c464c3a08c84e1ecf7df7d86217fe8afc"
+ },
+ "reassemble": "cat EXT_K1_authentic_pins_2026-10-03.tgz.part-00 EXT_K1_authentic_pins_2026-10-03.tgz.part-01 > EXT_K1_authentic_pins_2026-10-03.tgz && sha256sum -c",
+ "tar_flags": "--sort=name --owner=0 --group=0 --numeric-owner --mtime=2026-10-03T00:00:00Z -czf",
+ "top_dir": "EXT_K1_authentic_pins_2026-10-03/"
+}

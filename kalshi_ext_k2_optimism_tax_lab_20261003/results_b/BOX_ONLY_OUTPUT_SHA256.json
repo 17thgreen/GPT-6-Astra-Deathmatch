@@ -1,0 +1,5 @@
+{
+  "box_only_output_sha256": null,
+  "filled_by": null,
+  "note": "Placeholder. The Simulator records the sha256 of the box-only aggregate after the run. No Becker number is stored here."
+}

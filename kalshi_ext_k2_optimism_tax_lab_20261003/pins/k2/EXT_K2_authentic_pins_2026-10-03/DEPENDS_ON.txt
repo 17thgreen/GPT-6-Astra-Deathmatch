@@ -1,0 +1,2 @@
+# DEPENDS_ON (reused by sha, not re-bundled): EXT_K1_authentic_pins_2026-10-03.tgz sha256 0f8f529733bfd1ccb01b36f312cdc20865cc2811c04dcd3c812d50c67295db38 inner MANIFEST a041561e130fb97eaa8d7bfab5dd6fa53963fa4fbdb13c00cd4f71089e0e3db5
+# BECKER BYTES IN THIS BUNDLE: 0 (Becker inputs are box-only; see BECKER_BOXONLY_PIN_MANIFEST.json, never bundled)

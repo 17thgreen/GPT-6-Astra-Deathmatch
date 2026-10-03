@@ -1,0 +1,618 @@
+{
+ "fills": {
+  "rows": 12853,
+  "keys": {
+   "at": 12853,
+   "ticker": 12853,
+   "event": 12853,
+   "outcome": 12853,
+   "direction": 12853,
+   "price": 12853,
+   "size": 12853,
+   "fee": 12853,
+   "kind": 12853,
+   "paired": 12853,
+   "reason": 12853,
+   "inventory_after": 12853,
+   "cash_after": 12853,
+   "order_id": 12853,
+   "improved": 12853,
+   "resting_seconds": 12853,
+   "queue_remaining": 12853,
+   "outcome_mid_at_fill": 12853,
+   "completion_instruction": 12853,
+   "entry_window_open": 12853
+  },
+  "contracts_by_kind_outcome": {
+   "maker/no": 321622.45,
+   "maker/yes": 3345.33,
+   "taker/no": 1292.25,
+   "taker/yes": 776.41
+  },
+  "rows_by_kind_outcome": {
+   "maker/no": 12620,
+   "maker/yes": 217,
+   "taker/no": 10,
+   "taker/yes": 6
+  },
+  "maker_contracts": 324967.78,
+  "maker_no_share": 0.9897056563576855,
+  "taker_contracts": 2068.66,
+  "sorted_by_at": true,
+  "events": 31,
+  "at_min": 1788477092.551908,
+  "at_max": 1789938900.0,
+  "in_admit1": 0,
+  "maker_fills_at_or_after_cutoff": 0,
+  "distinct_order_ids": 1846
+ },
+ "unhedged": {
+  "recomputed_contract_hours": 603262.7291176913,
+  "ledger_contract_hours": 603262.7291176913,
+  "abs_diff": 0.0,
+  "fifo_lot_contract_hours": 603262.7291176922,
+  "opening_lots": 6161,
+  "contracts_closed_by_kind": {
+   "maker": 161449.56,
+   "taker": 2068.66
+  },
+  "residual_open_contracts_at_end": 0,
+  "coverage_end": 1789939500.0,
+  "all_flat": true,
+  "passive_pairing_fraction": 0.9873490550471932
+ },
+ "tape": {
+  "trades": 681732,
+  "quotes": 364988,
+  "rows": 1046720,
+  "tickers": 62,
+  "events": 31,
+  "trades_by_taker_side": {
+   "yes": 636251,
+   "no": 45481
+  },
+  "contracts_by_taker_side": {
+   "yes": 43386453.85,
+   "no": 3933097.51
+  },
+  "taker_yes_contract_share": 0.9168821893495998,
+  "taker_yes_trade_share": 0.9332861006964613,
+  "trade_keys": {
+   "at": 681732,
+   "ticker": 681732,
+   "taker_side": 681732,
+   "yes_price": 681732,
+   "size": 681732,
+   "trade_id": 681732
+  },
+  "quote_keys": {
+   "at": 364988,
+   "asof": 364988,
+   "ticker": 364988,
+   "bid": 364988,
+   "ask": 364988,
+   "kind": 364988
+  },
+  "block_trades": 0,
+  "at_min_utc": "2026-09-03T00:20:17.069481+00:00",
+  "at_max_utc": "2026-09-20T21:26:00+00:00",
+  "rows_in_admit1_window": 0,
+  "last_row_minutes_before_kickoff_min": 174.0,
+  "last_row_minutes_before_kickoff_max": 174.0
+ },
+ "join": {
+  "joined": 31,
+  "events": 31,
+  "exact_without_alias": 28,
+  "alias_events": {
+   "KXNFLGAME-26SEP10SFLAR": [
+    "LAR"
+   ],
+   "KXNFLGAME-26SEP13CLEJAC": [
+    "JAC"
+   ],
+   "KXNFLGAME-26SEP20JACDEN": [
+    "JAC"
+   ]
+  },
+  "all_kickoff_time_match": true,
+  "all_ticker_date_match": true,
+  "all_have_both_ml": true,
+  "game_ids": [
+   "2026_01_NE_SEA",
+   "2026_01_SF_LA",
+   "2026_01_ARI_LAC",
+   "2026_01_ATL_PIT",
+   "2026_01_BAL_IND",
+   "2026_01_BUF_HOU",
+   "2026_01_CHI_CAR",
+   "2026_01_CLE_JAX",
+   "2026_01_DAL_NYG",
+   "2026_01_GB_MIN",
+   "2026_01_MIA_LV",
+   "2026_01_NO_DET",
+   "2026_01_NYJ_TEN",
+   "2026_01_TB_CIN",
+   "2026_01_WAS_PHI",
+   "2026_01_DEN_KC",
+   "2026_02_DET_BUF",
+   "2026_02_CAR_ATL",
+   "2026_02_CIN_HOU",
+   "2026_02_CLE_TB",
+   "2026_02_GB_NYJ",
+   "2026_02_IND_KC",
+   "2026_02_JAX_DEN",
+   "2026_02_LV_LAC",
+   "2026_02_MIA_SF",
+   "2026_02_MIN_CHI",
+   "2026_02_NO_BAL",
+   "2026_02_PHI_TEN",
+   "2026_02_PIT_NE",
+   "2026_02_SEA_ARI",
+   "2026_02_WAS_DAL"
+  ],
+  "rows": [
+   {
+    "event": "KXNFLGAME-26SEP09NESEA",
+    "teams": [
+     "NE",
+     "SEA"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_NE_SEA",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP10SFLAR",
+    "teams": [
+     "LAR",
+     "SF"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_SF_LA",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": [
+     "LAR"
+    ]
+   },
+   {
+    "event": "KXNFLGAME-26SEP13ARILAC",
+    "teams": [
+     "ARI",
+     "LAC"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_ARI_LAC",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13ATLPIT",
+    "teams": [
+     "ATL",
+     "PIT"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_ATL_PIT",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13BALIND",
+    "teams": [
+     "BAL",
+     "IND"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_BAL_IND",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13BUFHOU",
+    "teams": [
+     "BUF",
+     "HOU"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_BUF_HOU",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13CHICAR",
+    "teams": [
+     "CAR",
+     "CHI"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_CHI_CAR",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13CLEJAC",
+    "teams": [
+     "CLE",
+     "JAC"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_CLE_JAX",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": [
+     "JAC"
+    ]
+   },
+   {
+    "event": "KXNFLGAME-26SEP13DALNYG",
+    "teams": [
+     "DAL",
+     "NYG"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_DAL_NYG",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13GBMIN",
+    "teams": [
+     "GB",
+     "MIN"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_GB_MIN",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13MIALV",
+    "teams": [
+     "LV",
+     "MIA"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_MIA_LV",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13NODET",
+    "teams": [
+     "DET",
+     "NO"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_NO_DET",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13NYJTEN",
+    "teams": [
+     "NYJ",
+     "TEN"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_NYJ_TEN",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13TBCIN",
+    "teams": [
+     "CIN",
+     "TB"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_TB_CIN",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP13WASPHI",
+    "teams": [
+     "PHI",
+     "WAS"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_WAS_PHI",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP14DENKC",
+    "teams": [
+     "DEN",
+     "KC"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_01_DEN_KC",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP17DETBUF",
+    "teams": [
+     "BUF",
+     "DET"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_DET_BUF",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20CARATL",
+    "teams": [
+     "ATL",
+     "CAR"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_CAR_ATL",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20CINHOU",
+    "teams": [
+     "CIN",
+     "HOU"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_CIN_HOU",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20CLETB",
+    "teams": [
+     "CLE",
+     "TB"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_CLE_TB",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20GBNYJ",
+    "teams": [
+     "GB",
+     "NYJ"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_GB_NYJ",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20INDKC",
+    "teams": [
+     "IND",
+     "KC"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_IND_KC",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20JACDEN",
+    "teams": [
+     "DEN",
+     "JAC"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_JAX_DEN",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": [
+     "JAC"
+    ]
+   },
+   {
+    "event": "KXNFLGAME-26SEP20LVLAC",
+    "teams": [
+     "LAC",
+     "LV"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_LV_LAC",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20MIASF",
+    "teams": [
+     "MIA",
+     "SF"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_MIA_SF",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20MINCHI",
+    "teams": [
+     "CHI",
+     "MIN"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_MIN_CHI",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20NOBAL",
+    "teams": [
+     "BAL",
+     "NO"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_NO_BAL",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20PHITEN",
+    "teams": [
+     "PHI",
+     "TEN"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_PHI_TEN",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20PITNE",
+    "teams": [
+     "NE",
+     "PIT"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_PIT_NE",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20SEAARI",
+    "teams": [
+     "ARI",
+     "SEA"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_SEA_ARI",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   },
+   {
+    "event": "KXNFLGAME-26SEP20WASDAL",
+    "teams": [
+     "DAL",
+     "WAS"
+    ],
+    "n_candidates": 1,
+    "game_id": "2026_02_WAS_DAL",
+    "kickoff_matches_gametime_et": true,
+    "ticker_date_matches": true,
+    "has_both_moneylines": true,
+    "aliases_used": []
+   }
+  ],
+  "nflverse_rows": 7548,
+  "nflverse_columns": [
+   "game_id",
+   "season",
+   "game_type",
+   "week",
+   "gameday",
+   "weekday",
+   "gametime",
+   "away_team",
+   "away_score",
+   "home_team",
+   "home_score",
+   "location",
+   "result",
+   "total",
+   "overtime",
+   "old_game_id",
+   "gsis",
+   "nfl_detail_id",
+   "pfr",
+   "pff",
+   "espn",
+   "ftn",
+   "away_rest",
+   "home_rest",
+   "away_moneyline",
+   "home_moneyline",
+   "spread_line",
+   "away_spread_odds",
+   "home_spread_odds",
+   "total_line",
+   "under_odds",
+   "over_odds",
+   "div_game",
+   "roof",
+   "surface",
+   "temp",
+   "wind",
+   "away_qb_id",
+   "home_qb_id",
+   "away_qb_name",
+   "home_qb_name",
+   "away_coach",
+   "home_coach",
+   "referee",
+   "stadium_id",
+   "stadium"
+  ],
+  "nflverse_2026_rows": 272,
+  "nflverse_2026_w1w2": 32,
+  "substring_style_matches_no_alias": 29
+ }
+}

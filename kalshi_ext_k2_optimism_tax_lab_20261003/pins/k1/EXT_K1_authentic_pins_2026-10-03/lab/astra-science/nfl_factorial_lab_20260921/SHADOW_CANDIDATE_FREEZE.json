@@ -1,0 +1,62 @@
+{
+  "frozen_at": "2026-09-21T17:14:27.832122+00:00",
+  "selected": "000",
+  "status": "SHADOW_RESEARCH_CANDIDATE_ONLY",
+  "source_sha256": {
+    "EXPERIMENT_SPEC.md": "540356a6ee130f0e7077c3eff8d62d4271b3d545e0a3f43acaaf72e4ebce1afd",
+    "BASELINE_HASHES.json": "f2ac102708f1c581d5384b1799618bacbc1f04b0a529c723b1b0cc7b51655335",
+    "factorial_policy.py": "4f1f870242431537599a9e22222f181f919347d1095e276c89d41fa23a4e9870",
+    "run_experiment.py": "c1a0fd2d85637b4fe909a24ca96784d3a99fe0a07c03bcef024c9fa16bbf84bc",
+    "test_factorial.py": "0a627b0588b9b6688b98f7c1742628c6895757c9f02b143b24b5a21a1d05cd0a",
+    "analyze.py": "a05e4ba81f873e1b0b58a528d11b6494f573dfe2dfb3f85a6c25f2a05c2bd542",
+    "test_analysis.py": "c0b502ce28ad59df898d6f1c45461cd88f10911c9af3cc5abb4347c64a3682f4",
+    "Q5_REFERENCES.json": "8828ecd556857bcbde8e9909cd6ebd68766ec4f2c8350923cb7d391481e39c65",
+    "inputs/manifest.json": "375ea6e2c9125a411d5444a88115213542d5b19c874d73a2bed0b9355fd6277d",
+    "RESERVED_HOLDOUT.json": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+    "FORWARD_PROTOCOL.md": "0ddd4ab6132b9bc8b702bd2199a1a23001061651a3d007c2274aafc206208326"
+  },
+  "baseline_sha256": {
+    "replay_v2.py": "5aba1bf36385d9defeb032040dd6560d3eb1a192fc0203e984a47d9e7c3f37c3",
+    "queue_policies.py": "641d0df3913f4a66fb926c84d170fe1fe61347a2fad16959b6824abb0c135fc2",
+    "completion_policy.py": "8225ec7afe03539ea24d84a16c0dd59cdd4124d77048183082d31823a3ceaaec",
+    "timing_policy.py": "a20eb7b4500f3ef10c5f0fc0dc8ab7512268e2364fccbf7521013c5bc2e18d9f",
+    "adaptive_policy.py": "fdd4294fcac8490f156130c0c6dc0e4e1c1f1b20214cd923c3cc18d0dcb466db",
+    "test_replay_v2.py": "af3056993de961453962ba8c07cec9bb8bd73fe80e67a495ae96e127dcc5734c",
+    "test_queue_policies.py": "f3d0944cbd34852abecd0ebbd2c74cff5f36f2deaf8c0032f28d081617de0f8a",
+    "test_completion.py": "ff54aa2d4608f4b154270aee442371f8313b777e84beba57694c6d7d32376fa4",
+    "test_timing.py": "c357bddca9d573f79afe9a6568f0a93220629b53d43634d27259c2805eae1150",
+    "test_adaptive.py": "efa887a659d48ee256efc29cec1d169e91e4dbbc3a95bfb6a91b3a49d2418546"
+  },
+  "common_config": {
+    "starting_cash": 5000,
+    "order_size": 250,
+    "exposure_cap": 250,
+    "queue_early": 3300,
+    "queue_last12h": 1327847.005,
+    "fill_participation": 0.5,
+    "requote_seconds": 60,
+    "proxy_max_age_seconds": 300,
+    "cancel_delay_seconds": 0.25,
+    "order_delay_seconds": 0.25,
+    "maker_coefficient": 0.0175,
+    "taker_coefficient": 0.07,
+    "balance_precision": ".0001",
+    "assumed_exit_depth": 250,
+    "inventory_reduce_only": false,
+    "event_netting": true,
+    "quote_source": "candles",
+    "liquidation_lead_seconds": 300
+  },
+  "scenario_stresses": {
+    "early_queues": [
+      3300,
+      10000
+    ],
+    "submit_cancel_delays": [
+      0.25,
+      5
+    ]
+  },
+  "selection_sha256": "0bf4a66f7032e45060d35c3a6d5b3f7d537e68c607b502b44de330906e64242b",
+  "evidence": "Selected after repeated use of 31 development games. Zero fresh completed games. No live promotion."
+}

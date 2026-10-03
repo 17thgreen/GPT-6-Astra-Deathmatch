@@ -1,0 +1,347 @@
+{
+ "experiment_id": "EXT-K1-Q6000-LEGGING-RISK-AUDIT",
+ "kernel": "EXT-K1",
+ "incumbent": "Q6-000 (q3300_d0.25_000)",
+ "feature_family": "legging_risk_audit",
+ "new_knobs_on_000": 0,
+ "changed_000_parameters": 0,
+ "scope": "measurement-only audit of the recorded 000 replay ledger; static label-free refusal gate; no re-simulation",
+ "frozen_at_et": "2026-10-03T16:14:59-04:00",
+ "file_date_et": "2026-10-03",
+ "owner_seat": "R&D Variants",
+ "status": "FROZEN_FREEZE_ONLY_AWAITING_CONDUCTOR_ACCEPT_IMPLEMENT_GO",
+ "governing_ruling": {
+  "path": "packets/CONDUCTOR_RULING_SCOUT_EXTERNAL_HUNT_2026-10-03.json",
+  "sha256": "870895a58e80fd1442d0ce97e42df02426bf7e38f64dcd091efc6fbf26b74ebf",
+  "ext_k1_verbatim": "TRY first. Variants freezes a measurement-only legging-risk audit of Q6-000 (unhedged contract-hours vs nflverse consensus side; refusal gate). Dev-grade, ex-post anchor only (nflverse line timing undocumented [U]). No retune of 000.",
+  "fee_rounding_verbatim": "Examiner pins. Until account member-type is resolved, score with the conservative non-direct-member rule (fees rounded up to $0.01 per order); may also report the $0.0001 direct-member figure as a sensitivity, never as the headline.",
+  "dev_grade_verbatim": "All box-scorable results on the reused 31-game dev cohort are dev-grade, not OOS; no KEEP from them.",
+  "provenance_note": "issued_et 16:10:00 ET but file mtime 16:06:39 ET (stamp ~3.5 min ahead of bytes)"
+ },
+ "scout_brief": {
+  "path": "SCOUT_EXTERNAL_HUNT_2026-10-03.md",
+  "sha256": "13e442892d27466f3ee3082509a47ac9706c7f3448aa079de798bec8cb1a1dfb",
+  "prev_bytes_sha256": "bfb1b7f353bc89cfd82c6d56abfeac7755f7d96e2aa0ae95007cca4160193d0f"
+ },
+ "repo": "17thgreen/GPT-6-Astra-Deathmatch",
+ "base_main_last_recorded": "761eaaedc153dca9807d7630adcea1ae3387d9c1 (PR65 squash; not network-verified; UNPINNED -> cloud records HEAD, proceeds only if nfl_factorial_lab_20260921 byte-identical)",
+ "proposed_lab_dir": "kalshi_ext_k1_q6000_legging_audit_lab_20261003/",
+ "universe": {
+  "events": 31,
+  "tickers": 62,
+  "game_ids": [
+   "2026_01_NE_SEA",
+   "2026_01_SF_LA",
+   "2026_01_ARI_LAC",
+   "2026_01_ATL_PIT",
+   "2026_01_BAL_IND",
+   "2026_01_BUF_HOU",
+   "2026_01_CHI_CAR",
+   "2026_01_CLE_JAX",
+   "2026_01_DAL_NYG",
+   "2026_01_GB_MIN",
+   "2026_01_MIA_LV",
+   "2026_01_NO_DET",
+   "2026_01_NYJ_TEN",
+   "2026_01_TB_CIN",
+   "2026_01_WAS_PHI",
+   "2026_01_DEN_KC",
+   "2026_02_DET_BUF",
+   "2026_02_CAR_ATL",
+   "2026_02_CIN_HOU",
+   "2026_02_CLE_TB",
+   "2026_02_GB_NYJ",
+   "2026_02_IND_KC",
+   "2026_02_JAX_DEN",
+   "2026_02_LV_LAC",
+   "2026_02_MIA_SF",
+   "2026_02_MIN_CHI",
+   "2026_02_NO_BAL",
+   "2026_02_PHI_TEN",
+   "2026_02_PIT_NE",
+   "2026_02_SEA_ARI",
+   "2026_02_WAS_DAL"
+  ],
+  "alias_map": {
+   "JAC": "JAX",
+   "LAR": "LA"
+  }
+ },
+ "structural_reproduction": {
+  "maker_no_share": {
+   "scout": "~0.990 (321,622 NO / 3,345 YES)",
+   "rederived": 0.9897056563576855,
+   "maker_no_contracts": 321622.45,
+   "maker_yes_contracts": 3345.33,
+   "reproduces": true,
+   "tag": "[V]"
+  },
+  "taker_yes_contract_share": {
+   "scout": "0.917 (43.39M / 3.93M)",
+   "rederived": 0.9168821893495998,
+   "contracts": {
+    "yes": 43386453.85,
+    "no": 3933097.51
+   },
+   "trades": {
+    "yes": 636251,
+    "no": 45481
+   },
+   "reproduces": true,
+   "tag": "[V]"
+  },
+  "unhedged_contract_hours": {
+   "scout": "603,262.7",
+   "ledger": 603262.7291176913,
+   "rederived": 603262.7291176913,
+   "abs_diff": 0.0,
+   "fifo": 603262.7291176922,
+   "reproduces": true,
+   "tag": "[V]"
+  },
+  "join": {
+   "scout": "31/31 (29 exact; JAC<->JAX)",
+   "rederived_joined": 31,
+   "exact_without_alias": 28,
+   "substring_style_no_alias": 29,
+   "alias_events": {
+    "KXNFLGAME-26SEP10SFLAR": [
+     "LAR"
+    ],
+    "KXNFLGAME-26SEP13CLEJAC": [
+     "JAC"
+    ],
+    "KXNFLGAME-26SEP20JACDEN": [
+     "JAC"
+    ]
+   },
+   "reproduces": "31/31 YES; alias claim incomplete (LAR<->LA also required)",
+   "tag": "[V]"
+  },
+  "admit1_rows": {
+   "tape": 0,
+   "fills": 0
+  }
+ },
+ "rules": {
+  "R01": "Universe = 31 cohort events / 62 tickers; else ClosedUniverseRefused",
+  "R02": "Closed sha-checked manifest, fail-closed",
+  "R03": "000 ledger read as-is; no re-run, no retune; 000 bytes unchanged",
+  "R04": "I_e(t) from fills (direction-signed), must equal inventory_after (1e-6)",
+  "R05": "Opening portion via FIFO (queue_policies L100-109); p_entry=fill price (own outcome); team_long = team of ticker with markets.json direction == lot direction",
+  "R06": "UNPINNED->resolved: close at FIFO opposite fill (maker pair or taker flatten) else T_end=min(coverage_end,K-10800), coverage_end=max(K-10800)+300; settlement/market close cannot bind; open_at_window_end must be 0",
+  "R07": "UCH = sum size*(t_close-t_open)/3600 [contract-hours] = sum_e int|I_e|dt/3600; reproduce 603262.7291176913 within 0.01",
+  "R08": "UNPINNED->resolved: secondary premium-hours ($h), hold-time quantiles, UCH per game and per split (descriptive)",
+  "R09": "Consensus = nflverse away/home_moneyline only; snapshot time [U]; EX_POST_ANCHOR_U",
+  "R10": "UNPINNED->resolved: join season 2026 REG, gameday==kickoff ET date, team set with alias {JAC:JAX, LAR:LA}; gametime and ticker-date cross-checks; exactly 1 candidate; 31/31 else JoinRefused",
+  "R11": "American->implied: |ML|/(|ML|+100) if ML<0 else 100/(ML+100); missing/0 -> UNCLASSIFIED",
+  "R12": "UNPINNED->resolved: proportional primary; Shin sensitivity (bisection z in [0,0.4], 200 iterations)",
+  "R13": "p_cons(team_long) = p_home if home else 1-p_home",
+  "R14": "UNPINNED->resolved: m_open = ledger outcome_mid_at_fill; null -> UNCLASSIFIED, never refused",
+  "R15": "dev = p_cons(team_long) - m_open",
+  "R16": "UNPINNED->resolved: PRIMARY S_DEV: ON dev>+0.005, AGAINST dev<-0.005, else NEUTRAL; delta sensitivity {0,0.01}",
+  "R17": "SECONDARY S_FAV: ON p_cons(team_long)>0.5, AGAINST <0.5, NEUTRAL ==0.5",
+  "R18": "UNPINNED->resolved: H={60,300,1800,3600}s + CLOSE + SETTLE(secondary); primary H*=1800s (first grid point >= ledger weighted-median pair hold 1002.46s)",
+  "R19": "mid(t) = latest quote row with at<=t; valid iff 0<bid<ask<1 and 0<=t-asof<300; outcome terms; no print-derived mids; Lee-Ready refused",
+  "R20": "MO_h = mid_out(t_open+h) - p_entry [$/contract]; net = MO_h - headline fee/contract; contract-weighted mean, unweighted median, n, contracts, censored",
+  "R21": "UNPINNED->resolved: invalid mid -> null + censored count; no forward-fill/interpolation/substitution; horizons not truncated at T_end",
+  "R22": "MO_close = mid_out(t_close) - p_entry; not PnL; never summed into PnL",
+  "R23": "UNPINNED->resolved: SETTLE secondary from nflverse scores [A]; tie/missing null; never feeds gate/splits; no settlement_ts read or invented",
+  "R24": "UNPINNED->resolved: headline fee per maker order = ceil_to_0.01(sum_f ceil_6dp(0.0175*1*C_f*p_f*(1-p_f))), pro-rata by contracts; CACHE_NOT_R1P1; NON_DIRECT_CENT_HEADLINE",
+  "R25": "UNPINNED->resolved: direct-member sensitivity = ledger fee/size; never headline; account class = Examiner pin (null)",
+  "R26": "taker flatten fills close only; their fee not charged to open-leg markouts; taker opening portion -> hard fail",
+  "R27": "UNPINNED->resolved: REFUSE iff dev < -x AND |inventory_after| >= E; primary x=0.02, E=0 contracts; inputs nflverse ML + ledger outcome_mid_at_fill + ledger inventory_after only",
+  "R28": "UNPINNED->resolved: grid x{0.01,0.02,0.03,0.05} x E{0,125} x devig{proportional,shin}; 16 cells; none selected or promoted",
+  "R29": "gate outputs per cell: counts, contract/UCH shares, refused-vs-kept markouts, per game; no counterfactual PnL/ROI",
+  "R30": "UNPINNED->resolved: static attribution only; counterfactual gated replay needs a new freeze (variant, not retune)",
+  "R31": "UNPINNED->resolved: Delta* = MO_1800(AGAINST)-MO_1800(ON) under S_DEV, contract-weighted, gross (net beside); game-cluster bootstrap B=10000 random.Random(20261003) 95% percentile CI",
+  "R32": "UNPINNED->resolved: verdict {DESCRIPTIVE, ITERATE, INCONCLUSIVE}; INCONCLUSIVE if join!=31/31, R36 fail, UNCLASSIFIED>5% opening contracts, censored@H*>20% in ON or AGAINST, open_at_window_end!=0; ITERATE if CI(Delta*) excludes 0; else DESCRIPTIVE; no KEEP, no KILL of 000",
+  "R33": "tags: EX_POST_ANCHOR_U + no-tradable-signal sentence on p_cons outputs; DEV_GRADE_REUSED_31_GAME_COHORT; HYPOTHETICAL_REPLAY_FILLS; IN_SAMPLE_DEV; CACHE_NOT_R1P1 on fees",
+  "R34": "refuse ADMIT-1 [2026-09-27T00:00Z,2026-09-30T04:00Z) half-open; NFL RESERVED_HOLDOUT holdout_games + measurement_development_events; KXMLBSPREAD (prereg 9a987a77/370dc31d); non-cohort nflverse rows; capture.sqlite / weather archive.sqlite; sqlite3 and network imports",
+  "R35": "Lee-Ready refused; registry 0860cbe2 never rebinned; no price-band split",
+  "R36": "pre-run structural gate reproduces Scout facts within tolerance before any markout; else stop INCONCLUSIVE",
+  "R37": "precision $/ct 6dp, contract-hours 4dp, shares 6dp; canonical JSON sorted keys, compact separators",
+  "R38": "only Delta* can move the verdict; everything else descriptive",
+  "R39": "no new data pulls (no Becker, no in-game tape, no new nflverse fetch)"
+ },
+ "unpinned_rule_ids": [
+  "R06",
+  "R08",
+  "R10",
+  "R12",
+  "R14",
+  "R16",
+  "R18",
+  "R21",
+  "R23",
+  "R24",
+  "R25",
+  "R27",
+  "R28",
+  "R30",
+  "R31",
+  "R32"
+ ],
+ "unpinned_count": 16,
+ "unpinned_non_rule": [
+  "cloud base main"
+ ],
+ "blockers": [],
+ "primary": {
+  "split": "S_DEV",
+  "delta": 0.005,
+  "horizon_s": 1800,
+  "contrast": "MO_1800(AGAINST) - MO_1800(ON), contract-weighted, gross (net beside)",
+  "bootstrap": {
+   "B": 10000,
+   "seed": 20261003,
+   "ci": 0.95,
+   "cluster": "game"
+  }
+ },
+ "horizons_s": [
+  60,
+  300,
+  1800,
+  3600
+ ],
+ "extra_marks": [
+  "CLOSE",
+  "SETTLE_secondary_label_dependent"
+ ],
+ "gate": {
+  "primary": {
+   "x": 0.02,
+   "E": 0,
+   "devig": "proportional"
+  },
+  "grid": {
+   "x": [
+    0.01,
+    0.02,
+    0.03,
+    0.05
+   ],
+   "E": [
+    0,
+    125
+   ],
+   "devig": [
+    "proportional",
+    "shin"
+   ]
+  },
+  "inputs": [
+   "nflverse moneylines",
+   "ledger outcome_mid_at_fill",
+   "ledger inventory_after"
+  ],
+  "static_attribution_only": true
+ },
+ "lookahead": {
+  "gate_label_free": true,
+  "ex_post_anchor": "nflverse line timing undocumented [U]; ex-post anchor only; cannot support a tradable pre-game signal claim",
+  "author_exposure": "saw Scout summary numbers, 000 summary json (incl completed_strategy_pnl), ledger head rows, and W1-W2 nflverse score columns printed while verifying the join; computed no markout, split count, gate output, dev value or fee total"
+ },
+ "required_tests": {
+  "T01": "label-permutation: gate/split/UCH/H+CLOSE markout bytes invariant to permuted (away_score,home_score) (fixture + 1000 perms random.Random(20261003) + shift-1 derangement); only SETTLE may change",
+  "T02": "lookahead truncation over 200 seeded fills; gate signature accepts no tape/score/markout (LookaheadRefused)",
+  "T03": "join 31/31 equal to pinned game_ids; aliases JAC->JAX (CLEJAC, JACDEN), LAR->LA (SFLAR); 28 exact; no alias / duplicate row / time mismatch -> JoinRefused",
+  "T04": "ADMIT-1 half-open boundaries (09-27T00:00Z rejected, 09-30T03:59:59.999Z rejected, 09-30T04:00Z accepted); KXNFLGAME-26SEP28PHICHI, 2026_03_PHI_CHI, 26SEP21NYGLAR, 26SEP24ATLGB, KXMLBSPREAD -> HoldoutRefused; sqlite paths refused; AST import scan",
+  "T05": "fee units: (1,.5)->0.004375->$0.01; (247.5,.37)->1.009614375->1.009615->$1.01; (2.5,.37)->0.010198125->0.010199->$0.02; (100,.5)->$0.44; (1,.05)->0.000832->$0.01; (250,.95)->0.207813->$0.21; order 247.5+2.5@.37 -> $1.02 (per-fill would be $1.03, not headline); M=1 KXNFLGAME; CACHE_NOT_R1P1",
+  "T06": "Scout repro: maker NO share 0.989706 (1e-6; <=0.0005 vs 0.990), taker-YES contract share 0.916882 (1e-6; <=0.0005 vs 0.917), counts 12853/681732/364988/62/31 exact, sums within 0.01, UCH within 0.01 of 603262.7291176913, join 31/31",
+  "T07": "UCH integral == FIFO sum (1e-6); inventory reconciliation; opening == closing == 163518.22 == paired_units; 6161 maker openings; open_at_window_end == 0",
+  "T08": "markout null handling: staleness 299.999 valid / 300.0 null; pre-first-quote null; past last row null; bid>=ask null; prints never change mid",
+  "T09": "Lee-Ready refusal; no price binning; 0860cbe2 unchanged",
+  "T10": "one-byte tamper of any vendored pin -> hard fail before read",
+  "T11": "CONSENSUS_FIXTURE reproduction within 1e-6 (31/31)",
+  "T12": "EMPTY_RESULTS results/pnl/roi null; no non-null pnl/roi/keep/profit/return keys in committed outputs; verdict domain; counts_toward_keep false",
+  "T13": "000 code and ledger sha unchanged; nfl_factorial_lab diff empty",
+  "T14": "EX_POST_ANCHOR_U + sentence on every p_cons-derived output"
+ },
+ "test_command": "python3 -m unittest discover -s tests -v",
+ "verdict": {
+  "domain": [
+   "DESCRIPTIVE",
+   "ITERATE",
+   "INCONCLUSIVE"
+  ],
+  "keep_possible": false,
+  "kill_000_possible": false,
+  "counts_toward_keep": false,
+  "promote": false,
+  "evidence_class": "IN_SAMPLE_DEV / HISTORICAL_REPLAY",
+  "family_size": 1,
+  "effective_n_games": 31,
+  "owner": "Examiner"
+ },
+ "fees": {
+  "maker_coefficient": 0.0175,
+  "M_KXNFLGAME": 1,
+  "headline": "non-direct: per maker order ceil to $0.01 of sum of ceil_6dp model fees, pro rata",
+  "sensitivity": "direct member $0.0001 = ledger fee/size",
+  "label": "CACHE_NOT_R1P1",
+  "examiner_pin_account_class": null,
+  "cache_sha256": {
+   "schedule": "d9435b8b7e30fecbe1a07539990667b23b828a8175962c0882d6c7bce93980ec",
+   "rounding": "7591cf0fb277eaf8fac8aedaf1645e58b61dacb22b5fed20ba7d8ea9f76ffa22",
+   "nonstandard": "558a4fa75516cc68b31568ca83aeb15e1b5f301c2696b32647315668e464c5be"
+  }
+ },
+ "exclusions": {
+  "admit1_window_utc": [
+   "2026-09-27T00:00:00Z",
+   "2026-09-30T04:00:00Z"
+  ],
+  "nfl_reserved_holdout_sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca",
+  "kxmlbspread_prereg_accept_sha256": "9a987a77e6cd6293ddaeb14fadbf33a25c1a6cc392af25f46eaaaaae33ebb273",
+  "refused_paths": [
+   "lab/astra-capture/prospective/capture.sqlite",
+   "lab/astra-capture/weather-nowcast/archive.sqlite"
+  ]
+ },
+ "cloud": {
+  "clouds": 1,
+  "pr": "draft",
+  "tests": "python3 -m unittest discover -s tests -v",
+  "committed_outputs_allowed": [
+   "results/STRUCTURAL.json",
+   "results/UCH.json",
+   "results/MARKOUTS.json (aggregates)",
+   "results/GATE.json",
+   "results/EMPTY_RESULTS.json",
+   "results/UNIT_RESULTS.md"
+  ],
+  "markouts_allowed": true,
+  "forbidden": [
+   "PnL",
+   "ROI",
+   "would-have-earned",
+   "Sharpe",
+   "KEEP/KILL framing",
+   "per-fill real-ledger dumps"
+  ],
+  "vendor_pin_bundle": true
+ },
+ "attention_items": [
+  "LAR<->LA alias required in addition to JAC<->JAX",
+  "[U] line timing; games.csv fetched after all cohort games",
+  "hypothetical replay fills only",
+  "static gate; counterfactual needs new freeze",
+  "account class Examiner-owned",
+  "ruling issued_et ahead of file mtime",
+  "repo base not network-verified"
+ ],
+ "pin_bundle": {
+  "path": "/workspace/EXT_K1_authentic_pins_2026-10-03.tgz",
+  "receipt": "packets/EXT_K1_LEGGING_AUDIT/BUNDLE_RECEIPT.json"
+ },
+ "source_pins_count": 37,
+ "freeze_md": {
+  "path": "packets/VARIANTS_EXT_K1_Q6000_LEGGING_RISK_AUDIT_FREEZE_2026-10-03.md",
+  "sha256": "5c40fb9d03a924e40577a81f262231701e331c98922f60f6dc7ab65a2dbed6d3"
+ },
+ "results": null,
+ "pnl": null,
+ "roi": null
+}

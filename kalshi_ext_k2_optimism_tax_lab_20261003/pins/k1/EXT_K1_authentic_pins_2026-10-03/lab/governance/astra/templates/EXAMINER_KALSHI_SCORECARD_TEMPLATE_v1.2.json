@@ -1,0 +1,785 @@
+{
+  "template_id": "EXAMINER_KALSHI_SCORECARD_TEMPLATE",
+  "template_version": "v1.2",
+  "template_status": "RATIFIED",
+  "ratified_by": "Conductor",
+  "ratified_at_et": "2026-09-24T19:37-04:00",
+  "ratified_at_et_note": "Ruling time given as ~7:37 PM ET; minute precision only, approximate per ruling.",
+  "revision_date_et": "2026-09-24",
+  "authored_by": "Examiner (Kalshi), Astra desk",
+  "filed_at_et": "2026-09-24T19:37:00-04:00",
+  "supersedes": {
+    "template_version": "v1.1",
+    "json": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.1.json",
+      "sha256": "4042e4f63bdba98faca8fe2f741556dc79260cffbc28d293dc834ba40fa29ffd"
+    },
+    "md": {
+      "path": "lab/governance/astra/templates/EXAMINER_KALSHI_SCORECARD_TEMPLATE_v1.1.md",
+      "sha256": "7880d0d135b001250ebb637866d46289486c8cf7435e9f1c11fb055f11e8d52a"
+    },
+    "revision_note": {
+      "path": "lab/governance/astra/packets/EXAMINER_KALSHI_SCORECARD_TEMPLATE_REVISION_v1.1_2026-09-24.json",
+      "sha256": "f2ce985d8e2a85d63336bbbb36b6e9f924959e06fad68060ae17850c178c6cfd"
+    },
+    "v1_edited_in_place": false,
+    "v1_1_edited_in_place": false
+  },
+  "changelog": [
+    "v0 (implicit): shape used by EXAMINER_SCORECARD_STUB_* / EXAMINER_ACK_* / EXAMINER_SCORECARD_* stamps 2026-09-22..24 (verdict, stub_ready, scored, promote, pins/digests, score_gate, refuse, etc.).",
+    "v1 (2026-09-24): codifies v0 shape unchanged; adds common_scorecard (11 metrics, all null), controls (market_only/simple_model/no_trade, per packet, null), fee_regime (standing feebook pin + Archivist fee/account-version manifest placeholder, pending), proposed_optional (listed only), common_scorecard_rules. No existing stamp modified.",
+    "v1.1 (2026-09-24): Conductor ratified v1 plus defaults (~19:34 ET). Adds: template_status RATIFIED; default_override_policy (a packet freeze may override any default ONLY if declared before outcomes are seen; otherwise defaults apply); ruling definitions/units for calibration, fill_rate, adverse_selection_after_fills (post-fill adverse selection), feasible_vs_requested_size, unresolved_inventory, capital_hours, drawdown, event_concentration; per-metric override_rule; rewards rule (without/with side by side; KEEP on without-rewards unless freeze declares rewards thesis, card 03 only; p15 rule is law); simulated_fills separate section (never counts toward KEEP); adopted from proposed_optional: study_label, stress_sensitivity (one tick worse; 2x fees), executable_dollars_per_day, preregistration_checklist (REQUIRED gate for cards 01-04). Remaining 10 proposed_optional stay optional/unadopted. Net P&L (both) stays null pending Archivist fee/account-version manifest. v1 files not edited; no existing stamp modified.",
+    "v1.2 (2026-09-24): Conductor ruling ~19:37 ET adopted as defaults. Resolved calibration bins (10 equal-width bins on [0,1], last bin closed, per-bin counts, thin if n<10); adverse-selection sign and formula (positive against our side, horizons unchanged); event-concentration HHI basis/scale (absolute net P&L without rewards, 0-1); executable $/day formula and ET daily reporting (median and p10, no mean-only report); study-label source is canonical PDF p16 and Archivist should adopt the five names. All metric values remain null; no existing stamp modified."
+  ],
+  "ruling_source": {
+    "ruling": "Conductor ruling 2026-09-24 ~19:37 ET (v1.2 defaults)",
+    "conductor_message_id": "50948621-ce91-47df-b661-12e9df823fe2",
+    "ruling_text_on_disk": null,
+    "note": "Ruling received via Conductor routing to Examiner; encoded verbatim-in-substance below. No separate ruling file found on disk at filing."
+  },
+  "applies_to": "new Kalshi Examiner scorecards/stubs/ACKs stamped after this revision; existing stamps are not retro-edited",
+  "existing_stamps_untouched": true,
+  "research_source": {
+    "path": "lab/governance/astra/research/KALSHI_EDGE_RESEARCH_2026-09-24.pdf",
+    "sha256": "7e55bc260526aa5088ee31f74475851219ab2cd7f19fdd2f0dd5e9f998c8b45e",
+    "pages": "15-16 (scorecard/preregistration); 5-8 (cards 01-04)",
+    "note": "Research, not a profit claim (PDF footer)."
+  },
+  "default_override_policy": {
+    "rule": "A packet freeze may override any default ONLY by declaring the override before outcomes are seen; otherwise defaults apply.",
+    "per_metric_override_rule": "freeze may override only if declared pre-outcome",
+    "override_declared_in_freeze": null,
+    "override_declared_pre_outcome_evidence": null,
+    "post_outcome_override_admissible": false
+  },
+  "scorecard": {
+    "id": null,
+    "seat": "Examiner (Kalshi)",
+    "desk": "Astra",
+    "packet": null,
+    "feature_family": null,
+    "status": null,
+    "status_enum": [
+      "NOT_SCORED",
+      "SCORED",
+      "HOLD_PRE_PR",
+      "SUPERSEDED"
+    ],
+    "verdict": null,
+    "verdict_enum": [
+      "KEEP",
+      "ITERATE",
+      "KILL",
+      "READY_NOT_SCORED",
+      "HOLD",
+      "NOT_SCORED"
+    ],
+    "stub_ready": null,
+    "scored": false,
+    "promote": false,
+    "live_promotion": false,
+    "counted_as_experiment_pnl": false,
+    "admit_alone_neq_score": true,
+    "units_neq_score": true,
+    "selection_status": null,
+    "selection_reason": null,
+    "fallback_shadow_candidate": null,
+    "supersedes_hold": null,
+    "supersedes_hold_sha256": null,
+    "supersedes_hold_path": null,
+    "supersedes_stub": null,
+    "pr": {
+      "number": null,
+      "merged": null,
+      "main": null,
+      "head_sha_pre_merge": null,
+      "base_pre_merge": null,
+      "merge_method": null,
+      "merged_at_et": null,
+      "lab": null,
+      "units_ok": null,
+      "arms": [],
+      "arm_values": {},
+      "url": null
+    },
+    "main_pin": null,
+    "lab": null,
+    "parent_source_pins": null,
+    "accept_sha256": null,
+    "merge_packet_sha256": null,
+    "freeze_sha256": null,
+    "pins": {
+      "<pin_name>": {
+        "path": null,
+        "sha256": null
+      }
+    },
+    "digest_verify": {
+      "<pin_name>": null,
+      "match_all": null,
+      "method": null
+    },
+    "source_pins_copies": {
+      "blob": null,
+      "sha256": null,
+      "copies_match": null,
+      "paths": [],
+      "digest_all_match_claimed": null
+    },
+    "positive_control": null,
+    "arms": [],
+    "arm_values": {},
+    "metrics": {
+      "_note": "packet-specific metrics (e.g. results, pnl, settled_join_n); null until measured"
+    },
+    "metrics_null": [],
+    "metrics_fill_policy": "null_until_panel_and_units_examiner_ready",
+    "bar_table": null,
+    "pnl_by_scenario": null,
+    "score_gate": [],
+    "refuse": [],
+    "refuse_binds": [
+      "astra.r1p1.feebook.claude_order_level_ceil.v1"
+    ],
+    "does_not_ungate": [],
+    "orthogonal_to": [],
+    "evidence_tags": [],
+    "corpse_route": null,
+    "doc_nits_non_blocking": [],
+    "cite": [],
+    "stub_path": null,
+    "ready_packet_path": null,
+    "merge_stamp": null,
+    "canonical_ready_packet": null,
+    "canonical_ready_sha256": null,
+    "conductor_route": null,
+    "stamped_at_et": null
+  },
+  "fee_regime": {
+    "feebook_formula_id": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+    "feebook_formula_id_status": "standing pin (R1-P1); required for fee-honest claims",
+    "fee_account_version_manifest": {
+      "path": null,
+      "sha256": null,
+      "manifest_id": null,
+      "status": "pending",
+      "owner": "Archivist",
+      "note": "Placeholder only. Archivist is drafting; contents and formula ids NOT assumed. Examiner consumes once filed and pinned.",
+      "check_at_v1_1_filing": {
+        "checked_at_et": "2026-09-24T19:36:36-04:00",
+        "found_on_disk": false,
+        "search": "lab/ (governance/astra, astra-science, pulses, all files mtime >= 2026-09-24) for Archivist fee/account-version manifest; none found. Latest Archivist mentions: PULSE_2026-09-24_1853ET.md ('board bump PR19-48 still owed'), MAXIMIZE_PIN_2026-09-24_1926ET.md ('Archivist board bump').",
+        "note": "Values NOT populated regardless; Conductor to be notified when manifest lands."
+      }
+    }
+  },
+  "common_scorecard": {
+    "_block_note": "v1.2: definitions for calibration..event_concentration are Conductor defaults (ruling 2026-09-24 ~19:34 ET). All values null (calibration may be 'N/A' when strategy emits no probabilities), measured=false, until measured on a frozen packet. Keys retained from v1 for continuity; ruling_label gives the ruling's name. Every default may be overridden only by a pre-outcome freeze declaration.",
+    "net_pnl_without_rewards": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "from_pdf ('net dollars', p15 headline)",
+      "definition": "p15 'Separate the profit sources': \"Report trading P&L excluding rewards, exchange rewards actually earned, fees, inventory liquidation or settlement, and capital cost.\" p15 'Binary expected value': \"expected net value per contract is q - p - net fees - other costs\" (q conditional on info AND on our order filling); \"Exit-based strategies must model realized entry and exit cash flows instead of replacing them with terminal payoff.\"",
+      "definition_status": "partial_from_pdf (components named; no realized-P&L formula given)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "feebook_formula_id_required": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "feebook_formula_id_rule": "fee-honest claims require the standing R1-P1 feebook formula_id pin",
+      "fee_account_version_manifest_ref": "fee_regime.fee_account_version_manifest (Archivist; pending)",
+      "fee_honest": null,
+      "fee_components_source": null,
+      "fee_components_source_note": "p15 'Fees must be versioned': \"Prefer actual recorded fee components.\"; \"The repo's older cent-ceiling convention requires a version-and-account reconciliation, not an assumption that one formula covers every historical and current trade.\"",
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "value_status": "null_until_archivist_fee_account_version_manifest_lands",
+      "keep_basis": true,
+      "keep_rule": "KEEP judged on without-rewards net P&L unless the packet freeze explicitly declares the rewards thesis (card 03 only). p15 rule is law: \"Do not hide a negative forecasting strategy inside a positive subsidy.\"",
+      "reported_side_by_side_with": "net_pnl_with_rewards"
+    },
+    "net_pnl_with_rewards": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "from_pdf ('net dollars', p15 headline)",
+      "definition": "p15/p16: \"net P&L with and without rewards\"; rewards component = \"exchange rewards actually earned\" (not an ideal estimate). p15: \"Do not hide a negative forecasting strategy inside a positive subsidy.\"",
+      "definition_status": "partial_from_pdf (no explicit formula; composition = net_pnl_without_rewards + rewards_actually_earned is NOT asserted here)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "feebook_formula_id_required": "astra.r1p1.feebook.claude_order_level_ceil.v1",
+      "feebook_formula_id_rule": "fee-honest claims require the standing R1-P1 feebook formula_id pin",
+      "fee_account_version_manifest_ref": "fee_regime.fee_account_version_manifest (Archivist; pending)",
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "value_status": "null_until_archivist_fee_account_version_manifest_lands",
+      "keep_basis": false,
+      "keep_basis_exception": "Only if the packet freeze explicitly declares the rewards thesis pre-outcome, and only for card 03 (selective liquidity rewards). Even then without-rewards is still reported side by side.",
+      "reported_side_by_side_with": "net_pnl_without_rewards"
+    },
+    "rewards_actually_earned": {
+      "value": null,
+      "unit": "USD",
+      "unit_status": "implied_by_pdf ('cash received')",
+      "definition": "p15: \"exchange rewards actually earned\" ... \"do not count an ideal reward estimate as cash received.\"",
+      "definition_status": "partial_from_pdf (cash received, not estimate; no computation method given)",
+      "formula": "pending_definition",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16",
+      "measured": false,
+      "source_of_record": null,
+      "estimate_not_admissible": true,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "v1_1_change": "none (ruling: stays as in v1 - cash received only, never ideal estimate)"
+    },
+    "calibration": {
+      "value": null,
+      "ruling_label": "calibration",
+      "definition": "Brier score + 10-bin reliability table (forecast probability vs settled outcome). Applies only when the strategy emits probabilities; otherwise value is \"N/A\" (not null).",
+      "unit": "Brier score (dimensionless) + reliability table (10 bins: mean forecast probability vs observed settled frequency, count per bin)",
+      "applies_when": "strategy emits probabilities",
+      "value_if_not_probabilistic": "N/A",
+      "emits_probabilities": null,
+      "brier_score": null,
+      "reliability_table": {
+        "n_bins": 10,
+        "bin_edges": [
+          0,
+          0.1,
+          0.2,
+          0.3,
+          0.4,
+          0.5,
+          0.6,
+          0.7,
+          0.8,
+          0.9,
+          1.0
+        ],
+        "bin_edges_note": "10 equal-width bins on [0,1]: bins 1-9 are [lower, upper), and the last bin is [0.9,1.0] closed.",
+        "bins": [
+          {
+            "bin": 1,
+            "interval": "[0.0,0.1)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 2,
+            "interval": "[0.1,0.2)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 3,
+            "interval": "[0.2,0.3)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 4,
+            "interval": "[0.3,0.4)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 5,
+            "interval": "[0.4,0.5)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 6,
+            "interval": "[0.5,0.6)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 7,
+            "interval": "[0.6,0.7)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 8,
+            "interval": "[0.7,0.8)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 9,
+            "interval": "[0.8,0.9)",
+            "count": null,
+            "thin": null
+          },
+          {
+            "bin": 10,
+            "interval": "[0.9,1.0]",
+            "count": null,
+            "thin": null
+          }
+        ],
+        "thin_rule": "flag a bin as thin when its count n<10"
+      },
+      "formula": "Brier = mean over settled forecasts of (forecast_prob - settled_outcome)^2, outcome in {0,1} (standard Brier definition as named by ruling)",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "fill_rate": {
+      "value": null,
+      "ruling_label": "fill_rate",
+      "definition": "Filled contracts / requested contracts at order level. Only fills tagged demo, shadow, or live count. Replay/simulated fills reported separately (simulated_fills section), labeled \"simulated\", never count toward KEEP.",
+      "unit": "fraction (contracts filled / contracts requested)",
+      "formula": "sum(filled_contracts) / sum(requested_contracts), order level, eligible fill tags only",
+      "eligible_fill_tags": [
+        "demo",
+        "shadow",
+        "live"
+      ],
+      "excluded_fill_tags": [
+        "replay",
+        "simulated"
+      ],
+      "filled_contracts": null,
+      "requested_contracts": null,
+      "simulated_counterpart": "simulated_fills.fill_rate_simulated",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "adverse_selection_after_fills": {
+      "value": null,
+      "ruling_label": "post_fill_adverse_selection",
+      "definition": "Signed mid move against our side at +60s, +300s, and settlement, cents per contract.",
+      "unit": "cents per contract (signed)",
+      "horizons": {
+        "plus_60s": null,
+        "plus_300s": null,
+        "settlement": null
+      },
+      "sign_convention": "positive = the mid moved against our side (a cost to us); side = -1 for a buy and +1 for a sell.",
+      "formula": "(mid_t - fill_price) * side, side = -1 for a buy and +1 for a sell; cents per contract; evaluate at +60s, +300s, and settlement.",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)",
+      "worked_checks": [
+        "buy at 50, mid 40: (40 - 50) * -1 = +10 cents per contract",
+        "sell at 50, mid 60: (60 - 50) * +1 = +10 cents per contract"
+      ]
+    },
+    "feasible_vs_requested_size": {
+      "value": null,
+      "ruling_label": "feasible_vs_requested",
+      "definition": "Fraction of requested size that visible depth supported at decision time, from the book at receipt time.",
+      "unit": "fraction (depth-supported contracts / requested contracts)",
+      "formula": "min(visible_depth_at_receipt_time_on_our_side_within_order_terms, requested) / requested, aggregated over decisions",
+      "book_timestamp_basis": "receipt time",
+      "feasible": null,
+      "requested": null,
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "unresolved_inventory": {
+      "value": null,
+      "ruling_label": "unresolved_inventory",
+      "definition": "Open contracts and dollar risk at window end, marked at conservative (bid-side) value.",
+      "unit": "contracts (count) + USD (dollar risk)",
+      "open_contracts": null,
+      "dollar_risk_usd": null,
+      "mark_basis": "conservative, bid-side value",
+      "measured_at": "window end",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "capital_hours": {
+      "value": null,
+      "ruling_label": "capital_hours",
+      "definition": "Sum over positions of (max collateral at risk x hours held).",
+      "unit": "USD-hours",
+      "formula": "SUM_i( max_collateral_at_risk_i [USD] * hours_held_i )",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "drawdown": {
+      "value": null,
+      "ruling_label": "drawdown",
+      "definition": "Max peak-to-trough on cumulative net P&L WITHOUT rewards.",
+      "unit": "USD",
+      "formula": "max over t of ( max_{s<=t} cumPnL_wo_rewards(s) - cumPnL_wo_rewards(t) )",
+      "basis_series": "net_pnl_without_rewards (cumulative)",
+      "dependency_note": "Depends on net_pnl_without_rewards, which stays null until the Archivist fee/account-version manifest lands.",
+      "stress_scenario_ref": null,
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)"
+    },
+    "event_concentration": {
+      "value": null,
+      "ruling_label": "event_concentration",
+      "definition": "Top-1 event share of positive net P&L, plus HHI over events; flag if top-1 share > 50%.",
+      "unit": "fraction (top-1 share) + HHI (dimensionless)",
+      "top1_event_share_of_positive_net_pnl": null,
+      "hhi_over_events": null,
+      "hhi_note": "HHI is computed on each event share of absolute net P&L without rewards, on a 0-1 scale; top-1 event share of positive net P&L remains a separate flag (>50%).",
+      "flag_threshold_top1_share_gt": 0.5,
+      "flag_threshold_source": "ruling: 'flag if top-1 share > 50%'",
+      "concentration_flag": null,
+      "event_cluster_key": null,
+      "dependency_note": "P&L-based; depends on net P&L (null until Archivist manifest lands).",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "definition_source": "Conductor ruling 2026-09-24 ~19:34 ET (v1 RATIFIED plus defaults)",
+      "hhi_basis": "event share of absolute net_pnl_without_rewards",
+      "hhi_scale": "0-1",
+      "hhi_formula": "sum over events e of (abs(net_pnl_without_rewards_e) / sum_j abs(net_pnl_without_rewards_j))^2"
+    }
+  },
+  "rewards_rule": {
+    "side_by_side": "Without-rewards and with-rewards net P&L always reported side by side.",
+    "keep_basis": "net_pnl_without_rewards",
+    "rewards_thesis_exception": "Only if the packet freeze explicitly declares the rewards thesis (card 03 only).",
+    "rewards_thesis_declared_in_freeze": null,
+    "p15_rule_status": "law (Conductor ruling 2026-09-24)",
+    "p15_quote": "Do not hide a negative forecasting strategy inside a positive subsidy. Likewise, do not count an ideal reward estimate as cash received.",
+    "rewards_actually_earned": "unchanged from v1: cash received only, never ideal estimate"
+  },
+  "simulated_fills": {
+    "_block_note": "Replay/simulated fills reported separately from common_scorecard.fill_rate. Never count toward KEEP.",
+    "label": "simulated",
+    "included_fill_tags": [
+      "replay",
+      "simulated"
+    ],
+    "counts_toward_keep": false,
+    "fill_rate_simulated": {
+      "value": null,
+      "unit": "fraction (contracts filled / contracts requested)",
+      "measured": false,
+      "override_rule": "freeze may override only if declared pre-outcome",
+      "label": "simulated"
+    },
+    "filled_contracts_simulated": null,
+    "requested_contracts_simulated": null,
+    "fill_model_ref": null,
+    "fill_model_ref_note": "Fill model must be frozen in the preregistration (p16 item 'fill model')."
+  },
+  "stress_sensitivity": {
+    "_block_note": "Adopted from proposed_optional (p16 'sensitivity to worse queues, latency and costs'). Scenarios per ruling: worse by one tick; 2x fees. Both P&L columns reported side by side.",
+    "source": "Conductor ruling 2026-09-24 (adopted item 2); p16",
+    "override_rule": "freeze may override only if declared pre-outcome",
+    "scenarios": {
+      "one_tick_worse": {
+        "definition": "every fill price worse by one tick against our side (cost/queue/latency stress)",
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "unit": "USD",
+        "measured": false,
+        "tick_size_ref": null,
+        "override_rule": "freeze may override only if declared pre-outcome"
+      },
+      "fees_2x": {
+        "definition": "fees doubled (2x the fee-regime fees)",
+        "net_pnl_without_rewards": null,
+        "net_pnl_with_rewards": null,
+        "unit": "USD",
+        "measured": false,
+        "fee_basis_ref": "fee_regime (feebook astra.r1p1.feebook.claude_order_level_ceil.v1 + Archivist manifest, pending)",
+        "override_rule": "freeze may override only if declared pre-outcome"
+      }
+    },
+    "dependency_note": "P&L-based; null until Archivist fee/account-version manifest lands."
+  },
+  "executable_dollars_per_day": {
+    "value": null,
+    "unit": "USD per day",
+    "measured": false,
+    "definition": "For each signal, executable contracts are min(requested size, visible depth at our limit price or better in the book at receipt time). Multiply by per-contract edge net of fees, where edge = expected value - price paid. Sum by calendar day in ET.",
+    "definition_source": "Conductor ruling 2026-09-24 (adopted item 3); p15",
+    "formula": "sum over signals per ET calendar day of min(requested_size, visible_depth_at_our_limit_price_or_better_at_receipt) * (expected_value - price_paid - fees_per_contract)",
+    "override_rule": "freeze may override only if declared pre-outcome",
+    "reporting": {
+      "daily_unit": "USD per ET calendar day",
+      "median_day": null,
+      "p10_day": null,
+      "mean_only_prohibited": true
+    },
+    "value_status": "null_until_archivist_fee_account_version_manifest_lands",
+    "fee_account_version_manifest_ref": "fee_regime.fee_account_version_manifest (Archivist; pending)"
+  },
+  "study_label": {
+    "value": null,
+    "allowed": [
+      "unit-only",
+      "synthetic",
+      "historical replay",
+      "prospective shadow",
+      "live"
+    ],
+    "allowed_source": "canonical per Conductor ruling: PDF p16 five classes (unit-only, synthetic, historical replay, prospective shadow, live)",
+    "archivist_definition_file": null,
+    "archivist_definition_search": "Archivist should adopt these five canonical names; no separate Archivist definition file was found at filing.",
+    "owner": "Archivist (labeling); Examiner records",
+    "definition_source": "Conductor ruling 2026-09-24 (canonical study-label source; PDF p16 five classes)",
+    "override_rule": "not overridable by freeze (label must reflect study type)",
+    "measured": false,
+    "archivist_action_note": "Archivist should adopt the canonical PDF p16 names exactly."
+  },
+  "preregistration_checklist": {
+    "_block_note": "Adopted from proposed_optional as a REQUIRED gate for new cards 01-04 (Conductor ruling item 4). Items extracted from PDF p16 'Minimum preregistration' (pdftotext -f 16 -l 16 -layout). All item statuses null until the card's freeze is filed.",
+    "required": true,
+    "required_for_cards": [
+      "01",
+      "02",
+      "03",
+      "04"
+    ],
+    "gate": "No card 01-04 study may be scored until every item has status satisfied, with the freeze filed before the test/outcomes.",
+    "gate_status": null,
+    "source_quote_p16": "Freeze the market universe, exclusions, receipt-time information set, fee regime, order timing, sizing, fill model, stopping rules and evaluation metrics before the test. Limit candidate variants; log every attempted variant. Separate discovery, tuning and untouched evaluation periods. Sampling more prints from the same event does not solve small-sample uncertainty.",
+    "timing_requirement": "before the test (p16)",
+    "items": [
+      {
+        "id": 1,
+        "key": "market_universe",
+        "item": "Freeze the market universe",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 2,
+        "key": "exclusions",
+        "item": "Freeze the exclusions",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 3,
+        "key": "receipt_time_information_set",
+        "item": "Freeze the receipt-time information set",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 4,
+        "key": "fee_regime",
+        "item": "Freeze the fee regime",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 5,
+        "key": "order_timing",
+        "item": "Freeze the order timing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 6,
+        "key": "sizing",
+        "item": "Freeze the sizing",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 7,
+        "key": "fill_model",
+        "item": "Freeze the fill model",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 8,
+        "key": "stopping_rules",
+        "item": "Freeze the stopping rules",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 9,
+        "key": "evaluation_metrics",
+        "item": "Freeze the evaluation metrics",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 10,
+        "key": "limit_candidate_variants",
+        "item": "Limit candidate variants",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 11,
+        "key": "log_every_attempted_variant",
+        "item": "Log every attempted variant",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      },
+      {
+        "id": 12,
+        "key": "separate_discovery_tuning_evaluation_periods",
+        "item": "Separate discovery, tuning and untouched evaluation periods",
+        "source": "PDF p16 Minimum preregistration",
+        "status": null,
+        "evidence_ref": null
+      }
+    ],
+    "p16_context_note_not_an_item": "Sampling more prints from the same event does not solve small-sample uncertainty.",
+    "status_enum": [
+      "satisfied",
+      "missing",
+      "n/a"
+    ],
+    "overlap_note": "Items 10-12 overlap proposed_optional attempted_variants_log / period_separation; those standalone scorecard fields remain optional (unadopted) per ruling.",
+    "cards": {
+      "01": {
+        "title_pdf": "Neglected-market hybrid forecasts",
+        "pdf_page": 5,
+        "routing_ref": "packets/CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md (workstream 1)",
+        "on_disk": "lab/governance/astra/packets/card01_hybrid_forecast/ (live_get_2026-09-24: GET series lists only; no freeze on disk)",
+        "freeze_ref": null
+      },
+      "02": {
+        "title_pdf": "Station-specific weather nowcasts",
+        "pdf_page": 6,
+        "routing_ref": "packets/CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md (workstream 2)",
+        "on_disk": "lab/governance/astra/packets/card02_station_weather/ (live_get_2026-09-24: GET series list + markets_open only; no freeze on disk)",
+        "freeze_ref": null
+      },
+      "03": {
+        "title_pdf": "Selective liquidity-reward allocation",
+        "pdf_page": 7,
+        "routing_ref": "packets/CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md (workstream 3; Mechanic)",
+        "on_disk": null,
+        "on_disk_note": "No card03-labeled directory under lab/governance/astra. Related (unlabeled) AMS reward work exists at lab/tmp/ams_branch_ro/all_market_structure_20260924/reward_* (not asserted as card 03).",
+        "rewards_thesis_eligible": true,
+        "freeze_ref": null
+      },
+      "04": {
+        "title_pdf": "Stale quotes in subsidized perpetuals",
+        "pdf_page": 8,
+        "routing_ref": "packets/CONDUCTOR_ROUTING_KALSHI_EDGE_RESEARCH_2026-09-24.md (Perps card 04; Market Scout)",
+        "on_disk": null,
+        "on_disk_note": "No card04-labeled directory. Likely related (unlabeled): lab/governance/astra/packets/scout_perps_screen_2026-09-24/ (perps feasibility screen docs/feeds; not asserted as card 04).",
+        "freeze_ref": null
+      }
+    }
+  },
+  "controls": {
+    "_block_note": "Controls apply per packet. Each is null / not-applicable until that packet's freeze declares it. p16: \"Compare with market-only, simple-model and no-trade controls where relevant.\" p15-16 give no further definition of each control.",
+    "market_only": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; context p5 (card 01): \"market-only, model-only and hybrid baselines\" and \"Reject if its gains disappear against market-only\" (context only).",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    },
+    "simple_model": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; which simple model is packet-specific and must be frozen, never chosen after peek.",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    },
+    "no_trade": {
+      "applies": null,
+      "result": null,
+      "declared_in_freeze": null,
+      "definition_status": "pending_definition (p15-16 names only)",
+      "note": "null until packet freeze declares applicability; context p9: \"Compare equal-risk maker, taker and abstention policies\" (context only).",
+      "source_ref": "KALSHI_EDGE_RESEARCH_2026-09-24.pdf p15-16"
+    }
+  },
+  "proposed_optional": {
+    "_block_note": "v1.1: 4 of 14 adopted by Conductor ruling (moved to top-level blocks: study_label, stress_sensitivity, executable_dollars_per_day, preregistration_checklist). The remaining 10 stay optional/unadopted; listed only, null, not scored.",
+    "adopted_in_v1_1": {
+      "study_label": "study_label",
+      "sensitivity_worse_queues_latency_costs": "stress_sensitivity",
+      "executable_dollars_per_day": "executable_dollars_per_day",
+      "preregistration_checklist": "preregistration_checklist"
+    },
+    "uncertainty_by_event_or_day": {
+      "value": null,
+      "quote": "p16: \"Report uncertainty by event or day\"",
+      "adopted": false
+    },
+    "independent_opportunities": {
+      "value": null,
+      "quote": "p15: \"independent opportunities\"",
+      "adopted": false
+    },
+    "correlation_with_existing_positions": {
+      "value": null,
+      "quote": "p15: \"correlation with existing positions\"",
+      "adopted": false
+    },
+    "fees_reported_separately": {
+      "value": null,
+      "quote": "p15: profit sources incl. \"fees\"",
+      "adopted": false
+    },
+    "capital_cost": {
+      "value": null,
+      "quote": "p15: profit sources incl. \"capital cost\"",
+      "adopted": false
+    },
+    "inventory_liquidation_or_settlement_pnl": {
+      "value": null,
+      "quote": "p15: \"inventory liquidation or settlement\"",
+      "adopted": false
+    },
+    "risk_adjusted_net_dollars_per_capital_hour": {
+      "value": null,
+      "quote": "p15 headline objective",
+      "adopted": false
+    },
+    "attempted_variants_log": {
+      "value": null,
+      "quote": "p16: \"Limit candidate variants; log every attempted variant.\"",
+      "adopted": false
+    },
+    "period_separation": {
+      "value": null,
+      "quote": "p16: \"Separate discovery, tuning and untouched evaluation periods.\"",
+      "adopted": false
+    },
+    "single_event_dependence": {
+      "value": null,
+      "quote": "p16: \"survives reasonable stress without dependence on one exceptional event\"",
+      "adopted": false
+    }
+  },
+  "common_scorecard_rules": [
+    "All common_scorecard values are null and measured=false until measured on a frozen packet with artifacts.",
+    "Never back-fill any common_scorecard or control field from scout N, unit-test counts, fixtures, admit flags, or estimates.",
+    "v1.2: calibration, adverse selection, event concentration, and executable_dollars_per_day use the ratified defaults above. The net P&L formula remains pending_definition and must not be given an Examiner-invented formula.",
+    "net_pnl_with_rewards and net_pnl_without_rewards are always reported side by side; neither is omitted when the other is reported.",
+    "Rewards-inclusive P&L never substitutes for without-rewards P&L in a KEEP decision unless the packet freeze explicitly declares the rewards thesis pre-outcome, and only for card 03. The p15 rule is law (Conductor 2026-09-24). Both remain reported side by side.",
+    "rewards_actually_earned counts only rewards actually earned/received; ideal/estimated rewards are inadmissible (p15).",
+    "Fee-honest P&L claims require feebook formula_id astra.r1p1.feebook.claude_order_level_ceil.v1 (standing R1-P1 pin) and, once filed, a pinned Archivist fee/account-version manifest; until the manifest is filed, its reference stays null/pending and no manifest contents or formula ids are assumed.",
+    "Controls (market_only, simple_model, no_trade) are per packet; applies/result stay null (not applicable) until the packet freeze declares them.",
+    "Template revision only: adding fields here does not re-score, re-open, or alter any existing stamped verdict.",
+    "Default override policy: a packet freeze may override any default ONLY by declaring it before outcomes are seen; otherwise defaults apply. Post-outcome overrides are inadmissible.",
+    "calibration value is \"N/A\" (not null) when the strategy emits no probabilities; otherwise null until measured.",
+    "fill_rate counts only fills tagged demo, shadow or live. Replay/simulated fills go to simulated_fills, labeled \"simulated\", and never count toward KEEP.",
+    "Net P&L (both columns), drawdown, event_concentration and stress_sensitivity P&L stay null until the Archivist fee/account-version manifest lands and is pinned; a manifest landing does not by itself populate values.",
+    "preregistration_checklist is a REQUIRED gate for new cards 01-04; all items must be satisfied pre-test before any scoring.",
+    "study_label must be one of the five canonical PDF p16 classes; Archivist should adopt these names.",
+    "v1.2 resolved defaults: calibration bins are equal-width with prescribed edges and thin flag; adverse-selection sign is positive against our side with the stated formula; HHI uses absolute net P&L without rewards on a 0-1 scale; executable $/day uses receipt-time visible depth and ET median/p10 reporting."
+  ],
+  "no_orders": true,
+  "promote": false
+}

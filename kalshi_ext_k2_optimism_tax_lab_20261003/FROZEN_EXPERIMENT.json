@@ -1,0 +1,23 @@
+{
+  "experiment_id": "EXT-K2-OPTIMISM-TAX-DEPENDENCE-STRESS",
+  "base_head": "761eaaedc153dca9807d7630adcea1ae3387d9c1",
+  "freeze_sha256": "d69a4f627cb420b59bbc961b072d28242faeb9d21d5d29b9f90a77f6825acbce",
+  "freeze_json_sha256": "025a01a121e5b3a64a0b683a8030f9cbd1681f132365dadb419377d09d71ff6c",
+  "accept_sha256": "d76779e1a309388e6bc7f401a2c992a3be2015ae81ba910b8f5655fb10472fc0",
+  "commission_sha256": "1f2c7f68396131d65ef31e492355c2937a9a0a91fb6cdf67c7d66e220f0b51f5",
+  "k1_bundle_sha256": "0f8f529733bfd1ccb01b36f312cdc20865cc2811c04dcd3c812d50c67295db38",
+  "k2_bundle_sha256": "963f7663a74527db38479bbf4a253870bd5dc6f99c8f85b70750d3600c65907f",
+  "verdict_domain": ["DESCRIPTIVE", "ITERATE", "INCONCLUSIVE"],
+  "part_b_label_domain": ["DESCRIPTIVE", "INCONCLUSIVE"],
+  "results": null,
+  "pnl": null,
+  "roi": null,
+  "counts_toward_keep": false,
+  "promote": false,
+  "feeds_gate": false,
+  "examiner_pin_account_class": null,
+  "fee_label_part_a": "CACHE_NOT_R1P1",
+  "net_label_part_b": "NET_ILLUSTRATIVE_2026_SCHEDULE_NOT_HISTORICAL",
+  "part_b_status": "CODE_AND_SYNTHETIC_TESTS_ONLY",
+  "box_only_output_sha256": null
+}
