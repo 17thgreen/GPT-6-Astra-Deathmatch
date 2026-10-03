@@ -500,6 +500,9 @@ def measure(write=True):
             censored_against=censored_share(against_summary),
             open_at_window_end_contracts=lots["open_at_window_end_contracts"],
             ci_excludes_0=measurement["contrast"]["ci_excludes_0"],
+            delta_star=measurement["contrast"]["delta_star_gross"],
+            ci_low=measurement["contrast"]["ci95_low"],
+            ci_high=measurement["contrast"]["ci95_high"],
         )
         measurement["unclassified_contracts"] = unclassified
         measurement["unclassified_share"] = unclassified_share

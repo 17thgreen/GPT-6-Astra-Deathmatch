@@ -4,7 +4,7 @@ Code verification from this directory:
 
 `python3 -m unittest discover -s tests -v`
 
-Ran 22 tests in 106.526s at 2026-10-03T20:39:33Z. Result: OK. Failures: 0. Errors: 0. This run is not an Examiner score. The suite covers T01–T14: label-permutation invariance, lookahead, the 31/31 join, holdout and ADMIT-1 refusals, fee formula, structural reproduction, unhedged contract-hours, markout nulls, Lee-Ready refusal, manifest tamper, de-vig examples, framing, untouched 000 files, and the ex-post `[U]` tag.
+Ran 26 tests in 123.193s at 2026-10-03T23:38:52Z. Result: OK. Failures: 0. Errors: 0. This run is not an Examiner score. The suite covers T01–T14: label-permutation invariance, lookahead, the 31/31 join, holdout and ADMIT-1 refusals, fee formula, structural reproduction, unhedged contract-hours, markout nulls, Lee-Ready refusal, manifest tamper, de-vig examples, framing, untouched 000 files, and the ex-post `[U]` tag.
 
 Built on `761eaaedc153dca9807d7630adcea1ae3387d9c1`.
 
@@ -73,7 +73,7 @@ Headline maker-order fee total is $1,286.22, label `CACHE_NOT_R1P1`, name `NON_D
 
 ## Invariance
 
-One thousand `Random(20261003)` shuffles of the 31-game `(away_score, home_score)` pairs, plus a shift-1 derangement, left these artifacts byte-identical. The shift-1 derangement changes only the settlement artifact, which is outside the constancy hash.
+T01(b) applies one thousand `Random(20261003)` shuffles of the 31-game `(away_score, home_score)` pairs, plus a shift-1 derangement, to the cached portion table. That check covers `settle_artifact` only. Join, consensus, the refusal gate and horizon markouts are not rebuilt there, so the four constancy artifacts do not read the permuted scores and stay byte-identical for that reason. The shift-1 derangement on that cached path changes the settlement artifact, which is outside the constancy hash. End-to-end rebuild coverage is in T01: `Random(7)`, 25 shuffles plus a shift-1 derangement, permutes the score columns of the games csv and rebuilds join, consensus, gate and markouts. Those rebuilt artifact shas stay at the constancy sha below. A moneyline-column permutation changes the artifacts. The recorded permutation count, seed and derangement below remain the cached T01(b) run.
 
 | Artifact | sha256 |
 |---|---|
