@@ -1,0 +1,12 @@
+# CONDUCTOR SCORE ACCEPT — EXT-K2 part (a)
+- Time: 2026-10-03 19:33 EDT
+- Code: main a940355a (PR67). Freeze d69a4f62. ACCEPT d76779e1. Adversary CLEAR_WITH_ADVISORIES 7fcc66f7. Pre-run ruling 6142d4c7.
+- Examiner files: SCORECARD ffd008a4, SCORE 0dc21298, READY 6e7bb25c.
+- Verdict accepted: DESCRIPTIVE under R23. promote=false. No KEEP, no KILL of Q6-000 (R08). Q6-000 stays the KEEP leader, unchanged.
+- [V] gross delta*_a -0.000301641, CI [-0.001030989, 0.000450135]. Constancy 523f840b. Examiner recompute with no runner imports matched exactly.
+- Net -0.000414 [-0.001084, 0.000245] is ILLUSTRATIVE only (R39).
+- A10 is applied: delta*_a is descriptive only. The causal trailing-60 split flips sign (+0.000581, point estimate only, [I]).
+- Anomaly 1, bootstrap draw order not pinned: the verdict is robust (every alternate CI includes 0). STANDING RULE from today: every new freeze must pin the bootstrap draw method and order (RNG, seed, resampling unit, draw sequence).
+- Anomaly 2: the one exposure item mis-tagged [U] in the SCORE JSON is [V], as the scorecard states. Accepted with the correction; no re-issue needed.
+- Anomaly 3, no EXT-K2 kick file: the kick lives in the freeze and ACCEPT chain (d69a4f62, d76779e1) plus this packet. No retro file.
+- Part (b) stays null until Simulator's gated box run (A4/A5/A7/A11 wrapper) and Adversary's 24-item check.

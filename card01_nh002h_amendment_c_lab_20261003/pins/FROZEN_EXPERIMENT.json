@@ -1,0 +1,68 @@
+{
+  "experiment_id": "CARD01-NH002-HOUSE-PROSPECTIVE-v0",
+  "packet_id": "CARD01-NH002-HOUSE-PROSPECTIVE",
+  "packet_path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md",
+  "status": "FROZEN_NOT_RUN",
+  "results": null,
+  "pnl": null,
+  "packet_sha256": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+  "charter_sha256": "6a02cb468a4b6c600fc3a16078a216a6095321c6bc92c24b2a7aca58f149daa8",
+  "predecessor_pin": "17thgreen/GPT-6-Astra-Deathmatch@2253c03cd86eb5515325f1d91b43bdcbea7a902c (neglected_hybrid_20260924, NH-001/NH-001A; preserved control)",
+  "universe_file": "packets/card01_hybrid_forecast/UNIVERSE_2026_HOUSE_FROZEN.json",
+  "universe_sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
+  "precommit_sha256": "2968f389050341a8734bed76c60fbcb4f7d70feb96cf5f9da88ef4c19e50e77e",
+  "n_races": 92,
+  "decision_time_utc": "2026-11-02T22:00:00Z",
+  "forecast_source": "ElectIndex output/races_summary.csv dem_prob (admission gate open: ToS/licence, market-independence unverified)",
+  "knob": {
+    "name": "blend_weight_w_on_external_forecast",
+    "levels": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "headline": 0.5,
+    "control_market_only": 0.0
+  },
+  "controls": [
+    "market_only",
+    "simple_model(model_only w=1.0 reported as comparator)",
+    "no_trade"
+  ],
+  "fee_instrument": "R1-P1 kalshi_feebook_lab_20260922 @ 22371178cb2663250b4762f328069571c48cb551",
+  "rails_instrument": "R1-P5 kalshi_rails_lab_20260922 @ 6a28e0d6254327ea4e6451c781bec56215ac6cac",
+  "study_label": "prospective shadow",
+  "no_live_orders": true,
+  "orthogonal_to": [
+    "Q6-000",
+    "S2",
+    "R2-P4",
+    "CEM-ASTRA-20260922-001"
+  ],
+  "nearest_dead_card": "FEAT-20260912-001/-002 (F1) / TEST-20260912-002 (no cemetery record)",
+  "frozen_at_utc": "2026-09-24T23:52:48Z",
+  "amendments": [
+    {
+      "id": "A",
+      "path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_A.md",
+      "sha256": "4e36d0db5728148d5bb4688fd8626eca9907a8933747f85e0bc17ede0ac0936b",
+      "filed_at_utc": "2026-09-24T23:59:50Z",
+      "scope": "contract mapping only (34 of 92 races listed in per-district legacy HOUSEPARTY series); no change to universe/w/knob/decision time/tests"
+    },
+    {
+      "id": "B",
+      "path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md",
+      "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+      "filed_at_utc": "2026-09-25T00:15:13Z",
+      "pinned_script": "packets/card01_hybrid_forecast/amendment_b/NH002H_AMENDMENT_B_national_miss.py",
+      "pinned_script_sha256": "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2",
+      "scope": "pre-outcome clarification: national-miss M_f=mean(p-y); Bernoulli MLE recentering; correlated-swing stress; M1/M2/M3 mapping split; methodology regime; fee BLOCKED until manifest; track record IN-SAMPLE/UNCHECKED. No change to universe/w/knob/decision time/pre-commit/entry gate/PASS-REJECT logic."
+    }
+  ],
+  "decision_packet_sha256_current": "d66c9eaf2988bf081fea3096d7052c20def651e813ec29f13906a626effe81ef",
+  "decision_packet_lineage": [
+    "58c44c4fb144968ba57e4c8b4a2018026a123d17a02e2e6c09fdfd38f465a353",
+    "d59c26420713ef728a306efc0bb12761584125e96ba6a87e84fe0c3e57c69688",
+    "c0c1aa66f104e3f102228a7a8e16f205977afbee63928f30a6954ec46707a82c"
+  ]
+}
