@@ -13,8 +13,12 @@ def join(rows, results_doc):
         raise ValueError("results must be a list")
     index = {}
     conflicts = set()
+    ignored_results = 0
     for item in results:
         if not isinstance(item, dict):
+            continue
+        if "ticker" not in item or item.get("ticker") in (None, ""):
+            ignored_results += 1
             continue
         ticker = item.get("ticker")
         result = item.get("result")
@@ -32,7 +36,7 @@ def join(rows, results_doc):
             elif result == "no":
                 copied["y"] = 0
         out.append(copied)
-    return {"rows": out}
+    return {"rows": out, "ignored_results": ignored_results}
 
 
 def main(argv):

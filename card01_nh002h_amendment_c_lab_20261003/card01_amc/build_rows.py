@@ -100,6 +100,21 @@ def _forecast_table(forecast):
     return by, conflict, file_ok
 
 
+def _blank_ticker(ticker) -> bool:
+    return ticker is None or ticker == ""
+
+
+def _same_party(row) -> bool:
+    """True only from an explicit forecast flag or a present (No Republican) name."""
+    if not isinstance(row, dict):
+        return False
+    if row.get("same_party") is True:
+        return True
+    if "rep_name" in row and row.get("rep_name") == "(No Republican)":
+        return True
+    return False
+
+
 def _model(code, by, conflict, file_ok):
     if not file_ok or code in conflict or code not in by:
         return None
@@ -204,13 +219,19 @@ def build(universe, forecast, mapping, book, input_shas):
         mapping_status, series, ticker, map_reason = _classify_mapping(map_by.get(code))
         p_model = _model(code, fc_by, fc_conflict, file_ok)
         forecast_reason = None if p_model is not None else "no_admissible_forecast"
-        snap = _select_snapshot(snaps, ticker) if ticker else None
+        fc_row = fc_by.get(code) if file_ok and code not in fc_conflict else None
+        same_party = _same_party(fc_row)
+        snap = None if _blank_ticker(ticker) else _select_snapshot(snaps, ticker)
         reasons = []
         if map_reason:
             reasons.append(map_reason)
-        if forecast_reason:
+        if same_party:
+            reasons.append("same_party_race")
+        elif forecast_reason:
             reasons.append(forecast_reason)
-        if snap is None:
+        if mapping_status in ("KXHOUSERACE", "LEGACY") and _blank_ticker(ticker):
+            reasons.append("no_ticker_for_mapped_race")
+        elif snap is None:
             reasons.append("snapshot_outside_window")
         else:
             status = str(snap.get("market_status") or "").lower()

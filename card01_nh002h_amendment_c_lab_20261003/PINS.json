@@ -63,25 +63,29 @@
    "path": "pins/VARIANTS_CARD01_AMENDMENT_C_IMPL_NOTE_BOOTSTRAP_PIN_2026-10-03.md",
    "sha256": "fb4e5bc09af19971d67d479a67e387f61599294cd5fce3b64ca1518f4057b626",
    "role": "bootstrap pin note",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/VARIANTS_CARD01_AMENDMENT_C_IMPL_NOTE_BOOTSTRAP_PIN_2026-10-03.json",
    "sha256": "0c0992b19d1cc1f04c228871f84ff343d6c51f18ab89f6090af8843381b8cf5d",
    "role": "bootstrap pin note json",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/ADVERSARY_CARD01_AMENDMENT_B_REVIEW_2026-10-03.md",
    "sha256": "271ec099481ca35a57e4605b28abeff78d2660b6fd2657044666d45bcb728f01",
    "role": "Adversary review of Amendment B",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md",
    "sha256": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
    "role": "base freeze",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_A.md",
@@ -93,7 +97,8 @@
    "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md",
    "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
    "role": "Amendment B",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/CONDUCTOR_ACCEPT_CARD01_NH002H_AMENDMENT_B_2026-09-24.json",
@@ -105,7 +110,8 @@
    "path": "pins/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md",
    "sha256": "d66c9eaf2988bf081fea3096d7052c20def651e813ec29f13906a626effe81ef",
    "role": "decision packet, context",
-   "vendored": true
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
   },
   {
    "path": "pins/CONDUCTOR_SCORE_ACCEPT_EXT_K2_PARTA_2026-10-03.md",
@@ -133,13 +139,13 @@
   },
   {
    "path": "card01_amc/pinload.py",
-   "sha256": "ac2d345f1495f06bf6b82f4f4f1f0a535df450a07b197e3e3b665fea04553e63",
+   "sha256": "803cf6d8691017c06fc98a23fb1f80b509add935a1e7d7a66d615a8fc0291977",
    "role": "sha-checked loader for script 049368f9",
    "vendored": true
   },
   {
    "path": "card01_amc/build_rows.py",
-   "sha256": "791d3d2cb0bda9581c756ffe2d1c336a940330a652a7231405b021f2804507bf",
+   "sha256": "fcc61f986a9e5181a91e2f49fdab1b233607b872dcd0d0cf3dd8acdbe0e2518d",
    "role": "AF-8 input builder",
    "vendored": true
   },
@@ -157,7 +163,7 @@
   },
   {
    "path": "card01_amc/swing_stress.py",
-   "sha256": "5e1d642e7b1b54951162f75c8bc5c7f95c755b1476645debd629910aa428953d",
+   "sha256": "7d43fc8a1656e387497b585a016e79fd39e6d97df738eac24befcec915d38150",
    "role": "AF-7 outcome-free swing stress",
    "vendored": true
   },
@@ -169,7 +175,7 @@
   },
   {
    "path": "card01_amc/join_outcomes.py",
-   "sha256": "b45e77ba0d0bea2dfd66bf63064c1be7a029bd600803b4233b5655d71ec8d853",
+   "sha256": "b3f16ae8eff470c36991cba010b6bdb8ab8fdc5cd99e12ad14d1f0de33c6247f",
    "role": "post-settlement y join",
    "vendored": true
   }

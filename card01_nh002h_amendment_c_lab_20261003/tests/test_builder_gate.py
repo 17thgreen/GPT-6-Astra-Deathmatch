@@ -169,6 +169,44 @@ class BuilderTests(unittest.TestCase):
         with self.assertRaises(OutcomeKeyRefused):
             _built(forecast, mapping, settled)
 
+    def test_mapped_without_ticker_is_not_a_window_miss(self):
+        codes, forecast, mapping, book = _inputs()
+        index = codes.index("AL-02")
+        for blank in (None, ""):
+            mapping2 = copy.deepcopy(mapping)
+            _map(mapping2, "AL-02")["chosen_ticker"] = blank
+            row = _built(forecast, mapping2, book)["rows"][index]
+            self.assertEqual(row["exclusion_reason"], "no_ticker_for_mapped_race")
+            self.assertNotEqual(row["exclusion_reason"], "snapshot_outside_window")
+            self.assertIsNone(row["p_market"])
+            self.assertIsNone(row["p_model"])
+            self.assertEqual(row["mapping_status"], "KXHOUSERACE")
+
+    def test_same_party_only_from_explicit_fields(self):
+        codes, forecast, mapping, book = _inputs()
+        index = codes.index("AL-02")
+        flagged = copy.deepcopy(forecast)
+        _fc(flagged, "AL-02")["same_party"] = True
+        row = _built(flagged, mapping, book)["rows"][index]
+        self.assertEqual(row["exclusion_reason"], "same_party_race")
+        self.assertIsNone(row["p_market"])
+        self.assertIsNone(row["p_model"])
+        self.assertEqual(row["yes_bid"], 0.40)
+
+        named = copy.deepcopy(forecast)
+        _fc(named, "AL-02")["rep_name"] = "(No Republican)"
+        self.assertEqual(_built(named, mapping, book)["rows"][index]["exclusion_reason"], "same_party_race")
+
+        clear = copy.deepcopy(forecast)
+        _fc(clear, "AL-02")["same_party"] = False
+        _fc(clear, "AL-02")["rep_name"] = "Smith"
+        self.assertIsNone(_built(clear, mapping, book)["rows"][index]["exclusion_reason"])
+
+        absent = copy.deepcopy(forecast)
+        self.assertNotIn("same_party", _fc(absent, "AL-02"))
+        self.assertNotIn("rep_name", _fc(absent, "AL-02"))
+        self.assertIsNone(_built(absent, mapping, book)["rows"][index]["exclusion_reason"])
+
     def test_p1_spelling_changes_sort_order(self):
         usps = sorted(["NE", "NH", "NV"])
         names = sorted(["Nebraska", "New Hampshire", "Nevada"])

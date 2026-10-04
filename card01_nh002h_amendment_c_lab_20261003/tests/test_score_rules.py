@@ -25,16 +25,40 @@ def _race(i, state, y, mapping="KXHOUSERACE"):
 class BoundaryCountTests(unittest.TestCase):
     def test_counter_matches_independent_stream_and_pinned_ci(self):
         pinned = load_national_miss()
+        # Mixed y and distinct prices, so a boundary hit depends on which states
+        # the seed draws. Identical rows would make the count 10000 and the CI
+        # a point, and an extra rng draw would still match.
+        specs = (
+            ("PA", 1, 0.20, 0.25),
+            ("PA", 1, 0.30, 0.35),
+            ("OH", 1, 0.22, 0.40),
+            ("NY", 0, 0.70, 0.65),
+            ("NY", 0, 0.80, 0.75),
+            ("TX", 0, 0.60, 0.55),
+            ("CA", 1, 0.45, 0.50),
+            ("CA", 0, 0.55, 0.48),
+            ("FL", 1, 0.33, 0.62),
+            ("FL", 0, 0.71, 0.28),
+        )
+        self.assertGreaterEqual(len({spec[0] for spec in specs}), 5)
+        self.assertGreaterEqual(len(specs), 8)
+        self.assertLessEqual(len(specs), 12)
         rows = []
-        states = ("PA", "OH", "NY")
-        for i in range(8):
-            rows.append(_race(i, states[i % 3], 1))
+        for i, (state, y, p_market, p_model) in enumerate(specs):
+            row = _race(i, state, y)
+            row["p_market"] = p_market
+            row["p_model"] = p_model
+            rows.append(row)
+        self.assertGreater(len({r["y"] for r in rows}), 1)
+        self.assertGreater(len({r["p_market"] for r in rows}), 1)
+        self.assertGreater(len({r["p_model"] for r in rows}), 1)
+
         block = block_with_boundary_count(rows, pinned)
         counts = block["n_boundary_resamples"]
 
         states_sorted = sorted({r["state"] for r in rows})
         by = {s: [r for r in rows if r["state"] == s] for s in states_sorted}
-        rng = random.Random(pinned.SEED)
+        rng = random.Random(20261102)
         independent = {str(w): 0 for w in pinned.WS}
         for _ in range(pinned.B_RESAMPLES):
             rs = [r for s in rng.choices(states_sorted, k=len(states_sorted)) for r in by[s]]
@@ -43,14 +67,17 @@ class BoundaryCountTests(unittest.TestCase):
                 if st[str(w)]["boundary"] is True:
                     independent[str(w)] += 1
         self.assertEqual(counts, independent)
-        for value in counts.values():
-            self.assertEqual(value, 10000)
+        self.assertTrue(any(0 < value < 10000 for value in counts.values()))
 
         ci = pinned.boot(rows)
+        spread = False
         for w in pinned.WS:
             arm = block["arms"][str(w)]
             self.assertEqual(arm["CI95_D_raw"], ci[str(w)]["D_raw"])
             self.assertEqual(arm["CI95_D_rc"], ci[str(w)]["D_rc"])
+            if arm["CI95_D_raw"][0] != arm["CI95_D_raw"][1]:
+                spread = True
+        self.assertTrue(spread)
 
 
 class DegenerateTests(unittest.TestCase):

@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import hashlib
-import importlib.util
+import types
 from pathlib import Path
 
 PIN_SHA256 = "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2"
@@ -39,10 +39,10 @@ def load_national_miss(path: Path | None = None):
     cached = _CACHE.get(key)
     if cached is not None:
         return cached
-    spec = importlib.util.spec_from_file_location("nh002h_amendment_b_national_miss", src)
-    if spec is None or spec.loader is None:
-        raise PinMismatch("import spec missing")
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
+    # Compile the bytes that passed the sha check. Do not read the path again.
+    module = types.ModuleType("nh002h_amendment_b_national_miss")
+    module.__file__ = str(src)
+    code = compile(data, str(src), "exec")
+    exec(code, module.__dict__)
     _CACHE[key] = module
     return module

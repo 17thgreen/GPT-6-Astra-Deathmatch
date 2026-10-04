@@ -179,20 +179,34 @@ def evaluate(rows, gate, rows_sha256, gate_sha256, gate_sha_expected=None):
     fees = [s.get("fee") for s in signals]
     grid = _grid(pinned)
     fee_ok = _fee_net_allowed(gate, signals)
+    # A gate file cannot self-certify a numeric net. The caller must pass the
+    # gate file's sha, and it must match the bytes that were hashed.
+    net_block_reason = None
+    if gate_sha_expected is None:
+        net_block_reason = "GATE_SHA_NOT_SUPPLIED"
     out_rows = []
     for swing, informational in grid:
         evs = [_ev(pinned, byid[s["race_id"]], s, swing) for s in signals]
         flips = sum(1 for a, b in zip(base, evs) if (a > 0) != (b > 0))
         gross = sum(evs)
-        out_rows.append({
+        if net_block_reason is not None or not fee_ok:
+            net = "BLOCKED_FEE_UNVERIFIED"
+        else:
+            net = gross - sum(fees)
+        row = {
             "swing_logit": swing,
             "expected_gross": gross,
-            "expected_net": (gross - sum(fees)) if fee_ok else "BLOCKED_FEE_UNVERIFIED",
+            "expected_net": net,
             "n_sign_flips_vs_s0": flips,
             "share_sign_flips_vs_s0": flips / len(signals),
             "informational": informational,
-        })
+        }
+        if net_block_reason is not None:
+            row["net_block_reason"] = net_block_reason
+        out_rows.append(row)
     extra = {"n_signals": len(signals)}
+    if net_block_reason is not None:
+        extra["net_block_reason"] = net_block_reason
     if gate.get("manifest_id") is not None:
         extra["manifest_id"] = gate["manifest_id"]
     return _envelope("OK", _fragility(out_rows), out_rows, rows_sha256, gate_sha256, extra)

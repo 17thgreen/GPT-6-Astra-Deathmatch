@@ -85,32 +85,60 @@ class SwingTests(unittest.TestCase):
         self.assertNotEqual(proc.returncode, 0)
         self.assertEqual(proc.stdout, b"")
 
+    def _strip_outcomes(self, rows, labels):
+        stripped = []
+        for row, y in zip(rows, labels):
+            copied = dict(row)
+            copied["y"] = y
+            copied["result"] = "yes" if y else "no"
+            for key in FORBIDDEN_OUTCOME_KEYS:
+                copied.pop(key, None)
+            stripped.append(copied)
+        return stripped
+
     def test_label_permutation_is_invariant_and_source_does_not_subscript_y(self):
         base = [_row("AL-02", 0.55, 0.45), _row("OH-01", 0.40, 0.50), _row("NY-02", 0.70, 0.30)]
-        gate_doc = {"status": "BLOCKED_FEE_UNVERIFIED", "signals": None, "reason": "MANIFEST_ABSENT"}
+        labels_set = ((0, 1, 0), (1, 0, 1), (0, 0, 0), (1, 1, 1))
+        blocked = {"status": "BLOCKED_FEE_UNVERIFIED", "signals": None, "reason": "MANIFEST_ABSENT"}
         dumps = []
-        for labels in ((0, 1, 0), (1, 0, 1), (0, 0, 0), (1, 1, 1)):
-            labeled = []
-            for row, y in zip(base, labels):
-                copied = dict(row)
-                copied["y"] = y
-                copied["result"] = "yes" if y else "no"
-                labeled.append(copied)
-            stripped = []
-            for row in labeled:
-                cleaned = dict(row)
-                for key in FORBIDDEN_OUTCOME_KEYS:
-                    cleaned.pop(key, None)
-                stripped.append(cleaned)
-            dumps.append(json.dumps(evaluate(stripped, gate_doc, "same", "same"), indent=1))
+        for labels in labels_set:
+            stripped = self._strip_outcomes(base, labels)
+            dumps.append(json.dumps(evaluate(stripped, blocked, "same", "same"), indent=1))
         self.assertEqual(len(set(dumps)), 1)
 
+        signals = [
+            _signal("AL-02", "D_YES", 0.42, 0.01),
+            _signal("OH-01", "D_NO", 0.55, 0.02),
+            _signal("NY-02", "D_YES", 0.40, 0.015),
+        ]
+        self.assertGreaterEqual(len(signals), 3)
+        ok = _ok_gate(signals)
+        ok_dumps = []
+        for labels in labels_set:
+            stripped = self._strip_outcomes(base, labels)
+            ok_dumps.append(json.dumps(evaluate(stripped, ok, "same", "gate-sha", "gate-sha"), indent=1))
+        self.assertEqual(len(set(ok_dumps)), 1)
+        ok_obj = json.loads(ok_dumps[0])
+        self.assertEqual(ok_obj["stress_status"], "OK")
+        self.assertGreaterEqual(ok_obj["n_signals"], 3)
+
+        self.assertIn("y", FORBIDDEN_OUTCOME_KEYS)
         tree = ast.parse((LAB / "card01_amc" / "swing_stress.py").read_text())
         for node in ast.walk(tree):
             if isinstance(node, ast.Subscript):
                 sl = node.slice
                 if isinstance(sl, ast.Constant) and sl.value == "y":
                     self.fail("swing_stress subscripts y")
+            if isinstance(node, ast.Call):
+                func = node.func
+                if isinstance(func, ast.Attribute) and func.attr == "get":
+                    for arg in list(node.args) + [kw.value for kw in node.keywords]:
+                        if isinstance(arg, ast.Constant) and arg.value == "y":
+                            self.fail("swing_stress calls .get('y')")
+            if isinstance(node, ast.Dict):
+                for key in node.keys:
+                    if isinstance(key, ast.Constant) and key.value == "y":
+                        self.fail("swing_stress uses y as a dict key")
 
     def test_formula_matches_pinned_stress_and_hash(self):
         pinned = load_national_miss()
@@ -126,7 +154,7 @@ class SwingTests(unittest.TestCase):
         ]
         with_y = [dict(row, y=1) for row in rows]
         pinned_out = pinned.stress(with_y, signals)
-        ours = evaluate(rows, _ok_gate(signals), "rows-sha", "gate-sha")
+        ours = evaluate(rows, _ok_gate(signals), "rows-sha", "gate-sha", "gate-sha")
         self.assertEqual(ours["stress_status"], "OK")
         frozen = [row for row in ours["rows"] if row["informational"] is False]
         self.assertEqual(len(frozen), len(pinned_out["rows"]))
@@ -215,6 +243,22 @@ class SwingTests(unittest.TestCase):
         self.assertEqual(evaluate(rows, {"status": "MAYBE"}, "r", "g")["stress_status"], "REPORTING_DEFECT")
         self.assertEqual(evaluate(rows, None, "r", None)["fragility"], "FRAGILE_NOT_CLEARED_REPORTING_DEFECT")
 
+        unsigned = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha")
+        self.assertEqual(unsigned["stress_status"], "OK")
+        self.assertEqual(unsigned["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
+        self.assertTrue(unsigned["rows"])
+        for stress_row in unsigned["rows"]:
+            self.assertEqual(stress_row["expected_net"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(stress_row["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
+            self.assertIsInstance(stress_row["expected_gross"], float)
+        self_certified = _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)])
+        self_certified["gate_sha256"] = "gate-sha"
+        still = evaluate(rows, self_certified, "r", "gate-sha")
+        self.assertEqual(still["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
+        signed = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha", "gate-sha")
+        self.assertNotIn("net_block_reason", signed)
+        self.assertIsInstance(signed["rows"][0]["expected_net"], float)
+
     def test_pinned_main_raises_without_outcomes(self):
         pinned = load_national_miss()
         doc = {
@@ -270,7 +314,7 @@ class FeeBlockTests(unittest.TestCase):
             signal = dict(signal)
             if signal["fee_source"] is None:
                 del signal["fee_source"]
-            out = evaluate([row], _ok_gate([signal], adopted=adopted), "r", "g")
+            out = evaluate([row], _ok_gate([signal], adopted=adopted), "r", "g", "g")
             self.assertEqual(out["stress_status"], "OK", signal)
             for stress_row in out["rows"]:
                 self.assertEqual(stress_row["expected_net"], "BLOCKED_FEE_UNVERIFIED")
@@ -305,6 +349,27 @@ class JoinTests(unittest.TestCase):
             {"ticker": "T-AL-02", "result": "no"},
         ]})
         self.assertIsNone(conflict["rows"][0]["y"])
+        self.assertEqual(joined["ignored_results"], 0)
+
+    def test_ignores_missing_or_empty_ticker(self):
+        rows = [
+            _row("AL-02", 0.5, 0.4),
+            _row("OH-01", 0.5, 0.4),
+        ]
+        rows.append(dict(rows[0], race_id="TX-01", ticker=""))
+        rows.append(dict(rows[0], race_id="CA-01", ticker=None))
+        joined = join(rows, {"results": [
+            {"result": "yes"},
+            {"ticker": "", "result": "yes"},
+            {"ticker": None, "result": "no"},
+            {"ticker": "T-OH-01", "result": "no"},
+        ]})
+        self.assertEqual(joined["ignored_results"], 3)
+        self.assertEqual(joined["rows"][0]["y"], None)
+        self.assertEqual(joined["rows"][1]["y"], 0)
+        self.assertIsNone(joined["rows"][2]["y"])
+        self.assertIsNone(joined["rows"][3]["y"])
+        self.assertEqual([r["race_id"] for r in joined["rows"]], ["AL-02", "OH-01", "TX-01", "CA-01"])
 
 
 if __name__ == "__main__":

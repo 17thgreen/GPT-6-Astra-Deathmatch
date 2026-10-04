@@ -20,8 +20,13 @@ It does not place orders. `results` and `pnl` stay null.
 | Pinned script (unchanged) | `049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2` |
 | Universe | `d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6` |
 
-Vendored copies live in `pins/`. `PINS.json` records the sha of each pin and of
-each module under `card01_amc/`.
+Code pins and the governance texts that do not carry private paths live in
+`pins/`. `PINS.json` records the sha of each pin and of each module under
+`card01_amc/`. Six governance documents are listed there with `vendored: false`
+and reason `PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE`. Their bytes are not in
+this public tree. Amendment B requires a Terms of Service §06 re-gate before
+ElectIndex values are published, and those documents also contain private box
+paths.
 
 ## What this lab implements
 
@@ -73,7 +78,7 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 
 ## Verified unit results
 
-`python3 -m unittest discover -s tests -v` from this directory: Ran 35 tests in 157.262s at 2026-10-04T00:27:46Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0.
+`python3 -m unittest discover -s tests -v` from this directory: Ran 38 tests in 168.440s at 2026-10-04T00:49:49Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. The follow-up adds the mixed-y AF-5 fixture, the gate-sha net rule, same-party and missing-ticker exclusions, and the empty-ticker join count.
 
 Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
 
@@ -105,9 +110,15 @@ These are fixed here so the code does not invent a second reading later.
   require an adopted series-endpoint entry. AF-4 cannot see the series from
   `mapping_status` alone when the series is legacy.
 - An exclusion nulls both `p_market` and `p_model`. Raw quote fields stay when a
-  snapshot was selected. Priority is `mapping_unresolved`,
-  `no_admissible_forecast`, `snapshot_outside_window`,
-  `market_closed_or_settled`, `no_two_sided_book`.
+  snapshot was selected. Priority is `mapping_unresolved`, `same_party_race`,
+  `no_admissible_forecast`, `no_ticker_for_mapped_race`,
+  `snapshot_outside_window`, `market_closed_or_settled`, `no_two_sided_book`.
+- A mapped race with no `chosen_ticker` is `no_ticker_for_mapped_race`. It is
+  not recorded as a snapshot-window miss.
+- `same_party_race` fires only when the forecast row has `same_party: true`, or
+  when `rep_name` is present and equals `(No Republican)`. The Collector's
+  derived format does not yet require `same_party`. Absence of both fields is
+  not treated as same-party. That field is an open Collector item.
 - `no_two_sided_book` covers a missing side, a crossed book (`bid > ask`),
   `bid <= 0`, and `ask >= 1`.
 - A snapshot is tradable only when `market_status` is `active` or `open`.
@@ -115,15 +126,23 @@ These are fixed here so the code does not invent a second reading later.
   `(No Democrat)` is `no_admissible_forecast`.
 - Gate JSON that is `OK` also carries `manifest_status` and `adopted_entry_ids`.
   Swing-stress emits a numeric `expected_net` only when those show an ADOPTED
-  manifest and every signal fee is numeric with `fee_source` in that id list.
+  manifest, every signal fee is numeric with `fee_source` in that id list, and
+  the caller passes `--gate-sha256` equal to the gate file bytes. If that
+  argument is absent, `expected_net` is `BLOCKED_FEE_UNVERIFIED` and
+  `net_block_reason` is `GATE_SHA_NOT_SUPPLIED`. A gate file cannot self-certify
+  its net.
 - `leave_one_state_out.by_state[s]` is either per-arm point estimates or the
   string `UNDEFINED`. Min and max ignore undefined remainders.
 - `n_boundary_resamples` is a sibling of `arms` on each non-empty block.
 - A reporting defect emits `rows: null`. It does not emit
   `NOT_FRAGILE_AT_PM0.5`.
-- Conflicting settled results for one ticker leave `y` unchanged.
+- Conflicting settled results for one ticker leave `y` unchanged. A result with
+  a missing or empty ticker is ignored and counted in `ignored_results`.
+- `pinload` compiles the bytes that passed the sha check. It does not read the
+  path a second time to execute them.
 - `PINS.json` marks every listed file that is present, including the authored
   `card01_amc` modules, with `vendored: true`. The pin test treats
-  `vendored: false` as "this path must not exist" (an unavailable attachment).
-  All twenty code pins were present, so none are recorded that way. The file
-  does not list its own sha256.
+  `vendored: false` as "this path must not exist". The six redacted governance
+  documents use that flag with reason
+  `PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE`. The file does not list its own
+  sha256.
