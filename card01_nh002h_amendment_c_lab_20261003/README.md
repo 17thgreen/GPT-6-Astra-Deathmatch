@@ -71,6 +71,16 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 `json.dumps(obj_without_that_key, indent=1)` encoded as UTF-8. No
 `computed_at_utc` field is emitted. The Examiner records hashing time separately.
 
+## Verified unit results
+
+`python3 -m unittest discover -s tests -v` from this directory: Ran 35 tests in 157.262s at 2026-10-04T00:27:46Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0.
+
+Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
+
+Interpreter: `3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]`. Platform: `Linux-6.12.94+-x86_64-with-glibc2.39`. CPython 3.13 was not installed on this machine. The byte match still held.
+
+This run is code verification on synthetic inputs. It is not an Examiner score. `results`, `pnl`, and `roi` stay null.
+
 ## Limits
 
 - Pre-outcome. No real data run. No Kalshi call. No ElectIndex fetch.
@@ -112,3 +122,8 @@ These are fixed here so the code does not invent a second reading later.
 - A reporting defect emits `rows: null`. It does not emit
   `NOT_FRAGILE_AT_PM0.5`.
 - Conflicting settled results for one ticker leave `y` unchanged.
+- `PINS.json` marks every listed file that is present, including the authored
+  `card01_amc` modules, with `vendored: true`. The pin test treats
+  `vendored: false` as "this path must not exist" (an unavailable attachment).
+  All twenty code pins were present, so none are recorded that way. The file
+  does not list its own sha256.
