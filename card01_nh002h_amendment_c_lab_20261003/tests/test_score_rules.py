@@ -186,11 +186,136 @@ class VerdictTests(unittest.TestCase):
         self.assertTrue(verdict["evaluations"]["pass_i"])
         self.assertTrue(verdict["evaluations"]["reject_b"])
 
+    def _pair(self):
+        return ("FEE_SOURCE_CARD01_v1", "ab" * 32)
+
+    def _gate(self):
+        fee_id, digest = self._pair()
+        return {"status": "OK", "fee_source": fee_id, "fee_source_sha256": digest}
+
+    def _attestation(self, series_status="PINNED", digest=None):
+        from card01_amc.fee_source import CONDUCTOR_ACCEPT_SHA256
+        fee_id, default_digest = self._pair()
+        return {
+            "fee_source": fee_id,
+            "fee_source_sha256": default_digest if digest is None else digest,
+            "rehash_ok": True,
+            "packet_index_anchor_ok": True,
+            "status": "ADOPTED",
+            "conductor_accept_sha256": CONDUCTOR_ACCEPT_SHA256,
+            "series": [{"series": "KXHOUSERACE", "series_status": series_status}],
+            "examiner": "synthetic-examiner",
+            "time": "2026-11-03T00:00:00Z",
+        }
+
+    def _admitted(self, score, cd=None, **kwargs):
+        return apply_verdict(
+            score,
+            gate=self._gate(),
+            attestation=self._attestation(),
+            cd=cd,
+            expected_fee_source=self._pair(),
+            **kwargs,
+        )
+
     def test_fee_unblocked_requires_examiner(self):
-        verdict = apply_verdict(self._score(-0.01, -0.02), fee_blocked=False)
+        verdict = self._admitted(self._score(-0.01, -0.02), cd=None)
         self.assertEqual(verdict["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(verdict["fee_state"], "ADMITTED")
         self.assertIsNone(verdict["evaluations"]["reject_c"])
         self.assertIsNone(verdict["evaluations"]["reject_d"])
+
+    def test_validity_and_degenerate_outrank_fee_branch(self):
+        degenerate = {
+            "headline_status": "INCONCLUSIVE_DEGENERATE_BLOCK",
+            "degenerate_reason": "N_ZERO",
+            "all_admitted": {"n": 0},
+        }
+        void = apply_verdict(
+            degenerate,
+            validity={"licence_gate": "REFUSED"},
+            gate=self._gate(),
+            attestation=self._attestation(),
+            cd={"n_signals": 0, "reject_c": None, "reject_d": None},
+            expected_fee_source=self._pair(),
+        )
+        self.assertEqual(void["verdict"], "VOID")
+        self.assertEqual(void["reason"], "LICENCE_GATE_REFUSED")
+        self.assertEqual(void["firing"], [])
+
+        outranked = self._admitted(
+            degenerate,
+            cd={"n_signals": 0, "reject_c": None, "reject_d": None},
+        )
+        self.assertEqual(outranked["verdict"], "INCONCLUSIVE_DEGENERATE_BLOCK")
+        self.assertEqual(outranked["firing"], [])
+
+        admitted_a = self._admitted(
+            self._score(0.0, -0.02),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": False},
+        )
+        self.assertEqual(admitted_a["verdict"], "REJECT")
+        self.assertEqual(admitted_a["firing"], ["(a)"])
+        self.assertNotIn("FORECAST_ONLY", admitted_a["verdict"])
+
+    def test_admitted_c_and_d_and_missing_attestation(self):
+        zero = self._admitted(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 0, "reject_c": None, "reject_d": None},
+        )
+        self.assertEqual(zero["verdict"], "REJECT")
+        self.assertEqual(zero["firing"], ["(c)"])
+        self.assertIn("NO_SIGNALS_SELECTED", zero["notes"])
+        self.assertEqual(zero["evaluations"]["reject_d"], "NOT_EVALUATED_NO_SIGNALS")
+
+        only_c = self._admitted(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 2, "reject_c": True, "reject_d": False},
+        )
+        self.assertEqual(only_c["verdict"], "REJECT")
+        self.assertEqual(only_c["firing"], ["(c)"])
+
+        only_d = self._admitted(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": True},
+        )
+        self.assertEqual(only_d["firing"], ["(d)"])
+
+        clear = self._admitted(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": False},
+        )
+        self.assertEqual(clear["verdict"], "PASS-FORECAST")
+        self.assertEqual(clear["firing"], [])
+
+        missing = apply_verdict(
+            self._score(-0.01, -0.02),
+            gate=self._gate(),
+            expected_fee_source=self._pair(),
+        )
+        self.assertEqual(missing["fee_state"], "BLOCKED")
+        self.assertIn("FEE_ATTESTATION_MISSING", missing["notes"])
+        self.assertEqual(missing["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
+
+        wrong = apply_verdict(
+            self._score(-0.01, -0.02),
+            gate=self._gate(),
+            attestation=self._attestation(digest="cd" * 32),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": False},
+            expected_fee_source=self._pair(),
+        )
+        self.assertEqual(wrong["fee_state"], "BLOCKED")
+        self.assertNotIn("FEE_ATTESTATION_MISSING", wrong["notes"])
+
+        unpinned = apply_verdict(
+            self._score(-0.01, -0.02),
+            gate=self._gate(),
+            attestation=self._attestation(series_status="BLOCKED_FEE_UNVERIFIED"),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": False},
+            expected_fee_source=self._pair(),
+        )
+        self.assertEqual(unpinned["fee_state"], "BLOCKED")
+        self.assertEqual(unpinned["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
 
 if __name__ == "__main__":
