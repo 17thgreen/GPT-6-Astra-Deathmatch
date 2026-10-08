@@ -71,6 +71,30 @@ def _scorable(row) -> bool:
     )
 
 
+def fee_attest_reason(fee_sha, attest):
+    """Return None when the attest admits this fee-source sha.
+
+    Shape, marked as a kit reading: a JSON object with
+    fee_source_sha256 equal to the fee-source bytes, and verdict
+    exactly ATTEST_PASS. No other field is read.
+    """
+    if attest is None:
+        return "FEE_ATTEST_ABSENT"
+    if isinstance(attest, (bytes, bytearray)):
+        try:
+            attest = json.loads(bytes(attest))
+        except json.JSONDecodeError:
+            return "FEE_ATTEST_INVALID"
+    if not isinstance(attest, dict):
+        return "FEE_ATTEST_INVALID"
+    quoted = attest.get("fee_source_sha256")
+    if not isinstance(quoted, str) or quoted != fee_sha:
+        return "FEE_ATTEST_SHA_MISMATCH"
+    if attest.get("verdict") != "ATTEST_PASS":
+        return "FEE_ATTEST_NOT_PASS"
+    return None
+
+
 def _blocked(reason, blocked_series=None):
     return {
         "status": "BLOCKED_FEE_UNVERIFIED",
@@ -123,6 +147,7 @@ def gate(
     rows,
     fee_source_bytes=None,
     *,
+    fee_attest=None,
     expected_sha256=FEE_SOURCE_SHA256,
     expected_id=FEE_SOURCE_ID,
     expected_accept=CONDUCTOR_ACCEPT_SHA256,
@@ -140,6 +165,9 @@ def gate(
         )
     except FeeBlocked as exc:
         return _blocked(exc.reason, exc.blocked_series)
+    attest_reason = fee_attest_reason(loaded.sha256, fee_attest)
+    if attest_reason is not None:
+        return _blocked(attest_reason)
 
     used = []
     seen = set()
@@ -196,6 +224,8 @@ def gate(
         "fee_source": loaded.manifest_id,
         "fee_source_sha256": loaded.sha256,
         "fee_source_status": "ADOPTED",
+        "fee_attest_verdict": "ATTEST_PASS",
+        "fee_attest_fee_source_sha256": loaded.sha256,
         "conductor_accept_sha256": loaded.conductor_accept_sha256,
         "series_used": [{"series": series, "series_status": "PINNED"} for series in used],
         "gate_sha256": module_sha256(),
@@ -206,11 +236,13 @@ def main(argv):
     parser = argparse.ArgumentParser(description="outcome-free entry gate")
     parser.add_argument("rows")
     parser.add_argument("--fee-source", default=None)
+    parser.add_argument("--fee-attest", default=None)
     args = parser.parse_args(argv)
     try:
         rows = _rows_of(json.loads(Path(args.rows).read_text()))
         fee_bytes = Path(args.fee_source).read_bytes() if args.fee_source else None
-        obj = gate(rows, fee_bytes)
+        attest = Path(args.fee_attest).read_bytes() if args.fee_attest else None
+        obj = gate(rows, fee_bytes, fee_attest=attest)
     except (OutcomePresent, ValueError, json.JSONDecodeError, OSError) as exc:
         print(str(exc), file=sys.stderr)
         return 2

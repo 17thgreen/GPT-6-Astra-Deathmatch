@@ -111,6 +111,12 @@ def load_fee_source(
         raise FeeBlocked("FEE_SOURCE_SCHEMA_INVALID") from None
     if not isinstance(doc, dict):
         raise FeeBlocked("FEE_SOURCE_SCHEMA_INVALID")
+    schema = doc.get("schema")
+    version = doc.get("version")
+    if schema == "astra.fee_source.v1" and version not in (None, "v1", 1, "1"):
+        raise FeeBlocked("FEE_SOURCE_VERSION_UNSUPPORTED")
+    if isinstance(schema, str) and schema != "astra.fee_source.v1":
+        raise FeeBlocked("FEE_SOURCE_VERSION_UNSUPPORTED")
     template = doc.get("template")
     if isinstance(template, dict) and template.get("is_template") is True:
         raise FeeBlocked("FEE_SOURCE_IS_TEMPLATE")

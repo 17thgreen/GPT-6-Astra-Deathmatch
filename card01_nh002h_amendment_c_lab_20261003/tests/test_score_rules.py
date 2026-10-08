@@ -191,7 +191,13 @@ class VerdictTests(unittest.TestCase):
 
     def _gate(self):
         fee_id, digest = self._pair()
-        return {"status": "OK", "fee_source": fee_id, "fee_source_sha256": digest}
+        return {
+            "status": "OK",
+            "fee_source": fee_id,
+            "fee_source_sha256": digest,
+            "fee_attest_verdict": "ATTEST_PASS",
+            "fee_attest_fee_source_sha256": digest,
+        }
 
     def _attestation(self, series_status="PINNED", digest=None):
         from card01_amc.fee_source import CONDUCTOR_ACCEPT_SHA256
@@ -338,6 +344,19 @@ class VerdictTests(unittest.TestCase):
         )
         self.assertEqual(unpinned["fee_state"], "BLOCKED")
         self.assertEqual(unpinned["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
+
+        bare = self._gate()
+        bare.pop("fee_attest_verdict")
+        bare.pop("fee_attest_fee_source_sha256")
+        alone = apply_verdict(
+            self._score(-0.01, -0.02),
+            gate=bare,
+            attestation=self._attestation(),
+            cd={"n_signals": 2, "reject_c": False, "reject_d": False},
+            expected_fee_source=self._pair(),
+        )
+        self.assertEqual(alone["fee_state"], "BLOCKED")
+        self.assertEqual(alone["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
 
 if __name__ == "__main__":

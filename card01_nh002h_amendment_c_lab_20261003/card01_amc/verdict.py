@@ -56,6 +56,11 @@ def _fee_state(gate, attestation, expected):
         return "BLOCKED", notes
     if gate.get("fee_source") != expected_id or gate.get("fee_source_sha256") != expected_sha:
         return "BLOCKED", notes
+    if (
+        gate.get("fee_attest_verdict") != "ATTEST_PASS"
+        or gate.get("fee_attest_fee_source_sha256") != gate.get("fee_source_sha256")
+    ):
+        return "BLOCKED", notes
     if not isinstance(attestation, dict):
         notes.append("FEE_ATTESTATION_MISSING")
         return "BLOCKED", notes

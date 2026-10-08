@@ -50,8 +50,9 @@ ElectIndex values are published.
   A selected forecast is accepted only when its sha matches the Q6 record and
   the runtime dem_name step passes.
 - AF-8 / AF-4 entry gate (`card01_amc/entry_gate.py`): signals require an
-  `ADOPTED` + `PINNED` `astra.fee_source.v1` file loaded at runtime. There is
-  no default-multiplier path.
+  `ADOPTED` + `PINNED` `astra.fee_source.v1` file and a passing fee attestation.
+  `ADOPTED` + `PINNED` alone does not admit the fee. There is no
+  default-multiplier path. An unknown fee-source schema version fails closed.
 - AF-7 outcome-free swing stress (`card01_amc/swing_stress.py`): grid ±0.5, ±0.25,
   0 plus informational ±1.0. Fragility is read from ±0.5 gross and sign flips
   only. Numeric nets require a matching gate sha and a recomputed headline fee.
@@ -70,16 +71,21 @@ ElectIndex values are published.
 The taker formula is pinned inside `pinned_taker_fee`: round up
 `M × rate × C × P × (1−P)` to six decimal dollars. The headline is
 `ceil_cent(P × C + fee_raw) − P × C` on the one-cent grid. `FEE_ONLY_CEIL` is
-`ceil_cent(fee_raw)`. It is a labeled sensitivity row. It is not the headline
-and it does not drive the verdict. The direct one-ten-thousandth figure is a
+`ceil_cent(fee_raw)`. It is a labeled sensitivity-only row. It is not the
+headline and it does not drive the verdict. The headline can be lower than
+`FEE_ONLY_CEIL` when `P × C` is off a whole cent. The direct one-ten-thousandth figure is a
 second sensitivity row. `M` and `fee_type` come only from a `PINNED` series
 entry. Any series in use that is not `PINNED` blocks the whole card. No fee
 is computed in that case, and there is no default-multiplier row.
 
 The adopted file id is `FEE_SOURCE_CARD01_v1`, sha256
 `d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd`, accepted by
-`5b2eb82613d74bbfb2dd937efa43e239083367f832430a46d011759ccf451b59`. The command
-line loads that file from `--fee-source` and does not embed it. Commit
+`5b2eb82613d74bbfb2dd937efa43e239083367f832430a46d011759ccf451b59`. Ruling
+`715fbafd` records that examiner attestation as `ATTEST_FAIL`. The command
+line loads the fee file from `--fee-source` and an attestation from
+`--fee-attest`. The adopted file is not embedded. Without `ATTEST_PASS` for
+that sha, the gate stays `BLOCKED_FEE_UNVERIFIED` and money rows stay
+forecast-only. Commit
 `22371178cb2663250b4762f328069571c48cb551` remains in the pin list with
 `superseded: true`. Its feebook does not price this gate.
 
@@ -91,7 +97,7 @@ From this directory, CPython 3.12 or 3.13, standard library only:
 python3 -m unittest discover -s tests -v
 python3 -m card01_amc.select_forecast --capture-log LOG --daily-runs RUNS --root ROOT --run-at-utc T
 python3 -m card01_amc.build_rows --universe pins/UNIVERSE_2026_HOUSE_FROZEN.json --selection SEL.json --forecast forecast.json --mapping mapping.json --book book.json --add-dem-name PATH
-python3 -m card01_amc.entry_gate built_rows.json --fee-source PATH
+python3 -m card01_amc.entry_gate built_rows.json --fee-source PATH --fee-attest ATTEST.json
 python3 -m card01_amc.swing_stress --rows built_rows.json --gate gate.json --gate-sha256 SHA --fee-source PATH
 python3 -m card01_amc.score rows_with_outcomes.json
 python3 -m card01_amc.join_outcomes built_rows.json settled.json
@@ -171,7 +177,13 @@ These are fixed here so the code does not invent a second reading later.
   selection. A non-selected record builds 92 rows of `no_admissible_forecast`
   and records `q6_status`.
 - Gate JSON that is `OK` carries `fee_source`, `fee_source_sha256`,
-  `fee_source_status`, `conductor_accept_sha256`, and `series_used`.
+  `fee_source_status`, `fee_attest_verdict` (`ATTEST_PASS`),
+  `fee_attest_fee_source_sha256`, `conductor_accept_sha256`, and `series_used`.
+  A missing, mismatched, or non-pass attestation leaves the gate
+  `BLOCKED_FEE_UNVERIFIED` with no signals. The attestation object is
+  `{fee_source_sha256, verdict}` and the sha must equal the fee-source bytes.
+  An unknown `astra.fee_source` schema version is
+  `FEE_SOURCE_VERSION_UNSUPPORTED`. `astra.fee_source.v1` stays supported.
   Swing-stress emits a numeric `expected_net` only when `--gate-sha256` matches
   the gate file, `--fee-source` loads, the gate and every signal carry that
   pair, and each headline fee recomputes. Otherwise `expected_net` is

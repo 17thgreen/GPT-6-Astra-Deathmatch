@@ -205,9 +205,9 @@ class BuilderTests(unittest.TestCase):
 
 class GateSelectionTests(unittest.TestCase):
     def _open(self):
-        from tests.test_fee_source import synth_bytes, synth_overrides
+        from tests.test_fee_source import attest_pass, synth_bytes, synth_overrides
         raw = synth_bytes()
-        return raw, synth_overrides(raw)
+        return raw, synth_overrides(raw), attest_pass(raw)
 
     def _row(self, **kwargs):
         row = {
@@ -229,8 +229,8 @@ class GateSelectionTests(unittest.TestCase):
         return row
 
     def _gate(self, rows):
-        raw, overrides = self._open()
-        return gate(rows, raw, **overrides)
+        raw, overrides, attest = self._open()
+        return gate(rows, raw, fee_attest=attest, **overrides)
 
     def test_yes_no_tie_boundary_and_qty(self):
         yes = self._gate([self._row()])

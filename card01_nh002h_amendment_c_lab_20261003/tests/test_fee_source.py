@@ -38,6 +38,10 @@ def synth_overrides(raw: bytes) -> dict:
     }
 
 
+def attest_pass(raw: bytes) -> dict:
+    return {"fee_source_sha256": sha256_bytes(raw), "verdict": "ATTEST_PASS"}
+
+
 def _row(series="KXHOUSERACE", **kwargs):
     row = {
         "race_id": "AL-02",
@@ -117,7 +121,7 @@ class FormulaTests(unittest.TestCase):
         self.assertEqual(whole["FEE_ONLY_CEIL"], whole["headline"])
 
         off = _row(yes_bid=0.07, yes_ask=0.077, p_market=0.07, p_model=0.90)
-        selected = gate([off], raw, **synth_overrides(raw))
+        selected = gate([off], raw, fee_attest=attest_pass(raw), **synth_overrides(raw))
         signal = selected["signals"][0]
         self.assertEqual(signal["price"], 0.077)
         self.assertEqual(signal["fee_decimal"], "0.013")
@@ -131,7 +135,7 @@ class FormulaTests(unittest.TestCase):
         self.assertNotEqual(headline_net, fee_only_net)
 
         agree = _row(yes_bid=0.40, yes_ask=0.50, p_market=0.45, p_model=0.90)
-        agreed = gate([agree], raw, **synth_overrides(raw))
+        agreed = gate([agree], raw, fee_attest=attest_pass(raw), **synth_overrides(raw))
         agreed_signal = agreed["signals"][0]
         self.assertEqual(agreed_signal["price"], 0.50)
         self.assertEqual(agreed_signal["fee_decimal"], "0.03")
@@ -220,13 +224,13 @@ class LoadTests(unittest.TestCase):
         raw = synth_bytes()
         overrides = synth_overrides(raw)
         rows = [_row("KXHOUSERACE", race_id="AL-02"), _row("HOUSEVA2", race_id="VA-02")]
-        result = gate(rows, raw, **overrides)
+        result = gate(rows, raw, fee_attest=attest_pass(raw), **overrides)
         self.assertEqual(result["status"], "BLOCKED_FEE_UNVERIFIED")
         self.assertIsNone(result["signals"])
         self.assertEqual(result["reason"], "SERIES_NOT_PINNED")
         self.assertEqual(result["blocked_series"], ["HOUSEVA2"])
 
-        unknown = gate([_row("NOT-A-SERIES")], raw, **overrides)
+        unknown = gate([_row("NOT-A-SERIES")], raw, fee_attest=attest_pass(raw), **overrides)
         self.assertEqual(unknown["reason"], "SERIES_ENTRY_MISSING")
         self.assertIsNone(unknown["signals"])
 
@@ -276,7 +280,7 @@ class LoadTests(unittest.TestCase):
         ]
         for mutate, reason in expected:
             body, overrides, _doc = self._mutated(mutate)
-            result = gate([_row()], body, **overrides)
+            result = gate([_row()], body, fee_attest=attest_pass(body), **overrides)
             self.assertEqual(result["status"], "BLOCKED_FEE_UNVERIFIED", reason)
             self.assertIsNone(result["signals"], reason)
             self.assertEqual(result["reason"], reason)
@@ -285,7 +289,7 @@ class LoadTests(unittest.TestCase):
 
     def test_positive_synthetic_gate(self):
         raw = synth_bytes()
-        result = gate([_row()], raw, **synth_overrides(raw))
+        result = gate([_row()], raw, fee_attest=attest_pass(raw), **synth_overrides(raw))
         self.assertEqual(result["status"], "OK")
         self.assertEqual(result["fee_source"], "FEE_SOURCE_CARD01_v1")
         self.assertEqual(result["fee_source_sha256"], sha256_bytes(raw))
@@ -294,6 +298,98 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(result["n_selected"], 1)
         self.assertNotIn("adopted_entry_ids", result)
         self.assertNotIn("manifest_status", result)
+        self.assertEqual(result["fee_attest_verdict"], "ATTEST_PASS")
+
+    def test_attest_blocks_unless_pass_matches_the_fee_sha(self):
+        from card01_amc.verdict import apply_verdict
+
+        raw = synth_bytes()
+        overrides = synth_overrides(raw)
+        digest = sha256_bytes(raw)
+        row = _row()
+        missing = gate([row], raw, **overrides)
+        mismatched = gate(
+            [row],
+            raw,
+            fee_attest={"fee_source_sha256": "ab" * 32, "verdict": "ATTEST_PASS"},
+            **overrides,
+        )
+        failed = gate(
+            [row],
+            raw,
+            fee_attest={"fee_source_sha256": digest, "verdict": "ATTEST_FAIL"},
+            **overrides,
+        )
+        other = gate(
+            [row],
+            raw,
+            fee_attest={"fee_source_sha256": digest, "verdict": "ATTEST_PENDING"},
+            **overrides,
+        )
+        self.assertEqual(missing["reason"], "FEE_ATTEST_ABSENT")
+        self.assertEqual(mismatched["reason"], "FEE_ATTEST_SHA_MISMATCH")
+        self.assertEqual(failed["reason"], "FEE_ATTEST_NOT_PASS")
+        self.assertEqual(other["reason"], "FEE_ATTEST_NOT_PASS")
+        score = {
+            "all_admitted": {
+                "n": 2,
+                "states": 2,
+                "arms": {"0.5": {"CI95_D_raw": [-0.02, -0.01], "CI95_D_rc": [-0.03, -0.01]}},
+            }
+        }
+        for blocked in (missing, mismatched, failed, other):
+            self.assertEqual(blocked["status"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertIsNone(blocked["signals"])
+            stress = evaluate([row], blocked, "r", "g")
+            self.assertEqual(stress["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertIsNone(stress["rows"])
+            verdict = apply_verdict(score, gate=blocked)
+            self.assertTrue(verdict["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED"))
+            self.assertEqual(verdict["fee_state"], "BLOCKED")
+
+        admitted = gate([row], raw, fee_attest=attest_pass(raw), **overrides)
+        self.assertEqual(admitted["status"], "OK")
+        self.assertGreater(admitted["n_selected"], 0)
+        self.assertEqual(admitted["fee_attest_fee_source_sha256"], digest)
+
+    def test_unknown_schema_version_fails_closed(self):
+        body, overrides, _doc = self._mutated(lambda doc: doc.__setitem__("schema", "astra.fee_source.v2"))
+        with self.assertRaises(FeeBlocked) as caught:
+            load_fee_source(body, **overrides)
+        self.assertEqual(caught.exception.reason, "FEE_SOURCE_VERSION_UNSUPPORTED")
+        blocked = gate([_row()], body, fee_attest=attest_pass(body), **overrides)
+        self.assertEqual(blocked["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked["reason"], "FEE_SOURCE_VERSION_UNSUPPORTED")
+        self.assertIsNone(blocked["signals"])
+
+        body, overrides, _doc = self._mutated(lambda doc: doc.__setitem__("version", "v2"))
+        with self.assertRaises(FeeBlocked) as caught:
+            load_fee_source(body, **overrides)
+        self.assertEqual(caught.exception.reason, "FEE_SOURCE_VERSION_UNSUPPORTED")
+
+    def test_m1_headline_can_sit_below_fee_only_ceil(self):
+        def set_m1(doc):
+            entry = doc["series"]["KXHOUSERACE"]
+            entry["fee_multiplier"] = "1"
+            entry["series_endpoint_source"]["fee_multiplier"] = "1"
+
+        body, overrides, _doc = self._mutated(set_m1)
+        loaded = load_fee_source(body, **overrides)
+        entry = pinned_entry(loaded, "KXHOUSERACE")
+        self.assertEqual(entry.fee_multiplier, Decimal("1"))
+        self.assertEqual(entry.fee_type, "quadratic")
+        expected = (
+            (Decimal("0.055"), Decimal("0.005"), Decimal("0.01")),
+            (Decimal("0.072"), Decimal("0.008"), Decimal("0.01")),
+            (Decimal("0.077"), Decimal("0.013"), Decimal("0.01")),
+            (Decimal("0.50"), Decimal("0.02"), Decimal("0.02")),
+        )
+        for price, headline, fee_only in expected:
+            quoted = pinned_taker_fee(entry, price)
+            self.assertEqual(quoted["headline"], headline, price)
+            self.assertEqual(quoted["FEE_ONLY_CEIL"], fee_only, price)
+        low = pinned_taker_fee(entry, Decimal("0.055"))
+        self.assertLess(low["headline"], low["FEE_ONLY_CEIL"])
 
 
 class RateScanTests(unittest.TestCase):
