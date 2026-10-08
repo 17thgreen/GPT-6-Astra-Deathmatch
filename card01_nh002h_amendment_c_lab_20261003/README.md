@@ -105,7 +105,7 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 
 ## Verified unit results
 
-`python3 -m unittest discover -s tests -v` from this directory: Ran 38 tests in 168.440s at 2026-10-04T00:49:49Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. The follow-up adds the mixed-y AF-5 fixture, the gate-sha net rule, same-party and missing-ticker exclusions, and the empty-ticker join count.
+`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 69 tests in 171.798s at 2026-10-08T23:35:40Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. This follow-up adds the runtime fee source, the dem_name builder step, the Q6 selector, and the verdict precedence ladder.
 
 Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
 
@@ -179,7 +179,7 @@ These are fixed here so the code does not invent a second reading later.
   path a second time to execute them.
 - `PINS.json` marks every listed file that is present, including the authored
   `card01_amc` modules, with `vendored: true`. The pin test treats
-  `vendored: false` as "this path must not exist". The six redacted governance
-  documents use that flag with reason
-  `PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE`. The file does not list its own
-  sha256.
+  `vendored: false` as "this path must not exist". The six earlier redacted
+  governance documents use reason `PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE`.
+  Follow-up context documents use `PUBLIC_REPO_REDACTION`. The Q5 spec uses
+  `REFERENCE_ONLY_Q5_NOT_IMPLEMENTED`. The file does not list its own sha256.
