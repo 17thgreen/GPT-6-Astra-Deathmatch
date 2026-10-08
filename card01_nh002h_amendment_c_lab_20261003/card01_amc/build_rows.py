@@ -28,6 +28,8 @@ BOOK_MAX_DISTANCE_SECONDS = 15 * 60
 CODE_RE = re.compile(r"^[A-Z]{2}-\d{2}$")
 STATE_RE = re.compile(r"^[A-Z]{2}$")
 NO_DEMOCRAT_RE = re.compile(r"^\(no democrat\b", re.IGNORECASE)
+Q5_STATUS = "UNAVAILABLE_NEEDS_EGRESS"
+DEGENERATE_BLOCK = "INCONCLUSIVE_DEGENERATE_BLOCK"
 OUTCOME_KEYS = ("y", "result", "settlement", "outcome", "settled")
 OPEN_MARKET = ("active", "open")
 
@@ -42,6 +44,11 @@ class OutcomeKeyRefused(BuilderError):
 
 def module_sha256() -> str:
     return sha256_bytes(Path(__file__).read_bytes())
+
+
+def q5_orderbook_status() -> str:
+    """Q5 is deferred. This does not fetch or parse an order book."""
+    return Q5_STATUS
 
 
 def parse_utc(value: str) -> datetime:
@@ -342,11 +349,17 @@ def build(universe, forecast, mapping, book, input_shas, *, selection, dem_name_
             "exclusion_reasons": reasons,
             "dem_name_flags": flags,
         })
+    refused = (
+        isinstance(dem_name_step, dict)
+        and dem_name_step.get("status") == "DEM_NAME_STEP_REFUSED"
+    )
     return {
         "rows": rows,
         "builder_sha256": module_sha256(),
         "q6_status": status,
         "dem_name_step": _public_step(dem_name_step),
+        "closed_result": DEGENERATE_BLOCK if refused else None,
+        "q5_status": q5_orderbook_status(),
         "inputs_sha256": {
             "universe": input_shas.get("universe"),
             "forecast": input_shas.get("forecast"),

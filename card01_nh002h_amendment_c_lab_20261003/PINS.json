@@ -1,7 +1,7 @@
 {
  "lab": "card01_nh002h_amendment_c_lab_20261003",
  "note": "This file does not list its own sha256.",
- "fee_formula": "PINNED: taker round_up(M x 0.07 x C x P x (1-P)); headline non-direct $0.01; direct $0.0001 sensitivity (ruling b8cb27e0)",
+ "fee_formula": "PINNED: taker round_up(M x 0.07 x C x P x (1-P)); headline ceil_cent(P*C+fee_raw)-P*C; FEE_ONLY_CEIL = ceil_cent(fee_raw) sensitivity only; direct $0.0001 sensitivity (rulings b8cb27e0, c05d7003)",
  "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
  "feebook_py_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
  "pins": [
@@ -145,13 +145,13 @@
   },
   {
    "path": "card01_amc/build_rows.py",
-   "sha256": "99d72cc19d06b57896871d1638286fcd79f2738e8aeaf87a67ca9e0fc0217fd5",
+   "sha256": "32d47685d12ba567dc7f95dea4c23e45fa57ab29032a8a11a8dfb1adfbd8a174",
    "role": "AF-8 input builder",
    "vendored": true
   },
   {
    "path": "card01_amc/entry_gate.py",
-   "sha256": "af49c08ae2a625141320c06ae1ff65751bf1206b5a08a12d1e780714404fd5bf",
+   "sha256": "302e7c18489dd9d2250f6a8818dbe711ae2bb41b578d59faa4b98997d5b668fc",
    "role": "AF-8 entry gate and AF-4 fee block",
    "vendored": true
   },
@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "19972ca848a7ba4154e72c80e76b99367e2590c32c5e18d2076733e243f52330",
+   "sha256": "959223860869f5ca3c9b19b524553d246ef67630ca590ef6b8aaa09753252342",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -257,7 +257,7 @@
   {
    "path": "pins/FIELD_SPEC_Q5_ORDERBOOK_2026-10-03.md",
    "sha256": "4916d57febf074ae3c074a47b4baae5875c77ccc7d211176f152007d119257e9",
-   "role": "Q5 orderbook spec, not implemented",
+   "role": "Q5 orderbook spec, deferred by ruling c05d7003; status UNAVAILABLE_NEEDS_EGRESS",
    "vendored": false,
    "reason": "REFERENCE_ONLY_Q5_NOT_IMPLEMENTED"
   },
@@ -283,7 +283,7 @@
   },
   {
    "path": "card01_amc/fee_source.py",
-   "sha256": "bbae19b2f07c279f2075b23f5f8bba3da58fefd3c496d1739a96f172801f9b77",
+   "sha256": "3db43a47baee00ade80dbe8caf028e878449c138f899b83864583cd7bc1727a1",
    "role": "runtime fee-source loader and pinned taker formula",
    "vendored": true
   },

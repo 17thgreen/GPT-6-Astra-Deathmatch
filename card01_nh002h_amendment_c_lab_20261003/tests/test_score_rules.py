@@ -249,6 +249,9 @@ class VerdictTests(unittest.TestCase):
         )
         self.assertEqual(outranked["verdict"], "INCONCLUSIVE_DEGENERATE_BLOCK")
         self.assertEqual(outranked["firing"], [])
+        self.assertTrue(outranked["evaluations"]["reject_c"])
+        self.assertTrue(outranked["evaluations"]["reject_d"])
+        self.assertIn("NO_SIGNALS_SELECTED", outranked["notes"])
 
         admitted_a = self._admitted(
             self._score(0.0, -0.02),
@@ -264,9 +267,28 @@ class VerdictTests(unittest.TestCase):
             cd={"n_signals": 0, "reject_c": None, "reject_d": None},
         )
         self.assertEqual(zero["verdict"], "REJECT")
-        self.assertEqual(zero["firing"], ["(c)"])
+        self.assertEqual(zero["firing"], ["(c)", "(d)"])
         self.assertIn("NO_SIGNALS_SELECTED", zero["notes"])
-        self.assertEqual(zero["evaluations"]["reject_d"], "NOT_EVALUATED_NO_SIGNALS")
+        self.assertTrue(zero["evaluations"]["reject_d"])
+
+    def test_reject_d_is_literal_at_zero_signals(self):
+        zero = self._admitted(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 0, "reject_c": False, "reject_d": False},
+        )
+        self.assertEqual(zero["verdict"], "REJECT")
+        self.assertEqual(zero["firing"], ["(c)", "(d)"])
+        self.assertNotIn("FORECAST_ONLY", zero["verdict"])
+        self.assertIn("NO_SIGNALS_SELECTED", zero["notes"])
+        self.assertTrue(zero["evaluations"]["reject_c"])
+        self.assertIs(zero["evaluations"]["reject_d"], True)
+        blocked = apply_verdict(
+            self._score(-0.01, -0.02),
+            cd={"n_signals": 0, "reject_c": False, "reject_d": False},
+        )
+        self.assertEqual(blocked["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
+        self.assertEqual(blocked["evaluations"]["reject_c"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked["evaluations"]["reject_d"], "BLOCKED_FEE_UNVERIFIED")
 
         only_c = self._admitted(
             self._score(-0.01, -0.02),

@@ -9,7 +9,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from card01_amc.build_rows import BuilderError, build, dumps
+from card01_amc.build_rows import NO_DEMOCRAT_RE, BuilderError, build, dumps, q5_orderbook_status
 from card01_amc.dem_name_step import (
     ADD_DEM_NAME_SHA256,
     run_dem_name_step,
@@ -113,6 +113,62 @@ class DemNameBuilderTests(unittest.TestCase):
             self.assertTrue(row["dem_name_flags"]["no_democrat"], code)
             self.assertTrue(row["dem_name_flags"]["same_party_s5"], code)
 
+    def test_prefix_matches_the_add_dem_name_boundary(self):
+        def prefix_test(name):
+            token = "(no democrat"
+            folded = name.casefold()
+            if not folded.startswith(token):
+                return False
+            if len(folded) == len(token):
+                return True
+            nxt = folded[len(token)]
+            return not (nxt.isalnum() or nxt == "_")
+
+        positive = (
+            "(No Democrat)",
+            "(no democrat)",
+            "(NO DEMOCRAT)",
+            "(no Democrat — top-two)",
+            "(No Democrat.)",
+        )
+        negative = (
+            "(No Democratic primary)",
+            "No Democratic…",
+            "No Democrat",
+            "(no democrats)",
+            "(No DemocratX)",
+            "Synthetic Placeholder",
+            "quoted no democrat later",
+            "",
+        )
+        for name in positive:
+            self.assertTrue(prefix_test(name), name)
+            self.assertIsNotNone(NO_DEMOCRAT_RE.match(name), name)
+            self.assertEqual(prefix_test(name), NO_DEMOCRAT_RE.match(name) is not None, name)
+        for name in negative:
+            self.assertFalse(prefix_test(name), name)
+            self.assertIsNone(NO_DEMOCRAT_RE.match(name), name)
+            self.assertEqual(prefix_test(name), NO_DEMOCRAT_RE.match(name) is not None, name)
+
+        doc, raw, codes, forecast, mapping, book = self._world()
+        edits = {
+            "AL-02": {"dem_name": "(No Democratic primary)", "same_party_excluded_s5": False},
+            "AZ-01": {"dem_name": "No Democratic…", "same_party_excluded_s5": False},
+        }
+        built = _assemble(
+            forecast, mapping, book, doc, raw,
+            {"status": "SELECTED"},
+            _accepted(codes, forecast, edits),
+        )
+        for code in edits:
+            row = self._row(built, code)
+            self.assertNotIn("NO_DEMOCRAT", row["exclusion_reasons"], code)
+            self.assertIsNone(row["exclusion_reason"], code)
+            self.assertFalse(row["dem_name_flags"]["no_democrat"], code)
+        self.assertEqual(q5_orderbook_status(), "UNAVAILABLE_NEEDS_EGRESS")
+        self.assertEqual(built["q5_status"], "UNAVAILABLE_NEEDS_EGRESS")
+        self.assertIsNone(built["closed_result"])
+
     def test_same_party_s5_alone_and_a_later_mention(self):
         doc, raw, codes, forecast, mapping, book = self._world()
         edits = {
@@ -179,10 +235,25 @@ class DemNameBuilderTests(unittest.TestCase):
             row["dem_prob"] = forecast_rows[row["race_code"]]["dem_prob"]
         _forecast["source_fetched_at_utc"] = forecast["source_fetched_at_utc"]
         built = _assemble(_forecast, mapping, book, doc, raw, {"status": "SELECTED"}, refused)
+        self.assertEqual(built["dem_name_step"]["status"], "DEM_NAME_STEP_REFUSED")
         self.assertEqual(built["dem_name_step"]["reason"], "BASE_SHA_MISMATCH")
         self.assertEqual(len(built["rows"]), 92)
         self.assertTrue(all(row["exclusion_reason"] == "DEM_NAME_UNRESOLVED" for row in built["rows"]))
         self.assertNotIn("v1", built["dem_name_step"])
+        self.assertEqual(built["closed_result"], "INCONCLUSIVE_DEGENERATE_BLOCK")
+        self.assertEqual(built["q5_status"], "UNAVAILABLE_NEEDS_EGRESS")
+        scored_rows = copy.deepcopy(built["rows"])
+        for row in scored_rows:
+            row["y"] = 1
+        from card01_amc.score import score_document
+        from card01_amc.verdict import apply_verdict
+        scored = score_document({"rows": scored_rows})
+        self.assertEqual(scored["counts"]["scored"], 0)
+        self.assertEqual(scored["headline_status"], "INCONCLUSIVE_DEGENERATE_BLOCK")
+        self.assertEqual(scored["degenerate_reason"], "N_ZERO")
+        verdict = apply_verdict(scored)
+        self.assertEqual(verdict["verdict"], "INCONCLUSIVE_DEGENERATE_BLOCK")
+        self.assertEqual(verdict["firing"], [])
 
     def test_fixture_names_are_not_copied(self):
         doc, raw, codes = _codes()

@@ -197,9 +197,11 @@ def pinned_entry(doc_info, series):
 
 
 def pinned_taker_fee(entry, price, contracts=1):
-    """Headline non-direct cent fee, plus the direct-member sensitivity.
+    """Headline non-direct cent fee, plus sensitivity rows.
 
-    The rate literal is intentionally confined to this function.
+    Headline is ceil_cent(P*C + fee_raw) - P*C. FEE_ONLY_CEIL is
+    ceil_cent(fee_raw) and is not the headline. The rate literal is
+    intentionally confined to this function.
     """
     if type(entry) is not PinnedEntry:
         raise TypeError("pinned_taker_fee requires a PinnedEntry")
@@ -239,10 +241,12 @@ def pinned_taker_fee(entry, price, contracts=1):
 
     raw = ceil_to(entry.fee_multiplier * rate * count * grid * (1 - grid), Decimal("0.000001"))
     headline = trim(ceil_to(grid * count + raw, Decimal("0.01")) - grid * count)
+    fee_only_ceil = trim(ceil_to(raw, Decimal("0.01")))
     sensitivity_direct = trim(ceil_to(grid * count + raw, Decimal("0.0001")) - grid * count)
     raw = trim(raw)
     return {
         "headline": headline,
+        "FEE_ONLY_CEIL": fee_only_ceil,
         "sensitivity_direct_member": sensitivity_direct,
         "raw": raw,
     }

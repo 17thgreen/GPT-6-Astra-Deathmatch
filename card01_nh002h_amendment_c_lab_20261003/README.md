@@ -68,11 +68,13 @@ ElectIndex values are published.
 ## Fee formula
 
 The taker formula is pinned inside `pinned_taker_fee`: round up
-`M × rate × C × P × (1−P)` to six decimal dollars. The gate and the headline
-net use the non-direct one-cent round-up of fee plus position cost. The
-direct one-ten-thousandth figure is a sensitivity row only. `M` and `fee_type`
-come only from a `PINNED` series entry. A missing, unpinned, or conflicting
-series blocks the whole card. No fee is computed for any series in that case.
+`M × rate × C × P × (1−P)` to six decimal dollars. The headline is
+`ceil_cent(P × C + fee_raw) − P × C` on the one-cent grid. `FEE_ONLY_CEIL` is
+`ceil_cent(fee_raw)`. It is a labeled sensitivity row. It is not the headline
+and it does not drive the verdict. The direct one-ten-thousandth figure is a
+second sensitivity row. `M` and `fee_type` come only from a `PINNED` series
+entry. Any series in use that is not `PINNED` blocks the whole card. No fee
+is computed in that case, and there is no default-multiplier row.
 
 The adopted file id is `FEE_SOURCE_CARD01_v1`, sha256
 `d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd`, accepted by
@@ -119,15 +121,18 @@ This run is code verification on synthetic inputs. It is not an Examiner score. 
 - Script `049368f9` is vendored byte-for-byte and is not edited.
 - `UNSTABLE_SPLIT`, the R4 district split, and secondary metrics (log loss,
   calibration, adverse selection, top-1 share) are out of scope.
-- The Q5 orderbook adapter is not in this tree. The builder consumes the
+- The Q5 orderbook adapter is deferred (ruling `c05d7003`). Any Q5 status
+  this tree emits is `UNAVAILABLE_NEEDS_EGRESS`. The builder consumes the
   normalized snapshot named in the lab spec.
 - The adopted fee file is a runtime input. This tree does not contain it.
 - `INCONCLUSIVE_DEGENERATE_BLOCK` is a headline status for 0 scored races or
   fewer than 2 states. It is not a PASS and not a REJECT. The verdict helper
   ranks validity above that status, then REJECT (a) / (b), then the fee branch.
-- REJECT (c) and (d) realized P&L, including one-tick-worse fills, is not
-  computed here. The verdict helper takes precomputed booleans. Zero admitted
-  signals with an admitted fee is REJECT (c), with note `NO_SIGNALS_SELECTED`.
+- REJECT (c) and (d) realized P&L, including one-tick-worse fills, is out of
+  scope for this PR (ruling `c05d7003`; a later PR-C). The helper does not
+  compute it. A missing boolean stays fail-closed. Zero admitted signals
+  make both (c) and (d) true, with note `NO_SIGNALS_SELECTED`. Precedence is
+  unchanged.
 - Adversary verification is required before the decision snapshot
   `2026-11-02T22:00Z`. This lab does not merge itself.
 
@@ -149,9 +154,14 @@ These are fixed here so the code does not invent a second reading later.
   not recorded as a snapshot-window miss.
 - `same_party_race` is retired. `SAME_PARTY_S5` fires only when the sha-checked
   dem_name file has `same_party_excluded_s5` true. `NO_DEMOCRAT` matches a
-  leading `(no democrat` name, case-insensitive. A null or unresolved name is
-  `DEM_NAME_UNRESOLVED`. Original forecast keys `same_party`, `rep_name`, and
-  `dem_name` are ignored. The builder does not copy name strings into its output.
+  case-insensitive leading `(no democrat` token and then a word boundary
+  (ruling `c05d7003`). A name such as `(No Democratic primary)` does not
+  match. A null or unresolved name is `DEM_NAME_UNRESOLVED`. A refused dem_name step is
+  `DEM_NAME_STEP_REFUSED` plus its sub-reason. Usable rows become
+  `DEM_NAME_UNRESOLVED`, and `closed_result` is
+  `INCONCLUSIVE_DEGENERATE_BLOCK`. Original forecast keys `same_party`,
+  `rep_name`, and `dem_name` are ignored. The builder does not copy name
+  strings into its output.
 - `no_two_sided_book` covers a missing side, a crossed book (`bid > ask`),
   `bid <= 0`, and `ask >= 1`.
 - A snapshot is tradable only when `market_status` is `active` or `open`.
@@ -181,5 +191,6 @@ These are fixed here so the code does not invent a second reading later.
   `card01_amc` modules, with `vendored: true`. The pin test treats
   `vendored: false` as "this path must not exist". The six earlier redacted
   governance documents use reason `PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE`.
-  Follow-up context documents use `PUBLIC_REPO_REDACTION`. The Q5 spec uses
-  `REFERENCE_ONLY_Q5_NOT_IMPLEMENTED`. The file does not list its own sha256.
+  Follow-up context documents use `PUBLIC_REPO_REDACTION`. The Q5 spec stays
+  unvendored. Ruling `c05d7003` defers the adapter; the emitted status is
+  `UNAVAILABLE_NEEDS_EGRESS`. The file does not list its own sha256.

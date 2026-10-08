@@ -2,7 +2,8 @@
 
 Precedence is validity, then INCONCLUSIVE_DEGENERATE_BLOCK, then REJECT (a)
 or (b), then the fee branch. Notes do not change the verdict. Realized P&L
-for (c) and (d) is supplied by the caller.
+for (c) and (d) is supplied by the caller and is not computed here. A missing
+boolean stays fail-closed. Zero signals make both (c) and (d) true.
 """
 from __future__ import annotations
 
@@ -92,8 +93,7 @@ def _evaluations(raw_hi, rc_hi, admitted, cd):
         ev["reject_d"] = "BLOCKED_FEE_UNVERIFIED"
     elif isinstance(cd, dict) and cd.get("n_signals") == 0:
         ev["reject_c"] = True
-        supplied = cd.get("reject_d")
-        ev["reject_d"] = supplied if supplied is not None else "NOT_EVALUATED_NO_SIGNALS"
+        ev["reject_d"] = True
     elif isinstance(cd, dict):
         ev["reject_c"] = cd.get("reject_c")
         ev["reject_d"] = cd.get("reject_d")
@@ -107,7 +107,7 @@ def _cd_firing(cd):
     if not isinstance(cd, dict):
         return []
     if cd.get("n_signals") == 0:
-        return ["(c)"]
+        return ["(c)", "(d)"]
     firing = []
     if cd.get("reject_c") is True:
         firing.append("(c)")

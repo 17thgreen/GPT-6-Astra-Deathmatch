@@ -83,22 +83,62 @@ class FormulaTests(unittest.TestCase):
         half = self._fee("1.5", Decimal("0.50"))
         self.assertEqual(half["raw"], Decimal("0.026250"))
         self.assertEqual(half["headline"], Decimal("0.03"))
+        self.assertEqual(half["FEE_ONLY_CEIL"], Decimal("0.03"))
         self.assertEqual(half["sensitivity_direct_member"], Decimal("0.0263"))
         self.assertEqual(half["headline"], ceil_to(half["raw"], Decimal("0.01")))
+        self.assertEqual(half["FEE_ONLY_CEIL"], ceil_to(half["raw"], Decimal("0.01")))
 
         small = self._fee("1", Decimal("0.07"))
         self.assertEqual(small["raw"], Decimal("0.004557"))
         self.assertEqual(small["headline"], Decimal("0.01"))
+        self.assertEqual(small["FEE_ONLY_CEIL"], Decimal("0.01"))
         self.assertEqual(small["sensitivity_direct_member"], Decimal("0.0046"))
         self.assertEqual(small["headline"], ceil_to(small["raw"], Decimal("0.01")))
 
         sub = self._fee("1", Decimal("0.077"))
         self.assertEqual(sub["raw"], Decimal("0.004975"))
         self.assertEqual(sub["headline"], Decimal("0.013"))
+        self.assertEqual(sub["FEE_ONLY_CEIL"], Decimal("0.01"))
         self.assertEqual(
             sub["headline"],
             ceil_to(Decimal("0.077") + sub["raw"], Decimal("0.01")) - Decimal("0.077"),
         )
+        self.assertNotEqual(sub["headline"], sub["FEE_ONLY_CEIL"])
+
+    def test_synthetic_source_splits_headline_from_fee_only_ceil(self):
+        raw = synth_bytes()
+        loaded = load_fee_source(raw, **synth_overrides(raw))
+        entry = pinned_entry(loaded, "KXHOUSERACE")
+        sub = pinned_taker_fee(entry, Decimal("0.077"))
+        self.assertEqual(sub["headline"], Decimal("0.013"))
+        self.assertEqual(sub["FEE_ONLY_CEIL"], Decimal("0.01"))
+        whole = pinned_taker_fee(entry, Decimal("0.50"))
+        self.assertEqual(whole["headline"], Decimal("0.03"))
+        self.assertEqual(whole["FEE_ONLY_CEIL"], whole["headline"])
+
+        off = _row(yes_bid=0.07, yes_ask=0.077, p_market=0.07, p_model=0.90)
+        selected = gate([off], raw, **synth_overrides(raw))
+        signal = selected["signals"][0]
+        self.assertEqual(signal["price"], 0.077)
+        self.assertEqual(signal["fee_decimal"], "0.013")
+        self.assertEqual(signal["FEE_ONLY_CEIL"], "0.01")
+        self.assertEqual(signal["fee"], 0.013)
+        headline_net = Decimal("0.5") * Decimal("0.90") + Decimal("0.5") * Decimal("0.07")
+        headline_net -= Decimal("0.077") + Decimal(signal["fee_decimal"]) + Decimal("0.02")
+        fee_only_net = Decimal("0.5") * Decimal("0.90") + Decimal("0.5") * Decimal("0.07")
+        fee_only_net -= Decimal("0.077") + Decimal(signal["FEE_ONLY_CEIL"]) + Decimal("0.02")
+        self.assertEqual(Decimal(str(signal["expected_net_gate"])), headline_net)
+        self.assertNotEqual(headline_net, fee_only_net)
+
+        agree = _row(yes_bid=0.40, yes_ask=0.50, p_market=0.45, p_model=0.90)
+        agreed = gate([agree], raw, **synth_overrides(raw))
+        agreed_signal = agreed["signals"][0]
+        self.assertEqual(agreed_signal["price"], 0.50)
+        self.assertEqual(agreed_signal["fee_decimal"], "0.03")
+        self.assertEqual(agreed_signal["FEE_ONLY_CEIL"], "0.03")
+
+        from card01_amc import verdict
+        self.assertNotIn("FEE_ONLY_CEIL", Path(verdict.__file__).read_text())
 
     def test_float_complement_matches_grid_price(self):
         floated = 1 - 0.43
