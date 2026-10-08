@@ -107,7 +107,7 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 
 ## Verified unit results
 
-`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 69 tests in 171.798s at 2026-10-08T23:35:40Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. This follow-up adds the runtime fee source, the dem_name builder step, the Q6 selector, and the verdict precedence ladder.
+`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 72 tests in 171.760s at 2026-10-08T23:49:59Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. Ruling `c05d7003` adds the `FEE_ONLY_CEIL` sensitivity row, the dem_name fail-closed result, and literal REJECT (d) at zero signals.
 
 Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
 
