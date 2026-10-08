@@ -14,7 +14,7 @@ from card01_amc.build_rows import (
     OutcomeKeyRefused,
     dumps,
 )
-from card01_amc.entry_gate import EXTRA_COST, FEE_FORMULA_PINNED, RESERVE, SELECT_EPS, OutcomePresent, gate
+from card01_amc.entry_gate import RESERVE, SELECT_EPS, OutcomePresent, gate
 from tests.support import build_from, universe
 
 
@@ -216,9 +216,10 @@ class BuilderTests(unittest.TestCase):
 
 
 class GateSelectionTests(unittest.TestCase):
-    def _manifest(self):
-        from tests.support import adopted_manifest
-        return adopted_manifest()
+    def _open(self):
+        from tests.test_fee_source import synth_bytes, synth_overrides
+        raw = synth_bytes()
+        return raw, synth_overrides(raw)
 
     def _row(self, **kwargs):
         row = {
@@ -239,83 +240,49 @@ class GateSelectionTests(unittest.TestCase):
         row.update(kwargs)
         return row
 
-    def _fee(self, amount):
-        def fee_fn(fee_type, fee_multiplier, price, amount=amount):
-            return amount
-        return fee_fn
-
-    def _trade(self, q, bid, ask, fee_of_price):
-        choices = []
-        for side, prob, price in (("yes", q, ask), ("no", 1 - q, 1 - bid)):
-            fee = fee_of_price(price)
-            choices.append({
-                "side": side,
-                "price": price,
-                "fee": fee,
-                "expected_net": prob - (price + fee + EXTRA_COST),
-            })
-        best = max(choices, key=lambda item: (item["expected_net"], item["side"] == "yes"))
-        if best["expected_net"] > RESERVE + SELECT_EPS:
-            return best
-        return None
+    def _gate(self, rows):
+        raw, overrides = self._open()
+        return gate(rows, raw, **overrides)
 
     def test_yes_no_tie_boundary_and_qty(self):
-        self.assertFalse(FEE_FORMULA_PINNED)
-        manifest = self._manifest()
-
-        yes = gate([self._row()], manifest, self._fee(0.0))
+        yes = self._gate([self._row()])
         self.assertEqual(yes["status"], "OK")
         self.assertEqual(yes["signals"][0]["side"], "D_YES")
-        q = 0.5 * 0.90 + 0.5 * 0.25
-        transcribed = self._trade(q, 0.20, 0.30, lambda price: 0.0)
-        self.assertEqual(transcribed["side"], "yes")
-        self.assertEqual(yes["signals"][0]["price"], transcribed["price"])
-        self.assertEqual(yes["signals"][0]["expected_net_gate"], transcribed["expected_net"])
+        self.assertEqual(yes["signals"][0]["price"], 0.30)
+        self.assertEqual(yes["signals"][0]["fee_decimal"], "0.03")
+        self.assertEqual(yes["signals"][0]["fee_rounding"], "NON_DIRECT_CEIL_CENT")
+        self.assertGreater(yes["signals"][0]["expected_net_gate"], float(RESERVE + SELECT_EPS))
 
-        no_row = self._row(p_market=0.85, p_model=0.10, yes_bid=0.80, yes_ask=0.90)
-        no = gate([no_row], manifest, self._fee(0.0))
+        no = self._gate([self._row(p_market=0.85, p_model=0.10, yes_bid=0.80, yes_ask=0.90)])
         self.assertEqual(no["signals"][0]["side"], "D_NO")
-        q_no = 0.5 * 0.10 + 0.5 * 0.85
-        transcribed_no = self._trade(q_no, 0.80, 0.90, lambda price: 0.0)
-        self.assertEqual(transcribed_no["side"], "no")
-        self.assertEqual(no["signals"][0]["expected_net_gate"], transcribed_no["expected_net"])
+        self.assertEqual(no["signals"][0]["price"], 0.20)
+        self.assertEqual(no["signals"][0]["fee_decimal"], "0.02")
 
-        tie = self._row(p_market=0.50, p_model=0.50, yes_bid=0.45, yes_ask=0.55)
-        chosen = gate([tie], manifest, self._fee(-0.12))
-        self.assertEqual(chosen["n_selected"], 1)
-        self.assertEqual(chosen["signals"][0]["side"], "D_YES")
-        q_tie = 0.5
-        both = []
-        for side, prob, price in (("yes", q_tie, 0.55), ("no", 1 - q_tie, 0.55)):
-            both.append(prob - (price + (-0.12) + EXTRA_COST))
-        self.assertEqual(both[0], both[1])
-        self.assertGreater(both[0], RESERVE + SELECT_EPS)
+        tie = self._gate([self._row(p_market=0.50, p_model=0.50, yes_bid=0.95, yes_ask=0.05)])
+        self.assertEqual(tie["n_selected"], 1)
+        self.assertEqual(tie["signals"][0]["side"], "D_YES")
+        self.assertEqual(tie["signals"][0]["price"], 0.05)
+        self.assertEqual(tie["signals"][0]["fee_decimal"], "0.01")
 
-        edge = self._row()
-        q_edge = 0.5 * edge["p_model"] + 0.5 * edge["p_market"]
-        fee_edge = q_edge - edge["yes_ask"] - EXTRA_COST - RESERVE
+        # Headline net is exactly the reserve. The direct-member fee would clear it.
+        edge = self._gate([self._row(p_market=0.58, p_model=0.58, yes_bid=0.40, yes_ask=0.50)])
+        self.assertEqual(edge["status"], "OK")
+        self.assertEqual(edge["n_selected"], 0)
+        self.assertEqual(edge["signals"], [])
 
-        def fee_fn(fee_type, fee_multiplier, price, fee_edge=fee_edge):
-            return fee_edge
-
-        blocked = gate([edge], manifest, fee_fn)
-        self.assertEqual(blocked["n_selected"], 0)
-        self.assertEqual(blocked["signals"], [])
-        self.assertEqual(blocked["status"], "OK")
-
-        thin = self._row(yes_ask_qty=0)
-        none_selected = gate([thin], manifest, self._fee(0.0))
-        self.assertEqual(none_selected["n_selected"], 0)
+        thin = self._gate([self._row(yes_ask_qty=0)])
+        self.assertEqual(thin["n_selected"], 0)
 
     def test_refuses_non_null_y(self):
         with self.assertRaises(OutcomePresent):
-            gate([self._row(y=1)], self._manifest(), self._fee(0.0))
+            self._gate([self._row(y=1)])
 
-    def test_formula_not_pinned_on_adopted_manifest(self):
-        result = gate([self._row()], self._manifest())
+    def test_absent_fee_source_blocks(self):
+        result = gate([self._row()])
         self.assertEqual(result["status"], "BLOCKED_FEE_UNVERIFIED")
         self.assertIsNone(result["signals"])
-        self.assertEqual(result["reason"], "FEE_FORMULA_NOT_PINNED")
+        self.assertEqual(result["reason"], "FEE_SOURCE_ABSENT")
+        self.assertEqual(result["blocked_series"], [])
 
 
 if __name__ == "__main__":

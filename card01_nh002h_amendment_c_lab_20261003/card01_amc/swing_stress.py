@@ -11,8 +11,18 @@ import hashlib
 import json
 import platform
 import sys
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
+from card01_amc.fee_source import (
+    CONDUCTOR_ACCEPT_SHA256,
+    FEE_SOURCE_ID,
+    FEE_SOURCE_SHA256,
+    FeeBlocked,
+    load_fee_source,
+    pinned_entry,
+    pinned_taker_fee,
+)
 from card01_amc.pinload import PIN_SHA256, load_national_miss, sha256_bytes
 
 # Refusal list. The EV formula does not subscript these names.
@@ -44,25 +54,36 @@ def assert_outcome_free(rows):
                 raise OutcomePresent(key)
 
 
-def _fee_net_allowed(gate, signals) -> bool:
-    if gate.get("status") != "OK":
-        return False
-    if not gate.get("manifest_id") or gate.get("manifest_status") != "ADOPTED":
-        return False
-    adopted = gate.get("adopted_entry_ids")
-    if not isinstance(adopted, list) or not adopted:
-        return False
-    adopted_set = set(adopted)
-    if not signals:
-        return False
+def _pair_matches(obj, loaded) -> bool:
+    return obj.get("fee_source") == loaded.manifest_id and obj.get("fee_source_sha256") == loaded.sha256
+
+
+def _net_decision(gate, signals, gate_sha_expected, fee_source_bytes, fee_kwargs):
+    """None when headline nets may be numeric. Otherwise a net_block_reason."""
+    if gate_sha_expected is None:
+        return "GATE_SHA_NOT_SUPPLIED", None
+    if fee_source_bytes is None:
+        return "FEE_SOURCE_NOT_SUPPLIED", None
+    try:
+        loaded = load_fee_source(fee_source_bytes, **fee_kwargs)
+    except FeeBlocked as exc:
+        return "FEE_SOURCE_INVALID:" + exc.reason, None
+    if not _pair_matches(gate, loaded):
+        return "FEE_SOURCE_PAIR_MISMATCH", None
+    directs = []
     for signal in signals:
-        fee = signal.get("fee")
-        if isinstance(fee, bool) or not isinstance(fee, (int, float)):
-            return False
-        source = signal.get("fee_source")
-        if not isinstance(source, str) or source not in adopted_set:
-            return False
-    return True
+        if not _pair_matches(signal, loaded):
+            return "FEE_SOURCE_PAIR_MISMATCH", None
+        try:
+            entry = pinned_entry(loaded, signal.get("series"))
+            quoted = pinned_taker_fee(entry, signal.get("price"))
+            declared = Decimal(signal.get("fee_decimal"))
+        except (FeeBlocked, TypeError, InvalidOperation, ArithmeticError, ValueError):
+            return "FEE_RECOMPUTE_MISMATCH", None
+        if quoted["headline"] != declared:
+            return "FEE_RECOMPUTE_MISMATCH", None
+        directs.append(quoted["sensitivity_direct_member"])
+    return None, directs
 
 
 def _ev(pinned, row, signal, swing):
@@ -124,7 +145,18 @@ def _defect(rows_sha, gate_sha, reason):
     )
 
 
-def evaluate(rows, gate, rows_sha256, gate_sha256, gate_sha_expected=None):
+def evaluate(
+    rows,
+    gate,
+    rows_sha256,
+    gate_sha256,
+    gate_sha_expected=None,
+    fee_source_bytes=None,
+    *,
+    fee_source_expected_sha256=FEE_SOURCE_SHA256,
+    fee_source_expected_id=FEE_SOURCE_ID,
+    fee_source_expected_accept=CONDUCTOR_ACCEPT_SHA256,
+):
     """Outcome-free stress. Caller has already rejected non-null outcome fields."""
     assert_outcome_free(rows)
     if gate_sha_expected is not None and gate_sha256 != gate_sha_expected:
@@ -176,27 +208,36 @@ def evaluate(rows, gate, rows_sha256, gate_sha256, gate_sha_expected=None):
 
     pinned = load_national_miss()
     base = [_ev(pinned, byid[s["race_id"]], s, 0.0) for s in signals]
-    fees = [s.get("fee") for s in signals]
     grid = _grid(pinned)
-    fee_ok = _fee_net_allowed(gate, signals)
     # A gate file cannot self-certify a numeric net. The caller must pass the
-    # gate file's sha, and it must match the bytes that were hashed.
-    net_block_reason = None
-    if gate_sha_expected is None:
-        net_block_reason = "GATE_SHA_NOT_SUPPLIED"
+    # gate file's sha, and the headline fee must recompute from the fee source.
+    net_block_reason, directs = _net_decision(
+        gate,
+        signals,
+        gate_sha_expected,
+        fee_source_bytes,
+        {
+            "expected_sha256": fee_source_expected_sha256,
+            "expected_id": fee_source_expected_id,
+            "expected_accept": fee_source_expected_accept,
+        },
+    )
     out_rows = []
     for swing, informational in grid:
         evs = [_ev(pinned, byid[s["race_id"]], s, swing) for s in signals]
         flips = sum(1 for a, b in zip(base, evs) if (a > 0) != (b > 0))
         gross = sum(evs)
-        if net_block_reason is not None or not fee_ok:
+        if net_block_reason is not None:
             net = "BLOCKED_FEE_UNVERIFIED"
+            sensitivity = "BLOCKED_FEE_UNVERIFIED"
         else:
-            net = gross - sum(fees)
+            net = gross - sum(float(s["fee"]) for s in signals)
+            sensitivity = gross - sum(float(item) for item in directs)
         row = {
             "swing_logit": swing,
             "expected_gross": gross,
             "expected_net": net,
+            "expected_net_sensitivity_direct_member": sensitivity,
             "n_sign_flips_vs_s0": flips,
             "share_sign_flips_vs_s0": flips / len(signals),
             "informational": informational,
@@ -207,8 +248,8 @@ def evaluate(rows, gate, rows_sha256, gate_sha256, gate_sha_expected=None):
     extra = {"n_signals": len(signals)}
     if net_block_reason is not None:
         extra["net_block_reason"] = net_block_reason
-    if gate.get("manifest_id") is not None:
-        extra["manifest_id"] = gate["manifest_id"]
+    if gate.get("fee_source") is not None:
+        extra["fee_source"] = gate["fee_source"]
     return _envelope("OK", _fragility(out_rows), out_rows, rows_sha256, gate_sha256, extra)
 
 
@@ -217,6 +258,7 @@ def main(argv):
     parser.add_argument("--rows", required=True)
     parser.add_argument("--gate", default=None)
     parser.add_argument("--gate-sha256", default=None, dest="gate_sha256")
+    parser.add_argument("--fee-source", default=None)
     args = parser.parse_args(argv)
     try:
         row_bytes = Path(args.rows).read_bytes()
@@ -228,6 +270,11 @@ def main(argv):
         print(str(exc), file=sys.stderr)
         return 2
 
+    fee_bytes = None
+    if args.fee_source:
+        fee_path = Path(args.fee_source)
+        if fee_path.is_file():
+            fee_bytes = fee_path.read_bytes()
     gate = None
     gate_sha = None
     if args.gate:
@@ -241,7 +288,7 @@ def main(argv):
                 gate = {"status": "UNPARSEABLE"}
         else:
             gate = None
-    obj = evaluate(rows, gate, hashlib.sha256(row_bytes).hexdigest(), gate_sha, args.gate_sha256)
+    obj = evaluate(rows, gate, hashlib.sha256(row_bytes).hexdigest(), gate_sha, args.gate_sha256, fee_bytes)
     json.dump(obj, sys.stdout, indent=1)
     return 0
 

@@ -141,20 +141,44 @@ class SwingTests(unittest.TestCase):
                         self.fail("swing_stress uses y as a dict key")
 
     def test_formula_matches_pinned_stress_and_hash(self):
+        from card01_amc.fee_source import load_fee_source, pinned_entry, pinned_taker_fee
+        from tests.test_fee_source import synth_bytes, synth_overrides
+
         pinned = load_national_miss()
+        raw = synth_bytes()
+        overrides = synth_overrides(raw)
+        loaded = load_fee_source(raw, **overrides)
+        entry = pinned_entry(loaded, "KXHOUSERACE")
         rows = [
             _row("AL-02", 0.62, 0.48),
             _row("OH-01", 0.41, 0.52),
             _row("NY-02", 0.73, 0.33),
         ]
-        signals = [
-            _signal("AL-02", "D_YES", 0.42, 0.01),
-            _signal("OH-01", "D_NO", 0.55, 0.02),
-            _signal("NY-02", "D_YES", 0.40, 0.015),
-        ]
+        prices = (0.42, 0.55, 0.40)
+        sides = ("D_YES", "D_NO", "D_YES")
+        signals = []
+        for row, side, price in zip(rows, sides, prices):
+            quoted = pinned_taker_fee(entry, price)
+            signal = _signal(row["race_id"], side, price, float(quoted["headline"]), source=loaded.manifest_id)
+            signal["fee_decimal"] = str(quoted["headline"])
+            signal["fee_source_sha256"] = loaded.sha256
+            signal["series"] = "KXHOUSERACE"
+            signals.append(signal)
         with_y = [dict(row, y=1) for row in rows]
         pinned_out = pinned.stress(with_y, signals)
-        ours = evaluate(rows, _ok_gate(signals), "rows-sha", "gate-sha", "gate-sha")
+        gate_doc = _ok_gate(signals)
+        gate_doc["fee_source"] = loaded.manifest_id
+        gate_doc["fee_source_sha256"] = loaded.sha256
+        ours = evaluate(
+            rows,
+            gate_doc,
+            "rows-sha",
+            "gate-sha",
+            "gate-sha",
+            raw,
+            fee_source_expected_sha256=overrides["expected_sha256"],
+            fee_source_expected_accept=overrides["expected_accept"],
+        )
         self.assertEqual(ours["stress_status"], "OK")
         frozen = [row for row in ours["rows"] if row["informational"] is False]
         self.assertEqual(len(frozen), len(pinned_out["rows"]))
@@ -256,8 +280,9 @@ class SwingTests(unittest.TestCase):
         still = evaluate(rows, self_certified, "r", "gate-sha")
         self.assertEqual(still["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
         signed = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha", "gate-sha")
-        self.assertNotIn("net_block_reason", signed)
-        self.assertIsInstance(signed["rows"][0]["expected_net"], float)
+        self.assertEqual(signed["net_block_reason"], "FEE_SOURCE_NOT_SUPPLIED")
+        self.assertEqual(signed["rows"][0]["expected_net"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(signed["rows"][0]["expected_net_sensitivity_direct_member"], "BLOCKED_FEE_UNVERIFIED")
 
     def test_pinned_main_raises_without_outcomes(self):
         pinned = load_national_miss()
@@ -277,45 +302,54 @@ class FeeBlockTests(unittest.TestCase):
         return _row("AL-02", 0.70, 0.40)
 
     def test_gate_blocks_and_handmade_nets_stay_blocked(self):
+        import json as _json
+        from tests.support import sha256_bytes
+        from tests.test_fee_source import synth_bytes, synth_overrides
+
         row = self._row()
-        base = adopted_manifest()
+        absent = gate([row])
+        self.assertEqual(absent["reason"], "FEE_SOURCE_ABSENT")
+        self.assertIsNone(absent["signals"])
 
-        draft = copy.deepcopy(base)
-        draft["status"] = "DRAFT_NOT_ADOPTED"
-        draft["entries"]["KXHOUSERACE"]["entry_id"] = "ADDENDUM_02"
-        draft["entries"]["KXHOUSERACE"]["status"] = "DRAFT_NOT_ADOPTED"
-        missing = copy.deepcopy(base)
-        missing["entries"] = {}
-        series_list = copy.deepcopy(base)
-        series_list["entries"]["KXHOUSERACE"]["source"] = "series_list"
-        null_mult = copy.deepcopy(base)
-        null_mult["entries"]["KXHOUSERACE"]["fee_multiplier"] = None
-        zero_mult = copy.deepcopy(base)
-        zero_mult["entries"]["KXHOUSERACE"]["fee_multiplier"] = 0
-
-        for manifest in (None, draft, missing, series_list, null_mult, zero_mult):
-            result = gate([row], manifest)
+        old = adopted_manifest()
+        old["entries"]["KXHOUSERACE"]["entry_id"] = "ADDENDUM_02"
+        old_bytes = _json.dumps(old).encode()
+        sha_miss = gate([row], old_bytes)
+        self.assertEqual(sha_miss["reason"], "FEE_SOURCE_SHA_MISMATCH")
+        schema = gate(
+            [row],
+            old_bytes,
+            expected_sha256=sha256_bytes(old_bytes),
+            expected_accept="a" * 64,
+        )
+        self.assertEqual(schema["reason"], "FEE_SOURCE_SCHEMA_INVALID")
+        for result in (absent, sha_miss, schema):
             self.assertEqual(result["status"], "BLOCKED_FEE_UNVERIFIED")
             self.assertIsNone(result["signals"])
             stress = evaluate([row], result, "r", "g")
             self.assertEqual(stress["stress_status"], "BLOCKED_FEE_UNVERIFIED")
             self.assertIsNone(stress["rows"])
 
+        raw = synth_bytes()
+        overrides = synth_overrides(raw)
         price = 0.42
-        quadratic = 0.07 * price * (1 - price)
         handmade = [
-            (_signal("AL-02", "D_YES", price, quadratic, source=None), ["entry-KXHOUSERACE"]),
-            (_signal("AL-02", "D_YES", price, quadratic, source="ADDENDUM_02"), ["entry-KXHOUSERACE"]),
-            (_signal("AL-02", "D_YES", price, quadratic, source="unknown-entry"), ["entry-KXHOUSERACE"]),
-            (_signal("AL-02", "D_YES", price, 0, source=None), ["entry-KXHOUSERACE"]),
-            (_signal("AL-02", "D_YES", price, None, source="entry-KXHOUSERACE"), ["entry-KXHOUSERACE"]),
+            _signal("AL-02", "D_YES", price, 0.01, source=None),
+            _signal("AL-02", "D_YES", price, 0.01, source="ADDENDUM_02"),
+            _signal("AL-02", "D_YES", price, 0.01, source="DRAFT_NOT_ADOPTED"),
+            _signal("AL-02", "D_YES", price, 0.01, source="unknown-entry"),
+            _signal("AL-02", "D_YES", price, None, source="FEE_SOURCE_CARD01_v1"),
         ]
-        for signal, adopted in handmade:
+        for signal in handmade:
             signal = dict(signal)
             if signal["fee_source"] is None:
                 del signal["fee_source"]
-            out = evaluate([row], _ok_gate([signal], adopted=adopted), "r", "g", "g")
+            out = evaluate([row], _ok_gate([signal]), "r", "g", "g", raw, **{
+                "fee_source_expected_sha256": overrides["expected_sha256"],
+                "fee_source_expected_accept": overrides["expected_accept"],
+            })
             self.assertEqual(out["stress_status"], "OK", signal)
+            self.assertEqual(out["net_block_reason"], "FEE_SOURCE_PAIR_MISMATCH")
             for stress_row in out["rows"]:
                 self.assertEqual(stress_row["expected_net"], "BLOCKED_FEE_UNVERIFIED")
 

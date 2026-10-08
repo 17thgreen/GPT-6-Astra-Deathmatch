@@ -1,26 +1,31 @@
-"""AF-8 entry gate with the AF-4 fee block.
+"""AF-8 entry gate.
 
-The production path never prices a contract. Commit 22371178's feebook
-order_fee(role, contracts, price) is not a (fee_type, fee_multiplier, price)
-function, so an otherwise ADOPTED manifest still returns FEE_FORMULA_NOT_PINNED.
-Tests may pass fee_fn. The command line does not.
+Fees come from an astra.fee_source.v1 file loaded at runtime. One unpinned
+series blocks the card. No fee, net, or signal is computed in that case.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import sys
+from decimal import Decimal
 from pathlib import Path
 
+from card01_amc.fee_source import (
+    CONDUCTOR_ACCEPT_SHA256,
+    FEE_SOURCE_ID,
+    FEE_SOURCE_SHA256,
+    FeeBlocked,
+    load_fee_source,
+    pinned_entry,
+    pinned_taker_fee,
+)
 from card01_amc.pinload import sha256_bytes
 
-# R1-P1 kalshi_feebook_lab_20260922 @ 22371178 has no matching function.
-FEE_FORMULA_PINNED = False
-FEEBOOK_COMMIT = "22371178cb2663250b4762f328069571c48cb551"
-
-EXTRA_COST = 0.02
-RESERVE = 0.03
-SELECT_EPS = 1e-12
+EXTRA_COST = Decimal("0.02")
+RESERVE = Decimal("0.03")
+SELECT_EPS = Decimal("1e-12")
 OUTCOME_KEYS = ("y", "result", "settlement", "outcome", "settled")
 
 
@@ -49,14 +54,6 @@ def _refuse_outcomes(rows):
                 raise OutcomePresent(key)
 
 
-def _term_ok(value) -> bool:
-    if isinstance(value, bool):
-        return False
-    if isinstance(value, (int, float)):
-        return math.isfinite(float(value))
-    return isinstance(value, str) and value != ""
-
-
 def _series_of(row):
     series = row.get("series")
     if isinstance(series, str) and series:
@@ -74,35 +71,13 @@ def _scorable(row) -> bool:
     )
 
 
-def _blocked(reason):
-    return {"status": "BLOCKED_FEE_UNVERIFIED", "signals": None, "reason": reason}
-
-
-def admissibility_reason(rows, manifest):
-    """None when every scorable row's series has an ADOPTED series-endpoint entry."""
-    if not isinstance(manifest, dict):
-        return "MANIFEST_ABSENT"
-    if manifest.get("status") != "ADOPTED":
-        return "MANIFEST_NOT_ADOPTED"
-    entries = manifest.get("entries")
-    if not isinstance(entries, dict):
-        return "MANIFEST_ENTRIES_MISSING"
-    for row in rows:
-        if not isinstance(row, dict) or not _scorable(row):
-            continue
-        series = _series_of(row)
-        entry = entries.get(series) if series else None
-        if not isinstance(entry, dict):
-            return "SERIES_ENTRY_MISSING"
-        if entry.get("status") != "ADOPTED":
-            return "SERIES_ENTRY_NOT_ADOPTED"
-        if entry.get("source") != "series_endpoint":
-            return "SERIES_SOURCE_NOT_ENDPOINT"
-        if not _term_ok(entry.get("fee_type")) or not _term_ok(entry.get("fee_multiplier")):
-            return "FEE_TERMS_MISSING"
-        if not isinstance(entry.get("entry_id"), str) or not entry["entry_id"]:
-            return "ENTRY_ID_MISSING"
-    return None
+def _blocked(reason, blocked_series=None):
+    return {
+        "status": "BLOCKED_FEE_UNVERIFIED",
+        "signals": None,
+        "reason": reason,
+        "blocked_series": list(blocked_series or []),
+    }
 
 
 def _qty_ok(value) -> bool:
@@ -111,23 +86,27 @@ def _qty_ok(value) -> bool:
     return math.isfinite(float(value)) and float(value) >= 1
 
 
-def _select(row, fee_at):
+def _select(row, entry):
     if row.get("yes_bid") is None or row.get("yes_ask") is None:
         return None
-    q = 0.5 * float(row["p_model"]) + 0.5 * float(row["p_market"])
-    bid = float(row["yes_bid"])
-    ask = float(row["yes_ask"])
+    model = Decimal(str(row["p_model"]))
+    market = Decimal(str(row["p_market"]))
+    q = Decimal("0.5") * model + Decimal("0.5") * market
+    bid = Decimal(str(row["yes_bid"]))
+    ask = Decimal(str(row["yes_ask"]))
     choices = []
     for side, prob, price, qty_key in (
         ("yes", q, ask, "yes_ask_qty"),
-        ("no", 1.0 - q, 1.0 - bid, "yes_bid_qty"),
+        ("no", Decimal(1) - q, Decimal(1) - bid, "yes_bid_qty"),
     ):
-        fee = float(fee_at(price))
-        expected_net = prob - (price + fee + EXTRA_COST)
+        quoted = pinned_taker_fee(entry, price)
+        headline = quoted["headline"]
+        expected_net = prob - (price + headline + EXTRA_COST)
         choices.append({
             "side": side,
             "price": price,
-            "fee": fee,
+            "headline": headline,
+            "direct": quoted["sensitivity_direct_member"],
             "expected_net": expected_net,
             "qty": row.get(qty_key),
         })
@@ -139,63 +118,97 @@ def _select(row, fee_at):
     return best
 
 
-def gate(rows, manifest=None, fee_fn=None):
-    """Apply the frozen gate. fee_fn is test-only and is ignored on the CLI."""
+def gate(
+    rows,
+    fee_source_bytes=None,
+    *,
+    expected_sha256=FEE_SOURCE_SHA256,
+    expected_id=FEE_SOURCE_ID,
+    expected_accept=CONDUCTOR_ACCEPT_SHA256,
+):
+    """Apply the frozen gate. Expectation overrides are for tests. The CLI does not pass them."""
     _refuse_outcomes(rows)
-    reason = admissibility_reason(rows, manifest)
-    if reason:
-        return _blocked(reason)
-    # Production has no pinned (fee_type, fee_multiplier, price) function.
-    # fee_fn is a test injection and is not available on the command line.
-    if fee_fn is None:
-        return _blocked("FEE_FORMULA_NOT_PINNED")
+    if fee_source_bytes is None:
+        return _blocked("FEE_SOURCE_ABSENT")
+    try:
+        loaded = load_fee_source(
+            fee_source_bytes,
+            expected_sha256=expected_sha256,
+            expected_id=expected_id,
+            expected_accept=expected_accept,
+        )
+    except FeeBlocked as exc:
+        return _blocked(exc.reason, exc.blocked_series)
 
-    entries = manifest["entries"]
-    adopted = []
+    used = []
+    seen = set()
+    for row in rows:
+        if not isinstance(row, dict) or not _scorable(row):
+            continue
+        series = _series_of(row)
+        if series not in seen:
+            seen.add(series)
+            used.append(series)
+    entries = {}
+    blocked = []
+    first_reason = None
+    for series in used:
+        try:
+            entries[series] = pinned_entry(loaded, series)
+        except FeeBlocked as exc:
+            blocked.append(series)
+            if first_reason is None:
+                first_reason = exc.reason
+    if blocked:
+        return _blocked(first_reason, blocked)
+
     signals = []
     for row in rows:
         if not isinstance(row, dict) or not _scorable(row):
             continue
         series = _series_of(row)
-        entry = entries[series]
-        entry_id = entry["entry_id"]
-        if entry_id not in adopted:
-            adopted.append(entry_id)
-
-        def fee_at(price, entry=entry):
-            return fee_fn(entry["fee_type"], entry["fee_multiplier"], price)
-
-        best = _select(row, fee_at)
+        best = _select(row, entries[series])
         if best is None:
             continue
         signals.append({
             "race_id": row["race_id"],
             "side": "D_YES" if best["side"] == "yes" else "D_NO",
-            "price": best["price"],
-            "fee": best["fee"],
-            "fee_source": entry_id,
+            "price": float(best["price"]),
+            "fee": float(best["headline"]),
+            "fee_decimal": str(best["headline"]),
+            "fee_sensitivity_direct_member": str(best["direct"]),
+            "fee_rounding": "NON_DIRECT_CEIL_CENT",
+            "contracts": 1,
+            "series": series,
+            "fee_type": entries[series].fee_type,
+            "fee_multiplier": entries[series].fee_multiplier_str,
+            "fee_source": loaded.manifest_id,
+            "fee_source_sha256": loaded.sha256,
             "visible_qty": best["qty"],
-            "expected_net_gate": best["expected_net"],
+            "expected_net_gate": float(best["expected_net"]),
         })
     return {
         "status": "OK",
         "n_selected": len(signals),
         "signals": signals,
-        "manifest_id": manifest.get("manifest_id"),
-        "manifest_status": manifest.get("status"),
-        "adopted_entry_ids": adopted,
+        "fee_source": loaded.manifest_id,
+        "fee_source_sha256": loaded.sha256,
+        "fee_source_status": "ADOPTED",
+        "conductor_accept_sha256": loaded.conductor_accept_sha256,
+        "series_used": [{"series": series, "series_status": "PINNED"} for series in used],
         "gate_sha256": module_sha256(),
     }
 
 
 def main(argv):
-    if len(argv) not in (1, 2):
-        print("usage: python -m card01_amc.entry_gate rows.json [manifest.json]", file=sys.stderr)
-        return 2
+    parser = argparse.ArgumentParser(description="outcome-free entry gate")
+    parser.add_argument("rows")
+    parser.add_argument("--fee-source", default=None)
+    args = parser.parse_args(argv)
     try:
-        rows = _rows_of(json.loads(Path(argv[0]).read_text()))
-        manifest = json.loads(Path(argv[1]).read_text()) if len(argv) == 2 else None
-        obj = gate(rows, manifest)
+        rows = _rows_of(json.loads(Path(args.rows).read_text()))
+        fee_bytes = Path(args.fee_source).read_bytes() if args.fee_source else None
+        obj = gate(rows, fee_bytes)
     except (OutcomePresent, ValueError, json.JSONDecodeError, OSError) as exc:
         print(str(exc), file=sys.stderr)
         return 2
