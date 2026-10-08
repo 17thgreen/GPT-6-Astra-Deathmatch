@@ -1,0 +1,1535 @@
+{
+ "schema": "astra.fee_source.v1",
+ "manifest_id": "FEE_SOURCE_CARD01_v1",
+ "card": "card01 NH-002-H",
+ "template": {
+  "is_template": false,
+  "template_path": "registry/FEE_SOURCE_CARD01_TEMPLATE_v1_2026-10-03.json",
+  "fill_copy_path": "registry/FEE_SOURCE_CARD01_v1_<YYYY-MM-DD>.json",
+  "rule": "This template is never edited. Deep Research fills a byte COPY at fill_copy_path and sets is_template=false in the copy. Template sha256 is recorded in registry/PACKET_INDEX.md.",
+  "spec_path": "packets/ARCHIVIST_FEE_SOURCE_FORMAT_CARD01_2026-10-03.md",
+  "spec_sha256": "488a443bfff2b91ca22e8546801448866269d6ad25a3dbdca4f9e0a068975072"
+ },
+ "parents": {
+  "amendment_b": {
+   "path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md",
+   "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6"
+  },
+  "amendment_c": {
+   "path": "packets/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_C.md",
+   "sha256": "cc75f09614ad285756fd7cb7f7a5c2ce4e711b5adb98102c2dd043ccfc1af0f0"
+  },
+  "amendment_c_conductor_accept": {
+   "path": "packets/CONDUCTOR_ACCEPT_CARD01_AMENDMENT_C_2026-10-03.json",
+   "sha256": "2225c3fa0bea7c58cad59f52476f9fbe69e1d6fa813114a7557c748126dd2b1a"
+  },
+  "conductor_ruling_q3_q4": {
+   "path": "packets/CONDUCTOR_RULING_CARD01_PR69_Q1_Q3_L1_ROUTING_2026-10-03.md",
+   "sha256": "b1c1851f3edfd04ad9d2d0c91fed17e86f6fd543ad0f489f4775d1540478017f"
+  },
+  "fee_addendum_02": {
+   "path": "registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24_ADDENDUM_02.json",
+   "sha256": "44a69092461a94b259209b60c583166bf1ec56b322fc5dc9bf69f1b0fa2a9a12"
+  }
+ },
+ "status": "ADOPTED",
+ "status_enum": [
+  "DRAFT_NOT_ADOPTED",
+  "ADOPTED"
+ ],
+ "conductor_accept_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+ "archivist_anchor_sha256": null,
+ "archivist_anchor_note": "Always null inside the file. The file sha256 is recorded by the Archivist in registry/PACKET_INDEX.md; that anchored value is the only valid fee_source_sha256.",
+ "prepared_by": "SYNTHETIC TEST FIXTURE (not a fee source; every value is invented)",
+ "prepared_at_et": "2026-10-03T21:20:00-04:00",
+ "no_fallback_rule": "No series falls back to 0.07*p*(1-p) or any default. A series without a PINNED entry under an ADOPTED file is BLOCKED_FEE_UNVERIFIED with no computation. 0.07*p*(1-p) is a labelled sensitivity only and can never be a fee_source.",
+ "b_c_resolution": {
+  "option": "SERIES_LIST_ADMITTED_BY_RULING",
+  "option_enum": [
+   "BOTH_BLOCKS",
+   "SCHEDULE_SATISFIES_B_C_BY_RULING",
+   "SERIES_LIST_ADMITTED_BY_RULING",
+   "COLLECTOR_SERIES_GET"
+  ],
+  "ruling_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+ },
+ "member_type": {
+  "ref_path": "registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24_ADDENDUM_02.json",
+  "ref_sha256": "44a69092461a94b259209b60c583166bf1ec56b322fc5dc9bf69f1b0fa2a9a12",
+  "status_in_ref": "OPEN",
+  "value": null,
+  "card01_requires_member_type": false,
+  "decided_by": "Conductor",
+  "ruling_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+ },
+ "enums": {
+  "rounding_rule": [
+   "PER_CONTRACT_CEIL_CENT",
+   "PER_ORDER_CEIL_CENT",
+   "PER_ORDER_CEIL_CENTICENT",
+   "OTHER"
+  ],
+  "maker_taker_class": [
+   "TAKER",
+   "MAKER",
+   "BOTH"
+  ],
+  "evidence_tag": [
+   "[V]",
+   "[I]",
+   "[U]",
+   "[H]",
+   "[A]"
+  ],
+  "admission": [
+   "NOT_ADMITTED",
+   "ADMITTED_BY_RULING <sha256>"
+  ],
+  "series_status": [
+   "BLOCKED_FEE_UNVERIFIED",
+   "PINNED"
+  ]
+ },
+ "series": {
+  "KXHOUSERACE": {
+   "ticker": "KXHOUSERACE",
+   "fee_type": "quadratic",
+   "fee_multiplier": "1.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "1.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEAZ1": {
+   "ticker": "HOUSEAZ1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "2",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "2",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEAZ2": {
+   "ticker": "HOUSEAZ2",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEAZ6": {
+   "ticker": "HOUSEAZ6",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSECA22": {
+   "ticker": "HOUSECA22",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSECO3": {
+   "ticker": "HOUSECO3",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSECO8": {
+   "ticker": "HOUSECO8",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEFL13": {
+   "ticker": "HOUSEFL13",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEIA3": {
+   "ticker": "HOUSEIA3",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEME2": {
+   "ticker": "HOUSEME2",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEMI4": {
+   "ticker": "HOUSEMI4",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEMI7": {
+   "ticker": "HOUSEMI7",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEPARTY-MI07": {
+   "ticker": "HOUSEPARTY-MI07",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEMI10": {
+   "ticker": "HOUSEMI10",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEMT1": {
+   "ticker": "HOUSEMT1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSENC1": {
+   "ticker": "HOUSENC1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "KXHOUSENC11": {
+   "ticker": "KXHOUSENC11",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSENE2": {
+   "ticker": "HOUSENE2",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSENH1": {
+   "ticker": "HOUSENH1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSENJ7": {
+   "ticker": "HOUSENJ7",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSENY17": {
+   "ticker": "HOUSENY17",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEOH9": {
+   "ticker": "HOUSEOH9",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEPA1": {
+   "ticker": "HOUSEPA1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEPA7": {
+   "ticker": "HOUSEPA7",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEPA8": {
+   "ticker": "HOUSEPA8",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEPA10": {
+   "ticker": "HOUSEPA10",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "KXHOUSETX9": {
+   "ticker": "KXHOUSETX9",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSETX15": {
+   "ticker": "HOUSETX15",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "KXHOUSETX32": {
+   "ticker": "KXHOUSETX32",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSETX34": {
+   "ticker": "HOUSETX34",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "KXHOUSETX35": {
+   "ticker": "KXHOUSETX35",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEVA1": {
+   "ticker": "HOUSEVA1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEVA2": {
+   "ticker": "HOUSEVA2",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "NOT_ADMITTED",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "BLOCKED_FEE_UNVERIFIED",
+   "blocked_reason": "SERIES_ENDPOINT_NOT_ADMITTED"
+  },
+  "HOUSEWA3": {
+   "ticker": "HOUSEWA3",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEWI1": {
+   "ticker": "HOUSEWI1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "HOUSEWI3": {
+   "ticker": "HOUSEWI3",
+   "fee_type": "quadratic",
+   "fee_multiplier": "0.5",
+   "taker_rate": "0.07",
+   "maker_rate": "0.0175",
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "PER_ORDER_CEIL_CENT",
+   "rounding_rule_verbatim": "SYNTHETIC: non-direct balances aligned to $0.01; direct $0.0001 is a sensitivity row",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC: fees = round up(M x 0.07 x C x P x (1-P))",
+   "effective_date": "2026-07-07",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "https://example.invalid/synthetic-fee-schedule.pdf",
+    "retrieved_at_utc": "2026-09-25T01:40:55Z",
+    "doc_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "doc_box_path": "SYNTHETIC_NOT_A_PATH",
+    "locator": {
+     "page": "2",
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC_NOT_A_PATH",
+    "raw_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+    "captured_at_utc": "2026-09-25T00:07:16.537Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "0.5",
+    "admission": "ADMITTED_BY_RULING bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  }
+ }
+}
