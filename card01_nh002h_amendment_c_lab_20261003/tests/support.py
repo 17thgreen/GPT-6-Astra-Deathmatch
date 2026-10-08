@@ -66,19 +66,46 @@ def full_books(codes):
 
 def build_from(universe_doc, universe_raw, forecast, mapping, book):
     from card01_amc.build_rows import build
+    from card01_amc.dem_name_step import ADD_DEM_NAME_SHA256
 
+    codes = universe_doc["universe_2026_house"]
     blobs = {
         "forecast": json.dumps(forecast).encode(),
         "mapping": json.dumps(mapping).encode(),
         "book": json.dumps(book).encode(),
     }
+    forecast_sha = sha256_bytes(blobs["forecast"])
+    selection = {"status": "SELECTED", "selected_derived_sha256": forecast_sha}
+    selection_raw = json.dumps(selection, sort_keys=True).encode()
+    by_code = {row["race_code"]: row for row in forecast["rows"] if isinstance(row, dict)}
+    v1_rows = []
+    for code in codes:
+        fc = by_code.get(code, {})
+        v1_rows.append({
+            "race_code": code,
+            "dem_prob": fc.get("dem_prob"),
+            "dem_name": "Synthetic Placeholder",
+            "dem_name_status": "RESOLVED",
+            "same_party_excluded_s5": False,
+        })
+    step = {
+        "status": "DEM_NAME_ACCEPTED",
+        "reason": None,
+        "expected_script_sha256": ADD_DEM_NAME_SHA256,
+        "observed_script_sha256": ADD_DEM_NAME_SHA256,
+        "original_sha256": forecast_sha,
+        "v1_sha256": None,
+        "check": None,
+        "v1": {"version": "dem_name_v1", "rows": v1_rows},
+    }
     shas = {
         "universe": sha256_bytes(universe_raw),
-        "forecast": sha256_bytes(blobs["forecast"]),
+        "forecast": forecast_sha,
         "mapping": sha256_bytes(blobs["mapping"]),
         "book": sha256_bytes(blobs["book"]),
+        "selection": sha256_bytes(selection_raw),
     }
-    return build(universe_doc, forecast, mapping, book, shas)
+    return build(universe_doc, forecast, mapping, book, shas, selection=selection, dem_name_step=step)
 
 
 def adopted_manifest(entries=None):

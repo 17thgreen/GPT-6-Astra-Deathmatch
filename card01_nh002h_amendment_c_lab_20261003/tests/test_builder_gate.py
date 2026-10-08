@@ -187,25 +187,13 @@ class BuilderTests(unittest.TestCase):
         index = codes.index("AL-02")
         flagged = copy.deepcopy(forecast)
         _fc(flagged, "AL-02")["same_party"] = True
+        _fc(flagged, "AL-02")["rep_name"] = "(No Republican)"
+        _fc(flagged, "AL-02")["dem_name"] = "(No Democrat)"
         row = _built(flagged, mapping, book)["rows"][index]
-        self.assertEqual(row["exclusion_reason"], "same_party_race")
-        self.assertIsNone(row["p_market"])
-        self.assertIsNone(row["p_model"])
+        self.assertIsNone(row["exclusion_reason"])
+        self.assertNotIn("same_party_race", row["exclusion_reasons"])
+        self.assertEqual(row["p_model"], 0.55)
         self.assertEqual(row["yes_bid"], 0.40)
-
-        named = copy.deepcopy(forecast)
-        _fc(named, "AL-02")["rep_name"] = "(No Republican)"
-        self.assertEqual(_built(named, mapping, book)["rows"][index]["exclusion_reason"], "same_party_race")
-
-        clear = copy.deepcopy(forecast)
-        _fc(clear, "AL-02")["same_party"] = False
-        _fc(clear, "AL-02")["rep_name"] = "Smith"
-        self.assertIsNone(_built(clear, mapping, book)["rows"][index]["exclusion_reason"])
-
-        absent = copy.deepcopy(forecast)
-        self.assertNotIn("same_party", _fc(absent, "AL-02"))
-        self.assertNotIn("rep_name", _fc(absent, "AL-02"))
-        self.assertIsNone(_built(absent, mapping, book)["rows"][index]["exclusion_reason"])
 
     def test_p1_spelling_changes_sort_order(self):
         usps = sorted(["NE", "NH", "NV"])
