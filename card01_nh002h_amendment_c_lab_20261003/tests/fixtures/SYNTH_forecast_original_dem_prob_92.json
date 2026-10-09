@@ -1,0 +1,388 @@
+{
+ "card": "card01-NH002-H",
+ "capture_date_utc": "2000-01-01",
+ "source_url": "https://example.invalid/synthetic_races_summary.csv",
+ "source_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+ "source_bytes": 1000,
+ "source_fetched_at_utc": "2000-01-01T00:00:00Z",
+ "source_http_date": "Sat, 01 Jan 2000 00:00:00 GMT",
+ "universe_ref": {
+  "file": "UNIVERSE_2026_HOUSE_FROZEN.json",
+  "sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
+  "n": 92
+ },
+ "dem_prob_units": "percent (0-100)",
+ "n_rows": 92,
+ "missing_races": [],
+ "unparsable_races": [],
+ "rows": [
+  {
+   "race_code": "AL-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AR-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AZ-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AZ-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AZ-05",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AZ-06",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "AZ-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CA-22",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CA-48",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CO-03",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CO-04",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CO-05",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "CO-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-04",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-09",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-11",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-12",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-13",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-14",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-16",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-18",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-22",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-25",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-26",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "FL-27",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "GA-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "GA-11",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "GA-12",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "IA-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "IA-03",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "KY-06",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "ME-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MI-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MI-04",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MI-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MI-10",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MN-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MN-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MO-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "MT-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-03",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-05",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-06",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-09",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-11",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-13",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NC-14",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NE-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NE-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NH-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NJ-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NJ-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NV-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NY-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NY-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NY-17",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "NY-21",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "OH-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "OH-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "OH-09",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "OH-10",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "OH-15",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "PA-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "PA-07",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "PA-08",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "PA-10",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "SC-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "SC-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TN-05",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TN-09",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-09",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-10",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-15",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-21",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-22",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-23",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-24",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-32",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-34",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "TX-35",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "VA-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "VA-02",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "VA-05",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "WA-03",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "WI-01",
+   "dem_prob": 55.0
+  },
+  {
+   "race_code": "WI-03",
+   "dem_prob": 55.0
+  }
+ ]
+}

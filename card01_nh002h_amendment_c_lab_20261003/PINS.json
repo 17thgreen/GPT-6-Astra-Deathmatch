@@ -1,0 +1,305 @@
+{
+ "lab": "card01_nh002h_amendment_c_lab_20261003",
+ "note": "This file does not list its own sha256.",
+ "fee_formula": "PINNED: taker round_up(M x 0.07 x C x P x (1-P)); headline ceil_cent(P*C+fee_raw)-P*C; FEE_ONLY_CEIL = ceil_cent(fee_raw) sensitivity only; direct $0.0001 sensitivity (rulings b8cb27e0, c05d7003, 715fbafd)",
+ "feebook_commit": "22371178cb2663250b4762f328069571c48cb551",
+ "feebook_py_sha256": "eaf5aac7126efcd574c972fa77438c4118d44d50acafa17c504bdd48768bebe7",
+ "pins": [
+  {
+   "path": "pins/NH002H_AMENDMENT_B_national_miss.py",
+   "sha256": "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2",
+   "role": "pinned Amendment B scorer, unchanged",
+   "vendored": true
+  },
+  {
+   "path": "pins/SELFTEST_unit_checks.py",
+   "sha256": "a06f1e23d0802e4ff8472109aec8740b4da7c8e5d01d80eac3a0b7fc56338567",
+   "role": "synthetic self-test generator",
+   "vendored": true
+  },
+  {
+   "path": "pins/SELFTEST_SYNTHETIC_input.json",
+   "sha256": "b16ba92bde540a9623f815654bd33b531536aad8b986c4614a08f36dd27cf65e",
+   "role": "synthetic scorer input",
+   "vendored": true
+  },
+  {
+   "path": "pins/SELFTEST_SYNTHETIC_output.json",
+   "sha256": "0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23",
+   "role": "pinned-script self-test output",
+   "vendored": true
+  },
+  {
+   "path": "pins/UNIVERSE_2026_HOUSE_FROZEN.json",
+   "sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
+   "role": "frozen 92-race universe",
+   "vendored": true
+  },
+  {
+   "path": "pins/NH001_recovered_2253c03c_core.py",
+   "sha256": "0f58065615726c4195e3c172557c87676e70658482ecef03458e42bb3ee813b7",
+   "role": "NH-001 reference core, not used for fees",
+   "vendored": true
+  },
+  {
+   "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_C.md",
+   "sha256": "cc75f09614ad285756fd7cb7f7a5c2ce4e711b5adb98102c2dd043ccfc1af0f0",
+   "role": "Amendment C",
+   "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_ACCEPT_CARD01_AMENDMENT_C_2026-10-03.json",
+   "sha256": "2225c3fa0bea7c58cad59f52476f9fbe69e1d6fa813114a7557c748126dd2b1a",
+   "role": "Conductor ACCEPT of Amendment C",
+   "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_BOOTSTRAP_PIN_NOTES_CARD01_K3_2026-10-03.md",
+   "sha256": "86baa504c639a74c22db72821ac0c09cdf63cb7aaf8941e74012b14dac3bb256",
+   "role": "degenerate-block ruling",
+   "vendored": true
+  },
+  {
+   "path": "pins/VARIANTS_CARD01_AMENDMENT_C_IMPL_NOTE_BOOTSTRAP_PIN_2026-10-03.md",
+   "sha256": "fb4e5bc09af19971d67d479a67e387f61599294cd5fce3b64ca1518f4057b626",
+   "role": "bootstrap pin note",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/VARIANTS_CARD01_AMENDMENT_C_IMPL_NOTE_BOOTSTRAP_PIN_2026-10-03.json",
+   "sha256": "0c0992b19d1cc1f04c228871f84ff343d6c51f18ab89f6090af8843381b8cf5d",
+   "role": "bootstrap pin note json",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/ADVERSARY_CARD01_AMENDMENT_B_REVIEW_2026-10-03.md",
+   "sha256": "271ec099481ca35a57e4605b28abeff78d2660b6fd2657044666d45bcb728f01",
+   "role": "Adversary review of Amendment B",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24.md",
+   "sha256": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+   "role": "base freeze",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_A.md",
+   "sha256": "4e36d0db5728148d5bb4688fd8626eca9907a8933747f85e0bc17ede0ac0936b",
+   "role": "Amendment A",
+   "vendored": true
+  },
+  {
+   "path": "pins/CARD01_HOUSE_ONLY_PROSPECTIVE_FREEZE_2026-09-24_AMENDMENT_B.md",
+   "sha256": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+   "role": "Amendment B",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/CONDUCTOR_ACCEPT_CARD01_NH002H_AMENDMENT_B_2026-09-24.json",
+   "sha256": "74c5d49c0452ce97def7b36129ba362ebc4387627b93d5611bb67c5f8dfcbd23",
+   "role": "Conductor ACCEPT of Amendment B",
+   "vendored": true
+  },
+  {
+   "path": "pins/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24.md",
+   "sha256": "d66c9eaf2988bf081fea3096d7052c20def651e813ec29f13906a626effe81ef",
+   "role": "decision packet, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION_PENDING_TOS_REGATE"
+  },
+  {
+   "path": "pins/CONDUCTOR_SCORE_ACCEPT_EXT_K2_PARTA_2026-10-03.md",
+   "sha256": "6824793a44f5a10ee1d6e869e694d6681cfaba1681ff9b4bfb7cd0ed98242502",
+   "role": "standing bootstrap-pin rule source",
+   "vendored": true
+  },
+  {
+   "path": "pins/PRECOMMIT_UNIVERSE_WEIGHT_2026-09-24.json",
+   "sha256": "2968f389050341a8734bed76c60fbcb4f7d70feb96cf5f9da88ef4c19e50e77e",
+   "role": "precommit context",
+   "vendored": true
+  },
+  {
+   "path": "pins/FROZEN_EXPERIMENT.json",
+   "sha256": "8b716ef0ee2ed2daa5f533681ea6e4c77767094fd95e611b681f9f2807ef855c",
+   "role": "card01 freeze stub, context",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/__init__.py",
+   "sha256": "f51f2f1908c594ee331fa2b9c396124c8b1d0c9752cdba8dfdfd3fe1b18fb530",
+   "role": "package marker",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/pinload.py",
+   "sha256": "803cf6d8691017c06fc98a23fb1f80b509add935a1e7d7a66d615a8fc0291977",
+   "role": "sha-checked loader for script 049368f9",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/build_rows.py",
+   "sha256": "502c27fb1b0d259e733483c59433c1871c01762fd1d714b9701db4f452ac2a4f",
+   "role": "AF-8 input builder",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/entry_gate.py",
+   "sha256": "a705fc1f6d93c3e97ec78e1e83ef6b93ff3a6f6fca64b8237c152393fdb21ba1",
+   "role": "AF-8 entry gate and AF-4 fee block",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/score.py",
+   "sha256": "05c1d79436c7336b52aed1d6d6446573c9b5c46d909e3bcba75eb4f3ea0a3886",
+   "role": "AF-5 AF-11 P7 P8 degenerate scorer",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/swing_stress.py",
+   "sha256": "8341d544f2cffa9f33d5b8fd9adc8a6dd025f039c36743fb18ba17523dbdb9de",
+   "role": "AF-7 outcome-free swing stress",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/verdict.py",
+   "sha256": "e549f3765567d7cf417cf0019fdfadf8f4107bf4dc0e9c394313897b09f27645",
+   "role": "C1 C5 degenerate verdict helper",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/join_outcomes.py",
+   "sha256": "b3f16ae8eff470c36991cba010b6bdb8ab8fdc5cd99e12ad14d1f0de33c6247f",
+   "role": "post-settlement y join",
+   "vendored": true
+  },
+  {
+   "path": "pins/FEE_SOURCE_CARD01_TEMPLATE_v1_2026-10-03.json",
+   "sha256": "13e9554277a6eeebef86c1191f9cbca6f4a5521cad875c649b99dc97d8fd3614",
+   "role": "fee-source template, values null",
+   "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_ACCEPT_FEE_SOURCE_CARD01_v1_2026-10-03.md",
+   "sha256": "5b2eb82613d74bbfb2dd937efa43e239083367f832430a46d011759ccf451b59",
+   "role": "Conductor ACCEPT of FEE_SOURCE_CARD01_v1",
+   "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_GV2_EXPOSURE_AND_CARD01_BUILDER_2026-10-03.md",
+   "sha256": "3bff01cd6e60779fd2081703d05a8ffc304c9f08f414c0827a984d474cf96f41",
+   "role": "builder dem_name ruling, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_CARD01_FEE_SOURCE_Q6_PRECEDENCE_2026-10-03.md",
+   "sha256": "b8cb27e0e94c2a27c22fd1d92395109168a90ca78bb5928a65fbf0f89c397517",
+   "role": "fee, Q6, and precedence ruling, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_CARD01_PR69_Q1_Q3_L1_ROUTING_2026-10-03.md",
+   "sha256": "b1c1851f3edfd04ad9d2d0c91fed17e86f6fd543ad0f489f4775d1540478017f",
+   "role": "public-repo routing ruling, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/ARCHIVIST_FEE_SOURCE_FORMAT_CARD01_2026-10-03.md",
+   "sha256": "488a443bfff2b91ca22e8546801448866269d6ad25a3dbdca4f9e0a068975072",
+   "role": "astra.fee_source.v1 format spec, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/FEE_SOURCE_CARD01_v1_2026-10-03.json",
+   "sha256": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd",
+   "role": "runtime input --fee-source; adopted fee_source; never committed",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CARD01_Q6_FORECAST_FILE_SELECTION_RULE_2026-10-03.md",
+   "sha256": "5535ff2a60223587bef9b9f3a0d981f01387ca57cf23e02a0bc2e6d991d6ac0c",
+   "role": "Q6 forecast-file selection rule, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CARD01_NEGLECTED_HYBRID_DECISION_PACKET_2026-09-24__817e5dd0.md",
+   "sha256": "817e5dd0f9e2b7e903f318a15a4e65d7614b6a00da62b5bedde1eae53d4f6b19",
+   "role": "decision packet precedence, context",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/add_dem_name.py",
+   "sha256": "19250333e6f5f1acaa80fd82fc7f02c01ed2de2101fb557165a04453a247036e",
+   "role": "runtime script run by path by the builder; sha-checked; never committed",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/run_daily.py",
+   "sha256": "4f0854e56265e10b2505a9f371260caa6eaddb57726244a4435e1a424a54d5c8",
+   "role": "derived rebuild runner, record only; never committed",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/FIELD_SPEC_Q5_ORDERBOOK_2026-10-03.md",
+   "sha256": "4916d57febf074ae3c074a47b4baae5875c77ccc7d211176f152007d119257e9",
+   "role": "Q5 orderbook spec, deferred by ruling c05d7003; status UNAVAILABLE_NEEDS_EGRESS",
+   "vendored": false,
+   "reason": "REFERENCE_ONLY_Q5_NOT_IMPLEMENTED"
+  },
+  {
+   "path": "pins/DR_FEE_PIN_7201d024.json",
+   "sha256": "7201d02446315013cd975d5675f29342abc09f601923d7f01ed615b94a9ac4ff",
+   "role": "superseded DR fee pin json",
+   "vendored": false,
+   "reason": "SUPERSEDED_BY_FEE_SOURCE_CARD01_v1"
+  },
+  {
+   "path": "pins/DR_FEE_PIN_3c591397.md",
+   "sha256": "3c591397e7f0684be60a80d47a02241d9f30fad1ddb953d9eed08cfc1966d89c",
+   "role": "superseded DR fee pin note",
+   "vendored": false,
+   "reason": "SUPERSEDED_BY_FEE_SOURCE_CARD01_v1"
+  },
+  {
+   "path": "card01_amc/dem_name_step.py",
+   "sha256": "ca6b86d76dc898fc2198d24b78fe9d73cb22c38dc6f3d088709d688c2e2cd98c",
+   "role": "sha-checked add_dem_name wrapper",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/fee_source.py",
+   "sha256": "d4f9a84811030572b26378518ef94df77054cc5f802105be67cbf10db8db9b8c",
+   "role": "runtime fee-source loader and pinned taker formula",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/select_forecast.py",
+   "sha256": "3e552d83fe4bbcaf8a1d13ac342f377b3e7ff0a3d63be2bc8e9489f9da69047c",
+   "role": "Q6 strict forecast-file selector",
+   "vendored": true
+  }
+ ],
+ "feebook_superseded": true,
+ "fee_source": {
+  "id": "FEE_SOURCE_CARD01_v1",
+  "sha256": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd",
+  "vendored": false,
+  "reason": "PUBLIC_REPO_REDACTION",
+  "loaded": "runtime --fee-source"
+ }
+}

@@ -1,0 +1,12 @@
+# CONDUCTOR ACCEPT — FEE_SOURCE_CARD01_v1
+- Time: 2026-10-03 20:54 EDT
+- File: registry/FEE_SOURCE_CARD01_v1_2026-10-03.json, sha256 8b973fd127d37f03c5699da366c35d0a93941ec8f8afc2216635c9876031c16a (status DRAFT_NOT_ADOPTED). DR note d2e98409. Template 13e95542, spec 488a443b. Ruling b8cb27e0.
+- Conductor independent [V]:
+  - 36/36 series appear exactly once in admitted raw/0003 Elections (7f7e3316), each with fee_type "quadratic" and fee_multiplier 1, and are marked PINNED;
+  - 0 appear in raw/0008 Politics;
+  - no mismatch.
+- ACCEPTED for adoption. Archivist performs the two-field adoption edit (status ADOPTED + conductor_accept_sha256 = sha of THIS packet, _prev first) and anchors the adopted sha. Consumers must carry fee_source = FEE_SOURCE_CARD01_v1 + fee_source_sha256 = the anchored adopted sha.
+- Headline: TAKER, PER_ORDER_CEIL_CENT (non-direct $0.01). Direct $0.0001 is a sensitivity row.
+- maker_multiplier is null and stays null: any maker-side fill is fee BLOCKED; no default of 0 [U].
+- After adoption, REJECT(c)/(d) become evaluable. The Collector re-fetch, if egress reopens before 2026-11-02T22:00Z, is confirmatory only; any difference sends that series to BLOCKED pending ruling.
+- Decision packet e90577fb (carries b8cb27e0) noted. House mapping 8b7ed046 is authoritative per Collector (4af13691 bytes unrecoverable): Archivist to log that lineage.

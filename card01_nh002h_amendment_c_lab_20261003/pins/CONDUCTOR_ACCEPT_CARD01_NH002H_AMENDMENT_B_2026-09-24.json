@@ -1,0 +1,27 @@
+{
+  "type": "CONDUCTOR_ACCEPT",
+  "experiment": "Card 01 NH-002-H House-only prospective freeze — Amendment B",
+  "issued_at_et": "2026-09-24T20:22-04:00",
+  "decision": "ACCEPT",
+  "card_status": "LIVE",
+  "conductor_verified_sha256": {
+    "amendment_b_md": "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+    "national_miss_script": "049368f942741ff4a63acad328a49ff256252587d6c65f1e7e6d65d6101781f2",
+    "parent_freeze": "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+    "amendment_a": "4e36d0db5728148d5bb4688fd8626eca9907a8933747f85e0bc17ede0ac0936b"
+  },
+  "unchanged_confirmed": ["universe_92", "w_grid_0.25/0.5/1.0", "decision_time_2026-11-02T22:00Z", "headline_paired_Brier_D_w0.5", "state_cluster_bootstrap_seed_20261102"],
+  "accepted_clarifications": [
+    "M_f = mean(p_f - y) against 0/1 outcomes; recentering = Bernoulli-MLE uniform logit shift only",
+    "correlated-swing stress S in [-0.5,+0.5] logit is secondary, non-gating",
+    "results split M1 KXHOUSERACE / M2 legacy / M3 unresolved; headline remains all-admitted",
+    "ElectIndex 2022/2024 record and 2004-2024 backtest labeled IN-SAMPLE UNCHECKED, not validation",
+    "House after-cost figures BLOCKED until Archivist fee manifest holds series-endpoint fee_type/multiplier; no 0.07 scoring fallback"
+  ],
+  "next": [
+    "Archivist indexes Amendment B + this ACCEPT; fee ADDENDUM_02 remains blocking for after-cost KEEP",
+    "Adversary advisory review of Amendment B (national-miss + stress) pre-outcome",
+    "Deep Research files ONE merged freeze for Exp-2 census + October gate-count before any pull",
+    "Collector continues House fee series GETs into Archivist manifest"
+  ]
+}

@@ -1,0 +1,2092 @@
+{
+ "card": "card01-NH002-H",
+ "capture_date_utc": "2000-01-01",
+ "source_url": "https://example.invalid/synthetic_races_summary.csv",
+ "source_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+ "source_bytes": 1000,
+ "source_fetched_at_utc": "2000-01-01T00:00:00Z",
+ "source_http_date": "Sat, 01 Jan 2000 00:00:00 GMT",
+ "universe_ref": {
+  "file": "UNIVERSE_2026_HOUSE_FROZEN.json",
+  "sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
+  "n": 92
+ },
+ "dem_prob_units": "percent (0-100)",
+ "n_rows": 92,
+ "missing_races": [],
+ "unparsable_races": [],
+ "version": "dem_name_v1",
+ "base_derived": {
+  "path": "derived/SYNTH_forecast_original_dem_prob_92.json",
+  "sha256": "8c7383a13fcc0e2899fba78ebcde6153eb2729b9782557e32707750274e43d99",
+  "bytes": 5588,
+  "note": "unchanged original; its sha is the Q6 linkage key"
+ },
+ "dem_name_source": {
+  "raw_path_private": "SYNTHETIC_NOT_A_PATH",
+  "raw_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+  "raw_bytes": 1000,
+  "fetched_at_utc": "2000-01-01T00:00:00Z",
+  "capture_log": "SYNTHETIC_NOT_A_PATH",
+  "capture_log_line": 1,
+  "capture_run_id": "SYNTH",
+  "columns_read": [
+   "race_code",
+   "race_type",
+   "dem_name",
+   "dem_party",
+   "rep_party",
+   "same_party",
+   "dem_prob"
+  ],
+  "pre_outcome_check": "SYNTHETIC",
+  "rule": "SYNTHETIC"
+ },
+ "authority": {
+  "ruling_sha256": "b8cb27e0e94c2a27c22fd1d92395109168a90ca78bb5928a65fbf0f89c397517"
+ },
+ "s5_definition": "same_party_excluded_s5 = TRUE iff raw same_party is non-empty OR dem_name == (No Democrat) OR lower-case (no democrat prefix; null when dem_name is EXCLUSION_UNAPPLYABLE and same_party is empty.",
+ "step": {
+  "script": "SYNTHETIC_NOT_A_PATH",
+  "script_sha256": "19250333e6f5f1acaa80fd82fc7f02c01ed2de2101fb557165a04453a247036e",
+  "deterministic": "no wall-clock fields"
+ },
+ "counts": {
+  "n_races": 92,
+  "resolved": 92,
+  "no_democrat": 0,
+  "exclusion_unapplyable": 0,
+  "s5_excluded_true": 0,
+  "s5_null": 0
+ },
+ "no_democrat_races": [],
+ "EXCLUSION_UNAPPLYABLE": [],
+ "s5_excluded_races": [],
+ "mapping_s5_consistency": null,
+ "rows": [
+  {
+   "race_code": "AL-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 00",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 2,
+    "line_end": 2,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AR-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 01",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 3,
+    "line_end": 3,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AZ-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 02",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 4,
+    "line_end": 4,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AZ-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 03",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 5,
+    "line_end": 5,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AZ-05",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 04",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 6,
+    "line_end": 6,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AZ-06",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 05",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 7,
+    "line_end": 7,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "AZ-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 06",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 8,
+    "line_end": 8,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CA-22",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 07",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 9,
+    "line_end": 9,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CA-48",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 08",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 10,
+    "line_end": 10,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CO-03",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 09",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 11,
+    "line_end": 11,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CO-04",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 10",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 12,
+    "line_end": 12,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CO-05",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 11",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 13,
+    "line_end": 13,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "CO-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 12",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 14,
+    "line_end": 14,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 13",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 15,
+    "line_end": 15,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-04",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 14",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 16,
+    "line_end": 16,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 15",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 17,
+    "line_end": 17,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 16",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 18,
+    "line_end": 18,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-09",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 17",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 19,
+    "line_end": 19,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-11",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 18",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 20,
+    "line_end": 20,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-12",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 19",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 21,
+    "line_end": 21,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-13",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 20",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 22,
+    "line_end": 22,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-14",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 21",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 23,
+    "line_end": 23,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-16",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 22",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 24,
+    "line_end": 24,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-18",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 23",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 25,
+    "line_end": 25,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-22",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 24",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 26,
+    "line_end": 26,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-25",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 25",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 27,
+    "line_end": 27,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-26",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 26",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 28,
+    "line_end": 28,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "FL-27",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 27",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 29,
+    "line_end": 29,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "GA-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 28",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 30,
+    "line_end": 30,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "GA-11",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 29",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 31,
+    "line_end": 31,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "GA-12",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 30",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 32,
+    "line_end": 32,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "IA-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 31",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 33,
+    "line_end": 33,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "IA-03",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 32",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 34,
+    "line_end": 34,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "KY-06",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 33",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 35,
+    "line_end": 35,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "ME-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 34",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 36,
+    "line_end": 36,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MI-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 35",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 37,
+    "line_end": 37,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MI-04",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 36",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 38,
+    "line_end": 38,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MI-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 37",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 39,
+    "line_end": 39,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MI-10",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 38",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 40,
+    "line_end": 40,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MN-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 39",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 41,
+    "line_end": 41,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MN-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 40",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 42,
+    "line_end": 42,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MO-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 41",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 43,
+    "line_end": 43,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "MT-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 42",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 44,
+    "line_end": 44,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 43",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 45,
+    "line_end": 45,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-03",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 44",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 46,
+    "line_end": 46,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-05",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 45",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 47,
+    "line_end": 47,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-06",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 46",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 48,
+    "line_end": 48,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 47",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 49,
+    "line_end": 49,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-09",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 48",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 50,
+    "line_end": 50,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-11",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 49",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 51,
+    "line_end": 51,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-13",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 50",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 52,
+    "line_end": 52,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NC-14",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 51",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 53,
+    "line_end": 53,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NE-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 52",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 54,
+    "line_end": 54,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NE-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 53",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 55,
+    "line_end": 55,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NH-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 54",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 56,
+    "line_end": 56,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NJ-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 55",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 57,
+    "line_end": 57,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NJ-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 56",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 58,
+    "line_end": 58,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NV-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 57",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 59,
+    "line_end": 59,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NY-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 58",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 60,
+    "line_end": 60,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NY-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 59",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 61,
+    "line_end": 61,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NY-17",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 60",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 62,
+    "line_end": 62,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "NY-21",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 61",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 63,
+    "line_end": 63,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "OH-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 62",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 64,
+    "line_end": 64,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "OH-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 63",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 65,
+    "line_end": 65,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "OH-09",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 64",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 66,
+    "line_end": 66,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "OH-10",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 65",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 67,
+    "line_end": 67,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "OH-15",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 66",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 68,
+    "line_end": 68,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "PA-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 67",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 69,
+    "line_end": 69,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "PA-07",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 68",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 70,
+    "line_end": 70,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "PA-08",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 69",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 71,
+    "line_end": 71,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "PA-10",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 70",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 72,
+    "line_end": 72,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "SC-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 71",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 73,
+    "line_end": 73,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "SC-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 72",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 74,
+    "line_end": 74,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TN-05",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 73",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 75,
+    "line_end": 75,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TN-09",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 74",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 76,
+    "line_end": 76,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 75",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 77,
+    "line_end": 77,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-09",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 76",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 78,
+    "line_end": 78,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-10",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 77",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 79,
+    "line_end": 79,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-15",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 78",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 80,
+    "line_end": 80,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-21",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 79",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 81,
+    "line_end": 81,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-22",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 80",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 82,
+    "line_end": 82,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-23",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 81",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 83,
+    "line_end": 83,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-24",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 82",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 84,
+    "line_end": 84,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-32",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 83",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 85,
+    "line_end": 85,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-34",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 84",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 86,
+    "line_end": 86,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "TX-35",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 85",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 87,
+    "line_end": 87,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "VA-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 86",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 88,
+    "line_end": 88,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "VA-02",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 87",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 89,
+    "line_end": 89,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "VA-05",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 88",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 90,
+    "line_end": 90,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "WA-03",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 89",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 91,
+    "line_end": 91,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "WI-01",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 90",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 92,
+    "line_end": 92,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  },
+  {
+   "race_code": "WI-03",
+   "dem_prob": 55.0,
+   "dem_name": "Synthetic Candidate 91",
+   "dem_name_status": "RESOLVED",
+   "dem_name_reason": null,
+   "dem_name_is_no_democrat": false,
+   "same_party_excluded_s5": false,
+   "s5_components": {
+    "same_party_race": false,
+    "same_party_field_value": "",
+    "no_democrat_literal": false,
+    "no_democrat_prefix_variant": false,
+    "dem_party": "DEM",
+    "rep_party": "REP"
+   },
+   "raw_row": {
+    "line_start": 93,
+    "line_end": 93,
+    "row_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+   }
+  }
+ ]
+}
