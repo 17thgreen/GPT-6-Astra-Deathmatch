@@ -237,7 +237,7 @@ def pinned_taker_fee(entry, price, contracts=1):
         count = Decimal(contracts)
     except Exception:
         raise FeeBlocked("FEE_TERMS_INVALID") from None
-    if count != 1:
+    if not count.is_finite() or count <= 0:
         raise FeeBlocked("FEE_TERMS_INVALID")
     def trim(value):
         text = format(value, "f")

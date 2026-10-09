@@ -151,8 +151,8 @@
   },
   {
    "path": "card01_amc/entry_gate.py",
-   "sha256": "a705fc1f6d93c3e97ec78e1e83ef6b93ff3a6f6fca64b8237c152393fdb21ba1",
-   "role": "AF-8 entry gate and AF-4 fee block",
+   "sha256": "81f33e24216e4cbc12de12984e5871f51620178997923fb6aaf411b8f3b916c3",
+   "role": "AF-8 entry gate and v2 index-only admission",
    "vendored": true
   },
   {
@@ -283,7 +283,7 @@
   },
   {
    "path": "card01_amc/fee_source.py",
-   "sha256": "d4f9a84811030572b26378518ef94df77054cc5f802105be67cbf10db8db9b8c",
+   "sha256": "3ffc20401b04f2ac8da9b517a5e12924f85a2c00f1fbc9cdfd31f81d92af1775",
    "role": "runtime fee-source loader and pinned taker formula",
    "vendored": true
   },
@@ -427,6 +427,12 @@
    "role": "superseded r4 addendum json",
    "vendored": false,
    "reason": "SUPERSEDED_NON_BINDING"
+  },
+  {
+   "path": "card01_amc/fee_admission.py",
+   "sha256": "c2a4dc2bb133c5f238c6b47b9d4b31b2a0d73dca2272833ce8100f8156bdf289",
+   "role": "v2 index-only fee admission",
+   "vendored": true
   }
  ],
  "feebook_superseded": true,

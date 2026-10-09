@@ -12,6 +12,7 @@ import sys
 from decimal import Decimal
 from pathlib import Path
 
+from card01_amc.fee_admission import admit_fee_source_v2, pinned_entry_v2
 from card01_amc.fee_source import (
     CONDUCTOR_ACCEPT_SHA256,
     FEE_SOURCE_ID,
@@ -95,13 +96,33 @@ def fee_attest_reason(fee_sha, attest):
     return None
 
 
-def _blocked(reason, blocked_series=None):
-    return {
+def _blocked(reason, blocked_series=None, fee_source=None, fee_source_sha256=None, **extra):
+    obj = {
         "status": "BLOCKED_FEE_UNVERIFIED",
         "signals": None,
         "reason": reason,
+        "fee_block_reason": reason,
         "blocked_series": list(blocked_series or []),
+        "fee_source": fee_source,
+        "fee_source_sha256": fee_source_sha256,
     }
+    for key, val in extra.items():
+        obj[key] = val
+    return obj
+
+
+def _file_identity(fee_source_bytes):
+    """Identity carried on a blocked gate once bytes were supplied."""
+    if not isinstance(fee_source_bytes, (bytes, bytearray)):
+        return None, None
+    digest = sha256_bytes(bytes(fee_source_bytes))
+    try:
+        doc = json.loads(bytes(fee_source_bytes))
+    except (json.JSONDecodeError, UnicodeDecodeError, TypeError):
+        return None, digest
+    if isinstance(doc, dict) and isinstance(doc.get("manifest_id"), str):
+        return doc["manifest_id"], digest
+    return None, digest
 
 
 def _qty_ok(value) -> bool:
@@ -138,9 +159,42 @@ def _select(row, entry):
     best = max(choices, key=lambda item: (item["expected_net"], item["side"] == "yes"))
     if not (best["expected_net"] > RESERVE + SELECT_EPS):
         return None
-    if not _qty_ok(best["qty"]):
-        return None
+    best["depth_ok"] = _qty_ok(best["qty"])
     return best
+
+
+def _signal_from(row, series, entry, best, *, manifest_id, digest, formula_id=None):
+    signal = {
+        "race_id": row["race_id"],
+        "side": "D_YES" if best["side"] == "yes" else "D_NO",
+        "price": float(best["price"]),
+        "fee": float(best["headline"]),
+        "fee_decimal": str(best["headline"]),
+        "fee_rounding": "NON_DIRECT_CEIL_CENT",
+        "contracts": 1,
+        "series": series,
+        "fee_type": entry.fee_type,
+        "fee_multiplier": entry.fee_multiplier_str,
+        "fee_source": manifest_id,
+        "fee_source_sha256": digest,
+        "visible_qty": best["qty"],
+        "expected_net_gate": float(best["expected_net"]),
+    }
+    if formula_id is not None:
+        signal["fee_formula_id"] = formula_id
+    else:
+        signal["FEE_ONLY_CEIL"] = str(best["fee_only_ceil"])
+        signal["fee_sensitivity_direct_member"] = str(best["direct"])
+    return signal
+
+
+def _depth_item(row, best):
+    return {
+        "race_id": row["race_id"],
+        "side": "D_YES" if best["side"] == "yes" else "D_NO",
+        "price": float(best["price"]),
+        "visible_qty": best["qty"],
+    }
 
 
 def gate(
@@ -156,6 +210,7 @@ def gate(
     _refuse_outcomes(rows)
     if fee_source_bytes is None:
         return _blocked("FEE_SOURCE_ABSENT")
+    file_id, file_sha = _file_identity(fee_source_bytes)
     try:
         loaded = load_fee_source(
             fee_source_bytes,
@@ -164,10 +219,10 @@ def gate(
             expected_accept=expected_accept,
         )
     except FeeBlocked as exc:
-        return _blocked(exc.reason, exc.blocked_series)
+        return _blocked(exc.reason, exc.blocked_series, file_id, file_sha)
     attest_reason = fee_attest_reason(loaded.sha256, fee_attest)
     if attest_reason is not None:
-        return _blocked(attest_reason)
+        return _blocked(attest_reason, fee_source=loaded.manifest_id, fee_source_sha256=loaded.sha256)
 
     used = []
     seen = set()
@@ -189,9 +244,10 @@ def gate(
             if first_reason is None:
                 first_reason = exc.reason
     if blocked:
-        return _blocked(first_reason, blocked)
+        return _blocked(first_reason, blocked, loaded.manifest_id, loaded.sha256)
 
     signals = []
+    depth_rejected = []
     for row in rows:
         if not isinstance(row, dict) or not _scorable(row):
             continue
@@ -199,24 +255,13 @@ def gate(
         best = _select(row, entries[series])
         if best is None:
             continue
-        signals.append({
-            "race_id": row["race_id"],
-            "side": "D_YES" if best["side"] == "yes" else "D_NO",
-            "price": float(best["price"]),
-            "fee": float(best["headline"]),
-            "fee_decimal": str(best["headline"]),
-            "FEE_ONLY_CEIL": str(best["fee_only_ceil"]),
-            "fee_sensitivity_direct_member": str(best["direct"]),
-            "fee_rounding": "NON_DIRECT_CEIL_CENT",
-            "contracts": 1,
-            "series": series,
-            "fee_type": entries[series].fee_type,
-            "fee_multiplier": entries[series].fee_multiplier_str,
-            "fee_source": loaded.manifest_id,
-            "fee_source_sha256": loaded.sha256,
-            "visible_qty": best["qty"],
-            "expected_net_gate": float(best["expected_net"]),
-        })
+        if not best["depth_ok"]:
+            depth_rejected.append(_depth_item(row, best))
+            continue
+        signals.append(_signal_from(
+            row, series, entries[series], best,
+            manifest_id=loaded.manifest_id, digest=loaded.sha256,
+        ))
     return {
         "status": "OK",
         "n_selected": len(signals),
@@ -228,21 +273,120 @@ def gate(
         "fee_attest_fee_source_sha256": loaded.sha256,
         "conductor_accept_sha256": loaded.conductor_accept_sha256,
         "series_used": [{"series": series, "series_status": "PINNED"} for series in used],
+        "depth_rejected": depth_rejected,
         "gate_sha256": module_sha256(),
     }
+
+
+def _series_used(rows):
+    used = []
+    seen = set()
+    for row in rows:
+        if not isinstance(row, dict) or not _scorable(row):
+            continue
+        series = _series_of(row)
+        if series not in seen:
+            seen.add(series)
+            used.append(series)
+    return used
+
+
+def gate_v2(
+    rows,
+    *,
+    fee_source_path,
+    fee_source_id,
+    fee_source_sha256,
+    packet_index_path,
+    fee_accept_path,
+    side="BUY",
+    taker_maker_role="TAKER",
+    member_class_assumption="NON_DIRECT",
+    fill_model="SINGLE_FILL",
+):
+    """Headline gate. Admission is index-only. Sensitivity rows are not emitted."""
+    _refuse_outcomes(rows)
+    used = _series_used(rows)
+    admission = admit_fee_source_v2(
+        fee_source_path=fee_source_path,
+        fee_source_id=fee_source_id,
+        fee_source_sha256=fee_source_sha256,
+        packet_index_path=packet_index_path,
+        fee_accept_path=fee_accept_path,
+        series_used=used,
+        side=side,
+        taker_maker_role=taker_maker_role,
+        member_class_assumption=member_class_assumption,
+        fill_model=fill_model,
+    )
+    base = admission.public_dict()
+    if not admission.admitted:
+        blocked = _blocked(
+            admission.fee_block_reason,
+            admission.blocked_series,
+            admission.fee_source,
+            admission.fee_source_sha256,
+        )
+        blocked.update(base)
+        blocked["status"] = "BLOCKED_FEE_UNVERIFIED"
+        blocked["signals"] = None
+        blocked["depth_rejected"] = None
+        return blocked
+
+    entries = {}
+    for series in used:
+        entries[series] = pinned_entry_v2(admission, series)
+    signals = []
+    depth_rejected = []
+    for row in rows:
+        if not isinstance(row, dict) or not _scorable(row):
+            continue
+        series = _series_of(row)
+        best = _select(row, entries[series])
+        if best is None:
+            continue
+        if not best["depth_ok"]:
+            depth_rejected.append(_depth_item(row, best))
+            continue
+        signals.append(_signal_from(
+            row,
+            series,
+            entries[series],
+            best,
+            manifest_id=admission.fee_source,
+            digest=admission.fee_source_sha256,
+            formula_id=admission.fee_formula_id,
+        ))
+    out = {
+        "status": "OK",
+        "n_selected": len(signals),
+        "signals": signals,
+        "depth_rejected": depth_rejected,
+        "gate_sha256": module_sha256(),
+    }
+    out.update(base)
+    return out
 
 
 def main(argv):
     parser = argparse.ArgumentParser(description="outcome-free entry gate")
     parser.add_argument("rows")
     parser.add_argument("--fee-source", default=None)
-    parser.add_argument("--fee-attest", default=None)
+    parser.add_argument("--fee-source-id", default=None)
+    parser.add_argument("--fee-source-sha256", default=None)
+    parser.add_argument("--packet-index", default=None)
+    parser.add_argument("--fee-accept", default=None)
     args = parser.parse_args(argv)
     try:
         rows = _rows_of(json.loads(Path(args.rows).read_text()))
-        fee_bytes = Path(args.fee_source).read_bytes() if args.fee_source else None
-        attest = Path(args.fee_attest).read_bytes() if args.fee_attest else None
-        obj = gate(rows, fee_bytes, fee_attest=attest)
+        obj = gate_v2(
+            rows,
+            fee_source_path=args.fee_source,
+            fee_source_id=args.fee_source_id,
+            fee_source_sha256=args.fee_source_sha256,
+            packet_index_path=args.packet_index,
+            fee_accept_path=args.fee_accept,
+        )
     except (OutcomePresent, ValueError, json.JSONDecodeError, OSError) as exc:
         print(str(exc), file=sys.stderr)
         return 2
