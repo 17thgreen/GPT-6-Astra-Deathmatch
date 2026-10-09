@@ -126,26 +126,59 @@ def _hex64(value) -> bool:
     return True
 
 
+ASCII_DIGITS = "0123456789"
+ISO_Z_SHAPE = "dddd-dd-ddTdd:dd:ddZ"
+
+
 def _iso_z(value) -> bool:
-    if not isinstance(value, str) or len(value) != 20 or not value.endswith("Z"):
+    """True only for dddd-dd-ddTdd:dd:ddZ with ASCII digits and in-range parts.
+
+    The full string is exactly 20 characters. A trailing newline does not match.
+    Unicode decimal digits are rejected before int(), so they cannot verify
+    and they cannot raise.
+    """
+    if not isinstance(value, str) or len(value) != len(ISO_Z_SHAPE):
         return False
-    if value[4] != "-" or value[7] != "-" or value[10] != "T":
-        return False
-    if value[13] != ":" or value[16] != ":":
-        return False
-    digits = value[0:4] + value[5:7] + value[8:10] + value[11:13] + value[14:16] + value[17:19]
-    if len(digits) != 14 or not digits.isdigit():
-        return False
-    month = int(digits[4:6])
-    day = int(digits[6:8])
-    hour = int(digits[8:10])
-    minute = int(digits[10:12])
-    second = int(digits[12:14])
+    for char, shape in zip(value, ISO_Z_SHAPE):
+        if shape == "d":
+            if char not in ASCII_DIGITS:
+                return False
+        elif char != shape:
+            return False
+    month = int(value[5:7])
+    day = int(value[8:10])
+    hour = int(value[11:13])
+    minute = int(value[14:16])
+    second = int(value[17:19])
     if month < 1 or month > 12 or day < 1 or day > 31:
         return False
     if hour > 23 or minute > 59 or second > 59:
         return False
     return True
+
+
+def _duplicate_race_id(items) -> bool:
+    """True when a race_id is not a str, or a str race_id repeats.
+
+    Scoring keys rows by the raw value, so 1, 1.0 and True are one key.
+    Any non-str race_id is a reporting defect before that collision is scored.
+    Non-dicts and race_id None are ignored, matching the book lookups.
+    """
+    seen = set()
+    if not isinstance(items, list):
+        return False
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        rid = item.get("race_id")
+        if rid is None:
+            continue
+        if not isinstance(rid, str):
+            return True
+        if rid in seen:
+            return True
+        seen.add(rid)
+    return False
 
 
 def _on_open_grid(price: Decimal) -> bool:
@@ -206,6 +239,8 @@ def entry_book(gate, *, fee_ctx) -> dict:
         }
     defects = []
     rows = []
+    if isinstance(signals, list) and _duplicate_race_id(signals):
+        defects.append({"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "signals"})
     if not signals:
         table = {
             "schema": ENTRY_TABLE_SCHEMA,
@@ -792,6 +827,14 @@ def run(
             book["reporting_defects"][0]["kind"],
             anchor_status="VERIFIED",
             inputs=inputs,
+        )
+    if _duplicate_race_id(rows):
+        return _defect_score(
+            book,
+            "DUPLICATE_RACE_ID",
+            anchor_status="VERIFIED",
+            inputs=inputs,
+            detail="rows",
         )
     book_gap = _signal_row_book_reason(gate, rows)
     if book_gap is not None:

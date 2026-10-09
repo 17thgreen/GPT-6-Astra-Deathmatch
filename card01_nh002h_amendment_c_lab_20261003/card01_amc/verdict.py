@@ -18,7 +18,9 @@ from card01_amc.fee_admission import (
     FEE_FORMULA_ID,
     REFUSED_FEE_SOURCES,
     admit_fee_source_v2,
+    pinned_entry_v2,
 )
+from card01_amc.fee_source import FeeBlocked
 from card01_amc.pinload import sha256_bytes
 
 PASS_FORECAST = "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST"
@@ -259,6 +261,14 @@ def load_fee_source_v2(path=None):
     digest = block.get("sha256")
     accept = block.get("accept_sha256")
     formula = block.get("fee_formula_id")
+    pinned = block.get("series_pinned")
+    if (
+        not isinstance(pinned, list)
+        or not pinned
+        or any(not isinstance(name, str) or name == "" for name in pinned)
+        or len(set(pinned)) != len(pinned)
+    ):
+        return None
     if (
         not isinstance(ident, str)
         or ident == ""
@@ -275,6 +285,7 @@ def load_fee_source_v2(path=None):
         "sha256": digest,
         "accept_sha256": accept,
         "fee_formula_id": formula,
+        "series_pinned": tuple(pinned),
     }
 
 
@@ -330,6 +341,59 @@ def _gate_fee_reason(gate, pin):
     return None
 
 
+def _checked_series(pin, gate):
+    """Pinned series first, then any extra names the gate lists.
+
+    Gate series can only add names. A missing or empty signal list adds
+    nothing from signals, and the pinned list is still checked. A non-string
+    or empty name is kept so the fee check can label it.
+    """
+    names = list(pin["series_pinned"])
+    extra = []
+    if isinstance(gate, dict):
+        signals = gate.get("signals")
+        if isinstance(signals, list):
+            for signal in signals:
+                if isinstance(signal, dict):
+                    extra.append(signal.get("series"))
+        blocked = gate.get("blocked_series")
+        if isinstance(blocked, list):
+            extra.extend(blocked)
+    for name in extra:
+        if name not in names:
+            names.append(name)
+    return names
+
+
+def _disk_admission(fee_ctx, gate, pin):
+    """Return (admission, reason). reason is None when the fee files admit."""
+    paths = _fee_paths(fee_ctx)
+    names = _checked_series(pin, gate)
+    admission = admit_fee_source_v2(
+        fee_source_path=paths["fee_source"],
+        fee_source_id=pin["id"],
+        fee_source_sha256=pin["sha256"],
+        packet_index_path=paths["packet_index"],
+        fee_accept_path=paths["fee_accept"],
+        series_used=names,
+    )
+    if not admission.admitted:
+        return admission, admission.fee_block_reason or "FEE_RECOMPUTE_MISMATCH"
+    for name in names:
+        try:
+            pinned_entry_v2(admission, name)
+        except FeeBlocked as exc:
+            return admission, exc.reason
+    if (
+        admission.fee_source_sha256 != pin["sha256"]
+        or admission.fee_source_accept_sha256 != pin["accept_sha256"]
+    ):
+        return admission, "FEE_SOURCE_PAIR_MISMATCH"
+    if admission.fee_formula_id != pin["fee_formula_id"] or admission.fee_formula_id != FEE_FORMULA_ID:
+        return admission, "FEE_FORMULA_ID_MISMATCH"
+    return admission, None
+
+
 def disk_fee_state(gate, fee_ctx):
     """Rebuild v2 admission from the fee files. The expected pair is PINS only."""
     paths = _fee_paths(fee_ctx)
@@ -347,39 +411,8 @@ def disk_fee_state(gate, fee_ctx):
             "pin": None,
             "fee_input_sha256": fee_input_sha256,
         }
-    series = []
-    if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
-        for signal in gate["signals"]:
-            if isinstance(signal, dict):
-                series.append(signal.get("series"))
-    admission = admit_fee_source_v2(
-        fee_source_path=paths["fee_source"],
-        fee_source_id=pin["id"],
-        fee_source_sha256=pin["sha256"],
-        packet_index_path=paths["packet_index"],
-        fee_accept_path=paths["fee_accept"],
-        series_used=series,
-    )
-    if not admission.admitted:
-        return {
-            "admitted": False,
-            "reason": admission.fee_block_reason or "FEE_RECOMPUTE_MISMATCH",
-            "admission": admission,
-            "pin": pin,
-            "fee_input_sha256": fee_input_sha256,
-        }
-    if (
-        admission.fee_source_sha256 != pin["sha256"]
-        or admission.fee_source_accept_sha256 != pin["accept_sha256"]
-        or admission.fee_formula_id != pin["fee_formula_id"]
-        or admission.fee_formula_id != FEE_FORMULA_ID
-    ):
-        reason = "FEE_FORMULA_ID_MISMATCH"
-        if (
-            admission.fee_source_sha256 != pin["sha256"]
-            or admission.fee_source_accept_sha256 != pin["accept_sha256"]
-        ):
-            reason = "FEE_SOURCE_PAIR_MISMATCH"
+    admission, reason = _disk_admission(fee_ctx, gate, pin)
+    if reason is not None:
         return {
             "admitted": False,
             "reason": reason,
@@ -620,41 +653,17 @@ def _fee_paths_ready(fee_ctx):
     return True
 
 
-def _series_from_gate(gate):
-    series = []
-    if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
-        for signal in gate["signals"]:
-            if isinstance(signal, dict):
-                series.append(signal.get("series"))
-    return series
-
-
 def _disk_files_admit(fee_ctx, gate):
-    """Fee-file admission. A blocked gate status is not a disk block.
+    """Fee-file admission. A blocked gate status is not itself a disk block.
 
-    series come from the gate when it lists signals, so an unpinned series
-    still fails the files. A missing gate uses no series.
+    The pinned series list is always checked. Names on the gate can only add
+    series. A missing gate adds none.
     """
-    paths = _fee_paths(fee_ctx)
     pin = load_fee_source_v2()
     if pin is None:
         return False
-    admission = admit_fee_source_v2(
-        fee_source_path=paths["fee_source"],
-        fee_source_id=pin["id"],
-        fee_source_sha256=pin["sha256"],
-        packet_index_path=paths["packet_index"],
-        fee_accept_path=paths["fee_accept"],
-        series_used=_series_from_gate(gate),
-    )
-    if not admission.admitted:
-        return False
-    return (
-        admission.fee_source_sha256 == pin["sha256"]
-        and admission.fee_source_accept_sha256 == pin["accept_sha256"]
-        and admission.fee_formula_id == pin["fee_formula_id"]
-        and admission.fee_formula_id == FEE_FORMULA_ID
-    )
+    _admission, reason = _disk_admission(fee_ctx, gate, pin)
+    return reason is None
 
 
 def _race_ids(items):
@@ -691,7 +700,10 @@ _ABSENT = object()
 # Positive fee-block labels. A trailing underscore is a prefix for that family.
 # FEE_SOURCE_ includes FEE_SOURCE_UNREADABLE and the v1 refusal
 # FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL. NOT_AN_ACCEPT is the accept-file
-# label. GATE_NOT_REPRODUCED, an OK gate, and a missing field are not here.
+# label. SERIES_NOT_PINNED, HEADLINE_SCOPE_MISMATCH and TAKER_RATE_MISMATCH
+# are fee-rule blocks. The bare status BLOCKED_FEE_UNVERIFIED is not a reason.
+# GATE_NOT_REPRODUCED, ENTRY_BOOK_*, ENTRY_ROW_BOOK_MISSING, an OK gate, and a
+# missing field are not here.
 FEE_CLASS_REASONS = (
     "FEE_SOURCE_",
     "FEE_ACCEPT_",
@@ -699,6 +711,9 @@ FEE_CLASS_REASONS = (
     "FEE_CITATIONS_CHANGED",
     "NOT_AN_ACCEPT",
     "FEE_FORMULA_ID_MISMATCH",
+    "SERIES_NOT_PINNED",
+    "HEADLINE_SCOPE_MISMATCH",
+    "TAKER_RATE_MISMATCH",
 )
 
 
@@ -788,6 +803,78 @@ def _unproven_fee_blocks(regime, gate, prc):
     return gaps
 
 
+def _get(doc, *keys):
+    for key in keys:
+        if not isinstance(doc, dict):
+            return None
+        doc = doc.get(key)
+    return doc
+
+
+def _disk_identity(fee_ctx, gate):
+    """Fee identity of this disk admission, or None when the pin cannot be read."""
+    pin = load_fee_source_v2()
+    if pin is None:
+        return None
+    admission, reason = _disk_admission(fee_ctx, gate, pin)
+    paths = _fee_paths(fee_ctx)
+    return {
+        "reason": reason,
+        "pin_sha256": pin["sha256"],
+        "pin_accept_sha256": pin["accept_sha256"],
+        "adm_fee_source_sha256": admission.fee_source_sha256,
+        "adm_accept_sha256": admission.fee_source_accept_sha256,
+        "adm_packet_index_sha256": admission.packet_index_sha256_at_run,
+        "file_fee_source": _sha_file(paths["fee_source"]),
+        "file_packet_index": _sha_file(paths["packet_index"]),
+        "file_fee_accept": _sha_file(paths["fee_accept"]),
+    }
+
+
+def _fee_identity_gaps(disk, regime, gate, prc):
+    """Each supplied input's recorded fee identity must equal the disk's own.
+
+    An absent field is None. disk.reason must itself be fee-class. Any
+    difference is name:field.
+    """
+    if disk is None:
+        return ["disk:pin_missing"]
+    checks = []
+    if regime is not _ABSENT:
+        checks += [
+            ("regime_report", "fee_block_reason", _get(regime, "fee_admission", "fee_block_reason"), disk["reason"]),
+            ("regime_report", "fee_source_sha256", _get(regime, "fee_admission", "fee_source_sha256"), disk["adm_fee_source_sha256"]),
+            ("regime_report", "fee_source_accept_sha256", _get(regime, "fee_admission", "fee_source_accept_sha256"), disk["adm_accept_sha256"]),
+            ("regime_report", "packet_index_sha256_at_run", _get(regime, "fee_admission", "packet_index_sha256_at_run"), disk["adm_packet_index_sha256"]),
+            ("regime_report", "inputs.fee_source_accept", _get(regime, "inputs_sha256", "fee_source_accept"), disk["adm_accept_sha256"]),
+            ("regime_report", "inputs.packet_index_at_admission", _get(regime, "inputs_sha256", "packet_index_at_admission"), disk["adm_packet_index_sha256"]),
+        ]
+    if gate is not _ABSENT:
+        reason = _get(gate, "fee_block_reason") or _get(gate, "reason")
+        checks += [
+            ("gate", "fee_block_reason", reason, disk["reason"]),
+            ("gate", "fee_source_sha256", _get(gate, "fee_source_sha256"), disk["adm_fee_source_sha256"]),
+            ("gate", "fee_source_accept_sha256", _get(gate, "fee_source_accept_sha256"), disk["adm_accept_sha256"]),
+            ("gate", "packet_index_sha256_at_run", _get(gate, "packet_index_sha256_at_run"), disk["adm_packet_index_sha256"]),
+        ]
+    if prc is not _ABSENT:
+        checks += [
+            ("prc", "fee_block_reason", _get(prc, "fee_block_reason"), disk["reason"]),
+            ("prc", "inputs.fee_source", _get(prc, "inputs_sha256", "fee_source"), disk["file_fee_source"]),
+            ("prc", "inputs.packet_index", _get(prc, "inputs_sha256", "packet_index"), disk["file_packet_index"]),
+            ("prc", "inputs.fee_accept", _get(prc, "inputs_sha256", "fee_accept"), disk["file_fee_accept"]),
+            ("prc", "fee_source_sha256", _get(prc, "fee_source_sha256"), disk["pin_sha256"]),
+            ("prc", "fee_source_accept_sha256", _get(prc, "fee_source_accept_sha256"), disk["pin_accept_sha256"]),
+        ]
+    gaps = []
+    for name, field, got, want in checks:
+        if got != want:
+            gaps.append(name + ":" + field)
+    if disk["reason"] is None or not _is_fee_class_reason(disk["reason"]):
+        gaps.append("disk:reason")
+    return gaps
+
+
 def _forecast_only(score, regime):
     """Disk-blocked hand-off when every supplied input proves a fee block.
 
@@ -848,6 +935,25 @@ def main(argv):
                     "DISK_BLOCKED_INPUTS_ADMITTED",
                     report,
                     detail=";".join(gaps),
+                ),
+                sys.stdout,
+                indent=1,
+            )
+            return 0
+        identity = _fee_identity_gaps(
+            _disk_identity(fee_ctx, gate),
+            regime,
+            gate if args.gate is not None else _ABSENT,
+            prc_output,
+        )
+        if identity:
+            report = regime if isinstance(regime, dict) else None
+            json.dump(
+                _binding_block(
+                    score,
+                    "DISK_INPUT_FEE_IDENTITY_MISMATCH",
+                    report,
+                    detail=";".join(identity),
                 ),
                 sys.stdout,
                 indent=1,
