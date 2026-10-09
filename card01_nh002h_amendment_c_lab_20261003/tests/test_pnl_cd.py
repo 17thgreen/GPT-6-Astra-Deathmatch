@@ -2260,6 +2260,195 @@ class PnLHarness(unittest.TestCase):
             self.assertIn("OUTPUT_PATH_IN_REPO", refused.stderr)
             self.assertFalse((LAB / "CARD01_PRC_ENTRY_BOOK_refused.json").exists())
 
+    def _no_score_numbers(self, out):
+        self.assertIsNone(out.get("n_signals"))
+        self.assertIsNone(out.get("reject_c"))
+        self.assertIsNone(out.get("reject_d"))
+        self.assertIsNone(out.get("per_signal"))
+        self.assertNotIn("net_headline_total", out)
+        self.assertNotIn("net_one_tick_worse_total", out)
+        self.assertFalse(_has_money(out))
+
+    def test_h_e6b_duplicate_signal_is_reporting_defect(self):
+        base = self._run("P1_CLEAN")
+        gate = json.loads(json.dumps(base["_gate"]))
+        gate["signals"].append(json.loads(json.dumps(gate["signals"][0])))
+        book = pnl_cd.entry_book(gate, fee_ctx=self.fee_ctx)
+        self.assertEqual(book["status"], "REPORTING_DEFECT")
+        self.assertIn(
+            {"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "signals"},
+            book["reporting_defects"],
+        )
+        out = self._run("P1_CLEAN", gate=gate)
+        self.assertEqual(out["status"], "REPORTING_DEFECT")
+        kinds = [item["kind"] for item in out["reporting_defects"]]
+        self.assertIn("DUPLICATE_RACE_ID", kinds)
+        self.assertEqual(out["_calls"]["n"], 0)
+        self._no_score_numbers(out)
+
+    def test_h_e6b_duplicate_rows_skip_loader(self):
+        base = self._run("P1_CLEAN")
+        rows = [dict(row) for row in base["_rows"]]
+        rows.append(dict(rows[0]))
+        anchor = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+
+        def loader():
+            raise AssertionError("loader called")
+
+        out = pnl_cd.run(
+            base["_gate"],
+            rows,
+            loader,
+            gate_sha256=base["_gate_sha"],
+            entry_book_bytes=base["_book"],
+            anchor_doc=anchor,
+            fee_ctx=self.fee_ctx,
+        )
+        self.assertEqual(out["status"], "REPORTING_DEFECT")
+        found = [
+            item for item in out["reporting_defects"]
+            if item.get("kind") == "DUPLICATE_RACE_ID"
+        ]
+        self.assertEqual(found, [{"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "rows"}])
+        self._no_score_numbers(out)
+
+    def test_h_e6b_duplicate_rows_different_y_have_no_numbers(self):
+        base = self._run("P1_CLEAN")
+        rows = [dict(row) for row in base["_rows"]]
+        rows.append(dict(rows[0]))
+        anchor = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+        settled = json.loads(json.dumps(base["_settled"]))
+        settled["results"].append({
+            "ticker": rows[0]["ticker"],
+            "result": "no" if settled["results"][0]["result"] == "yes" else "yes",
+            "settlement_ts": "2000-01-01T00:00:00.000000Z",
+        })
+
+        def loader():
+            raise AssertionError("loader called")
+
+        out = pnl_cd.run(
+            base["_gate"],
+            rows,
+            loader,
+            gate_sha256=base["_gate_sha"],
+            entry_book_bytes=base["_book"],
+            anchor_doc=anchor,
+            fee_ctx=self.fee_ctx,
+        )
+        self.assertEqual(out["status"], "REPORTING_DEFECT")
+        self._no_score_numbers(out)
+        self.assertIsNotNone(settled)
+
+    def test_h_e6b_verdict_duplicate_rows_is_n_signals_mismatch(self):
+        root, full, _sub, _blocked, honest = self._examiner_world()
+        self.assertEqual(full["status"], "OK")
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        gate_path = root / "gate-full5.json"
+        gate_bytes = gate_path.read_bytes()
+        gate = json.loads(gate_bytes.decode("utf-8"))
+        rows = json.loads((root / "rows.json").read_text(encoding="utf-8"))
+        rows.append(json.loads(json.dumps(rows[0])))
+        book = (root / "book-full5.json").read_bytes()
+        anchor = json.loads((root / "anchor-full5.json").read_text(encoding="utf-8"))
+
+        def loader():
+            raise AssertionError("loader called")
+
+        scored = pnl_cd.run(
+            gate,
+            rows,
+            loader,
+            gate_sha256=sha256_bytes(gate_bytes),
+            entry_book_bytes=book,
+            anchor_doc=anchor,
+            fee_ctx=self.fee_ctx,
+        )
+        self.assertEqual(scored["status"], "REPORTING_DEFECT")
+        self._no_score_numbers(scored)
+        prc_path = root / "prc-duplicate-rows.json"
+        prc_path.write_text(json.dumps(scored), encoding="utf-8")
+        produced = self._verdict_bound(
+            root,
+            gate=gate_path,
+            prc=prc_path,
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "N_SIGNALS_MISMATCH")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertNotEqual(produced["verdict"], "REJECT")
+
+    def test_h_e6b_honest_case_unchanged(self):
+        out = self._run("P1_CLEAN")
+        exp = EXPECTED["cases"]["P1_CLEAN"]
+        self.assertEqual(out["status"], "OK")
+        self.assertEqual(out["entry_table_sha256"], exp["entry_table_sha256"])
+        self.assertEqual(out["entry_table_sha256"], "ce2d2c694cee99dd6fce14d0a990cb20529e3ec1b046e28e826767c13887174f")
+        self.assertEqual(out["net_headline_total"], exp["net_headline_total"])
+        self.assertGreater(out["_calls"]["n"], 0)
+        self.assertFalse(pnl_cd._duplicate_race_id([{"race_id": None}, {"race_id": None}]))
+        self.assertFalse(pnl_cd._duplicate_race_id([{"race_id": {"k": 1}}, "nope"]))
+        self.assertTrue(pnl_cd._duplicate_race_id([
+            {"race_id": {"b": 1, "a": 2}},
+            {"race_id": {"a": 2, "b": 1}},
+        ]))
+
+    def test_h_a1_non_ascii_and_malformed_anchors_are_invalid(self):
+        base = "2026-11-02T22:15:00Z"
+        digits = [index for index, char in enumerate(base) if char in pnl_cd.ASCII_DIGITS]
+        self.assertEqual(len(digits), 14)
+        aliens = ("\u0660", "\uff10", "\u00b2")
+        for index in digits:
+            for alien in aliens:
+                stamp = base[:index] + alien + base[index + 1:]
+                try:
+                    ok = pnl_cd._iso_z(stamp)
+                except Exception as exc:
+                    self.fail(repr(stamp) + " raised " + type(exc).__name__)
+                self.assertFalse(ok, repr(stamp))
+        malformed = (
+            "2026-11-02T22:15:00Z\n",
+            " 2026-11-02T22:15:00Z",
+            "2026-11-02T22:15:00z",
+            "2026-11-02T22:15:00+00:00",
+            "2026-11-02T22:15:00.0Z",
+            "2026-13-02T22:15:00Z",
+            "2026-11-02T24:15:00Z",
+        )
+        for stamp in malformed:
+            try:
+                ok = pnl_cd._iso_z(stamp)
+            except Exception as exc:
+                self.fail(repr(stamp) + " raised " + type(exc).__name__)
+            self.assertFalse(ok, repr(stamp))
+        clean = self._run("P1_CLEAN")
+        anchor = pnl_cd.make_anchor(
+            clean["_book"],
+            gate_sha256=clean["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+        anchor["anchored_at_utc"] = "2026-11-02T22:15:00Z".replace("0", "\u0660", 1)
+        bad = self._run(
+            "P1_CLEAN",
+            gate=clean["_gate"],
+            anchor_doc=anchor,
+            entry_book_bytes=clean["_book"],
+        )
+        self.assertEqual(bad["status"], "REPORTING_DEFECT")
+        self.assertIn("ENTRY_BOOK_ANCHOR_INVALID", [item["kind"] for item in bad["reporting_defects"]])
+        self.assertNotIn("ENTRY_BOOK_ANCHOR_OUTSIDE_WINDOW", [item["kind"] for item in bad["reporting_defects"]])
+        self.assertEqual(bad["_calls"]["n"], 0)
+        self._no_score_numbers(bad)
+
 
 if __name__ == "__main__":
     unittest.main()
