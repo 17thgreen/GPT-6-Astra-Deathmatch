@@ -1,0 +1,10 @@
+{
+ "_SYNTHETIC_NOT_A_RULING": true,
+ "ruling": "ACCEPT_FEE_SOURCE_SYNTH_v2_FILL",
+ "issued_et": "2026-10-08T00:00:00-04:00",
+ "accepted": {
+  "fill": "SYNTH_FEE_SOURCE_v2_example.json",
+  "fill_sha256": "9d9da1c4e2c593cfa762701eef973c2a3538bd74410097fbcff20673b884c5b8"
+ },
+ "do_not_edit": "SYNTHETIC"
+}

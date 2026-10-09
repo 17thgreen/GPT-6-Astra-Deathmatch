@@ -292,6 +292,141 @@
    "sha256": "3e552d83fe4bbcaf8a1d13ac342f377b3e7ff0a3d63be2bc8e9489f9da69047c",
    "role": "Q6 strict forecast-file selector",
    "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_R1_R4_ADDENDUM_DISPOSITION_2026-10-08.md",
+   "sha256": "861b7d14e75979f798b872a2c16b6e440d4f5b6332d4ad9e1e81d713863f5757",
+   "role": "R1 r4-addendum disposition ruling",
+   "vendored": true
+  },
+  {
+   "path": "pins/EXAMINER_SPEC_CARD01_R1_REGIME_SPLIT_SECONDARY_METRICS_2026-10-08_r3.md",
+   "sha256": "c5b08459dd6f1e1e6cae65dbb13c4aa5b0d6a1418d79d3bae54c9370d9beede5",
+   "role": "regime-split spec r3",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/EXAMINER_SPEC_CARD01_R1_REGIME_SPLIT_SECONDARY_METRICS_2026-10-08_r3.json",
+   "sha256": "2ad3ce23f697e900e7923fb0cc19540e319e4fd6ba02293747791a1acdb4c9a4",
+   "role": "regime-split spec r3 json twin",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CONDUCTOR_ACCEPT_CARD01_R1_SPEC_R3_2026-10-08.md",
+   "sha256": "69b98b2f643a7510280cd6b959c30e285df081c8142b910808001db8cad5b81a",
+   "role": "Conductor ACCEPT of spec r3",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_CARD01_R1_SPEC_OQ1_11_2026-10-08.md",
+   "sha256": "e5227270b6e767b0c25fdfe68b8a859351a1a84d42200816c0f7eac6aad56bde",
+   "role": "OQ1-11 ruling quoted by spec r3",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/CONDUCTOR_AMEND_FEE_ADMISSION_INDEX_ONLY_CARD01_V2_2026-10-08.md",
+   "sha256": "2c870cd57fc4acb4290c1273e06876e8380159f2f6614a5519314b43817a8583",
+   "role": "index-only fee admission amendment",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/EXAMINER_ATTEST_FEE_SOURCE_CARD01_V2_2026-10-08_r2.json",
+   "sha256": "b59e416873bd00c7c27572eb5eab10bb4d4a078b515465d94ea6e37efb3db84f",
+   "role": "headline fee attestation, runtime context only",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/FEE_SOURCE_CARD01_v2_2026-10-08_r1fill.json",
+   "sha256": "6edc3effcd3bed0ce3a3b586880de50835440a3b1925b5803093c826424aea7f",
+   "role": "runtime input --fee-source; index-only adopted fee source; never committed",
+   "vendored": false,
+   "reason": "RUNTIME_INPUT"
+  },
+  {
+   "path": "pins/CONDUCTOR_ACCEPT_FEE_SOURCE_CARD01_V2_FILL_2026-10-08.json",
+   "sha256": "cb5e88a6db9496ff63ce3b0aa889b0a20164acff56cf2d316982ab30983263d2",
+   "role": "runtime input --fee-accept; fill ACCEPT",
+   "vendored": false,
+   "reason": "RUNTIME_INPUT"
+  },
+  {
+   "path": "pins/ARCHIVIST_FEE_SOURCE_FORMAT_CARD01_v2_DRAFT_2026-10-08.md",
+   "sha256": "b822d63e74c8c3ce1a1a0b693febf9bdb0e9efd3b4a93ba299394eb5da40b303",
+   "role": "astra.fee_source.v2 format spec",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/FEE_SOURCE_CARD01_TEMPLATE_v2_DRAFT_2026-10-08.json",
+   "sha256": "da9d0b57885509ac9d7a125d021a81c6fe7360140250434f0a4ffac1cc59992c",
+   "role": "v2 fee-source template, values null",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "tests/fixtures/SYNTH_FEE_SOURCE_v2_example.json",
+   "sha256": "9d9da1c4e2c593cfa762701eef973c2a3538bd74410097fbcff20673b884c5b8",
+   "role": "synthetic v2-shaped fee source",
+   "vendored": true
+  },
+  {
+   "path": "tests/fixtures/SYNTH_CONDUCTOR_ACCEPT_FEE_FILL.json",
+   "sha256": "762336831853a8085fb474d5064a66962ae595b5cea13c4c385815fbdb824ba3",
+   "role": "synthetic fill ACCEPT for the synthetic fee source",
+   "vendored": true
+  },
+  {
+   "path": "tests/fixtures/SYNTH_PACKET_INDEX_excerpt.md",
+   "sha256": "46fc80af7b64a4b3f21e31da525e4ad3e55183f85050ea0c0739a177aa62e12b",
+   "role": "synthetic packet-index excerpt",
+   "vendored": true
+  },
+  {
+   "path": "tests/fixtures/SYNTH_R1_EXPECTED_VALUES.json",
+   "sha256": "016d9053ac4d409cab1bcb9558bdaa069d9c20628fe050dcdeaed02b9741ab79",
+   "role": "hand-computed synthetic expectations",
+   "vendored": true
+  },
+  {
+   "path": "pins/FEE_SOURCE_CARD01_v2_2026-10-08_r1fill_NOTE.md",
+   "sha256": "1bd42d3a432dd79aea1a9a479c4a54d5143d2c1888702692c8f0efbedde8d3fb",
+   "role": "fee source v2 note",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_FEE_715fbafd.md",
+   "sha256": "715fbafd588845867d7fe0af59b32a21d2411afc14bfb6da718f5592e0608703",
+   "role": "fee ruling",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/CARD01_R1_OQ5_OQ8_COLLECTOR_PLAN_2026-10-08.md",
+   "sha256": "f9f727c118732119389ebbd1bc2eafb0c85d0123ce5970c802cfd78e8a93cb02",
+   "role": "collector plan",
+   "vendored": false,
+   "reason": "PIN_BY_SHA_ONLY"
+  },
+  {
+   "path": "pins/EXAMINER_R1_R4_ADDENDUM.md",
+   "sha256": "61fbb3fc9db0965777720f2937a6ec738fe68bd8dc5be497df1e0227c93989c1",
+   "role": "superseded r4 addendum",
+   "vendored": false,
+   "reason": "SUPERSEDED_NON_BINDING"
+  },
+  {
+   "path": "pins/EXAMINER_R1_R4_ADDENDUM.json",
+   "sha256": "d55e877ea4db0f102b8a9dcf0493a24f168c93764097dc2452498a45ce1725dc",
+   "role": "superseded r4 addendum json",
+   "vendored": false,
+   "reason": "SUPERSEDED_NON_BINDING"
   }
  ],
  "feebook_superseded": true,
@@ -301,5 +436,23 @@
   "vendored": false,
   "reason": "PUBLIC_REPO_REDACTION",
   "loaded": "runtime --fee-source"
+ },
+ "governing_set": [
+  "c5b08459dd6f1e1e6cae65dbb13c4aa5b0d6a1418d79d3bae54c9370d9beede5",
+  "69b98b2f643a7510280cd6b959c30e285df081c8142b910808001db8cad5b81a",
+  "861b7d14e75979f798b872a2c16b6e440d4f5b6332d4ad9e1e81d713863f5757"
+ ],
+ "fee_source_v2": {
+  "id": "FEE_SOURCE_CARD01_v2",
+  "sha256": "6edc3effcd3bed0ce3a3b586880de50835440a3b1925b5803093c826424aea7f",
+  "fee_formula_id": "astra.card01.fee_eff.non_direct_buy_ceil_cent.v1",
+  "admission_rule_sha256": "2c870cd57fc4acb4290c1273e06876e8380159f2f6614a5519314b43817a8583",
+  "accept_sha256": "cb5e88a6db9496ff63ce3b0aa889b0a20164acff56cf2d316982ab30983263d2",
+  "attestation_sha256": "b59e416873bd00c7c27572eb5eab10bb4d4a078b515465d94ea6e37efb3db84f",
+  "adoption_mode": "INDEX_ONLY",
+  "sensitivity_rows_status": "SENSITIVITY_BASIS_INCOMPLETE",
+  "vendored": false,
+  "loaded": "runtime --fee-source",
+  "refused_historical": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd"
  }
 }

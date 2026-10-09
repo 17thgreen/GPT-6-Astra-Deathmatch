@@ -124,6 +124,82 @@ Interpreter: `3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]`. Platform: `Lin
 
 This run is code verification on synthetic inputs. It is not an Examiner score. `results`, `pnl`, and `roi` stay null.
 
+## Regime-split and secondary metrics
+
+This section records the pre-outcome module that lands beside the Amendment C
+scorer. It does not read settled outcomes from the public tree. Every fixture
+under `tests/fixtures/` that this module uses is synthetic.
+
+Governing set, sha256:
+
+- spec r3 `c5b08459dd6f1e1e6cae65dbb13c4aa5b0d6a1418d79d3bae54c9370d9beede5`
+- Conductor ACCEPT `69b98b2f643a7510280cd6b959c30e285df081c8142b910808001db8cad5b81a`
+- disposition ruling `861b7d14e75979f798b872a2c16b6e440d4f5b6332d4ad9e1e81d713863f5757` (vendored)
+
+The disposition ruling is the only new governance text vendored here. The spec,
+the ACCEPT, the fee file, the fill ACCEPT, the attestation, and the packet
+index stay runtime inputs pinned by sha. `PINS.json` does not pin the packet
+index; a run records that file's sha.
+
+Command, from this directory:
+
+```bash
+python3 -m card01_amc.regime_split_secondary \
+  --joined-rows rows.json \
+  --score score.json \
+  --selection selection.json \
+  --gate gate.json \
+  --settled settled.json \
+  --book-1103 book.json \
+  --fee-source PATH --fee-source-id ID --fee-source-sha256 HEX \
+  --packet-index PATH --fee-accept PATH \
+  --out /tmp/CARD01_REGIME_SPLIT_SECONDARY_stamp.json
+```
+
+`--out` must not sit inside this repo. The command exits 2 with
+`OUTPUT_PATH_IN_REPO` when any ancestor of the output path contains a git
+directory. Joined rows must be the 92-row universe. Library calls used by the
+tests accept a shorter synthetic list.
+
+Label sets:
+
+- Regime rows follow `selection.regime_table`, then `UNMONITORED`, then
+  `UNCLASSIFIED`. Regime label values may be `R0` or `R1` and so on. Module
+  names and output keys do not use a bare R1 token. The schema is
+  `astra.card01.regime_split_secondary.v1`.
+- 11-03 null statuses are exactly `MARKET_NOT_OPEN_AT_T`, `NOT_CAPTURED`,
+  `NOT_CAPTURED_EGRESS_CLOSED`, and `NO_TWO_SIDED_BOOK_IN_WINDOW`.
+
+Fee admission, first failure wins:
+
+| Check | Block reason |
+|---|---|
+| v1 id or sha | `FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL` |
+| fee file, index, or accept argument missing | `FEE_SOURCE_PAIR_MISSING` |
+| (a) rehash, anchor, manifest id | `FEE_SOURCE_REHASH_MISMATCH` or `FEE_SOURCE_NOT_ANCHORED` |
+| (b) index ADOPTED row and fill ACCEPT | `FEE_SOURCE_STATUS_NOT_ADOPTED`, `FEE_ACCEPT_MISSING`, `FEE_ACCEPT_REHASH_MISMATCH` |
+| (c) in-file draft fields | `FEE_SOURCE_IN_FILE_UNEXPECTED` |
+| headline formula | `FEE_FORMULA_ID_MISMATCH` |
+| (d) scope, series, multiplier | `HEADLINE_SCOPE_MISMATCH` or `SERIES_NOT_PINNED` |
+
+A pass records `fee_admission = ADMITTED_INDEX_ONLY`. Anything else is
+`BLOCKED_FEE_UNVERIFIED` with no fee number. Sensitivity rows
+(`FEE_ONLY_CEIL`, `DIRECT_MEMBER_GRID`) are omitted from output.
+`sensitivity_rows_status` is `SENSITIVITY_BASIS_INCOMPLETE`. Emitted views are
+`HEADLINE`, `FEES_2X`, and `GROSS`.
+
+`p_model_raw` is box-only. Public tests use synthetic values. Builder output
+and the regime-split JSON are not committed.
+
+Lineage added for this module: admission amendment
+`2c870cd57fc4acb4290c1273e06876e8380159f2f6614a5519314b43817a8583`, format spec
+`b822d63e74c8c3ce1a1a0b693febf9bdb0e9efd3b4a93ba299394eb5da40b303`, collector
+plan `f9f727c118732119389ebbd1bc2eafb0c85d0123ce5970c802cfd78e8a93cb02`, fee
+note `1bd42d3a432dd79aea1a9a479c4a54d5143d2c1888702692c8f0efbedde8d3fb`, fee
+ruling `715fbafd588845867d7fe0af59b32a21d2411afc14bfb6da718f5592e0608703`.
+The v2 fee file and its fill ACCEPT are loaded at runtime and are not in this
+tree. The historical v1 fee sha stays on the refuse list.
+
 ## Limits
 
 - Pre-outcome. No real data run. No Kalshi call. No ElectIndex fetch.
