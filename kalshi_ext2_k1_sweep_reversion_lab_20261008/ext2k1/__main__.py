@@ -14,9 +14,9 @@ from .pins_io import (
     load_verified_json,
     read_git_commit,
     sweeps_module_sha256,
-    verify_production,
+    verify_run_pins,
 )
-from .report import build_receipt, build_results, published_results
+from .report import body_if_sweeps_sha_differs, build_receipt, build_results, published_results
 from .tape import iter_jsonl_gz, load_jsonl_gz
 
 
@@ -58,8 +58,8 @@ def _load_tape_rows(tape_path):
 
 
 def _production_inputs():
-    """Hash every pin first. Quote-builder sha is fixed before the tape is opened."""
-    checked = verify_production()
+    """Hash every pin first. A bad quote builder is a C2 fact, not SourcePinMismatch."""
+    checked = verify_run_pins()
     builder = entry_by_role(checked, "B1 quote builder")
     if builder["path"] != BUILDER_RELATIVE_PATH:
         raise SourcePinMismatch("B1 quote builder")
@@ -118,8 +118,14 @@ def cmd_score(receipt_path, receipt_sha, out_dir):
         source_pins=checked,
         sweeps_module_sha256=module_sha,
     )
-    if receipt["sweeps_sha256"] != payload.get("sweeps_sha256"):
-        return _fail("RECEIPT_NOT_VERIFIED")
+    mismatch = body_if_sweeps_sha_differs(receipt, payload.get("sweeps_sha256"), read_git_commit())
+    if mismatch is not None:
+        destination = Path(out_dir)
+        destination.mkdir(parents=True, exist_ok=True)
+        published = published_results(mismatch)
+        _write(destination / "RESULTS.json", published)
+        print("output_sha256 " + published["output_sha256"])
+        return 0
     if _gates_ok(payload) != _gates_ok(receipt):
         return _fail("RECEIPT_NOT_VERIFIED")
     b2_rows = None

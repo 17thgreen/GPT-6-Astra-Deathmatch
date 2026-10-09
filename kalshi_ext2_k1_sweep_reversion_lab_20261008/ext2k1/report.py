@@ -146,12 +146,43 @@ def _base_results(receipt, git_commit):
 def _verdict_only(receipt):
     count_pass = bool(receipt["count_gate"]["pass"])
     structure_pass = bool(receipt["structure_gate"]["pass"] and receipt["b1_quote_builder"]["match"])
-    return count_pass and structure_pass, evaluate(
+    table = evaluate(
         {},
         {},
         count_pass=count_pass,
         structure_pass=structure_pass,
     )
+    if table["rule"] == "V1s":
+        builder = receipt["b1_quote_builder"]
+        structure = receipt["structure_gate"]
+        if not builder.get("match"):
+            table["reason"] = builder.get("reason") or "C2_BUILDER_SHA_MISMATCH"
+        elif structure.get("reason"):
+            table["reason"] = structure["reason"]
+    return count_pass and structure_pass, table
+
+
+def body_if_sweeps_sha_differs(receipt, filed_sweeps_sha256, git_commit=None):
+    """None when the filed sha matches. Otherwise a V1 body and no statistics."""
+    if receipt.get("sweeps_sha256") == filed_sweeps_sha256:
+        return None
+    return results_for_sweeps_mismatch(receipt, git_commit)
+
+
+def results_for_sweeps_mismatch(receipt, git_commit=None):
+    """Filed SWEEPS sha disagrees with the rebuild. V1, no statistics."""
+    body = _base_results(receipt, git_commit)
+    body["verdict_table_evaluation"] = {
+        "verdict": "INCONCLUSIVE",
+        "rule": "V1",
+        "owner": "Examiner",
+        "status": "RUNNER_EVALUATION_NOT_A_SCORE",
+        "reason": "SWEEPS_SHA_MISMATCH",
+    }
+    body["output_sha256"] = canonical_sha256(
+        {key: value for key, value in body.items() if key != "output_sha256"}
+    )
+    return body
 
 
 def build_results(

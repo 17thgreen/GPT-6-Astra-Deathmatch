@@ -64,6 +64,38 @@ def verify_production(root=None, pins_path=None):
     return verify_entries(root, document["pins"])
 
 
+_BUILDER_ROLE = "B1 quote builder"
+
+
+def verify_run_pins(root=None, pins_path=None):
+    """Hash pins for a run. A changed or missing quote builder is observed, not refused.
+
+    Every other role still raises SourcePinMismatch and returns nothing.
+    """
+    root = REPO_ROOT if root is None else Path(root)
+    document = read_source_pins(pins_path)
+    checked = []
+    for entry in document["pins"]:
+        rel = entry["path"]
+        assert_source_path(rel)
+        if entry.get("role") != _BUILDER_ROLE:
+            checked.extend(verify_entries(root, [entry]))
+            continue
+        full = Path(root) / rel
+        if not full.is_file():
+            checked.append({"role": entry["role"], "path": rel, "bytes": None, "sha256": None})
+            continue
+        checked.append(
+            {
+                "role": entry["role"],
+                "path": rel,
+                "bytes": full.stat().st_size,
+                "sha256": sha256_file(full),
+            }
+        )
+    return checked
+
+
 def entry_by_role(entries, role):
     for entry in entries:
         if entry["role"] == role:

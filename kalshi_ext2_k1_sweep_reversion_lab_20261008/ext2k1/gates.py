@@ -86,41 +86,79 @@ def count_gate(rows, markets, week_membership, pins):
     return {"observed": observed, "expected": expected, "pass": matches}
 
 
+def _malformed_timestamp(value):
+    """NaN, inf, text, and other non-finite values. They fail the gate; they do not raise."""
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return True
+    try:
+        number = float(value)
+    except (TypeError, ValueError, OverflowError):
+        return True
+    return math.isnan(number) or math.isinf(number)
+
+
 def structure_gate(rows):
     """RE-2. Quote publication lag, and trade-time resolution not coarser than 1s."""
     quote_ok = True
     trade_times = []
+    malformed = False
+    trade_malformed = False
     for row in rows:
         if row.get("kind") == "quote":
-            at = row["at"]
-            asof = row["asof"]
+            at = row.get("at")
+            asof = row.get("asof")
+            if _malformed_timestamp(at) or _malformed_timestamp(asof):
+                malformed = True
+                quote_ok = False
+                continue
             assert_timestamp_allowed(asof)
             if (at - asof) != 60 or asof % 60 != 0:
                 quote_ok = False
         else:
-            at = row["at"]
+            at = row.get("at")
+            if _malformed_timestamp(at):
+                malformed = True
+                trade_malformed = True
+                continue
             assert_timestamp_allowed(at)
             trade_times.append(at)
-    if any(float(at) != math.floor(float(at)) for at in trade_times):
+    if trade_malformed:
+        resolution_ok = False
+    elif any(float(at) != math.floor(float(at)) for at in trade_times):
         resolution_ok = True
     else:
         divisor = 0
         for at in trade_times:
             divisor = math.gcd(divisor, int(at))
         resolution_ok = divisor == 1
-    return {
+    result = {
         "quote_at_minus_asof_60_and_asof_mod_60_0": quote_ok,
         "trade_at_not_coarser_than_1s": resolution_ok,
-        "pass": quote_ok and resolution_ok,
+        "pass": quote_ok and resolution_ok and not malformed,
     }
+    if malformed:
+        result["reason"] = "STRUCTURE_TIMESTAMP_MALFORMED"
+        result["pass"] = False
+    return result
 
 
 def builder_receipt(observed_sha256, expected_sha256, path):
     """C2. Absence is a mismatch. Callers record this before any mid."""
-    match = observed_sha256 is not None and observed_sha256 == expected_sha256
-    return {
+    if observed_sha256 is None:
+        reason = "C2_BUILDER_SHA_MISSING"
+        match = False
+    elif observed_sha256 != expected_sha256:
+        reason = "C2_BUILDER_SHA_MISMATCH"
+        match = False
+    else:
+        reason = None
+        match = True
+    receipt = {
         "path": path,
         "sha256": observed_sha256,
         "expected_sha256": expected_sha256,
         "match": match,
     }
+    if reason is not None:
+        receipt["reason"] = reason
+    return receipt
