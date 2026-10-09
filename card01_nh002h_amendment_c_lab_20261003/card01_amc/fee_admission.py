@@ -161,9 +161,9 @@ def _status_blocks(text):
     return _SUPERSEDED_RE.search(folded) is not None
 
 
-# 69b98b2f is not in the citation multiset. A row cites it when, after
-# zero-width removal and casefolding, it contains the 7-hex prefix.
-# A status blocks only when 69b98b2f is the subject of that status.
+# The fee citation multiset does not include 69b98b2f. That packet has its
+# own pinned line set, checked before this word rule. The word rule is
+# defence in depth: a status blocks only when 69b98b2f is the subject.
 _R1_ACCEPT_PREFIX7 = "69b98b2"
 _R1_STATUS = (
     r"(?:withdrawn|withdrawal|withdraws|withdraw|revoked|revocation|revokes|revoke|"
@@ -314,7 +314,7 @@ def _r1_entries(text):
 def _r1_accept_block_reason(text):
     """ACCEPT_69B98B2F_WITHDRAWN, or None.
 
-    The citation multiset does not include 69b98b2f. A packet path named
+    Defence in depth after the R1 accept citation set. A packet path named
     WITHDRAW, WITHDRAWAL, REVOKE, REVOCATION, RESCIND, or SUPERSEDE blocks
     when the row cites it. A status word blocks only when 69b98b2f is the
     object ('69b98b2f WITHDRAWN', 'WITHDRAW of 69b98b2f', 'revokes 69b98b2f',
@@ -436,6 +436,68 @@ def _line_cites(folded, watched_sha8, watched_files):
     return any(name in folded for name in names)
 
 
+_R1_CITATION_PATH = Path(__file__).with_name("r1_accept_citation_set.json")
+# sha256 of r1_accept_citation_set.json. A byte change with this constant
+# left unchanged makes the pin unusable (ADV-10). There is no override.
+R1_ACCEPT_CITATION_SET_SHA256 = "8e26ac4e5db007ab671119379acdf0251f18b08f56ab00813cdd4e89401d4da3"
+
+
+def _load_r1_citation_doc():
+    """Return the 69b98b2f citation pin, or None when it is missing or unusable.
+
+    The raw bytes must match R1_ACCEPT_CITATION_SET_SHA256. A mismatch is an
+    unusable pin. The constant is the reference; there is no path override.
+    """
+    try:
+        raw = _R1_CITATION_PATH.read_bytes()
+    except OSError:
+        return None
+    if sha256_bytes(raw) != R1_ACCEPT_CITATION_SET_SHA256:
+        return None
+    try:
+        doc = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    if not isinstance(doc, dict):
+        return None
+    watched = doc.get("watched_sha8")
+    lines = doc.get("line_sha256")
+    if not isinstance(watched, list) or watched != ["69b98b2f"]:
+        return None
+    if (
+        not isinstance(lines, list)
+        or not lines
+        or any(not isinstance(item, str) or len(item) != 64 for item in lines)
+        or lines != sorted(lines)
+    ):
+        return None
+    return doc
+
+
+def _r1_citation_block_reason(text):
+    """ACCEPT_69B98B2F_CITATIONS_CHANGED unless the index matches or cites none.
+
+    Same citing-line rule as the fee set, watching only the 7-hex prefix
+    69b98b2. The line hash is sha256 of the original rstrip'd line. An index
+    that cites none of them is left to the word rule. An index that cites any
+    must reproduce the pinned multiset. A missing or unusable pin fails closed.
+    """
+    doc = _load_r1_citation_doc()
+    if doc is None:
+        return "ACCEPT_69B98B2F_CITATIONS_CHANGED"
+    found = []
+    for line in text.splitlines():
+        stripped = line.rstrip()
+        if _line_cites(_citation_fold(stripped), doc["watched_sha8"], []):
+            found.append(sha256_bytes(stripped.encode("utf-8")))
+    found.sort()
+    if not found:
+        return None
+    if found != doc["line_sha256"]:
+        return "ACCEPT_69B98B2F_CITATIONS_CHANGED"
+    return None
+
+
 def _citation_block_reason(text):
     """FEE_CITATIONS_CHANGED unless this index matches the pin or cites none.
 
@@ -523,6 +585,9 @@ def admit_fee_source_v2(
     citation_reason = _citation_block_reason(index_text)
     if citation_reason is not None:
         return _blocked(citation_reason, "b", "CITATION_SET", **identity)
+    r1_set_reason = _r1_citation_block_reason(index_text)
+    if r1_set_reason is not None:
+        return _blocked(r1_set_reason, "b", "R1_ACCEPT_CITATION_SET", **identity)
     r1_reason = _r1_accept_block_reason(index_text)
     if r1_reason is not None:
         return _blocked(r1_reason, "b", "R1_ACCEPT", **identity)

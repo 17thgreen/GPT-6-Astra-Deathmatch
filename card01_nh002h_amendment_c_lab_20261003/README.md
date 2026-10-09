@@ -331,7 +331,16 @@ These are fixed here so the code does not invent a second reading later.
   of line hashes in `card01_amc/fee_citation_set.json`. Admission recomputes
   that set from the index on disk. Any difference is `FEE_CITATIONS_CHANGED`
   with no fee or net numbers. Reordering those lines without editing them
-  still matches. Status-word checks remain only after the set matches.
+  still matches. Lines that cite packet `69b98b2f`, after the same zero-width
+  removal and casefolding, as the 7-hex prefix `69b98b2`, are a second sorted
+  multiset in `card01_amc/r1_accept_citation_set.json`. Admission recomputes
+  that set after the fee set and before the 69b98b2f word rule. Any difference
+  is `ACCEPT_69B98B2F_CITATIONS_CHANGED` with detail `R1_ACCEPT_CITATION_SET`
+  and no fee or net numbers. An index that cites none of them is left to the
+  later checks. Reordering those lines without editing them still matches.
+  The pin file's sha256 is the runtime constant `R1_ACCEPT_CITATION_SET_SHA256`.
+  There is no override. The 69b98b2f word rule stays as defence in depth after
+  the set matches. Status-word checks remain only after both sets match.
   A missing, unreadable, or non-UTF-8 fee file is `FEE_SOURCE_UNREADABLE`.
   The verdict takes `fee_state` from the regime report and does not read a
   passed-in gate or pair. The swing net subtracts the recomputed headline.
