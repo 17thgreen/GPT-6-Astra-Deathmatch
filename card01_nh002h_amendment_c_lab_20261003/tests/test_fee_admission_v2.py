@@ -560,6 +560,9 @@ class AdmissionTests(unittest.TestCase):
         banned = []
         covered = (
             "fee_admission.py",
+            "secondary_metrics.py",
+            "book_1103.py",
+            "regime_split_secondary.py",
             "fee_source.py",
         )
         for name in covered:

@@ -433,6 +433,30 @@
    "sha256": "c2a4dc2bb133c5f238c6b47b9d4b31b2a0d73dca2272833ce8100f8156bdf289",
    "role": "v2 index-only fee admission",
    "vendored": true
+  },
+  {
+   "path": "card01_amc/regime_split.py",
+   "sha256": "322636a9132f175f8a47a828c72186fffac21e22b0e6132afe6247229d0f6122",
+   "role": "forecast-only regime partition",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/secondary_metrics.py",
+   "sha256": "862335d55e32c2e051d95ffdbf2b1a695116f60da90557a3792e3043ad470302",
+   "role": "secondary metrics and headline fee views",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/book_1103.py",
+   "sha256": "b4901628b34a7de69511b199f7759d3270d8ff7a08e4021061fdea886c6990ee",
+   "role": "11-03 adverse selection labels",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/regime_split_secondary.py",
+   "sha256": "4fdeb0d337aa5173526907175d9786beb82fbc9374f1365a95d9a349bff4e59c",
+   "role": "regime-split assembly and CLI",
+   "vendored": true
   }
  ],
  "feebook_superseded": true,
