@@ -1,0 +1,130 @@
+{
+  "schema": "astra.ext2k1.pins.v1",
+  "experiment_id": "EXT2-K1-SWEEP-REVERSION",
+  "no_real_data_in_repo_outputs": true,
+  "kit_defaults": [
+    "KD-1",
+    "KD-2",
+    "KD-3",
+    "KD-4",
+    "KD-5",
+    "KD-6",
+    "KD-7",
+    "KD-8",
+    "KD-9",
+    "KD-10",
+    "KD-11",
+    "KD-12",
+    "KD-13",
+    "KD-14",
+    "KD-15",
+    "KD-16",
+    "KD-17",
+    "KD-18",
+    "KD-19",
+    "KD-20",
+    "KD-21"
+  ],
+  "kit_defaults_frozen_at_kit_values": ["KD-5", "KD-6", "KD-7", "KD-19"],
+  "modules": [
+    {"path": "ext2k1/__init__.py", "sha256": "365d7216128b64be9b7e53930ad2f7b38017bac1217067e3c6dd28a692b9251e", "role": "package identity", "vendored": false},
+    {"path": "ext2k1/__main__.py", "sha256": "48fc60b8d7c24f884c605c966dbe292400dbace906963d7d486289681c4b27e8", "role": "CLI receipt and score", "vendored": false},
+    {"path": "ext2k1/b2join.py", "sha256": "f7747990b21163164027a5a6b3a972bab50df95a56f95f9aca5c280a5d82540c", "role": "R18 maker-fill join", "vendored": false},
+    {"path": "ext2k1/bootstrap.py", "sha256": "da895b71f1a25dd38da2a5b22e5f5e7131aafdd179c73f0d1b212808377aefba", "role": "game-cluster bootstrap", "vendored": false},
+    {"path": "ext2k1/canonical.py", "sha256": "0434a72a4f5fd665b7a97a43d780003d22b7ae13b42acbad57af4b2741f8f927", "role": "canonical JSON", "vendored": false},
+    {"path": "ext2k1/constants.py", "sha256": "f72f0315edc24d5e37ebd1ad66228e23781c2374abd5744d45d9e75139e4af44", "role": "pins and kit defaults", "vendored": false},
+    {"path": "ext2k1/errors.py", "sha256": "86714298344604cff1343c09c848ccb55f85e6be1e016263a973d17a3d247ead", "role": "closed-universe and refusal errors", "vendored": false},
+    {"path": "ext2k1/fees.py", "sha256": "403f6c4fb1fa0be65473eed5072300107652bb3f74a1800a406e9dbe89c8fa00", "role": "blocked fee admission and pure decimal cost", "vendored": false},
+    {"path": "ext2k1/gates.py", "sha256": "416eb3207ce40694d3709ef2b820e4feff3bee794cdcca9f0c00160082452be1", "role": "builder receipt, count gate, structure gate", "vendored": false},
+    {"path": "ext2k1/metrics.py", "sha256": "43eede85e4069ba373cd38e78e558e6524e1b9b57a4d95a2be2f473f852093dc", "role": "primary, cells, impact, leave-one-out", "vendored": false},
+    {"path": "ext2k1/pins_io.py", "sha256": "c151ea9dc2aa627aa22d452cf518b61c906a8cf72709e76617c4ceb97c27e87e", "role": "closed manifest and git HEAD text", "vendored": false},
+    {"path": "ext2k1/placebo.py", "sha256": "f9a972c433a9fba340b02aeb02391ed662dac67ff2196c978d83c6233f092dae", "role": "label permutation", "vendored": false},
+    {"path": "ext2k1/quotes.py", "sha256": "9b3d4cddbf7ee5991ecb9e30c96aed6a02edf5a06763d6f378a54cc96aba84fd", "role": "quote mids and per-sweep status", "vendored": false},
+    {"path": "ext2k1/refusals.py", "sha256": "42b8eaa663f465dcf77b723f5fc967b6071e9ab476f94c2e3edcb90c87cdd672", "role": "clock, holdout, and path refusals", "vendored": false},
+    {"path": "ext2k1/report.py", "sha256": "73e220e1f19d29d181c7ac8d9f368de1751bb722b618ace14d74160732a86af8", "role": "receipt and results assembly", "vendored": false},
+    {"path": "ext2k1/sweeps.py", "sha256": "1b69d7e3ba4116318c7d3ca93e4ec5f77c6f3bb953e5f11d8e0184f47e8de6c7", "role": "sweep grouping", "vendored": false},
+    {"path": "ext2k1/tape.py", "sha256": "78451f4f945c8309eca9622f961d0ba0b10e6a14db4f74ca487f31aa3e00a3fa", "role": "gzip jsonl stream", "vendored": false},
+    {"path": "ext2k1/verdict.py", "sha256": "9d694a516fd78a5ba4bd72c920ca4e6abf177bc4a8c7739ac0ccc7204c463fc4", "role": "verdict table", "vendored": false}
+  ],
+  "entries": [
+    {
+      "path": "pins/CONDUCTOR_ACCEPT_EXT2_K1_FREEZE_R2_2026-10-08.md",
+      "sha256": "d3ddc2ca50db07f36142acce38add4153beeba2c466cfdebba647671049abf21",
+      "role": "Conductor ACCEPT",
+      "vendored": true
+    },
+    {
+      "path": "tests/fixtures/SYNTH_EXT2K1_FIXTURES.json",
+      "sha256": "4f6791ee4cce5baa3f67acb29c563c0823b36f6ecea420a03cabe95e8efca430",
+      "role": "synthetic fixtures",
+      "vendored": true
+    },
+    {
+      "path": "tests/fixtures/SYNTH_EXT2K1_EXPECTED.json",
+      "sha256": "f8f916dd03aac4700f7f01d77dedec48108f1cb3a3fc8308b7bfd0885d829c17",
+      "role": "synthetic expected blocks",
+      "vendored": true
+    },
+    {
+      "name": "freeze md",
+      "sha256": "8f35fa77cab5872f7956df34c145fda2e8ae5587e1c1396ca2d39b5e347676a9",
+      "vendored": false,
+      "reason": "FREEZE_NEVER_VENDORED_AND_PUBLIC_REPO_REDACTION"
+    },
+    {
+      "name": "freeze json",
+      "sha256": "afbcd089888c84fb5db4e611b1e58ef59a558d4b379c843bae68c82a386ed8af",
+      "vendored": false,
+      "reason": "FREEZE_NEVER_VENDORED"
+    },
+    {
+      "name": "conditional ruling",
+      "sha256": "7bd04408703b7a0d5e36967477e1e697d03a131e28fe4d30f7439b0a9ca7abe8",
+      "vendored": false,
+      "reason": "PIN_BY_SHA_ONLY"
+    },
+    {
+      "name": "adversary pass",
+      "sha256": "9da36baaf76d60eb221d3ed71605e4951e7ffe9e1e4bb3d01261fe60230d7797",
+      "vendored": false,
+      "reason": "PUBLIC_REPO_REDACTION"
+    },
+    {
+      "name": "kernel ruling",
+      "sha256": "85376e40518e5a51066ce290505ab3896bb804b43ad1780e48df0485d4d310fa",
+      "vendored": false,
+      "reason": "PIN_BY_SHA_ONLY"
+    },
+    {
+      "name": "freeze r1 md",
+      "sha256": "c2dcce31725eae1c1c238d924701b8712d1879c3093c620fba634e662d089c90",
+      "vendored": false,
+      "reason": "SUPERSEDED"
+    },
+    {
+      "name": "freeze r1 json",
+      "sha256": "78ae5d7dcaeee8e11c3166dcf8fee13009a6f4e915e819bd43a3a2af6f862915",
+      "vendored": false,
+      "reason": "SUPERSEDED"
+    },
+    {
+      "name": "adversary pre-review",
+      "sha256": "8a1a38049e79b77c95caf74f561b16599f2e4e9a687c4a10aa7d507d251b58a0",
+      "vendored": false,
+      "reason": "PUBLIC_REPO_REDACTION"
+    },
+    {
+      "name": "standing bootstrap rule",
+      "sha256": "6824793a44f5a10ee1d6e869e694d6681cfaba1681ff9b4bfb7cd0ed98242502",
+      "path": "card01_nh002h_amendment_c_lab_20261003/pins/CONDUCTOR_SCORE_ACCEPT_EXT_K2_PARTA_2026-10-03.md",
+      "vendored": false,
+      "reason": "ALREADY_ON_MAIN"
+    },
+    {
+      "name": "public repo rule",
+      "sha256": "b1c1851f3edfd04ad9d2d0c91fed17e86f6fd543ad0f489f4775d1540478017f",
+      "vendored": false,
+      "reason": "PIN_BY_SHA_ONLY"
+    }
+  ]
+}
