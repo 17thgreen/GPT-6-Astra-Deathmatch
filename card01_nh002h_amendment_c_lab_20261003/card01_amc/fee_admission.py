@@ -46,16 +46,8 @@ _BOLD_STATUS_RE = re.compile(
     re.IGNORECASE,
 )
 _HEX_TOKEN_RE = re.compile(r"[0-9a-f]{8,64}")
-_RULING_RE = re.compile(r"accept(?:_[a-z0-9]+)*\Z")
-_RULING_STATUS_TOKENS = frozenset({
-    "withdrawn",
-    "withdraw",
-    "revoked",
-    "superseded",
-    "adopted",
-    "admitted",
-})
 _ADMISSION_RE = re.compile(r"^ADMITTED_BY_RULING [0-9a-f]{64}$")
+_CITATION_PATH = Path(__file__).with_name("fee_citation_set.json")
 
 
 @dataclass(frozen=True)
@@ -178,24 +170,74 @@ def _mentions_sha(row, sha):
     return any(target.startswith(token) for token in _HEX_TOKEN_RE.findall(blob))
 
 
-def _ruling_is_accept(ruling):
-    """True for the exact token ACCEPT, or ACCEPT plus non-status underscore tokens.
+def _load_citation_doc():
+    """Return the citation pin, or None when it is missing or unusable."""
+    try:
+        raw = _CITATION_PATH.read_bytes()
+    except OSError:
+        return None
+    try:
+        doc = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    if not isinstance(doc, dict):
+        return None
+    allow = doc.get("ruling_allowlist")
+    watched = doc.get("watched_sha8")
+    lines = doc.get("line_sha256")
+    if (
+        not isinstance(allow, list)
+        or len(allow) != 1
+        or not isinstance(allow[0], str)
+        or allow[0] == ""
+    ):
+        return None
+    if (
+        not isinstance(watched, list)
+        or not watched
+        or any(not isinstance(item, str) or len(item) != 8 for item in watched)
+    ):
+        return None
+    if (
+        not isinstance(lines, list)
+        or not lines
+        or any(not isinstance(item, str) or len(item) != 64 for item in lines)
+        or lines != sorted(lines)
+    ):
+        return None
+    return doc
 
-    ACCEPT_THEN_WITHDRAWN is refused. A prefix such as ACCEPTED is refused.
+
+def _ruling_is_accept(ruling):
+    """True only when ruling equals the single pinned allowlist token."""
+    doc = _load_citation_doc()
+    if doc is None or not isinstance(ruling, str):
+        return False
+    return ruling in doc["ruling_allowlist"]
+
+
+def _citation_block_reason(text):
+    """FEE_CITATIONS_CHANGED unless this index matches the pin or cites none.
+
+    An index that cites none of the watched shas is not the adopted index.
+    An index that cites any of them must reproduce the pinned multiset.
+    A missing or unusable pin fails closed. Status words are not this gate.
     """
-    if not isinstance(ruling, str):
-        return False
-    folded = _normalize_status(ruling)
-    if _RULING_RE.fullmatch(folded) is None:
-        return False
-    tokens = folded.split("_")
-    if tokens[0] != "accept":
-        return False
-    if any(token in _RULING_STATUS_TOKENS for token in tokens):
-        return False
-    if "not" in tokens:
-        return False
-    return True
+    doc = _load_citation_doc()
+    if doc is None:
+        return "FEE_CITATIONS_CHANGED"
+    watched = doc["watched_sha8"]
+    found = []
+    for line in text.splitlines():
+        stripped = line.rstrip()
+        if any(prefix in stripped for prefix in watched):
+            found.append(sha256_bytes(stripped.encode("utf-8")))
+    found.sort()
+    if not found:
+        return None
+    if found != doc["line_sha256"]:
+        return "FEE_CITATIONS_CHANGED"
+    return None
 
 
 def _series_list(names):
@@ -253,7 +295,11 @@ def admit_fee_source_v2(
     if not isinstance(doc, dict):
         return _blocked("FEE_SOURCE_IN_FILE_UNEXPECTED", "c", "UNPARSEABLE", **identity)
 
-    rows = _index_rows(index_bytes.decode("utf-8", "replace"))
+    index_text = index_bytes.decode("utf-8", "replace")
+    citation_reason = _citation_block_reason(index_text)
+    if citation_reason is not None:
+        return _blocked(citation_reason, "b", "CITATION_SET", **identity)
+    rows = _index_rows(index_text)
     anchored = [row for row in rows if row["sha256"] == fee_source_sha256]
     if not anchored:
         return _blocked("FEE_SOURCE_NOT_ANCHORED", "a", **identity)

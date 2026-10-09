@@ -430,8 +430,14 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "5795d5f0a30cd8ab41bc526432536adc4fa97eaa91b69eb7fd2a50bc4c2adf53",
+   "sha256": "00f00952ea57a5a64b147898be3605a5618262ce890417c5fc7f52c438cba615",
    "role": "v2 index-only fee admission",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/fee_citation_set.json",
+   "sha256": "88c71eccc6cb21fb5151e7f9dca718e653f6824067a7bec6624d35127cd6586c",
+   "role": "pinned citation multiset for the adopted v2 fee index",
    "vendored": true
   },
   {

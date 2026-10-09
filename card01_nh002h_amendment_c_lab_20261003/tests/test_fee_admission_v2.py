@@ -76,15 +76,28 @@ def _no_fee_numbers(obj):
 
 
 def _copy_kit(tmp: Path):
+    """Copy the synthetic kit and set the allowlisted ruling in the temp accept.
+
+    The fixture bytes stay pinned. The temp accept sha is written back into
+    the temp index so the kit still anchors.
+    """
+    pin = json.loads((LAB / "card01_amc" / "fee_citation_set.json").read_text())
     fee = (FIXTURES / FEE_NAME).read_bytes()
-    accept = (FIXTURES / ACCEPT_NAME).read_bytes()
-    index = (FIXTURES / INDEX_NAME).read_bytes()
+    accept_bytes = (FIXTURES / ACCEPT_NAME).read_bytes()
+    index = (FIXTURES / INDEX_NAME).read_text()
+    old_sha = sha256_bytes(accept_bytes)
+    accept = json.loads(accept_bytes)
+    accept["ruling"] = pin["ruling_allowlist"][0]
+    new_bytes = json.dumps(accept).encode()
+    new_sha = sha256_bytes(new_bytes)
+    index = index.replace(old_sha, new_sha)
+    index = index.replace("ACCEPT 76233683", "ACCEPT " + new_sha[:8])
     fee_path = tmp / "fee.json"
     accept_path = tmp / "accept.json"
     index_path = tmp / "index.md"
     fee_path.write_bytes(fee)
-    accept_path.write_bytes(accept)
-    index_path.write_bytes(index)
+    accept_path.write_bytes(new_bytes)
+    index_path.write_text(index)
     return fee_path, accept_path, index_path
 
 
@@ -101,7 +114,7 @@ def _repin(tmp: Path, doc, accept_fill_sha=None, adopted_phrase=None):
     accept.setdefault("accepted", {})
     accept["accepted"]["fill_sha256"] = fee_sha if accept_fill_sha is None else accept_fill_sha
     if not isinstance(accept.get("ruling"), str):
-        accept["ruling"] = "ACCEPT_FEE_SOURCE_SYNTH_v2_FILL"
+        accept["ruling"] = "ACCEPT_FEE_SOURCE_CARD01_v2_FILL"
     accept_bytes = json.dumps(accept).encode()
     accept_path.write_bytes(accept_bytes)
     accept_sha = sha256_bytes(accept_bytes)
@@ -603,7 +616,9 @@ class AdmissionTests(unittest.TestCase):
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             paths = _copy_kit(Path(tmp))
-            other = "76233683" + ("ab" * 28)
+            cited = sha256_bytes(paths[1].read_bytes())
+            other = cited[:8] + ("ab" * 28)
+            self.assertNotEqual(other, cited)
             self.assertEqual(len(other), 64)
             extra = (
                 "| `packets/OTHER_CONDUCTOR_ACCEPT.json` (second fill ACCEPT) | `"
@@ -797,8 +812,8 @@ class AdmissionTests(unittest.TestCase):
             paths[2].write_text(paths[2].read_text() + extra)
             admission = _admit(paths)
             self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
-            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
-            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+            self.assertEqual(admission.fee_block_reason, "FEE_CITATIONS_CHANGED")
+            self.assertEqual(admission.fee_block_detail, "CITATION_SET")
 
     def test_lowercase_withdrawn_blocks(self):
         import tempfile
@@ -844,8 +859,8 @@ class AdmissionTests(unittest.TestCase):
             accept["ruling"] = "ACCEPT"
             paths[1].write_bytes(json.dumps(accept).encode())
             fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
-            admitted = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
-            self.assertEqual(admitted.fee_admission, "ADMITTED_INDEX_ONLY")
+            plain = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertEqual(plain.fee_block_detail, "NOT_AN_ACCEPT")
             accept["ruling"] = "ACCEPTED"
             paths[1].write_bytes(json.dumps(accept).encode())
             fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
@@ -886,6 +901,183 @@ class AdmissionTests(unittest.TestCase):
             self.assertEqual(unreadable.fee_admission, "BLOCKED_FEE_UNVERIFIED")
             self.assertEqual(unreadable.fee_block_reason, "FEE_SOURCE_UNREADABLE")
             self.assertEqual(unreadable.fee_block_detail, "non_utf8")
+
+    def _numbers_blocked(self, paths, digest, prior, reason):
+        admission = _admit(paths)
+        self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(admission.fee_block_reason, reason)
+        self.assertFalse(admission.admitted)
+        gated = gate_v2(
+            [_row()],
+            fee_source_path=paths[0],
+            fee_source_id=ADMITTED_ID,
+            fee_source_sha256=digest,
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+        )
+        self.assertEqual(gated["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(gated["fee_block_reason"], reason)
+        self.assertIsNone(gated["signals"])
+        self.assertTrue(_no_fee_numbers(gated))
+        out = evaluate(
+            [_row()],
+            prior,
+            "r",
+            "g",
+            "g",
+            fee_source_path=paths[0],
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+            fee_source_expected_id=ADMITTED_ID,
+            fee_source_expected_sha256=digest,
+            fee_source_expected_accept=prior["fee_source_accept_sha256"],
+            fee_source_expected_formula=FEE_FORMULA_ID,
+        )
+        self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(out["rows"])
+        self.assertEqual(out["fee_block_reason"], reason)
+        self.assertTrue(_no_fee_numbers(out))
+        return gated
+
+    def _prior_gate(self, paths):
+        digest = sha256_bytes(paths[0].read_bytes())
+        gated = gate_v2(
+            [_row()],
+            fee_source_path=paths[0],
+            fee_source_id=ADMITTED_ID,
+            fee_source_sha256=digest,
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+        )
+        self.assertEqual(gated["status"], "OK")
+        self.assertEqual(gated["fee_admission"], "ADMITTED_INDEX_ONLY")
+        return digest, gated
+
+    def test_c5_unlisted_rulings_block_without_numbers(self):
+        import tempfile
+        for ruling in ("ACCEPT_CONDITIONAL", "ACCEPT_PROVISIONAL", "accept", "ACCEPTED"):
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                paths = _copy_kit(root)
+                accept = json.loads(paths[1].read_bytes())
+                accept["ruling"] = ruling
+                paths[1].write_bytes(json.dumps(accept).encode())
+                doc = json.loads(paths[0].read_bytes())
+                fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+                accept_sha = sha256_bytes(accept_path.read_bytes())
+                claimed = {
+                    "status": "OK",
+                    "n_selected": 1,
+                    "signals": [{
+                        "race_id": "G1-01",
+                        "side": "D_YES",
+                        "price": 0.055,
+                        "fee_decimal": "0.005",
+                        "series": "XS1",
+                        "fee_source": ADMITTED_ID,
+                        "fee_source_sha256": fee_sha,
+                        "fee_formula_id": FEE_FORMULA_ID,
+                    }],
+                    "fee_admission": "ADMITTED_INDEX_ONLY",
+                    "fee_formula_id": FEE_FORMULA_ID,
+                    "fee_source": ADMITTED_ID,
+                    "fee_source_sha256": fee_sha,
+                    "fee_source_accept_sha256": accept_sha,
+                }
+                self._numbers_blocked(
+                    (fee_path, accept_path, index_path),
+                    fee_sha,
+                    claimed,
+                    "FEE_ACCEPT_REHASH_MISMATCH",
+                )
+
+    def test_c1_superseded_by_on_fee_and_accept_rows_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest, prior = self._prior_gate(paths)
+            extra = (
+                "| `registry/SYNTH_FEE_SOURCE_v2_example.json` "
+                "(SUPERSEDED by 0123abcd) | `6edc3effcd3bed0ce3a3b586880de50835440a3b1925b5803093c826424aea7f` |\n"
+                "| `packets/SYNTH_CONDUCTOR_ACCEPT_FEE_FILL.json` "
+                "(SUPERSEDED by 0123abcd) | `cb5e88a6db9496ff63ce3b0aa889b0a20164acff56cf2d316982ab30983263d2` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            self._numbers_blocked(paths, digest, prior, "FEE_CITATIONS_CHANGED")
+
+    def test_c2_withdraw_packet_citing_only_fee_sha_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest, prior = self._prior_gate(paths)
+            extra = (
+                "| `packets/CONDUCTOR_WITHDRAW_ACCEPT_SYNTH.json` "
+                "(Conductor WITHDRAW of 6edc3eff) | `"
+                + ("61e571da" + ("ab" * 28))
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            self._numbers_blocked(paths, digest, prior, "FEE_CITATIONS_CHANGED")
+
+    def test_c3_withdraws_rescinded_and_void_block(self):
+        import tempfile
+        for word in ("withdraws", "rescinded", "VOID"):
+            with tempfile.TemporaryDirectory() as tmp:
+                paths = _copy_kit(Path(tmp))
+                digest, prior = self._prior_gate(paths)
+                extra = (
+                    "| `registry/SYNTH_FEE_SOURCE_v2_example.json` ("
+                    + word
+                    + ") | `6edc3effcd3bed0ce3a3b586880de50835440a3b1925b5803093c826424aea7f` |\n"
+                )
+                paths[2].write_text(paths[2].read_text() + extra)
+                self._numbers_blocked(paths, digest, prior, "FEE_CITATIONS_CHANGED")
+
+    def test_c4_status_bullet_citing_accept_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest, prior = self._prior_gate(paths)
+            paths[2].write_text(paths[2].read_text() + "- STATUS: withdrawn cb5e88a6\n")
+            self._numbers_blocked(paths, digest, prior, "FEE_CITATIONS_CHANGED")
+
+    def test_benign_extra_citation_blocks_in_regime_and_verdict(self):
+        import tempfile
+        from card01_amc.regime_split_secondary import build_report
+        from card01_amc.verdict import apply_verdict
+        from tests.test_regime_split_secondary import _selection
+        from tests.test_v2_consumers import _score
+
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest, prior = self._prior_gate(paths)
+            paths[2].write_text(
+                paths[2].read_text()
+                + "| `registry/NOTE.md` (benign re-confirm) | `b59e416873bd00c7c27572eb5eab10bb4d4a078b515465d94ea6e37efb3db84f` |\n"
+            )
+            self._numbers_blocked(paths, digest, prior, "FEE_CITATIONS_CHANGED")
+            report = build_report(
+                [_row()],
+                selection=_selection(),
+                gate=prior,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=digest,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                series_used=["XS1"],
+            )
+            self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(report["secondary"]["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+            self.assertIsNone(report["fee_views"])
+            verdict = apply_verdict(
+                _score(),
+                gate=prior,
+                regime_report=report,
+                cd={"n_signals": 1, "reject_c": False, "reject_d": False},
+            )
+            self.assertEqual(verdict["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+            self.assertNotIn("fee_headline", json.dumps(verdict))
 
     def test_t20_real_when_env_set(self):
         real = os.environ.get("CARD01_R1_REAL_FEE_DIR")
@@ -940,6 +1132,169 @@ class AdmissionTests(unittest.TestCase):
         )
         self.assertEqual(admission.fee_admission, "ADMITTED_INDEX_ONLY")
         self.assertEqual(admission.packet_index_sha256_at_run, digest)
+
+    def test_t20_real_reorder_admits_and_one_edit_blocks(self):
+        import hashlib
+        real = os.environ.get("CARD01_R1_REAL_FEE_DIR")
+        if not real:
+            self.skipTest("CARD01_R1_REAL_FEE_DIR is unset")
+        root = Path(real)
+        index_path = root / "PACKET_INDEX.md"
+        text = index_path.read_text(encoding="utf-8")
+        self.assertEqual(
+            hashlib.sha256(text.encode("utf-8")).hexdigest(),
+            "4a1ceb4b036b45914d5c0a0b7f6eeac9efb208f7792f99423acbeaf852587dfe",
+        )
+        pin = json.loads((LAB / "card01_amc" / "fee_citation_set.json").read_text())
+        watched = pin["watched_sha8"]
+        lines = text.splitlines()
+        citing = [i for i, line in enumerate(lines) if any(prefix in line for prefix in watched)]
+        self.assertIn(1222, citing)
+        self.assertIn(1226, citing)
+        found = sorted(
+            hashlib.sha256(lines[i].rstrip().encode("utf-8")).hexdigest()
+            for i in citing
+        )
+        self.assertEqual(found, pin["line_sha256"])
+        for number in (1223, 1227):
+            digest = hashlib.sha256(lines[number - 1].rstrip().encode("utf-8")).hexdigest()
+            self.assertIn(digest, pin["line_sha256"])
+        swapped = list(lines)
+        first, last = citing[0], citing[-1]
+        swapped[first], swapped[last] = swapped[last], swapped[first]
+        newline = "\n" if text.endswith("\n") else ""
+        reordered = "\n".join(swapped) + newline
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_index = Path(tmp) / "PACKET_INDEX.md"
+            tmp_index.write_text(reordered, encoding="utf-8")
+            pins = json.loads((LAB / "PINS.json").read_text())["fee_source_v2"]
+            admission = admit_fee_source_v2(
+                fee_source_path=root / "fee.json",
+                fee_source_id=pins["id"],
+                fee_source_sha256=pins["sha256"],
+                packet_index_path=tmp_index,
+                fee_accept_path=root / "accept.json",
+                series_used=["KXHOUSERACE"],
+            )
+            self.assertEqual(admission.fee_admission, "ADMITTED_INDEX_ONLY")
+            edited = list(lines)
+            target = edited[citing[0]]
+            for index, char in enumerate(target):
+                if char.isalpha() and char.lower() not in "abcdef":
+                    edited[citing[0]] = target[:index] + ("Z" if char != "Z" else "Y") + target[index + 1:]
+                    break
+            self.assertNotEqual(edited[citing[0]], target)
+            tmp_index.write_text("\n".join(edited) + newline, encoding="utf-8")
+            changed = admit_fee_source_v2(
+                fee_source_path=root / "fee.json",
+                fee_source_id=pins["id"],
+                fee_source_sha256=pins["sha256"],
+                packet_index_path=tmp_index,
+                fee_accept_path=root / "accept.json",
+                series_used=["KXHOUSERACE"],
+            )
+            self.assertEqual(changed.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(changed.fee_block_reason, "FEE_CITATIONS_CHANGED")
+            self.assertEqual(changed.fee_block_detail, "CITATION_SET")
+            self._real_surfaces_blocked(root, tmp_index, pins)
+            phrase = list(lines)
+            fee_hits = [i for i in citing if watched[0] in phrase[i]]
+            accept_hits = [i for i in citing if watched[1] in phrase[i]]
+            self.assertTrue(fee_hits)
+            self.assertTrue(accept_hits)
+            phrase[fee_hits[0]] += " SUPERSEDED by 0123abcd"
+            phrase[accept_hits[0]] += " SUPERSEDED by 0123abcd"
+            tmp_index.write_text("\n".join(phrase) + newline, encoding="utf-8")
+            superseded = admit_fee_source_v2(
+                fee_source_path=root / "fee.json",
+                fee_source_id=pins["id"],
+                fee_source_sha256=pins["sha256"],
+                packet_index_path=tmp_index,
+                fee_accept_path=root / "accept.json",
+                series_used=["KXHOUSERACE"],
+            )
+            self.assertEqual(superseded.fee_block_reason, "FEE_CITATIONS_CHANGED")
+            self._real_surfaces_blocked(root, tmp_index, pins)
+
+    def _real_surfaces_blocked(self, root, index_path, pins):
+        from card01_amc.regime_split_secondary import build_report
+        from card01_amc.verdict import apply_verdict
+        from tests.test_regime_split_secondary import _selection
+        from tests.test_v2_consumers import _score
+
+        accept_sha = sha256_bytes((root / "accept.json").read_bytes())
+        claimed = {
+            "status": "OK",
+            "n_selected": 1,
+            "signals": [{
+                "race_id": "G1-01",
+                "side": "D_YES",
+                "price": 0.055,
+                "fee_decimal": "0.005",
+                "series": "KXHOUSERACE",
+                "fee_source": pins["id"],
+                "fee_source_sha256": pins["sha256"],
+                "fee_formula_id": FEE_FORMULA_ID,
+            }],
+            "fee_admission": "ADMITTED_INDEX_ONLY",
+            "fee_formula_id": FEE_FORMULA_ID,
+            "fee_source": pins["id"],
+            "fee_source_sha256": pins["sha256"],
+            "fee_source_accept_sha256": accept_sha,
+        }
+        paths = (root / "fee.json", root / "accept.json", index_path)
+        gated = gate_v2(
+            [_row()],
+            fee_source_path=paths[0],
+            fee_source_id=pins["id"],
+            fee_source_sha256=pins["sha256"],
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+        )
+        self.assertEqual(gated["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        self.assertIsNone(gated["signals"])
+        self.assertTrue(_no_fee_numbers(gated))
+        out = evaluate(
+            [_row()],
+            claimed,
+            "r",
+            "g",
+            "g",
+            fee_source_path=paths[0],
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+            fee_source_expected_id=pins["id"],
+            fee_source_expected_sha256=pins["sha256"],
+            fee_source_expected_accept=accept_sha,
+            fee_source_expected_formula=FEE_FORMULA_ID,
+        )
+        self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(out["rows"])
+        self.assertEqual(out["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        self.assertTrue(_no_fee_numbers(out))
+        report = build_report(
+            [_row()],
+            selection=_selection(),
+            gate=claimed,
+            fee_source_path=paths[0],
+            fee_source_id=pins["id"],
+            fee_source_sha256=pins["sha256"],
+            packet_index_path=paths[2],
+            fee_accept_path=paths[1],
+            series_used=["KXHOUSERACE"],
+        )
+        self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(report["secondary"]["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        self.assertIsNone(report["fee_views"])
+        verdict = apply_verdict(
+            _score(),
+            gate=claimed,
+            regime_report=report,
+            cd={"n_signals": 1, "reject_c": False, "reject_d": False},
+        )
+        self.assertEqual(verdict["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        self.assertNotIn("fee_headline", json.dumps(verdict))
 
 
 if __name__ == "__main__":

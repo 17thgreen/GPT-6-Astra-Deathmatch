@@ -265,15 +265,16 @@ These are fixed here so the code does not invent a second reading later.
   `gate()` cannot mint that state. Swing stress and the regime report re-run
   `gate_v2` on the outcome-stripped rows and the same fee files. Any mismatch
   is `GATE_NOT_REPRODUCED`, logged on the output, with no fee or net numbers.
-  The pair check includes `fee_formula_id`. An index row that is `WITHDRAWN`,
-  `WITHDRAW`, `REVOKED`, `SUPERSEDED`, `NOT ADOPTED`, or `NOT admitted`
-  blocks. That includes a later row for the fee sha, a row keyed by the
-  ACCEPT sha or the attestation sha, and a WITHDRAW packet that references
-  either sha. Status words are matched after case-folding and collapsing
-  whitespace, as exact tokens. `DRAFT_NOT_ADOPTED` is not that token. An
-  adoption match does not follow the word `NOT`. The ACCEPT `ruling` must be
-  the exact token `ACCEPT`, or `ACCEPT` plus underscore tokens that are not
-  themselves a status word. `ACCEPT_THEN_WITHDRAWN` is refused.
+  The pair check includes `fee_formula_id`. The ACCEPT `ruling` must equal
+  the pinned allowlist, which contains only `ACCEPT_FEE_SOURCE_CARD01_v2_FILL`.
+  The match is case-sensitive and exact. Any other ruling is blocked and
+  produces no fee or net numbers. Lines in the packet index that cite the
+  fee sha `6edc3eff`, the fill ACCEPT `cb5e88a6`, or the attestation sha
+  `b59e4168`, full or as that 8-hex prefix, are pinned as a sorted multiset
+  of line hashes in `card01_amc/fee_citation_set.json`. Admission recomputes
+  that set from the index on disk. Any difference is `FEE_CITATIONS_CHANGED`
+  with no fee or net numbers. Reordering those lines without editing them
+  still matches. Status-word checks remain only after the set matches.
   A missing, unreadable, or non-UTF-8 fee file is `FEE_SOURCE_UNREADABLE`.
   The verdict takes `fee_state` from the regime report and does not read a
   passed-in gate or pair. The swing net subtracts the recomputed headline.
