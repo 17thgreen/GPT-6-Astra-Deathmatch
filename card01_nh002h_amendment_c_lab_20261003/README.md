@@ -202,6 +202,62 @@ ruling `715fbafd588845867d7fe0af59b32a21d2411afc14bfb6da718f5592e0608703`.
 The v2 fee file and its fill ACCEPT are loaded at runtime and are not in this
 tree. The historical v1 fee sha stays on the refuse list.
 
+## PR-C realized P&L
+
+Pre-outcome. No real data. Synthetic fixtures only. No resampling.
+
+`card01_amc/pnl_cd.py` scores REJECT (c) and REJECT (d) on the w = 0.5 gate.
+EXTRACT BASE L288: the hypothetical taker P&L at ask is ≤ 0, or ≤ 0 under the
+one-tick-worse stress. EXTRACT BASE L289: the top-1 share of positive P&L is
+> 50%, or dropping the best two winners leaves ≤ $0. Payoff is `y` for D_YES
+and `1 − y` for D_NO (EXTRACT BASE L192). Headline fee only:
+`net = payoff − P − fee_H(P)`. The stress price is `P' = P + TICK` with
+`TICK = Decimal("0.01")` (ruling `61c1e4ea` (1)), and `fee_H` is recomputed
+at `P'` (ruling `61c1e4ea` (2)). The 2c buffer is excluded from every verdict
+net (ruling `61c1e4ea` (4)).
+
+Ruled kit points, each one constant or function, ruling
+`61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca`:
+
+- KI-1, PRCR L3: `TICK = Decimal("0.01")`.
+- KI-2, PRCR L4: headline fee recomputed at `P'`.
+- KI-3, PRCR L5: same signals; off-grid `P'` is `STRESS_PRICE_OFF_GRID`.
+- KI-4, PRCR L6: buffer excluded; `CITATION_WORDING_NH001_CHECK` is logged and non-blocking.
+- KI-5, PRCR L7: missing `y` is `UNRESOLVED_INVENTORY_AT_SCORING`.
+- KI-6, PRCR L8: w = 0.5 gate; (d) uses at-ask headline nets.
+- KI-7, PRCR L9: v2 `ADMITTED_INDEX_ONLY` only.
+- KI-8, PRCR L10: `verdict.cd_from_prc` checks format, output hash, and the PINS fee pair.
+- KI-9, PRCR L11: `entry_book` anchors the outcome-free price and fee table before any join.
+
+The fee pair is read from `PINS.json` `fee_source_v2`. Fee files are runtime
+paths only. A blocked fee is `BLOCKED_FEE_UNVERIFIED` with no fee, net, gross,
+or total number. `counts_toward_keep` is false. Fills are labelled `simulated`.
+
+Two CLI steps. The entry book is outcome-free and takes no settled-results
+argument:
+
+```
+python -m card01_amc.pnl_cd entry-book --gate GATE.json --fee-source FEE.json --packet-index INDEX.md --fee-accept ACCEPT.json --out ENTRY_BOOK.json
+```
+
+The Examiner then files an anchor packet
+`CARD01_PRC_ENTRY_BOOK_ANCHOR_<YYYYMMDDTHHMMSSZ>.json` (schema
+`astra.card01.prc_entry_book_anchor.v1`) with the entry-book file sha, the
+envelope `output_sha256`, the entry-table sha, the gate sha, the fee-source
+sha, `fee_formula_id`, the module sha, `n_signals`, `anchored_at_utc`, and
+ruling sha `61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca`.
+That packet is box-only. Scoring opens the settled-results file only after
+the anchor verifies:
+
+```
+python -m card01_amc.pnl_cd score --gate GATE.json --rows ROWS.json --entry-book ENTRY_BOOK.json --entry-book-anchor ANCHOR.json --settled-results SETTLED.json --fee-source FEE.json --packet-index INDEX.md --fee-accept ACCEPT.json --out SCORE.json
+```
+
+`--emit-buffered-sensitivity` adds a labelled descriptive row. It is not a
+verdict input. Statuses are `OK`, `NO_SIGNALS_SELECTED`,
+`BLOCKED_FEE_UNVERIFIED`, `UNRESOLVED_INVENTORY_AT_SCORING`, and
+`REPORTING_DEFECT`. An `--out` path inside a git checkout is refused.
+
 ## Limits
 
 - Pre-outcome. No real data run. No Kalshi call. No ElectIndex fetch.
@@ -215,11 +271,10 @@ tree. The historical v1 fee sha stays on the refuse list.
 - `INCONCLUSIVE_DEGENERATE_BLOCK` is a headline status for 0 scored races or
   fewer than 2 states. It is not a PASS and not a REJECT. The verdict helper
   ranks validity above that status, then REJECT (a) / (b), then the fee branch.
-- REJECT (c) and (d) realized P&L, including one-tick-worse fills, is out of
-  scope for this PR (ruling `c05d7003`; a later PR-C). The helper does not
-  compute it. A missing boolean stays fail-closed. Zero admitted signals
-  make both (c) and (d) true, with note `NO_SIGNALS_SELECTED`. Precedence is
-  unchanged.
+- REJECT (c) and (d) realized P&L, including the one-tick-worse stress, is
+  the PR-C section above. A missing boolean stays fail-closed. Zero admitted
+  signals make both (c) and (d) true, with note `NO_SIGNALS_SELECTED`.
+  Precedence is unchanged.
 - Adversary verification is required before the decision snapshot
   `2026-11-02T22:00Z`. This lab does not merge itself.
 
@@ -269,8 +324,10 @@ These are fixed here so the code does not invent a second reading later.
   the pinned allowlist, which contains only `ACCEPT_FEE_SOURCE_CARD01_v2_FILL`.
   The match is case-sensitive and exact. Any other ruling is blocked and
   produces no fee or net numbers. Lines in the packet index that cite the
-  fee sha `6edc3eff`, the fill ACCEPT `cb5e88a6`, or the attestation sha
-  `b59e4168`, full or as that 8-hex prefix, are pinned as a sorted multiset
+  fee sha `6edc3eff`, the fill ACCEPT `cb5e88a6`, the attestation sha
+  `b59e4168`, or amendment `2c870cd5`, after zero-width removal and
+  casefolding, as a 7-hex prefix or as one of the three watched file names,
+  are pinned as a sorted multiset
   of line hashes in `card01_amc/fee_citation_set.json`. Admission recomputes
   that set from the index on disk. Any difference is `FEE_CITATIONS_CHANGED`
   with no fee or net numbers. Reordering those lines without editing them
