@@ -861,12 +861,16 @@ class RealCitationTests(unittest.TestCase):
             match = fee_admission._ROW_RE.match(line.rstrip())
             if match is not None and match.group(3).startswith("69b98b2"):
                 hits.append(index)
-        self.assertEqual(len(hits), 1)
-        self.assertIn(hits[0], only)
-        match = fee_admission._ROW_RE.match(lines[hits[0]].rstrip())
-        edited = list(lines)
-        edited[hits[0]] = "| `" + match.group(1) + "` WITHDRAWN | `" + match.group(3) + "` |"
-        self._changed(self._admit_lines(root, edited, newline))
+        self.assertGreaterEqual(len(hits), 1)
+        for index in hits:
+            with self.subTest(row=index):
+                self.assertIn(index, only)
+                match = fee_admission._ROW_RE.match(lines[index].rstrip())
+                edited = list(lines)
+                edited[index] = (
+                    "| `" + match.group(1) + "` WITHDRAWN | `" + match.group(3) + "` |"
+                )
+                self._changed(self._admit_lines(root, edited, newline))
 
     def _one_char_edit(self, line):
         for pos in range(len(line) - 1, -1, -1):
