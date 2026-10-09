@@ -3,7 +3,9 @@ from __future__ import annotations
 
 import copy
 import re
+import tempfile
 import unittest
+from pathlib import Path
 
 from card01_amc.build_rows import (
     BOOK_WINDOW_END_UTC,
@@ -14,7 +16,8 @@ from card01_amc.build_rows import (
     OutcomeKeyRefused,
     dumps,
 )
-from card01_amc.entry_gate import RESERVE, SELECT_EPS, OutcomePresent, gate
+from card01_amc.entry_gate import RESERVE, SELECT_EPS, OutcomePresent, gate, gate_v2
+from card01_amc.pinload import sha256_bytes
 from tests.support import build_from, universe
 
 
@@ -204,11 +207,6 @@ class BuilderTests(unittest.TestCase):
 
 
 class GateSelectionTests(unittest.TestCase):
-    def _open(self):
-        from tests.test_fee_source import attest_pass, synth_bytes, synth_overrides
-        raw = synth_bytes()
-        return raw, synth_overrides(raw), attest_pass(raw)
-
     def _row(self, **kwargs):
         row = {
             "race_id": "AL-02",
@@ -229,16 +227,33 @@ class GateSelectionTests(unittest.TestCase):
         return row
 
     def _gate(self, rows):
-        raw, overrides, attest = self._open()
-        return gate(rows, raw, fee_attest=attest, **overrides)
+        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit
+
+        prepared = []
+        for row in rows:
+            item = dict(row)
+            item["series"] = "XS1"
+            prepared.append(item)
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            return gate_v2(
+                prepared,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=sha256_bytes(paths[0].read_bytes()),
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
 
     def test_yes_no_tie_boundary_and_qty(self):
         yes = self._gate([self._row()])
         self.assertEqual(yes["status"], "OK")
+        self.assertEqual(yes["fee_admission"], "ADMITTED_INDEX_ONLY")
         self.assertEqual(yes["signals"][0]["side"], "D_YES")
         self.assertEqual(yes["signals"][0]["price"], 0.30)
-        self.assertEqual(yes["signals"][0]["fee_decimal"], "0.03")
+        self.assertEqual(yes["signals"][0]["fee_decimal"], "0.02")
         self.assertEqual(yes["signals"][0]["fee_rounding"], "NON_DIRECT_CEIL_CENT")
+        self.assertNotIn("FEE_ONLY_CEIL", yes["signals"][0])
         self.assertGreater(yes["signals"][0]["expected_net_gate"], float(RESERVE + SELECT_EPS))
 
         no = self._gate([self._row(p_market=0.85, p_model=0.10, yes_bid=0.80, yes_ask=0.90)])
@@ -252,8 +267,8 @@ class GateSelectionTests(unittest.TestCase):
         self.assertEqual(tie["signals"][0]["price"], 0.05)
         self.assertEqual(tie["signals"][0]["fee_decimal"], "0.01")
 
-        # Headline net is exactly the reserve. The direct-member fee would clear it.
-        edge = self._gate([self._row(p_market=0.58, p_model=0.58, yes_bid=0.40, yes_ask=0.50)])
+        # Headline net is exactly the reserve under multiplier 1.
+        edge = self._gate([self._row(p_market=0.57, p_model=0.57, yes_bid=0.40, yes_ask=0.50)])
         self.assertEqual(edge["status"], "OK")
         self.assertEqual(edge["n_selected"], 0)
         self.assertEqual(edge["signals"], [])

@@ -12,6 +12,7 @@ import unittest
 from pathlib import Path
 
 from card01_amc.entry_gate import gate
+from card01_amc.fee_admission import FEE_FORMULA_ID
 from card01_amc.join_outcomes import join
 from card01_amc.pinload import load_national_miss
 from card01_amc.swing_stress import FORBIDDEN_OUTCOME_KEYS, OutcomePresent, evaluate
@@ -48,20 +49,42 @@ def _signal(race_id, side, price, fee, source="entry-KXHOUSERACE"):
     }
 
 
+_V2_SHA = "11" * 32
+_V2_ACCEPT = "22" * 32
+
+
 def _ok_gate(signals, adopted=None):
-    digest = "ab" * 32
+    del adopted
+    prepared = []
+    for signal in signals:
+        item = dict(signal)
+        item.setdefault("series", "XS1")
+        item.setdefault("fee_source", "FEE_SOURCE_SYNTH_v2")
+        item.setdefault("fee_source_sha256", _V2_SHA)
+        if item.get("fee_decimal") is None and item.get("fee") is not None:
+            item["fee_decimal"] = str(item["fee"])
+        prepared.append(item)
     return {
         "status": "OK",
-        "n_selected": len(signals),
-        "signals": signals,
-        "manifest_id": "synthetic-adopted",
-        "manifest_status": "ADOPTED",
-        "adopted_entry_ids": adopted if adopted is not None else ["entry-KXHOUSERACE"],
-        "fee_source": "FEE_SOURCE_CARD01_v1",
-        "fee_source_sha256": digest,
-        "fee_attest_verdict": "ATTEST_PASS",
-        "fee_attest_fee_source_sha256": digest,
+        "n_selected": len(prepared),
+        "signals": prepared,
+        "fee_admission": "ADMITTED_INDEX_ONLY",
+        "adoption_mode": "INDEX_ONLY",
+        "fee_formula_id": FEE_FORMULA_ID,
+        "fee_source": "FEE_SOURCE_SYNTH_v2",
+        "fee_source_sha256": _V2_SHA,
+        "fee_source_accept_sha256": _V2_ACCEPT,
     }
+
+
+def _admitted(**extra):
+    kwargs = {
+        "fee_source_expected_sha256": _V2_SHA,
+        "fee_source_expected_accept": _V2_ACCEPT,
+        "fee_source_expected_formula": FEE_FORMULA_ID,
+    }
+    kwargs.update(extra)
+    return kwargs
 
 
 class SwingTests(unittest.TestCase):
@@ -121,7 +144,7 @@ class SwingTests(unittest.TestCase):
         ok_dumps = []
         for labels in labels_set:
             stripped = self._strip_outcomes(base, labels)
-            ok_dumps.append(json.dumps(evaluate(stripped, ok, "same", "gate-sha", "gate-sha"), indent=1))
+            ok_dumps.append(json.dumps(evaluate(stripped, ok, "same", "gate-sha", "gate-sha", **_admitted()), indent=1))
         self.assertEqual(len(set(ok_dumps)), 1)
         ok_obj = json.loads(ok_dumps[0])
         self.assertEqual(ok_obj["stress_status"], "OK")
@@ -146,46 +169,45 @@ class SwingTests(unittest.TestCase):
                         self.fail("swing_stress uses y as a dict key")
 
     def test_formula_matches_pinned_stress_and_hash(self):
-        from card01_amc.fee_source import load_fee_source, pinned_entry, pinned_taker_fee
-        from tests.test_fee_source import synth_bytes, synth_overrides
+        from card01_amc.entry_gate import gate_v2
+        from card01_amc.pinload import sha256_bytes
+        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit, _row as fee_row
 
         pinned = load_national_miss()
-        raw = synth_bytes()
-        overrides = synth_overrides(raw)
-        loaded = load_fee_source(raw, **overrides)
-        entry = pinned_entry(loaded, "KXHOUSERACE")
         rows = [
-            _row("AL-02", 0.62, 0.48),
-            _row("OH-01", 0.41, 0.52),
-            _row("NY-02", 0.73, 0.33),
+            fee_row("G1-01"),
+            fee_row("G1-02", p_model=0.20),
+            fee_row("G1-03", p_model=0.30),
         ]
-        prices = (0.42, 0.55, 0.40)
-        sides = ("D_YES", "D_NO", "D_YES")
-        signals = []
-        for row, side, price in zip(rows, sides, prices):
-            quoted = pinned_taker_fee(entry, price)
-            signal = _signal(row["race_id"], side, price, float(quoted["headline"]), source=loaded.manifest_id)
-            signal["fee_decimal"] = str(quoted["headline"])
-            signal["fee_source_sha256"] = loaded.sha256
-            signal["series"] = "KXHOUSERACE"
-            signals.append(signal)
-        with_y = [dict(row, y=1) for row in rows]
-        pinned_out = pinned.stress(with_y, signals)
-        gate_doc = _ok_gate(signals)
-        gate_doc["fee_source"] = loaded.manifest_id
-        gate_doc["fee_source_sha256"] = loaded.sha256
-        gate_doc["fee_attest_verdict"] = "ATTEST_PASS"
-        gate_doc["fee_attest_fee_source_sha256"] = loaded.sha256
-        ours = evaluate(
-            rows,
-            gate_doc,
-            "rows-sha",
-            "gate-sha",
-            "gate-sha",
-            raw,
-            fee_source_expected_sha256=overrides["expected_sha256"],
-            fee_source_expected_accept=overrides["expected_accept"],
-        )
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest = sha256_bytes(paths[0].read_bytes())
+            accept_sha = sha256_bytes(paths[1].read_bytes())
+            gate_doc = gate_v2(
+                rows,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=digest,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+            self.assertEqual(gate_doc["status"], "OK")
+            self.assertGreaterEqual(gate_doc["n_selected"], 1)
+            with_y = [dict(row, y=1) for row in rows]
+            pinned_out = pinned.stress(with_y, gate_doc["signals"])
+            ours = evaluate(
+                rows,
+                gate_doc,
+                "rows-sha",
+                "gate-sha",
+                "gate-sha",
+                fee_source_path=paths[0],
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                fee_source_expected_sha256=digest,
+                fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
+            )
         self.assertEqual(ours["stress_status"], "OK")
         frozen = [row for row in ours["rows"] if row["informational"] is False]
         self.assertEqual(len(frozen), len(pinned_out["rows"]))
@@ -208,6 +230,7 @@ class SwingTests(unittest.TestCase):
             _ok_gate([_signal("AL-02", "D_YES", 0.65, 0.01)]),
             "a",
             "b",
+            **_admitted(),
         )
         self.assertEqual(calm["fragility"], "NOT_FRAGILE_AT_PM0.5")
         halves = [r for r in calm["rows"] if r["swing_logit"] in (-0.5, 0.5)]
@@ -220,6 +243,7 @@ class SwingTests(unittest.TestCase):
             _ok_gate([_signal("AL-02", "D_YES", 0.90, 0.01)]),
             "a",
             "b",
+            **_admitted(),
         )
         self.assertEqual(gross["fragility"], "FRAGILE_NATIONAL_SWING")
         self.assertTrue(any(r["swing_logit"] in (-0.5, 0.5) and r["expected_gross"] <= 0 for r in gross["rows"]))
@@ -229,7 +253,7 @@ class SwingTests(unittest.TestCase):
             _signal("AL-02", "D_YES", 0.20, 0.01),
             _signal("OH-01", "D_YES", 0.45, 0.01),
         ]
-        share = evaluate(share_rows, _ok_gate(share_signals), "a", "b")
+        share = evaluate(share_rows, _ok_gate(share_signals), "a", "b", **_admitted())
         self.assertEqual(share["fragility"], "FRAGILE_NATIONAL_SWING")
         minus = next(r for r in share["rows"] if r["swing_logit"] == -0.5)
         self.assertGreater(minus["expected_gross"], 0)
@@ -247,34 +271,44 @@ class SwingTests(unittest.TestCase):
         self.assertEqual(blocked["fragility"], "NOT_EVALUATED_FEE_BLOCKED")
         self.assertIsNone(blocked["rows"])
 
-        empty = evaluate(rows, _ok_gate([]), "r", "g")
+        empty = evaluate(rows, _ok_gate([]), "r", "g", **_admitted())
         # n_selected 0. _ok_gate([]) has n_selected 0 and signals [].
         self.assertEqual(empty["stress_status"], "NO_SIGNALS_SELECTED")
         self.assertIsNone(empty["fragility"])
         self.assertEqual(empty["gate_n_selected"], 0)
         self.assertIsNone(empty["rows"])
 
-        missing = {"status": "OK", "n_selected": 2, "signals": [], "manifest_id": "m"}
-        defect = evaluate(rows, missing, "r", "g")
+        missing = _ok_gate([])
+        missing["n_selected"] = 2
+        defect = evaluate(rows, missing, "r", "g", **_admitted())
         self.assertEqual(defect["stress_status"], "REPORTING_DEFECT")
         self.assertEqual(defect["fragility"], "FRAGILE_NOT_CLEARED_REPORTING_DEFECT")
         self.assertNotEqual(defect["fragility"], "NOT_FRAGILE_AT_PM0.5")
 
         unknown_race = _ok_gate([_signal("ZZ-99", "D_YES", 0.4, 0.01)])
-        self.assertEqual(evaluate(rows, unknown_race, "r", "g")["stress_status"], "REPORTING_DEFECT")
+        self.assertEqual(
+            evaluate(rows, unknown_race, "r", "g", **_admitted())["stress_status"],
+            "REPORTING_DEFECT",
+        )
 
         null_model = [_row("AL-02", None, 0.40)]
         self.assertEqual(
-            evaluate(null_model, _ok_gate([_signal("AL-02", "D_YES", 0.4, 0.01)]), "r", "g")["stress_status"],
+            evaluate(null_model, _ok_gate([_signal("AL-02", "D_YES", 0.4, 0.01)]), "r", "g", **_admitted())["stress_status"],
             "REPORTING_DEFECT",
         )
         mismatch = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.4, 0.01)]), "r", "abc", "deadbeef")
         self.assertEqual(mismatch["stress_status"], "REPORTING_DEFECT")
         self.assertEqual(mismatch["reason"], "GATE_SHA_MISMATCH")
-        self.assertEqual(evaluate(rows, {"status": "MAYBE"}, "r", "g")["stress_status"], "REPORTING_DEFECT")
-        self.assertEqual(evaluate(rows, None, "r", None)["fragility"], "FRAGILE_NOT_CLEARED_REPORTING_DEFECT")
+        maybe = evaluate(rows, {"status": "MAYBE"}, "r", "g")
+        self.assertEqual(maybe["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(maybe["fee_block_reason"], "GATE_STATUS_NOT_OK")
+        self.assertIsNone(maybe["rows"])
+        missing_gate = evaluate(rows, None, "r", None)
+        self.assertEqual(missing_gate["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(missing_gate["fragility"], "NOT_EVALUATED_FEE_BLOCKED")
+        self.assertEqual(missing_gate["fee_block_reason"], "GATE_MISSING")
 
-        unsigned = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha")
+        unsigned = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha", **_admitted())
         self.assertEqual(unsigned["stress_status"], "OK")
         self.assertEqual(unsigned["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
         self.assertTrue(unsigned["rows"])
@@ -284,12 +318,19 @@ class SwingTests(unittest.TestCase):
             self.assertIsInstance(stress_row["expected_gross"], float)
         self_certified = _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)])
         self_certified["gate_sha256"] = "gate-sha"
-        still = evaluate(rows, self_certified, "r", "gate-sha")
+        still = evaluate(rows, self_certified, "r", "gate-sha", **_admitted())
         self.assertEqual(still["net_block_reason"], "GATE_SHA_NOT_SUPPLIED")
-        signed = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha", "gate-sha")
+        signed = evaluate(
+            rows,
+            _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]),
+            "r",
+            "gate-sha",
+            "gate-sha",
+            **_admitted(),
+        )
         self.assertEqual(signed["net_block_reason"], "FEE_SOURCE_NOT_SUPPLIED")
         self.assertEqual(signed["rows"][0]["expected_net"], "BLOCKED_FEE_UNVERIFIED")
-        self.assertEqual(signed["rows"][0]["expected_net_sensitivity_direct_member"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertNotIn("expected_net_sensitivity_direct_member", signed["rows"][0])
 
     def test_pinned_main_raises_without_outcomes(self):
         pinned = load_national_miss()
@@ -311,7 +352,6 @@ class FeeBlockTests(unittest.TestCase):
     def test_gate_blocks_and_handmade_nets_stay_blocked(self):
         import json as _json
         from tests.support import sha256_bytes
-        from tests.test_fee_source import synth_bytes, synth_overrides
 
         row = self._row()
         absent = gate([row])
@@ -322,14 +362,16 @@ class FeeBlockTests(unittest.TestCase):
         old["entries"]["KXHOUSERACE"]["entry_id"] = "ADDENDUM_02"
         old_bytes = _json.dumps(old).encode()
         sha_miss = gate([row], old_bytes)
-        self.assertEqual(sha_miss["reason"], "FEE_SOURCE_SHA_MISMATCH")
+        self.assertEqual(sha_miss["reason"], "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
         schema = gate(
             [row],
             old_bytes,
             expected_sha256=sha256_bytes(old_bytes),
             expected_accept="a" * 64,
         )
-        self.assertEqual(schema["reason"], "FEE_SOURCE_SCHEMA_INVALID")
+        self.assertEqual(schema["reason"], "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
+        self.assertNotIn("FEE_ONLY_CEIL", schema)
+        self.assertNotIn("fee_sensitivity_direct_member", schema)
         for result in (absent, sha_miss, schema):
             self.assertEqual(result["status"], "BLOCKED_FEE_UNVERIFIED")
             self.assertIsNone(result["signals"])
@@ -337,8 +379,6 @@ class FeeBlockTests(unittest.TestCase):
             self.assertEqual(stress["stress_status"], "BLOCKED_FEE_UNVERIFIED")
             self.assertIsNone(stress["rows"])
 
-        raw = synth_bytes()
-        overrides = synth_overrides(raw)
         price = 0.42
         handmade = [
             _signal("AL-02", "D_YES", price, 0.01, source=None),
@@ -351,14 +391,19 @@ class FeeBlockTests(unittest.TestCase):
             signal = dict(signal)
             if signal["fee_source"] is None:
                 del signal["fee_source"]
-            out = evaluate([row], _ok_gate([signal]), "r", "g", "g", raw, **{
-                "fee_source_expected_sha256": overrides["expected_sha256"],
-                "fee_source_expected_accept": overrides["expected_accept"],
-            })
-            self.assertEqual(out["stress_status"], "OK", signal)
-            self.assertEqual(out["net_block_reason"], "FEE_SOURCE_PAIR_MISMATCH")
-            for stress_row in out["rows"]:
-                self.assertEqual(stress_row["expected_net"], "BLOCKED_FEE_UNVERIFIED")
+            legacy = {
+                "status": "OK",
+                "n_selected": 1,
+                "signals": [signal],
+                "fee_source": "FEE_SOURCE_CARD01_v1",
+                "fee_source_sha256": "ab" * 32,
+                "fee_attest_verdict": "ATTEST_PASS",
+                "fee_attest_fee_source_sha256": "ab" * 32,
+            }
+            out = evaluate([row], legacy, "r", "g", "g")
+            self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED", signal)
+            self.assertIsNone(out["rows"])
+            self.assertEqual(out["fee_block_reason"], "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
 
     def test_source_has_no_unadopted_coefficient(self):
         for name in ("entry_gate.py", "swing_stress.py", "score.py"):

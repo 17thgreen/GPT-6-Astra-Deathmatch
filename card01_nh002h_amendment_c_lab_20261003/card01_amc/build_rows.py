@@ -193,6 +193,33 @@ def _quote_fields(snap):
     return snap.get("yes_bid"), snap.get("yes_ask"), snap.get("yes_bid_qty"), snap.get("yes_ask_qty")
 
 
+def _two_sided(bid, ask) -> bool:
+    if isinstance(bid, bool) or isinstance(ask, bool):
+        return False
+    if not isinstance(bid, (int, float)) or not isinstance(ask, (int, float)):
+        return False
+    if not math.isfinite(float(bid)) or not math.isfinite(float(ask)):
+        return False
+    return 0 < float(bid) <= float(ask) < 1
+
+
+_MID_STATUS = (
+    "no_two_sided_book",
+    "snapshot_outside_window",
+    "no_ticker_for_mapped_race",
+    "mapping_unresolved",
+)
+
+
+def _mid_raw(bid, ask, reasons):
+    if _two_sided(bid, ask):
+        return (float(bid) + float(ask)) / 2.0, "OK"
+    for code in reasons:
+        if code in _MID_STATUS:
+            return None, code
+    return None, "no_two_sided_book"
+
+
 def _public_step(step):
     step = step or {}
     return {
@@ -333,6 +360,13 @@ def build(universe, forecast, mapping, book, input_shas, *, selection, dem_name_
                 reasons.append(problem)
         exclusion = reasons[0] if reasons else None
         bid, ask, bid_qty, ask_qty = _quote_fields(snap)
+        mid_raw, mid_raw_status = _mid_raw(bid, ask, reasons)
+        if p_model is None:
+            p_model_raw = None
+            p_model_raw_status = "no_admissible_forecast"
+        else:
+            p_model_raw = p_model
+            p_model_raw_status = "OK"
         if exclusion is None:
             p_market = (float(bid) + float(ask)) / 2.0
             model_out = p_model
@@ -347,6 +381,10 @@ def build(universe, forecast, mapping, book, input_shas, *, selection, dem_name_
             "series": series,
             "p_market": p_market,
             "p_model": model_out,
+            "mid_raw": mid_raw,
+            "mid_raw_status": mid_raw_status,
+            "p_model_raw": p_model_raw,
+            "p_model_raw_status": p_model_raw_status,
             "y": None,
             "ticker": ticker,
             "yes_bid": bid,

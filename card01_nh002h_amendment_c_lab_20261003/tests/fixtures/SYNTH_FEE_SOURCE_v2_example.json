@@ -1,0 +1,372 @@
+{
+ "schema": "astra.fee_source.v2",
+ "manifest_id": "FEE_SOURCE_SYNTH_v2",
+ "card": "card01-synthetic",
+ "template": {
+  "is_template": false,
+  "template_path": "SYNTHETIC",
+  "fill_copy_path": "SYNTHETIC",
+  "rule": "SYNTHETIC kit fixture shaped like astra.fee_source.v2; not a fee source; values invented",
+  "spec_path": "SYNTHETIC",
+  "spec_sha256": "b822d63e74c8c3ce1a1a0b693febf9bdb0e9efd3b4a93ba299394eb5da40b303",
+  "amends_spec_sha256": "488a443bfff2b91ca22e8546801448866269d6ad25a3dbdca4f9e0a068975072"
+ },
+ "parents": {
+  "synthetic": true
+ },
+ "status": "DRAFT_NOT_ADOPTED",
+ "status_enum": [
+  "DRAFT_NOT_ADOPTED",
+  "ADOPTED"
+ ],
+ "conductor_accept_sha256": null,
+ "archivist_anchor_sha256": null,
+ "archivist_anchor_note": "Always null inside the file. The file sha256 is recorded by the Archivist in registry/PACKET_INDEX.md; that anchored value is the only valid fee_source_sha256.",
+ "prepared_by": "SYNTHETIC kit fixture (card01 R1 kit 2026-10-08)",
+ "prepared_at_et": "2026-10-08T00:00:00-04:00",
+ "no_fallback_rule": "No series falls back to 0.07*p*(1-p) or any default. A series without a PINNED entry under an ADOPTED file is BLOCKED_FEE_UNVERIFIED with no computation. 0.07*p*(1-p) is a labelled sensitivity only and can never be a fee_source.",
+ "b_c_resolution": {
+  "option": null,
+  "option_enum": [
+   "BOTH_BLOCKS",
+   "SCHEDULE_SATISFIES_B_C_BY_RULING",
+   "SERIES_LIST_ADMITTED_BY_RULING",
+   "COLLECTOR_SERIES_GET"
+  ],
+  "ruling_sha256": null
+ },
+ "member_type": {
+  "ref_path": "registry/FEE_ACCOUNT_MANIFEST_v0_DRAFT_2026-09-24_ADDENDUM_02.json",
+  "ref_sha256": "44a69092461a94b259209b60c583166bf1ec56b322fc5dc9bf69f1b0fa2a9a12",
+  "status_in_ref": "OPEN",
+  "value": null,
+  "card01_requires_member_type": null,
+  "decided_by": "Conductor",
+  "ruling_sha256": null
+ },
+ "enums": {
+  "rounding_rule": [
+   "PER_CONTRACT_CEIL_CENT",
+   "PER_ORDER_CEIL_CENT",
+   "PER_ORDER_CEIL_CENTICENT",
+   "OTHER"
+  ],
+  "maker_taker_class": [
+   "TAKER",
+   "MAKER",
+   "BOTH"
+  ],
+  "evidence_tag": [
+   "[V]",
+   "[I]",
+   "[U]",
+   "[H]",
+   "[A]"
+  ],
+  "admission": [
+   "NOT_ADMITTED",
+   "ADMITTED_BY_RULING <sha256>"
+  ],
+  "series_status": [
+   "BLOCKED_FEE_UNVERIFIED",
+   "PINNED"
+  ],
+  "fee_computation_role": [
+   "HEADLINE_FEE_SOURCE",
+   "SENSITIVITY_ONLY_NOT_FEE_SOURCE",
+   "WORKED_EXAMPLE_NOT_A_FEE_TABLE"
+  ],
+  "side": [
+   "BUY",
+   "SELL"
+  ],
+  "taker_maker_role": [
+   "TAKER",
+   "MAKER"
+  ],
+  "member_class_assumption": [
+   "NON_DIRECT",
+   "DIRECT"
+  ],
+  "fill_model": [
+   "SINGLE_FILL",
+   "MULTI_FILL_ACCUMULATOR"
+  ],
+  "sensitivity_row_id": [
+   "FEE_ONLY_CEIL",
+   "DIRECT_MEMBER_GRID"
+  ],
+  "blocked_reason_added_v2": [
+   "HEADLINE_NOT_CARRIED",
+   "HEADLINE_SCOPE_MISMATCH",
+   "SENSITIVITY_ROW_DEFECT"
+  ]
+ },
+ "prior_version": {
+  "manifest_id": "FEE_SOURCE_CARD01_v1",
+  "adopted_sha256": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd",
+  "status_after_v2_adoption": "HISTORICAL_NOT_A_FEE_SOURCE_FOR_V2_CONSUMERS"
+ },
+ "fee_computation": {
+  "headline": {
+   "role": "HEADLINE_FEE_SOURCE",
+   "formula_id": "astra.card01.fee_eff.non_direct_buy_ceil_cent.v1",
+   "expression": "ceil_cent(P*C + fee_raw) - P*C",
+   "symbols": {
+    "P": "SYNTHETIC: price of one contract in dollars.",
+    "C": "SYNTHETIC: contracts in the fill.",
+    "fee_raw": "SYNTHETIC: ceil_to(M*rate*C*P*(1-P), 1e-6) with the series' pinned M and taker_rate.",
+    "ceil_to(x, g)": "smallest integer multiple of g that is >= x",
+    "ceil_cent(x)": "ceil_to(x, 0.01)"
+   },
+   "applies_to": {
+    "side": "BUY",
+    "taker_maker_role": "TAKER",
+    "member_class_assumption": "NON_DIRECT",
+    "fill_model": "SINGLE_FILL",
+    "fee_type": "quadratic"
+   },
+   "basis": [
+    {
+     "doc_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+     "doc_box_path": "SYNTHETIC",
+     "locator": {
+      "page": null,
+      "section": "SYNTHETIC",
+      "row": "SYNTHETIC"
+     },
+     "quote_verbatim": "SYNTHETIC",
+     "evidence_tag": "[V]"
+    }
+   ],
+   "ruling_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+   "derivation_note": "SYNTHETIC"
+  },
+  "sensitivity_rows": [
+   {
+    "row_id": "FEE_ONLY_CEIL",
+    "role": "SENSITIVITY_ONLY_NOT_FEE_SOURCE",
+    "usable_for_net_pnl_or_gate": false,
+    "usable_for_pinned_or_adopted_computation": false,
+    "may_replace_headline": false,
+    "formula_id": null,
+    "expression": "ceil_cent(fee_raw)",
+    "symbols": {
+     "SYNTHETIC": "see headline"
+    },
+    "applies_to": {
+     "side": null,
+     "taker_maker_role": null,
+     "member_class_assumption": null,
+     "fill_model": null,
+     "fee_type": null
+    },
+    "basis": [],
+    "ruling_sha256": null,
+    "derivation_note": null
+   },
+   {
+    "row_id": "DIRECT_MEMBER_GRID",
+    "role": "SENSITIVITY_ONLY_NOT_FEE_SOURCE",
+    "usable_for_net_pnl_or_gate": false,
+    "usable_for_pinned_or_adopted_computation": false,
+    "may_replace_headline": false,
+    "formula_id": null,
+    "expression": "ceil_centicent(P*C + fee_raw) - P*C",
+    "symbols": {
+     "SYNTHETIC": "see headline"
+    },
+    "applies_to": {
+     "side": null,
+     "taker_maker_role": null,
+     "member_class_assumption": null,
+     "fill_model": null,
+     "fee_type": null
+    },
+    "basis": [],
+    "ruling_sha256": null,
+    "derivation_note": null
+   }
+  ],
+  "worked_examples": [
+   {
+    "role": "WORKED_EXAMPLE_NOT_A_FEE_TABLE",
+    "P": "0.055",
+    "C": "1",
+    "M": "1",
+    "fee_type": "quadratic",
+    "headline_fee_eff": "0.005",
+    "sensitivity": {
+     "FEE_ONLY_CEIL": "0.01",
+     "DIRECT_MEMBER_GRID": "0.0037"
+    },
+    "arithmetic": "SYNTHETIC (r3 Appendix A)",
+    "source": "SYNTHETIC"
+   },
+   {
+    "role": "WORKED_EXAMPLE_NOT_A_FEE_TABLE",
+    "P": "0.072",
+    "C": "1",
+    "M": "1",
+    "fee_type": "quadratic",
+    "headline_fee_eff": "0.008",
+    "sensitivity": {
+     "FEE_ONLY_CEIL": "0.01",
+     "DIRECT_MEMBER_GRID": "0.0047"
+    },
+    "arithmetic": "SYNTHETIC (r3 Appendix A)",
+    "source": "SYNTHETIC"
+   },
+   {
+    "role": "WORKED_EXAMPLE_NOT_A_FEE_TABLE",
+    "P": "0.077",
+    "C": "1",
+    "M": "1",
+    "fee_type": "quadratic",
+    "headline_fee_eff": "0.013",
+    "sensitivity": {
+     "FEE_ONLY_CEIL": "0.01",
+     "DIRECT_MEMBER_GRID": "0.0050"
+    },
+    "arithmetic": "SYNTHETIC (r3 Appendix A)",
+    "source": "SYNTHETIC"
+   },
+   {
+    "role": "WORKED_EXAMPLE_NOT_A_FEE_TABLE",
+    "P": "0.50",
+    "C": "1",
+    "M": "1",
+    "fee_type": "quadratic",
+    "headline_fee_eff": "0.02",
+    "sensitivity": {
+     "FEE_ONLY_CEIL": "0.02",
+     "DIRECT_MEMBER_GRID": "0.0175"
+    },
+    "arithmetic": "SYNTHETIC (r3 Appendix A)",
+    "source": "SYNTHETIC"
+   }
+  ]
+ },
+ "series": {
+  "XS1": {
+   "ticker": "XS1",
+   "fee_type": "quadratic",
+   "fee_multiplier": "1",
+   "taker_rate": "0.07",
+   "maker_rate": null,
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "OTHER",
+   "rounding_rule_verbatim": "SYNTHETIC",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC",
+   "effective_date": "2026-01-01",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "SYNTHETIC",
+    "retrieved_at_utc": "2026-01-01T00:00:00Z",
+    "doc_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "doc_box_path": "SYNTHETIC",
+    "locator": {
+     "page": null,
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC",
+    "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "captured_at_utc": "2026-01-01T00:00:00Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "1",
+    "admission": "ADMITTED_BY_RULING 0000000000000000000000000000000000000000000000000000000000000000",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "XS2": {
+   "ticker": "XS2",
+   "fee_type": "quadratic",
+   "fee_multiplier": "1",
+   "taker_rate": "0.07",
+   "maker_rate": null,
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "OTHER",
+   "rounding_rule_verbatim": "SYNTHETIC",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC",
+   "effective_date": "2026-01-01",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "SYNTHETIC",
+    "retrieved_at_utc": "2026-01-01T00:00:00Z",
+    "doc_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "doc_box_path": "SYNTHETIC",
+    "locator": {
+     "page": null,
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC",
+    "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "captured_at_utc": "2026-01-01T00:00:00Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "1",
+    "admission": "ADMITTED_BY_RULING 0000000000000000000000000000000000000000000000000000000000000000",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "PINNED",
+   "blocked_reason": null
+  },
+  "XS3": {
+   "ticker": "XS3",
+   "fee_type": "quadratic",
+   "fee_multiplier": "1",
+   "taker_rate": "0.07",
+   "maker_rate": null,
+   "maker_multiplier": null,
+   "cap": null,
+   "rounding_rule": "OTHER",
+   "rounding_rule_verbatim": "SYNTHETIC",
+   "maker_taker_class": "TAKER",
+   "formula_verbatim": "SYNTHETIC",
+   "effective_date": "2026-01-01",
+   "schedule_source": {
+    "source_class": "KALSHI_PUBLISHED_SCHEDULE",
+    "url": "SYNTHETIC",
+    "retrieved_at_utc": "2026-01-01T00:00:00Z",
+    "doc_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "doc_box_path": "SYNTHETIC",
+    "locator": {
+     "page": null,
+     "section": "SYNTHETIC",
+     "row": "SYNTHETIC",
+     "quote_verbatim": "SYNTHETIC"
+    },
+    "evidence_tag": "[V]"
+   },
+   "series_endpoint_source": {
+    "source_class": "KALSHI_SERIES_ENDPOINT",
+    "raw_box_path": "SYNTHETIC",
+    "raw_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "captured_at_utc": "2026-01-01T00:00:00Z",
+    "fee_type": "quadratic",
+    "fee_multiplier": "1",
+    "admission": "ADMITTED_BY_RULING 0000000000000000000000000000000000000000000000000000000000000000",
+    "evidence_tag": "[V]"
+   },
+   "series_status": "BLOCKED_FEE_UNVERIFIED",
+   "blocked_reason": "SYNTHETIC_BLOCKED"
+  }
+ }
+}
