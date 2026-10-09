@@ -321,8 +321,8 @@ class VerdictTests(unittest.TestCase):
             gate=self._gate(),
             expected_fee_source=self._pair(),
         )
-        self.assertEqual(missing["fee_state"], "BLOCKED")
-        self.assertIn("FEE_ATTESTATION_MISSING", missing["notes"])
+        self.assertEqual(missing["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertNotIn("FEE_ATTESTATION_MISSING", missing["notes"])
         self.assertEqual(missing["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
         wrong = apply_verdict(
@@ -332,7 +332,7 @@ class VerdictTests(unittest.TestCase):
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
             expected_fee_source=self._pair(),
         )
-        self.assertEqual(wrong["fee_state"], "BLOCKED")
+        self.assertEqual(wrong["fee_state"], "BLOCKED_FEE_UNVERIFIED")
         self.assertNotIn("FEE_ATTESTATION_MISSING", wrong["notes"])
 
         unpinned = apply_verdict(
@@ -342,7 +342,7 @@ class VerdictTests(unittest.TestCase):
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
             expected_fee_source=self._pair(),
         )
-        self.assertEqual(unpinned["fee_state"], "BLOCKED")
+        self.assertEqual(unpinned["fee_state"], "BLOCKED_FEE_UNVERIFIED")
         self.assertEqual(unpinned["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
         bare = self._gate()
@@ -355,7 +355,7 @@ class VerdictTests(unittest.TestCase):
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
             expected_fee_source=self._pair(),
         )
-        self.assertEqual(alone["fee_state"], "BLOCKED")
+        self.assertEqual(alone["fee_state"], "BLOCKED_FEE_UNVERIFIED")
         self.assertEqual(alone["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
 

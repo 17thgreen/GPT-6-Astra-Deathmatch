@@ -14,6 +14,11 @@ import sys
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
+from card01_amc.fee_admission import (
+    SENSITIVITY_ROWS_STATUS,
+    admit_fee_source_v2,
+    pinned_entry_v2,
+)
 from card01_amc.fee_source import (
     CONDUCTOR_ACCEPT_SHA256,
     FEE_SOURCE_ID,
@@ -58,12 +63,34 @@ def _pair_matches(obj, loaded) -> bool:
     return obj.get("fee_source") == loaded.manifest_id and obj.get("fee_source_sha256") == loaded.sha256
 
 
-def _attest_recorded(gate) -> bool:
-    """Same recorded-attestation requirement as verdict._fee_state."""
-    return not (
-        gate.get("fee_attest_verdict") != "ATTEST_PASS"
-        or gate.get("fee_attest_fee_source_sha256") != gate.get("fee_source_sha256")
+_UNSET = object()
+
+# Consumer-side checks that still emit the swing grid, with the net column blocked.
+_ROW_BLOCK_REASONS = frozenset({
+    "GATE_SHA_NOT_SUPPLIED",
+    "FEE_SOURCE_NOT_SUPPLIED",
+    "FEE_SOURCE_PAIR_MISMATCH",
+    "FEE_RECOMPUTE_MISMATCH",
+})
+
+
+def _is_v2_gate(gate) -> bool:
+    return isinstance(gate, dict) and (
+        "fee_admission" in gate or "adoption_mode" in gate or "fee_formula_id" in gate
     )
+
+
+def _attest_reason(gate):
+    """Distinct recorded-attestation failures. Absent, not-pass, and sha mismatch."""
+    verdict = gate.get("fee_attest_verdict")
+    recorded = gate.get("fee_attest_fee_source_sha256")
+    if verdict is None and recorded is None:
+        return "FEE_ATTEST_ABSENT"
+    if recorded != gate.get("fee_source_sha256"):
+        return "FEE_ATTEST_SHA_MISMATCH"
+    if verdict != "ATTEST_PASS":
+        return "FEE_ATTEST_NOT_PASS"
+    return None
 
 
 def _fee_identity(gate):
@@ -80,29 +107,77 @@ def _fee_identity(gate):
 def _net_decision(gate, signals, gate_sha_expected, fee_source_bytes, fee_kwargs):
     """None when headline nets may be numeric. Otherwise a net_block_reason."""
     if gate_sha_expected is None:
-        return "GATE_SHA_NOT_SUPPLIED", None
+        return "GATE_SHA_NOT_SUPPLIED"
     if fee_source_bytes is None:
-        return "FEE_SOURCE_NOT_SUPPLIED", None
+        return "FEE_SOURCE_NOT_SUPPLIED"
     try:
         loaded = load_fee_source(fee_source_bytes, **fee_kwargs)
     except FeeBlocked as exc:
-        return "FEE_SOURCE_INVALID:" + exc.reason, None
+        return "FEE_SOURCE_INVALID:" + exc.reason
     if not _pair_matches(gate, loaded):
-        return "FEE_SOURCE_PAIR_MISMATCH", None
-    directs = []
+        return "FEE_SOURCE_PAIR_MISMATCH"
     for signal in signals:
         if not _pair_matches(signal, loaded):
-            return "FEE_SOURCE_PAIR_MISMATCH", None
+            return "FEE_SOURCE_PAIR_MISMATCH"
         try:
             entry = pinned_entry(loaded, signal.get("series"))
             quoted = pinned_taker_fee(entry, signal.get("price"))
             declared = Decimal(signal.get("fee_decimal"))
         except (FeeBlocked, TypeError, InvalidOperation, ArithmeticError, ValueError):
-            return "FEE_RECOMPUTE_MISMATCH", None
+            return "FEE_RECOMPUTE_MISMATCH"
         if quoted["headline"] != declared:
-            return "FEE_RECOMPUTE_MISMATCH", None
-        directs.append(quoted["sensitivity_direct_member"])
-    return None, directs
+            return "FEE_RECOMPUTE_MISMATCH"
+    return None
+
+
+def _v2_pair_ok(gate, fee_id, fee_sha, formula):
+    if fee_id is _UNSET or fee_sha is _UNSET or formula is _UNSET:
+        return False
+    return (
+        gate.get("fee_source") == fee_id
+        and gate.get("fee_source_sha256") == fee_sha
+        and gate.get("fee_formula_id") == formula
+    )
+
+
+def _v2_recompute(gate, signals, gate_sha_expected, paths, expected):
+    """None when every headline fee recomputes. Otherwise a block reason."""
+    fee_source_path, packet_index_path, fee_accept_path = paths
+    if gate_sha_expected is None:
+        return "GATE_SHA_NOT_SUPPLIED"
+    if fee_source_path is None or packet_index_path is None or fee_accept_path is None:
+        return "FEE_SOURCE_NOT_SUPPLIED"
+    admission = admit_fee_source_v2(
+        fee_source_path=fee_source_path,
+        fee_source_id=expected[0],
+        fee_source_sha256=expected[1],
+        packet_index_path=packet_index_path,
+        fee_accept_path=fee_accept_path,
+        series_used=[signal.get("series") for signal in signals],
+    )
+    if not admission.admitted:
+        return admission.fee_block_reason or "FEE_RECOMPUTE_MISMATCH"
+    if (
+        admission.fee_source != gate.get("fee_source")
+        or admission.fee_source_sha256 != gate.get("fee_source_sha256")
+        or admission.fee_formula_id != gate.get("fee_formula_id")
+    ):
+        return "FEE_SOURCE_PAIR_MISMATCH"
+    for signal in signals:
+        if (
+            signal.get("fee_source") != admission.fee_source
+            or signal.get("fee_source_sha256") != admission.fee_source_sha256
+        ):
+            return "FEE_SOURCE_PAIR_MISMATCH"
+        try:
+            entry = pinned_entry_v2(admission, signal.get("series"))
+            quoted = pinned_taker_fee(entry, signal.get("price"))
+            declared = Decimal(signal.get("fee_decimal"))
+        except (FeeBlocked, TypeError, InvalidOperation, ArithmeticError, ValueError):
+            return "FEE_RECOMPUTE_MISMATCH"
+        if quoted["headline"] != declared:
+            return "FEE_RECOMPUTE_MISMATCH"
+    return None
 
 
 def _ev(pinned, row, signal, swing):
@@ -164,6 +239,23 @@ def _defect(rows_sha, gate_sha, reason):
     )
 
 
+def _fee_block(rows_sha, gate_sha, reason, gate=None):
+    extra = {
+        "reason": reason,
+        "fee_block_reason": reason,
+        "net_block_reason": reason,
+    }
+    extra.update(_fee_identity(gate))
+    return _envelope(
+        "BLOCKED_FEE_UNVERIFIED",
+        "NOT_EVALUATED_FEE_BLOCKED",
+        None,
+        rows_sha,
+        gate_sha,
+        extra,
+    )
+
+
 def evaluate(
     rows,
     gate,
@@ -172,21 +264,43 @@ def evaluate(
     gate_sha_expected=None,
     fee_source_bytes=None,
     *,
-    fee_source_expected_sha256=FEE_SOURCE_SHA256,
-    fee_source_expected_id=FEE_SOURCE_ID,
-    fee_source_expected_accept=CONDUCTOR_ACCEPT_SHA256,
+    fee_source_expected_sha256=_UNSET,
+    fee_source_expected_id=_UNSET,
+    fee_source_expected_accept=_UNSET,
+    fee_source_expected_formula=_UNSET,
+    fee_source_path=None,
+    packet_index_path=None,
+    fee_accept_path=None,
 ):
-    """Outcome-free stress. Caller has already rejected non-null outcome fields."""
+    """Outcome-free stress. Caller has already rejected non-null outcome fields.
+
+    A gate is v2 when it carries fee_admission, adoption_mode, or fee_formula_id,
+    or when the caller passed v2 paths. Only ADMITTED_INDEX_ONLY computes on that
+    path, and only against the caller-supplied pair. A legacy gate stays on the
+    v1 ATTEST_PASS recompute path.
+    """
     assert_outcome_free(rows)
     if gate_sha_expected is not None and gate_sha256 != gate_sha_expected:
         return _defect(rows_sha256, gate_sha256, "GATE_SHA_MISMATCH")
+    v2_paths = (
+        fee_source_path is not None
+        or packet_index_path is not None
+        or fee_accept_path is not None
+    )
     if not isinstance(gate, dict):
+        if v2_paths:
+            return _fee_block(rows_sha256, gate_sha256, "GATE_MISSING")
         return _defect(rows_sha256, gate_sha256, "GATE_MISSING")
     status = gate.get("status")
     if status == "BLOCKED_FEE_UNVERIFIED":
         extra = {}
-        if gate.get("reason") is not None:
-            extra["reason"] = gate["reason"]
+        reason = gate.get("fee_block_reason")
+        if reason is None:
+            reason = gate.get("reason")
+        if reason is not None:
+            extra["reason"] = gate.get("reason") if gate.get("reason") is not None else reason
+            extra["fee_block_reason"] = reason
+            extra["net_block_reason"] = reason
         if gate.get("manifest_id") is not None:
             extra["manifest_id"] = gate["manifest_id"]
         extra.update(_fee_identity(gate))
@@ -198,8 +312,39 @@ def evaluate(
             gate_sha256,
             extra or None,
         )
-    if status != "OK":
+    v2 = _is_v2_gate(gate) or v2_paths
+    if not v2 and status != "OK":
         return _defect(rows_sha256, gate_sha256, "GATE_STATUS_UNKNOWN")
+    if v2:
+        if status != "OK":
+            return _fee_block(
+                rows_sha256,
+                gate_sha256,
+                gate.get("fee_block_reason") or "GATE_STATUS_NOT_OK",
+                gate,
+            )
+        if "fee_admission" not in gate:
+            return _fee_block(rows_sha256, gate_sha256, "FEE_ADMISSION_MISSING", gate)
+        if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
+            return _fee_block(
+                rows_sha256,
+                gate_sha256,
+                gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED",
+                gate,
+            )
+        if not _v2_pair_ok(
+            gate,
+            fee_source_expected_id,
+            fee_source_expected_sha256,
+            fee_source_expected_formula,
+        ):
+            return _fee_block(rows_sha256, gate_sha256, "FEE_SOURCE_PAIR_MISMATCH", gate)
+    else:
+        # Fee attestation blocks before a zero-signal note, so an unattested
+        # empty gate emits no numbers.
+        attest_reason = _attest_reason(gate)
+        if attest_reason is not None:
+            return _fee_block(rows_sha256, gate_sha256, attest_reason, gate)
 
     n_selected = gate.get("n_selected")
     signals = gate.get("signals")
@@ -226,34 +371,40 @@ def evaluate(
         if row is None or row.get("p_model") is None or row.get("p_market") is None:
             return _defect(rows_sha256, gate_sha256, "SIGNAL_ROW_UNUSABLE")
 
-    if not _attest_recorded(gate):
-        extra = {"reason": "FEE_ATTEST_ABSENT"}
-        extra.update(_fee_identity(gate))
-        return _envelope(
-            "BLOCKED_FEE_UNVERIFIED",
-            "NOT_EVALUATED_FEE_BLOCKED",
-            None,
-            rows_sha256,
-            gate_sha256,
-            extra,
-        )
-
     pinned = load_national_miss()
     base = [_ev(pinned, byid[s["race_id"]], s, 0.0) for s in signals]
     grid = _grid(pinned)
     # A gate file cannot self-certify a numeric net. The caller must pass the
     # gate file's sha, and the headline fee must recompute from the fee source.
-    net_block_reason, directs = _net_decision(
-        gate,
-        signals,
-        gate_sha_expected,
-        fee_source_bytes,
-        {
-            "expected_sha256": fee_source_expected_sha256,
-            "expected_id": fee_source_expected_id,
-            "expected_accept": fee_source_expected_accept,
-        },
-    )
+    if v2:
+        net_block_reason = _v2_recompute(
+            gate,
+            signals,
+            gate_sha_expected,
+            (fee_source_path, packet_index_path, fee_accept_path),
+            (fee_source_expected_id, fee_source_expected_sha256),
+        )
+        if net_block_reason is not None and net_block_reason not in _ROW_BLOCK_REASONS:
+            return _fee_block(rows_sha256, gate_sha256, net_block_reason, gate)
+    else:
+        v1_sha = FEE_SOURCE_SHA256 if fee_source_expected_sha256 is _UNSET else fee_source_expected_sha256
+        v1_id = FEE_SOURCE_ID if fee_source_expected_id is _UNSET else fee_source_expected_id
+        v1_accept = (
+            CONDUCTOR_ACCEPT_SHA256
+            if fee_source_expected_accept is _UNSET
+            else fee_source_expected_accept
+        )
+        net_block_reason = _net_decision(
+            gate,
+            signals,
+            gate_sha_expected,
+            fee_source_bytes,
+            {
+                "expected_sha256": v1_sha,
+                "expected_id": v1_id,
+                "expected_accept": v1_accept,
+            },
+        )
     out_rows = []
     for swing, informational in grid:
         evs = [_ev(pinned, byid[s["race_id"]], s, swing) for s in signals]
@@ -261,15 +412,12 @@ def evaluate(
         gross = sum(evs)
         if net_block_reason is not None:
             net = "BLOCKED_FEE_UNVERIFIED"
-            sensitivity = "BLOCKED_FEE_UNVERIFIED"
         else:
             net = gross - sum(float(s["fee"]) for s in signals)
-            sensitivity = gross - sum(float(item) for item in directs)
         row = {
             "swing_logit": swing,
             "expected_gross": gross,
             "expected_net": net,
-            "expected_net_sensitivity_direct_member": sensitivity,
             "n_sign_flips_vs_s0": flips,
             "share_sign_flips_vs_s0": flips / len(signals),
             "informational": informational,
@@ -280,6 +428,8 @@ def evaluate(
     extra = {"n_signals": len(signals)}
     if net_block_reason is not None:
         extra["net_block_reason"] = net_block_reason
+    if v2:
+        extra["sensitivity_rows_status"] = SENSITIVITY_ROWS_STATUS
     extra.update(_fee_identity(gate))
     return _envelope("OK", _fragility(out_rows), out_rows, rows_sha256, gate_sha256, extra)
 

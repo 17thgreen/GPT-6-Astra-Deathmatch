@@ -163,13 +163,13 @@
   },
   {
    "path": "card01_amc/swing_stress.py",
-   "sha256": "8341d544f2cffa9f33d5b8fd9adc8a6dd025f039c36743fb18ba17523dbdb9de",
+   "sha256": "e5a6e0b45398d8647b3b5f0b8041d47b7d0e0dad2c717523f1cf14ec9fee73ae",
    "role": "AF-7 outcome-free swing stress",
    "vendored": true
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "e549f3765567d7cf417cf0019fdfadf8f4107bf4dc0e9c394313897b09f27645",
+   "sha256": "2893dada895d09d7d7806f1a4630992559a00e751026cac4c895e4eaf20d1515",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },

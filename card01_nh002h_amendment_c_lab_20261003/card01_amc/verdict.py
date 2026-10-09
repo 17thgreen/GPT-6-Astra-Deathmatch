@@ -49,21 +49,63 @@ def _degenerate_from(score):
     return None
 
 
-def _fee_state(gate, attestation, expected):
+def _is_v2_gate(gate) -> bool:
+    return isinstance(gate, dict) and (
+        "fee_admission" in gate or "adoption_mode" in gate or "fee_formula_id" in gate
+    )
+
+
+def _attest_reason(gate):
+    verdict = gate.get("fee_attest_verdict")
+    recorded = gate.get("fee_attest_fee_source_sha256")
+    if verdict is None and recorded is None:
+        return "FEE_ATTEST_ABSENT"
+    if recorded != gate.get("fee_source_sha256"):
+        return "FEE_ATTEST_SHA_MISMATCH"
+    if verdict != "ATTEST_PASS":
+        return "FEE_ATTEST_NOT_PASS"
+    return None
+
+
+def _blocked(notes, reason):
+    return "BLOCKED_FEE_UNVERIFIED", notes, reason
+
+
+def _fee_state(gate, attestation, expected, expected_formula):
+    """Return fee_state, notes, and fee_block_reason.
+
+    A v2 gate (fee_admission, adoption_mode, or fee_formula_id) computes only
+    when fee_admission is ADMITTED_INDEX_ONLY and the caller supplied the
+    matching pair. A legacy gate stays on the v1 ATTEST_PASS path. The v1
+    signature default is not an admitted v2 pair.
+    """
     notes = []
+    if not isinstance(gate, dict):
+        return _blocked(notes, "GATE_MISSING")
+    if gate.get("status") != "OK":
+        return _blocked(notes, gate.get("fee_block_reason") or gate.get("reason") or "GATE_STATUS_NOT_OK")
     expected_id, expected_sha = expected
-    if not isinstance(gate, dict) or gate.get("status") != "OK":
-        return "BLOCKED", notes
+    if _is_v2_gate(gate):
+        if "fee_admission" not in gate:
+            return _blocked(notes, "FEE_ADMISSION_MISSING")
+        if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
+            return _blocked(notes, gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED")
+        pair_ok = (
+            expected_formula is not None
+            and gate.get("fee_source") == expected_id
+            and gate.get("fee_source_sha256") == expected_sha
+            and gate.get("fee_formula_id") == expected_formula
+        )
+        if not pair_ok:
+            return _blocked(notes, "FEE_SOURCE_PAIR_MISMATCH")
+        return "ADMITTED", notes, None
     if gate.get("fee_source") != expected_id or gate.get("fee_source_sha256") != expected_sha:
-        return "BLOCKED", notes
-    if (
-        gate.get("fee_attest_verdict") != "ATTEST_PASS"
-        or gate.get("fee_attest_fee_source_sha256") != gate.get("fee_source_sha256")
-    ):
-        return "BLOCKED", notes
+        return _blocked(notes, "FEE_SOURCE_PAIR_MISMATCH")
+    attest_reason = _attest_reason(gate)
+    if attest_reason is not None:
+        return _blocked(notes, attest_reason)
     if not isinstance(attestation, dict):
-        notes.append("FEE_ATTESTATION_MISSING")
-        return "BLOCKED", notes
+        return _blocked(notes, "FEE_ATTEST_ABSENT")
     series = attestation.get("series")
     accept = attestation.get("conductor_accept_sha256")
     admitted = (
@@ -82,8 +124,8 @@ def _fee_state(gate, attestation, expected):
         and all(isinstance(item, dict) and item.get("series_status") == "PINNED" for item in series)
     )
     if not admitted:
-        return "BLOCKED", notes
-    return "ADMITTED", notes
+        return _blocked(notes, "FEE_ATTEST_NOT_PASS")
+    return "ADMITTED", notes, None
 
 
 def _evaluations(raw_hi, rc_hi, admitted, cd):
@@ -129,10 +171,13 @@ def apply_verdict(
     cd=None,
     validity=None,
     expected_fee_source=(FEE_SOURCE_ID, FEE_SOURCE_SHA256),
+    expected_fee_formula=None,
 ):
     """Return the verdict label. cd booleans are precomputed and are not P&L."""
     score = score if isinstance(score, dict) else {}
-    fee_state, notes = _fee_state(gate, attestation, expected_fee_source)
+    fee_state, notes, fee_block_reason = _fee_state(
+        gate, attestation, expected_fee_source, expected_fee_formula
+    )
     admitted = fee_state == "ADMITTED"
     if admitted and isinstance(cd, dict) and cd.get("n_signals") == 0:
         notes = list(notes) + ["NO_SIGNALS_SELECTED"]
@@ -146,6 +191,7 @@ def apply_verdict(
             "firing": [],
             "evaluations": evaluations,
             "fee_state": fee_state,
+            "fee_block_reason": fee_block_reason,
             "notes": notes,
         }
     why = _degenerate_from(score)
@@ -156,6 +202,7 @@ def apply_verdict(
             "firing": [],
             "evaluations": evaluations,
             "fee_state": fee_state,
+            "fee_block_reason": fee_block_reason,
             "notes": notes,
         }
         return out
@@ -179,6 +226,7 @@ def apply_verdict(
             "firing": firing,
             "evaluations": evaluations,
             "fee_state": fee_state,
+            "fee_block_reason": fee_block_reason,
             "notes": notes,
         }
     if not admitted:
@@ -187,6 +235,7 @@ def apply_verdict(
             "firing": [],
             "evaluations": evaluations,
             "fee_state": fee_state,
+            "fee_block_reason": fee_block_reason,
             "notes": notes,
         }
     if not isinstance(cd, dict) or cd.get("reject_c") is None or cd.get("reject_d") is None:
@@ -198,6 +247,7 @@ def apply_verdict(
                 "firing": [],
                 "evaluations": evaluations,
                 "fee_state": fee_state,
+                "fee_block_reason": fee_block_reason,
                 "notes": notes,
             }
     firing = _cd_firing(cd)
@@ -210,6 +260,7 @@ def apply_verdict(
         "firing": firing,
         "evaluations": evaluations,
         "fee_state": fee_state,
+        "fee_block_reason": fee_block_reason,
         "notes": notes,
     }
 

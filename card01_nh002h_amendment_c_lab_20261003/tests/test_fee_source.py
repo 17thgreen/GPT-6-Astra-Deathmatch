@@ -346,7 +346,7 @@ class LoadTests(unittest.TestCase):
             self.assertIsNone(stress["rows"])
             verdict = apply_verdict(score, gate=blocked)
             self.assertTrue(verdict["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED"))
-            self.assertEqual(verdict["fee_state"], "BLOCKED")
+            self.assertEqual(verdict["fee_state"], "BLOCKED_FEE_UNVERIFIED")
 
         admitted = gate([row], raw, fee_attest=attest_pass(raw), **overrides)
         self.assertEqual(admitted["status"], "OK")
@@ -483,11 +483,7 @@ class SwingRecomputeTests(unittest.TestCase):
         self.assertEqual(out["stress_status"], "OK")
         self.assertNotIn("net_block_reason", out)
         self.assertIsInstance(out["rows"][0]["expected_net"], float)
-        self.assertIsInstance(out["rows"][0]["expected_net_sensitivity_direct_member"], float)
-        self.assertNotEqual(
-            out["rows"][0]["expected_net"],
-            out["rows"][0]["expected_net_sensitivity_direct_member"],
-        )
+        self.assertNotIn("expected_net_sensitivity_direct_member", out["rows"][0])
         self.assertEqual(out["fee_source"], loaded.manifest_id)
         self.assertEqual(out["fee_source_sha256"], loaded.sha256)
 

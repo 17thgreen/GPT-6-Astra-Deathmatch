@@ -254,7 +254,8 @@ class SwingTests(unittest.TestCase):
         self.assertEqual(empty["gate_n_selected"], 0)
         self.assertIsNone(empty["rows"])
 
-        missing = {"status": "OK", "n_selected": 2, "signals": [], "manifest_id": "m"}
+        missing = _ok_gate([])
+        missing["n_selected"] = 2
         defect = evaluate(rows, missing, "r", "g")
         self.assertEqual(defect["stress_status"], "REPORTING_DEFECT")
         self.assertEqual(defect["fragility"], "FRAGILE_NOT_CLEARED_REPORTING_DEFECT")
@@ -289,7 +290,7 @@ class SwingTests(unittest.TestCase):
         signed = evaluate(rows, _ok_gate([_signal("AL-02", "D_YES", 0.40, 0.01)]), "r", "gate-sha", "gate-sha")
         self.assertEqual(signed["net_block_reason"], "FEE_SOURCE_NOT_SUPPLIED")
         self.assertEqual(signed["rows"][0]["expected_net"], "BLOCKED_FEE_UNVERIFIED")
-        self.assertEqual(signed["rows"][0]["expected_net_sensitivity_direct_member"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertNotIn("expected_net_sensitivity_direct_member", signed["rows"][0])
 
     def test_pinned_main_raises_without_outcomes(self):
         pinned = load_national_miss()
