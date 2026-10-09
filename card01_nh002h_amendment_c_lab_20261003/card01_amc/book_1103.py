@@ -19,6 +19,7 @@ LABELS = (
     "NOT_CAPTURED_EGRESS_CLOSED",
     "NO_TWO_SIDED_BOOK_IN_WINDOW",
 )
+TALLY_LABELS = LABELS + ("ENTRY_BOOK_EMPTY",)
 _MEAN = Decimal("0.0001")
 
 
@@ -105,7 +106,7 @@ def book_status(book) -> str:
 
 
 def _blank_counts():
-    return {label: 0 for label in LABELS}
+    return {label: 0 for label in TALLY_LABELS}
 
 
 def quote_for_ticker(book, ticker):
@@ -184,7 +185,7 @@ def _aggregate(values):
             "n_defined": 0,
             "n_missing": len(values),
             "n_missing_by_label": counts,
-            "sum_cents": "0",
+            "sum_cents": None,
             "mean_cents": None,
             "per_signal": values,
         }
