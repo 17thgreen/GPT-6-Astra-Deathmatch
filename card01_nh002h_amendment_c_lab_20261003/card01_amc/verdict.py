@@ -344,8 +344,9 @@ def _gate_fee_reason(gate, pin):
 def _checked_series(pin, gate):
     """Pinned series first, then any extra names the gate lists.
 
-    Gate series can only add names. A blocked, empty, or missing gate adds
-    nothing, and the pinned list is still checked.
+    Gate series can only add names. A missing or empty signal list adds
+    nothing from signals, and the pinned list is still checked. A non-string
+    or empty name is kept so the fee check can label it.
     """
     names = list(pin["series_pinned"])
     extra = []
@@ -359,7 +360,7 @@ def _checked_series(pin, gate):
         if isinstance(blocked, list):
             extra.extend(blocked)
     for name in extra:
-        if isinstance(name, str) and name != "" and name not in names:
+        if name not in names:
             names.append(name)
     return names
 

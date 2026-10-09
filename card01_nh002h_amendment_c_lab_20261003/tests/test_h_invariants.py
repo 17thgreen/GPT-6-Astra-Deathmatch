@@ -10,7 +10,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from card01_amc import pnl_cd, verdict
+from card01_amc import pnl_cd, regime_split_secondary, verdict
 from card01_amc.fee_admission import admit_fee_source_v2
 from card01_amc.pinload import sha256_bytes
 from card01_amc.regime_split_secondary import build_report, render
@@ -22,8 +22,8 @@ from tests.test_regime_split_secondary import _selection, fixture_a
 OLD_MODULE_SHA256 = "fd4473b10625e619b545f421aa09edd7341ac5567925ad35c63a95c5602f485f"
 OLD_DETERMINISM = "91ddfa5546a63b175e440bce841baa71ffa7bb461c62b9fc9b7ad5de3a5af142"
 OLD_ENVELOPE = "99cd8259686a3e59098f5b8fae7a6617f7ebdc181f9eec181fb04f67e48f38c5"
-NATURAL_DETERMINISM = "305c351c7a449e3d9f0cc097fad17d8940d0d8509bd0306d7b16e98b93ac6344"
-NATURAL_ENVELOPE = "ded715f5d9f58aec88577fc76e6fdc5885ec6846e4c3a147770bb3815d0007e7"
+NATURAL_DETERMINISM = "b5ac236469182f566292c2fb4ce88b5f6751cadc07763e66466ec510bc8433e4"
+NATURAL_ENVELOPE = "ab1151169fc0b86cb4a7a13e42fbd7a4be77b6207b2db713aeb3fe047d74e0d3"
 PY_VERSION = "3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]"
 PLATFORM_NAME = "Linux-6.12.94+-x86_64-with-glibc2.39"
 T5_DIGEST = "5113b8cd01950a13a1547ed44b8726c9a40afde312526b42774dc7f6e7c1d7b6"
@@ -55,7 +55,11 @@ class FrozenVerdictTests(unittest.TestCase):
         found = {}
         for node in tree.body:
             if isinstance(node, ast.FunctionDef) and node.name in FROZEN_AST:
-                found[node.name] = hashlib.sha256(ast.dump(node).encode()).hexdigest()
+                if sys.version_info >= (3, 13):
+                    dumped = ast.dump(node, show_empty=True)
+                else:
+                    dumped = ast.dump(node)
+                found[node.name] = hashlib.sha256(dumped.encode()).hexdigest()
         self.assertEqual(found, FROZEN_AST)
 
     def test_h_invariant_frozen_modules_and_citation_sets(self):
@@ -181,17 +185,18 @@ class T5InvariantTests(unittest.TestCase):
                 "fee_source_sha256": fee_sha,
                 "fee_source_accept_sha256": accept_sha,
             }
-            with mock.patch.object(sys, "version", PY_VERSION):
-                _text, digest = render(build_report(
-                    rows,
-                    selection=_selection(),
-                    gate=gate,
-                    book={"capture_status": "NOT_CAPTURED_EGRESS_CLOSED", "snapshots": []},
-                    settled={"results": []},
-                    fee_source_path=paths[0],
-                    fee_source_id=ADMITTED_ID,
-                    fee_source_sha256=fee_sha,
-                    packet_index_path=paths[2],
-                    fee_accept_path=paths[1],
-                ))
+            with mock.patch.object(regime_split_secondary.platform, "platform", return_value=PLATFORM_NAME):
+                with mock.patch.object(regime_split_secondary.sys, "version", PY_VERSION):
+                    _text, digest = render(build_report(
+                        rows,
+                        selection=_selection(),
+                        gate=gate,
+                        book={"capture_status": "NOT_CAPTURED_EGRESS_CLOSED", "snapshots": []},
+                        settled={"results": []},
+                        fee_source_path=paths[0],
+                        fee_source_id=ADMITTED_ID,
+                        fee_source_sha256=fee_sha,
+                        packet_index_path=paths[2],
+                        fee_accept_path=paths[1],
+                    ))
         self.assertEqual(digest, T5_DIGEST)

@@ -158,9 +158,10 @@ def _iso_z(value) -> bool:
 
 
 def _duplicate_race_id(items) -> bool:
-    """True when a non-None race_id repeats among dict items.
+    """True when a race_id is not a str, or a str race_id repeats.
 
-    Identity is canonical JSON, so a dict or list race_id cannot crash the check.
+    Scoring keys rows by the raw value, so 1, 1.0 and True are one key.
+    Any non-str race_id is a reporting defect before that collision is scored.
     Non-dicts and race_id None are ignored, matching the book lookups.
     """
     seen = set()
@@ -172,10 +173,11 @@ def _duplicate_race_id(items) -> bool:
         rid = item.get("race_id")
         if rid is None:
             continue
-        key = json.dumps(rid, sort_keys=True)
-        if key in seen:
+        if not isinstance(rid, str):
             return True
-        seen.add(key)
+        if rid in seen:
+            return True
+        seen.add(rid)
     return False
 
 

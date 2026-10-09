@@ -2317,6 +2317,50 @@ class PnLHarness(unittest.TestCase):
         self.assertEqual(found, [{"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "rows"}])
         self._no_score_numbers(out)
 
+    def test_h_e6b_non_string_race_id_is_reporting_defect(self):
+        base = self._run("P1_CLEAN")
+        for bad in (1, 1.0, True):
+            gate = json.loads(json.dumps(base["_gate"]))
+            gate["signals"][0]["race_id"] = bad
+            book = pnl_cd.entry_book(gate, fee_ctx=self.fee_ctx)
+            self.assertEqual(book["status"], "REPORTING_DEFECT", repr(bad))
+            self.assertIn(
+                {"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "signals"},
+                book["reporting_defects"],
+            )
+        rows = [dict(row) for row in base["_rows"]]
+        rows[0]["race_id"] = 1
+        floated = dict(rows[0])
+        floated["race_id"] = 1.0
+        flagged = dict(rows[0])
+        flagged["race_id"] = True
+        rows.extend((floated, flagged))
+        anchor = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+
+        def loader():
+            raise AssertionError("loader called")
+
+        out = pnl_cd.run(
+            base["_gate"],
+            rows,
+            loader,
+            gate_sha256=base["_gate_sha"],
+            entry_book_bytes=base["_book"],
+            anchor_doc=anchor,
+            fee_ctx=self.fee_ctx,
+        )
+        self.assertEqual(out["status"], "REPORTING_DEFECT")
+        found = [
+            item for item in out["reporting_defects"]
+            if item.get("kind") == "DUPLICATE_RACE_ID"
+        ]
+        self.assertEqual(found, [{"kind": "DUPLICATE_RACE_ID", "blocking": True, "detail": "rows"}])
+        self._no_score_numbers(out)
+
     def test_h_e6b_duplicate_rows_different_y_have_no_numbers(self):
         base = self._run("P1_CLEAN")
         rows = [dict(row) for row in base["_rows"]]
@@ -2397,10 +2441,15 @@ class PnLHarness(unittest.TestCase):
         self.assertEqual(out["net_headline_total"], exp["net_headline_total"])
         self.assertGreater(out["_calls"]["n"], 0)
         self.assertFalse(pnl_cd._duplicate_race_id([{"race_id": None}, {"race_id": None}]))
-        self.assertFalse(pnl_cd._duplicate_race_id([{"race_id": {"k": 1}}, "nope"]))
+        self.assertTrue(pnl_cd._duplicate_race_id([{"race_id": {"k": 1}}, "nope"]))
         self.assertTrue(pnl_cd._duplicate_race_id([
-            {"race_id": {"b": 1, "a": 2}},
-            {"race_id": {"a": 2, "b": 1}},
+            {"race_id": 1},
+            {"race_id": 1.0},
+            {"race_id": True},
+        ]))
+        self.assertFalse(pnl_cd._duplicate_race_id([
+            {"race_id": "X1-01"},
+            {"race_id": "X1-02"},
         ]))
 
     def test_h_a1_non_ascii_and_malformed_anchors_are_invalid(self):
@@ -2609,6 +2658,20 @@ class PnLHarness(unittest.TestCase):
         self.assertFalse(stated["admitted"])
         self.assertEqual(stated["reason"], "SERIES_NOT_PINNED")
         self.assertFalse(verdict._disk_files_admit(fee_ctx, empty))
+
+    def test_h_a2_non_string_series_is_series_not_pinned(self):
+        for bad in (None, 4, ""):
+            gate = {
+                "status": "OK",
+                "signals": [{"series": bad, "race_id": "X1-01"}],
+                "fee_admission": "ADMITTED_INDEX_ONLY",
+            }
+            state = verdict.disk_fee_state(gate, self.fee_ctx)
+            self.assertFalse(state["admitted"], repr(bad))
+            self.assertEqual(state["reason"], "SERIES_NOT_PINNED", repr(bad))
+            book = pnl_cd.entry_book(gate, fee_ctx=self.fee_ctx)
+            self.assertEqual(book["status"], "BLOCKED_FEE_UNVERIFIED", repr(bad))
+            self.assertEqual(book["fee_block_reason"], "SERIES_NOT_PINNED", repr(bad))
 
     def test_h_a2_series_pinned_fail_closed(self):
         variants = [

@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "937e9d195fbeadd66003f4d9642abe0876b04231dceee87edf7845b2727ad686",
+   "sha256": "ee0b1b535d97a49700071a7e03d46a8fe914fa4227f6c27e2df5cf63070a20ba",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -472,7 +472,7 @@
   },
   {
    "path": "card01_amc/pnl_cd.py",
-   "sha256": "3a68b401e2040caf5300e0433526c9dd540cb4987418d01b114daba5d89f2921",
+   "sha256": "4ff4acdfc8ecb6405f777a01b216147d31655f22c03b57a4e781b6886795c93b",
    "role": "PR-C REJECT (c)/(d) realized P&L + one-tick-worse stress",
    "vendored": true
   },
