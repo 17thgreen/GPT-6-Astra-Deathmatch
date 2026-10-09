@@ -48,6 +48,10 @@ _BOLD_STATUS_RE = re.compile(
 _HEX_TOKEN_RE = re.compile(r"[0-9a-f]{8,64}")
 _ADMISSION_RE = re.compile(r"^ADMITTED_BY_RULING [0-9a-f]{64}$")
 _CITATION_PATH = Path(__file__).with_name("fee_citation_set.json")
+# sha256 of fee_citation_set.json. A byte change with this constant left
+# unchanged makes the pin unusable (ADV-10). There is no override.
+FEE_CITATION_SET_SHA256 = "3a56ead8151967f704ce6e344f3c61f18bc660e3f37e45dbb269dd3123905149"
+_ZERO_WIDTH = str.maketrans("", "", "\u200b\u200c\u200d\u2060\ufeff")
 
 
 @dataclass(frozen=True)
@@ -171,10 +175,16 @@ def _mentions_sha(row, sha):
 
 
 def _load_citation_doc():
-    """Return the citation pin, or None when it is missing or unusable."""
+    """Return the citation pin, or None when it is missing or unusable.
+
+    The raw bytes must match FEE_CITATION_SET_SHA256. A mismatch is an
+    unusable pin. The constant is the reference; PINS.json is not read.
+    """
     try:
         raw = _CITATION_PATH.read_bytes()
     except OSError:
+        return None
+    if sha256_bytes(raw) != FEE_CITATION_SET_SHA256:
         return None
     try:
         doc = json.loads(raw.decode("utf-8"))
@@ -184,6 +194,7 @@ def _load_citation_doc():
         return None
     allow = doc.get("ruling_allowlist")
     watched = doc.get("watched_sha8")
+    files = doc.get("watched_files")
     lines = doc.get("line_sha256")
     if (
         not isinstance(allow, list)
@@ -196,6 +207,12 @@ def _load_citation_doc():
         not isinstance(watched, list)
         or not watched
         or any(not isinstance(item, str) or len(item) != 8 for item in watched)
+    ):
+        return None
+    if (
+        not isinstance(files, list)
+        or not files
+        or any(not isinstance(item, str) or item == "" for item in files)
     ):
         return None
     if (
@@ -216,21 +233,39 @@ def _ruling_is_accept(ruling):
     return ruling in doc["ruling_allowlist"]
 
 
+def _citation_fold(line):
+    """Drop zero-width characters, then casefold. The line hash stays raw."""
+    return line.translate(_ZERO_WIDTH).casefold()
+
+
+def _line_cites(folded, watched_sha8, watched_files):
+    """True when the folded line contains a 7-hex prefix or a watched file name."""
+    prefixes = [item[:7].casefold() for item in watched_sha8]
+    names = [item.casefold() for item in watched_files]
+    if any(prefix in folded for prefix in prefixes):
+        return True
+    return any(name in folded for name in names)
+
+
 def _citation_block_reason(text):
     """FEE_CITATIONS_CHANGED unless this index matches the pin or cites none.
 
-    An index that cites none of the watched shas is not the adopted index.
-    An index that cites any of them must reproduce the pinned multiset.
-    A missing or unusable pin fails closed. Status words are not this gate.
+    A line cites when, after zero-width removal and casefolding, it contains
+    the first 7 hex digits of a watched_sha8 entry or a watched file name.
+    The line hash is sha256 of the original rstrip'd line. An index that
+    cites none of them is left to the other checks. An index that cites any
+    must reproduce the pinned multiset. A missing or unusable pin fails
+    closed. Status words are not this gate.
     """
     doc = _load_citation_doc()
     if doc is None:
         return "FEE_CITATIONS_CHANGED"
     watched = doc["watched_sha8"]
+    files = doc["watched_files"]
     found = []
     for line in text.splitlines():
         stripped = line.rstrip()
-        if any(prefix in stripped for prefix in watched):
+        if _line_cites(_citation_fold(stripped), watched, files):
             found.append(sha256_bytes(stripped.encode("utf-8")))
     found.sort()
     if not found:
