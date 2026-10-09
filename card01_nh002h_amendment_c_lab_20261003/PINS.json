@@ -145,7 +145,7 @@
   },
   {
    "path": "card01_amc/build_rows.py",
-   "sha256": "502c27fb1b0d259e733483c59433c1871c01762fd1d714b9701db4f452ac2a4f",
+   "sha256": "6d3a92fb7e3d3364e62713625774c581ae39494d70e7d66294456fbd60ff9f88",
    "role": "AF-8 input builder",
    "vendored": true
   },
