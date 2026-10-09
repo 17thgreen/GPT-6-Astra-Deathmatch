@@ -1,0 +1,21 @@
+{
+  "experiment_id": "EXT2-K1-SWEEP-REVERSION",
+  "freeze_md_sha256": "8f35fa77cab5872f7956df34c145fda2e8ae5587e1c1396ca2d39b5e347676a9",
+  "freeze_json_sha256": "afbcd089888c84fb5db4e611b1e58ef59a558d4b379c843bae68c82a386ed8af",
+  "accept_sha256": "d3ddc2ca50db07f36142acce38add4153beeba2c466cfdebba647671049abf21",
+  "seed": 20261008,
+  "B": 10000,
+  "threshold_headline": 1000,
+  "threshold_s5k": 5000,
+  "horizons_s": [60, 300, 900, 1800, 3600],
+  "k_star_s": 900,
+  "entry_gap_s": 120,
+  "verdict_domain": [
+    "KILL_EXT2K1",
+    "CLOSE_NULL",
+    "ITERATE_DESCRIPTIVE",
+    "INCONCLUSIVE",
+    "INCONCLUSIVE(STRUCTURE)"
+  ],
+  "results": null
+}

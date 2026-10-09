@@ -1,0 +1,42 @@
+{
+  "schema": "astra.ext2k1.source_pins.v1",
+  "experiment_id": "EXT2-K1-SWEEP-REVERSION",
+  "pins": [
+    {
+      "role": "B1 dev tape",
+      "path": "nfl_factorial_lab_20260921/inputs/events.jsonl.gz",
+      "bytes": 22967126,
+      "sha256": "cd300e664c2c5f2ff344c4b1eb17dd3f8e5f3326168b9dd8e3ade94a3a7382b4"
+    },
+    {
+      "role": "B1 markets",
+      "path": "nfl_factorial_lab_20260921/inputs/markets.json",
+      "bytes": 9697,
+      "sha256": "66cc07e9e9e1543b3fdcbcded30ff50af0abae87bb2aa3d5fcb3d0be7925632f"
+    },
+    {
+      "role": "B1 cohort",
+      "path": "nfl_factorial_lab_20260921/inputs/week_membership.json",
+      "bytes": 1166,
+      "sha256": "a47d0e0dc5a64d79335bc5588f8aa5e1d937503d36ebcbaaf219965a68adf88c"
+    },
+    {
+      "role": "RESERVED_HOLDOUT",
+      "path": "nfl_factorial_lab_20260921/RESERVED_HOLDOUT.json",
+      "bytes": 7446,
+      "sha256": "74507e1a4371d69bc79ea2369f9bff030a74f51ee80c8072ba9c0f5345d377ca"
+    },
+    {
+      "role": "B2 000 fills",
+      "path": "kalshi_ext_k1_q6000_legging_audit_lab_20261003/pins/EXT_K1_authentic_pins_2026-10-03/lab/astra-science/nfl_factorial_lab_20260921/results/q3300_d0.25_000_fills.jsonl.gz",
+      "bytes": 534945,
+      "sha256": "9d56f5d3c599e092606be9f4a1ad41ae8baabff4921d3d722adf0b57ac944a3f"
+    },
+    {
+      "role": "B1 quote builder",
+      "path": "nfl_completion_lab_20260921/load_data.py",
+      "bytes": 5284,
+      "sha256": "817c74deec49103ff8e1849c23677b207cb698e5cb05559b69978fe25eaa2ca3"
+    }
+  ]
+}
