@@ -7,11 +7,17 @@ boolean stays fail-closed. Zero signals make both (c) and (d) true.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
 
-from card01_amc.fee_admission import FEE_FORMULA_ID, REFUSED_FEE_SOURCES
+from card01_amc.fee_admission import (
+    FEE_FORMULA_ID,
+    REFUSED_FEE_SOURCES,
+    admit_fee_source_v2,
+)
+from card01_amc.pinload import sha256_bytes
 
 PASS_FORECAST = "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST"
 REJECT_FORECAST = "FORECAST_ONLY_FEE_BLOCKED: REJECT"
@@ -232,12 +238,263 @@ def apply_verdict(
     }
 
 
+# Production reader. Tests may monkeypatch this constant. No CLI or env override.
+PINS_PATH = Path(__file__).resolve().parents[1] / "PINS.json"
+
+
+def load_fee_source_v2(path=None):
+    """Return the PINS.json fee_source_v2 pair, or None when it cannot be read."""
+    target = PINS_PATH if path is None else Path(path)
+    try:
+        raw = target.read_bytes()
+        doc = json.loads(raw.decode("utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, ValueError):
+        return None
+    block = doc.get("fee_source_v2") if isinstance(doc, dict) else None
+    if not isinstance(block, dict):
+        return None
+    ident = block.get("id")
+    digest = block.get("sha256")
+    accept = block.get("accept_sha256")
+    formula = block.get("fee_formula_id")
+    if (
+        not isinstance(ident, str)
+        or ident == ""
+        or not isinstance(digest, str)
+        or len(digest) != 64
+        or not isinstance(accept, str)
+        or len(accept) != 64
+        or not isinstance(formula, str)
+        or formula == ""
+    ):
+        return None
+    return {
+        "id": ident,
+        "sha256": digest,
+        "accept_sha256": accept,
+        "fee_formula_id": formula,
+    }
+
+
+def _fee_paths(fee_ctx):
+    if not isinstance(fee_ctx, dict):
+        return {"fee_source": None, "packet_index": None, "fee_accept": None}
+    return {
+        "fee_source": fee_ctx.get("fee_source_path"),
+        "packet_index": fee_ctx.get("packet_index_path"),
+        "fee_accept": fee_ctx.get("fee_accept_path"),
+    }
+
+
+def sha256_path(path):
+    """Hash a file. path may be a string. Used by pnl_cd.module_sha256."""
+    return sha256_bytes(Path(path).read_bytes())
+
+
+def _sha_file(path):
+    if path is None or path == "":
+        return None
+    try:
+        return sha256_path(path)
+    except OSError:
+        return None
+
+
+def _gate_fee_reason(gate, pin):
+    """Consumer fee-state reasons. First failure wins. Pair is the PINS pair."""
+    if not isinstance(gate, dict):
+        return "GATE_MISSING"
+    if (
+        gate.get("fee_source") in REFUSED_FEE_SOURCES
+        or gate.get("fee_source_sha256") in REFUSED_FEE_SOURCES
+    ):
+        return "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL"
+    status = gate.get("status")
+    if status == "BLOCKED_FEE_UNVERIFIED":
+        return gate.get("fee_block_reason") or gate.get("reason") or "BLOCKED_FEE_UNVERIFIED"
+    if status != "OK":
+        return gate.get("fee_block_reason") or "GATE_STATUS_NOT_OK"
+    if "fee_admission" not in gate:
+        return "FEE_ADMISSION_MISSING"
+    if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
+        return gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED"
+    if (
+        gate.get("fee_source_sha256") != pin["sha256"]
+        or gate.get("fee_source_accept_sha256") != pin["accept_sha256"]
+    ):
+        return "FEE_SOURCE_PAIR_MISMATCH"
+    if gate.get("fee_formula_id") != pin["fee_formula_id"] or gate.get("fee_formula_id") != FEE_FORMULA_ID:
+        return "FEE_FORMULA_ID_MISMATCH"
+    return None
+
+
+def disk_fee_state(gate, fee_ctx):
+    """Rebuild v2 admission from the fee files. The expected pair is PINS only."""
+    paths = _fee_paths(fee_ctx)
+    fee_input_sha256 = {
+        "fee_source": _sha_file(paths["fee_source"]),
+        "packet_index": _sha_file(paths["packet_index"]),
+        "fee_accept": _sha_file(paths["fee_accept"]),
+    }
+    pin = load_fee_source_v2()
+    if pin is None:
+        return {
+            "admitted": False,
+            "reason": "FEE_SOURCE_PAIR_MISSING",
+            "admission": None,
+            "pin": None,
+            "fee_input_sha256": fee_input_sha256,
+        }
+    series = []
+    if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
+        for signal in gate["signals"]:
+            if isinstance(signal, dict):
+                series.append(signal.get("series"))
+    admission = admit_fee_source_v2(
+        fee_source_path=paths["fee_source"],
+        fee_source_id=pin["id"],
+        fee_source_sha256=pin["sha256"],
+        packet_index_path=paths["packet_index"],
+        fee_accept_path=paths["fee_accept"],
+        series_used=series,
+    )
+    if not admission.admitted:
+        return {
+            "admitted": False,
+            "reason": admission.fee_block_reason or "FEE_RECOMPUTE_MISMATCH",
+            "admission": admission,
+            "pin": pin,
+            "fee_input_sha256": fee_input_sha256,
+        }
+    if (
+        admission.fee_source_sha256 != pin["sha256"]
+        or admission.fee_source_accept_sha256 != pin["accept_sha256"]
+        or admission.fee_formula_id != pin["fee_formula_id"]
+        or admission.fee_formula_id != FEE_FORMULA_ID
+    ):
+        reason = "FEE_FORMULA_ID_MISMATCH"
+        if (
+            admission.fee_source_sha256 != pin["sha256"]
+            or admission.fee_source_accept_sha256 != pin["accept_sha256"]
+        ):
+            reason = "FEE_SOURCE_PAIR_MISMATCH"
+        return {
+            "admitted": False,
+            "reason": reason,
+            "admission": admission,
+            "pin": pin,
+            "fee_input_sha256": fee_input_sha256,
+        }
+    reason = _gate_fee_reason(gate, pin)
+    if reason is not None:
+        return {
+            "admitted": False,
+            "reason": reason,
+            "admission": admission,
+            "pin": pin,
+            "fee_input_sha256": fee_input_sha256,
+        }
+    return {
+        "admitted": True,
+        "reason": None,
+        "admission": admission,
+        "pin": pin,
+        "fee_input_sha256": fee_input_sha256,
+    }
+
+
+def _pair_equal(left, pin):
+    if not isinstance(left, dict) or pin is None:
+        return False
+    return (
+        left.get("fee_source_sha256") == pin["sha256"]
+        and left.get("fee_source_accept_sha256") == pin["accept_sha256"]
+        and left.get("fee_formula_id") == pin["fee_formula_id"]
+        and left.get("fee_formula_id") == FEE_FORMULA_ID
+    )
+
+
+def cd_from_prc(prc_output, gate, *, fee_ctx):
+    """Hand-off check: schema, output hash, and the PINS fee pair.
+
+    Returns the (c)/(d) booleans for apply_verdict, the blocked strings, or
+    None when the hand-off fails. A caller-supplied pair is not accepted.
+    """
+    from card01_amc.pnl_cd import SCHEMA, score_body_sha256
+
+    if not isinstance(prc_output, dict) or prc_output.get("schema") != SCHEMA:
+        return None
+    if score_body_sha256(prc_output) != prc_output.get("output_sha256"):
+        return None
+    state = disk_fee_state(gate, fee_ctx)
+    status = prc_output.get("status")
+    if status == "BLOCKED_FEE_UNVERIFIED":
+        return {
+            "n_signals": prc_output.get("n_signals"),
+            "reject_c": "BLOCKED_FEE_UNVERIFIED",
+            "reject_d": "BLOCKED_FEE_UNVERIFIED",
+        }
+    pin = state["pin"]
+    if not _pair_equal(prc_output, pin) or not _pair_equal(gate, pin):
+        return None
+    if not state["admitted"]:
+        return None
+    defects = prc_output.get("reporting_defects") or []
+    blocking = any(
+        isinstance(item, dict) and item.get("blocking") is True for item in defects
+    )
+    if status in ("UNRESOLVED_INVENTORY_AT_SCORING", "REPORTING_DEFECT") or blocking:
+        return {
+            "n_signals": prc_output.get("n_signals"),
+            "reject_c": None,
+            "reject_d": None,
+        }
+    if prc_output.get("entry_book_anchor_status") != "VERIFIED":
+        return None
+    if status not in ("OK", "NO_SIGNALS_SELECTED"):
+        return None
+    return {
+        "n_signals": prc_output.get("n_signals"),
+        "reject_c": prc_output.get("reject_c"),
+        "reject_d": prc_output.get("reject_d"),
+    }
+
+
 def main(argv):
-    if len(argv) != 1:
+    parser = argparse.ArgumentParser(prog="python -m card01_amc.verdict")
+    parser.add_argument("score", nargs="?")
+    parser.add_argument("--gate", default=None)
+    parser.add_argument("--prc", default=None)
+    parser.add_argument("--fee-source", default=None)
+    parser.add_argument("--packet-index", default=None)
+    parser.add_argument("--fee-accept", default=None)
+    parser.add_argument("--regime-report", default=None)
+    args = parser.parse_args(argv)
+    if not args.score:
         print("usage: python -m card01_amc.verdict score.json", file=sys.stderr)
         return 2
-    score = json.loads(Path(argv[0]).read_text())
-    json.dump(apply_verdict(score), sys.stdout, indent=1)
+    score = json.loads(Path(args.score).read_text(encoding="utf-8"))
+    cd = None
+    regime = None
+    if args.prc is not None or args.gate is not None:
+        if not args.prc or not args.gate:
+            print("usage: --gate and --prc are supplied together", file=sys.stderr)
+            return 2
+        fee_ctx = {
+            "fee_source_path": args.fee_source,
+            "packet_index_path": args.packet_index,
+            "fee_accept_path": args.fee_accept,
+        }
+        gate = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
+        cd = cd_from_prc(prc_output, gate, fee_ctx=fee_ctx)
+    if args.regime_report:
+        regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
+    json.dump(
+        apply_verdict(score, cd=cd, regime_report=regime),
+        sys.stdout,
+        indent=1,
+    )
     return 0
 
 
