@@ -1,0 +1,1085 @@
+{
+ "_SYNTHETIC_NOT_DATA": true,
+ "cases": [
+  {
+   "description": "four winners spread, one loser; (c) and (d) clear",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 5,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.4,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.45,
+      "race_id": "XA-02",
+      "series": "XS1",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.35,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.42,
+      "race_id": "XB-02",
+      "series": "XS1",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.3,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "P1_CLEAN",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-02",
+     "state": "XA",
+     "ticker": "T-XA-02",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-02",
+     "state": "XB",
+     "ticker": "T-XB-02",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    }
+   ]
+  },
+  {
+   "description": "sub-cent prices where headline differs from fee-only ceil (0.055, 0.072, 0.077)",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 5,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.005,
+      "fee_decimal": "0.005",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.055,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.008,
+      "fee_decimal": "0.008",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.072,
+      "race_id": "XA-02",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.013,
+      "fee_decimal": "0.013",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.077,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.4,
+      "race_id": "XB-02",
+      "series": "XS1",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.41,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "P2_SUBCENT",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-02",
+     "state": "XA",
+     "ticker": "T-XA-02",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-02",
+     "state": "XB",
+     "ticker": "T-XB-02",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "total net at ask exactly 0 -> REJECT (c) fires (<= 0)",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.5,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.46,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "C_ASK_ZERO",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "total net at ask +0.01 -> (c) at-ask clear; stress fires",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.5,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.45,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "C_ASK_PLUS_CENT",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "at-ask total +0.02 > 0 but one-tick-worse total <= 0 -> (c) fires on the stress leg only",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 6,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XA-02",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XB-02",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.57,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.57,
+      "race_id": "XC-02",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "C_TICK_ONLY",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-02",
+     "state": "XA",
+     "ticker": "T-XA-02",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-02",
+     "state": "XB",
+     "ticker": "T-XB-02",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-02",
+     "state": "XC",
+     "ticker": "T-XC-02",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "at-ask total > 0, one-tick-worse total exactly 0 -> (c) fires (<= 0)",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.5,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.44,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "C_TICK_ZERO",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "at-ask and one-tick-worse totals both > 0 (worse = +0.01) -> (c) clear",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.5,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.43,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "C_TICK_PLUS_CENT",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "headline fee changes at the worse price (0.17->0.18 fee up; 0.82->0.83 fee down)",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 3,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.01,
+      "fee_decimal": "0.01",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.17,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.82,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.4,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "TICK_FEE_STEP",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    }
+   ]
+  },
+  {
+   "description": "top-1 share exactly 0.5 -> (d)(i) does NOT fire (> 50% required); drop-best-two > 0",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 3,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.58,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.78,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.78,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "D_TOP1_EQ_HALF",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    }
+   ]
+  },
+  {
+   "description": "top-1 share 0.41/0.81 > 0.5 -> (d)(i) fires",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 3,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.57,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.78,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.78,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "D_TOP1_GT_HALF",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    }
+   ]
+  },
+  {
+   "description": "dropping best two winners leaves exactly 0 -> (d)(ii) fires",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 4,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.28,
+      "race_id": "XD-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "D_DROP2_ZERO",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XD-01",
+     "state": "XD",
+     "ticker": "T-XD-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "dropping best two winners leaves +0.01 -> (d)(ii) clear",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 4,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.68,
+      "race_id": "XC-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.27,
+      "race_id": "XD-01",
+      "series": "XS1",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "D_DROP2_PLUS_CENT",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XC-01",
+     "state": "XC",
+     "ticker": "T-XC-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XD-01",
+     "state": "XD",
+     "ticker": "T-XD-01",
+     "y": 0
+    }
+   ]
+  },
+  {
+   "description": "signals but no positive net -> top1 null NO_POSITIVE_PNL; (d) fires via drop-best-two",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.4,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.3,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "D_NO_POSITIVE",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 0
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": 1
+    }
+   ]
+  },
+  {
+   "description": "fee admitted, gate selected 0 signals -> (c) and (d) true, NO_SIGNALS_SELECTED",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 0,
+    "signals": [],
+    "status": "OK"
+   },
+   "id": "ZERO_SIGNALS",
+   "joined_rows": []
+  },
+  {
+   "description": "one signal has y null at scoring -> fail closed, reject_c/d null",
+   "gate": {
+    "fee_admission": "ADMITTED_INDEX_ONLY",
+    "n_selected": 2,
+    "signals": [
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.4,
+      "race_id": "XA-01",
+      "series": "XS1",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee": 0.02,
+      "fee_decimal": "0.02",
+      "fee_rounding": "NON_DIRECT_CEIL_CENT",
+      "price": 0.45,
+      "race_id": "XB-01",
+      "series": "XS1",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK"
+   },
+   "id": "UNRESOLVED",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    },
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XB-01",
+     "state": "XB",
+     "ticker": "T-XB-01",
+     "y": null
+    }
+   ]
+  },
+  {
+   "description": "gate BLOCKED_FEE_UNVERIFIED -> no number anywhere",
+   "gate": {
+    "fee_admission": "BLOCKED_FEE_UNVERIFIED",
+    "fee_block_reason": "SERIES_NOT_PINNED",
+    "signals": null,
+    "status": "BLOCKED_FEE_UNVERIFIED"
+   },
+   "id": "FEE_BLOCKED",
+   "joined_rows": [
+    {
+     "mapping_status": "KXHOUSERACE",
+     "p_market": 0.5,
+     "p_model": 0.5,
+     "race_id": "XA-01",
+     "state": "XA",
+     "ticker": "T-XA-01",
+     "y": 1
+    }
+   ]
+  }
+ ],
+ "created_utc": "2000-01-01T00:00:00Z",
+ "fee_terms": {
+  "contracts": 1,
+  "fee_multiplier": "1",
+  "fee_type": "quadratic",
+  "series": "XS1",
+  "taker_rate": "0.07"
+ },
+ "schema": "astra.card01.prc_fixtures.kit.v1",
+ "tick_kit_interpretation": "0.01",
+ "timestamp_convention": "2000-01-01T00:00:00Z (synthetic)"
+}

@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "593eeabdf177e075c5c616f067888d618692ea5dd23e599871320a0d7cce4c3d",
+   "sha256": "a140e078deb2e3a603d7f61a021851292b1e4e8a45be183d66a5ca84c915280e",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -430,14 +430,20 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "00f00952ea57a5a64b147898be3605a5618262ce890417c5fc7f52c438cba615",
+   "sha256": "c4a5d3b2fe8edb50a3782ed6a15fd0b3a3d2071597e657a0fbb10ab9aae60805",
    "role": "v2 index-only fee admission",
    "vendored": true
   },
   {
    "path": "card01_amc/fee_citation_set.json",
-   "sha256": "88c71eccc6cb21fb5151e7f9dca718e653f6824067a7bec6624d35127cd6586c",
+   "sha256": "3a56ead8151967f704ce6e344f3c61f18bc660e3f37e45dbb269dd3123905149",
    "role": "pinned citation multiset for the adopted v2 fee index",
+   "vendored": true
+  },
+  {
+   "path": "card01_amc/r1_accept_citation_set.json",
+   "sha256": "8e26ac4e5db007ab671119379acdf0251f18b08f56ab00813cdd4e89401d4da3",
+   "role": "pinned citation multiset for packet 69b98b2f",
    "vendored": true
   },
   {
@@ -454,7 +460,7 @@
   },
   {
    "path": "card01_amc/book_1103.py",
-   "sha256": "b4901628b34a7de69511b199f7759d3270d8ff7a08e4021061fdea886c6990ee",
+   "sha256": "4eca06d6373adab58dde029550af85ee0c7724e711b93bc8dcfe4ae82317fbc6",
    "role": "11-03 adverse selection labels",
    "vendored": true
   },
@@ -463,6 +469,44 @@
    "sha256": "c498f72b7a0b559b47342183e09bc62f4e14bd5a9174fe89efa96796efd1a151",
    "role": "regime-split assembly and CLI",
    "vendored": true
+  },
+  {
+   "path": "card01_amc/pnl_cd.py",
+   "sha256": "fd4473b10625e619b545f421aa09edd7341ac5567925ad35c63a95c5602f485f",
+   "role": "PR-C REJECT (c)/(d) realized P&L + one-tick-worse stress",
+   "vendored": true
+  },
+  {
+   "path": "pins/GOVERNANCE_EXTRACT_CARD01_PRC_2026-10-08.md",
+   "sha256": "114c5f2b635e419696fe627f6f27b6ca1175755e60a3ffb1ce550a2d699915be",
+   "role": "PR-C governance extract",
+   "vendored": true
+  },
+  {
+   "path": "tests/fixtures/SYNTH_PRC_FIXTURES.json",
+   "sha256": "961bf3cd6e46da4b5b66b200818e710f73c34a4d264a96828b3e196447f0ae54",
+   "role": "synthetic PR-C cases",
+   "vendored": true
+  },
+  {
+   "path": "tests/fixtures/SYNTH_PRC_EXPECTED_VALUES.json",
+   "sha256": "541c60e4c376fc7bde98dac878ef4a69e81b763fa72159c23c491a49889a0100",
+   "role": "hand-computed PR-C expectations",
+   "vendored": true
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_CARD01_PR69_FU2_2026-10-08.md",
+   "sha256": "c05d70037b82d62a9cf01740b50a34773f87025cd6887f5dcfc68f8a443bb813",
+   "role": "PR69 follow-up ruling items 7 and 8",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
+  },
+  {
+   "path": "pins/CONDUCTOR_RULING_CARD01_PRC_KIT_OQ1_9_2026-10-08.md",
+   "sha256": "61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca",
+   "role": "PR-C kit rulings KI-1 through KI-9",
+   "vendored": false,
+   "reason": "PUBLIC_REPO_REDACTION"
   }
  ],
  "feebook_superseded": true,
@@ -490,5 +534,44 @@
   "vendored": false,
   "loaded": "runtime --fee-source",
   "refused_historical": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd"
+ },
+ "prc": {
+  "schema": "astra.card01.prc_pnl_cd.v1",
+  "tick": "0.01",
+  "tick_status": "RULED_61c1e4ea",
+  "ruled_kit_points": {
+   "ruling_sha256": "61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca",
+   "points": [
+    "KI-1",
+    "KI-2",
+    "KI-3",
+    "KI-4",
+    "KI-5",
+    "KI-6",
+    "KI-7",
+    "KI-8 verdict.cd_from_prc",
+    "KI-9 entry-table anchor"
+   ]
+  },
+  "entry_table_schema": "astra.card01.prc_entry_table.v1",
+  "entry_book_schema": "astra.card01.prc_entry_book.v1",
+  "anchor_schema": "astra.card01.prc_entry_book_anchor.v1",
+  "buffer_2c": "EXCLUDED_FROM_VERDICT; optional labelled descriptive sensitivity only",
+  "governing_set": [
+   "114c5f2b635e419696fe627f6f27b6ca1175755e60a3ffb1ce550a2d699915be",
+   "b8cb27e0e94c2a27c22fd1d92395109168a90ca78bb5928a65fbf0f89c397517",
+   "c05d70037b82d62a9cf01740b50a34773f87025cd6887f5dcfc68f8a443bb813",
+   "715fbafd588845867d7fe0af59b32a21d2411afc14bfb6da718f5592e0608703",
+   "2c870cd57fc4acb4290c1273e06876e8380159f2f6614a5519314b43817a8583",
+   "69b98b2f643a7510280cd6b959c30e285df081c8142b910808001db8cad5b81a",
+   "861b7d14e75979f798b872a2c16b6e440d4f5b6332d4ad9e1e81d713863f5757",
+   "e5227270b6e767b0c25fdfe68b8a859351a1a84d42200816c0f7eac6aad56bde",
+   "c5b08459dd6f1e1e6cae65dbb13c4aa5b0d6a1418d79d3bae54c9370d9beede5",
+   "61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca",
+   "c31724463d81747702910a2d5296c2fc21d2a1dbc594727b26ac3d894b55ec59",
+   "ee6af37cef95f1e468d28e5b06750caaca8b1706ec11ed5cf5cdce460524c2c6",
+   "cc75f09614ad285756fd7cb7f7a5c2ce4e711b5adb98102c2dd043ccfc1af0f0"
+  ],
+  "no_resampling": true
  }
 }

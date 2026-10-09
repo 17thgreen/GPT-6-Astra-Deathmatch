@@ -48,6 +48,10 @@ _BOLD_STATUS_RE = re.compile(
 _HEX_TOKEN_RE = re.compile(r"[0-9a-f]{8,64}")
 _ADMISSION_RE = re.compile(r"^ADMITTED_BY_RULING [0-9a-f]{64}$")
 _CITATION_PATH = Path(__file__).with_name("fee_citation_set.json")
+# sha256 of fee_citation_set.json. A byte change with this constant left
+# unchanged makes the pin unusable (ADV-10). There is no override.
+FEE_CITATION_SET_SHA256 = "3a56ead8151967f704ce6e344f3c61f18bc660e3f37e45dbb269dd3123905149"
+_ZERO_WIDTH = str.maketrans("", "", "\u200b\u200c\u200d\u2060\ufeff")
 
 
 @dataclass(frozen=True)
@@ -157,6 +161,195 @@ def _status_blocks(text):
     return _SUPERSEDED_RE.search(folded) is not None
 
 
+# The fee citation multiset does not include 69b98b2f. That packet has its
+# own pinned line set, checked before this word rule. The word rule is
+# defence in depth: a status blocks only when 69b98b2f is the subject.
+_R1_ACCEPT_PREFIX7 = "69b98b2"
+_R1_STATUS = (
+    r"(?:withdrawn|withdrawal|withdraws|withdraw|revoked|revocation|revokes|revoke|"
+    r"rescinded|rescission|rescinds|rescind|superseded|supersedes|supersede|"
+    r"retracted|vacated|void|no longer adopted|not adopted|not admitted)"
+)
+_R1_STATUS_RE = re.compile(r"\b" + _R1_STATUS + r"\b")
+_R1_BY_FORM = r"(?:withdrawn_by|revoked_by|rescinded_by|superseded_by)"
+_R1_OBJECT_AFTER_RE = re.compile(
+    _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*\b\s+(?:" + _R1_BY_FORM + r"|" + _R1_STATUS + r")\b"
+)
+_R1_OBJECT_OF_RE = re.compile(r"\b" + _R1_STATUS + r"\s+of\s+" + _R1_ACCEPT_PREFIX7)
+_R1_OBJECT_BEFORE_RE = re.compile(r"\b" + _R1_STATUS + r"\s+" + _R1_ACCEPT_PREFIX7)
+_R1_NEGATED_RE = re.compile(
+    r"\bnot\s+(?:withdrawn|withdrawal|withdraws|withdraw|revoked|revocation|revokes|revoke|"
+    r"rescinded|rescission|rescinds|rescind|superseded|supersedes|supersede|"
+    r"retracted|vacated|void)\b"
+)
+_R1_ACTOR_RE = re.compile(
+    r"\b(?:accepted(?:\s+as\s+modified)?\s+by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*"
+    r"|(?:superseded|withdrawn|revoked|rescinded)_by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*"
+    r"|(?:superseded|withdrawn|revoked|rescinded)\s+by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*)\b"
+)
+_R1_OTHER_LABEL_RE = re.compile(
+    r"\br\d+(?:\s*/\s*r\d+)+\s+" + _R1_STATUS + r"\b"
+)
+_R1_OTHER_HEX_RE = re.compile(
+    r"\b([0-9a-f]{8,64})\s+(" + _R1_STATUS + r")\b"
+)
+_R1_PACKET_ACTIONS = frozenset({
+    "withdraw",
+    "withdrawal",
+    "withdrawn",
+    "withdraws",
+    "revoke",
+    "revocation",
+    "revoked",
+    "revokes",
+    "rescind",
+    "rescinded",
+    "rescission",
+    "rescinds",
+    "supersede",
+    "superseded",
+    "supersedes",
+    "retracted",
+    "vacated",
+})
+
+
+def _cites_r1_accept(text):
+    if not isinstance(text, str) or text == "":
+        return False
+    return _R1_ACCEPT_PREFIX7 in text.translate(_ZERO_WIDTH).casefold()
+
+
+def _r1_plain(text):
+    """Casefold, drop zero-width characters, and unfold bold markers."""
+    if not isinstance(text, str) or text == "":
+        return ""
+    plain = text.translate(_ZERO_WIDTH).casefold().replace("*", " ")
+    return re.sub(r"\s+", " ", plain).strip()
+
+
+def _r1_scrub_negation(plain):
+    """Drop 'not withdrawn' and the same shape. 'not adopted' stays a status."""
+    return _R1_NEGATED_RE.sub(" ", plain)
+
+
+def _r1_object_hit(text):
+    """True when a status word takes 69b98b2f as its object.
+
+    'ACCEPTED by 69b98b2f' and 'SUPERSEDED_BY 69b98b2f' name it as the actor
+    and do not match. 'r1/r2 superseded' names other documents and does not
+    match unless the status sits on the 69b98b2f token itself.
+    """
+    plain = _r1_scrub_negation(_r1_plain(text))
+    if _R1_ACCEPT_PREFIX7 not in plain:
+        return False
+    if _R1_OBJECT_OF_RE.search(plain) or _R1_OBJECT_BEFORE_RE.search(plain):
+        return True
+    return _R1_OBJECT_AFTER_RE.search(plain) is not None
+
+
+def _r1_scrub_other_subjects(plain):
+    """Remove status words that are tied to r1/r2 or to some other sha."""
+    plain = _R1_ACTOR_RE.sub(" ", plain)
+    plain = _R1_OTHER_LABEL_RE.sub(" ", plain)
+
+    def keep_self(match):
+        if match.group(1).startswith(_R1_ACCEPT_PREFIX7):
+            return match.group(0)
+        return " "
+
+    return _R1_OTHER_HEX_RE.sub(keep_self, plain)
+
+
+def _r1_subject_status(text):
+    """A status aimed at this text after actor phrases and other documents are gone."""
+    plain = _r1_scrub_other_subjects(_r1_scrub_negation(_r1_plain(text)))
+    return _R1_STATUS_RE.search(plain) is not None
+
+
+def _r1_header_keyed(line):
+    """True when the line's own subject is 69b98b2f, not merely its actor."""
+    plain = _r1_scrub_other_subjects(_r1_scrub_negation(_r1_plain(line)))
+    return _R1_ACCEPT_PREFIX7 in plain
+
+
+def _r1_status_line(line):
+    return re.search(r"\bstatus\b", _r1_plain(line)) is not None
+
+
+def _r1_subject_row(row):
+    sha = row.get("sha256")
+    if isinstance(sha, str) and sha.startswith(_R1_ACCEPT_PREFIX7):
+        return True
+    return _cites_r1_accept(row.get("path"))
+
+
+def _r1_packet_action(path):
+    if not isinstance(path, str) or path == "":
+        return False
+    parts = re.split(r"[^a-z0-9]+", path.translate(_ZERO_WIDTH).casefold())
+    return any(part in _R1_PACKET_ACTIONS for part in parts)
+
+
+def _r1_entries(text):
+    """Heading-led blocks. A blank line or a new heading starts a new entry."""
+    entries = []
+    current = []
+    for line in text.splitlines():
+        if line.strip() == "":
+            if current:
+                entries.append(current)
+                current = []
+            continue
+        if line.lstrip().startswith("#") and current:
+            entries.append(current)
+            current = [line]
+            continue
+        current.append(line)
+    if current:
+        entries.append(current)
+    return entries
+
+
+def _r1_accept_block_reason(text):
+    """ACCEPT_69B98B2F_WITHDRAWN, or None.
+
+    Defence in depth after the R1 accept citation set. A packet path named
+    WITHDRAW, WITHDRAWAL, REVOKE, REVOCATION, RESCIND, or SUPERSEDE blocks
+    when the row cites it. A status word blocks only when 69b98b2f is the
+    object ('69b98b2f WITHDRAWN', 'WITHDRAW of 69b98b2f', 'revokes 69b98b2f',
+    '69b98b2f superseded by X') or the entry's own subject (its sha or path,
+    or a header keyed by it plus a later STATUS line). 'ACCEPTED by 69b98b2f'
+    and 'SUPERSEDED_BY 69b98b2f' keep it as the actor and stay open.
+    """
+    if not isinstance(text, str) or text == "":
+        return None
+    for row in _index_rows(text):
+        blob = row["path"] + " " + row["description"]
+        if _cites_r1_accept(blob) and _r1_packet_action(row["path"]):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+        if _r1_object_hit(row["description"]) or _r1_object_hit(blob):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+        if _r1_subject_row(row) and _r1_subject_status(row["description"]):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+    for entry in _r1_entries(text):
+        if not entry or not _r1_header_keyed(entry[0]):
+            for line in entry:
+                if _r1_object_hit(line):
+                    return "ACCEPT_69B98B2F_WITHDRAWN"
+            continue
+        for line in entry[1:]:
+            if _r1_status_line(line) and _r1_subject_status(line):
+                return "ACCEPT_69B98B2F_WITHDRAWN"
+        for line in entry:
+            if _r1_object_hit(line):
+                return "ACCEPT_69B98B2F_WITHDRAWN"
+    for line in text.splitlines():
+        if _r1_object_hit(line):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+    return None
+
+
 def _mentions_sha(row, sha):
     """True when the row is keyed by sha, or its path or text cites sha."""
     if not isinstance(sha, str) or len(sha) != 64:
@@ -171,10 +364,16 @@ def _mentions_sha(row, sha):
 
 
 def _load_citation_doc():
-    """Return the citation pin, or None when it is missing or unusable."""
+    """Return the citation pin, or None when it is missing or unusable.
+
+    The raw bytes must match FEE_CITATION_SET_SHA256. A mismatch is an
+    unusable pin. The constant is the reference; PINS.json is not read.
+    """
     try:
         raw = _CITATION_PATH.read_bytes()
     except OSError:
+        return None
+    if sha256_bytes(raw) != FEE_CITATION_SET_SHA256:
         return None
     try:
         doc = json.loads(raw.decode("utf-8"))
@@ -184,6 +383,7 @@ def _load_citation_doc():
         return None
     allow = doc.get("ruling_allowlist")
     watched = doc.get("watched_sha8")
+    files = doc.get("watched_files")
     lines = doc.get("line_sha256")
     if (
         not isinstance(allow, list)
@@ -196,6 +396,12 @@ def _load_citation_doc():
         not isinstance(watched, list)
         or not watched
         or any(not isinstance(item, str) or len(item) != 8 for item in watched)
+    ):
+        return None
+    if (
+        not isinstance(files, list)
+        or not files
+        or any(not isinstance(item, str) or item == "" for item in files)
     ):
         return None
     if (
@@ -216,21 +422,101 @@ def _ruling_is_accept(ruling):
     return ruling in doc["ruling_allowlist"]
 
 
+def _citation_fold(line):
+    """Drop zero-width characters, then casefold. The line hash stays raw."""
+    return line.translate(_ZERO_WIDTH).casefold()
+
+
+def _line_cites(folded, watched_sha8, watched_files):
+    """True when the folded line contains a 7-hex prefix or a watched file name."""
+    prefixes = [item[:7].casefold() for item in watched_sha8]
+    names = [item.casefold() for item in watched_files]
+    if any(prefix in folded for prefix in prefixes):
+        return True
+    return any(name in folded for name in names)
+
+
+_R1_CITATION_PATH = Path(__file__).with_name("r1_accept_citation_set.json")
+# sha256 of r1_accept_citation_set.json. A byte change with this constant
+# left unchanged makes the pin unusable (ADV-10). There is no override.
+R1_ACCEPT_CITATION_SET_SHA256 = "8e26ac4e5db007ab671119379acdf0251f18b08f56ab00813cdd4e89401d4da3"
+
+
+def _load_r1_citation_doc():
+    """Return the 69b98b2f citation pin, or None when it is missing or unusable.
+
+    The raw bytes must match R1_ACCEPT_CITATION_SET_SHA256. A mismatch is an
+    unusable pin. The constant is the reference; there is no path override.
+    """
+    try:
+        raw = _R1_CITATION_PATH.read_bytes()
+    except OSError:
+        return None
+    if sha256_bytes(raw) != R1_ACCEPT_CITATION_SET_SHA256:
+        return None
+    try:
+        doc = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        return None
+    if not isinstance(doc, dict):
+        return None
+    watched = doc.get("watched_sha8")
+    lines = doc.get("line_sha256")
+    if not isinstance(watched, list) or watched != ["69b98b2f"]:
+        return None
+    if (
+        not isinstance(lines, list)
+        or not lines
+        or any(not isinstance(item, str) or len(item) != 64 for item in lines)
+        or lines != sorted(lines)
+    ):
+        return None
+    return doc
+
+
+def _r1_citation_block_reason(text):
+    """ACCEPT_69B98B2F_CITATIONS_CHANGED unless the index matches or cites none.
+
+    Same citing-line rule as the fee set, watching only the 7-hex prefix
+    69b98b2. The line hash is sha256 of the original rstrip'd line. An index
+    that cites none of them is left to the word rule. An index that cites any
+    must reproduce the pinned multiset. A missing or unusable pin fails closed.
+    """
+    doc = _load_r1_citation_doc()
+    if doc is None:
+        return "ACCEPT_69B98B2F_CITATIONS_CHANGED"
+    found = []
+    for line in text.splitlines():
+        stripped = line.rstrip()
+        if _line_cites(_citation_fold(stripped), doc["watched_sha8"], []):
+            found.append(sha256_bytes(stripped.encode("utf-8")))
+    found.sort()
+    if not found:
+        return None
+    if found != doc["line_sha256"]:
+        return "ACCEPT_69B98B2F_CITATIONS_CHANGED"
+    return None
+
+
 def _citation_block_reason(text):
     """FEE_CITATIONS_CHANGED unless this index matches the pin or cites none.
 
-    An index that cites none of the watched shas is not the adopted index.
-    An index that cites any of them must reproduce the pinned multiset.
-    A missing or unusable pin fails closed. Status words are not this gate.
+    A line cites when, after zero-width removal and casefolding, it contains
+    the first 7 hex digits of a watched_sha8 entry or a watched file name.
+    The line hash is sha256 of the original rstrip'd line. An index that
+    cites none of them is left to the other checks. An index that cites any
+    must reproduce the pinned multiset. A missing or unusable pin fails
+    closed. Status words are not this gate.
     """
     doc = _load_citation_doc()
     if doc is None:
         return "FEE_CITATIONS_CHANGED"
     watched = doc["watched_sha8"]
+    files = doc["watched_files"]
     found = []
     for line in text.splitlines():
         stripped = line.rstrip()
-        if any(prefix in stripped for prefix in watched):
+        if _line_cites(_citation_fold(stripped), watched, files):
             found.append(sha256_bytes(stripped.encode("utf-8")))
     found.sort()
     if not found:
@@ -299,6 +585,12 @@ def admit_fee_source_v2(
     citation_reason = _citation_block_reason(index_text)
     if citation_reason is not None:
         return _blocked(citation_reason, "b", "CITATION_SET", **identity)
+    r1_set_reason = _r1_citation_block_reason(index_text)
+    if r1_set_reason is not None:
+        return _blocked(r1_set_reason, "b", "R1_ACCEPT_CITATION_SET", **identity)
+    r1_reason = _r1_accept_block_reason(index_text)
+    if r1_reason is not None:
+        return _blocked(r1_reason, "b", "R1_ACCEPT", **identity)
     rows = _index_rows(index_text)
     anchored = [row for row in rows if row["sha256"] == fee_source_sha256]
     if not anchored:

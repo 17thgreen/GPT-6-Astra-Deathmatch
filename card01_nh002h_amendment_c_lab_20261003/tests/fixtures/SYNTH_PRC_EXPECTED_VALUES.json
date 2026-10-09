@@ -1,0 +1,1931 @@
+{
+ "_SYNTHETIC_NOT_DATA": true,
+ "anchor_cases": {
+  "ANCHOR_FEE_BLOCKED": {
+   "base_case": "FEE_BLOCKED",
+   "expect_status": "BLOCKED_FEE_UNVERIFIED",
+   "join_called": false,
+   "mutation": null
+  },
+  "ANCHOR_FEE_PAIR_MISMATCH": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_MISMATCH",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "anchor fee_source_sha256 differs from the admitted fee source"
+  },
+  "ANCHOR_FILE_SHA_MISMATCH": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_MISMATCH",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "one byte of the entry-book file changed after anchoring"
+  },
+  "ANCHOR_GATE_SHA_MISMATCH": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_MISMATCH",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "anchor gate_sha256 differs from sha256(gate file bytes)"
+  },
+  "ANCHOR_MISSING": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_MISSING",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "no --entry-book-anchor"
+  },
+  "ANCHOR_OK": {
+   "base_case": "P1_CLEAN",
+   "expect_status": "OK",
+   "join_called": true,
+   "mutation": null
+  },
+  "ANCHOR_RECOMPUTE_MISMATCH": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_RECOMPUTE_MISMATCH",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "entry book + anchor rebuilt consistently but from a gate whose XA-01 price is 0.41 instead of 0.4; scoring uses the original gate"
+  },
+  "ANCHOR_SCHEMA_BAD": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_INVALID",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "anchor schema string changed"
+  },
+  "ANCHOR_TABLE_SHA_MISMATCH": {
+   "base_case": "P1_CLEAN",
+   "expect_kind": "ENTRY_BOOK_ANCHOR_MISMATCH",
+   "expect_status": "REPORTING_DEFECT",
+   "join_called": false,
+   "mutation": "anchor entry_table_sha256 replaced by the C_ASK_ZERO table sha"
+  },
+  "ANCHOR_ZERO_SIGNALS_OK": {
+   "base_case": "ZERO_SIGNALS",
+   "expect_status": "NO_SIGNALS_SELECTED",
+   "join_called": true,
+   "mutation": null
+  }
+ },
+ "cases": {
+  "C_ASK_PLUS_CENT": {
+   "best_two_winners": [
+    "0.48"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.5",
+      "price_one_tick_worse": "0.51",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.45",
+      "price_one_tick_worse": "0.46",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "2f7a6be822a10861adcb364e3ad643706fa45d38c01a07b4a446fec7f4230adf",
+   "max_positive_net": "0.48",
+   "n_signals": 2,
+   "net_excluding_best_two_winners": "-0.47",
+   "net_headline_total": "0.01",
+   "net_one_tick_worse_total": "-0.01",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0175",
+     "fee_raw_one_tick_worse": "0.017493",
+     "gross": "0.5",
+     "net_headline": "0.48",
+     "net_one_tick_worse": "0.47",
+     "payoff": "1",
+     "price": "0.5",
+     "price_one_tick_worse": "0.51",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.5 - 0.02 = 0.48; worse: 1 - 0.51 - 0.02 = 0.47",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017325",
+     "fee_raw_one_tick_worse": "0.017388",
+     "gross": "-0.45",
+     "net_headline": "-0.47",
+     "net_one_tick_worse": "-0.48",
+     "payoff": "0",
+     "price": "0.45",
+     "price_one_tick_worse": "0.46",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.45 - 0.02 = -0.47; worse: 0 - 0.46 - 0.02 = -0.48",
+     "y": 0
+    }
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.03",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.46",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.49",
+      "race_id": "XB-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.48",
+   "top1_positive_share": "1.000000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "C_ASK_ZERO": {
+   "best_two_winners": [
+    "0.48"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.5",
+      "price_one_tick_worse": "0.51",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.46",
+      "price_one_tick_worse": "0.47",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "80b20631b172c87062a3d3389e327d8a352269a695a39ce64540ba7da70fd8e2",
+   "max_positive_net": "0.48",
+   "n_signals": 2,
+   "net_excluding_best_two_winners": "-0.48",
+   "net_headline_total": "0.00",
+   "net_one_tick_worse_total": "-0.02",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0175",
+     "fee_raw_one_tick_worse": "0.017493",
+     "gross": "0.5",
+     "net_headline": "0.48",
+     "net_one_tick_worse": "0.47",
+     "payoff": "1",
+     "price": "0.5",
+     "price_one_tick_worse": "0.51",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.5 - 0.02 = 0.48; worse: 1 - 0.51 - 0.02 = 0.47",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017388",
+     "fee_raw_one_tick_worse": "0.017437",
+     "gross": "-0.46",
+     "net_headline": "-0.48",
+     "net_one_tick_worse": "-0.49",
+     "payoff": "0",
+     "price": "0.46",
+     "price_one_tick_worse": "0.47",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.46 - 0.02 = -0.48; worse: 0 - 0.47 - 0.02 = -0.49",
+     "y": 0
+    }
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": true,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.04",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.46",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.50",
+      "race_id": "XB-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.48",
+   "top1_positive_share": "1.000000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "C_TICK_ONLY": {
+   "best_two_winners": [
+    "0.30",
+    "0.30"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XA-02",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XB-02",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.57",
+      "price_one_tick_worse": "0.58",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.57",
+      "price_one_tick_worse": "0.58",
+      "race_id": "XC-02",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "969db9b4b4dc661e79cd3f004048b5d31f7ff4b49cd4080a2b262fa017a5018c",
+   "max_positive_net": "0.30",
+   "n_signals": 6,
+   "net_excluding_best_two_winners": "-0.58",
+   "net_headline_total": "0.02",
+   "net_one_tick_worse_total": "-0.04",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XA-02",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XB-02",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017157",
+     "fee_raw_one_tick_worse": "0.017052",
+     "gross": "-0.57",
+     "net_headline": "-0.59",
+     "net_one_tick_worse": "-0.60",
+     "payoff": "0",
+     "price": "0.57",
+     "price_one_tick_worse": "0.58",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.57 - 0.02 = -0.59; worse: 0 - 0.58 - 0.02 = -0.60",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017157",
+     "fee_raw_one_tick_worse": "0.017052",
+     "gross": "-0.57",
+     "net_headline": "-0.59",
+     "net_one_tick_worse": "-0.60",
+     "payoff": "0",
+     "price": "0.57",
+     "price_one_tick_worse": "0.58",
+     "race_id": "XC-02",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.57 - 0.02 = -0.59; worse: 0 - 0.58 - 0.02 = -0.60",
+     "y": 0
+    }
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.10",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XA-02"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XB-02"
+     },
+     {
+      "net_buffered_2c": "-0.61",
+      "race_id": "XC-01"
+     },
+     {
+      "net_buffered_2c": "-0.61",
+      "race_id": "XC-02"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "1.20",
+   "top1_positive_share": "0.250000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "C_TICK_PLUS_CENT": {
+   "best_two_winners": [
+    "0.48"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.5",
+      "price_one_tick_worse": "0.51",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.43",
+      "price_one_tick_worse": "0.44",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "71a06270f6b1ad92bee50dfa4ad5c3d13450f473c2297f756e22b3d687875f6f",
+   "max_positive_net": "0.48",
+   "n_signals": 2,
+   "net_excluding_best_two_winners": "-0.45",
+   "net_headline_total": "0.03",
+   "net_one_tick_worse_total": "0.01",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0175",
+     "fee_raw_one_tick_worse": "0.017493",
+     "gross": "0.5",
+     "net_headline": "0.48",
+     "net_one_tick_worse": "0.47",
+     "payoff": "1",
+     "price": "0.5",
+     "price_one_tick_worse": "0.51",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.5 - 0.02 = 0.48; worse: 1 - 0.51 - 0.02 = 0.47",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017157",
+     "fee_raw_one_tick_worse": "0.017248",
+     "gross": "-0.43",
+     "net_headline": "-0.45",
+     "net_one_tick_worse": "-0.46",
+     "payoff": "0",
+     "price": "0.43",
+     "price_one_tick_worse": "0.44",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.43 - 0.02 = -0.45; worse: 0 - 0.44 - 0.02 = -0.46",
+     "y": 0
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.01",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.46",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.47",
+      "race_id": "XB-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.48",
+   "top1_positive_share": "1.000000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "C_TICK_ZERO": {
+   "best_two_winners": [
+    "0.48"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.5",
+      "price_one_tick_worse": "0.51",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.44",
+      "price_one_tick_worse": "0.45",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "874c97ad2c15ad8372fc02d47b55bb29852680fe1c37741cda1cc52e575057f5",
+   "max_positive_net": "0.48",
+   "n_signals": 2,
+   "net_excluding_best_two_winners": "-0.46",
+   "net_headline_total": "0.02",
+   "net_one_tick_worse_total": "0.00",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0175",
+     "fee_raw_one_tick_worse": "0.017493",
+     "gross": "0.5",
+     "net_headline": "0.48",
+     "net_one_tick_worse": "0.47",
+     "payoff": "1",
+     "price": "0.5",
+     "price_one_tick_worse": "0.51",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.5 - 0.02 = 0.48; worse: 1 - 0.51 - 0.02 = 0.47",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017248",
+     "fee_raw_one_tick_worse": "0.017325",
+     "gross": "-0.44",
+     "net_headline": "-0.46",
+     "net_one_tick_worse": "-0.47",
+     "payoff": "0",
+     "price": "0.44",
+     "price_one_tick_worse": "0.45",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.44 - 0.02 = -0.46; worse: 0 - 0.45 - 0.02 = -0.47",
+     "y": 0
+    }
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.02",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.46",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.48",
+      "race_id": "XB-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.48",
+   "top1_positive_share": "1.000000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "D_DROP2_PLUS_CENT": {
+   "best_two_winners": [
+    "0.30",
+    "0.30"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.27",
+      "price_one_tick_worse": "0.28",
+      "race_id": "XD-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "1af5f72b8e57067b5efc7d91dadb6ccb99ae16d860c3a295f83c750034b6d811",
+   "max_positive_net": "0.30",
+   "n_signals": 4,
+   "net_excluding_best_two_winners": "0.01",
+   "net_headline_total": "0.61",
+   "net_one_tick_worse_total": "0.57",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.013797",
+     "fee_raw_one_tick_worse": "0.014112",
+     "gross": "-0.27",
+     "net_headline": "-0.29",
+     "net_one_tick_worse": "-0.30",
+     "payoff": "0",
+     "price": "0.27",
+     "price_one_tick_worse": "0.28",
+     "race_id": "XD-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.27 - 0.02 = -0.29; worse: 0 - 0.28 - 0.02 = -0.30",
+     "y": 0
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": false,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "0.53",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XC-01"
+     },
+     {
+      "net_buffered_2c": "-0.31",
+      "race_id": "XD-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.90",
+   "top1_positive_share": "0.333333",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "D_DROP2_ZERO": {
+   "best_two_winners": [
+    "0.30",
+    "0.30"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.68",
+      "price_one_tick_worse": "0.69",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.28",
+      "price_one_tick_worse": "0.29",
+      "race_id": "XD-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "0cc96f745743b180db4078315d60ebd3e414a186ca6daf1f5914f746e60b3b3f",
+   "max_positive_net": "0.30",
+   "n_signals": 4,
+   "net_excluding_best_two_winners": "0.00",
+   "net_headline_total": "0.60",
+   "net_one_tick_worse_total": "0.56",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015232",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "0.32",
+     "net_headline": "0.30",
+     "net_one_tick_worse": "0.29",
+     "payoff": "1",
+     "price": "0.68",
+     "price_one_tick_worse": "0.69",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.68 - 0.02 = 0.30; worse: 1 - 0.69 - 0.02 = 0.29",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.014112",
+     "fee_raw_one_tick_worse": "0.014413",
+     "gross": "-0.28",
+     "net_headline": "-0.30",
+     "net_one_tick_worse": "-0.31",
+     "payoff": "0",
+     "price": "0.28",
+     "price_one_tick_worse": "0.29",
+     "race_id": "XD-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.28 - 0.02 = -0.30; worse: 0 - 0.29 - 0.02 = -0.31",
+     "y": 0
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "0.52",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.28",
+      "race_id": "XC-01"
+     },
+     {
+      "net_buffered_2c": "-0.32",
+      "race_id": "XD-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.90",
+   "top1_positive_share": "0.333333",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "D_NO_POSITIVE": {
+   "best_two_winners": [],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.4",
+      "price_one_tick_worse": "0.41",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.3",
+      "price_one_tick_worse": "0.31",
+      "race_id": "XB-01",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "2cea6cce3599458f2ab122739ca03db785799bb5864ced48bb5fcc497c9f3dd4",
+   "max_positive_net": null,
+   "n_signals": 2,
+   "net_excluding_best_two_winners": "-0.74",
+   "net_headline_total": "-0.74",
+   "net_one_tick_worse_total": "-0.76",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0168",
+     "fee_raw_one_tick_worse": "0.016933",
+     "gross": "-0.4",
+     "net_headline": "-0.42",
+     "net_one_tick_worse": "-0.43",
+     "payoff": "0",
+     "price": "0.4",
+     "price_one_tick_worse": "0.41",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.4 - 0.02 = -0.42; worse: 0 - 0.41 - 0.02 = -0.43",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0147",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "-0.3",
+     "net_headline": "-0.32",
+     "net_one_tick_worse": "-0.33",
+     "payoff": "0",
+     "price": "0.3",
+     "price_one_tick_worse": "0.31",
+     "race_id": "XB-01",
+     "side": "D_NO",
+     "trace": "net = 0 - 0.3 - 0.02 = -0.32; worse: 0 - 0.31 - 0.02 = -0.33",
+     "y": 1
+    }
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": true,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "-0.78",
+    "per_signal": [
+     {
+      "net_buffered_2c": "-0.44",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.34",
+      "race_id": "XB-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0",
+   "top1_positive_share": null,
+   "top1_positive_share_status": "NO_POSITIVE_PNL",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "D_TOP1_EQ_HALF": {
+   "best_two_winners": [
+    "0.40",
+    "0.20"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.58",
+      "price_one_tick_worse": "0.59",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.78",
+      "price_one_tick_worse": "0.79",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.78",
+      "price_one_tick_worse": "0.79",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "4e5689e70d8907bf999a44e022108ff67648931a53456cafb851835caedb652b",
+   "max_positive_net": "0.40",
+   "n_signals": 3,
+   "net_excluding_best_two_winners": "0.20",
+   "net_headline_total": "0.80",
+   "net_one_tick_worse_total": "0.77",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017052",
+     "fee_raw_one_tick_worse": "0.016933",
+     "gross": "0.42",
+     "net_headline": "0.40",
+     "net_one_tick_worse": "0.39",
+     "payoff": "1",
+     "price": "0.58",
+     "price_one_tick_worse": "0.59",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.58 - 0.02 = 0.40; worse: 1 - 0.59 - 0.02 = 0.39",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.012012",
+     "fee_raw_one_tick_worse": "0.011613",
+     "gross": "0.22",
+     "net_headline": "0.20",
+     "net_one_tick_worse": "0.19",
+     "payoff": "1",
+     "price": "0.78",
+     "price_one_tick_worse": "0.79",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.78 - 0.02 = 0.20; worse: 1 - 0.79 - 0.02 = 0.19",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.012012",
+     "fee_raw_one_tick_worse": "0.011613",
+     "gross": "0.22",
+     "net_headline": "0.20",
+     "net_one_tick_worse": "0.19",
+     "payoff": "1",
+     "price": "0.78",
+     "price_one_tick_worse": "0.79",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.78 - 0.02 = 0.20; worse: 1 - 0.79 - 0.02 = 0.19",
+     "y": 1
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": false,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "0.74",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.38",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.18",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.18",
+      "race_id": "XC-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.80",
+   "top1_positive_share": "0.500000",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "D_TOP1_GT_HALF": {
+   "best_two_winners": [
+    "0.41",
+    "0.20"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.57",
+      "price_one_tick_worse": "0.58",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.78",
+      "price_one_tick_worse": "0.79",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.78",
+      "price_one_tick_worse": "0.79",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "af8f1c7cd4a0cb60730673e499f5ef744167a4fdf8265dbbb7b5a43fd454806c",
+   "max_positive_net": "0.41",
+   "n_signals": 3,
+   "net_excluding_best_two_winners": "0.20",
+   "net_headline_total": "0.81",
+   "net_one_tick_worse_total": "0.78",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017157",
+     "fee_raw_one_tick_worse": "0.017052",
+     "gross": "0.43",
+     "net_headline": "0.41",
+     "net_one_tick_worse": "0.40",
+     "payoff": "1",
+     "price": "0.57",
+     "price_one_tick_worse": "0.58",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.57 - 0.02 = 0.41; worse: 1 - 0.58 - 0.02 = 0.40",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.012012",
+     "fee_raw_one_tick_worse": "0.011613",
+     "gross": "0.22",
+     "net_headline": "0.20",
+     "net_one_tick_worse": "0.19",
+     "payoff": "1",
+     "price": "0.78",
+     "price_one_tick_worse": "0.79",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.78 - 0.02 = 0.20; worse: 1 - 0.79 - 0.02 = 0.19",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.012012",
+     "fee_raw_one_tick_worse": "0.011613",
+     "gross": "0.22",
+     "net_headline": "0.20",
+     "net_one_tick_worse": "0.19",
+     "payoff": "1",
+     "price": "0.78",
+     "price_one_tick_worse": "0.79",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.78 - 0.02 = 0.20; worse: 1 - 0.79 - 0.02 = 0.19",
+     "y": 1
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": true,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "0.75",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.39",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.18",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.18",
+      "race_id": "XC-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "0.81",
+   "top1_positive_share": "0.506173",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "FEE_BLOCKED": {
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": null,
+    "status": "BLOCKED_FEE_UNVERIFIED",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "cc52bdf30af3104065321d13ecc74b3bfa7736a59db83d14a30ce7911ab72e77",
+   "n_signals": null,
+   "reject_c": "BLOCKED_FEE_UNVERIFIED",
+   "reject_d": "BLOCKED_FEE_UNVERIFIED",
+   "sensitivity_buffered_2c": null,
+   "status": "BLOCKED_FEE_UNVERIFIED"
+  },
+  "P1_CLEAN": {
+   "best_two_winners": [
+    "0.63",
+    "0.58"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.4",
+      "price_one_tick_worse": "0.41",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.45",
+      "price_one_tick_worse": "0.46",
+      "race_id": "XA-02",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.35",
+      "price_one_tick_worse": "0.36",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.42",
+      "price_one_tick_worse": "0.43",
+      "race_id": "XB-02",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.3",
+      "price_one_tick_worse": "0.31",
+      "race_id": "XC-01",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "ce2d2c694cee99dd6fce14d0a990cb20529e3ec1b046e28e826767c13887174f",
+   "max_positive_net": "0.63",
+   "n_signals": 5,
+   "net_excluding_best_two_winners": "0.77",
+   "net_headline_total": "1.98",
+   "net_one_tick_worse_total": "1.93",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0168",
+     "fee_raw_one_tick_worse": "0.016933",
+     "gross": "0.6",
+     "net_headline": "0.58",
+     "net_one_tick_worse": "0.57",
+     "payoff": "1",
+     "price": "0.4",
+     "price_one_tick_worse": "0.41",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.4 - 0.02 = 0.58; worse: 1 - 0.41 - 0.02 = 0.57",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017325",
+     "fee_raw_one_tick_worse": "0.017388",
+     "gross": "0.55",
+     "net_headline": "0.53",
+     "net_one_tick_worse": "0.52",
+     "payoff": "1",
+     "price": "0.45",
+     "price_one_tick_worse": "0.46",
+     "race_id": "XA-02",
+     "side": "D_NO",
+     "trace": "net = 1 - 0.45 - 0.02 = 0.53; worse: 1 - 0.46 - 0.02 = 0.52",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.015925",
+     "fee_raw_one_tick_worse": "0.016128",
+     "gross": "0.65",
+     "net_headline": "0.63",
+     "net_one_tick_worse": "0.62",
+     "payoff": "1",
+     "price": "0.35",
+     "price_one_tick_worse": "0.36",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.35 - 0.02 = 0.63; worse: 1 - 0.36 - 0.02 = 0.62",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.017052",
+     "fee_raw_one_tick_worse": "0.017157",
+     "gross": "0.58",
+     "net_headline": "0.56",
+     "net_one_tick_worse": "0.55",
+     "payoff": "1",
+     "price": "0.42",
+     "price_one_tick_worse": "0.43",
+     "race_id": "XB-02",
+     "side": "D_NO",
+     "trace": "net = 1 - 0.42 - 0.02 = 0.56; worse: 1 - 0.43 - 0.02 = 0.55",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0147",
+     "fee_raw_one_tick_worse": "0.014973",
+     "gross": "-0.3",
+     "net_headline": "-0.32",
+     "net_one_tick_worse": "-0.33",
+     "payoff": "0",
+     "price": "0.3",
+     "price_one_tick_worse": "0.31",
+     "race_id": "XC-01",
+     "side": "D_NO",
+     "trace": "net = 0 - 0.3 - 0.02 = -0.32; worse: 0 - 0.31 - 0.02 = -0.33",
+     "y": 1
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": false,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "1.88",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.56",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.51",
+      "race_id": "XA-02"
+     },
+     {
+      "net_buffered_2c": "0.61",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.54",
+      "race_id": "XB-02"
+     },
+     {
+      "net_buffered_2c": "-0.34",
+      "race_id": "XC-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "2.30",
+   "top1_positive_share": "0.273913",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "P2_SUBCENT": {
+   "best_two_winners": [
+    "0.940",
+    "0.910"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.005",
+      "fee_headline_one_tick_worse": "0.005",
+      "price": "0.055",
+      "price_one_tick_worse": "0.065",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.008",
+      "fee_headline_one_tick_worse": "0.008",
+      "price": "0.072",
+      "price_one_tick_worse": "0.082",
+      "race_id": "XA-02",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.013",
+      "fee_headline_one_tick_worse": "0.013",
+      "price": "0.077",
+      "price_one_tick_worse": "0.087",
+      "race_id": "XB-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.4",
+      "price_one_tick_worse": "0.41",
+      "race_id": "XB-02",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.41",
+      "price_one_tick_worse": "0.42",
+      "race_id": "XC-01",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "db0e7aaa39a68e6f661d874a1c79090626009657c42477c4d0aacb796061fae9",
+   "max_positive_net": "0.940",
+   "n_signals": 5,
+   "net_excluding_best_two_winners": "1.070",
+   "net_headline_total": "2.920",
+   "net_one_tick_worse_total": "2.870",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.005",
+     "fee_headline_one_tick_worse": "0.005",
+     "fee_raw": "0.003639",
+     "fee_raw_one_tick_worse": "0.004255",
+     "gross": "0.945",
+     "net_headline": "0.940",
+     "net_one_tick_worse": "0.930",
+     "payoff": "1",
+     "price": "0.055",
+     "price_one_tick_worse": "0.065",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.055 - 0.005 = 0.940; worse: 1 - 0.065 - 0.005 = 0.930",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.008",
+     "fee_headline_one_tick_worse": "0.008",
+     "fee_raw": "0.004678",
+     "fee_raw_one_tick_worse": "0.00527",
+     "gross": "-0.072",
+     "net_headline": "-0.080",
+     "net_one_tick_worse": "-0.090",
+     "payoff": "0",
+     "price": "0.072",
+     "price_one_tick_worse": "0.082",
+     "race_id": "XA-02",
+     "side": "D_YES",
+     "trace": "net = 0 - 0.072 - 0.008 = -0.080; worse: 0 - 0.082 - 0.008 = -0.090",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.013",
+     "fee_headline_one_tick_worse": "0.013",
+     "fee_raw": "0.004975",
+     "fee_raw_one_tick_worse": "0.005561",
+     "gross": "0.923",
+     "net_headline": "0.910",
+     "net_one_tick_worse": "0.900",
+     "payoff": "1",
+     "price": "0.077",
+     "price_one_tick_worse": "0.087",
+     "race_id": "XB-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.077 - 0.013 = 0.910; worse: 1 - 0.087 - 0.013 = 0.900",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0168",
+     "fee_raw_one_tick_worse": "0.016933",
+     "gross": "0.6",
+     "net_headline": "0.58",
+     "net_one_tick_worse": "0.57",
+     "payoff": "1",
+     "price": "0.4",
+     "price_one_tick_worse": "0.41",
+     "race_id": "XB-02",
+     "side": "D_NO",
+     "trace": "net = 1 - 0.4 - 0.02 = 0.58; worse: 1 - 0.41 - 0.02 = 0.57",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.016933",
+     "fee_raw_one_tick_worse": "0.017052",
+     "gross": "0.59",
+     "net_headline": "0.57",
+     "net_one_tick_worse": "0.56",
+     "payoff": "1",
+     "price": "0.41",
+     "price_one_tick_worse": "0.42",
+     "race_id": "XC-01",
+     "side": "D_NO",
+     "trace": "net = 1 - 0.41 - 0.02 = 0.57; worse: 1 - 0.42 - 0.02 = 0.56",
+     "y": 0
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": false,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "2.820",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.920",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "-0.100",
+      "race_id": "XA-02"
+     },
+     {
+      "net_buffered_2c": "0.890",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.56",
+      "race_id": "XB-02"
+     },
+     {
+      "net_buffered_2c": "0.55",
+      "race_id": "XC-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "3.000",
+   "top1_positive_share": "0.313333",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "TICK_FEE_STEP": {
+   "best_two_winners": [
+    "0.82",
+    "0.58"
+   ],
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.01",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.17",
+      "price_one_tick_worse": "0.18",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.01",
+      "price": "0.82",
+      "price_one_tick_worse": "0.83",
+      "race_id": "XB-01",
+      "side": "D_NO"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.4",
+      "price_one_tick_worse": "0.41",
+      "race_id": "XC-01",
+      "side": "D_YES"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "185bcd1b0f7ba98180f9541f86049fb860d0a0ca0be69d2f193da9eb56b95c45",
+   "max_positive_net": "0.82",
+   "n_signals": 3,
+   "net_excluding_best_two_winners": "0.16",
+   "net_headline_total": "1.56",
+   "net_one_tick_worse_total": "1.53",
+   "notes": [],
+   "per_signal": [
+    {
+     "fee_headline": "0.01",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.009877",
+     "fee_raw_one_tick_worse": "0.010332",
+     "gross": "0.83",
+     "net_headline": "0.82",
+     "net_one_tick_worse": "0.80",
+     "payoff": "1",
+     "price": "0.17",
+     "price_one_tick_worse": "0.18",
+     "race_id": "XA-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.17 - 0.01 = 0.82; worse: 1 - 0.18 - 0.02 = 0.80",
+     "y": 1
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.01",
+     "fee_raw": "0.010332",
+     "fee_raw_one_tick_worse": "0.009877",
+     "gross": "0.18",
+     "net_headline": "0.16",
+     "net_one_tick_worse": "0.16",
+     "payoff": "1",
+     "price": "0.82",
+     "price_one_tick_worse": "0.83",
+     "race_id": "XB-01",
+     "side": "D_NO",
+     "trace": "net = 1 - 0.82 - 0.02 = 0.16; worse: 1 - 0.83 - 0.01 = 0.16",
+     "y": 0
+    },
+    {
+     "fee_headline": "0.02",
+     "fee_headline_one_tick_worse": "0.02",
+     "fee_raw": "0.0168",
+     "fee_raw_one_tick_worse": "0.016933",
+     "gross": "0.6",
+     "net_headline": "0.58",
+     "net_one_tick_worse": "0.57",
+     "payoff": "1",
+     "price": "0.4",
+     "price_one_tick_worse": "0.41",
+     "race_id": "XC-01",
+     "side": "D_YES",
+     "trace": "net = 1 - 0.4 - 0.02 = 0.58; worse: 1 - 0.41 - 0.02 = 0.57",
+     "y": 1
+    }
+   ],
+   "reject_c": false,
+   "reject_c_at_ask": false,
+   "reject_c_one_tick_worse": false,
+   "reject_d": true,
+   "reject_d_drop_best_two": false,
+   "reject_d_top1": true,
+   "sensitivity_buffered_2c": {
+    "buffer": "0.02",
+    "label": "DESCRIPTIVE_SENSITIVITY_BUFFERED_2C_NOT_VERDICT_INPUT",
+    "net_buffered_2c_total": "1.50",
+    "per_signal": [
+     {
+      "net_buffered_2c": "0.80",
+      "race_id": "XA-01"
+     },
+     {
+      "net_buffered_2c": "0.14",
+      "race_id": "XB-01"
+     },
+     {
+      "net_buffered_2c": "0.56",
+      "race_id": "XC-01"
+     }
+    ],
+    "verdict_input": false
+   },
+   "status": "OK",
+   "sum_positive_net": "1.56",
+   "top1_positive_share": "0.525641",
+   "top1_positive_share_status": "OK",
+   "top1_rule": "fires iff 2*max_positive_net > sum_positive_net"
+  },
+  "UNRESOLVED": {
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.4",
+      "price_one_tick_worse": "0.41",
+      "race_id": "XA-01",
+      "side": "D_YES"
+     },
+     {
+      "contracts": 1,
+      "fee_headline": "0.02",
+      "fee_headline_one_tick_worse": "0.02",
+      "price": "0.45",
+      "price_one_tick_worse": "0.46",
+      "race_id": "XB-01",
+      "side": "D_NO"
+     }
+    ],
+    "status": "OK",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "c39da4d539a818e25d1df062753ece4fc959d08d68365181c2c545b4723c10e7",
+   "n_signals": 2,
+   "reject_c": null,
+   "reject_d": null,
+   "sensitivity_buffered_2c": null,
+   "status": "UNRESOLVED_INVENTORY_AT_SCORING",
+   "unresolved_race_ids": [
+    "XB-01"
+   ]
+  },
+  "ZERO_SIGNALS": {
+   "entry_table": {
+    "schema": "astra.card01.prc_entry_table.v1",
+    "signals": [],
+    "status": "NO_SIGNALS_SELECTED",
+    "tick": "0.01"
+   },
+   "entry_table_sha256": "e63505b67e8471d4e8b9645458b31fc8a304ea2b7419b027765548d54ff1bdf8",
+   "n_signals": 0,
+   "net_excluding_best_two_winners": "0",
+   "net_headline_total": "0",
+   "net_one_tick_worse_total": "0",
+   "notes": [
+    "NO_SIGNALS_SELECTED"
+   ],
+   "reject_c": true,
+   "reject_c_at_ask": true,
+   "reject_c_one_tick_worse": true,
+   "reject_d": true,
+   "reject_d_drop_best_two": true,
+   "reject_d_top1": false,
+   "sensitivity_buffered_2c": null,
+   "status": "NO_SIGNALS_SELECTED",
+   "top1_positive_share": null,
+   "top1_positive_share_status": "NO_SIGNALS_SELECTED"
+  }
+ },
+ "created_utc": "2000-01-01T00:00:00Z",
+ "logged_reporting_defect_every_output": {
+  "detail": "base freeze c3172446 s9 (d) cites 'the NH-001 check'; NH-001 net included the 2c buffer; per ruling 61c1e4ea (4) the citation refers to the concentration-test shape only and the buffer is excluded everywhere",
+  "kind": "CITATION_WORDING_NH001_CHECK",
+  "validity_effect": "NONE",
+  "verdict_effect": "NONE"
+ },
+ "schema": "astra.card01.prc_expected.kit.v1"
+}

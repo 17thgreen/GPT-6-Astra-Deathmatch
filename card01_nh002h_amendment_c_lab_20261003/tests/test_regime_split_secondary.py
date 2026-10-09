@@ -12,7 +12,7 @@ import unittest
 from decimal import Decimal
 from pathlib import Path
 
-from card01_amc.book_1103 import LABELS, adverse_selection, quote_for_ticker
+from card01_amc.book_1103 import LABELS, adverse_selection, book_status, quote_for_ticker
 from card01_amc.fee_source import PinnedEntry, pinned_taker_fee
 from card01_amc.pinload import load_national_miss
 from card01_amc.regime_split import (
@@ -440,6 +440,18 @@ class MetricTests(unittest.TestCase):
         self.assertTrue(statuses <= set(LABELS))
         self.assertEqual(block["plus_60s_status"], "NOT_CAPTURED")
         self.assertEqual(block["plus_300s_status"], "NOT_CAPTURED")
+
+    def test_empty_book_status_blocks(self):
+        self.assertEqual(book_status({}), "ENTRY_BOOK_EMPTY")
+        self.assertEqual(book_status(None), "NOT_CAPTURED_EGRESS_CLOSED")
+        quote = quote_for_ticker({}, "T-OPEN")
+        self.assertEqual(quote["status"], "ENTRY_BOOK_EMPTY")
+        self.assertIsNone(quote["yes_mid"])
+        rows, signals, _book, _settled = fixture_b()
+        block = adverse_selection(signals, {row["race_id"]: row for row in rows}, {})
+        self.assertEqual(block["book_1103_status"], "ENTRY_BOOK_EMPTY")
+        statuses = {item["status"] for item in block["plus_24h"]["per_signal"]}
+        self.assertEqual(statuses, {"ENTRY_BOOK_EMPTY"})
 
 
 def datetime_offsets():
