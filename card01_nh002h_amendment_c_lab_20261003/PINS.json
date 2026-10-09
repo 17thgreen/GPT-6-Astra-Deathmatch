@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "a140e078deb2e3a603d7f61a021851292b1e4e8a45be183d66a5ca84c915280e",
+   "sha256": "937e9d195fbeadd66003f4d9642abe0876b04231dceee87edf7845b2727ad686",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -460,7 +460,7 @@
   },
   {
    "path": "card01_amc/book_1103.py",
-   "sha256": "4eca06d6373adab58dde029550af85ee0c7724e711b93bc8dcfe4ae82317fbc6",
+   "sha256": "c92ec1a8d89942d7ebb3b677707bafe85368575b4ae720d0af37b69a99f792df",
    "role": "11-03 adverse selection labels",
    "vendored": true
   },
@@ -472,7 +472,7 @@
   },
   {
    "path": "card01_amc/pnl_cd.py",
-   "sha256": "fd4473b10625e619b545f421aa09edd7341ac5567925ad35c63a95c5602f485f",
+   "sha256": "3a68b401e2040caf5300e0433526c9dd540cb4987418d01b114daba5d89f2921",
    "role": "PR-C REJECT (c)/(d) realized P&L + one-tick-worse stress",
    "vendored": true
   },
@@ -533,7 +533,46 @@
   "sensitivity_rows_status": "SENSITIVITY_BASIS_INCOMPLETE",
   "vendored": false,
   "loaded": "runtime --fee-source",
-  "refused_historical": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd"
+  "refused_historical": "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd",
+  "series_pinned": [
+   "HOUSEAZ1",
+   "HOUSEAZ2",
+   "HOUSEAZ6",
+   "HOUSECA22",
+   "HOUSECO3",
+   "HOUSECO8",
+   "HOUSEFL13",
+   "HOUSEIA3",
+   "HOUSEME2",
+   "HOUSEMI10",
+   "HOUSEMI4",
+   "HOUSEMI7",
+   "HOUSEMT1",
+   "HOUSENC1",
+   "HOUSENE2",
+   "HOUSENH1",
+   "HOUSENJ7",
+   "HOUSENY17",
+   "HOUSEOH9",
+   "HOUSEPA1",
+   "HOUSEPA10",
+   "HOUSEPA7",
+   "HOUSEPA8",
+   "HOUSEPARTY-MI07",
+   "HOUSETX15",
+   "HOUSETX34",
+   "HOUSEVA1",
+   "HOUSEVA2",
+   "HOUSEWA3",
+   "HOUSEWI1",
+   "HOUSEWI3",
+   "KXHOUSENC11",
+   "KXHOUSERACE",
+   "KXHOUSETX32",
+   "KXHOUSETX35",
+   "KXHOUSETX9"
+  ],
+  "series_pinned_sha256": "5d20f776bf2d2e61f2e4134d72fcc0bb32ab0b438b66f37b1a30aa3c1a7ef175"
  },
  "prc": {
   "schema": "astra.card01.prc_pnl_cd.v1",

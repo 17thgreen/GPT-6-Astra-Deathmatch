@@ -261,6 +261,22 @@ verdict input. Statuses are `OK`, `NO_SIGNALS_SELECTED`,
 `BLOCKED_FEE_UNVERIFIED`, `UNRESOLVED_INVENTORY_AT_SCORING`, and
 `REPORTING_DEFECT`. An `--out` path inside a git checkout is refused.
 
+## card01 hardening
+
+E6b. A repeated race id among the signals is a reporting defect `DUPLICATE_RACE_ID` with detail signals. A repeated race id among the rows is the same defect with detail rows, returned before any settlement load and with no scored numbers. A fee block is still reported first.
+
+A1. The anchor timestamp must be exactly twenty ASCII characters: four digits, a hyphen, two digits, a hyphen, two digits, T, two digits, a colon, two digits, a colon, two digits, and Z. A non-ASCII digit or any other malformation is `ENTRY_BOOK_ANCHOR_INVALID`. It is not an outside-window result and it does not raise.
+
+A2. The disk fee check uses the pinned series list. A gate can only add series names. A blocked, empty, or missing gate still checks that pinned list.
+
+N1. When the disk is fee-blocked, every supplied input must carry that disk's own fee identity. A mismatch is `DISK_INPUT_FEE_IDENTITY_MISMATCH` and requires the examiner.
+
+N2. Fee-class labels include `SERIES_NOT_PINNED`, `HEADLINE_SCOPE_MISMATCH`, and `TAKER_RATE_MISMATCH`. The bare status `BLOCKED_FEE_UNVERIFIED` is not a fee-class reason.
+
+T1. The display tally includes `ENTRY_BOOK_EMPTY` beside the four ruled null labels. When nothing is defined, `sum_cents` is null. This display does not feed the verdict.
+
+Conductor rulings of 2026-10-09 accept those six choices. The operative merge cap is 2026-10-30. The entry-book anchor window still opens at 22:15Z on 2026-11-02, and the anchor records the module sha, so this hardening has to be on main before that window.
+
 ## Limits
 
 - Pre-outcome. No real data run. No Kalshi call. No ElectIndex fetch.
