@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "e96228130c9070fb8655dacfc7f5805495d20f3e3d3999ac5e2c2dd077202e88",
+   "sha256": "7bb7255994326483117ceadfd32474e1569b8e5b6d244c90f870dacfbe634ac8",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -430,7 +430,7 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "975e35c1795d376a69a25d6d174df42dea1e5eeae112a3b41d61eabbaf535069",
+   "sha256": "2e7bed8e6daf475a39e798634db5b15ea25b245e2b4da3102b7b7e4d18521bea",
    "role": "v2 index-only fee admission",
    "vendored": true
   },
@@ -466,7 +466,7 @@
   },
   {
    "path": "card01_amc/pnl_cd.py",
-   "sha256": "72311fe5b14bebe7b9bb533391fe0a1dde532db5888371d6e048fbbee0f2c98b",
+   "sha256": "fbaffbe6718bbb20b76d96f5774c028dae66a69e580180c0ef62815ed4580179",
    "role": "PR-C REJECT (c)/(d) realized P&L + one-tick-worse stress",
    "vendored": true
   },

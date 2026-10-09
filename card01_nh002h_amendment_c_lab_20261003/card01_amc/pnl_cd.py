@@ -612,13 +612,6 @@ def _entry_book_block_reason(entry_book_bytes):
     return None
 
 
-def _rows_carry_book(rows):
-    for row in rows:
-        if isinstance(row, dict) and row.get("yes_bid") is not None and row.get("yes_ask") is not None:
-            return True
-    return False
-
-
 def _bare_rows(rows):
     bare = []
     for row in rows:
@@ -627,14 +620,35 @@ def _bare_rows(rows):
     return bare
 
 
+def _signal_row_book_reason(gate, rows):
+    """ENTRY_ROW_BOOK_MISSING when a signal has no two-sided row, else None.
+
+    An empty signal list is vacuous. A deleted quote, a None quote, or a
+    one-sided quote is missing. Production does not score those rows.
+    """
+    signals = gate.get("signals") if isinstance(gate, dict) else None
+    if not isinstance(signals, list) or not signals:
+        return None
+    by_id = {}
+    for row in rows:
+        if isinstance(row, dict) and row.get("race_id") not in by_id:
+            by_id[row.get("race_id")] = row
+    for signal in signals:
+        if not isinstance(signal, dict):
+            return "ENTRY_ROW_BOOK_MISSING"
+        row = by_id.get(signal.get("race_id"))
+        if not isinstance(row, dict):
+            return "ENTRY_ROW_BOOK_MISSING"
+        if row.get("yes_bid") is None or row.get("yes_ask") is None:
+            return "ENTRY_ROW_BOOK_MISSING"
+    return None
+
+
 def _signals_reproduced(gate, rows, fee_ctx):
     """True when gate_v2 on the outcome-stripped rows returns the same signals.
 
-    Rows with no yes bid and no yes ask cannot be priced by gate_v2. The
-    synthetic cases are that shape. A row that carries a book must match.
+    Every admitted score re-runs gate_v2. There is no bookless skip.
     """
-    if not _rows_carry_book(rows):
-        return True
     if not isinstance(gate, dict) or not isinstance(fee_ctx, dict):
         return False
     pin = load_fee_source_v2()
@@ -728,14 +742,6 @@ def run(
         "packet_index": (book.get("fee_input_sha256") or {}).get("packet_index"),
         "fee_accept": (book.get("fee_input_sha256") or {}).get("fee_accept"),
     }
-    if book["status"] != "BLOCKED_FEE_UNVERIFIED" and not _signals_reproduced(gate, rows, fee_ctx):
-        out = _defect_score(book, "GATE_NOT_REPRODUCED", anchor_status="GATE_NOT_REPRODUCED", inputs=inputs)
-        out["status"] = "GATE_NOT_REPRODUCED"
-        out["fee_block_reason"] = "GATE_NOT_REPRODUCED"
-        out["fee_state"] = "BLOCKED_FEE_UNVERIFIED"
-        out["reject_c"] = "BLOCKED_FEE_UNVERIFIED"
-        out["reject_d"] = "BLOCKED_FEE_UNVERIFIED"
-        return _with_hash(out)
     if book["status"] == "BLOCKED_FEE_UNVERIFIED":
         anchor_status = None
         if anchor_doc is not None or entry_book_bytes is not None:
@@ -764,6 +770,23 @@ def run(
             anchor_status="VERIFIED",
             inputs=inputs,
         )
+    book_gap = _signal_row_book_reason(gate, rows)
+    if book_gap is not None:
+        out = _defect_score(book, book_gap, anchor_status="VERIFIED", inputs=inputs)
+        out["status"] = "BLOCKED_FEE_UNVERIFIED"
+        out["fee_block_reason"] = book_gap
+        out["fee_state"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_c"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_d"] = "BLOCKED_FEE_UNVERIFIED"
+        return _with_hash(out)
+    if not _signals_reproduced(gate, rows, fee_ctx):
+        out = _defect_score(book, "GATE_NOT_REPRODUCED", anchor_status="GATE_NOT_REPRODUCED", inputs=inputs)
+        out["status"] = "GATE_NOT_REPRODUCED"
+        out["fee_block_reason"] = "GATE_NOT_REPRODUCED"
+        out["fee_state"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_c"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_d"] = "BLOCKED_FEE_UNVERIFIED"
+        return _with_hash(out)
     settled_doc = settled_results_loader()
     inputs["settled_results"] = _canonical(settled_doc)
     joined = join_outcomes.join(rows, settled_doc)

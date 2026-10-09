@@ -163,29 +163,54 @@ def _status_blocks(text):
 
 # 69b98b2f is not in the citation multiset. A row cites it when, after
 # zero-width removal and casefolding, it contains the 7-hex prefix.
+# A status blocks only when 69b98b2f is the subject of that status.
 _R1_ACCEPT_PREFIX7 = "69b98b2"
-_R1_BOLD_RE = re.compile(
-    r"\*\*\s*(?:withdrawn|withdraws|withdraw|revoked|revoke|rescinded|rescind|"
-    r"superseded|supersede|not\s+adopted|not\s+admitted|void)\s*\*\*",
-    re.IGNORECASE,
+_R1_STATUS = (
+    r"(?:withdrawn|withdrawal|withdraws|withdraw|revoked|revocation|revokes|revoke|"
+    r"rescinded|rescission|rescinds|rescind|superseded|supersedes|supersede|"
+    r"retracted|vacated|void|no longer adopted|not adopted|not admitted)"
 )
-_R1_TOKEN_RE = re.compile(
-    r"\b(?:withdrawn|withdraws|withdraw|revoked|rescinded|not adopted|not admitted|void)\b"
+_R1_STATUS_RE = re.compile(r"\b" + _R1_STATUS + r"\b")
+_R1_BY_FORM = r"(?:withdrawn_by|revoked_by|rescinded_by|superseded_by)"
+_R1_OBJECT_AFTER_RE = re.compile(
+    _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*\b\s+(?:" + _R1_BY_FORM + r"|" + _R1_STATUS + r")\b"
 )
-_R1_SUPERSEDE_RE = re.compile(r"\bsupersede\b")
+_R1_OBJECT_OF_RE = re.compile(r"\b" + _R1_STATUS + r"\s+of\s+" + _R1_ACCEPT_PREFIX7)
+_R1_OBJECT_BEFORE_RE = re.compile(r"\b" + _R1_STATUS + r"\s+" + _R1_ACCEPT_PREFIX7)
 _R1_NEGATED_RE = re.compile(
-    r"\bnot\s+(?:withdrawn|withdraws|withdraw|revoked|rescinded|superseded|supersede|void)\b"
+    r"\bnot\s+(?:withdrawn|withdrawal|withdraws|withdraw|revoked|revocation|revokes|revoke|"
+    r"rescinded|rescission|rescinds|rescind|superseded|supersedes|supersede|"
+    r"retracted|vacated|void)\b"
+)
+_R1_ACTOR_RE = re.compile(
+    r"\b(?:accepted(?:\s+as\s+modified)?\s+by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*"
+    r"|(?:superseded|withdrawn|revoked|rescinded)_by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*"
+    r"|(?:superseded|withdrawn|revoked|rescinded)\s+by\s+" + _R1_ACCEPT_PREFIX7 + r"[0-9a-f]*)\b"
+)
+_R1_OTHER_LABEL_RE = re.compile(
+    r"\br\d+(?:\s*/\s*r\d+)+\s+" + _R1_STATUS + r"\b"
+)
+_R1_OTHER_HEX_RE = re.compile(
+    r"\b([0-9a-f]{8,64})\s+(" + _R1_STATUS + r")\b"
 )
 _R1_PACKET_ACTIONS = frozenset({
     "withdraw",
+    "withdrawal",
     "withdrawn",
     "withdraws",
     "revoke",
+    "revocation",
     "revoked",
+    "revokes",
     "rescind",
     "rescinded",
+    "rescission",
+    "rescinds",
     "supersede",
     "superseded",
+    "supersedes",
+    "retracted",
+    "vacated",
 })
 
 
@@ -195,25 +220,68 @@ def _cites_r1_accept(text):
     return _R1_ACCEPT_PREFIX7 in text.translate(_ZERO_WIDTH).casefold()
 
 
-def _r1_status_hit(text):
-    """Standalone or bold status on text that already cites 69b98b2f.
-
-    "not withdrawn" and "superseded by" stay narrative. "not adopted" and
-    "not admitted" are status phrases and still match.
-    """
+def _r1_plain(text):
+    """Casefold, drop zero-width characters, and unfold bold markers."""
     if not isinstance(text, str) or text == "":
+        return ""
+    plain = text.translate(_ZERO_WIDTH).casefold().replace("*", " ")
+    return re.sub(r"\s+", " ", plain).strip()
+
+
+def _r1_scrub_negation(plain):
+    """Drop 'not withdrawn' and the same shape. 'not adopted' stays a status."""
+    return _R1_NEGATED_RE.sub(" ", plain)
+
+
+def _r1_object_hit(text):
+    """True when a status word takes 69b98b2f as its object.
+
+    'ACCEPTED by 69b98b2f' and 'SUPERSEDED_BY 69b98b2f' name it as the actor
+    and do not match. 'r1/r2 superseded' names other documents and does not
+    match unless the status sits on the 69b98b2f token itself.
+    """
+    plain = _r1_scrub_negation(_r1_plain(text))
+    if _R1_ACCEPT_PREFIX7 not in plain:
         return False
-    if _R1_BOLD_RE.search(text):
+    if _R1_OBJECT_OF_RE.search(plain) or _R1_OBJECT_BEFORE_RE.search(plain):
         return True
-    folded = _normalize_status(text.translate(_ZERO_WIDTH))
-    if re.search(r"\bnot adopted\b", folded) or re.search(r"\bnot admitted\b", folded):
+    return _R1_OBJECT_AFTER_RE.search(plain) is not None
+
+
+def _r1_scrub_other_subjects(plain):
+    """Remove status words that are tied to r1/r2 or to some other sha."""
+    plain = _R1_ACTOR_RE.sub(" ", plain)
+    plain = _R1_OTHER_LABEL_RE.sub(" ", plain)
+
+    def keep_self(match):
+        if match.group(1).startswith(_R1_ACCEPT_PREFIX7):
+            return match.group(0)
+        return " "
+
+    return _R1_OTHER_HEX_RE.sub(keep_self, plain)
+
+
+def _r1_subject_status(text):
+    """A status aimed at this text after actor phrases and other documents are gone."""
+    plain = _r1_scrub_other_subjects(_r1_scrub_negation(_r1_plain(text)))
+    return _R1_STATUS_RE.search(plain) is not None
+
+
+def _r1_header_keyed(line):
+    """True when the line's own subject is 69b98b2f, not merely its actor."""
+    plain = _r1_scrub_other_subjects(_r1_scrub_negation(_r1_plain(line)))
+    return _R1_ACCEPT_PREFIX7 in plain
+
+
+def _r1_status_line(line):
+    return re.search(r"\bstatus\b", _r1_plain(line)) is not None
+
+
+def _r1_subject_row(row):
+    sha = row.get("sha256")
+    if isinstance(sha, str) and sha.startswith(_R1_ACCEPT_PREFIX7):
         return True
-    scrubbed = _R1_NEGATED_RE.sub(" ", folded)
-    if _R1_TOKEN_RE.search(scrubbed):
-        return True
-    if _SUPERSEDED_RE.search(scrubbed):
-        return True
-    return _R1_SUPERSEDE_RE.search(scrubbed) is not None
+    return _cites_r1_accept(row.get("path"))
 
 
 def _r1_packet_action(path):
@@ -223,24 +291,61 @@ def _r1_packet_action(path):
     return any(part in _R1_PACKET_ACTIONS for part in parts)
 
 
+def _r1_entries(text):
+    """Heading-led blocks. A blank line or a new heading starts a new entry."""
+    entries = []
+    current = []
+    for line in text.splitlines():
+        if line.strip() == "":
+            if current:
+                entries.append(current)
+                current = []
+            continue
+        if line.lstrip().startswith("#") and current:
+            entries.append(current)
+            current = [line]
+            continue
+        current.append(line)
+    if current:
+        entries.append(current)
+    return entries
+
+
 def _r1_accept_block_reason(text):
     """ACCEPT_69B98B2F_WITHDRAWN, or None.
 
-    A line that cites 69b98b2f blocks when its status is a bold word or a
-    standalone token from the status list. A parsed packet row also blocks
-    when its path names WITHDRAW, REVOKE, RESCIND, or SUPERSEDE. A cite with
-    neither of those stays open.
+    The citation multiset does not include 69b98b2f. A packet path named
+    WITHDRAW, WITHDRAWAL, REVOKE, REVOCATION, RESCIND, or SUPERSEDE blocks
+    when the row cites it. A status word blocks only when 69b98b2f is the
+    object ('69b98b2f WITHDRAWN', 'WITHDRAW of 69b98b2f', 'revokes 69b98b2f',
+    '69b98b2f superseded by X') or the entry's own subject (its sha or path,
+    or a header keyed by it plus a later STATUS line). 'ACCEPTED by 69b98b2f'
+    and 'SUPERSEDED_BY 69b98b2f' keep it as the actor and stay open.
     """
     if not isinstance(text, str) or text == "":
         return None
     for row in _index_rows(text):
         blob = row["path"] + " " + row["description"]
-        if _cites_r1_accept(blob) and (
-            _r1_status_hit(row["description"]) or _r1_packet_action(row["path"])
-        ):
+        if _cites_r1_accept(blob) and _r1_packet_action(row["path"]):
             return "ACCEPT_69B98B2F_WITHDRAWN"
+        if _r1_object_hit(row["description"]) or _r1_object_hit(blob):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+        if _r1_subject_row(row) and _r1_subject_status(row["description"]):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+    for entry in _r1_entries(text):
+        if not entry or not _r1_header_keyed(entry[0]):
+            for line in entry:
+                if _r1_object_hit(line):
+                    return "ACCEPT_69B98B2F_WITHDRAWN"
+            continue
+        for line in entry[1:]:
+            if _r1_status_line(line) and _r1_subject_status(line):
+                return "ACCEPT_69B98B2F_WITHDRAWN"
+        for line in entry:
+            if _r1_object_hit(line):
+                return "ACCEPT_69B98B2F_WITHDRAWN"
     for line in text.splitlines():
-        if _cites_r1_accept(line) and _r1_status_hit(line):
+        if _r1_object_hit(line):
             return "ACCEPT_69B98B2F_WITHDRAWN"
     return None
 

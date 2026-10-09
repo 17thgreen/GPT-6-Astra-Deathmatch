@@ -283,6 +283,67 @@ class CitationPinTests(unittest.TestCase):
         self.assertEqual(blocked.fee_block_reason, "ACCEPT_69B98B2F_WITHDRAWN")
         self.assertTrue(_no_fee_numbers(blocked.public_dict()))
 
+    def _assert_r1_blocked(self, extra):
+        blocked = self._admit_synth_index(extra)
+        self.assertEqual(blocked.fee_admission, "BLOCKED_FEE_UNVERIFIED", extra)
+        self.assertEqual(blocked.fee_block_reason, "ACCEPT_69B98B2F_WITHDRAWN", extra)
+        self.assertTrue(_no_fee_numbers(blocked.public_dict()))
+
+    def _assert_r1_admits(self, extra):
+        admitted = self._admit_synth_index(extra)
+        self.assertEqual(admitted.fee_admission, "ADMITTED_INDEX_ONLY", extra)
+
+    def test_r1_actor_lines_admit(self):
+        sha = "ab" * 32
+        self._assert_r1_admits(
+            "| `registry/other.md` (**ACCEPTED by 69b98b2fabcdef**; r1/r2 superseded) | `" + sha + "` |\n"
+        )
+        self._assert_r1_admits(
+            "| notes/other.md | **ACCEPTED by 69b98b2fabcdef**; r1/r2 superseded | other |\n"
+        )
+        self._assert_r1_admits(
+            "STATUS **ACCEPTED as modified by 69b98b2f** r1/r2 **SUPERSEDED**\n"
+        )
+        self._assert_r1_admits(
+            "| `notes/actor.md` (SUPERSEDED_BY 69b98b2fabcdef) | `" + ("cd" * 32) + "` |\n"
+        )
+        self._assert_r1_admits(
+            "| `notes/actor.md` (superseded by 69b98b2f) | `" + ("ef" * 32) + "` |\n"
+        )
+        self._assert_r1_admits(
+            "| `notes/calm.md` (not withdrawn 69b98b2f) | `" + ("12" * 32) + "` |\n"
+        )
+        self._assert_r1_admits(
+            "| `packets/69b98b2f-note.md` (r1/r2 superseded) | `" + ("34" * 32) + "` |\n"
+        )
+
+    def test_r1_object_and_subject_forms_block(self):
+        forms = [
+            "| `notes/status.md` (69b98b2f WITHDRAWN) | `" + ("11" * 32) + "` |\n",
+            "| `notes/status.md` (WITHDRAW of 69b98b2f) | `" + ("22" * 32) + "` |\n",
+            "| `notes/status.md` (revokes 69b98b2f) | `" + ("33" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f superseded by abcd1234) | `" + ("44" * 32) + "` |\n",
+            "| `notes/status.md` (withdrawal of 69b98b2f) | `" + ("55" * 32) + "` |\n",
+            "| `notes/status.md` (revocation of 69b98b2f) | `" + ("66" * 32) + "` |\n",
+            "| `notes/status.md` (rescission of 69b98b2f) | `" + ("77" * 32) + "` |\n",
+            "| `notes/status.md` (rescinds 69b98b2f) | `" + ("88" * 32) + "` |\n",
+            "| `notes/status.md` (supersedes 69b98b2f) | `" + ("99" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f retracted) | `" + ("a1" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f vacated) | `" + ("a2" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f no longer adopted) | `" + ("a3" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f withdrawn_by abcd1234) | `" + ("a4" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f REVOKED_BY abcd1234) | `" + ("a5" * 32) + "` |\n",
+            "| `notes/status.md` (69b98b2f SUPERSEDED_BY abcd1234) | `" + ("a6" * 32) + "` |\n",
+            "| `notes/69b98b2f-note.md` (**RETRACTED**) | `" + ("a7" * 32) + "` |\n",
+            "| `packets/WITHDRAWAL_note.md` (cites 69b98b2f) | `" + ("a8" * 32) + "` |\n",
+            "| `packets/REVOCATION_note.md` (cites 69b98b2f) | `" + ("a9" * 32) + "` |\n",
+            "| `packets/RESCISSION_note.md` (cites 69b98b2f) | `" + ("b1" * 32) + "` |\n",
+            "| `packets/69b98b2f.md` (**WITHDRAWN**) | `" + ("69b98b2f" + "ab" * 28) + "` |\n",
+            "\n### 69b98b2f accept packet\nSTATUS: **WITHDRAWN**\n",
+        ]
+        for extra in forms:
+            self._assert_r1_blocked(extra)
+
 
 class RealCitationTests(unittest.TestCase):
     def _root(self):

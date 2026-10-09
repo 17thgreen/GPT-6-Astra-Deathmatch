@@ -447,28 +447,82 @@ def _gate_bound(prc_output, gate, gate_sha256):
     return prc_output.get("n_signals") == len(signals)
 
 
-def _report_gate_sha(regime):
+def _gate_identities(gate, file_sha):
+    """File bytes, compact canonical JSON, and spaced canonical JSON.
+
+    build_report records the compact form in inputs_sha256.gate_output.
+    The CLI records the file bytes. Both name the same parsed gate.
+    """
+    found = set()
+    if isinstance(file_sha, str):
+        found.add(file_sha)
+    if isinstance(gate, dict):
+        compact = json.dumps(gate, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("ascii")
+        found.add(hashlib.sha256(compact).hexdigest())
+        spaced = json.dumps(gate, sort_keys=True).encode("utf-8")
+        found.add(hashlib.sha256(spaced).hexdigest())
+    return found
+
+
+def _regime_gate_ids(regime):
+    """Identities build_report or a hand-built report actually records.
+
+    inputs_sha256.gate_sha256 is entry_gate.module_sha256(), not the gate
+    document, so it is not an identity of this gate.
+    """
+    found = []
     if not isinstance(regime, dict):
-        return None
+        return found
     if isinstance(regime.get("gate_sha256"), str):
-        return regime["gate_sha256"]
+        found.append(regime["gate_sha256"])
     inputs = regime.get("inputs_sha256")
     if isinstance(inputs, dict) and isinstance(inputs.get("gate_output"), str):
-        return inputs["gate_output"]
+        found.append(inputs["gate_output"])
+    return found
+
+
+def _regime_n_signals(regime):
+    """Signal count from the fields build_report fills, then a hand-built fallback."""
+    if not isinstance(regime, dict):
+        return None
+    secondary = regime.get("secondary")
+    sized = secondary.get("signals_and_size") if isinstance(secondary, dict) else None
+    if isinstance(sized, dict) and type(sized.get("n_signals")) is int:
+        return sized["n_signals"]
+    if type(regime.get("n_signals")) is int:
+        return regime["n_signals"]
+    views = regime.get("fee_views")
+    per = views.get("per_signal") if isinstance(views, dict) else None
+    if isinstance(per, list):
+        return len(per)
     return None
 
 
-def _triple_agrees(gate_sha, n_signals, prc, regime):
-    """True when the gate file, the PR-C output, and the regime report match."""
-    if not isinstance(prc, dict) or not isinstance(regime, dict):
+def _triple_agrees(gate, file_sha, prc, regime):
+    """True when the gate file, the PR-C output, and the regime report match.
+
+    The regime side may hash the parsed gate as compact JSON. The PR-C side
+    records the file bytes. n_signals is read from secondary.signals_and_size
+    when build_report wrote it.
+    """
+    if not isinstance(prc, dict) or not isinstance(regime, dict) or not isinstance(gate, dict):
         return False
+    identities = _gate_identities(gate, file_sha)
     inputs = prc.get("inputs_sha256")
     prc_sha = inputs.get("gate_output") if isinstance(inputs, dict) else None
-    if not (isinstance(gate_sha, str) and gate_sha == prc_sha == _report_gate_sha(regime)):
+    if prc_sha not in identities:
         return False
-    if type(n_signals) is not int:
+    regime_ids = _regime_gate_ids(regime)
+    if not regime_ids or any(item not in identities for item in regime_ids):
         return False
-    return prc.get("n_signals") == n_signals and regime.get("n_signals") == n_signals
+    signals = gate.get("signals")
+    if not isinstance(signals, list):
+        return False
+    n_signals = len(signals)
+    regime_n = _regime_n_signals(regime)
+    if type(regime_n) is not int:
+        return False
+    return prc.get("n_signals") == n_signals and regime_n == n_signals
 
 
 def cd_from_prc(prc_output, gate, *, fee_ctx, gate_sha256=None):
@@ -547,13 +601,10 @@ def main(argv):
         gate = json.loads(gate_bytes.decode("utf-8"))
         gate_sha = hashlib.sha256(gate_bytes).hexdigest()
         prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
-        n_signals = None
-        if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
-            n_signals = len(gate["signals"])
         regime_doc = None
         if args.regime_report:
             regime_doc = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
-        if _triple_agrees(gate_sha, n_signals, prc_output, regime_doc):
+        if _triple_agrees(gate, gate_sha, prc_output, regime_doc):
             cd = cd_from_prc(
                 prc_output,
                 gate,
