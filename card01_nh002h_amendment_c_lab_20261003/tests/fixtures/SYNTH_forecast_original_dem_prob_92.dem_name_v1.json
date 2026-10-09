@@ -1,11 +1,11 @@
 {
  "card": "card01-NH002-H",
- "capture_date_utc": "2026-10-31",
+ "capture_date_utc": "2000-01-01",
  "source_url": "https://example.invalid/synthetic_races_summary.csv",
  "source_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
  "source_bytes": 1000,
- "source_fetched_at_utc": "2026-10-31T20:17:05Z",
- "source_http_date": "Sat, 31 Oct 2026 20:17:05 GMT",
+ "source_fetched_at_utc": "2000-01-01T00:00:00Z",
+ "source_http_date": "Sat, 01 Jan 2000 00:00:00 GMT",
  "universe_ref": {
   "file": "UNIVERSE_2026_HOUSE_FROZEN.json",
   "sha256": "d8af74515e449b151016105f956c5e54a4fb4eac3ec570364da58f8fe47d8ca6",
@@ -18,7 +18,7 @@
  "version": "dem_name_v1",
  "base_derived": {
   "path": "derived/SYNTH_forecast_original_dem_prob_92.json",
-  "sha256": "0354386ae6105fe1420c1a5753d16814b7e24dfe0d5467002d3a031a6ce72c94",
+  "sha256": "8c7383a13fcc0e2899fba78ebcde6153eb2729b9782557e32707750274e43d99",
   "bytes": 5588,
   "note": "unchanged original; its sha is the Q6 linkage key"
  },
@@ -26,7 +26,7 @@
   "raw_path_private": "SYNTHETIC_NOT_A_PATH",
   "raw_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
   "raw_bytes": 1000,
-  "fetched_at_utc": "2026-10-31T20:17:05Z",
+  "fetched_at_utc": "2000-01-01T00:00:00Z",
   "capture_log": "SYNTHETIC_NOT_A_PATH",
   "capture_log_line": 1,
   "capture_run_id": "SYNTH",

@@ -83,9 +83,12 @@ The adopted file id is `FEE_SOURCE_CARD01_v1`, sha256
 `5b2eb82613d74bbfb2dd937efa43e239083367f832430a46d011759ccf451b59`. Ruling
 `715fbafd` records that examiner attestation as `ATTEST_FAIL`. The command
 line loads the fee file from `--fee-source` and an attestation from
-`--fee-attest`. The adopted file is not embedded. Without `ATTEST_PASS` for
-that sha, the gate stays `BLOCKED_FEE_UNVERIFIED` and money rows stay
-forecast-only. Commit
+`--fee-attest`. The adopted file is not embedded. The fee stays `BLOCKED`
+until an `ATTEST_PASS` attestation is supplied. Without that attestation the
+gate stays `BLOCKED_FEE_UNVERIFIED` and money rows stay forecast-only. A fee
+file whose bytes are not that adopted sha, including a future
+`astra.fee_source.v2` document, is rejected as `FEE_SOURCE_SHA_MISMATCH`
+before the version check runs, so it is still blocked. Commit
 `22371178cb2663250b4762f328069571c48cb551` remains in the pin list with
 `superseded: true`. Its feebook does not price this gate.
 
@@ -165,7 +168,10 @@ These are fixed here so the code does not invent a second reading later.
   match. A null or unresolved name is `DEM_NAME_UNRESOLVED`. A refused dem_name step is
   `DEM_NAME_STEP_REFUSED` plus its sub-reason. Usable rows become
   `DEM_NAME_UNRESOLVED`, and `closed_result` is
-  `INCONCLUSIVE_DEGENERATE_BLOCK`. Original forecast keys `same_party`,
+  `INCONCLUSIVE_DEGENERATE_BLOCK`. An accepted dem_name step must carry
+  `original_sha256` equal to the sha of the forecast file actually passed to
+  `build()`. A mismatch is `DEM_NAME_STEP_REFUSED` / `BASE_SHA_MISMATCH`, the
+  same refusal the command line records. Original forecast keys `same_party`,
   `rep_name`, and `dem_name` are ignored. The builder does not copy name
   strings into its output.
 - `no_two_sided_book` covers a missing side, a crossed book (`bid > ask`),
@@ -183,13 +189,20 @@ These are fixed here so the code does not invent a second reading later.
   `BLOCKED_FEE_UNVERIFIED` with no signals. The attestation object is
   `{fee_source_sha256, verdict}` and the sha must equal the fee-source bytes.
   An unknown `astra.fee_source` schema version is
-  `FEE_SOURCE_VERSION_UNSUPPORTED`. `astra.fee_source.v1` stays supported.
-  Swing-stress emits a numeric `expected_net` only when `--gate-sha256` matches
-  the gate file, `--fee-source` loads, the gate and every signal carry that
-  pair, and each headline fee recomputes. Otherwise `expected_net` is
+  `FEE_SOURCE_VERSION_UNSUPPORTED` once the sha check has passed.
+  `astra.fee_source.v1` stays supported. A v2 file that is not the adopted
+  sha is `FEE_SOURCE_SHA_MISMATCH` before that version check. Swing-stress
+  emits a numeric `expected_net` only when `--gate-sha256` matches the gate
+  file, `--fee-source` loads, the gate records `fee_attest_verdict`
+  `ATTEST_PASS` for that `fee_source_sha256`, the gate and every signal carry
+  that pair, and each headline fee recomputes. Without that recorded
+  attestation the stress rows are null and the status is
+  `BLOCKED_FEE_UNVERIFIED`. The output includes `fee_source` and
+  `fee_source_sha256` when the gate carries them. Otherwise `expected_net` is
   `BLOCKED_FEE_UNVERIFIED` with `net_block_reason` set. A gate file cannot
   self-certify its net. The direct-member net is a sensitivity field and is
-  not used for fragility.
+  not used for fragility. The fee stays blocked until an `ATTEST_PASS`
+  attestation is supplied.
 - `leave_one_state_out.by_state[s]` is either per-arm point estimates or the
   string `UNDEFINED`. Min and max ignore undefined remainders.
 - `n_boundary_resamples` is a sibling of `arms` on each non-empty block.

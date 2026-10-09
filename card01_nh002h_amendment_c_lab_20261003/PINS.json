@@ -145,7 +145,7 @@
   },
   {
    "path": "card01_amc/build_rows.py",
-   "sha256": "32d47685d12ba567dc7f95dea4c23e45fa57ab29032a8a11a8dfb1adfbd8a174",
+   "sha256": "502c27fb1b0d259e733483c59433c1871c01762fd1d714b9701db4f452ac2a4f",
    "role": "AF-8 input builder",
    "vendored": true
   },
@@ -163,7 +163,7 @@
   },
   {
    "path": "card01_amc/swing_stress.py",
-   "sha256": "04ae4b0dcac8f42deb42249456f3d682442925b549deec29d3bc6584df8e567e",
+   "sha256": "8341d544f2cffa9f33d5b8fd9adc8a6dd025f039c36743fb18ba17523dbdb9de",
    "role": "AF-7 outcome-free swing stress",
    "vendored": true
   },

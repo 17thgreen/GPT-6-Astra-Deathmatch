@@ -49,6 +49,7 @@ def _signal(race_id, side, price, fee, source="entry-KXHOUSERACE"):
 
 
 def _ok_gate(signals, adopted=None):
+    digest = "ab" * 32
     return {
         "status": "OK",
         "n_selected": len(signals),
@@ -56,6 +57,10 @@ def _ok_gate(signals, adopted=None):
         "manifest_id": "synthetic-adopted",
         "manifest_status": "ADOPTED",
         "adopted_entry_ids": adopted if adopted is not None else ["entry-KXHOUSERACE"],
+        "fee_source": "FEE_SOURCE_CARD01_v1",
+        "fee_source_sha256": digest,
+        "fee_attest_verdict": "ATTEST_PASS",
+        "fee_attest_fee_source_sha256": digest,
     }
 
 
@@ -169,6 +174,8 @@ class SwingTests(unittest.TestCase):
         gate_doc = _ok_gate(signals)
         gate_doc["fee_source"] = loaded.manifest_id
         gate_doc["fee_source_sha256"] = loaded.sha256
+        gate_doc["fee_attest_verdict"] = "ATTEST_PASS"
+        gate_doc["fee_attest_fee_source_sha256"] = loaded.sha256
         ours = evaluate(
             rows,
             gate_doc,

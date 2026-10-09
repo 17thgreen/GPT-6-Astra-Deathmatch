@@ -58,6 +58,25 @@ def _pair_matches(obj, loaded) -> bool:
     return obj.get("fee_source") == loaded.manifest_id and obj.get("fee_source_sha256") == loaded.sha256
 
 
+def _attest_recorded(gate) -> bool:
+    """Same recorded-attestation requirement as verdict._fee_state."""
+    return not (
+        gate.get("fee_attest_verdict") != "ATTEST_PASS"
+        or gate.get("fee_attest_fee_source_sha256") != gate.get("fee_source_sha256")
+    )
+
+
+def _fee_identity(gate):
+    extra = {}
+    if not isinstance(gate, dict):
+        return extra
+    if "fee_source" in gate:
+        extra["fee_source"] = gate.get("fee_source")
+    if "fee_source_sha256" in gate:
+        extra["fee_source_sha256"] = gate.get("fee_source_sha256")
+    return extra
+
+
 def _net_decision(gate, signals, gate_sha_expected, fee_source_bytes, fee_kwargs):
     """None when headline nets may be numeric. Otherwise a net_block_reason."""
     if gate_sha_expected is None:
@@ -170,6 +189,7 @@ def evaluate(
             extra["reason"] = gate["reason"]
         if gate.get("manifest_id") is not None:
             extra["manifest_id"] = gate["manifest_id"]
+        extra.update(_fee_identity(gate))
         return _envelope(
             "BLOCKED_FEE_UNVERIFIED",
             "NOT_EVALUATED_FEE_BLOCKED",
@@ -205,6 +225,18 @@ def evaluate(
         row = byid.get(signal.get("race_id"))
         if row is None or row.get("p_model") is None or row.get("p_market") is None:
             return _defect(rows_sha256, gate_sha256, "SIGNAL_ROW_UNUSABLE")
+
+    if not _attest_recorded(gate):
+        extra = {"reason": "FEE_ATTEST_ABSENT"}
+        extra.update(_fee_identity(gate))
+        return _envelope(
+            "BLOCKED_FEE_UNVERIFIED",
+            "NOT_EVALUATED_FEE_BLOCKED",
+            None,
+            rows_sha256,
+            gate_sha256,
+            extra,
+        )
 
     pinned = load_national_miss()
     base = [_ev(pinned, byid[s["race_id"]], s, 0.0) for s in signals]
@@ -248,8 +280,7 @@ def evaluate(
     extra = {"n_signals": len(signals)}
     if net_block_reason is not None:
         extra["net_block_reason"] = net_block_reason
-    if gate.get("fee_source") is not None:
-        extra["fee_source"] = gate["fee_source"]
+    extra.update(_fee_identity(gate))
     return _envelope("OK", _fragility(out_rows), out_rows, rows_sha256, gate_sha256, extra)
 
 

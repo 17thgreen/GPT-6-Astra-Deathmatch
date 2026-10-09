@@ -283,6 +283,14 @@ def build(universe, forecast, mapping, book, input_shas, *, selection, dem_name_
         dem_name_step = _step_not_run()
     elif dem_name_step is None:
         dem_name_step = _step_not_run()
+    if (
+        isinstance(dem_name_step, dict)
+        and dem_name_step.get("status") == "DEM_NAME_ACCEPTED"
+        and dem_name_step.get("original_sha256") != input_shas.get("forecast")
+    ):
+        dem_name_step = dict(dem_name_step)
+        dem_name_step["status"] = "DEM_NAME_STEP_REFUSED"
+        dem_name_step["reason"] = "BASE_SHA_MISMATCH"
     step_ok = isinstance(dem_name_step, dict) and dem_name_step.get("status") == "DEM_NAME_ACCEPTED"
     v1_by = _v1_index(dem_name_step) if step_ok else None
 

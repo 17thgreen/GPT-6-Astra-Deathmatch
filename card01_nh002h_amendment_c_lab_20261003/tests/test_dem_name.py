@@ -47,7 +47,7 @@ def _accepted(codes, forecast, edits=None, drop=()):
         "reason": None,
         "expected_script_sha256": ADD_DEM_NAME_SHA256,
         "observed_script_sha256": ADD_DEM_NAME_SHA256,
-        "original_sha256": None,
+        "original_sha256": sha256_bytes(json.dumps(forecast).encode()),
         "v1_sha256": None,
         "check": {"byte_identical": True, "sha256": "ab" * 32},
         "v1": {"version": "dem_name_v1", "rows": rows},
@@ -233,7 +233,7 @@ class DemNameBuilderTests(unittest.TestCase):
         forecast_rows = {row["race_code"]: row for row in forecast["rows"]}
         for row in _forecast["rows"]:
             row["dem_prob"] = forecast_rows[row["race_code"]]["dem_prob"]
-        _forecast["source_fetched_at_utc"] = forecast["source_fetched_at_utc"]
+        _forecast["source_fetched_at_utc"] = "2026-10-30T18:00:00Z"
         built = _assemble(_forecast, mapping, book, doc, raw, {"status": "SELECTED"}, refused)
         self.assertEqual(built["dem_name_step"]["status"], "DEM_NAME_STEP_REFUSED")
         self.assertEqual(built["dem_name_step"]["reason"], "BASE_SHA_MISMATCH")
@@ -268,7 +268,7 @@ class DemNameBuilderTests(unittest.TestCase):
             "reason": None,
             "expected_script_sha256": ADD_DEM_NAME_SHA256,
             "observed_script_sha256": ADD_DEM_NAME_SHA256,
-            "original_sha256": sha256_bytes(ORIGINAL.read_bytes()),
+            "original_sha256": sha256_bytes(json.dumps(_fc).encode()),
             "v1_sha256": sha256_bytes(V1.read_bytes()),
             "check": {"byte_identical": True},
             "v1": v1,
@@ -406,6 +406,22 @@ class DemNameRunnerTests(unittest.TestCase):
         self.assertNotIn("out", result["check"])
         self.assertTrue(result["check"]["byte_identical"])
         self.assertNotIn("dem_name", json.dumps(result["check"]))
+
+    def test_direct_build_refuses_mismatched_forecast_sha(self):
+        doc, raw, codes, forecast, mapping, book = DemNameBuilderTests()._world()
+        step = _accepted(codes, forecast)
+        step["original_sha256"] = "ab" * 32
+        built = _assemble(
+            forecast, mapping, book, doc, raw,
+            {"status": "SELECTED"},
+            step,
+        )
+        self.assertEqual(built["dem_name_step"]["status"], "DEM_NAME_STEP_REFUSED")
+        self.assertEqual(built["dem_name_step"]["reason"], "BASE_SHA_MISMATCH")
+        self.assertNotIn("v1", built["dem_name_step"])
+        self.assertEqual(built["closed_result"], "INCONCLUSIVE_DEGENERATE_BLOCK")
+        self.assertEqual(len(built["rows"]), 92)
+        self.assertTrue(all(row["exclusion_reason"] == "DEM_NAME_UNRESOLVED" for row in built["rows"]))
 
     def test_cli_refuses_a_mismatched_forecast(self):
         doc, raw, codes, forecast, mapping, book = DemNameBuilderTests()._world()

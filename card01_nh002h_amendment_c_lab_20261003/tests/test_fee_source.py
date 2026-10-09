@@ -4,6 +4,7 @@ from __future__ import annotations
 import ast
 import copy
 import json
+import tempfile
 import tokenize
 import unittest
 from decimal import Decimal, ROUND_CEILING, InvalidOperation
@@ -469,7 +470,17 @@ class SwingRecomputeTests(unittest.TestCase):
             "fee_source_expected_sha256": overrides["expected_sha256"],
             "fee_source_expected_accept": overrides["expected_accept"],
         }
-        out = evaluate([row], gate_doc, "r", "g", "g", raw, **kwargs)
+        blocked = evaluate([row], gate_doc, "r", "g", "g", raw, **kwargs)
+        self.assertEqual(blocked["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(blocked["rows"])
+        self.assertEqual(blocked["fee_source"], loaded.manifest_id)
+        self.assertEqual(blocked["fee_source_sha256"], loaded.sha256)
+
+        attested = copy.deepcopy(gate_doc)
+        attested["fee_attest_verdict"] = "ATTEST_PASS"
+        attested["fee_attest_fee_source_sha256"] = loaded.sha256
+        out = evaluate([row], attested, "r", "g", "g", raw, **kwargs)
+        self.assertEqual(out["stress_status"], "OK")
         self.assertNotIn("net_block_reason", out)
         self.assertIsInstance(out["rows"][0]["expected_net"], float)
         self.assertIsInstance(out["rows"][0]["expected_net_sensitivity_direct_member"], float)
@@ -477,13 +488,60 @@ class SwingRecomputeTests(unittest.TestCase):
             out["rows"][0]["expected_net"],
             out["rows"][0]["expected_net_sensitivity_direct_member"],
         )
+        self.assertEqual(out["fee_source"], loaded.manifest_id)
+        self.assertEqual(out["fee_source_sha256"], loaded.sha256)
 
-        forged = copy.deepcopy(gate_doc)
+        forged = copy.deepcopy(attested)
         forged["signals"][0]["fee_decimal"] = "0.99"
         forged["signals"][0]["fee"] = 0.99
         bad = evaluate([row], forged, "r", "g", "g", raw, **kwargs)
         self.assertEqual(bad["net_block_reason"], "FEE_RECOMPUTE_MISMATCH")
         self.assertEqual(bad["rows"][0]["expected_net"], "BLOCKED_FEE_UNVERIFIED")
+
+    def test_handmade_ok_gate_without_attestation_is_blocked(self):
+        raw = synth_bytes()
+        overrides = synth_overrides(raw)
+        loaded = load_fee_source(raw, **overrides)
+        entry = pinned_entry(loaded, "KXHOUSERACE")
+        quoted = pinned_taker_fee(entry, Decimal("0.42"))
+        row = _row()
+        gate_doc = {
+            "status": "OK",
+            "n_selected": 1,
+            "signals": [{
+                "race_id": "AL-02",
+                "side": "D_YES",
+                "price": 0.42,
+                "fee": float(quoted["headline"]),
+                "fee_decimal": str(quoted["headline"]),
+                "series": "KXHOUSERACE",
+                "fee_source": loaded.manifest_id,
+                "fee_source_sha256": loaded.sha256,
+            }],
+            "fee_source": loaded.manifest_id,
+            "fee_source_sha256": loaded.sha256,
+        }
+        self.assertNotIn("fee_attest_verdict", gate_doc)
+        self.assertNotIn("fee_attest_fee_source_sha256", gate_doc)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "gate.json"
+            path.write_text(json.dumps(gate_doc))
+            handmade = json.loads(path.read_text())
+        out = evaluate(
+            [row],
+            handmade,
+            "r",
+            "g",
+            "g",
+            raw,
+            fee_source_expected_sha256=overrides["expected_sha256"],
+            fee_source_expected_accept=overrides["expected_accept"],
+        )
+        self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(out["fragility"], "NOT_EVALUATED_FEE_BLOCKED")
+        self.assertIsNone(out["rows"])
+        self.assertEqual(out["fee_source"], loaded.manifest_id)
+        self.assertEqual(out["fee_source_sha256"], loaded.sha256)
 
 
 if __name__ == "__main__":
