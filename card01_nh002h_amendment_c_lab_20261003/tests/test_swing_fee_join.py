@@ -81,6 +81,7 @@ def _admitted(**extra):
     kwargs = {
         "fee_source_expected_sha256": _V2_SHA,
         "fee_source_expected_accept": _V2_ACCEPT,
+        "fee_source_expected_formula": FEE_FORMULA_ID,
     }
     kwargs.update(extra)
     return kwargs
@@ -168,52 +169,32 @@ class SwingTests(unittest.TestCase):
                         self.fail("swing_stress uses y as a dict key")
 
     def test_formula_matches_pinned_stress_and_hash(self):
-        from card01_amc.fee_admission import admit_fee_source_v2, pinned_entry_v2
-        from card01_amc.fee_source import pinned_taker_fee
+        from card01_amc.entry_gate import gate_v2
         from card01_amc.pinload import sha256_bytes
-        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit
+        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit, _row as fee_row
 
         pinned = load_national_miss()
         rows = [
-            _row("AL-02", 0.62, 0.48),
-            _row("OH-01", 0.41, 0.52),
-            _row("NY-02", 0.73, 0.33),
+            fee_row("G1-01"),
+            fee_row("G1-02", p_model=0.20),
+            fee_row("G1-03", p_model=0.30),
         ]
-        prices = (0.42, 0.55, 0.40)
-        sides = ("D_YES", "D_NO", "D_YES")
         with tempfile.TemporaryDirectory() as tmp:
             paths = _copy_kit(Path(tmp))
             digest = sha256_bytes(paths[0].read_bytes())
             accept_sha = sha256_bytes(paths[1].read_bytes())
-            admission = admit_fee_source_v2(
+            gate_doc = gate_v2(
+                rows,
                 fee_source_path=paths[0],
                 fee_source_id=ADMITTED_ID,
                 fee_source_sha256=digest,
                 packet_index_path=paths[2],
                 fee_accept_path=paths[1],
-                series_used=["XS1"],
             )
-            entry = pinned_entry_v2(admission, "XS1")
-            signals = []
-            for row, side, price in zip(rows, sides, prices):
-                quoted = pinned_taker_fee(entry, price)
-                signal = _signal(row["race_id"], side, price, 9.0, source=ADMITTED_ID)
-                signal["fee_decimal"] = str(quoted["headline"])
-                signal["fee_source_sha256"] = digest
-                signal["series"] = "XS1"
-                signals.append(signal)
+            self.assertEqual(gate_doc["status"], "OK")
+            self.assertGreaterEqual(gate_doc["n_selected"], 1)
             with_y = [dict(row, y=1) for row in rows]
-            compare = []
-            for signal, price in zip(signals, prices):
-                quoted = pinned_taker_fee(entry, price)
-                item = dict(signal)
-                item["fee"] = float(quoted["headline"])
-                compare.append(item)
-            pinned_out = pinned.stress(with_y, compare)
-            gate_doc = _ok_gate(signals)
-            gate_doc["fee_source"] = ADMITTED_ID
-            gate_doc["fee_source_sha256"] = digest
-            gate_doc["fee_source_accept_sha256"] = accept_sha
+            pinned_out = pinned.stress(with_y, gate_doc["signals"])
             ours = evaluate(
                 rows,
                 gate_doc,
@@ -225,6 +206,7 @@ class SwingTests(unittest.TestCase):
                 fee_accept_path=paths[1],
                 fee_source_expected_sha256=digest,
                 fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
             )
         self.assertEqual(ours["stress_status"], "OK")
         frozen = [row for row in ours["rows"] if row["informational"] is False]

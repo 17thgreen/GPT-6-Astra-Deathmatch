@@ -95,14 +95,29 @@ class PinnedEntry:
 def load_fee_source(
     path_bytes,
     *,
-    expected_sha256=FEE_SOURCE_SHA256,
-    expected_id=FEE_SOURCE_ID,
-    expected_accept=CONDUCTOR_ACCEPT_SHA256,
+    expected_sha256=None,
+    expected_id=None,
+    expected_accept=None,
 ):
-    """Validate file bytes. Tests may override the three expectations. The CLI does not."""
+    """Validate file bytes. There is no v1 default identity.
+
+    Bytes or an expectation equal to the refused v1 sha raise
+    FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL and do not return a source.
+    Callers map FeeBlocked onto BLOCKED_FEE_UNVERIFIED. This function
+    does not compute a fee.
+    """
     if not isinstance(path_bytes, (bytes, bytearray)):
         raise FeeBlocked("FEE_SOURCE_SCHEMA_INVALID")
-    digest = sha256_bytes(bytes(path_bytes))
+    raw = bytes(path_bytes)
+    try:
+        raw.decode("utf-8")
+    except UnicodeDecodeError:
+        raise FeeBlocked("FEE_SOURCE_UNREADABLE") from None
+    digest = sha256_bytes(raw)
+    if digest == FEE_SOURCE_SHA256 or expected_sha256 == FEE_SOURCE_SHA256:
+        raise FeeBlocked("FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
+    if expected_sha256 is None or expected_id is None or expected_accept is None:
+        raise FeeBlocked("FEE_SOURCE_IDENTITY_MISSING")
     if digest != expected_sha256:
         raise FeeBlocked("FEE_SOURCE_SHA_MISMATCH")
     try:

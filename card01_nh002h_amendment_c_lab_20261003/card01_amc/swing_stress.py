@@ -14,6 +14,8 @@ import sys
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 
+from card01_amc.entry_gate import OutcomePresent as GateOutcomePresent
+from card01_amc.entry_gate import gate_v2
 from card01_amc.fee_admission import (
     REFUSED_FEE_SOURCES,
     SENSITIVITY_ROWS_STATUS,
@@ -86,18 +88,59 @@ def _fee_identity(gate):
     return extra
 
 
-def _pair_reason(gate, expected_sha, expected_accept):
-    if expected_sha is _UNSET or expected_accept is _UNSET:
+def _pair_reason(gate, expected_sha, expected_accept, expected_formula):
+    if (
+        expected_sha is _UNSET
+        or expected_accept is _UNSET
+        or expected_formula is _UNSET
+    ):
         return "FEE_SOURCE_PAIR_MISSING"
     if (
         gate.get("fee_source_sha256") != expected_sha
         or gate.get("fee_source_accept_sha256") != expected_accept
+        or gate.get("fee_formula_id") != expected_formula
     ):
         return "FEE_SOURCE_PAIR_MISMATCH"
     return None
 
 
-def _v2_recompute(gate, signals, gate_sha_expected, paths, expected_sha):
+def _bare_rows(rows):
+    bare = []
+    for row in rows:
+        if isinstance(row, dict):
+            bare.append({
+                key: value
+                for key, value in row.items()
+                if key not in FORBIDDEN_OUTCOME_KEYS
+            })
+    return bare
+
+
+def _again(rows, gate, paths, expected_sha):
+    """Re-run gate_v2 on the outcome-stripped rows and the same fee files."""
+    fee_source_path, packet_index_path, fee_accept_path = paths
+    try:
+        return gate_v2(
+            _bare_rows(rows),
+            fee_source_path=fee_source_path,
+            fee_source_id=gate.get("fee_source"),
+            fee_source_sha256=expected_sha,
+            packet_index_path=packet_index_path,
+            fee_accept_path=fee_accept_path,
+        )
+    except (FeeBlocked, GateOutcomePresent, ValueError, TypeError):
+        return None
+
+
+def _same_signals(gate, again):
+    return (
+        isinstance(again, dict)
+        and again.get("status") == "OK"
+        and again.get("signals") == gate.get("signals")
+    )
+
+
+def _v2_recompute(gate, signals, gate_sha_expected, paths, expected_sha, rows):
     """Return (block_reason, headlines). Headlines are recomputed Decimals."""
     fee_source_path, packet_index_path, fee_accept_path = paths
     if gate_sha_expected is None:
@@ -117,13 +160,18 @@ def _v2_recompute(gate, signals, gate_sha_expected, paths, expected_sha):
     if (
         admission.fee_source_sha256 != gate.get("fee_source_sha256")
         or admission.fee_source_accept_sha256 != gate.get("fee_source_accept_sha256")
+        or admission.fee_formula_id != gate.get("fee_formula_id")
     ):
         return "FEE_SOURCE_PAIR_MISMATCH", None
+    again = _again(rows, gate, paths, expected_sha)
+    if not _same_signals(gate, again):
+        return "GATE_NOT_REPRODUCED", None
     headlines = []
     for signal in signals:
         if (
             signal.get("fee_source") != admission.fee_source
             or signal.get("fee_source_sha256") != admission.fee_source_sha256
+            or signal.get("fee_formula_id") != admission.fee_formula_id
         ):
             return "FEE_SOURCE_PAIR_MISMATCH", None
         try:
@@ -203,6 +251,11 @@ def _fee_block(rows_sha, gate_sha, reason, gate=None):
         "fee_block_reason": reason,
         "net_block_reason": reason,
     }
+    if reason == "GATE_NOT_REPRODUCED":
+        extra["reporting_defects"] = [{
+            "kind": "GATE_NOT_REPRODUCED",
+            "status": "REPORTING_DEFECT",
+        }]
     extra.update(_fee_identity(gate))
     return _envelope(
         "BLOCKED_FEE_UNVERIFIED",
@@ -233,12 +286,13 @@ def evaluate(
     """Outcome-free stress.
 
     The only fee input is a v2 admission state. Numbers are computed only when
-    fee_admission is ADMITTED_INDEX_ONLY and the gate's fee-source sha and
-    accept sha equal the pair the caller passed. A v1 pair, a legacy
-    attestation, or a missing gate is BLOCKED_FEE_UNVERIFIED. fee_source_bytes
-    is ignored.
+    fee_admission is ADMITTED_INDEX_ONLY, the gate's fee-source sha, accept
+    sha, and fee_formula_id equal the pair the caller passed, and gate_v2
+    reproduces the gate's signals from these rows and fee files. A mismatch
+    is GATE_NOT_REPRODUCED with no fee or net numbers. fee_source_bytes is
+    ignored.
     """
-    del fee_source_bytes, fee_source_expected_formula
+    del fee_source_bytes
     assert_outcome_free(rows)
     if gate_sha_expected is not None and gate_sha256 != gate_sha_expected:
         return _defect(rows_sha256, gate_sha256, "GATE_SHA_MISMATCH")
@@ -288,14 +342,31 @@ def evaluate(
             gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED",
             gate,
         )
-    pair_reason = _pair_reason(gate, fee_source_expected_sha256, fee_source_expected_accept)
+    pair_reason = _pair_reason(
+        gate,
+        fee_source_expected_sha256,
+        fee_source_expected_accept,
+        fee_source_expected_formula,
+    )
     if pair_reason is not None:
         return _fee_block(rows_sha256, gate_sha256, pair_reason, gate)
 
     n_selected = gate.get("n_selected")
     signals = gate.get("signals")
+    paths = (fee_source_path, packet_index_path, fee_accept_path)
     if not signals:
         if n_selected in (0, None):
+            if all(path is not None for path in paths):
+                reason, _headlines = _v2_recompute(
+                    gate,
+                    [],
+                    gate_sha_expected,
+                    paths,
+                    fee_source_expected_sha256,
+                    rows,
+                )
+                if reason is not None:
+                    return _fee_block(rows_sha256, gate_sha256, reason, gate)
             return _envelope(
                 "NO_SIGNALS_SELECTED",
                 None,
@@ -325,8 +396,9 @@ def evaluate(
         gate,
         signals,
         gate_sha_expected,
-        (fee_source_path, packet_index_path, fee_accept_path),
+        paths,
         fee_source_expected_sha256,
+        rows,
     )
     if net_block_reason is not None and net_block_reason not in _ROW_BLOCK_REASONS:
         return _fee_block(rows_sha256, gate_sha256, net_block_reason, gate)

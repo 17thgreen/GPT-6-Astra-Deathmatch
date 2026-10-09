@@ -690,6 +690,7 @@ class ReportTests(unittest.TestCase):
                 "depth_rejected": [],
                 "gate_sha256": "ab" * 32,
                 "fee_admission": "ADMITTED_INDEX_ONLY",
+                "fee_formula_id": "astra.card01.fee_eff.non_direct_buy_ceil_cent.v1",
                 "fee_source": ADMITTED_ID,
                 "fee_source_sha256": fee_sha,
                 "fee_source_accept_sha256": accept_sha,
@@ -805,30 +806,38 @@ class ReportTests(unittest.TestCase):
                 self.assertNotIn(token, text, name)
 
     def test_t24_admitted_output_omits_sensitivity_rows(self):
+        from card01_amc.entry_gate import gate_v2
+        from card01_amc.pinload import sha256_bytes
+
         rows = [
-            _row("S1", 0.30, 0.30, 1, "KXHOUSERACE", ticker="TS1"),
-            _row("S2", 0.40, 0.40, 1, "LEGACY", ticker="TS2"),
+            _row(
+                "S1", 0.077, 0.90, 1, "KXHOUSERACE", ticker="TS1",
+                yes_bid=0.05, yes_ask=0.077, yes_bid_qty=5, yes_ask_qty=5,
+            ),
+            _row(
+                "S2", 0.50, 0.90, 1, "LEGACY", ticker="TS2",
+                yes_bid=0.40, yes_ask=0.50, yes_bid_qty=5, yes_ask_qty=5,
+            ),
         ]
-        signals = [
-            {"race_id": "S1", "side": "D_YES", "price": "0.077", "series": "XS1", "fee_decimal": "0.013"},
-            {"race_id": "S2", "side": "D_NO", "price": "0.50", "series": "XS1", "fee_decimal": "0.02"},
+        bare = [
+            {key: value for key, value in row.items() if key not in ("y", "result", "settlement", "outcome", "settled")}
+            for row in rows
         ]
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             paths = self._fee(root)
-            from card01_amc.pinload import sha256_bytes
 
             def once(fee_sha, fee_path, accept_path, index_path):
-                gate = {
-                    "status": "OK",
-                    "signals": signals,
-                    "depth_rejected": [],
-                    "gate_sha256": "ab" * 32,
-                    "fee_admission": "ADMITTED_INDEX_ONLY",
-                    "fee_source": ADMITTED_ID,
-                    "fee_source_sha256": fee_sha,
-                    "fee_source_accept_sha256": sha256_bytes(accept_path.read_bytes()),
-                }
+                gate = gate_v2(
+                    bare,
+                    fee_source_path=fee_path,
+                    fee_source_id=ADMITTED_ID,
+                    fee_source_sha256=fee_sha,
+                    packet_index_path=index_path,
+                    fee_accept_path=accept_path,
+                )
+                self.assertEqual(gate["status"], "OK")
+                self.assertGreaterEqual(len(gate["signals"]), 1)
                 return build_report(
                     rows,
                     selection=_selection(),
@@ -858,6 +867,7 @@ class ReportTests(unittest.TestCase):
                 self.assertNotIn(key, blob)
             self.assertEqual(first["sensitivity_rows_status"], "SENSITIVITY_BASIS_INCOMPLETE")
             self.assertEqual(first["fee_views"]["per_signal"][0]["fee_headline"], "0.013")
+            self.assertEqual(first["fee_state"], "ADMITTED")
             doc = json.loads(paths[0].read_bytes())
             doc["fee_computation"]["sensitivity_rows"][0]["expression"] = "ceil_cent(fee_raw)+1"
             fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
@@ -896,27 +906,42 @@ class ReportTests(unittest.TestCase):
         self.assertNotIn('"fee_headline": "0"', json.dumps(report))
 
     def test_each_signal_uses_its_own_series_entry(self):
+        from decimal import Decimal
+
+        from card01_amc.entry_gate import gate_v2
+        from card01_amc.fee_source import PinnedEntry
+        from card01_amc.pinload import sha256_bytes
+        from card01_amc.secondary_metrics import fee_views
+
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             paths = self._fee(root)
-            from card01_amc.pinload import sha256_bytes
-
             fee_sha = sha256_bytes(paths[0].read_bytes())
-            accept_sha = sha256_bytes(paths[1].read_bytes())
-            signals = [
-                {"race_id": "S1", "side": "D_YES", "price": "0.077", "series": "XS1", "fee_decimal": "0.013"},
-                {"race_id": "S2", "side": "D_NO", "price": "0.50", "series": "XS9", "fee_decimal": "0.02"},
+            rows = [
+                _row(
+                    "S1", 0.055, 0.90, 1, "KXHOUSERACE", series="XS1",
+                    yes_bid=0.04, yes_ask=0.055, yes_bid_qty=5, yes_ask_qty=5,
+                ),
+                _row(
+                    "S2", 0.055, 0.90, 1, "LEGACY", series="XS2",
+                    yes_bid=0.04, yes_ask=0.055, yes_bid_qty=5, yes_ask_qty=5,
+                ),
             ]
-            gate = {
-                "status": "OK",
-                "signals": signals,
-                "fee_admission": "ADMITTED_INDEX_ONLY",
-                "fee_source": ADMITTED_ID,
-                "fee_source_sha256": fee_sha,
-                "fee_source_accept_sha256": accept_sha,
-            }
+            bare = [
+                {key: value for key, value in row.items() if key not in ("y", "result", "settlement", "outcome", "settled")}
+                for row in rows
+            ]
+            gate = gate_v2(
+                bare,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=fee_sha,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+            self.assertEqual([signal["series"] for signal in gate["signals"]], ["XS1", "XS2"])
             report = build_report(
-                [_row("S1", 0.30, 0.30, 1, "KXHOUSERACE"), _row("S2", 0.40, 0.40, 1, "LEGACY")],
+                rows,
                 selection=_selection(),
                 gate=gate,
                 fee_source_path=paths[0],
@@ -924,13 +949,26 @@ class ReportTests(unittest.TestCase):
                 fee_source_sha256=fee_sha,
                 packet_index_path=paths[2],
                 fee_accept_path=paths[1],
-                series_used=["XS1"],
+                series_used=["XS1", "XS2"],
             )
-        self.assertEqual(report["fee_admission"]["fee_admission"], "ADMITTED_INDEX_ONLY")
-        self.assertEqual(report["verdict_fee_branch"], "FORECAST_ONLY_FEE_BLOCKED")
-        self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
-        self.assertIsNone(report["fee_views"])
-        self.assertEqual(report["secondary"]["fee_block_reason"], "SERIES_NOT_PINNED")
+        self.assertEqual(report["fee_state"], "ADMITTED")
+        self.assertIsNone(report["verdict_fee_branch"])
+        self.assertEqual(
+            [item["fee_headline"] for item in report["fee_views"]["per_signal"]],
+            ["0.005", "0.005"],
+        )
+        low = PinnedEntry("XS1", "quadratic", Decimal("1"), "1", "synth", "ab" * 32, "0.07")
+        high = PinnedEntry("XS2", "quadratic", Decimal("1.5"), "1.5", "synth", "ab" * 32, "0.07")
+        views = fee_views(
+            [
+                {"race_id": "A", "series": "XS1", "side": "D_YES", "price": "0.50", "fee_decimal": "0.02"},
+                {"race_id": "B", "series": "XS2", "side": "D_YES", "price": "0.50", "fee_decimal": "0.03"},
+            ],
+            {},
+            {"XS1": low, "XS2": high},
+        )
+        self.assertNotEqual(views["per_signal"][0]["fee_headline"], views["per_signal"][1]["fee_headline"])
+        self.assertEqual(views["per_signal"][1]["fee_headline"], "0.03")
 
 
 if __name__ == "__main__":

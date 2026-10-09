@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 from card01_amc.book_1103 import adverse_selection, book_status
+from card01_amc.entry_gate import OUTCOME_KEYS, OutcomePresent, gate_v2
 from card01_amc.fee_admission import (
     FEE_ADMISSION_RULE_SHA256,
     REFUSED_FEE_SOURCES,
@@ -131,9 +132,37 @@ def _gate_fee_reason(gate, admission):
     if (
         gate.get("fee_source_sha256") != admission.fee_source_sha256
         or gate.get("fee_source_accept_sha256") != admission.fee_source_accept_sha256
+        or gate.get("fee_formula_id") != admission.fee_formula_id
     ):
         return "FEE_SOURCE_PAIR_MISMATCH"
     return None
+
+
+def _reproduced(rows, gate, paths, fee_source_id, fee_source_sha256):
+    """Re-run gate_v2 on outcome-stripped rows and the same fee files."""
+    fee_source_path, packet_index_path, fee_accept_path = paths
+    bare = []
+    for row in rows:
+        if isinstance(row, dict):
+            bare.append({key: value for key, value in row.items() if key not in OUTCOME_KEYS})
+    try:
+        again = gate_v2(
+            bare,
+            fee_source_path=fee_source_path,
+            fee_source_id=fee_source_id,
+            fee_source_sha256=fee_source_sha256,
+            packet_index_path=packet_index_path,
+            fee_accept_path=fee_accept_path,
+        )
+    except (FeeBlocked, OutcomePresent, ValueError, TypeError):
+        return None
+    if (
+        not isinstance(again, dict)
+        or again.get("status") != "OK"
+        or again.get("signals") != gate.get("signals")
+    ):
+        return None
+    return again
 
 
 def _blocked_secondary(reason, forecast, capture):
@@ -222,6 +251,20 @@ def build_report(
     capture = book_status(book)
     defects = []
     gate_reason = _gate_fee_reason(gate, admission)
+    if gate_reason is None:
+        again = _reproduced(
+            rows,
+            gate,
+            (fee_source_path, packet_index_path, fee_accept_path),
+            fee_source_id,
+            fee_source_sha256,
+        )
+        if again is None:
+            gate_reason = "GATE_NOT_REPRODUCED"
+            defects.append({
+                "kind": "GATE_NOT_REPRODUCED",
+                "status": "REPORTING_DEFECT",
+            })
     fee_state = "BLOCKED_FEE_UNVERIFIED"
     if gate_reason is None:
         signals = gate.get("signals") if isinstance(gate.get("signals"), list) else []

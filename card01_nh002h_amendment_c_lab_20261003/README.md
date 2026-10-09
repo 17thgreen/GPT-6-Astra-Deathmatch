@@ -85,9 +85,12 @@ The adopted file id is `FEE_SOURCE_CARD01_v1`, sha256
 `2c870cd5` §1 leaves that v1 fee not admitted. `gate()` does not mint an
 admitting state. Any supplied v1 file is `BLOCKED_FEE_UNVERIFIED` with reason
 `FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL`, and it emits no signals and no
-sensitivity fields. A numeric fee is computed only when `fee_admission` is
-`ADMITTED_INDEX_ONLY` and the caller passes the matching fee-source sha and
-accept sha. Commit
+sensitivity fields. `load_fee_source` has no v1 default identity. Bytes
+or an expectation equal to that v1 sha raise
+`FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL` and compute no fee. A numeric fee
+is computed only when `fee_admission` is `ADMITTED_INDEX_ONLY`, the caller
+passes the matching fee-source sha, accept sha, and `fee_formula_id`, and
+`gate_v2` reproduces the supplied signals. Commit
 `22371178cb2663250b4762f328069571c48cb551` remains in the pin list with
 `superseded: true`. Its feebook does not price this gate.
 
@@ -258,19 +261,20 @@ These are fixed here so the code does not invent a second reading later.
   selection. A non-selected record builds 92 rows of `no_admissible_forecast`
   and records `q6_status`.
 - A computing gate carries `fee_admission` `ADMITTED_INDEX_ONLY`,
-  `fee_source_sha256`, and `fee_source_accept_sha256`. `gate()` cannot mint
-  that state. A missing gate, a legacy two-field attestation, a v1 pair
-  including `d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd`,
-  or any other admission is `BLOCKED_FEE_UNVERIFIED` with no signals and no
-  sensitivity fields. Swing-stress and the verdict helper compute a numeric
-  fee only when the gate is `ADMITTED_INDEX_ONLY` and the caller passes that
-  same fee-source sha and accept sha. The swing net subtracts the recomputed
-  headline, not the gate's float `fee`. Without that pair the stress rows are
-  null and the status is `BLOCKED_FEE_UNVERIFIED`. The output includes
-  `fee_source` and `fee_source_sha256` when the gate carries them. A gate
-  file cannot self-certify its net. The direct-member net is a sensitivity
-  field and is not used for fragility. Amendment `2c870cd5` §1 leaves the v1
-  fee not admitted.
+  `fee_source_sha256`, `fee_source_accept_sha256`, and `fee_formula_id`.
+  `gate()` cannot mint that state. Swing stress and the regime report re-run
+  `gate_v2` on the outcome-stripped rows and the same fee files. Any mismatch
+  is `GATE_NOT_REPRODUCED`, logged on the output, with no fee or net numbers.
+  The pair check includes `fee_formula_id`. An index row that is `WITHDRAWN`,
+  `WITHDRAW`, `REVOKED`, `SUPERSEDED`, `NOT ADOPTED`, or `NOT admitted`
+  blocks, including a later row for the same sha. An adoption match does not
+  follow the word `NOT`. The ACCEPT file's `ruling` must start with `ACCEPT`.
+  A missing, unreadable, or non-UTF-8 fee file is `FEE_SOURCE_UNREADABLE`.
+  The verdict takes `fee_state` from the regime report and does not read a
+  passed-in gate or pair. The swing net subtracts the recomputed headline.
+  Without a reproduced admitted gate the stress rows are null and the status
+  is `BLOCKED_FEE_UNVERIFIED`. A gate file cannot self-certify its net.
+  Amendment `2c870cd5` §1 leaves the v1 fee not admitted.
 - `leave_one_state_out.by_state[s]` is either per-arm point estimates or the
   string `UNDEFINED`. Min and max ignore undefined remainders.
 - `n_boundary_resamples` is a sibling of `arms` on each non-empty block.

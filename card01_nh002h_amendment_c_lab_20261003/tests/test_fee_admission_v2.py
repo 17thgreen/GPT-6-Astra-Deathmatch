@@ -98,6 +98,8 @@ def _repin(tmp: Path, doc, accept_fill_sha=None, adopted_phrase=None):
         accept = {}
     accept.setdefault("accepted", {})
     accept["accepted"]["fill_sha256"] = fee_sha if accept_fill_sha is None else accept_fill_sha
+    if not isinstance(accept.get("ruling"), str):
+        accept["ruling"] = "ACCEPT_FEE_SOURCE_SYNTH_v2_FILL"
     accept_bytes = json.dumps(accept).encode()
     accept_path.write_bytes(accept_bytes)
     accept_sha = sha256_bytes(accept_bytes)
@@ -285,9 +287,10 @@ class AdmissionTests(unittest.TestCase):
             self.assertEqual(anchor.amendment_check_failed, "a")
 
             missing = _admit(paths, fee_source_path=root / "missing.json")
-            self.assertEqual(missing.fee_block_reason, "FEE_SOURCE_PAIR_MISSING")
+            self.assertEqual(missing.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(missing.fee_block_reason, "FEE_SOURCE_UNREADABLE")
             self.assertEqual(missing.amendment_check_failed, "a")
-            self.assertEqual(missing.fee_block_detail, "fee_source_path")
+            self.assertEqual(missing.fee_block_detail, "unreadable")
 
     def test_t21b_check_b_alone(self):
         import tempfile
@@ -635,6 +638,85 @@ class AdmissionTests(unittest.TestCase):
             self.assertEqual(gated["status"], "BLOCKED_FEE_UNVERIFIED")
             self.assertEqual(gated["fee_block_reason"], "TAKER_RATE_MISMATCH")
             self.assertIsNone(gated["signals"])
+
+    def test_b8_later_withdrawn_row_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            fee_sha = sha256_bytes(paths[0].read_bytes())
+            extra = (
+                "| `registry/SYNTH_FEE_SOURCE_v2_example.json` (later WITHDRAWN row) | `"
+                + fee_sha
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+            self.assertFalse(admission.admitted)
+
+    def test_b9_not_adopted_phrase_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            text = paths[2].read_text().replace("ADOPTED (anchor)", "NOT ADOPTED (anchor)", 1)
+            paths[2].write_text(text)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+
+    def test_b10_withdraw_ruling_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = _copy_kit(root)
+            accept = json.loads(paths[1].read_bytes())
+            accept["ruling"] = "WITHDRAW_ACCEPT_PAIR"
+            paths[1].write_bytes(json.dumps(accept).encode())
+            doc = json.loads(paths[0].read_bytes())
+            fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+            admission = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_ACCEPT_REHASH_MISMATCH")
+            self.assertEqual(admission.fee_block_detail, "NOT_AN_ACCEPT")
+            self.assertNotEqual(admission.fee_block_reason, "FEE_ACCEPT_MISSING")
+
+    def test_withdrawn_other_sha_and_draft_not_adopted_still_admit(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            other = (
+                "| `registry/OTHER.json` (WITHDRAWN other file) | `"
+                + ("ab" * 32)
+                + "` |\n"
+            )
+            text = paths[2].read_text().replace(
+                "ADOPTED (anchor)",
+                "DRAFT_NOT_ADOPTED then ADOPTED (anchor)",
+                1,
+            )
+            paths[2].write_text(text + other)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "ADMITTED_INDEX_ONLY")
+
+    def test_unreadable_and_non_utf8_fee_file_block(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = _copy_kit(root)
+            missing = _admit(paths, fee_source_path=None)
+            self.assertEqual(missing.fee_block_reason, "FEE_SOURCE_UNREADABLE")
+            self.assertEqual(missing.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            directory = _admit(paths, fee_source_path=root)
+            self.assertEqual(directory.fee_block_reason, "FEE_SOURCE_UNREADABLE")
+            bad = root / "bad.json"
+            bad.write_bytes(b"\xff\xfe")
+            unreadable = _admit(paths, fee_source_path=bad, fee_sha=sha256_bytes(bad.read_bytes()))
+            self.assertEqual(unreadable.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(unreadable.fee_block_reason, "FEE_SOURCE_UNREADABLE")
+            self.assertEqual(unreadable.fee_block_detail, "non_utf8")
 
     def test_t20_real_when_env_set(self):
         real = os.environ.get("CARD01_R1_REAL_FEE_DIR")

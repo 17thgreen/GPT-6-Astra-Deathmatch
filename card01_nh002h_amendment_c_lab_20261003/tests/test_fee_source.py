@@ -156,9 +156,18 @@ class LoadTests(unittest.TestCase):
     def test_real_constant_rejects_the_synthetic_file(self):
         with self.assertRaises(FeeBlocked) as caught:
             load_fee_source(synth_bytes())
-        self.assertEqual(caught.exception.reason, "FEE_SOURCE_SHA_MISMATCH")
+        self.assertEqual(caught.exception.reason, "FEE_SOURCE_IDENTITY_MISSING")
         self.assertNotEqual(sha256_bytes(synth_bytes()), FEE_SOURCE_SHA256)
         self.assertEqual(len(CONDUCTOR_ACCEPT_SHA256), 64)
+        with self.assertRaises(FeeBlocked) as refused:
+            load_fee_source(
+                synth_bytes(),
+                expected_sha256=FEE_SOURCE_SHA256,
+                expected_id="FEE_SOURCE_CARD01_v1",
+                expected_accept=CONDUCTOR_ACCEPT_SHA256,
+            )
+        self.assertEqual(refused.exception.reason, "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
+        self.assertFalse(hasattr(refused.exception, "headline"))
 
     def test_override_loads_and_pins_house_series(self):
         raw = synth_bytes()
@@ -197,7 +206,7 @@ class LoadTests(unittest.TestCase):
         raw = synth_bytes()
         with self.assertRaises(FeeBlocked) as caught:
             load_fee_source(raw, expected_sha256=sha256_bytes(raw))
-        self.assertEqual(caught.exception.reason, "CONDUCTOR_ACCEPT_MISMATCH")
+        self.assertEqual(caught.exception.reason, "FEE_SOURCE_IDENTITY_MISSING")
 
         body, overrides, _doc = self._mutated(lambda doc: doc["template"].__setitem__("is_template", True))
         with self.assertRaises(FeeBlocked) as caught:
@@ -470,44 +479,27 @@ class SwingRecomputeTests(unittest.TestCase):
         self.assertEqual(blocked["fee_source"], loaded.manifest_id)
         self.assertEqual(blocked["fee_source_sha256"], loaded.sha256)
 
-        from card01_amc.fee_admission import admit_fee_source_v2, pinned_entry_v2
-        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit
+        from card01_amc.entry_gate import gate_v2
+        from card01_amc.fee_admission import FEE_FORMULA_ID
+        from tests.test_fee_admission_v2 import ADMITTED_ID, _copy_kit, _row as fee_row
 
         with tempfile.TemporaryDirectory() as tmp:
             paths = _copy_kit(Path(tmp))
             digest = sha256_bytes(paths[0].read_bytes())
             accept_sha = sha256_bytes(paths[1].read_bytes())
-            admission = admit_fee_source_v2(
+            book = fee_row()
+            admitted_gate = gate_v2(
+                [book],
                 fee_source_path=paths[0],
                 fee_source_id=ADMITTED_ID,
                 fee_source_sha256=digest,
                 packet_index_path=paths[2],
                 fee_accept_path=paths[1],
-                series_used=["XS1"],
             )
-            entry = pinned_entry_v2(admission, "XS1")
-            quoted_v2 = pinned_taker_fee(entry, Decimal("0.42"))
-            admitted_gate = {
-                "status": "OK",
-                "n_selected": 1,
-                "signals": [{
-                    "race_id": "AL-02",
-                    "side": "D_YES",
-                    "price": 0.42,
-                    "fee": 9.0,
-                    "fee_decimal": str(quoted_v2["headline"]),
-                    "series": "XS1",
-                    "fee_source": ADMITTED_ID,
-                    "fee_source_sha256": digest,
-                }],
-                "fee_admission": "ADMITTED_INDEX_ONLY",
-                "fee_source": ADMITTED_ID,
-                "fee_source_sha256": digest,
-                "fee_source_accept_sha256": accept_sha,
-                "fee_formula_id": admission.fee_formula_id,
-            }
+            self.assertEqual(admitted_gate["status"], "OK")
+            headline = Decimal(admitted_gate["signals"][0]["fee_decimal"])
             out = evaluate(
-                [row],
+                [book],
                 admitted_gate,
                 "r",
                 "g",
@@ -517,17 +509,18 @@ class SwingRecomputeTests(unittest.TestCase):
                 fee_accept_path=paths[1],
                 fee_source_expected_sha256=digest,
                 fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
             )
             self.assertEqual(out["stress_status"], "OK")
             self.assertNotIn("net_block_reason", out)
             self.assertIsInstance(out["rows"][0]["expected_net"], float)
             gross = out["rows"][0]["expected_gross"]
-            self.assertEqual(out["rows"][0]["expected_net"], gross - float(quoted_v2["headline"]))
+            self.assertEqual(out["rows"][0]["expected_net"], gross - float(headline))
             forged = copy.deepcopy(admitted_gate)
             forged["signals"][0]["fee_decimal"] = "0.99"
             forged["signals"][0]["fee"] = 0.99
             bad = evaluate(
-                [row],
+                [book],
                 forged,
                 "r",
                 "g",
@@ -537,9 +530,12 @@ class SwingRecomputeTests(unittest.TestCase):
                 fee_accept_path=paths[1],
                 fee_source_expected_sha256=digest,
                 fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
             )
-        self.assertEqual(bad["net_block_reason"], "FEE_RECOMPUTE_MISMATCH")
-        self.assertEqual(bad["rows"][0]["expected_net"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(bad["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(bad["fee_block_reason"], "GATE_NOT_REPRODUCED")
+        self.assertIsNone(bad["rows"])
+        self.assertEqual(bad["reporting_defects"][0]["kind"], "GATE_NOT_REPRODUCED")
 
     def test_handmade_ok_gate_without_attestation_is_blocked(self):
         raw = synth_bytes()

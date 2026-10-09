@@ -38,7 +38,8 @@ REFUSED_FEE_SOURCES = frozenset({
 })
 
 _ROW_RE = re.compile(r"^\|\s*`([^`]+)`\s*(.*)\|\s*`([0-9a-f]{64})`\s*\|\s*$", re.M)
-_ADOPTED_RE = re.compile(r"ADOPTED \(anchor\) by (?:Conductor )?ACCEPT ([0-9a-f]{8,64})")
+_ADOPTED_RE = re.compile(r"(?<!NOT )ADOPTED \(anchor\) by (?:Conductor )?ACCEPT ([0-9a-f]{8,64})")
+_REVOKED_RE = re.compile(r"\b(?:WITHDRAWN|WITHDRAW|REVOKED|SUPERSEDED|NOT ADOPTED|NOT admitted)\b")
 _ADMISSION_RE = re.compile(r"^ADMITTED_BY_RULING [0-9a-f]{64}$")
 
 
@@ -154,7 +155,7 @@ def admit_fee_source_v2(
 
     fee_bytes, fee_err = _read(fee_source_path)
     if fee_err is not None:
-        return _blocked("FEE_SOURCE_PAIR_MISSING", "a", "fee_source_path", **identity)
+        return _blocked("FEE_SOURCE_UNREADABLE", "a", fee_err, **identity)
     index_bytes, index_err = _read(packet_index_path)
     if index_err is not None:
         return _blocked("FEE_SOURCE_PAIR_MISSING", "a", "packet_index_path", **identity)
@@ -172,7 +173,11 @@ def admit_fee_source_v2(
         return _blocked("FEE_SOURCE_REHASH_MISMATCH", "a", **identity)
 
     try:
-        doc = json.loads(fee_bytes)
+        fee_text = fee_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        return _blocked("FEE_SOURCE_UNREADABLE", "a", "non_utf8", **identity)
+    try:
+        doc = json.loads(fee_text)
     except json.JSONDecodeError:
         return _blocked("FEE_SOURCE_IN_FILE_UNEXPECTED", "c", "UNPARSEABLE", **identity)
     if not isinstance(doc, dict):
@@ -185,6 +190,9 @@ def admit_fee_source_v2(
 
     if doc.get("manifest_id") != fee_source_id:
         return _blocked("FEE_SOURCE_REHASH_MISMATCH", "a", "MANIFEST_ID_MISMATCH", **identity)
+
+    if any(_REVOKED_RE.search(row["description"]) for row in anchored):
+        return _blocked("FEE_SOURCE_STATUS_NOT_ADOPTED", "b", "REVOKED_ROW", **identity)
 
     adopted = []
     for row in anchored:
@@ -216,6 +224,9 @@ def admit_fee_source_v2(
         accept_doc = json.loads(accept_bytes)
     except json.JSONDecodeError:
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
+    ruling = accept_doc.get("ruling") if isinstance(accept_doc, dict) else None
+    if not isinstance(ruling, str) or not ruling.startswith("ACCEPT"):
+        return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", "NOT_AN_ACCEPT", **identity)
     accepted = accept_doc.get("accepted") if isinstance(accept_doc, dict) else None
     fill_sha = accepted.get("fill_sha256") if isinstance(accepted, dict) else None
     if fill_sha != fee_source_sha256:

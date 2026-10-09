@@ -163,13 +163,13 @@
   },
   {
    "path": "card01_amc/swing_stress.py",
-   "sha256": "743e865d9b37ea0385745e47a6b726b2a9d1ca364561e54d7ae3e8e96d132cff",
+   "sha256": "686b6d5bb397bbc2b16b939ba7ed15ed5bcc2c84997eb2a8d1602bf5428aca86",
    "role": "AF-7 outcome-free swing stress",
    "vendored": true
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "2cc1305d99ce38526a72ee598eef8e17f282f616e90156e50fff70c869d90bbd",
+   "sha256": "593eeabdf177e075c5c616f067888d618692ea5dd23e599871320a0d7cce4c3d",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -283,7 +283,7 @@
   },
   {
    "path": "card01_amc/fee_source.py",
-   "sha256": "3ffc20401b04f2ac8da9b517a5e12924f85a2c00f1fbc9cdfd31f81d92af1775",
+   "sha256": "a3da1e8286ed22a94e784dc6e42cd9252922d5744bffb47f227b01ada490d808",
    "role": "runtime fee-source loader and pinned taker formula",
    "vendored": true
   },
@@ -430,7 +430,7 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "166939cc99d75e619658dcdc741de1230ec2b4b5868eb5a65bf346a25a48a4c8",
+   "sha256": "230d107346ec55807207266125db8f13c21cfc4c3dbd0afce1e788ca81de56a2",
    "role": "v2 index-only fee admission",
    "vendored": true
   },
@@ -454,7 +454,7 @@
   },
   {
    "path": "card01_amc/regime_split_secondary.py",
-   "sha256": "a0602c64df2f8c5c41b611af150244026d19a86db52b31db41b43f413718720b",
+   "sha256": "c498f72b7a0b559b47342183e09bc62f4e14bd5a9174fe89efa96796efd1a151",
    "role": "regime-split assembly and CLI",
    "vendored": true
   }
