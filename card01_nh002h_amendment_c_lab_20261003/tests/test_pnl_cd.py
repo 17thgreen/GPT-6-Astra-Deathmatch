@@ -946,11 +946,21 @@ class PnLHarness(unittest.TestCase):
             gate_path.write_text(json.dumps(gate), encoding="utf-8")
             report_path = root / "regime.json"
             report_path.write_text(json.dumps(regime), encoding="utf-8")
+            driver = root / "drive.py"
+            driver.write_text(
+                "import sys\n"
+                "from pathlib import Path\n"
+                "from card01_amc import verdict\n"
+                "from card01_amc.verdict import main\n"
+                "verdict.PINS_PATH = Path(sys.argv[1])\n"
+                "sys.exit(main(sys.argv[2:]))\n",
+                encoding="utf-8",
+            )
             env = dict(os.environ)
             env["PYTHONPATH"] = str(LAB)
             proc = subprocess.run(
                 [
-                    sys.executable, "-m", "card01_amc.verdict", str(score),
+                    sys.executable, str(driver), str(self.pin_path), str(score),
                     "--gate", str(gate_path),
                     "--prc", str(prc_path),
                     "--fee-source", fee_ctx["fee_source_path"],
@@ -1000,9 +1010,14 @@ class PnLHarness(unittest.TestCase):
             self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
             self.assertEqual(produced["firing"], [], name)
             cli = self._verdict_cli(public, out["_gate"], report, fee_ctx=ctx)
-            self.assertEqual(cli["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
-            self.assertNotIn("PASS-FORECAST", cli["verdict"], name)
-            self.assertEqual(cli["firing"], [], name)
+            if name == "FEE_CITATIONS_CHANGED":
+                self.assertTrue(cli["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"), name)
+                self.assertNotEqual(cli["verdict"], "PASS-FORECAST", name)
+                self.assertNotEqual(cli["verdict"], "REJECT", name)
+            else:
+                self.assertEqual(cli["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+                self.assertNotIn("PASS-FORECAST", cli["verdict"], name)
+                self.assertEqual(cli["firing"], [], name)
             held = apply_verdict(_score_dict(-0.01, -0.02), cd=cd, regime_report=blocked_report)
             self.assertTrue(held["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"), name)
 
@@ -1436,22 +1451,97 @@ class PnLHarness(unittest.TestCase):
         (root / "regime-honest.json").write_text(json.dumps(honest), encoding="utf-8")
         return root, full, sub, blocked, honest
 
-    def _verdict_bound(self, root, *, gate=None, prc=None, regime=None, fee_ctx=None):
+    def _verdict_bound(self, root, *, gate=None, prc=None, regime=None, fee_ctx=None, fee_paths=True):
         fee_ctx = self.fee_ctx if fee_ctx is None else fee_ctx
         args = [str(root / "score.json")]
         if gate is not None:
             args.extend(["--gate", str(gate)])
         if prc is not None:
             args.extend(["--prc", str(prc)])
-        args.extend([
-            "--fee-source", fee_ctx["fee_source_path"],
-            "--packet-index", fee_ctx["packet_index_path"],
-            "--fee-accept", fee_ctx["fee_accept_path"],
-        ])
+        if fee_paths:
+            args.extend([
+                "--fee-source", fee_ctx["fee_source_path"],
+                "--packet-index", fee_ctx["packet_index_path"],
+                "--fee-accept", fee_ctx["fee_accept_path"],
+            ])
         if regime is not None:
             args.extend(["--regime-report", str(regime)])
         proc = self._run_module(root, "verdict", args)
         return json.loads(proc.stdout)
+
+    def _rehash_score(self, doc):
+        body = json.loads(json.dumps(doc))
+        body.pop("output_sha256", None)
+        body["output_sha256"] = pnl_cd.score_body_sha256(body)
+        return body
+
+    def _blocked_disk_chain(self, root):
+        """Real entry_gate and build_report on a fee file that does not admit."""
+        from card01_amc.join_outcomes import join
+        from card01_amc.pnl_cd import make_anchor
+        from card01_amc.regime_split_secondary import build_report
+        from tests.test_regime_split_secondary import _selection
+
+        bad = root / "bad-fee.json"
+        bad.write_text("{}", encoding="utf-8")
+        fee_ctx = dict(self.fee_ctx)
+        fee_ctx["fee_source_path"] = str(bad)
+        fee_args = [
+            "--fee-source", fee_ctx["fee_source_path"],
+            "--packet-index", fee_ctx["packet_index_path"],
+            "--fee-accept", fee_ctx["fee_accept_path"],
+        ]
+        gated = self._run_module(root, "entry_gate", [
+            str(root / "rows.json"),
+            "--fee-source-id", self.pin["id"],
+            "--fee-source-sha256", self.pin["sha256"],
+            *fee_args,
+        ])
+        gate_path = root / "gate-disk-blocked.json"
+        gate_path.write_text(gated.stdout, encoding="utf-8")
+        gate = json.loads(gated.stdout)
+        rows = json.loads((root / "rows.json").read_text(encoding="utf-8"))
+        settled = json.loads((root / "settled.json").read_text(encoding="utf-8"))
+        report = build_report(
+            join(rows, settled)["rows"],
+            gate=gate,
+            selection=_selection(),
+            settled=settled,
+            fee_source_path=fee_ctx["fee_source_path"],
+            fee_source_id=self.pin["id"],
+            fee_source_sha256=self.pin["sha256"],
+            packet_index_path=fee_ctx["packet_index_path"],
+            fee_accept_path=fee_ctx["fee_accept_path"],
+            series_used=["XS1"],
+        )
+        report_path = root / "regime-disk-blocked.json"
+        report_path.write_text(json.dumps(report), encoding="utf-8")
+        book = root / "book-disk-blocked.json"
+        self._run_module(root, "pnl_cd", [
+            "entry-book",
+            "--gate", str(gate_path),
+            *fee_args,
+            "--out", str(book),
+        ])
+        anchor = make_anchor(
+            book.read_bytes(),
+            gate_sha256=sha256_bytes(gate_path.read_bytes()),
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+        anchor_path = root / "anchor-disk-blocked.json"
+        anchor_path.write_text(json.dumps(anchor), encoding="utf-8")
+        prc_path = root / "prc-disk-blocked.json"
+        self._run_module(root, "pnl_cd", [
+            "score",
+            "--gate", str(gate_path),
+            "--rows", str(root / "rows.json"),
+            "--entry-book", str(book),
+            "--entry-book-anchor", str(anchor_path),
+            "--settled-results", str(root / "settled.json"),
+            *fee_args,
+            "--out", str(prc_path),
+        ])
+        return fee_ctx, gate_path, prc_path, report_path, gate, report
 
     def test_e2b_cli_blocked_regime_requires_examiner(self):
         root, full, sub, blocked, _honest = self._examiner_world()
@@ -1482,11 +1572,10 @@ class PnLHarness(unittest.TestCase):
             self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
             self.assertIsNone(produced["evaluations"]["reject_c"], name)
             self.assertIsNone(produced["evaluations"]["reject_d"], name)
-            self.assertIn(
-                produced["binding_reason"],
-                {"GATE_BINDING_MISMATCH", "N_SIGNALS_MISMATCH", "BINDING_IDENTITY_MISSING", "REGIME_REPORT_REQUIRED"},
-                name,
-            )
+            if name == "c":
+                self.assertEqual(produced["binding_reason"], "REGIME_REPORT_REQUIRED", name)
+            else:
+                self.assertEqual(produced["binding_reason"], "REGIME_BLOCKED_DISK_ADMITS", name)
 
     def test_e2b_cli_prc_without_regime_requires_examiner(self):
         root, _full, _sub, _blocked, _honest = self._examiner_world()
@@ -1514,50 +1603,137 @@ class PnLHarness(unittest.TestCase):
         self.assertNotIn("binding_reason", produced)
 
     def test_e2b_cli_regime_blocked_disk_admits_requires_examiner(self):
-        root, _full, _sub, _blocked, honest = self._examiner_world()
-        matched = {
-            "fee_state": "BLOCKED_FEE_UNVERIFIED",
-            "verdict_fee_branch": "FORECAST_ONLY_FEE_BLOCKED",
-            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
-            "inputs_sha256": {"gate_output": honest["inputs_sha256"]["gate_output"]},
-            "secondary": {"signals_and_size": {"n_signals": 5}},
-        }
-        path = root / "regime-matched-block.json"
-        path.write_text(json.dumps(matched), encoding="utf-8")
+        root, _full, _sub, blocked, _honest = self._examiner_world()
+        self.assertEqual(blocked["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(blocked["secondary"]["signals_and_size"])
+        self.assertNotIn("n_signals", blocked["secondary"])
         produced = self._verdict_bound(
             root,
             gate=root / "gate-full5.json",
             prc=root / "prc-full5.json",
-            regime=path,
+            regime=root / "regime-blocked.json",
         )
         self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
         self.assertEqual(produced["binding_reason"], "REGIME_BLOCKED_DISK_ADMITS")
         self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertIsNone(produced["evaluations"]["reject_c"])
+        self.assertIsNone(produced["evaluations"]["reject_d"])
 
-    def test_e2b_cli_blocked_disk_stays_forecast_only(self):
+    def test_mf1_regime_report_only_admitting_disk_is_full(self):
+        root, _full, _sub, blocked, _honest = self._examiner_world()
+        self.assertEqual(blocked["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        produced = self._verdict_bound(root, regime=root / "regime-blocked.json")
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "GATE_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertNotIn("FORECAST_ONLY", produced["verdict"])
+        self.assertIsNone(produced["evaluations"]["reject_c"])
+        self.assertIsNone(produced["evaluations"]["reject_d"])
+
+    def test_e2b_cli_only_gate_requires_examiner(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
+        produced = self._verdict_bound(root, gate=root / "gate-full5.json")
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "REGIME_REPORT_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+
+    def test_e2b_cli_one_sided_requires_examiner(self):
         root, _full, _sub, _blocked, honest = self._examiner_world()
-        matched = {
-            "fee_state": "BLOCKED_FEE_UNVERIFIED",
-            "verdict_fee_branch": "FORECAST_ONLY_FEE_BLOCKED",
-            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
-            "inputs_sha256": {"gate_output": honest["inputs_sha256"]["gate_output"]},
-            "secondary": {"signals_and_size": {"n_signals": 5}},
-        }
-        path = root / "regime-matched-block.json"
-        path.write_text(json.dumps(matched), encoding="utf-8")
-        bad = root / "bad-fee.json"
-        bad.write_text("{}", encoding="utf-8")
-        fee_ctx = dict(self.fee_ctx)
-        fee_ctx["fee_source_path"] = str(bad)
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        missing_prc = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(missing_prc["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(missing_prc["binding_reason"], "PRC_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", missing_prc["verdict"])
+        missing_gate = self._verdict_bound(
+            root,
+            prc=root / "prc-full5.json",
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(missing_gate["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(missing_gate["binding_reason"], "GATE_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", missing_gate["verdict"])
+
+    def test_e2b_cli_missing_fee_paths_requires_examiner(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
         produced = self._verdict_bound(
             root,
             gate=root / "gate-full5.json",
             prc=root / "prc-full5.json",
-            regime=path,
+            regime=root / "regime-honest.json",
+            fee_paths=False,
+        )
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "FEE_PATHS_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        regime_only = self._verdict_bound(
+            root,
+            regime=root / "regime-blocked.json",
+            fee_paths=False,
+        )
+        self.assertEqual(regime_only["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(regime_only["binding_reason"], "FEE_PATHS_REQUIRED")
+
+    def test_e2b_cli_race_id_relabel_requires_examiner(self):
+        root, full, sub, _blocked, honest = self._examiner_world()
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        self.assertEqual([row["race_id"] for row in sub["per_signal"]], ["W1", "W2", "W3"])
+        self.assertEqual(
+            [row["race_id"] for row in full["per_signal"]],
+            ["W1", "W2", "W3", "L1", "L2"],
+        )
+        forged = json.loads(json.dumps(sub))
+        forged["n_signals"] = full["n_signals"]
+        forged["inputs_sha256"]["gate_output"] = sha256_bytes((root / "gate-full5.json").read_bytes())
+        forged = self._rehash_score(forged)
+        path = root / "prc-relabelled.json"
+        path.write_text(json.dumps(forged), encoding="utf-8")
+        produced = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=path,
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "SIGNAL_IDENTITY_MISMATCH")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertIsNone(produced["evaluations"]["reject_c"])
+        self.assertIsNone(produced["evaluations"]["reject_d"])
+        shuffled = json.loads(json.dumps(full))
+        shuffled["per_signal"] = list(reversed(shuffled["per_signal"]))
+        shuffled = self._rehash_score(shuffled)
+        shuffle_path = root / "prc-shuffled.json"
+        shuffle_path.write_text(json.dumps(shuffled), encoding="utf-8")
+        ordered = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=shuffle_path,
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(ordered["verdict"], "REJECT")
+        self.assertIn("(d)", ordered["firing"])
+        self.assertNotIn("PASS-FORECAST", ordered["verdict"])
+
+    def test_e2b_cli_blocked_disk_stays_forecast_only(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
+        fee_ctx, gate_path, prc_path, report_path, gate, report = self._blocked_disk_chain(root)
+        self.assertIsNone(gate.get("signals"))
+        self.assertNotEqual(report["fee_state"], "ADMITTED")
+        self.assertIsNone(report["secondary"]["signals_and_size"])
+        produced = self._verdict_bound(
+            root,
+            gate=gate_path,
+            prc=prc_path,
+            regime=report_path,
             fee_ctx=fee_ctx,
         )
         self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
         self.assertNotEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertNotEqual(produced["verdict"], "PASS-FORECAST")
+        self.assertNotEqual(produced["verdict"], "REJECT")
 
     def test_e1b_stripped_book_reject_cannot_pass_forecast(self):
         from card01_amc.fee_admission import pinned_entry_v2

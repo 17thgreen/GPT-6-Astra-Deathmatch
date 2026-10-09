@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import sys
+from collections import Counter
 from pathlib import Path
 
 from card01_amc.fee_admission import (
@@ -604,6 +605,92 @@ def cd_from_prc(prc_output, gate, *, fee_ctx, gate_sha256=None):
     }
 
 
+def _fee_paths_ready(fee_ctx):
+    """True when all three fee paths are present files."""
+    paths = _fee_paths(fee_ctx)
+    for key in ("fee_source", "packet_index", "fee_accept"):
+        path = paths[key]
+        if not isinstance(path, str) or path == "":
+            return False
+        if not Path(path).is_file():
+            return False
+    return True
+
+
+def _series_from_gate(gate):
+    series = []
+    if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
+        for signal in gate["signals"]:
+            if isinstance(signal, dict):
+                series.append(signal.get("series"))
+    return series
+
+
+def _disk_files_admit(fee_ctx, gate):
+    """Fee-file admission. A blocked gate status is not a disk block.
+
+    series come from the gate when it lists signals, so an unpinned series
+    still fails the files. A missing gate uses no series.
+    """
+    paths = _fee_paths(fee_ctx)
+    pin = load_fee_source_v2()
+    if pin is None:
+        return False
+    admission = admit_fee_source_v2(
+        fee_source_path=paths["fee_source"],
+        fee_source_id=pin["id"],
+        fee_source_sha256=pin["sha256"],
+        packet_index_path=paths["packet_index"],
+        fee_accept_path=paths["fee_accept"],
+        series_used=_series_from_gate(gate),
+    )
+    if not admission.admitted:
+        return False
+    return (
+        admission.fee_source_sha256 == pin["sha256"]
+        and admission.fee_source_accept_sha256 == pin["accept_sha256"]
+        and admission.fee_formula_id == pin["fee_formula_id"]
+        and admission.fee_formula_id == FEE_FORMULA_ID
+    )
+
+
+def _race_ids(items):
+    if not isinstance(items, list):
+        return None
+    found = []
+    for item in items:
+        if not isinstance(item, dict) or "race_id" not in item:
+            return None
+        found.append(item["race_id"])
+    return found
+
+
+def _signal_identity_reason(gate, prc):
+    """SIGNAL_IDENTITY_MISMATCH when race_id multisets differ.
+
+    Order does not matter. The PR-C side is per_signal. The gate side is
+    signals. A missing list is a mismatch.
+    """
+    gate_ids = _race_ids(gate.get("signals") if isinstance(gate, dict) else None)
+    prc_ids = _race_ids(prc.get("per_signal") if isinstance(prc, dict) else None)
+    if gate_ids is None or prc_ids is None:
+        return "SIGNAL_IDENTITY_MISMATCH"
+    try:
+        if Counter(gate_ids) != Counter(prc_ids):
+            return "SIGNAL_IDENTITY_MISMATCH"
+    except TypeError:
+        return "SIGNAL_IDENTITY_MISMATCH"
+    return None
+
+
+def _forecast_only(score, regime):
+    """Disk-blocked hand-off. An admitted report is not trusted over the files."""
+    report = regime
+    if isinstance(regime, dict) and _fee_state(regime)[0] == "ADMITTED":
+        report = None
+    return apply_verdict(score, cd=None, regime_report=report)
+
+
 def main(argv):
     parser = argparse.ArgumentParser(prog="python -m card01_amc.verdict")
     parser.add_argument("score", nargs="?")
@@ -618,46 +705,63 @@ def main(argv):
         print("usage: python -m card01_amc.verdict score.json", file=sys.stderr)
         return 2
     score = json.loads(Path(args.score).read_text(encoding="utf-8"))
-    cd = None
-    regime = None
-    if args.prc is not None or args.gate is not None:
-        if not args.regime_report:
-            json.dump(_binding_block(score, "REGIME_REPORT_REQUIRED", None), sys.stdout, indent=1)
-            return 0
-        regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
-        if not args.prc or not args.gate:
-            json.dump(_binding_block(score, "BINDING_IDENTITY_MISSING", regime), sys.stdout, indent=1)
-            return 0
-        fee_ctx = {
-            "fee_source_path": args.fee_source,
-            "packet_index_path": args.packet_index,
-            "fee_accept_path": args.fee_accept,
-        }
+    touched = args.regime_report is not None or args.gate is not None or args.prc is not None
+    if not touched:
+        json.dump(apply_verdict(score, cd=None, regime_report=None), sys.stdout, indent=1)
+        return 0
+    fee_ctx = {
+        "fee_source_path": args.fee_source,
+        "packet_index_path": args.packet_index,
+        "fee_accept_path": args.fee_accept,
+    }
+    if not _fee_paths_ready(fee_ctx):
+        json.dump(_binding_block(score, "FEE_PATHS_REQUIRED", None), sys.stdout, indent=1)
+        return 0
+    gate = None
+    gate_sha = None
+    if args.gate is not None:
         gate_bytes = Path(args.gate).read_bytes()
         gate = json.loads(gate_bytes.decode("utf-8"))
         gate_sha = hashlib.sha256(gate_bytes).hexdigest()
-        prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
-        reason = _binding_reason(gate, gate_sha, prc_output, regime)
-        if reason is not None:
-            json.dump(_binding_block(score, reason, regime), sys.stdout, indent=1)
-            return 0
-        disk = disk_fee_state(gate, fee_ctx)
-        fee_state, _notes, _why = _fee_state(regime)
-        if fee_state != "ADMITTED" and disk["admitted"]:
-            json.dump(
-                _binding_block(score, "REGIME_BLOCKED_DISK_ADMITS", regime),
-                sys.stdout,
-                indent=1,
-            )
-            return 0
-        cd = cd_from_prc(
-            prc_output,
-            gate,
-            fee_ctx=fee_ctx,
-            gate_sha256=gate_sha,
+    if not _disk_files_admit(fee_ctx, gate):
+        regime = None
+        if args.regime_report is not None:
+            regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
+        json.dump(_forecast_only(score, regime), sys.stdout, indent=1)
+        return 0
+    if args.regime_report is None:
+        json.dump(_binding_block(score, "REGIME_REPORT_REQUIRED", None), sys.stdout, indent=1)
+        return 0
+    regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
+    if args.gate is None:
+        json.dump(_binding_block(score, "GATE_REQUIRED", regime), sys.stdout, indent=1)
+        return 0
+    if args.prc is None:
+        json.dump(_binding_block(score, "PRC_REQUIRED", regime), sys.stdout, indent=1)
+        return 0
+    fee_state, _notes, _why = _fee_state(regime)
+    if fee_state != "ADMITTED":
+        json.dump(
+            _binding_block(score, "REGIME_BLOCKED_DISK_ADMITS", regime),
+            sys.stdout,
+            indent=1,
         )
-    elif args.regime_report:
-        regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
+        return 0
+    prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
+    reason = _binding_reason(gate, gate_sha, prc_output, regime)
+    if reason is not None:
+        json.dump(_binding_block(score, reason, regime), sys.stdout, indent=1)
+        return 0
+    identity = _signal_identity_reason(gate, prc_output)
+    if identity is not None:
+        json.dump(_binding_block(score, identity, regime), sys.stdout, indent=1)
+        return 0
+    cd = cd_from_prc(
+        prc_output,
+        gate,
+        fee_ctx=fee_ctx,
+        gate_sha256=gate_sha,
+    )
     json.dump(
         apply_verdict(score, cd=cd, regime_report=regime),
         sys.stdout,
