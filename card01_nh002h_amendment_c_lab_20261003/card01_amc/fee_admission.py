@@ -39,7 +39,22 @@ REFUSED_FEE_SOURCES = frozenset({
 
 _ROW_RE = re.compile(r"^\|\s*`([^`]+)`\s*(.*)\|\s*`([0-9a-f]{64})`\s*\|\s*$", re.M)
 _ADOPTED_RE = re.compile(r"(?<!NOT )ADOPTED \(anchor\) by (?:Conductor )?ACCEPT ([0-9a-f]{8,64})")
-_REVOKED_RE = re.compile(r"\b(?:WITHDRAWN|WITHDRAW|REVOKED|SUPERSEDED|NOT ADOPTED|NOT admitted)\b")
+_BLOCK_RE = re.compile(r"\b(?:withdrawn|withdraw|revoked|not adopted|not admitted)\b")
+_SUPERSEDED_RE = re.compile(r"\bsuperseded\b(?! by\b)")
+_BOLD_STATUS_RE = re.compile(
+    r"\*\*\s*(?:withdrawn|withdraw|revoked|superseded|not\s+adopted|not\s+admitted)\s*\*\*",
+    re.IGNORECASE,
+)
+_HEX_TOKEN_RE = re.compile(r"[0-9a-f]{8,64}")
+_RULING_RE = re.compile(r"accept(?:_[a-z0-9]+)*\Z")
+_RULING_STATUS_TOKENS = frozenset({
+    "withdrawn",
+    "withdraw",
+    "revoked",
+    "superseded",
+    "adopted",
+    "admitted",
+})
 _ADMISSION_RE = re.compile(r"^ADMITTED_BY_RULING [0-9a-f]{64}$")
 
 
@@ -128,6 +143,61 @@ def _index_rows(text):
     return rows
 
 
+def _normalize_status(text):
+    return re.sub(r"\s+", " ", text).strip().casefold()
+
+
+def _status_blocks(text):
+    """True when a status word is an exact token after case and whitespace folding.
+
+    Underscore stays inside a token, so DRAFT_NOT_ADOPTED and
+    SUPERSEDED_CHECKER_BUG do not match. A narrative "superseded by <later
+    record>" names a successor and is not a withdrawal of this row. A bold
+    status word still blocks, including **SUPERSEDED** by a later sha.
+    """
+    if not isinstance(text, str) or text == "":
+        return False
+    if _BOLD_STATUS_RE.search(text):
+        return True
+    folded = _normalize_status(text)
+    if _BLOCK_RE.search(folded):
+        return True
+    return _SUPERSEDED_RE.search(folded) is not None
+
+
+def _mentions_sha(row, sha):
+    """True when the row is keyed by sha, or its path or text cites sha."""
+    if not isinstance(sha, str) or len(sha) != 64:
+        return False
+    if row["sha256"] == sha:
+        return True
+    blob = (row["path"] + " " + row["description"]).casefold()
+    target = sha.casefold()
+    if target in blob:
+        return True
+    return any(target.startswith(token) for token in _HEX_TOKEN_RE.findall(blob))
+
+
+def _ruling_is_accept(ruling):
+    """True for the exact token ACCEPT, or ACCEPT plus non-status underscore tokens.
+
+    ACCEPT_THEN_WITHDRAWN is refused. A prefix such as ACCEPTED is refused.
+    """
+    if not isinstance(ruling, str):
+        return False
+    folded = _normalize_status(ruling)
+    if _RULING_RE.fullmatch(folded) is None:
+        return False
+    tokens = folded.split("_")
+    if tokens[0] != "accept":
+        return False
+    if any(token in _RULING_STATUS_TOKENS for token in tokens):
+        return False
+    if "not" in tokens:
+        return False
+    return True
+
+
 def _series_list(names):
     return tuple({"series": name, "series_status": "PINNED"} for name in names)
 
@@ -191,7 +261,7 @@ def admit_fee_source_v2(
     if doc.get("manifest_id") != fee_source_id:
         return _blocked("FEE_SOURCE_REHASH_MISMATCH", "a", "MANIFEST_ID_MISMATCH", **identity)
 
-    if any(_REVOKED_RE.search(row["description"]) for row in anchored):
+    if any(_status_blocks(row["description"]) for row in anchored):
         return _blocked("FEE_SOURCE_STATUS_NOT_ADOPTED", "b", "REVOKED_ROW", **identity)
 
     adopted = []
@@ -218,6 +288,12 @@ def admit_fee_source_v2(
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
     accept_sha = next(iter(cited_shas))
     identity["fee_source_accept_sha256"] = accept_sha
+    watched = (accept_sha, FEE_ATTESTATION_SHA256)
+    if any(
+        _status_blocks(row["description"]) and any(_mentions_sha(row, sha) for sha in watched)
+        for row in rows
+    ):
+        return _blocked("FEE_SOURCE_STATUS_NOT_ADOPTED", "b", "REVOKED_ROW", **identity)
     if sha256_bytes(accept_bytes) != accept_sha:
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
     try:
@@ -225,7 +301,7 @@ def admit_fee_source_v2(
     except json.JSONDecodeError:
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
     ruling = accept_doc.get("ruling") if isinstance(accept_doc, dict) else None
-    if not isinstance(ruling, str) or not ruling.startswith("ACCEPT"):
+    if not _ruling_is_accept(ruling):
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", "NOT_AN_ACCEPT", **identity)
     accepted = accept_doc.get("accepted") if isinstance(accept_doc, dict) else None
     fill_sha = accepted.get("fill_sha256") if isinstance(accepted, dict) else None

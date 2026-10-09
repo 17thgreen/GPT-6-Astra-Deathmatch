@@ -430,7 +430,7 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "230d107346ec55807207266125db8f13c21cfc4c3dbd0afce1e788ca81de56a2",
+   "sha256": "5795d5f0a30cd8ab41bc526432536adc4fa97eaa91b69eb7fd2a50bc4c2adf53",
    "role": "v2 index-only fee admission",
    "vendored": true
   },

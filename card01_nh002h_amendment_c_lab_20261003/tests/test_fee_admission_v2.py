@@ -11,10 +11,12 @@ from pathlib import Path
 
 from card01_amc.entry_gate import gate, gate_v2
 from card01_amc.fee_admission import (
+    FEE_ATTESTATION_SHA256,
     FEE_FORMULA_ID,
     admit_fee_source_v2,
     pinned_entry_v2,
 )
+from card01_amc.swing_stress import evaluate
 from card01_amc.fee_source import FeeBlocked, PinnedEntry, pinned_taker_fee
 from card01_amc.pinload import sha256_bytes
 from tests.support import LAB
@@ -682,6 +684,173 @@ class AdmissionTests(unittest.TestCase):
             self.assertEqual(admission.fee_block_reason, "FEE_ACCEPT_REHASH_MISMATCH")
             self.assertEqual(admission.fee_block_detail, "NOT_AN_ACCEPT")
             self.assertNotEqual(admission.fee_block_reason, "FEE_ACCEPT_MISSING")
+
+    def test_accept_row_withdraw_blocks_without_numbers(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest = sha256_bytes(paths[0].read_bytes())
+            prior = gate_v2(
+                [_row()],
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=digest,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+            self.assertEqual(prior["status"], "OK")
+            accept_sha = prior["fee_source_accept_sha256"]
+            extra = (
+                "| `packets/SYNTH_CONDUCTOR_ACCEPT_FEE_FILL.json` "
+                "(Conductor ACCEPT — **WITHDRAWN** by aa11aa11; not an adoption basis) | `"
+                + accept_sha
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+            out = evaluate(
+                [_row()],
+                prior,
+                "r",
+                "g",
+                "g",
+                fee_source_path=paths[0],
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                fee_source_expected_id=ADMITTED_ID,
+                fee_source_expected_sha256=digest,
+                fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
+            )
+            self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertIsNone(out["rows"])
+            self.assertEqual(out["fee_block_reason"], "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertTrue(_no_fee_numbers(out))
+            gated = gate_v2(
+                [_row()],
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=digest,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+            self.assertIsNone(gated["signals"])
+            self.assertTrue(_no_fee_numbers(gated))
+
+    def test_withdraw_packet_referencing_accept_blocks_without_numbers(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            digest = sha256_bytes(paths[0].read_bytes())
+            prior = gate_v2(
+                [_row()],
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=digest,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+            self.assertEqual(prior["fee_admission"], "ADMITTED_INDEX_ONLY")
+            accept_sha = prior["fee_source_accept_sha256"]
+            packet_sha = "61e571da" + ("ab" * 28)
+            self.assertEqual(len(packet_sha), 64)
+            self.assertFalse(packet_sha.startswith(accept_sha[:8]))
+            extra = (
+                "| `packets/CONDUCTOR_WITHDRAW_ACCEPT_SYNTH.json` "
+                "(Conductor WITHDRAW of ACCEPT "
+                + accept_sha[:8]
+                + ") | `"
+                + packet_sha
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            out = evaluate(
+                [_row()],
+                prior,
+                "r",
+                "g",
+                "g",
+                fee_source_path=paths[0],
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                fee_source_expected_id=ADMITTED_ID,
+                fee_source_expected_sha256=digest,
+                fee_source_expected_accept=accept_sha,
+                fee_source_expected_formula=FEE_FORMULA_ID,
+            )
+            self.assertEqual(out["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertIsNone(out["rows"])
+            self.assertEqual(out["fee_block_reason"], "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertTrue(_no_fee_numbers(out))
+
+    def test_attestation_sha_withdraw_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            extra = (
+                "| `packets/EXAMINER_ATTEST_SYNTH.json` (WITHDRAWN attestation) | `"
+                + FEE_ATTESTATION_SHA256
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+
+    def test_lowercase_withdrawn_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            fee_sha = sha256_bytes(paths[0].read_bytes())
+            extra = (
+                "| `registry/SYNTH_FEE_SOURCE_v2_example.json` (later withdrawn row) | `"
+                + fee_sha
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+
+    def test_double_space_not_adopted_blocks(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            text = paths[2].read_text().replace("ADOPTED (anchor)", "NOT  ADOPTED (anchor)", 1)
+            paths[2].write_text(text)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_SOURCE_STATUS_NOT_ADOPTED")
+            self.assertEqual(admission.fee_block_detail, "REVOKED_ROW")
+
+    def test_accept_then_withdrawn_ruling_refuses(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = _copy_kit(root)
+            accept = json.loads(paths[1].read_bytes())
+            accept["ruling"] = "ACCEPT_THEN_WITHDRAWN"
+            paths[1].write_bytes(json.dumps(accept).encode())
+            doc = json.loads(paths[0].read_bytes())
+            fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+            refused = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertEqual(refused.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(refused.fee_block_reason, "FEE_ACCEPT_REHASH_MISMATCH")
+            self.assertEqual(refused.fee_block_detail, "NOT_AN_ACCEPT")
+            accept["ruling"] = "ACCEPT"
+            paths[1].write_bytes(json.dumps(accept).encode())
+            fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+            admitted = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertEqual(admitted.fee_admission, "ADMITTED_INDEX_ONLY")
+            accept["ruling"] = "ACCEPTED"
+            paths[1].write_bytes(json.dumps(accept).encode())
+            fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+            prefix = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertEqual(prefix.fee_block_detail, "NOT_AN_ACCEPT")
 
     def test_withdrawn_other_sha_and_draft_not_adopted_still_admit(self):
         import tempfile

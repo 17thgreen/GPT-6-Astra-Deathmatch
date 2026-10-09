@@ -267,8 +267,13 @@ These are fixed here so the code does not invent a second reading later.
   is `GATE_NOT_REPRODUCED`, logged on the output, with no fee or net numbers.
   The pair check includes `fee_formula_id`. An index row that is `WITHDRAWN`,
   `WITHDRAW`, `REVOKED`, `SUPERSEDED`, `NOT ADOPTED`, or `NOT admitted`
-  blocks, including a later row for the same sha. An adoption match does not
-  follow the word `NOT`. The ACCEPT file's `ruling` must start with `ACCEPT`.
+  blocks. That includes a later row for the fee sha, a row keyed by the
+  ACCEPT sha or the attestation sha, and a WITHDRAW packet that references
+  either sha. Status words are matched after case-folding and collapsing
+  whitespace, as exact tokens. `DRAFT_NOT_ADOPTED` is not that token. An
+  adoption match does not follow the word `NOT`. The ACCEPT `ruling` must be
+  the exact token `ACCEPT`, or `ACCEPT` plus underscore tokens that are not
+  themselves a status word. `ACCEPT_THEN_WITHDRAWN` is refused.
   A missing, unreadable, or non-UTF-8 fee file is `FEE_SOURCE_UNREADABLE`.
   The verdict takes `fee_state` from the regime report and does not read a
   passed-in gate or pair. The swing net subtracts the recomputed headline.
