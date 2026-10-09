@@ -225,6 +225,7 @@ class PnLHarness(unittest.TestCase):
             "sha256": cls.admission.fee_source_sha256,
             "accept_sha256": cls.admission.fee_source_accept_sha256,
             "fee_formula_id": cls.admission.fee_formula_id,
+            "series_pinned": ["XS1"],
         }
         cls.pin_path = cls.root / "PINS.json"
         cls.pin_path.write_text(json.dumps({"fee_source_v2": cls.pin}), encoding="utf-8")
@@ -2448,6 +2449,349 @@ class PnLHarness(unittest.TestCase):
         self.assertNotIn("ENTRY_BOOK_ANCHOR_OUTSIDE_WINDOW", [item["kind"] for item in bad["reporting_defects"]])
         self.assertEqual(bad["_calls"]["n"], 0)
         self._no_score_numbers(bad)
+
+    def _xs_row(self, series, race="XA-01"):
+        return {
+            "race_id": race,
+            "ticker": "T-" + race,
+            "series": series,
+            "mapping_status": "LEGACY",
+            "p_model": 0.99,
+            "p_market": 0.99,
+            "yes_bid": "0.40",
+            "yes_ask": "0.41",
+            "yes_bid_qty": 10,
+            "yes_ask_qty": 10,
+        }
+
+    def _repinned(self, mutate, series_pinned=None):
+        from tests.test_fee_admission_v2 import _repin
+
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        for src, name in zip(self.paths, ("fee.json", "accept.json", "index.md")):
+            (root / name).write_bytes(Path(src).read_bytes())
+        doc = json.loads((root / "fee.json").read_text(encoding="utf-8"))
+        mutate(doc)
+        fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+        accept_sha = sha256_bytes(accept_path.read_bytes())
+        pin = {
+            "id": self.pin["id"],
+            "sha256": fee_sha,
+            "accept_sha256": accept_sha,
+            "fee_formula_id": self.pin["fee_formula_id"],
+            "series_pinned": ["XS1"] if series_pinned is None else series_pinned,
+        }
+        pin_path = root / "PINS.json"
+        pin_path.write_text(json.dumps({"fee_source_v2": pin}), encoding="utf-8")
+        fee_ctx = {
+            "fee_source_path": str(fee_path),
+            "packet_index_path": str(index_path),
+            "fee_accept_path": str(accept_path),
+        }
+        return root, fee_ctx, pin, pin_path
+
+    def _use_pin(self, pin_path):
+        self.pin_path = pin_path
+        verdict.PINS_PATH = pin_path
+
+    def _blocked_chain(self, root, fee_ctx, pin, rows, series_used):
+        from card01_amc.join_outcomes import join
+        from card01_amc.pnl_cd import make_anchor
+        from card01_amc.regime_split_secondary import build_report
+        from tests.test_regime_split_secondary import _selection
+
+        (root / "rows.json").write_text(json.dumps(rows), encoding="utf-8")
+        settled = {
+            "results": [{
+                "ticker": rows[0]["ticker"],
+                "result": "yes",
+                "settlement_ts": "2000-01-01T00:00:00.000000Z",
+            }],
+        }
+        (root / "settled.json").write_text(json.dumps(settled), encoding="utf-8")
+        (root / "score.json").write_text(json.dumps(_score_dict(-0.01, -0.02)), encoding="utf-8")
+        fee_args = [
+            "--fee-source", fee_ctx["fee_source_path"],
+            "--packet-index", fee_ctx["packet_index_path"],
+            "--fee-accept", fee_ctx["fee_accept_path"],
+        ]
+        gated = self._run_module(root, "entry_gate", [
+            str(root / "rows.json"),
+            "--fee-source-id", pin["id"],
+            "--fee-source-sha256", pin["sha256"],
+            *fee_args,
+        ])
+        gate_path = root / "gate-blocked.json"
+        gate_path.write_text(gated.stdout, encoding="utf-8")
+        gate = json.loads(gated.stdout)
+        report = build_report(
+            join(rows, settled)["rows"],
+            gate=gate,
+            selection=_selection(),
+            settled=settled,
+            fee_source_path=fee_ctx["fee_source_path"],
+            fee_source_id=pin["id"],
+            fee_source_sha256=pin["sha256"],
+            packet_index_path=fee_ctx["packet_index_path"],
+            fee_accept_path=fee_ctx["fee_accept_path"],
+            series_used=series_used,
+        )
+        report_path = root / "regime-blocked.json"
+        report_path.write_text(json.dumps(report), encoding="utf-8")
+        book = root / "book-blocked.json"
+        self._run_module(root, "pnl_cd", [
+            "entry-book", "--gate", str(gate_path), *fee_args, "--out", str(book),
+        ])
+        anchor = make_anchor(
+            book.read_bytes(),
+            gate_sha256=sha256_bytes(gate_path.read_bytes()),
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+        anchor_path = root / "anchor-blocked.json"
+        anchor_path.write_text(json.dumps(anchor), encoding="utf-8")
+        prc_path = root / "prc-blocked.json"
+        self._run_module(root, "pnl_cd", [
+            "score",
+            "--gate", str(gate_path),
+            "--rows", str(root / "rows.json"),
+            "--entry-book", str(book),
+            "--entry-book-anchor", str(anchor_path),
+            "--settled-results", str(root / "settled.json"),
+            *fee_args,
+            "--out", str(prc_path),
+        ])
+        return gate_path, prc_path, report_path, gate, report
+
+    def test_h_a2_unpinned_series_blocks_disk_and_stays_forecast_only(self):
+        root, fee_ctx, pin, pin_path = self._repinned(lambda doc: doc["series"].pop("XS2", None))
+        self._use_pin(pin_path)
+        rows = [self._xs_row("XS2")]
+        gate_path, prc_path, report_path, gate, report = self._blocked_chain(
+            root, fee_ctx, pin, rows, ["XS2"],
+        )
+        self.assertEqual(gate.get("status"), "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(gate.get("signals"))
+        self.assertEqual(gate.get("fee_block_reason"), "SERIES_NOT_PINNED")
+        self.assertEqual(gate.get("blocked_series"), ["XS2"])
+        state = verdict.disk_fee_state(gate, fee_ctx)
+        self.assertFalse(state["admitted"])
+        self.assertEqual(state["reason"], "SERIES_NOT_PINNED")
+        self.assertFalse(verdict._disk_files_admit(fee_ctx, gate))
+        self.assertEqual(report["fee_admission"]["fee_block_reason"], "SERIES_NOT_PINNED")
+        produced = self._verdict_bound(
+            root, gate=gate_path, prc=prc_path, regime=report_path, fee_ctx=fee_ctx,
+        )
+        self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+        self.assertEqual(produced["fee_block_reason"], "SERIES_NOT_PINNED")
+        self.assertNotEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+
+    def test_h_a2_pinned_list_blocks_without_gate(self):
+        def unpin(doc):
+            doc["series"]["XS1"]["series_status"] = "NOT_PINNED"
+
+        _root, fee_ctx, _pin, pin_path = self._repinned(unpin)
+        self._use_pin(pin_path)
+        absent = verdict.disk_fee_state(None, fee_ctx)
+        self.assertFalse(absent["admitted"])
+        self.assertEqual(absent["reason"], "SERIES_NOT_PINNED")
+        self.assertFalse(verdict._disk_files_admit(fee_ctx, None))
+        empty = {
+            "status": "OK",
+            "signals": [],
+            "fee_admission": "ADMITTED_INDEX_ONLY",
+            "fee_source_sha256": _pin["sha256"],
+            "fee_source_accept_sha256": _pin["accept_sha256"],
+            "fee_formula_id": _pin["fee_formula_id"],
+        }
+        stated = verdict.disk_fee_state(empty, fee_ctx)
+        self.assertFalse(stated["admitted"])
+        self.assertEqual(stated["reason"], "SERIES_NOT_PINNED")
+        self.assertFalse(verdict._disk_files_admit(fee_ctx, empty))
+
+    def test_h_a2_series_pinned_fail_closed(self):
+        variants = [
+            {key: value for key, value in self.pin.items() if key != "series_pinned"},
+            {**self.pin, "series_pinned": []},
+            {**self.pin, "series_pinned": ["XS1", "XS1"]},
+            {**self.pin, "series_pinned": ["XS1", 2]},
+            {**self.pin, "series_pinned": [""]},
+            {**self.pin, "series_pinned": "XS1"},
+        ]
+        for index, block in enumerate(variants):
+            path = self.root / ("bad-pin-" + str(index) + ".json")
+            path.write_text(json.dumps({"fee_source_v2": block}), encoding="utf-8")
+            self.assertIsNone(verdict.load_fee_source_v2(path), index)
+            verdict.PINS_PATH = path
+            state = verdict.disk_fee_state(None, self.fee_ctx)
+            self.assertFalse(state["admitted"], index)
+            self.assertEqual(state["reason"], "FEE_SOURCE_PAIR_MISSING", index)
+
+    def test_h_a2_honest_cases_unchanged(self):
+        for case in FIXTURES["cases"]:
+            out = self._run(case["id"])
+            exp = EXPECTED["cases"][case["id"]]
+            self.assertEqual(out["status"], exp["status"], case["id"])
+            self.assertEqual(out.get("entry_table_sha256"), exp["entry_table_sha256"], case["id"])
+            self.assertEqual(out.get("reject_c"), exp["reject_c"], case["id"])
+            self.assertEqual(out.get("reject_d"), exp["reject_d"], case["id"])
+        clean = self._run("P1_CLEAN")
+        self.assertEqual(
+            clean["entry_table_sha256"],
+            "ce2d2c694cee99dd6fce14d0a990cb20529e3ec1b046e28e826767c13887174f",
+        )
+
+    def test_h_a2_taker_rate_mismatch_from_disk(self):
+        def clear_rate(doc):
+            doc["series"]["XS1"]["taker_rate"] = None
+
+        _root, fee_ctx, _pin, pin_path = self._repinned(clear_rate)
+        self._use_pin(pin_path)
+        state = verdict.disk_fee_state(None, fee_ctx)
+        self.assertFalse(state["admitted"])
+        self.assertEqual(state["reason"], "TAKER_RATE_MISMATCH")
+        self.assertFalse(verdict._disk_files_admit(fee_ctx, None))
+
+    def _citation_index(self, root, name, mark):
+        original = Path(self.fee_ctx["packet_index_path"]).read_text(encoding="utf-8")
+        path = root / name
+        path.write_text(original + "\nSYNTHETIC row cites 2c870cd5 " + mark + "\n", encoding="utf-8")
+        return path
+
+    def _identity_cases(self, root, gate_path, prc_path, report_path, fee_ctx):
+        specs = (
+            ("report", None, None, report_path),
+            ("prc", None, prc_path, None),
+            ("chain", gate_path, prc_path, report_path),
+        )
+        found = []
+        for name, gate, prc, regime in specs:
+            produced = self._verdict_bound(
+                root, gate=gate, prc=prc, regime=regime, fee_ctx=fee_ctx,
+            )
+            found.append((name, produced))
+        return found
+
+    def test_h_n1_wrong_index_on_different_path_is_full(self):
+        root = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(root, ignore_errors=True))
+        index_a = self._citation_index(root, "index-a.md", "edit-a")
+        built = dict(self.fee_ctx)
+        built["packet_index_path"] = str(index_a)
+        gate_path, prc_path, report_path, gate, report = self._blocked_chain(
+            root, built, self.pin, [self._xs_row("XS1")], ["XS1"],
+        )
+        self.assertEqual(gate.get("fee_block_reason"), "FEE_CITATIONS_CHANGED")
+        self.assertEqual(report["fee_admission"]["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        v1_path = LAB / "tests" / "fixtures" / "SYNTH_FEE_SOURCE_v1_example.json"
+        unrelated = root / "unrelated-accept.txt"
+        unrelated.write_text("not an accept\n", encoding="utf-8")
+        swapped = dict(self.fee_ctx)
+        swapped["fee_source_path"] = self.fee_ctx["fee_accept_path"]
+        swapped["fee_accept_path"] = self.fee_ctx["fee_source_path"]
+        v1_ctx = dict(self.fee_ctx)
+        v1_ctx["fee_source_path"] = str(v1_path)
+        unrelated_ctx = dict(self.fee_ctx)
+        unrelated_ctx["fee_accept_path"] = str(unrelated)
+        for name, fee_ctx in (
+            ("v1_fee_source", v1_ctx),
+            ("swapped_source_and_accept", swapped),
+            ("unrelated_accept", unrelated_ctx),
+        ):
+            for label, produced in self._identity_cases(root, gate_path, prc_path, report_path, fee_ctx):
+                self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name + " " + label)
+                self.assertEqual(produced["binding_reason"], "DISK_INPUT_FEE_IDENTITY_MISMATCH", name + " " + label)
+                self.assertNotIn("PASS-FORECAST", produced["verdict"], name + " " + label)
+                self.assertTrue(produced.get("binding_detail"), name + " " + label)
+
+    def test_h_n1_other_citation_index_is_full(self):
+        root = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(root, ignore_errors=True))
+        index_a = self._citation_index(root, "index-a.md", "edit-a")
+        index_b = self._citation_index(root, "index-b.md", "edit-b")
+        built = dict(self.fee_ctx)
+        built["packet_index_path"] = str(index_a)
+        gate_path, prc_path, report_path, _gate, _report = self._blocked_chain(
+            root, built, self.pin, [self._xs_row("XS1")], ["XS1"],
+        )
+        judged = dict(self.fee_ctx)
+        judged["packet_index_path"] = str(index_b)
+        for label, produced in self._identity_cases(root, gate_path, prc_path, report_path, judged):
+            self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", label)
+            self.assertEqual(produced["binding_reason"], "DISK_INPUT_FEE_IDENTITY_MISMATCH", label)
+            self.assertNotIn("PASS-FORECAST", produced["verdict"], label)
+
+    def test_h_n1_own_files_stay_forecast_only(self):
+        root = Path(tempfile.mkdtemp())
+        self.addCleanup(lambda: __import__("shutil").rmtree(root, ignore_errors=True))
+        specs = []
+        index_a = self._citation_index(root, "index-own.md", "own")
+        cited = dict(self.fee_ctx)
+        cited["packet_index_path"] = str(index_a)
+        specs.append(("FEE_CITATIONS_CHANGED", cited, self.pin, self.pin_path, [self._xs_row("XS1")], ["XS1"]))
+        rehash = dict(self.fee_ctx)
+        bad_fee = root / "rehash-fee.json"
+        bad_fee.write_text("{}\n", encoding="utf-8")
+        rehash["fee_source_path"] = str(bad_fee)
+        specs.append(("FEE_SOURCE_REHASH_MISMATCH", rehash, self.pin, self.pin_path, [self._xs_row("XS1")], ["XS1"]))
+        accept_bad = dict(self.fee_ctx)
+        bad_accept = root / "rehash-accept.json"
+        bad_accept.write_text("not-the-accept\n", encoding="utf-8")
+        accept_bad["fee_accept_path"] = str(bad_accept)
+        specs.append(("FEE_ACCEPT_REHASH_MISMATCH", accept_bad, self.pin, self.pin_path, [self._xs_row("XS1")], ["XS1"]))
+        series_root, series_ctx, series_pin, series_pins = self._repinned(
+            lambda doc: doc["series"].pop("XS2", None)
+        )
+        specs.append(("SERIES_NOT_PINNED", series_ctx, series_pin, series_pins, [self._xs_row("XS2")], ["XS2"]))
+        for reason, fee_ctx, pin, pin_path, rows, used in specs:
+            self._use_pin(pin_path)
+            case_root = root / reason
+            case_root.mkdir()
+            gate_path, prc_path, report_path, gate, report = self._blocked_chain(
+                case_root, fee_ctx, pin, rows, used,
+            )
+            self.assertEqual(gate.get("fee_block_reason"), reason, reason)
+            self.assertEqual(report["fee_admission"]["fee_block_reason"], reason, reason)
+            produced = self._verdict_bound(
+                case_root, gate=gate_path, prc=prc_path, regime=report_path, fee_ctx=fee_ctx,
+            )
+            self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"), reason + " " + produced["verdict"])
+            self.assertEqual(produced["fee_block_reason"], reason, reason)
+            self.assertNotEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", reason)
+
+    def test_h_n1_honest_triple_still_rejects_d(self):
+        root, full, _sub, _blocked, honest = self._examiner_world()
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        self.assertEqual(full["status"], "OK")
+        self.assertIs(full["reject_c"], False)
+        self.assertIs(full["reject_d"], True)
+        produced = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=root / "prc-full5.json",
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(produced["verdict"], "REJECT")
+        self.assertIn("(d)", produced["firing"])
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+
+
+class FeeClassLabelTests(unittest.TestCase):
+    def test_h_n2_added_labels_are_fee_class(self):
+        from card01_amc.verdict import _is_fee_class_reason
+
+        for label in ("SERIES_NOT_PINNED", "HEADLINE_SCOPE_MISMATCH", "TAKER_RATE_MISMATCH"):
+            self.assertTrue(_is_fee_class_reason(label), label)
+        for label in (
+            "BLOCKED_FEE_UNVERIFIED",
+            "GATE_NOT_REPRODUCED",
+            "ENTRY_BOOK_EMPTY",
+            "ENTRY_BOOK_ABSENT",
+            "ENTRY_BOOK_ANCHOR_INVALID",
+            "ENTRY_ROW_BOOK_MISSING",
+        ):
+            self.assertFalse(_is_fee_class_reason(label), label)
 
 
 if __name__ == "__main__":
