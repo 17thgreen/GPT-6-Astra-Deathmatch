@@ -169,6 +169,34 @@ class NFollowup(unittest.TestCase):
                 [{"kind": "quote", "ticker": "T-X", "at": instant + 60, "asof": instant, "bid": 0.4, "ask": 0.42}]
             )
 
+    def test_n3_malformed_at_inside_headline_sweep_skips_builder(self):
+        """A size>=1000 group with a bad trade time must not reach the sweep builder."""
+        quote = {"kind": "quote", "ticker": "T-X", "at": 120, "asof": 60, "bid": 0.4, "ask": 0.42}
+        for bad in (float("nan"), float("inf"), "not-a-time", None):
+            rows = [
+                dict(quote),
+                {"ticker": "T-X", "at": 50.5, "taker_side": "no", "size": 1000.0},
+                {"ticker": "T-X", "at": bad, "taker_side": "yes", "size": 1000.0},
+                {"ticker": "T-X", "at": bad, "taker_side": "yes", "size": 1.0},
+            ]
+            gate = structure_gate(rows)
+            self.assertFalse(gate["pass"])
+            self.assertEqual(gate["reason"], "STRUCTURE_TIMESTAMP_MALFORMED")
+            with mock.patch("ext2k1.report.build_sweeps", side_effect=AssertionError("builder")) as sweeps:
+                with mock.patch("ext2k1.quotes.QuoteBook", side_effect=AssertionError("mid")) as book:
+                    receipt, document, body = _score(rows, BUILDER_SHA256)
+            sweeps.assert_not_called()
+            book.assert_not_called()
+            self.assertEqual(document["sweeps"], [])
+            self.assertEqual(receipt["structure_gate"]["reason"], "STRUCTURE_TIMESTAMP_MALFORMED")
+            published = published_results(body)
+            verdict = published["verdict_table_evaluation"]
+            self.assertEqual(verdict["verdict"], "INCONCLUSIVE(STRUCTURE)")
+            self.assertEqual(verdict["rule"], "V1s")
+            self.assertEqual(verdict["reason"], "STRUCTURE_TIMESTAMP_MALFORMED")
+            for key in _METRIC_KEYS:
+                self.assertNotIn(key, published)
+
 
 if __name__ == "__main__":
     unittest.main()

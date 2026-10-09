@@ -28,7 +28,7 @@
   "kit_defaults_frozen_at_kit_values": ["KD-5", "KD-6", "KD-7", "KD-19"],
   "modules": [
     {"path": "ext2k1/__init__.py", "sha256": "365d7216128b64be9b7e53930ad2f7b38017bac1217067e3c6dd28a692b9251e", "role": "package identity", "vendored": false},
-    {"path": "ext2k1/__main__.py", "sha256": "a2847eb2374ba2060f96e7017d3ff09b928249d5799f31ec13ee4548de435044", "role": "CLI receipt and score", "vendored": false},
+    {"path": "ext2k1/__main__.py", "sha256": "7f940a95f25bf8828137893e563502170253eb7a2fb604cd1098f19d47bd016a", "role": "CLI receipt and score", "vendored": false},
     {"path": "ext2k1/b2join.py", "sha256": "f7747990b21163164027a5a6b3a972bab50df95a56f95f9aca5c280a5d82540c", "role": "R18 maker-fill join", "vendored": false},
     {"path": "ext2k1/bootstrap.py", "sha256": "da895b71f1a25dd38da2a5b22e5f5e7131aafdd179c73f0d1b212808377aefba", "role": "game-cluster bootstrap", "vendored": false},
     {"path": "ext2k1/canonical.py", "sha256": "0434a72a4f5fd665b7a97a43d780003d22b7ae13b42acbad57af4b2741f8f927", "role": "canonical JSON", "vendored": false},
@@ -41,7 +41,7 @@
     {"path": "ext2k1/placebo.py", "sha256": "f9a972c433a9fba340b02aeb02391ed662dac67ff2196c978d83c6233f092dae", "role": "label permutation", "vendored": false},
     {"path": "ext2k1/quotes.py", "sha256": "9b3d4cddbf7ee5991ecb9e30c96aed6a02edf5a06763d6f378a54cc96aba84fd", "role": "quote mids and per-sweep status", "vendored": false},
     {"path": "ext2k1/refusals.py", "sha256": "42b8eaa663f465dcf77b723f5fc967b6071e9ab476f94c2e3edcb90c87cdd672", "role": "clock, holdout, and path refusals", "vendored": false},
-    {"path": "ext2k1/report.py", "sha256": "1a593d51748bc13486be451c9a71561af06b25637181c8edfa9c076f06ff6509", "role": "receipt and results assembly", "vendored": false},
+    {"path": "ext2k1/report.py", "sha256": "b3f5500228f98698af5b31882f8fcfdd3df3ba99693141e2d8c05d004a787aa1", "role": "receipt and results assembly", "vendored": false},
     {"path": "ext2k1/sweeps.py", "sha256": "1b69d7e3ba4116318c7d3ca93e4ec5f77c6f3bb953e5f11d8e0184f47e8de6c7", "role": "sweep grouping", "vendored": false},
     {"path": "ext2k1/tape.py", "sha256": "78451f4f945c8309eca9622f961d0ba0b10e6a14db4f74ca487f31aa3e00a3fa", "role": "gzip jsonl stream", "vendored": false},
     {"path": "ext2k1/verdict.py", "sha256": "9d694a516fd78a5ba4bd72c920ca4e6abf177bc4a8c7739ac0ccc7204c463fc4", "role": "verdict table", "vendored": false}

@@ -19,7 +19,12 @@ from .constants import (
     RECEIPT_SCHEMA,
     REPORTING_DEFECT,
     SAMPLER_STRING,
+    SWEEP_KEY,
+    SWEEP_ORDER,
+    SWEEPS_SCHEMA,
     TAGS,
+    THRESHOLD_HEADLINE,
+    THRESHOLD_S5K,
 )
 from .fees import admission
 from .gates import builder_receipt, count_gate, structure_gate
@@ -48,6 +53,23 @@ def _public(mapping):
     return {key: value for key, value in mapping.items() if not str(key).startswith("_")}
 
 
+def _unbuilt_sweeps_document():
+    """KD-1 shell with no sweeps. Used only when the structure gate rejected a timestamp."""
+    return {
+        "schema": SWEEPS_SCHEMA,
+        "threshold_headline": THRESHOLD_HEADLINE,
+        "threshold_s5k": THRESHOLD_S5K,
+        "key": list(SWEEP_KEY),
+        "order": list(SWEEP_ORDER),
+        "sweeps": [],
+    }
+
+
+def structure_timestamp_malformed(receipt_or_gate):
+    gate = receipt_or_gate.get("structure_gate", receipt_or_gate)
+    return gate.get("reason") == "STRUCTURE_TIMESTAMP_MALFORMED"
+
+
 def build_receipt(
     rows,
     markets,
@@ -65,7 +87,10 @@ def build_receipt(
     counted = count_gate(rows, markets, week_membership, pins)
     builder = builder_receipt(builder_sha256, pins.builder_expected_sha256, BUILDER_RELATIVE_PATH)
     structure = structure_gate(rows)
-    document = build_sweeps(rows, markets)
+    if structure_timestamp_malformed(structure):
+        document = _unbuilt_sweeps_document()
+    else:
+        document = build_sweeps(rows, markets)
     events = _events(week_membership)
     sweeps = document["sweeps"]
     no_count = sum(1 for sweep in sweeps if sweep["d"] == -1)

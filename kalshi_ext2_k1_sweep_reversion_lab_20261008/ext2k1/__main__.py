@@ -16,7 +16,13 @@ from .pins_io import (
     sweeps_module_sha256,
     verify_run_pins,
 )
-from .report import body_if_sweeps_sha_differs, build_receipt, build_results, published_results
+from .report import (
+    body_if_sweeps_sha_differs,
+    build_receipt,
+    build_results,
+    published_results,
+    structure_timestamp_malformed,
+)
 from .tape import iter_jsonl_gz, load_jsonl_gz
 
 
@@ -118,16 +124,18 @@ def cmd_score(receipt_path, receipt_sha, out_dir):
         source_pins=checked,
         sweeps_module_sha256=module_sha,
     )
-    mismatch = body_if_sweeps_sha_differs(receipt, payload.get("sweeps_sha256"), read_git_commit())
-    if mismatch is not None:
-        destination = Path(out_dir)
-        destination.mkdir(parents=True, exist_ok=True)
-        published = published_results(mismatch)
-        _write(destination / "RESULTS.json", published)
-        print("output_sha256 " + published["output_sha256"])
-        return 0
-    if _gates_ok(payload) != _gates_ok(receipt):
-        return _fail("RECEIPT_NOT_VERIFIED")
+    # A malformed trade time is V1s. Do not build sweeps, and do not refuse with no output.
+    if not structure_timestamp_malformed(receipt):
+        mismatch = body_if_sweeps_sha_differs(receipt, payload.get("sweeps_sha256"), read_git_commit())
+        if mismatch is not None:
+            destination = Path(out_dir)
+            destination.mkdir(parents=True, exist_ok=True)
+            published = published_results(mismatch)
+            _write(destination / "RESULTS.json", published)
+            print("output_sha256 " + published["output_sha256"])
+            return 0
+        if _gates_ok(payload) != _gates_ok(receipt):
+            return _fail("RECEIPT_NOT_VERIFIED")
     b2_rows = None
     if _gates_ok(receipt):
         b2_path = REPO_ROOT / entry_by_role(checked, "B2 000 fills")["path"]
