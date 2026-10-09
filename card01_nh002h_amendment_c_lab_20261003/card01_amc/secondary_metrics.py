@@ -169,8 +169,8 @@ def headline_quote(entry, price):
     return quoted["headline"], quoted["raw"]
 
 
-def fee_views(signals, rows_by_id, entry):
-    """HEADLINE and FEES_2X nets, plus GROSS. No sensitivity column."""
+def fee_views(signals, rows_by_id, entries):
+    """HEADLINE and FEES_2X nets, plus GROSS. One pinned entry per series."""
     per_signal = []
     totals = {
         "gross": Decimal(0),
@@ -183,7 +183,7 @@ def fee_views(signals, rows_by_id, entry):
     for signal in signals:
         row = rows_by_id.get(signal.get("race_id")) or {}
         price = _money(signal.get("price"))
-        headline, raw = headline_quote(entry, price)
+        headline, raw = headline_quote(entries[signal.get("series")], price)
         declared = signal.get("fee_decimal")
         if declared is not None and _money(declared) != headline:
             defects.append({"kind": "FEE_RECOMPUTE_MISMATCH", "status": "REPORTING_DEFECT"})

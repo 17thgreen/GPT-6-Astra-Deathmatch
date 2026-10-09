@@ -15,7 +15,7 @@ from card01_amc.fee_admission import (
     admit_fee_source_v2,
     pinned_entry_v2,
 )
-from card01_amc.fee_source import PinnedEntry, pinned_taker_fee
+from card01_amc.fee_source import FeeBlocked, PinnedEntry, pinned_taker_fee
 from card01_amc.pinload import sha256_bytes
 from tests.support import LAB
 
@@ -582,6 +582,60 @@ class AdmissionTests(unittest.TestCase):
                     banned.append((name, func.attr, node.lineno))
         self.assertEqual(banned, [])
 
+    def test_same_accept_sha_on_two_rows_admits(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            text = paths[2].read_text()
+            accept_lines = [line for line in text.splitlines() if "CONDUCTOR_ACCEPT" in line]
+            self.assertEqual(len(accept_lines), 1)
+            paths[2].write_text(text + accept_lines[0] + "\n")
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "ADMITTED_INDEX_ONLY")
+            self.assertEqual(len(admission.fee_source_accept_sha256), 64)
+
+    def test_conflicting_accept_shas_block_as_rehash_mismatch(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            other = "76233683" + ("ab" * 28)
+            self.assertEqual(len(other), 64)
+            extra = (
+                "| `packets/OTHER_CONDUCTOR_ACCEPT.json` (second fill ACCEPT) | `"
+                + other
+                + "` |\n"
+            )
+            paths[2].write_text(paths[2].read_text() + extra)
+            admission = _admit(paths)
+            self.assertEqual(admission.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(admission.fee_block_reason, "FEE_ACCEPT_REHASH_MISMATCH")
+            self.assertNotEqual(admission.fee_block_reason, "FEE_ACCEPT_MISSING")
+            self.assertEqual(admission.amendment_check_failed, "b")
+
+    def test_missing_taker_rate_blocks_without_keyerror(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            doc = json.loads((FIXTURES / FEE_NAME).read_bytes())
+            del doc["series"]["XS1"]["taker_rate"]
+            fee_path, accept_path, index_path, fee_sha = _repin(root, doc)
+            admission = _admit((fee_path, accept_path, index_path), fee_sha=fee_sha)
+            self.assertTrue(admission.admitted)
+            with self.assertRaises(FeeBlocked) as caught:
+                pinned_entry_v2(admission, "XS1")
+            self.assertEqual(caught.exception.reason, "TAKER_RATE_MISMATCH")
+            gated = gate_v2(
+                [_row()],
+                fee_source_path=fee_path,
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=fee_sha,
+                packet_index_path=index_path,
+                fee_accept_path=accept_path,
+            )
+            self.assertEqual(gated["status"], "BLOCKED_FEE_UNVERIFIED")
+            self.assertEqual(gated["fee_block_reason"], "TAKER_RATE_MISMATCH")
+            self.assertIsNone(gated["signals"])
+
     def test_t20_real_when_env_set(self):
         real = os.environ.get("CARD01_R1_REAL_FEE_DIR")
         if not real:
@@ -608,6 +662,33 @@ class AdmissionTests(unittest.TestCase):
             (Decimal("0.077"), Decimal("0.013")),
         ):
             self.assertEqual(pinned_taker_fee(entry, price)["headline"], headline)
+
+    def test_t20_real_index_sha_before_use(self):
+        real = os.environ.get("CARD01_R1_REAL_FEE_DIR")
+        if not real:
+            self.skipTest("CARD01_R1_REAL_FEE_DIR is unset")
+        root = Path(real)
+        index_path = root / "PACKET_INDEX.md"
+        fee_path = root / "fee.json"
+        accept_path = root / "accept.json"
+        if not index_path.is_file() or not fee_path.is_file() or not accept_path.is_file():
+            self.skipTest("runtime fee index is absent")
+        digest = sha256_bytes(index_path.read_bytes())
+        self.assertEqual(
+            digest,
+            "4a1ceb4b036b45914d5c0a0b7f6eeac9efb208f7792f99423acbeaf852587dfe",
+        )
+        pins = json.loads((LAB / "PINS.json").read_text())["fee_source_v2"]
+        admission = admit_fee_source_v2(
+            fee_source_path=fee_path,
+            fee_source_id=pins["id"],
+            fee_source_sha256=pins["sha256"],
+            packet_index_path=index_path,
+            fee_accept_path=accept_path,
+            series_used=["KXHOUSERACE"],
+        )
+        self.assertEqual(admission.fee_admission, "ADMITTED_INDEX_ONLY")
+        self.assertEqual(admission.packet_index_sha256_at_run, digest)
 
 
 if __name__ == "__main__":

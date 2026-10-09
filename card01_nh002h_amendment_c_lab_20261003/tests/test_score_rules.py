@@ -186,41 +186,40 @@ class VerdictTests(unittest.TestCase):
         self.assertTrue(verdict["evaluations"]["pass_i"])
         self.assertTrue(verdict["evaluations"]["reject_b"])
 
-    def _pair(self):
-        return ("FEE_SOURCE_CARD01_v1", "ab" * 32)
+    def _sha(self):
+        return "11" * 32
+
+    def _accept(self):
+        return "22" * 32
 
     def _gate(self):
-        fee_id, digest = self._pair()
         return {
             "status": "OK",
-            "fee_source": fee_id,
+            "fee_admission": "ADMITTED_INDEX_ONLY",
+            "adoption_mode": "INDEX_ONLY",
+            "fee_formula_id": "astra.card01.fee_eff.non_direct_buy_ceil_cent.v1",
+            "fee_source": "FEE_SOURCE_SYNTH_v2",
+            "fee_source_sha256": self._sha(),
+            "fee_source_accept_sha256": self._accept(),
+        }
+
+    def _legacy(self):
+        digest = "ab" * 32
+        return {
+            "status": "OK",
+            "fee_source": "SYNTH_V1_GATE",
             "fee_source_sha256": digest,
             "fee_attest_verdict": "ATTEST_PASS",
             "fee_attest_fee_source_sha256": digest,
-        }
-
-    def _attestation(self, series_status="PINNED", digest=None):
-        from card01_amc.fee_source import CONDUCTOR_ACCEPT_SHA256
-        fee_id, default_digest = self._pair()
-        return {
-            "fee_source": fee_id,
-            "fee_source_sha256": default_digest if digest is None else digest,
-            "rehash_ok": True,
-            "packet_index_anchor_ok": True,
-            "status": "ADOPTED",
-            "conductor_accept_sha256": CONDUCTOR_ACCEPT_SHA256,
-            "series": [{"series": "KXHOUSERACE", "series_status": series_status}],
-            "examiner": "synthetic-examiner",
-            "time": "2026-11-03T00:00:00Z",
         }
 
     def _admitted(self, score, cd=None, **kwargs):
         return apply_verdict(
             score,
             gate=self._gate(),
-            attestation=self._attestation(),
             cd=cd,
-            expected_fee_source=self._pair(),
+            expected_fee_sha256=self._sha(),
+            expected_accept_sha256=self._accept(),
             **kwargs,
         )
 
@@ -241,9 +240,9 @@ class VerdictTests(unittest.TestCase):
             degenerate,
             validity={"licence_gate": "REFUSED"},
             gate=self._gate(),
-            attestation=self._attestation(),
             cd={"n_signals": 0, "reject_c": None, "reject_d": None},
-            expected_fee_source=self._pair(),
+            expected_fee_sha256=self._sha(),
+            expected_accept_sha256=self._accept(),
         )
         self.assertEqual(void["verdict"], "VOID")
         self.assertEqual(void["reason"], "LICENCE_GATE_REFUSED")
@@ -318,42 +317,53 @@ class VerdictTests(unittest.TestCase):
 
         missing = apply_verdict(
             self._score(-0.01, -0.02),
-            gate=self._gate(),
-            expected_fee_source=self._pair(),
+            gate=self._legacy(),
+            expected_fee_sha256="ab" * 32,
+            expected_accept_sha256="22" * 32,
         )
         self.assertEqual(missing["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(missing["fee_block_reason"], "FEE_ADMISSION_MISSING")
         self.assertNotIn("FEE_ATTESTATION_MISSING", missing["notes"])
         self.assertEqual(missing["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
+        attested = dict(self._legacy())
+        attested["fee_source_attestation"] = {
+            "rehash_ok": True,
+            "series": [{"series": "KXHOUSERACE", "series_status": "PINNED"}],
+            "status": "ADOPTED",
+        }
         wrong = apply_verdict(
             self._score(-0.01, -0.02),
-            gate=self._gate(),
-            attestation=self._attestation(digest="cd" * 32),
+            gate=attested,
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
-            expected_fee_source=self._pair(),
+            expected_fee_sha256="ab" * 32,
+            expected_accept_sha256="22" * 32,
         )
         self.assertEqual(wrong["fee_state"], "BLOCKED_FEE_UNVERIFIED")
         self.assertNotIn("FEE_ATTESTATION_MISSING", wrong["notes"])
 
+        refused = "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd"
+        v1 = self._gate()
+        v1["fee_source"] = "FEE_SOURCE_CARD01_v1"
+        v1["fee_source_sha256"] = refused
         unpinned = apply_verdict(
             self._score(-0.01, -0.02),
-            gate=self._gate(),
-            attestation=self._attestation(series_status="BLOCKED_FEE_UNVERIFIED"),
+            gate=v1,
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
-            expected_fee_source=self._pair(),
+            expected_fee_sha256=refused,
+            expected_accept_sha256=self._accept(),
         )
         self.assertEqual(unpinned["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(unpinned["fee_block_reason"], "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
         self.assertEqual(unpinned["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")
 
-        bare = self._gate()
-        bare.pop("fee_attest_verdict")
-        bare.pop("fee_attest_fee_source_sha256")
         alone = apply_verdict(
             self._score(-0.01, -0.02),
-            gate=bare,
-            attestation=self._attestation(),
+            gate=self._legacy(),
+            attestation={"verdict": "ATTEST_PASS", "fee_source_sha256": "ab" * 32},
             cd={"n_signals": 2, "reject_c": False, "reject_d": False},
-            expected_fee_source=self._pair(),
+            expected_fee_sha256="ab" * 32,
+            expected_accept_sha256="22" * 32,
         )
         self.assertEqual(alone["fee_state"], "BLOCKED_FEE_UNVERIFIED")
         self.assertEqual(alone["verdict"], "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST")

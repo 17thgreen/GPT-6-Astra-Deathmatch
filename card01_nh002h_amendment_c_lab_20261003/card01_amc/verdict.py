@@ -11,7 +11,7 @@ import json
 import sys
 from pathlib import Path
 
-from card01_amc.fee_source import CONDUCTOR_ACCEPT_SHA256, FEE_SOURCE_ID, FEE_SOURCE_SHA256
+from card01_amc.fee_admission import REFUSED_FEE_SOURCES
 
 PASS_FORECAST = "FORECAST_ONLY_FEE_BLOCKED: PASS-FORECAST"
 REJECT_FORECAST = "FORECAST_ONLY_FEE_BLOCKED: REJECT"
@@ -49,82 +49,45 @@ def _degenerate_from(score):
     return None
 
 
-def _is_v2_gate(gate) -> bool:
-    return isinstance(gate, dict) and (
-        "fee_admission" in gate or "adoption_mode" in gate or "fee_formula_id" in gate
-    )
-
-
-def _attest_reason(gate):
-    verdict = gate.get("fee_attest_verdict")
-    recorded = gate.get("fee_attest_fee_source_sha256")
-    if verdict is None and recorded is None:
-        return "FEE_ATTEST_ABSENT"
-    if recorded != gate.get("fee_source_sha256"):
-        return "FEE_ATTEST_SHA_MISMATCH"
-    if verdict != "ATTEST_PASS":
-        return "FEE_ATTEST_NOT_PASS"
-    return None
-
-
 def _blocked(notes, reason):
     return "BLOCKED_FEE_UNVERIFIED", notes, reason
 
 
-def _fee_state(gate, attestation, expected, expected_formula):
+def _refused(gate, expected_sha) -> bool:
+    values = []
+    if isinstance(gate, dict):
+        values.append(gate.get("fee_source"))
+        values.append(gate.get("fee_source_sha256"))
+    if expected_sha is not None:
+        values.append(expected_sha)
+    return any(item in REFUSED_FEE_SOURCES for item in values)
+
+
+def _fee_state(gate, expected_sha, expected_accept):
     """Return fee_state, notes, and fee_block_reason.
 
-    A v2 gate (fee_admission, adoption_mode, or fee_formula_id) computes only
-    when fee_admission is ADMITTED_INDEX_ONLY and the caller supplied the
-    matching pair. A legacy gate stays on the v1 ATTEST_PASS path. The v1
-    signature default is not an admitted v2 pair.
+    There is no v1 default. A gate is admitted only when fee_admission is
+    ADMITTED_INDEX_ONLY and its fee-source sha and accept sha equal the pair
+    the caller passed. An attestation object does not admit.
     """
     notes = []
     if not isinstance(gate, dict):
         return _blocked(notes, "GATE_MISSING")
+    if _refused(gate, expected_sha):
+        return _blocked(notes, "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
     if gate.get("status") != "OK":
         return _blocked(notes, gate.get("fee_block_reason") or gate.get("reason") or "GATE_STATUS_NOT_OK")
-    expected_id, expected_sha = expected
-    if _is_v2_gate(gate):
-        if "fee_admission" not in gate:
-            return _blocked(notes, "FEE_ADMISSION_MISSING")
-        if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
-            return _blocked(notes, gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED")
-        pair_ok = (
-            expected_formula is not None
-            and gate.get("fee_source") == expected_id
-            and gate.get("fee_source_sha256") == expected_sha
-            and gate.get("fee_formula_id") == expected_formula
-        )
-        if not pair_ok:
-            return _blocked(notes, "FEE_SOURCE_PAIR_MISMATCH")
-        return "ADMITTED", notes, None
-    if gate.get("fee_source") != expected_id or gate.get("fee_source_sha256") != expected_sha:
+    if "fee_admission" not in gate:
+        return _blocked(notes, "FEE_ADMISSION_MISSING")
+    if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
+        return _blocked(notes, gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED")
+    if expected_sha is None or expected_accept is None:
+        return _blocked(notes, "FEE_SOURCE_PAIR_MISSING")
+    if (
+        gate.get("fee_source_sha256") != expected_sha
+        or gate.get("fee_source_accept_sha256") != expected_accept
+    ):
         return _blocked(notes, "FEE_SOURCE_PAIR_MISMATCH")
-    attest_reason = _attest_reason(gate)
-    if attest_reason is not None:
-        return _blocked(notes, attest_reason)
-    if not isinstance(attestation, dict):
-        return _blocked(notes, "FEE_ATTEST_ABSENT")
-    series = attestation.get("series")
-    accept = attestation.get("conductor_accept_sha256")
-    admitted = (
-        attestation.get("fee_source") == expected_id
-        and attestation.get("fee_source_sha256") == expected_sha
-        and attestation.get("rehash_ok") is True
-        and attestation.get("packet_index_anchor_ok") is True
-        and attestation.get("status") == "ADOPTED"
-        and accept == CONDUCTOR_ACCEPT_SHA256
-        and isinstance(attestation.get("examiner"), str)
-        and attestation.get("examiner") != ""
-        and isinstance(attestation.get("time"), str)
-        and attestation.get("time") != ""
-        and isinstance(series, list)
-        and len(series) > 0
-        and all(isinstance(item, dict) and item.get("series_status") == "PINNED" for item in series)
-    )
-    if not admitted:
-        return _blocked(notes, "FEE_ATTEST_NOT_PASS")
     return "ADMITTED", notes, None
 
 
@@ -170,13 +133,18 @@ def apply_verdict(
     attestation=None,
     cd=None,
     validity=None,
-    expected_fee_source=(FEE_SOURCE_ID, FEE_SOURCE_SHA256),
-    expected_fee_formula=None,
+    expected_fee_sha256=None,
+    expected_accept_sha256=None,
 ):
-    """Return the verdict label. cd booleans are precomputed and are not P&L."""
+    """Return the verdict label. cd booleans are precomputed and are not P&L.
+
+    expected_fee_sha256 and expected_accept_sha256 have no default. An
+    attestation dict is not an admission.
+    """
+    del attestation
     score = score if isinstance(score, dict) else {}
     fee_state, notes, fee_block_reason = _fee_state(
-        gate, attestation, expected_fee_source, expected_fee_formula
+        gate, expected_fee_sha256, expected_accept_sha256
     )
     admitted = fee_state == "ADMITTED"
     if admitted and isinstance(cd, dict) and cd.get("n_signals") == 0:

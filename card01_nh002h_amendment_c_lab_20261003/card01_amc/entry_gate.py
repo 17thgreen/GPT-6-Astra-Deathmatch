@@ -1,7 +1,7 @@
 """AF-8 entry gate.
 
-Fees come from an astra.fee_source.v1 file loaded at runtime. One unpinned
-series blocks the card. No fee, net, or signal is computed in that case.
+gate() cannot mint an admitting state. gate_v2 computes a headline only
+after index-only admission. One unpinned series blocks the card.
 """
 from __future__ import annotations
 
@@ -12,16 +12,8 @@ import sys
 from decimal import Decimal
 from pathlib import Path
 
-from card01_amc.fee_admission import admit_fee_source_v2, pinned_entry_v2
-from card01_amc.fee_source import (
-    CONDUCTOR_ACCEPT_SHA256,
-    FEE_SOURCE_ID,
-    FEE_SOURCE_SHA256,
-    FeeBlocked,
-    load_fee_source,
-    pinned_entry,
-    pinned_taker_fee,
-)
+from card01_amc.fee_admission import REFUSED_FEE_SOURCES, admit_fee_source_v2, pinned_entry_v2
+from card01_amc.fee_source import FeeBlocked, pinned_taker_fee
 from card01_amc.pinload import sha256_bytes
 
 EXTRA_COST = Decimal("0.02")
@@ -70,30 +62,6 @@ def _scorable(row) -> bool:
         and row.get("p_market") is not None
         and row.get("p_model") is not None
     )
-
-
-def fee_attest_reason(fee_sha, attest):
-    """Return None when the attest admits this fee-source sha.
-
-    Shape, marked as a kit reading: a JSON object with
-    fee_source_sha256 equal to the fee-source bytes, and verdict
-    exactly ATTEST_PASS. No other field is read.
-    """
-    if attest is None:
-        return "FEE_ATTEST_ABSENT"
-    if isinstance(attest, (bytes, bytearray)):
-        try:
-            attest = json.loads(bytes(attest))
-        except json.JSONDecodeError:
-            return "FEE_ATTEST_INVALID"
-    if not isinstance(attest, dict):
-        return "FEE_ATTEST_INVALID"
-    quoted = attest.get("fee_source_sha256")
-    if not isinstance(quoted, str) or quoted != fee_sha:
-        return "FEE_ATTEST_SHA_MISMATCH"
-    if attest.get("verdict") != "ATTEST_PASS":
-        return "FEE_ATTEST_NOT_PASS"
-    return None
 
 
 def _blocked(reason, blocked_series=None, fee_source=None, fee_source_sha256=None, **extra):
@@ -202,80 +170,37 @@ def gate(
     fee_source_bytes=None,
     *,
     fee_attest=None,
-    expected_sha256=FEE_SOURCE_SHA256,
-    expected_id=FEE_SOURCE_ID,
-    expected_accept=CONDUCTOR_ACCEPT_SHA256,
+    expected_sha256=None,
+    expected_id=None,
+    expected_accept=None,
 ):
-    """Apply the frozen gate. Expectation overrides are for tests. The CLI does not pass them."""
+    """v1 entry point. It cannot mint an admitting state.
+
+    Missing bytes are FEE_SOURCE_ABSENT. Any supplied file, including a
+    deny-listed v1 pair, is BLOCKED_FEE_UNVERIFIED with no signals and no
+    sensitivity fields. fee_attest and the expectation arguments are ignored.
+    """
+    del fee_attest, expected_accept
     _refuse_outcomes(rows)
     if fee_source_bytes is None:
         return _blocked("FEE_SOURCE_ABSENT")
     file_id, file_sha = _file_identity(fee_source_bytes)
-    try:
-        loaded = load_fee_source(
-            fee_source_bytes,
-            expected_sha256=expected_sha256,
-            expected_id=expected_id,
-            expected_accept=expected_accept,
+    if (
+        file_sha in REFUSED_FEE_SOURCES
+        or file_id in REFUSED_FEE_SOURCES
+        or expected_sha256 in REFUSED_FEE_SOURCES
+        or expected_id in REFUSED_FEE_SOURCES
+    ):
+        return _blocked(
+            "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL",
+            fee_source=file_id,
+            fee_source_sha256=file_sha,
         )
-    except FeeBlocked as exc:
-        return _blocked(exc.reason, exc.blocked_series, file_id, file_sha)
-    attest_reason = fee_attest_reason(loaded.sha256, fee_attest)
-    if attest_reason is not None:
-        return _blocked(attest_reason, fee_source=loaded.manifest_id, fee_source_sha256=loaded.sha256)
-
-    used = []
-    seen = set()
-    for row in rows:
-        if not isinstance(row, dict) or not _scorable(row):
-            continue
-        series = _series_of(row)
-        if series not in seen:
-            seen.add(series)
-            used.append(series)
-    entries = {}
-    blocked = []
-    first_reason = None
-    for series in used:
-        try:
-            entries[series] = pinned_entry(loaded, series)
-        except FeeBlocked as exc:
-            blocked.append(series)
-            if first_reason is None:
-                first_reason = exc.reason
-    if blocked:
-        return _blocked(first_reason, blocked, loaded.manifest_id, loaded.sha256)
-
-    signals = []
-    depth_rejected = []
-    for row in rows:
-        if not isinstance(row, dict) or not _scorable(row):
-            continue
-        series = _series_of(row)
-        best = _select(row, entries[series])
-        if best is None:
-            continue
-        if not best["depth_ok"]:
-            depth_rejected.append(_depth_item(row, best))
-            continue
-        signals.append(_signal_from(
-            row, series, entries[series], best,
-            manifest_id=loaded.manifest_id, digest=loaded.sha256,
-        ))
-    return {
-        "status": "OK",
-        "n_selected": len(signals),
-        "signals": signals,
-        "fee_source": loaded.manifest_id,
-        "fee_source_sha256": loaded.sha256,
-        "fee_source_status": "ADOPTED",
-        "fee_attest_verdict": "ATTEST_PASS",
-        "fee_attest_fee_source_sha256": loaded.sha256,
-        "conductor_accept_sha256": loaded.conductor_accept_sha256,
-        "series_used": [{"series": series, "series_status": "PINNED"} for series in used],
-        "depth_rejected": depth_rejected,
-        "gate_sha256": module_sha256(),
-    }
+    return _blocked(
+        "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL",
+        fee_source=file_id,
+        fee_source_sha256=file_sha,
+    )
 
 
 def _series_used(rows):
@@ -306,6 +231,12 @@ def gate_v2(
 ):
     """Headline gate. Admission is index-only. Sensitivity rows are not emitted."""
     _refuse_outcomes(rows)
+    if fee_source_sha256 in REFUSED_FEE_SOURCES or fee_source_id in REFUSED_FEE_SOURCES:
+        return _blocked(
+            "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL",
+            fee_source=fee_source_id if isinstance(fee_source_id, str) else None,
+            fee_source_sha256=fee_source_sha256 if isinstance(fee_source_sha256, str) else None,
+        )
     used = _series_used(rows)
     admission = admit_fee_source_v2(
         fee_source_path=fee_source_path,
@@ -334,8 +265,23 @@ def gate_v2(
         return blocked
 
     entries = {}
-    for series in used:
-        entries[series] = pinned_entry_v2(admission, series)
+    try:
+        for series in used:
+            entries[series] = pinned_entry_v2(admission, series)
+    except FeeBlocked as exc:
+        blocked = _blocked(
+            exc.reason,
+            exc.blocked_series,
+            admission.fee_source,
+            admission.fee_source_sha256,
+        )
+        blocked.update(base)
+        blocked["status"] = "BLOCKED_FEE_UNVERIFIED"
+        blocked["reason"] = exc.reason
+        blocked["fee_block_reason"] = exc.reason
+        blocked["signals"] = None
+        blocked["depth_rejected"] = None
+        return blocked
     signals = []
     depth_rejected = []
     for row in rows:

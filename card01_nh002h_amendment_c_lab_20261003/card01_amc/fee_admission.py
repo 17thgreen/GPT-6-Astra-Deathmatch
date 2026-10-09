@@ -194,14 +194,21 @@ def admit_fee_source_v2(
     if not adopted:
         return _blocked("FEE_SOURCE_STATUS_NOT_ADOPTED", "b", **identity)
 
-    prefix = adopted[0][1]
-    cited = [
-        row for row in rows
-        if row["sha256"].startswith(prefix) and "CONDUCTOR_ACCEPT" in row["path"]
-    ]
-    if len(cited) != 1:
+    prefixes = []
+    for _row, prefix in adopted:
+        if prefix not in prefixes:
+            prefixes.append(prefix)
+    cited_shas = set()
+    for row in rows:
+        if "CONDUCTOR_ACCEPT" not in row["path"]:
+            continue
+        if any(row["sha256"].startswith(prefix) for prefix in prefixes):
+            cited_shas.add(row["sha256"])
+    if len(cited_shas) == 0:
         return _blocked("FEE_ACCEPT_MISSING", "b", **identity)
-    accept_sha = cited[0]["sha256"]
+    if len(cited_shas) > 1:
+        return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
+    accept_sha = next(iter(cited_shas))
     identity["fee_source_accept_sha256"] = accept_sha
     if sha256_bytes(accept_bytes) != accept_sha:
         return _blocked("FEE_ACCEPT_REHASH_MISMATCH", "b", **identity)
@@ -334,6 +341,9 @@ def pinned_entry_v2(admission, series):
     if not isinstance(entry, dict):
         raise FeeBlocked("SERIES_NOT_PINNED", [series])
     multiplier = Decimal(entry["fee_multiplier"])
+    taker_rate = entry.get("taker_rate")
+    if not isinstance(taker_rate, str):
+        raise FeeBlocked("TAKER_RATE_MISMATCH", [series])
     return PinnedEntry(
         series=series,
         fee_type=entry["fee_type"],
@@ -341,5 +351,5 @@ def pinned_entry_v2(admission, series):
         fee_multiplier_str=entry["fee_multiplier"],
         fee_source=admission.fee_source,
         fee_source_sha256=admission.fee_source_sha256,
-        taker_rate=entry["taker_rate"],
+        taker_rate=taker_rate,
     )

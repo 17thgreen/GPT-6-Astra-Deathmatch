@@ -151,7 +151,7 @@
   },
   {
    "path": "card01_amc/entry_gate.py",
-   "sha256": "81f33e24216e4cbc12de12984e5871f51620178997923fb6aaf411b8f3b916c3",
+   "sha256": "24c9e06ab392b463613a7f1d7ca29eb3f7c88e7d24de299d59c11fa5014b9d73",
    "role": "AF-8 entry gate and v2 index-only admission",
    "vendored": true
   },
@@ -163,13 +163,13 @@
   },
   {
    "path": "card01_amc/swing_stress.py",
-   "sha256": "e5a6e0b45398d8647b3b5f0b8041d47b7d0e0dad2c717523f1cf14ec9fee73ae",
+   "sha256": "743e865d9b37ea0385745e47a6b726b2a9d1ca364561e54d7ae3e8e96d132cff",
    "role": "AF-7 outcome-free swing stress",
    "vendored": true
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "2893dada895d09d7d7806f1a4630992559a00e751026cac4c895e4eaf20d1515",
+   "sha256": "2cc1305d99ce38526a72ee598eef8e17f282f616e90156e50fff70c869d90bbd",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -430,7 +430,7 @@
   },
   {
    "path": "card01_amc/fee_admission.py",
-   "sha256": "c2a4dc2bb133c5f238c6b47b9d4b31b2a0d73dca2272833ce8100f8156bdf289",
+   "sha256": "166939cc99d75e619658dcdc741de1230ec2b4b5868eb5a65bf346a25a48a4c8",
    "role": "v2 index-only fee admission",
    "vendored": true
   },
@@ -442,7 +442,7 @@
   },
   {
    "path": "card01_amc/secondary_metrics.py",
-   "sha256": "862335d55e32c2e051d95ffdbf2b1a695116f60da90557a3792e3043ad470302",
+   "sha256": "2c44f6aa0bd0682df188ce2d4516925779aa66b3a86fd2c3763775e25eae4fe0",
    "role": "secondary metrics and headline fee views",
    "vendored": true
   },
@@ -454,7 +454,7 @@
   },
   {
    "path": "card01_amc/regime_split_secondary.py",
-   "sha256": "4fdeb0d337aa5173526907175d9786beb82fbc9374f1365a95d9a349bff4e59c",
+   "sha256": "a0602c64df2f8c5c41b611af150244026d19a86db52b31db41b43f413718720b",
    "role": "regime-split assembly and CLI",
    "vendored": true
   }

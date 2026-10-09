@@ -1,7 +1,8 @@
 """v2 fee-state consumers. Synthetic gates only.
 
-A legacy gate still needs ATTEST_PASS. A v2 gate computes only when
-fee_admission is ADMITTED_INDEX_ONLY and the caller supplied the pair.
+A gate computes only when fee_admission is ADMITTED_INDEX_ONLY and the
+caller supplied the fee-source sha and accept sha. A legacy two-field
+ATTEST_PASS does not admit.
 """
 from __future__ import annotations
 
@@ -177,13 +178,30 @@ class SwingConsumerTests(unittest.TestCase):
                 fee_accept_path=paths[1],
                 fee_source_expected_id=ADMITTED_ID,
                 fee_source_expected_sha256=digest,
+                fee_source_expected_accept=gated["fee_source_accept_sha256"],
                 fee_source_expected_formula=FEE_FORMULA_ID,
             )
-        self.assertEqual(out["stress_status"], "OK")
+            self.assertEqual(out["stress_status"], "OK")
+            for signal in gated["signals"]:
+                signal["fee"] = 9.0
+            again = evaluate(
+                [_row()],
+                gated,
+                "r",
+                "g",
+                "g",
+                fee_source_path=paths[0],
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                fee_source_expected_id=ADMITTED_ID,
+                fee_source_expected_sha256=digest,
+                fee_source_expected_accept=gated["fee_source_accept_sha256"],
+            )
         self.assertIsInstance(out["rows"][0]["expected_net"], float)
         self.assertIsInstance(out["rows"][0]["expected_gross"], float)
         self.assertNotIn("expected_net_sensitivity_direct_member", out["rows"][0])
         self.assertEqual(out["sensitivity_rows_status"], SENSITIVITY_ROWS_STATUS)
+        self.assertEqual(again["rows"][0]["expected_net"], out["rows"][0]["expected_net"])
         blob = json.dumps(out)
         for key in (
             "fee_only_ceil",
@@ -222,14 +240,17 @@ class SwingConsumerTests(unittest.TestCase):
     def test_swing_blocked_pair_mismatch(self):
         out = evaluate(
             [_row()],
-            _admitted_shape(),
+            _admitted_shape(fee_source_accept_sha256="ee" * 32),
             "r",
             "g",
-            fee_source_expected_id="OTHER_ID",
             fee_source_expected_sha256="ab" * 32,
-            fee_source_expected_formula=FEE_FORMULA_ID,
+            fee_source_expected_accept="ee" * 32,
         )
         self._assert_blocked(out, "FEE_SOURCE_PAIR_MISMATCH")
+
+    def test_swing_blocked_pair_missing(self):
+        out = evaluate([_row()], _admitted_shape(), "r", "g")
+        self._assert_blocked(out, "FEE_SOURCE_PAIR_MISSING")
 
     def test_swing_blocked_fee_admission_missing(self):
         gate = _admitted_shape()
@@ -262,34 +283,39 @@ class SwingConsumerTests(unittest.TestCase):
             "status": "OK",
             "n_selected": 0,
             "signals": [],
-            "fee_source": "FEE_SOURCE_CARD01_v1",
+            "fee_source": "SYNTH_V1_GATE",
             "fee_source_sha256": "ab" * 32,
+            "fee_attest_verdict": "ATTEST_PASS",
+            "fee_attest_fee_source_sha256": "ab" * 32,
         }
         out = evaluate([_row()], gate, "r", "g")
-        self._assert_blocked(out, "FEE_ATTEST_ABSENT")
+        self._assert_blocked(out, "FEE_ADMISSION_MISSING")
 
-    def test_attest_fail_and_sha_mismatch_are_distinct(self):
+    def test_legacy_attest_pass_does_not_admit(self):
         digest = "ab" * 32
-        failed = {
-            "status": "OK",
-            "n_selected": 0,
-            "signals": [],
-            "fee_source": "FEE_SOURCE_CARD01_v1",
-            "fee_source_sha256": digest,
-            "fee_attest_verdict": "ATTEST_FAIL",
-            "fee_attest_fee_source_sha256": digest,
-        }
-        mismatched = {
+        refused = {
             "status": "OK",
             "n_selected": 0,
             "signals": [],
             "fee_source": "FEE_SOURCE_CARD01_v1",
             "fee_source_sha256": digest,
             "fee_attest_verdict": "ATTEST_PASS",
+            "fee_attest_fee_source_sha256": digest,
+        }
+        plain = {
+            "status": "OK",
+            "n_selected": 0,
+            "signals": [],
+            "fee_source": "SYNTH_V1_GATE",
+            "fee_source_sha256": digest,
+            "fee_attest_verdict": "ATTEST_PASS",
             "fee_attest_fee_source_sha256": "cd" * 32,
         }
-        self._assert_blocked(evaluate([_row()], failed, "r", "g"), "FEE_ATTEST_NOT_PASS")
-        self._assert_blocked(evaluate([_row()], mismatched, "r", "g"), "FEE_ATTEST_SHA_MISMATCH")
+        self._assert_blocked(
+            evaluate([_row()], refused, "r", "g"),
+            "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL",
+        )
+        self._assert_blocked(evaluate([_row()], plain, "r", "g"), "FEE_ADMISSION_MISSING")
 
 
 class VerdictConsumerTests(unittest.TestCase):
@@ -322,8 +348,8 @@ class VerdictConsumerTests(unittest.TestCase):
             )
         common = {
             "gate": gated,
-            "expected_fee_source": (ADMITTED_ID, digest),
-            "expected_fee_formula": FEE_FORMULA_ID,
+            "expected_fee_sha256": digest,
+            "expected_accept_sha256": gated["fee_source_accept_sha256"],
         }
         rejected = apply_verdict(
             _score(),
@@ -358,12 +384,16 @@ class VerdictConsumerTests(unittest.TestCase):
     def test_verdict_blocked_pair_mismatch(self):
         verdict = apply_verdict(
             _score(),
-            gate=_admitted_shape(),
+            gate=_admitted_shape(fee_source_accept_sha256="ee" * 32),
             cd=_clear_cd(),
-            expected_fee_source=("OTHER_ID", "ab" * 32),
-            expected_fee_formula=FEE_FORMULA_ID,
+            expected_fee_sha256="ab" * 32,
+            expected_accept_sha256="ee" * 32,
         )
         self._assert_blocked(verdict, "FEE_SOURCE_PAIR_MISMATCH")
+
+    def test_verdict_blocked_pair_missing(self):
+        verdict = apply_verdict(_score(), gate=_admitted_shape(), cd=_clear_cd())
+        self._assert_blocked(verdict, "FEE_SOURCE_PAIR_MISSING")
 
     def test_verdict_blocked_fee_admission_missing(self):
         gate = _admitted_shape()
@@ -372,8 +402,8 @@ class VerdictConsumerTests(unittest.TestCase):
             _score(),
             gate=gate,
             cd=_clear_cd(),
-            expected_fee_source=(ADMITTED_ID, "cd" * 32),
-            expected_fee_formula=FEE_FORMULA_ID,
+            expected_fee_sha256="cd" * 32,
+            expected_accept_sha256="ee" * 32,
         )
         self._assert_blocked(verdict, "FEE_ADMISSION_MISSING")
 
@@ -382,10 +412,29 @@ class VerdictConsumerTests(unittest.TestCase):
             _score(),
             gate=_admitted_shape(fee_admission="SOFT_PASS"),
             cd=_clear_cd(),
-            expected_fee_source=(ADMITTED_ID, "cd" * 32),
-            expected_fee_formula=FEE_FORMULA_ID,
+            expected_fee_sha256="cd" * 32,
+            expected_accept_sha256="ee" * 32,
         )
         self._assert_blocked(verdict, "FEE_ADMISSION_NOT_ADMITTED")
+
+    def test_verdict_v1_pair_has_no_default(self):
+        refused = "d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd"
+        gate = _admitted_shape(
+            fee_source="FEE_SOURCE_CARD01_v1",
+            fee_source_sha256=refused,
+            fee_source_accept_sha256="22" * 32,
+        )
+        verdict = apply_verdict(
+            _score(),
+            gate=gate,
+            cd=_clear_cd(),
+            expected_fee_sha256=refused,
+            expected_accept_sha256="22" * 32,
+        )
+        self._assert_blocked(verdict, "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
+        bare = apply_verdict(_score(), cd=_clear_cd())
+        self.assertEqual(bare["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(bare["fee_block_reason"], "GATE_MISSING")
 
 
 def _swing_reason(reason):
@@ -405,6 +454,73 @@ def _verdict_reason(reason):
 for _reason in BLOCK_REASONS:
     setattr(SwingConsumerTests, "test_swing_blocked_" + _reason, _swing_reason(_reason))
     setattr(VerdictConsumerTests, "test_verdict_blocked_" + _reason, _verdict_reason(_reason))
+
+
+class SyntheticV1GateTests(unittest.TestCase):
+    def test_synthetic_v1_gate_blocks_in_swing_verdict_and_regime(self):
+        from card01_amc.entry_gate import gate
+        from card01_amc.regime_split_secondary import build_report
+        from tests.test_regime_split_secondary import _selection, fixture_a
+
+        digest = "ab" * 32
+        legacy = {
+            "status": "OK",
+            "n_selected": 1,
+            "signals": [{
+                "race_id": "G1-01",
+                "side": "D_YES",
+                "price": 0.055,
+                "fee": 0.005,
+                "fee_decimal": "0.005",
+                "series": "XS1",
+                "fee_source": "SYNTH_V1_GATE",
+                "fee_source_sha256": digest,
+            }],
+            "fee_source": "SYNTH_V1_GATE",
+            "fee_source_sha256": digest,
+            "fee_attest_verdict": "ATTEST_PASS",
+            "fee_attest_fee_source_sha256": digest,
+        }
+        swing = evaluate([_row()], legacy, "r", "g", "g")
+        self.assertEqual(swing["stress_status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(swing["fee_block_reason"], "FEE_ADMISSION_MISSING")
+        self.assertIsNone(swing["rows"])
+        self.assertTrue(_no_numeric_fee(swing))
+        verdict = apply_verdict(
+            _score(),
+            gate=legacy,
+            cd=_clear_cd(),
+            expected_fee_sha256=digest,
+            expected_accept_sha256="22" * 32,
+        )
+        self.assertEqual(verdict["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(verdict["fee_block_reason"], "FEE_ADMISSION_MISSING")
+        self.assertTrue(verdict["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED"))
+        minted = gate([_row()], b'{"manifest_id":"SYNTH_V1_GATE"}')
+        self.assertEqual(minted["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(minted["reason"], "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL")
+        self.assertIsNone(minted["signals"])
+        self.assertNotIn("FEE_ONLY_CEIL", json.dumps(minted))
+        self.assertNotIn("fee_sensitivity_direct_member", json.dumps(minted))
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = _copy_kit(Path(tmp))
+            report = build_report(
+                fixture_a(),
+                selection=_selection(),
+                gate=legacy,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=sha256_bytes(paths[0].read_bytes()),
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+        self.assertEqual(report["fee_admission"]["fee_admission"], "ADMITTED_INDEX_ONLY")
+        self.assertEqual(report["verdict_fee_branch"], "FORECAST_ONLY_FEE_BLOCKED")
+        self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(report["fee_block_reason"] if "fee_block_reason" in report else report["secondary"]["fee_block_reason"], "FEE_ADMISSION_MISSING")
+        self.assertIsNone(report["fee_views"])
+        self.assertNotIn('"fee_headline": "0"', json.dumps(report))
+        self.assertTrue(_no_numeric_fee(report["secondary"]))
 
 
 class RetiredStringTests(unittest.TestCase):

@@ -143,7 +143,11 @@ def _selection(label="R1", pre="UNAVAILABLE_NO_PRECHANGE_FILE"):
 
 def _views_for(signals, rows):
     by_id = {row["race_id"]: row for row in rows}
-    return fee_views(signals, by_id, _entry()), by_id
+    entries = {}
+    for signal in signals:
+        series = signal.get("series")
+        entries.setdefault(series, _entry())
+    return fee_views(signals, by_id, entries), by_id
 
 
 def fixture_b():
@@ -676,12 +680,19 @@ class ReportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             paths = self._fee(root)
+            from card01_amc.pinload import sha256_bytes
+
+            fee_sha = sha256_bytes(paths[0].read_bytes())
+            accept_sha = sha256_bytes(paths[1].read_bytes())
             gate = {
                 "status": "OK",
                 "signals": [],
                 "depth_rejected": [],
                 "gate_sha256": "ab" * 32,
                 "fee_admission": "ADMITTED_INDEX_ONLY",
+                "fee_source": ADMITTED_ID,
+                "fee_source_sha256": fee_sha,
+                "fee_source_accept_sha256": accept_sha,
             }
             kwargs = dict(
                 rows=rows,
@@ -691,7 +702,7 @@ class ReportTests(unittest.TestCase):
                 settled={"results": []},
                 fee_source_path=paths[0],
                 fee_source_id=ADMITTED_ID,
-                fee_source_sha256=__import__("card01_amc.pinload", fromlist=["sha256_bytes"]).sha256_bytes(paths[0].read_bytes()),
+                fee_source_sha256=fee_sha,
                 packet_index_path=paths[2],
                 fee_accept_path=paths[1],
             )
@@ -813,6 +824,10 @@ class ReportTests(unittest.TestCase):
                     "signals": signals,
                     "depth_rejected": [],
                     "gate_sha256": "ab" * 32,
+                    "fee_admission": "ADMITTED_INDEX_ONLY",
+                    "fee_source": ADMITTED_ID,
+                    "fee_source_sha256": fee_sha,
+                    "fee_source_accept_sha256": sha256_bytes(accept_path.read_bytes()),
                 }
                 return build_report(
                     rows,
@@ -856,6 +871,66 @@ class ReportTests(unittest.TestCase):
                 return obj
 
             self.assertEqual(scrub(first), scrub(second))
+
+    def test_blocked_gate_does_not_emit_zero_totals_when_file_admits(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = self._fee(Path(tmp))
+            from card01_amc.pinload import sha256_bytes
+
+            fee_sha = sha256_bytes(paths[0].read_bytes())
+            report = build_report(
+                fixture_a(),
+                selection=_selection(),
+                gate={"status": "OK", "signals": [], "fee_attest_verdict": "ATTEST_PASS"},
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=fee_sha,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+            )
+        self.assertEqual(report["fee_admission"]["fee_admission"], "ADMITTED_INDEX_ONLY")
+        self.assertEqual(report["verdict_fee_branch"], "FORECAST_ONLY_FEE_BLOCKED")
+        self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(report["secondary"]["fee_block_reason"], "FEE_ADMISSION_MISSING")
+        self.assertIsNone(report["fee_views"])
+        self.assertNotIn('"fee_headline": "0"', json.dumps(report))
+
+    def test_each_signal_uses_its_own_series_entry(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            paths = self._fee(root)
+            from card01_amc.pinload import sha256_bytes
+
+            fee_sha = sha256_bytes(paths[0].read_bytes())
+            accept_sha = sha256_bytes(paths[1].read_bytes())
+            signals = [
+                {"race_id": "S1", "side": "D_YES", "price": "0.077", "series": "XS1", "fee_decimal": "0.013"},
+                {"race_id": "S2", "side": "D_NO", "price": "0.50", "series": "XS9", "fee_decimal": "0.02"},
+            ]
+            gate = {
+                "status": "OK",
+                "signals": signals,
+                "fee_admission": "ADMITTED_INDEX_ONLY",
+                "fee_source": ADMITTED_ID,
+                "fee_source_sha256": fee_sha,
+                "fee_source_accept_sha256": accept_sha,
+            }
+            report = build_report(
+                [_row("S1", 0.30, 0.30, 1, "KXHOUSERACE"), _row("S2", 0.40, 0.40, 1, "LEGACY")],
+                selection=_selection(),
+                gate=gate,
+                fee_source_path=paths[0],
+                fee_source_id=ADMITTED_ID,
+                fee_source_sha256=fee_sha,
+                packet_index_path=paths[2],
+                fee_accept_path=paths[1],
+                series_used=["XS1"],
+            )
+        self.assertEqual(report["fee_admission"]["fee_admission"], "ADMITTED_INDEX_ONLY")
+        self.assertEqual(report["verdict_fee_branch"], "FORECAST_ONLY_FEE_BLOCKED")
+        self.assertEqual(report["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(report["fee_views"])
+        self.assertEqual(report["secondary"]["fee_block_reason"], "SERIES_NOT_PINNED")
 
 
 if __name__ == "__main__":

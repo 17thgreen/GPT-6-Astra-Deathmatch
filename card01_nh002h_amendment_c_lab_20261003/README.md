@@ -81,14 +81,13 @@ is computed in that case, and there is no default-multiplier row.
 The adopted file id is `FEE_SOURCE_CARD01_v1`, sha256
 `d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd`, accepted by
 `5b2eb82613d74bbfb2dd937efa43e239083367f832430a46d011759ccf451b59`. Ruling
-`715fbafd` records that examiner attestation as `ATTEST_FAIL`. The command
-line loads the fee file from `--fee-source` and an attestation from
-`--fee-attest`. The adopted file is not embedded. The fee stays `BLOCKED`
-until an `ATTEST_PASS` attestation is supplied. Without that attestation the
-gate stays `BLOCKED_FEE_UNVERIFIED` and money rows stay forecast-only. A fee
-file whose bytes are not that adopted sha, including a future
-`astra.fee_source.v2` document, is rejected as `FEE_SOURCE_SHA_MISMATCH`
-before the version check runs, so it is still blocked. Commit
+`715fbafd` records that examiner attestation as `ATTEST_FAIL`. Amendment
+`2c870cd5` §1 leaves that v1 fee not admitted. `gate()` does not mint an
+admitting state. Any supplied v1 file is `BLOCKED_FEE_UNVERIFIED` with reason
+`FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL`, and it emits no signals and no
+sensitivity fields. A numeric fee is computed only when `fee_admission` is
+`ADMITTED_INDEX_ONLY` and the caller passes the matching fee-source sha and
+accept sha. Commit
 `22371178cb2663250b4762f328069571c48cb551` remains in the pin list with
 `superseded: true`. Its feebook does not price this gate.
 
@@ -100,8 +99,8 @@ From this directory, CPython 3.12 or 3.13, standard library only:
 python3 -m unittest discover -s tests -v
 python3 -m card01_amc.select_forecast --capture-log LOG --daily-runs RUNS --root ROOT --run-at-utc T
 python3 -m card01_amc.build_rows --universe pins/UNIVERSE_2026_HOUSE_FROZEN.json --selection SEL.json --forecast forecast.json --mapping mapping.json --book book.json --add-dem-name PATH
-python3 -m card01_amc.entry_gate built_rows.json --fee-source PATH --fee-attest ATTEST.json
-python3 -m card01_amc.swing_stress --rows built_rows.json --gate gate.json --gate-sha256 SHA --fee-source PATH
+python3 -m card01_amc.entry_gate built_rows.json --fee-source PATH --fee-source-id ID --fee-source-sha256 SHA --packet-index INDEX --fee-accept ACCEPT
+python3 -m card01_amc.swing_stress --rows built_rows.json --gate gate.json --gate-sha256 SHA --fee-source PATH --fee-source-id ID --fee-source-sha256 SHA --fee-accept-sha256 ACCEPT_SHA --packet-index INDEX --fee-accept ACCEPT
 python3 -m card01_amc.score rows_with_outcomes.json
 python3 -m card01_amc.join_outcomes built_rows.json settled.json
 python3 -m card01_amc.verdict score.json
@@ -116,7 +115,7 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 
 ## Verified unit results
 
-`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 156 tests in 257.986s at 2026-10-09T01:28:10Z. Result: OK. Failures: 0. Errors: 0. Skipped: 1. The skipped test is the runtime fee admission, which runs only when its directory is supplied. Ruling `715fbafd` keeps the adopted v1 fee blocked without `ATTEST_PASS`. The v2 path stays blocked unless admission is `ADMITTED_INDEX_ONLY`. The headline may sit below `FEE_ONLY_CEIL`, and an unknown fee-source version fails closed. An unattested OK gate, including one with zero signals, produces no numeric swing net. Ruling `c05d7003` remains in force for the sensitivity row, the dem_name fail-closed result, and literal REJECT (d) at zero signals.
+`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 156 tests in 257.986s at 2026-10-09T01:28:10Z. Result: OK. Failures: 0. Errors: 0. Skipped: 1. The skipped test is the runtime fee admission, which runs only when its directory is supplied. Amendment `2c870cd5` §1 leaves the v1 fee not admitted. The fee stays blocked unless admission is `ADMITTED_INDEX_ONLY`. The headline may sit below `FEE_ONLY_CEIL`, and an unknown fee-source version fails closed. An unattested OK gate, including one with zero signals, produces no numeric swing net. Ruling `c05d7003` remains in force for the sensitivity row, the dem_name fail-closed result, and literal REJECT (d) at zero signals.
 
 Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
 
@@ -258,27 +257,20 @@ These are fixed here so the code does not invent a second reading later.
   `selected_derived_sha256`, and a forecast passed with a non-`SELECTED`
   selection. A non-selected record builds 92 rows of `no_admissible_forecast`
   and records `q6_status`.
-- Gate JSON that is `OK` carries `fee_source`, `fee_source_sha256`,
-  `fee_source_status`, `fee_attest_verdict` (`ATTEST_PASS`),
-  `fee_attest_fee_source_sha256`, `conductor_accept_sha256`, and `series_used`.
-  A missing, mismatched, or non-pass attestation leaves the gate
-  `BLOCKED_FEE_UNVERIFIED` with no signals. The attestation object is
-  `{fee_source_sha256, verdict}` and the sha must equal the fee-source bytes.
-  An unknown `astra.fee_source` schema version is
-  `FEE_SOURCE_VERSION_UNSUPPORTED` once the sha check has passed.
-  `astra.fee_source.v1` stays supported. A v2 file that is not the adopted
-  sha is `FEE_SOURCE_SHA_MISMATCH` before that version check. Swing-stress
-  emits a numeric `expected_net` only when `--gate-sha256` matches the gate
-  file, `--fee-source` loads, the gate records `fee_attest_verdict`
-  `ATTEST_PASS` for that `fee_source_sha256`, the gate and every signal carry
-  that pair, and each headline fee recomputes. Without that recorded
-  attestation the stress rows are null and the status is
-  `BLOCKED_FEE_UNVERIFIED`. The output includes `fee_source` and
-  `fee_source_sha256` when the gate carries them. Otherwise `expected_net` is
-  `BLOCKED_FEE_UNVERIFIED` with `net_block_reason` set. A gate file cannot
-  self-certify its net. The direct-member net is a sensitivity field and is
-  not used for fragility. The fee stays blocked until an `ATTEST_PASS`
-  attestation is supplied.
+- A computing gate carries `fee_admission` `ADMITTED_INDEX_ONLY`,
+  `fee_source_sha256`, and `fee_source_accept_sha256`. `gate()` cannot mint
+  that state. A missing gate, a legacy two-field attestation, a v1 pair
+  including `d4dc8e72ae2b2a72824487eb386d6684c451a5e3b2e9dce58c1a68aaea9436cd`,
+  or any other admission is `BLOCKED_FEE_UNVERIFIED` with no signals and no
+  sensitivity fields. Swing-stress and the verdict helper compute a numeric
+  fee only when the gate is `ADMITTED_INDEX_ONLY` and the caller passes that
+  same fee-source sha and accept sha. The swing net subtracts the recomputed
+  headline, not the gate's float `fee`. Without that pair the stress rows are
+  null and the status is `BLOCKED_FEE_UNVERIFIED`. The output includes
+  `fee_source` and `fee_source_sha256` when the gate carries them. A gate
+  file cannot self-certify its net. The direct-member net is a sensitivity
+  field and is not used for fragility. Amendment `2c870cd5` §1 leaves the v1
+  fee not admitted.
 - `leave_one_state_out.by_state[s]` is either per-arm point estimates or the
   string `UNDEFINED`. Min and max ignore undefined remainders.
 - `n_boundary_resamples` is a sibling of `arms` on each non-empty block.

@@ -15,6 +15,7 @@ from pathlib import Path
 from card01_amc.book_1103 import adverse_selection, book_status
 from card01_amc.fee_admission import (
     FEE_ADMISSION_RULE_SHA256,
+    REFUSED_FEE_SOURCES,
     SENSITIVITY_ROWS_STATUS,
     admit_fee_source_v2,
     pinned_entry_v2,
@@ -110,6 +111,31 @@ def _series_used(gate, explicit):
     return found
 
 
+def _gate_fee_reason(gate, admission):
+    """None when this gate may compute against an admitted file."""
+    if not admission.admitted:
+        return admission.fee_block_reason
+    if not isinstance(gate, dict):
+        return "GATE_MISSING"
+    if (
+        gate.get("fee_source") in REFUSED_FEE_SOURCES
+        or gate.get("fee_source_sha256") in REFUSED_FEE_SOURCES
+    ):
+        return "FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL"
+    if gate.get("status") != "OK":
+        return gate.get("fee_block_reason") or "GATE_STATUS_NOT_OK"
+    if "fee_admission" not in gate:
+        return "FEE_ADMISSION_MISSING"
+    if gate.get("fee_admission") != "ADMITTED_INDEX_ONLY":
+        return gate.get("fee_block_reason") or "FEE_ADMISSION_NOT_ADMITTED"
+    if (
+        gate.get("fee_source_sha256") != admission.fee_source_sha256
+        or gate.get("fee_source_accept_sha256") != admission.fee_source_accept_sha256
+    ):
+        return "FEE_SOURCE_PAIR_MISMATCH"
+    return None
+
+
 def _blocked_secondary(reason, forecast, capture):
     return {
         "log_loss": forecast["log_loss"],
@@ -195,25 +221,28 @@ def build_report(
     )
     capture = book_status(book)
     defects = []
-    if admission.admitted:
-        signals = gate.get("signals") if isinstance(gate, dict) and isinstance(gate.get("signals"), list) else []
+    gate_reason = _gate_fee_reason(gate, admission)
+    fee_state = "BLOCKED_FEE_UNVERIFIED"
+    if gate_reason is None:
+        signals = gate.get("signals") if isinstance(gate.get("signals"), list) else []
         rows_by_id = {}
         for row in rows:
             if isinstance(row, dict) and row.get("race_id") not in rows_by_id:
                 rows_by_id[row.get("race_id")] = row
-        entry = None
         if signals:
             try:
-                entry = pinned_entry_v2(admission, signals[0].get("series"))
+                entries = {}
+                for signal in signals:
+                    series = signal.get("series") if isinstance(signal, dict) else None
+                    if series not in entries:
+                        entries[series] = pinned_entry_v2(admission, series)
+                views = fee_views(signals, rows_by_id, entries)
             except FeeBlocked as exc:
-                admission_reason = exc.reason
-                secondary = _blocked_secondary(admission_reason, forecast, capture)
+                secondary = _blocked_secondary(exc.reason, forecast, capture)
                 views = None
                 views_status = "BLOCKED_FEE_UNVERIFIED"
                 branch = "FORECAST_ONLY_FEE_BLOCKED"
-                entry = None
             else:
-                views = fee_views(signals, rows_by_id, entry)
                 defects.extend(views.pop("reporting_defects"))
                 settled_by = _settled_index(settled)
                 concentration, pnl_defects = event_concentration(views, pr_c_output)
@@ -224,7 +253,7 @@ def build_report(
                     "adverse_selection_after_fills": None,
                     "adverse_selection_after_fills_status": "NO_REAL_FILLS",
                     "adverse_selection_simulated_fills": selection_block,
-                    "signals_and_size": signals_and_size(gate if isinstance(gate, dict) else {}),
+                    "signals_and_size": signals_and_size(gate),
                     "event_concentration": concentration,
                     "capital_hours": capital_hours(signals, rows_by_id, views, settled_by),
                     "drawdown": drawdown(signals, views, settled_by, rows_by_id),
@@ -235,6 +264,7 @@ def build_report(
                 }
                 views_status = views["status"]
                 branch = None
+                fee_state = "ADMITTED"
         else:
             views = {
                 "per_signal": [],
@@ -250,6 +280,7 @@ def build_report(
             }
             views_status = "NO_SIGNALS_SELECTED"
             branch = None
+            fee_state = "ADMITTED"
             secondary = {
                 **forecast,
                 "adverse_selection_after_fills": None,
@@ -263,7 +294,7 @@ def build_report(
                     "plus_300s": None,
                     "plus_300s_status": "NOT_CAPTURED",
                 },
-                "signals_and_size": signals_and_size(gate if isinstance(gate, dict) else {}),
+                "signals_and_size": signals_and_size(gate),
                 "event_concentration": None,
                 "event_concentration_status": "NO_SIGNALS_SELECTED",
                 "capital_hours": None,
@@ -280,7 +311,7 @@ def build_report(
         views = None
         views_status = "BLOCKED_FEE_UNVERIFIED"
         branch = "FORECAST_ONLY_FEE_BLOCKED"
-        secondary = _blocked_secondary(admission.fee_block_reason, forecast, capture)
+        secondary = _blocked_secondary(gate_reason, forecast, capture)
     report = {
         "schema": SCHEMA,
         "spec_sha256": SPEC_SHA256,
@@ -308,6 +339,7 @@ def build_report(
         "fee_assumptions": FEE_ASSUMPTIONS,
         "sensitivity_rows_status": SENSITIVITY_ROWS_STATUS,
         "verdict_fee_branch": branch,
+        "fee_state": fee_state,
         "regime_split": regime,
         "pre_change_snapshot": pre,
         "secondary": secondary,
