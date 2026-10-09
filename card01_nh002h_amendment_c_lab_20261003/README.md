@@ -116,7 +116,7 @@ on the synthetic 92-row input. They take on the order of a few minutes together.
 
 ## Verified unit results
 
-`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 75 tests in 170.057s at 2026-10-09T00:01:39Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. Ruling `715fbafd` keeps the adopted fee blocked without `ATTEST_PASS`, allows the headline to sit below `FEE_ONLY_CEIL`, and fails closed on an unknown fee-source version. Ruling `c05d7003` remains in force for the sensitivity row, the dem_name fail-closed result, and literal REJECT (d) at zero signals.
+`python3 -m unittest discover -s tests -v --durations 10` from this directory: Ran 77 tests in 170.639s at 2026-10-09T00:23:52Z. Result: OK. Failures: 0. Errors: 0. Skipped: 0. Ruling `715fbafd` keeps the adopted fee blocked without `ATTEST_PASS`, allows the headline to sit below `FEE_ONLY_CEIL`, and fails closed on an unknown fee-source version. An unattested OK gate no longer produces a numeric swing net. Ruling `c05d7003` remains in force for the sensitivity row, the dem_name fail-closed result, and literal REJECT (d) at zero signals.
 
 Both self-test reproductions matched sha256 `0e93e153b7fc03cb996f3200dc576dd770ad638b00a1a0e3ed1e28632b682f23`: the pinned script's stdout, and the scorer projection after deleting the added keys.
 
