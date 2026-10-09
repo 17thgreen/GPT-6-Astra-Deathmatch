@@ -28,7 +28,10 @@ ANCHOR_SCHEMA = "astra.card01.prc_entry_book_anchor.v1"
 SCHEMA = "astra.card01.prc_pnl_cd.v1"
 SENSITIVITY_ROWS_STATUS = "SENSITIVITY_BASIS_INCOMPLETE"
 NET_FIGURE_LABEL = "ILLUSTRATIVE/R39"
-DECISION_SNAPSHOT_UTC = "2026-11-02T22:00:00Z"
+# Inclusive after the 21:45–22:15Z capture close. Exclusive before the
+# earliest US poll close (6pm EST, eastern IN/KY, after DST ends 2026-11-01).
+ANCHOR_EARLIEST_UTC = "2026-11-02T22:15:00Z"
+ANCHOR_BEFORE_UTC = "2026-11-03T23:00:00Z"
 OUTCOME_KEYS = ("y", "result", "settlement", "outcome", "settled")
 RULING_SHA256 = "61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca"
 CITATION_DETAIL = (
@@ -453,23 +456,40 @@ def _anchor_invalid(anchor) -> bool:
     return False
 
 
+def _anchor_window_detail(stamp):
+    """BEFORE_EARLIEST, AT_OR_AFTER_CUTOFF, or None when the stamp is inside.
+
+    _iso_z has already required the 20-character Z form, so the bounds compare
+    as text: ANCHOR_EARLIEST_UTC <= stamp < ANCHOR_BEFORE_UTC.
+    """
+    if stamp < ANCHOR_EARLIEST_UTC:
+        return "BEFORE_EARLIEST"
+    if not stamp < ANCHOR_BEFORE_UTC:
+        return "AT_OR_AFTER_CUTOFF"
+    return None
+
+
 def verify_entry_book_anchor(entry_book_bytes, anchor_doc, *, gate, gate_sha256, fee_ctx):
-    """Outcome-free. First failure wins. Does not join."""
+    """Outcome-free. First failure wins. Does not join.
+
+    Returns (ok, kind, detail). detail is set only for a window miss.
+    """
     if anchor_doc is None or entry_book_bytes is None:
-        return False, "ENTRY_BOOK_ANCHOR_MISSING"
+        return False, "ENTRY_BOOK_ANCHOR_MISSING", None
     if _anchor_invalid(anchor_doc):
-        return False, "ENTRY_BOOK_ANCHOR_INVALID"
-    if anchor_doc.get("anchored_at_utc") > DECISION_SNAPSHOT_UTC:
-        return False, "ENTRY_BOOK_ANCHOR_AFTER_SNAPSHOT"
+        return False, "ENTRY_BOOK_ANCHOR_INVALID", None
+    detail = _anchor_window_detail(anchor_doc.get("anchored_at_utc"))
+    if detail is not None:
+        return False, "ENTRY_BOOK_ANCHOR_OUTSIDE_WINDOW", detail
     file_sha = hashlib.sha256(entry_book_bytes).hexdigest()
     if file_sha != anchor_doc["entry_book_file_sha256"]:
-        return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
+        return False, "ENTRY_BOOK_ANCHOR_MISMATCH", None
     try:
         parsed = json.loads(entry_book_bytes.decode("utf-8"))
     except (UnicodeDecodeError, json.JSONDecodeError, ValueError):
-        return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
+        return False, "ENTRY_BOOK_ANCHOR_MISMATCH", None
     if not isinstance(parsed, dict):
-        return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
+        return False, "ENTRY_BOOK_ANCHOR_MISMATCH", None
     recomputed = envelope_output_sha256(parsed)
     if (
         recomputed != parsed.get("output_sha256")
@@ -477,18 +497,18 @@ def verify_entry_book_anchor(entry_book_bytes, anchor_doc, *, gate, gate_sha256,
         or parsed.get("entry_table_sha256") != anchor_doc["entry_table_sha256"]
         or anchor_doc["gate_sha256"] != gate_sha256
     ):
-        return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
+        return False, "ENTRY_BOOK_ANCHOR_MISMATCH", None
     pin = load_fee_source_v2()
     if (
         pin is None
         or anchor_doc["fee_source_sha256"] != pin["sha256"]
         or anchor_doc.get("fee_formula_id") != pin["fee_formula_id"]
     ):
-        return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
+        return False, "ENTRY_BOOK_ANCHOR_MISMATCH", None
     fresh = entry_book(gate, fee_ctx=fee_ctx)
     if fresh["entry_table_sha256"] != anchor_doc["entry_table_sha256"]:
-        return False, "ENTRY_BOOK_RECOMPUTE_MISMATCH"
-    return True, None
+        return False, "ENTRY_BOOK_RECOMPUTE_MISMATCH", None
+    return True, None, None
 
 
 def make_anchor(entry_book_bytes, *, gate_sha256, anchored_at_utc) -> dict:
@@ -573,7 +593,7 @@ def _blocked_score(book, *, anchor_status, inputs):
     return _with_hash(out)
 
 
-def _defect_score(book, kind, *, anchor_status, inputs):
+def _defect_score(book, kind, *, anchor_status, inputs, detail=None):
     evaluated = {
         "status": "REPORTING_DEFECT",
         "n_signals": None,
@@ -583,9 +603,12 @@ def _defect_score(book, kind, *, anchor_status, inputs):
     }
     out = _base_output(book, anchor_status=anchor_status, inputs=inputs, evaluated=evaluated)
     out["fee_state"] = "ADMITTED" if book.get("fee_admission") == "ADMITTED_INDEX_ONLY" else "BLOCKED_FEE_UNVERIFIED"
+    defect = {"kind": kind, "blocking": True}
+    if detail is not None:
+        defect["detail"] = detail
     out["reporting_defects"] = [
         _citation_defect(),
-        {"kind": kind, "blocking": True},
+        defect,
     ]
     return _with_hash(out)
 
@@ -745,7 +768,7 @@ def run(
     if book["status"] == "BLOCKED_FEE_UNVERIFIED":
         anchor_status = None
         if anchor_doc is not None or entry_book_bytes is not None:
-            ok, kind = verify_entry_book_anchor(
+            ok, kind, _detail = verify_entry_book_anchor(
                 entry_book_bytes,
                 anchor_doc,
                 gate=gate,
@@ -754,7 +777,7 @@ def run(
             )
             anchor_status = "VERIFIED" if ok else kind
         return _blocked_score(book, anchor_status=anchor_status, inputs=inputs)
-    ok, kind = verify_entry_book_anchor(
+    ok, kind, detail = verify_entry_book_anchor(
         entry_book_bytes,
         anchor_doc,
         gate=gate,
@@ -762,7 +785,7 @@ def run(
         fee_ctx=fee_ctx,
     )
     if not ok:
-        return _defect_score(book, kind, anchor_status=kind, inputs=inputs)
+        return _defect_score(book, kind, anchor_status=kind, inputs=inputs, detail=detail)
     if book["reporting_defects"]:
         return _defect_score(
             book,

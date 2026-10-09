@@ -292,7 +292,7 @@ class PnLHarness(unittest.TestCase):
             anchor_doc = pnl_cd.make_anchor(
                 entry_book_bytes,
                 gate_sha256=gate_sha,
-                anchored_at_utc="2000-01-01T00:00:00Z",
+                anchored_at_utc="2026-11-02T22:15:00Z",
             )
         calls = {"n": 0, "join": 0}
 
@@ -625,7 +625,7 @@ class PnLHarness(unittest.TestCase):
             anchor = pnl_cd.make_anchor(
                 book_path.read_bytes(),
                 gate_sha256=sha256_bytes(gate_path.read_bytes()),
-                anchored_at_utc="2000-01-01T00:00:00Z",
+                anchored_at_utc="2026-11-02T22:15:00Z",
             )
             (root / "anchor.json").write_text(json.dumps(anchor), encoding="utf-8")
             pins = root / "pins.json"
@@ -711,13 +711,13 @@ class PnLHarness(unittest.TestCase):
         base = self._run("P1_CLEAN")
         zero_table = EXPECTED["cases"]["C_ASK_ZERO"]["entry_table_sha256"]
         mutations = {
-            "ANCHOR_OK": lambda out: (out["_book"], pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), out["_gate"]),
+            "ANCHOR_OK": lambda out: (out["_book"], pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), out["_gate"]),
             "ANCHOR_MISSING": lambda out: (out["_book"], None, out["_gate"]),
-            "ANCHOR_SCHEMA_BAD": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), "schema": "nope"}, out["_gate"]),
-            "ANCHOR_FILE_SHA_MISMATCH": lambda out: (out["_book"][:-2] + b"ZZ", pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), out["_gate"]),
-            "ANCHOR_TABLE_SHA_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), "entry_table_sha256": zero_table}, out["_gate"]),
-            "ANCHOR_GATE_SHA_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), "gate_sha256": "cd" * 32}, out["_gate"]),
-            "ANCHOR_FEE_PAIR_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z"), "fee_source_sha256": "ef" * 32}, out["_gate"]),
+            "ANCHOR_SCHEMA_BAD": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), "schema": "nope"}, out["_gate"]),
+            "ANCHOR_FILE_SHA_MISMATCH": lambda out: (out["_book"][:-2] + b"ZZ", pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), out["_gate"]),
+            "ANCHOR_TABLE_SHA_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), "entry_table_sha256": zero_table}, out["_gate"]),
+            "ANCHOR_GATE_SHA_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), "gate_sha256": "cd" * 32}, out["_gate"]),
+            "ANCHOR_FEE_PAIR_MISMATCH": lambda out: (out["_book"], {**pnl_cd.make_anchor(out["_book"], gate_sha256=out["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z"), "fee_source_sha256": "ef" * 32}, out["_gate"]),
         }
         for name, build in mutations.items():
             spec = EXPECTED["anchor_cases"][name]
@@ -749,7 +749,7 @@ class PnLHarness(unittest.TestCase):
         mutated_bytes = json.dumps(mutated, sort_keys=True).encode()
         env = pnl_cd.entry_book_envelope(mutated, gate_sha256=sha256_bytes(mutated_bytes), fee_ctx=self.fee_ctx)
         raw = (json.dumps(env, indent=1) + "\n").encode()
-        anchor = pnl_cd.make_anchor(raw, gate_sha256=base["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z")
+        anchor = pnl_cd.make_anchor(raw, gate_sha256=base["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z")
         out = self._run("P1_CLEAN", gate=original, anchor_doc=anchor, entry_book_bytes=raw)
         self.assertEqual(out["status"], "REPORTING_DEFECT")
         self.assertIn("ENTRY_BOOK_RECOMPUTE_MISMATCH", [item["kind"] for item in out["reporting_defects"]])
@@ -864,7 +864,7 @@ class PnLHarness(unittest.TestCase):
                 env = pnl_cd.entry_book_envelope(gate, gate_sha256=sha256_bytes(gate_path.read_bytes()), fee_ctx=fee_ctx)
                 book = root / "book.json"
                 book.write_text(json.dumps(env, indent=1) + "\n", encoding="utf-8")
-                anchor = pnl_cd.make_anchor(book.read_bytes(), gate_sha256=sha256_bytes(gate_path.read_bytes()), anchored_at_utc="2000-01-01T00:00:00Z")
+                anchor = pnl_cd.make_anchor(book.read_bytes(), gate_sha256=sha256_bytes(gate_path.read_bytes()), anchored_at_utc="2026-11-02T22:15:00Z")
                 (root / "anchor.json").write_text(json.dumps(anchor), encoding="utf-8")
                 missing_settled = root / "no-such-settled.json"
                 dest = root / "out.json"
@@ -911,7 +911,7 @@ class PnLHarness(unittest.TestCase):
         forged_out.pop("fee_formula_id")
         forged_out["output_sha256"] = pnl_cd.score_body_sha256(forged_out)
         self.assertIsNone(cd_from_prc(forged_out, good["_gate"], fee_ctx=self.fee_ctx))
-        anchor = pnl_cd.make_anchor(good["_book"], gate_sha256=good["_gate_sha"], anchored_at_utc="2000-01-01T00:00:00Z")
+        anchor = pnl_cd.make_anchor(good["_book"], gate_sha256=good["_gate_sha"], anchored_at_utc="2026-11-02T22:15:00Z")
         anchor["fee_formula_id"] = forged
         bad_anchor = self._run("P1_CLEAN", anchor_doc=anchor, entry_book_bytes=good["_book"])
         self.assertEqual(bad_anchor["status"], "REPORTING_DEFECT")
@@ -1055,7 +1055,7 @@ class PnLHarness(unittest.TestCase):
         anchor = pnl_cd.make_anchor(
             book,
             gate_sha256=gate_sha,
-            anchored_at_utc="2000-01-01T00:00:00Z",
+            anchored_at_utc="2026-11-02T22:15:00Z",
         )
         calls = {"n": 0}
 
@@ -1282,6 +1282,283 @@ class PnLHarness(unittest.TestCase):
         self.assertIs(type(agreed["evaluations"]["reject_c"]), bool)
         self.assertNotEqual(agreed["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
 
+    def _run_module(self, root, module, args):
+        driver = root / "drive.py"
+        if not driver.is_file():
+            driver.write_text(
+                "import sys\n"
+                "from pathlib import Path\n"
+                "from card01_amc import verdict\n"
+                "verdict.PINS_PATH = Path(sys.argv[1])\n"
+                "name = sys.argv[2]\n"
+                "if name == 'entry_gate':\n"
+                "    from card01_amc.entry_gate import main\n"
+                "elif name == 'pnl_cd':\n"
+                "    from card01_amc.pnl_cd import main\n"
+                "elif name == 'verdict':\n"
+                "    from card01_amc.verdict import main\n"
+                "else:\n"
+                "    raise SystemExit(2)\n"
+                "sys.exit(main(sys.argv[3:]))\n",
+                encoding="utf-8",
+            )
+        env = dict(os.environ)
+        env["PYTHONPATH"] = str(LAB)
+        proc = subprocess.run(
+            [sys.executable, str(driver), str(self.pin_path), module, *args],
+            cwd=str(LAB),
+            capture_output=True,
+            text=True,
+            check=False,
+            env=env,
+        )
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertNotIn("Traceback", proc.stderr)
+        return proc
+
+    def _examiner_world(self):
+        from card01_amc.join_outcomes import join
+        from card01_amc.pnl_cd import make_anchor
+        from card01_amc.regime_split_secondary import build_report
+        from tests.test_regime_split_secondary import _selection
+
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+
+        def quote_row(race, ask):
+            ask_d = Decimal(ask)
+            bid = ask_d - Decimal("0.01")
+            return {
+                "race_id": race,
+                "ticker": "T-" + race,
+                "series": "XS1",
+                "mapping_status": "LEGACY",
+                "p_model": 0.99,
+                "p_market": 0.99,
+                "yes_bid": format(bid, "f"),
+                "yes_ask": format(ask_d, "f"),
+                "yes_bid_qty": 10,
+                "yes_ask_qty": 10,
+            }
+
+        rows = [
+            quote_row("W1", "0.055"),
+            quote_row("W2", "0.055"),
+            quote_row("W3", "0.055"),
+            quote_row("L1", "0.50"),
+            quote_row("L2", "0.50"),
+        ]
+        settled = {
+            "results": [
+                {"ticker": "T-" + race, "result": result, "settlement_ts": "2000-01-01T00:00:00.000000Z"}
+                for race, result in (
+                    ("W1", "yes"),
+                    ("W2", "yes"),
+                    ("W3", "yes"),
+                    ("L1", "no"),
+                    ("L2", "no"),
+                )
+            ]
+        }
+        (root / "rows.json").write_text(json.dumps(rows), encoding="utf-8")
+        (root / "rows-sub3.json").write_text(json.dumps(rows[:3]), encoding="utf-8")
+        (root / "settled.json").write_text(json.dumps(settled), encoding="utf-8")
+        (root / "score.json").write_text(json.dumps(_score_dict(-0.01, -0.02)), encoding="utf-8")
+        fee_args = [
+            "--fee-source", self.fee_ctx["fee_source_path"],
+            "--packet-index", self.fee_ctx["packet_index_path"],
+            "--fee-accept", self.fee_ctx["fee_accept_path"],
+        ]
+        gated = self._run_module(root, "entry_gate", [
+            str(root / "rows.json"),
+            "--fee-source-id", self.pin["id"],
+            "--fee-source-sha256", self.pin["sha256"],
+            *fee_args,
+        ])
+        (root / "gate-full5.json").write_text(gated.stdout, encoding="utf-8")
+        gated3 = self._run_module(root, "entry_gate", [
+            str(root / "rows-sub3.json"),
+            "--fee-source-id", self.pin["id"],
+            "--fee-source-sha256", self.pin["sha256"],
+            *fee_args,
+        ])
+        (root / "gate-sub3.json").write_text(gated3.stdout, encoding="utf-8")
+
+        def book_and_score(tag, gate_name, row_name):
+            book = root / ("book-" + tag + ".json")
+            self._run_module(root, "pnl_cd", [
+                "entry-book",
+                "--gate", str(root / gate_name),
+                *fee_args,
+                "--out", str(book),
+            ])
+            anchor = make_anchor(
+                book.read_bytes(),
+                gate_sha256=sha256_bytes((root / gate_name).read_bytes()),
+                anchored_at_utc="2026-11-02T22:15:00Z",
+            )
+            anchor_path = root / ("anchor-" + tag + ".json")
+            anchor_path.write_text(json.dumps(anchor), encoding="utf-8")
+            prc = root / ("prc-" + tag + ".json")
+            self._run_module(root, "pnl_cd", [
+                "score",
+                "--gate", str(root / gate_name),
+                "--rows", str(root / row_name),
+                "--entry-book", str(book),
+                "--entry-book-anchor", str(anchor_path),
+                "--settled-results", str(root / "settled.json"),
+                *fee_args,
+                "--out", str(prc),
+            ])
+            return json.loads(prc.read_text(encoding="utf-8"))
+
+        full = book_and_score("full5", "gate-full5.json", "rows.json")
+        sub = book_and_score("sub3", "gate-sub3.json", "rows-sub3.json")
+        full_gate = json.loads((root / "gate-full5.json").read_text(encoding="utf-8"))
+        subset_gate = json.loads(json.dumps(full_gate))
+        subset_gate["signals"] = full_gate["signals"][:3]
+        subset_gate["n_selected"] = 3
+        joined = join(rows, settled)["rows"]
+        report_kwargs = {
+            "selection": _selection(),
+            "settled": settled,
+            "fee_source_path": self.fee_ctx["fee_source_path"],
+            "fee_source_id": self.pin["id"],
+            "fee_source_sha256": self.pin["sha256"],
+            "packet_index_path": self.fee_ctx["packet_index_path"],
+            "fee_accept_path": self.fee_ctx["fee_accept_path"],
+            "series_used": ["XS1"],
+        }
+        blocked = build_report(joined, gate=subset_gate, **report_kwargs)
+        honest = build_report(joined, gate=full_gate, **report_kwargs)
+        (root / "regime-blocked.json").write_text(json.dumps(blocked), encoding="utf-8")
+        (root / "regime-honest.json").write_text(json.dumps(honest), encoding="utf-8")
+        return root, full, sub, blocked, honest
+
+    def _verdict_bound(self, root, *, gate=None, prc=None, regime=None, fee_ctx=None):
+        fee_ctx = self.fee_ctx if fee_ctx is None else fee_ctx
+        args = [str(root / "score.json")]
+        if gate is not None:
+            args.extend(["--gate", str(gate)])
+        if prc is not None:
+            args.extend(["--prc", str(prc)])
+        args.extend([
+            "--fee-source", fee_ctx["fee_source_path"],
+            "--packet-index", fee_ctx["packet_index_path"],
+            "--fee-accept", fee_ctx["fee_accept_path"],
+        ])
+        if regime is not None:
+            args.extend(["--regime-report", str(regime)])
+        proc = self._run_module(root, "verdict", args)
+        return json.loads(proc.stdout)
+
+    def test_e2b_cli_blocked_regime_requires_examiner(self):
+        root, full, sub, blocked, _honest = self._examiner_world()
+        self.assertEqual(full["status"], "OK")
+        self.assertEqual(full["n_signals"], 5)
+        self.assertEqual(full["net_headline_total"], "1.780")
+        self.assertEqual(full["net_one_tick_worse_total"], "1.730")
+        self.assertIs(full["reject_c"], False)
+        self.assertIs(full["reject_d"], True)
+        self.assertEqual(sub["status"], "OK")
+        self.assertEqual(sub["n_signals"], 3)
+        self.assertEqual(sub["net_headline_total"], "2.820")
+        self.assertEqual(sub["net_one_tick_worse_total"], "2.790")
+        self.assertIs(sub["reject_c"], False)
+        self.assertIs(sub["reject_d"], False)
+        self.assertEqual(blocked["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked["secondary"]["fee_block_reason"], "GATE_NOT_REPRODUCED")
+        blocked_path = root / "regime-blocked.json"
+        cases = (
+            ("a", root / "gate-full5.json", root / "prc-full5.json"),
+            ("b", root / "gate-full5.json", root / "prc-sub3.json"),
+            ("c", root / "gate-full5.json", root / "prc-full5.json"),
+        )
+        for name, gate, prc in cases:
+            regime = None if name == "c" else blocked_path
+            produced = self._verdict_bound(root, gate=gate, prc=prc, regime=regime)
+            self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+            self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
+            self.assertIsNone(produced["evaluations"]["reject_c"], name)
+            self.assertIsNone(produced["evaluations"]["reject_d"], name)
+            self.assertIn(
+                produced["binding_reason"],
+                {"GATE_BINDING_MISMATCH", "N_SIGNALS_MISMATCH", "BINDING_IDENTITY_MISSING", "REGIME_REPORT_REQUIRED"},
+                name,
+            )
+
+    def test_e2b_cli_prc_without_regime_requires_examiner(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
+        produced = self._verdict_bound(root, prc=root / "prc-full5.json")
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "REGIME_REPORT_REQUIRED")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertIsNone(produced["evaluations"]["reject_c"])
+        self.assertIsNone(produced["evaluations"]["reject_d"])
+
+    def test_e2b_cli_honest_triple_rejects_d(self):
+        root, _full, _sub, _blocked, honest = self._examiner_world()
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        self.assertEqual(honest["secondary"]["signals_and_size"]["n_signals"], 5)
+        produced = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=root / "prc-full5.json",
+            regime=root / "regime-honest.json",
+        )
+        self.assertEqual(produced["verdict"], "REJECT")
+        self.assertIn("(d)", produced["firing"])
+        self.assertNotIn("(c)", produced["firing"])
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertNotIn("binding_reason", produced)
+
+    def test_e2b_cli_regime_blocked_disk_admits_requires_examiner(self):
+        root, _full, _sub, _blocked, honest = self._examiner_world()
+        matched = {
+            "fee_state": "BLOCKED_FEE_UNVERIFIED",
+            "verdict_fee_branch": "FORECAST_ONLY_FEE_BLOCKED",
+            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
+            "inputs_sha256": {"gate_output": honest["inputs_sha256"]["gate_output"]},
+            "secondary": {"signals_and_size": {"n_signals": 5}},
+        }
+        path = root / "regime-matched-block.json"
+        path.write_text(json.dumps(matched), encoding="utf-8")
+        produced = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=root / "prc-full5.json",
+            regime=path,
+        )
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "REGIME_BLOCKED_DISK_ADMITS")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+
+    def test_e2b_cli_blocked_disk_stays_forecast_only(self):
+        root, _full, _sub, _blocked, honest = self._examiner_world()
+        matched = {
+            "fee_state": "BLOCKED_FEE_UNVERIFIED",
+            "verdict_fee_branch": "FORECAST_ONLY_FEE_BLOCKED",
+            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
+            "inputs_sha256": {"gate_output": honest["inputs_sha256"]["gate_output"]},
+            "secondary": {"signals_and_size": {"n_signals": 5}},
+        }
+        path = root / "regime-matched-block.json"
+        path.write_text(json.dumps(matched), encoding="utf-8")
+        bad = root / "bad-fee.json"
+        bad.write_text("{}", encoding="utf-8")
+        fee_ctx = dict(self.fee_ctx)
+        fee_ctx["fee_source_path"] = str(bad)
+        produced = self._verdict_bound(
+            root,
+            gate=root / "gate-full5.json",
+            prc=root / "prc-full5.json",
+            regime=path,
+            fee_ctx=fee_ctx,
+        )
+        self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+        self.assertNotEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+
     def test_e1b_stripped_book_reject_cannot_pass_forecast(self):
         from card01_amc.fee_admission import pinned_entry_v2
         from card01_amc.fee_source import pinned_taker_fee
@@ -1403,53 +1680,47 @@ class PnLHarness(unittest.TestCase):
         self.assertEqual(honest["status"], "OK")
         self.assertGreater(honest["_calls"]["n"], 0)
 
-    def test_e5_anchor_after_snapshot_blocks(self):
+    def test_e5_anchor_window(self):
         base = self._run("P1_CLEAN")
-        late = pnl_cd.make_anchor(
-            base["_book"],
-            gate_sha256=base["_gate_sha"],
-            anchored_at_utc="2026-11-05T00:00:00Z",
+
+        def scored(stamp):
+            anchor = pnl_cd.make_anchor(
+                base["_book"],
+                gate_sha256=base["_gate_sha"],
+                anchored_at_utc=stamp,
+            )
+            return self._run(
+                "P1_CLEAN",
+                gate=base["_gate"],
+                anchor_doc=anchor,
+                entry_book_bytes=base["_book"],
+            )
+
+        outside = (
+            ("2026-11-02T22:14:59Z", "BEFORE_EARLIEST"),
+            ("1999-01-01T00:00:00Z", "BEFORE_EARLIEST"),
+            ("2026-11-03T23:00:00Z", "AT_OR_AFTER_CUTOFF"),
+            ("2026-11-05T00:00:00Z", "AT_OR_AFTER_CUTOFF"),
         )
-        blocked = self._run(
-            "P1_CLEAN",
-            gate=base["_gate"],
-            anchor_doc=late,
-            entry_book_bytes=base["_book"],
-        )
-        self.assertEqual(blocked["status"], "REPORTING_DEFECT")
-        self.assertIn("ENTRY_BOOK_ANCHOR_AFTER_SNAPSHOT", [item["kind"] for item in blocked["reporting_defects"]])
-        self.assertEqual(blocked["_calls"]["n"], 0)
-        self.assertFalse(_has_money(blocked))
-        one_second = pnl_cd.make_anchor(
-            base["_book"],
-            gate_sha256=base["_gate_sha"],
-            anchored_at_utc="2026-11-02T22:00:01Z",
-        )
-        later = self._run(
-            "P1_CLEAN",
-            gate=base["_gate"],
-            anchor_doc=one_second,
-            entry_book_bytes=base["_book"],
-        )
-        self.assertEqual(later["status"], "REPORTING_DEFECT")
-        self.assertEqual(later["_calls"]["n"], 0)
-        exact = pnl_cd.make_anchor(
-            base["_book"],
-            gate_sha256=base["_gate_sha"],
-            anchored_at_utc="2026-11-02T22:00:00Z",
-        )
-        passed = self._run(
-            "P1_CLEAN",
-            gate=base["_gate"],
-            anchor_doc=exact,
-            entry_book_bytes=base["_book"],
-        )
-        self.assertEqual(passed["status"], "OK")
-        self.assertGreater(passed["_calls"]["n"], 0)
+        for stamp, detail in outside:
+            blocked = scored(stamp)
+            self.assertEqual(blocked["status"], "REPORTING_DEFECT", stamp)
+            window = [
+                item for item in blocked["reporting_defects"]
+                if item.get("kind") == "ENTRY_BOOK_ANCHOR_OUTSIDE_WINDOW"
+            ]
+            self.assertEqual(len(window), 1, stamp)
+            self.assertEqual(window[0].get("detail"), detail, stamp)
+            self.assertEqual(blocked["_calls"]["n"], 0, stamp)
+            self.assertFalse(_has_money(blocked), stamp)
+        for stamp in ("2026-11-02T22:15:00Z", "2026-11-03T22:59:59Z"):
+            passed = scored(stamp)
+            self.assertEqual(passed["status"], "OK", stamp)
+            self.assertGreater(passed["_calls"]["n"], 0, stamp)
         unparsed = pnl_cd.make_anchor(
             base["_book"],
             gate_sha256=base["_gate_sha"],
-            anchored_at_utc="2000-01-01T00:00:00Z",
+            anchored_at_utc="2026-11-02T22:15:00Z",
         )
         unparsed["anchored_at_utc"] = "not-a-timestamp"
         bad = self._run(

@@ -246,8 +246,11 @@ The Examiner then files an anchor packet
 envelope `output_sha256`, the entry-table sha, the gate sha, the fee-source
 sha, `fee_formula_id`, the module sha, `n_signals`, `anchored_at_utc`, and
 ruling sha `61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca`.
-That packet is box-only. Scoring opens the settled-results file only after
-the anchor verifies:
+That packet is box-only. `anchored_at_utc` verifies only when
+`ANCHOR_EARLIEST_UTC` (`2026-11-02T22:15:00Z`) <= the stamp <
+`ANCHOR_BEFORE_UTC` (`2026-11-03T23:00:00Z`). A stamp outside that window is
+`REPORTING_DEFECT` (`ENTRY_BOOK_ANCHOR_OUTSIDE_WINDOW`) and does not join.
+Scoring opens the settled-results file only after the anchor verifies:
 
 ```
 python -m card01_amc.pnl_cd score --gate GATE.json --rows ROWS.json --entry-book ENTRY_BOOK.json --entry-book-anchor ANCHOR.json --settled-results SETTLED.json --fee-source FEE.json --packet-index INDEX.md --fee-accept ACCEPT.json --out SCORE.json

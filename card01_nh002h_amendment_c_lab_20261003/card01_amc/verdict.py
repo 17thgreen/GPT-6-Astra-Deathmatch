@@ -498,31 +498,63 @@ def _regime_n_signals(regime):
     return None
 
 
-def _triple_agrees(gate, file_sha, prc, regime):
-    """True when the gate file, the PR-C output, and the regime report match.
+def _binding_reason(gate, file_sha, prc, regime):
+    """None when the gate file, the PR-C output, and the regime report match.
 
     The regime side may hash the parsed gate as compact JSON. The PR-C side
     records the file bytes. n_signals is read from secondary.signals_and_size
-    when build_report wrote it.
+    when build_report wrote it. A missing identity or a count disagreement
+    is a named reason. The caller must not drop that reason and score the
+    regime report on its own.
     """
     if not isinstance(prc, dict) or not isinstance(regime, dict) or not isinstance(gate, dict):
-        return False
+        return "BINDING_IDENTITY_MISSING"
     identities = _gate_identities(gate, file_sha)
     inputs = prc.get("inputs_sha256")
     prc_sha = inputs.get("gate_output") if isinstance(inputs, dict) else None
+    if not isinstance(prc_sha, str):
+        return "BINDING_IDENTITY_MISSING"
     if prc_sha not in identities:
-        return False
+        return "GATE_BINDING_MISMATCH"
     regime_ids = _regime_gate_ids(regime)
-    if not regime_ids or any(item not in identities for item in regime_ids):
-        return False
+    if not regime_ids:
+        return "BINDING_IDENTITY_MISSING"
+    if any(item not in identities for item in regime_ids):
+        return "GATE_BINDING_MISMATCH"
     signals = gate.get("signals")
     if not isinstance(signals, list):
-        return False
+        return "BINDING_IDENTITY_MISSING"
     n_signals = len(signals)
     regime_n = _regime_n_signals(regime)
-    if type(regime_n) is not int:
-        return False
-    return prc.get("n_signals") == n_signals and regime_n == n_signals
+    if type(prc.get("n_signals")) is not int or type(regime_n) is not int:
+        return "N_SIGNALS_MISMATCH"
+    if prc.get("n_signals") != n_signals or regime_n != n_signals:
+        return "N_SIGNALS_MISMATCH"
+    return None
+
+
+def _triple_agrees(gate, file_sha, prc, regime):
+    """True when _binding_reason finds no mismatch."""
+    return _binding_reason(gate, file_sha, prc, regime) is None
+
+
+def _binding_block(score, reason, regime):
+    """Examiner hand-off. cd is not taken from a report that failed to bind."""
+    raw_hi = _hi(score if isinstance(score, dict) else {}, "CI95_D_raw")
+    rc_hi = _hi(score if isinstance(score, dict) else {}, "CI95_D_rc")
+    evaluations = _evaluations(raw_hi, rc_hi, True, None)
+    fee_state = "BLOCKED_FEE_UNVERIFIED"
+    if isinstance(regime, dict) and isinstance(regime.get("fee_state"), str):
+        fee_state = regime["fee_state"]
+    return {
+        "verdict": FULL,
+        "binding_reason": reason,
+        "firing": [],
+        "evaluations": evaluations,
+        "fee_state": fee_state,
+        "fee_block_reason": reason,
+        "notes": [reason],
+    }
 
 
 def cd_from_prc(prc_output, gate, *, fee_ctx, gate_sha256=None):
@@ -589,9 +621,13 @@ def main(argv):
     cd = None
     regime = None
     if args.prc is not None or args.gate is not None:
+        if not args.regime_report:
+            json.dump(_binding_block(score, "REGIME_REPORT_REQUIRED", None), sys.stdout, indent=1)
+            return 0
+        regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
         if not args.prc or not args.gate:
-            print("usage: --gate and --prc are supplied together", file=sys.stderr)
-            return 2
+            json.dump(_binding_block(score, "BINDING_IDENTITY_MISSING", regime), sys.stdout, indent=1)
+            return 0
         fee_ctx = {
             "fee_source_path": args.fee_source,
             "packet_index_path": args.packet_index,
@@ -601,17 +637,26 @@ def main(argv):
         gate = json.loads(gate_bytes.decode("utf-8"))
         gate_sha = hashlib.sha256(gate_bytes).hexdigest()
         prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
-        regime_doc = None
-        if args.regime_report:
-            regime_doc = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
-        if _triple_agrees(gate, gate_sha, prc_output, regime_doc):
-            cd = cd_from_prc(
-                prc_output,
-                gate,
-                fee_ctx=fee_ctx,
-                gate_sha256=gate_sha,
+        reason = _binding_reason(gate, gate_sha, prc_output, regime)
+        if reason is not None:
+            json.dump(_binding_block(score, reason, regime), sys.stdout, indent=1)
+            return 0
+        disk = disk_fee_state(gate, fee_ctx)
+        fee_state, _notes, _why = _fee_state(regime)
+        if fee_state != "ADMITTED" and disk["admitted"]:
+            json.dump(
+                _binding_block(score, "REGIME_BLOCKED_DISK_ADMITS", regime),
+                sys.stdout,
+                indent=1,
             )
-    if args.regime_report:
+            return 0
+        cd = cd_from_prc(
+            prc_output,
+            gate,
+            fee_ctx=fee_ctx,
+            gate_sha256=gate_sha,
+        )
+    elif args.regime_report:
         regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
     json.dump(
         apply_verdict(score, cd=cd, regime_report=regime),

@@ -96,8 +96,11 @@ def _missing_side(kinds):
 
 
 def book_status(book) -> str:
+    """Capture label. A missing book is egress-closed. {} is an empty book."""
     if not isinstance(book, dict) or book.get("capture_status") == "NOT_CAPTURED_EGRESS_CLOSED":
         return "NOT_CAPTURED_EGRESS_CLOSED"
+    if not book:
+        return "ENTRY_BOOK_EMPTY"
     return "OK"
 
 
@@ -107,8 +110,9 @@ def _blank_counts():
 
 def quote_for_ticker(book, ticker):
     """One 11-03 quote, or a null label. Outside-window snapshots are ignored."""
-    if book_status(book) == "NOT_CAPTURED_EGRESS_CLOSED":
-        return {"status": "NOT_CAPTURED_EGRESS_CLOSED", "yes_mid": None}
+    status = book_status(book)
+    if status != "OK":
+        return {"status": status, "yes_mid": None}
     snaps = book.get("snapshots") if isinstance(book, dict) else None
     in_window = []
     if isinstance(snaps, list):

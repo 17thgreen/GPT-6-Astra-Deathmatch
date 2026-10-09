@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "7bb7255994326483117ceadfd32474e1569b8e5b6d244c90f870dacfbe634ac8",
+   "sha256": "62f06a912826c1d970453866f6a4d64a19f573e28fab577375d0b4796e3107be",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
@@ -460,7 +460,7 @@
   },
   {
    "path": "card01_amc/book_1103.py",
-   "sha256": "b4901628b34a7de69511b199f7759d3270d8ff7a08e4021061fdea886c6990ee",
+   "sha256": "4eca06d6373adab58dde029550af85ee0c7724e711b93bc8dcfe4ae82317fbc6",
    "role": "11-03 adverse selection labels",
    "vendored": true
   },
@@ -472,7 +472,7 @@
   },
   {
    "path": "card01_amc/pnl_cd.py",
-   "sha256": "fbaffbe6718bbb20b76d96f5774c028dae66a69e580180c0ef62815ed4580179",
+   "sha256": "fd4473b10625e619b545f421aa09edd7341ac5567925ad35c63a95c5602f485f",
    "role": "PR-C REJECT (c)/(d) realized P&L + one-tick-worse stress",
    "vendored": true
   },
