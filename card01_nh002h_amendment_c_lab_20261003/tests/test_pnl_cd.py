@@ -1799,12 +1799,195 @@ class PnLHarness(unittest.TestCase):
             )
             self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
             self.assertEqual(produced["binding_reason"], "DISK_BLOCKED_INPUTS_ADMITTED", name)
-            self.assertEqual(produced["binding_detail"], "regime_report,prc,gate", name)
+            self.assertEqual(
+                produced["binding_detail"],
+                "regime_report:fee_admission=ADMITTED_INDEX_ONLY;prc:status=OK,fee_state=ADMITTED;gate:status=OK",
+                name,
+            )
             self.assertNotEqual(produced["fee_block_reason"], "FEE_REPORT_MISSING", name)
             self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
             self.assertNotIn("FORECAST_ONLY", produced["verdict"], name)
             self.assertIsNone(produced["evaluations"]["reject_c"], name)
             self.assertIsNone(produced["evaluations"]["reject_d"], name)
+
+    def _wrong_fee_contexts(self, root):
+        pinned_v1 = LAB / "pins" / "FEE_SOURCE_CARD01_v1_2026-10-03.json"
+        if pinned_v1.is_file() and sha256_bytes(pinned_v1.read_bytes()) == V1_SHA:
+            v1_path = pinned_v1
+        else:
+            v1_path = LAB / "tests" / "fixtures" / "SYNTH_FEE_SOURCE_v1_example.json"
+            self.assertTrue(v1_path.is_file())
+            self.assertNotEqual(sha256_bytes(v1_path.read_bytes()), self.pin["sha256"])
+        unrelated = root / "unrelated-accept.txt"
+        unrelated.write_text("not an accept\n", encoding="utf-8")
+        cited = root / "packet-index-cited.md"
+        cited.write_text(
+            Path(self.fee_ctx["packet_index_path"]).read_text(encoding="utf-8")
+            + "\nConductor WITHDRAW of amendment 2c870cd5\n",
+            encoding="utf-8",
+        )
+        swapped = dict(self.fee_ctx)
+        swapped["fee_source_path"] = self.fee_ctx["fee_accept_path"]
+        swapped["fee_accept_path"] = self.fee_ctx["fee_source_path"]
+        v1_ctx = dict(self.fee_ctx)
+        v1_ctx["fee_source_path"] = str(v1_path)
+        unrelated_ctx = dict(self.fee_ctx)
+        unrelated_ctx["fee_accept_path"] = str(unrelated)
+        cited_ctx = dict(self.fee_ctx)
+        cited_ctx["packet_index_path"] = str(cited)
+        return (
+            ("v1_fee_source", v1_ctx),
+            ("swapped_source_and_accept", swapped),
+            ("unrelated_accept", unrelated_ctx),
+            ("citation_changed_index", cited_ctx),
+        )
+
+    def _zero_signal_chain(self, root):
+        """Real entry_gate, score, and build_report with no selected signal."""
+        from card01_amc.join_outcomes import join
+        from card01_amc.pnl_cd import make_anchor
+        from card01_amc.regime_split_secondary import build_report
+        from tests.test_regime_split_secondary import _selection
+
+        rows = [{
+            "race_id": "Z0",
+            "ticker": "T-Z0",
+            "series": "XS1",
+            "mapping_status": "LEGACY",
+            "p_model": 0.50,
+            "p_market": 0.50,
+            "yes_bid": "0.49",
+            "yes_ask": "0.50",
+            "yes_bid_qty": 10,
+            "yes_ask_qty": 10,
+        }]
+        settled = {
+            "results": [{
+                "ticker": "T-Z0",
+                "result": "yes",
+                "settlement_ts": "2000-01-01T00:00:00.000000Z",
+            }],
+        }
+        (root / "rows-zero.json").write_text(json.dumps(rows), encoding="utf-8")
+        (root / "settled-zero.json").write_text(json.dumps(settled), encoding="utf-8")
+        fee_args = [
+            "--fee-source", self.fee_ctx["fee_source_path"],
+            "--packet-index", self.fee_ctx["packet_index_path"],
+            "--fee-accept", self.fee_ctx["fee_accept_path"],
+        ]
+        gated = self._run_module(root, "entry_gate", [
+            str(root / "rows-zero.json"),
+            "--fee-source-id", self.pin["id"],
+            "--fee-source-sha256", self.pin["sha256"],
+            *fee_args,
+        ])
+        gate_path = root / "gate-zero.json"
+        gate_path.write_text(gated.stdout, encoding="utf-8")
+        gate = json.loads(gated.stdout)
+        joined = join(rows, settled)["rows"]
+        report = build_report(
+            joined,
+            gate=gate,
+            selection=_selection(),
+            settled=settled,
+            fee_source_path=self.fee_ctx["fee_source_path"],
+            fee_source_id=self.pin["id"],
+            fee_source_sha256=self.pin["sha256"],
+            packet_index_path=self.fee_ctx["packet_index_path"],
+            fee_accept_path=self.fee_ctx["fee_accept_path"],
+            series_used=["XS1"],
+        )
+        report_path = root / "regime-zero.json"
+        report_path.write_text(json.dumps(report), encoding="utf-8")
+        book = root / "book-zero.json"
+        self._run_module(root, "pnl_cd", [
+            "entry-book",
+            "--gate", str(gate_path),
+            *fee_args,
+            "--out", str(book),
+        ])
+        anchor = make_anchor(
+            book.read_bytes(),
+            gate_sha256=sha256_bytes(gate_path.read_bytes()),
+            anchored_at_utc="2026-11-02T22:15:00Z",
+        )
+        anchor_path = root / "anchor-zero.json"
+        anchor_path.write_text(json.dumps(anchor), encoding="utf-8")
+        prc_path = root / "prc-zero.json"
+        self._run_module(root, "pnl_cd", [
+            "score",
+            "--gate", str(gate_path),
+            "--rows", str(root / "rows-zero.json"),
+            "--entry-book", str(book),
+            "--entry-book-anchor", str(anchor_path),
+            "--settled-results", str(root / "settled-zero.json"),
+            *fee_args,
+            "--out", str(prc_path),
+        ])
+        return gate_path, prc_path, report_path, gate, report, json.loads(prc_path.read_text(encoding="utf-8"))
+
+    def test_mf3_gate_not_reproduced_report_on_wrong_fee_path_requires_examiner(self):
+        root, _full, _sub, blocked, _honest = self._examiner_world()
+        self.assertEqual(blocked["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked["secondary"]["fee_block_reason"], "GATE_NOT_REPRODUCED")
+        self.assertEqual(blocked["fee_admission"]["fee_admission"], "ADMITTED_INDEX_ONLY")
+        for name, fee_ctx in self._wrong_fee_contexts(root):
+            produced = self._verdict_bound(
+                root,
+                regime=root / "regime-blocked.json",
+                fee_ctx=fee_ctx,
+            )
+            self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+            self.assertEqual(produced["binding_reason"], "DISK_BLOCKED_INPUTS_ADMITTED", name)
+            self.assertEqual(
+                produced["binding_detail"],
+                "regime_report:fee_admission=ADMITTED_INDEX_ONLY",
+                name,
+            )
+            self.assertNotEqual(produced["fee_block_reason"], "FEE_REPORT_MISSING", name)
+            self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
+            self.assertNotIn("FORECAST_ONLY", produced["verdict"], name)
+            self.assertIsNone(produced["evaluations"]["reject_c"], name)
+            self.assertIsNone(produced["evaluations"]["reject_d"], name)
+
+    def test_mf3_zero_signal_gate_on_v1_path_requires_examiner(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
+        gate_path, _prc_path, _report_path, gate, report, _prc = self._zero_signal_chain(root)
+        self.assertEqual(gate["status"], "OK")
+        self.assertEqual(gate["signals"], [])
+        self.assertEqual(report["fee_state"], "ADMITTED")
+        v1_ctx = dict(self._wrong_fee_contexts(root)[0][1])
+        produced = self._verdict_bound(root, gate=gate_path, fee_ctx=v1_ctx)
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertEqual(produced["binding_reason"], "DISK_BLOCKED_INPUTS_ADMITTED")
+        self.assertEqual(produced["binding_detail"], "gate:status=OK")
+        self.assertNotEqual(produced["fee_block_reason"], "FEE_REPORT_MISSING")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertNotIn("FORECAST_ONLY", produced["verdict"])
+        self.assertIsNone(produced["evaluations"]["reject_c"])
+        self.assertIsNone(produced["evaluations"]["reject_d"])
+
+    def test_mf3_honest_zero_signal_triple_rejects(self):
+        root, _full, _sub, _blocked, _honest = self._examiner_world()
+        gate_path, prc_path, report_path, gate, report, prc = self._zero_signal_chain(root)
+        self.assertEqual(gate["status"], "OK")
+        self.assertEqual(gate["signals"], [])
+        self.assertEqual(report["fee_state"], "ADMITTED")
+        self.assertEqual(prc["status"], "NO_SIGNALS_SELECTED")
+        self.assertEqual(prc["n_signals"], 0)
+        self.assertIs(prc["reject_c"], True)
+        self.assertIs(prc["reject_d"], True)
+        produced = self._verdict_bound(
+            root,
+            gate=gate_path,
+            prc=prc_path,
+            regime=report_path,
+        )
+        self.assertEqual(produced["verdict"], "REJECT")
+        self.assertIn("(c)", produced["firing"])
+        self.assertIn("(d)", produced["firing"])
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        self.assertNotIn("binding_reason", produced)
 
     def test_e1b_stripped_book_reject_cannot_pass_forecast(self):
         from card01_amc.fee_admission import pinned_entry_v2

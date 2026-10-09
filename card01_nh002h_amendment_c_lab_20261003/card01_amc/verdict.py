@@ -688,52 +688,108 @@ def _signal_identity_reason(gate, prc):
 
 _ABSENT = object()
 
+# Positive fee-block labels. A trailing underscore is a prefix for that family.
+# FEE_SOURCE_ includes FEE_SOURCE_UNREADABLE and the v1 refusal
+# FEE_SOURCE_NOT_ADMITTED_V1_ATTEST_FAIL. NOT_AN_ACCEPT is the accept-file
+# label. GATE_NOT_REPRODUCED, an OK gate, and a missing field are not here.
+FEE_CLASS_REASONS = (
+    "FEE_SOURCE_",
+    "FEE_ACCEPT_",
+    "ACCEPT_69B98B2F_",
+    "FEE_CITATIONS_CHANGED",
+    "NOT_AN_ACCEPT",
+    "FEE_FORMULA_ID_MISMATCH",
+)
 
-def _regime_claims_admission(regime):
-    """True when a supplied report is admitted, or is not a blocked report.
 
-    A supplied non-report is labelled. It is not rewritten as a missing report.
+def _is_fee_class_reason(reason):
+    """True when reason is a fee or citation block label in FEE_CLASS_REASONS."""
+    if not isinstance(reason, str) or reason == "":
+        return False
+    for label in FEE_CLASS_REASONS:
+        if reason == label:
+            return True
+        if label.endswith("_") and reason.startswith(label):
+            return True
+    return False
+
+
+def _label(value, missing):
+    if isinstance(value, str) and value != "":
+        return value
+    return missing
+
+
+def _regime_fee_block_gap(regime):
+    """None when the report's own fee_admission proves a fee-class block.
+
+    fee_state is not read. A GATE_NOT_REPRODUCED report whose admission is
+    still ADMITTED_INDEX_ONLY does not prove a fee block.
     """
     if not isinstance(regime, dict):
-        return True
-    return _fee_state(regime)[0] == "ADMITTED"
+        return "not_a_report"
+    admission = regime.get("fee_admission")
+    if not isinstance(admission, dict):
+        return "fee_admission_missing"
+    if admission.get("fee_admission") != "BLOCKED_FEE_UNVERIFIED":
+        return "fee_admission=" + _label(admission.get("fee_admission"), "missing")
+    if _is_fee_class_reason(admission.get("fee_block_reason")):
+        return None
+    return "reason=" + _label(admission.get("fee_block_reason"), "missing")
 
 
-def _prc_claims_admission(prc):
-    """True when a supplied PR-C output is not itself fee-blocked."""
+def _prc_fee_block_gap(prc):
+    """None when status or fee_state is blocked for a fee-class reason."""
     if not isinstance(prc, dict):
-        return True
-    if prc.get("status") == "BLOCKED_FEE_UNVERIFIED":
-        return False
-    if prc.get("fee_state") == "BLOCKED_FEE_UNVERIFIED":
-        return False
-    return True
+        return "not_a_prc"
+    status = prc.get("status")
+    state = prc.get("fee_state")
+    blocked = (
+        status == "BLOCKED_FEE_UNVERIFIED"
+        or state == "BLOCKED_FEE_UNVERIFIED"
+    )
+    if not blocked:
+        return "status=" + _label(status, "missing") + ",fee_state=" + _label(state, "missing")
+    if _is_fee_class_reason(prc.get("fee_block_reason")):
+        return None
+    return "reason=" + _label(prc.get("fee_block_reason"), "missing")
 
 
-def _gate_claims_admission(gate):
-    """True when a supplied gate carries admitted signals."""
+def _gate_fee_block_gap(gate):
+    """None only when the gate status is BLOCKED_FEE_UNVERIFIED.
+
+    An OK gate with an empty signals list does not prove a fee block.
+    """
     if not isinstance(gate, dict):
-        return True
-    signals = gate.get("signals")
-    if not isinstance(signals, list):
-        return False
-    return any(isinstance(item, dict) for item in signals)
+        return "not_a_gate"
+    if gate.get("status") == "BLOCKED_FEE_UNVERIFIED":
+        return None
+    return "status=" + _label(gate.get("status"), "missing")
 
 
-def _disk_blocked_claims(regime, gate, prc):
-    """Names of supplied inputs that claim admission. _ABSENT means not supplied."""
-    names = []
-    if regime is not _ABSENT and _regime_claims_admission(regime):
-        names.append("regime_report")
-    if prc is not _ABSENT and _prc_claims_admission(prc):
-        names.append("prc")
-    if gate is not _ABSENT and _gate_claims_admission(gate):
-        names.append("gate")
-    return names
+def _unproven_fee_blocks(regime, gate, prc):
+    """Supplied inputs that do not positively prove a fee block.
+
+    _ABSENT means that input was not supplied. Each item is name:why.
+    """
+    gaps = []
+    if regime is not _ABSENT:
+        why = _regime_fee_block_gap(regime)
+        if why is not None:
+            gaps.append("regime_report:" + why)
+    if prc is not _ABSENT:
+        why = _prc_fee_block_gap(prc)
+        if why is not None:
+            gaps.append("prc:" + why)
+    if gate is not _ABSENT:
+        why = _gate_fee_block_gap(gate)
+        if why is not None:
+            gaps.append("gate:" + why)
+    return gaps
 
 
 def _forecast_only(score, regime):
-    """Disk-blocked hand-off when every supplied input is blocked or absent.
+    """Disk-blocked hand-off when every supplied input proves a fee block.
 
     A supplied report is passed through. It is not replaced with a missing report.
     """
@@ -779,19 +835,19 @@ def main(argv):
         prc_output = _ABSENT
         if args.prc is not None:
             prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
-        claims = _disk_blocked_claims(
+        gaps = _unproven_fee_blocks(
             regime,
             gate if args.gate is not None else _ABSENT,
             prc_output,
         )
-        if claims:
+        if gaps:
             report = regime if isinstance(regime, dict) else None
             json.dump(
                 _binding_block(
                     score,
                     "DISK_BLOCKED_INPUTS_ADMITTED",
                     report,
-                    detail=",".join(claims),
+                    detail=";".join(gaps),
                 ),
                 sys.stdout,
                 indent=1,
