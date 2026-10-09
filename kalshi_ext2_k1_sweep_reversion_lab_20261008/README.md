@@ -32,7 +32,7 @@ The cloud never executes that order.
 
 ## Kit defaults
 
-KD-1 through KD-21 are implemented as written. KD-5, KD-6, KD-7, and KD-19 are frozen at the kit values (Conductor addendum 2026-10-09). The other defaults remain pending Conductor confirmation.
+KD-1 through KD-21 are implemented as written, except KD-20, which is amended pending Conductor ratification: a rebuilt sweeps sha that differs from the filed receipt writes `INCONCLUSIVE` / V1 / `SWEEPS_SHA_MISMATCH` (rc 0, no statistics) instead of refusing, and a malformed timestamp writes `INCONCLUSIVE(STRUCTURE)` / V1s / `STRUCTURE_TIMESTAMP_MALFORMED` before the sweeps-sha check. KD-5, KD-6, KD-7, and KD-19 are frozen at the kit values (Conductor addendum 2026-10-09). The other defaults remain pending Conductor confirmation.
 
 KD-21 logs one reporting defect on every receipt and every results object: `FREEZE_R2_CHANGELOG_OMITS_FIVE_WORDING_CHANGES`. It is non-blocking and does not change the verdict.
 
