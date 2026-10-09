@@ -14,6 +14,8 @@ from decimal import Decimal, ROUND_HALF_EVEN
 from pathlib import Path
 
 from card01_amc.entry_gate import EXTRA_COST as BUFFER_2C
+from card01_amc.entry_gate import OutcomePresent as GateOutcomePresent
+from card01_amc.entry_gate import gate_v2
 from card01_amc.fee_source import FeeBlocked, pinned_taker_fee
 from card01_amc import join_outcomes
 from card01_amc.verdict import disk_fee_state, load_fee_source_v2, sha256_path
@@ -25,6 +27,8 @@ ENTRY_BOOK_SCHEMA = "astra.card01.prc_entry_book.v1"
 ANCHOR_SCHEMA = "astra.card01.prc_entry_book_anchor.v1"
 SCHEMA = "astra.card01.prc_pnl_cd.v1"
 SENSITIVITY_ROWS_STATUS = "SENSITIVITY_BASIS_INCOMPLETE"
+NET_FIGURE_LABEL = "ILLUSTRATIVE/R39"
+DECISION_SNAPSHOT_UTC = "2026-11-02T22:00:00Z"
 OUTCOME_KEYS = ("y", "result", "settlement", "outcome", "settled")
 RULING_SHA256 = "61c1e4ea948109508ef12497a96b45f728f8e183168b26bffb87f11fda6107ca"
 CITATION_DETAIL = (
@@ -455,6 +459,8 @@ def verify_entry_book_anchor(entry_book_bytes, anchor_doc, *, gate, gate_sha256,
         return False, "ENTRY_BOOK_ANCHOR_MISSING"
     if _anchor_invalid(anchor_doc):
         return False, "ENTRY_BOOK_ANCHOR_INVALID"
+    if anchor_doc.get("anchored_at_utc") > DECISION_SNAPSHOT_UTC:
+        return False, "ENTRY_BOOK_ANCHOR_AFTER_SNAPSHOT"
     file_sha = hashlib.sha256(entry_book_bytes).hexdigest()
     if file_sha != anchor_doc["entry_book_file_sha256"]:
         return False, "ENTRY_BOOK_ANCHOR_MISMATCH"
@@ -527,6 +533,7 @@ def _base_output(book, *, anchor_status, inputs, evaluated):
         "sensitivity_rows_status": SENSITIVITY_ROWS_STATUS,
         "fills_label": "simulated",
         "counts_toward_keep": False,
+        "net_figure_label": NET_FIGURE_LABEL,
         "inputs_sha256": inputs,
         "entry_table_sha256": book.get("entry_table_sha256"),
         "entry_book_output_sha256": book.get("entry_book_output_sha256"),
@@ -589,6 +596,84 @@ def _rows_outcome_free(rows):
             raise OutcomePresent(OUTCOME_KEYS[0])
 
 
+def _entry_book_block_reason(entry_book_bytes):
+    """ENTRY_BOOK_ABSENT, ENTRY_BOOK_EMPTY, or None when a book is present."""
+    if entry_book_bytes is None:
+        return "ENTRY_BOOK_ABSENT"
+    raw = entry_book_bytes.encode("utf-8") if isinstance(entry_book_bytes, str) else entry_book_bytes
+    if not isinstance(raw, (bytes, bytearray)) or raw.strip() == b"":
+        return "ENTRY_BOOK_ABSENT"
+    try:
+        parsed = json.loads(raw.decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError, ValueError):
+        return None
+    if parsed == {}:
+        return "ENTRY_BOOK_EMPTY"
+    return None
+
+
+def _rows_carry_book(rows):
+    for row in rows:
+        if isinstance(row, dict) and row.get("yes_bid") is not None and row.get("yes_ask") is not None:
+            return True
+    return False
+
+
+def _bare_rows(rows):
+    bare = []
+    for row in rows:
+        if isinstance(row, dict):
+            bare.append({key: value for key, value in row.items() if key not in OUTCOME_KEYS})
+    return bare
+
+
+def _signals_reproduced(gate, rows, fee_ctx):
+    """True when gate_v2 on the outcome-stripped rows returns the same signals.
+
+    Rows with no yes bid and no yes ask cannot be priced by gate_v2. The
+    synthetic cases are that shape. A row that carries a book must match.
+    """
+    if not _rows_carry_book(rows):
+        return True
+    if not isinstance(gate, dict) or not isinstance(fee_ctx, dict):
+        return False
+    pin = load_fee_source_v2()
+    if pin is None:
+        return False
+    try:
+        again = gate_v2(
+            _bare_rows(rows),
+            fee_source_path=fee_ctx.get("fee_source_path"),
+            fee_source_id=gate.get("fee_source"),
+            fee_source_sha256=pin["sha256"],
+            packet_index_path=fee_ctx.get("packet_index_path"),
+            fee_accept_path=fee_ctx.get("fee_accept_path"),
+        )
+    except (FeeBlocked, GateOutcomePresent, OutcomePresent, ValueError, TypeError):
+        return False
+    return (
+        isinstance(again, dict)
+        and again.get("status") == "OK"
+        and again.get("signals") == gate.get("signals")
+    )
+
+
+def _label_nets(out):
+    rows = out.get("per_signal")
+    if not isinstance(rows, list):
+        return out
+    labelled = []
+    for row in rows:
+        if isinstance(row, dict):
+            item = dict(row)
+            item["net_label"] = NET_FIGURE_LABEL
+            labelled.append(item)
+        else:
+            labelled.append(row)
+    out["per_signal"] = labelled
+    return out
+
+
 def run(
     gate,
     rows,
@@ -602,6 +687,36 @@ def run(
 ) -> dict:
     """Fee state, then the anchor, then the join. The loader runs only after both pass."""
     _rows_outcome_free(rows)
+    book_reason = _entry_book_block_reason(entry_book_bytes)
+    if book_reason is not None:
+        inputs = {
+            "gate_output": gate_sha256,
+            "rows": _canonical(rows),
+            "entry_book": None,
+            "entry_book_anchor": None if anchor_doc is None else _canonical(anchor_doc),
+            "settled_results": None,
+            "fee_source": None,
+            "packet_index": None,
+            "fee_accept": None,
+        }
+        stub = {
+            "status": "BLOCKED_FEE_UNVERIFIED",
+            "fee_admission": "BLOCKED_FEE_UNVERIFIED",
+            "fee_block_reason": book_reason,
+            "fee_source": None,
+            "fee_source_sha256": None,
+            "fee_source_accept_sha256": None,
+            "fee_formula_id": None,
+            "entry_table_sha256": None,
+            "entry_book_output_sha256": None,
+            "fee_input_sha256": {},
+        }
+        out = _blocked_score(stub, anchor_status=book_reason, inputs=inputs)
+        out["reporting_defects"] = [
+            _citation_defect(),
+            {"kind": book_reason, "blocking": True},
+        ]
+        return _with_hash(out)
     book = entry_book(gate, fee_ctx=fee_ctx)
     inputs = {
         "gate_output": gate_sha256,
@@ -613,6 +728,14 @@ def run(
         "packet_index": (book.get("fee_input_sha256") or {}).get("packet_index"),
         "fee_accept": (book.get("fee_input_sha256") or {}).get("fee_accept"),
     }
+    if book["status"] != "BLOCKED_FEE_UNVERIFIED" and not _signals_reproduced(gate, rows, fee_ctx):
+        out = _defect_score(book, "GATE_NOT_REPRODUCED", anchor_status="GATE_NOT_REPRODUCED", inputs=inputs)
+        out["status"] = "GATE_NOT_REPRODUCED"
+        out["fee_block_reason"] = "GATE_NOT_REPRODUCED"
+        out["fee_state"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_c"] = "BLOCKED_FEE_UNVERIFIED"
+        out["reject_d"] = "BLOCKED_FEE_UNVERIFIED"
+        return _with_hash(out)
     if book["status"] == "BLOCKED_FEE_UNVERIFIED":
         anchor_status = None
         if anchor_doc is not None or entry_book_bytes is not None:
@@ -667,6 +790,7 @@ def run(
     ):
         if field in evaluated:
             out[field] = evaluated[field]
+    _label_nets(out)
     if emit_buffered and evaluated.get("status") == "OK":
         per = []
         total = Decimal(0)

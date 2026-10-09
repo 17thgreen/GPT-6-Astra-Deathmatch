@@ -161,6 +161,90 @@ def _status_blocks(text):
     return _SUPERSEDED_RE.search(folded) is not None
 
 
+# 69b98b2f is not in the citation multiset. A row cites it when, after
+# zero-width removal and casefolding, it contains the 7-hex prefix.
+_R1_ACCEPT_PREFIX7 = "69b98b2"
+_R1_BOLD_RE = re.compile(
+    r"\*\*\s*(?:withdrawn|withdraws|withdraw|revoked|revoke|rescinded|rescind|"
+    r"superseded|supersede|not\s+adopted|not\s+admitted|void)\s*\*\*",
+    re.IGNORECASE,
+)
+_R1_TOKEN_RE = re.compile(
+    r"\b(?:withdrawn|withdraws|withdraw|revoked|rescinded|not adopted|not admitted|void)\b"
+)
+_R1_SUPERSEDE_RE = re.compile(r"\bsupersede\b")
+_R1_NEGATED_RE = re.compile(
+    r"\bnot\s+(?:withdrawn|withdraws|withdraw|revoked|rescinded|superseded|supersede|void)\b"
+)
+_R1_PACKET_ACTIONS = frozenset({
+    "withdraw",
+    "withdrawn",
+    "withdraws",
+    "revoke",
+    "revoked",
+    "rescind",
+    "rescinded",
+    "supersede",
+    "superseded",
+})
+
+
+def _cites_r1_accept(text):
+    if not isinstance(text, str) or text == "":
+        return False
+    return _R1_ACCEPT_PREFIX7 in text.translate(_ZERO_WIDTH).casefold()
+
+
+def _r1_status_hit(text):
+    """Standalone or bold status on text that already cites 69b98b2f.
+
+    "not withdrawn" and "superseded by" stay narrative. "not adopted" and
+    "not admitted" are status phrases and still match.
+    """
+    if not isinstance(text, str) or text == "":
+        return False
+    if _R1_BOLD_RE.search(text):
+        return True
+    folded = _normalize_status(text.translate(_ZERO_WIDTH))
+    if re.search(r"\bnot adopted\b", folded) or re.search(r"\bnot admitted\b", folded):
+        return True
+    scrubbed = _R1_NEGATED_RE.sub(" ", folded)
+    if _R1_TOKEN_RE.search(scrubbed):
+        return True
+    if _SUPERSEDED_RE.search(scrubbed):
+        return True
+    return _R1_SUPERSEDE_RE.search(scrubbed) is not None
+
+
+def _r1_packet_action(path):
+    if not isinstance(path, str) or path == "":
+        return False
+    parts = re.split(r"[^a-z0-9]+", path.translate(_ZERO_WIDTH).casefold())
+    return any(part in _R1_PACKET_ACTIONS for part in parts)
+
+
+def _r1_accept_block_reason(text):
+    """ACCEPT_69B98B2F_WITHDRAWN, or None.
+
+    A line that cites 69b98b2f blocks when its status is a bold word or a
+    standalone token from the status list. A parsed packet row also blocks
+    when its path names WITHDRAW, REVOKE, RESCIND, or SUPERSEDE. A cite with
+    neither of those stays open.
+    """
+    if not isinstance(text, str) or text == "":
+        return None
+    for row in _index_rows(text):
+        blob = row["path"] + " " + row["description"]
+        if _cites_r1_accept(blob) and (
+            _r1_status_hit(row["description"]) or _r1_packet_action(row["path"])
+        ):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+    for line in text.splitlines():
+        if _cites_r1_accept(line) and _r1_status_hit(line):
+            return "ACCEPT_69B98B2F_WITHDRAWN"
+    return None
+
+
 def _mentions_sha(row, sha):
     """True when the row is keyed by sha, or its path or text cites sha."""
     if not isinstance(sha, str) or len(sha) != 64:
@@ -334,6 +418,9 @@ def admit_fee_source_v2(
     citation_reason = _citation_block_reason(index_text)
     if citation_reason is not None:
         return _blocked(citation_reason, "b", "CITATION_SET", **identity)
+    r1_reason = _r1_accept_block_reason(index_text)
+    if r1_reason is not None:
+        return _blocked(r1_reason, "b", "R1_ACCEPT", **identity)
     rows = _index_rows(index_text)
     anchored = [row for row in rows if row["sha256"] == fee_source_sha256]
     if not anchored:

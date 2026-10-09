@@ -232,6 +232,57 @@ class CitationPinTests(unittest.TestCase):
             self.assertEqual(blocked.fee_block_reason, "FEE_CITATIONS_CHANGED")
             self.assertTrue(_no_fee_numbers(blocked.public_dict()))
 
+    def _admit_synth_index(self, extra):
+        import tempfile
+
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        root = Path(tmp.name)
+        paths = _copy_kit(root)
+        index_path = paths[2]
+        index_path.write_text(index_path.read_text(encoding="utf-8") + extra, encoding="utf-8")
+        digest = sha256_bytes(paths[0].read_bytes())
+        return admit_fee_source_v2(
+            fee_source_path=paths[0],
+            fee_source_id="FEE_SOURCE_SYNTH_v2",
+            fee_source_sha256=digest,
+            packet_index_path=index_path,
+            fee_accept_path=paths[1],
+            series_used=["XS1"],
+        )
+
+    def test_r1_withdraw_citing_69b98b2f_blocks(self):
+        calm = self._admit_synth_index(
+            "| `notes/r1-context.md` (background on 69b98b2f only) | `" + ("ab" * 32) + "` |\n"
+        )
+        self.assertEqual(calm.fee_admission, "ADMITTED_INDEX_ONLY")
+        narrative = self._admit_synth_index(
+            "| `notes/r1-context.md` (superseded by 0123abcd under 69b98b2f) | `" + ("cd" * 32) + "` |\n"
+        )
+        self.assertEqual(narrative.fee_admission, "ADMITTED_INDEX_ONLY")
+        blocked = self._admit_synth_index(
+            "| `notes/r1-status.md` (WITHDRAWN 69b98b2f) | `" + ("ef" * 32) + "` |\n"
+        )
+        self.assertEqual(blocked.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked.fee_block_reason, "ACCEPT_69B98B2F_WITHDRAWN")
+        self.assertTrue(_no_fee_numbers(blocked.public_dict()))
+
+    def test_r1_revoke_citing_69b98b2f_blocks(self):
+        blocked = self._admit_synth_index(
+            "| `notes/r1-status.md` (**REVOKED** 69b98b2f) | `" + ("11" * 32) + "` |\n"
+        )
+        self.assertEqual(blocked.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked.fee_block_reason, "ACCEPT_69B98B2F_WITHDRAWN")
+        self.assertTrue(_no_fee_numbers(blocked.public_dict()))
+
+    def test_r1_supersede_packet_citing_69b98b2f_blocks(self):
+        blocked = self._admit_synth_index(
+            "| `packets/SUPERSEDE_note.md` (cites 69b98b2f) | `" + ("22" * 32) + "` |\n"
+        )
+        self.assertEqual(blocked.fee_admission, "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(blocked.fee_block_reason, "ACCEPT_69B98B2F_WITHDRAWN")
+        self.assertTrue(_no_fee_numbers(blocked.public_dict()))
+
 
 class RealCitationTests(unittest.TestCase):
     def _root(self):

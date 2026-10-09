@@ -963,6 +963,295 @@ class PnLHarness(unittest.TestCase):
         self.assertEqual(kept["reject_c"], False)
         self.assertEqual(kept["reject_d"], False)
 
+    def _score_bytes(self, gate, gate_bytes, rows, settled):
+        gate_sha = sha256_bytes(gate_bytes)
+        envelope = pnl_cd.entry_book_envelope(gate, gate_sha256=gate_sha, fee_ctx=self.fee_ctx)
+        book = (json.dumps(envelope, indent=1) + "\n").encode()
+        anchor = pnl_cd.make_anchor(
+            book,
+            gate_sha256=gate_sha,
+            anchored_at_utc="2000-01-01T00:00:00Z",
+        )
+        calls = {"n": 0}
+
+        def loader():
+            calls["n"] += 1
+            return settled
+
+        out = pnl_cd.run(
+            gate,
+            rows,
+            loader,
+            gate_sha256=gate_sha,
+            entry_book_bytes=book,
+            anchor_doc=anchor,
+            fee_ctx=self.fee_ctx,
+        )
+        out["_calls"] = calls
+        out["_gate_sha"] = gate_sha
+        return out
+
+    def test_e2b_subset_gate_does_not_bind(self):
+        case = self._case("P1_CLEAN")
+        full = self._gate(case)
+        subset = json.loads(json.dumps(full))
+        subset["signals"] = subset["signals"][:3]
+        subset["n_selected"] = 3
+        rows, settled = _split(case)
+        full_bytes = json.dumps(full, sort_keys=True).encode()
+        subset_bytes = json.dumps(subset, sort_keys=True).encode()
+        full_out = self._score_bytes(full, full_bytes, rows, settled)
+        subset_out = self._score_bytes(subset, subset_bytes, rows, settled)
+        self.assertEqual(full_out["status"], "OK")
+        self.assertEqual(subset_out["status"], "OK")
+        self.assertEqual(subset_out["n_signals"], 3)
+        self.assertNotEqual(subset_out["inputs_sha256"]["gate_output"], full_out["inputs_sha256"]["gate_output"])
+        mismatch = cd_from_prc(_public(subset_out), full, fee_ctx=self.fee_ctx)
+        self.assertIsNone(mismatch)
+        produced = apply_verdict(
+            _score_dict(-0.01, -0.02),
+            cd=mismatch,
+            regime_report=_admitted_report(self.pin),
+        )
+        self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertNotIn("PASS-FORECAST", produced["verdict"])
+        matched = cd_from_prc(_public(subset_out), subset, fee_ctx=self.fee_ctx)
+        self.assertIs(matched["reject_c"], subset_out["reject_c"])
+        self.assertIs(matched["reject_d"], subset_out["reject_d"])
+        self.assertIs(type(matched["reject_c"]), bool)
+        self.assertIs(type(matched["reject_d"]), bool)
+
+    def test_e2b_cli_gate_prc_regime_must_agree(self):
+        case = self._case("P1_CLEAN")
+        full = self._gate(case)
+        subset = json.loads(json.dumps(full))
+        subset["signals"] = subset["signals"][:3]
+        subset["n_selected"] = 3
+        rows, settled = _split(case)
+        full_bytes = json.dumps(full, sort_keys=True).encode()
+        subset_bytes = json.dumps(subset, sort_keys=True).encode()
+        subset_out = self._score_bytes(subset, subset_bytes, rows, settled)
+        self.assertEqual(subset_out["status"], "OK")
+        public = _public(subset_out)
+
+        def report_for(gate_sha, n_signals):
+            report = _admitted_report(self.pin)
+            report["gate_sha256"] = gate_sha
+            report["n_signals"] = n_signals
+            return report
+
+        def invoke(gate_bytes, regime):
+            with tempfile.TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                (root / "score.json").write_text(json.dumps(_score_dict(-0.01, -0.02)), encoding="utf-8")
+                (root / "prc.json").write_text(json.dumps(public), encoding="utf-8")
+                (root / "gate.json").write_bytes(gate_bytes)
+                (root / "regime.json").write_text(json.dumps(regime), encoding="utf-8")
+                driver = root / "drive.py"
+                driver.write_text(
+                    "import sys\n"
+                    "from pathlib import Path\n"
+                    "from card01_amc import verdict\n"
+                    "from card01_amc.verdict import main\n"
+                    "verdict.PINS_PATH = Path(sys.argv[1])\n"
+                    "sys.exit(main(sys.argv[2:]))\n",
+                    encoding="utf-8",
+                )
+                env = dict(os.environ)
+                env["PYTHONPATH"] = str(LAB)
+                proc = subprocess.run(
+                    [
+                        sys.executable, str(driver), str(self.pin_path),
+                        str(root / "score.json"),
+                        "--gate", str(root / "gate.json"),
+                        "--prc", str(root / "prc.json"),
+                        "--fee-source", self.fee_ctx["fee_source_path"],
+                        "--packet-index", self.fee_ctx["packet_index_path"],
+                        "--fee-accept", self.fee_ctx["fee_accept_path"],
+                        "--regime-report", str(root / "regime.json"),
+                    ],
+                    cwd=str(LAB),
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                    env=env,
+                )
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            return json.loads(proc.stdout)
+
+        refused = invoke(full_bytes, report_for(sha256_bytes(full_bytes), 5))
+        self.assertEqual(refused["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertIsNone(refused["evaluations"]["reject_c"])
+        self.assertIsNone(refused["evaluations"]["reject_d"])
+        self.assertNotIn("PASS-FORECAST", refused["verdict"])
+        agreed = invoke(subset_bytes, report_for(sha256_bytes(subset_bytes), 3))
+        self.assertEqual(agreed["evaluations"]["reject_c"], subset_out["reject_c"])
+        self.assertEqual(agreed["evaluations"]["reject_d"], subset_out["reject_d"])
+        self.assertIs(type(agreed["evaluations"]["reject_c"]), bool)
+        self.assertNotEqual(agreed["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+
+    def test_e1b_ten_cent_forged_gate_is_not_reproduced(self):
+        from card01_amc.entry_gate import gate_v2
+        from card01_amc.fee_admission import pinned_entry_v2
+        from card01_amc.fee_source import pinned_taker_fee
+
+        row = {
+            "series": "XS1",
+            "mapping_status": "LEGACY",
+            "p_market": 0.8,
+            "p_model": 0.8,
+            "yes_bid": 0.35,
+            "yes_ask": 0.4,
+            "yes_ask_qty": 10,
+            "yes_bid_qty": 10,
+            "race_id": "XA-01",
+            "state": "XA",
+            "ticker": "T-XA-01",
+            "y": 1,
+        }
+        bare = {key: value for key, value in row.items() if key != "y"}
+        true_gate = gate_v2(
+            [bare],
+            fee_source_path=self.fee_ctx["fee_source_path"],
+            fee_source_id=self.pin["id"],
+            fee_source_sha256=self.pin["sha256"],
+            packet_index_path=self.fee_ctx["packet_index_path"],
+            fee_accept_path=self.fee_ctx["fee_accept_path"],
+        )
+        self.assertEqual(true_gate["status"], "OK")
+        self.assertEqual(len(true_gate["signals"]), 1)
+        forged = json.loads(json.dumps(true_gate))
+        entry = pinned_entry_v2(self.admission, "XS1")
+        for signal in forged["signals"]:
+            price = Decimal(str(signal["price"])) + Decimal("0.10")
+            signal["price"] = float(price)
+            quoted = pinned_taker_fee(entry, price)
+            signal["fee"] = float(quoted["headline"])
+            signal["fee_decimal"] = str(quoted["headline"])
+        self.assertNotEqual(forged["signals"], true_gate["signals"])
+        scoring_row = {key: value for key, value in row.items() if key != "y"}
+        settled = {
+            "results": [{
+                "ticker": "T-XA-01",
+                "result": "yes",
+                "settlement_ts": "2000-01-01T00:00:00.000000Z",
+            }],
+        }
+        gate_bytes = json.dumps(forged, sort_keys=True).encode()
+        scored = self._score_bytes(forged, gate_bytes, [scoring_row], settled)
+        self.assertEqual(scored["status"], "GATE_NOT_REPRODUCED")
+        self.assertEqual(scored["fee_block_reason"], "GATE_NOT_REPRODUCED")
+        self.assertIn("GATE_NOT_REPRODUCED", [item["kind"] for item in scored["reporting_defects"]])
+        self.assertEqual(scored["_calls"]["n"], 0)
+        self.assertFalse(_has_money(scored))
+        self.assertNotEqual(scored["reject_c"], True)
+        self.assertNotEqual(scored["reject_d"], True)
+        honest = self._score_bytes(
+            true_gate,
+            json.dumps(true_gate, sort_keys=True).encode(),
+            [scoring_row],
+            settled,
+        )
+        self.assertEqual(honest["status"], "OK")
+        self.assertGreater(honest["_calls"]["n"], 0)
+
+    def test_e5_anchor_after_snapshot_blocks(self):
+        base = self._run("P1_CLEAN")
+        late = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-05T00:00:00Z",
+        )
+        blocked = self._run(
+            "P1_CLEAN",
+            gate=base["_gate"],
+            anchor_doc=late,
+            entry_book_bytes=base["_book"],
+        )
+        self.assertEqual(blocked["status"], "REPORTING_DEFECT")
+        self.assertIn("ENTRY_BOOK_ANCHOR_AFTER_SNAPSHOT", [item["kind"] for item in blocked["reporting_defects"]])
+        self.assertEqual(blocked["_calls"]["n"], 0)
+        self.assertFalse(_has_money(blocked))
+        one_second = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:00:01Z",
+        )
+        later = self._run(
+            "P1_CLEAN",
+            gate=base["_gate"],
+            anchor_doc=one_second,
+            entry_book_bytes=base["_book"],
+        )
+        self.assertEqual(later["status"], "REPORTING_DEFECT")
+        self.assertEqual(later["_calls"]["n"], 0)
+        exact = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2026-11-02T22:00:00Z",
+        )
+        passed = self._run(
+            "P1_CLEAN",
+            gate=base["_gate"],
+            anchor_doc=exact,
+            entry_book_bytes=base["_book"],
+        )
+        self.assertEqual(passed["status"], "OK")
+        self.assertGreater(passed["_calls"]["n"], 0)
+        unparsed = pnl_cd.make_anchor(
+            base["_book"],
+            gate_sha256=base["_gate_sha"],
+            anchored_at_utc="2000-01-01T00:00:00Z",
+        )
+        unparsed["anchored_at_utc"] = "not-a-timestamp"
+        bad = self._run(
+            "P1_CLEAN",
+            gate=base["_gate"],
+            anchor_doc=unparsed,
+            entry_book_bytes=base["_book"],
+        )
+        self.assertEqual(bad["status"], "REPORTING_DEFECT")
+        self.assertIn("ENTRY_BOOK_ANCHOR_INVALID", [item["kind"] for item in bad["reporting_defects"]])
+        self.assertEqual(bad["_calls"]["n"], 0)
+
+    def test_e9_empty_or_missing_entry_book_is_blocked(self):
+        gate = self._gate(self._case("P1_CLEAN"))
+        rows, settled = _split(self._case("P1_CLEAN"))
+        calls = {"n": 0}
+
+        def loader():
+            calls["n"] += 1
+            return settled
+
+        specs = (("absent", None, "ENTRY_BOOK_ABSENT"), ("empty", b"{}", "ENTRY_BOOK_EMPTY"))
+        for name, book, reason in specs:
+            out = pnl_cd.run(
+                gate,
+                rows,
+                loader,
+                gate_sha256="ab" * 32,
+                entry_book_bytes=book,
+                anchor_doc=None,
+                fee_ctx=self.fee_ctx,
+            )
+            self.assertEqual(out["status"], "BLOCKED_FEE_UNVERIFIED", name)
+            self.assertEqual(out["fee_block_reason"], reason, name)
+            self.assertIn(reason, [item["kind"] for item in out["reporting_defects"]], name)
+            self.assertNotEqual(out["status"], "OK", name)
+            self.assertFalse(_has_money(out), name)
+            self.assertEqual(calls["n"], 0, name)
+
+    def test_r39_net_figures_are_labelled_illustrative(self):
+        out = self._run("P1_CLEAN")
+        self.assertEqual(out["net_figure_label"], "ILLUSTRATIVE/R39")
+        self.assertEqual(out["net_headline_total"], EXPECTED["cases"]["P1_CLEAN"]["net_headline_total"])
+        self.assertTrue(out["per_signal"])
+        for row in out["per_signal"]:
+            self.assertEqual(row["net_label"], "ILLUSTRATIVE/R39")
+        zero = self._run("ZERO_SIGNALS")
+        self.assertEqual(zero["net_figure_label"], "ILLUSTRATIVE/R39")
+        self.assertEqual(zero["net_headline_total"], "0")
+
     def test_pins_override_is_tests_only(self):
         for path in (LAB / "card01_amc").glob("*.py"):
             tree = ast.parse(path.read_text(encoding="utf-8"))

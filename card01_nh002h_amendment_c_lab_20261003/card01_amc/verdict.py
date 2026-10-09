@@ -8,6 +8,7 @@ boolean stays fail-closed. Zero signals make both (c) and (d) true.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 from pathlib import Path
@@ -418,12 +419,66 @@ def _both_bool(reject_c, reject_d):
     return type(reject_c) is bool and type(reject_d) is bool
 
 
-def cd_from_prc(prc_output, gate, *, fee_ctx):
-    """Hand-off check: schema, output hash, and the PINS fee pair.
+def _hex64(value):
+    if not isinstance(value, str) or len(value) != 64:
+        return False
+    return all(char in "0123456789abcdef" for char in value)
+
+
+def _handed_gate_sha(gate, gate_sha256):
+    if isinstance(gate_sha256, str):
+        return gate_sha256
+    if not isinstance(gate, dict):
+        return None
+    raw = json.dumps(gate, sort_keys=True).encode("utf-8")
+    return hashlib.sha256(raw).hexdigest()
+
+
+def _gate_bound(prc_output, gate, gate_sha256):
+    """True when the score's gate sha and n_signals match the handed gate."""
+    inputs = prc_output.get("inputs_sha256")
+    recorded = inputs.get("gate_output") if isinstance(inputs, dict) else None
+    handed = _handed_gate_sha(gate, gate_sha256)
+    if not _hex64(recorded) or recorded != handed:
+        return False
+    signals = gate.get("signals") if isinstance(gate, dict) else None
+    if not isinstance(signals, list):
+        return False
+    return prc_output.get("n_signals") == len(signals)
+
+
+def _report_gate_sha(regime):
+    if not isinstance(regime, dict):
+        return None
+    if isinstance(regime.get("gate_sha256"), str):
+        return regime["gate_sha256"]
+    inputs = regime.get("inputs_sha256")
+    if isinstance(inputs, dict) and isinstance(inputs.get("gate_output"), str):
+        return inputs["gate_output"]
+    return None
+
+
+def _triple_agrees(gate_sha, n_signals, prc, regime):
+    """True when the gate file, the PR-C output, and the regime report match."""
+    if not isinstance(prc, dict) or not isinstance(regime, dict):
+        return False
+    inputs = prc.get("inputs_sha256")
+    prc_sha = inputs.get("gate_output") if isinstance(inputs, dict) else None
+    if not (isinstance(gate_sha, str) and gate_sha == prc_sha == _report_gate_sha(regime)):
+        return False
+    if type(n_signals) is not int:
+        return False
+    return prc.get("n_signals") == n_signals and regime.get("n_signals") == n_signals
+
+
+def cd_from_prc(prc_output, gate, *, fee_ctx, gate_sha256=None):
+    """Hand-off check: schema, output hash, the PINS fee pair, and the gate.
 
     Returns the (c)/(d) booleans for apply_verdict, or None when the hand-off
     fails. A blocked PR-C output is None. reject_c and reject_d are returned
-    only when both are real booleans. A caller-supplied pair is not accepted.
+    only when both are real booleans. The recorded gate sha must equal the
+    sha of the gate handed here, and n_signals must equal that gate's signal
+    count. A caller-supplied pair is not accepted.
     """
     from card01_amc.pnl_cd import SCHEMA, score_body_sha256
 
@@ -449,6 +504,8 @@ def cd_from_prc(prc_output, gate, *, fee_ctx):
     if prc_output.get("entry_book_anchor_status") != "VERIFIED":
         return None
     if status not in ("OK", "NO_SIGNALS_SELECTED"):
+        return None
+    if not _gate_bound(prc_output, gate, gate_sha256):
         return None
     reject_c = prc_output.get("reject_c")
     reject_d = prc_output.get("reject_d")
@@ -486,9 +543,23 @@ def main(argv):
             "packet_index_path": args.packet_index,
             "fee_accept_path": args.fee_accept,
         }
-        gate = json.loads(Path(args.gate).read_text(encoding="utf-8"))
+        gate_bytes = Path(args.gate).read_bytes()
+        gate = json.loads(gate_bytes.decode("utf-8"))
+        gate_sha = hashlib.sha256(gate_bytes).hexdigest()
         prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
-        cd = cd_from_prc(prc_output, gate, fee_ctx=fee_ctx)
+        n_signals = None
+        if isinstance(gate, dict) and isinstance(gate.get("signals"), list):
+            n_signals = len(gate["signals"])
+        regime_doc = None
+        if args.regime_report:
+            regime_doc = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
+        if _triple_agrees(gate_sha, n_signals, prc_output, regime_doc):
+            cd = cd_from_prc(
+                prc_output,
+                gate,
+                fee_ctx=fee_ctx,
+                gate_sha256=gate_sha,
+            )
     if args.regime_report:
         regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
     json.dump(

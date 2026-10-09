@@ -211,7 +211,7 @@ EXTRACT BASE L288: the hypothetical taker P&L at ask is ≤ 0, or ≤ 0 under th
 one-tick-worse stress. EXTRACT BASE L289: the top-1 share of positive P&L is
 > 50%, or dropping the best two winners leaves ≤ $0. Payoff is `y` for D_YES
 and `1 − y` for D_NO (EXTRACT BASE L192). Headline fee only:
-`net = payoff − P − fee_H(P)`. The stress price is `P' = P + TICK` with
+`net = payoff − P − fee_H(P)`. Every net figure `pnl_cd` emits is labelled `ILLUSTRATIVE/R39` until a live-fill basis exists. The label does not change the number. The stress price is `P' = P + TICK` with
 `TICK = Decimal("0.01")` (ruling `61c1e4ea` (1)), and `fee_H` is recomputed
 at `P'` (ruling `61c1e4ea` (2)). The 2c buffer is excluded from every verdict
 net (ruling `61c1e4ea` (4)).
