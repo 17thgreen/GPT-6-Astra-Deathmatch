@@ -539,7 +539,7 @@ def _triple_agrees(gate, file_sha, prc, regime):
     return _binding_reason(gate, file_sha, prc, regime) is None
 
 
-def _binding_block(score, reason, regime):
+def _binding_block(score, reason, regime, detail=None):
     """Examiner hand-off. cd is not taken from a report that failed to bind."""
     raw_hi = _hi(score if isinstance(score, dict) else {}, "CI95_D_raw")
     rc_hi = _hi(score if isinstance(score, dict) else {}, "CI95_D_rc")
@@ -547,7 +547,7 @@ def _binding_block(score, reason, regime):
     fee_state = "BLOCKED_FEE_UNVERIFIED"
     if isinstance(regime, dict) and isinstance(regime.get("fee_state"), str):
         fee_state = regime["fee_state"]
-    return {
+    out = {
         "verdict": FULL,
         "binding_reason": reason,
         "firing": [],
@@ -556,6 +556,9 @@ def _binding_block(score, reason, regime):
         "fee_block_reason": reason,
         "notes": [reason],
     }
+    if detail is not None:
+        out["binding_detail"] = detail
+    return out
 
 
 def cd_from_prc(prc_output, gate, *, fee_ctx, gate_sha256=None):
@@ -683,12 +686,58 @@ def _signal_identity_reason(gate, prc):
     return None
 
 
+_ABSENT = object()
+
+
+def _regime_claims_admission(regime):
+    """True when a supplied report is admitted, or is not a blocked report.
+
+    A supplied non-report is labelled. It is not rewritten as a missing report.
+    """
+    if not isinstance(regime, dict):
+        return True
+    return _fee_state(regime)[0] == "ADMITTED"
+
+
+def _prc_claims_admission(prc):
+    """True when a supplied PR-C output is not itself fee-blocked."""
+    if not isinstance(prc, dict):
+        return True
+    if prc.get("status") == "BLOCKED_FEE_UNVERIFIED":
+        return False
+    if prc.get("fee_state") == "BLOCKED_FEE_UNVERIFIED":
+        return False
+    return True
+
+
+def _gate_claims_admission(gate):
+    """True when a supplied gate carries admitted signals."""
+    if not isinstance(gate, dict):
+        return True
+    signals = gate.get("signals")
+    if not isinstance(signals, list):
+        return False
+    return any(isinstance(item, dict) for item in signals)
+
+
+def _disk_blocked_claims(regime, gate, prc):
+    """Names of supplied inputs that claim admission. _ABSENT means not supplied."""
+    names = []
+    if regime is not _ABSENT and _regime_claims_admission(regime):
+        names.append("regime_report")
+    if prc is not _ABSENT and _prc_claims_admission(prc):
+        names.append("prc")
+    if gate is not _ABSENT and _gate_claims_admission(gate):
+        names.append("gate")
+    return names
+
+
 def _forecast_only(score, regime):
-    """Disk-blocked hand-off. An admitted report is not trusted over the files."""
-    report = regime
-    if isinstance(regime, dict) and _fee_state(regime)[0] == "ADMITTED":
-        report = None
-    return apply_verdict(score, cd=None, regime_report=report)
+    """Disk-blocked hand-off when every supplied input is blocked or absent.
+
+    A supplied report is passed through. It is not replaced with a missing report.
+    """
+    return apply_verdict(score, cd=None, regime_report=regime)
 
 
 def main(argv):
@@ -724,10 +773,32 @@ def main(argv):
         gate = json.loads(gate_bytes.decode("utf-8"))
         gate_sha = hashlib.sha256(gate_bytes).hexdigest()
     if not _disk_files_admit(fee_ctx, gate):
-        regime = None
+        regime = _ABSENT
         if args.regime_report is not None:
             regime = json.loads(Path(args.regime_report).read_text(encoding="utf-8"))
-        json.dump(_forecast_only(score, regime), sys.stdout, indent=1)
+        prc_output = _ABSENT
+        if args.prc is not None:
+            prc_output = json.loads(Path(args.prc).read_text(encoding="utf-8"))
+        claims = _disk_blocked_claims(
+            regime,
+            gate if args.gate is not None else _ABSENT,
+            prc_output,
+        )
+        if claims:
+            report = regime if isinstance(regime, dict) else None
+            json.dump(
+                _binding_block(
+                    score,
+                    "DISK_BLOCKED_INPUTS_ADMITTED",
+                    report,
+                    detail=",".join(claims),
+                ),
+                sys.stdout,
+                indent=1,
+            )
+            return 0
+        handed = None if regime is _ABSENT else regime
+        json.dump(_forecast_only(score, handed), sys.stdout, indent=1)
         return 0
     if args.regime_report is None:
         json.dump(_binding_block(score, "REGIME_REPORT_REQUIRED", None), sys.stdout, indent=1)

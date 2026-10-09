@@ -1011,8 +1011,11 @@ class PnLHarness(unittest.TestCase):
             self.assertEqual(produced["firing"], [], name)
             cli = self._verdict_cli(public, out["_gate"], report, fee_ctx=ctx)
             if name == "FEE_CITATIONS_CHANGED":
-                self.assertTrue(cli["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"), name)
-                self.assertNotEqual(cli["verdict"], "PASS-FORECAST", name)
+                self.assertEqual(cli["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+                self.assertEqual(cli["binding_reason"], "DISK_BLOCKED_INPUTS_ADMITTED", name)
+                self.assertIn("regime_report", cli["binding_detail"], name)
+                self.assertNotEqual(cli["fee_block_reason"], "FEE_REPORT_MISSING", name)
+                self.assertNotIn("PASS-FORECAST", cli["verdict"], name)
                 self.assertNotEqual(cli["verdict"], "REJECT", name)
             else:
                 self.assertEqual(cli["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
@@ -1734,6 +1737,74 @@ class PnLHarness(unittest.TestCase):
         self.assertNotEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
         self.assertNotEqual(produced["verdict"], "PASS-FORECAST")
         self.assertNotEqual(produced["verdict"], "REJECT")
+        self.assertNotEqual(produced["fee_block_reason"], "FEE_REPORT_MISSING")
+        report_only = self._verdict_bound(root, regime=report_path, fee_ctx=fee_ctx)
+        self.assertTrue(report_only["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+        self.assertNotEqual(report_only["fee_block_reason"], "FEE_REPORT_MISSING")
+        absent_report = self._verdict_bound(
+            root,
+            gate=gate_path,
+            prc=prc_path,
+            fee_ctx=fee_ctx,
+        )
+        self.assertTrue(absent_report["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+        self.assertEqual(absent_report["fee_block_reason"], "FEE_REPORT_MISSING")
+
+    def test_mf2_wrong_fee_path_on_honest_triple_requires_examiner(self):
+        root, full, _sub, _blocked, honest = self._examiner_world()
+        self.assertEqual(honest["fee_state"], "ADMITTED")
+        self.assertEqual(full["status"], "OK")
+        self.assertNotEqual(full["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertNotEqual(full["fee_state"], "BLOCKED_FEE_UNVERIFIED")
+        gate = json.loads((root / "gate-full5.json").read_text(encoding="utf-8"))
+        self.assertIsInstance(gate.get("signals"), list)
+        self.assertTrue(gate["signals"])
+        pinned_v1 = LAB / "pins" / "FEE_SOURCE_CARD01_v1_2026-10-03.json"
+        if pinned_v1.is_file() and sha256_bytes(pinned_v1.read_bytes()) == V1_SHA:
+            v1_path = pinned_v1
+        else:
+            v1_path = LAB / "tests" / "fixtures" / "SYNTH_FEE_SOURCE_v1_example.json"
+            self.assertTrue(v1_path.is_file())
+            self.assertNotEqual(sha256_bytes(v1_path.read_bytes()), self.pin["sha256"])
+        unrelated = root / "unrelated-accept.txt"
+        unrelated.write_text("not an accept\n", encoding="utf-8")
+        cited = root / "packet-index-cited.md"
+        cited.write_text(
+            Path(self.fee_ctx["packet_index_path"]).read_text(encoding="utf-8")
+            + "\nConductor WITHDRAW of amendment 2c870cd5\n",
+            encoding="utf-8",
+        )
+        swapped = dict(self.fee_ctx)
+        swapped["fee_source_path"] = self.fee_ctx["fee_accept_path"]
+        swapped["fee_accept_path"] = self.fee_ctx["fee_source_path"]
+        v1_ctx = dict(self.fee_ctx)
+        v1_ctx["fee_source_path"] = str(v1_path)
+        unrelated_ctx = dict(self.fee_ctx)
+        unrelated_ctx["fee_accept_path"] = str(unrelated)
+        cited_ctx = dict(self.fee_ctx)
+        cited_ctx["packet_index_path"] = str(cited)
+        cases = (
+            ("v1_fee_source", v1_ctx),
+            ("swapped_source_and_accept", swapped),
+            ("unrelated_accept", unrelated_ctx),
+            ("citation_changed_index", cited_ctx),
+        )
+        for name, fee_ctx in cases:
+            produced = self._verdict_bound(
+                root,
+                gate=root / "gate-full5.json",
+                prc=root / "prc-full5.json",
+                regime=root / "regime-honest.json",
+                fee_ctx=fee_ctx,
+            )
+            self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+            self.assertEqual(produced["binding_reason"], "DISK_BLOCKED_INPUTS_ADMITTED", name)
+            self.assertEqual(produced["binding_detail"], "regime_report,prc,gate", name)
+            self.assertNotEqual(produced["fee_block_reason"], "FEE_REPORT_MISSING", name)
+            self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
+            self.assertNotIn("FORECAST_ONLY", produced["verdict"], name)
+            self.assertIsNone(produced["evaluations"]["reject_c"], name)
+            self.assertIsNone(produced["evaluations"]["reject_d"], name)
 
     def test_e1b_stripped_book_reject_cannot_pass_forecast(self):
         from card01_amc.fee_admission import pinned_entry_v2

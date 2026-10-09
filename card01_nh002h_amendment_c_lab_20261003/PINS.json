@@ -169,7 +169,7 @@
   },
   {
    "path": "card01_amc/verdict.py",
-   "sha256": "7d31b61a83ef54997e8d4e1bfe32fdf95d9f81d35c02b9e057ec9c19061d80a8",
+   "sha256": "7ac08264e91a752201d9f6de6b5c469b945a482170ea75893e2b41a001da62f1",
    "role": "C1 C5 degenerate verdict helper",
    "vendored": true
   },
