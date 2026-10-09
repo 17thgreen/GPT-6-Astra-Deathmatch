@@ -414,11 +414,16 @@ def _pair_equal(left, pin):
     )
 
 
+def _both_bool(reject_c, reject_d):
+    return type(reject_c) is bool and type(reject_d) is bool
+
+
 def cd_from_prc(prc_output, gate, *, fee_ctx):
     """Hand-off check: schema, output hash, and the PINS fee pair.
 
-    Returns the (c)/(d) booleans for apply_verdict, the blocked strings, or
-    None when the hand-off fails. A caller-supplied pair is not accepted.
+    Returns the (c)/(d) booleans for apply_verdict, or None when the hand-off
+    fails. A blocked PR-C output is None. reject_c and reject_d are returned
+    only when both are real booleans. A caller-supplied pair is not accepted.
     """
     from card01_amc.pnl_cd import SCHEMA, score_body_sha256
 
@@ -426,14 +431,10 @@ def cd_from_prc(prc_output, gate, *, fee_ctx):
         return None
     if score_body_sha256(prc_output) != prc_output.get("output_sha256"):
         return None
-    state = disk_fee_state(gate, fee_ctx)
     status = prc_output.get("status")
     if status == "BLOCKED_FEE_UNVERIFIED":
-        return {
-            "n_signals": prc_output.get("n_signals"),
-            "reject_c": "BLOCKED_FEE_UNVERIFIED",
-            "reject_d": "BLOCKED_FEE_UNVERIFIED",
-        }
+        return None
+    state = disk_fee_state(gate, fee_ctx)
     pin = state["pin"]
     if not _pair_equal(prc_output, pin) or not _pair_equal(gate, pin):
         return None
@@ -444,19 +445,19 @@ def cd_from_prc(prc_output, gate, *, fee_ctx):
         isinstance(item, dict) and item.get("blocking") is True for item in defects
     )
     if status in ("UNRESOLVED_INVENTORY_AT_SCORING", "REPORTING_DEFECT") or blocking:
-        return {
-            "n_signals": prc_output.get("n_signals"),
-            "reject_c": None,
-            "reject_d": None,
-        }
+        return None
     if prc_output.get("entry_book_anchor_status") != "VERIFIED":
         return None
     if status not in ("OK", "NO_SIGNALS_SELECTED"):
         return None
+    reject_c = prc_output.get("reject_c")
+    reject_d = prc_output.get("reject_d")
+    if not _both_bool(reject_c, reject_d):
+        return None
     return {
         "n_signals": prc_output.get("n_signals"),
-        "reject_c": prc_output.get("reject_c"),
-        "reject_d": prc_output.get("reject_d"),
+        "reject_c": reject_c,
+        "reject_d": reject_d,
     }
 
 

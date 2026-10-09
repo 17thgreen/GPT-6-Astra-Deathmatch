@@ -724,7 +724,7 @@ class PnLHarness(unittest.TestCase):
         self.assertFalse(_has_money(out))
         self.assertEqual(out["_calls"]["n"], 0)
         cd = cd_from_prc(_public(out), gate, fee_ctx=self.fee_ctx)
-        self.assertEqual(cd["reject_c"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertIsNone(cd)
         produced = apply_verdict(_score_dict(-0.01, -0.02), cd=cd)
         self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
         # A score that would clear, with a fee pair that is not the real PINS pair.
@@ -735,10 +735,9 @@ class PnLHarness(unittest.TestCase):
         forged["fee_source_sha256"] = self.pin["sha256"]
         forged["output_sha256"] = pnl_cd.score_body_sha256(forged)
         cleared = cd_from_prc(forged, good["_gate"], fee_ctx=self.fee_ctx)
-        self.assertTrue(cleared is None or cleared.get("reject_c") == "BLOCKED_FEE_UNVERIFIED")
-        if cleared is None:
-            follow = apply_verdict(_score_dict(-0.01, -0.02), cd=None, regime_report=_admitted_report(self.pin))
-            self.assertEqual(follow["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+        self.assertIsNone(cleared)
+        follow = apply_verdict(_score_dict(-0.01, -0.02), cd=cleared, regime_report=_admitted_report(self.pin))
+        self.assertEqual(follow["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
 
     def test_pc18_unreadable_fee_files(self):
         gate = self._gate(self._case("P1_CLEAN"))
@@ -769,7 +768,7 @@ class PnLHarness(unittest.TestCase):
             self.assertEqual(out["_calls"]["n"], 0, name)
             self.assertEqual(out["_calls"]["join"], 0, name)
             cd = cd_from_prc(_public(out), gate, fee_ctx=fee_ctx)
-            self.assertEqual(cd["reject_c"], "BLOCKED_FEE_UNVERIFIED", name)
+            self.assertIsNone(cd, name)
             cases.append(out["fee_block_reason"])
             with tempfile.TemporaryDirectory() as tmp:
                 root = Path(tmp)
@@ -843,6 +842,126 @@ class PnLHarness(unittest.TestCase):
             regime_report=_admitted_report(self.pin),
         )
         self.assertEqual(follow["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER")
+
+    def _citing_index(self):
+        text = Path(self.fee_ctx["packet_index_path"]).read_text(encoding="utf-8")
+        path = self.root / "packet-index-cited.md"
+        path.write_text(text + "\nConductor WITHDRAW of amendment 2c870cd5\n", encoding="utf-8")
+        return path
+
+    def _verdict_cli(self, prc, gate, regime, fee_ctx=None):
+        fee_ctx = self.fee_ctx if fee_ctx is None else fee_ctx
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            score = root / "score.json"
+            score.write_text(json.dumps(_score_dict(-0.01, -0.02)), encoding="utf-8")
+            prc_path = root / "prc.json"
+            prc_path.write_text(json.dumps(prc), encoding="utf-8")
+            gate_path = root / "gate.json"
+            gate_path.write_text(json.dumps(gate), encoding="utf-8")
+            report_path = root / "regime.json"
+            report_path.write_text(json.dumps(regime), encoding="utf-8")
+            env = dict(os.environ)
+            env["PYTHONPATH"] = str(LAB)
+            proc = subprocess.run(
+                [
+                    sys.executable, "-m", "card01_amc.verdict", str(score),
+                    "--gate", str(gate_path),
+                    "--prc", str(prc_path),
+                    "--fee-source", fee_ctx["fee_source_path"],
+                    "--packet-index", fee_ctx["packet_index_path"],
+                    "--fee-accept", fee_ctx["fee_accept_path"],
+                    "--regime-report", str(report_path),
+                ],
+                cwd=str(LAB),
+                capture_output=True,
+                text=True,
+                check=False,
+                env=env,
+            )
+        self.assertEqual(proc.returncode, 0, proc.stderr)
+        self.assertNotIn("Traceback", proc.stderr)
+        return json.loads(proc.stdout)
+
+    def test_m1a_blocked_prc_admitted_report_requires_examiner(self):
+        cited = self._citing_index()
+        fee_ctx = dict(self.fee_ctx)
+        fee_ctx["packet_index_path"] = str(cited)
+        cited_out = self._run("P1_CLEAN", fee_ctx=fee_ctx)
+        self.assertEqual(cited_out["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(cited_out["fee_block_reason"], "FEE_CITATIONS_CHANGED")
+        self.assertEqual(cited_out["reject_c"], "BLOCKED_FEE_UNVERIFIED")
+        missing = self._gate(self._case("P1_CLEAN"))
+        missing.pop("fee_formula_id")
+        for signal in missing["signals"]:
+            signal.pop("fee_formula_id", None)
+        missing_out = self._run("P1_CLEAN", gate=missing)
+        self.assertEqual(missing_out["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(missing_out["fee_block_reason"], "FEE_FORMULA_ID_MISMATCH")
+        report = _admitted_report(self.pin)
+        blocked_report = {
+            "fee_state": "BLOCKED_FEE_UNVERIFIED",
+            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
+        }
+        for name, out, ctx in (
+            ("FEE_CITATIONS_CHANGED", cited_out, fee_ctx),
+            ("missing_fee_formula_id", missing_out, self.fee_ctx),
+        ):
+            public = _public(out)
+            cd = cd_from_prc(public, out["_gate"], fee_ctx=ctx)
+            self.assertIsNone(cd, name)
+            produced = apply_verdict(_score_dict(-0.01, -0.02), cd=cd, regime_report=report)
+            self.assertEqual(produced["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+            self.assertNotIn("PASS-FORECAST", produced["verdict"], name)
+            self.assertEqual(produced["firing"], [], name)
+            cli = self._verdict_cli(public, out["_gate"], report, fee_ctx=ctx)
+            self.assertEqual(cli["verdict"], "FULL_VERDICT_REQUIRES_EXAMINER", name)
+            self.assertNotIn("PASS-FORECAST", cli["verdict"], name)
+            self.assertEqual(cli["firing"], [], name)
+            held = apply_verdict(_score_dict(-0.01, -0.02), cd=cd, regime_report=blocked_report)
+            self.assertTrue(held["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"), name)
+
+    def test_m1b_blocked_prc_blocked_report_stays_forecast_only(self):
+        out = self._run("FEE_BLOCKED")
+        self.assertEqual(out["status"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(out["reject_c"], "BLOCKED_FEE_UNVERIFIED")
+        cd = cd_from_prc(_public(out), out["_gate"], fee_ctx=self.fee_ctx)
+        self.assertIsNone(cd)
+        blocked_report = {
+            "fee_state": "BLOCKED_FEE_UNVERIFIED",
+            "fee_block_reason": out["fee_block_reason"],
+            "fee_admission": {"fee_admission": "BLOCKED_FEE_UNVERIFIED"},
+        }
+        produced = apply_verdict(
+            _score_dict(-0.01, -0.02),
+            cd=cd,
+            regime_report=blocked_report,
+        )
+        self.assertTrue(produced["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+        self.assertEqual(produced["evaluations"]["reject_c"], "BLOCKED_FEE_UNVERIFIED")
+        self.assertEqual(produced["evaluations"]["reject_d"], "BLOCKED_FEE_UNVERIFIED")
+        omitted = apply_verdict(_score_dict(-0.01, -0.02), cd=cd)
+        self.assertTrue(omitted["verdict"].startswith("FORECAST_ONLY_FEE_BLOCKED:"))
+
+    def test_m1c_nonboolean_reject_maps_to_none(self):
+        clean = self._run("P1_CLEAN")
+        self.assertIs(clean["reject_c"], False)
+        self.assertIs(clean["reject_d"], False)
+        base = _public(clean)
+        for label, reject_c, reject_d in (
+            ("string", "BLOCKED_FEE_UNVERIFIED", False),
+            ("int", 1, 1),
+            ("none", None, None),
+        ):
+            mutated = json.loads(json.dumps(base))
+            mutated["reject_c"] = reject_c
+            mutated["reject_d"] = reject_d
+            mutated["output_sha256"] = pnl_cd.score_body_sha256(mutated)
+            cd = cd_from_prc(mutated, clean["_gate"], fee_ctx=self.fee_ctx)
+            self.assertIsNone(cd, label)
+        kept = cd_from_prc(base, clean["_gate"], fee_ctx=self.fee_ctx)
+        self.assertEqual(kept["reject_c"], False)
+        self.assertEqual(kept["reject_d"], False)
 
     def test_pins_override_is_tests_only(self):
         for path in (LAB / "card01_amc").glob("*.py"):
